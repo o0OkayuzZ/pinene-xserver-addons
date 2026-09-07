@@ -1,0 +1,36 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shapeless":  {
+                                       "description":  {
+                                                           "identifier":  "true_dn:recipe_parcanite_leggings"
+                                                       },
+                                       "tags":  [
+                                                    "crafting_table"
+                                                ],
+                                       "ingredients":  [
+                                                           {
+                                                               "item":  "true_dn:deathnerite_leggings"
+                                                           },
+                                                           {
+                                                               "item":  "true_dn:darkness_upgrade_smithing_template"
+                                                           },
+                                                           {
+                                                               "item":  "minecraft:netherite_ingot"
+                                                           }
+                                                       ],
+                                       "result":  {
+                                                      "item":  "true_dn:parcanite_leggings"
+                                                  },
+                                       "unlock":  [
+                                                      {
+                                                          "item":  "true_dn:deathnerite_leggings"
+                                                      },
+                                                      {
+                                                          "item":  "true_dn:darkness_upgrade_smithing_template"
+                                                      },
+                                                      {
+                                                          "item":  "minecraft:netherite_ingot"
+                                                      }
+                                                  ]
+                                   }
+}

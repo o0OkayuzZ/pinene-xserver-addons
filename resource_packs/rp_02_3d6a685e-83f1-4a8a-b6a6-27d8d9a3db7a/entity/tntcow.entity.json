@@ -1,0 +1,35 @@
+{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "a:tntcow",
+                                                        "min_engine_version":  "1.20.30",
+                                                        "materials":  {
+                                                                          "default":  "cow"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/tntcow"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.cow"
+                                                                     },
+                                                        "animations":  {
+                                                                           "walk":  "animation.tntcow.walk"
+                                                                       },
+                                                        "scripts":  {
+                                                                        "animate":  [
+                                                                                        {
+                                                                                            "walk":  "query.modified_move_speed"
+                                                                                        }
+                                                                                    ]
+                                                                    },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.cow"
+                                                                               ],
+                                                        "spawn_egg":  {
+                                                                          "base_color":  "#CC3300",
+                                                                          "overlay_color":  "#FFCC66"
+                                                                      }
+                                                    }
+                                }
+}

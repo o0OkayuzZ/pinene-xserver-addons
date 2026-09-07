@@ -1,0 +1,25 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "ws:warpstone_pedestal_to_warpstone"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "ws:warpstone_pedestal"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "ws:warpstone_pedestal"
+      }
+    ],
+    "result": {
+      "item": "ws:warpstone",
+      "count": 1
+    }
+  }
+}

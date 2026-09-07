@@ -1,0 +1,84 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "effectoo:xp_valve",
+      "menu_category": {
+        "category": "Construction"
+      },
+      "states": {
+        "valve:flow": [ false, true ]
+      },
+      "traits": {
+        "minecraft:placement_position": {
+          "enabled_states": ["minecraft:block_face"]
+        }
+      }
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": { "texture": "xp_valve", "ambient_occlusion": false }
+      },
+      "minecraft:custom_components": [
+        "block:interact"
+      ],
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:selection_box": {
+        "origin": [-5, 3, 1],
+        "size": [10, 10, 7]
+      },
+      "minecraft:collision_box":  {
+        "origin": [-5, 3, 3],
+        "size": [10, 10, 5]
+      },
+      "minecraft:geometry": {
+        "identifier": "geometry.xp_valve",
+        "bone_visibility": {
+          "valve_open": "!q.block_state('valve:flow')",
+          "valve_closed": "q.block_state('valve:flow')"
+        }
+      },
+      "minecraft:map_color": "#BACBF1"
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:block_face') == 'down'",
+        "components": {
+          "minecraft:transformation": { "rotation": [-90, 0, 0] }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:block_face') == 'up'",
+        "components": {
+          "minecraft:transformation": { "rotation": [90, 0, 0] }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:block_face') == 'north'",
+        "components": {
+          "minecraft:transformation": { "rotation": [0, 0, 0] }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:block_face') == 'west'",
+        "components": {
+          "minecraft:transformation": { "rotation": [0, 90, 0] }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:block_face') == 'south'",
+        "components": {
+          "minecraft:transformation": { "rotation": [0, 180, 0] }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:block_face') == 'east'",
+        "components": {
+          "minecraft:transformation": { "rotation": [0, -90, 0] }
+        }
+      }
+    ]
+  }
+}

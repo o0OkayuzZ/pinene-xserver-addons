@@ -1,0 +1,39 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[音楽連携] 追加レコード音源 RP",
+                   "description":  "追加レコード音源を供給。ピネCD音源RPが同名イベントを最上位で調整。",
+                   "uuid":  "fdcac724-cba1-46b2-9510-a433d666ed70",
+                   "version":  [
+                                   1,
+                                   1,
+                                   12
+                               ],
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              0
+                                          ]
+               },
+    "modules":  [
+                    {
+                        "type":  "resources",
+                        "uuid":  "9215abed-20a7-4817-8f9a-8b155bf8eebf",
+                        "version":  [
+                                        1,
+                                        1,
+                                        12
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "87a4083d-6ba7-4667-957b-dfee8b23e1b9",
+                             "version":  [
+                                             1,
+                                             1,
+                                             8
+                                         ]
+                         }
+                     ]
+}

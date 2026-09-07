@@ -1,0 +1,38 @@
+item.new:key.name=Key
+
+action.players.death=§cYou died in 
+action.players.warn=§cYou can't open the grave of 
+action.players.warn2=§cThis grave does not belong to you
+
+action.players.no_key=§cYou need a key
+
+title.grave.config=§l§5--Graves Config--
+options.config.owner=Grave Owner Restriction
+options.config.name=Show Grave Owner Name
+options.config.show_chat=Show death coordinates in chat
+options.config.show_key=Show death coordinates on key
+options.config.lose=Lose key when dying
+options.config.inv=Generate Grave with empty inventory
+options.config.zombie=Spawn Zombie when opening grave
+options.config.bones=Generate Bones when opening grave
+
+
+
+action.graves.empty=§dThe tomb was not generated because it was empty!
+
+title.grave.model_config=§l§8-Model Tombs Config-
+button.grave.random_model=§l§5Random Model
+button.grave.model_select=§l§3Model
+responce.grave.model=§l§aYou chose tomb model number
+
+title.grave.visual_config=§l§8-Visual Config
+button.grave.model_config=§l§2-Model Config
+button.grave.color_name=§l§3-Visual Color
+title.grave.color_name=§l§8-Visual Color-
+
+dropdown.grave.color_name=Color Name
+responce.grave.random_model=§l§aYou chose tomb random model
+
+dropdown.grave.color_name=\n§l§7-Color Name-
+
+responce.grave.color_name=§2§lYou chose the color

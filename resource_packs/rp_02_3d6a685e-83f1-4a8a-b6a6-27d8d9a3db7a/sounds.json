@@ -1,0 +1,133 @@
+{
+  "resource_pack_name": "FigureAddon",
+  "entity_sounds": {
+    "entities": {
+      "myname:pinene_bomb_cow": {
+        "volume": 1.0,
+        "pitch": [0.8, 1.2],
+        "events": {
+          "ambient": { "sound": "mob.creeper.say", "volume": 1.6, "pitch": [0.62, 0.72] },
+          "fuse": { "sound": "mob.creeper.say", "volume": 1.6, "pitch": [0.62, 0.72] },
+          "hurt": { "sound": "mob.creeper.say", "volume": 1.0, "pitch": [0.9, 1.3] },
+          "death": { "sound": "mob.creeper.death", "volume": 1.0, "pitch": [0.9, 1.1] }
+        }
+      }
+    }
+  },
+  "sound_definitions": {
+    "record.13": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_01"
+      ]
+    },
+    "record.cat": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_02"
+      ]
+    },
+    "record.blocks": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_03"
+      ]
+    },
+    "record.chirp": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_04"
+      ]
+    },
+    "record.far": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_05"
+      ]
+    },
+    "record.mall": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_06"
+      ]
+    },
+    "record.mellohi": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_07"
+      ]
+    },
+    "record.stal": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_08"
+      ]
+    },
+    "record.strad": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_09"
+      ]
+    },
+    "record.ward": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_10"
+      ]
+    },
+    "record.11": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_11"
+      ]
+    },
+    "record.wait": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_12"
+      ]
+    },
+    "record.pigstep": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_13"
+      ]
+    },
+    "record.otherside": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_14"
+      ]
+    },
+    "record.5": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_15"
+      ]
+    },
+    "record.relic": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_16"
+      ]
+    },
+    "record.creator": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_17"
+      ]
+    },
+    "record.creator_music_box": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_18"
+      ]
+    },
+    "record.precipice": {
+      "category": "record",
+      "sounds": [
+        "records/pinecd_track_19"
+      ]
+    }
+  }
+}

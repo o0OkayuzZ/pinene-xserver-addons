@@ -1,0 +1,349 @@
+{
+    "pools":  [
+                  {
+                      "rolls":  {
+                                    "min":  3,
+                                    "max":  5
+                                },
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:arrow",
+                                          "weight":  2,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  4,
+                                                                              "max":  28
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:arrow",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  4,
+                                                                              "max":  16
+                                                                          }
+                                                            },
+                                                            {
+                                                                "function":  "set_potion",
+                                                                "id":  "poison"
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:arrow",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  4,
+                                                                              "max":  16
+                                                                          }
+                                                            },
+                                                            {
+                                                                "function":  "set_potion",
+                                                                "id":  "slowness"
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:baked_potato",
+                                          "weight":  2,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  4
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:glow_berries",
+                                          "weight":  2,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  10
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:acacia_planks",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  3,
+                                                                              "max":  6
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:moss_block",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  5
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:bone_meal",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  5
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:tuff",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  5,
+                                                                              "max":  10
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:torch",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  3,
+                                                                              "max":  6
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:potion",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  2.0
+                                                            },
+                                                            {
+                                                                "function":  "set_potion",
+                                                                "id":  "regeneration"
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:potion",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  2.0
+                                                            },
+                                                            {
+                                                                "function":  "set_potion",
+                                                                "id":  "strength"
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:stone_pickaxe",
+                                          "weight":  2,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1.0
+                                                            },
+                                                            {
+                                                                "function":  "set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.15,
+                                                                               "max":  0.8
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:milk_bucket",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1.0
+                                                            }
+                                                        ]
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_ingot",
+                                          "weight":  18
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:gold_ingot",
+                                          "weight":  10
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:emerald",
+                                          "weight":  10
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond",
+                                          "weight":  3
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:golden_apple",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:name_tag",
+                                          "weight":  6
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_pickaxe",
+                                          "weight":  6
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:golden_helmet",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:book",
+                                          "weight":  4
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "resetapple:blue_apple",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "a:gwheat",
+                                          "weight":  4
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "a:egwheat",
+                                          "weight":  3
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "a:gbread",
+                                          "weight":  4
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "a:egbread",
+                                          "weight":  3
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_oyu",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_spiral",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:mystery_fossil",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:utyuuneko",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "kyuden:sunshine_doll",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_01",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_02",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_03",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_04",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_05",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_06",
+                                          "weight":  1
+                                      }
+                                  ]
+                  }
+              ]
+}

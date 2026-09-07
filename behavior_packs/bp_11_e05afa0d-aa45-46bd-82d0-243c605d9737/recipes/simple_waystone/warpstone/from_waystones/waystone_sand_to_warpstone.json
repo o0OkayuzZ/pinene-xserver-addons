@@ -1,0 +1,25 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shapeless":  {
+                                       "description":  {
+                                                           "identifier":  "ws:to_warpstone_waystone_sand"
+                                                       },
+                                       "tags":  [
+                                                    "crafting_table"
+                                                ],
+                                       "ingredients":  [
+                                                           {
+                                                               "item":  "ws:waystone_sand"
+                                                           }
+                                                       ],
+                                       "unlock":  [
+                                                      {
+                                                          "item":  "ws:waystone_sand"
+                                                      }
+                                                  ],
+                                       "result":  {
+                                                      "item":  "ws:warpstone",
+                                                      "count":  1
+                                                  }
+                                   }
+}

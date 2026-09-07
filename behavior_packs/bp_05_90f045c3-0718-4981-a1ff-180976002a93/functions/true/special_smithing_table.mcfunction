@@ -1,0 +1,1 @@
+execute as @e[type=true:special_smithing_table] at @s run scriptevent true:special_smithing_table

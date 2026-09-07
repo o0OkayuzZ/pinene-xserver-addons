@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:hitomoshi_placed",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/figure_hitomoshi"
+      },
+      "geometry": {
+        "default": "geometry.figure_hitomoshi"
+      },
+      "scripts": {
+        "scale": "0.51"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

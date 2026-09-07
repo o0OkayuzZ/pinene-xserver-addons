@@ -1,0 +1,39 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[装備互換] ゾンビ装備＋クロスボウ RP",
+                   "description":  "ゾンビ装備をSystem Crossbowと同時表示する上位互換層。",
+                   "uuid":  "4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10",
+                   "version":  [
+                                   1,
+                                   0,
+                                   12
+                               ],
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              0
+                                          ]
+               },
+    "modules":  [
+                    {
+                        "type":  "resources",
+                        "uuid":  "112d2f31-42b4-40ff-aa27-393eef69d7f8",
+                        "version":  [
+                                        1,
+                                        0,
+                                        12
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "7c8ac348-47ad-4f71-8503-dc40a6f813f1",
+                             "version":  [
+                                             1,
+                                             0,
+                                             6
+                                         ]
+                         }
+                     ]
+}

@@ -1,0 +1,21 @@
+{
+"entity_sounds": {
+  "entities": {
+    "new:tumba": {
+      "volume": 2.0,
+      "pitch": [ 0.8, 1.2 ],
+      "events": {
+        "death": "mob.tumba.break",
+        "hurt": "dig.stone",
+        "hit": "dig.stone"
+      }
+    },
+    "new:tumba_loot": {
+      "volume": 2.0,
+      "pitch": [ 0.8, 1.2 ],
+      "events": {
+        "death": ""
+      }
+    }
+  }
+}}

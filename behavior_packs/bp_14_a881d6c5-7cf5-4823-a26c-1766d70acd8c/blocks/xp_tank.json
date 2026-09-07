@@ -1,0 +1,50 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:block": {
+    "description": {
+      "identifier": "effectoo:xp_tank",
+      "menu_category": {
+        "category": "Construction"
+      },
+      "states": {
+        "block:light": [ 0, 1 ]
+      }
+    },
+    "components": {
+      "minecraft:light_emission": 0,
+      "minecraft:material_instances": {
+        "*": { "texture": "xp_tank", "render_method": "blend" }
+      },
+      "minecraft:custom_components": [
+        "block:interact"
+      ],
+      "minecraft:redstone_conductivity": {
+        "redstone_conductor": true
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.8
+      },
+      "minecraft:selection_box": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:collision_box": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:map_color": "#1FD900",
+
+      "minecraft:geometry": {
+        "identifier": "geometry.xp_tank"
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('block:light')",
+        "components": {
+          "minecraft:light_emission": 6
+        }
+      }
+    ]
+  }
+}

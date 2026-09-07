@@ -1,0 +1,41 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "pattern":  [
+                                                    "N G",
+                                                    " C ",
+                                                    " N "
+                                                ],
+                                    "description":  {
+                                                        "identifier":  "pinene:meitetsu_chest_gold_tr"
+                                                    },
+                                    "tags":  [
+                                                 "crafting_table"
+                                             ],
+                                    "result":  {
+                                                   "item":  "pinene:meitetsu_chest"
+                                               },
+                                    "key":  {
+                                                "G":  {
+                                                          "item":  "minecraft:gold_ingot"
+                                                      },
+                                                "C":  {
+                                                          "item":  "minecraft:chest"
+                                                      },
+                                                "N":  {
+                                                          "item":  "minecraft:netherite_ingot"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:chest"
+                                                   },
+                                                   {
+                                                       "item":  "minecraft:netherite_ingot"
+                                                   },
+                                                   {
+                                                       "item":  "minecraft:gold_ingot"
+                                                   }
+                                               ]
+                                }
+}

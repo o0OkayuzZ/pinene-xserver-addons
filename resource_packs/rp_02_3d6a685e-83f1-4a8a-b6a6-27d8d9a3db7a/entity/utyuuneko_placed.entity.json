@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:utyuuneko_placed",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/figure_utyuuneko"
+      },
+      "geometry": {
+        "default": "geometry.figure_utyuuneko"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

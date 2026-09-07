@@ -1,0 +1,25 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shapeless":  {
+                                       "description":  {
+                                                           "identifier":  "ws:to_warpstone_waystone_black_terracotta"
+                                                       },
+                                       "tags":  [
+                                                    "crafting_table"
+                                                ],
+                                       "ingredients":  [
+                                                           {
+                                                               "item":  "ws:waystone_black_terracotta"
+                                                           }
+                                                       ],
+                                       "unlock":  [
+                                                      {
+                                                          "item":  "ws:waystone_black_terracotta"
+                                                      }
+                                                  ],
+                                       "result":  {
+                                                      "item":  "ws:warpstone",
+                                                      "count":  1
+                                                  }
+                                   }
+}

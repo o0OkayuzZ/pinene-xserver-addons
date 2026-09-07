@@ -1,0 +1,39 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[音楽連携] 追加レコード連携 BP",
+                   "description":  "追加レコード音源RPを有効化する互換スタブ。ゲーム要素の本体定義は持たない。",
+                   "uuid":  "87a4083d-6ba7-4667-957b-dfee8b23e1b9",
+                   "version":  [
+                                   1,
+                                   1,
+                                   8
+                               ],
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              0
+                                          ]
+               },
+    "modules":  [
+                    {
+                        "type":  "data",
+                        "uuid":  "1682f208-8f62-45cb-845b-7cc8aa263338",
+                        "version":  [
+                                        1,
+                                        1,
+                                        8
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "fdcac724-cba1-46b2-9510-a433d666ed70",
+                             "version":  [
+                                             1,
+                                             1,
+                                             12
+                                         ]
+                         }
+                     ]
+}

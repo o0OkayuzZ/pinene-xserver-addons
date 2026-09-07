@@ -1,0 +1,52 @@
+{
+    "format_version":  2,
+    "metadata":  {
+                     "authors":  [
+                                     "Marcos Paulo"
+                                 ],
+                     "generated_with":  {
+                                            "bridge":  [
+                                                           "2.7.50"
+                                                       ],
+                                            "dash":  [
+                                                         "0.11.7"
+                                                     ]
+                                        }
+                 },
+    "header":  {
+                   "name":  "[鉱石] モアジオード RP",
+                   "description":  "追加鉱石・ジオードのモデルとテクスチャを担当。",
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              0
+                                          ],
+                   "uuid":  "d68eee7e-653f-474a-a385-e1a76fdd28bd",
+                   "version":  [
+                                   1,
+                                   0,
+                                   13
+                               ]
+               },
+    "modules":  [
+                    {
+                        "type":  "resources",
+                        "uuid":  "64e0a40f-7393-4704-b9e8-84635bbfba50",
+                        "version":  [
+                                        1,
+                                        0,
+                                        13
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "228eb1da-6372-4a9b-9050-a40256149144",
+                             "version":  [
+                                             1,
+                                             0,
+                                             23
+                                         ]
+                         }
+                     ]
+}

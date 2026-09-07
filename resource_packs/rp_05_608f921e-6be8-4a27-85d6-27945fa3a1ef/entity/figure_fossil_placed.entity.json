@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:figure_fossil_placed",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/blocks/mystery_fossil"
+      },
+      "geometry": {
+        "default": "geometry.figure_fossil"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

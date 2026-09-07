@@ -1,0 +1,65 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[移動] Simple Waystone BP",
+                   "description":  "多数のWaystoneブロックとテレポート処理を担当する本体。",
+                   "uuid":  "e05afa0d-aa45-46bd-82d0-243c605d9737",
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              100
+                                          ],
+                   "version":  [
+                                   8,
+                                   2,
+                                   5
+                               ]
+               },
+    "modules":  [
+                    {
+                        "type":  "data",
+                        "uuid":  "15aea1a7-7997-40ad-932d-2b99447005b8",
+                        "version":  [
+                                        8,
+                                        2,
+                                        5
+                                    ]
+                    },
+                    {
+                        "type":  "script",
+                        "language":  "javascript",
+                        "entry":  "scripts/simple_waystone/main.js",
+                        "uuid":  "119674e9-4eec-4664-b102-55ce891c3c0e",
+                        "version":  [
+                                        8,
+                                        2,
+                                        5
+                                    ]
+                    }
+                ],
+    "metadata":  {
+                     "product_type":  "addon",
+                     "authors":  [
+                                     "繝ｻ繧托ｽｽ・ｧbEndermen76428繝ｻ繧托ｽｽ・ｧr \u0026 繝ｻ繧托ｽｽ・ｧ5Heartiorn"
+                                 ],
+                     "url":  "https://www.curseforge.com/minecraft-bedrock/addons/simple-waystone"
+                 },
+    "dependencies":  [
+                         {
+                             "uuid":  "4d6ce949-1de7-41ec-87ab-3068434459a4",
+                             "version":  [
+                                             8,
+                                             2,
+                                             7
+                                         ]
+                         },
+                         {
+                             "module_name":  "@minecraft/server",
+                             "version":  "2.0.0"
+                         },
+                         {
+                             "module_name":  "@minecraft/server-ui",
+                             "version":  "2.0.0"
+                         }
+                     ]
+}

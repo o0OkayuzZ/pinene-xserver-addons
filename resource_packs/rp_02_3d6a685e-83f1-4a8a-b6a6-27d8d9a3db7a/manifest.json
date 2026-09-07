@@ -1,0 +1,22 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "ピーネン統合リソースパック",
+    "description": "開発用統合リソースパック",
+    "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+    "version": [1, 0, 51],
+    "min_engine_version": [1, 20, 30]
+  },
+  "modules": [
+    {
+      "description": "Resource module",
+      "type": "resources",
+      "uuid": "1bd7239c-57cd-4df7-9223-acd3efcf07b1",
+      "version": [1, 0, 51]
+    }
+  ],
+  "metadata": {
+    "authors": ["Pinene"],
+    "product_type": "addon"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "resetapple:enchanted_blue_diamond_apple"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "BBB",
+      "BAB",
+      "BBB"
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:diamond_block"
+      },
+      "A": {
+        "item": "resetapple:blue_diamond_apple"
+      }
+    },
+    "result": {
+      "item": "resetapple:enchanted_blue_diamond_apple",
+      "count": 1
+    }
+  }
+}

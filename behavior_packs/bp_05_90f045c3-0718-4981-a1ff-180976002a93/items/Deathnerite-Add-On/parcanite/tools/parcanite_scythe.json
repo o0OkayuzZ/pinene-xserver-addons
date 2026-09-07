@@ -1,0 +1,127 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "true_dn:parcanite_hoe",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.hoe"
+      }
+    },
+    "components": {
+      "minecraft:liquid_clipped": true,
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "true_dn:on_mine_block": {},
+      "true_dn:transform_block": {
+        "affect_tags": [ "grass", "dirt" ],
+        "transform_to": "minecraft:farmland",
+
+        "specific_transformations": {
+          "minecraft:farmland": null
+        },
+
+        "sfx": {
+          "sound": "use.grass"
+        }
+      },
+
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_hoe"
+        ]
+      },
+      "minecraft:damage": 9,
+      "minecraft:enchantable": {
+        "value": 50,
+        "slot": "hoe"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": {
+              "tags": "q.any_tag('minecraft:is_hoe_item_destructible')"
+            },
+            "speed": 25
+          },
+          {
+            "block": "minecraft:mangrove_leaves",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:moss_block",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:leaves",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:shroomlight",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:sponge",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:target",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:hay_block",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:leaves2",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:warped_wart_block",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:nether_wart_block",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:sculk",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:sculk_catalyst",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:sculk_shrieker",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:sculk_vein",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:sculk_sensor",
+            "speed": 25
+          },
+          {
+            "block": "minecraft:dried_kelp_block",
+            "speed": 25
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 3633
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "parcanite_hoe"
+        }
+      }
+    }
+  }
+}

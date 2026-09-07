@@ -1,0 +1,63 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "effectoo:xp_fluid": {
+        "volume": 0.3,
+        "pitch": [ 0.9, 1.1 ],
+        "events": {
+          "ambient": "random.orb",
+          "hurt": "random.orb",
+          "death": "random.orb",
+          "step": "random.orb",
+          "fall.small" : {
+             "pitch" : 0.5,
+             "sound" : "random.orb",
+             "volume" : 0.5
+          },
+          "fall.big" : {
+             "pitch" : 0.3,
+             "sound" : "random.orb",
+             "volume" : 0.5
+          }
+        }
+      },
+      "effectoo:xp_tank": {
+        "volume": 0.3,
+        "pitch": [ 0.9, 1.1 ],
+        "events": {
+          "ambient": "random.orb",
+          "hurt": "random.orb",
+          "death": "random.orb"
+        }
+      },
+      "effectoo:orb_fairy": {
+        "volume": 0.8,
+        "pitch": [ 0.9, 1.1 ],
+        "events": {
+          "ambient": "random.orb",
+          "hurt": {
+            "pitch": 0.4,
+            "sound": "random.orb",
+            "volume": 0.5
+          },
+          "death": {
+            "pitch": 1.4,
+            "sound": "random.orb",
+            "volume": 1
+          },
+          "step": "random.orb",
+          "fall.small": {
+            "pitch": 0.5,
+            "sound": "random.orb",
+            "volume": 0.5
+          },
+          "fall.big": {
+            "pitch": 0.3,
+            "sound": "random.orb",
+            "volume": 0.5
+          }
+        }
+      }
+    }
+  }
+}

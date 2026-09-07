@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "resetapple:blue_diamond_apple"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "DDD",
+      "DAD",
+      "DDD"
+    ],
+    "key": {
+      "D": {
+        "item": "minecraft:diamond"
+      },
+      "A": {
+        "item": "resetapple:blue_apple"
+      }
+    },
+    "result": {
+      "item": "resetapple:blue_diamond_apple",
+      "count": 1
+    }
+  }
+}

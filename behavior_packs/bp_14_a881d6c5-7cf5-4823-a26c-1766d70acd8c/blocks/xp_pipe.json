@@ -1,0 +1,69 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "effectoo:xp_pipe",
+      "states": {
+        "block:default": [ 0, 1 ],
+        "pipe:up": [ 0, 1 ],
+        "pipe:down": [ 0, 1 ],
+        "pipe:north": [ 0, 1 ],
+        "pipe:south": [ 0, 1 ],
+        "pipe:east": [ 0, 1 ],
+        "pipe:west": [ 0, 1 ],
+        "pipe:flow": [ false, true ]
+      },
+      "menu_category": {
+        "category": "Construction"
+      }
+    },
+    "components": {
+      "minecraft:selection_box": {
+        "origin": [ -4, 4, -4 ],
+        "size": [ 8, 8, 8 ]
+      },
+      "minecraft:collision_box": {
+        "origin": [ -4, 4, -4 ],
+        "size": [ 8, 8, 8 ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.3
+      },
+      "minecraft:light_emission": 0,
+      "minecraft:light_dampening": 0,
+      "minecraft:material_instances": {
+        "*": { "texture": "xp_pipe", "render_method": "blend", "ambient_occlusion": false }
+      },
+      "minecraft:geometry": {
+        "identifier": "geometry.xp_pipe",
+        "bone_visibility": {
+          "pipe": "q.block_state('block:default')",
+          "base_icon": "!q.block_state('block:default')",
+          "valve_blocked": "q.block_state('pipe:flow')",
+          "up": "q.block_state('pipe:up')",
+          "down": "q.block_state('pipe:down')",
+          "north": "q.block_state('pipe:north')",
+          "east": "q.block_state('pipe:east')",
+          "south": "q.block_state('pipe:south')",
+          "west": "q.block_state('pipe:west')",
+
+          "center_up": "!q.block_state('pipe:up') && q.block_state('block:default')",
+          "center_down": "!q.block_state('pipe:down') && q.block_state('block:default')",
+          "center_north": "!q.block_state('pipe:north') && q.block_state('block:default')",
+          "center_south": "!q.block_state('pipe:south') && q.block_state('block:default')",
+          "center_east": "!q.block_state('pipe:east') && q.block_state('block:default')",
+          "center_west": "!q.block_state('pipe:west') && q.block_state('block:default')",
+
+          "bonding_up": "q.block_state('pipe:down') && !q.block_state('pipe:up') && !q.block_state('pipe:north') && !q.block_state('pipe:east') && !q.block_state('pipe:south') && !q.block_state('pipe:west')",
+          "bonding_down": "q.block_state('pipe:up') && !q.block_state('pipe:down') && !q.block_state('pipe:north') && !q.block_state('pipe:east') && !q.block_state('pipe:south') && !q.block_state('pipe:west')",
+          "bonding_north": "q.block_state('pipe:south') && !q.block_state('pipe:north') && !q.block_state('pipe:up') && !q.block_state('pipe:down') && !q.block_state('pipe:east') && !q.block_state('pipe:west')",
+          "bonding_south": "q.block_state('pipe:north') && !q.block_state('pipe:south') && !q.block_state('pipe:up') && !q.block_state('pipe:down') && !q.block_state('pipe:east') && !q.block_state('pipe:west')",
+          "bonding_east": "q.block_state('pipe:west') && !q.block_state('pipe:east') && !q.block_state('pipe:up') && !q.block_state('pipe:down') && !q.block_state('pipe:north') && !q.block_state('pipe:south')",
+          "bonding_west": "q.block_state('pipe:east') && !q.block_state('pipe:west') && !q.block_state('pipe:up') && !q.block_state('pipe:down') && !q.block_state('pipe:north') && !q.block_state('pipe:south')",
+          "default": "!q.block_state('pipe:up') && !q.block_state('pipe:down') && !q.block_state('pipe:north') && !q.block_state('pipe:east') && !q.block_state('pipe:south') && !q.block_state('pipe:west') && q.block_state('block:default')"
+        }
+      },
+      "minecraft:map_color": "#CBF5FF"
+    }
+  }
+}

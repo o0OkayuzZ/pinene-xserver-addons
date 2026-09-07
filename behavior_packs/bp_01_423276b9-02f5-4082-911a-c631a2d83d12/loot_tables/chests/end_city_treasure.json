@@ -1,0 +1,602 @@
+{
+    "pools":  [
+                  {
+                      "rolls":  {
+                                    "min":  4,
+                                    "max":  12
+                                },
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond",
+                                          "weight":  10,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  14
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:copper_ingot",
+                                          "weight":  10,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  12
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_ingot",
+                                          "weight":  20,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  4,
+                                                                              "max":  16
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:gold_ingot",
+                                          "weight":  30,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  14
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:emerald",
+                                          "weight":  4,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  12
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:beetroot_seeds",
+                                          "weight":  5,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  10
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:chorus_fruit",
+                                          "weight":  5,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  12
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:popped_chorus_fruit",
+                                          "weight":  5,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  16
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:shulker_shell",
+                                          "weight":  10,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  2
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:phantom_membrane",
+                                          "weight":  10,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  3
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:dragon_breath",
+                                          "weight":  5,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  5
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:ender_pearl",
+                                          "weight":  5,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  3
+                                                                          }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:end_crystal",
+                                          "weight":  5,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:dragon_head",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:dragon_egg",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:saddle",
+                                          "weight":  3
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_horse_armor",
+                                          "weight":  2
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:copper_horse_armor",
+                                          "weight":  2
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:golden_horse_armor",
+                                          "weight":  2
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_horse_armor",
+                                          "weight":  2
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_sword",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_spear",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_boots",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_chestplate",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_leggings",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_helmet",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_shovel",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_sword",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_boots",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_chestplate",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_leggings",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_helmet",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_shovel",
+                                          "weight":  3,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_with_levels",
+                                                                "treasure":  true,
+                                                                "levels":  {
+                                                                               "min":  20,
+                                                                               "max":  39
+                                                                           }
+                                                            }
+                                                        ]
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "empty",
+                                          "weight":  14
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:spire_armor_trim_smithing_template",
+                                          "weight":  2
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_block",
+                                          "weight":  12
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:emerald_block",
+                                          "weight":  12
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:gold_block",
+                                          "weight":  10
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:netherite_ingot",
+                                          "weight":  8
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:enchanted_golden_apple",
+                                          "weight":  6
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:totem_of_undying",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:nether_star",
+                                          "weight":  3
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:trident",
+                                          "weight":  4
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "waystone:waystone",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "ws:warpstone",
+                                          "weight":  3
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "resetapple:blue_apple",
+                                          "weight":  4
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_fossil",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_oyu",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_spiral",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:gengar",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:goamagara",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:hitomoshi",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:jack",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:meltan",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:metamon",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:mimikkyu",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:shini",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:soubraze",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:utyuuneko",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_01",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_02",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_03",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_04",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_05",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_06",
+                                          "weight":  1
+                                      }
+                                  ]
+                  }
+              ]
+}

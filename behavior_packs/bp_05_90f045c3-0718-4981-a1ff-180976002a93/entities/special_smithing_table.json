@@ -1,0 +1,65 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "true:special_smithing_table",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "components": {
+      "minecraft:body_rotation_axis_aligned": {},
+      "minecraft:renders_when_invisible": {},
+      "minecraft:body_rotation_blocked": {},
+      "minecraft:cannot_be_attacked": {},
+
+      "minecraft:type_family": {
+        "family": ["inanimate", "smithing_table", "true:special_smithing_table"]
+      },
+      "minecraft:collision_box": {
+        "height": 0.4,
+        "width": 1
+      },
+      "minecraft:inventory": {
+        "can_be_siphoned_from": false,
+        "container_type": "hopper",
+        "inventory_size": 5
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:equipment": {
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0.0
+          }
+        ]
+      },
+
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+
+      "minecraft:dimension_bound": {},
+      "minecraft:fire_immune": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false,
+        "push_towards_closest_space": false
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:meltan_placed",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/figure_meltan"
+      },
+      "geometry": {
+        "default": "geometry.figure_meltan"
+      },
+      "scripts": {
+        "scale": "0.45"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+    "format_version":  "1.21.40",
+    "minecraft:color_grading_settings":  {
+                                             "description":  {
+                                                                 "identifier":  "vrd:color_grading"
+                                                             },
+                                             "color_grading":  {
+                                                                   "midtones":  {
+                                                                                    "midtonesMax":  60,
+                                                                                    "contrast":  [
+                                                                                                     1.02,
+                                                                                                     1.02,
+                                                                                                     1.02
+                                                                                                 ],
+                                                                                    "saturation":  [
+                                                                                                       0.82,
+                                                                                                       0.82,
+                                                                                                       0.82
+                                                                                                   ],
+                                                                                    "gain":  [
+                                                                                                 0.95,
+                                                                                                 0.97,
+                                                                                                 1
+                                                                                             ],
+                                                                                    "offset":  [
+                                                                                                   0.0,
+                                                                                                   0.0,
+                                                                                                   0.0
+                                                                                               ],
+                                                                                    "gamma":  [
+                                                                                                  2.15,
+                                                                                                  2.15,
+                                                                                                  2.12
+                                                                                              ]
+                                                                                },
+                                                                   "highlights":  {
+                                                                                      "enabled":  true,
+                                                                                      "highlightsMin":  28,
+                                                                                      "contrast":  [
+                                                                                                       0.92,
+                                                                                                       0.92,
+                                                                                                       0.92
+                                                                                                   ],
+                                                                                      "gain":  [
+                                                                                                   0.78,
+                                                                                                   0.8,
+                                                                                                   0.84
+                                                                                               ],
+                                                                                      "gamma":  [
+                                                                                                    2.35,
+                                                                                                    2.35,
+                                                                                                    2.3
+                                                                                                ],
+                                                                                      "offset":  [
+                                                                                                     0.00,
+                                                                                                     0.00,
+                                                                                                     0.00
+                                                                                                 ],
+                                                                                      "saturation":  [
+                                                                                                         0.86,
+                                                                                                         0.86,
+                                                                                                         0.86
+                                                                                                     ]
+                                                                                  },
+                                                                   "shadows":  {
+                                                                                   "enabled":  true,
+                                                                                   "shadowsMax":  0.58,
+                                                                                   "contrast":  [
+                                                                                                    1.02,
+                                                                                                    1.02,
+                                                                                                    1.02
+                                                                                                ],
+                                                                                   "gain":  [
+                                                                                                0.92,
+                                                                                                0.96,
+                                                                                                1.05
+                                                                                            ],
+                                                                                   "gamma":  [
+                                                                                                 1.9,
+                                                                                                 1.9,
+                                                                                                 1.88
+                                                                                             ],
+                                                                                   "offset":  [
+                                                                                                  0.0,
+                                                                                                  0.0,
+                                                                                                  0.0
+                                                                                              ],
+                                                                                   "saturation":  [
+                                                                                                      0.84,
+                                                                                                      0.84,
+                                                                                                      0.84
+                                                                                                  ]
+                                                                               }
+                                                               },
+                                             "tone_mapping":  {
+                                                                  "operator":  "aces"
+                                                              }
+                                         }
+}

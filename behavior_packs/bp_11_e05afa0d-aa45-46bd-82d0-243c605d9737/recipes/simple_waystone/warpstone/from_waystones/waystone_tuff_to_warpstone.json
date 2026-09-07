@@ -1,0 +1,25 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shapeless":  {
+                                       "description":  {
+                                                           "identifier":  "ws:to_warpstone_waystone_tuff"
+                                                       },
+                                       "tags":  [
+                                                    "crafting_table"
+                                                ],
+                                       "ingredients":  [
+                                                           {
+                                                               "item":  "ws:waystone_tuff"
+                                                           }
+                                                       ],
+                                       "unlock":  [
+                                                      {
+                                                          "item":  "ws:waystone_tuff"
+                                                      }
+                                                  ],
+                                       "result":  {
+                                                      "item":  "ws:warpstone",
+                                                      "count":  1
+                                                  }
+                                   }
+}

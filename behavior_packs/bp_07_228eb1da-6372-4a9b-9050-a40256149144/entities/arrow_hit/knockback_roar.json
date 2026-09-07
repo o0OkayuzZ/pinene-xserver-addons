@@ -1,0 +1,66 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sysc:knockback_roar",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "despawn": {
+        "minecraft:despawn": {}
+      }
+    },
+    "components": {
+		"minecraft:behavior.knockback_roar": {
+			"attack_time": 0.1,
+			"cooldown_time": 0,
+			"duration": 0.1,
+			"knockback_damage": 5,
+			"knockback_strength": 10,
+			"knockback_range": 15,
+	    "on_roar_end": {
+		  "event": "new:event_despawn"
+		}
+	  },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": ["knockback_roar"]
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      }
+    },
+    "events": {
+      "new:event_despawn": {
+        "add": {
+          "component_groups": [
+            "despawn"
+          ]
+        }
+      }
+    }
+  }
+}

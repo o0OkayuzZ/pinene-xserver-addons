@@ -1,0 +1,20 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "new:visual_config"
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:cooldown":{
+        "category": "key",
+        "duration": 1
+      },
+      "minecraft:glint": true,
+      "minecraft:icon": "book_normal",
+      "minecraft:display_name": {
+        "value": "§l§2墓の見た目設定キー\n\n§7墓のモデルや色を変更する鍵"
+      }
+    }
+  }
+}

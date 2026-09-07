@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "pinematerials:stone_snowball",
+            "is_spawnable": false,
+            "is_summonable": false,
+            "is_experimental": false
+        },
+        "components": {
+            "minecraft:projectile": {
+                "hit_sound": "stone.hit",
+                "power": 1.5,
+                "gravity": 0.05,
+                "uncertainty_base": 0,
+                "offset": [0, -0.1, 0],
+                "on_hit": {
+                    "remove_on_hit": {},
+                    "impact_damage": {
+                        "damage": 6,
+                        "knockback": false,
+                        "semi_random_diff_damage": false
+                    }
+                }
+            },
+            "minecraft:physics": {},
+            "minecraft:collision_box": {
+                "width": 0.25,
+                "height": 0.25
+            }
+        }
+    }
+}

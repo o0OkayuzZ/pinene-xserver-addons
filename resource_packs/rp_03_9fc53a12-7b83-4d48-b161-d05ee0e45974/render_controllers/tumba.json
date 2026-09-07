@@ -1,0 +1,54 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tumba": {
+      "arrays": {
+        "geometries": {
+          "array.geos": [
+            "geometry.default",
+            "geometry.var2",
+            "geometry.var3",
+            "geometry.var4",
+            "geometry.var5",
+            "geometry.var6",
+            "geometry.var7",
+            "geometry.var8",
+            "geometry.var9",
+            "geometry.var10",
+            "geometry.var11",
+            "geometry.var12",
+            "geometry.var13",
+            "geometry.var14",
+            "geometry.var15",
+            "geometry.var16",
+            "geometry.var1"
+          ]
+        },
+        "textures": {
+          "array.skins": [
+            "Texture.default",
+            "Texture.var2",
+            "Texture.var3",
+            "Texture.var4",
+            "Texture.var5",
+            "Texture.var6",
+            "Texture.var7",
+            "Texture.var8",
+            "Texture.var9",
+            "Texture.var10",
+            "Texture.var11",
+            "Texture.var12",
+            "Texture.var13",
+            "Texture.var14",
+            "Texture.var15",
+            "Texture.var16",
+            "Texture.var1"
+          ]
+        }
+      },
+      "geometry": "Array.geos[query.variant]",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Array.skins[query.variant]" ]
+    }
+  }
+}

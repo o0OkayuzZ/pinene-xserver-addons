@@ -1,0 +1,489 @@
+{
+    "pools":  [
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "weight":  15,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.15,
+                                                                               "max":  0.8
+                                                                           }
+                                                            },
+                                                            {
+                                                                "function":  "enchant_randomly"
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:diamond_shovel"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.05,
+                                                                               "max":  0.1
+                                                                           }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:netherite_hoe"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  1,
+                                          "name":  "minecraft:netherite_horse_armor"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  8,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:netherite_scrap"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  5,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:ancient_debris"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  12,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:saddle"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  16,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  4
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:gold_block"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  10,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  8,
+                                                                              "max":  17
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:golden_carrot"
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  {
+                                    "min":  3,
+                                    "max":  4
+                                },
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  3,
+                                                                              "max":  6
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:glowstone",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  5
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:gilded_blackstone",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  7
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:soul_sand",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  7
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:crimson_nylium",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  16
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:gold_nugget",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  5
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:leather",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  5,
+                                                                              "max":  17
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:arrow",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  3,
+                                                                              "max":  16
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:string",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  5
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:porkchop",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  5
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:cooked_porkchop",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  7
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:crimson_fungus",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  7
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:crimson_roots",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  1,
+                                                                              "max":  5
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:crying_obsidian",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "enchant_randomly"
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:golden_axe"
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "empty",
+                                          "weight":  11
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:snout_armor_trim_smithing_template",
+                                          "weight":  2
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "empty",
+                                          "weight":  9
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:netherite_upgrade_smithing_template",
+                                          "weight":  2
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond",
+                                          "weight":  14
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:emerald",
+                                          "weight":  12
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:iron_block",
+                                          "weight":  10
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:gold_block",
+                                          "weight":  8
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:golden_apple",
+                                          "weight":  8
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:enchanted_golden_apple",
+                                          "weight":  2
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_pickaxe",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:name_tag",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "resetapple:blue_apple",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "waystone:waystone",
+                                          "weight":  3
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "ws:warpstone",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_oyu",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_fossil",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_spiral",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:gengar",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:goamagara",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:hitomoshi",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:jack",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:meltan",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:metamon",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:mimikkyu",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:shini",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:soubraze",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:utyuuneko",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_01",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_02",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_03",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_04",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_05",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_06",
+                                          "weight":  1
+                                      }
+                                  ]
+                  }
+              ]
+}

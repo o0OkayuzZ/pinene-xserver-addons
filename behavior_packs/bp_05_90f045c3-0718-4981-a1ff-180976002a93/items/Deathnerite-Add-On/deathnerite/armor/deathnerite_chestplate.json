@@ -1,0 +1,46 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "true_dn:deathnerite_chestplate",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.chestplate"
+      }
+    },
+    "components": {
+      "minecraft:liquid_clipped": true,
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "true_dn:anti_knockback": {
+        "resistance": 0.2
+      },
+
+      "minecraft:tags": {
+        "tags": ["minecraft:trimmable_armors"]
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 25,
+        "slot": "armor_torso"
+      },
+      "minecraft:durability": {
+        "max_durability": 710,
+        "damage_chance": {
+          "min": 60,
+          "max": 100
+        }
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "deathnerite_chestplate"
+        }
+      },
+      "minecraft:wearable": {
+        "protection": 9,
+        "slot": "slot.armor.chest"
+      }
+    }
+  }
+}

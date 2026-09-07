@@ -1,0 +1,24 @@
+{
+  "format_version": "1.19.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "effectoo:xp_valve"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "PE"
+    ],
+    "key": {
+      "P": {
+        "item": "effectoo:xp_pipe"
+      },
+      "E": {
+        "item": "minecraft:emerald"
+      }
+    },
+    "result": {
+      "item": "effectoo:xp_valve",
+      "count": 1
+    }
+  }
+}

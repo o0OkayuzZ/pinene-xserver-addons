@@ -1,0 +1,64 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[墓] 死亡回収・墓 BP",
+                   "description":  "死亡時の墓、鍵、回収処理を担当。new名前空間は既存セーブ互換のため維持。",
+                   "uuid":  "8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a",
+                   "version":  [
+                                   1,
+                                   0,
+                                   11
+                               ],
+                   "min_engine_version":  [
+                                              1,
+                                              19,
+                                              50
+                                          ]
+               },
+    "metadata":  {
+                     "product_type":  "addon"
+                 },
+    "modules":  [
+                    {
+                        "type":  "data",
+                        "uuid":  "4a2205c6-4f1b-47a0-9d4a-51d98d6f89cf",
+                        "version":  [
+                                        1,
+                                        0,
+                                        11
+                                    ]
+                    },
+                    {
+                        "type":  "script",
+                        "language":  "Javascript",
+                        "uuid":  "2d10d4ef-7663-43d2-a77b-1a3e9804638e",
+                        "version":  [
+                                        1,
+                                        0,
+                                        11
+                                    ],
+                        "entry":  "scripts/main.js"
+                    }
+                ],
+    "capabilities":  [
+                         "script_eval"
+                     ],
+    "dependencies":  [
+                         {
+                             "module_name":  "@minecraft/server",
+                             "version":  "1.11.0"
+                         },
+                         {
+                             "module_name":  "@minecraft/server-ui",
+                             "version":  "1.1.0"
+                         },
+                         {
+                             "uuid":  "9fc53a12-7b83-4d48-b161-d05ee0e45974",
+                             "version":  [
+                                             1,
+                                             0,
+                                             8
+                                         ]
+                         }
+                     ]
+}

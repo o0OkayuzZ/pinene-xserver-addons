@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:gengar_placed",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/figure_gengar"
+      },
+      "geometry": {
+        "default": "geometry.figure_gengar"
+      },
+      "scripts": {
+        "scale": "1.22"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

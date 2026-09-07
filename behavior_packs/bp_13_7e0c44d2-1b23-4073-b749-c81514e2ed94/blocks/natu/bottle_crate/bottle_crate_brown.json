@@ -1,0 +1,192 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:bottle_crate_brown",
+                                                "traits":  {
+                                                               "minecraft:placement_direction":  {
+                                                                                                     "enabled_states":  [
+                                                                                                                            "minecraft:cardinal_direction"
+                                                                                                                        ]
+                                                                                                 }
+                                                           },
+                                                "states":  {
+                                                               "sit:on":  [
+                                                                              false,
+                                                                              true
+                                                                          ],
+                                                               "9den:shape":  {
+                                                                                  "values":  {
+                                                                                                 "min":  0,
+                                                                                                 "max":  1
+                                                                                             }
+                                                                              }
+                                                           },
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "example:on_step_component":  {
+
+                                                                             },
+                                               "minecraft:liquid_detection":  {
+                                                                                  "detection_rules":  [
+                                                                                                          {
+                                                                                                              "can_contain_liquid":  true,
+                                                                                                              "on_liquid_touches":  "blocking"
+                                                                                                          }
+                                                                                                      ]
+                                                                              },
+                                               "minecraft:collision_box":  true,
+                                               "minecraft:selection_box":  true,
+                                               "minecraft:geometry":  {
+                                                                          "identifier":  "geometry.bottle_crate_colours",
+                                                                          "bone_visibility":  {
+                                                                                                  "1":  "q.block_state(\u00279den:shape\u0027)==0"
+                                                                                              }
+                                                                      },
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "bottle_crate_brown",
+                                                                                              "render_method":  "alpha_test"
+                                                                                          }
+                                                                                },
+                                               "minecraft:map_color":  "#ffffff"
+                                           },
+                            "permutations":  [
+                                                 {
+                                                     "condition":  "q.block_state(\u0027sit:on\u0027)",
+                                                     "components":  {
+                                                                        "minecraft:liquid_detection":  {
+                                                                                                           "detection_rules":  [
+                                                                                                                                   {
+                                                                                                                                       "can_contain_liquid":  true,
+                                                                                                                                       "on_liquid_touches":  "blocking"
+                                                                                                                                   }
+                                                                                                                               ]
+                                                                                                       },
+                                                                        "minecraft:tick":  {
+                                                                                               "interval_range":  [
+                                                                                                                      60,
+                                                                                                                      60
+                                                                                                                  ],
+                                                                                               "looping":  true
+                                                                                           },
+                                                                        "example:on_step_component":  {
+
+                                                                                                      },
+                                                                        "sit:on2":  {
+
+                                                                                    }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u00279den:shape\u0027)==1",
+                                                     "components":  {
+                                                                        "minecraft:collision_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -5.2,
+                                                                                                                       0,
+                                                                                                                       -7.2
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     10.4,
+                                                                                                                     7.2,
+                                                                                                                     14.4
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:selection_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -5.2,
+                                                                                                                       0,
+                                                                                                                       -7.2
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     10.4,
+                                                                                                                     7.2,
+                                                                                                                     14.4
+                                                                                                                 ]
+                                                                                                    }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u00279den:shape\u0027)==0",
+                                                     "components":  {
+                                                                        "minecraft:collision_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -5.2,
+                                                                                                                       0,
+                                                                                                                       -7.2
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     10.4,
+                                                                                                                     14.4,
+                                                                                                                     14.4
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:selection_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -5.2,
+                                                                                                                       0,
+                                                                                                                       -7.2
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     10.4,
+                                                                                                                     14.4,
+                                                                                                                     14.4
+                                                                                                                 ]
+                                                                                                    }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          180,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          0,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          90,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          270,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 }
+                                             ]
+                        }
+}

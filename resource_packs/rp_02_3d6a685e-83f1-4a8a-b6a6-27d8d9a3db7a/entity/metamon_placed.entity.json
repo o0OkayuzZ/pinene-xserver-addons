@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:metamon_placed",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/figure_metamon"
+      },
+      "geometry": {
+        "default": "geometry.figure_metamon"
+      },
+      "scripts": {
+        "scale": "0.42"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

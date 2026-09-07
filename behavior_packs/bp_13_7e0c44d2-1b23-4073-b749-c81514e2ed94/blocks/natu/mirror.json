@@ -1,0 +1,163 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:road_mirror",
+                                                "traits":  {
+                                                               "minecraft:placement_direction":  {
+                                                                                                     "enabled_states":  [
+                                                                                                                            "minecraft:cardinal_direction"
+                                                                                                                        ]
+                                                                                                 }
+                                                           },
+                                                "states":  {
+                                                               "Kyuden:set":  [
+                                                                                  0,
+                                                                                  1,
+                                                                                  2
+                                                                              ]
+                                                           },
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -1,
+                                                                                              0,
+                                                                                              -1
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            2,
+                                                                                            16,
+                                                                                            2
+                                                                                        ]
+                                                                           },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -1,
+                                                                                              0,
+                                                                                              -1
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            2,
+                                                                                            16,
+                                                                                            2
+                                                                                        ]
+                                                                           },
+                                               "minecraft:item_visual":  {
+                                                                             "geometry":  "geometry.roadmirror",
+                                                                             "material_instances":  {
+                                                                                                        "*":  {
+                                                                                                                  "texture":  "roadmirror",
+                                                                                                                  "render_method":  "opaque"
+                                                                                                              }
+                                                                                                    }
+                                                                         },
+                                               "kyuden:roadmirror":  {
+
+                                                                     },
+                                               "minecraft:geometry":  "geometry.roadmirror",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "roadmirror",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:map_color":  "#5f4a2b"
+                                           },
+                            "permutations":  [
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          180,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          0,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          90,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          270,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==0",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.roadmirror1"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==1",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.roadmirror2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==2",
+                                                     "components":  {
+                                                                        "minecraft:collision_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -8,
+                                                                                                                       0,
+                                                                                                                       -7
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     16,
+                                                                                                                     16,
+                                                                                                                     8
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:selection_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -8,
+                                                                                                                       0,
+                                                                                                                       -7
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     16,
+                                                                                                                     16,
+                                                                                                                     8
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:geometry":  "geometry.roadmirror3"
+                                                                    }
+                                                 }
+                                             ]
+                        }
+}

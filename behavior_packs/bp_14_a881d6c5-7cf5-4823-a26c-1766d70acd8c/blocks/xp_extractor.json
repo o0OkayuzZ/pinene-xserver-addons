@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "effectoo:xp_extractor",
+      "menu_category": {
+        "category": "Construction"
+      }
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": { "texture": "xp_extractor", "render_method": "blend", "ambient_occlusion": false }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:selection_box": {
+        "origin": [-8, 0, -8],
+        "size": [16, 4, 16]
+      },
+      "minecraft:collision_box": {
+        "origin": [-8, 0, -8],
+        "size": [16, 4, 16]
+      },
+      "minecraft:light_emission": 4,
+      "minecraft:map_color": "#1FD900",
+
+      "minecraft:geometry": {
+        "identifier": "geometry.xp_extractor"
+      }
+    }
+  }
+}

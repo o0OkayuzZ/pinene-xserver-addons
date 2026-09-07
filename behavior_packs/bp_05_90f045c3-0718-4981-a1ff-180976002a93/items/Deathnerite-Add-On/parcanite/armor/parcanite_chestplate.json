@@ -1,0 +1,51 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "true_dn:parcanite_chestplate",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.chestplate"
+      }
+    },
+    "components": {
+      "minecraft:liquid_clipped": true,
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "true_dn:lore": [ "§r§4+1 Wither Immunity" ],
+
+      "true_dn:anti_knockback": {
+        "resistance": 0.25
+      },
+      "true_dn:remove_effects": {
+        "effect_ids": ["wither"]
+      },
+
+      "minecraft:tags": {
+        "tags": ["minecraft:trimmable_armors"]
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 50,
+        "slot": "armor_torso"
+      },
+      "minecraft:durability": {
+        "max_durability": 1420,
+        "damage_chance": {
+          "min": 60,
+          "max": 100
+        }
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "parcanite_chestplate"
+        }
+      },
+      "minecraft:wearable": {
+        "protection": 11,
+        "slot": "slot.armor.chest"
+      }
+    }
+  }
+}

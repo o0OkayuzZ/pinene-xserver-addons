@@ -1,0 +1,94 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.tumba10",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1, 0, -4],
+							"size": [7, 5, 5],
+							"uv": {
+								"north": {"uv": [0, 14], "uv_size": [12, 10]},
+								"east": {"uv": [22, 0], "uv_size": [10, 10]},
+								"south": {"uv": [22, 0], "uv_size": [10, 10]},
+								"west": {"uv": [22, 0], "uv_size": [10, 10]},
+								"up": {"uv": [32, 20], "uv_size": [-12, -10]},
+								"down": {"uv": [32, 20], "uv_size": [-12, -10]}
+							}
+						}
+					]
+				},
+				{
+					"name": "stone_tomb",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, -8],
+							"size": [16, 0, 16],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [14, 0]},
+								"east": {"uv": [0, 0], "uv_size": [14, 0]},
+								"south": {"uv": [0, 0], "uv_size": [14, 0]},
+								"west": {"uv": [0, 0], "uv_size": [14, 0]},
+								"up": {"uv": [0, 0], "uv_size": [14, 14]},
+								"down": {"uv": [0, 28], "uv_size": [14, -2]}
+							}
+						},
+						{
+							"origin": [-1, 0, 4.5],
+							"size": [2, 12, 2],
+							"uv": {
+								"north": {"uv": [14, 0], "uv_size": [2, 12]},
+								"east": {"uv": [14, 12], "uv_size": [2, 12]},
+								"south": {"uv": [16, 0], "uv_size": [2, 12]},
+								"west": {"uv": [16, 12], "uv_size": [2, 12]},
+								"up": {"uv": [14, 0], "uv_size": [2, 2]},
+								"down": {"uv": [18, 4], "uv_size": [2, -2]}
+							}
+						},
+						{
+							"origin": [-3, 8, 4.5],
+							"size": [2, 2, 2],
+							"uv": {
+								"north": {"uv": [18, 4], "uv_size": [2, 2]},
+								"east": {"uv": [14, 4], "uv_size": [2, 2]},
+								"south": {"uv": [18, 8], "uv_size": [2, 2]},
+								"west": {"uv": [18, 10], "uv_size": [2, 2]},
+								"up": {"uv": [18, 16], "uv_size": [2, 2]},
+								"down": {"uv": [18, 18], "uv_size": [2, -2]}
+							}
+						},
+						{
+							"origin": [1, 8, 4.5],
+							"size": [2, 2, 2],
+							"uv": {
+								"north": {"uv": [18, 16], "uv_size": [2, 2]},
+								"east": {"uv": [18, 18], "uv_size": [2, 2]},
+								"south": {"uv": [14, 0], "uv_size": [2, 2]},
+								"west": {"uv": [14, 2], "uv_size": [2, 2]},
+								"up": {"uv": [14, 4], "uv_size": [2, 2]},
+								"down": {"uv": [20, 8], "uv_size": [2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "arm",
+					"parent": "stone_tomb",
+					"pivot": [0, 0, 0]
+				}
+			]
+		}
+	]
+}

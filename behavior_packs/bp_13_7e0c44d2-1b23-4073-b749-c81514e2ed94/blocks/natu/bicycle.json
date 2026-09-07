@@ -1,0 +1,126 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:bicycle",
+                                                "traits":  {
+                                                               "minecraft:placement_direction":  {
+                                                                                                     "enabled_states":  [
+                                                                                                                            "minecraft:cardinal_direction"
+                                                                                                                        ]
+                                                                                                 }
+                                                           },
+                                                "states":  {
+                                                               "kyuden:shape":  {
+                                                                                    "values":  {
+                                                                                                   "min":  0,
+                                                                                                   "max":  1
+                                                                                               }
+                                                                                }
+                                                           },
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:liquid_detection":  {
+                                                                                  "detection_rules":  [
+                                                                                                          {
+                                                                                                              "can_contain_liquid":  true,
+                                                                                                              "on_liquid_touches":  "blocking"
+                                                                                                          }
+                                                                                                      ]
+                                                                              },
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -6.5,
+                                                                                              0,
+                                                                                              -2.5
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            13,
+                                                                                            16,
+                                                                                            5
+                                                                                        ]
+                                                                           },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -6.5,
+                                                                                              0,
+                                                                                              -2.5
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            13,
+                                                                                            16,
+                                                                                            5
+                                                                                        ]
+                                                                           },
+                                               "minecraft:geometry":  {
+                                                                          "identifier":  "geometry.bicycle"
+                                                                      },
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "bicycle",
+                                                                                              "render_method":  "alpha_test"
+                                                                                          }
+                                                                                },
+                                               "minecraft:map_color":  "#ffffff"
+                                           },
+                            "permutations":  [
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          180,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          0,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          90,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          270,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027kyuden:shape\u0027)==1",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.bicycle_2"
+                                                                    }
+                                                 }
+                                             ]
+                        }
+}

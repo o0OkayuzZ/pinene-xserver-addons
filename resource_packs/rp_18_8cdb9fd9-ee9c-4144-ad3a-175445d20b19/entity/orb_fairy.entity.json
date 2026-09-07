@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "effectoo:orb_fairy",
+      "materials": {
+        "default": "experience_orb"
+      },
+      "textures": {
+        "default": "textures/entity/experience_orb"
+      },
+      "geometry": {
+        "default": "geometry.xp_fluid"
+      },
+      "animations": {
+        "face_player": "animation.orb.fairy",
+        "offset": "animation.orb.offset"
+      },
+      "scripts": {
+        "scale": "0.3",
+        "pre_animation": [
+          "variable.m = math.floor((math.min(q.property('xp:level'), 55) * 9) / 55);",
+          "variable.u = math.mod(variable.m, 4) * 16.0 / 64.0;",
+          "variable.v = math.round(variable.m / 4) * 16.0 / 64.0;"
+        ],
+        "animate": [
+          "face_player",
+          "offset"
+        ]
+      },
+      "render_controllers": [ "controller.render.experience_orb" ],
+      "spawn_egg": { "texture": "orb" }
+    }
+  }
+}

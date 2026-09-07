@@ -1,0 +1,48 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:entity":{
+      "description":{
+        "identifier": "new:tumba_loot",
+        "is_spawnable": false,
+        "is_summonable": true,
+        "is_experimental": false
+      },
+      "components":{
+        "minecraft:collision_box":{
+          "width": 1,
+          "height": 1
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/tumba_loot.json"
+        },
+        "minecraft:type_family":{
+          "family":["tumba"]
+        },
+        "minecraft:health":{
+          "value": 0,
+          "max":0,
+          "min":0
+        },
+        "minecraft:damage_sensor":{
+          "triggers":[
+            {
+              "on_damage":{
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:knockback_resistance": {
+          "value": 100
+        },
+        "minecraft:scale": {
+          "value": 2
+        },
+        "minecraft:fire_immune": true,
+        "minecraft:physics": {},
+        "minecraft:pushable": {}
+      },
+      "events":{
+      }
+    }
+  }

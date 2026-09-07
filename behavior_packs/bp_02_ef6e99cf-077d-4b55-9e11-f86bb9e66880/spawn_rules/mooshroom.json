@@ -1,0 +1,53 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "minecraft:mooshroom",
+      "population_control": "animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:brightness_filter": {
+          "min": 7,
+          "max": 15,
+          "adjust_for_weather": false
+        },
+        "minecraft:weight": {
+          "default": 9
+        },
+        "minecraft:herd": {
+          "min_size": 4,
+          "max_size": 8
+        },
+        "minecraft:permute_type": [
+          {
+            "weight": 54,
+            "entity_type": "mooshroom"
+          },
+          {
+            "weight": 18,
+            "entity_type": "a:applecow"
+          },
+          {
+            "weight": 22,
+            "entity_type": "a:gapplecow"
+          },
+          {
+            "weight": 5,
+            "entity_type": "a:tcow"
+          },
+          {
+            "weight": 1,
+            "entity_type": "a:egapplecow"
+          }
+        ],
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "mooshroom_island"
+        }
+      }
+    ]
+  }
+}

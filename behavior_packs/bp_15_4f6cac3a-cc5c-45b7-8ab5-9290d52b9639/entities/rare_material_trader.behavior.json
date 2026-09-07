@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pinematerials:rare_material_trader",
+      "runtime_identifier": "minecraft:wandering_trader",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "trader",
+          "villager",
+          "mob",
+          "pinematerials_rare_trader"
+        ]
+      },
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": true
+      },
+      "minecraft:economy_trade_table": {
+        "display_name": "entity.pinematerials:rare_material_trader.name",
+        "table": "trading/rare_material_trader_trades.json",
+        "new_screen": true,
+        "convert_trades_economy": true
+      }
+    }
+  }
+}

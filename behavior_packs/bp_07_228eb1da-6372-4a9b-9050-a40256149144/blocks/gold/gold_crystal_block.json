@@ -1,0 +1,43 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wx:gold_crystal_block",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4.5,
+				"item_specific_speeds": [
+					{
+						"item": "minecraft:wooden_pickaxe",
+						"destroy_speed": 1
+					},
+					{
+						"item": "minecraft:stone_pickaxe",
+						"destroy_speed": 0.8
+					},
+					{
+						"item": "minecraft:iron_pickaxe",
+						"destroy_speed": 0.5
+					},
+					{
+						"item": "minecraft:golden_pickaxe",
+						"destroy_speed": 0.15
+					},
+					{
+						"item": "minecraft:diamond_pickaxe",
+						"destroy_speed": 0.25
+					},
+					{
+						"item": "minecraft:netherite_pickaxe",
+						"destroy_speed": 0.2
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/blocks/gold_crystal_block.json"
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[建築] INAKA家具 RP",
+                   "description":  "9DENシリーズ家具のモデル・UI・テクスチャを担当。",
+                   "uuid":  "9a12d1e1-d6c3-43b6-8551-cdc1bb582f82",
+                   "min_engine_version":  [
+                                              1,
+                                              20,
+                                              30
+                                          ],
+                   "version":  [
+                                   1,
+                                   1,
+                                   5
+                               ]
+               },
+    "modules":  [
+                    {
+                        "type":  "resources",
+                        "uuid":  "cb20f683-9dfb-4d27-833a-1056fd68dbca",
+                        "version":  [
+                                        1,
+                                        1,
+                                        5
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "7e0c44d2-1b23-4073-b749-c81514e2ed94",
+                             "version":  [
+                                             1,
+                                             1,
+                                             4
+                                         ]
+                         }
+                     ]
+}

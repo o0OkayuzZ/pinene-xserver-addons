@@ -1,0 +1,36 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shapeless":  {
+                                       "description":  {
+                                                           "identifier":  "true_dn:recipe_parcanite_pickaxe"
+                                                       },
+                                       "tags":  [
+                                                    "crafting_table"
+                                                ],
+                                       "ingredients":  [
+                                                           {
+                                                               "item":  "true_dn:deathnerite_pickaxe"
+                                                           },
+                                                           {
+                                                               "item":  "true_dn:darkness_upgrade_smithing_template"
+                                                           },
+                                                           {
+                                                               "item":  "minecraft:netherite_ingot"
+                                                           }
+                                                       ],
+                                       "result":  {
+                                                      "item":  "true_dn:parcanite_pickaxe"
+                                                  },
+                                       "unlock":  [
+                                                      {
+                                                          "item":  "true_dn:deathnerite_pickaxe"
+                                                      },
+                                                      {
+                                                          "item":  "true_dn:darkness_upgrade_smithing_template"
+                                                      },
+                                                      {
+                                                          "item":  "minecraft:netherite_ingot"
+                                                      }
+                                                  ]
+                                   }
+}

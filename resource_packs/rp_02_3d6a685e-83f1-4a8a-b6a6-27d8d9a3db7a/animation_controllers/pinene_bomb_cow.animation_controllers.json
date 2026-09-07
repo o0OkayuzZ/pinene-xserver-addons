@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pinene_bomb_cow.swell": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [
+            "variable.swell_timer = 0;"
+          ],
+          "transitions": [
+            {"swell": "query.property('myname:is_fusing')"}
+          ]
+        },
+        "swell": {
+          "on_entry": [
+            "variable.swell_timer = 0;"
+          ],
+          "transitions": [
+            {"default": "!query.property('myname:is_fusing')"}
+          ]
+        }
+      }
+    },
+    "controller.animation.pinene_bomb_cow.hurt_sound": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "transitions": [
+            {"hurt": "query.hurt_time > 0.0"}
+          ]
+        },
+        "hurt": {
+          "animations": [
+            "hurt_sound"
+          ],
+          "transitions": [
+            {"idle": "query.hurt_time <= 0.0"}
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:beer",
+                                                "traits":  {
+                                                               "minecraft:placement_direction":  {
+                                                                                                     "enabled_states":  [
+                                                                                                                            "minecraft:cardinal_direction"
+                                                                                                                        ]
+                                                                                                 }
+                                                           },
+                                                "states":  {
+                                                               "desk_on:down":  [
+                                                                                    false,
+                                                                                    true
+                                                                                ]
+                                                           },
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "9DEN:desk_checker":  {
+
+                                                                     },
+                                               "minecraft:liquid_detection":  {
+                                                                                  "detection_rules":  [
+                                                                                                          {
+                                                                                                              "can_contain_liquid":  true,
+                                                                                                              "on_liquid_touches":  "blocking"
+                                                                                                          }
+                                                                                                      ]
+                                                                              },
+                                               "minecraft:collision_box":  false,
+                                               "minecraft:selection_box":  true,
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  30
+                                                                                       },
+                                               "minecraft:geometry":  {
+                                                                          "identifier":  "geometry.beer",
+                                                                          "bone_visibility":  {
+                                                                                                  "0":  "q.block_state(\u0027desk_on:down\u0027)==false||!q.block_state(\u0027desk_on:down\u0027)==true",
+                                                                                                  "1":  "q.block_state(\u0027desk_on:down\u0027)==true||!q.block_state(\u0027desk_on:down\u0027)==false"
+                                                                                              }
+                                                                      },
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "beer",
+                                                                                              "render_method":  "blend"
+                                                                                          }
+                                                                                },
+                                               "minecraft:map_color":  "#ffffff"
+                                           },
+                            "permutations":  [
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          180,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          0,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          90,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          270,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 }
+                                             ]
+                        }
+}

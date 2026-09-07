@@ -1,0 +1,114 @@
+{
+  "format_version" : "1.21.100",
+  "sound_definitions" : {
+    // Golden Feather
+    "simple_waystone.item.golden_feather.used" : {
+      "category" : "block",
+      "max_distance" : 16,
+      "min_distance" : 0,
+      "sounds" : [
+        { "name" : "sounds/note/icechime", "is3D": false, "pitch": 0.95 },
+        { "name" : "sounds/note/icechime", "is3D": false, "pitch": 1.0 },
+        { "name" : "sounds/note/icechime", "is3D": false, "pitch": 1.05 }
+      ]
+    },
+
+    // Return Scroll
+    "simple_waystone.item.return_scroll.used" : {
+      "category" : "block",
+      "max_distance" : 16,
+      "min_distance" : 0,
+      "sounds" : [
+        { "name" : "sounds/item/book/open_flip1", "volume": 2, "is3D": false },
+        { "name" : "sounds/item/book/open_flip2", "volume": 2, "is3D": false },
+        { "name" : "sounds/item/book/open_flip3", "volume": 2, "is3D": false }
+      ]
+    },
+
+    // Waystone
+    "simple_waystone.block.waystone.registered" : {
+      "category" : "block",
+      "max_distance" : 16,
+      "min_distance" : 0,
+      "sounds" : [
+        { "name" : "sounds/block/enchanting_table/enchant1", "is3D": false },
+        { "name" : "sounds/block/enchanting_table/enchant2", "is3D": false },
+        { "name" : "sounds/block/enchanting_table/enchant3", "is3D": false }
+      ]
+    },
+    "simple_waystone.block.waystone.unregistered" : {
+      "category" : "block",
+      "max_distance" : 16,
+      "min_distance" : 0,
+      "sounds" : [
+        { "name" : "sounds/block/beacon/deactivate", "is3D": false, "pitch": 0.95 },
+        { "name" : "sounds/block/beacon/deactivate", "is3D": false, "pitch": 1.0 },
+        { "name" : "sounds/block/beacon/deactivate", "is3D": false, "pitch": 1.05 }
+      ]
+    },
+    "simple_waystone.block.waystone.teleport" : {
+      "category" : "block",
+      "max_distance" : 16,
+      "min_distance" : 0,
+      "sounds" : [
+        { "name" : "sounds/mob/endermen/portal", "is3D": false, "pitch": 0.95 },
+        { "name" : "sounds/mob/endermen/portal", "is3D": false, "pitch": 1.0 },
+        { "name" : "sounds/mob/endermen/portal", "is3D": false, "pitch": 1.05 },
+
+        { "name" : "sounds/mob/endermen/portal2", "is3D": false, "pitch": 0.95 },
+        { "name" : "sounds/mob/endermen/portal2", "is3D": false, "pitch": 1.0 },
+        { "name" : "sounds/mob/endermen/portal2", "is3D": false, "pitch": 1.05 }
+      ]
+    },
+    "simple_waystone.block.waystone.paint" : {
+      "category" : "block",
+      "max_distance" : 16,
+      "min_distance" : 0,
+      "sounds" : [
+        { "name" : "sounds/item/dye/dye", "is3D": false }
+      ]
+    },
+
+    // Warnings
+    "simple_waystone.warn.levelup": {
+      "category": "warn",
+      "max_distance": 8,
+      "min_distance": 0,
+      "sounds": [
+        { "name" : "sounds/random/levelup", "is3D": false, "pitch": 0.95 },
+        { "name" : "sounds/random/levelup", "is3D": false, "pitch": 1.0 },
+        { "name" : "sounds/random/levelup", "is3D": false, "pitch": 1.05 }
+      ]
+    },
+    "simple_waystone.warn.bass": {
+      "category": "warn",
+      "max_distance": 8,
+      "min_distance": 0,
+      "sounds": [
+        { "name" : "sounds/note/bass", "is3D": false, "pitch": 0.95 },
+        { "name" : "sounds/note/bass", "is3D": false, "pitch": 1.0 },
+        { "name" : "sounds/note/bass", "is3D": false, "pitch": 1.05 }
+      ]
+    },
+    "simple_waystone.warn.break": {
+      "category": "warn",
+      "max_distance": 8,
+      "min_distance": 0,
+      "sounds": [
+        { "name" : "sounds/random/break", "is3D": false, "pitch": 0.95 },
+        { "name" : "sounds/random/break", "is3D": false, "pitch": 1.0 },
+        { "name" : "sounds/random/break", "is3D": false, "pitch": 1.05 }
+      ]
+    },
+    "simple_waystone.warn.pop": {
+      "category": "warn",
+      "max_distance": 8,
+      "min_distance": 0,
+      "sounds": [
+        { "name" : "sounds/random/pop", "is3D": false, "pitch": 0.95 },
+        { "name" : "sounds/random/pop", "is3D": false, "pitch": 1.0 },
+        { "name" : "sounds/random/pop", "is3D": false, "pitch": 1.05 }
+      ]
+    }
+  }
+}

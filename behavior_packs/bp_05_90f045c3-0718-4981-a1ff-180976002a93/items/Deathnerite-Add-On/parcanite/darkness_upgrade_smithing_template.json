@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "true_dn:darkness_upgrade_smithing_template",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:liquid_clipped": true,
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:transform_templates"
+        ]
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "darkness_upgrade_smithing_template"
+        }
+      }
+    }
+  }
+}

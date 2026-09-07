@@ -1,0 +1,26 @@
+{
+	"format_version" : "1.16.0",
+	"minecraft:geometry" : [
+		{
+			"description" : {
+				"identifier" : "geometry.true_model_26x26",
+				"texture_width" : 26.0,
+				"texture_height" : 26.0
+			},
+			"bones" : [
+				{
+					"name" : "rightitem",
+					"texture_meshes" : [
+						{
+							"local_pivot" : [ 6.0, 0.0, 6.0 ],
+							"position" : [ -0.3, 3.1, -7.2 ],
+							"rotation" : [ 0.0, 35.0, -95.0 ],
+							"scale": [ 0.92, 0.92, 0.92 ],
+							"texture" : "default"
+						}
+					]
+				}
+			]
+		}
+	]
+}

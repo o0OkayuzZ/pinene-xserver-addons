@@ -1,0 +1,66 @@
+﻿{
+    "format_version": 2,
+    "header": {
+        "name": "ピネン統合ビヘイビアーパック",
+        "description": "ピネディメンション開発用ビヘイビアーパック",
+        "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+        "version": [
+            1,
+            0,
+            56
+        ],
+        "min_engine_version": [
+            1,
+            21,
+            50
+        ]
+    },
+    "modules": [
+        {
+            "description": "統合データモジュール",
+            "type": "data",
+            "uuid": "7f9c2828-4cc6-4d35-b1f4-4f8f06f7d8d3",
+            "version": [
+                1,
+                0,
+                56
+            ]
+        },
+        {
+            "description": "統合スクリプトモジュール",
+            "type": "script",
+            "language": "javascript",
+            "uuid": "7a7a0b65-7dfc-4f52-8b1c-a74a6ca7f511",
+            "entry": "scripts/main.js",
+            "version": [
+                1,
+                0,
+                56
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+            "version": [
+                1,
+                0,
+                51
+            ]
+        },
+        {
+            "module_name": "@minecraft/server",
+            "version": "2.7.0"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "2.0.0"
+        }
+    ],
+    "metadata": {
+        "authors": [
+            "ピネン"
+        ],
+        "product_type": "addon"
+    }
+}

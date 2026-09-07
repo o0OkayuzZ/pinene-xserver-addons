@@ -1,0 +1,50 @@
+{
+    "format_version":  2,
+    "metadata":  {
+                     "product_type":  "addon"
+                 },
+    "header":  {
+                   "description":  "構造物チェストの戦利品を一元管理する最上位オーバーライド。",
+                   "name":  "[戦利品] Better Structure Loot BP",
+                   "uuid":  "423276b9-02f5-4082-911a-c631a2d83d12",
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              130
+                                          ],
+                   "version":  [
+                                   1,
+                                   0,
+                                   14
+                               ]
+               },
+    "modules":  [
+                    {
+                        "description":  "Updates most structure loot tables to include more items and newer items.",
+                        "type":  "data",
+                        "uuid":  "2badead6-8d73-42ba-a64a-801d3cdb6b55",
+                        "version":  [
+                                        1,
+                                        0,
+                                        14
+                                    ]
+                    },
+                    {
+                        "type":  "script",
+                        "language":  "javascript",
+                        "uuid":  "6785f301-bf7a-4075-b8eb-ba95ac53c9d1",
+                        "version":  [
+                                        1,
+                                        0,
+                                        14
+                                    ],
+                        "entry":  "scripts/main.js"
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "module_name":  "@minecraft/server",
+                             "version":  "1.11.0"
+                         }
+                     ]
+}

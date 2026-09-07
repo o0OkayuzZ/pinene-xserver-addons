@@ -1,0 +1,53 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:asphalt",
+                                                "states":  {
+                                                               "rc:number":  {
+                                                                                 "values":  {
+                                                                                                "min":  0,
+                                                                                                "max":  8
+                                                                                            }
+                                                                             }
+                                                           },
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "rc:block_checker2":  {
+
+                                                                     },
+                                               "minecraft:collision_box":  true,
+                                               "minecraft:selection_box":  true,
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  30
+                                                                                       },
+                                               "minecraft:geometry":  {
+                                                                          "identifier":  "geometry.ctm2",
+                                                                          "bone_visibility":  {
+                                                                                                  "ct0":  "q.block_state(\u0027rc:number\u0027)==0",
+                                                                                                  "ct1":  "q.block_state(\u0027rc:number\u0027)==1",
+                                                                                                  "ct2":  "q.block_state(\u0027rc:number\u0027)==2",
+                                                                                                  "ct3":  "q.block_state(\u0027rc:number\u0027)==3",
+                                                                                                  "ct4":  "q.block_state(\u0027rc:number\u0027)==4",
+                                                                                                  "ct5":  "q.block_state(\u0027rc:number\u0027)==5",
+                                                                                                  "ct6":  "q.block_state(\u0027rc:number\u0027)==6",
+                                                                                                  "ct7":  "q.block_state(\u0027rc:number\u0027)==7",
+                                                                                                  "ct8":  "q.block_state(\u0027rc:number\u0027)==8"
+                                                                                              }
+                                                                      },
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "asphalt",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:map_color":  "#ffffff"
+                                           }
+                        }
+}

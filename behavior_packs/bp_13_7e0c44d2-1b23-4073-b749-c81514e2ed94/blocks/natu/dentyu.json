@@ -1,0 +1,293 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:dentyu",
+                                                "traits":  {
+                                                               "minecraft:placement_direction":  {
+                                                                                                     "enabled_states":  [
+                                                                                                                            "minecraft:cardinal_direction"
+                                                                                                                        ]
+                                                                                                 }
+                                                           },
+                                                "states":  {
+                                                               "Kyuden:set":  [
+                                                                                  0,
+                                                                                  1,
+                                                                                  2,
+                                                                                  3,
+                                                                                  4,
+                                                                                  5,
+                                                                                  6,
+                                                                                  7,
+                                                                                  8,
+                                                                                  9
+                                                                              ]
+                                                           },
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:item_visual":  {
+                                                                             "geometry":  "geometry.dentyu0",
+                                                                             "material_instances":  {
+                                                                                                        "*":  {
+                                                                                                                  "texture":  "dentyu",
+                                                                                                                  "render_method":  "opaque"
+                                                                                                              }
+                                                                                                    }
+                                                                         },
+                                               "kyuden:dentyu":  {
+
+                                                                 },
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -4.35,
+                                                                                              0,
+                                                                                              -4.35
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            8.7,
+                                                                                            16,
+                                                                                            8.7
+                                                                                        ]
+                                                                           },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -4.35,
+                                                                                              0,
+                                                                                              -4.35
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            8.7,
+                                                                                            16,
+                                                                                            8.7
+                                                                                        ]
+                                                                           },
+                                               "minecraft:geometry":  "geometry.dentyu1",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "dentyu",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:map_color":  "#5f4a2b"
+                                           },
+                            "permutations":  [
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          180,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          0,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          90,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          270,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==0",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.dentyu1"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==1",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.dentyu2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==2",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.dentyu3"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==3",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.dentyu4"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==4",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.dentyu5"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==5",
+                                                     "components":  {
+                                                                        "tag:kyuden:dentyu3":  {
+
+                                                                                               },
+                                                                        "minecraft:geometry":  "geometry.dentyu6"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==6",
+                                                     "components":  {
+                                                                        "minecraft:collision_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -4.35,
+                                                                                                                       0,
+                                                                                                                       -8
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     8.7,
+                                                                                                                     16,
+                                                                                                                     14
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:selection_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -4.35,
+                                                                                                                       0,
+                                                                                                                       -8
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     8.7,
+                                                                                                                     16,
+                                                                                                                     14
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:geometry":  "geometry.dentyu7"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==7",
+                                                     "components":  {
+                                                                        "minecraft:collision_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -3.5,
+                                                                                                                       0,
+                                                                                                                       -3.5
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     7,
+                                                                                                                     16,
+                                                                                                                     7
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:selection_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -3.5,
+                                                                                                                       0,
+                                                                                                                       -3.5
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     7,
+                                                                                                                     16,
+                                                                                                                     7
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:geometry":  "geometry.dentyu8"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==8",
+                                                     "components":  {
+                                                                        "minecraft:collision_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -2.55,
+                                                                                                                       0,
+                                                                                                                       -2.55
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     5.1,
+                                                                                                                     16,
+                                                                                                                     5.1
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:selection_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -2.55,
+                                                                                                                       0,
+                                                                                                                       -2.55
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     5.1,
+                                                                                                                     16,
+                                                                                                                     5.1
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "tag:kyuden:dentyu2":  {
+
+                                                                                               },
+                                                                        "minecraft:geometry":  "geometry.dentyu9"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027Kyuden:set\u0027)==9",
+                                                     "components":  {
+                                                                        "minecraft:collision_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -2.55,
+                                                                                                                       0,
+                                                                                                                       -5
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     5.1,
+                                                                                                                     16,
+                                                                                                                     13
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "minecraft:selection_box":  {
+                                                                                                        "origin":  [
+                                                                                                                       -2.55,
+                                                                                                                       0,
+                                                                                                                       -5
+                                                                                                                   ],
+                                                                                                        "size":  [
+                                                                                                                     5.1,
+                                                                                                                     16,
+                                                                                                                     13
+                                                                                                                 ]
+                                                                                                    },
+                                                                        "tag:kyuden:dentyu1":  {
+
+                                                                                               },
+                                                                        "minecraft:geometry":  "geometry.dentyu10"
+                                                                    }
+                                                 }
+                                             ]
+                        }
+}

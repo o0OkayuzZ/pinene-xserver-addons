@@ -1,0 +1,18 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "myname:figure_tuna_placed",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/baked_basecolor"
+			},
+			"geometry": {
+				"default": "geometry.pinene_tuna"
+			},
+			"render_controllers": ["controller.render.default"]
+		}
+	}
+}

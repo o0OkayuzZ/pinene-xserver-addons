@@ -1,0 +1,67 @@
+{
+    "format_version":  2,
+    "metadata":  {
+                     "authors":  [
+                                     "Marcos Paulo"
+                                 ],
+                     "generated_with":  {
+                                            "bridge":  [
+                                                           "2.7.50"
+                                                       ],
+                                            "dash":  [
+                                                         "0.11.7"
+                                                     ]
+                                        }
+                 },
+    "header":  {
+                   "name":  "[鉱石] モアジオード BP",
+                   "description":  "追加鉱石・ジオード・専用矢・ワールド生成を担当。",
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              0
+                                          ],
+                   "uuid":  "228eb1da-6372-4a9b-9050-a40256149144",
+                   "version":  [
+                                   1,
+                                   0,
+                                   23
+                               ]
+               },
+    "modules":  [
+                    {
+                        "type":  "data",
+                        "uuid":  "fc029673-5445-4421-be1d-4436b9b09b33",
+                        "version":  [
+                                        1,
+                                        0,
+                                        23
+                                    ]
+                    },
+                    {
+                        "type":  "script",
+                        "language":  "javascript",
+                        "uuid":  "c66ae255-6ffb-4317-b70f-f8d346a05d64",
+                        "entry":  "scripts/__bundle.js",
+                        "version":  [
+                                        1,
+                                        0,
+                                        23
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "d68eee7e-653f-474a-a385-e1a76fdd28bd",
+                             "version":  [
+                                             1,
+                                             0,
+                                             13
+                                         ]
+                         },
+                         {
+                             "module_name":  "@minecraft/server",
+                             "version":  "2.1.0"
+                         }
+                     ]
+}

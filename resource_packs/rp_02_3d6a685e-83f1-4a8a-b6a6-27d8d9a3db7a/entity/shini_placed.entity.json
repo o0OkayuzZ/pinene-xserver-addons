@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:shini_placed",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/figure_shini"
+      },
+      "geometry": {
+        "default": "geometry.figure_shini"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

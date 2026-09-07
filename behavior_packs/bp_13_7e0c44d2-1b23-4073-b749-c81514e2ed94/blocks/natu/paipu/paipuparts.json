@@ -1,0 +1,197 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:paipuparts",
+                                                "traits":  {
+                                                               "minecraft:placement_direction":  {
+                                                                                                     "enabled_states":  [
+                                                                                                                            "minecraft:cardinal_direction"
+                                                                                                                        ]
+                                                                                                 }
+                                                           },
+                                                "states":  {
+                                                               "k:z":  [
+                                                                           "false",
+                                                                           "plus",
+                                                                           "minus",
+                                                                           "both"
+                                                                       ],
+                                                               "k:x":  [
+                                                                           "false",
+                                                                           "plus",
+                                                                           "minus",
+                                                                           "both"
+                                                                       ],
+                                                               "k:vertical":  [
+                                                                                  "false",
+                                                                                  "plus",
+                                                                                  "minus",
+                                                                                  "both"
+                                                                              ]
+                                                           },
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "konbou:block_checker9":  {
+
+                                                                         },
+                                               "tag:paipu":  {
+
+                                                             },
+                                               "minecraft:collision_box":  true,
+                                               "minecraft:selection_box":  true,
+                                               "minecraft:geometry":  "geometry.paipuparts",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "paipu4",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                }
+                                           },
+                            "permutations":  [
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  {
+                                                                                                   "identifier":  "geometry.paipuparts",
+                                                                                                   "bone_visibility":  {
+                                                                                                                           "north":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027",
+                                                                                                                           "south":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027",
+                                                                                                                           "east":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027||q.block_state(\u0027k:x\u0027)==\u0027both\u0027",
+                                                                                                                           "west":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027||q.block_state(\u0027k:x\u0027)==\u0027both\u0027",
+                                                                                                                           "eastsouth":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027minus\u0027",
+                                                                                                                           "westnorth":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027plus\u0027",
+                                                                                                                           "eastnorth":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027plus\u0027",
+                                                                                                                           "westsouth":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027minus\u0027",
+                                                                                                                           "upwest":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upeast":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upnorth":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upsouth":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "downwest":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downeast":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downnorth":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downsouth":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "up":  "(q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027||q.block_state(\u0027k:vertical\u0027)==\u0027both\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)",
+                                                                                                                           "down":  "(q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027||q.block_state(\u0027k:vertical\u0027)==\u0027both\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)"
+                                                                                                                       }
+                                                                                               },
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          180,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  {
+                                                                                                   "identifier":  "geometry.paipuparts",
+                                                                                                   "bone_visibility":  {
+                                                                                                                           "north":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027",
+                                                                                                                           "south":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027",
+                                                                                                                           "east":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027||q.block_state(\u0027k:x\u0027)==\u0027both\u0027",
+                                                                                                                           "west":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027||q.block_state(\u0027k:x\u0027)==\u0027both\u0027",
+                                                                                                                           "eastsouth":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027plus\u0027",
+                                                                                                                           "westnorth":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027minus\u0027",
+                                                                                                                           "eastnorth":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027minus\u0027",
+                                                                                                                           "westsouth":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027plus\u0027",
+                                                                                                                           "upwest":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upeast":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upnorth":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upsouth":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "downwest":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downeast":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downnorth":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downsouth":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "up":  "(q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027||q.block_state(\u0027k:vertical\u0027)==\u0027both\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)",
+                                                                                                                           "down":  "(q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027||q.block_state(\u0027k:vertical\u0027)==\u0027both\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)"
+                                                                                                                       }
+                                                                                               },
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          0,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  {
+                                                                                                   "identifier":  "geometry.paipuparts",
+                                                                                                   "bone_visibility":  {
+                                                                                                                           "north":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027||q.block_state(\u0027k:x\u0027)==\u0027both\u0027",
+                                                                                                                           "south":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027||q.block_state(\u0027k:x\u0027)==\u0027both\u0027",
+                                                                                                                           "east":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027",
+                                                                                                                           "west":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027",
+                                                                                                                           "eastsouth":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027plus\u0027",
+                                                                                                                           "westnorth":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027minus\u0027",
+                                                                                                                           "eastnorth":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027minus\u0027",
+                                                                                                                           "westsouth":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027plus\u0027",
+                                                                                                                           "upwest":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upeast":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upnorth":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upsouth":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "downwest":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downeast":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downnorth":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downsouth":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "up":  "(q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027||q.block_state(\u0027k:vertical\u0027)==\u0027both\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)",
+                                                                                                                           "down":  "(q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027||q.block_state(\u0027k:vertical\u0027)==\u0027both\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)"
+                                                                                                                       }
+                                                                                               },
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          90,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  {
+                                                                                                   "identifier":  "geometry.paipuparts",
+                                                                                                   "bone_visibility":  {
+                                                                                                                           "north":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027||q.block_state(\u0027k:x\u0027)==\u0027both\u0027",
+                                                                                                                           "south":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027||q.block_state(\u0027k:x\u0027)==\u0027both\u0027",
+                                                                                                                           "east":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027",
+                                                                                                                           "west":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027",
+                                                                                                                           "eastsouth":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027minus\u0027",
+                                                                                                                           "westnorth":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027plus\u0027",
+                                                                                                                           "eastnorth":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027plus\u0027",
+                                                                                                                           "westsouth":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027minus\u0027",
+                                                                                                                           "upwest":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upeast":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upnorth":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "upsouth":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027",
+                                                                                                                           "downwest":  "q.block_state(\u0027k:z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downeast":  "q.block_state(\u0027k:z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downnorth":  "q.block_state(\u0027k:x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "downsouth":  "q.block_state(\u0027k:x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027",
+                                                                                                                           "up":  "(q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027||q.block_state(\u0027k:vertical\u0027)==\u0027both\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)",
+                                                                                                                           "down":  "(q.block_state(\u0027k:vertical\u0027)==\u0027minus\u0027||q.block_state(\u0027k:vertical\u0027)==\u0027both\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)||(q.block_state(\u0027k:vertical\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027false\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027false\u0027)"
+                                                                                                                       }
+                                                                                               },
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          270,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 }
+                                             ]
+                        }
+}

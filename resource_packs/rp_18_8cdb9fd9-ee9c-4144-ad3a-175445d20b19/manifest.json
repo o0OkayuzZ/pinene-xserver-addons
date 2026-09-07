@@ -1,0 +1,39 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[保管] 経験値ストレージ RP",
+                   "description":  "経験値タンク・配管のモデル、粒子、テクスチャを担当。",
+                   "uuid":  "8cdb9fd9-ee9c-4144-ad3a-175445d20b19",
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              30
+                                          ],
+                   "version":  [
+                                   1,
+                                   0,
+                                   4
+                               ]
+               },
+    "modules":  [
+                    {
+                        "type":  "resources",
+                        "uuid":  "98a155e8-dc23-40ea-9061-f77f361a65c5",
+                        "version":  [
+                                        1,
+                                        0,
+                                        4
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "version":  [
+                                             1,
+                                             0,
+                                             5
+                                         ],
+                             "uuid":  "a881d6c5-7cf5-4823-a26c-1766d70acd8c"
+                         }
+                     ]
+}

@@ -1,0 +1,42 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[大型統合] Minecraft Dungeons RP",
+                   "description":  "Dungeonsの大規模アセットとDeathnerite表示互換を担当。",
+                   "uuid":  "ab296f68-bb16-4ede-a49c-d0ed99b5b87b",
+                   "version":  [
+                                   1,
+                                   5,
+                                   16
+                               ],
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              100
+                                          ]
+               },
+    "modules":  [
+                    {
+                        "type":  "resources",
+                        "uuid":  "eb704eb5-0d32-480d-848e-307a4b38a4df",
+                        "version":  [
+                                        1,
+                                        5,
+                                        16
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
+                             "version":  [
+                                             1,
+                                             5,
+                                             17
+                                         ]
+                         }
+                     ],
+    "capabilities":  [
+                         "pbr"
+                     ]
+}

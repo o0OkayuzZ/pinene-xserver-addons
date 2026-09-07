@@ -1,0 +1,63 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[保管] 経験値ストレージ BP",
+                   "description":  "経験値タンク・配管・入出力処理を担当。",
+                   "uuid":  "a881d6c5-7cf5-4823-a26c-1766d70acd8c",
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              30
+                                          ],
+                   "version":  [
+                                   1,
+                                   0,
+                                   5
+                               ]
+               },
+    "modules":  [
+                    {
+                        "type":  "data",
+                        "uuid":  "05dde16e-db68-467a-91d8-310a8be4fdab",
+                        "version":  [
+                                        1,
+                                        0,
+                                        5
+                                    ]
+                    },
+                    {
+                        "type":  "script",
+                        "uuid":  "82a8b3e7-35e4-44c5-a5c6-85b95aa1578d",
+                        "entry":  "scripts/index.js",
+                        "version":  [
+                                        1,
+                                        0,
+                                        5
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "module_name":  "@minecraft/server",
+                             "version":  "1.13.0"
+                         },
+                         {
+                             "module_name":  "@minecraft/server-ui",
+                             "version":  "1.3.0"
+                         },
+                         {
+                             "version":  [
+                                             1,
+                                             0,
+                                             4
+                                         ],
+                             "uuid":  "8cdb9fd9-ee9c-4144-ad3a-175445d20b19"
+                         }
+                     ],
+    "metadata":  {
+                     "product_type":  "addon",
+                     "authors":  [
+                                     "Effect99"
+                                 ]
+                 }
+}

@@ -1,0 +1,22 @@
+{
+    "format_version":  "1.21.0",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "true_dn:deathnerite_block",
+                                                "menu_category":  {
+                                                                      "category":  "construction",
+                                                                      "is_hidden_in_commands":  true
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:loot":  "loot_tables/blocks/deathnerite_block.json",
+                                               "minecraft:map_color":  "#991623",
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  999
+                                                                                       },
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  25
+                                                                                    }
+                                           }
+                        }
+}

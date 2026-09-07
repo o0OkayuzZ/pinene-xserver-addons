@@ -1,0 +1,60 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "9DEN:ctm_stone_wall",
+                                                "states":  {
+                                                               "rc:number":  {
+                                                                                 "values":  {
+                                                                                                "min":  0,
+                                                                                                "max":  15
+                                                                                            }
+                                                                             }
+                                                           },
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "rc:block_checker":  {
+
+                                                                    },
+                                               "minecraft:collision_box":  true,
+                                               "minecraft:selection_box":  true,
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  30
+                                                                                       },
+                                               "minecraft:geometry":  {
+                                                                          "identifier":  "geometry.ctm",
+                                                                          "bone_visibility":  {
+                                                                                                  "ct0":  "q.block_state(\u0027rc:number\u0027)==0",
+                                                                                                  "ct1":  "q.block_state(\u0027rc:number\u0027)==1",
+                                                                                                  "ct2":  "q.block_state(\u0027rc:number\u0027)==2",
+                                                                                                  "ct3":  "q.block_state(\u0027rc:number\u0027)==3",
+                                                                                                  "ct4":  "q.block_state(\u0027rc:number\u0027)==4",
+                                                                                                  "ct5":  "q.block_state(\u0027rc:number\u0027)==5",
+                                                                                                  "ct6":  "q.block_state(\u0027rc:number\u0027)==6",
+                                                                                                  "ct7":  "q.block_state(\u0027rc:number\u0027)==7",
+                                                                                                  "ct8":  "q.block_state(\u0027rc:number\u0027)==8",
+                                                                                                  "ct9":  "q.block_state(\u0027rc:number\u0027)==9",
+                                                                                                  "ct10":  "q.block_state(\u0027rc:number\u0027)==10",
+                                                                                                  "ct11":  "q.block_state(\u0027rc:number\u0027)==11",
+                                                                                                  "ct12":  "q.block_state(\u0027rc:number\u0027)==12",
+                                                                                                  "ct13":  "q.block_state(\u0027rc:number\u0027)==13",
+                                                                                                  "ct14":  "q.block_state(\u0027rc:number\u0027)==14",
+                                                                                                  "ct15":  "q.block_state(\u0027rc:number\u0027)==15"
+                                                                                              }
+                                                                      },
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "ctm_stone_wall",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:map_color":  "#ffffff"
+                                           }
+                        }
+}

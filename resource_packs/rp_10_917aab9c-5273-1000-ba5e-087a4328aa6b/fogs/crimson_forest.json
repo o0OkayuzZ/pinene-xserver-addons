@@ -1,0 +1,42 @@
+{
+    "format_version":  "1.21.30",
+    "minecraft:fog_settings":  {
+                                   "description":  {
+                                                       "identifier":  "ale:crimson"
+                                                   },
+                                   "distance":  {
+                                                    "air":  {
+                                                                "fog_start":  184.32,
+                                                                "fog_end":  737.28,
+                                                                "fog_color":  "#d42646",
+                                                                "render_distance_type":  "fixed"
+                                                            }
+                                                },
+                                   "volumetric":  {
+                                                      "density":  {
+                                                                      "air":  {
+                                                                                  "max_density":  0.0308,
+                                                                                  "uniform":  true
+                                                                              },
+                                                                      "water":  {
+                                                                                    "max_density":  1.0,
+                                                                                    "uniform":  true
+                                                                                }
+                                                                  },
+                                                      "media_coefficients":  {
+                                                                                 "air":  {
+                                                                                             "scattering":  [
+                                                                                                                0.03655,
+                                                                                                                0.0187,
+                                                                                                                0.01122
+                                                                                                            ],
+                                                                                             "absorption":  [
+                                                                                                                0.0,
+                                                                                                                0.0631,
+                                                                                                                0.20952
+                                                                                                            ]
+                                                                                         }
+                                                                             }
+                                                  }
+                               }
+}

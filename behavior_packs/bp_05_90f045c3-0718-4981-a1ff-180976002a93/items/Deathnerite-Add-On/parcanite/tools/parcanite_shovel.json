@@ -1,0 +1,133 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "true_dn:parcanite_shovel",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.shovel"
+      }
+    },
+    "components": {
+      "minecraft:liquid_clipped": true,
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "true_dn:on_mine_block": {},
+      "true_dn:transform_block": {
+        "affect_tags": [ "grass" ],
+        "transform_to": "minecraft:grass_path",
+
+        "specific_transformations": {
+          "minecraft:grass_path": null
+        },
+
+        "sfx": {
+          "sound": "step.gravel"
+        }
+      },
+
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_shovel"
+        ]
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:damage": 8,
+      "minecraft:enchantable": {
+        "value": 50,
+        "slot": "shovel"
+      },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": {
+              "tags": "q.any_tag('minecraft:is_shovel_item_destructible')"
+            },
+            "speed": 30
+          },
+          {
+            "block": {
+              "tags": "q.any_tag('dirt', 'sand', 'gravel', 'grass', 'snow')"
+            },
+            "speed": 30
+          },
+          {
+            "block": "minecraft:grass_path",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:soul_sand",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:soul_soil",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:mud",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:dirt_with_roots",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:muddy_mangrove_roots",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:farmland",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:snow",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:grass",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:gravel",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:sand",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:dirt",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:mycelium",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:podzol",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:snow",
+            "speed": 30
+          },
+          {
+            "block": "minecraft:clay",
+            "speed": 30
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 3633
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "parcanite_shovel"
+        }
+      }
+    }
+  }
+}

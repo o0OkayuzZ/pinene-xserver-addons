@@ -1,0 +1,220 @@
+﻿{
+    "pools":  [
+                  {
+                      "rolls":  1,
+                      "conditions":  [
+                                         {
+                                             "condition":  "match_tool",
+                                             "minecraft:match_tool_filter_all":  [
+                                                                                     "minecraft:is_pickaxe"
+                                                                                 ]
+                                         },
+                                         {
+                                             "condition":  "match_tool",
+                                             "enchantments":  [
+                                                                  {
+                                                                      "enchantment":  "silk_touch",
+                                                                      "levels":  {
+                                                                                     "min":  1,
+                                                                                     "max":  255
+                                                                                 }
+                                                                  }
+                                                              ]
+                                         }
+                                     ],
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "wx:redstone_crystal_block",
+                                          "weight":  1
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "conditions":  [
+                                         {
+                                             "condition":  "match_tool",
+                                             "minecraft:match_tool_filter_all":  [
+                                                                                     "minecraft:is_pickaxe"
+                                                                                 ]
+                                         },
+                                         {
+                                             "condition":  "match_tool",
+                                             "enchantments":  [
+                                                                  {
+                                                                      "enchantment":  "silk_touch",
+                                                                      "levels":  {
+                                                                                     "min":  0,
+                                                                                     "max":  0
+                                                                                 }
+                                                                  }
+                                                              ]
+                                         },
+                                         {
+                                             "condition":  "match_tool",
+                                             "enchantments":  [
+                                                                  {
+                                                                      "enchantment":  "fortune",
+                                                                      "levels":  {
+                                                                                     "min":  0,
+                                                                                     "max":  0
+                                                                                 }
+                                                                  }
+                                                              ]
+                                         },
+                                         {
+                                             "condition":  "random_chance",
+                                             "chance": 0.02
+                                         }
+                                     ],
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "wx:redstone_cluster",
+                                          "weight":  1
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "conditions":  [
+                                         {
+                                             "condition":  "match_tool",
+                                             "minecraft:match_tool_filter_all":  [
+                                                                                     "minecraft:is_pickaxe"
+                                                                                 ]
+                                         },
+                                         {
+                                             "condition":  "match_tool",
+                                             "enchantments":  [
+                                                                  {
+                                                                      "enchantment":  "silk_touch",
+                                                                      "levels":  {
+                                                                                     "min":  0,
+                                                                                     "max":  0
+                                                                                 }
+                                                                  }
+                                                              ]
+                                         },
+                                         {
+                                             "condition":  "match_tool",
+                                             "enchantments":  [
+                                                                  {
+                                                                      "enchantment":  "fortune",
+                                                                      "levels":  {
+                                                                                     "min":  1,
+                                                                                     "max":  1
+                                                                                 }
+                                                                  }
+                                                              ]
+                                         },
+                                         {
+                                             "condition":  "random_chance",
+                                             "chance": 0.12
+                                         }
+                                     ],
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "wx:redstone_cluster",
+                                          "weight":  1
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "conditions":  [
+                                         {
+                                             "condition":  "match_tool",
+                                             "minecraft:match_tool_filter_all":  [
+                                                                                     "minecraft:is_pickaxe"
+                                                                                 ]
+                                         },
+                                         {
+                                             "condition":  "match_tool",
+                                             "enchantments":  [
+                                                                  {
+                                                                      "enchantment":  "silk_touch",
+                                                                      "levels":  {
+                                                                                     "min":  0,
+                                                                                     "max":  0
+                                                                                 }
+                                                                  }
+                                                              ]
+                                         },
+                                         {
+                                             "condition":  "match_tool",
+                                             "enchantments":  [
+                                                                  {
+                                                                      "enchantment":  "fortune",
+                                                                      "levels":  {
+                                                                                     "min":  2,
+                                                                                     "max":  2
+                                                                                 }
+                                                                  }
+                                                              ]
+                                         },
+                                         {
+                                             "condition":  "random_chance",
+                                             "chance": 0.12
+                                         }
+                                     ],
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "wx:redstone_cluster",
+                                          "weight":  1
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "conditions":  [
+                                         {
+                                             "condition":  "match_tool",
+                                             "minecraft:match_tool_filter_all":  [
+                                                                                     "minecraft:is_pickaxe"
+                                                                                 ]
+                                         },
+                                         {
+                                             "condition":  "match_tool",
+                                             "enchantments":  [
+                                                                  {
+                                                                      "enchantment":  "silk_touch",
+                                                                      "levels":  {
+                                                                                     "min":  0,
+                                                                                     "max":  0
+                                                                                 }
+                                                                  }
+                                                              ]
+                                         },
+                                         {
+                                             "condition":  "match_tool",
+                                             "enchantments":  [
+                                                                  {
+                                                                      "enchantment":  "fortune",
+                                                                      "levels":  {
+                                                                                     "min":  3,
+                                                                                     "max":  255
+                                                                                 }
+                                                                  }
+                                                              ]
+                                         },
+                                         {
+                                             "condition":  "random_chance",
+                                             "chance": 0.20
+                                         }
+                                     ],
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "wx:redstone_cluster",
+                                          "weight":  1
+                                      }
+                                  ]
+                  }
+              ]
+}
+
+

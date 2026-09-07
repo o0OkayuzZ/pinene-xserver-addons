@@ -1,0 +1,62 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[装備] Deathnerite BP",
+                   "description":  "Deathnerite装備・ブロック・能力を担当。",
+                   "uuid":  "90f045c3-0718-4981-a1ff-180976002a93",
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              90
+                                          ],
+                   "version":  [
+                                   2,
+                                   12,
+                                   16
+                               ]
+               },
+    "modules":  [
+                    {
+                        "description":  "pack.description",
+                        "type":  "data",
+                        "uuid":  "499e838e-6d6a-4f33-a9f4-f78678b8db70",
+                        "version":  [
+                                        2,
+                                        12,
+                                        16
+                                    ]
+                    },
+                    {
+                        "description":  "Script",
+                        "type":  "script",
+                        "language":  "javascript",
+                        "entry":  "scripts/main.js",
+                        "uuid":  "d2d03160-7a73-4a6c-a3f8-a77dd8c786fd",
+                        "version":  [
+                                        2,
+                                        12,
+                                        16
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "6fefc83a-06f8-4d96-95d5-cd31718851d3",
+                             "version":  [
+                                             1,
+                                             0,
+                                             105
+                                         ]
+                         },
+                         {
+                             "module_name":  "@minecraft/server",
+                             "version":  "2.0.0"
+                         }
+                     ],
+    "metadata":  {
+                     "authors":  [
+                                     "Truecowboy"
+                                 ],
+                     "product_type":  "addon"
+                 }
+}

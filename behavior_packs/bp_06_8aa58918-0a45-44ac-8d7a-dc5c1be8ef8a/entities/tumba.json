@@ -1,0 +1,508 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "new:tumba",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups":{
+      "var0":{
+        "minecraft:variant":{
+          "value": 0
+        }
+      },
+      "var1":{
+        "minecraft:variant":{
+          "value": 1
+        }
+      },
+      "var2":{
+        "minecraft:variant":{
+          "value": 2
+        }
+      },
+      "var3":{
+        "minecraft:variant":{
+          "value": 3
+        }
+      },
+      "var4":{
+        "minecraft:variant":{
+          "value": 4
+        }
+      },
+      "var5":{
+        "minecraft:variant":{
+          "value": 5
+        }
+      },
+      "var6":{
+        "minecraft:variant":{
+          "value": 6
+        }
+      },
+      "var7":{
+        "minecraft:variant":{
+          "value": 7
+        }
+      },
+      "var8":{
+        "minecraft:variant":{
+          "value": 8
+        }
+      },
+      "var9":{
+        "minecraft:variant":{
+          "value": 9
+        }
+      },
+      "var10":{
+        "minecraft:variant":{
+          "value": 10
+        }
+      },
+      "var11":{
+        "minecraft:variant":{
+          "value": 11
+        }
+      },
+      "var12":{
+        "minecraft:variant":{
+          "value": 12
+        }
+      },
+      "var13":{
+        "minecraft:variant":{
+          "value": 13
+        }
+      },
+      "var14":{
+        "minecraft:variant":{
+          "value": 14
+        }
+      },
+      "var15":{
+        "minecraft:variant":{
+          "value": 15
+        }
+      },
+      "var16":{
+        "minecraft:variant":{
+          "value": 16
+        }
+      },
+      "death": {
+        "minecraft:is_stackable": {},
+        "minecraft:health": {
+          "value": 0,
+          "max": 0,
+          "min": 0
+        }
+      },
+      "pickup_item_timer": {
+        "minecraft:collision_box": {
+          "width": 0.5,
+          "height": 0.5
+        }
+      },
+      "not_pickup_item": {
+        "minecraft:collision_box": {
+          "width": 0.5,
+          "height": 0.5
+        }
+      }
+    },
+    "components": {
+      "minecraft:is_chested": {},
+      "minecraft:inventory": {
+        "container_type": "inventory",
+        "inventory_size": 48,
+        "private": true
+      },
+      "minecraft:nameable": {
+        "always_show": true
+      },
+      "minecraft:scale":{
+        "value": 1.25
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+            },
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:physics": {
+        "has_collision": true,
+        "has_gravity": true
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence":[
+          {
+            "filters":{
+              "all_of":[
+                {
+                  "test": "in_lava",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": true
+                }
+              ]
+            },
+            "queue_command": {
+              "command": [
+                "structure load mystructure:tumba_protect ~-2~-1~-2"
+              ]
+            }
+          },
+          {
+            "filters":{
+              "all_of":[
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "nether"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "jungle"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "desert"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": false
+                },
+                {
+                  "test": "is_underwater",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": false
+                }
+              ]
+            },
+            "randomize":[
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var0"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var3"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var5"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var6"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var7"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var11"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var12"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var13"
+                    
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "filters":{
+              "all_of":[
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "jungle"
+                }
+              ]
+            },
+            "randomize":[
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var2"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var4"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "filters":{
+              "any_of":[
+                {
+                  "test": "in_water",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": true
+                },
+                {
+                  "test": "is_underwater",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": true
+                }
+              ]
+            },
+            "add":{
+              "component_groups":[
+                "var10"
+              ]
+            }
+          },
+          {
+            "filters":{
+              "all_of":[
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "nether"
+                }
+              ]
+            },
+            "randomize":[
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var1"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var14"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var15"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var16"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "filters":{
+              "all_of":[
+                {
+                  "test": "has_biome_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "desert"
+                }
+              ]
+            },
+            "randomize":[
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var8"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add":{
+                  "component_groups":[
+                    "var9"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "add": {
+              "component_groups": [
+                "pickup_item_timer"
+              ]
+            }
+          },
+          {
+            "queue_command": {
+              "command": [
+                "tickingarea add ~~-1~ ~1~1~1"
+              ]
+            }
+          }
+        ]
+},
+"new:entity_death": {
+  "sequence":[
+    {
+      "queue_command": {
+        "command": [
+          "tickingarea remove ~~~",
+          "function kill_chest"
+        ]
+      },
+      "add": {
+        "component_groups": [
+          "death"
+        ]
+      }
+    }
+  ]
+},
+"tombs_event":{
+  "sequence": [
+    {
+      "filters":{
+              "all_of":[
+                {
+                  "test": "in_lava",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": true
+                }
+              ]
+            },
+            "queue_command": {
+              "command": [
+                "structure load mystructure:tumba_protect ~-2~-1~-2"
+              ]
+            }
+    },
+    {
+      "add": {
+        "component_groups": [
+          "pickup_item_timer"
+        ]
+      }
+    },
+    {
+      "queue_command": {
+        "command": [
+          "tickingarea add ~~-1~ ~1~1~1"
+        ]
+      }
+    }
+  ]
+},
+"set_var0": { "add": { "component_groups": [ "var0" ] } },
+  "set_var1": { "add": { "component_groups": [ "var1" ] } },
+  "set_var2": { "add": { "component_groups": [ "var2" ] } },
+  "set_var3": { "add": { "component_groups": [ "var3" ] } },
+  "set_var4": { "add": { "component_groups": [ "var4" ] } },
+  "set_var5": { "add": { "component_groups": [ "var5" ] } },
+  "set_var6": { "add": { "component_groups": [ "var6" ] } },
+  "set_var7": { "add": { "component_groups": [ "var7" ] } },
+  "set_var8": { "add": { "component_groups": [ "var8" ] } },
+  "set_var9": { "add": { "component_groups": [ "var9" ] } },
+  "set_var10": { "add": { "component_groups": [ "var10" ] } },
+  "set_var11": { "add": { "component_groups": [ "var11" ] } },
+  "set_var12": { "add": { "component_groups": [ "var12" ] } },
+  "set_var13": { "add": { "component_groups": [ "var13" ] } },
+  "set_var14": { "add": { "component_groups": [ "var14" ] } },
+  "set_var15": { "add": { "component_groups": [ "var15" ] } },
+  "set_var16": { "add": { "component_groups": [ "var16" ] } },
+"new:stop_pickup_item": {
+  "add": {
+    "component_groups": [
+      "not_pickup_item"
+    ]
+  },
+  "remove": {
+    "component_groups": [
+      "pickup_item_timer"
+    ]
+  }
+}
+}
+}
+}

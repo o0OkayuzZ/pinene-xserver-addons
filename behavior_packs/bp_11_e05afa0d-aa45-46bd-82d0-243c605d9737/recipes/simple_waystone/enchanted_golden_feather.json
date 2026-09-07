@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ws:enchanted_golden_feather"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "GGG",
+      "GFG",
+      "GGG"
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:gold_block"
+      },
+      "F": {
+        "item": "ws:golden_feather"
+      }
+    },
+    "unlock": [
+      {
+        "item": "ws:golden_feather"
+      }
+    ],
+    "result": {
+      "item": "ws:enchanted_golden_feather"
+    }
+  }
+}

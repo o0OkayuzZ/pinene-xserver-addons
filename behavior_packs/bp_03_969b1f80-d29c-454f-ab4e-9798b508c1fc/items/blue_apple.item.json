@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:item": {
+    "description": {
+      "identifier": "resetapple:blue_apple",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "青りんご"
+      },
+      "minecraft:icon": "blue_apple",
+      "minecraft:max_stack_size": 64,
+      "minecraft:use_animation": "eat",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 8,
+        "saturation_modifier": 0.8,
+        "can_always_eat": true
+      }
+    }
+  }
+}

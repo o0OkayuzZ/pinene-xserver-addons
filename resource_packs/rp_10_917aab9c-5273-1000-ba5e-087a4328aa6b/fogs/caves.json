@@ -1,0 +1,68 @@
+{
+    "format_version":  "1.21.0",
+    "minecraft:fog_settings":  {
+                                   "description":  {
+                                                       "identifier":  "vrd:caves"
+                                                   },
+                                   "distance":  {
+                                                    "air":  {
+                                                                "fog_start":  0.88,
+                                                                "fog_end":  1,
+                                                                "fog_color":  "#C9D4E3",
+                                                                "render_distance_type":  "render"
+                                                            },
+                                                    "water":  {
+                                                                  "fog_start":  0.4,
+                                                                  "fog_end":  0.7,
+                                                                  "fog_color":  "#1c2b3c",
+                                                                  "render_distance_type":  "render"
+                                                              },
+                                                    "weather":  {
+                                                                    "fog_start":  0.3,
+                                                                    "fog_end":  0.6,
+                                                                    "fog_color":  "#303030",
+                                                                    "render_distance_type":  "render"
+                                                                }
+                                                },
+                                   "volumetric":  {
+                                                      "density":  {
+                                                                      "air":  {
+                                                                                  "max_density":  0.045,
+                                                                                  "uniform":  false,
+                                                                                  "max_density_height":  62,
+                                                                                  "zero_density_height":  120
+                                                                              },
+                                                                      "water":  {
+                                                                                    "max_density":  0.05,
+                                                                                    "uniform":  true
+                                                                                }
+                                                                  },
+                                                      "media_coefficients":  {
+                                                                                 "air":  {
+                                                                                             "scattering":  [
+                                                                                                                0.055,
+                                                                                                                0.06,
+                                                                                                                0.072
+                                                                                                            ],
+                                                                                             "absorption":  [
+                                                                                                                0.005,
+                                                                                                                0.004,
+                                                                                                                0.003
+                                                                                                            ]
+                                                                                         },
+                                                                                 "water":  {
+                                                                                               "scattering":  [
+                                                                                                                  0.03,
+                                                                                                                  0.08,
+                                                                                                                  0.1
+                                                                                                              ],
+                                                                                               "absorption":  [
+                                                                                                                  0.008,
+                                                                                                                  0.005,
+                                                                                                                  0.0
+                                                                                                              ]
+                                                                                           }
+                                                                             }
+                                                  }
+                               }
+}

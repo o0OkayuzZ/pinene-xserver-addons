@@ -1,0 +1,35 @@
+{
+    "format_version":  "1.20.50",
+    "minecraft:item":  {
+                           "description":  {
+                                               "identifier":  "zombiegear:zombie_boots_c4",
+                                               "menu_category":  {
+                                                                     "category":  "equipment"
+                                                                 }
+                                           },
+                           "components":  {
+                                              "minecraft:icon":  "zombie_boots_c4",
+                                              "minecraft:max_stack_size":  1,
+                                              "minecraft:durability":  {
+                                                                           "max_durability":  130
+                                                                       },
+                                              "minecraft:wearable":  {
+                                                                         "slot":  "slot.armor.feet",
+                                                                         "protection":  1
+                                                                     },
+                                              "minecraft:display_name":  {
+                                                                             "value":  "item.zombiegear:zombie_boots.name"
+                                                                         },
+                                              "minecraft:attribute_modifiers":  {
+                                                                                    "modifiers":  [
+                                                                                                      {
+                                                                                                          "attribute":  "minecraft:knockback_resistance",
+                                                                                                          "amount":  0.2,
+                                                                                                          "operation":  "addition",
+                                                                                                          "slot":  "slot.armor.feet"
+                                                                                                      }
+                                                                                                  ]
+                                                                                }
+                                          }
+                       }
+}

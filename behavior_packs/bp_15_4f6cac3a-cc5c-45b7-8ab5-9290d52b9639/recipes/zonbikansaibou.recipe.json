@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinematerials:zonbikansaibou"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "TTT",
+      "TFT",
+      "TTT"
+    ],
+    "key": {
+      "T": {
+        "item": "minecraft:totem_of_undying"
+      },
+      "F": {
+        "item": "minecraft:rotten_flesh"
+      }
+    },
+    "result": {
+      "item": "pinematerials:zonbikansaibou",
+      "count": 1
+    }
+  }
+}

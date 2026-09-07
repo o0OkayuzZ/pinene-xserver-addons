@@ -1,0 +1,48 @@
+{
+    "format_version": "1.17.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "wx:lapis_lazuli_geode",
+            "places_feature": "wx:lapis_lazuli_geode_feature"
+        },
+        "conditions": {
+            "minecraft:biome_filter": [
+                {
+                    "any_of": [
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "==",
+                            "value": "overworld"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "==",
+                            "value": "overworld_generation"
+                        }
+                    ]
+                }
+            ],
+            "placement_pass": "underground_pass"
+        },
+        "distribution": {
+            "x": {
+                "extent": [0, 16],
+                "distribution": "uniform"
+            },
+            "y": {
+                "extent": [-30, 30],
+                "distribution": "uniform"
+            },
+            "z": {
+                "extent": [0, 16],
+                "distribution": "uniform"
+            },
+            "iterations": 1,
+            "coordinate_eval_order": "zyx",
+            "scatter_chance": {
+                "numerator": 1,
+                "denominator": 180
+            }
+        }
+    }
+}

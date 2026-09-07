@@ -1,0 +1,42 @@
+{
+    "format_version":  "1.21.30",
+    "minecraft:fog_settings":  {
+                                   "description":  {
+                                                       "identifier":  "ale:soulsand_valley"
+                                                   },
+                                   "distance":  {
+                                                    "air":  {
+                                                                "fog_start":  69.12,
+                                                                "fog_end":  515.52,
+                                                                "fog_color":  "#115a66",
+                                                                "render_distance_type":  "fixed"
+                                                            }
+                                                },
+                                   "volumetric":  {
+                                                      "density":  {
+                                                                      "air":  {
+                                                                                  "max_density":  0.075075,
+                                                                                  "uniform":  true
+                                                                              },
+                                                                      "water":  {
+                                                                                    "max_density":  1.0,
+                                                                                    "uniform":  true
+                                                                                }
+                                                                  },
+                                                      "media_coefficients":  {
+                                                                                 "air":  {
+                                                                                             "scattering":  [
+                                                                                                                0.01139,
+                                                                                                                0.03519,
+                                                                                                                0.033575
+                                                                                                            ],
+                                                                                             "absorption":  [
+                                                                                                                0.145,
+                                                                                                                0.021,
+                                                                                                                0.00
+                                                                                                            ]
+                                                                                         }
+                                                                             }
+                                                  }
+                               }
+}

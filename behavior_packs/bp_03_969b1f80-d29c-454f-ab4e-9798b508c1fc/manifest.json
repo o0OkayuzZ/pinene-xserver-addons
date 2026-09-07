@@ -1,0 +1,56 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[保守] 青リンゴ状態リセット BP",
+                   "description":  "青リンゴ関連の状態を安全に初期化する小規模保守パック。",
+                   "uuid":  "969b1f80-d29c-454f-ab4e-9798b508c1fc",
+                   "min_engine_version":  [
+                                              1,
+                                              20,
+                                              30
+                                          ],
+                   "version":  [
+                                   1,
+                                   0,
+                                   6
+                               ]
+               },
+    "modules":  [
+                    {
+                        "description":  "Behavior",
+                        "type":  "data",
+                        "uuid":  "1065c774-bad2-485d-8c30-f158d4f53022",
+                        "version":  [
+                                        1,
+                                        0,
+                                        6
+                                    ]
+                    },
+                    {
+                        "description":  "Script",
+                        "type":  "script",
+                        "language":  "javascript",
+                        "entry":  "scripts/main.js",
+                        "uuid":  "3fddb6fa-fcbd-4ed5-b41e-8fdfe491f58c",
+                        "version":  [
+                                        1,
+                                        0,
+                                        6
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78",
+                             "version":  [
+                                             1,
+                                             0,
+                                             4
+                                         ]
+                         },
+                         {
+                             "module_name":  "@minecraft/server",
+                             "version":  "1.12.0"
+                         }
+                     ]
+}

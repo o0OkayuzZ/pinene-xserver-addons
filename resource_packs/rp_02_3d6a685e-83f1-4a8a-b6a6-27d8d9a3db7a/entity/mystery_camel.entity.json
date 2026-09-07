@@ -1,0 +1,20 @@
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:client_entity":  {
+                                    "description":  {
+                                                        "identifier":  "myname:mystery_camel",
+                                                        "materials":  {
+                                                                          "default":  "cow"
+                                                                      },
+                                                        "textures":  {
+                                                                         "default":  "textures/entity/cow/cow"
+                                                                     },
+                                                        "geometry":  {
+                                                                         "default":  "geometry.cow"
+                                                                     },
+                                                        "render_controllers":  [
+                                                                                   "controller.render.pinene_bomb_cow"
+                                                                               ]
+                                                    }
+                                }
+}

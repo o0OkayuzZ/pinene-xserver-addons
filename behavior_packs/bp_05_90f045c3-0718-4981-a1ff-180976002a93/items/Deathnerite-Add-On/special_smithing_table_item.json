@@ -1,0 +1,19 @@
+{
+    "format_version":  "1.21.90",
+    "minecraft:item":  {
+                           "description":  {
+                                               "identifier":  "true:special_smithing_table",
+                                               "menu_category":  {
+                                                                     "category":  "items"
+                                                                 }
+                                           },
+                           "components":  {
+                                              "minecraft:display_name":  {
+                                                                            "value":  "高度な鍛冶台"
+                                                                        },
+                                              "minecraft:block_placer":  {
+                                                                             "block":  "true:special_smithing_table"
+                                                                         }
+                                          }
+                       }
+}

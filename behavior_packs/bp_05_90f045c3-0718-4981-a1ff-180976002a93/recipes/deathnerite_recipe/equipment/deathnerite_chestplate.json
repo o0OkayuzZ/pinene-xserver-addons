@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "true_dn:recipe_deathnerite_chestplate"
+                                                    },
+                                    "tags":  [
+                                                 "crafting_table"
+                                             ],
+                                    "pattern":  [
+                                                    "A A",
+                                                    "AAA",
+                                                    "AAA"
+                                                ],
+                                    "key":  {
+                                                "A":  {
+                                                          "item":  "true_dn:deathnerite_ingot"
+                                                      }
+                                            },
+                                    "result":  {
+                                                   "item":  "true_dn:deathnerite_chestplate"
+                                               },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "true_dn:deathnerite_ingot"
+                                                   }
+                                               ]
+                                }
+}

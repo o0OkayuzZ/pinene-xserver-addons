@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myname:jack_placed",
+      "runtime_identifier": "minecraft:armor_stand",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": { "family": ["figure", "inanimate", "mob"] },
+      "minecraft:collision_box": { "width": 0.5, "height": 1.975 },
+      "minecraft:health": { "value": 6, "max": 6 },
+      "minecraft:knockback_resistance": { "value": 1 },
+      "minecraft:loot": { "table": "loot_tables/entities/empty_figure_no_drop.json" },
+      "minecraft:nameable": {},
+      "minecraft:persistent": {},
+      "minecraft:physics": { "has_gravity": true, "has_collision": true },
+      "minecraft:pushable": { "is_pushable": false, "is_pushable_by_piston": false },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {}
+  }
+}

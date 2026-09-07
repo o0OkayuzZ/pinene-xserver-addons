@@ -1,0 +1,159 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sysc:arrow_spider",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "spawn_item":{
+        "minecraft:instant_despawn":{}
+      },
+      "pickup_item":{
+        "minecraft:entity_sensor":{
+          "sensor_range": 1.5,
+          "event_filters":[
+            {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "sysc:no_pick"
+                }
+              ]
+            }
+          ],
+          "event": "new:spawn_item"
+        }
+      },
+
+      "minecraft:player_arrow": {
+        "minecraft:projectile": {
+          "on_hit": {
+            "definition_event": {
+              "affect_projectile": true,
+              "event_trigger": {
+                "event": "new:pickup_item",
+                "target": "self"
+              }
+            },
+            "impact_damage": {
+              "damage": 13,
+              "knockback": false,
+              "semi_random_diff_damage": true,
+              "destroy_on_hit": false,
+              "max_critical_damage": 12,
+              "min_critical_damage": 12,
+              "power_multiplier": 0.97
+            },
+            "mob_effect": {
+              "effect": "slowness",
+              "durationeasy": 500,
+              "durationnormal": 500,
+              "durationhard": 500,
+              "amplifier": 8
+            },
+            "stick_in_ground": {
+              "shake_time" : 0.35
+            },
+            "arrow_effect": {
+            }
+          },
+          "hit_sound": "bow.hit",
+          "power": 5.0,
+          "gravity": 0.05,
+          "uncertainty_base": 1,
+          "uncertainty_multiplier": 0,
+          "anchor": 1,
+          "should_bounce": true,
+          "offset": [ 0, -0.1, 0 ]
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:type_family": {
+        "family": [ "arrow" ]
+      },
+      "minecraft:scale":{
+        "value": 0.5
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "new:pickup_item":{
+        "add":{
+          "component_groups":[
+            "pickup_item"
+          ]
+        }
+      },
+      "new:particle":{
+        "queue_command":{
+          "command":[
+            "particle minecraft:ice_evaporation_emitter ~~~"
+          ]
+        }
+      },
+      "new:spawn_item":{
+        "sequence": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "sysc:no_pick"
+                }
+              ]
+            },
+            "queue_command":{
+              "command":[
+                "give @p[r=3] sysc:spider_arrow 1",
+                "playsound random.pop @p[r=3]"
+              ]
+            }
+          },
+          {
+            "add":{
+              "component_groups":[
+                "spawn_item"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups" : [ "minecraft:player_arrow" ]
+              
+            }
+          }
+        ]
+      }
+    }
+
+  }
+}

@@ -1,0 +1,48 @@
+{
+    "format_version":  "1.10.0",
+    "minecraft:attachable":  {
+                                 "description":  {
+                                                     "identifier":  "sysc:glowstone_crossbow",
+                                                     "materials":  {
+                                                                       "default":  "entity_alphatest",
+                                                                       "enchanted":  "entity_alphatest_glint"
+                                                                   },
+                                                     "textures":  {
+                                                                      "default":  "textures/items/glowstone_crossbow_standby",
+                                                                      "crossbow_pulling_0":  "textures/items/glowstone_crossbow_pulling_0",
+                                                                      "crossbow_pulling_1":  "textures/items/glowstone_crossbow_pulling_1",
+                                                                      "crossbow_pulling_2":  "textures/items/glowstone_crossbow_pulling_2",
+                                                                      "crossbow_arrow":  "textures/items/glowstone_crossbow_arrow",
+                                                                      "enchanted":  "textures/misc/enchanted_item_glint"
+                                                                  },
+                                                     "geometry":  {
+                                                                      "default": "geometry.crossbow_standby"
+                                                                  },
+                                                     "animations":  {
+                                                                        "wield":  "animation.crossbow.wield",
+                                                                        "wield_first_person_pull":  "animation.crossbow.wield_first_person_pull"
+                                                                    },
+                                                     "scripts":  {
+                                                                     "pre_animation":  [
+                                                                                           "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);",
+                                                                                           "v.arrow = q.is_item_name_any(\u0027slot.weapon.offhand\u0027, 0, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.hotbar\u0027, 0, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.hotbar\u0027, 1, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.hotbar\u0027, 2, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.hotbar\u0027, 3, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.hotbar\u0027, 4, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.hotbar\u0027, 5, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.hotbar\u0027, 6, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.hotbar\u0027, 7, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.hotbar\u0027, 8, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 0, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 1, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 2, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 3, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 4, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 5, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 6, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 7, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 8, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 9, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 10, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 11, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 12, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 13, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 14, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 15, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 16, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 17, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 18, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 19, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 20, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 21, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 22, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 23, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 24, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 25, \u0027sysc:glowstone_arrow\u0027) || q.is_item_name_any(\u0027slot.inventory\u0027, 26, \u0027sysc:glowstone_arrow\u0027);"
+                                                                                       ],
+                                                                     "animate":  [
+                                                                                     "wield",
+                                                                                     {
+                                                                                         "wield_first_person_pull":  "query.main_hand_item_use_duration \u003e 0.0f \u0026\u0026 c.is_first_person"
+                                                                                     }
+                                                                                 ]
+                                                                 },
+                                                     "render_controllers":  [
+                                                                                {
+                                                                                    "controller.render.custom_crossbow":  "v.arrow"
+                                                                                },
+                                                                                {
+                                                                                    "controller.render.custom_crossbow_charged":  "!v.arrow"
+                                                                                }
+                                                                            ]
+                                                 }
+                             }
+}
+

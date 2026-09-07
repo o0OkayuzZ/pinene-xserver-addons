@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.true_dn.deathnerite_horse_armor": {
+      "geometry": "geometry.c_horse_armor",
+      "materials": [
+        {
+          "*": "Material.c_a"
+        }
+      ],
+      "textures": [
+        "texture.armor_deathnerite"
+      ]
+    },
+    "controller.render.true_dn.parcanite_horse_armor": {
+      "geometry": "geometry.parcanite_armor",
+      "materials": [
+        {
+          "*": "Material.c_a"
+        }
+      ],
+      "textures": [
+        "texture.armor_parcanite"
+      ]
+    }
+  }
+}

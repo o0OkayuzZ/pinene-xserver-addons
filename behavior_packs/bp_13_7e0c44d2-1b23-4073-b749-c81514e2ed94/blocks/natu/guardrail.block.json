@@ -1,0 +1,296 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:guardrail",
+                                                "traits":  {
+                                                               "minecraft:placement_direction":  {
+                                                                                                     "enabled_states":  [
+                                                                                                                            "minecraft:cardinal_direction"
+                                                                                                                        ]
+                                                                                                 }
+                                                           },
+                                                "states":  {
+                                                               "k:z":  [
+                                                                           "false",
+                                                                           "plus",
+                                                                           "minus",
+                                                                           "both"
+                                                                       ],
+                                                               "k:x":  [
+                                                                           "false",
+                                                                           "plus",
+                                                                           "minus",
+                                                                           "both"
+                                                                       ],
+                                                               "k:diagonal_z":  [
+                                                                                    "false",
+                                                                                    "plus",
+                                                                                    "minus",
+                                                                                    "both"
+                                                                                ],
+                                                               "k:diagonal_x":  [
+                                                                                    "false",
+                                                                                    "plus",
+                                                                                    "minus",
+                                                                                    "both"
+                                                                                ],
+                                                               "kyuden:zx_ones":  {
+                                                                                      "values":  {
+                                                                                                     "min":  0,
+                                                                                                     "max":  2
+                                                                                                 }
+                                                                                  }
+                                                           },
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -8,
+                                                                                              0,
+                                                                                              -1.05
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            16,
+                                                                                            16,
+                                                                                            3.5
+                                                                                        ]
+                                                                           },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -8,
+                                                                                              0,
+                                                                                              -1.05
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            16,
+                                                                                            16,
+                                                                                            3.5
+                                                                                        ]
+                                                                           },
+                                               "minecraft:geometry":  "geometry.guardrail",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "guardrail",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "rc:yoko_guardrail":  {
+
+                                                                     },
+                                               "konbou:block_checker3":  {
+
+                                                                         },
+                                               "minecraft:map_color":  "#5f4a2b"
+                                           },
+                            "permutations":  [
+                                                 {
+                                                     "condition":  "(q.block_state(\u0027k:x\u0027)==\u0027both\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027)\u0026\u0026q.block_state(\u0027kyuden:zx_ones\u0027)==1",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_center"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "(q.block_state(\u0027k:x\u0027)==\u0027both\u0027||q.block_state(\u0027k:z\u0027)==\u0027both\u0027)\u0026\u0026q.block_state(\u0027kyuden:zx_ones\u0027)==2",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_center2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          180,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027plus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_edge1"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027minus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_edge2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027\u0026\u0026q.block_state(\u0027k:diagonal_z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027plus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027\u0026\u0026q.block_state(\u0027k:diagonal_x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027minus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027\u0026\u0026(q.block_state(\u0027k:diagonal_x\u0027)==\u0027minus\u0027||q.block_state(\u0027k:diagonal_x\u0027)==\u0027both\u0027)\u0026\u0026(q.block_state(\u0027k:x\u0027)==\u0027false\u0027||q.block_state(\u0027k:x\u0027)==\u0027plus\u0027)",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_diagonal"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027north\u0027\u0026\u0026(q.block_state(\u0027k:diagonal_z\u0027)==\u0027plus\u0027||q.block_state(\u0027k:diagonal_z\u0027)==\u0027both\u0027)\u0026\u0026(q.block_state(\u0027k:x\u0027)==\u0027false\u0027||q.block_state(\u0027k:x\u0027)==\u0027minus\u0027)",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_diagonal2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          0,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027minus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_edge1"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027plus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_edge2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027\u0026\u0026q.block_state(\u0027k:diagonal_z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027minus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027\u0026\u0026q.block_state(\u0027k:diagonal_x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:x\u0027)==\u0027plus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027\u0026\u0026(q.block_state(\u0027k:diagonal_x\u0027)==\u0027plus\u0027||q.block_state(\u0027k:diagonal_x\u0027)==\u0027both\u0027)\u0026\u0026(q.block_state(\u0027k:x\u0027)==\u0027false\u0027||q.block_state(\u0027k:x\u0027)==\u0027minus\u0027)",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_diagonal"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027south\u0027\u0026\u0026(q.block_state(\u0027k:diagonal_z\u0027)==\u0027minus\u0027||q.block_state(\u0027k:diagonal_z\u0027)==\u0027both\u0027)\u0026\u0026(q.block_state(\u0027k:x\u0027)==\u0027false\u0027||q.block_state(\u0027k:x\u0027)==\u0027plus\u0027)",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_diagonal2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          90,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027plus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_edge1"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027minus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_edge2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027\u0026\u0026q.block_state(\u0027k:diagonal_x\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027plus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027\u0026\u0026q.block_state(\u0027k:diagonal_z\u0027)==\u0027minus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027minus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027\u0026\u0026(q.block_state(\u0027k:diagonal_z\u0027)==\u0027plus\u0027||q.block_state(\u0027k:diagonal_z\u0027)==\u0027both\u0027)\u0026\u0026(q.block_state(\u0027k:z\u0027)==\u0027false\u0027||q.block_state(\u0027k:z\u0027)==\u0027plus\u0027)",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_diagonal"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027east\u0027\u0026\u0026(q.block_state(\u0027k:diagonal_x\u0027)==\u0027plus\u0027||q.block_state(\u0027k:diagonal_x\u0027)==\u0027both\u0027)\u0026\u0026(q.block_state(\u0027k:z\u0027)==\u0027false\u0027||q.block_state(\u0027k:z\u0027)==\u0027minus\u0027)",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_diagonal2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027",
+                                                     "components":  {
+                                                                        "minecraft:transformation":  {
+                                                                                                         "rotation":  [
+                                                                                                                          0,
+                                                                                                                          270,
+                                                                                                                          0
+                                                                                                                      ]
+                                                                                                     }
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027minus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_edge1"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027plus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_edge2"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027\u0026\u0026q.block_state(\u0027k:diagonal_x\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027minus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027\u0026\u0026q.block_state(\u0027k:diagonal_z\u0027)==\u0027plus\u0027\u0026\u0026q.block_state(\u0027k:z\u0027)==\u0027plus\u0027",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027\u0026\u0026(q.block_state(\u0027k:diagonal_z\u0027)==\u0027minus\u0027||q.block_state(\u0027k:diagonal_z\u0027)==\u0027both\u0027)\u0026\u0026(q.block_state(\u0027k:z\u0027)==\u0027false\u0027||q.block_state(\u0027k:z\u0027)==\u0027minus\u0027)",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_diagonal"
+                                                                    }
+                                                 },
+                                                 {
+                                                     "condition":  "q.block_state(\u0027minecraft:cardinal_direction\u0027)==\u0027west\u0027\u0026\u0026(q.block_state(\u0027k:diagonal_x\u0027)==\u0027minus\u0027||q.block_state(\u0027k:diagonal_x\u0027)==\u0027both\u0027)\u0026\u0026(q.block_state(\u0027k:z\u0027)==\u0027false\u0027||q.block_state(\u0027k:z\u0027)==\u0027plus\u0027)",
+                                                     "components":  {
+                                                                        "minecraft:geometry":  "geometry.guardrail_diagonal2"
+                                                                    }
+                                                 }
+                                             ]
+                        }
+}

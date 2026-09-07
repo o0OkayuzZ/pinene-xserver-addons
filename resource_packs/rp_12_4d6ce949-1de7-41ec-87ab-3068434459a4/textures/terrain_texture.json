@@ -1,0 +1,473 @@
+{
+    "resource_pack_name":  "Simple Waystone",
+    "texture_name":  "atlas.terrain",
+    "padding":  8,
+    "num_mip_levels":  4,
+    "texture_data":  {
+                         "simple_waystone:teleport_shard":  {
+                                                                "textures":  "textures/simple_waystone/items/teleport_shard"
+                                                            },
+                         "simple_waystone:teleport_shard_broken":  {
+                                                                       "textures":  "textures/simple_waystone/items/teleport_shard_broken"
+                                                                   },
+                         "simple_waystone:warpstone":  {
+                                                           "textures":  "textures/simple_waystone/items/warpstone"
+                                                       },
+                         "letters":  {
+                                         "textures":  "textures/simple_waystone/blocks/letters"
+                                     },
+                         "letters_light_gray":  {
+                                                    "textures":  "textures/simple_waystone/blocks/letters_light_gray"
+                                                },
+                         "letters_gray":  {
+                                              "textures":  "textures/simple_waystone/blocks/letters_gray"
+                                          },
+                         "letters_black":  {
+                                               "textures":  "textures/simple_waystone/blocks/letters_black"
+                                           },
+                         "letters_brown":  {
+                                               "textures":  "textures/simple_waystone/blocks/letters_brown"
+                                           },
+                         "letters_red":  {
+                                             "textures":  "textures/simple_waystone/blocks/letters_red"
+                                         },
+                         "letters_orange":  {
+                                                "textures":  "textures/simple_waystone/blocks/letters_orange"
+                                            },
+                         "letters_yellow":  {
+                                                "textures":  "textures/simple_waystone/blocks/letters_yellow"
+                                            },
+                         "letters_lime":  {
+                                              "textures":  "textures/simple_waystone/blocks/letters_lime"
+                                          },
+                         "letters_green":  {
+                                               "textures":  "textures/simple_waystone/blocks/letters_green"
+                                           },
+                         "letters_cyan":  {
+                                              "textures":  "textures/simple_waystone/blocks/letters_cyan"
+                                          },
+                         "letters_light_blue":  {
+                                                    "textures":  "textures/simple_waystone/blocks/letters_light_blue"
+                                                },
+                         "letters_blue":  {
+                                              "textures":  "textures/simple_waystone/blocks/letters_blue"
+                                          },
+                         "letters_purple":  {
+                                                "textures":  "textures/simple_waystone/blocks/letters_purple"
+                                            },
+                         "letters_magenta":  {
+                                                 "textures":  "textures/simple_waystone/blocks/letters_magenta"
+                                             },
+                         "letters_pink":  {
+                                              "textures":  "textures/simple_waystone/blocks/letters_pink"
+                                          },
+                         "simple_waystone_chiseled_bookshelf":  {
+                                                                    "textures":  "textures/blocks/chiseled_bookshelf_occupied"
+                                                                },
+                         "simple_waystone_crafter_top":  {
+                                                             "textures":  "textures/blocks/crafter_top_crafting"
+                                                         },
+                         "simple_waystone_creaking_heart_top":  {
+                                                                    "textures":  "textures/blocks/creaking_heart_top_active"
+                                                                },
+                         "simple_waystone_respawn_anchor_side4":  {
+                                                                      "textures":  "textures/blocks/respawn_anchor_side4"
+                                                                  },
+                         "simple_waystone_sculk_shrieker":  {
+                                                                "textures":  "textures/blocks/sculk_shrieker_can_summon_inner_top"
+                                                            },
+                         "simple_waystone_sculk_catalyst_side":  {
+                                                                     "textures":  "textures/blocks/sculk_catalyst_side_bloom"
+                                                                 },
+                         "simple_waystone_sculk_catalyst_top":  {
+                                                                    "textures":  "textures/blocks/sculk_catalyst_top_bloom"
+                                                                },
+                         "acacia_log_side":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/acacia_log_side"
+                                             },
+                         "acacia_log_top":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/acacia_log_top"
+                                            },
+                         "bamboo_block":  {
+                                              "textures":  "textures/simple_waystone/vanilla_materials/bamboo_block"
+                                          },
+                         "bamboo_mosaic":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/bamboo_mosaic"
+                                           },
+                         "bamboo_planks":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/bamboo_planks"
+                                           },
+                         "birch_log_side":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/birch_log_side"
+                                            },
+                         "birch_log_top":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/birch_log_top"
+                                           },
+                         "black_concrete":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/black_concrete"
+                                            },
+                         "black_concrete_powder":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/black_concrete_powder"
+                                                   },
+                         "black_stained_glass":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/black_stained_glass"
+                                                 },
+                         "black_terracotta":  {
+                                                  "textures":  "textures/simple_waystone/vanilla_materials/black_terracotta"
+                                              },
+                         "blue_concrete":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/blue_concrete"
+                                           },
+                         "blue_concrete_powder":  {
+                                                      "textures":  "textures/simple_waystone/vanilla_materials/blue_concrete_powder"
+                                                  },
+                         "blue_stained_glass":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/blue_stained_glass"
+                                                },
+                         "blue_terracotta":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/blue_terracotta"
+                                             },
+                         "brown_concrete":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/brown_concrete"
+                                            },
+                         "brown_concrete_powder":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/brown_concrete_powder"
+                                                   },
+                         "brown_stained_glass":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/brown_stained_glass"
+                                                 },
+                         "brown_terracotta":  {
+                                                  "textures":  "textures/simple_waystone/vanilla_materials/brown_terracotta"
+                                              },
+                         "cherry_log_side":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/cherry_log_side"
+                                             },
+                         "cherry_log_top":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/cherry_log_top"
+                                            },
+                         "chiseled_copper":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/chiseled_copper"
+                                             },
+                         "chiseled_quartz_block_side":  {
+                                                            "textures":  "textures/simple_waystone/vanilla_materials/chiseled_quartz_block_side"
+                                                        },
+                         "chiseled_quartz_block_top":  {
+                                                           "textures":  "textures/simple_waystone/vanilla_materials/chiseled_quartz_block_top"
+                                                       },
+                         "chiseled_red_sandstone":  {
+                                                        "textures":  "textures/simple_waystone/vanilla_materials/chiseled_red_sandstone"
+                                                    },
+                         "chiseled_resin_bricks":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/chiseled_resin_bricks"
+                                                   },
+                         "chiseled_sandstone":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/chiseled_sandstone"
+                                                },
+                         "chiseled_stone_bricks":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/chiseled_stone_bricks"
+                                                   },
+                         "chiseled_tuff_bricks_top":  {
+                                                          "textures":  "textures/simple_waystone/vanilla_materials/chiseled_tuff_bricks_top"
+                                                      },
+                         "chiseled_tuff_top":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/chiseled_tuff_top"
+                                               },
+                         "crafter_north":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/crafter_north"
+                                           },
+                         "cut_red_sandstone":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/cut_red_sandstone"
+                                               },
+                         "cut_sandstone":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/cut_sandstone"
+                                           },
+                         "cyan_concrete":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/cyan_concrete"
+                                           },
+                         "cyan_concrete_powder":  {
+                                                      "textures":  "textures/simple_waystone/vanilla_materials/cyan_concrete_powder"
+                                                  },
+                         "cyan_stained_glass":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/cyan_stained_glass"
+                                                },
+                         "cyan_terracotta":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/cyan_terracotta"
+                                             },
+                         "dark_oak_log_side":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/dark_oak_log_side"
+                                               },
+                         "dark_oak_log_top":  {
+                                                  "textures":  "textures/simple_waystone/vanilla_materials/dark_oak_log_top"
+                                              },
+                         "exposed_chiseled_copper":  {
+                                                         "textures":  "textures/simple_waystone/vanilla_materials/exposed_chiseled_copper"
+                                                     },
+                         "gray_concrete":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/gray_concrete"
+                                           },
+                         "gray_concrete_powder":  {
+                                                      "textures":  "textures/simple_waystone/vanilla_materials/gray_concrete_powder"
+                                                  },
+                         "gray_stained_glass":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/gray_stained_glass"
+                                                },
+                         "gray_terracotta":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/gray_terracotta"
+                                             },
+                         "green_concrete":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/green_concrete"
+                                            },
+                         "green_concrete_powder":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/green_concrete_powder"
+                                                   },
+                         "green_stained_glass":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/green_stained_glass"
+                                                 },
+                         "green_terracotta":  {
+                                                  "textures":  "textures/simple_waystone/vanilla_materials/green_terracotta"
+                                              },
+                         "jungle_log_side":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/jungle_log_side"
+                                             },
+                         "jungle_log_top":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/jungle_log_top"
+                                            },
+                         "light_blue_concrete":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/light_blue_concrete"
+                                                 },
+                         "light_blue_concrete_powder":  {
+                                                            "textures":  "textures/simple_waystone/vanilla_materials/light_blue_concrete_powder"
+                                                        },
+                         "light_blue_stained_glass":  {
+                                                          "textures":  "textures/simple_waystone/vanilla_materials/light_blue_stained_glass"
+                                                      },
+                         "light_blue_terracotta":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/light_blue_terracotta"
+                                                   },
+                         "light_gray_concrete":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/light_gray_concrete"
+                                                 },
+                         "light_gray_concrete_powder":  {
+                                                            "textures":  "textures/simple_waystone/vanilla_materials/light_gray_concrete_powder"
+                                                        },
+                         "light_gray_stained_glass":  {
+                                                          "textures":  "textures/simple_waystone/vanilla_materials/light_gray_stained_glass"
+                                                      },
+                         "light_gray_terracotta":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/light_gray_terracotta"
+                                                   },
+                         "lime_concrete":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/lime_concrete"
+                                           },
+                         "lime_concrete_powder":  {
+                                                      "textures":  "textures/simple_waystone/vanilla_materials/lime_concrete_powder"
+                                                  },
+                         "lime_stained_glass":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/lime_stained_glass"
+                                                },
+                         "lime_terracotta":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/lime_terracotta"
+                                             },
+                         "magenta_concrete":  {
+                                                  "textures":  "textures/simple_waystone/vanilla_materials/magenta_concrete"
+                                              },
+                         "magenta_concrete_powder":  {
+                                                         "textures":  "textures/simple_waystone/vanilla_materials/magenta_concrete_powder"
+                                                     },
+                         "magenta_stained_glass":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/magenta_stained_glass"
+                                                   },
+                         "magenta_terracotta":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/magenta_terracotta"
+                                                },
+                         "mossy_stone_bricks":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/mossy_stone_bricks"
+                                                },
+                         "oak_log_side":  {
+                                              "textures":  "textures/simple_waystone/vanilla_materials/oak_log_side"
+                                          },
+                         "oak_log_top":  {
+                                             "textures":  "textures/simple_waystone/vanilla_materials/oak_log_top"
+                                         },
+                         "orange_concrete":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/orange_concrete"
+                                             },
+                         "orange_concrete_powder":  {
+                                                        "textures":  "textures/simple_waystone/vanilla_materials/orange_concrete_powder"
+                                                    },
+                         "orange_stained_glass":  {
+                                                      "textures":  "textures/simple_waystone/vanilla_materials/orange_stained_glass"
+                                                  },
+                         "orange_terracotta":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/orange_terracotta"
+                                               },
+                         "oxidized_chiseled_copper":  {
+                                                          "textures":  "textures/simple_waystone/vanilla_materials/oxidized_chiseled_copper"
+                                                      },
+                         "pale_oak_log_side":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/pale_oak_log_side"
+                                               },
+                         "pale_oak_log_top":  {
+                                                  "textures":  "textures/simple_waystone/vanilla_materials/pale_oak_log_top"
+                                              },
+                         "pink_concrete":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/pink_concrete"
+                                           },
+                         "pink_concrete_powder":  {
+                                                      "textures":  "textures/simple_waystone/vanilla_materials/pink_concrete_powder"
+                                                  },
+                         "pink_stained_glass":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/pink_stained_glass"
+                                                },
+                         "pink_terracotta":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/pink_terracotta"
+                                             },
+                         "polished_tuff":  {
+                                               "textures":  "textures/simple_waystone/vanilla_materials/polished_tuff"
+                                           },
+                         "purple_concrete":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/purple_concrete"
+                                             },
+                         "purple_concrete_powder":  {
+                                                        "textures":  "textures/simple_waystone/vanilla_materials/purple_concrete_powder"
+                                                    },
+                         "purple_stained_glass":  {
+                                                      "textures":  "textures/simple_waystone/vanilla_materials/purple_stained_glass"
+                                                  },
+                         "purple_terracotta":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/purple_terracotta"
+                                               },
+                         "purpur_pillar_side":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/purpur_pillar_side"
+                                                },
+                         "quartz_pillar_side":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/quartz_pillar_side"
+                                                },
+                         "quartz_pillar_top":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/quartz_pillar_top"
+                                               },
+                         "red_concrete":  {
+                                              "textures":  "textures/simple_waystone/vanilla_materials/red_concrete"
+                                          },
+                         "red_concrete_powder":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/red_concrete_powder"
+                                                 },
+                         "red_sand":  {
+                                          "textures":  "textures/simple_waystone/vanilla_materials/red_sand"
+                                      },
+                         "red_stained_glass":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/red_stained_glass"
+                                               },
+                         "red_terracotta":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/red_terracotta"
+                                            },
+                         "resin_block":  {
+                                             "textures":  "textures/simple_waystone/vanilla_materials/resin_block"
+                                         },
+                         "resin_bricks":  {
+                                              "textures":  "textures/simple_waystone/vanilla_materials/resin_bricks"
+                                          },
+                         "spruce_log_side":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/spruce_log_side"
+                                             },
+                         "spruce_log_top":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/spruce_log_top"
+                                            },
+                         "stone_bricks":  {
+                                              "textures":  "textures/simple_waystone/vanilla_materials/stone_bricks"
+                                          },
+                         "stripped_bamboo_block":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/stripped_bamboo_block"
+                                                   },
+                         "stripped_cherry_log_side":  {
+                                                          "textures":  "textures/simple_waystone/vanilla_materials/stripped_cherry_log_side"
+                                                      },
+                         "stripped_cherry_log_top":  {
+                                                         "textures":  "textures/simple_waystone/vanilla_materials/stripped_cherry_log_top"
+                                                     },
+                         "stripped_pale_oak_log_side":  {
+                                                            "textures":  "textures/simple_waystone/vanilla_materials/stripped_pale_oak_log_side"
+                                                        },
+                         "stripped_pale_oak_log_top":  {
+                                                           "textures":  "textures/simple_waystone/vanilla_materials/stripped_pale_oak_log_top"
+                                                       },
+                         "tuff_bricks":  {
+                                             "textures":  "textures/simple_waystone/vanilla_materials/tuff_bricks"
+                                         },
+                         "weathered_chiseled_copper":  {
+                                                           "textures":  "textures/simple_waystone/vanilla_materials/weathered_chiseled_copper"
+                                                       },
+                         "white_concrete":  {
+                                                "textures":  "textures/simple_waystone/vanilla_materials/white_concrete"
+                                            },
+                         "white_concrete_powder":  {
+                                                       "textures":  "textures/simple_waystone/vanilla_materials/white_concrete_powder"
+                                                   },
+                         "white_stained_glass":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/white_stained_glass"
+                                                 },
+                         "white_terracotta":  {
+                                                  "textures":  "textures/simple_waystone/vanilla_materials/white_terracotta"
+                                              },
+                         "wool_colored_black":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_black"
+                                                },
+                         "wool_colored_blue":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_blue"
+                                               },
+                         "wool_colored_brown":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_brown"
+                                                },
+                         "wool_colored_cyan":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_cyan"
+                                               },
+                         "wool_colored_gray":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_gray"
+                                               },
+                         "wool_colored_green":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_green"
+                                                },
+                         "wool_colored_light_blue":  {
+                                                         "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_light_blue"
+                                                     },
+                         "wool_colored_lime":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_lime"
+                                               },
+                         "wool_colored_magenta":  {
+                                                      "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_magenta"
+                                                  },
+                         "wool_colored_orange":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_orange"
+                                                 },
+                         "wool_colored_pink":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_pink"
+                                               },
+                         "wool_colored_purple":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_purple"
+                                                 },
+                         "wool_colored_red":  {
+                                                  "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_red"
+                                              },
+                         "wool_colored_silver":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_silver"
+                                                 },
+                         "wool_colored_white":  {
+                                                    "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_white"
+                                                },
+                         "wool_colored_yellow":  {
+                                                     "textures":  "textures/simple_waystone/vanilla_materials/wool_colored_yellow"
+                                                 },
+                         "yellow_concrete":  {
+                                                 "textures":  "textures/simple_waystone/vanilla_materials/yellow_concrete"
+                                             },
+                         "yellow_concrete_powder":  {
+                                                        "textures":  "textures/simple_waystone/vanilla_materials/yellow_concrete_powder"
+                                                    },
+                         "yellow_stained_glass":  {
+                                                      "textures":  "textures/simple_waystone/vanilla_materials/yellow_stained_glass"
+                                                  },
+                         "yellow_terracotta":  {
+                                                   "textures":  "textures/simple_waystone/vanilla_materials/yellow_terracotta"
+                                               }
+                     }
+}

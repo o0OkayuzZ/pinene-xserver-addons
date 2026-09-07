@@ -1,0 +1,75 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "effectoo:xp_fluid",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "properties": {
+        "xp:level": { "type": "int", "range": [ 0, 160 ], "default": 0, "client_sync": true },
+        "xp:offset": { "type": "bool", "default": false, "client_sync": true }
+      }
+    },
+    "component_groups": {
+      "despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "physics": {
+        "minecraft:physics": {
+          "has_gravity": true,
+          "has_collision": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "xp_fluid", "inanimate" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:buoyant": {
+        "apply_gravity": false,
+        "liquid_blocks": [ "minecraft:flowing_water", "minecraft:water" ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "despawn": {
+        "add": { "component_groups": "despawn" }
+      },
+      "physics": {
+        "add": { "component_groups": "physics" }
+      },
+      "default": {
+        "remove": { "component_groups": "physics" }
+      }
+    }
+  }
+}

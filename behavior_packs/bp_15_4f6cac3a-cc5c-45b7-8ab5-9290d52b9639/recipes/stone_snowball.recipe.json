@@ -1,0 +1,19 @@
+{
+    "format_version": "1.17.0",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "pinematerials:stone_snowball"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            { "item": "minecraft:snowball" },
+            { "tag": "minecraft:stone_crafting_materials" }
+        ],
+        "result": {
+            "item": "pinematerials:stone_snowball",
+            "count": 2
+        }
+    }
+}

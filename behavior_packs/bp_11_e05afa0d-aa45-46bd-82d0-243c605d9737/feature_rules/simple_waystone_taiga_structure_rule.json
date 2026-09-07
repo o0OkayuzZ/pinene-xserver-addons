@@ -1,0 +1,43 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "simple_waystone:simple_waystone_taiga_structure_rule",
+      "places_feature": "simple_waystone:simple_waystone_taiga_structure_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "any_of": [
+            { "test": "has_biome_tag", "operator": "==", "value": "cold_taiga" },
+            { "test": "has_biome_tag", "operator": "==", "value": "cold_taiga_hills" },
+            { "test": "has_biome_tag", "operator": "==", "value": "cold_taiga_mutated" },
+            { "test": "has_biome_tag", "operator": "==", "value": "mega_taiga" },
+            { "test": "has_biome_tag", "operator": "==", "value": "mega_taiga_hills" },
+            { "test": "has_biome_tag", "operator": "==", "value": "redwood_taiga_hills_mutated" },
+            { "test": "has_biome_tag", "operator": "==", "value": "redwood_taiga_mutated" },
+            { "test": "has_biome_tag", "operator": "==", "value": "taiga" },
+            { "test": "has_biome_tag", "operator": "==", "value": "taiga_hills" },
+            { "test": "has_biome_tag", "operator": "==", "value": "taiga_mutated" }
+          ]
+        },
+        {
+          "all_of": [
+            { "test": "has_biome_tag", "operator": "!=", "value": "ocean" },
+            { "test": "has_biome_tag", "operator": "!=", "value": "deep" },
+            { "test": "has_biome_tag", "operator": "!=", "value": "caves" },
+            { "test": "has_biome_tag", "operator": "!=", "value": "deep_dark" }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+      "scatter_chance": { "numerator": 1, "denominator": 2000 },
+      "x": { "distribution": "uniform", "extent": [ 0, 15 ] },
+      "y": "query.heightmap(variable.worldx, variable.worldz)",
+      "z": { "distribution": "uniform", "extent": [ 0, 15 ] }
+    }
+  }
+}

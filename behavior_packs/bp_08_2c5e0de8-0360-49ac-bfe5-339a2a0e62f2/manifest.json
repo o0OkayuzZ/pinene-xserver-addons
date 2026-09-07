@@ -1,0 +1,61 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "[大型] Minecraft Dungeons BP",
+                   "description":  "Dungeons由来のモブ・装備・構造物・ワールド生成を担当。",
+                   "uuid":  "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
+                   "version":  [
+                                   1,
+                                   5,
+                                   17
+                               ],
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              100
+                                          ]
+               },
+    "modules":  [
+                    {
+                        "type":  "data",
+                        "uuid":  "f6998f6e-1841-4da3-8425-034233ae930f",
+                        "version":  [
+                                        1,
+                                        5,
+                                        17
+                                    ]
+                    },
+                    {
+                        "uuid":  "d7f02fa9-f236-487e-9d23-a80053ccd5f3",
+                        "version":  [
+                                        1,
+                                        5,
+                                        17
+                                    ],
+                        "type":  "script",
+                        "language":  "javascript",
+                        "entry":  "scripts/main.js"
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "ab296f68-bb16-4ede-a49c-d0ed99b5b87b",
+                             "version":  [
+                                             1,
+                                             5,
+                                             16
+                                         ]
+                         },
+                         {
+                             "module_name":  "@minecraft/server",
+                             "version":  "1.15.0"
+                         },
+                         {
+                             "module_name":  "@minecraft/server-ui",
+                             "version":  "1.2.0"
+                         }
+                     ],
+    "metadata":  {
+                     "product_type":  "addon"
+                 }
+}

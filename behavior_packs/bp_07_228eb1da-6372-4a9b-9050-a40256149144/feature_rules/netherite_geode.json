@@ -1,0 +1,52 @@
+{
+    "format_version": "1.17.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "wx:netherite_geode",
+            "places_feature": "wx:netherite_geode_feature"
+        },
+        "conditions": {
+            "minecraft:biome_filter": [
+                {
+                    "any_of": [
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "==",
+                            "value": "nether"
+                        }
+                    ]
+                }
+            ],
+            "placement_pass": "surface_pass"
+        },
+        "distribution": {
+            "x": {
+                "extent": [
+                    0,
+                    16
+                ],
+                "distribution": "uniform"
+            },
+            "y": {
+                "extent": [
+                    10,
+                    100
+                ],
+                "distribution": "uniform"
+            },
+            "z": {
+                "extent": [
+                    0,
+                    16
+                ],
+                "distribution": "uniform"
+            },
+            "iterations": 1,
+            "coordinate_eval_order": "yxz",
+            "scatter_chance": {
+                "numerator": 3,
+                "denominator": 100
+            }
+        }
+    }
+}

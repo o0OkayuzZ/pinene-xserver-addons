@@ -1,0 +1,51 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:orange_pole",
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -1,
+                                                                                              0,
+                                                                                              -1
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            2,
+                                                                                            16,
+                                                                                            2
+                                                                                        ]
+                                                                           },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -1,
+                                                                                              0,
+                                                                                              -1
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            2,
+                                                                                            16,
+                                                                                            2
+                                                                                        ]
+                                                                           },
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  30
+                                                                                       },
+                                               "minecraft:geometry":  "geometry.orangepole",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "orange_pole",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:map_color":  "#ffffff"
+                                           }
+                        }
+}

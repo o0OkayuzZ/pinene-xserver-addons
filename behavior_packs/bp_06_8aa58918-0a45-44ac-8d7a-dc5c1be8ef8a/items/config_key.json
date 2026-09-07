@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "new:config_key"
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:cooldown":{
+        "category": "key",
+        "duration": 1
+      },
+      "minecraft:glint": true,
+      "minecraft:icon": "config",
+      "minecraft:display_name": {
+        "value": "§l§b墓設定キー\n\n§7墓アドオンの設定を開く鍵"
+      }
+    },
+    "events":{
+    }
+  }
+}

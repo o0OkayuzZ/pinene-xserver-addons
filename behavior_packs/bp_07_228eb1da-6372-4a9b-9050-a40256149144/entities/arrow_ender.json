@@ -1,0 +1,84 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sysc:arrow_ender",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "minecraft:player_arrow": {
+        "minecraft:projectile": {
+          "on_hit": {
+            "teleport_owner": {},
+            "remove_on_hit": {},
+            "impact_damage": {
+              "damage": 13,
+              "knockback": true,
+             "semi_random_diff_damage": true,
+              "destroy_on_hit": false,
+              "max_critical_damage": 11,
+              "min_critical_damage": 11,
+              "power_multiplier": 0.97
+            },
+            "stick_in_ground": {
+              "shake_time" : 0.35
+            },
+            "arrow_effect": {
+            }
+          },
+          "hit_sound": "bow.hit",
+          "power": 5.0,
+          "gravity": 0.05,
+          "uncertainty_base": 1,
+          "uncertainty_multiplier": 0,
+          "anchor": 1,
+          "should_bounce": true,
+          "offset": [ 0, -0.1, 0 ]
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:scale":{
+        "value": 0.5
+      },
+      "minecraft:type_family": {
+        "family": [ "arrow" ]
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "new:particle":{
+        "queue_command":{
+          "command":[
+            "particle minecraft:mob_portal ~~~"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups" : [ "minecraft:player_arrow" ]
+            
+            }
+          }
+        ]
+      }
+    }
+
+  }
+}

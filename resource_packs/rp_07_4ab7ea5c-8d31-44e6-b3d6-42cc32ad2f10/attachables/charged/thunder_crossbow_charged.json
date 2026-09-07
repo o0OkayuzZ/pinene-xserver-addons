@@ -1,0 +1,38 @@
+﻿{
+    "format_version":  "1.10.0",
+    "minecraft:attachable":  {
+                                 "description":  {
+                                                     "identifier":  "sysc:thunder_crossbow_charged",
+                                                     "materials":  {
+                                                                       "default":  "entity_alphatest",
+                                                                       "enchanted":  "entity_alphatest_glint"
+                                                                   },
+                                                     "textures":  {
+                                                                      "default":  "textures/items/thunder_crossbow_arrow",
+                                                                      "enchanted":  "textures/misc/enchanted_item_glint"
+                                                                  },
+                                                     "geometry":  {
+                                                                      "default": "geometry.crossbow_standby"
+                                                                  },
+                                                     "animations":  {
+                                                                        "wield":  "animation.crossbow.wield",
+                                                                        "wield_first_person_pull":  "animation.crossbow.wield_first_person_pull"
+                                                                    },
+                                                     "scripts":  {
+                                                                     "pre_animation":  [
+                                                                                           "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);"
+                                                                                       ],
+                                                                     "animate":  [
+                                                                                     "wield",
+                                                                                     {
+                                                                                         "wield_first_person_pull":  "query.main_hand_item_use_duration \u003e 0.0f \u0026\u0026 c.is_first_person"
+                                                                                     }
+                                                                                 ]
+                                                                 },
+                                                     "render_controllers":  [
+                                                                                "controller.render.custom_crossbow_charged"
+                                                                            ]
+                                                 }
+                             }
+}
+

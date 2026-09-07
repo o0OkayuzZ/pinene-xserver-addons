@@ -1,0 +1,545 @@
+{
+    "pools":  [
+                  {
+                      "rolls":  3,
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "weight":  15,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:netherite_ingot"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  2,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:enchanted_golden_apple"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  8,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  1
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:netherite_scrap"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  2
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:ancient_debris",
+                                          "weight":  4
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.05,
+                                                                               "max":  0.1
+                                                                           }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:netherite_sword"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  1,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.05,
+                                                                               "max":  0.1
+                                                                           }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:netherite_spear"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  6,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.8,
+                                                                               "max":  1
+                                                                           }
+                                                            },
+                                                            {
+                                                                "function":  "enchant_randomly"
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:diamond_sword"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  6,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.8,
+                                                                               "max":  1
+                                                                           }
+                                                            },
+                                                            {
+                                                                "function":  "enchant_randomly"
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:diamond_spear"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  6,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.8,
+                                                                               "max":  1
+                                                                           }
+                                                            },
+                                                            {
+                                                                "function":  "enchant_randomly"
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:diamond_chestplate"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  6,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.8,
+                                                                               "max":  1
+                                                                           }
+                                                            },
+                                                            {
+                                                                "function":  "enchant_randomly"
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:diamond_helmet"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  6,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.8,
+                                                                               "max":  1
+                                                                           }
+                                                            },
+                                                            {
+                                                                "function":  "enchant_randomly"
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:diamond_leggings"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  6,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "minecraft:set_damage",
+                                                                "damage":  {
+                                                                               "min":  0.8,
+                                                                               "max":  1
+                                                                           }
+                                                            },
+                                                            {
+                                                                "function":  "enchant_randomly"
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:diamond_boots"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  6,
+                                          "name":  "minecraft:diamond_sword"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  6,
+                                          "name":  "minecraft:diamond_spear"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  5,
+                                          "name":  "minecraft:diamond_chestplate"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  5,
+                                          "name":  "minecraft:diamond_helmet"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  5,
+                                          "name":  "minecraft:diamond_boots"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  5,
+                                          "name":  "minecraft:diamond_leggings"
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "weight":  5,
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  12
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:diamond"
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  {
+                                    "min":  3,
+                                    "max":  4
+                                },
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  12,
+                                                                              "max":  25
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:arrow",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  10
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:gold_block",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  3,
+                                                                              "max":  18
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:gold_ingot",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  3,
+                                                                              "max":  18
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:iron_ingot",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  3,
+                                                                              "max":  5
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:crying_obsidian",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  8,
+                                                                              "max":  23
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:quartz",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  5,
+                                                                              "max":  15
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:gilded_blackstone",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  3,
+                                                                              "max":  16
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:magma_cream",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "functions":  [
+                                                            {
+                                                                "function":  "set_count",
+                                                                "count":  {
+                                                                              "min":  2,
+                                                                              "max":  10
+                                                                          }
+                                                            }
+                                                        ],
+                                          "name":  "minecraft:iron_block",
+                                          "weight":  1
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "empty",
+                                          "weight":  11
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:snout_armor_trim_smithing_template",
+                                          "weight":  2
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:netherite_upgrade_smithing_template",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "true_dn:darkness_upgrade_smithing_template",
+                                          "weight":  10
+                                      }
+                                  ]
+                  },
+                  {
+                      "rolls":  1,
+                      "entries":  [
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:diamond_block",
+                                          "weight":  12
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:emerald_block",
+                                          "weight":  12
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:gold_block",
+                                          "weight":  10
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:netherite_ingot",
+                                          "weight":  8
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:enchanted_golden_apple",
+                                          "weight":  6
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:totem_of_undying",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:nether_star",
+                                          "weight":  3
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "minecraft:trident",
+                                          "weight":  4
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "waystone:waystone",
+                                          "weight":  5
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "ws:warpstone",
+                                          "weight":  3
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "resetapple:blue_apple",
+                                          "weight":  4
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_fossil",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_oyu",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:figure_spiral",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:gengar",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:goamagara",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:hitomoshi",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:jack",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:meltan",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:metamon",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:mimikkyu",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:shini",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:soubraze",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "myname:utyuuneko",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_01",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_02",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_03",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_04",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_05",
+                                          "weight":  1
+                                      },
+                                      {
+                                          "type":  "item",
+                                          "name":  "pinecd:cd_06",
+                                          "weight":  1
+                                      }
+                                  ]
+                  }
+              ]
+}

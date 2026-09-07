@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "true_dn:recipe_deathnerite_leggings"
+                                                    },
+                                    "tags":  [
+                                                 "crafting_table"
+                                             ],
+                                    "pattern":  [
+                                                    "AAA",
+                                                    "A A",
+                                                    "A A"
+                                                ],
+                                    "key":  {
+                                                "A":  {
+                                                          "item":  "true_dn:deathnerite_ingot"
+                                                      }
+                                            },
+                                    "result":  {
+                                                   "item":  "true_dn:deathnerite_leggings"
+                                               },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "true_dn:deathnerite_ingot"
+                                                   }
+                                               ]
+                                }
+}

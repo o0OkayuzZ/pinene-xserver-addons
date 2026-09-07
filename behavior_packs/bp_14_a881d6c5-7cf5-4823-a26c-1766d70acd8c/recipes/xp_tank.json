@@ -1,0 +1,26 @@
+{
+  "format_version": "1.19.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "effectoo:xp_tank"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "EEE",
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "E": {
+        "item": "minecraft:emerald"
+      },
+      "G": {
+        "item": "minecraft:glass"
+      }
+    },
+    "result": {
+      "item": "effectoo:xp_tank",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.19.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "effectoo:xp_pipe"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "GG",
+      "GG",
+      "GG"
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:glass"
+      }
+    },
+    "result": {
+      "item": "effectoo:xp_pipe",
+      "count": 4
+    }
+  }
+}

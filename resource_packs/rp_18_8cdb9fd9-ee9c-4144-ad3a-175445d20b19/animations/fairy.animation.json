@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.orb.fairy": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"body": {
+					"rotation": ["query.camera_rotation(0)", "query.camera_rotation(1) - query.body_y_rotation", 0],
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.5": [0.4, 0.4, 0.4],
+						"1.0": [1, 1, 1]
+					}
+				}
+			}
+		}
+	}
+}

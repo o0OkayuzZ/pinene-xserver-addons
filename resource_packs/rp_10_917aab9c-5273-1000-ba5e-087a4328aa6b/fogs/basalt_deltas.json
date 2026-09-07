@@ -1,0 +1,50 @@
+{
+    "format_version":  "1.21.90",
+    "minecraft:fog_settings":  {
+                                   "description":  {
+                                                       "identifier":  "ale:delta"
+                                                   },
+                                   "distance":  {
+                                                    "air":  {
+                                                                "fog_start":  236.16,
+                                                                "fog_end":  1474.56,
+                                                                "fog_color":  "#7b7b7b",
+                                                                "render_distance_type":  "fixed"
+                                                            }
+                                                },
+                                   "volumetric":  {
+                                                      "density":  {
+                                                                      "air":  {
+                                                                                  "max_density":  0.016978,
+                                                                                  "uniform":  true
+                                                                              },
+                                                                      "water":  {
+                                                                                    "max_density":  1.0,
+                                                                                    "uniform":  true
+                                                                                }
+                                                                  },
+                                                      "media_coefficients":  {
+                                                                                 "air":  {
+                                                                                             "scattering":  [
+                                                                                                                0.02635,
+                                                                                                                0.02635,
+                                                                                                                0.02635
+                                                                                                            ],
+                                                                                             "absorption":  [
+                                                                                                                0.005,
+                                                                                                                0.005,
+                                                                                                                0.005
+                                                                                                            ]
+                                                                                         }
+                                                                             },
+                                                      "henyey_greenstein_g":  {
+                                                                                  "air":  {
+                                                                                              "henyey_greenstein_g":  0.1
+                                                                                          },
+                                                                                  "water":  {
+                                                                                                "henyey_greenstein_g":  0.34
+                                                                                            }
+                                                                              }
+                                                  }
+                               }
+}

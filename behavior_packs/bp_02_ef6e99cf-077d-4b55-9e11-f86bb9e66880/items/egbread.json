@@ -1,0 +1,47 @@
+﻿{
+    "format_version":  "1.20.30",
+    "minecraft:item":  {
+                           "description":  {
+                                               "identifier":  "a:egbread",
+                                               "category":  "items"
+                                           },
+                           "components":  {
+                                              "minecraft:max_stack_size":  64,
+                                              "minecraft:use_duration":  1.6,
+                                              "minecraft:icon":  "gbread",
+                                              "minecraft:food":  {
+                                                                     "nutrition":  6,
+                                                                     "saturation_modifier":  1,
+                                                                     "can_always_eat":  true,
+                                                                     "effects":  [
+                                                                                     {
+                                                                                         "name":  "regeneration",
+                                                                                         "chance":  1,
+                                                                                         "duration":  35,
+                                                                                         "amplifier":  1
+                                                                                     },
+                                                                                     {
+                                                                                         "name":  "absorption",
+                                                                                         "chance":  1,
+                                                                                         "duration":  110,
+                                                                                         "amplifier":  4
+                                                                                     },
+                                                                                     {
+                                                                                         "name":  "resistance",
+                                                                                         "chance":  1,
+                                                                                         "duration":  240,
+                                                                                         "amplifier":  0
+                                                                                     },
+                                                                                     {
+                                                                                         "name":  "fire_resistance",
+                                                                                         "chance":  1,
+                                                                                         "duration":  210,
+                                                                                         "amplifier":  0
+                                                                                     }
+                                                                                 ]
+                                                                 },
+                                                                                "minecraft:use_animation":  "eat",
+                                                                                "minecraft:glint":  true
+                                          }
+                       }
+}

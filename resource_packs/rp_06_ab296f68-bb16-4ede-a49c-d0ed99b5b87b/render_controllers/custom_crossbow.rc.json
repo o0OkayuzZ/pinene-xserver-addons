@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.dungeons_custom_crossbow": {
+      "geometry": "geometry.crossbow_standby",
+      "materials": [
+        { "*": "variable.is_enchanted ? material.enchanted : material.default" }
+      ],
+      "textures": [
+        "texture.bow_standby",
+        "texture.enchanted"
+      ]
+    }
+  }
+}

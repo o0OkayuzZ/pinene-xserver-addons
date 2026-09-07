@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "effectoo:xp_fluid",
+      "materials": {
+        "default": "experience_orb"
+      },
+      "textures": {
+        "default": "textures/entity/experience_orb"
+      },
+      "geometry": {
+        "default": "geometry.xp_fluid"
+      },
+      "animations": {
+        "face_player": "animation.actor.billboard",
+        "offset": "animation.orb.offset"
+      },
+      "scripts": {
+        "scale": "0.3",
+        "pre_animation": [
+          "variable.m = math.floor((q.property('xp:level') * 9) / 160);",
+          "variable.u = math.mod(variable.m, 4) * 16.0 / 64.0;",
+          "variable.v = math.round(variable.m / 4) * 16.0 / 64.0;"
+        ],
+        "animate": [
+          "face_player",
+          { "offset": "q.property('xp:offset')" }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.experience_orb"
+      ]
+    }
+  }
+}

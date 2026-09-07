@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.custom_crossbow": {
+      "geometry": "geometry.default",
+      "materials": [
+        { "*": "variable.is_enchanted ? material.enchanted : material.default" }
+      ],
+      "textures": [ "texture.default", "texture.enchanted" ]
+    },
+    "controller.render.custom_crossbow_charged": {
+      "geometry": "geometry.default",
+      "materials": [
+        { "*": "variable.is_enchanted ? material.enchanted : material.default" }
+      ],
+      "textures": [ "texture.default", "texture.enchanted" ]
+    }
+  }
+}

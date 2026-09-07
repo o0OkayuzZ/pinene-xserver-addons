@@ -1,0 +1,28 @@
+{
+  "format_version": "1.19.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "effectoo:xp_extractor"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "EEE",
+      "GPG"
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:glass"
+      },
+      "P": {
+        "item": "effectoo:xp_pipe"
+      },
+      "E": {
+        "item": "minecraft:emerald"
+      }
+    },
+    "result": {
+      "item": "effectoo:xp_extractor",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "format_version":  "1.21.60",
+    "minecraft:block":  {
+                            "description":  {
+                                                "identifier":  "kyuden:stone_pole",
+                                                "menu_category":  {
+                                                                      "category":  "construction"
+                                                                  }
+                                            },
+                            "components":  {
+                                               "minecraft:collision_box":  {
+                                                                               "origin":  [
+                                                                                              -2,
+                                                                                              0,
+                                                                                              -2
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            4,
+                                                                                            16,
+                                                                                            4
+                                                                                        ]
+                                                                           },
+                                               "minecraft:selection_box":  {
+                                                                               "origin":  [
+                                                                                              -2,
+                                                                                              0,
+                                                                                              -2
+                                                                                          ],
+                                                                               "size":  [
+                                                                                            4,
+                                                                                            16,
+                                                                                            4
+                                                                                        ]
+                                                                           },
+                                               "minecraft:destructible_by_mining":  {
+                                                                                        "seconds_to_destroy":  1
+                                                                                    },
+                                               "minecraft:destructible_by_explosion":  {
+                                                                                           "explosion_resistance":  30
+                                                                                       },
+                                               "minecraft:geometry":  "geometry.stonepole",
+                                               "minecraft:material_instances":  {
+                                                                                    "*":  {
+                                                                                              "texture":  "stone_pole",
+                                                                                              "render_method":  "opaque"
+                                                                                          }
+                                                                                },
+                                               "minecraft:map_color":  "#ffffff"
+                                           }
+                        }
+}

@@ -1,0 +1,62 @@
+{
+    "format_version":  "1.21.70",
+    "minecraft:lighting_settings":  {
+                                        "description":  {
+                                                            "identifier":  "ale:crimson_lighting"
+                                                        },
+                                        "directional_lights":  {
+                                                                   "orbital":  {
+                                                                                   "sun":  {
+                                                                                               "illuminance":  {
+                                                                                                                   "0.000000":  100.0,
+                                                                                                                   "1.000000":  100.0
+                                                                                                               },
+                                                                                               "color":  {
+                                                                                                             "0.000000":  [
+                                                                                                                              255,
+                                                                                                                              140,
+                                                                                                                              12
+                                                                                                                          ],
+                                                                                                             "1.000000":  [
+                                                                                                                              255,
+                                                                                                                              140,
+                                                                                                                              12
+                                                                                                                          ]
+                                                                                                         }
+                                                                                           },
+                                                                                   "moon":  {
+                                                                                                "illuminance":  {
+                                                                                                                    "0.000000":  100.0,
+                                                                                                                    "1.000000":  100.0
+                                                                                                                },
+                                                                                                "color":  {
+                                                                                                              "0.000000":  [
+                                                                                                                               255,
+                                                                                                                               255,
+                                                                                                                               255
+                                                                                                                           ],
+                                                                                                              "1.000000":  [
+                                                                                                                               255,
+                                                                                                                               255,
+                                                                                                                               255
+                                                                                                                           ]
+                                                                                                          }
+                                                                                            },
+                                                                                   "orbital_offset_degrees":  {
+                                                                                                                  "0.0":  0
+                                                                                                              }
+                                                                               }
+                                                               },
+                                        "ambient":  {
+                                                        "color":  [
+                                                                      255,
+                                                                      50,
+                                                                      6
+                                                                  ],
+                                                        "illuminance":  1.0
+                                                    },
+                                        "sky":  {
+                                                    "intensity":  1.0
+                                                }
+                                    }
+}

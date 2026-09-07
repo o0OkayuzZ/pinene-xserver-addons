@@ -1,0 +1,29 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "true_dn:deathnerite_ingot",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:liquid_clipped": true,
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:transform_templates",
+          "minecraft:netherite_ingot",
+          "minecraft:transform_materials"
+        ]
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "true_dn:deathnerite_ingot"
+        }
+      }
+    }
+  }
+}

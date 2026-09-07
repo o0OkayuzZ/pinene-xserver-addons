@@ -1,0 +1,43 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "sysc:tnt_crossbow",
+			"materials": {
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/items/explosive_crossbow_standby",
+				"crossbow_pulling_0": "textures/items/explosive_crossbow_pulling_0",
+				"crossbow_pulling_1": "textures/items/explosive_crossbow_pulling_1",
+				"crossbow_pulling_2": "textures/items/explosive_crossbow_pulling_2",
+        		"crossbow_arrow": "textures/items/explosive_crossbow_arrow",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.crossbow_standby"},
+			"animations": {
+				"wield": "animation.crossbow.wield",
+				"wield_first_person_pull": "animation.crossbow.wield_first_person_pull"
+			},
+			"scripts": {
+				"pre_animation": [
+				"variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);",
+				"v.arrow = q.is_item_name_any('slot.weapon.offhand', 0, 'sysc:tnt_arrow') || q.is_item_name_any('slot.hotbar', 0, 'sysc:tnt_arrow') || q.is_item_name_any('slot.hotbar', 1, 'sysc:tnt_arrow') || q.is_item_name_any('slot.hotbar', 2, 'sysc:tnt_arrow') || q.is_item_name_any('slot.hotbar', 3, 'sysc:tnt_arrow') || q.is_item_name_any('slot.hotbar', 4, 'sysc:tnt_arrow') || q.is_item_name_any('slot.hotbar', 5, 'sysc:tnt_arrow') || q.is_item_name_any('slot.hotbar', 6, 'sysc:tnt_arrow') || q.is_item_name_any('slot.hotbar', 7, 'sysc:tnt_arrow') || q.is_item_name_any('slot.hotbar', 8, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 0, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 1, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 2, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 3, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 4, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 5, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 6, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 7, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 8, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 9, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 10, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 11, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 12, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 13, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 14, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 15, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 16, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 17, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 18, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 19, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 20, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 21, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 22, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 23, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 24, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 25, 'sysc:tnt_arrow') || q.is_item_name_any('slot.inventory', 26, 'sysc:tnt_arrow');"
+				],
+				"animate": [
+				"wield",
+				{
+					"wield_first_person_pull": "query.main_hand_item_use_duration > 0.0f && c.is_first_person"
+				}
+				]
+			},
+			"render_controllers": [ 
+				{"controller.render.custom_crossbow": "v.arrow"},
+				{"controller.render.custom_crossbow_charged": "!v.arrow"}
+			]
+		}
+	}
+}
+

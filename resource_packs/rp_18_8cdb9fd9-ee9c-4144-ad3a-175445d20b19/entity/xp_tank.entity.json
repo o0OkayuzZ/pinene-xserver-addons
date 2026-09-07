@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "effectoo:xp_storage",
+      "materials": {
+        "default": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/entity/xp_liquid"
+      },
+      "geometry": {
+        "default": "geometry.xp_storage"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.m = (q.property('xp:level') > 0 && q.property('xp:level') < 209) ? 1 : math.floor((q.property('xp:level') * 14) / 2920);"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.xp_storage"
+      ]
+    }
+  }
+}
