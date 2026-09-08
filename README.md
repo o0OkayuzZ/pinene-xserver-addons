@@ -18,7 +18,7 @@ All 15 custom behavior packs and 18 custom resource packs are preserved in their
 | behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2 | [大型] Minecraft Dungeons BP | 1.5.17 |
 | behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1 | [装備] ゾンビ装備 BP | 1.0.6 |
 | behavior_packs/bp_10_6b1f1e2b-2f6f-4e06-bfd7-2da2f9f5d2a1 | [戦利品連携] Waystoneアイテム BP | 1.0.2 |
-| behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737 | [移動] Simple Waystone BP | 8.2.5 |
+| behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737 | [移動] Simple Waystone BP | 8.2.6 |
 | behavior_packs/bp_12_87a4083d-6ba7-4667-957b-dfee8b23e1b9 | [音楽連携] 追加レコード連携 BP | 1.1.8 |
 | behavior_packs/bp_13_7e0c44d2-1b23-4073-b749-c81514e2ed94 | [建築] INAKA家具 BP | 1.1.4 |
 | behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c | [保管] 経験値ストレージ BP | 1.0.5 |
@@ -34,7 +34,7 @@ All 15 custom behavior packs and 18 custom resource packs are preserved in their
 | resource_packs/rp_09_3554695d-d627-4971-8420-dc4ece2f8613 | [素材元] System Crossbow RP | 1.1.13 |
 | resource_packs/rp_10_917aab9c-5273-1000-ba5e-087a4328aa6b | [描画] Vibrant Visuals・Deferred RP | 1.3.20 |
 | resource_packs/rp_11_8f4cb6ce-7ca2-4ae9-8d47-9d4f4d0eab55 | [戦利品連携] Waystoneアイテム RP | 1.0.2 |
-| resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4 | [移動] Simple Waystone RP | 8.2.7 |
+| resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4 | [移動] Simple Waystone RP | 8.2.8 |
 | resource_packs/rp_13_fdcac724-cba1-46b2-9510-a433d666ed70 | [音楽連携] 追加レコード音源 RP | 1.1.12 |
 | resource_packs/rp_14_8f8c7cdb-60c5-4b4b-bc1c-334eb8f24b9a | [食料] ピネの弁当 RP | 1.0.5 |
 | resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3 | [素材元] Deathnerite RP | 1.0.105 |
