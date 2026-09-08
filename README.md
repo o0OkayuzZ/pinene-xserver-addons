@@ -20,7 +20,7 @@ All 15 custom behavior packs and 18 custom resource packs are preserved in their
 | behavior_packs/bp_10_6b1f1e2b-2f6f-4e06-bfd7-2da2f9f5d2a1 | [戦利品連携] Waystoneアイテム BP | 1.0.2 |
 | behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737 | [移動] Simple Waystone BP | 8.2.6 |
 | behavior_packs/bp_12_87a4083d-6ba7-4667-957b-dfee8b23e1b9 | [音楽連携] 追加レコード連携 BP | 1.1.8 |
-| behavior_packs/bp_13_7e0c44d2-1b23-4073-b749-c81514e2ed94 | [建築] INAKA家具 BP | 1.1.4 |
+| behavior_packs/bp_13_7e0c44d2-1b23-4073-b749-c81514e2ed94 | [建築] INAKA家具 BP | 1.1.5 |
 | behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c | [保管] 経験値ストレージ BP | 1.0.5 |
 | behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639 | ピネン統合ビヘイビアーパック | 1.0.56 |
 | resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784 | [音楽] ピネCD音源 RP | 1.0.27 |
@@ -39,7 +39,7 @@ All 15 custom behavior packs and 18 custom resource packs are preserved in their
 | resource_packs/rp_14_8f8c7cdb-60c5-4b4b-bc1c-334eb8f24b9a | [食料] ピネの弁当 RP | 1.0.5 |
 | resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3 | [素材元] Deathnerite RP | 1.0.105 |
 | resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78 | [保守] 青リンゴ状態リセット RP | 1.0.4 |
-| resource_packs/rp_17_9a12d1e1-d6c3-43b6-8551-cdc1bb582f82 | [建築] INAKA家具 RP | 1.1.5 |
+| resource_packs/rp_17_9a12d1e1-d6c3-43b6-8551-cdc1bb582f82 | [建築] INAKA家具 RP | 1.1.6 |
 | resource_packs/rp_18_8cdb9fd9-ee9c-4144-ad3a-175445d20b19 | [保管] 経験値ストレージ RP | 1.0.4 |
 
 `snapshot-files.json` contains the size and SHA-256 hash of each original file. Files were verified against the remote snapshot before committing.
