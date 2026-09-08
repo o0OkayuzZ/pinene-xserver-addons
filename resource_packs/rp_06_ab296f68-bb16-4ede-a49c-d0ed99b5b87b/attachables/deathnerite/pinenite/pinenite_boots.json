@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "true_dn:pinenite_boots",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/models/armor/pinenite_boots"
+      },
+      "geometry": {
+        "default": "geometry.true_dn.pinenite_boots"
+      },
+      "scripts": {
+        "parent_setup": "variable.boot_layer_visible = 0.0;"
+      },
+      "render_controllers": [
+        "controller.render.true_dn.pinenite_armor"
+      ]
+    }
+  }
+}
