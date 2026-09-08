@@ -1,0 +1,17 @@
+{
+  "format_version": "1.26.40",
+  "minecraft:block": {
+    "description": { "identifier": "pinene_pvp:temporary_base_marker_block" },
+    "components": {
+      "minecraft:display_name": "tile.pinene_pvp:temporary_base_marker_block.name",
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": { "texture": "respawn_anchor_top", "render_method": "opaque" }
+      },
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 3.0 },
+      "minecraft:destructible_by_explosion": { "explosion_resistance": 6.0 },
+      "minecraft:movable": { "movement_type": "immovable" },
+      "minecraft:loot": "loot_tables/blocks/temporary_base_marker.json"
+    }
+  }
+}

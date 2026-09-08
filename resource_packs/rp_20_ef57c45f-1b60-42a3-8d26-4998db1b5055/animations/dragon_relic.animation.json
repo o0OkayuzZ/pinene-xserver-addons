@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.pinene_pvp.dragon_relic.hover_spin": {
+      "loop": true,
+      "bones": {
+        "bb_main": {
+          "position": [0, "math.sin(query.life_time * 72.0) * 0.8", 0],
+          "rotation": [0, "query.life_time * 18.0", 0]
+        }
+      }
+    }
+  }
+}

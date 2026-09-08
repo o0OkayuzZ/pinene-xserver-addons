@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": { "identifier": "pinene_pvp:shingan_arrow", "menu_category": { "category": "equipment" } },
+    "components": {
+      "minecraft:display_name": { "value": "§b神眼の矢\\n§7能力: 命中後、次の一撃を強化\\n§7次の一撃の威力 = ダメージ^1.5" },
+      "minecraft:icon": "shingan_arrow",
+      "minecraft:max_stack_size": 64,
+      "minecraft:tags": { "tags": ["minecraft:arrow"] },
+      "minecraft:projectile": { "projectile_entity": "pinene_pvp:shingan_arrow", "minimum_critical_power": 1.25 },
+      "minecraft:allow_off_hand": true
+    }
+  }
+}

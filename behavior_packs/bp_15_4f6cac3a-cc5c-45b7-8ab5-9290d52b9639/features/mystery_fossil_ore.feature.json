@@ -1,0 +1,19 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:ore_feature": {
+    "description": {
+      "identifier": "myname:mystery_fossil_ore_feature"
+    },
+    "count": 2,
+    "replace_rules": [
+      {
+        "places_block": "myname:mystery_fossil",
+        "may_replace": [
+          {
+            "name": "minecraft:deepslate"
+          }
+        ]
+      }
+    ]
+  }
+}

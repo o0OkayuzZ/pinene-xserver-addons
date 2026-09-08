@@ -1,0 +1,34 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:fog_settings": {
+    "description": {
+      "identifier": "pinene:default"
+    },
+    "distance": {
+      "air": {
+        "fog_start": 0.82,
+        "fog_end": 1.0,
+        "fog_color": "#B7DCFF",
+        "render_distance_type": "render"
+      },
+      "water": {
+        "fog_start": 0.58,
+        "fog_end": 0.92,
+        "fog_color": "#3A78A8",
+        "render_distance_type": "render"
+      },
+      "weather": {
+        "fog_start": 0.7,
+        "fog_end": 0.95,
+        "fog_color": "#AFC9E6",
+        "render_distance_type": "render"
+      },
+      "lava": {
+        "fog_start": 0.0,
+        "fog_end": 0.35,
+        "fog_color": "#D65A1A",
+        "render_distance_type": "render"
+      }
+    }
+  }
+}

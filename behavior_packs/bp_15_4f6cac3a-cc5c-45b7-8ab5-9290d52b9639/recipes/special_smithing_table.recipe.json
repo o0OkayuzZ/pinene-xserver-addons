@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "true:special_smithing_table"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:smithing_table"
+      },
+      {
+        "item": "minecraft:gold_ingot"
+      },
+      {
+        "item": "minecraft:netherite_ingot"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:smithing_table"
+      },
+      {
+        "item": "minecraft:gold_ingot"
+      },
+      {
+        "item": "minecraft:netherite_ingot"
+      }
+    ],
+    "result": {
+      "item": "true:special_smithing_table"
+    }
+  }
+}

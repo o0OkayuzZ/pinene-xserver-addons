@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "myname:recipe_onso_from_all_cds_shaped"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "CCC",
+      "CNC",
+      "CCC"
+    ],
+    "key": {
+      "C": { "tag": "myname:all_cds" },
+      "N": { "item": "minecraft:noteblock" }
+    },
+    "result": {
+      "count": 1,
+      "item": "myname:onso"
+    },
+    "unlock": [
+      { "item": "minecraft:noteblock" }
+    ]
+  }
+}

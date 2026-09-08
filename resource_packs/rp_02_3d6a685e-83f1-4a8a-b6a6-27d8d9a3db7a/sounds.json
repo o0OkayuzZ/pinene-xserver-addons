@@ -1,133 +1,299 @@
 {
-  "resource_pack_name": "FigureAddon",
-  "entity_sounds": {
-    "entities": {
-      "myname:pinene_bomb_cow": {
-        "volume": 1.0,
-        "pitch": [0.8, 1.2],
-        "events": {
-          "ambient": { "sound": "mob.creeper.say", "volume": 1.6, "pitch": [0.62, 0.72] },
-          "fuse": { "sound": "mob.creeper.say", "volume": 1.6, "pitch": [0.62, 0.72] },
-          "hurt": { "sound": "mob.creeper.say", "volume": 1.0, "pitch": [0.9, 1.3] },
-          "death": { "sound": "mob.creeper.death", "volume": 1.0, "pitch": [0.9, 1.1] }
-        }
-      }
-    }
-  },
-  "sound_definitions": {
-    "record.13": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_01"
-      ]
-    },
-    "record.cat": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_02"
-      ]
-    },
-    "record.blocks": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_03"
-      ]
-    },
-    "record.chirp": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_04"
-      ]
-    },
-    "record.far": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_05"
-      ]
-    },
-    "record.mall": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_06"
-      ]
-    },
-    "record.mellohi": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_07"
-      ]
-    },
-    "record.stal": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_08"
-      ]
-    },
-    "record.strad": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_09"
-      ]
-    },
-    "record.ward": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_10"
-      ]
-    },
-    "record.11": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_11"
-      ]
-    },
-    "record.wait": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_12"
-      ]
-    },
-    "record.pigstep": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_13"
-      ]
-    },
-    "record.otherside": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_14"
-      ]
-    },
-    "record.5": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_15"
-      ]
-    },
-    "record.relic": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_16"
-      ]
-    },
-    "record.creator": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_17"
-      ]
-    },
-    "record.creator_music_box": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_18"
-      ]
-    },
-    "record.precipice": {
-      "category": "record",
-      "sounds": [
-        "records/pinecd_track_19"
-      ]
-    }
-  }
+    "resource_pack_name":  "FigureAddon",
+    "entity_sounds":  {
+                          "entities":  {
+                                           "myname:pinene_bomb_cow":  {
+                                                                          "volume":  1.0,
+                                                                          "pitch":  [
+                                                                                        0.8,
+                                                                                        1.2
+                                                                                    ],
+                                                                          "events":  {
+                                                                                         "ambient":  {
+                                                                                                         "sound":  "mob.creeper.say",
+                                                                                                         "volume":  1.6,
+                                                                                                         "pitch":  [
+                                                                                                                       0.62,
+                                                                                                                       0.72
+                                                                                                                   ]
+                                                                                                     },
+                                                                                         "fuse":  {
+                                                                                                      "sound":  "mob.creeper.say",
+                                                                                                      "volume":  1.6,
+                                                                                                      "pitch":  [
+                                                                                                                    0.62,
+                                                                                                                    0.72
+                                                                                                                ]
+                                                                                                  },
+                                                                                         "hurt":  {
+                                                                                                      "sound":  "mob.creeper.say",
+                                                                                                      "volume":  1.0,
+                                                                                                      "pitch":  [
+                                                                                                                    0.9,
+                                                                                                                    1.3
+                                                                                                                ]
+                                                                                                  },
+                                                                                         "death":  {
+                                                                                                       "sound":  "mob.creeper.death",
+                                                                                                       "volume":  1.0,
+                                                                                                       "pitch":  [
+                                                                                                                     0.9,
+                                                                                                                     1.1
+                                                                                                                 ]
+                                                                                                   }
+                                                                                     }
+                                                                      }
+                                       }
+                      },
+    "sound_definitions":  {
+                              "record.13":  {
+                                                "category":  "record",
+                                                "sounds":  [
+                                                               "records/pinecd_track_01",
+                                                               "sounds/records/pinecd_track_01"
+                                                           ]
+                                            },
+                              "record.cat":  {
+                                                 "category":  "record",
+                                                 "sounds":  [
+                                                                "records/pinecd_track_02",
+                                                                "sounds/records/pinecd_track_02"
+                                                            ]
+                                             },
+                              "record.blocks":  {
+                                                    "category":  "record",
+                                                    "sounds":  [
+                                                                   "records/pinecd_track_03",
+                                                                   "sounds/records/pinecd_track_03"
+                                                               ]
+                                                },
+                              "record.chirp":  {
+                                                   "category":  "record",
+                                                   "sounds":  [
+                                                                  "records/pinecd_track_04",
+                                                                  "sounds/records/pinecd_track_04"
+                                                              ]
+                                               },
+                              "record.far":  {
+                                                 "category":  "record",
+                                                 "sounds":  [
+                                                                "records/pinecd_track_05",
+                                                                "sounds/records/pinecd_track_05"
+                                                            ]
+                                             },
+                              "record.mall":  {
+                                                  "category":  "record",
+                                                  "sounds":  [
+                                                                 "records/pinecd_track_06",
+                                                                 "sounds/records/pinecd_track_06"
+                                                             ]
+                                              },
+                              "record.mellohi":  {
+                                                     "category":  "record",
+                                                     "sounds":  [
+                                                                    "records/pinecd_track_07",
+                                                                    "sounds/records/pinecd_track_07"
+                                                                ]
+                                                 },
+                              "record.stal":  {
+                                                  "category":  "record",
+                                                  "sounds":  [
+                                                                 "records/pinecd_track_08",
+                                                                 "sounds/records/pinecd_track_08"
+                                                             ]
+                                              },
+                              "record.strad":  {
+                                                   "category":  "record",
+                                                   "sounds":  [
+                                                                  "records/pinecd_track_09",
+                                                                  "sounds/records/pinecd_track_09"
+                                                              ]
+                                               },
+                              "record.ward":  {
+                                                  "category":  "record",
+                                                  "sounds":  [
+                                                                 "records/pinecd_track_10",
+                                                                 "sounds/records/pinecd_track_10"
+                                                             ]
+                                              },
+                              "record.11":  {
+                                                "category":  "record",
+                                                "sounds":  [
+                                                               "records/pinecd_track_11",
+                                                               "sounds/records/pinecd_track_11"
+                                                           ]
+                                            },
+                              "record.wait":  {
+                                                  "category":  "record",
+                                                  "sounds":  [
+                                                                 "records/pinecd_track_12",
+                                                                 "sounds/records/pinecd_track_12"
+                                                             ]
+                                              },
+                              "record.pigstep":  {
+                                                     "category":  "record",
+                                                     "sounds":  [
+                                                                    "records/pinecd_track_13",
+                                                                    "sounds/records/pinecd_track_13"
+                                                                ]
+                                                 },
+                              "record.otherside":  {
+                                                       "category":  "record",
+                                                       "sounds":  [
+                                                                      "records/pinecd_track_14",
+                                                                      "sounds/records/pinecd_track_14"
+                                                                  ]
+                                                   },
+                              "record.5":  {
+                                               "category":  "record",
+                                               "sounds":  [
+                                                              "records/pinecd_track_15",
+                                                              "sounds/records/pinecd_track_15"
+                                                          ]
+                                           },
+                              "record.relic":  {
+                                                   "category":  "record",
+                                                   "sounds":  [
+                                                                  "records/pinecd_track_16",
+                                                                  "sounds/records/pinecd_track_16"
+                                                              ]
+                                               },
+                              "record.creator":  {
+                                                     "category":  "record",
+                                                     "sounds":  [
+                                                                    "records/pinecd_track_17",
+                                                                    "sounds/records/pinecd_track_17"
+                                                                ]
+                                                 },
+                              "record.creator_music_box":  {
+                                                               "category":  "record",
+                                                               "sounds":  [
+                                                                              "records/pinecd_track_18",
+                                                                              "sounds/records/pinecd_track_18"
+                                                                          ]
+                                                           },
+                              "record.precipice":  {
+                                                       "category":  "record",
+                                                       "sounds":  [
+                                                                      "records/pinecd_track_19",
+                                                                      "sounds/records/pinecd_track_19"
+                                                                  ]
+                                                   }
+                          },
+    "records":  {
+                    "pinecd.record.01":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_01"
+                                                        ]
+                                         },
+                    "pinecd.record.02":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_02"
+                                                        ]
+                                         },
+                    "pinecd.record.03":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_03"
+                                                        ]
+                                         },
+                    "pinecd.record.04":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_04"
+                                                        ]
+                                         },
+                    "pinecd.record.05":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_05"
+                                                        ]
+                                         },
+                    "pinecd.record.06":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_06"
+                                                        ]
+                                         },
+                    "pinecd.record.07":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_07"
+                                                        ]
+                                         },
+                    "pinecd.record.08":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_08"
+                                                        ]
+                                         },
+                    "pinecd.record.09":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_09"
+                                                        ]
+                                         },
+                    "pinecd.record.10":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_10"
+                                                        ]
+                                         },
+                    "pinecd.record.11":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_11"
+                                                        ]
+                                         },
+                    "pinecd.record.12":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_12"
+                                                        ]
+                                         },
+                    "pinecd.record.13":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_13"
+                                                        ]
+                                         },
+                    "pinecd.record.14":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_14"
+                                                        ]
+                                         },
+                    "pinecd.record.15":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_15"
+                                                        ]
+                                         },
+                    "pinecd.record.16":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_16"
+                                                        ]
+                                         },
+                    "pinecd.record.17":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_17"
+                                                        ]
+                                         },
+                    "pinecd.record.18":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_18"
+                                                        ]
+                                         },
+                    "pinecd.record.19":  {
+                                             "category":  "record",
+                                             "sounds":  [
+                                                            "sounds/records/pinecd_track_19"
+                                                        ]
+                                         }
+                }
 }

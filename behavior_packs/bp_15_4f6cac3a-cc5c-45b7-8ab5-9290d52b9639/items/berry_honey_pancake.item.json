@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "pinebento:berry_honey_pancake",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.miscFood"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "ベリーハニーパンケーキ"
+      },
+      "minecraft:icon": "berry_honey_pancake",
+      "minecraft:max_stack_size": 64,
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:food": {
+        "nutrition": 10,
+        "saturation_modifier": 2.0,
+        "can_always_eat": false
+      }
+    }
+  }
+}

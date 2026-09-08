@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "true_dn:parcanite_pickaxe",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/items/parcanite_pickaxe",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.true_model_26x26"
+      },
+      "animations": {
+        "vision": "animation.deathnerite.item_animated_true.vision"
+      },
+      "scripts": {
+        "animate": [
+          "vision"
+        ]
+      },
+      "render_controllers": [ "controller.render.drowned" ]
+    }
+  }
+}

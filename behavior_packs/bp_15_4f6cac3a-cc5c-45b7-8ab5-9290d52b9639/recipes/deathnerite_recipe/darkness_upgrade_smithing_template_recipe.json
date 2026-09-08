@@ -1,0 +1,44 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "true_dn:darkness_upgrade_smithing_template"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "BBB",
+      "BAB",
+      "BCB"
+    ],
+    "key": {
+      "A": {
+        "item": "true_dn:darkness_upgrade_smithing_template"
+      },
+      "B": {
+        "item": "minecraft:netherite_ingot"
+      },
+      "C": {
+        "item": "minecraft:skull",
+        "data": 1
+      }
+    },
+    "unlock": [
+      {
+        "item": "true_dn:darkness_upgrade_smithing_template"
+      },
+      {
+        "item": "minecraft:netherite_ingot"
+      },
+      {
+        "item": "minecraft:skull",
+        "data": 1
+      }
+    ],
+    "result": {
+      "item": "true_dn:darkness_upgrade_smithing_template",
+      "count": 2
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:item": {
+    "description": {
+      "identifier": "myname:pinene_bomb_cow_spawn_egg",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:icon": "diamond",
+      "minecraft:display_name": {
+        "value": "爆弾牛のスポーンエッグ"
+      },
+      "minecraft:entity_placer": {
+        "entity": "myname:pinene_bomb_cow"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

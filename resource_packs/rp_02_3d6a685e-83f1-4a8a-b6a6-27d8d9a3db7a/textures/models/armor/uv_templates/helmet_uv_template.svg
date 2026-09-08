@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 64 32">
+  <defs>
+    <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#444" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="64" height="32" fill="none"/>
+  <rect x="0" y="0" width="64" height="32" fill="url(#grid)" opacity="0.95"/>
+  <rect x="0.5" y="0.5" width="31" height="15" fill="#7fe5a6" opacity="0.18" stroke="#7fe5a6" stroke-width="0.8"/>
+  <rect x="0.5" y="0.5" width="63" height="31" fill="none" stroke="#ffffff" stroke-width="0.7" opacity="0.9"/>
+  <text x="2" y="5" font-size="3" fill="#ffffff">HELMET UV TEMPLATE</text>
+  <text x="2" y="9" font-size="2.6" fill="#7fe5a6">Paint inside the highlighted region</text>
+  <text x="2" y="13" font-size="2.4" fill="#ffffff">Use for zombie stem-cell style head armor</text>
+  <text x="2" y="29" font-size="2.2" fill="#ffffff">Canvas: 64x32</text>
+</svg>

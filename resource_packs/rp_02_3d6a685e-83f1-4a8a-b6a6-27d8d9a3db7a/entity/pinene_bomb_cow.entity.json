@@ -1,45 +1,36 @@
-{
-    "format_version":  "1.10.0",
-    "minecraft:client_entity":  {
-                                    "description":  {
-                                                        "identifier":  "myname:pinene_bomb_cow",
-                                                        "materials":  {
-                                                                          "default":  "cow"
-                                                                      },
-                                                        "textures":  {
-                                                                         "default":  "textures/entity/cow/cow"
-                                                                     },
-                                                        "geometry":  {
-                                                                         "default":  "geometry.cow"
-                                                                     },
-                                                        "animations":  {
-                                                                           "setup":  "animation.cow.setup.v1.0",
-                                                                           "walk":  "animation.quadruped.walk",
-                                                                           "look_at_target":  "animation.common.look_at_target",
-                                                                           "hurt_sound":  "animation.pinene_bomb_cow.hurt_layered",
-                                                                           "hurt_sound_controller":  "controller.animation.pinene_bomb_cow.hurt_sound"
-                                                                       },
-                                                        "sound_effects":  {
-                                                                              "bomb_hurt_cow":  "mob.cow.hurt"
-                                                                          },
-                                                        "scripts":  {
-                                                                        "animate":  [
-                                                                                        "setup",
-                                                                                        {
-                                                                                            "walk":  "query.modified_move_speed"
-                                                                                        },
-                                                                                        "look_at_target",
-                                                                                        "hurt_sound_controller"
-                                                                                    ],
-                                                                        "scale":  "query.property(\u0027myname:is_fusing\u0027) ? (query.property(\u0027myname:blink_on\u0027) ? 1.08 : 1.0) : 1.0"
-                                                                    },
-                                                        "render_controllers":  [
-                                                                                   "controller.render.pinene_bomb_cow"
-                                                                               ],
-                                                        "spawn_egg":  {
-                                                                          "base_color":  "#CC3300",
-                                                                          "overlay_color":  "#FFCC66"
-                                                                      }
-                                                    }
-                                }
+﻿{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:pinene_bomb_cow",
+      "materials": {"default": "cow"},
+      "textures": {"default": "textures/entity/cow/cow"},
+      "geometry": {"default": "geometry.cow"},
+      "animations": {
+        "setup": "animation.cow.setup.v1.0",
+        "walk": "animation.quadruped.walk",
+        "look_at_target": "animation.common.look_at_target",
+        "hurt_sound": "animation.pinene_bomb_cow.hurt_layered",
+        "hurt_sound_controller": "controller.animation.pinene_bomb_cow.hurt_sound"
+      },
+      "sound_effects": {
+        "bomb_hurt_cow": "mob.cow.hurt"
+      },
+      "scripts": {
+        "animate": [
+          "setup",
+          {
+            "walk": "query.modified_move_speed"
+          },
+          "look_at_target",
+          "hurt_sound_controller"
+        ],
+        "scale": "query.property('myname:is_fusing') ? (query.property('myname:blink_on') ? 1.08 : 1.0) : 1.0"
+      },
+      "render_controllers": ["controller.render.pinene_bomb_cow"],
+      "spawn_egg": {
+        "texture": "spawn_egg_cow"
+      }
+    }
+  }
 }

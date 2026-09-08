@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "myname:blue_diamond_apple"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "DDD",
+      "DAD",
+      "DDD"
+    ],
+    "key": {
+      "D": {
+        "item": "minecraft:diamond"
+      },
+      "A": {
+        "item": "myname:blue_apple"
+      }
+    },
+    "result": {
+      "item": "myname:blue_diamond_apple",
+      "count": 1
+    }
+  }
+}

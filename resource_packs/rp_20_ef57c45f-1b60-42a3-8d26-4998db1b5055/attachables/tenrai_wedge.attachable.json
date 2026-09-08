@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "pinene_pvp:tenrai_wedge",
+      "item": {
+        "pinene_pvp:tenrai_wedge": "query.is_owner_identifier_any('minecraft:player')"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tenrai_wedge"
+      },
+      "geometry": {
+        "default": "geometry.tenrai_wedge"
+      },
+      "animations": {
+        "hold": "animation.tenrai_wedge.hold"
+      },
+      "scripts": {
+        "animate": ["hold"]
+      },
+      "render_controllers": ["controller.render.tenrai_wedge"]
+    }
+  }
+}

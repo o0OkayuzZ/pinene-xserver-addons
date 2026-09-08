@@ -1,0 +1,13 @@
+import "./elemental_status.js";
+import "./pvp_island/register_dimension.js";
+import "./pvp_island/island_bootstrap.js";
+import "./pvp_island/island_template.js";
+import "./pvp_island/dragon_unlock.js";
+import "./pvp_island/dragon_relic_display.js";
+import "./pvp_island/dragon_relic_gateway.js";
+import "./pvp_island/ability_router.js";
+import "./pvp_island/protection_service.js";
+import "./pvp_island/marker_service.js";
+import "./pvp_island/editor.js";
+import "./pvp_island/admin.js";
+import "./pvp_island/natural_island_import.js";

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tenrai_wedge.hold": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": [
+            "query.is_first_person ? -32.0 : -104.0",
+            "query.is_first_person ? 18.0 : 4.0",
+            "query.is_first_person ? -28.0 : -14.0"
+          ],
+          "position": [
+            "query.is_first_person ? 1.0 : 0.0",
+            "query.is_first_person ? -3.5 : 1.5",
+            "query.is_first_person ? -6.0 : 0.0"
+          ],
+          "scale": [
+            "query.is_first_person ? 0.72 : 0.52",
+            "query.is_first_person ? 0.72 : 0.52",
+            "query.is_first_person ? 0.72 : 0.52"
+          ]
+        }
+      }
+    }
+  }
+}

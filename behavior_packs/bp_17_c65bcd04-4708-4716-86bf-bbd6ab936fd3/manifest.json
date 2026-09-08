@@ -1,0 +1,54 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Pinene PvP Island BP",
+    "description": "Isolated experimental PvP island gameplay",
+    "uuid": "c65bcd04-4708-4716-86bf-bbd6ab936fd3",
+    "version": [
+      0,
+      2,
+      15
+    ],
+    "min_engine_version": [
+      1,
+      26,
+      40
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "85ddb3b5-1700-4003-b08b-e0d9d5c04bc2",
+      "version": [
+        0,
+        2,
+        15
+      ]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/main.js",
+      "uuid": "b90d72b6-e040-4bfe-95fb-176cba28a21a",
+      "version": [
+        0,
+        2,
+        15
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.9.0"
+    },
+    {
+      "uuid": "ef57c45f-1b60-42a3-8d26-4998db1b5055",
+      "version": [
+        0,
+        2,
+        15
+      ]
+    }
+  ]
+}

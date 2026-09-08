@@ -1,0 +1,51 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pinene_pvp:dragon_relic_display",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:body_rotation_axis_aligned": {},
+      "minecraft:body_rotation_blocked": {},
+      "minecraft:cannot_be_attacked": {},
+      "minecraft:type_family": {
+        "family": [
+          "dragon_relic_display",
+          "inanimate"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.01,
+        "height": 0.01
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:dimension_bound": {},
+      "minecraft:fire_immune": {},
+      "minecraft:persistent": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false,
+        "push_towards_closest_space": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    }
+  }
+}

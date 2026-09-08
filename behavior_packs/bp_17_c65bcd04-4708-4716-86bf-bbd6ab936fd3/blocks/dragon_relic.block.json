@@ -1,0 +1,63 @@
+{
+  "format_version": "1.26.40",
+  "minecraft:block": {
+    "description": {
+      "identifier": "pinene_pvp:dragon_relic_block"
+    },
+    "components": {
+      "minecraft:display_name": "tile.pinene_pvp:dragon_relic_block.name",
+      "minecraft:geometry": "geometry.pinene_pvp.dragon_relic_anchor",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "pinene_pvp_dragon_relic_anchor",
+          "render_method": "blend",
+          "ambient_occlusion": 0.0,
+          "face_dimming": false
+        }
+      },
+      "pinene_pvp:dragon_relic_display_sync": {},
+      "minecraft:tick": {
+        "interval_range": [
+          100,
+          100
+        ],
+        "looping": true
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          -8,
+          0,
+          -3
+        ],
+        "size": [
+          16,
+          24,
+          6
+        ]
+      },
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0,
+          -3
+        ],
+        "size": [
+          16,
+          16,
+          6
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 2.5
+      },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:movable": {
+        "movement_type": "immovable"
+      },
+      "minecraft:loot": "loot_tables/blocks/dragon_relic.json",
+      "minecraft:light_emission": 5,
+      "minecraft:light_dampening": 0,
+      "minecraft:map_color": "#251137"
+    }
+  }
+}
