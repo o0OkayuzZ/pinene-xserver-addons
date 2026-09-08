@@ -38,6 +38,20 @@ def armor_probability(path, visiting=()):
     return 1 - no_armor
 
 class BossRewards(unittest.TestCase):
+    def test_reward_quantities(self):
+        for path in CHESTS.glob('*.json'):
+            pools = read(path)['pools']
+            with self.subTest(boss=path.stem):
+                self.assertEqual(pools[0]['rolls'], 2)
+                mineral_rolls = 4 if path.stem in {'corrupted_cauldron', 'mooshroom_monstrosity', 'vengeful_heart_of_ender'} else 3
+                self.assertEqual(pools[-2]['rolls'], mineral_rolls)
+                for pool in pools:
+                    names = [e.get('name') for e in pool['entries']]
+                    if 'dungeons:diamond_dust' in names:
+                        self.assertEqual(pool['rolls'], 4 if path.stem == 'vengeful_heart_of_ender' else 3)
+                    if any(e['type'] == 'loot_table' for e in pool['entries']):
+                        self.assertEqual(pool['rolls'], {'min': 3, 'max': 4} if path.stem == 'spooky_monstrosity' else 2)
+
     def test_armor_tables_are_only_their_own_set(self):
         paths = list((CHESTS / 'armor').rglob('*.json'))
         self.assertEqual(len(paths), 113)

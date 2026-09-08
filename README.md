@@ -15,7 +15,7 @@ All 15 custom behavior packs and 18 custom resource packs are preserved in their
 | behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93 | [装備] Deathnerite BP | 2.12.16 |
 | behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a | [墓] 死亡回収・墓 BP | 1.0.11 |
 | behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144 | [鉱石] モアジオード BP | 1.0.23 |
-| behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2 | [大型] Minecraft Dungeons BP | 1.5.20 |
+| behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2 | [大型] Minecraft Dungeons BP | 1.5.21 |
 | behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1 | [装備] ゾンビ装備 BP | 1.0.6 |
 | behavior_packs/bp_10_6b1f1e2b-2f6f-4e06-bfd7-2da2f9f5d2a1 | [戦利品連携] Waystoneアイテム BP | 1.0.2 |
 | behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737 | [移動] Simple Waystone BP | 8.2.6 |
@@ -28,7 +28,7 @@ All 15 custom behavior packs and 18 custom resource packs are preserved in their
 | resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974 | [墓] 死亡回収・墓 RP | 1.0.8 |
 | resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd | [鉱石] モアジオード RP | 1.0.13 |
 | resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef | [統合素材] 化石・フィギュア RP | 1.0.35 |
-| resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b | [大型統合] Minecraft Dungeons RP | 1.5.19 |
+| resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b | [大型統合] Minecraft Dungeons RP | 1.5.20 |
 | resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10 | [装備互換] ゾンビ装備＋クロスボウ RP | 1.0.12 |
 | resource_packs/rp_08_4f927a7a-fc68-4051-8686-43ab94ed1c5b | [モブ] ギャップルカウズ RP | 1.0.39 |
 | resource_packs/rp_09_3554695d-d627-4971-8420-dc4ece2f8613 | [素材元] System Crossbow RP | 1.1.13 |
