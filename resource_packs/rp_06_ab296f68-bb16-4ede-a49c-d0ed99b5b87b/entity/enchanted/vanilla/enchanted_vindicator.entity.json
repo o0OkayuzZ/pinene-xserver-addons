@@ -1,0 +1,60 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:enchanted_vindicator",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_emissive_alpha",
+				"enchanted": "dungeons_entity_enchant"
+			},
+			"textures": {
+				"default": "textures/entity/enchanted_mob/vindicator",
+				"none": "textures/misc/void",
+				"gold": "textures/entity/enchanted_mob/gold_vindicator",
+				"diamond": "textures/entity/enchanted_mob/diamond_vindicator",
+				"enchanted": "textures/misc/enchanted_entity_glint"
+			},
+			"geometry": {
+				"default": "geometry.vindicator.v1.8",
+				"armored": "geometry.armored_vindicator"
+			},
+			"spawn_egg": {
+				"texture": "egg_enchanted_vindicator"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"vindicator_base",
+					"vindicator_walk",
+					"controller_look_at_target",
+					"controller_vindicator_base",
+					"controller_riding"
+				]
+			},
+			"animations": {
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"riding.arms": "animation.vindicator.riding.arms",
+				"riding.legs": "animation.vindicator.riding.legs",
+				"vindicator_base": "animation.vindicator.base",
+				"vindicator_attack": "animation.vindicator.attack",
+				"vindicator_hand_attack": "animation.vindicator.hand_attack",
+				"vindicator_walk": "animation.vindicator.walk",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_vindicator_base": "controller.animation.vindicator.base",
+				"controller_riding": "controller.animation.humanoid.riding"
+			},
+			"render_controllers": [
+				"controller.render.armored_vindicator1",
+				"controller.render.armored_vindicator2",
+				"controller.render.dungeons_entity_enchanted",
+				"controller.render.vindicator_outer_enchanted"
+			],
+			"enable_attachables": true,
+			"hide_armor": true
+		}
+	}
+}

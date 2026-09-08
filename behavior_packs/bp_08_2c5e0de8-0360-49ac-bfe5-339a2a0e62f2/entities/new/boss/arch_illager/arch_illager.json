@@ -1,0 +1,390 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeons:arch_illager",
+			"runtime_identifier": "minecraft:vindicator",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"casting": "controller.animation.nameless_one.casting"
+			},
+			"properties": {
+				"dungeons:current_point": {
+					"client_sync": true,
+					"type": "enum",
+					"default": "center",
+					"values": [
+						"center",
+						"posx",
+						"negx",
+						"posz",
+						"negz"
+					]
+				},
+				"dungeons:ready_to_change_pos": {
+					"type": "bool",
+					"default": false
+				},
+				"dungeons:casting": {
+					"type": "bool",
+					"default": false
+				},
+				"dungeons:teleporting": {
+					"type": "bool",
+					"default": false
+				},
+				"dungeons:can_enchant": {
+					"type": "bool",
+					"default": false
+				},
+				"dungeons:can_summon": {
+					"type": "bool",
+					"default": true
+				}
+			},
+			"scripts": {
+				"animate": [
+					"casting"
+				]
+			}
+		},
+		"component_groups": {
+			"dungeons:summon_cooldown": {
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": 9,
+					"attack_cooldown_complete_event": {
+						"event": "dungeons:summon_cooldown_complete",
+						"target": "self"
+					}
+				}
+			},
+			"dungeons:summon_cooldown_short": {
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": 4,
+					"attack_cooldown_complete_event": {
+						"event": "dungeons:summon_cooldown_complete",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:nameable": {},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:experience_reward": {
+				"on_death": "0"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"dungeons_musicbox",
+					"arch_illager",
+					"illager",
+					"boss",
+					"monster",
+					"mob"
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.75,
+				"height": 1.5
+			},
+			"minecraft:navigation.generic": {
+				"can_walk": false
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:boss": {
+				"should_darken_sky": false,
+				"hud_range": 48,
+				"name": "dungeons.bossbar.arch_illager"
+			},
+			"minecraft:can_climb": {},
+			"minecraft:health": {
+				"value": 500,
+				"max": 500
+			},
+			"minecraft:behavior.hurt_by_target": {},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_air": true,
+				"breathes_water": true
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/heart_of_ender.json"
+			},
+			"minecraft:shooter": {
+				"def": "dungeons:arch_illager_projectile"
+			},
+			"minecraft:behavior.ranged_attack": {
+				"priority": 3,
+				"attack_interval_min": 2,
+				"attack_interval_max": 2,
+				"attack_radius": 40,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 7,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_target": {
+				"priority": 8,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 9
+			},
+			"minecraft:behavior.summon_entity": {
+				"priority": 1,
+				"summon_choices": [
+					{
+						"filters": [
+							{
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"value": "minecraft:attack_cooldown",
+										"operator": "!="
+									},
+									{
+										"test": "bool_property",
+										"value": false,
+										"subject": "self",
+										"domain": "dungeons:teleporting"
+									},
+									{
+										"test": "bool_property",
+										"value": true,
+										"subject": "self",
+										"domain": "dungeons:can_summon"
+									}
+								]
+							}
+						],
+						"cast_duration": 1,
+						"do_casting": true,
+						"cooldown_time": 5,
+						"max_activation_range": 32,
+						"min_activation_range": 0,
+						"weight": 1,
+						"sequence": [
+							{
+								"base_delay": 1,
+								"num_entities_spawned": 3,
+								"entity_type": "dungeons:arch_illager_minion_spawnpoint",
+								"target": "target",
+								"size": 4,
+								"shape": "circle"
+							}
+						]
+					},
+					{
+						"filters": [
+							{
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"value": "minecraft:attack_cooldown",
+										"operator": "!="
+									},
+									{
+										"test": "bool_property",
+										"value": false,
+										"subject": "self",
+										"domain": "dungeons:teleporting"
+									},
+									{
+										"test": "bool_property",
+										"value": true,
+										"subject": "self",
+										"domain": "dungeons:can_enchant"
+									}
+								]
+							}
+						],
+						"cast_duration": 1,
+						"do_casting": true,
+						"cooldown_time": 5,
+						"max_activation_range": 32,
+						"min_activation_range": 0,
+						"weight": 1,
+						"sequence": [
+							{
+								"base_delay": 0.1,
+								"num_entities_spawned": 1,
+								"entity_type": "dungeons:arch_illager_enchant_nearby_mobs",
+								"target": "target",
+								"size": 1,
+								"shape": "circle"
+							}
+						]
+					}
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": false,
+				"reselect_targets": true,
+				"within_radius": 64,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						},
+						"max_dist": 64
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:home": {
+				"restriction_radius": 32,
+				"restriction_type": "random_movement"
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:behavior.timer_flag_3": {
+				"cooldown_range": 0,
+				"duration_range": 0.2,
+				"on_end": {
+					"event": "dungeons:evaluate_minions"
+				}
+			},
+			"minecraft:behavior.timer_flag_2": {
+				"cooldown_range": 0,
+				"duration_range": 1,
+				"on_end": {
+					"filters": [
+						{
+							"all_of": [
+								{
+									"test": "bool_property",
+									"value": true,
+									"domain": "dungeons:ready_to_change_pos"
+								},
+								{
+									"test": "bool_property",
+									"value": false,
+									"domain": "dungeons:casting"
+								}
+							]
+						}
+					],
+					"event": "dungeons:arch_illager_change_position"
+				}
+			},
+			"minecraft:behavior.timer_flag_1": {
+				"cooldown_range": [
+					0,
+					0
+				],
+				"duration_range": [
+					20,
+					25
+				],
+				"on_end": {
+					"event": "dungeons:arch_illager_ready_change_position",
+					"target": "self"
+				},
+				"priority": 0
+			},
+			"minecraft:follow_range": {
+				"max": 64,
+				"value": 64
+			},
+			"minecraft:on_death": {
+				"event": "dungeons:arch_illager_dead"
+			}
+		},
+		"events": {
+			"dungeons:arch_illager_dead": {},
+			"dungeons:arch_illager_ready_change_position": {
+				"set_property": {
+					"dungeons:ready_to_change_pos": true
+				}
+			},
+			"dungeons:arch_illager_change_position": {
+				"set_property": {
+					"dungeons:ready_to_change_pos": false
+				}
+			},
+			"dungeons:begin_casting": {
+				"set_property": {
+					"dungeons:casting": true
+				}
+			},
+			"dungeons:complete_casting": {
+				"set_property": {
+					"dungeons:casting": false
+				},
+				"add": {
+					"component_groups": [
+						"dungeons:summon_cooldown"
+					]
+				}
+			},
+			"dungeons:summon_cooldown_complete": {
+				"remove": {
+					"component_groups": [
+						"dungeons:summon_cooldown",
+						"dungeons:summon_cooldown_short"
+					]
+				}
+			},
+			"dungeons:evaluate_minions": {},
+			"minecraft:entity_spawned": {},
+			"minecraft:entity_transformed": {}
+		}
+	}
+}

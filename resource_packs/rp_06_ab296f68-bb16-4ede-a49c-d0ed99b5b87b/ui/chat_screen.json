@@ -1,0 +1,11 @@
+{
+    "messages_text/text": {
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_property_name": "(('§␛' + #text + '§r') - ('§␛' + 'toast.') = ('§␛' + #text + '§r'))",
+                "target_property_name": "#visible"
+            }
+        ]
+    }
+}

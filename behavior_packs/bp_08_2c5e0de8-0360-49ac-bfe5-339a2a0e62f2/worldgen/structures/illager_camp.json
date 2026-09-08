@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.20",
+  "format_version": "1.21.100",
   "minecraft:jigsaw": {
     "description": {
       "identifier": "dungeons:illager_camp"
@@ -44,14 +44,18 @@
       }
     ],
     "heightmap_projection": "world_surface",
-    "max_depth": 3,
+    "max_depth": 10,
+    "dimension_padding": {
+      "bottom": 127,
+      "top": 0
+    },
     "start_height": {
       "type": "constant",
       "value": {
         "absolute": 2
       }
     },
-    "start_pool": "dungeons:illager_camp",
+    "start_pool": "dungeons:illager_camp_v2_starter",
     "step": "surface_structures",
     "terrain_adaptation": "beard_thin"
   }

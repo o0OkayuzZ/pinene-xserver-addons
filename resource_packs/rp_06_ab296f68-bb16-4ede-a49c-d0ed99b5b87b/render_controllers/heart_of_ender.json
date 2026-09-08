@@ -1,0 +1,80 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.heart_of_ender": {
+			"is_hurt_color": {
+				"a": 0.2,
+				"b": 0,
+				"g": 0,
+				"r": 0.1
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.heart_of_ender.glow": {
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0.1
+			},
+			"geometry": "geometry.glow",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.glow"
+			],
+			"ignore_lighting": true
+		},
+		"controller.render.heart_of_ender.stars": {
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0.1
+			},
+			"geometry": "geometry.glow",
+			"part_visibility": [
+				{
+					"*": true
+				}
+			],
+			"materials": [
+				{
+					"*": "material.stars"
+				}
+			],
+			"textures": [
+				"texture.stars"
+			],
+			"color": {
+				"r": 0.5,
+				"g": 0.4,
+				"b": 1,
+				"a": 0.5
+			},
+			"uv_anim": {
+				"offset": [
+					"(math.floor(query.life_time*20)+query.frame_alpha)*0.01",
+					"(math.floor(query.life_time*20)+query.frame_alpha)*0.01"
+				],
+				"scale": [
+					2,
+					2
+				]
+			},
+			"light_color_multiplier": 1,
+			"ignore_lighting": true
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.teleport_robes": {
+			"loop": false,
+			"animation_length": 0.4,
+			"bones": {
+				"root": {
+					"scale": "query.is_first_person ? 1 : 0"
+				},
+				"head": {
+					"scale": "query.is_first_person ? 1 : 0"
+				},
+				"rightItem": {
+					"scale": "query.is_first_person ? 1 : 0"
+				},
+				"leftItem": {
+					"scale": "query.is_first_person ? 1 : 0"
+				}
+			}
+		}
+	}
+}

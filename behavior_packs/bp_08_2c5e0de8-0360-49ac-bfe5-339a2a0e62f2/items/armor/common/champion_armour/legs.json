@@ -1,0 +1,44 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:champions_leggings",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor",
+					"dungeons:armor_lore",
+					"dungeons:champions_armour"
+				]
+			},
+			"minecraft:icon": "champion_leggings",
+			"minecraft:max_stack_size": 1,
+			"minecraft:stacked_by_data": false,
+			"minecraft:enchantable": {
+				"value": 10,
+				"slot": "armor_legs"
+			},
+			"minecraft:wearable": {
+				"protection": 5,
+				"slot": "slot.armor.legs"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:iron_ingot"
+						],
+						"repair_amount": "q.max_durability*0.25"
+					}
+				]
+			},
+			"minecraft:durability": {
+				"max_durability": 312
+			}
+		}
+	}
+}

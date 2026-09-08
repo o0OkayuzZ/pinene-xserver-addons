@@ -1,0 +1,119 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeons:obsidian_scatter_mine",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"dungeons:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"inanimate",
+					"artefact",
+					"obsidian_summon"
+				]
+			},
+			"minecraft:health": {
+				"max": 20,
+				"value": 20
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:tameable": {
+				"probability": 1
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"pivot": [
+							0,
+							1000,
+							0
+						],
+						"width": 0,
+						"height": 0
+					}
+				]
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"randomInterval": true,
+				"time": [
+					5,
+					8
+				],
+				"time_down_event": {
+					"event": "dungeons:obsidian_scatter_mine_explode"
+				}
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:entity_sensor": {
+				"sensor_range": 1,
+				"relative_range": false,
+				"minimum_count": 1,
+				"event_filters": {
+					"all_of": [
+						{
+							"test": "inactivity_timer",
+							"value": 1,
+							"subject": "self",
+							"operator": ">="
+						},
+						{
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "==",
+									"value": "mob"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "==",
+									"value": "player"
+								}
+							]
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "not",
+							"value": "monster"
+						}
+					]
+				},
+				"event": "dungeons:obsidian_scatter_mine_explode"
+			},
+			"minecraft:tick_world": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"dungeons:scatter_mine": {},
+			"dungeons:obsidian_scatter_mine_explode": {}
+		}
+	}
+}

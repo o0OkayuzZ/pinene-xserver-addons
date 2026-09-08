@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:totem_of_soul_protection",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": [
+					"dungeons:soul_artefact"
+				]
+			},
+			"minecraft:icon": "totem_of_soul_protection",
+			"minecraft:max_stack_size": 1,
+			"minecraft:stacked_by_data": false,
+			"minecraft:can_destroy_in_creative": false,
+			"dungeons:artefact_cooldown": {},
+			"dungeons:totem_of_soul_protection": {},
+			"minecraft:cooldown": {
+				"category": "totem_of_soul_protection_common",
+				"duration": 25
+			},
+			"minecraft:interact_button": "item.use.artefact",
+			"minecraft:use_modifiers": {
+				"use_duration": 0
+			}
+		}
+	}
+}

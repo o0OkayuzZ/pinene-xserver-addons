@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:arch_castle"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "arch_castle/arch_castle",
+                    "processors": "dungeons:arch_castle"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

@@ -23,7 +23,7 @@
 				}
 			],
 			"textures": [
-				"array.skins[query.skin_id]"
+				"array.skins[query.property('dungeons:armour_type')]"
 			],
 			"arrays": {
 				"textures": {
@@ -43,7 +43,7 @@
 				}
 			],
 			"textures": [
-				"array.skins[query.skin_id]"
+				"array.skins[query.property('dungeons:armour_type')]"
 			],
 			"arrays": {
 				"textures": {

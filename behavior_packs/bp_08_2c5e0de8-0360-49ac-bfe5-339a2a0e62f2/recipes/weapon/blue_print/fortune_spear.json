@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bp_fortune_spear"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"B": {
+				"item": "dungeons:blue_print"
+			},
+			"W": {
+				"item": "dungeons:fortune_spear"
+			}
+		},
+		"unlock": [
+			{
+				"item": "dungeons:fortune_spear"
+			}
+		],
+		"pattern": [
+			"B",
+			"W"
+		],
+		"result": [
+			{
+				"item": "dungeons:fortune_spear",
+				"count": 1
+			},
+			{
+				"item": "dungeons:fortune_spear",
+				"count": 1
+			}
+		]
+	}
+}

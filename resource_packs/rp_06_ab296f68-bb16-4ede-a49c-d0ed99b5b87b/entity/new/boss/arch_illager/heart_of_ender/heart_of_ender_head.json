@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:heart_of_ender_head",
+			"materials": {
+				"default": "entity_alphablend",
+				"glow": "entity_emissive_alpha",
+				"stars": "dungeons_entity_enchant"
+			},
+			"spawn_egg": {
+				"texture": "egg_heart_of_ender"
+			},
+			"textures": {
+				"default": "textures/entity/arch_illager/heart_of_ender",
+				"glow": "textures/entity/arch_illager/heart_of_ender_glow",
+				"stars": "textures/misc/heart_of_ender_stars"
+			},
+			"geometry": {
+				"default": "geometry.heart_of_ender",
+				"glow": "geometry.heart_of_ender"
+			},
+			"render_controllers": [
+				"controller.render.heart_of_ender",
+				"controller.render.heart_of_ender.glow",
+				"controller.render.heart_of_ender.stars"
+			],
+			"sound_effects": {
+				"rise": "mob.heart_of_ender.rise",
+				"sink": "mob.heart_of_ender.sink",
+				"walk": "mob.heart_of_ender.walk",
+				"loop": "mob.heart_of_ender.loop"
+			},
+			"animations": {
+				"opening": "animation.heart_of_ender.head_and_laser1_opening",
+				"loop": "animation.heart_of_ender.head_and_laser1_loop",
+				"end": "animation.heart_of_ender.head_and_laser1_end",
+				"laser_controller": "controller.animation.heart_of_ender.laser"
+			},
+			"scripts": {
+				"animate": [
+					"laser_controller"
+				]
+			}
+		}
+	}
+}

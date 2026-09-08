@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "phantom_boots"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"L L",
+			"B B"
+		],
+		"unlock": [
+			{
+				"item": "minecraft:phantom_membrane"
+			}
+		],
+		"key": {
+			"L": {
+				"item": "minecraft:bone"
+			},
+			"B": {
+				"item": "minecraft:phantom_membrane"
+			}
+		},
+		"result": {
+			"item": "dungeons:phantom_boots",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"format_version": "1.21.20",
+	"minecraft:structure_set": {
+		"description": {
+			"identifier": "dungeons:trial_arena_underground"
+		},
+		"placement": {
+			"type": "minecraft:random_spread",
+			"salt": 64032026,
+			"separation": 15,
+			"spacing": 35
+		},
+		"structures": [
+			{
+				"structure": "dungeons:cave_trial_arena",
+				"weight": 1
+			}
+		]
+	}
+}

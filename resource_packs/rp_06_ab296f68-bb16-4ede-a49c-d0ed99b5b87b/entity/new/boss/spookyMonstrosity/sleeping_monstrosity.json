@@ -19,17 +19,21 @@
 				"controller.render.monstrosity_awaken"
 			],
 			"animations": {
-				"resting": "animation.redstone_monstrosity.resting",
-				"awaken": "animation.redstone_monstrosity.awaken",
-				"wake_controller": "controller.animation.redstone_monstrosity.rest"
+				"resting": "animation.redstone_monstrosity_v2.resting",
+				"activate": "animation.redstone_monstrosity_v2.activate",
+				"wake_controller": "controller.animation.redstone_monstrosity_v2.activate",
+				"fire": "animation.spooky_monstrosity.fire"
 			},
 			"scripts": {
 				"animate": [
+					{
+						"fire": "query.variant==1"
+					},
 					"wake_controller"
 				]
 			},
 			"sound_effects": {
-				"awaken": "mob.monstrosity.awaken"
+				"awaken": "mob.redstone_monstrosity.awaken"
 			},
 			"spawn_egg": {
 				"texture": "egg_spooky_monstrosity"

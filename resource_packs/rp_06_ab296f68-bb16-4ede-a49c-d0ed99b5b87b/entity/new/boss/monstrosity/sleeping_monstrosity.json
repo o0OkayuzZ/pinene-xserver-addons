@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "dungeons:redstone_monstrosity_resting",
 			"materials": {
-				"default": "entity_alphatest"
+				"default": "entity_emissive_alpha"
 			},
 			"textures": {
 				"default": "textures/entity/redstone_monstrosity/monstrosity",
@@ -19,9 +19,9 @@
 				"controller.render.monstrosity_awaken"
 			],
 			"animations": {
-				"resting": "animation.redstone_monstrosity.resting",
-				"awaken": "animation.redstone_monstrosity.awaken",
-				"wake_controller": "controller.animation.redstone_monstrosity.rest"
+				"resting": "animation.redstone_monstrosity_v2.resting",
+				"activate": "animation.redstone_monstrosity_v2.activate",
+				"wake_controller": "controller.animation.redstone_monstrosity_v2.activate"
 			},
 			"scripts": {
 				"animate": [
@@ -29,7 +29,7 @@
 				]
 			},
 			"sound_effects": {
-				"awaken": "mob.monstrosity.awaken"
+				"awaken": "mob.redstone_monstrosity.awaken"
 			},
 			"spawn_egg": {
 				"texture": "egg_redstone_monstrosity"

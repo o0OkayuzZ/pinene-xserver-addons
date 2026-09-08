@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:obsidian_monstrosity_projectile",
+			"materials": {
+				"default": "entity_emissive"
+			},
+			"textures": {
+				"default": "textures/entity/obsidian_monstrosity/obsidian_monstrosity_projectile"
+			},
+			"geometry": {
+				"default": "geometry.redstone_monstrosity_projectile"
+			},
+			"animations": {
+				"fly": "animation.blast_fungus.fly"
+			},
+			"scripts": {
+				"animate": [
+					"fly"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

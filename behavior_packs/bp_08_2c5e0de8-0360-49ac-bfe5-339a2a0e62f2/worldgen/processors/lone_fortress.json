@@ -1,0 +1,99 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:processor_list": {
+        "description": {
+            "identifier": "dungeons:lone_fortress"
+        },
+        "processors": [
+            {
+                "processor_type": "minecraft:rule",
+                "rules": [
+                    {
+                        "input_predicate": {
+                            "predicate_type": "minecraft:block_match",
+                            "block": "chest"
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "block_entity_modifier": {
+                            "type": "minecraft:append_loot",
+                            "loot_table": "loot_tables/structures/fortress_barrel.json"
+                        },
+                        "output_state": {
+                            "name": "chest"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "predicate_type": "minecraft:block_match",
+                            "block": "barrel"
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "block_entity_modifier": {
+                            "type": "minecraft:append_loot",
+                            "loot_table": "loot_tables/structures/fortress_barrel.json"
+                        },
+                        "output_state": {
+                            "name": "barrel"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "web",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.25
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "minecraft:air"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "stone_bricks",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.2
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "cracked_stone_bricks"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "stone_bricks",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.01
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "cobblestone"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "packed_ice",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.1
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "blue_ice"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

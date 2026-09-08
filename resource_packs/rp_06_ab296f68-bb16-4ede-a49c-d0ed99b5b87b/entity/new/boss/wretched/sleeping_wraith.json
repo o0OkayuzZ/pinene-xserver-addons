@@ -16,9 +16,9 @@
 				"controller.render.default"
 			],
 			"animations": {
-				"resting": "animation.wretched_wraith.resting",
-				"awaken": "animation.wretched_wraith.awaken",
-				"wake_controller": "controller.animation.redstone_monstrosity.rest"
+				"resting": "animation.wretched_wraith_v2.rest",
+				"awaken": "animation.wretched_wraith_v2.arise",
+				"wake_controller": "controller.animation.wretched_wraith_v2.awaken"
 			},
 			"scripts": {
 				"animate": [
@@ -26,7 +26,7 @@
 				]
 			},
 			"sound_effects": {
-				"awaken": "mob.wretched_wraith.awaken"
+				"awaken": "mob.wretched_wraith.spawn"
 			},
 			"spawn_egg": {
 				"texture": "egg_wretched_wraith"

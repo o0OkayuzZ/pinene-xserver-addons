@@ -3,7 +3,7 @@
 	"animations": {
 		"animation.player.greatsword_hold": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 0.257193,
+			"animation_length": 0.3,
 			"bones": {
 				"leftarm": {
 					"rotation": [
@@ -25,6 +25,50 @@
 						"v.is_first_person?0:-20.2",
 						"v.is_first_person?0:-9"
 					]
+				}
+			}
+		},
+		"animation.claymore.third_person_swing": {
+			"override_previous_animation": true,
+			"animation_length": 0.375,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							-45,
+							0,
+							0
+						],
+						"0.2083": [
+							40,
+							0,
+							0
+						],
+						"0.375": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							-45,
+							0,
+							0
+						],
+						"0.2083": [
+							31.1707,
+							6.3561,
+							12.4071
+						],
+						"0.375": [
+							0,
+							0,
+							0
+						]
+					}
 				}
 			}
 		}

@@ -1,0 +1,133 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.arch_illager_orb",
+				"texture_width": 54,
+				"texture_height": 42,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [
+					0,
+					1.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						1,
+						0
+					]
+				},
+				{
+					"name": "torso",
+					"parent": "root",
+					"pivot": [
+						0,
+						1,
+						0
+					]
+				},
+				{
+					"name": "head",
+					"parent": "torso",
+					"pivot": [
+						0,
+						10,
+						0
+					]
+				},
+				{
+					"name": "crown",
+					"parent": "head",
+					"pivot": [
+						0,
+						16,
+						0
+					]
+				},
+				{
+					"name": "left_leg",
+					"parent": "torso",
+					"pivot": [
+						1.4,
+						3,
+						0
+					]
+				},
+				{
+					"name": "right_leg",
+					"parent": "torso",
+					"pivot": [
+						-1.4,
+						3,
+						0
+					]
+				},
+				{
+					"name": "right_arm",
+					"parent": "torso",
+					"pivot": [
+						-3,
+						10.25,
+						0
+					]
+				},
+				{
+					"name": "left_arm",
+					"parent": "torso",
+					"pivot": [
+						3,
+						10,
+						0
+					]
+				},
+				{
+					"name": "staff",
+					"parent": "left_arm",
+					"pivot": [
+						4.35,
+						6.25,
+						-2
+					]
+				},
+				{
+					"name": "orb",
+					"parent": "staff",
+					"pivot": [
+						4.35,
+						4.25,
+						-11.5
+					],
+					"rotation": [
+						90,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								2.85,
+								2.75,
+								-13
+							],
+							"size": [
+								3,
+								3,
+								3
+							],
+							"uv": [
+								0,
+								35
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

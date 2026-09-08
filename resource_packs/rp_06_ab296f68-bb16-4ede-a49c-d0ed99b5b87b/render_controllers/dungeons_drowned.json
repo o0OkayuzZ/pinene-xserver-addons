@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.dungeons_drowned": {
+			"arrays": {
+				"textures": {
+					"array.skins": [
+						"texture.default",
+						"texture.tier2",
+						"texture.tier3",
+						"texture.baby",
+						"texture.baby_t2",
+						"texture.baby_t3"
+					]
+				}
+			},
+			"geometry": "query.is_baby?geometry.baby:geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.property('dungeons:armour_type')+q.is_baby*3]"
+			]
+		}
+	}
+}

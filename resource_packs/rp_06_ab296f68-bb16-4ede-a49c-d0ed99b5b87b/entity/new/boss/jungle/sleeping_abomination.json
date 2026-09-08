@@ -7,19 +7,18 @@
 				"default": "entity_emissive_alpha"
 			},
 			"textures": {
-				"default": "textures/entity/jungle_abomination/off",
-				"on": "textures/entity/jungle_abomination/on"
+				"default": "textures/entity/jungle_abomination/jungle_abomination"
 			},
 			"geometry": {
 				"default": "geometry.jungle_abomination"
 			},
 			"render_controllers": [
-				"controller.render.redstone_monstrosity"
+				"controller.render.default"
 			],
 			"animations": {
-				"resting": "animation.jungle_abomination.sleep",
-				"awaken": "animation.jungle_abomination.activate",
-				"wake_controller": "controller.animation.redstone_monstrosity.rest"
+				"resting": "animation.jungle_abomination_v2.sleep",
+				"activate": "animation.jungle_abomination_v2.activate",
+				"wake_controller": "controller.animation.jungle_abomination_v2.activate"
 			},
 			"scripts": {
 				"animate": [
@@ -27,7 +26,8 @@
 				]
 			},
 			"sound_effects": {
-				"awaken": "mob.jungle_abomination.awaken"
+				"awaken": "mob.jungle_abomination.awaken",
+				"activate": "mob.jungle_abomination.activate"
 			},
 			"spawn_egg": {
 				"texture": "egg_jungle_abomination"

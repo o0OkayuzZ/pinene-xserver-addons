@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:corrupted_cauldron_fire",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/corrupted_cauldron/cauldron_fire"
+			},
+			"geometry": {
+				"default": "geometry.wraith.fire"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"animations": {
+				"spawn": "animation.wraith_fire.animation",
+				"idle": "animation.wraith_fire.move",
+				"scale": "animation.wraith_fire.scale"
+			},
+			"scripts": {
+				"animate": [
+					"scale",
+					"idle",
+					"spawn"
+				]
+			}
+		}
+	}
+}

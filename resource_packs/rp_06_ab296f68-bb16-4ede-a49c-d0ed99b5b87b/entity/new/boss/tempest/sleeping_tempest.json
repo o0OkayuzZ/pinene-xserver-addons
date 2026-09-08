@@ -18,8 +18,8 @@
 			],
 			"animations": {
 				"resting": "animation.tempest_golem.rest",
-				"awaken": "animation.tempest_golem.wake2",
-				"wake_controller": "controller.animation.redstone_monstrosity.rest"
+				"activate": "animation.tempest_golem.wake2",
+				"wake_controller": "controller.animation.tempest_golem_v2.activate"
 			},
 			"scripts": {
 				"animate": [

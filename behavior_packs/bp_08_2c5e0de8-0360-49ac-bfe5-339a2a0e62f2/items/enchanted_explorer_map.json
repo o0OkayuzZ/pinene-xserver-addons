@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:enchanted_explorer_map",
@@ -8,13 +8,12 @@
 			}
 		},
 		"components": {
+			"minecraft:rarity": "epic",
 			"minecraft:max_stack_size": 1,
 			"minecraft:stacked_by_data": false,
 			"minecraft:can_destroy_in_creative": false,
 			"minecraft:icon": "enchanted_explorer_map",
-			"minecraft:custom_components": [
-				"dungeons:enchanted_map"
-			],
+			"dungeons:enchanted_map": {},
 			"minecraft:interact_button": "item.use.book_of_heroes",
 			"minecraft:use_modifiers": {
 				"use_duration": 0

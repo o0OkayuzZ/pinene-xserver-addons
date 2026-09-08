@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.100",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:opulent_leggings",
@@ -8,9 +8,16 @@
 			}
 		},
 		"components": {
-			"minecraft:hover_text_color": {
-				"value": "aqua"
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor",
+					"dungeons:armor_lore",
+					"dungeons:emerald_armour",
+					"dungeons:opulent_armour",
+					"dungeons:unique_item"
+				]
 			},
+			"minecraft:rarity": "rare",
 			"minecraft:icon": "opulent_leggings",
 			"minecraft:max_stack_size": 1,
 			"minecraft:stacked_by_data": false,

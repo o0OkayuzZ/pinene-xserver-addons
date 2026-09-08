@@ -1,0 +1,29 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dungeons:chiseled_desert_bricks"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B",
+			"B"
+		],
+		"unlock": [
+			{
+				"item": "dungeons:desert_brick_slab"
+			}
+		],
+		"key": {
+			"B": {
+				"item": "dungeons:desert_brick_slab"
+			}
+		},
+		"result": {
+			"item": "dungeons:chiseled_desert_bricks",
+			"count": 2
+		}
+	}
+}

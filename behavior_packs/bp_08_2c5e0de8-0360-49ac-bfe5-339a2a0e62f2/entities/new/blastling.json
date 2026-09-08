@@ -3,11 +3,18 @@
 	"minecraft:entity": {
 		"description": {
 			"identifier": "dungeons:blastling",
+			"runtime_identifier": "vindicator",
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false
 		},
 		"component_groups": {
+			"dungeons:transform_to_enchanted": {
+				"minecraft:transformation": {
+					"into": "dungeons:enchanted_blastling<minecraft:entity_spawned>",
+					"preserve_equipment": true
+				}
+			},
 			"not_shooting": {
 				"minecraft:target_nearby_sensor": {
 					"inside_range": 12,
@@ -157,8 +164,27 @@
 			"minecraft:knockback_resistance": {
 				"value": 0.4
 			},
+			"minecraft:tameable": {
+				"probability": 1
+			},
+			"minecraft:behavior.follow_owner": {
+				"can_teleport": false,
+				"max_distance": 64,
+				"priority": 3,
+				"speed_multiplier": 1,
+				"start_distance": 10,
+				"stop_distance": 6
+			},
+			"minecraft:behavior.owner_hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.owner_hurt_target": {
+				"priority": 0
+			},
 			"minecraft:type_family": {
 				"family": [
+					"love_medallion_target",
+					"enchantable",
 					"enderling",
 					"monster",
 					"mob"
@@ -288,12 +314,28 @@
 			}
 		},
 		"events": {
-			"minecraft:entity_spawned": {
+			"dungeons:become_enchanted": {
 				"add": {
 					"component_groups": [
-						"not_shooting"
+						"dungeons:transform_to_enchanted"
 					]
 				}
+			},
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 1,
+						"trigger": "dungeons:become_enchanted"
+					},
+					{
+						"weight": 9,
+						"add": {
+							"component_groups": [
+								"not_shooting"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:stop_shooting": {
 				"add": {

@@ -1,5 +1,190 @@
 // got this from a sketchy spanish tutorial lol
 {
+  //advancements addon nab
+  "test_panel": {
+    "type": "panel",
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "size": [
+      "100%",
+      "100%cm + 0.5px"
+    ],
+    "controls": [
+      {
+        "test@hud.test": {}
+      }
+    ]
+  },
+  "test": {
+    "type": "image",
+    "anchor_to": "top_right",
+    "anchor_from": "top_right",
+    "texture": "textures/ui/toast/style_dungeons",
+    "size": [
+      "100%c + 30px",
+      "95%c - 10px"
+    ],
+    "offset": "@hud.test_anim",
+    "layer": 998,
+    "bindings": [
+      {
+        "binding_name": "#text"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(('%.6s' * #text) = 'toast.')",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#text - 'toast.')",
+        "target_property_name": "#text_remainder"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(('%.200s' * #text_remainder) - '$')",
+        "target_property_name": "#adv_icon"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#text_remainder - '$') - #adv_icon)",
+        "target_property_name": "#adv_text"
+      }
+    ],
+    "controls": [
+      {
+        "text": {
+          "type": "label",
+          "layer": 999,
+          "text": "#text",
+          "anchor_to": "left_middle",
+          "anchor_from": "left_middle",
+          "offset": [
+            "32px",
+            "-1%"
+          ],
+          "localize": true,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "test",
+              "source_property_name": "#adv_text",
+              "target_property_name": "#text",
+              "resolve_sibling_scope": true
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not (#text = ''))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "icon": {
+          "type": "image",
+          "layer": 1000,
+          "size": [
+            "20px",
+            "20px"
+          ],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "offset": [
+            "4px",
+            "0%"
+          ],
+          "keep_ratio": true,
+          "texture": "#texture",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "test",
+              "source_property_name": "#adv_icon",
+              "target_property_name": "#texture",
+              "resolve_sibling_scope": true
+            },
+            {
+              "binding_type": "view",
+              "binding_condition": "once",
+              "source_property_name": "(not (#texture = ''))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "test_anim": {
+    "anim_type": "offset",
+    "easing": "out_sine",
+    "next": "@hud.test_anim2",
+    "from": [
+      "100%c + 40px",
+      "20px"
+    ],
+    "to": [
+      "0%",
+      "20px"
+    ],
+    "duration": 1
+  },
+  "test_anim2": {
+    "anim_type": "wait",
+    "next": "@hud.test_anim3",
+    "duration": 4
+  },
+  "test_anim3": {
+    "anim_type": "offset",
+    "easing": "in_sine",
+    "from": [
+      "0%",
+      "20px"
+    ],
+    "to": [
+      "100%c + 40px",
+      "20px"
+    ],
+    "duration": 1,
+    "destroy_at_end": "chat_grid_item"
+  },
+  "test_factory": {
+    "type": "stack_panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "factory": {
+      "name": "chat_item_factory",
+      "control_ids": {
+        "chat_item": "test_panel@hud.test_panel"
+      }
+    }
+  },
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "test_factory@hud.test_factory": {}
+          }
+        ]
+      }
+    ]
+  },
+  //Vanilla Overrides
+  "chat_grid_item/chat_background": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_property_name": "(('§␛' + #text + '§r') - ('§␛' + 'toast.') = ('§␛' + #text + '§r'))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+  //boss bars from the sketchy tutorial
   "boss_health_panel": {
     "type": "panel",
     "size": [
@@ -37,7 +222,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = '§fChris Night§r')",
+              "source_property_name": "(#bossName = '§fChris Night')",
               "target_property_name": "#visible"
             }
           ]
@@ -58,7 +243,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = '§cLethal Dragon§r')",
+              "source_property_name": "(#bossName = '§cLethal Dragon')",
               "target_property_name": "#visible"
             }
           ]
@@ -79,7 +264,91 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §cRedstone Monstrosity§r ')",
+              "source_property_name": "(#bossName = '§cRedstone Monstrosity')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "obsidianmonstrosity_health@obsidianmonstrosity_health": {
+          "offset": [
+            0,
+            -50
+          ],
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#bossName",
+              "binding_type": "collection",
+              "binding_collection_name": "boss_bars"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#bossName = '§uObsidian Monstrosity')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "archillager_health@archillager_health": {
+          "offset": [
+            0,
+            -50
+          ],
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#bossName",
+              "binding_type": "collection",
+              "binding_collection_name": "boss_bars"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#bossName = '§dThe Arch-Illager')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "heartofender_health@heartofender_health": {
+          "offset": [
+            0,
+            -50
+          ],
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#bossName",
+              "binding_type": "collection",
+              "binding_collection_name": "boss_bars"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#bossName = '§dThe Heart of Ender')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "heartofender2_health@heartofender2_health": {
+          "offset": [
+            0,
+            -50
+          ],
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#bossName",
+              "binding_type": "collection",
+              "binding_collection_name": "boss_bars"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#bossName = '§uThe Heart of Ender')",
               "target_property_name": "#visible"
             }
           ]
@@ -100,7 +369,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §uHaunted Monstrosity§r ')",
+              "source_property_name": "(#bossName = '§uHaunted Monstrosity')",
               "target_property_name": "#visible"
             }
           ]
@@ -121,7 +390,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §aNameless One§r ')",
+              "source_property_name": "(#bossName = '§aThe Nameless One')",
               "target_property_name": "#visible"
             }
           ]
@@ -142,7 +411,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §5Mooshroom Monstrosity§r ')",
+              "source_property_name": "(#bossName = '§5Mooshroom Monstrosity')",
               "target_property_name": "#visible"
             }
           ]
@@ -163,7 +432,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §bWretched Wraith§r ')",
+              "source_property_name": "(#bossName = '§bWretched Wraith')",
               "target_property_name": "#visible"
             }
           ]
@@ -184,7 +453,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §5Wretched Wraith§r ')",
+              "source_property_name": "(#bossName = '§5Wretched Wraith')",
               "target_property_name": "#visible"
             }
           ]
@@ -205,7 +474,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §dCorrupted Cauldron§r ')",
+              "source_property_name": "(#bossName = '§dCorrupted Cauldron')",
               "target_property_name": "#visible"
             }
           ]
@@ -226,7 +495,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §qJungle Abomination§r ')",
+              "source_property_name": "(#bossName = '§qJungle Abomination')",
               "target_property_name": "#visible"
             }
           ]
@@ -247,7 +516,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §sTempest Golem§r ')",
+              "source_property_name": "(#bossName = '§6Tempest Golem')",
               "target_property_name": "#visible"
             }
           ]
@@ -268,7 +537,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §6Tempest Golem§r ')",
+              "source_property_name": "(#bossName = '§3Tempest Golem')",
               "target_property_name": "#visible"
             }
           ]
@@ -310,7 +579,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §eAncient Guardian§r ')",
+              "source_property_name": "(#bossName = '§eAncient Guardian')",
               "target_property_name": "#visible"
             }
           ]
@@ -331,7 +600,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §eHovering Inferno§r ')",
+              "source_property_name": "(#bossName = '§eHovering Inferno')",
               "target_property_name": "#visible"
             }
           ]
@@ -352,7 +621,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §dThe§c Spiked§d Eye§r ')",
+              "source_property_name": "(#bossName = '§dThe§c Spiked§d Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -373,7 +642,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §5The Spiked Eye§r ')",
+              "source_property_name": "(#bossName = '§5The Spiked Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -394,7 +663,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §dThe§v Savage§d Eye§r ')",
+              "source_property_name": "(#bossName = '§dThe§v Savage§d Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -415,7 +684,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §5The Savage Eye§r ')",
+              "source_property_name": "(#bossName = '§5The Savage Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -436,7 +705,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §dThe§e Ravenous§d Eye§r ')",
+              "source_property_name": "(#bossName = '§dThe§e Ravenous§d Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -457,7 +726,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §5The Ravenous Eye§r ')",
+              "source_property_name": "(#bossName = '§5The Ravenous Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -478,7 +747,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §dThe§b Reaping§d Eye§r ')",
+              "source_property_name": "(#bossName = '§dThe§b Reaping§d Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -499,7 +768,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §5The Reaping Eye§r ')",
+              "source_property_name": "(#bossName = '§5The Reaping Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -520,7 +789,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §dThe§f Binding§d Eye§r ')",
+              "source_property_name": "(#bossName = '§dThe§f Binding§d Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -541,7 +810,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §5The Binding Eye§r ')",
+              "source_property_name": "(#bossName = '§5The Binding Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -562,7 +831,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §dThe§2 Blight§d Eye§r ')",
+              "source_property_name": "(#bossName = '§dThe§2 Blight§d Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -583,7 +852,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §5The Blight Eye§r ')",
+              "source_property_name": "(#bossName = '§5The Blight Eye')",
               "target_property_name": "#visible"
             }
           ]
@@ -604,7 +873,28 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#bossName = ' §dVengeful Heart of Ender§r ')",
+              "source_property_name": "(#bossName = '§dThe Vengeful Heart of Ender')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "vengefulheartofender2_health@vengefulheartofender2_health": {
+          "offset": [
+            0,
+            -50
+          ],
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#bossName",
+              "binding_type": "collection",
+              "binding_collection_name": "boss_bars"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#bossName = '§5The Vengeful Heart of Ender')",
               "target_property_name": "#visible"
             }
           ]
@@ -631,12 +921,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §cRedstone Monstrosity§r ')",
+        "binding_name": "(#bossName = 'dungeons.bossbar.chris_night')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -701,12 +991,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §cRedstone Monstrosity§r ')",
+        "binding_name": "(#bossName = '§cRedstone Monstrosity')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -771,12 +1061,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §cRedstone Monstrosity§r ')",
+        "binding_name": "(#bossName = '§cRedstone Monstrosity')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -835,18 +1125,298 @@
     "type": "image",
     "texture": "textures/ui/bossbars/redstonemonstrosity/overlayBar"
   },
+  // Obsidian Monstrosity 
+  "obsidianmonstrosity_health": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [
+      300,
+      128
+    ],
+    "bindings": [
+      {
+        "binding_name": "(#bossName = '§uObsidian Monstrosity')",
+        "binding_type": "collection",
+        "binding_collection_name": "boss_bars",
+        "binding_name_override": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "empty_obsidianmonstrosity_health@empty_obsidianmonstrosity_health": {
+          "layer": 1,
+          "keep_ratio": false
+        }
+      },
+      {
+        "filled_obsidianmonstrosity_bossbar@filled_obsidianmonstrosity_bossbar": {
+          "layer": 2,
+          "keep_ratio": false
+        }
+      },
+      {
+        "overlay_obsidianmonstrosity_bossbar@overlay_obsidianmonstrosity_bossbar": {
+          "layer": 3,
+          "keep_ratio": false
+        }
+      }
+    ]
+  },
+  //Health Bar
+  "filled_obsidianmonstrosity_bossbar@filled_obsidianmonstrosity_health": {
+    "clip_pixelperfect": true,
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio",
+        "binding_type": "collection",
+        "binding_collection_name": "$progress_bar_collection"
+      }
+    ]
+  },
+  //Obsidian Monstrosity BossBar Images
+  "filled_obsidianmonstrosity_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/obsidianmonstrosity/fullBar",
+    "clip_direction": "left",
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio"
+      }
+    ]
+  },
+  "empty_obsidianmonstrosity_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/obsidianmonstrosity/emptyBar"
+  },
+  "overlay_obsidianmonstrosity_bossbar": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/obsidianmonstrosity/overlayBar"
+  },
+  // ARchie
+  "archillager_health": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [
+      300,
+      128
+    ],
+    "bindings": [
+      {
+        "binding_name": "(#bossName = '§dThe Arch-Illager')",
+        "binding_type": "collection",
+        "binding_collection_name": "boss_bars",
+        "binding_name_override": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "empty_archillager_health@empty_archillager_health": {
+          "layer": 1,
+          "keep_ratio": false
+        }
+      },
+      {
+        "filled_archillager_bossbar@filled_archillager_bossbar": {
+          "layer": 2,
+          "keep_ratio": false
+        }
+      },
+      {
+        "overlay_archillager_bossbar@overlay_archillager_bossbar": {
+          "layer": 3,
+          "keep_ratio": false
+        }
+      }
+    ]
+  },
+  //Health Bar
+  "filled_archillager_bossbar@filled_archillager_health": {
+    "clip_pixelperfect": true,
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio",
+        "binding_type": "collection",
+        "binding_collection_name": "$progress_bar_collection"
+      }
+    ]
+  },
+  //Obsidian Monstrosity BossBar Images
+  "filled_archillager_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/archillager/fullBar",
+    "clip_direction": "left",
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio"
+      }
+    ]
+  },
+  "empty_archillager_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/archillager/emptyBar"
+  },
+  "overlay_archillager_bossbar": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/archillager/overlayBar"
+  },
+  // Heart of Ender
+  "heartofender_health": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [
+      300,
+      128
+    ],
+    "bindings": [
+      {
+        "binding_name": "(#bossName = '§dThe Heart of Ender')",
+        "binding_type": "collection",
+        "binding_collection_name": "boss_bars",
+        "binding_name_override": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "empty_heartofender_health@empty_heartofender_health": {
+          "layer": 1,
+          "keep_ratio": false
+        }
+      },
+      {
+        "filled_heartofender_bossbar@filled_heartofender_bossbar": {
+          "layer": 2,
+          "keep_ratio": false
+        }
+      },
+      {
+        "overlay_heartofender_bossbar@overlay_heartofender_bossbar": {
+          "layer": 3,
+          "keep_ratio": false
+        }
+      }
+    ]
+  },
+  //Health Bar
+  "filled_heartofender_bossbar@filled_heartofender_health": {
+    "clip_pixelperfect": true,
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio",
+        "binding_type": "collection",
+        "binding_collection_name": "$progress_bar_collection"
+      }
+    ]
+  },
+  //Heart of Ender BossBar Images
+  "filled_heartofender_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/heartofender/fullBar",
+    "clip_direction": "left",
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio"
+      }
+    ]
+  },
+  "empty_heartofender_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/heartofender/emptyBar"
+  },
+  "overlay_heartofender_bossbar": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/heartofender/overlayBar"
+  },
+  // Heart of Ender
+  "heartofender2_health": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [
+      300,
+      128
+    ],
+    "bindings": [
+      {
+        "binding_name": "(#bossName = '§uThe Heart of Ender')",
+        "binding_type": "collection",
+        "binding_collection_name": "boss_bars",
+        "binding_name_override": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "empty_heartofender2_health@empty_heartofender2_health": {
+          "layer": 1,
+          "keep_ratio": false
+        }
+      },
+      {
+        "filled_heartofender2_bossbar@filled_heartofender2_bossbar": {
+          "layer": 2,
+          "keep_ratio": false
+        }
+      },
+      {
+        "overlay_heartofender2_bossbar@overlay_heartofender2_bossbar": {
+          "layer": 3,
+          "keep_ratio": false
+        }
+      }
+    ]
+  },
+  //Health Bar
+  "filled_heartofender2_bossbar@filled_heartofender2_health": {
+    "clip_pixelperfect": true,
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio",
+        "binding_type": "collection",
+        "binding_collection_name": "$progress_bar_collection"
+      }
+    ]
+  },
+  //Heart of Ender BossBar Images
+  "filled_heartofender2_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/heartofender/fullBar2",
+    "clip_direction": "left",
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio"
+      }
+    ]
+  },
+  "empty_heartofender2_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/heartofender/emptyBar"
+  },
+  "overlay_heartofender2_bossbar": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/heartofender/overlayBar"
+  },
   // Haunted Monstrosity 
   "hauntedmonstrosity_health": {
     "type": "panel",
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §uHaunted Monstrosity§r ')",
+        "binding_name": "(#bossName = '§uHaunted Monstrosity')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -911,12 +1481,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §aNameless One§r ')",
+        "binding_name": "(#bossName = '§aThe Nameless One')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -981,12 +1551,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §5Mooshroom Monstrosity§r ')",
+        "binding_name": "(#bossName = '§5Mooshroom Monstrosity')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1051,12 +1621,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §bWretched Wraith§r ')",
+        "binding_name": "(#bossName = '§bWretched Wraith')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1121,12 +1691,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §bWretched Wraith§r ')",
+        "binding_name": "(#bossName = '§5Wretched Wraith')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1168,7 +1738,7 @@
   //Wretched Wraith Immune BossBar Images
   "filled_wretchedwraith2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/wretchedwraith2/fullBar",
+    "texture": "textures/ui/bossbars/wretchedwraith/fullBar2",
     "clip_direction": "left",
     "bindings": [
       {
@@ -1179,11 +1749,11 @@
   },
   "empty_wretchedwraith2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/wretchedwraith2/emptyBar"
+    "texture": "textures/ui/bossbars/wretchedwraith/emptyBar2"
   },
   "overlay_wretchedwraith2_bossbar": {
     "type": "image",
-    "texture": "textures/ui/bossbars/wretchedwraith2/overlayBar"
+    "texture": "textures/ui/bossbars/wretchedwraith/overlayBar"
   },
   // Corrupted Cauldron
   "corruptedcauldron_health": {
@@ -1191,12 +1761,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §dCorrupted Cauldron§r ')",
+        "binding_name": "(#bossName = '§dCorrupted Cauldron')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1261,12 +1831,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §qJungle Abomination Jungle§r ')",
+        "binding_name": "(#bossName = '§qJungle Abomination')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1325,18 +1895,18 @@
     "type": "image",
     "texture": "textures/ui/bossbars/jungleabomination/overlayBar"
   },
-  // Tempest Golem 
+  // Tempest Golem
   "tempestgolem_health": {
     "type": "panel",
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §sTempest Golem§r ')",
+        "binding_name": "(#bossName = '§3Tempest Golem')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1395,18 +1965,18 @@
     "type": "image",
     "texture": "textures/ui/bossbars/tempestgolem/overlayBar"
   },
-  // Tempest Golem 2
+  // Tempest Golem Immunity
   "tempestgolem2_health": {
     "type": "panel",
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §6Tempest Golem§r ')",
+        "binding_name": "(#bossName = '§6Tempest Golem')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1445,10 +2015,10 @@
       }
     ]
   },
-  //Tempest Golem2 BossBar Images
+  //Tempest Golem Immune BossBar Images
   "filled_tempestgolem2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/tempestgolem/fullBar",
+    "texture": "textures/ui/bossbars/tempestgolem/fullBar2",
     "clip_direction": "left",
     "bindings": [
       {
@@ -1459,7 +2029,7 @@
   },
   "empty_tempestgolem2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/tempestgolem/emptyBar2"
+    "texture": "textures/ui/bossbars/tempestgolem/emptyBar"
   },
   "overlay_tempestgolem2_bossbar": {
     "type": "image",
@@ -1471,12 +2041,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = '§6Wind Totem§r')",
+        "binding_name": "(#bossName = '§9Wind Totem§r')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1541,12 +2111,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §eAncient Guardian§r ')",
+        "binding_name": "(#bossName = '§eAncient Guardian')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1611,12 +2181,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §eHovering Inferno§r ')",
+        "binding_name": "(#bossName = '§eHovering Inferno')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1681,12 +2251,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §dThe§c Spiked§d Eye§r ')",
+        "binding_name": "(#bossName = '§dThe§c Spiked§d Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1751,12 +2321,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §5The Spiked Eye§r ')",
+        "binding_name": "(#bossName = '§5The Spiked Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1798,7 +2368,7 @@
   //Spiked Eye BossBar Images
   "filled_spikedeye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/fullBar",
+    "texture": "textures/ui/bossbars/endersent/fullBar2",
     "clip_direction": "left",
     "bindings": [
       {
@@ -1809,7 +2379,7 @@
   },
   "empty_spikedeye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/emptyBar"
+    "texture": "textures/ui/bossbars/endersent/emptyBar2"
   },
   "overlay_spikedeye2_bossbar": {
     "type": "image",
@@ -1821,12 +2391,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §dThe§v Savage§d Eye§r ')",
+        "binding_name": "(#bossName = '§dThe§v Savage§d Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1891,12 +2461,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §5The Savage Eye§r ')",
+        "binding_name": "(#bossName = '§5The Savage Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -1938,7 +2508,7 @@
   //Savage Eye BossBar Images
   "filled_savageeye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/fullBar",
+    "texture": "textures/ui/bossbars/endersent/fullBar2",
     "clip_direction": "left",
     "bindings": [
       {
@@ -1949,7 +2519,7 @@
   },
   "empty_savageeye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/emptyBar"
+    "texture": "textures/ui/bossbars/endersent/emptyBar2"
   },
   "overlay_savageeye2_bossbar": {
     "type": "image",
@@ -1961,12 +2531,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §dThe§e Ravenous§d Eye§r ')",
+        "binding_name": "(#bossName = '§dThe§e Ravenous§d Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -2031,12 +2601,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §5The Ravenous Eye§r ')",
+        "binding_name": "(#bossName = '§5The Ravenous Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -2078,7 +2648,7 @@
   //Ravenous Eye BossBar Images
   "filled_ravenouseye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/fullBar",
+    "texture": "textures/ui/bossbars/endersent/fullBar2",
     "clip_direction": "left",
     "bindings": [
       {
@@ -2089,7 +2659,7 @@
   },
   "empty_ravenouseye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/emptyBar"
+    "texture": "textures/ui/bossbars/endersent/emptyBar2"
   },
   "overlay_ravenouseye2_bossbar": {
     "type": "image",
@@ -2101,12 +2671,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §dThe§b Reaping§d Eye§r ')",
+        "binding_name": "(#bossName = '§dThe§b Reaping§d Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -2171,12 +2741,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §5The Reaping Eye§r ')",
+        "binding_name": "(#bossName = '§5The Reaping Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -2218,7 +2788,7 @@
   //Reaping Eye BossBar Images
   "filled_reapingeye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/fullBar",
+    "texture": "textures/ui/bossbars/endersent/fullBar2",
     "clip_direction": "left",
     "bindings": [
       {
@@ -2229,7 +2799,7 @@
   },
   "empty_reapingeye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/emptyBar"
+    "texture": "textures/ui/bossbars/endersent/emptyBar2"
   },
   "overlay_reapingeye2_bossbar": {
     "type": "image",
@@ -2241,12 +2811,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §dThe§f Binding§d Eye§r ')",
+        "binding_name": "(#bossName = '§dThe§f Binding§d Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -2311,12 +2881,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §5The Binding Eye§r ')",
+        "binding_name": "(#bossName = '§5The Binding Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -2358,7 +2928,7 @@
   //Binding Eye BossBar Images
   "filled_bindingeye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/fullBar",
+    "texture": "textures/ui/bossbars/endersent/fullBar2",
     "clip_direction": "left",
     "bindings": [
       {
@@ -2369,7 +2939,7 @@
   },
   "empty_bindingeye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/emptyBar"
+    "texture": "textures/ui/bossbars/endersent/emptyBar2"
   },
   "overlay_bindingeye2_bossbar": {
     "type": "image",
@@ -2381,12 +2951,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §dThe§2 Binding§d Eye§r ')",
+        "binding_name": "(#bossName = '§dThe§2 Blight§d Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -2451,12 +3021,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §5The Blight Eye§r ')",
+        "binding_name": "(#bossName = '§5The Blight Eye')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -2498,7 +3068,7 @@
   //Blight Eye BossBar Images
   "filled_blighteye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/fullBar",
+    "texture": "textures/ui/bossbars/endersent/fullBar2",
     "clip_direction": "left",
     "bindings": [
       {
@@ -2509,7 +3079,7 @@
   },
   "empty_blighteye2_health": {
     "type": "image",
-    "texture": "textures/ui/bossbars/endersent/emptyBar"
+    "texture": "textures/ui/bossbars/endersent/emptyBar2"
   },
   "overlay_blighteye2_bossbar": {
     "type": "image",
@@ -2521,12 +3091,12 @@
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
     "size": [
-      256,
+      300,
       128
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = ' §dVengeful Heart of Ender§r ')",
+        "binding_name": "(#bossName = '§dThe Vengeful Heart of Ender')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"
@@ -2582,6 +3152,76 @@
     "texture": "textures/ui/bossbars/vengefulheartofender/emptyBar"
   },
   "overlay_vengefulheartofender_bossbar": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/vengefulheartofender/overlayBar"
+  },
+  // Vhoe immune
+  "vengefulheartofender2_health": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [
+      300,
+      128
+    ],
+    "bindings": [
+      {
+        "binding_name": "(#bossName = '§5The Vengeful Heart of Ender')",
+        "binding_type": "collection",
+        "binding_collection_name": "boss_bars",
+        "binding_name_override": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "empty_vengefulheartofender2_health@empty_vengefulheartofender2_health": {
+          "layer": 1,
+          "keep_ratio": false
+        }
+      },
+      {
+        "filled_vengefulheartofender2_bossbar@filled_vengefulheartofender2_bossbar": {
+          "layer": 2,
+          "keep_ratio": false
+        }
+      },
+      {
+        "overlay_vengefulheartofender2_bossbar@overlay_vengefulheartofender2_bossbar": {
+          "layer": 3,
+          "keep_ratio": false
+        }
+      }
+    ]
+  },
+  //Health Bar
+  "filled_vengefulheartofender2_bossbar@filled_vengefulheartofender2_health": {
+    "clip_pixelperfect": true,
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio",
+        "binding_type": "collection",
+        "binding_collection_name": "$progress_bar_collection"
+      }
+    ]
+  },
+  //Vhoe BossBar Images
+  "filled_vengefulheartofender2_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/vengefulheartofender/fullBar2",
+    "clip_direction": "left",
+    "bindings": [
+      {
+        "binding_name": "#progress_percentage",
+        "binding_name_override": "#clip_ratio"
+      }
+    ]
+  },
+  "empty_vengefulheartofender2_health": {
+    "type": "image",
+    "texture": "textures/ui/bossbars/vengefulheartofender/emptyBar"
+  },
+  "overlay_vengefulheartofender2_bossbar": {
     "type": "image",
     "texture": "textures/ui/bossbars/vengefulheartofender/overlayBar"
   }

@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:jungle_dart",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/misc/void"
+			},
+			"geometry": {
+				"default": "geometry.redstone_monstrosity_projectile"
+			},
+			"animations": {
+				"particles": "animation.necromancer_shot.particles"
+			},
+			"particle_effects": {
+				"energy": "dungeons:jungle_dart"
+			},
+			"scripts": {
+				"animate": [
+					"particles"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

@@ -1,6 +1,9 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.bone_club.dummy1": {
+			"animation_length": 0.05
+		},
 		"animation.bone_club.first_person_hold": {
 			"loop": true,
 			"bones": {
@@ -33,6 +36,76 @@
 						4.25
 					],
 					"scale": 1.033
+				}
+			}
+		},
+		"animation.bone_club.first_person_swing": {
+			"anim_time_update": "q.anim_time+(q.delta_time*(q.base_swing_duration/q.modified_swing_duration))",
+			"animation_length": 0.8,
+			"bones": {
+				"pivot": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								-39.06
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								97.14,
+								-40.79,
+								-69.06
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								48.57,
+								-20.4,
+								-69.06
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.7917": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								4,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [
+								9,
+								4.15,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								4,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.7917": [
+							0,
+							0,
+							0
+						]
+					}
 				}
 			}
 		}

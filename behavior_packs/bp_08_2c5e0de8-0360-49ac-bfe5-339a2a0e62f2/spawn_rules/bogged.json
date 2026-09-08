@@ -5,54 +5,54 @@
       "identifier": "minecraft:bogged",
       "population_control": "monster"
     },
-    "conditions": [{
-      "minecraft:spawns_on_surface": {},
-      "minecraft:brightness_filter": {
-        "min": 0,
-        "max": 7,
-        "adjust_for_weather": true
-      },
-
-      "minecraft:difficulty_filter": {
-        "min": "easy",
-        "max": "hard"
-      },
-
-      "minecraft:weight": {
-        "default": 40
-      },
-
-      "minecraft:herd": {
-        "min_size": 1,
-        "max_size": 2
-      },
-
-      "minecraft:biome_filter": {
-        "any_of": [{
-            "test": "has_biome_tag",
-            "operator": "==",
-            "value": "swamp"
-          },
-          {
-            "test": "has_biome_tag",
-            "operator": "==",
-            "value": "mangrove_swamp"
-          },
-          {
-            "all_of": [{
-                "test": "has_biome_tag",
-                "operator": "==",
-                "value": "jungle"
-              },
-              {
-                "test": "has_biome_tag",
-                "operator": "!=",
-                "value": "edge"
-              }
-            ]
-          }
-        ]
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 0,
+          "adjust_for_weather": true
+        },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 55
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 2
+        },
+        "minecraft:biome_filter": {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "swamp"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "mangrove_swamp"
+            },
+            {
+              "all_of": [
+                {
+                  "test": "has_biome_tag",
+                  "operator": "==",
+                  "value": "jungle"
+                },
+                {
+                  "test": "has_biome_tag",
+                  "operator": "!=",
+                  "value": "edge"
+                }
+              ]
+            }
+          ]
+        }
       }
-    }]
+    ]
   }
 }

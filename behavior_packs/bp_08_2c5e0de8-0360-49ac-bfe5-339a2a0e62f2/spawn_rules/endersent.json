@@ -29,7 +29,7 @@
         ],
         "minecraft:brightness_filter": {
           "min": 0,
-          "max": 7,
+          "max": 4,
           "adjust_for_weather": true
         },
         "minecraft:weight": {
@@ -44,7 +44,9 @@
         },
         "minecraft:biome_filter": [
           {
-            "test": "has_biome_tag", "operator": "==", "value": "the_end"
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "the_end"
           }
         ]
       }

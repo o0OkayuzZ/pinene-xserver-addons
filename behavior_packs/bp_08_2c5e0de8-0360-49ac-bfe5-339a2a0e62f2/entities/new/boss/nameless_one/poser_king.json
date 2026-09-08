@@ -1,40 +1,16 @@
 {
-	"format_version": "1.16.210",
+	"format_version": "1.21.130",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "dungeons:false_king",
+			"identifier": "dungeons:nameless_one_illusion",
+			"runtime_identifier": "zombie",
 			"is_spawnable": false,
 			"is_summonable": true,
 			"is_experimental": false
 		},
-		"component_groups": {
-			"dungeons:despawn": {
-				"minecraft:instant_despawn": {}
-			},
-			"dungeons:damaged": {
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"deals_damage": false
-						}
-					]
-				},
-				"minecraft:variant": {
-					"value": 1
-				},
-				"minecraft:timer": {
-					"looping": false,
-					"time": 3,
-					"time_down_event": {
-						"event": "dungeons:despawn"
-					}
-				}
-			}
-		},
 		"components": {
 			"minecraft:scale": {
-				"value": 1.22
+				"value": 1.15
 			},
 			"minecraft:movement": {
 				"value": 0
@@ -46,23 +22,12 @@
 			},
 			"minecraft:type_family": {
 				"family": [
+					"undead",
 					"boss",
 					"nameless_one",
 					"gravity_immune",
 					"false_king"
 				]
-			},
-			"minecraft:behavior.timer_flag_1": {
-				"priority": 0,
-				"cooldown_range": 8,
-				"duration_range": [
-					4.75,
-					5.66
-				],
-				"on_end": {
-					"event": "dungeons:begin_despawn",
-					"target": "self"
-				}
 			},
 			"minecraft:variant": {
 				"value": 0
@@ -74,76 +39,6 @@
 			"minecraft:health": {
 				"value": 2000,
 				"max": 2000
-			},
-			"minecraft:damage_sensor": {
-				"triggers": [
-					{
-						"on_damage": {
-							"filters": {
-								"all_of": [
-									{
-										"test": "is_family",
-										"subject": "other",
-										"value": "player"
-									},
-									{
-										"test": "is_variant",
-										"subject": "self",
-										"value": 0
-									}
-								]
-							},
-							"event": "dungeons:damaged"
-						},
-						"deals_damage": false
-					},
-					{
-						"on_damage": {
-							"filters": {
-								"all_of": [
-									{
-										"test": "is_family",
-										"subject": "other",
-										"value": "nameless_one"
-									},
-									{
-										"test": "is_variant",
-										"subject": "self",
-										"value": 0
-									}
-								]
-							},
-							"event": "dungeons:damaged"
-						},
-						"deals_damage": false
-					},
-					{
-						"on_damage": {
-							"filters": {
-								"all_of": [
-									{
-										"test": "is_family",
-										"subject": "other",
-										"operator": "not",
-										"value": "player"
-									},
-									{
-										"test": "is_family",
-										"subject": "other",
-										"operator": "not",
-										"value": "nameless_one"
-									},
-									{
-										"test": "is_variant",
-										"subject": "self",
-										"value": 0
-									}
-								]
-							}
-						},
-						"deals_damage": false
-					}
-				]
 			},
 			"minecraft:movement.basic": {},
 			"minecraft:navigation.walk": {
@@ -161,19 +56,20 @@
 				"is_pushable_by_piston": true
 			},
 			"minecraft:shooter": {
-				"def": "dungeons:nameless_false_shot"
+				"def": "dungeons:nameless_one_projectile"
 			},
 			"minecraft:behavior.ranged_attack": {
-				"priority": 0,
-				"attack_interval_min": 1.8,
-				"attack_interval_max": 2.2,
-				"attack_radius": 12
+				"priority": 3,
+				"attack_interval_min": 2,
+				"attack_interval_max": 2,
+				"attack_radius": 40,
+				"speed_multiplier": 1
 			},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 0,
 				"must_see": false,
 				"reselect_targets": true,
-				"within_radius": 24,
+				"within_radius": 64,
 				"entity_types": [
 					{
 						"filters": {
@@ -195,45 +91,79 @@
 								}
 							]
 						},
-						"max_dist": 24
+						"max_dist": 64
 					}
 				]
 			},
-			"minecraft:conditional_bandwidth_optimization": {}
-		},
-		"events": {
-			"dungeons:begin_despawn": {
-				"add": {
-					"component_groups": [
-						"dungeons:damaged"
-					]
-				},
-				"queue_command": {
-					"command": []
-				}
+			"minecraft:entity_sensor": {
+				"subsensors": [
+					{
+						"maximum_count": 0,
+						"minimum_count": -1,
+						"range": [
+							32,
+							32
+						],
+						"event_filters": [
+							{
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "nameless_one"
+									},
+									{
+										"test": "is_family",
+										"value": "false_king",
+										"operator": "not",
+										"subject": "other"
+									}
+								]
+							}
+						],
+						"event": "dungeons:despawn"
+					}
+				]
 			},
-			"dungeons:despawn": {
-				"add": {
-					"component_groups": [
-						"dungeons:despawn"
-					]
-				}
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": [
+								{
+									"any_of": [
+										{
+											"test": "is_family",
+											"subject": "damager",
+											"value": "player"
+										},
+										{
+											"test": "is_target",
+											"subject": "damager"
+										}
+									]
+								}
+							],
+							"event": "dungeons:despawn"
+						},
+						"deals_damage": "no"
+					},
+					{
+						"cause": "all",
+						"deals_damage": "no"
+					}
+				]
 			},
-			"dungeons:damaged": {
-				"queue_command": {
-					"command": [
-						"event entity @e[c=1,rm=0.2,family=false_king] dungeons:begin_despawn",
-						"particle dungeons:blindness",
-						"effect @a[r=4] blindness 3 0 true",
-						"playsound mob.nameless_one.laugh @a[r=4]"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"dungeons:damaged"
-					]
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:timer": {
+				"time": 5,
+				"time_down_event": {
+					"event": "dungeons:despawn"
 				}
 			}
+		},
+		"events": {
+			"dungeons:despawn": {}
 		}
 	}
 }

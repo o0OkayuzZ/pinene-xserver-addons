@@ -10,6 +10,10 @@
 		},
 		"component_groups": {
 			"on_land": {
+				"minecraft:knockback_resistance": {
+					"value": 0.1,
+					"max": 0.1
+				},
 				"minecraft:environment_sensor": {
 					"triggers": [
 						{
@@ -45,6 +49,25 @@
 				}
 			},
 			"in_water": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water",
+										"value": false
+									}
+								]
+							},
+							"event": "dungeons:on_land"
+						}
+					]
+				},
+				"minecraft:knockback_resistance": {
+					"value": 0.9,
+					"max": 0.9
+				},
 				"minecraft:navigation.generic": {
 					"is_amphibious": true,
 					"can_path_over_water": false,
@@ -319,7 +342,7 @@
 			"minecraft:boss": {
 				"should_darken_sky": false,
 				"hud_range": 48,
-				"name": " §eAncient Guardian§r "
+				"name": "dungeons.bossbar.ancient_guardian"
 			},
 			"minecraft:behavior.summon_entity": {
 				"priority": 2,
@@ -336,10 +359,10 @@
 								"shape": "circle",
 								"target": "target",
 								"base_delay": 1,
-								"delay_per_summon": 0,
+								"delay_per_summon": 0.1,
 								"num_entities_spawned": 2,
-								"entity_type": "minecraft:guardian",
-								"size": 1.8,
+								"entity_type": "dungeons:guardian_spawnpoint<dungeons:guardian>",
+								"size": 2.8,
 								"entity_lifespan": 45
 							}
 						]
@@ -358,7 +381,7 @@
 								"delay_per_summon": 0.25,
 								"num_entities_spawned": 4,
 								"entity_type": "dungeons:biomine",
-								"size": 8,
+								"size": 9,
 								"entity_lifespan": 33
 							}
 						]

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:rare_soul_lantern",
@@ -8,6 +8,7 @@
 			}
 		},
 		"components": {
+			"minecraft:hover_text_color": "green",
 			"minecraft:tags": {
 				"tags": [
 					"dungeons:soul_artefact"
@@ -17,10 +18,8 @@
 			"minecraft:max_stack_size": 1,
 			"minecraft:stacked_by_data": false,
 			"minecraft:can_destroy_in_creative": false,
-			"minecraft:custom_components": [
-				"dungeons:dynamic_cooldown",
-				"dungeons:soul_lantern"
-			],
+			"dungeons:artefact_cooldown": {},
+			"dungeons:soul_lantern": {},
 			"minecraft:cooldown": {
 				"category": "soul_lantern_rare",
 				"duration": 40

@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.20",
+	"minecraft:structure_set": {
+		"description": {
+			"identifier": "dungeons:trial_arena_overworld"
+		},
+		"placement": {
+			"type": "minecraft:random_spread",
+			"salt": 44032026,
+			"separation": 15,
+			"spacing": 35
+		},
+		"structures": [
+			{
+				"structure": "dungeons:trial_arena",
+				"weight": 1
+			},
+			{
+				"structure": "dungeons:snowy_trial_arena",
+				"weight": 1
+			},
+			{
+				"structure": "dungeons:desert_trial_arena",
+				"weight": 1
+			},
+			{
+				"structure": "dungeons:jungle_trial_arena",
+				"weight": 1
+			},
+			{
+				"structure": "dungeons:mountains_trial_arena",
+				"weight": 1
+			}
+		]
+	}
+}

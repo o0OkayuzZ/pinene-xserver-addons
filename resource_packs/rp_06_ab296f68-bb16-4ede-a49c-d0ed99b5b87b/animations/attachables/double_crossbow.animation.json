@@ -1,0 +1,133 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.dual_crossbow.first_person": {
+			"loop": true,
+			"bones": {
+				"mainHand": {
+					"rotation": [
+						-18.4833,
+						-26.7082,
+						-23.6947
+					],
+					"position": [
+						-5.5,
+						24,
+						-2
+					],
+					"scale": 0.85
+				},
+				"offHand": {
+					"rotation": [
+						-0.9833,
+						-26.7082,
+						-23.6947
+					],
+					"position": [
+						-0.5,
+						32,
+						-19
+					],
+					"scale": 0
+				},
+				"offHand2": {
+					"rotation": [
+						103.7375,
+						-13.2377,
+						-258.7081
+					],
+					"position": [
+						-8.5,
+						22,
+						13
+					],
+					"scale": "q.is_item_equipped(1) ? 0 : 0.85"
+				}
+			}
+		},
+		"animation.dual_crossbow.third_person": {
+			"loop": true,
+			"bones": {
+				"mainHand": {
+					"rotation": [
+						0.5,
+						90,
+						0
+					],
+					"position": [
+						2.5,
+						19.5,
+						-1.5
+					]
+				},
+				"offHand": {
+					"rotation": [
+						0.5,
+						90,
+						0
+					],
+					"position": [
+						2.5,
+						19.5,
+						-1.5
+					]
+				},
+				"offHand2": {
+					"rotation": [
+						0.5,
+						90,
+						0
+					],
+					"position": [
+						2.5,
+						19.5,
+						-1.5
+					],
+					"scale": 0
+				}
+			}
+		},
+		"animation.dual_crossbow.wield_first_person_pull": {
+			"loop": true,
+			"bones": {
+				"mainHand": {
+					"rotation": [
+						-11,
+						0,
+						-11
+					],
+					"position": [
+						-1,
+						"1+(v.charge_amount>=1?math.sin(1300*(q.life_time))*0.1-math.sin(q.life_time*45)*0.5:0)",
+						0.2
+					]
+				},
+				"offHand": {
+					"rotation": [
+						-11,
+						0,
+						-11
+					],
+					"position": [
+						-1,
+						"1+(v.charge_amount>=1?math.sin(1300*(q.life_time))*0.1-math.sin(q.life_time*45)*0.5:0)",
+						0.2
+					],
+					"scale": 0
+				},
+				"offHand2": {
+					"rotation": [
+						6.1696,
+						4.6967,
+						-9.253
+					],
+					"position": [
+						-1,
+						"1+(v.charge_amount>=1?math.sin(1300*(q.life_time))*0.1-math.sin(q.life_time*45)*0.5:0)",
+						-0.8
+					]
+				}
+			}
+		}
+	}
+}

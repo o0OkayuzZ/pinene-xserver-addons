@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:book_of_heroes",
@@ -17,9 +17,8 @@
 			"minecraft:stacked_by_data": false,
 			"minecraft:can_destroy_in_creative": false,
 			"minecraft:icon": "book_of_heroes",
-			"minecraft:custom_components": [
-				"dungeons:book_of_heroes"
-			],
+			"dungeons:book_of_heroes": {},
+			"minecraft:rarity": "uncommon",
 			"minecraft:interact_button": "item.use.book_of_heroes",
 			"minecraft:use_modifiers": {
 				"use_duration": 0

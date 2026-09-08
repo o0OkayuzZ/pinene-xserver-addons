@@ -24,8 +24,9 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
   const message = event.message;
   const enchant = message.charAt(0).toUpperCase() + message.slice(1)
   const hand = player.getComponent('minecraft:equippable').getEquipmentSlot('Mainhand')
-
-  hand.nameTag = "§r§e" + hand.nameTag + "§r"
+  if (hand.nameTag !== undefined) {
+    hand.nameTag = "§r§e" + hand.nameTag + "§r"
+  }
   hand.setLore([`§r§7${enchant} `])
-  hand.setDynamicProperty("dungeons:gild", enchant)
+  hand.setDynamicProperty("dungeons:gild", message)
 })

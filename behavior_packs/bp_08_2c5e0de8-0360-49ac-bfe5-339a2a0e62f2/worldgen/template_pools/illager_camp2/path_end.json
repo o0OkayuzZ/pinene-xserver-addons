@@ -1,0 +1,43 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:pillager_outpost_v2_path_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:empty_pool_element"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "illager_camp/v2/log_decor",
+                    "processors": "dungeons:illager_camp_v2",
+                    "projection": "rigid"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "illager_camp/v2/lamp_decor",
+                    "processors": "dungeons:illager_camp_v2",
+                    "projection": "terrain_matching"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "illager_camp/v2/hay_decor",
+                    "processors": "dungeons:illager_camp_v2",
+                    "projection": "terrain_matching"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

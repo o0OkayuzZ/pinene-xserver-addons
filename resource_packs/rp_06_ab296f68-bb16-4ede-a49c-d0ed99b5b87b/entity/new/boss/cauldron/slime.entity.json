@@ -1,8 +1,8 @@
 {
-	"format_version": "1.10.0",
+	"format_version": "1.8.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "dungeons:corrupted_ooze",
+			"identifier": "dungeons:cauldron_slime",
 			"materials": {
 				"default": "slime",
 				"outer": "slime_outer"
@@ -11,29 +11,24 @@
 				"default": "textures/entity/corrupted_cauldron/ooze"
 			},
 			"geometry": {
-				"default": "geometry.corrupted_ooze",
-				"armor": "geometry.corrupted_ooze.armor"
-			},
-			"animations": {
-				"spawn": "animation.corrupted_ooze.spawn",
-				"despawn": "animation.corrupted_ooze.despawn",
-				"particles": "animation.corrupted_ooze.particles",
-				"land": "animation.corrupted_ooze.land",
-				"land_controller": "controller.animation.corrupted_ooze.land"
+				"default": "geometry.slime",
+				"armor": "geometry.slime.armor"
 			},
 			"scripts": {
-				"animate": [
-					"land_controller",
-					"particles"
-				]
+				"pre_animation": [
+					"variable.squish_factor = (query.previous_squish_value + (query.current_squish_value - query.previous_squish_value) * query.frame_alpha);",
+					"variable.bounce = 1 / ((variable.squish_factor / (query.variant * 0.5 + 1)) + 1);",
+					"variable.horizontal_scale_amount = variable.bounce * query.variant;",
+					"variable.vertical_scale_amount = (1 / variable.bounce) * query.variant;"
+				],
+				"scaleX": "variable.horizontal_scale_amount",
+				"scaleY": "variable.vertical_scale_amount",
+				"scaleZ": "variable.horizontal_scale_amount"
 			},
 			"render_controllers": [
-				"controller.render.ooze",
-				"controller.render.ooze_armor"
+				"controller.render.slime",
+				"controller.render.slime_armor"
 			],
-			"particle_effects": {
-				"slime": "dungeons:cauldron_slime"
-			},
 			"spawn_egg": {
 				"texture": "egg_corrupted_ooze"
 			}

@@ -27,15 +27,15 @@
 				},
 				"minecraft:boss": {
 					"should_darken_sky": false,
-					"hud_range": 48,
-					"name": " §aNameless One§r "
+					"hud_range": 32,
+					"name": "dungeons.bossbar.nameless_one"
 				},
 				"minecraft:variant": {
 					"value": 1
 				},
 				"minecraft:timer": {
 					"looping": false,
-					"time": 4.1255,
+					"time": 1.9167,
 					"time_down_event": {
 						"event": "dungeons:finish_waking"
 					}
@@ -44,7 +44,7 @@
 		},
 		"components": {
 			"minecraft:scale": {
-				"value": 1.333
+				"value": 1.2
 			},
 			"minecraft:type_family": {
 				"family": [

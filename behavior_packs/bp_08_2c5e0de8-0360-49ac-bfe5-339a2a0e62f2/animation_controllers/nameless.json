@@ -1,36 +1,26 @@
 {
 	"format_version": "1.10.0",
 	"animation_controllers": {
-		"controller.animation.nameless_one.invisible": {
-			"initial_state": "default",
+		"controller.animation.nameless_one.casting": {
+			"initial_state": "not_casting",
 			"states": {
-				"attacking": {
-					"animations": [
-						"casting_timer"
+				"casting": {
+					"on_exit": [
+						"/event entity @s dungeons:complete_casting"
 					],
 					"transitions": [
 						{
-							"finish": "query.all_animations_finished"
+							"not_casting": "!q.is_casting"
 						}
 					]
 				},
-				"default": {
-					"on_entry": [],
-					"transitions": [
-						{
-							"attacking": "q.variant==1&&query.is_casting==1"
-						}
-					]
-				},
-				"finish": {
-					"on_entry": [
-						"/particle dungeons:nameless_awaken ~~1~",
-						"/effect @s invisibility 7 0 true",
-						"/effect @s resistance 5 3 true"
+				"not_casting": {
+					"on_exit": [
+						"/event entity @s dungeons:begin_casting"
 					],
 					"transitions": [
 						{
-							"default": "query.is_casting==0"
+							"casting": "query.is_casting"
 						}
 					]
 				}

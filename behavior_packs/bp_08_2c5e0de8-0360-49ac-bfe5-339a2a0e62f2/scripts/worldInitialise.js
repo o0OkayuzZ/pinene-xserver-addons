@@ -15,25 +15,27 @@ const allScores = [
   'swirlCD',
   'anchorCD',
   'spongeStrikerCharge',
-  'guardianEye',
   'sawbladeCharge',
   'sawbladeCD',
   'powershaker_t',
   'powershaker_u',
-  'corruptBeacon',
-  'corruptPumpkin',
   'glaiveCD',
   'echoCD',
   'tpCD',
   'dungeons:music'
 ];
 
-world.afterEvents.worldInitialize.subscribe(e => {
+world.afterEvents.worldLoad.subscribe(e => {
+  world.gameRules.showTags = false
 
   for (const score of allScores) {
     if (!world.scoreboard.getObjective(score)) {
       world.scoreboard.addObjective(score)
     }
+  }
+  for (const player of world.getPlayers()) {
+
+    player.setDynamicProperty("dungeons:damage_reduction_prevented", null)
   }
 });
 
@@ -41,6 +43,7 @@ world.afterEvents.playerSpawn.subscribe(e => {
   let player = e.player;
   if (e.initialSpawn === false) return;
 
+  player.setDynamicProperty("dungeons:damage_reduction_prevented", null)
   player.removeTag('dungeons:tempest_warn');
   player.removeTag('dungeons:guardian_warn');
   player.removeTag('dungeons:spooky_warn');

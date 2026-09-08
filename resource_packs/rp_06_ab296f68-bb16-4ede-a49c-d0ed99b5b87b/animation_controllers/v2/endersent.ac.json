@@ -1,0 +1,53 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.endersent_v2.attack": {
+			"initial_state": "default",
+			"states": {
+				"attacking": {
+					"animations": [
+						"attack.rotations"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"default": {
+					"transitions": [
+						{
+							"attacking": "query.is_delayed_attacking==1"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.endersent_v2.teleport": {
+			"initial_state": "default",
+			"states": {
+				"attacking": {
+					"animations": [
+						"target_teleport"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0
+				},
+				"default": {
+					"transitions": [
+						{
+							"attacking": "query.property('dungeons:target_teleporting')"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		}
+	}
+}

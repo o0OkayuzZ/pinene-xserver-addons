@@ -1,0 +1,115 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.obsidian_claw",
+				"texture_width": 55,
+				"texture_height": 30,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								0,
+								-7
+							],
+							"size": [
+								14,
+								16,
+								14
+							],
+							"pivot": [
+								0,
+								8,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								-180
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										14,
+										14
+									],
+									"uv_size": [
+										14,
+										16
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										14
+									],
+									"uv_size": [
+										14,
+										16
+									]
+								},
+								"south": {
+									"uv": [
+										42,
+										14
+									],
+									"uv_size": [
+										14,
+										16
+									]
+								},
+								"west": {
+									"uv": [
+										28,
+										14
+									],
+									"uv_size": [
+										14,
+										16
+									]
+								},
+								"up": {
+									"uv": [
+										14,
+										0
+									],
+									"uv_size": [
+										14,
+										14
+									]
+								},
+								"down": {
+									"uv": [
+										28,
+										14
+									],
+									"uv_size": [
+										14,
+										-14
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.20",
+	"minecraft:structure_set": {
+		"description": {
+			"identifier": "dungeons:obsidian_pinnacle"
+		},
+		"placement": {
+			"type": "minecraft:random_spread",
+			"salt": 1452024,
+			"separation": 19,
+			"spacing": 40
+		},
+		"structures": [
+			{
+				"structure": "dungeons:obsidian_pinnacle",
+				"weight": 1
+			},
+			{
+				"structure": "dungeons:arch_castle",
+				"weight": 1
+			}
+		]
+	}
+}

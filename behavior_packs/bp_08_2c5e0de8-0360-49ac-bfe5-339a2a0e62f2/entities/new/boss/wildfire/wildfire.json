@@ -21,9 +21,9 @@
 					"client_sync": false,
 					"range": [
 						0,
-						8
+						10
 					],
-					"default": 8
+					"default": 10
 				}
 			}
 		},
@@ -104,11 +104,10 @@
 										"value": "player"
 									},
 									{
-										"none_of": {
-											"test": "has_ability",
-											"subject": "other",
-											"value": "instabuild"
-										}
+										"test": "has_ability",
+										"subject": "other",
+										"value": "instabuild",
+										"operator": "not"
 									}
 								]
 							},
@@ -342,8 +341,8 @@
 			"minecraft:jump.static": {},
 			"minecraft:can_climb": {},
 			"minecraft:health": {
-				"value": 400,
-				"max": 400
+				"value": 500,
+				"max": 500
 			},
 			"minecraft:spell_effects": {
 				"add_effects": [
@@ -361,7 +360,7 @@
 			"minecraft:boss": {
 				"should_darken_sky": false,
 				"hud_range": 48,
-				"name": " §eHovering Inferno§r "
+				"name": "dungeons.bossbar.hovering_inferno"
 			},
 			"minecraft:scale": {
 				"value": 2.2
@@ -469,12 +468,10 @@
 			"dungeons:destroy_shield": {
 				"set_property": {
 					"dungeons:shields": "query.property('dungeons:shields') - 1",
-					"dungeons:durability": "8"
+					"dungeons:durability": "10"
 				},
 				"queue_command": {
 					"command": [
-						"playsound random.explode @a ~~~ 1.2",
-						"summon dungeons:boss_wildfire_blast",
 						"particle dungeons:wildfire_flames ~~1~",
 						"playsound mob.wildfire.shield_break @a ~~~ 1.0 1.5"
 					]
@@ -504,16 +501,7 @@
 					]
 				}
 			},
-			"dungeons:shockwave_damage": {
-				"queue_command": {
-					"command": [
-						"playsound random.explode @a ~~~ 1.2",
-						"summon dungeons:boss_wildfire_blast",
-						"summon dungeons:wildfire_blaze ~~~2",
-						"summon dungeons:wildfire_blaze ~~~-2"
-					]
-				}
-			},
+			"dungeons:shockwave_damage": {},
 			"dungeons:shockwave_end": {
 				"add": {
 					"component_groups": [

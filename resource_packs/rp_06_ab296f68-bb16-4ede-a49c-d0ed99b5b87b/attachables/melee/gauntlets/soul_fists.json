@@ -3,7 +3,10 @@
 	"minecraft:attachable": {
 		"description": {
 			"identifier": "dungeons:soul_fists",
-			"render_controllers": ["controller.render.item_default", "controller.render.sawblade_glowing"],
+			"render_controllers": [
+				"controller.render.item_default",
+				"controller.render.sawblade_glowing"
+			],
 			"materials": {
 				"default": "entity_alphatest",
 				"glow": "entity_emissive_alpha",
@@ -20,10 +23,21 @@
 			},
 			"animations": {
 				"first_person_hold": "animation.gauntlets.first_person_hold",
-				"third_person_hold": "animation.gauntlets.third_person_hold"
+				"third_person_hold": "animation.gauntlets.third_person_hold",
+				"melee_attack": "animation.gauntlets.first_person_swing",
+				"melee_controller": "controller.animation.weapon.melee_attack"
 			},
 			"scripts": {
+				"initialize": [
+					"v.melee_attack = false;"
+				],
+				"pre_animation": [
+					"q.get_name == (t.player_name ?? '') ? {v.melee_attack = t.melee_attack;};"
+				],
 				"animate": [
+					{
+						"melee_controller": "c.is_first_person"
+					},
 					{
 						"first_person_hold": "c.is_first_person"
 					},

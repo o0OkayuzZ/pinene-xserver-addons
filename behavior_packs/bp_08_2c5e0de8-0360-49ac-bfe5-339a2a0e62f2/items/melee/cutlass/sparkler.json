@@ -1,0 +1,81 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:sparkler",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_tool",
+					"minecraft:is_sword",
+					"dungeons:rampaging",
+					"alylica:disable_melee_swing",
+					"dungeons:melee_lore",
+					"dungeons:seasonal_item"
+				]
+			},
+			"dungeons:durability_fix": {
+				"tag": "minecraft:is_sword_item_destructible"
+			},
+			"dungeons:cutlass": {},
+			"dungeons:custom_swing": {
+				"has_cooldown": false,
+				"animation": "sawblade",
+				"swing_sound": "weapon.sparkler.swing"
+			},
+			"minecraft:icon": "sparkler",
+			"minecraft:max_stack_size": 1,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 1320
+			},
+			"minecraft:rarity": "epic",
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:iron_ingot"
+						],
+						"repair_amount": "q.max_durability*0.25"
+					},
+					{
+						"items": [
+							"dungeons:cutlass"
+						],
+						"repair_amount": "c.other->q.remaining_durability+0.12*c.other->q.max_durability"
+					}
+				]
+			},
+			"minecraft:damage": {
+				"value": 8
+			},
+			"minecraft:digger": {
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "q.any_tag('sword_mine', 'minecraft:is_sword_item_destructible')"
+						},
+						"speed": 15
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 60
+					},
+					{
+						"block": "minecraft:web",
+						"speed": 15
+					}
+				],
+				"use_efficiency": true
+			},
+			"minecraft:enchantable": {
+				"value": 6,
+				"slot": "sword"
+			}
+		}
+	}
+}

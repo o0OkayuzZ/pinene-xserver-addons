@@ -1,0 +1,36 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "rush_spear"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" iI",
+			" Si",
+			"S  "
+		],
+		"unlock": [
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_ingot"
+			},
+			"i": {
+				"item": "iron_nugget"
+			},
+			"S": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "dungeons:rush_spear",
+			"count": 1
+		}
+	}
+}

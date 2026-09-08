@@ -31,6 +31,7 @@
 				}
 			},
 			"dungeons:exploding": {
+				"minecraft:is_saddled": {},
 				"minecraft:underwater_movement": {
 					"value": 0.3
 				},
@@ -47,6 +48,21 @@
 		"components": {
 			"minecraft:damage_sensor": {
 				"triggers": [
+					{
+						"cause": "projectile",
+						"deals_damage": false,
+						"on_damage": {
+							"filters": [
+								{
+									"test": "has_component",
+									"value": "minecraft:is_saddled",
+									"operator": "not"
+								}
+							],
+							"event": "dungeons:explode",
+							"target": "self"
+						}
+					},
 					{
 						"deals_damage": false
 					}
@@ -156,17 +172,11 @@
 				"queue_command": {
 					"command": [
 						"playanimation @s animation.biomine.boom",
-						"playsound mob.evocation_illager.cast_spell @a ~~~"
+						"playsound mob.biomine.splash @a ~~~"
 					]
 				}
 			},
 			"dungeons:explode": {
-				"queue_command": {
-					"command": [
-						"playsound mob.biomine.boom @a ~~~",
-						"summon dungeons:biomine_boom ~~~"
-					]
-				},
 				"add": {
 					"component_groups": [
 						"dungeons:despawn"

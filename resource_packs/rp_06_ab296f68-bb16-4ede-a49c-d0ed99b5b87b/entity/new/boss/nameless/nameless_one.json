@@ -4,8 +4,7 @@
 		"description": {
 			"identifier": "dungeons:nameless_one",
 			"materials": {
-				"default": "entity_emissive_alpha",
-				"orb": "entity_emissive_alpha_one_sided"
+				"default": "entity_emissive_alpha"
 			},
 			"textures": {
 				"default": "textures/entity/nameless_one/nameless_one"
@@ -14,36 +13,36 @@
 				"default": "geometry.nameless_one"
 			},
 			"render_controllers": [
-				"controller.render.nameless_one"
+				"controller.render.default"
 			],
 			"animations": {
-				"move": "animation.nameless_one.walk",
-				"orb": "animation.nameless_one.orb",
-				"cast_controller": "controller.animation.nameless_one.cast",
-				"move_controller": "controller.animation.nameless_one.move",
-				"cast": "animation.nameless_one.summon",
-				"cast2": "animation.nameless_one.summon2",
-				"look_at_target": "animation.common.look_at_target"
+				"idle": "animation.nameless_one_v2.idle",
+				"move": "animation.nameless_one_v2.walk",
+				"move_controller": "controller.animation.nameless_one_v2.move",
+				"orb": "animation.nameless_one_v2.orb",
+				"orb_particles": "animation.nameless_one_v2.orb_particles",
+				"ranged_attack": "animation.nameless_one_v2.ranged_attack",
+				"ranged_controller": "controller.animation.nameless_one_v2.ranged_attack",
+				"look_at_target": "animation.nameless_one_v2.look_at_target",
+				"cast_short": "animation.nameless_one_v2.summon",
+				"cast_long": "animation.nameless_one_v2.summon_long",
+				"cast_spell_controller": "controller.animation.nameless_one_v2.cast_spell"
 			},
 			"scripts": {
-				"pre_animation": [
-					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
-				],
 				"animate": [
 					"orb",
+					"orb_particles",
+					"look_at_target",
+					"idle",
 					"move_controller",
-					"cast_controller",
-					{
-						"look_at_target": "!query.is_casting&&!q.is_delayed_attacking"
-					}
+					"ranged_controller",
+					"cast_spell_controller"
 				]
 			},
 			"particle_effects": {
-				"summon": "dungeons:nameless_summon",
-				"charge": "dungeons:nameless_charge"
-			},
-			"sound_effects": {
-				"awaken": "mob.nameless_one.laugh"
+				"orb_magic_0": "dungeons:nameless_one_orb_0",
+				"orb_magic_1": "dungeons:nameless_one_orb_1",
+				"legs": "dungeons:nameless_one_feet"
 			},
 			"spawn_egg": {
 				"base_color": "#1d0021",

@@ -74,14 +74,14 @@
 				"minecraft:boss": {
 					"should_darken_sky": false,
 					"hud_range": 48,
-					"name": " §5Mooshroom Monstrosity§r "
+					"name": "dungeons.bossbar.mooshroom_monstrosity"
 				},
 				"minecraft:variant": {
 					"value": 1
 				},
 				"minecraft:timer": {
 					"looping": false,
-					"time": 3.333,
+					"time": 1.9583,
 					"time_down_event": {
 						"event": "dungeons:finish_waking"
 					}

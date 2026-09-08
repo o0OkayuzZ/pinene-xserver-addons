@@ -1,18 +1,17 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
-			"identifier": "dungeons:spooky_painting",
+			"identifier": "dungeons:spooky_painting_block",
 			"menu_category": {
 				"category": "items"
 			}
 		},
 		"components": {
-			"minecraft:hover_text_color": {
-				"value": "light_purple"
-			},
+			"minecraft:rarity": "epic",
 			"minecraft:icon": "spooky_painting",
 			"minecraft:block_placer": {
+				"replace_block_item": true,
 				"block": "dungeons:spooky_painting_block"
 			}
 		}

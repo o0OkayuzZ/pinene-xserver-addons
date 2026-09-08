@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dungeons:desert_bricks"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"SC",
+			"CS"
+		],
+		"unlock": [
+			{
+				"item": "minecraft:sand"
+			}
+		],
+		"key": {
+			"S": {
+				"item": "sand"
+			},
+			"C": {
+				"item": "cobblestone"
+			}
+		},
+		"result": {
+			"item": "dungeons:desert_bricks",
+			"count": 4
+		}
+	}
+}

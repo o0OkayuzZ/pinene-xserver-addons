@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:enchanted_eye_of_ender",
@@ -8,13 +8,9 @@
 			}
 		},
 		"components": {
-			"minecraft:hover_text_color": {
-				"value": "light_purple"
-			},
+			"minecraft:rarity": "epic",
 			"minecraft:icon": "enchanted_eye_of_ender",
-			"minecraft:glint": {
-				"value": true
-			}
+			"minecraft:glint": true
 		}
 	}
 }

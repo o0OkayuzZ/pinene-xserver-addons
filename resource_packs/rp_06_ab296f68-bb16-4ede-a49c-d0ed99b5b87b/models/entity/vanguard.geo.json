@@ -54,7 +54,18 @@
 								16,
 								16
 							]
-						},
+						}
+					]
+				},
+				{
+					"name": "chestplate",
+					"parent": "body",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
 						{
 							"origin": [
 								-5,
@@ -80,11 +91,6 @@
 					"pivot": [
 						0,
 						24,
-						0
-					],
-					"rotation": [
-						2.5,
-						0,
 						0
 					],
 					"cubes": [
@@ -344,7 +350,18 @@
 								0,
 								16
 							]
-						},
+						}
+					]
+				},
+				{
+					"name": "legClothright",
+					"parent": "rightLeg",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
 						{
 							"origin": [
 								-5,
@@ -389,7 +406,18 @@
 								0,
 								16
 							]
-						},
+						}
+					]
+				},
+				{
+					"name": "legClothleft",
+					"parent": "leftLeg",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
 						{
 							"origin": [
 								0,
@@ -405,8 +433,7 @@
 							"uv": [
 								50,
 								0
-							],
-							"mirror": false
+							]
 						}
 					]
 				}

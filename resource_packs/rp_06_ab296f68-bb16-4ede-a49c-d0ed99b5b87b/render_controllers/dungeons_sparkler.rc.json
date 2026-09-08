@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.dungeons_sparkler": {
+			"arrays": {
+				"textures": {
+					"array.skins": [
+						"texture.glow_1",
+						"texture.glow_2",
+						"texture.glow_3"
+					]
+				},
+				"geometries": {
+					"array.geo": [
+						"Geometry.glow_1",
+						"Geometry.glow_2",
+						"Geometry.glow_3"
+					]
+				}
+			},
+			"geometry": "array.geo[math.mod(q.life_time*9,3)]",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"array.skins[math.mod(q.life_time*9,3)]"
+			]
+		}
+	}
+}

@@ -1,29 +1,29 @@
 {
-    "pools":  [
-                  {
-                      "rolls":  1,
-                      "entries":  [
-                                      {
-                                          "type":  "loot_table",
-                                          "weight":  1,
-                                          "name":  "loot_tables/chests/diamond_chest/armor/ghost_kindler/helmet.json"
-                                      },
-                                      {
-                                          "type":  "loot_table",
-                                          "weight":  1,
-                                          "name":  "loot_tables/chests/diamond_chest/armor/ghost_kindler/chestplate.json"
-                                      },
-                                      {
-                                          "type":  "loot_table",
-                                          "weight":  1,
-                                          "name":  "loot_tables/chests/diamond_chest/armor/ghost_kindler/leggings.json"
-                                      },
-                                      {
-                                          "type":  "loot_table",
-                                          "weight":  1,
-                                          "name":  "loot_tables/chests/diamond_chest/armor/ghost_kindler/boots.json"
-                                      }
-                                  ]
-                  }
-              ]
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "weight": 1,
+          "name": "loot_tables/chests/diamond_chest/armor/ghost_kindler/helmet.json"
+        },
+        {
+          "type": "loot_table",
+          "weight": 1,
+          "name": "loot_tables/chests/diamond_chest/armor/ghost_kindler/chestplate.json"
+        },
+        {
+          "type": "loot_table",
+          "weight": 1,
+          "name": "loot_tables/chests/diamond_chest/armor/ghost_kindler/leggings.json"
+        },
+        {
+          "type": "loot_table",
+          "weight": 1,
+          "name": "loot_tables/chests/diamond_chest/armor/ghost_kindler/boots.json"
+        }
+      ]
+    }
+  ]
 }

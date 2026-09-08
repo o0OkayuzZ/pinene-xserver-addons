@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:enchanted_silverfish",
+			"materials": {
+				"default": "entity_emissive_alpha",
+				"body_layer": "silverfish_layers",
+				"enchanted": "dungeons_entity_enchant"
+			},
+			"textures": {
+				"default": "textures/entity/enchanted_mob/silverfish",
+				"enchanted": "textures/misc/enchanted_entity_glint"
+			},
+			"geometry": {
+				"default": "geometry.silverfish"
+			},
+			"animations": {
+				"move": "animation.silverfish.move"
+			},
+			"animation_controllers": [
+				{
+					"move": "controller.animation.silverfish.move"
+				}
+			],
+			"render_controllers": [
+				"controller.render.silverfish",
+				"controller.render.dungeons_entity_enchanted"
+			],
+			"spawn_egg": {
+				"texture": "egg_enchanted_silverfish"
+			}
+		}
+	}
+}

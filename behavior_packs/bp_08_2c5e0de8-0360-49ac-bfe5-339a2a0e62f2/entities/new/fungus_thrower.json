@@ -244,6 +244,7 @@
 			"hunter": {
 				"minecraft:type_family": {
 					"family": [
+						"love_medallion_target",
 						"piglin",
 						"piglin_hunter",
 						"monster"
@@ -253,6 +254,7 @@
 			"not_hunter": {
 				"minecraft:type_family": {
 					"family": [
+						"love_medallion_target",
 						"piglin",
 						"monster"
 					]
@@ -401,6 +403,23 @@
 			}
 		},
 		"components": {
+			"minecraft:tameable": {
+				"probability": 1
+			},
+			"minecraft:behavior.follow_owner": {
+				"can_teleport": false,
+				"max_distance": 64,
+				"priority": 3,
+				"speed_multiplier": 1,
+				"start_distance": 10,
+				"stop_distance": 6
+			},
+			"minecraft:behavior.owner_hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.owner_hurt_target": {
+				"priority": 0
+			},
 			"minecraft:is_hidden_when_invisible": {},
 			"minecraft:equip_item": {
 				"excluded_items": [

@@ -17,6 +17,7 @@
 			],
 			"animations": {
 				"walk": "animation.necromancer.walk",
+				"float_walk": "animation.drowned_necromancer.float_walk",
 				"cast_controller": "controller.animation.necromancer.cast",
 				"particles": "animation.necromancer_shot.particles",
 				"cast": "animation.drowned_necromancer.summon",
@@ -27,7 +28,8 @@
 				"swimming": "animation.zombie.swimming",
 				"idle": "animation.drowned_necromancer.idle",
 				"attack": "animation.drowned_necromancer.ranged",
-				"attack_controller": "controller.animation.drowned_necromancer.ranged"
+				"attack_controller": "controller.animation.drowned_necromancer.ranged",
+				"walk_controller": "controller.animation.drowned_necromancer.walk"
 			},
 			"scripts": {
 				"pre_animation": [
@@ -35,7 +37,7 @@
 				],
 				"animate": [
 					"particles",
-					"walk",
+					"walk_controller",
 					"head_controller",
 					"cast_controller",
 					"attack_controller",

@@ -1,0 +1,567 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeons:heart_of_ender",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"casting"
+				]
+			},
+			"properties": {
+				"dungeons:hidden": {
+					"client_sync": true,
+					"type": "bool",
+					"default": false
+				},
+				"dungeons:moving": {
+					"client_sync": true,
+					"type": "bool",
+					"default": false
+				},
+				"dungeons:is_casting": {
+					"client_sync": false,
+					"type": "bool",
+					"default": false
+				},
+				"dungeons:is_invulnerable": {
+					"client_sync": true,
+					"type": "bool",
+					"default": false
+				},
+				"dungeons:spinning_lasers": {
+					"client_sync": true,
+					"type": "bool",
+					"default": false
+				}
+			},
+			"animations": {
+				"casting": "controller.animation.nameless_one.casting"
+			}
+		},
+		"component_groups": {
+			"dungeons:invulernable": {
+				"minecraft:collision_box": {
+					"height": 6.5,
+					"width": 0.1
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"deals_damage": "no"
+						}
+					]
+				},
+				"minecraft:boss": {
+					"should_darken_sky": false,
+					"hud_range": 48,
+					"name": "dungeons.bossbar.heart_of_ender_immune"
+				}
+			},
+			"dungeons:vulnerable": {
+				"minecraft:collision_box": {
+					"height": 6,
+					"width": 3.5
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "fall",
+							"deals_damage": "no"
+						},
+						{
+							"cause": "entity_explosion",
+							"deals_damage": "no"
+						},
+						{
+							"cause": "all",
+							"on_damage": {
+								"filters": [
+									{
+										"all_of": [
+											{
+												"test": "bool_property",
+												"value": false,
+												"domain": "dungeons:spinning_lasers"
+											},
+											{
+												"test": "bool_property",
+												"value": false,
+												"domain": "dungeons:is_casting"
+											},
+											{
+												"test": "bool_property",
+												"domain": "dungeons:moving",
+												"value": false
+											},
+											{
+												"test": "random_chance",
+												"value": 1
+											}
+										]
+									}
+								],
+								"event": "dungeons:attempt_movement"
+							}
+						}
+					]
+				},
+				"minecraft:boss": {
+					"should_darken_sky": false,
+					"hud_range": 48,
+					"name": "dungeons.bossbar.heart_of_ender"
+				}
+			},
+			"dungeons:summon_cooldown": {
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": 10,
+					"attack_cooldown_complete_event": {
+						"event": "dungeons:summon_cooldown_complete",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:rotation_axis_aligned": {},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?750:375"
+			},
+			"minecraft:attack": {
+				"damage": 22
+			},
+			"minecraft:breathable": {
+				"suffocate_time": 0,
+				"total_supply": 150
+			},
+			"minecraft:collision_box": {
+				"height": 6,
+				"width": 3.5
+			},
+			"minecraft:health": {
+				"max": 1000,
+				"value": 1000
+			},
+			"minecraft:jump.static": {},
+			"minecraft:break_blocks": {
+				"breakable_blocks": [
+					"bamboo",
+					"bamboo_sapling",
+					"beetroot",
+					"brown_mushroom",
+					"carrots",
+					"carved_pumpkin",
+					"chorus_flower",
+					"chorus_plant",
+					"deadbush",
+					"double_plant",
+					"leaves",
+					"leaves2",
+					"lit_pumpkin",
+					"melon_block",
+					"melon_stem",
+					"potatoes",
+					"pumpkin",
+					"pumpkin_stem",
+					"red_flower",
+					"red_mushroom",
+					"crimson_fungus",
+					"warped_fungus",
+					"reeds",
+					"sapling",
+					"snow_layer",
+					"sweet_berry_bush",
+					"tallgrass",
+					"turtle_egg",
+					"vine",
+					"waterlily",
+					"wheat",
+					"yellow_flower",
+					"azalea",
+					"flowering_azalea",
+					"azalea_leaves",
+					"azalea_leaves_flowered",
+					"cave_vines",
+					"cave_vines_body_with_berries",
+					"cave_vines_head_with_berries",
+					"small_dripleaf_block",
+					"big_dripleaf",
+					"spore_blossom",
+					"hanging_roots",
+					"mangrove_leaves"
+				]
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/heart_of_ender.json"
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:behavior.look_at_target": {
+				"priority": 5,
+				"angle_of_view_vertical": 75,
+				"look_distance": 28
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 6,
+				"angle_of_view_vertical": 75,
+				"look_distance": 28
+			},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:nameable": {},
+			"minecraft:navigation.walk": {
+				"can_walk": true
+			},
+			"minecraft:physics": {},
+			"minecraft:variable_max_auto_step": {
+				"base_value": 1.5625,
+				"jump_prevented_value": 0.5625
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:behavior.summon_entity": {
+				"priority": 2,
+				"summon_choices": [
+					{
+						"cast_duration": 2.7,
+						"do_casting": true,
+						"cooldown_time": 10,
+						"filters": [
+							{
+								"all_of": [
+									{
+										"test": "has_component",
+										"value": "minecraft:attack_cooldown",
+										"subject": "self",
+										"operator": "not"
+									},
+									{
+										"test": "bool_property",
+										"domain": "dungeons:moving",
+										"value": false
+									},
+									{
+										"test": "bool_property",
+										"domain": "dungeons:is_invulnerable",
+										"value": false
+									},
+									{
+										"test": "bool_property",
+										"value": false,
+										"domain": "dungeons:spinning_lasers"
+									}
+								]
+							}
+						],
+						"min_activation_range": 4,
+						"max_activation_range": 32,
+						"weight": 1,
+						"sequence": [
+							{
+								"base_delay": 0.5,
+								"delay_per_summon": 0,
+								"entity_type": "dungeons:heart_of_ender_scatter_mine<dungeons:scatter_mine>",
+								"num_entities_spawned": 8,
+								"shape": "circle",
+								"size": 8,
+								"target": "self"
+							},
+							{
+								"base_delay": 0.3,
+								"delay_per_summon": 0,
+								"entity_type": "dungeons:heart_of_ender_scatter_mine<dungeons:scatter_mine>",
+								"num_entities_spawned": 8,
+								"shape": "circle",
+								"size": 14,
+								"target": "self"
+							}
+						]
+					}
+				]
+			},
+			"minecraft:behavior.timer_flag_1": {
+				"cooldown_range": 0,
+				"duration_range": [
+					13,
+					24
+				],
+				"on_end": {
+					"filters": [
+						{
+							"all_of": [
+								{
+									"test": "has_target",
+									"value": true
+								},
+								{
+									"test": "bool_property",
+									"domain": "dungeons:is_casting",
+									"value": false
+								},
+								{
+									"test": "bool_property",
+									"domain": "dungeons:is_invulnerable",
+									"value": false
+								},
+								{
+									"test": "bool_property",
+									"value": false,
+									"domain": "dungeons:spinning_lasers"
+								}
+							]
+						}
+					],
+					"event": "dungeons:scatter_lasers"
+				},
+				"priority": 0
+			},
+			"minecraft:timer": {
+				"time": [
+					2,
+					3
+				],
+				"looping": true,
+				"time_down_event": {
+					"filters": [
+						{
+							"all_of": [
+								{
+									"test": "bool_property",
+									"value": false,
+									"domain": "dungeons:spinning_lasers"
+								},
+								{
+									"test": "bool_property",
+									"domain": "dungeons:is_casting",
+									"value": false
+								},
+								{
+									"test": "bool_property",
+									"domain": "dungeons:is_invulnerable",
+									"value": false
+								}
+							]
+						}
+					],
+					"event": "dungeons:attempt_movement"
+				}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "boss"
+						}
+					}
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": false,
+				"reselect_targets": true,
+				"within_radius": 32,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						},
+						"max_dist": 48
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:home": {
+				"restriction_radius": 32,
+				"restriction_type": "random_movement"
+			},
+			"minecraft:is_shaking": {},
+			"minecraft:type_family": {
+				"family": [
+					"dungeons_musicbox",
+					"monster",
+					"heart_of_ender",
+					"mob",
+					"boss",
+					"gravity_immune"
+				]
+			},
+			"minecraft:on_death": {
+				"event": "dungeons:death"
+			}
+		},
+		"events": {
+			"dungeons:return_from_laser_heads_failure": {},
+			"dungeons:death": {
+				"queue_command": {
+					"command": [
+						"function cutscene/regheart_death",
+						"playanimation @s animation.heart_of_ender.sink"
+					]
+				}
+			},
+			"dungeons:start_spinning_lasers": {
+				"set_property": {
+					"dungeons:spinning_lasers": true
+				}
+			},
+			"dungeons:stop_spinning_lasers": {
+				"set_property": {
+					"dungeons:spinning_lasers": false
+				}
+			},
+			"dungeons:scatter_lasers": {},
+			"dungeons:become_immune": {
+				"set_property": {
+					"dungeons:is_invulnerable": true
+				},
+				"add": {
+					"component_groups": [
+						"dungeons:invulernable"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"dungeons:vulnerable"
+					]
+				}
+			},
+			"dungeons:remove_immune": {
+				"set_property": {
+					"dungeons:is_invulnerable": false
+				},
+				"add": {
+					"component_groups": [
+						"dungeons:vulnerable"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"dungeons:invulernable"
+					]
+				}
+			},
+			"dungeons:attempt_movement": {
+				"filters": [
+					{
+						"all_of": [
+							{
+								"any_of": [
+									{
+										"all_of": [
+											{
+												"test": "has_target",
+												"value": false
+											},
+											{
+												"test": "random_chance",
+												"value": 2
+											}
+										]
+									},
+									{
+										"test": "has_target"
+									}
+								]
+							},
+							{
+								"test": "bool_property",
+								"domain": "dungeons:is_invulnerable",
+								"value": false
+							}
+						]
+					}
+				],
+				"set_property": {
+					"dungeons:moving": false
+				},
+				"trigger": "dungeons:erratic_movement"
+			},
+			"dungeons:erratic_movement": {
+				"filters": [
+					{
+						"test": "has_tag",
+						"value": "dungeons:laser_heads",
+						"operator": "equals",
+						"subject": "self"
+					}
+				]
+			},
+			"minecraft:entity_transformed": {
+				"trigger": "minecraft:entity_spawned"
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"dungeons:vulnerable"
+					]
+				}
+			},
+			"dungeons:begin_casting": {
+				"queue_command": {
+					"command": [
+						"playsound mob.heart_of_ender.projectiles @a ~~~ 1 1"
+					]
+				},
+				"set_property": {
+					"dungeons:is_casting": true
+				}
+			},
+			"dungeons:complete_casting": {
+				"queue_command": {
+					"command": [
+						"playsound mob.heart_of_ender.projectiles @a ~~~ 1 0.5"
+					]
+				},
+				"set_property": {
+					"dungeons:is_casting": false
+				},
+				"add": {
+					"component_groups": [
+						"dungeons:summon_cooldown"
+					]
+				},
+				"trigger": "dungeons:erratic_movement"
+			},
+			"dungeons:summon_cooldown_complete": {
+				"remove": {
+					"component_groups": [
+						"dungeons:summon_cooldown"
+					]
+				}
+			}
+		}
+	}
+}

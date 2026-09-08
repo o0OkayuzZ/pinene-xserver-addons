@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.100",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:sturdy_shulker_leggings",
@@ -10,13 +10,15 @@
 		"components": {
 			"minecraft:tags": {
 				"tags": [
-					"minecraft:is_armor"
+					"minecraft:is_armor",
+					"dungeons:armor_lore",
+					"dungeons:shulker_armour",
+					"dungeons:sturdy_shulker_armour",
+					"dungeons:unique_item"
 				]
 			},
 			"minecraft:icon": "sturdy_shulker_leggings",
-			"minecraft:hover_text_color": {
-				"value": "aqua"
-			},
+			"minecraft:rarity": "rare",
 			"minecraft:max_stack_size": 1,
 			"minecraft:stacked_by_data": false,
 			"minecraft:enchantable": {

@@ -8,15 +8,14 @@
 				"enchanted": "dungeons_entity_enchant"
 			},
 			"textures": {
-				"default": "textures/entity/illager/enchanted_iceologer",
+				"default": "textures/entity/enchanted_mob/iceologer",
 				"enchanted": "textures/misc/enchanted_entity_glint"
 			},
 			"geometry": {
 				"default": "geometry.iceologer"
 			},
 			"particle_effects": {
-				"snow": "dungeons:snow",
-				"enchant": "dungeons:humanoid_enchant"
+				"snow": "dungeons:snow"
 			},
 			"spawn_egg": {
 				"texture": "egg_enchanted_iceologer"
@@ -27,12 +26,10 @@
 				],
 				"animate": [
 					"pillager_root_controller",
-					"cast_controller",
-					"enchanted_particles"
+					"cast_controller"
 				]
 			},
 			"animations": {
-				"enchanted_particles": "animation.enchanted_mob.particles",
 				"cast_controller": "controller.animation.necromancer.cast",
 				"cast": "animation.iceologer.cast",
 				"humanoid_base_pose": "animation.humanoid.base_pose",

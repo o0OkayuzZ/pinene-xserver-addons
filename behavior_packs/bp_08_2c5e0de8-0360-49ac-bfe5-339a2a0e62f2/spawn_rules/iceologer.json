@@ -1,4 +1,4 @@
-{
+	{
   "format_version": "1.8.0",
   "minecraft:spawn_rules": {
     "description": {
@@ -11,7 +11,7 @@
         },
         "minecraft:brightness_filter": {
           "min": 0,
-          "max": 7,
+          "max": 0,
           "adjust_for_weather": true
         },
         
@@ -24,7 +24,7 @@
         },
 
         "minecraft:weight": {
-          "default": 30
+          "default": 45
         },
 
         "minecraft:biome_filter": [

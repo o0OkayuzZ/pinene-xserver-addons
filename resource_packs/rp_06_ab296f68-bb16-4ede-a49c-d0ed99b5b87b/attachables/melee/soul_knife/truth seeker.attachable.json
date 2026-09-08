@@ -18,11 +18,22 @@
 				"default": "geometry.truthseeker"
 			},
 			"animations": {
-				"first_person_hold": "animation.truthseeker.first_person_hold",
-				"third_person_hold": "animation.truthseeker.third_person_hold"
+				"first_person_hold": "animation.soul_knife.first_person_hold2",
+				"third_person_hold": "animation.soul_knife.third_person_hold2",
+				"melee_attack": "animation.soul_knife.first_person_swing",
+				"melee_controller": "controller.animation.weapon.melee_attack"
 			},
 			"scripts": {
+				"initialize": [
+					"v.melee_attack = false;"
+				],
+				"pre_animation": [
+					"q.get_name == (t.player_name ?? '') ? {v.melee_attack = t.melee_attack;};"
+				],
 				"animate": [
+					{
+						"melee_controller": "c.is_first_person"
+					},
 					{
 						"first_person_hold": "c.is_first_person"
 					},

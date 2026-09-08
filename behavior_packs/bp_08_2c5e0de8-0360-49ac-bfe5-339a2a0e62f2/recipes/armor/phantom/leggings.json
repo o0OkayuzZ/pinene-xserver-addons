@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "phantom_leggings"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"LLL",
+			"B B"
+		],
+		"unlock": [
+			{
+				"item": "minecraft:phantom_membrane"
+			}
+		],
+		"key": {
+			"B": {
+				"item": "minecraft:bone"
+			},
+			"L": {
+				"item": "minecraft:phantom_membrane"
+			}
+		},
+		"result": {
+			"item": "dungeons:phantom_leggings",
+			"count": 1
+		}
+	}
+}

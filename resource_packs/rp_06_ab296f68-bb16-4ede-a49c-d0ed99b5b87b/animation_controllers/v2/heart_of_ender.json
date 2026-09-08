@@ -1,0 +1,137 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.heart_of_ender.laser": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"opening"
+					],
+					"transitions": [
+						{
+							"loop": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0
+				},
+				"loop": {
+					"animations": [
+						"loop"
+					],
+					"transitions": [
+						{
+							"end": "q.property('dungeons:despawning')==true"
+						}
+					],
+					"blend_transition": 0
+				},
+				"end": {
+					"animations": [
+						"end"
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.heart_of_ender.move": {
+			"initial_state": "static",
+			"states": {
+				"walking": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"static": "q.property('dungeons:moving')==false"
+						}
+					],
+					"blend_transition": 0.5
+				},
+				"static": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"walking": "q.property('dungeons:moving')==true"
+						}
+					],
+					"blend_transition": 0.5
+				}
+			}
+		},
+		"controller.animation.heart_of_ender.spinning_lasers": {
+			"initial_state": "static",
+			"states": {
+				"walking": {
+					"animations": [
+						"idle_spinning"
+					],
+					"transitions": [
+						{
+							"static": "q.property('dungeons:spinning_lasers')==false"
+						}
+					],
+					"blend_transition": 0.5
+				},
+				"static": {
+					"transitions": [
+						{
+							"walking": "q.property('dungeons:spinning_lasers')==true"
+						}
+					],
+					"blend_transition": 0.5
+				}
+			}
+		},
+		"controller.animation.heart_of_ender.look_at_target": {
+			"initial_state": "static",
+			"states": {
+				"not": {
+					"transitions": [
+						{
+							"static": "q.property('dungeons:moving')==false&&!q.is_casting"
+						}
+					],
+					"blend_transition": 0.5
+				},
+				"static": {
+					"animations": [
+						"look_at_target"
+					],
+					"transitions": [
+						{
+							"not": "q.property('dungeons:moving')==true||q.is_casting"
+						}
+					],
+					"blend_transition": 0.5
+				}
+			}
+		},
+		"controller.animation.heart_of_ender.summon": {
+			"initial_state": "default",
+			"states": {
+				"attacking": {
+					"animations": [
+						"summon"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						}
+					],
+					"blend_transition": 0.33
+				},
+				"default": {
+					"transitions": [
+						{
+							"attacking": "query.is_casting"
+						}
+					],
+					"blend_transition": 0.33
+				}
+			}
+		}
+	}
+}

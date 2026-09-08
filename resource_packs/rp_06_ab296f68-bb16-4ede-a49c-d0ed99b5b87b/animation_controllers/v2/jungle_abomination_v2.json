@@ -1,0 +1,217 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.jungle_abomination_v2.move": {
+			"initial_state": "static",
+			"states": {
+				"walking": {
+					"animations": [
+						"move"
+					],
+					"transitions": [
+						{
+							"static": "q.modified_move_speed<=0.1"
+						}
+					],
+					"blend_transition": 0.5
+				},
+				"static": {
+					"transitions": [
+						{
+							"walking": "q.is_moving&&q.modified_move_speed>0.1"
+						}
+					],
+					"blend_transition": 0.5
+				}
+			}
+		},
+		"controller.animation.jungle_abomination_v2.attack": {
+			"initial_state": "default",
+			"states": {
+				"attacking": {
+					"animations": [
+						"attack_melee"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"default": {
+					"transitions": [
+						{
+							"attacking": "query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		},
+		"controller.animation.jungle_abomination_v2.summon": {
+			"initial_state": "default",
+			"states": {
+				"attacking": {
+					"animations": [
+						"summon"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						}
+					],
+					"blend_transition": 0.33
+				},
+				"default": {
+					"transitions": [
+						{
+							"attacking": "query.is_casting"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		},
+		"controller.animation.jungle_abomination_v2.ranged_attack": {
+			"initial_state": "default",
+			"states": {
+				"attacking": {
+					"animations": [
+						"attack_ranged"
+					],
+					"transitions": [
+						{
+							"default": "query.property('dungeons:jungle_darts')==false"
+						}
+					],
+					"blend_transition": 0.33
+				},
+				"default": {
+					"transitions": [
+						{
+							"attacking": "query.property('dungeons:jungle_darts')==true"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.jungle_abomination_v2.look_at_target": {
+			"initial_state": "look_at_target",
+			"states": {
+				"look_at_target": {
+					"animations": [
+						"look_at_target"
+					],
+					"transitions": [
+						{
+							"not_looking": "query.is_delayed_attacking||query.property('dungeons:jungle_darts')==true"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"not_looking": {
+					"transitions": [
+						{
+							"look_at_target": "!query.is_delayed_attacking&&query.property('dungeons:jungle_darts')==false"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.jungle_abomination_v2.idle_pose": {
+			"initial_state": "static",
+			"states": {
+				"attacking_melee": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"static": "!query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attacking_ranged": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"static": "query.property('dungeons:jungle_darts')==false"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"summoning": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"static": "!query.is_casting"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"moving": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"static": "query.modified_move_speed<0.1"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"static": {
+					"animations": [
+						"idle",
+						"idle_head_movement"
+					],
+					"transitions": [
+						{
+							"attacking_melee": "query.is_delayed_attacking"
+						},
+						{
+							"summoning": "query.is_casting"
+						},
+						{
+							"attacking_ranged": "query.property('dungeons:jungle_darts')==true"
+						},
+						{
+							"moving": "q.is_moving&&query.modified_move_speed>0.1"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.jungle_abomination_v2.activate": {
+			"initial_state": "default",
+			"states": {
+				"attacking": {
+					"animations": [
+						"activate"
+					],
+					"blend_transition": 0
+				},
+				"default": {
+					"animations": [
+						"resting"
+					],
+					"transitions": [
+						{
+							"attacking": "query.variant==1"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		}
+	}
+}

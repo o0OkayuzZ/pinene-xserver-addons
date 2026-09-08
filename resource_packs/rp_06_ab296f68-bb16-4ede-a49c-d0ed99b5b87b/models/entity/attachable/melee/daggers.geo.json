@@ -23,13 +23,207 @@
 						0
 					],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)",
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								0,
+								-1
+							],
+							"size": [
+								2,
+								2,
+								2
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"up": {
+									"uv": [
+										2,
+										2
+									],
+									"uv_size": [
+										-2,
+										-2
+									]
+								},
+								"down": {
+									"uv": [
+										2,
+										2
+									],
+									"uv_size": [
+										-2,
+										-2
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "pivot1",
+					"parent": "root_item",
+					"pivot": [
+						0,
+						0,
+						0
+					],
 					"texture_meshes": [
 						{
 							"texture": "default",
 							"position": [
 								-0.5,
-								-4,
-								-7
+								-5,
+								-11.25
+							],
+							"rotation": [
+								0,
+								-45,
+								-90
+							]
+						}
+					]
+				},
+				{
+					"name": "root_item3",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)",
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								0,
+								-1
+							],
+							"size": [
+								2,
+								2,
+								2
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"up": {
+									"uv": [
+										2,
+										2
+									],
+									"uv_size": [
+										-2,
+										-2
+									]
+								},
+								"down": {
+									"uv": [
+										2,
+										2
+									],
+									"uv_size": [
+										-2,
+										-2
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "pivot3",
+					"parent": "root_item3",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"texture_meshes": [
+						{
+							"texture": "default",
+							"position": [
+								-0.5,
+								-5,
+								-11.25
 							],
 							"rotation": [
 								0,
@@ -47,13 +241,98 @@
 						0
 					],
 					"binding": "'leftitem'",
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								0,
+								-1
+							],
+							"size": [
+								2,
+								2,
+								2
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"up": {
+									"uv": [
+										2,
+										2
+									],
+									"uv_size": [
+										-2,
+										-2
+									]
+								},
+								"down": {
+									"uv": [
+										2,
+										2
+									],
+									"uv_size": [
+										-2,
+										-2
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "pivot2",
+					"parent": "root_item2",
+					"pivot": [
+						0,
+						0,
+						0
+					],
 					"texture_meshes": [
 						{
 							"texture": "default",
 							"position": [
 								-0.5,
-								-4,
-								-7
+								-5,
+								-11.25
 							],
 							"rotation": [
 								0,

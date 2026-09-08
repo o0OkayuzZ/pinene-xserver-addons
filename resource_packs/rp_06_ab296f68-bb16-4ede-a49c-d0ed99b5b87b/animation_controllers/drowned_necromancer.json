@@ -24,6 +24,50 @@
 					"blend_transition": 0.1
 				}
 			}
+		},
+		"controller.animation.drowned_necromancer.walk": {
+			"initial_state": "default",
+			"states": {
+				"moving": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"floating": "query.is_in_water"
+						},
+						{
+							"default": "q.modified_move_speed<=0.1"
+						}
+					],
+					"blend_transition": 0.5
+				},
+				"floating": {
+					"animations": [
+						"float_walk"
+					],
+					"transitions": [
+						{
+							"moving": "!query.is_in_water"
+						},
+						{
+							"default": "q.modified_move_speed<=0.1"
+						}
+					],
+					"blend_transition": 0.5
+				},
+				"default": {
+					"transitions": [
+						{
+							"moving": "q.modified_move_speed>0.1&&!q.is_in_water"
+						},
+						{
+							"floating": "q.modified_move_speed>0.1&&q.is_in_water"
+						}
+					],
+					"blend_transition": 0.5
+				}
+			}
 		}
 	}
 }

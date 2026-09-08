@@ -1,6 +1,9 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.soul_knife.dummy1": {
+			"animation_length": 0.05
+		},
 		"animation.soul_knife.first_person_hold": {
 			"loop": true,
 			"bones": {
@@ -16,6 +19,24 @@
 						8
 					],
 					"scale": 1.1
+				}
+			}
+		},
+		"animation.soul_knife.first_person_hold2": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						113.20245,
+						66.67253,
+						-70.66271
+					],
+					"position": [
+						-4,
+						26,
+						8
+					],
+					"scale": 1.2
 				}
 			}
 		},
@@ -41,39 +62,82 @@
 				}
 			}
 		},
-		"animation.truthseeker.first_person_hold": {
-			"loop": true,
-			"bones": {
-				"root_item": {
-					"rotation": [
-						98.204,
-						66.67253,
-						-70.66271
-					],
-					"position": [
-						1,
-						23,
-						6
-					],
-					"scale": 1
-				}
-			}
-		},
-		"animation.truthseeker.third_person_hold": {
+		"animation.soul_knife.third_person_hold2": {
 			"loop": true,
 			"bones": {
 				"root_item": {
 					"rotation": [
 						85,
-						2.5,
-						0
+						-2.481,
+						0.436
 					],
 					"position": [
-						0,
-						20,
-						-1.5
+						0.365,
+						18.5,
+						0.05
 					],
-					"scale": 0.67
+					"scale": 1
+				}
+			}
+		},
+		"animation.soul_knife.first_person_swing": {
+			"anim_time_update": "q.anim_time+(q.delta_time*(q.base_swing_duration/q.modified_swing_duration))",
+			"animation_length": 0.5417,
+			"bones": {
+				"root_item": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							40,
+							0,
+							0
+						],
+						"0.3333": [
+							22,
+							0,
+							0
+						],
+						"0.5417": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [
+								13,
+								-12,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								13,
+								-12,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": [
+							0,
+							0,
+							0
+						]
+					}
 				}
 			}
 		}

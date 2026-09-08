@@ -1,0 +1,28 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dungeons:desert_brick_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"DDD"
+		],
+		"unlock": [
+			{
+				"item": "dungeons:desert_bricks"
+			}
+		],
+		"key": {
+			"D": {
+				"item": "dungeons:desert_bricks"
+			}
+		},
+		"result": {
+			"item": "dungeons:desert_brick_slab",
+			"count": 6
+		}
+	}
+}

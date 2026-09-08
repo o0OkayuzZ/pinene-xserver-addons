@@ -1,0 +1,39 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "dungeons:arch_castle"
+    },
+    "biome_filters": [
+      {
+        "all_of": [
+          {
+            "any_of": [
+              {
+                "test": "has_biome_tag",
+                "operator": "==",
+                "value": "pale_garden"
+              },
+              {
+                "test": "has_biome_tag",
+                "operator": "==",
+                "value": "roofed"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "heightmap_projection": "world_surface",
+    "max_depth": 3,
+    "start_height": {
+      "type": "constant",
+      "value": {
+        "absolute": 1
+      }
+    },
+    "start_pool": "dungeons:arch_castle",
+    "step": "surface_structures",
+    "terrain_adaptation": "beard_thin"
+  }
+}

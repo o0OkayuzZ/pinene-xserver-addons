@@ -24,14 +24,14 @@
 				"minecraft:boss": {
 					"should_darken_sky": false,
 					"hud_range": 48,
-					"name": " §sTempest Golem§r "
+					"name": "dungeons.bossbar.tempest_golem"
 				},
 				"minecraft:variant": {
 					"value": 1
 				},
 				"minecraft:timer": {
 					"looping": false,
-					"time": 15,
+					"time": 12,
 					"time_down_event": {
 						"event": "dungeons:shields_up"
 					}
@@ -53,7 +53,7 @@
 				"minecraft:boss": {
 					"should_darken_sky": false,
 					"hud_range": 48,
-					"name": " §6Tempest Golem§r "
+					"name": "dungeons.bossbar.tempest_golem_immune"
 				},
 				"minecraft:variant": {
 					"value": 0
@@ -89,7 +89,7 @@
 					"reach_multiplier": 3.4,
 					"cooldown_time": 5,
 					"speed_multiplier": 0,
-					"melee_fov": 135,
+					"melee_fov": 160,
 					"attack_duration": 2.25,
 					"hit_delay_pct": 0.295
 				},
@@ -110,17 +110,7 @@
 									"base_delay": 0.05,
 									"delay_per_summon": 0,
 									"num_entities_spawned": 1,
-									"entity_type": "dungeons:tempest_zap_circle",
-									"size": 1,
-									"entity_lifespan": 5
-								},
-								{
-									"shape": "circle",
-									"target": "target",
-									"base_delay": 2.25,
-									"delay_per_summon": 0,
-									"num_entities_spawned": 1,
-									"entity_type": "dungeons:tempest_golem_zap",
+									"entity_type": "dungeons:tempest_lightning<dungeons:tempest_lightning>",
 									"size": 1,
 									"entity_lifespan": 5
 								}

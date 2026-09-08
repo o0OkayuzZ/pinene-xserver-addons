@@ -1,0 +1,59 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.weapon.melee_attack": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{
+							"special": "v.melee_attack==1"
+						}
+					],
+					"blend_transition": 0
+				},
+				"special": {
+					"animations": [
+						"melee_attack"
+					],
+					"on_entry": [
+						"v.melee_attack=0;"
+					],
+					"transitions": [
+						{
+							"idle": "query.all_animations_finished||v.melee_attack==1"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.weapon.melee_attack_tp": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{
+							"special": "v.melee_attack==1"
+						}
+					],
+					"blend_transition": 0
+				},
+				"special": {
+					"animations": [
+						"melee_attack_tp"
+					],
+					"on_entry": [
+						"v.melee_attack=0;"
+					],
+					"transitions": [
+						{
+							"idle": "query.all_animations_finished||v.melee_attack==1"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		}
+	}
+}

@@ -1,6 +1,9 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.sword.dummy1": {
+			"animation_length": 0.05
+		},
 		"animation.sword.first_person_hold": {
 			"loop": true,
 			"bones": {
@@ -68,6 +71,58 @@
 						-1.5
 					],
 					"scale": 1.125
+				}
+			}
+		},
+		"animation.sword.first_person_swing": {
+			"animation_length": 0.5,
+			"bones": {
+				"root_item": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								-84.9895,
+								4.6727,
+								-88.3371
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [
+								41.8998,
+								2.0982,
+								-60.5778
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": [
+							-74.422,
+							11.755,
+							-132.4641
+						],
+						"0.4167": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							-2,
+							-2,
+							-1
+						],
+						"0.125": [
+							10,
+							-2,
+							-11
+						],
+						"0.4167": [
+							0,
+							0,
+							0
+						]
+					}
 				}
 			}
 		}

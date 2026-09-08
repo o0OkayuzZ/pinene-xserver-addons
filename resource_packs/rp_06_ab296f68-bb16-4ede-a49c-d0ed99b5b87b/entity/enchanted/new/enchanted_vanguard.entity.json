@@ -8,14 +8,14 @@
 				"enchanted": "dungeons_entity_enchant"
 			},
 			"textures": {
-				"default": "textures/entity/skeleton/enchanted_vanguard",
+				"default": "textures/entity/enchanted_mob/vanguard",
 				"enchanted": "textures/misc/enchanted_entity_glint"
 			},
 			"geometry": {
 				"default": "geometry.vanguard"
 			},
 			"render_controllers": [
-				"controller.render.default",
+				"controller.render.vanguard",
 				"controller.render.dungeons_entity_enchanted"
 			],
 			"animations": {
@@ -28,12 +28,10 @@
 				"head_controller": "controller.animation.humanoid.look_at_target",
 				"move": "animation.vanguard.move",
 				"bob": "animation.humanoid.bob",
-				"enchanted_particles": "animation.enchanted_mob.particles",
 				"shielded": "animation.vanguard.shielded",
 				"glaive": "animation.vanguard.glaive"
 			},
 			"particle_effects": {
-				"enchant": "dungeons:humanoid_enchant",
 				"shield": "dungeons:vanguard_shield_break"
 			},
 			"scripts": {
@@ -41,7 +39,6 @@
 					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
 				],
 				"animate": [
-					"enchanted_particles",
 					"head_controller",
 					"attack_controller",
 					"move_controller",

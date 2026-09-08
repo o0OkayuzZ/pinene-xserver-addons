@@ -1,0 +1,58 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "dungeons:flail",
+			"render_controllers": [
+				"controller.render.item_default"
+			],
+			"materials": {
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/items/attachables/flail",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.flail"
+			},
+			"animations": {
+				"first_person_hold": "animation.flail.first_person_hold",
+				"third_person_hold": "animation.flail.third_person_hold",
+				"melee_attack": "animation.flail.first_person_swing",
+				"melee_attack_tp": "animation.flail.third_person_swing",
+				"melee_controller": "controller.animation.weapon.melee_attack",
+				"melee_controller_tp": "controller.animation.weapon.melee_attack_tp",
+				"chain": "animation.flail.align_chain"
+			},
+			"scripts": {
+				"initialize": [
+					"v.melee_attack = false;",
+					"v.handle_rotation = 0;"
+				],
+				"pre_animation": [
+					"v.handle_rotation = q.bone_orientation_trs('handle');",
+					"q.get_name == (t.player_name ?? '') ? {v.melee_attack = t.melee_attack;};"
+				],
+				"animate": [
+					{
+						"chain": "!c.is_first_person"
+					},
+					{
+						"melee_controller": "c.is_first_person"
+					},
+					{
+						"first_person_hold": "c.is_first_person"
+					},
+					{
+						"melee_controller_tp": "!c.is_first_person"
+					},
+					{
+						"third_person_hold": "!c.is_first_person"
+					}
+				]
+			}
+		}
+	}
+}

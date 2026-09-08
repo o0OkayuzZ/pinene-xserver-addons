@@ -1,0 +1,429 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeons:enchanter",
+			"runtime_identifier": "minecraft:evocation_illager",
+			"spawn_category": "monster",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"animations": {
+				"casting": "controller.animation.nameless_one.casting"
+			},
+			"properties": {
+				"dungeons:casting": {
+					"client_sync": true,
+					"default": false,
+					"type": "bool"
+				}
+			},
+			"scripts": {
+				"animate": [
+					"casting"
+				]
+			}
+		},
+		"component_groups": {
+			"minecraft:celebrate": {
+				"minecraft:behavior.celebrate": {
+					"priority": 5,
+					"celebration_sound": "celebrate",
+					"sound_interval": {
+						"range_min": 2,
+						"range_max": 7
+					},
+					"jump_interval": {
+						"range_min": 1,
+						"range_max": 3.5
+					},
+					"duration": 30,
+					"on_celebration_end_event": {
+						"event": "minecraft:stop_celebrating",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:raid_configuration": {
+				"minecraft:loot": {
+					"table": "loot_tables/entities/enchanter_raid.json"
+				},
+				"minecraft:can_join_raid": {},
+				"minecraft:dweller": {
+					"dwelling_type": "village",
+					"dweller_role": "hostile",
+					"update_interval_base": 60,
+					"update_interval_variant": 40,
+					"can_find_poi": false,
+					"can_migrate": true,
+					"first_founding_reward": 0
+				},
+				"minecraft:behavior.move_to_village": {
+					"priority": 6,
+					"speed_multiplier": 1.5
+				},
+				"minecraft:ambient_sound_interval": {
+					"value": 2,
+					"range": 4,
+					"event_name": "ambient.in.raid"
+				}
+			},
+			"minecraft:raid_persistence": {
+				"minecraft:persistent": {}
+			},
+			"minecraft:raid_despawn": {
+				"minecraft:despawn": {
+					"despawn_from_distance": {}
+				}
+			}
+		},
+		"components": {
+			"minecraft:attack": {
+				"damage": 0
+			},
+			"minecraft:behavior.move_towards_target": {
+				"priority": 2,
+				"speed_multiplier": 2,
+				"within_radius": 8
+			},
+			"minecraft:equip_item": {},
+			"minecraft:shareables": {
+				"items": [
+					{
+						"item": "minecraft:banner:15",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					}
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:experience_reward": {
+				"on_death": "10"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"enchanter",
+					"monster",
+					"illager",
+					"mob"
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/enchanter.json"
+			},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:movement": {
+				"value": 0.2
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.summon_entity": {
+				"priority": 1,
+				"summon_choices": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"all_of": [
+										{
+											"test": "distance_to_nearest_player",
+											"value": 32,
+											"operator": "<=",
+											"subject": "self"
+										},
+										{
+											"test": "is_raider",
+											"subject": "self",
+											"value": true
+										}
+									]
+								},
+								{
+									"all_of": [
+										{
+											"test": "distance_to_nearest_player",
+											"value": 16,
+											"operator": "<=",
+											"subject": "self"
+										},
+										{
+											"test": "is_raider",
+											"subject": "self",
+											"value": false
+										}
+									]
+								}
+							]
+						},
+						"min_activation_range": 0,
+						"max_activation_range": 12,
+						"cooldown_time": 3,
+						"weight": 3,
+						"cast_duration": 2.5,
+						"particle_color": "#FF991D99",
+						"start_sound_event": "prepare.attack",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "target",
+								"base_delay": 1,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 1,
+								"entity_type": "dungeons:enchanter_point",
+								"size": 0.1,
+								"entity_lifespan": 5
+							}
+						]
+					}
+				]
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 7,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 8,
+						"walk_speed_multiplier": 1,
+						"sprint_speed_multiplier": 1.3
+					},
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "creaking"
+						},
+						"max_dist": 8,
+						"sprint_speed_multiplier": 1.5
+					}
+				]
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 8,
+				"speed_multiplier": 0.9
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 3,
+				"reselect_targets": true,
+				"within_radius": 32,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_tag",
+									"value": "dungeons:love_medallion_active",
+									"subject": "other",
+									"operator": "not"
+								},
+								{
+									"test": "is_raider",
+									"subject": "other",
+									"value": false
+								},
+								{
+									"test": "rider_count",
+									"value": 0
+								},
+								{
+									"test": "is_riding",
+									"subject": "other",
+									"value": false
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "enchantable"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "enchanted",
+									"operator": "!="
+								}
+							]
+						},
+						"max_dist": 32,
+						"must_see": true
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_raider",
+									"subject": "other",
+									"value": true
+								},
+								{
+									"test": "rider_count",
+									"value": 0
+								},
+								{
+									"test": "is_riding",
+									"subject": "other",
+									"value": false
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "enchantable"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "enchanted",
+									"operator": "!="
+								}
+							]
+						},
+						"max_dist": 128,
+						"must_see": false
+					}
+				]
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 3,
+				"probability": 1
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 10,
+				"look_distance": 8,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:behavior.equip_item": {
+				"priority": 4
+			},
+			"minecraft:behavior.pickup_items": {
+				"priority": 7,
+				"max_dist": 3,
+				"goal_radius": 2,
+				"speed_multiplier": 1
+			},
+			"minecraft:persistent": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:can_join_raid": {},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"dungeons:begin_casting": {
+				"set_property": {
+					"dungeons:casting": true
+				}
+			},
+			"dungeons:complete_casting": {
+				"set_property": {
+					"dungeons:casting": false
+				},
+				"queue_command": {
+					"command": [
+						"tag @s remove dungeons:enchanting_detected"
+					]
+				}
+			},
+			"minecraft:spawn_for_raid": {
+				"add": {
+					"component_groups": [
+						"minecraft:raid_configuration",
+						"minecraft:raid_despawn",
+						"minecraft:raid_persistence"
+					]
+				}
+			},
+			"minecraft:start_celebrating": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:celebrate"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_nametag",
+							"value": false
+						},
+						"remove": {
+							"component_groups": [
+								"minecraft:raid_persistence"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:stop_celebrating": {
+				"remove": {
+					"component_groups": [
+						"minecraft:celebrate"
+					]
+				}
+			},
+			"minecraft:raid_expired": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_nametag",
+							"value": false
+						},
+						"remove": {
+							"component_groups": [
+								"minecraft:raid_persistence"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

@@ -3,35 +3,19 @@
 	"animations": {
 		"animation.shadow": {
 			"loop": false,
-			"animation_length": 0.1,
+			"animation_length": 0.25,
 			"bones": {
 				"root": {
-					"scale": [
-						0,
-						1,
-						0
-					]
+					"scale": "query.is_first_person ? 1 : 0"
 				},
 				"head": {
-					"scale": [
-						0,
-						1,
-						0
-					]
+					"scale": "query.is_first_person ? 1 : 0"
 				},
 				"rightItem": {
-					"scale": [
-						0,
-						1,
-						0
-					]
+					"scale": "query.is_first_person ? 1 : 0"
 				},
 				"leftItem": {
-					"scale": [
-						0,
-						1,
-						0
-					]
+					"scale": "query.is_first_person ? 1 : 0"
 				}
 			}
 		}

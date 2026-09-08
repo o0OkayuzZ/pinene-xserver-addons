@@ -1,0 +1,70 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:battlestaff_of_terror",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_tool",
+					"minecraft:is_sword",
+					"dungeons:exploding",
+					"alylica:disable_melee_swing",
+					"dungeons:melee_lore",
+					"dungeons:unique_item"
+				]
+			},
+			"dungeons:durability_fix": {
+				"tag": "minecraft:is_sword_item_destructible"
+			},
+			"dungeons:custom_swing": {
+				"has_cooldown": false,
+				"animation": "battlestaff",
+				"swing_sound": "weapon.battlestaff.swing.terror"
+			},
+			"dungeons:battlestaff": {
+				"unique": true
+			},
+			"minecraft:swing_duration": {
+				"value": 0.4
+			},
+			"minecraft:icon": "battlestaff_of_terror",
+			"minecraft:max_stack_size": 1,
+			"minecraft:stacked_by_data": false,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 800
+			},
+			"minecraft:hover_text_color": {
+				"value": "aqua"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:stick"
+						],
+						"repair_amount": "q.max_durability*0.25"
+					},
+					{
+						"items": [
+							"dungeons:battlestaff"
+						],
+						"repair_amount": "c.other->q.remaining_durability+0.12*c.other->q.max_durability"
+					}
+				]
+			},
+			"minecraft:damage": {
+				"value": 5
+			},
+			"minecraft:enchantable": {
+				"value": 30,
+				"slot": "sword"
+			}
+		}
+	}
+}

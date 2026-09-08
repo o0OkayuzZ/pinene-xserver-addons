@@ -23,6 +23,13 @@
 				"minecraft:instant_despawn": {}
 			},
 			"dungeons:open": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 0.75,
+					"time_down_event": {
+						"event": "dungeons:startest"
+					}
+				},
 				"minecraft:variant": {
 					"value": 1
 				}
@@ -87,6 +94,14 @@
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
+			"dungeons:startest": {
+				"queue_command": {
+					"command": [
+						"particle dungeons:startest",
+						"particle dungeons:starswirl"
+					]
+				}
+			},
 			"dungeons:eye_placed": {
 				"set_property": {
 					"dungeons:eyes": "query.property('dungeons:eyes') + 1"

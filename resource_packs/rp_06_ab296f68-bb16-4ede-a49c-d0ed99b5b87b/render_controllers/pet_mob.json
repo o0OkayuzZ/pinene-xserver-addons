@@ -1,0 +1,48 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.pet_mob_dungeons": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"arrays": {
+				"textures": {
+					"array.skins": [
+						"texture.default",
+						"texture.glow"
+					]
+				}
+			},
+			"textures": [
+				"array.skins[query.is_saddled]"
+			]
+		},
+		"controller.render.pet_llama_dungeons": {
+			"part_visibility": [
+				{
+					"chest*": "query.is_chested"
+				}
+			],
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"arrays": {
+				"textures": {
+					"array.skins": [
+						"texture.default",
+						"texture.glow"
+					]
+				}
+			},
+			"textures": [
+				"array.skins[query.is_saddled]"
+			]
+		}
+	}
+}

@@ -1,0 +1,55 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:obsidian_monstrosity",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/obsidian_monstrosity/obsidian_monstrosity"
+			},
+			"geometry": {
+				"default": "geometry.obsidian_monstrosity"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"animations": {
+				"idle": "animation.obsidian_monstrosity_v2.idle",
+				"idle_head_movement": "animation.obsidian_monstrosity_v2.idle_head_movement",
+				"move": "animation.obsidian_monstrosity_v2.walk",
+				"attack_main": "animation.obsidian_monstrosity_v2.attack",
+				"attack_alt": "animation.obsidian_monstrosity_v2.attack_alt",
+				"attack_ranged": "animation.obsidian_monstrosity.projectile",
+				"look_at_target": "animation.redstone_monstrosity_v2.face_target",
+				"summon": "animation.obsidian_monstrosity.roar",
+				"ranged_controller": "controller.animation.redstone_monstrosity_v2.ranged_attack",
+				"move_controller": "controller.animation.mooshroom_monstrosity_v2.move",
+				"attack_controller": "controller.animation.obsidian_monstrosity.attack",
+				"look_at_target_controller": "controller.animation.mooshroom_monstrosity_v2.look_at_target",
+				"summon_controller": "controller.animation.mooshroom_monstrosity_v2.summon",
+				"idle_controller": "controller.animation.mooshroom_monstrosity_v2.idle_pose"
+			},
+			"scripts": {
+				"animate": [
+					"attack_controller",
+					"move_controller",
+					"summon_controller",
+					"idle_controller",
+					"look_at_target_controller",
+					"ranged_controller"
+				]
+			},
+			"sound_effects": {
+				"attack_start": "mob.redstone_monstrosity.attack_start",
+				"attack_end": "mob.redstone_monstrosity.attack_end",
+				"growl": "mob.redstone_monstrosity.growl"
+			},
+			"spawn_egg": {
+				"base_color": "#E61D00",
+				"overlay_color": "#FFFF97"
+			}
+		}
+	}
+}

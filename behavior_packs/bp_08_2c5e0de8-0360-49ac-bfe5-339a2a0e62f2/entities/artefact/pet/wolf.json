@@ -1,0 +1,337 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeons:pet_wolf",
+			"runtime_identifier": "minecraft:wolf",
+			"spawn_category": "creature",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"dungeons:enchanted": {
+				"minecraft:is_saddled": {},
+				"minecraft:health": {
+					"value": 80,
+					"max": 80
+				},
+				"minecraft:movement": {
+					"value": 0.36
+				},
+				"minecraft:scale": {
+					"value": 1.1
+				},
+				"minecraft:type_family": {
+					"family": [
+						"wolf",
+						"mob",
+						"artefact",
+						"enchanted"
+					]
+				}
+			},
+			"dungeons:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"minecraft:on_tame_collar_color": {},
+			"minecraft:wolf_tame": {
+				"minecraft:is_tamed": {},
+				"minecraft:attack": {
+					"damage": 6
+				},
+				"minecraft:behavior.teleport_to_owner": {
+					"priority": 1,
+					"filters": {
+						"any_of": [
+							{
+								"all_of": [
+									{
+										"test": "owner_distance",
+										"operator": ">",
+										"value": 12
+									},
+									{
+										"test": "is_panicking"
+									}
+								]
+							},
+							{
+								"all_of": [
+									{
+										"test": "owner_distance",
+										"operator": ">",
+										"value": 24
+									},
+									{
+										"test": "has_target"
+									}
+								]
+							}
+						]
+					}
+				},
+				"minecraft:behavior.owner_hurt_by_target": {
+					"priority": 1
+				},
+				"minecraft:behavior.owner_hurt_target": {
+					"priority": 2
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 5,
+					"must_see": true,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "skeleton"
+							},
+							"max_dist": 16
+						}
+					]
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				}
+			},
+			"minecraft:wolf_pale": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "is_owner",
+										"subject": "other",
+										"value": true
+									}
+								]
+							}
+						},
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:is_tamed": {},
+			"minecraft:behavior.follow_owner": {
+				"priority": 6,
+				"speed_multiplier": 1.1,
+				"start_distance": 10,
+				"stop_distance": 2
+			},
+			"minecraft:behavior.owner_hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.owner_hurt_target": {
+				"priority": 2
+			},
+			"minecraft:tameable": {
+				"probability": 1
+			},
+			"minecraft:timer": {
+				"time": 28,
+				"looping": true,
+				"time_down_event": {
+					"event": "dungeons:despawn"
+				}
+			},
+			"minecraft:balloonable": {
+				"mass": 0.8
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": [
+					"wolf",
+					"mob",
+					"artefact",
+					"enchantable_pet"
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 0.8
+			},
+			"minecraft:health": {
+				"value": 40,
+				"max": 40
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:attack": {
+				"damage": 6
+			},
+			"minecraft:healable": {
+				"items": [
+					{
+						"item": "porkchop",
+						"heal_amount": 6
+					},
+					{
+						"item": "cooked_porkchop",
+						"heal_amount": 16
+					},
+					{
+						"item": "fish",
+						"heal_amount": 4
+					},
+					{
+						"item": "salmon",
+						"heal_amount": 4
+					},
+					{
+						"item": "clownfish",
+						"heal_amount": 2
+					},
+					{
+						"item": "pufferfish",
+						"heal_amount": 2
+					},
+					{
+						"item": "cooked_fish",
+						"heal_amount": 10
+					},
+					{
+						"item": "cooked_salmon",
+						"heal_amount": 12
+					},
+					{
+						"item": "beef",
+						"heal_amount": 6
+					},
+					{
+						"item": "cooked_beef",
+						"heal_amount": 16
+					},
+					{
+						"item": "chicken",
+						"heal_amount": 4
+					},
+					{
+						"item": "cooked_chicken",
+						"heal_amount": 12
+					},
+					{
+						"item": "muttonRaw",
+						"heal_amount": 4
+					},
+					{
+						"item": "muttonCooked",
+						"heal_amount": 12
+					},
+					{
+						"item": "rotten_flesh",
+						"heal_amount": 8
+					},
+					{
+						"item": "rabbit",
+						"heal_amount": 6
+					},
+					{
+						"item": "cooked_rabbit",
+						"heal_amount": 10
+					},
+					{
+						"item": "rabbit_stew",
+						"heal_amount": 20
+					}
+				]
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable_by_entity": {},
+			"minecraft:pushable_by_block": {},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 3
+			},
+			"minecraft:behavior.leap_at_target": {
+				"priority": 4,
+				"yd": 0.4
+			},
+			"minecraft:behavior.melee_box_attack": {
+				"priority": 5
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 6,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 8,
+				"speed_multiplier": 1
+			}
+		},
+		"events": {
+			"dungeons:pet_become_enchanted": {
+				"add": {
+					"component_groups": [
+						"dungeons:enchanted"
+					]
+				}
+			},
+			"dungeons:despawn": {
+				"add": {
+					"component_groups": [
+						"dungeons:despawn"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"minecraft:on_tame_collar_color",
+						"minecraft:wolf_tame",
+						"minecraft:wolf_pale"
+					]
+				}
+			}
+		}
+	}
+}

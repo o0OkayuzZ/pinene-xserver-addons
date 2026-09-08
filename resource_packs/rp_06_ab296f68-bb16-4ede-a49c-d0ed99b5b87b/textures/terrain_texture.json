@@ -4,6 +4,27 @@
 	"padding": 8,
 	"num_mip_levels": 4,
 	"texture_data": {
+		"forge_core_bottom": {
+			"textures": "textures/blocks/forge_core/forge_core_bottom"
+		},
+		"forge_core_side_off": {
+			"textures": "textures/blocks/forge_core/forge_core_side_cooldown"
+		},
+		"forge_core_side_ready": {
+			"textures": "textures/blocks/forge_core/forge_core_side_ready"
+		},
+		"forge_core_side_active": {
+			"textures": "textures/blocks/forge_core/forge_core_side_active"
+		},
+		"forge_core_top_off": {
+			"textures": "textures/blocks/forge_core/forge_core_top_cooldown"
+		},
+		"forge_core_top_ready": {
+			"textures": "textures/blocks/forge_core/forge_core_top_ready"
+		},
+		"forge_core_top_active": {
+			"textures": "textures/blocks/forge_core/forge_core_top_active"
+		},
 		"redstone_golem_head": {
 			"textures": "textures/blocks/redstone_golem_head"
 		},
@@ -102,6 +123,114 @@
 		},
 		"eternal_flame": {
 			"textures": "textures/blocks/eternal_flame"
+		},
+		"chiseled_desert_bricks": {
+			"textures": "textures/blocks/nameless/chiseled_desert_bricks"
+		},
+		"desert_bricks": {
+			"textures": "textures/blocks/nameless/desert_bricks"
+		},
+		"desert_brick_tile": {
+			"textures": "textures/blocks/nameless/desert_brick_tile"
+		},
+		"desert_brick_pillar": {
+			"textures": "textures/blocks/nameless/pillar"
+		},
+		"desert_brick_pillar_top": {
+			"textures": "textures/blocks/nameless/desert_brick_pillar_top"
+		},
+		"desert_brick_pillar_base": {
+			"textures": "textures/blocks/nameless/desert_brick_pillar_base"
+		},
+		"desert_brick_pillar_base_gilded": {
+			"textures": "textures/blocks/nameless/desert_brick_pillar_base_gilded"
+		},
+		"sandy_desert_bricks_0": {
+			"textures": "textures/blocks/nameless/sandy_desert_bricks_0"
+		},
+		"sandy_desert_bricks_1": {
+			"textures": "textures/blocks/nameless/sandy_desert_bricks_1"
+		},
+		"sandy_desert_bricks_2": {
+			"textures": "textures/blocks/nameless/sandy_desert_bricks_2"
+		},
+		"sandy_desert_bricks": {
+			"textures": {
+				"variations": [
+					{
+						"path": "textures/blocks/nameless/sandy_desert_bricks_0",
+						"weight": 4
+					},
+					{
+						"path": "textures/blocks/nameless/sandy_desert_bricks_1",
+						"weight": 2
+					},
+					{
+						"path": "textures/blocks/nameless/sandy_desert_bricks_2",
+						"weight": 1
+					}
+				]
+			}
+		},
+		"trial_totem_stone": {
+			"textures": "textures/blocks/trial/trial_totem_stone"
+		},
+		"trial_totem_stone_top": {
+			"textures": "textures/blocks/trial/trial_totem_stone_top"
+		},
+		"trial_totem_stone_on": {
+			"textures": "textures/blocks/trial/trial_totem_stone_on"
+		},
+		"trial_totem_stone_on_ominous": {
+			"textures": "textures/blocks/trial/trial_totem_stone_on_ominous"
+		},
+		"trial_totem_mossy_stone": {
+			"textures": "textures/blocks/trial/trial_totem_mossy_stone"
+		},
+		"trial_totem_mossy_stone_top": {
+			"textures": "textures/blocks/trial/trial_totem_mossy_stone_top"
+		},
+		"trial_totem_mossy_stone_on": {
+			"textures": "textures/blocks/trial/trial_totem_mossy_stone_on"
+		},
+		"trial_totem_mossy_stone_on_ominous": {
+			"textures": "textures/blocks/trial/trial_totem_mossy_stone_on_ominous"
+		},
+		"trial_totem_calcite": {
+			"textures": "textures/blocks/trial/trial_totem_calcite"
+		},
+		"trial_totem_calcite_top": {
+			"textures": "textures/blocks/trial/trial_totem_calcite_top"
+		},
+		"trial_totem_calcite_on": {
+			"textures": "textures/blocks/trial/trial_totem_calcite_on"
+		},
+		"trial_totem_calcite_on_ominous": {
+			"textures": "textures/blocks/trial/trial_totem_calcite_on_ominous"
+		},
+		"trial_totem_void": {
+			"textures": "textures/blocks/trial/trial_totem_void"
+		},
+		"trial_totem_void_top": {
+			"textures": "textures/blocks/trial/trial_totem_void_top"
+		},
+		"trial_totem_void_on": {
+			"textures": "textures/blocks/trial/trial_totem_void_on"
+		},
+		"trial_totem_void_on_ominous": {
+			"textures": "textures/blocks/trial/trial_totem_void_on_ominous"
+		},
+		"obsidian_painting": {
+			"textures": "textures/blocks/obsidian_painting"
+		},
+		"heart_painting": {
+			"textures": "textures/blocks/heart_of_ender_painting"
+		},
+		"obsidian_claw": {
+			"textures": "textures/blocks/obsidian_claw"
+		},
+		"silver_crown": {
+			"textures": "textures/blocks/silver_crown"
 		}
 	}
 }

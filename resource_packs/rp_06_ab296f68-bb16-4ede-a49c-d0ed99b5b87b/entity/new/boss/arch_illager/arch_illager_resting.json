@@ -1,0 +1,41 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:arch_illager_resting",
+			"materials": {
+				"default": "entity_emissive_alpha",
+				"orb": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/arch_illager/arch_illager"
+			},
+			"geometry": {
+				"default": "geometry.arch_illager",
+				"orb": "geometry.arch_illager_orb"
+			},
+			"render_controllers": [
+				"controller.render.default",
+				"controller.render.arch_illager_orb"
+			],
+			"animations": {
+				"resting": "animation.arch_illager.hidden",
+				"awaken": "animation.arch_illager.spawn",
+				"wake_controller": "controller.animation.redstone_monstrosity.rest"
+			},
+			"scripts": {
+				"animate": [
+					"wake_controller"
+				]
+			},
+			"sound_effects": {
+				"orb_touched": "mob.arch_illager.orb_touched",
+				"greetings": "mob.arch_illager.greetings",
+				"laugh": "mob.arch_illager.laugh"
+			},
+			"spawn_egg": {
+				"texture": "egg_arch_illager"
+			}
+		}
+	}
+}

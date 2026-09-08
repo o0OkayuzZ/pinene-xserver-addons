@@ -7,10 +7,10 @@
 				"texture_width": 64,
 				"texture_height": 64,
 				"visible_bounds_width": 3,
-				"visible_bounds_height": 2.5,
+				"visible_bounds_height": 3.5,
 				"visible_bounds_offset": [
 					0,
-					0.75,
+					1.25,
 					0
 				]
 			},
@@ -34,11 +34,11 @@
 								12,
 								6
 							],
+							"inflate": 0.34,
 							"uv": [
 								1,
 								18
-							],
-							"inflate": 0.34
+							]
 						}
 					]
 				},
@@ -61,11 +61,11 @@
 								7,
 								6
 							],
+							"inflate": 0.33,
 							"uv": [
 								39,
 								0
 							],
-							"inflate": 0.33,
 							"mirror": true
 						}
 					]
@@ -90,11 +90,29 @@
 								7,
 								6
 							],
+							"inflate": 0.33,
 							"uv": [
 								39,
 								0
 							],
+							"mirror": false
+						},
+						{
+							"origin": [
+								4.33,
+								12,
+								-3
+							],
+							"size": [
+								5,
+								3,
+								6
+							],
 							"inflate": 0.33,
+							"uv": [
+								27,
+								40
+							],
 							"mirror": false
 						}
 					]

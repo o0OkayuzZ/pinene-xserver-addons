@@ -10,35 +10,20 @@
         "minecraft:spawns_on_surface": {},
         "minecraft:brightness_filter": {
           "min": 0,
-          "max": 7,
+          "max": 2,
           "adjust_for_weather": true
         },
         "minecraft:difficulty_filter": {
-          "min": "medium",
+          "min": "normal",
           "max": "hard"
         },
-        "minecraft:density_limit": {
-          "surface": 2
-        },
         "minecraft:weight": {
-          "default": 30
-        },
-        "minecraft:herd": {
-          "min_size": 1,
-          "max_size": 2
+          "default": 50
         },
         "minecraft:biome_filter": {
-          "all_of": [{
-            "test": "has_biome_tag",
-            "operator": "==",
-            "value": "jungle"
-          },
-          {
-            "test": "has_biome_tag",
-            "operator": "!=",
-            "value": "edge"
-          }
-        ]
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "jungle"
         }
       }
     ]

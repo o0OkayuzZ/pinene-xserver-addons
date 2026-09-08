@@ -1,0 +1,17 @@
+
+import {
+    system
+} from "@minecraft/server";
+
+system.beforeEvents.startup.subscribe((event) => {
+    event.blockComponentRegistry.registerCustomComponent("dungeons:precise_rotation", {
+        beforeOnPlayerPlace(e) {
+            const player = e.player;
+            const y = player.getRotation().y;
+            let rot = y + 360 * (y != Math.abs(y));
+            rot = Math.round(rot / 22.5)
+            rot = rot != 16 ? rot : 0
+            e.permutationToPlace = e.permutationToPlace.withState('dungeons:rotation', rot);
+        }
+    });
+})

@@ -9,7 +9,7 @@
 				"enchanted": "dungeons_entity_enchant"
 			},
 			"textures": {
-				"default": "textures/entity/necromancer/enchanted_necromancer_glow",
+				"default": "textures/entity/enchanted_mob/necromancer",
 				"enchanted": "textures/misc/enchanted_entity_glint"
 			},
 			"geometry": {
@@ -20,7 +20,6 @@
 				"controller.render.dungeons_entity_enchanted"
 			],
 			"animations": {
-				"enchanted_particles": "animation.enchanted_mob.particles",
 				"walk": "animation.necromancer.walk",
 				"cast_controller": "controller.animation.necromancer.cast",
 				"particles": "animation.necromancer_shot.particles",
@@ -38,14 +37,12 @@
 					"particles",
 					"walk",
 					"head_controller",
-					"cast_controller",
-					"enchanted_particles"
+					"cast_controller"
 				]
 			},
 			"particle_effects": {
 				"energy": "dungeons:necromancer_orb",
-				"summon": "dungeons:necromancer_summon",
-				"enchant": "dungeons:tall_humanoid_enchant"
+				"summon": "dungeons:necromancer_summon"
 			},
 			"spawn_egg": {
 				"texture": "egg_enchanted_necromancer"

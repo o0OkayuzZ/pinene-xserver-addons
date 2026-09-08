@@ -1,29 +1,29 @@
 {
-    "pools":  [
-                  {
-                      "rolls":  1,
-                      "entries":  [
-                                      {
-                                          "type":  "loot_table",
-                                          "weight":  1,
-                                          "name":  "loot_tables/chests/diamond_chest/armor/ender/helmet.json"
-                                      },
-                                      {
-                                          "type":  "loot_table",
-                                          "weight":  1,
-                                          "name":  "loot_tables/chests/diamond_chest/armor/ender/chestplate.json"
-                                      },
-                                      {
-                                          "type":  "loot_table",
-                                          "weight":  1,
-                                          "name":  "loot_tables/chests/diamond_chest/armor/ender/leggings.json"
-                                      },
-                                      {
-                                          "type":  "loot_table",
-                                          "weight":  1,
-                                          "name":  "loot_tables/chests/diamond_chest/armor/ender/boots.json"
-                                      }
-                                  ]
-                  }
-              ]
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "weight": 1,
+          "name": "loot_tables/chests/diamond_chest/armor/ender/helmet.json"
+        },
+        {
+          "type": "loot_table",
+          "weight": 1,
+          "name": "loot_tables/chests/diamond_chest/armor/ender/chestplate.json"
+        },
+        {
+          "type": "loot_table",
+          "weight": 1,
+          "name": "loot_tables/chests/diamond_chest/armor/ender/leggings.json"
+        },
+        {
+          "type": "loot_table",
+          "weight": 1,
+          "name": "loot_tables/chests/diamond_chest/armor/ender/boots.json"
+        }
+      ]
+    }
+  ]
 }

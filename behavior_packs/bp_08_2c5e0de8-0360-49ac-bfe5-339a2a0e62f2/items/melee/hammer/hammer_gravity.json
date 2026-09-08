@@ -1,0 +1,84 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:hammer_of_gravity",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": [
+					"dungeons:gravity",
+					"minecraft:is_tool",
+					"minecraft:is_sword",
+					"oreville:is_mace",
+					"alylica:disable_melee_swing",
+					"dungeons:melee_lore",
+					"dungeons:unique_item"
+				]
+			},
+			"dungeons:durability_fix": {
+				"tag": "minecraft:is_pickaxe_item_destructible"
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"speed": 6,
+						"block": {
+							"tags": "q.any_tag('minecraft:is_pickaxe_item_destructible')"
+						}
+					}
+				]
+			},
+			"minecraft:swing_duration": {
+				"value": 0.6
+			},
+			"minecraft:cooldown": {
+				"category": "hammer",
+				"duration": 1,
+				"type": "attack"
+			},
+			"dungeons:hammer": {
+				"unique": true
+			},
+			"dungeons:custom_swing": {
+				"has_cooldown": true,
+				"animation": "hammer",
+				"swing_sound": "weapon.hammer.swing"
+			},
+			"minecraft:icon": "hammer_of_gravity",
+			"minecraft:max_stack_size": 1,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 2004
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:cobblestone"
+						],
+						"repair_amount": "q.max_durability*0.125"
+					},
+					{
+						"items": [
+							"dungeons:great_hammer"
+						],
+						"repair_amount": "c.other->q.remaining_durability+0.12*c.other->q.max_durability"
+					}
+				]
+			},
+			"minecraft:damage": {
+				"value": 10
+			},
+			"minecraft:enchantable": {
+				"value": 1,
+				"slot": "flintsteel"
+			}
+		}
+	}
+}

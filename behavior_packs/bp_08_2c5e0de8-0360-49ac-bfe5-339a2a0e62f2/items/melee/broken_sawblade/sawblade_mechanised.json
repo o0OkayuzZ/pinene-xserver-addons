@@ -1,0 +1,71 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:mechanised_sawblade",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_tool",
+					"minecraft:is_sword",
+					"alylica:disable_melee_swing",
+					"dungeons:melee_lore",
+					"dungeons:unique_item"
+				]
+			},
+			"dungeons:broken_sawblade": {
+				"unique": true
+			},
+			"dungeons:durability_fix": {
+				"tag": "minecraft:is_sword_item_destructible"
+			},
+			"minecraft:cooldown": {
+				"category": "sawblade",
+				"duration": 0.1,
+				"type": "attack"
+			},
+			"dungeons:custom_swing": {
+				"has_cooldown": false,
+				"animation": "sawblade",
+				"swing_sound": "weapon.sawblade.swing.unique"
+			},
+			"minecraft:swing_duration": {
+				"value": 0.3
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:icon": "mechanised_sawblade",
+			"minecraft:max_stack_size": 1,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 912
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:iron_ingot"
+						],
+						"repair_amount": "q.max_durability*0.25"
+					},
+					{
+						"items": [
+							"dungeons:broken_sawblade"
+						],
+						"repair_amount": "c.other->q.remaining_durability+0.12*c.other->q.max_durability"
+					}
+				]
+			},
+			"minecraft:damage": {
+				"value": 6
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "sword"
+			}
+		}
+	}
+}

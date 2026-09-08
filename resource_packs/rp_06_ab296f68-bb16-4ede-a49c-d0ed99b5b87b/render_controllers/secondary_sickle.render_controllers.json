@@ -1,0 +1,17 @@
+{
+	"format_version": "1.10",
+	"render_controllers": {
+		"controller.render.secondary_sickle": {
+			"geometry": "geometry.alternate",
+			"materials": [
+				{
+					"*": "variable.is_enchanted?material.enchanted:material.default"
+				}
+			],
+			"textures": [
+				"texture.alternate",
+				"texture.enchanted"
+			]
+		}
+	}
+}

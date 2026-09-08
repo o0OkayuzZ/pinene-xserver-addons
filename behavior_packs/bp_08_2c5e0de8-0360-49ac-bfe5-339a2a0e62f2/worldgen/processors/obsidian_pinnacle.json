@@ -1,0 +1,106 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:processor_list": {
+        "description": {
+            "identifier": "dungeons:obsidian_pinnacle"
+        },
+        "processors": [
+            {
+                "processor_type": "minecraft:rule",
+                "rules": [
+                    {
+                        "input_predicate": {
+                            "block": "stone",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.1
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "minecraft:tuff"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "stone_bricks",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.2
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "cracked_stone_bricks"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "stone_bricks",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.01
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "cobblestone"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "crying_obsidian",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.1
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "obsidian"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "obsidian",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.1
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "blackstone"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "deepslate_gold_ore",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.33
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "deepslate"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "polished_andesite",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.2
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "andesite"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

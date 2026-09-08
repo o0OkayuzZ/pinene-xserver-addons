@@ -1,0 +1,47 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:heros_chestplate",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor",
+					"dungeons:armor_lore",
+					"dungeons:champions_armour",
+					"dungeons:heros_armour",
+					"dungeons:unique_item"
+				]
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:icon": "hero_chestplate",
+			"minecraft:max_stack_size": 1,
+			"minecraft:stacked_by_data": false,
+			"minecraft:enchantable": {
+				"value": 10,
+				"slot": "armor_torso"
+			},
+			"minecraft:wearable": {
+				"protection": 14,
+				"slot": "slot.armor.chest"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:iron_ingot"
+						],
+						"repair_amount": "q.max_durability*0.25"
+					}
+				]
+			},
+			"minecraft:durability": {
+				"max_durability": 725
+			}
+		}
+	}
+}

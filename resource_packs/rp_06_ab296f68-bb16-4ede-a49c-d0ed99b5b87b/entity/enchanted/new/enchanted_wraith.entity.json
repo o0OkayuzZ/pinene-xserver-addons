@@ -8,7 +8,7 @@
 				"enchanted": "dungeons_entity_enchant"
 			},
 			"textures": {
-				"default": "textures/entity/wraith/enchanted_wraith",
+				"default": "textures/entity/enchanted_mob/wraith",
 				"enchanted": "textures/misc/enchanted_entity_glint"
 			},
 			"geometry": {
@@ -19,33 +19,29 @@
 				"controller.render.dungeons_entity_enchanted"
 			],
 			"animations": {
-				"enchanted_particles": "animation.enchanted_mob.particles",
-				"cast_controller": "controller.animation.necromancer.cast",
+				"cast_controller": "controller.animation.wraith_v2.cast",
 				"cast": "animation.wraith.summon",
 				"look_at_target_default": "animation.humanoid.look_at_target.default",
 				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
 				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
 				"head_controller": "controller.animation.humanoid.look_at_target",
-				"move_controller": "controller.animation.wraith.move",
+				"move_controller": "controller.animation.wraith_v2.move",
 				"move": "animation.wraith.walk",
-				"spawn": "animation.wraith.spawn"
-			},
-			"particle_effects": {
-				"enchant": "dungeons:humanoid_enchant"
-			},
-			"sound_effects": {
-				"awaken": "mob.wraith.rise"
+				"spawn": "animation.wraith.spawn",
+				"idle": "animation.wraith.idle"
 			},
 			"scripts": {
 				"animate": [
-					"enchanted_particles",
+					"spawn",
 					"cast_controller",
 					{
 						"head_controller": "query.variant!=1"
 					},
-					"move_controller",
-					"spawn"
+					"move_controller"
 				]
+			},
+			"sound_effects": {
+				"awaken": "mob.wraith.rise"
 			},
 			"spawn_egg": {
 				"texture": "egg_enchanted_wraith"

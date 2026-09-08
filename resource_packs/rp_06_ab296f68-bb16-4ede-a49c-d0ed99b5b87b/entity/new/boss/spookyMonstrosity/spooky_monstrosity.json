@@ -18,29 +18,36 @@
 				"controller.render.default"
 			],
 			"animations": {
-				"move": "animation.redstone_monstrosity.walk",
-				"smash": "animation.redstone_monstrosity.smash",
-				"attack_controller": "controller.animation.redstone_monstrosity.attack",
-				"move_controller": "controller.animation.redstone_monstrosity.move",
-				"roar": "animation.redstone_monstrosity.roar",
-				"roar_controller": "controller.animation.redstone_monstrosity.roar",
-				"death": "animation.necromancer_shot.particles",
-				"fire": "animation.spooky_monstrosity.fire",
-				"look_at_target": "animation.common.look_at_target"
+				"idle": "animation.redstone_monstrosity_v2.idle",
+				"idle_head_movement": "animation.redstone_monstrosity_v2.idle_head_movement",
+				"move": "animation.redstone_monstrosity_v2.walk",
+				"attack_melee": "animation.redstone_monstrosity_v2.attack_melee",
+				"attack_ranged": "animation.redstone_monstrosity_v2.projectile",
+				"look_at_target": "animation.redstone_monstrosity_v2.face_target",
+				"summon": "animation.redstone_monstrosity_v2.lava_attack",
+				"move_controller": "controller.animation.redstone_monstrosity_v2.move",
+				"attack_controller": "controller.animation.redstone_monstrosity_v2.attack",
+				"look_at_target_controller": "controller.animation.redstone_monstrosity_v2.look_at_target",
+				"summon_controller": "controller.animation.redstone_monstrosity_v2.summon",
+				"idle_controller": "controller.animation.redstone_monstrosity_v2.idle_pose",
+				"ranged_controller": "controller.animation.redstone_monstrosity_v2.ranged_attack",
+				"fire": "animation.spooky_monstrosity.fire"
 			},
 			"scripts": {
 				"animate": [
-					"attack_controller",
-					"move_controller",
-					"roar_controller",
 					"fire",
-					{
-						"look_at_target": "!query.is_casting&&!q.is_delayed_attacking"
-					},
-					{
-						"death": "query.is_alive!=1"
-					}
+					"attack_controller",
+					"ranged_controller",
+					"move_controller",
+					"summon_controller",
+					"idle_controller",
+					"look_at_target_controller"
 				]
+			},
+			"sound_effects": {
+				"attack_start": "mob.redstone_monstrosity.attack_start",
+				"attack_end": "mob.redstone_monstrosity.attack_end",
+				"growl": "mob.redstone_monstrosity.growl"
 			},
 			"particle_effects": {
 				"magma": "dungeons:magma_spit_spooky",

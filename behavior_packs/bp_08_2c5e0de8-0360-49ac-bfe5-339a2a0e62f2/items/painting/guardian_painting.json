@@ -1,18 +1,17 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
-			"identifier": "dungeons:guardian_painting",
+			"identifier": "dungeons:guardian_painting_block",
 			"menu_category": {
 				"category": "items"
 			}
 		},
 		"components": {
-			"minecraft:hover_text_color": {
-				"value": "aqua"
-			},
+			"minecraft:rarity": "rare",
 			"minecraft:icon": "guardian_painting",
 			"minecraft:block_placer": {
+				"replace_block_item": true,
 				"block": "dungeons:guardian_painting_block"
 			}
 		}

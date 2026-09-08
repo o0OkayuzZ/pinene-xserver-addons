@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:rare_gong_of_weakening",
@@ -8,14 +8,15 @@
 			}
 		},
 		"components": {
+			"minecraft:hover_text_color": "green",
 			"minecraft:icon": "gong_weakening",
 			"minecraft:max_stack_size": 1,
 			"minecraft:stacked_by_data": false,
 			"minecraft:can_destroy_in_creative": false,
-			"minecraft:custom_components": [
-				"dungeons:dynamic_cooldown",
-				"dungeons:rare_gong_of_weakening"
-			],
+			"dungeons:artefact_cooldown": {},
+			"dungeons:gong_of_weakening": {
+				"type": "common"
+			},
 			"minecraft:cooldown": {
 				"category": "gong_weakening_rare",
 				"duration": 25

@@ -1,0 +1,43 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:arch_illager",
+			"materials": {
+				"default": "entity_emissive_alpha",
+				"orb": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/arch_illager/arch_illager"
+			},
+			"geometry": {
+				"default": "geometry.arch_illager",
+				"orb": "geometry.arch_illager_orb"
+			},
+			"render_controllers": [
+				"controller.render.default",
+				"controller.render.arch_illager_orb"
+			],
+			"animations": {
+				"look_at_target": "animation.common.look_at_target",
+				"idle": "animation.arch_illager.idle",
+				"orb": "animation.arch_illager.orb",
+				"shoot": "animation.arch_illager.shoot",
+				"summon": "animation.arch_illager.summon",
+				"summon_controller": "controller.animation.redstone_monstrosity_v2.summon"
+			},
+			"sound_effects": {
+				"summon": "mob.arch_illager.summon",
+				"laugh": "mob.arch_illager.laugh"
+			},
+			"scripts": {
+				"animate": [
+					"look_at_target",
+					"summon_controller",
+					"idle",
+					"orb"
+				]
+			}
+		}
+	}
+}

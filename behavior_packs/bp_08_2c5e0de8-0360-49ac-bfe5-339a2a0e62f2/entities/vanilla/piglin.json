@@ -1,5 +1,5 @@
 {
-	"format_version": "1.16.0",
+	"format_version": "1.26.20",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "minecraft:piglin",
@@ -165,6 +165,10 @@
 				"minecraft:is_baby": {},
 				"minecraft:scale": {
 					"value": 0.5
+				},
+				"minecraft:collision_box": {
+					"height": 1.96,
+					"width": 0.98
 				},
 				"minecraft:movement": {
 					"value": 0.42
@@ -502,6 +506,12 @@
 			"minecraft:movement.basic": {},
 			"minecraft:jump.static": {},
 			"minecraft:nameable": {},
+			"minecraft:offspring": {
+				"offspring_pairs": {
+					"minecraft:piglin": "minecraft:piglin"
+				}
+			},
+			"minecraft:spawn_egg_interaction": {},
 			"minecraft:inventory": {
 				"inventory_size": 8
 			},
@@ -515,8 +525,8 @@
 				"priority": 2,
 				"admire_item_sound": "admire",
 				"sound_interval": {
-					"range_min": 2,
-					"range_max": 5
+					"min": 8,
+					"max": 8
 				},
 				"on_admire_item_start": {
 					"event": "admire_item_started_event",
@@ -594,8 +604,8 @@
 				},
 				"avoid_mob_sound": "retreat",
 				"sound_interval": {
-					"range_min": 2,
-					"range_max": 5
+					"min": 2,
+					"max": 5
 				}
 			},
 			"minecraft:behavior.equip_item": {
@@ -625,8 +635,8 @@
 				],
 				"avoid_block_sound": "retreat",
 				"sound_interval": {
-					"range_min": 2,
-					"range_max": 5
+					"min": 2,
+					"max": 5
 				}
 			},
 			"minecraft:behavior.random_stroll": {
@@ -641,10 +651,8 @@
 				"priority": 12
 			},
 			"minecraft:physics": {},
-			"minecraft:pushable": {
-				"is_pushable": true,
-				"is_pushable_by_piston": true
-			},
+			"minecraft:pushable_by_entity": {},
+			"minecraft:pushable_by_block": {},
 			"minecraft:follow_range": {
 				"value": 64
 			},

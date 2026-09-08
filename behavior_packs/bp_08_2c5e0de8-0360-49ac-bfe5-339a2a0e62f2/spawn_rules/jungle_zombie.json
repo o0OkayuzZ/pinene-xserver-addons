@@ -5,11 +5,12 @@
       "identifier": "dungeons:jungle_zombie",
       "population_control": "monster"
     },
-    "conditions": [{
+    "conditions": [
+      {
         "minecraft:spawns_on_surface": {},
         "minecraft:brightness_filter": {
           "min": 0,
-          "max": 7,
+          "max": 0,
           "adjust_for_weather": true
         },
         "minecraft:difficulty_filter": {
@@ -24,7 +25,8 @@
           "max_size": 3
         },
         "minecraft:biome_filter": {
-          "all_of": [{
+          "all_of": [
+            {
               "test": "has_biome_tag",
               "operator": "==",
               "value": "jungle"
@@ -33,33 +35,6 @@
               "test": "has_biome_tag",
               "operator": "!=",
               "value": "edge"
-            }
-          ]
-        }
-      },
-      {
-        "minecraft:spawns_underground": {},
-        "minecraft:brightness_filter": {
-          "min": 0,
-          "max": 7,
-          "adjust_for_weather": true
-        },
-        "minecraft:difficulty_filter": {
-          "min": "easy",
-          "max": "hard"
-        },
-        "minecraft:weight": {
-          "default": 80
-        },
-        "minecraft:herd": {
-          "min_size": 1,
-          "max_size": 2
-        },
-        "minecraft:biome_filter": {
-          "all_of": [{
-              "test": "has_biome_tag",
-              "operator": "==",
-              "value": "lush_caves"
             }
           ]
         }

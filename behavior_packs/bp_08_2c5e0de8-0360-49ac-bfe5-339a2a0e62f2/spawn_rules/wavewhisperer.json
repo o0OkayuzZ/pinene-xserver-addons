@@ -9,44 +9,38 @@
       {
         "minecraft:spawns_on_surface": {},
         "minecraft:spawns_underwater": {},
-
         "minecraft:brightness_filter": {
           "min": 0,
-          "max": 7,
+          "max": 3,
           "adjust_for_weather": true
         },
-
         "minecraft:difficulty_filter": {
-          "min": "medium",
+          "min": "normal",
           "max": "hard"
         },
-
         "minecraft:weight": {
           "default": 45
         },
-
         "minecraft:density_limit": {
           "surface": 2
         },
-
         "minecraft:herd": {
           "min_size": 1,
           "max_size": 2
         },
-
         "minecraft:biome_filter": {
           "all_of": [
-                {
-                  "test": "has_biome_tag",
-                  "operator": "==",
-                  "value": "ocean"
-                },
-                {
-                  "test": "has_biome_tag",
-                  "operator": "==",
-                  "value": "deep"
-              }
-            ]
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "ocean"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "deep"
+            }
+          ]
         }
       }
     ]

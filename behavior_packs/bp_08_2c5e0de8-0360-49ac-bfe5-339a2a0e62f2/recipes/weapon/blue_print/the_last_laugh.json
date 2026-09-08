@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bp_the_last_laugh"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"B": {
+				"item": "dungeons:blue_print"
+			},
+			"W": {
+				"item": "dungeons:the_last_laugh"
+			}
+		},
+		"unlock": [
+			{
+				"item": "dungeons:the_last_laugh"
+			}
+		],
+		"pattern": [
+			"B",
+			"W"
+		],
+		"result": [
+			{
+				"item": "dungeons:the_last_laugh",
+				"count": 1
+			},
+			{
+				"item": "dungeons:the_last_laugh",
+				"count": 1
+			}
+		]
+	}
+}

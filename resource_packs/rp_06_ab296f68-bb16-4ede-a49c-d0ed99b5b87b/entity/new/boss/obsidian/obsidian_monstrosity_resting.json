@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:obsidian_monstrosity_resting",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/obsidian_monstrosity/obsidian_monstrosity_glowing"
+			},
+			"geometry": {
+				"default": "geometry.obsidian_monstrosity"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"animations": {
+				"resting": "animation.obsidian_monstrosity.sleep",
+				"awaken": "animation.obsidian_monstrosity.awaken",
+				"wake_controller": "controller.animation.redstone_monstrosity.rest"
+			},
+			"scripts": {
+				"animate": [
+					"wake_controller"
+				]
+			},
+			"sound_effects": {
+				"awaken": "mob.obsidian_monstrosity.awaken"
+			},
+			"spawn_egg": {
+				"texture": "egg_obsidian_monstrosity"
+			}
+		}
+	}
+}

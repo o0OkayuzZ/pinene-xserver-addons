@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bp_bubble_burster"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"B": {
+				"item": "dungeons:blue_print"
+			},
+			"W": {
+				"item": "dungeons:bubble_burster"
+			}
+		},
+		"unlock": [
+			{
+				"item": "dungeons:bubble_burster"
+			}
+		],
+		"pattern": [
+			"B",
+			"W"
+		],
+		"result": [
+			{
+				"item": "dungeons:bubble_burster",
+				"count": 1
+			},
+			{
+				"item": "dungeons:bubble_burster",
+				"count": 1
+			}
+		]
+	}
+}

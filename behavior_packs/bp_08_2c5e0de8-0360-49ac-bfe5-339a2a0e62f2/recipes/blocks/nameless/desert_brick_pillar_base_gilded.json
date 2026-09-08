@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dungeons:desert_brick_pillar_base_gilded"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B",
+			"G",
+			"B"
+		],
+		"unlock": [
+			{
+				"item": "dungeons:desert_brick_slab"
+			}
+		],
+		"key": {
+			"B": {
+				"item": "dungeons:desert_brick_pillar"
+			},
+			"G": {
+				"item": "gold_ingot"
+			}
+		},
+		"result": {
+			"item": "dungeons:desert_brick_pillar_base_gilded",
+			"count": 2
+		}
+	}
+}

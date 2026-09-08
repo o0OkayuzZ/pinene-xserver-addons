@@ -2,12 +2,23 @@
   "materials": {
     "version": "1.0.0",
     "custom_animated:entity": {
-      "+defines": ["USE_UV_ANIM"],
-      "+states": [ "Blending", "DisableCulling" ]
+      "+defines": [
+        "USE_UV_ANIM"
+      ],
+      "+states": [
+        "Blending",
+        "DisableCulling"
+      ]
     },
     "dungeons_entity_enchant:entity_static": {
-      "+defines": [ "USE_UV_ANIM", "USE_COLOR_MASK" ],
-      "+states": [ "Blending", "DisableCulling" ],
+      "+defines": [
+        "USE_UV_ANIM",
+        "USE_COLOR_MASK"
+      ],
+      "+states": [
+        "Blending",
+        "DisableCulling"
+      ],
       "blendSrc": "One",
       "blendDst": "One",
       "depthFunc": "Equal",

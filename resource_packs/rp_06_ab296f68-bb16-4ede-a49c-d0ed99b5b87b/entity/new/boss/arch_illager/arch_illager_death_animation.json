@@ -1,0 +1,35 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:arch_illager_death_animation",
+			"materials": {
+				"default": "entity_emissive_alpha",
+				"orb": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/arch_illager/arch_illager"
+			},
+			"geometry": {
+				"default": "geometry.arch_illager",
+				"orb": "geometry.arch_illager_orb"
+			},
+			"render_controllers": [
+				"controller.render.default",
+				"controller.render.arch_illager_orb"
+			],
+			"animations": {
+				"orb": "animation.arch_illager.orb",
+				"death": "animation.arch_illager.death"
+			},
+			"sound_effects": {
+				"absorbed": "mob.arch_illager.absorbed"
+			},
+			"scripts": {
+				"animate": [
+					"death"
+				]
+			}
+		}
+	}
+}

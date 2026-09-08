@@ -1,0 +1,30 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.swing_flail": {
+			"animation_length": 0.75,
+			"anim_time_update": "q.anim_time+(q.delta_time*(q.base_swing_duration/q.modified_swing_duration))",
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-130",
+							0,
+							0
+						],
+						"0.335": [
+							"v.is_first_person?0:10",
+							0,
+							0
+						],
+						"0.65": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

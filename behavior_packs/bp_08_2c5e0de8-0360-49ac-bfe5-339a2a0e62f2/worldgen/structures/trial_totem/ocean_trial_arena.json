@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:jigsaw": {
+        "description": {
+            "identifier": "dungeons:ocean_trial_arena"
+        },
+        "biome_filters": [
+            {
+                "all_of": [
+                    {
+                        "test": "has_biome_tag",
+                        "operator": "==",
+                        "value": "ocean"
+                    }
+                ]
+            }
+        ],
+        "heightmap_projection": "ocean_floor",
+        "liquid_settings": "apply_waterlogging",
+        "max_depth": 1,
+        "start_height": {
+            "type": "constant",
+            "value": {
+                "absolute": -1
+            }
+        },
+        "start_pool": "dungeons:ocean_trial_arena",
+        "step": "surface_structures",
+        "terrain_adaptation": "beard_box"
+    }
+}

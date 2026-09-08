@@ -1,0 +1,108 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeons:heart_of_ender_head",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"properties": {
+				"dungeons:despawning": {
+					"client_sync": true,
+					"type": "bool",
+					"default": false
+				}
+			}
+		},
+		"component_groups": {
+			"dungeons:despawn_timer": {
+				"minecraft:timer": {
+					"time": 0.45,
+					"time_down_event": {
+						"event": "dungeons:despawn"
+					}
+				}
+			},
+			"dungeons:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:timer": {
+				"time": 10,
+				"looping": true,
+				"time_down_event": {
+					"event": "dungeons:force_despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:rotation_axis_aligned": {},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:collision_box": {
+				"height": 3,
+				"width": 2
+			},
+			"minecraft:health": {
+				"max": 1000,
+				"value": 1000
+			},
+			"minecraft:jump.static": {},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:nameable": {},
+			"minecraft:navigation.walk": {
+				"can_walk": true
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:cannot_be_attacked": {},
+			"minecraft:type_family": {
+				"family": [
+					"monster",
+					"ignore",
+					"gravity_immune",
+					"heart_of_ender_head"
+				]
+			}
+		},
+		"events": {
+			"dungeons:force_despawn": {
+				"queue_command": {
+					"command": [
+						"event entity @n[type=dungeons:heart_of_ender,has_property={dungeons:hidden=true}] dungeons:return_from_laser_heads_failure"
+					]
+				},
+				"trigger": "dungeons:sink_laser_head"
+			},
+			"dungeons:spawn_head": {},
+			"dungeons:sink_laser_head": {
+				"set_property": {
+					"dungeons:despawning": true
+				},
+				"add": {
+					"component_groups": [
+						"dungeons:despawn_timer"
+					]
+				}
+			},
+			"dungeons:despawn": {
+				"add": {
+					"component_groups": [
+						"dungeons:despawn"
+					]
+				}
+			}
+		}
+	}
+}

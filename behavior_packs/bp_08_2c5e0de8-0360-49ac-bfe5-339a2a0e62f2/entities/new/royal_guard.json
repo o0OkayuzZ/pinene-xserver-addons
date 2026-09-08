@@ -9,6 +9,12 @@
 			"is_experimental": false
 		},
 		"component_groups": {
+			"dungeons:transform_to_enchanted": {
+				"minecraft:transformation": {
+					"into": "dungeons:enchanted_royal_guard<minecraft:entity_spawned>",
+					"preserve_equipment": true
+				}
+			},
 			"dungeons:has_home": {
 				"minecraft:home": {
 					"restriction_radius": 16,
@@ -109,7 +115,7 @@
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 2,
 					"must_see": true,
-					"within_radius": 12,
+					"within_radius": 16,
 					"must_see_forget_duration": 40,
 					"entity_types": [
 						{
@@ -137,7 +143,7 @@
 									}
 								]
 							},
-							"max_dist": 12
+							"max_dist": 16
 						},
 						{
 							"filters": {
@@ -155,7 +161,7 @@
 									}
 								]
 							},
-							"max_dist": 12
+							"max_dist": 16
 						}
 					]
 				}
@@ -220,6 +226,7 @@
 			"minecraft:nameable": {},
 			"minecraft:type_family": {
 				"family": [
+					"enchantable",
 					"royal_guard",
 					"monster",
 					"illager",
@@ -256,7 +263,7 @@
 				]
 			},
 			"minecraft:attack": {
-				"damage": 15
+				"damage": 10
 			},
 			"minecraft:movement": {
 				"value": 0.265
@@ -314,6 +321,13 @@
 			}
 		},
 		"events": {
+			"dungeons:become_enchanted": {
+				"add": {
+					"component_groups": [
+						"dungeons:transform_to_enchanted"
+					]
+				}
+			},
 			"dungeons:spawn_structure": {
 				"add": {
 					"component_groups": [

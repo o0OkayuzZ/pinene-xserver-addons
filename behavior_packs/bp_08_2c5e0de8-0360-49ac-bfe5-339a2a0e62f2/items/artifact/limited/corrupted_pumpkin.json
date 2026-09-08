@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:corrupted_pumpkin",
@@ -10,20 +10,17 @@
 		"components": {
 			"minecraft:tags": {
 				"tags": [
+					"dungeons:seasonal_item",
 					"dungeons:soul_artefact"
 				]
 			},
 			"minecraft:icon": "corrupted_pumpkin",
-			"minecraft:hover_text_color": {
-				"value": "light_purple"
-			},
+			"minecraft:rarity": "epic",
 			"minecraft:max_stack_size": 1,
 			"minecraft:stacked_by_data": false,
 			"minecraft:can_destroy_in_creative": false,
-			"minecraft:custom_components": [
-				"dungeons:dynamic_cooldown",
-				"dungeons:corrupted_pumpkin"
-			],
+			"dungeons:artefact_cooldown": {},
+			"dungeons:corrupted_pumpkin": {},
 			"minecraft:cooldown": {
 				"category": "corrupted_pumpkin",
 				"duration": 1

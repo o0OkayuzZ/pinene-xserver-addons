@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "beenest_chestplate"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B B",
+			"BNB",
+			"BBB"
+		],
+		"unlock": [
+			{
+				"item": "minecraft:honeycomb"
+			}
+		],
+		"key": {
+			"N": {
+				"item": "bee_nest"
+			},
+			"B": {
+				"item": "minecraft:honeycomb"
+			}
+		},
+		"result": {
+			"item": "dungeons:beenest_chestplate",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bp_spellbound_crossbows"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"B": {
+				"item": "dungeons:blue_print"
+			},
+			"W": {
+				"item": "dungeons:spellbound_crossbows"
+			}
+		},
+		"unlock": [
+			{
+				"item": "dungeons:spellbound_crossbows"
+			}
+		],
+		"pattern": [
+			"B",
+			"W"
+		],
+		"result": [
+			{
+				"item": "dungeons:spellbound_crossbows",
+				"count": 1
+			},
+			{
+				"item": "dungeons:spellbound_crossbows",
+				"count": 1
+			}
+		]
+	}
+}

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:grim_boots",
@@ -8,6 +8,13 @@
 			}
 		},
 		"components": {
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor",
+					"dungeons:armor_lore",
+					"dungeons:grim_armour"
+				]
+			},
 			"minecraft:icon": "grim_boots",
 			"minecraft:max_stack_size": 1,
 			"minecraft:stacked_by_data": false,

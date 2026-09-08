@@ -10,26 +10,75 @@
         },
         {
           "type": "empty",
-          "weight": 3
+          "weight": 2
         }
       ]
     },
     {
       "rolls": 1,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "random_chance"
+        }
+      ],
       "entries": [
         {
-          "type": "empty",
-          "weight": 2
-        },
+          "type": "item",
+          "functions": [
+            {
+              "function": "specific_enchants",
+              "enchants": [
+                {
+                  "id": "protection",
+                  "level": 4
+                },
+                {
+                  "id": "fire_protection",
+                  "level": 4
+                },
+                {
+                  "id": "projectile_protection",
+                  "level": 4
+                }
+              ]
+            }
+          ],
+          "name": "dungeons:frost_helmet"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
         {
-          "type": "loot_table",
-          "name": "loot_tables/entities/wretched_zombie_snow.json",
-          "weight": 2
-        },
+          "chance": 0.5,
+          "condition": "random_chance"
+        }
+      ],
+      "entries": [
         {
-          "type": "loot_table",
-          "name": "loot_tables/entities/wretched_zombie_frost.json",
-          "weight": 1
+          "type": "item",
+          "functions": [
+            {
+              "function": "specific_enchants",
+              "enchants": [
+                {
+                  "id": "protection",
+                  "level": 4
+                },
+                {
+                  "id": "fire_protection",
+                  "level": 4
+                },
+                {
+                  "id": "projectile_protection",
+                  "level": 4
+                }
+              ]
+            }
+          ],
+          "name": "dungeons:frost_chestplate"
         }
       ]
     }

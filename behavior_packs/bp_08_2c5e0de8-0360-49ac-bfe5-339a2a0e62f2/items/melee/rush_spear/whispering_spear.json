@@ -1,0 +1,111 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:whispering_spear",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"dungeons:rush_spear": {},
+			"minecraft:icon": "whispering_spear",
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_spear",
+					"dungeons:melee_lore",
+					"dungeons:echo",
+					"dungeons:unique_item"
+				]
+			},
+			"minecraft:rarity": "rare",
+			"dungeons:durability_fix": {
+				"tag": "minecraft:is_sword_item_destructible"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"max_durability": 1244
+			},
+			"dungeons:custom_swing": {
+				"has_cooldown": false,
+				"swing_sound": "weapon.rush_spear.swing.common"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"dungeons:rush_spear"
+						],
+						"repair_amount": "context.other->query.remaining_durability"
+					},
+					{
+						"items": [
+							"iron_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					}
+				]
+			},
+			"minecraft:enchantable": {
+				"slot": "melee_spear",
+				"value": 14
+			},
+			"minecraft:hand_equipped": {
+				"value": true
+			},
+			"minecraft:use_modifiers": {
+				"use_duration": 72000,
+				"emit_vibrations": false,
+				"start_sound": "item.spear.use",
+				"movement_modifier": 1
+			},
+			"minecraft:cooldown": {
+				"category": "spear",
+				"duration": 0.6,
+				"type": "attack"
+			},
+			"minecraft:swing_duration": {
+				"value": 0.6
+			},
+			"minecraft:damage": {
+				"value": 4
+			},
+			"minecraft:piercing_weapon": {
+				"reach": {
+					"min": 2,
+					"max": 4.5
+				},
+				"creative_reach": {
+					"min": 2,
+					"max": 7.5
+				},
+				"hitbox_margin": 0.25
+			},
+			"minecraft:kinetic_weapon": {
+				"delay": 6,
+				"reach": {
+					"min": 2,
+					"max": 4.5
+				},
+				"creative_reach": {
+					"min": 2,
+					"max": 7.5
+				},
+				"hitbox_margin": 0.25,
+				"damage_multiplier": 1,
+				"damage_conditions": {
+					"max_duration": 100,
+					"min_relative_speed": 4.6
+				},
+				"knockback_conditions": {
+					"max_duration": 100,
+					"min_speed": 5.1
+				},
+				"dismount_conditions": {
+					"max_duration": 100,
+					"min_speed": 11
+				}
+			}
+		}
+	}
+}

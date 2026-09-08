@@ -1,0 +1,90 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:jailors_scythe",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": [
+					"dungeons:chains",
+					"minecraft:is_tool",
+					"minecraft:is_sword",
+					"dungeons:soul_collection",
+					"alylica:disable_melee_swing",
+					"dungeons:melee_lore",
+					"dungeons:unique_item"
+				]
+			},
+			"dungeons:durability_fix": {
+				"tag": "minecraft:is_sword_item_destructible"
+			},
+			"minecraft:cooldown": {
+				"category": "soul_scythe",
+				"duration": 0.75,
+				"type": "attack"
+			},
+			"minecraft:swing_duration": {
+				"value": 0.5
+			},
+			"dungeons:scythe": {},
+			"dungeons:custom_swing": {
+				"has_cooldown": true,
+				"animation": "soul_scythe",
+				"swing_sound": "weapon.soul_scythe.swing.unique"
+			},
+			"minecraft:icon": "jailors_scythe",
+			"minecraft:max_stack_size": 1,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 1722
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:iron_ingot"
+						],
+						"repair_amount": "q.max_durability*0.25"
+					},
+					{
+						"items": [
+							"dungeons:soul_scythe"
+						],
+						"repair_amount": "c.other->q.remaining_durability+0.12*c.other->q.max_durability"
+					}
+				]
+			},
+			"minecraft:damage": {
+				"value": 8
+			},
+			"minecraft:digger": {
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "q.any_tag('sword_mine', 'minecraft:is_sword_item_destructible')"
+						},
+						"speed": 15
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 60
+					},
+					{
+						"block": "minecraft:web",
+						"speed": 15
+					}
+				],
+				"use_efficiency": true
+			},
+			"minecraft:enchantable": {
+				"value": 15,
+				"slot": "sword"
+			}
+		}
+	}
+}

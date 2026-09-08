@@ -54,7 +54,7 @@ class BossRewards(unittest.TestCase):
 
     def test_armor_tables_are_only_their_own_set(self):
         paths = list((CHESTS / 'armor').rglob('*.json'))
-        self.assertEqual(len(paths), 113)
+        self.assertEqual(len(paths), 133)
         for path in paths:
             with self.subTest(path=path.relative_to(BP)):
                 for pool in read(path)['pools']:
@@ -67,20 +67,22 @@ class BossRewards(unittest.TestCase):
                             self.assertTrue((BP / name).is_file())
                         else:
                             self.assertTrue(name.startswith(f'dungeons:{path.parent.name}_'), name)
+                if path.stem != 'base':
+                    self.assertEqual(read(path)['pools'][0]['entries'][0]['name'], f'dungeons:{path.parent.name}_{path.stem}')
                 # Selecting an armor subtable must now always give armor.
                 self.assertEqual(armor_probability(path), 1)
 
     def test_world_manifest_versions_and_order(self):
         manifests = [read(p) for p in ROOT.glob('*_packs/*/manifest.json')]
         headers = {m['header']['uuid']: m['header']['version'] for m in manifests}
-        self.assertEqual(len(headers), 33)
+        self.assertEqual(len(headers), 37)
         for manifest in manifests:
             for module in manifest['modules']:
                 self.assertEqual(module['version'], manifest['header']['version'])
             for dep in manifest.get('dependencies', []):
                 if 'uuid' in dep:
                     self.assertEqual(dep['version'], headers[dep['uuid']])
-        for kind, count in [('behavior', 15), ('resource', 18)]:
+        for kind, count in [('behavior', 17), ('resource', 20)]:
             path = ROOT / f'world_{kind}_packs.json'
             self.assertEqual(path.read_bytes(), (ROOT / 'worlds/Bedrock level' / path.name).read_bytes())
             rows = read(path)
@@ -91,7 +93,7 @@ class BossRewards(unittest.TestCase):
 
     def test_boss_tables_have_valid_armor_paths(self):
         paths = list(CHESTS.glob('*.json'))
-        self.assertEqual(len(paths), 12)
+        self.assertEqual(len(paths), 14)
         for path in paths:
             probability = armor_probability(path)
             if path.stem == 'spooky_monstrosity':
@@ -101,7 +103,7 @@ class BossRewards(unittest.TestCase):
                 expected = Fraction(1)
             else:
                 rolls = read(path)['pools'][6]['rolls']
-                expected = 1 - Fraction(1, 3) ** rolls
+                expected = 1 - Fraction(1, 4) ** rolls
             self.assertEqual(probability, expected, path.name)
 
 if __name__ == '__main__':

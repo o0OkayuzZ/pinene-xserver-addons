@@ -1,0 +1,19 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dungeons:obsidian_key",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:rarity": "uncommon",
+			"minecraft:icon": "obsidian_key",
+			"minecraft:should_despawn": {
+				"value": false
+			},
+			"minecraft:fire_resistant": {}
+		}
+	}
+}

@@ -38,6 +38,11 @@
 		},
 		"component_groups": {
 			"dungeons:non_portal": {
+				"minecraft:boss": {
+					"should_darken_sky": true,
+					"hud_range": 64,
+					"name": "dungeons.bossbar.vengeful_heart_of_ender"
+				},
 				"minecraft:movement": {
 					"value": 0.27
 				},
@@ -101,6 +106,11 @@
 				}
 			},
 			"dungeons:immune": {
+				"minecraft:boss": {
+					"should_darken_sky": true,
+					"hud_range": 64,
+					"name": "dungeons.bossbar.vengeful_heart_of_ender_immune"
+				},
 				"minecraft:movement": {
 					"value": 0
 				},
@@ -152,7 +162,7 @@
 				"minecraft:behavior.timer_flag_1": {
 					"priority": 0,
 					"cooldown_range": 0,
-					"duration_range": 8,
+					"duration_range": 9,
 					"on_end": {
 						"event": "dungeons:big_bang_attack",
 						"target": "self"
@@ -160,7 +170,7 @@
 				},
 				"minecraft:timer": {
 					"looping": false,
-					"time": 26,
+					"time": 29,
 					"time_down_event": {
 						"event": "dungeons:exit_portal"
 					}
@@ -407,7 +417,7 @@
 			"minecraft:boss": {
 				"should_darken_sky": true,
 				"hud_range": 64,
-				"name": " §dVengeful Heart of Ender§r "
+				"name": "dungeons.bossbar.vengeful_heart_of_ender"
 			},
 			"minecraft:pushable": {
 				"is_pushable": false,

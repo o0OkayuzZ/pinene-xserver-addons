@@ -1,0 +1,179 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeons:abomination_vine",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"dungeons:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"dungeons:damaged": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"deals_damage": "no"
+						}
+					]
+				},
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "dungeons:despawn"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:area_attack": {
+				"damage_range": 0.3,
+				"damage_per_tick": 12,
+				"cause": "thorns",
+				"entity_filter": {
+					"any_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "irongolem"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "snowgolem"
+						}
+					]
+				}
+			},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"abomination_vine",
+					"inanimate",
+					"gravity_immune"
+				]
+			},
+			"minecraft:entity_sensor": {
+				"subsensors": [
+					{
+						"cooldown": 10,
+						"event_filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "jungle_abomination"
+						},
+						"event": "dungeons:begin_despawn",
+						"minimum_count": 1,
+						"range": [
+							7,
+							3
+						]
+					}
+				]
+			},
+			"minecraft:behavior.timer_flag_1": {
+				"priority": 0,
+				"cooldown_range": 8,
+				"duration_range": [
+					5,
+					10
+				],
+				"on_end": {
+					"event": "dungeons:begin_despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:collision_box": {
+				"width": 0.65,
+				"height": 2.6
+			},
+			"minecraft:health": {
+				"value": 2000,
+				"max": 2000
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"none_of": [
+								{
+									"test": "on_ground"
+								}
+							]
+						},
+						"event": "dungeons:begin_despawn"
+					}
+				]
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"avoid_sun": false,
+				"can_walk": true
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:transient": {},
+			"minecraft:persistent": {},
+			"minecraft:physics": {},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"dungeons:begin_despawn": {
+				"add": {
+					"component_groups": [
+						"dungeons:damaged"
+					]
+				},
+				"queue_command": {
+					"command": []
+				}
+			},
+			"dungeons:despawn": {
+				"add": {
+					"component_groups": [
+						"dungeons:despawn"
+					]
+				}
+			},
+			"dungeons:damaged": {
+				"queue_command": {
+					"command": []
+				},
+				"add": {
+					"component_groups": [
+						"dungeons:damaged"
+					]
+				}
+			}
+		}
+	}
+}

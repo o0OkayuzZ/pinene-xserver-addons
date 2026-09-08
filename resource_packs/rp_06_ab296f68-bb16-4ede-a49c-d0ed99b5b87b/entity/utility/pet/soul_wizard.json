@@ -9,15 +9,14 @@
 			},
 			"textures": {
 				"default": "textures/entity/soul_wizard/soul_wizard",
-				"glow": "textures/entity/soul_wizard/enchanted_soul_wizard",
+				"glow": "textures/entity/enchanted_mob/soul_wizard",
 				"enchanted": "textures/misc/enchanted_entity_glint"
 			},
 			"geometry": {
 				"default": "geometry.soul_wizard"
 			},
 			"particle_effects": {
-				"glow": "dungeons:soul_wizard_glow",
-				"enchanted_particles": "dungeons:small_humanoid_enchant"
+				"glow": "dungeons:soul_wizard_glow"
 			},
 			"spawn_egg": {
 				"texture": "egg_soul_wizard"
@@ -26,14 +25,10 @@
 				"animate": [
 					"base_controller",
 					"look_at_target",
-					"particles",
-					{
-						"enchanted_particles": "q.is_saddled==1"
-					}
+					"particles"
 				]
 			},
 			"animations": {
-				"enchanted_particles": "animation.enchanted_mob.particles",
 				"particles": "animation.guardian_vex.particles",
 				"look_at_target": "animation.common.look_at_target",
 				"idle": "animation.soul_wizard.idle",

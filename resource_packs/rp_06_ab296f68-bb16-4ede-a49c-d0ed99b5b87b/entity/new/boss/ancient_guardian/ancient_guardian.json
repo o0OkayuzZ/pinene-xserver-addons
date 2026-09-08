@@ -26,11 +26,11 @@
 				"start_shooting": "animation.ancient_guardian.shoot_start",
 				"hold_shooting": "animation.ancient_guardian.shoot_hold",
 				"stop_shooting": "animation.ancient_guardian.shoot_end",
-				"roar": "animation.ancient_guardian.cast",
+				"summon": "animation.ancient_guardian.cast",
 				"aim": "animation.ancient_guardian.look_at_target",
 				"charge": "animation.ancient_guardian.charge",
-				"roar_controller": "controller.animation.redstone_monstrosity.roar",
-				"move_controller": "controller.animation.redstone_monstrosity.move",
+				"summon_controller": "controller.animation.ancient_guardian.summon",
+				"move_controller": "controller.animation.ancient_guardian.move",
 				"eye_controller": "controller.animation.ancient_guardian.eye",
 				"shoot_controller": "controller.animation.ancient_guardian.shooting",
 				"charge_controller": "controller.animation.ancient_guardian.charge"
@@ -48,7 +48,7 @@
 					"eye_controller",
 					"move_controller",
 					"shoot_controller",
-					"roar_controller",
+					"summon_controller",
 					"charge_controller"
 				]
 			}

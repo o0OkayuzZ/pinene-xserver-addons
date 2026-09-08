@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.130",
 	"minecraft:block": {
 		"description": {
 			"identifier": "dungeons:void_fluid",
@@ -8,6 +8,15 @@
 			}
 		},
 		"components": {
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"can_contain_liquid": false,
+						"liquid_type": "water",
+						"on_liquid_touches": "popped"
+					}
+				]
+			},
 			"minecraft:geometry": "minecraft:geometry.full_block",
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 8
@@ -16,7 +25,7 @@
 				"explosion_resistance": 9999
 			},
 			"minecraft:collision_box": false,
-			"minecraft:light_emission": 6,
+			"minecraft:light_emission": 8,
 			"minecraft:map_color": "#000000",
 			"minecraft:material_instances": {
 				"*": {
@@ -25,6 +34,14 @@
 					"face_dimming": false,
 					"ambient_occlusion": false
 				}
+			},
+			"dungeons:void_fluid": {},
+			"minecraft:tick": {
+				"interval_range": [
+					2,
+					2
+				],
+				"looping": true
 			},
 			"tag:hoe_mine": {},
 			"tag:minecraft:is_hoe_item_destructible": {},

@@ -1,71 +1,99 @@
 {
-	"format_version": "1.16.0",
+	"format_version": "1.21.100",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "dungeons:watchling",
+			"runtime_identifier": "vindicator",
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false
 		},
 		"component_groups": {
-			"dungeons:become_enchanted": {
+			"dungeons:endersent_minion": {
+				"minecraft:health": {
+					"value": 40,
+					"max": 40
+				},
+				"minecraft:experience_reward": {
+					"on_death": 0
+				},
+				"minecraft:loot": {
+					"table": "loot_tables/empty.json"
+				},
+				"minecraft:type_family": {
+					"family": [
+						"love_medallion_target",
+						"endersent_minion",
+						"enderling",
+						"monster",
+						"watchling",
+						"mob"
+					]
+				},
+				"minecraft:entity_sensor": {
+					"subsensors": [
+						{
+							"range": [
+								32,
+								32
+							],
+							"event": "dungeons:despawn_endersent_minion",
+							"cooldown": 1,
+							"minimum_count": 0,
+							"maximum_count": 0,
+							"event_filters": [
+								{
+									"all_of": [
+										{
+											"test": "is_family",
+											"value": "endersent",
+											"subject": "other"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			"dungeons:transform_to_enchanted": {
 				"minecraft:transformation": {
-					"into": "dungeons:enchanted_watchling",
+					"into": "dungeons:enchanted_watchling<minecraft:entity_spawned>",
 					"preserve_equipment": true
 				}
 			},
-			"dungeons:watchling_teleported": {
-				"minecraft:is_saddled": {},
-				"minecraft:behavior.timer_flag_1": {
-					"priority": 0,
-					"cooldown_range": 8,
-					"duration_range": [
-						0.12125,
-						0.12125
-					],
-					"on_end": {
-						"event": "dungeons:particle",
-						"target": "self"
-					}
+			"dungeons:watchling_normal": {
+				"minecraft:tameable": {
+					"probability": 1
 				},
-				"minecraft:timer": {
-					"looping": true,
-					"randomInterval": true,
-					"time": [
-						1.8,
-						1.8
-					],
-					"time_down_event": {
-						"event": "dungeons:end_teleport"
-					}
+				"minecraft:behavior.follow_owner": {
+					"can_teleport": false,
+					"max_distance": 64,
+					"priority": 3,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 6
+				},
+				"minecraft:behavior.owner_hurt_by_target": {
+					"priority": 1
+				},
+				"minecraft:behavior.owner_hurt_target": {
+					"priority": 0
 				},
 				"minecraft:damage_sensor": {
 					"triggers": [
 						{
+							"on_damage": {
+								"filters": [
+									{
+										"test": "has_tag",
+										"value": "dungeons:watchling_immune"
+									}
+								]
+							},
 							"cause": "all",
-							"deals_damage": false
-						}
-					]
-				},
-				"minecraft:knockback_resistance": {
-					"value": 1
-				},
-				"minecraft:type_family": {
-					"family": [
-						"ignore"
-					]
-				},
-				"minecraft:collision_box": {
-					"width": 0.007,
-					"height": 0.024
-				},
-				"minecraft:movement": {
-					"value": 0
-				}
-			},
-			"dungeons:watchling_normal": {
-				"minecraft:damage_sensor": {
-					"triggers": [
+							"deals_damage": "no"
+						},
 						{
 							"on_damage": {
 								"filters": {
@@ -78,8 +106,7 @@
 									]
 								},
 								"event": "dungeons:try_teleport"
-							},
-							"deals_damage": true
+							}
 						},
 						{
 							"on_damage": {
@@ -93,8 +120,7 @@
 									]
 								},
 								"event": "dungeons:try_teleport"
-							},
-							"deals_damage": true
+							}
 						}
 					]
 				},
@@ -107,6 +133,8 @@
 				},
 				"minecraft:type_family": {
 					"family": [
+						"love_medallion_target",
+						"enchantable",
 						"enderling",
 						"monster",
 						"watchling",
@@ -145,7 +173,7 @@
 		"components": {
 			"minecraft:is_hidden_when_invisible": {},
 			"minecraft:experience_reward": {
-				"on_death": "query.last_hit_by_player?8:0"
+				"on_death": "query.last_hit_by_player?5:0"
 			},
 			"minecraft:breathable": {
 				"total_supply": 15,
@@ -270,84 +298,39 @@
 			}
 		},
 		"events": {
-			"minecraft:entity_spawned": {
-				"sequence": [
-					{
-						"randomize": [
-							{
-								"weight": 1,
-								"remove": {},
-								"add": {
-									"component_groups": [
-										"dungeons:become_enchanted"
-									]
-								}
-							},
-							{
-								"weight": 11,
-								"add": {
-									"component_groups": [
-										"dungeons:watchling_normal"
-									]
-								}
-							}
-						]
-					}
-				]
-			},
-			"dungeons:particle": {
-				"queue_command": {
-					"command": [
-						"particle dungeons:instant_teleport ~~1.5~"
+			"dungeons:despawn_endersent_minion": {},
+			"dungeons:spawn_endersent_minion": {
+				"add": {
+					"component_groups": [
+						"dungeons:watchling_normal",
+						"dungeons:endersent_minion"
 					]
 				}
 			},
-			"dungeons:try_teleport": {
+			"dungeons:become_enchanted": {
+				"add": {
+					"component_groups": [
+						"dungeons:transform_to_enchanted"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
 				"randomize": [
 					{
-						"weight": 4
+						"weight": 1,
+						"trigger": "dungeons:become_enchanted"
 					},
 					{
-						"weight": 1,
-						"trigger": "dungeons:teleport"
+						"weight": 9,
+						"add": {
+							"component_groups": [
+								"dungeons:watchling_normal"
+							]
+						}
 					}
 				]
 			},
-			"dungeons:teleport": {
-				"remove": {
-					"component_groups": [
-						"dungeons:watchling_normal"
-					]
-				},
-				"queue_command": {
-					"command": [
-						"playsound mob.endermen.portal @a ~~~ 1.0 0.5",
-						"particle dungeons:instant_teleport ~~1.5~"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"dungeons:watchling_teleported"
-					]
-				}
-			},
-			"dungeons:end_teleport": {
-				"add": {
-					"component_groups": [
-						"dungeons:watchling_normal"
-					]
-				},
-				"queue_command": {
-					"command": [
-						"playsound mob.endermen.portal @a ~~~ 1.0 1.25"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:watchling_teleported"
-					]
-				}
-			}
+			"dungeons:try_teleport": {}
 		}
 	}
 }

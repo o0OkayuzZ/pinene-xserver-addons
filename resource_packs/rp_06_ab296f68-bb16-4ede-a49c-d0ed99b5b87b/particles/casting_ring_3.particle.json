@@ -5,7 +5,7 @@
 			"identifier": "dungeons:casting_ring_3",
 			"basic_render_parameters": {
 				"material": "particles_alpha",
-				"texture": "textures/particle/particles"
+				"texture": "textures/particles/forceglow_particles"
 			}
 		},
 		"curves": {
@@ -26,10 +26,10 @@
 				"max_particles": 100
 			},
 			"minecraft:emitter_lifetime_once": {
-				"active_time": 7.5
+				"active_time": 13
 			},
 			"minecraft:emitter_shape_disc": {
-				"radius": 2.5,
+				"radius": 5,
 				"direction": [
 					"math.random(-1,1)",
 					1,

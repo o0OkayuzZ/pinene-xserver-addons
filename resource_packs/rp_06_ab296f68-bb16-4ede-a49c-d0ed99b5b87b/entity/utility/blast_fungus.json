@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:blast_fungus",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/blast_fungus"
+			},
+			"geometry": {
+				"default": "geometry.blast_fungus"
+			},
+			"animations": {
+				"fly": "animation.blast_fungus.fly"
+			},
+			"scripts": {
+				"animate": [
+					"fly"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

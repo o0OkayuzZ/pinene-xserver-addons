@@ -4,25 +4,35 @@
     "description": {
       "identifier": "dungeons:corrupt_coven"
     },
-    "biome_filters": [{
-      "any_of": [{
-          "test": "has_biome_tag",
-          "operator": "==",
-          "value": "swamp"
-        }
-      ]
-    }],
+    "biome_filters": [
+      {
+        "any_of": [
+          {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "swamp"
+          }
+        ]
+      }
+    ],
     "heightmap_projection": "world_surface",
-    "max_depth": 1,
+    "max_depth": 20,
     "start_height": {
-      "type": "constant",
-      "value": {
-        "absolute": -4
+      "type": "uniform",
+      "max": {
+        "absolute": 1
+      },
+      "min": {
+        "absolute": 1
       }
     },
+    "max_distance_from_center": {
+      "vertical": 128,
+      "horizontal": 128
+    },
+    "liquid_settings": "ignore_waterlogging",
     "start_pool": "dungeons:corrupt_coven",
-    "step": "surface_structures",
-    "terrain_adaptation": "beard_thin",
-    "liquid_settings": "ignore_waterlogging"
+    "step": "top_layer_modification",
+    "terrain_adaptation": "beard_thin"
   }
 }

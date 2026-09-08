@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "power_bow"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" -S",
+			"- S",
+			" -S"
+		],
+		"key": {
+			"-": {
+				"item": "minecraft:iron_ingot"
+			},
+			"S": {
+				"item": "minecraft:string"
+			}
+		},
+		"unlock": [
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		],
+		"result": {
+			"item": "dungeons:power_bow",
+			"count": 1
+		}
+	}
+}

@@ -160,10 +160,7 @@
 			"minecraft:timer": {
 				"looping": true,
 				"randomInterval": true,
-				"time": [
-					3,
-					7
-				],
+				"time": 1.5,
 				"time_down_event": {
 					"event": "dungeons:particle"
 				}
@@ -435,13 +432,7 @@
 					}
 				]
 			},
-			"dungeons:particle": {
-				"queue_command": {
-					"command": [
-						"summon dungeons:rolling_flame_fire"
-					]
-				}
-			},
+			"dungeons:particle": {},
 			"dungeons:instant_despawn": {
 				"add": {
 					"component_groups": [

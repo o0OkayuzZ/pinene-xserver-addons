@@ -139,6 +139,68 @@
 					]
 				}
 			},
+			"dungeons:obsidian_monstrosity_chest": {
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										{
+											"test": "has_equipment",
+											"domain": "hand",
+											"subject": "other",
+											"value": "dungeons:obsidian_key"
+										}
+									]
+								},
+								"event": "dungeons:open_obsidian_monstrosity",
+								"target": "self"
+							},
+							"interact_text": "action.interact.unlock_chest",
+							"cooldown": 10,
+							"use_item": true,
+							"spawn_entities": "dungeons:obsidian_monstrosity_loot"
+						}
+					]
+				}
+			},
+			"dungeons:arch_illager_chest": {
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										{
+											"test": "has_equipment",
+											"domain": "hand",
+											"subject": "other",
+											"value": "dungeons:heart_key"
+										}
+									]
+								},
+								"event": "dungeons:open_arch_illager",
+								"target": "self"
+							},
+							"interact_text": "action.interact.unlock_chest",
+							"cooldown": 10,
+							"use_item": true,
+							"spawn_entities": "dungeons:arch_illager_loot"
+						}
+					]
+				}
+			},
 			"dungeons:wretched_wraith_chest": {
 				"minecraft:interact": {
 					"interactions": [
@@ -489,6 +551,44 @@
 				"add": {
 					"component_groups": [
 						"dungeons:mooshroom_monstrosity_chest"
+					]
+				}
+			},
+			"dungeons:open_obsidian_monstrosity": {
+				"add": {
+					"component_groups": [
+						"dungeons:opened"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"dungeons:obsidian_monstrosity_chest"
+					]
+				}
+			},
+			"dungeons:spawn_obsidian_monstrosity": {
+				"add": {
+					"component_groups": [
+						"dungeons:obsidian_monstrosity_chest"
+					]
+				}
+			},
+			"dungeons:open_arch_illager": {
+				"add": {
+					"component_groups": [
+						"dungeons:opened"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"dungeons:arch_illager_chest"
+					]
+				}
+			},
+			"dungeons:spawn_arch_illager": {
+				"add": {
+					"component_groups": [
+						"dungeons:arch_illager_chest"
 					]
 				}
 			},

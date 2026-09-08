@@ -3,7 +3,9 @@
 	"minecraft:attachable": {
 		"description": {
 			"identifier": "dungeons:jailors_scythe",
-			"render_controllers": ["controller.render.item_default"],
+			"render_controllers": [
+				"controller.render.item_default"
+			],
 			"materials": {
 				"default": "entity_alphatest",
 				"enchanted": "entity_alphatest_glint"
@@ -17,10 +19,21 @@
 			},
 			"animations": {
 				"first_person_hold": "animation.scythe.first_person_hold",
-				"third_person_hold": "animation.scythe.third_person_hold"
+				"third_person_hold": "animation.scythe.third_person_hold",
+				"melee_attack": "animation.scythe.first_person_swing",
+				"melee_controller": "controller.animation.weapon.melee_attack"
 			},
 			"scripts": {
+				"initialize": [
+					"v.melee_attack = false;"
+				],
+				"pre_animation": [
+					"q.get_name == (t.player_name ?? '') ? {v.melee_attack = t.melee_attack;};"
+				],
 				"animate": [
+					{
+						"melee_controller": "c.is_first_person"
+					},
 					{
 						"first_person_hold": "c.is_first_person"
 					},

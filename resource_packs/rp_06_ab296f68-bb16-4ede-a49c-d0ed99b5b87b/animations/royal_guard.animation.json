@@ -42,18 +42,6 @@
 		"animation.royal_guard.base": {
 			"loop": true,
 			"bones": {
-				"arms": {
-					"rotation": [
-						"-42.97-this",
-						0,
-						0
-					],
-					"position": [
-						0,
-						"-3-this",
-						"-1-this"
-					]
-				},
 				"leftArm": {
 					"rotation": [
 						"(math.cos(76.8*query.life_time)*2.87)*!q.is_saddled",
@@ -91,10 +79,18 @@
 		},
 		"animation.royal_guard.riding.arms": {
 			"loop": true,
+			"animation_length": 0.25,
 			"bones": {
 				"leftArm": {
 					"rotation": [
-						"!q.is_saddled*-20",
+						"!q.is_saddled*-2.5",
+						0,
+						0
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						-52.5,
 						0,
 						0
 					]

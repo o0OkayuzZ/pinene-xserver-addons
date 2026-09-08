@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "soul_leggings"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"WWW",
+			"S S",
+			"S S"
+		],
+		"unlock": [
+			{
+				"item": "minecraft:leather"
+			}
+		],
+		"key": {
+			"S": {
+				"item": "minecraft:lapis_lazuli"
+			},
+			"W": {
+				"item": "minecraft:leather"
+			}
+		},
+		"result": {
+			"item": "dungeons:soul_leggings",
+			"count": 1
+		}
+	}
+}

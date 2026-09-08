@@ -1,0 +1,20 @@
+{
+	"format_version": "1.21.20",
+	"minecraft:structure_set": {
+		"description": {
+			"identifier": "dungeons:trial_arena_end"
+		},
+		"placement": {
+			"type": "minecraft:random_spread",
+			"salt": 44032026,
+			"separation": 20,
+			"spacing": 41
+		},
+		"structures": [
+			{
+				"structure": "dungeons:end_trial_arena",
+				"weight": 1
+			}
+		]
+	}
+}

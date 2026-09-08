@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:wraith_fire",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/wraith/wraith_fire"
+			},
+			"geometry": {
+				"default": "geometry.wraith.fire"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"animations": {
+				"spawn": "animation.wraith_fire.animation",
+				"idle": "animation.wraith_fire.move",
+				"scale": "animation.wraith_fire.scale"
+			},
+			"scripts": {
+				"animate": [
+					"scale",
+					"idle",
+					"spawn"
+				]
+			},
+			"sound_effects": {
+				"awaken": "mob.wraith.rise"
+			},
+			"spawn_egg": {
+				"texture": "egg_wraith"
+			}
+		}
+	}
+}

@@ -5,19 +5,27 @@
 			"description": {
 				"identifier": "geometry.custom_bow_standby",
 				"texture_width": 18,
-				"texture_height": 18
+				"texture_height": 18,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [
+					0,
+					0,
+					0
+				]
 			},
 			"bones": [
 				{
 					"name": "rightItem",
+					"pivot": [
+						0,
+						0,
+						0
+					],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)",
 					"texture_meshes": [
 						{
-							"local_pivot": [
-								6,
-								0,
-								6
-							],
+							"texture": "bow_standby",
 							"position": [
 								2,
 								1,
@@ -28,7 +36,11 @@
 								-135,
 								90
 							],
-							"texture": "bow_standby"
+							"local_pivot": [
+								6,
+								0,
+								6
+							]
 						}
 					]
 				}

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:rare_updraft_tome",
@@ -8,14 +8,13 @@
 			}
 		},
 		"components": {
+			"minecraft:hover_text_color": "green",
 			"minecraft:icon": "updraft_tome",
 			"minecraft:max_stack_size": 1,
 			"minecraft:stacked_by_data": false,
 			"minecraft:can_destroy_in_creative": false,
-			"minecraft:custom_components": [
-				"dungeons:dynamic_cooldown",
-				"dungeons:updraft_tome"
-			],
+			"dungeons:artefact_cooldown": {},
+			"dungeons:updraft_tome": {},
 			"minecraft:cooldown": {
 				"category": "updraft_tome_rare",
 				"duration": 10

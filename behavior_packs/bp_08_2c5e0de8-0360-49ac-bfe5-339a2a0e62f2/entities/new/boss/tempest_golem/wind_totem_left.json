@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.30",
+	"format_version": "1.21.130",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "dungeons:wind_totem_left",
@@ -20,7 +20,7 @@
 				"minecraft:boss": {
 					"should_darken_sky": false,
 					"hud_range": 6,
-					"name": "§9Wind Totem§r"
+					"name": "dungeons.bossbar.wind_totem"
 				},
 				"minecraft:timer": {
 					"looping": true,
@@ -54,7 +54,7 @@
 				"minecraft:boss": {
 					"should_darken_sky": false,
 					"hud_range": 0,
-					"name": "§9Wind Totem§r"
+					"name": "dungeons.bossbar.wind_totem"
 				}
 			},
 			"dungeons:despawn_timer": {
@@ -71,8 +71,9 @@
 			}
 		},
 		"components": {
+			"minecraft:is_collidable": {},
 			"minecraft:scale": {
-				"value": 1.05
+				"value": 1.01
 			},
 			"minecraft:movement": {
 				"value": 0
@@ -96,7 +97,7 @@
 				"triggers": [
 					{
 						"cause": "all",
-						"deals_damage": false
+						"deals_damage": "no"
 					}
 				]
 			},
@@ -111,10 +112,6 @@
 			},
 			"minecraft:persistent": {},
 			"minecraft:physics": {},
-			"minecraft:pushable": {
-				"is_pushable": false,
-				"is_pushable_by_piston": false
-			},
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
@@ -145,6 +142,7 @@
 				},
 				"queue_command": {
 					"command": [
+						"fill ~2 ~3 ~2 ~-2 ~ ~-2 air destroy",
 						"particle dungeons:wind_totem_on ~~~",
 						"playsound beacon.activate @a ~~~ 1.0 1.5"
 					]

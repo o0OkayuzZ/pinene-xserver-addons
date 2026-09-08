@@ -3,14 +3,15 @@
 	"minecraft:entity": {
 		"description": {
 			"identifier": "dungeons:iceologer",
+			"runtime_identifier": "vindicator",
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false
 		},
 		"component_groups": {
-			"dungeons:become_enchanted": {
+			"dungeons:transform_to_enchanted": {
 				"minecraft:transformation": {
-					"into": "dungeons:enchanted_iceologer",
+					"into": "dungeons:enchanted_iceologer<minecraft:entity_spawned>",
 					"preserve_equipment": true
 				}
 			}
@@ -22,6 +23,7 @@
 			},
 			"minecraft:type_family": {
 				"family": [
+					"enchantable",
 					"iceologer",
 					"monster",
 					"illager",
@@ -203,23 +205,21 @@
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
+			"dungeons:become_enchanted": {
+				"add": {
+					"component_groups": [
+						"dungeons:transform_to_enchanted"
+					]
+				}
+			},
 			"minecraft:entity_spawned": {
-				"sequence": [
+				"randomize": [
 					{
-						"randomize": [
-							{
-								"weight": 1,
-								"remove": {},
-								"add": {
-									"component_groups": [
-										"dungeons:become_enchanted"
-									]
-								}
-							},
-							{
-								"weight": 11
-							}
-						]
+						"weight": 1,
+						"trigger": "dungeons:become_enchanted"
+					},
+					{
+						"weight": 9
 					}
 				]
 			}

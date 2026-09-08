@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dungeons:desert_brick_tile"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"SC",
+			"CS"
+		],
+		"unlock": [
+			{
+				"item": "dungeons:desert_bricks"
+			}
+		],
+		"key": {
+			"S": {
+				"item": "cobblestone"
+			},
+			"C": {
+				"item": "dungeons:desert_bricks"
+			}
+		},
+		"result": {
+			"item": "dungeons:desert_brick_tile",
+			"count": 2
+		}
+	}
+}

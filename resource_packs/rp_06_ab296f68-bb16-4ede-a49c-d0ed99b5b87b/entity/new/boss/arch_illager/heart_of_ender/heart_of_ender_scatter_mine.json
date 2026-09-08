@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:heart_of_ender_scatter_mine",
+			"materials": {
+				"default": "entity_emissive"
+			},
+			"textures": {
+				"default": "textures/entity/vengeful_heart_of_ender/vhoe_bomb"
+			},
+			"geometry": {
+				"default": "geometry.redstone_mine"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"animations": {
+				"particles": "animation.redstone_mine.particles"
+			},
+			"particle_effects": {
+				"mine": "dungeons:obsidian_scatter_mine"
+			},
+			"scripts": {
+				"scale": "query.life_time > 1 ? 1 : 0",
+				"animate": [
+					"particles"
+				]
+			}
+		}
+	}
+}

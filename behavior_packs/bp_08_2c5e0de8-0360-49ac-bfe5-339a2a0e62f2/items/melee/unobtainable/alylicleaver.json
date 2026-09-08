@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.21.130",
 	"minecraft:item": {
 		"description": {
 			"identifier": "dungeons:alylicleaver",
@@ -13,69 +13,110 @@
 				"tags": [
 					"minecraft:is_tool",
 					"minecraft:is_sword",
-					"dungeons:critical_hit",
-					"dungeons:burning",
-					"dungeons:stunning",
+					"dungeons:soul_collection",
 					"dungeons:ambush",
+					"dungeons:busy_bee",
+					"dungeons:chains",
 					"dungeons:committed",
+					"dungeons:critical_hit",
+					"dungeons:critical_hit_spooky",
+					"dungeons:echo",
+					"dungeons:enigma_resonator",
 					"dungeons:exploding",
+					"dungeons:fire_aspect",
+					"dungeons:freezing",
+					"dungeons:freezing_spooky",
+					"dungeons:gravity",
+					"dungeons:gravity_spooky",
 					"dungeons:illagers_bane",
 					"dungeons:leeching",
-					"dungeons:critical_hit_spooky",
-					"dungeons:enigma_resonator",
+					"dungeons:melee_lore",
+					"dungeons:poison",
+					"dungeons:poison_cloud",
 					"dungeons:rampaging",
 					"dungeons:rushdown",
-					"dungeons:shadow_shot",
-					"dungeons:shadow_shot_spooky",
+					"dungeons:shared_pain",
+					"dungeons:sharpened",
+					"dungeons:shockwave",
 					"dungeons:smiting",
-					"dungeons:soul_collection"
+					"dungeons:soul_siphon",
+					"dungeons:stunning",
+					"dungeons:swirling",
+					"dungeons:thundering",
+					"dungeons:triple_hit",
+					"dungeons:void_strike",
+					"dungeons:water_damage",
+					"dungeons:weakening",
+					"dungeons:whip",
+					"dungeons:prospector",
+					"dungeons:radiance",
+					"dungeons:looting"
 				]
 			},
-			"minecraft:custom_components": [
-				"dungeons:alylicleaver_sounds",
-				"dungeons:encrusted_anchor_shockwave",
-				"dungeons:poison",
-				"dungeons:echo",
-				"dungeons:large_sweep",
-				"dungeons:strong_knockback",
-				"dungeons:swirling_quick",
-				"dungeons:bonus_water_damage",
-				"dungeons:busy_bee",
-				"dungeons:chains",
-				"dungeons:freezing",
-				"dungeons:freezing_spooky",
-				"dungeons:glaive_sweep",
-				"dungeons:glaive_sweep_spooky",
-				"dungeons:gravity_hammer_shockwave",
-				"dungeons:obsidian_claymore",
-				"dungeons:poison_cloud",
-				"dungeons:sawblade_damage",
-				"dungeons:shockwave",
-				"dungeons:short_cooldown",
-				"dungeons:soul_siphon",
-				"dungeons:sponge_striker_damage",
-				"dungeons:starless_night",
-				"dungeons:sweep_attack",
-				"dungeons:void_multihit",
-				"dungeons:weakening",
-				"dungeons:whip_damage",
-				"dungeons:whip_vfx"
-			],
+			"dungeons:anchor": {
+				"unique": true
+			},
+			"dungeons:axe": {
+				"unique": true
+			},
+			"dungeons:battlestaff": {
+				"unique": true
+			},
+			"dungeons:boneclub": {
+				"unique": true
+			},
+			"dungeons:claymore": {
+				"unique": true
+			},
+			"dungeons:cutlass": {
+				"unique": true
+			},
+			"dungeons:daggers": {
+				"unique": true
+			},
+			"dungeons:gauntlets": {
+				"unique": true
+			},
+			"dungeons:glaive": {
+				"unique": true
+			},
+			"dungeons:hammer": {
+				"unique": true
+			},
+			"dungeons:obsidian_claymore": {
+				"unique": true
+			},
+			"dungeons:rapier": {
+				"unique": true
+			},
+			"dungeons:scythe": {
+				"unique": true
+			},
+			"dungeons:void_blades": {
+				"unique": true
+			},
+			"dungeons:whip": {
+				"unique": true
+			},
+			"dungeons:rush_spear": {},
+			"dungeons:iron_mace": {},
+			"dungeons:sickles": {
+				"unique": true
+			},
+			"dungeons:alylicleaver": {},
+			"dungeons:custom_swing": {
+				"has_cooldown": false,
+				"swing_sound": "weapon.alylicleaver.swing"
+			},
 			"minecraft:icon": "alylicleaver",
 			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
 			"minecraft:can_destroy_in_creative": false,
 			"minecraft:durability": {
-				"max_durability": 1
+				"max_durability": 4342
 			},
-			"minecraft:display_name": {
-				"value": "The Alylicleaver"
-			},
-			"minecraft:hover_text_color": {
-				"value": "light_purple"
-			},
+			"minecraft:rarity": "epic",
 			"minecraft:damage": {
-				"value": 64
+				"value": 4342
 			},
 			"minecraft:digger": {
 				"destroy_speeds": [

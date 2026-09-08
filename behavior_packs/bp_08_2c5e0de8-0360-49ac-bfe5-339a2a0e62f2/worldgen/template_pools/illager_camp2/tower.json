@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:illager_camp_v2_starter"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "illager_camp/v2/tower_big",
+                    "processors": "dungeons:illager_camp_v2",
+                    "projection": "rigid"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "illager_camp/v2/tower_small",
+                    "processors": "dungeons:illager_camp_v2",
+                    "projection": "rigid"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

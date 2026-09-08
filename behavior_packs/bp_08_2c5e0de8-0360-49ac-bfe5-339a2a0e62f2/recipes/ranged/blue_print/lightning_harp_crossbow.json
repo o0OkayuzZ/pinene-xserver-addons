@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bp_lightning_harp_crossbow"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"B": {
+				"item": "dungeons:blue_print"
+			},
+			"W": {
+				"item": "dungeons:lightning_harp_crossbow"
+			}
+		},
+		"unlock": [
+			{
+				"item": "dungeons:lightning_harp_crossbow"
+			}
+		],
+		"pattern": [
+			"B",
+			"W"
+		],
+		"result": [
+			{
+				"item": "dungeons:lightning_harp_crossbow",
+				"count": 1
+			},
+			{
+				"item": "dungeons:lightning_harp_crossbow",
+				"count": 1
+			}
+		]
+	}
+}

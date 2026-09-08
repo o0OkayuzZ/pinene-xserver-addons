@@ -2,14 +2,14 @@
 	"format_version": "1.8.0",
 	"render_controllers": {
 		"controller.render.armored_pillager": {
-			"geometry": "array.geo[query.skin_id]",
+			"geometry": "array.geo[query.property('dungeons:armour_type')]",
 			"materials": [
 				{
 					"*": "material.default"
 				}
 			],
 			"textures": [
-				"array.skins[query.skin_id]"
+				"array.skins[query.property('dungeons:armour_type')]"
 			],
 			"arrays": {
 				"textures": {

@@ -8,8 +8,16 @@
 					"*": "material.default"
 				}
 			],
+			"arrays": {
+				"textures": {
+					"array.skins": [
+						"texture.default",
+						"texture.glow"
+					]
+				}
+			},
 			"textures": [
-				"texture.default"
+				"array.skins[query.is_saddled]"
 			],
 			"overlay_color": {
 				"r": 0.9,

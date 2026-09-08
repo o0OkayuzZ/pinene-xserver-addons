@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:totem_of_soul_protection",
+			"materials": {
+				"default": "entity_emissive"
+			},
+			"textures": {
+				"default": "textures/entity/totem_soul_protection"
+			},
+			"geometry": {
+				"default": "geometry.totem_of_soul_protection"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

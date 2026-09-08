@@ -28,14 +28,14 @@
 				"minecraft:boss": {
 					"should_darken_sky": false,
 					"hud_range": 48,
-					"name": " §bWretched Wraith§r "
+					"name": "dungeons.bossbar.wretched_wraith"
 				},
 				"minecraft:variant": {
 					"value": 1
 				},
 				"minecraft:timer": {
 					"looping": false,
-					"time": 4.45833,
+					"time": 2.5,
 					"time_down_event": {
 						"event": "dungeons:finish_waking"
 					}

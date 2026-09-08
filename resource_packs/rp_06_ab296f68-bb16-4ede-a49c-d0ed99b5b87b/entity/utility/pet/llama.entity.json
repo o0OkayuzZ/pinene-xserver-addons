@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:pet_llama",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_emissive_alpha",
+				"enchanted": "dungeons_entity_enchant"
+			},
+			"textures": {
+				"default": "textures/entity/llama/llama_brown",
+				"glow": "textures/entity/enchanted_mob/llama",
+				"enchanted": "textures/misc/enchanted_entity_glint"
+			},
+			"geometry": {
+				"default": "geometry.llama.v1.8"
+			},
+			"animations": {
+				"setup": "animation.llama.setup",
+				"walk": "animation.quadruped.walk",
+				"look_at_target": "animation.common.look_at_target",
+				"move_controller": "controller.animation.llama.move"
+			},
+			"render_controllers": [
+				"controller.render.pet_llama_dungeons",
+				{
+					"controller.render.dungeons_entity_enchanted": "q.is_saddled==1"
+				}
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg_llama"
+			},
+			"scripts": {
+				"scale": "query.is_baby ? 2.0 : 1.0",
+				"animate": [
+					"move_controller"
+				]
+			}
+		}
+	}
+}

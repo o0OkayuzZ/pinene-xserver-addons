@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:lone_fortress_tower"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "lone_fortress/lonefortress_tower",
+                    "processors": "dungeons:lone_fortress"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

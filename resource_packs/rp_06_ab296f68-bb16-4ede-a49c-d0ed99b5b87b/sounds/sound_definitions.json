@@ -1,6 +1,176 @@
 {
 	"format_version": "1.14.0",
 	"sound_definitions": {
+		"block.forge_core.activate": {
+			"category": "block",
+			"sounds": [
+				"sounds/blockNew/forge_core/activate"
+			],
+			"subtitle": "Forge Core Activates"
+		},
+		"block.forge_core.recharge": {
+			"sounds": [
+				"sounds/blockNew/forge_core/recharge"
+			],
+			"subtitle": "Forge Core Charges"
+		},
+		"block.forge_core.out_of_power": {
+			"sounds": [
+				"sounds/blockNew/forge_core/out_of_power"
+			],
+			"subtitle": "Forge Core Rejects Power"
+		},
+		"block.trial_totem.charge": {
+			"category": "block",
+			"sounds": [
+				"sounds/blockNew/trial_totem/prepare_wave"
+			],
+			"subtitle": "Trial Totem Charges"
+		},
+		"block.trial_totem.wave": {
+			"category": "block",
+			"sounds": [
+				"sounds/blockNew/trial_totem/wave"
+			],
+			"subtitle": "Trial Totem Attacks"
+		},
+		"block.trial_totem.activate": {
+			"category": "block",
+			"sounds": [
+				"sounds/blockNew/trial_totem/begin"
+			],
+			"subtitle": "Trial Totem ACtivates"
+		},
+		"block.void_portal.power": {
+			"category": "block",
+			"sounds": [
+				"sounds/blockNew/void_portal/eye_place_extra"
+			],
+			"subtitle": "Void Echoes"
+		},
+		"artefact.love_medallion.fail": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/loveMedallion/fail"
+			],
+			"subtitle": "Love Medallion Chimes"
+		},
+		"artefact.love_medallion.success": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/loveMedallion/success"
+			],
+			"subtitle": "Love Medallion Charms"
+		},
+		"artefact.tasty_bone.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/tastyBone/use"
+			],
+			"subtitle": "Wolf Appears"
+		},
+		"artefact.wonderful_wheat.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/wonderfulWheat/use0",
+				"sounds/artefactNew/wonderfulWheat/use1"
+			],
+			"subtitle": "Llama Appears"
+		},
+		"artefact.totem_of_soul_protection.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/totemOfSoulProtection/use0",
+				"sounds/artefactNew/totemOfSoulProtection/use1"
+			],
+			"subtitle": "Totem Wails"
+		},
+		"artefact.blastfungus.explode": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/blastfungus/explode"
+			],
+			"subtitle": "Blast Fungus Explodes"
+		},
+		"artefact.swiftness_boot.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/switfnessBoot/use"
+			],
+			"subtitle": "Speed Up"
+		},
+		"artefact.buzzy_nest.spawn": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/buzzyNest/bee_spawn0",
+				"sounds/artefactNew/buzzyNest/bee_spawn1"
+			],
+			"subtitle": "Bee Spawns"
+		},
+		"artefact.lightningwand.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/lightningwand/use"
+			],
+			"subtitle": "Lightning Wand Chimes"
+		},
+		"artefact.lightningwand.strike": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/lightningwand/strike"
+			],
+			"subtitle": "Lightning Strikes"
+		},
+		"artefact.tome_of_duplication.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/tomeOfDuplication/use"
+			],
+			"subtitle": "Artefact Copied"
+		},
+		"artefact.vexing_chant.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/vexingChant/use"
+			],
+			"subtitle": "Vexes Summoned"
+		},
+		"artefact.golem_kit.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/golemKIt/summon"
+			],
+			"subtitle": "Iron Golem Constructed"
+		},
+		"artefact.enchanted_grass.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/enchantedGrass/use0",
+				"sounds/artefactNew/enchantedGrass/use1"
+			],
+			"subtitle": "Magical Sheep Summoned"
+		},
+		"artefact.soul_lantern.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/soulLantern/use"
+			],
+			"subtitle": "Soul Wizard Spawns"
+		},
+		"artefact.totem_of_casting.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/totemCasting/use"
+			],
+			"subtitle": "Totem Placed"
+		},
+		"artefact.updraft_tome.use": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/artefactNew/updraftTome/use"
+			],
+			"subtitle": "Tome Used"
+		},
 		"attack.sweep": {
 			"category": "player",
 			"sounds": [
@@ -17,38 +187,6 @@
 			"category": "neutral",
 			"sounds": [
 				"sounds/diamond_chest/open"
-			]
-		},
-		"mob.blastling.shoot": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/blastling/shoot"
-			]
-		},
-		"mob.monstrosity.step": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/monstrosity/step_1",
-				"sounds/monstrosity/step_2"
-			]
-		},
-		"mob.monstrosity.awaken": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/monstrosity/awaken"
-			]
-		},
-		"mob.snareling.shoot": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/snareling/shoot"
-			]
-		},
-		"mob.snareling.impact": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/snareling/hit_1",
-				"sounds/snareling/hit_2"
 			]
 		},
 		"mob.endersent.attack": {
@@ -141,42 +279,6 @@
 				"sounds/monstrosity/shoot_2"
 			]
 		},
-		"mob.wretched_wraith.awaken": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/wretched_wraith/awaken"
-			]
-		},
-		"mob.wretched_wraith.hurt": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/wretched_wraith/hurt_1",
-				"sounds/wretched_wraith/hurt_2",
-				"sounds/wretched_wraith/hurt_3"
-			]
-		},
-		"mob.wretched_wraith.shoot": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/wretched_wraith/shoot_1",
-				"sounds/wretched_wraith/shoot_2",
-				"sounds/wretched_wraith/shoot_3"
-			]
-		},
-		"mob.wretched_wraith.idle": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/wretched_wraith/idle_1",
-				"sounds/wretched_wraith/idle_2",
-				"sounds/wretched_wraith/idle_3"
-			]
-		},
-		"mob.wretched_wraith.die": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/wretched_wraith/death"
-			]
-		},
 		"artefact.wind_horn": {
 			"category": "neutral",
 			"sounds": [
@@ -220,23 +322,45 @@
 				"sounds/weapon/bone_crush3"
 			]
 		},
-		"weapon.obsidian_claymore.hit": {
+		"weapon.sharpened_pickaxe.swing": {
 			"category": "player",
 			"sounds": [
-				"sounds/weapon/obsidian_claymore/hit1",
-				"sounds/weapon/obsidian_claymore/hit2",
-				"sounds/weapon/obsidian_claymore/hit3",
-				"sounds/weapon/obsidian_claymore/hit4",
-				"sounds/weapon/obsidian_claymore/hit5",
-				"sounds/weapon/obsidian_claymore/hit6"
+				"sounds/weaponNew/pickaxe/swing0",
+				"sounds/weaponNew/pickaxe/swing1"
 			]
 		},
-		"weapon.obsidian_claymore.special": {
+		"weapon.the_monkey_motivator.swing": {
 			"category": "player",
 			"sounds": [
-				"sounds/weapon/obsidian_claymore/special1",
-				"sounds/weapon/obsidian_claymore/special2",
-				"sounds/weapon/obsidian_claymore/special3"
+				"sounds/weaponNew/pickaxe/monke0",
+				"sounds/weaponNew/pickaxe/monke1"
+			]
+		},
+		"weapon.obsidian_claymore.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/obsidianClaymore/common_swing0",
+				"sounds/weaponNew/obsidianClaymore/common_swing1",
+				"sounds/weaponNew/obsidianClaymore/common_swing2"
+			]
+		},
+		"weapon.obsidian_claymore.hit.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/obsidianClaymore/common_hit"
+			]
+		},
+		"weapon.obsidian_claymore.swing.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/obsidianClaymore/unique_swing0",
+				"sounds/weaponNew/obsidianClaymore/unique_swing1"
+			]
+		},
+		"weapon.obsidian_claymore.hit.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/obsidianClaymore/unique_hit"
 			]
 		},
 		"weapon.enchant.swirling": {
@@ -381,59 +505,6 @@
 				"sounds/leapleaf/step2"
 			]
 		},
-		"mob.jungle_abomination.attack": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/jungle_abomination/attack1",
-				"sounds/jungle_abomination/attack2"
-			]
-		},
-		"mob.jungle_abomination.vine_attack": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/jungle_abomination/vine_attack"
-			]
-		},
-		"mob.jungle_abomination.awaken": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/jungle_abomination/awaken"
-			]
-		},
-		"mob.jungle_abomination.death": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/jungle_abomination/death"
-			]
-		},
-		"mob.jungle_abomination.idle": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/jungle_abomination/idle"
-			]
-		},
-		"mob.jungle_abomination.hurt": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/jungle_abomination/hurt1",
-				"sounds/jungle_abomination/hurt2"
-			]
-		},
-		"mob.jungle_abomination.step": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/jungle_abomination/step1",
-				"sounds/jungle_abomination/step2"
-			]
-		},
-		"mob.jungle_abomination.burst": {
-			"category": "neutral",
-			"sounds": [
-				"sounds/jungle_abomination/burst1",
-				"sounds/jungle_abomination/burst2",
-				"sounds/jungle_abomination/burst3"
-			]
-		},
 		"mob.squall_golem.zap": {
 			"category": "neutral",
 			"sounds": [
@@ -562,55 +633,42 @@
 		"mob.ancient_guardian.awaken": {
 			"category": "neutral",
 			"sounds": [
-				"sounds/ancient_guardian/awaken"
-			]
+				"sounds/mobNew/ancient_guardian/awaken"
+			],
+			"subtitle": "Ancient Guardian Appears"
 		},
 		"mob.ancient_guardian.death": {
 			"category": "neutral",
 			"sounds": [
-				"sounds/ancient_guardian/death"
-			]
+				"sounds/mobNew/ancient_guardian/death"
+			],
+			"subtitle": "Ancient Guardian Dies"
 		},
 		"mob.ancient_guardian.melee": {
 			"category": "neutral",
 			"sounds": [
-				"sounds/ancient_guardian/melee"
-			]
+				"sounds/mobNew/ancient_guardian/melee"
+			],
+			"subtitle": "Ancient Guardian Attacks"
 		},
 		"mob.biomine.boom": {
 			"category": "neutral",
 			"sounds": [
-				"sounds/ancient_guardian/boom"
-			]
+				"sounds/mobNew/ancient_guardian/boom"
+			],
+			"subtitle": "Biomine Explodes"
 		},
-		"mob.wraith.rise": {
+		"mob.biomine.splash": {
 			"category": "neutral",
 			"sounds": [
-				"sounds/wraith/rise"
-			]
+				"sounds/mobNew/ancient_guardian/bomb_splash"
+			],
+			"subtitle": "Biomine Primes"
 		},
 		"weapon.enchant.ricochet": {
 			"category": "player",
 			"sounds": [
 				"sounds/weapon/deflect"
-			]
-		},
-		"weapon.enchant.sawblade_break": {
-			"category": "player",
-			"sounds": [
-				"sounds/weapon/sawblade/break"
-			]
-		},
-		"weapon.enchant.sawblade_attack": {
-			"category": "player",
-			"sounds": [
-				"sounds/weapon/sawblade/swing"
-			]
-		},
-		"weapon.enchant.sawblade_attack_unique": {
-			"category": "player",
-			"sounds": [
-				"sounds/weapon/sawblade/swing_unique"
 			]
 		},
 		"weapon.glaive.swing": {
@@ -739,22 +797,1883 @@
 				"sounds/artefact/corruptedPumpkin"
 			]
 		},
-		"weapon.shrieking_crossbow.shoot": {
+		"weapon.hammer.swing": {
 			"category": "player",
 			"sounds": [
-				"sounds/weapon/shriekingcrossbow"
+				"sounds/weaponNew/hammer/swing0",
+				"sounds/weaponNew/hammer/swing1"
 			]
 		},
-		"weapon.alylicleaver.hit": {
+		"weapon.anchor.swing.common": {
 			"category": "player",
 			"sounds": [
-				"sounds/weapon/alylicleaver/hitsound_byfurnace"
+				"sounds/weaponNew/anchor/common_swing0",
+				"sounds/weaponNew/anchor/common_swing1"
+			]
+		},
+		"weapon.anchor.swing.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/anchor/unique_swing0",
+				"sounds/weaponNew/anchor/unique_swing1"
+			]
+		},
+		"weapon.cutlass.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/cutlass/swing",
+				"sounds/weaponNew/cutlass/swing1"
+			]
+		},
+		"weapon.cutlass.swing.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/cutlass/unique_swing0",
+				"sounds/weaponNew/cutlass/unique_swing1"
+			]
+		},
+		"weapon.sparkler.swing": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/cutlass/sparkler_swing0",
+				"sounds/weaponNew/cutlass/sparkler_swing1"
+			]
+		},
+		"weapon.sparkler.hit": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/cutlass/sparkler_hit0",
+				"sounds/weaponNew/cutlass/sparkler_hit1"
+			]
+		},
+		"weapon.sparkler.crakles": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/cutlass/sparkler_crackles"
+			]
+		},
+		"weapon.soul_knife.swing": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/soulKnife/swing0",
+				"sounds/weaponNew/soulKnife/swing1",
+				"sounds/weaponNew/soulKnife/swing2"
+			]
+		},
+		"weapon.soul_scythe.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/scythe/common_swing0",
+				"sounds/weaponNew/scythe/common_swing1"
+			]
+		},
+		"weapon.soul_scythe.swing.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/scythe/unique_swing0",
+				"sounds/weaponNew/scythe/unique_swing1",
+				"sounds/weaponNew/scythe/unique_swing2"
+			]
+		},
+		"weapon.soul_scythe.swing.spooky": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/scythe/spooky_swing0",
+				"sounds/weaponNew/scythe/spooky_swing1"
+			]
+		},
+		"weapon.soul_scythe.hit": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/scythe/impact"
+			]
+		},
+		"weapon.soul_scythe.hit.spooky": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/scythe/spooky_impact"
+			]
+		},
+		"weapon.whip.hit.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/whip/common_hit0",
+				"sounds/weaponNew/whip/common_hit1"
+			]
+		},
+		"weapon.whip.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/whip/common_swing0",
+				"sounds/weaponNew/whip/common_swing1"
+			]
+		},
+		"weapon.whip.hit.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/whip/unique_hit0",
+				"sounds/weaponNew/whip/unique_hit1"
+			]
+		},
+		"weapon.whip.swing.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/whip/unique_swing0",
+				"sounds/weaponNew/whip/unique_swing1"
+			]
+		},
+		"weapon.enchant.void_strike": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/voidBlades/void_strike"
+			]
+		},
+		"weapon.void_blades.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/voidBlades/common_swing0",
+				"sounds/weaponNew/voidBlades/common_swing1"
+			]
+		},
+		"weapon.void_blades.swing.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/voidBlades/unique_swing0",
+				"sounds/weaponNew/voidBlades/unique_swing1"
+			]
+		},
+		"weapon.gauntlets.swing": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/gauntlets/swing0",
+				"sounds/weaponNew/gauntlets/swing1"
+			]
+		},
+		"weapon.gauntlets.hit": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/gauntlets/hit0",
+				"sounds/weaponNew/gauntlets/hit1",
+				"sounds/weaponNew/gauntlets/hit2"
+			]
+		},
+		"weapon.sawblade.break.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/sawblade/common_break0",
+				"sounds/weaponNew/sawblade/common_break1"
+			]
+		},
+		"weapon.sawblade.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/sawblade/common_swing0",
+				"sounds/weaponNew/sawblade/common_swing1"
+			]
+		},
+		"weapon.sawblade.hit.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/sawblade/common_hit0",
+				"sounds/weaponNew/sawblade/common_hit1"
+			]
+		},
+		"weapon.sawblade.break.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/sawblade/unique_break"
+			]
+		},
+		"weapon.sawblade.swing.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/sawblade/unique_swing0",
+				"sounds/weaponNew/sawblade/unique_swing1"
+			]
+		},
+		"weapon.sawblade.hit.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/sawblade/unique_hit0",
+				"sounds/weaponNew/sawblade/unique_hit1"
+			]
+		},
+		"weapon.boneclub.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/boneclub/common_swing0",
+				"sounds/weaponNew/boneclub/common_swing1"
+			]
+		},
+		"weapon.boneclub.swing.unique": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/boneclub/unique_swing0",
+				"sounds/weaponNew/boneclub/unique_swing1"
+			]
+		},
+		"weapon.daggers.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/daggers/swing_common0",
+				"sounds/weaponNew/daggers/swing_common1"
+			]
+		},
+		"weapon.daggers.hit.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/daggers/hit_common0",
+				"sounds/weaponNew/daggers/hit_common1"
+			]
+		},
+		"weapon.daggers.swing.ice": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/daggers/swing_ice0",
+				"sounds/weaponNew/daggers/swing_ice1"
+			]
+		},
+		"weapon.daggers.swing.sheer": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/daggers/swing_sheer0",
+				"sounds/weaponNew/daggers/swing_sheer1"
+			]
+		},
+		"weapon.daggers.hit.sheer": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/daggers/hit_sheer0",
+				"sounds/weaponNew/daggers/hit_sheer1"
+			]
+		},
+		"weapon.battlestaff.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/battlestaff/common_swing0",
+				"sounds/weaponNew/battlestaff/common_swing1"
+			]
+		},
+		"weapon.battlestaff.hit.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/battlestaff/common_sweep0",
+				"sounds/weaponNew/battlestaff/common_sweep1"
+			]
+		},
+		"weapon.battlestaff.swing.growing": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/battlestaff/growing_swing0",
+				"sounds/weaponNew/battlestaff/growing_swing1"
+			]
+		},
+		"weapon.battlestaff.hit.growing": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/battlestaff/growing_sweep0",
+				"sounds/weaponNew/battlestaff/growing_sweep1"
+			]
+		},
+		"weapon.battlestaff.swing.terror": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/battlestaff/terror_swing0",
+				"sounds/weaponNew/battlestaff/terror_swing1"
+			]
+		},
+		"weapon.battlestaff.hit.terror": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/battlestaff/terror_sweep0",
+				"sounds/weaponNew/battlestaff/terror_sweep1"
+			]
+		},
+		"weapon.rapier.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/rapier/common_swing0",
+				"sounds/weaponNew/rapier/common_swing1",
+				"sounds/weaponNew/rapier/common_swing2"
+			]
+		},
+		"weapon.rapier.swing.freeze": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/rapier/freeze_swing0",
+				"sounds/weaponNew/rapier/freeze_swing1"
+			]
+		},
+		"weapon.rapier.swing.bee": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/rapier/bee_swing0",
+				"sounds/weaponNew/rapier/bee_swing1"
 			]
 		},
 		"weapon.alylicleaver.swing": {
 			"category": "player",
 			"sounds": [
-				"sounds/weapon/alylicleaver/swingsound_byfurnace"
+				"sounds/weaponNew/alylicleaver/swingsound_byfurnace"
+			]
+		},
+		"weapon.alylicleaver.hit": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/alylicleaver/hitsound_byfurnace"
+			]
+		},
+		"weapon.rush_spear.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/spear/swing0",
+				"sounds/weaponNew/spear/swing1"
+			]
+		},
+		"weapon.rush_spear.attack": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/spear/hit"
+			]
+		},
+		"armour.death_barter.charged": {
+			"category": "player",
+			"sounds": [
+				"sounds/armourNew/deathBarter/power0",
+				"sounds/armourNew/deathBarter/power1"
+			],
+			"subtitle": "Armour Charged"
+		},
+		"armour.rush.activate": {
+			"category": "player",
+			"sounds": [
+				"sounds/armourNew/rush/rush"
+			],
+			"subtitle": "Speed Up"
+		},
+		"armour.teleport.in": {
+			"category": "player",
+			"sounds": [
+				"sounds/armourNew/teleport/start0",
+				"sounds/armourNew/teleport/start1"
+			],
+			"subtitle": "Player Reappears"
+		},
+		"armour.teleport.out": {
+			"category": "player",
+			"sounds": [
+				"sounds/armourNew/teleport/end0",
+				"sounds/armourNew/teleport/end1"
+			],
+			"subtitle": "Player Disappears"
+		},
+		"armour.teleport.explode": {
+			"category": "player",
+			"sounds": [
+				"sounds/armourNew/teleport/explode0",
+				"sounds/armourNew/teleport/explode1"
+			],
+			"subtitle": "Void Burst"
+		},
+		"weapon.scatter_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/scattershoot0",
+				"sounds/bowNew/scattershoot1",
+				"sounds/bowNew/scattershoot2",
+				"sounds/bowNew/scattershoot3"
+			]
+		},
+		"weapon.harp_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/harpshoot0",
+				"sounds/bowNew/harpshoot1"
+			]
+		},
+		"weapon.lightning_harp_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/lightningharpshoot0",
+				"sounds/bowNew/lightningharpshoot1"
+			]
+		},
+		"weapon.bubble_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/bubblebowshoot0",
+				"sounds/bowNew/bubblebowshoot1"
+			]
+		},
+		"weapon.bubble_burster.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/bubbleburstershoot0",
+				"sounds/bowNew/bubbleburstershoot1"
+			]
+		},
+		"weapon.dual_crossbows.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/dualcrossbowshoot0"
+			]
+		},
+		"weapon.baby_crossbows.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/babyshoot0",
+				"sounds/bowNew/babyshoot1"
+			]
+		},
+		"weapon.spellbound_crossbows.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/spellboundshoot0",
+				"sounds/bowNew/spellboundshoot1"
+			]
+		},
+		"weapon.call_of_the_void.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/boomvoidshoot0",
+				"sounds/bowNew/boomvoidshoot1"
+			]
+		},
+		"weapon.void_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/voidbowshoot0",
+				"sounds/bowNew/voidbowshoot1"
+			]
+		},
+		"weapon.burst_gale_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/burstgaleshoot0",
+				"sounds/bowNew/burstgaleshoot1"
+			]
+		},
+		"weapon.echo_of_the_valley.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/echovalleyshoot0",
+				"sounds/bowNew/echovalleyshoot1"
+			]
+		},
+		"weapon.wind_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/windbowshoot0",
+				"sounds/bowNew/windbowshoot1"
+			]
+		},
+		"weapon.cog_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/cogshoot0",
+				"sounds/bowNew/cogshoot1"
+			]
+		},
+		"weapon.pride_of_the_piglins.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/piglinsshoot0",
+				"sounds/bowNew/piglinsshoot1"
+			]
+		},
+		"weapon.guardian_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/guardianbowshoot0",
+				"sounds/bowNew/guardianbowshoot1"
+			]
+		},
+		"weapon.haunted_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/spookybowshoot0",
+				"sounds/bowNew/spookybowshoot1"
+			]
+		},
+		"weapon.harpoon_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/harpoonshoot0",
+				"sounds/bowNew/harpoonshoot1"
+			]
+		},
+		"weapon.nautical_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/nauticalshoot0",
+				"sounds/bowNew/nauticalshoot1"
+			]
+		},
+		"weapon.heavy_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/heavyshoot0"
+			]
+		},
+		"weapon.slayer_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/slayershoot0"
+			]
+		},
+		"weapon.shadow_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/shadowshoot0",
+				"sounds/bowNew/shadowshoot1"
+			]
+		},
+		"weapon.veiled_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/veiledshoot0",
+				"sounds/bowNew/veiledshoot1"
+			]
+		},
+		"weapon.shrieking_crossbow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/shriekingshoot0",
+				"sounds/bowNew/shriekingshoot1"
+			]
+		},
+		"weapon.soul_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/soulbowshoot0",
+				"sounds/bowNew/soulbowshoot1"
+			]
+		},
+		"weapon.twisting_vine_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/twistingvineshoot0",
+				"sounds/bowNew/twistingvineshoot1"
+			]
+		},
+		"weapon.weeping_vine_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/weepingvineshoot0",
+				"sounds/bowNew/weepingvineshoot1"
+			]
+		},
+		"weapon.webbed_bow.shoot": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/webbedbowshoot0",
+				"sounds/bowNew/webbedbowshoot1"
+			]
+		},
+		"projectile.burning_arrow": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/arrow_burning0",
+				"sounds/bowNew/arrow_burning1"
+			],
+			"subtitle": "Burning Arrow Crackles"
+		},
+		"projectile.thundering_arrow": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/arrow_thunder0",
+				"sounds/bowNew/arrow_thunder1"
+			],
+			"subtitle": "Thundering Arrow Hums"
+		},
+		"projectile.torment_arrow": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/arrow_torment0",
+				"sounds/bowNew/arrow_torment1"
+			],
+			"subtitle": "Torment Arrow Drones"
+		},
+		"projectile.harpoon_arrow": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/arrow_harpoon0",
+				"sounds/bowNew/arrow_harpoon1"
+			],
+			"subtitle": "Harpoon Arrow Slices"
+		},
+		"projectile.firework_arrow": {
+			"category": "player",
+			"sounds": [
+				"sounds/bowNew/arrow_firework0"
+			],
+			"subtitle": "Firework Wooshes"
+		},
+		"mob.illusioner.clone": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/illusioner/clone"
+			],
+			"subtitle": "Illusioner Casts Spell"
+		},
+		"mob.redstone_monstrosity.step": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/redstone_monstrosity/step1",
+				"sounds/mobNew/redstone_monstrosity/step2"
+			],
+			"subtitle": "Monstrosity Steps"
+		},
+		"mob.redstone_monstrosity.awaken": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/redstone_monstrosity/awaken"
+			],
+			"subtitle": "Monstrosity Powers Up"
+		},
+		"mob.redstone_monstrosity.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/redstone_monstrosity/death"
+			],
+			"subtitle": "Monstrosity Dies"
+		},
+		"mob.redstone_monstrosity.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/redstone_monstrosity/hurt1",
+				"sounds/mobNew/redstone_monstrosity/hurt2",
+				"sounds/mobNew/redstone_monstrosity/hurt3"
+			],
+			"subtitle": "Monstrosity Hurt"
+		},
+		"mob.redstone_monstrosity.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/redstone_monstrosity/idle1",
+				"sounds/mobNew/redstone_monstrosity/idle2"
+			],
+			"subtitle": "Monstrosity Grumbles"
+		},
+		"mob.redstone_monstrosity.attack_start": {
+			"category": "hostile",
+			"sounds": [
+				{
+					"name": "sounds/mobNew/redstone_monstrosity/melee_charge",
+					"volume": 2
+				}
+			],
+			"subtitle": "Monstrosity Raises Arms"
+		},
+		"mob.redstone_monstrosity.attack_end": {
+			"category": "hostile",
+			"sounds": [
+				{
+					"name": "sounds/mobNew/redstone_monstrosity/hurt1",
+					"volume": 2
+				},
+				{
+					"name": "sounds/mobNew/redstone_monstrosity/hurt2",
+					"volume": 2
+				},
+				{
+					"name": "sounds/mobNew/redstone_monstrosity/hurt3",
+					"volume": 2
+				}
+			],
+			"subtitle": "Monstrosity Slams Ground"
+		},
+		"mob.redstone_monstrosity.shoot": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/redstone_monstrosity/shoot1",
+				"sounds/mobNew/redstone_monstrosity/shoot2"
+			],
+			"subtitle": "Monstrosity Shoots"
+		},
+		"mob.redstone_monstrosity.growl": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/redstone_monstrosity/growl"
+			],
+			"subtitle": "Monstrosity Growls"
+		},
+		"mob.nameless_one.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/nameless_one/death"
+			],
+			"subtitle": "Nameless One Dies"
+		},
+		"mob.nameless_one.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/nameless_one/hurt0",
+				"sounds/mobNew/nameless_one/hurt1"
+			],
+			"subtitle": "Nameless One Rattles"
+		},
+		"mob.nameless_one.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/nameless_one/idle0",
+				"sounds/mobNew/nameless_one/idle1"
+			],
+			"subtitle": "Nameless One Groans"
+		},
+		"mob.nameless_one.teleport_in": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/nameless_one/teleport_in0",
+				"sounds/mobNew/nameless_one/teleport_in1"
+			],
+			"subtitle": "Nameless One Reappears"
+		},
+		"mob.nameless_one.teleport_out": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/nameless_one/teleport_out"
+			],
+			"subtitle": "Nameless One Disappears"
+		},
+		"mob.nameless_one.wake": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/nameless_one/wake"
+			],
+			"subtitle": "Nameless One Rises"
+		},
+		"mob.nameless_one.charge": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/nameless_one/charge_short"
+			],
+			"subtitle": "Nameless One Raises Staff"
+		},
+		"mob.nameless_one.charge_long": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/nameless_one/charge_long"
+			],
+			"subtitle": "Nameless One Raises Staff"
+		},
+		"mob.wraith.rise": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wraith/rise"
+			],
+			"subtitle": "Wraith Appears"
+		},
+		"mob.wraith.attack": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wraith/attack"
+			],
+			"subtitle": "Wraith Attacks"
+		},
+		"mob.wraith.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wraith/death0",
+				"sounds/mobNew/wraith/death1"
+			],
+			"subtitle": "Wraith Dies"
+		},
+		"mob.wraith.fire": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wraith/fire"
+			],
+			"subtitle": "Fire Appears"
+		},
+		"mob.wraith.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wraith/hurt0",
+				"sounds/mobNew/wraith/hurt1"
+			],
+			"subtitle": "Wraith Hurts"
+		},
+		"mob.wraith.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wraith/idle0",
+				"sounds/mobNew/wraith/idle1",
+				"sounds/mobNew/wraith/idle2"
+			],
+			"subtitle": "Wraith Groans"
+		},
+		"mob.wraith.teleport": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wraith/teleport0",
+				"sounds/mobNew/wraith/teleport1"
+			],
+			"subtitle": "Wraith Teleports"
+		},
+		"mob.wretched_wraith.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wretched_wraith/hurt0",
+				"sounds/mobNew/wretched_wraith/hurt1"
+			],
+			"subtitle": "Wretched Wraith Hurts"
+		},
+		"mob.wretched_wraith.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wretched_wraith/idle0",
+				"sounds/mobNew/wretched_wraith/idle1"
+			],
+			"subtitle": "Wretched Wraith Mutters"
+		},
+		"mob.wretched_wraith.shoot": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wretched_wraith/shoot"
+			],
+			"subtitle": "Wretched Wraith Shoots"
+		},
+		"mob.wretched_wraith.spawn": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wretched_wraith/spawn"
+			],
+			"subtitle": "Wretched Wraith Appears"
+		},
+		"mob.wretched_wraith.bullethell": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wretched_wraith/bullethell"
+			],
+			"subtitle": "Wretched Wraith Shivers"
+		},
+		"mob.wretched_wraith.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wretched_wraith/death"
+			],
+			"subtitle": "Wretched Wraith Dies"
+		},
+		"mob.wretched_wraith.summon": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/wretched_wraith/summon"
+			],
+			"subtitle": "Wretched Wraith Casts"
+		},
+		"mob.jungle_abomination.attack": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/attack1",
+				"sounds/mobNew/jungle_abomination/attack2"
+			],
+			"subtitle": "Jungle Abomination Attacks"
+		},
+		"mob.jungle_abomination.vine_attack": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/vine_attack"
+			],
+			"subtitle": "Jungle Abomination Digs"
+		},
+		"mob.jungle_abomination.awaken": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/awaken"
+			],
+			"subtitle": "Jungle Abomination Roars"
+		},
+		"mob.jungle_abomination.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/death"
+			],
+			"subtitle": "Jungle Abomination Dies"
+		},
+		"mob.jungle_abomination.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/idle"
+			],
+			"subtitle": "Jungle Abomination Grunts"
+		},
+		"mob.jungle_abomination.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/hurt1",
+				"sounds/mobNew/jungle_abomination/hurt2"
+			],
+			"subtitle": "Jungle Abomination Hurts"
+		},
+		"mob.jungle_abomination.step": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/step1",
+				"sounds/mobNew/jungle_abomination/step2"
+			],
+			"subtitle": "Jungle Abomination Steps"
+		},
+		"mob.jungle_abomination.burst": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/burst1",
+				"sounds/mobNew/jungle_abomination/burst2",
+				"sounds/mobNew/jungle_abomination/burst3"
+			],
+			"subtitle": "Jungle Abomination Attacks"
+		},
+		"mob.jungle_abomination.open_flower": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/open_flower"
+			],
+			"subtitle": "Abomination Bloom Opens"
+		},
+		"mob.jungle_abomination.close_flower": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/close_flower"
+			],
+			"subtitle": "Abomination Bloom Closes"
+		},
+		"mob.jungle_abomination.prepare_ranged": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/prepare_ranged"
+			],
+			"subtitle": "Abomination Bloom Readies Projectiles"
+		},
+		"mob.jungle_abomination.activate": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/jungle_abomination/activate"
+			],
+			"subtitle": "Abomination Bloom Awakens"
+		},
+		"mob.enchanter.beam_on": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/enchanter/beam_on"
+			],
+			"subtitle": "Enchanter Beam"
+		},
+		"mob.enchanter.cast": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/enchanter/cast"
+			],
+			"subtitle": "Enchanter Enchants"
+		},
+		"mob.enchanter.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/enchanter/death0",
+				"sounds/mobNew/enchanter/death1"
+			],
+			"subtitle": "Enchanter Dies"
+		},
+		"mob.enchanter.enchant": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/enchanter/enchant"
+			],
+			"subtitle": "Mob Transforms"
+		},
+		"mob.enchanter.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/enchanter/hurt0",
+				"sounds/mobNew/enchanter/hurt1"
+			],
+			"subtitle": "Enchanter Flinches"
+		},
+		"mob.enchanter.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/enchanter/idle0",
+				"sounds/mobNew/enchanter/idle1"
+			],
+			"subtitle": "Enchanter Mumbles"
+		},
+		"mob.enchanter.prepare": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/enchanter/prepare"
+			],
+			"subtitle": "Enchanter Prepares"
+		},
+		"mob.snareling.impact": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/snareling/projectileimpact0",
+				"sounds/mobNew/snareling/projectileimpact1"
+			],
+			"subtitle": "Snareling Traps Mob"
+		},
+		"mob.snareling.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/snareling/death0",
+				"sounds/mobNew/snareling/death1"
+			],
+			"subtitle": "Snareling Dies"
+		},
+		"mob.snareling.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/snareling/hurt0",
+				"sounds/mobNew/snareling/hurt1"
+			],
+			"subtitle": "Snareling Hurt"
+		},
+		"mob.snareling.melee": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/snareling/melee0",
+				"sounds/mobNew/snareling/melee1"
+			],
+			"subtitle": "Snareling Swings Arms"
+		},
+		"mob.snareling.ranged": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/snareling/ranged0",
+				"sounds/mobNew/snareling/ranged1"
+			],
+			"subtitle": "Snareling Spits"
+		},
+		"mob.snareling.step": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/snareling/step0",
+				"sounds/mobNew/snareling/step1"
+			],
+			"subtitle": "Snareling Walks"
+		},
+		"mob.snareling.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/snareling/idle0",
+				"sounds/mobNew/snareling/idle1"
+			],
+			"subtitle": "Snareling Hisses"
+		},
+		"mob.snareling.teleport": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/snareling/teleport"
+			],
+			"subtitle": "Snareling Ambushes"
+		},
+		"mob.watchling.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/watchling/idle0",
+				"sounds/mobNew/watchling/idle1"
+			],
+			"subtitle": "Watchling Snarls"
+		},
+		"mob.watchling.attack": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/watchling/attack"
+			],
+			"subtitle": "Watchling Attack"
+		},
+		"mob.watchling.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/watchling/death"
+			],
+			"subtitle": "Watchling Death"
+		},
+		"mob.watchling.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/watchling/hurt0",
+				"sounds/mobNew/watchling/hurt1"
+			],
+			"subtitle": "Watchling Hurts"
+		},
+		"mob.watchling.step": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/watchling/step0",
+				"sounds/mobNew/watchling/step1"
+			],
+			"subtitle": "Watchling Walks"
+		},
+		"mob.blastling.shoot": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/blastling/attack"
+			],
+			"subtitle": "Blastling Shoots"
+		},
+		"mob.blastling.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/blastling/death0",
+				"sounds/mobNew/blastling/death1"
+			],
+			"subtitle": "Blastling Death"
+		},
+		"mob.blastling.impact": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/blastling/hit"
+			],
+			"subtitle": "Blastling Hits"
+		},
+		"mob.blastling.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/blastling/hurt0",
+				"sounds/mobNew/blastling/hurt1"
+			],
+			"subtitle": "Blastling Hurt"
+		},
+		"mob.blastling.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/blastling/idle0",
+				"sounds/mobNew/blastling/idle1"
+			],
+			"subtitle": "Blastling Grumbles"
+		},
+		"mob.blastling.step": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/blastling/step0",
+				"sounds/mobNew/blastling/step1"
+			],
+			"subtitle": "Blastling Steps"
+		},
+		"armour.equip.phantom": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/phantom"
+			],
+			"subtitle": "Phantom Armour Screeches"
+		},
+		"armour.equip.frost_bite": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/phantom"
+			],
+			"subtitle": "Frost Bite Armour Screeches"
+		},
+		"armour.equip.beenest": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/beenest"
+			],
+			"subtitle": "Beenest Armour Buzzes"
+		},
+		"armour.equip.beehive": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/beehive"
+			],
+			"subtitle": "Beehive Armour Buzzes"
+		},
+		"armour.equip.champions": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/champions"
+			],
+			"subtitle": "Champion's Armour Hums"
+		},
+		"armour.equip.heros": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/heros"
+			],
+			"subtitle": "Hero's Armour Hums"
+		},
+		"armour.equip.emerald": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/emerald"
+			],
+			"subtitle": "Emerald Armour Shines"
+		},
+		"armour.equip.opulent": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/opulent"
+			],
+			"subtitle": "Opulent Armour Shines"
+		},
+		"armour.equip.gilded_glory": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/gildedglory"
+			],
+			"subtitle": "Gilded Glory Shines"
+		},
+		"armour.equip.souldancer": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/souldancer0",
+				"sounds/armourNew/equip/souldancer1"
+			],
+			"subtitle": "Souldancer Robe Groans"
+		},
+		"armour.equip.entertainer": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/entertainers_garb"
+			],
+			"subtitle": "Entertainer's Garb Ruffles"
+		},
+		"armour.equip.troubadour": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/troubdaour"
+			],
+			"subtitle": "Troubdaour Ruffles"
+		},
+		"armour.equip.evocation": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/evocationrobe"
+			],
+			"subtitle": "Evocation Robe Twinkles"
+		},
+		"armour.equip.ember": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/emberrobe0",
+				"sounds/armourNew/equip/emberrobe1"
+			],
+			"subtitle": "Ember Robe Twinkles"
+		},
+		"armour.equip.verdant": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/verdantrobe"
+			],
+			"subtitle": "Verdant Robe Twinkles"
+		},
+		"armour.equip.ghostly": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/ghostly"
+			],
+			"subtitle": "Ghostly Armour Wails"
+		},
+		"armour.equip.ghost_kindler": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/ghost_kindler"
+			],
+			"subtitle": "Ghost Kindler Wails"
+		},
+		"armour.equip.cloaked_skull": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/cloaked_skull"
+			],
+			"subtitle": "Cloaked Skull Rattles"
+		},
+		"armour.equip.wither": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/wither"
+			],
+			"subtitle": "Wither Armour Rattles"
+		},
+		"armour.equip.spooky_gourdian": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/spooky_gourdian"
+			],
+			"subtitle": "Spooky Gourdian Cackles"
+		},
+		"armour.equip.ender": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/ender"
+			],
+			"subtitle": "Ender Armour Clanks"
+		},
+		"armour.equip.ocelot": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/ocelot"
+			],
+			"subtitle": "Ocelot Armour Meows"
+		},
+		"armour.equip.shadow_walker": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/shadow_walker"
+			],
+			"subtitle": "Shadow Walker Armour Meows"
+		},
+		"armour.equip.plate": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/plate"
+			],
+			"subtitle": "Plate Armour Clanks"
+		},
+		"armour.equip.full_metal": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/plate"
+			],
+			"subtitle": "Full Metal Armour Clanks"
+		},
+		"armour.equip.cauldron": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/cauldron"
+			],
+			"subtitle": "Cauldron Armour Bubbles"
+		},
+		"armour.equip.piglin": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/piglin"
+			],
+			"subtitle": "Piglin Armour Oinks"
+		},
+		"armour.equip.golden_piglin": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/golden_piglin"
+			],
+			"subtitle": "Golden Piglin Armour Oinks"
+		},
+		"armour.equip.root_rot": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/rootrot"
+			],
+			"subtitle": "Root Rot Armour Tangles"
+		},
+		"armour.equip.black_spot": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/blackspot"
+			],
+			"subtitle": "Black Spot Armour Tangles"
+		},
+		"armour.equip.shulker": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/shulker"
+			],
+			"subtitle": "Shulker Armour Presses"
+		},
+		"armour.equip.sturdy_shulker": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/sturdyshulker"
+			],
+			"subtitle": "Sturdy Shulker Armour Presses"
+		},
+		"armour.equip.frost": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/frost"
+			],
+			"subtitle": "Frost Armour Shivers"
+		},
+		"armour.equip.sprout": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/sprout"
+			],
+			"subtitle": "Sprout Armour Shuffles"
+		},
+		"armour.equip.living_vines": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/livingvines"
+			],
+			"subtitle": "Living Vines Armour Shuffles"
+		},
+		"armour.equip.squid": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/squid"
+			],
+			"subtitle": "Squid Armour Bubbles"
+		},
+		"armour.equip.glow_squid": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/glowsquid"
+			],
+			"subtitle": "Glow Squid Armour Bubbles"
+		},
+		"armour.equip.teleportation": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/teleportation"
+			],
+			"subtitle": "Teleportation Robe Shifts"
+		},
+		"armour.equip.unstable": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/unstable"
+			],
+			"subtitle": "Unstable Robe Shifts"
+		},
+		"armour.equip.thief": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/thief"
+			],
+			"subtitle": "Thief Armour Whistles"
+		},
+		"armour.equip.spider": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/spider"
+			],
+			"subtitle": "Spider Armour Whistles"
+		},
+		"armour.equip.turtle": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/turtle"
+			],
+			"subtitle": "Turtle Armour Fastens"
+		},
+		"armour.equip.nimble_turtle": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/nimbleturtle"
+			],
+			"subtitle": "Nimble Turtle Armour Fastens"
+		},
+		"armour.equip.fox": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/fox0",
+				"sounds/armourNew/equip/fox1"
+			],
+			// what *does* the fox say?
+			"subtitle": "Fox Armour Screams"
+		},
+		"armour.equip.black_wolf": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/blackwolf"
+			],
+			"subtitle": "Black Wolf Armour Barks"
+		},
+		"weapon.mace.swing": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/mace/swing"
+			],
+			"subtitle": "Iron Mace Swings"
+		},
+		"weapon.mace.hit": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/mace/hit"
+			],
+			"subtitle": "Iron Mace Impact"
+		},
+		"weapon.mace.critical": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/mace/critical"
+			],
+			"subtitle": "Iron Mace Impact"
+		},
+		"weapon.flail.critical": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/mace/flail_critical"
+			],
+			"subtitle": "Flail Impact"
+		},
+		"weapon.sickles.swing": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/sickles/swing0",
+				"sounds/weaponNew/sickles/swing1"
+			],
+			"subtitle": "Sickles Slice"
+		},
+		"weapon.sickles.hit": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/sickles/hit0",
+				"sounds/weaponNew/sickles/hit1"
+			],
+			"subtitle": "Sickles Stab"
+		},
+		"bubble_bow.spawn": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/bowNew/bubble_spawn"
+			],
+			"subtitle": "Bubble Appears"
+		},
+		"bubble_bow.pop": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/bowNew/bubble_pop"
+			],
+			"subtitle": "Bubble Pops"
+		},
+		"mob.obsidian_monstrosity.awaken": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/obsidianMonstrosity/obsidianwakeup"
+			],
+			"subtitle": "Obsidian Monstrosity Activates"
+		},
+		"mob.obsidian_monstrosity.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/obsidianMonstrosity/obsidiandeath"
+			],
+			"subtitle": "Obsidian Monstrosity Dies"
+		},
+		"mob.obsidian_monstrosity.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/obsidianMonstrosity/obsidianidle0",
+				"sounds/mobNew/obsidianMonstrosity/obsidianidle1"
+			],
+			"subtitle": "Obsidian Monstrosity Mutters"
+		},
+		"mob.obsidian_monstrosity.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/obsidianMonstrosity/obsidianhurt0",
+				"sounds/mobNew/obsidianMonstrosity/obsidianhurt1"
+			],
+			"subtitle": "Obsidian Monstrosity Hurt"
+		},
+		"mob.arch_illager.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/archIllager/idle0",
+				"sounds/mobNew/archIllager/idle1"
+			],
+			"subtitle": "Arch-Illager Mutters"
+		},
+		"mob.arch_illager.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/archIllager/hurt0",
+				"sounds/mobNew/archIllager/hurt1",
+				"sounds/mobNew/archIllager/hurt2"
+			],
+			"subtitle": "Arch-Illager Flinches"
+		},
+		"mob.arch_illager.orb_touched": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/archIllager/orb_touched"
+			],
+			"subtitle": "Orb Disappears"
+		},
+		"mob.arch_illager.greetings": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/archIllager/greeting"
+			],
+			"subtitle": "Arch-Illager Appears"
+		},
+		"mob.arch_illager.laugh": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/archIllager/laugh"
+			],
+			"subtitle": "Arch-Illager Laughs"
+		},
+		"mob.arch_illager.magic_hit": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/archIllager/magichit"
+			],
+			"subtitle": "Arch-Illager Magic"
+		},
+		"mob.arch_illager.summon": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/archIllager/summon"
+			],
+			"subtitle": "Orb of Dominance Casts Spell"
+		},
+		"mob.arch_illager.absorbed": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/archIllager/absorbed"
+			],
+			"subtitle": "Something... Transforms?"
+		},
+		"mob.heart_of_ender.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/idle0",
+				"sounds/mobNew/heartOfEnder/idle1"
+			],
+			"subtitle": "??? Groans"
+		},
+		"mob.heart_of_ender.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/hurt0",
+				"sounds/mobNew/heartOfEnder/hurt1"
+			],
+			"subtitle": "??? Hurts"
+		},
+		"mob.heart_of_ender.loop": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/loop"
+			]
+		},
+		"mob.heart_of_ender.walk": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/walk0",
+				"sounds/mobNew/heartOfEnder/walk1"
+			],
+			"subtitle": "??? Crawls"
+		},
+		"mob.heart_of_ender.projectiles": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/projectiles0",
+				"sounds/mobNew/heartOfEnder/projectiles1"
+			],
+			"subtitle": "??? Spits"
+		},
+		"mob.heart_of_ender.rise": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/rise"
+			],
+			"subtitle": "??? Appears"
+		},
+		"mob.heart_of_ender.sink": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/sink"
+			],
+			"subtitle": "??? Vanishes"
+		},
+		"mob.heart_of_ender.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/death"
+			],
+			"subtitle": "??? Dies"
+		},
+		"mob.heart_of_ender.shoot_laser": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/shootlaser"
+			],
+			"subtitle": "??? Blasts Laser"
+		},
+		"mob.heart_of_ender.loop_laser": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mobNew/heartOfEnder/looplaser"
+			]
+		},
+		"toast.book_of_heroes.in": {
+			"category": "ui",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/uiNew/bookofheroes_toast_in0",
+				"sounds/uiNew/bookofheroes_toast_in1",
+				"sounds/uiNew/bookofheroes_toast_in2"
+			]
+		},
+		"toast.book_of_heroes.out": {
+			"category": "ui",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/uiNew/bookofheroes_toast_out"
+			]
+		},
+		"weapon.longsword.swing.common": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/longsword/common_swing0",
+				"sounds/weaponNew/longsword/common_swing1"
+			]
+		},
+		"weapon.longsword.swing.spooky": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/longsword/spooky_swing0",
+				"sounds/weaponNew/longsword/spooky_swing1"
+			]
+		},
+		"weapon.claymore.swing": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/claymore/swing"
+			]
+		},
+		"weapon.claymore.swing.axeblade": {
+			"category": "player",
+			"sounds": [
+				"sounds/weaponNew/claymore/swing_unique"
+			]
+		},
+		"random.birthday": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"__use_legacy_max_distance": true,
+			"sounds": [
+				"sounds/armourNew/equip/sweetTooth"
 			]
 		}
 	}

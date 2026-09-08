@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bp_whispering_spear"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"B": {
+				"item": "dungeons:blue_print"
+			},
+			"W": {
+				"item": "dungeons:whispering_spear"
+			}
+		},
+		"unlock": [
+			{
+				"item": "dungeons:whispering_spear"
+			}
+		],
+		"pattern": [
+			"B",
+			"W"
+		],
+		"result": [
+			{
+				"item": "dungeons:whispering_spear",
+				"count": 1
+			},
+			{
+				"item": "dungeons:whispering_spear",
+				"count": 1
+			}
+		]
+	}
+}

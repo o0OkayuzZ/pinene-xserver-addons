@@ -1,0 +1,53 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.corrupted_cauldron_v2.healing": {
+			"initial_state": "default",
+			"states": {
+				"charging": {
+					"animations": [
+						"charge"
+					],
+					"transitions": [
+						{
+							"default": "!q.property('dungeons:charging_heal')"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"default": {
+					"transitions": [
+						{
+							"charging": "q.property('dungeons:charging_heal')"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.corrupted_cauldron_v2.summon": {
+			"initial_state": "default",
+			"states": {
+				"attacking": {
+					"animations": [
+						"summon"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						}
+					],
+					"blend_transition": 0.33
+				},
+				"default": {
+					"transitions": [
+						{
+							"attacking": "query.is_casting"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		}
+	}
+}

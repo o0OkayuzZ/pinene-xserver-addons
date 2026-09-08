@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "dungeons:redstone_monstrosity",
 			"materials": {
-				"default": "entity_alphatest"
+				"default": "entity_emissive_alpha"
 			},
 			"textures": {
 				"default": "textures/entity/redstone_monstrosity/monstrosity",
@@ -18,32 +18,34 @@
 				"controller.render.default"
 			],
 			"animations": {
-				"move": "animation.redstone_monstrosity.walk",
-				"smash": "animation.redstone_monstrosity.smash",
-				"attack_controller": "controller.animation.redstone_monstrosity.attack",
-				"move_controller": "controller.animation.redstone_monstrosity.move",
-				"roar": "animation.redstone_monstrosity.roar",
-				"roar_controller": "controller.animation.redstone_monstrosity.roar",
-				"death": "animation.necromancer_shot.particles",
-				"look_at_target": "animation.common.look_at_target"
+				"idle": "animation.redstone_monstrosity_v2.idle",
+				"idle_head_movement": "animation.redstone_monstrosity_v2.idle_head_movement",
+				"move": "animation.redstone_monstrosity_v2.walk",
+				"attack_melee": "animation.redstone_monstrosity_v2.attack_melee",
+				"attack_ranged": "animation.redstone_monstrosity_v2.projectile",
+				"look_at_target": "animation.redstone_monstrosity_v2.face_target",
+				"summon": "animation.redstone_monstrosity_v2.lava_attack",
+				"move_controller": "controller.animation.redstone_monstrosity_v2.move",
+				"attack_controller": "controller.animation.redstone_monstrosity_v2.attack",
+				"look_at_target_controller": "controller.animation.redstone_monstrosity_v2.look_at_target",
+				"summon_controller": "controller.animation.redstone_monstrosity_v2.summon",
+				"idle_controller": "controller.animation.redstone_monstrosity_v2.idle_pose",
+				"ranged_controller": "controller.animation.redstone_monstrosity_v2.ranged_attack"
 			},
 			"scripts": {
 				"animate": [
 					"attack_controller",
+					"ranged_controller",
 					"move_controller",
-					"roar_controller",
-					{
-						"look_at_target": "!query.is_casting&&!q.is_delayed_attacking"
-					},
-					{
-						"death": "query.is_alive!=1"
-					}
+					"summon_controller",
+					"idle_controller",
+					"look_at_target_controller"
 				]
 			},
-			"particle_effects": {
-				"magma": "dungeons:magma_spit_new",
-				"smoke": "dungeons:magma_spit_smoke",
-				"energy": "minecraft:dragon_death_explosion_emitter"
+			"sound_effects": {
+				"attack_start": "mob.redstone_monstrosity.attack_start",
+				"attack_end": "mob.redstone_monstrosity.attack_end",
+				"growl": "mob.redstone_monstrosity.growl"
 			},
 			"spawn_egg": {
 				"base_color": "#E61D00",

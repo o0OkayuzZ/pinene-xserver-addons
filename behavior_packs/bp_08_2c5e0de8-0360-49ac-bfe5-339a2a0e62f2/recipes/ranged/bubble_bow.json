@@ -1,0 +1,36 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bubble_bow"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" /S",
+			"- S",
+			" /S"
+		],
+		"key": {
+			"-": {
+				"item": "minecraft:magma"
+			},
+			"/": {
+				"item": "minecraft:lapis_lazuli"
+			},
+			"S": {
+				"item": "minecraft:string"
+			}
+		},
+		"unlock": [
+			{
+				"item": "minecraft:lapis_lazuli"
+			}
+		],
+		"result": {
+			"item": "dungeons:bubble_bow",
+			"count": 1
+		}
+	}
+}

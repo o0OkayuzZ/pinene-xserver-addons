@@ -20,7 +20,7 @@
 				"r": 0.5,
 				"g": 0.4,
 				"b": 1,
-				"a": 1
+				"a": 0.5
 			},
 			"uv_anim": {
 				"offset": [
@@ -32,8 +32,76 @@
 					1
 				]
 			},
-			"light_color_multiplier": 1.33,
-			"ignore_lighting": false
+			"light_color_multiplier": 1,
+			"ignore_lighting": true
+		},
+		"controller.render.dungeons_entity_enchanted_has_baby": {
+			"geometry": "query.is_baby?geometry.baby:geometry.default",
+			"part_visibility": [
+				{
+					"*": true
+				}
+			],
+			"materials": [
+				{
+					"*": "material.enchanted"
+				}
+			],
+			"textures": [
+				"texture.enchanted"
+			],
+			"color": {
+				"r": 0.5,
+				"g": 0.4,
+				"b": 1,
+				"a": 0.5
+			},
+			"uv_anim": {
+				"offset": [
+					"(math.floor(query.life_time*20)+query.frame_alpha)*-0.02",
+					"(math.floor(query.life_time*20)+query.frame_alpha)*0.03"
+				],
+				"scale": [
+					1,
+					1
+				]
+			},
+			"light_color_multiplier": 1,
+			"ignore_lighting": true
+		},
+		"controller.render.dungeons_entity_enchanted_pillager": {
+			"geometry": "query.property('dungeons:armour_type')>=1?geometry.armored:geometry.default",
+			"part_visibility": [
+				{
+					"*": true
+				}
+			],
+			"materials": [
+				{
+					"*": "material.enchanted"
+				}
+			],
+			"textures": [
+				"texture.enchanted"
+			],
+			"color": {
+				"r": 0.5,
+				"g": 0.4,
+				"b": 1,
+				"a": 0.5
+			},
+			"uv_anim": {
+				"offset": [
+					"(math.floor(query.life_time*20)+query.frame_alpha)*-0.02",
+					"(math.floor(query.life_time*20)+query.frame_alpha)*0.03"
+				],
+				"scale": [
+					1,
+					1
+				]
+			},
+			"light_color_multiplier": 1,
+			"ignore_lighting": true
 		},
 		"controller.render.bogged_outer_enchanted": {
 			"geometry": "geometry.overlay",
@@ -54,7 +122,7 @@
 				"r": 0.5,
 				"g": 0.4,
 				"b": 1,
-				"a": 1
+				"a": 0.5
 			},
 			"uv_anim": {
 				"offset": [
@@ -66,8 +134,42 @@
 					1
 				]
 			},
-			"light_color_multiplier": 1.33,
-			"ignore_lighting": false
+			"light_color_multiplier": 1,
+			"ignore_lighting": true
+		},
+		"controller.render.vindicator_outer_enchanted": {
+			"geometry": "geometry.armored",
+			"part_visibility": [
+				{
+					"*": true
+				}
+			],
+			"materials": [
+				{
+					"*": "material.enchanted"
+				}
+			],
+			"textures": [
+				"texture.enchanted"
+			],
+			"color": {
+				"r": 0.5,
+				"g": 0.4,
+				"b": 1,
+				"a": 0.5
+			},
+			"uv_anim": {
+				"offset": [
+					"(math.floor(query.life_time*20)+query.frame_alpha)*-0.02",
+					"(math.floor(query.life_time*20)+query.frame_alpha)*0.03"
+				],
+				"scale": [
+					1,
+					1
+				]
+			},
+			"light_color_multiplier": 1,
+			"ignore_lighting": true
 		},
 		"controller.render.dungeons_endersent_enchanted": {
 			"geometry": "geometry.default",
@@ -88,7 +190,7 @@
 				"r": 0.5,
 				"g": 0.4,
 				"b": 1,
-				"a": 1
+				"a": 0.5
 			},
 			"uv_anim": {
 				"offset": [
@@ -100,8 +202,8 @@
 					2
 				]
 			},
-			"light_color_multiplier": 1.33,
-			"ignore_lighting": false
+			"light_color_multiplier": 1,
+			"ignore_lighting": true
 		}
 	}
 }

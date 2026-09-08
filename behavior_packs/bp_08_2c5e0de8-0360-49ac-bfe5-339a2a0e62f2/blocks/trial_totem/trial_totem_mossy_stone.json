@@ -1,0 +1,140 @@
+{
+	"format_version": "1.21.120",
+	"minecraft:block": {
+		"description": {
+			"identifier": "dungeons:trial_totem_mossy_stone",
+			"menu_category": {
+				"category": "construction"
+			},
+			"states": {
+				"dungeons:energy": {
+					"values": {
+						"min": 0,
+						"max": 9
+					}
+				},
+				"dungeons:subenergy": {
+					"values": {
+						"min": 0,
+						"max": 9
+					}
+				},
+				"dungeons:type": [
+					"off",
+					"on",
+					"ominous"
+				]
+			}
+		},
+		"components": {
+			"dungeons:trial_totem": {
+				"type": "mossy"
+			},
+			"minecraft:tick": {
+				"interval_range": [
+					1,
+					3
+				],
+				"looping": true
+			},
+			"minecraft:collision_box": true,
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 999999
+			},
+			"minecraft:destructible_by_mining": false,
+			"minecraft:geometry": {
+				"identifier": "minecraft:geometry.full_block"
+			},
+			"minecraft:loot": "loot_tables/empty.json",
+			"tag:pickaxe_mine": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"minecraft:map_color": "#777777",
+			"minecraft:material_instances": {
+				"down": {
+					"texture": "trial_spawner_bottom",
+					"render_method": "opaque"
+				},
+				"up": {
+					"texture": "trial_totem_mossy_stone_top",
+					"render_method": "opaque"
+				},
+				"*": {
+					"texture": "trial_totem_mossy_stone",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"allowed_faces": [
+							"up"
+						],
+						"block_filter": [
+							"trial_spawner"
+						]
+					}
+				]
+			},
+			"minecraft:selection_box": true
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('dungeons:type') == 'off'",
+				"components": {
+					"minecraft:material_instances": {
+						"down": {
+							"texture": "trial_spawner_bottom",
+							"render_method": "opaque"
+						},
+						"up": {
+							"texture": "trial_totem_mossy_stone_top",
+							"render_method": "opaque"
+						},
+						"*": {
+							"texture": "trial_totem_mossy_stone",
+							"render_method": "opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('dungeons:type') == 'on'",
+				"components": {
+					"minecraft:material_instances": {
+						"down": {
+							"texture": "trial_spawner_bottom",
+							"render_method": "opaque"
+						},
+						"up": {
+							"texture": "trial_totem_mossy_stone_top",
+							"render_method": "opaque"
+						},
+						"*": {
+							"texture": "trial_totem_mossy_stone_on",
+							"render_method": "opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('dungeons:type') == 'ominous'",
+				"components": {
+					"minecraft:material_instances": {
+						"down": {
+							"texture": "trial_spawner_bottom",
+							"render_method": "opaque"
+						},
+						"up": {
+							"texture": "trial_totem_mossy_stone_top",
+							"render_method": "opaque"
+						},
+						"*": {
+							"texture": "trial_totem_mossy_stone_on_ominous",
+							"render_method": "opaque"
+						}
+					}
+				}
+			}
+		]
+	}
+}

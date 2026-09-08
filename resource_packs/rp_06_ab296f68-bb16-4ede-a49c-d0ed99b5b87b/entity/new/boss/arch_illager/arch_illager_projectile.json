@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeons:arch_illager_projectile",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/arch_illager/projectile"
+			},
+			"geometry": {
+				"default": "geometry.arch_illager_projectile"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"animations": {
+				"nameless_projectile": "animation.nameless_projectile.idle",
+				"nameless_projectile_particles": "animation.nameless_projectile.particles"
+			},
+			"scripts": {
+				"animate": [
+					"nameless_projectile",
+					"nameless_projectile_particles"
+				]
+			},
+			"particle_effects": {
+				"trail": "dungeons:arch_illager_projectile_trail"
+			}
+		}
+	}
+}
