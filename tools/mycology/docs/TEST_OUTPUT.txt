@@ -1,0 +1,241 @@
+$ node --test tests/core.test.mjs
+TAP version 13
+# Subtest: 35 immutable species, 15 red / 20 brown
+ok 1 - 35 immutable species, 15 red / 20 brown
+  ---
+  duration_ms: 1.134
+  type: 'test'
+  ...
+# Subtest: weights 512..1, reject rarity zero and 11
+ok 2 - weights 512..1, reject rarity zero and 11
+  ---
+  duration_ms: 1.0057
+  type: 'test'
+  ...
+# Subtest: exact current sums: 2899 and 3183
+ok 3 - exact current sums: 2899 and 3183
+  ---
+  duration_ms: 0.2076
+  type: 'test'
+  ...
+# Subtest: red: exhaustively enumerate every integer ticket
+ok 4 - red: exhaustively enumerate every integer ticket
+  ---
+  duration_ms: 2.7152
+  type: 'test'
+  ...
+# Subtest: brown: exhaustively enumerate every integer ticket
+ok 5 - brown: exhaustively enumerate every integer ticket
+  ---
+  duration_ms: 1.949
+  type: 'test'
+  ...
+# Subtest: single draw boundaries and invalid RNG
+ok 6 - single draw boundaries and invalid RNG
+  ---
+  duration_ms: 0.2998
+  type: 'test'
+  ...
+# Subtest: all batch sizes conserve counts and aggregate duplicates
+ok 7 - all batch sizes conserve counts and aggregate duplicates
+  ---
+  duration_ms: 2.1616
+  type: 'test'
+  ...
+# Subtest: first existing partial stack, not fullest or combined stacks
+ok 8 - first existing partial stack, not fullest or combined stacks
+  ---
+  duration_ms: 0.2763
+  type: 'test'
+  ...
+# Subtest: inventory plan consumes one exact stack and leaves the next
+ok 9 - inventory plan consumes one exact stack and leaves the next
+  ---
+  duration_ms: 0.6828
+  type: 'test'
+  ...
+# Subtest: full inventory preserves unrelated items and emits grouped overflow
+ok 10 - full inventory preserves unrelated items and emits grouped overflow
+  ---
+  duration_ms: 0.5619
+  type: 'test'
+  ...
+# Subtest: matching plain stacks merge, named stacks are not overwritten
+ok 11 - matching plain stacks merge, named stacks are not overwritten
+  ---
+  duration_ms: 0.2981
+  type: 'test'
+  ...
+# Subtest: changed source / nonconserved output fails before mutation
+ok 12 - changed source / nonconserved output fails before mutation
+  ---
+  duration_ms: 0.1827
+  type: 'test'
+  ...
+# Subtest: segmented progress addresses 0,29,30,31,59,60,90 independently
+ok 13 - segmented progress addresses 0,29,30,31,59,60,90 independently
+  ---
+  duration_ms: 0.365
+  type: 'test'
+  ...
+# Subtest: one progress write per touched word and no duplicate NEW
+ok 14 - one progress write per touched word and no duplicate NEW
+  ---
+  duration_ms: 0.2195
+  type: 'test'
+  ...
+# Subtest: food/effect boundaries: specimens cannot eat; puffball is crush
+ok 15 - food/effect boundaries: specimens cannot eat; puffball is crush
+  ---
+  duration_ms: 0.2889
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 112.1724
+
+$ node --experimental-loader ./tests/mock-loader.mjs --test tests/adapters.test.mjs
+TAP version 13
+# (node:18696) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: adapter: one 37-stack becomes 37 results, next 64 untouched
+ok 1 - adapter: one 37-stack becomes 37 results, next 64 untouched
+  ---
+  duration_ms: 3.1867
+  type: 'test'
+  ...
+# Subtest: adapter: invalid NPC before commit cannot consume input
+ok 2 - adapter: invalid NPC before commit cannot consume input
+  ---
+  duration_ms: 0.3602
+  type: 'test'
+  ...
+# Subtest: adapter: synchronous slot-write exception rolls back cloned inventory
+ok 3 - adapter: synchronous slot-write exception rolls back cloned inventory
+  ---
+  duration_ms: 13.8706
+  type: 'test'
+  ...
+# Subtest: adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once
+ok 4 - adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once
+  ---
+  duration_ms: 0.651
+  type: 'test'
+  ...
+# Subtest: adapter: crash-ambiguous inflight receipt is quarantined
+ok 5 - adapter: crash-ambiguous inflight receipt is quarantined
+  ---
+  duration_ms: 0.1916
+  type: 'test'
+  ...
+# Subtest: adapter: legacy masks migrate without deleting old data
+ok 6 - adapter: legacy masks migrate without deleting old data
+  ---
+  duration_ms: 0.2035
+  type: 'test'
+  ...
+# Subtest: adapter: bad saved progress is rejected, not zeroed
+ok 7 - adapter: bad saved progress is rejected, not zeroed
+  ---
+  duration_ms: 0.2235
+  type: 'test'
+  ...
+# Subtest: adapter: poison is persistent before delay; repeated use cannot defer it
+ok 8 - adapter: poison is persistent before delay; repeated use cannot defer it
+  ---
+  duration_ms: 0.5285
+  type: 'test'
+  ...
+# Subtest: adapter: R06 fixed health cost then strength; lethal cost gives no buff
+ok 9 - adapter: R06 fixed health cost then strength; lethal cost gives no buff
+  ---
+  duration_ms: 0.5812
+  type: 'test'
+  ...
+# Subtest: adapter: normal/admin NPC is usable but drops no loot on death
+ok 10 - adapter: normal/admin NPC is usable but drops no loot on death
+  ---
+  duration_ms: 0.5673
+  type: 'test'
+  ...
+# Subtest: adapter: active natural death gives exactly 64+64 once
+ok 11 - adapter: active natural death gives exactly 64+64 once
+  ---
+  duration_ms: 0.2551
+  type: 'test'
+  ...
+# Subtest: adapter: stale loaded natural token is removed without loot
+ok 12 - adapter: stale loaded natural token is removed without loot
+  ---
+  duration_ms: 0.1887
+  type: 'test'
+  ...
+# Subtest: adapter: unloaded unexpired natural lease is preserved on restart
+ok 13 - adapter: unloaded unexpired natural lease is preserved on restart
+  ---
+  duration_ms: 0.3141
+  type: 'test'
+  ...
+# Subtest: adapter: grace only permits an existing session, then hard expires
+ok 14 - adapter: grace only permits an existing session, then hard expires
+  ---
+  duration_ms: 0.1661
+  type: 'test'
+  ...
+# Subtest: adapter: natural spawn works without experimental isSolid; rejects unsafe floors
+ok 15 - adapter: natural spawn works without experimental isSolid; rejects unsafe floors
+  ---
+  duration_ms: 1.1407
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 193.1051
+
+$ node --experimental-loader ./tests/mock-loader.mjs --test tests/field-guide.test.mjs
+TAP version 13
+# (node:24500) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# [Pinene Mycology] field guide: Error: expected closed form
+#     at file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/tests/field-guide.test.mjs:28:36
+#     at ActionFormData.show (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/tests/mock-forms.mjs:8:115)
+#     at encyclopedia (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/pack/BP/scripts/mycology/ui.js:36:27)
+#     at openFieldGuide (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/pack/BP/scripts/mycology/field_guide.js:11:12)
+#     at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/tests/field-guide.test.mjs:29:8)
+#     at async Test.run (node:internal/test_runner/test:1054:7)
+#     at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+# Subtest: portable guide displays only its reader discoveries; no NPC or item progress required
+ok 1 - portable guide displays only its reader discoveries; no NPC or item progress required
+  ---
+  duration_ms: 1.9844
+  type: 'test'
+  ...
+# Subtest: portable guide rejects duplicate opens and NPC lock; releases its lock on close/error
+ok 2 - portable guide rejects duplicate opens and NPC lock; releases its lock on close/error
+  ---
+  duration_ms: 0.5912
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 161.3396

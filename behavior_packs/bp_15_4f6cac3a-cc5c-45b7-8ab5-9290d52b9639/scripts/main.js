@@ -1,3 +1,4 @@
+import "./mycology/index.js";
 import { world, ItemStack, system, BlockPermutation, EntityDamageCause } from "@minecraft/server";
 import { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";
 import "./meitetsu_chest.js";
