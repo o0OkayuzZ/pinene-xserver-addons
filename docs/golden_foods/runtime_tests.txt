@@ -1,0 +1,24 @@
+✔ seconds converted once and level II remains amplifier 1 (1.1798ms)
+✔ weaker food cannot weaken or extend a stronger external effect (0.1221ms)
+✔ same level refresh uses max remaining/new, never sum (0.0897ms)
+✔ new stronger food does not inherit lower-tier long duration (0.1177ms)
+✔ infinite same-level effect is not shortened (0.1504ms)
+✔ invalid settings cannot emit invalid addEffect calls (0.111ms)
+✔ different foods coexist without amplifier sum or global cooldown (0.3098ms)
+✔ unknown items and nonfood wheat never apply buffs (0.1544ms)
+✔ one completed meal applies each basic effect once without inventory writes (0.1264ms)
+✔ all unverified one-shot and persistent capabilities remain inactive (0.2652ms)
+✔ UI uses data seconds; night vision eight minutes is level I (0.1204ms)
+✔ gated cleanse prototype only removes allowlisted effects (0.0949ms)
+✔ gated one-shot shortening keeps amplifier and shortens once (0.1225ms)
+✔ invalidating native Effect handle is not read after removal (0.1224ms)
+✔ failed gated shortening restores the captured duration (0.152ms)
+✔ registration has one onConsume callback; only guide onUse opens UI (1.9947ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 111.8134

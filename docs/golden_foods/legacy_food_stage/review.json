@@ -1,0 +1,92 @@
+{
+  "items": [
+    {
+      "id": "a:astew",
+      "name": "リンゴシチュー",
+      "effects": []
+    },
+    {
+      "id": "a:gstew",
+      "name": "金のリンゴシチュー",
+      "effects": [
+        {
+          "id": "regeneration",
+          "amplifier": 1,
+          "seconds": 15
+        }
+      ]
+    },
+    {
+      "id": "a:estew",
+      "name": "エンチャントされた金のリンゴシチュー",
+      "effects": [
+        {
+          "id": "regeneration",
+          "amplifier": 1,
+          "seconds": 30
+        },
+        {
+          "id": "absorption",
+          "amplifier": 1,
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "id": "a:gmbucket",
+      "name": "金のミルク",
+      "effects": [
+        {
+          "id": "regeneration",
+          "amplifier": 0,
+          "seconds": 10
+        },
+        {
+          "id": "absorption",
+          "amplifier": 0,
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "id": "a:egmbucket",
+      "name": "エンチャントされた金のミルク",
+      "effects": [
+        {
+          "id": "regeneration",
+          "amplifier": 1,
+          "seconds": 20
+        },
+        {
+          "id": "absorption",
+          "amplifier": 1,
+          "seconds": 180
+        }
+      ]
+    }
+  ],
+  "science": {
+    "milk": {
+      "title_gold": "乳たんぱく質と修復",
+      "title_enchanted": "修復と栄養の備え",
+      "body": "牛乳の主なたんぱく質はカゼインとホエイです。消化で生じるアミノ酸は、体のたんぱく質を合成・維持する材料になります。乳たんぱく質の摂取と運動後の筋たんぱく質合成の関係も研究されています。",
+      "design": "修復の材料を補給する働きを再生能力に、栄養を備えるイメージを衝撃吸収に対応させました。金版は小さな回復と備え、エンチャント版はその強化です。",
+      "caveat": "飲んですぐ傷が治ったり、衝撃を防いだりするわけではありません。効果の強さ・秒数はゲーム用の調整値です。",
+      "sources": [
+        "https://ncbi.nlm.nih.gov/mesh/68008894",
+        "https://pubmed.ncbi.nlm.nih.gov/26354539/"
+      ]
+    },
+    "apple_stew": {
+      "title_gold": "糖質による回復支援",
+      "title_enchanted": "回復とエネルギーの備え",
+      "body": "リンゴの糖類は代謝され、ATPを作るためのエネルギー源になります。果肉の細胞壁にはペクチンなどの食物繊維も含まれます。糖類と食物繊維は役割が異なり、ペクチンそのものが傷を治すという意味ではありません。",
+      "design": "糖質のエネルギー補給を題材に、金版は再生能力に集中させました。エンチャント版は回復時間と衝撃吸収を追加し、移動・採掘を補助する金のパンと役割を分けています。通常のリンゴシチューは満腹度回復のみです。",
+      "caveat": "再生能力や追加の体力はゲーム上の表現です。煮ることや金を加えることで、現実の治癒能力が高まるという意味ではありません。",
+      "sources": [
+        "https://newsinhealth.nih.gov/2023/08/breaking-down-food",
+        "https://www.ars.usda.gov/ARSUserFiles/60701000/Pickle%20Pubs/p274.pdf"
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "myname:pancake_batter"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:milk_bucket"
+      },
+      {
+        "item": "minecraft:egg"
+      },
+      {
+        "item": "minecraft:egg"
+      },
+      {
+        "item": "minecraft:egg"
+      },
+      {
+        "item": "minecraft:egg"
+      },
+      {
+        "item": "minecraft:wheat"
+      },
+      {
+        "item": "minecraft:wheat"
+      },
+      {
+        "item": "minecraft:wheat"
+      },
+      {
+        "item": "minecraft:wheat"
+      }
+    ],
+    "result": {
+      "item": "myname:pancake_batter",
+      "count": 16
+    },
+    "unlock": [
+      {
+        "item": "minecraft:milk_bucket"
+      }
+    ]
+  }
+}

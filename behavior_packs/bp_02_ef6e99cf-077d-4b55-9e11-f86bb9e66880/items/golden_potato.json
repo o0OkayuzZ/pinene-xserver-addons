@@ -1,0 +1,29 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "pinene:golden_potato",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "金のジャガイモ"
+      },
+      "minecraft:icon": "pinene_golden_foods_golden_potato",
+      "minecraft:max_stack_size": 64,
+      "minecraft:food": {
+        "nutrition": 1,
+        "saturation_modifier": 0.3,
+        "can_always_eat": false
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6,
+        "movement_modifier": 0.35
+      },
+      "minecraft:use_animation": "eat",
+      "pinene:golden_food_consume": {}
+    }
+  }
+}

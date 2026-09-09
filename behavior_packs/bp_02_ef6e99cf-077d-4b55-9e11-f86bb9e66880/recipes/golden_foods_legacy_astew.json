@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pinene:golden_foods_legacy_astew"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:apple"
+      },
+      {
+        "item": "minecraft:bowl"
+      }
+    ],
+    "result": {
+      "item": "a:astew",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:apple"
+      }
+    ]
+  }
+}

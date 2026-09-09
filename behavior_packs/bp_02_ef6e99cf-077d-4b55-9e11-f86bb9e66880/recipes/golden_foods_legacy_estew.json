@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene:golden_foods_legacy_estew"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "GGG",
+      "GFG",
+      "GGG"
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:gold_block"
+      },
+      "F": {
+        "item": "a:gstew"
+      }
+    },
+    "result": {
+      "item": "a:estew",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "a:gstew"
+      }
+    ]
+  }
+}

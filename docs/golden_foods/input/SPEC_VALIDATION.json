@@ -1,0 +1,49 @@
+{
+  "scope": "仕様データの整合性のみ。実装・テクスチャ・Minecraft・Gitの検証ではない。",
+  "version": "0.1.1",
+  "item_entries": 19,
+  "recipe_entries": 17,
+  "checks_passed": 8,
+  "checks": [
+    {
+      "name": "spec_version_0_1_1",
+      "passed": true
+    },
+    {
+      "name": "stacking_allowed",
+      "passed": true
+    },
+    {
+      "name": "no_consume_science_ui",
+      "passed": true
+    },
+    {
+      "name": "enchanted_wheat_bread_alt_recipe",
+      "passed": true
+    },
+    {
+      "name": "old_alt_not_retired",
+      "passed": true
+    },
+    {
+      "name": "pumpkin_recipe_cost_kept",
+      "passed": true
+    },
+    {
+      "name": "melon_brewing_preserved",
+      "passed": true
+    },
+    {
+      "name": "no_meal_cooldown",
+      "passed": true
+    }
+  ],
+  "minecraft_tests_run": false,
+  "git_modified": false,
+  "sha256": {
+    "CODEX_PROMPT.txt": "fb6756b3294d68287075bc8ed93524ca809d197adcf0f6e933f74bf2ba40335b",
+    "Pinene_Golden_Foods_Spec_v0.1.1.md": "722f76b897ab64508e778a4ea0e856ffe24aea122dbf7e3ed6f1420fab34f4fc",
+    "README.md": "be68f8b4e2aa0a5ffdf178db78e78bbee005797abdd935ac6454f794589d95a2",
+    "balance_seed.json": "3827feefcff72b5108214041a6ba2a37c7042c31e02ae185c74ab535683c9dc4"
+  }
+}

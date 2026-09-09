@@ -1,0 +1,48 @@
+﻿✔ four identifiers, eight ingots/blocks, no edible component, matching enchanted texture and glint (43.889ms)
+✔ projectile definitions have zero damage, zero knockback, no hatching and bounded lifetime (8.5191ms)
+✔ homing selects smallest angle, excludes owner, out-of-range and occluded targets (0.3778ms)
+✔ homing preserves speed, turns at most 6 degrees and handles zero/opposite vectors (0.7554ms)
+✔ absolute and relative coordinate parsing rejects commands, NaN and infinities (0.5814ms)
+✔ blink ranges are 24/64/96 and coordinate ranges are 256/256/1024 (0.1575ms)
+✔ clear ground reaches limit; walls and one-block ceilings block blinks (7.1855ms)
+✔ safe destinations refuse lava, magma, void, unloaded chunks and unknown floors (0.413ms)
+✔ long coordinate paths cannot skip one-block walls, including diagonal corner clipping (5.4048ms)
+✔ coordinate destination uses nearby safe space but never bypasses walls or distance limits (4.3652ms)
+✔ egg consumes exactly once and buffs players only, never mobs or double-hit overlap (26.3994ms)
+✔ enchanted egg exact buffs, no resistance/fire resistance, no amplifier stacking (1.3684ms)
+✔ projectile disappears on blocks and after lifetime; missing homing target retains forward velocity (1.7855ms)
+✔ ordinary chorus use blinks and consumes only on success without UI; failed teleport never consumes (7.3906ms)
+✔ only enchanted sneaking opens UI; cancel and changed held item are nonconsuming (9.0843ms)
+✔ End void anchor saves pre-warp safe point for 60 seconds, rescues once before death, clears on dimension change (16.1329ms)
+✔ expired anchors do not rescue (6.8884ms)
+✔ aimed entity and block shorten enhanced blink to the near side of the target (4.1228ms)
+✔ coordinate UI accepts relative values; invalid input and dimension change never consume (4.9852ms)
+✔ homing discards dead target and relocks a visible player; swept-wall hits never grant buffs (1.1976ms)
+✔ guide includes four new non-edible/utility entries and never restores ordinary apple stew (17.5641ms)
+✔ legacy consumables have Japanese names, one effect owner, native container return and matching guide nutrition (43.4168ms)
+✔ milk and stew consume once, have no regeneration V, do not clear other buffs or touch inventory (0.3208ms)
+✔ all 19 golden guide detail screens render names, chemistry, design rationale and real effect values (31.5243ms)
+✔ seconds converted once and level II remains amplifier 1 (2.3177ms)
+✔ weaker food cannot weaken or extend a stronger external effect (0.1248ms)
+✔ same level refresh uses max remaining/new, never sum (0.0918ms)
+✔ new stronger food does not inherit lower-tier long duration (0.0862ms)
+✔ infinite same-level effect is not shortened (0.1836ms)
+✔ invalid settings cannot emit invalid addEffect calls (0.1734ms)
+✔ different foods coexist without amplifier sum or global cooldown (0.6631ms)
+✔ unknown items and nonfood wheat never apply buffs (0.2369ms)
+✔ one completed meal applies each basic effect once without inventory writes (0.2398ms)
+✔ all unverified one-shot and persistent capabilities remain inactive (0.4263ms)
+✔ UI uses data seconds; night vision eight minutes is level I (0.1502ms)
+✔ gated cleanse prototype only removes allowlisted effects (0.1092ms)
+✔ gated one-shot shortening keeps amplifier and shortens once (0.2237ms)
+✔ invalidating native Effect handle is not read after removal (0.1571ms)
+✔ failed gated shortening restores the captured duration (0.2391ms)
+✔ registration has one onConsume callback; only guide onUse opens UI (1.5469ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 349.388

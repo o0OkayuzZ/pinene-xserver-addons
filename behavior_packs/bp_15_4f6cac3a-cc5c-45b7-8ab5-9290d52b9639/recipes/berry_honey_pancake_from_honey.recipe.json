@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pinebento:berry_honey_pancake_from_honey"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "pinebento:honey_pancake"
+      },
+      {
+        "item": "minecraft:sweet_berries"
+      },
+      {
+        "item": "minecraft:sweet_berries"
+      }
+    ],
+    "result": {
+      "item": "pinebento:berry_honey_pancake",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "pinebento:honey_pancake"
+      }
+    ]
+  }
+}

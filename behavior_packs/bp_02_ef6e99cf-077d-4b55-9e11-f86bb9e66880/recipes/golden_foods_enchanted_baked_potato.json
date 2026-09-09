@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene:golden_foods_enchanted_baked_potato"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "GGG",
+      "GCG",
+      "GGG"
+    ],
+    "key": {
+      "C": {
+        "item": "pinene:baked_golden_potato"
+      },
+      "G": {
+        "item": "minecraft:gold_block"
+      }
+    },
+    "result": {
+      "item": "pinene:enchanted_baked_golden_potato",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "pinene:baked_golden_potato"
+      }
+    ]
+  }
+}

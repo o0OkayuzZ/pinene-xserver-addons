@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene:golden_foods_enchanted_melon"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "GGG",
+      "GCG",
+      "GGG"
+    ],
+    "key": {
+      "C": {
+        "item": "minecraft:glistering_melon_slice"
+      },
+      "G": {
+        "item": "minecraft:gold_block"
+      }
+    },
+    "result": {
+      "item": "pinene:enchanted_glistering_melon_slice",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:glistering_melon_slice"
+      }
+    ]
+  }
+}

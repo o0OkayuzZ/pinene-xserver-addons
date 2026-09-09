@@ -9,6 +9,10 @@ def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def git(*args):return subprocess.check_output(['git','-c',f'safe.directory={ROOT.as_posix()}',*args],cwd=ROOT)
 provenance=load(ROOT/'docs/mycology/provenance.json')
 base=provenance['baseCommit']
+release=load(ROOT/'docs/deployments/2026-09-10-release-files.json')['files']
+for rel,digest in release.items():
+    p=ROOT/rel
+    assert (not p.exists()) if digest is None else p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==digest,rel
 subprocess.run([sys.executable,'-X','utf8','tools/validate.py'],cwd=AUTHOR,check=True)
 def old(p):return git('show',base+':'+p.relative_to(ROOT).as_posix())
 for rel in provenance['runtimeAdded']:
@@ -39,7 +43,9 @@ versions={load(p)['header']['uuid']:load(p)['header']['version'] for p in manife
 for p in manifests:
     m=load(p); before=json.loads(old(p))
     assert m['header']['uuid']==before['header']['uuid']
-    assert [x['uuid'] for x in m['modules']]==[x['uuid'] for x in before['modules']]
+    expected_modules=[x['uuid'] for x in before['modules']]
+    if p.parent.name=='bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880':expected_modules.append('31fa7e01-72cd-5a44-ab19-d52fbdc56d0e')
+    assert [x['uuid'] for x in m['modules']]==expected_modules
     for dep in m.get('dependencies',[]):
         if dep.get('uuid') in versions:assert dep['version']==versions[dep['uuid']],p
 for p in [ROOT/'world_behavior_packs.json',ROOT/'world_resource_packs.json',*ROOT.glob('worlds/*/world_*_packs.json')]:
@@ -52,6 +58,7 @@ allowed={f'{p.relative_to(ROOT).as_posix()}' for p in [BP/'manifest.json',BP/'sc
 allowed.add('resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/manifest.json')
 allowed.add('behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/manifest.json')
 allowed.update(provenance['runtimeAdded'])
+allowed.update(release)
 for rel in git('diff','--name-only',base).decode('utf-8').splitlines():
     if rel.startswith(('behavior_packs/','resource_packs/')):assert rel in allowed,f'Unexpected existing runtime change: {rel}'
 summary={'status':'integrated_static_passed','baseCommit':base,'runtimeFilesAdded':len(provenance['runtimeAdded']),'BPBytes':sum(p.stat().st_size for p in BP.rglob('*') if p.is_file()),'RPBytes':sum(p.stat().st_size for p in RP.rglob('*') if p.is_file()),'versions':provenance['versions'],'engineResults':'See INTEGRATION_REPORT.md; static validation does not certify engine acceptance.'}

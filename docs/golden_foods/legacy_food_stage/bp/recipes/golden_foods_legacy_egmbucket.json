@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene:golden_foods_legacy_egmbucket"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "GGG",
+      "GFG",
+      "GGG"
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:gold_block"
+      },
+      "F": {
+        "item": "a:gmbucket"
+      }
+    },
+    "result": {
+      "item": "a:egmbucket",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "a:gmbucket"
+      }
+    ]
+  }
+}

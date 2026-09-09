@@ -1,1 +1,33 @@
-{"format_version":"1.12","minecraft:recipe_shaped":{"description":{"identifier":"a:gwheat"},"tags":["crafting_table"],"pattern":["CBC","BAB","CBC"],"key":{"A":{"item":"wheat"},"B":{"item":"gold_ingot"},"C":{"item":"gold_nugget"}},"result":{"item":"a:gwheat"}}}
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "a:gwheat"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "GGG",
+      "GCG",
+      "GGG"
+    ],
+    "key": {
+      "C": {
+        "item": "minecraft:wheat"
+      },
+      "G": {
+        "item": "minecraft:gold_ingot"
+      }
+    },
+    "result": {
+      "item": "a:gwheat",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:wheat"
+      }
+    ]
+  }
+}

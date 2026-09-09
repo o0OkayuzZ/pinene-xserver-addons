@@ -1,0 +1,1463 @@
+{
+  "format": "pinene.golden_foods.design.v1",
+  "version": "0.1.1",
+  "language": "ja-JP",
+  "purpose": "設計データ。Minecraft用の完成済みitem JSONではない。実装前にID・API・値を検証する。",
+  "status": "handoff_complete_implementation_not_performed",
+  "repository": "o0OkayuzZ/pinene-xserver-addons",
+  "precedence": "最新のユーザー指定 > 同梱統合仕様書の確定ルール > この試験用数値。仕様書とJSONに不一致があれば黙って解決せず検出する。",
+  "production_release_requires": [
+    "target_engine_and_script_versions_recorded",
+    "capability_tests_passed",
+    "balance_review",
+    "multiplayer_and_existing_gear_tests_passed"
+  ],
+  "texture_policy": {
+    "golden": "対応するバニラ画像の輪郭・画素・陰影を保持し、apple→golden_appleの配色関係を基準に黄金化。既存金ニンジン・スイカは原画を再利用。",
+    "enchanted": "金版と同一の画像参照＋minecraft:glint=true。専用白金画像を生成しない。",
+    "alpha_mask_must_match_source": true
+  },
+  "default_proposals": {
+    "food_use_duration_s": 1.6,
+    "custom_reduction_combination": "strongest_applicable_only",
+    "custom_reduction_cap": 0.75,
+    "same_family_refresh": "max_remaining_and_new_duration_no_sum",
+    "different_families": "may_coexist_no_same_effect_amplifier_sum",
+    "ui_summary_seconds": 0,
+    "new_item_namespace": "pinene",
+    "extra_global_meal_cooldown": false,
+    "extra_active_food_slot_limit": false,
+    "state_refresh_on_rejoin": false,
+    "consume_science_notification": false
+  },
+  "items": [
+    {
+      "key": "golden_apple",
+      "item_id": "minecraft:golden_apple",
+      "name_ja": "金のリンゴ",
+      "family": "apple",
+      "tier": "golden",
+      "id_status": "existing_vanilla_preserve",
+      "vanilla_texture_reference": "apple",
+      "texture_group": "golden_apple",
+      "glint": false,
+      "food": null,
+      "effects": [],
+      "features": [],
+      "notes": "性能・テクスチャ・既存レシピを上書きしない。比較基準。"
+    },
+    {
+      "key": "enchanted_golden_apple",
+      "item_id": "minecraft:enchanted_golden_apple",
+      "name_ja": "エンチャントされた金のリンゴ",
+      "family": "apple",
+      "tier": "enchanted",
+      "id_status": "existing_vanilla_preserve",
+      "vanilla_texture_reference": "golden_apple",
+      "texture_group": "golden_apple",
+      "glint": true,
+      "food": null,
+      "effects": [],
+      "features": [],
+      "notes": "既存性能維持。アドオン内で既にクラフト可能。現行レシピを監査し、共通の金リンゴ＋金ブロック8ルートと同一なら重複登録しない。異なる既存ルートなら既存も残す。"
+    },
+    {
+      "key": "golden_carrot",
+      "item_id": "minecraft:golden_carrot",
+      "name_ja": "金のニンジン",
+      "family": "carrot",
+      "tier": "golden",
+      "id_status": "existing_vanilla_preserve",
+      "vanilla_texture_reference": "golden_carrot",
+      "texture_group": "golden_carrot",
+      "glint": false,
+      "food": null,
+      "effects": [],
+      "features": [],
+      "notes": "性能・金塊レシピ・醸造用途を維持。新しい金ニンジンを作らない。"
+    },
+    {
+      "key": "enchanted_golden_carrot",
+      "item_id": "pinene:enchanted_golden_carrot",
+      "name_ja": "エンチャントされた金のニンジン",
+      "family": "carrot",
+      "tier": "enchanted",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "golden_carrot",
+      "texture_group": "golden_carrot",
+      "glint": true,
+      "food": {
+        "nutrition": 6,
+        "saturation_modifier": 1.2,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "night_vision",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 480,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [
+        {
+          "key": "cleanse_on_consume",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "effect_ids": [
+            "blindness",
+            "darkness"
+          ]
+        },
+        {
+          "key": "prevent_effects",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 480,
+          "effect_ids": [
+            "blindness",
+            "darkness"
+          ]
+        }
+      ],
+      "notes": "大きな吸収・再生は追加しない。敵の壁越し輪郭表示は初期実装対象外。"
+    },
+    {
+      "key": "golden_potato",
+      "item_id": "pinene:golden_potato",
+      "name_ja": "金のジャガイモ",
+      "family": "potato",
+      "tier": "golden_raw",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "potato",
+      "texture_group": "golden_potato",
+      "glint": false,
+      "food": {
+        "nutrition": 1,
+        "saturation_modifier": 0.3,
+        "can_always_eat": false,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [],
+      "features": [],
+      "notes": "未調理。生で食べられるが特殊効果なし。栄養値は今回の暫定値。生のエンチャント金ジャガイモは作らない。"
+    },
+    {
+      "key": "baked_golden_potato",
+      "item_id": "pinene:baked_golden_potato",
+      "name_ja": "ベイクド金ジャガイモ",
+      "family": "potato",
+      "tier": "golden",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "baked_potato",
+      "texture_group": "baked_golden_potato",
+      "glint": false,
+      "food": {
+        "nutrition": 10,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "haste",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 180,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "speed",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 180,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [
+        {
+          "key": "exhaustion_reduction",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 300,
+          "rate": 0.3,
+          "scope": "all_native_exhaustion",
+          "value_status": "300秒は会話の3〜5分から選んだ暫定値"
+        }
+      ],
+      "notes": "必ず金のジャガイモを焼いて入手。通常ベイクドポテトを直接金にするレシピは禁止。"
+    },
+    {
+      "key": "enchanted_baked_golden_potato",
+      "item_id": "pinene:enchanted_baked_golden_potato",
+      "name_ja": "エンチャントされたベイクド金ジャガイモ",
+      "family": "potato",
+      "tier": "enchanted",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "baked_potato",
+      "texture_group": "baked_golden_potato",
+      "glint": true,
+      "food": {
+        "nutrition": 20,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "haste",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 300,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "speed",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 300,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [
+        {
+          "key": "exhaustion_reduction",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 300,
+          "rate": 0.75,
+          "scope": "all_native_exhaustion"
+        },
+        {
+          "key": "energy_reserve",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 300,
+          "capacity_hunger_equivalent": 20,
+          "phase": 2,
+          "stacking": "maximum_not_sum",
+          "value_status": "earlier_conversation_candidate"
+        }
+      ],
+      "notes": "予備エネルギーは実在の満腹ゲージ最大値とは別。軽減と予備消費の二重計上を禁止。"
+    },
+    {
+      "key": "golden_beetroot",
+      "item_id": "pinene:golden_beetroot",
+      "name_ja": "金のビートルート",
+      "family": "beetroot",
+      "tier": "golden",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "beetroot",
+      "texture_group": "golden_beetroot",
+      "glint": false,
+      "food": {
+        "nutrition": 6,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "speed",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 120,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "haste",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 120,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "regeneration",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 10,
+          "value_status": "new_test_default"
+        }
+      ],
+      "features": [
+        {
+          "key": "exhaustion_reduction",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 120,
+          "rate": 0.15,
+          "scope": "sprint_only"
+        }
+      ],
+      "notes": "再生の10秒は「軽い再生」を数値化した暫定値。移動由来消耗の識別は検証必須。"
+    },
+    {
+      "key": "enchanted_golden_beetroot",
+      "item_id": "pinene:enchanted_golden_beetroot",
+      "name_ja": "エンチャントされた金のビートルート",
+      "family": "beetroot",
+      "tier": "enchanted",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "beetroot",
+      "texture_group": "golden_beetroot",
+      "glint": true,
+      "food": {
+        "nutrition": 12,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "speed",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 240,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "haste",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 240,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "regeneration",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 240,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [
+        {
+          "key": "exhaustion_reduction",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 240,
+          "rate": 0.4,
+          "scope": "sprint_and_jump_only"
+        }
+      ],
+      "notes": "再生I4分は前案を保存したテスト候補。強すぎる可能性を残し、パンとの比較を必須にする。追加ダッシュ補正・水中補正は未採用。"
+    },
+    {
+      "key": "glistering_melon_slice",
+      "item_id": "minecraft:glistering_melon_slice",
+      "name_ja": "きらめくスイカの薄切り",
+      "family": "melon",
+      "tier": "golden",
+      "id_status": "existing_vanilla_edibility_gate",
+      "vanilla_texture_reference": "melon_speckled",
+      "texture_group": "glistering_melon_slice",
+      "glint": false,
+      "food": {
+        "nutrition": 6,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "fire_resistance",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 90,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [
+        {
+          "key": "same_id_vanilla_edibility",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true
+        },
+        {
+          "key": "extinguish_on_consume",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true
+        },
+        {
+          "key": "exhaustion_reduction",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 90,
+          "rate": 0.15,
+          "scope": "all_native_exhaustion"
+        }
+      ],
+      "notes": "既存画像・金塊レシピ・醸造素材としての互換性を維持。可食化は同IDでの検証に合格するまで保留。失敗時に別の金スイカを勝手に増やさない。"
+    },
+    {
+      "key": "enchanted_glistering_melon_slice",
+      "item_id": "pinene:enchanted_glistering_melon_slice",
+      "name_ja": "エンチャントされたきらめくスイカの薄切り",
+      "family": "melon",
+      "tier": "enchanted",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "melon_speckled",
+      "texture_group": "glistering_melon_slice",
+      "glint": true,
+      "food": {
+        "nutrition": 12,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "fire_resistance",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 300,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "speed",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 300,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [
+        {
+          "key": "extinguish_on_consume",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true
+        },
+        {
+          "key": "exhaustion_reduction",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 300,
+          "rate": 0.3,
+          "scope": "all_native_exhaustion"
+        },
+        {
+          "key": "heat_exposure_regeneration",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 300,
+          "phase": 2,
+          "trigger": "verified_environment_contact_not_entityHurt_only",
+          "proc_effect": {
+            "effect": "regeneration",
+            "level": 1,
+            "amplifier_zero_based": 0,
+            "duration_s": 5,
+            "value_status": "new_test_default"
+          },
+          "cooldown_s": 15,
+          "value_status": "new_test_default"
+        }
+      ],
+      "notes": "火炎耐性5分は前案維持。金リンゴより長いとは記載しない。10分への延長は比較テスト候補で未確定。水中移動強化は初期対象外。"
+    },
+    {
+      "key": "golden_pumpkin_pie",
+      "item_id": "pinene:golden_pumpkin_pie",
+      "name_ja": "金のパンプキンパイ",
+      "family": "pumpkin",
+      "tier": "golden",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "pumpkin_pie",
+      "texture_group": "golden_pumpkin_pie",
+      "glint": false,
+      "food": {
+        "nutrition": 12,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "resistance",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 120,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "regeneration",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 10,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "absorption",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 120,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [
+        {
+          "key": "reduce_existing_effect_duration_once",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "ratio": 0.25,
+          "effect_ids": [
+            "poison",
+            "wither",
+            "hunger"
+          ]
+        }
+      ],
+      "notes": "強めにする方針を維持。食後1回の短縮であり、毎tick25%短縮ではない。金8個のレシピなので高コストの根拠は未確定。"
+    },
+    {
+      "key": "enchanted_golden_pumpkin_pie",
+      "item_id": "pinene:enchanted_golden_pumpkin_pie",
+      "name_ja": "エンチャントされた金のパンプキンパイ",
+      "family": "pumpkin",
+      "tier": "enchanted",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "pumpkin_pie",
+      "texture_group": "golden_pumpkin_pie",
+      "glint": true,
+      "food": {
+        "nutrition": 20,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "resistance",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 300,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "absorption",
+          "level": 4,
+          "amplifier_zero_based": 3,
+          "duration_s": 180,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "regeneration",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 30,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [
+        {
+          "key": "cleanse_on_consume",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "effect_ids": [
+            "poison",
+            "wither",
+            "hunger",
+            "blindness"
+          ]
+        },
+        {
+          "key": "reduce_incoming_effect_duration",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 120,
+          "ratio": 0.75,
+          "effect_ids": [
+            "poison",
+            "wither",
+            "hunger",
+            "blindness"
+          ]
+        }
+      ],
+      "notes": "火炎耐性は付けない。何でも解除ではなく明示した4種類だけ。暗闇はニンジン担当として初期対象外。"
+    },
+    {
+      "key": "golden_poisonous_potato",
+      "item_id": "pinene:golden_poisonous_potato",
+      "name_ja": "金の毒ジャガイモ",
+      "family": "poison",
+      "tier": "golden",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "poisonous_potato",
+      "texture_group": "golden_poisonous_potato",
+      "glint": false,
+      "food": {
+        "nutrition": 4,
+        "saturation_modifier": 0.6,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "absorption",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 120,
+          "value_status": "new_test_default"
+        }
+      ],
+      "features": [
+        {
+          "key": "cleanse_on_consume",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "effect_ids": [
+            "poison"
+          ]
+        },
+        {
+          "key": "prevent_effects",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 120,
+          "effect_ids": [
+            "poison"
+          ]
+        },
+        {
+          "key": "reduce_incoming_effect_duration",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 120,
+          "ratio": 0.5,
+          "effect_ids": [
+            "nausea",
+            "hunger"
+          ]
+        }
+      ],
+      "notes": "毒を処理する別系列。焼いて普通の金ジャガイモにするレシピを作らない。吸収の120秒は暫定値。"
+    },
+    {
+      "key": "enchanted_golden_poisonous_potato",
+      "item_id": "pinene:enchanted_golden_poisonous_potato",
+      "name_ja": "エンチャントされた金の毒ジャガイモ",
+      "family": "poison",
+      "tier": "enchanted",
+      "id_status": "new_proposed_id",
+      "vanilla_texture_reference": "poisonous_potato",
+      "texture_group": "golden_poisonous_potato",
+      "glint": true,
+      "food": {
+        "nutrition": 8,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [],
+      "features": [
+        {
+          "key": "cleanse_on_consume",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "effect_ids": [
+            "poison",
+            "nausea",
+            "hunger"
+          ]
+        },
+        {
+          "key": "prevent_effects",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 300,
+          "effect_ids": [
+            "poison"
+          ]
+        },
+        {
+          "key": "poison_to_regeneration",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 300,
+          "proc_effect": {
+            "effect": "regeneration",
+            "level": 1,
+            "amplifier_zero_based": 0,
+            "duration_s": 6,
+            "value_status": "new_test_default"
+          },
+          "cooldown_s": 10,
+          "value_status": "new_test_default"
+        }
+      ],
+      "notes": "衰弱無効は付けない。毒の強さに応じた追加吸収はPhase2保留。持続毒の毎tick判定で回復を稼がせない。"
+    },
+    {
+      "key": "golden_wheat",
+      "item_id": "a:gwheat",
+      "name_ja": "金の小麦",
+      "family": "wheat",
+      "tier": "golden",
+      "id_status": "existing_custom_preserve_id",
+      "vanilla_texture_reference": "wheat",
+      "texture_group": "golden_wheat",
+      "glint": false,
+      "food": null,
+      "effects": [],
+      "features": [],
+      "notes": "非可食の中間素材。現在の他の用途も調査し維持。"
+    },
+    {
+      "key": "enchanted_golden_wheat",
+      "item_id": "a:egwheat",
+      "name_ja": "エンチャントされた金の小麦",
+      "family": "wheat",
+      "tier": "enchanted",
+      "id_status": "existing_custom_preserve_id",
+      "vanilla_texture_reference": "wheat",
+      "texture_group": "golden_wheat",
+      "glint": true,
+      "food": null,
+      "effects": [],
+      "features": [],
+      "notes": "非可食の中間素材。現行アイコンgwheat＋glintの共有を維持してよい。今回新しい完成品用途は捏造しない。"
+    },
+    {
+      "key": "golden_bread",
+      "item_id": "a:gbread",
+      "name_ja": "金のパン",
+      "family": "bread",
+      "tier": "golden",
+      "id_status": "existing_custom_preserve_id",
+      "vanilla_texture_reference": "bread",
+      "texture_group": "golden_bread",
+      "glint": false,
+      "food": {
+        "nutrition": 10,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "regeneration",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 15,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "speed",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 90,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "haste",
+          "level": 1,
+          "amplifier_zero_based": 0,
+          "duration_s": 90,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [],
+      "notes": "既存IDを維持し性能更新。Resistance/Fire Resistance/大量Absorptionは付けない。"
+    },
+    {
+      "key": "enchanted_golden_bread",
+      "item_id": "a:egbread",
+      "name_ja": "エンチャントされた金のパン",
+      "family": "bread",
+      "tier": "enchanted",
+      "id_status": "existing_custom_preserve_id",
+      "vanilla_texture_reference": "bread",
+      "texture_group": "golden_bread",
+      "glint": true,
+      "food": {
+        "nutrition": 20,
+        "saturation_modifier": 1.0,
+        "can_always_eat": true,
+        "use_duration_s": 1.6,
+        "numeric_status": "playtest_seed_not_final",
+        "saturation_note": "付与量の計算値と、ゲーム内で実際に保持できる上限は別。対象環境の上限に従う。"
+      },
+      "effects": [
+        {
+          "effect": "regeneration",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 30,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "speed",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 180,
+          "value_status": "conversation_candidate"
+        },
+        {
+          "effect": "haste",
+          "level": 2,
+          "amplifier_zero_based": 1,
+          "duration_s": 180,
+          "value_status": "conversation_candidate"
+        }
+      ],
+      "features": [
+        {
+          "key": "exhaustion_reduction",
+          "status": "capability_gated",
+          "must_not_advertise_until_verified": true,
+          "duration_s": 180,
+          "rate": 0.4,
+          "scope": "all_native_exhaustion"
+        }
+      ],
+      "notes": "現行アイコンgbread＋glintの共有は正しい。旧指示の専用画像化を撤回。"
+    }
+  ],
+  "recipes": [
+    {
+      "key": "enchanted_apple_rule",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "minecraft:golden_apple",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_block",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "enchanted_golden_apple",
+        "item_id": "minecraft:enchanted_golden_apple",
+        "count": 1
+      },
+      "status": "common_rule_interpretation",
+      "note": "全エンチャント系列ルールの適用案。既存競合レシピがあれば重複追加せず移行する。",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "enchanted_carrot",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "minecraft:golden_carrot",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_block",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "enchanted_golden_carrot",
+        "item_id": "pinene:enchanted_golden_carrot",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "golden_potato",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "minecraft:potato",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_ingot",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "golden_potato",
+        "item_id": "pinene:golden_potato",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "cook_golden_potato",
+      "type": "furnace",
+      "inputs": {
+        "input": {
+          "item_id": "pinene:golden_potato",
+          "count": 1
+        }
+      },
+      "output": {
+        "key": "baked_golden_potato",
+        "item_id": "pinene:baked_golden_potato",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "各調理器の対応は実機で確認。blast_furnaceは付けない。",
+      "station_tags": [
+        "furnace",
+        "smoker",
+        "campfire",
+        "soul_campfire"
+      ]
+    },
+    {
+      "key": "enchanted_baked_potato",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "pinene:baked_golden_potato",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_block",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "enchanted_baked_golden_potato",
+        "item_id": "pinene:enchanted_baked_golden_potato",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "golden_beetroot",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "minecraft:beetroot",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_ingot",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "golden_beetroot",
+        "item_id": "pinene:golden_beetroot",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "enchanted_beetroot",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "pinene:golden_beetroot",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_block",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "enchanted_golden_beetroot",
+        "item_id": "pinene:enchanted_golden_beetroot",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "golden_pumpkin",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "minecraft:pumpkin_pie",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_ingot",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "golden_pumpkin_pie",
+        "item_id": "pinene:golden_pumpkin_pie",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "enchanted_pumpkin",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "pinene:golden_pumpkin_pie",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_block",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "enchanted_golden_pumpkin_pie",
+        "item_id": "pinene:enchanted_golden_pumpkin_pie",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "golden_poison",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "minecraft:poisonous_potato",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_ingot",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "golden_poisonous_potato",
+        "item_id": "pinene:golden_poisonous_potato",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "enchanted_poison",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "pinene:golden_poisonous_potato",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_block",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "enchanted_golden_poisonous_potato",
+        "item_id": "pinene:enchanted_golden_poisonous_potato",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "golden_wheat",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "minecraft:wheat",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_ingot",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "golden_wheat",
+        "item_id": "a:gwheat",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "enchanted_wheat",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "a:gwheat",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_block",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "enchanted_golden_wheat",
+        "item_id": "a:egwheat",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "enchanted_melon",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "minecraft:glistering_melon_slice",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_block",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "enchanted_glistering_melon_slice",
+        "item_id": "pinene:enchanted_glistering_melon_slice",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "golden_bread",
+      "type": "shaped_row",
+      "inputs": {
+        "A": {
+          "item_id": "a:gwheat",
+          "count": 3
+        }
+      },
+      "output": {
+        "key": "golden_bread",
+        "item_id": "a:gbread",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "AAA"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "enchanted_bread",
+      "type": "shaped_ring",
+      "inputs": {
+        "C": {
+          "item_id": "a:gbread",
+          "count": 1
+        },
+        "G": {
+          "item_id": "minecraft:gold_block",
+          "count": 8
+        }
+      },
+      "output": {
+        "key": "enchanted_golden_bread",
+        "item_id": "a:egbread",
+        "count": 1
+      },
+      "status": "locked_design",
+      "note": "",
+      "pattern": [
+        "GGG",
+        "GCG",
+        "GGG"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    },
+    {
+      "key": "enchanted_bread_from_enchanted_wheat",
+      "type": "shaped_row",
+      "inputs": {
+        "A": {
+          "item_id": "a:egwheat",
+          "count": 3
+        }
+      },
+      "output": {
+        "key": "enchanted_golden_bread",
+        "item_id": "a:egbread",
+        "count": 1
+      },
+      "status": "locked_design_alternative_intentionally_inefficient",
+      "note": "代替レシピ。追加メリットなし。金換算で正規ルートより大幅に割高だが残す。",
+      "pattern": [
+        "AAA"
+      ],
+      "station_tags": [
+        "crafting_table"
+      ]
+    }
+  ],
+  "preserve_native_recipe_items": [
+    "minecraft:golden_apple",
+    "minecraft:golden_carrot",
+    "minecraft:glistering_melon_slice"
+  ],
+  "retire_recipe_routes": [
+    "a:gwheatの金インゴット4＋金塊4レシピ",
+    "a:egwheatの金インゴット＋金塊レシピ"
+  ],
+  "forbidden_new_routes": [
+    "minecraft:baked_potato＋gold_ingot×8→baked_golden_potato",
+    "golden_potato＋gold_block×8→raw_enchanted_potato",
+    "poisonous_potatoを焼いて通常系列へ解毒"
+  ],
+  "science_ui": {
+    "carrot": {
+      "title_gold": "視覚とビタミンA",
+      "title_enchanted": "視覚増強",
+      "body": "β-カロテンはビタミンAの前駆体。ビタミンA由来のレチナールは、暗所視に関わるロドプシンの構成に必要です。",
+      "caveat": "不足のない人が大量に食べても、超人的な視力が得られるわけではありません。",
+      "sources": [
+        "S1"
+      ]
+    },
+    "potato": {
+      "title_gold": "グリコーゲンローディング",
+      "title_enchanted": "グリコーゲン超充填",
+      "body": "デンプンは消化されてグルコースになります。その一部は肝臓や筋肉にグリコーゲンとして蓄えられ、必要に応じて利用されます。",
+      "caveat": "パンにも同じ糖質代謝があります。ジャガイモだけが貯蔵されるという意味ではありません。",
+      "sources": [
+        "S2",
+        "S3"
+      ]
+    },
+    "beetroot": {
+      "title_gold": "NOブースト",
+      "title_enchanted": "NOオーバードライブ",
+      "body": "食事由来の硝酸塩は、口腔内細菌などの働きで亜硝酸塩となり、さらに一酸化窒素（NO）へ変換されます。NOは血管の弛緩に関わります。",
+      "pathway": "NO3- → NO2- → NO",
+      "caveat": "運動への影響は条件によって異なります。速度上昇や再生の数値はゲーム用の創作です。",
+      "sources": [
+        "S5",
+        "S6"
+      ]
+    },
+    "melon": {
+      "title_gold": "ハイドレーション",
+      "title_enchanted": "ハイパーハイドレーション",
+      "body": "水分は体温調節などに必要です。スイカに含まれるシトルリンはアルギニンへ変換され、アルギニンは一酸化窒素（NO）を作る材料になります。",
+      "caveat": "水分補給やシトルリンに、炎・溶岩を無効化する作用はありません。",
+      "sources": [
+        "S5",
+        "S7"
+      ]
+    },
+    "pumpkin": {
+      "title_gold": "生体防御",
+      "title_enchanted": "生体防御亢進",
+      "body": "カボチャなどに含まれるβ-カロテンはビタミンAの前駆体。ビタミンAは上皮組織の維持や、正常な免疫機能に必要です。",
+      "caveat": "食べた直後の耐性上昇や毒・衰弱の短縮は、ゲーム上の誇張です。",
+      "sources": [
+        "S1"
+      ]
+    },
+    "poison": {
+      "title_gold": "解毒応答",
+      "title_enchanted": "異物代謝オーバードライブ",
+      "body": "ジャガイモの芽や緑化した部分などには、ソラニン・チャコニンが多く含まれることがあります。これらは食中毒の原因になります。",
+      "caveat": "毒で回復するのはゲーム内だけです。現実では食べて耐性をつけようとせず、加熱だけで安全になるとも考えないでください。",
+      "sources": [
+        "S8"
+      ]
+    },
+    "bread": {
+      "title_gold": "急速糖質供給",
+      "title_enchanted": "糖代謝オーバードライブ",
+      "body": "パンに含まれるデンプンは消化されてグルコースとなり、解糖系などを通じてATP産生に利用されます。ATPは細胞の活動を支えるエネルギーの受け渡しに使われます。",
+      "caveat": "パン＝瞬発、ジャガイモ＝持久という違いはゲーム上の役割分担です。",
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    "wheat": {
+      "title_gold": "金の小麦",
+      "title_enchanted": "エンチャントされた金の小麦",
+      "body": "パン系列のクラフト用素材です。食べるアイテムではありません。",
+      "caveat": "科学説明はパン系列に集約します。",
+      "sources": []
+    }
+  },
+  "science_disclaimer": "ゲーム内の強化効果は、生理作用を題材にしたフィクションです。",
+  "source_ids": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "T8",
+    "T9",
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6"
+  ],
+  "stacking_policy": {
+    "golden_food_families_can_coexist": true,
+    "global_meal_cooldown": false,
+    "active_food_family_limit": null,
+    "same_vanilla_effect_behavior": "follow_minecraft_effect_replacement_rules_no_custom_amplifier_addition",
+    "overlapping_custom_exhaustion_reduction": "strongest_rate_only_not_additive_or_multiplicative"
+  },
+  "science_ui_behavior": {
+    "on_consume": "no_ui_no_actionbar_no_chat_no_modal",
+    "detail_view": "optional_only",
+    "preferred_integration": "existing_guide_or_menu_if_available_else_small_separate_food_encyclopedia_ui",
+    "must_not_block_eating": true
+  },
+  "glistering_melon_policy": {
+    "target": "make_existing_minecraft:glistering_melon_slice_edible_if_safe",
+    "must_preserve_brewing_and_existing_uses": true,
+    "fallback": "if_same_id_edibility_cannot_safely_coexist_leave_base_item_non_edible_and_report; do_not_add_duplicate_golden_melon"
+  },
+  "golden_pumpkin_pie_policy": {
+    "recipe": "minecraft:pumpkin_pie + 8 gold_ingot",
+    "keep_recipe_cost": true,
+    "strength_reason": "completed_dish_bonus_not_extra_gold_cost"
+  }
+}

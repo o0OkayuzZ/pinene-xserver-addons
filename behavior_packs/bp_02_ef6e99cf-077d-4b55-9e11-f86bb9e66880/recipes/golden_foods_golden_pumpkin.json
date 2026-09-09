@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene:golden_foods_golden_pumpkin"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "GGG",
+      "GCG",
+      "GGG"
+    ],
+    "key": {
+      "C": {
+        "item": "minecraft:pumpkin_pie"
+      },
+      "G": {
+        "item": "minecraft:gold_ingot"
+      }
+    },
+    "result": {
+      "item": "pinene:golden_pumpkin_pie",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:pumpkin_pie"
+      }
+    ]
+  }
+}

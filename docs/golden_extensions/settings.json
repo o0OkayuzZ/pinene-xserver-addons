@@ -1,0 +1,35 @@
+{
+  "items": [
+    "a:gegg",
+    "a:egegg",
+    "a:gchorus_fruit",
+    "a:egchorus_fruit"
+  ],
+  "projectiles": [
+    "pinene:golden_egg_projectile",
+    "pinene:enchanted_golden_egg_projectile"
+  ],
+  "homing": {
+    "range": 32,
+    "cone_degrees": 20,
+    "max_turn_degrees_per_tick": 6,
+    "speed": 1.5,
+    "lifetime_ticks": 400
+  },
+  "blink": {
+    "gold": 24,
+    "enchanted": 64,
+    "enchanted_end": 96
+  },
+  "coordinates": {
+    "overworld": 256,
+    "nether": 256,
+    "end": 1024
+  },
+  "anchor_seconds": 60,
+  "egg_refill": {
+    "method": "native saturation effect, one tick, food and saturation capped by engine",
+    "gold_amplifier": 1,
+    "enchanted_amplifier": 5
+  }
+}

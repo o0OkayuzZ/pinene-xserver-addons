@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene:golden_extension_egchorus_fruit"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "GGG",
+      "GIG",
+      "GGG"
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:gold_block"
+      },
+      "I": {
+        "item": "a:gchorus_fruit"
+      }
+    },
+    "result": {
+      "item": "a:egchorus_fruit",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "a:gchorus_fruit"
+      }
+    ]
+  }
+}

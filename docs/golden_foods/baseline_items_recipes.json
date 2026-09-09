@@ -1,0 +1,218 @@
+{
+  "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/gwheat.json": {
+    "format_version": "1.20.30",
+    "minecraft:item": {
+      "description": {
+        "identifier": "a:gwheat",
+        "category": "items"
+      },
+      "components": {
+        "minecraft:max_stack_size": 64,
+        "minecraft:icon": "gwheat"
+      }
+    }
+  },
+  "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/gwheat.json": {
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+        "identifier": "a:gwheat"
+      },
+      "tags": [
+        "crafting_table"
+      ],
+      "pattern": [
+        "CBC",
+        "BAB",
+        "CBC"
+      ],
+      "key": {
+        "A": {
+          "item": "wheat"
+        },
+        "B": {
+          "item": "gold_ingot"
+        },
+        "C": {
+          "item": "gold_nugget"
+        }
+      },
+      "result": {
+        "item": "a:gwheat"
+      }
+    }
+  },
+  "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egwheat.json": {
+    "format_version": "1.20.30",
+    "minecraft:item": {
+      "description": {
+        "identifier": "a:egwheat",
+        "category": "items"
+      },
+      "components": {
+        "minecraft:max_stack_size": 64,
+        "minecraft:icon": "gwheat",
+        "minecraft:glint": true
+      }
+    }
+  },
+  "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/egwheat.json": {
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+        "identifier": "a:egwheat"
+      },
+      "tags": [
+        "crafting_table"
+      ],
+      "pattern": [
+        "CBC",
+        "BAB",
+        "CBC"
+      ],
+      "key": {
+        "A": {
+          "item": "a:gwheat"
+        },
+        "B": {
+          "item": "gold_ingot"
+        },
+        "C": {
+          "item": "gold_nugget"
+        }
+      },
+      "result": {
+        "item": "a:egwheat"
+      }
+    }
+  },
+  "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/gbread.json": {
+    "format_version": "1.20.30",
+    "minecraft:item": {
+      "description": {
+        "identifier": "a:gbread",
+        "category": "items"
+      },
+      "components": {
+        "minecraft:max_stack_size": 64,
+        "minecraft:use_duration": 1.6,
+        "minecraft:icon": "gbread",
+        "minecraft:food": {
+          "nutrition": 6,
+          "saturation_modifier": 1,
+          "can_always_eat": true,
+          "effects": [
+            {
+              "name": "regeneration",
+              "chance": 1,
+              "duration": 6,
+              "amplifier": 0
+            },
+            {
+              "name": "absorption",
+              "chance": 1,
+              "duration": 150,
+              "amplifier": 0
+            }
+          ]
+        },
+        "minecraft:use_animation": "eat"
+      }
+    }
+  },
+  "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/gbread.json": {
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+        "identifier": "a:gbread"
+      },
+      "tags": [
+        "crafting_table"
+      ],
+      "pattern": [
+        "",
+        "AAA",
+        ""
+      ],
+      "key": {
+        "A": {
+          "item": "a:gwheat"
+        }
+      },
+      "result": {
+        "item": "a:gbread"
+      }
+    }
+  },
+  "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egbread.json": {
+    "format_version": "1.20.30",
+    "minecraft:item": {
+      "description": {
+        "identifier": "a:egbread",
+        "category": "items"
+      },
+      "components": {
+        "minecraft:max_stack_size": 64,
+        "minecraft:use_duration": 1.6,
+        "minecraft:icon": "gbread",
+        "minecraft:food": {
+          "nutrition": 6,
+          "saturation_modifier": 1,
+          "can_always_eat": true,
+          "effects": [
+            {
+              "name": "regeneration",
+              "chance": 1,
+              "duration": 35,
+              "amplifier": 1
+            },
+            {
+              "name": "absorption",
+              "chance": 1,
+              "duration": 110,
+              "amplifier": 4
+            },
+            {
+              "name": "resistance",
+              "chance": 1,
+              "duration": 240,
+              "amplifier": 0
+            },
+            {
+              "name": "fire_resistance",
+              "chance": 1,
+              "duration": 210,
+              "amplifier": 0
+            }
+          ]
+        },
+        "minecraft:use_animation": "eat",
+        "minecraft:glint": true
+      }
+    }
+  },
+  "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/egbread.json": {
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+        "identifier": "a:egbread"
+      },
+      "tags": [
+        "crafting_table"
+      ],
+      "pattern": [
+        "",
+        "AAA",
+        ""
+      ],
+      "key": {
+        "A": {
+          "item": "a:egwheat"
+        }
+      },
+      "result": {
+        "item": "a:egbread"
+      }
+    }
+  }
+}

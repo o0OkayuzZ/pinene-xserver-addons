@@ -3,91 +3,91 @@ TAP version 13
 # Subtest: 35 immutable species, 15 red / 20 brown
 ok 1 - 35 immutable species, 15 red / 20 brown
   ---
-  duration_ms: 1.134
+  duration_ms: 1.1271
   type: 'test'
   ...
 # Subtest: weights 512..1, reject rarity zero and 11
 ok 2 - weights 512..1, reject rarity zero and 11
   ---
-  duration_ms: 1.0057
+  duration_ms: 1.0301
   type: 'test'
   ...
 # Subtest: exact current sums: 2899 and 3183
 ok 3 - exact current sums: 2899 and 3183
   ---
-  duration_ms: 0.2076
+  duration_ms: 0.2113
   type: 'test'
   ...
 # Subtest: red: exhaustively enumerate every integer ticket
 ok 4 - red: exhaustively enumerate every integer ticket
   ---
-  duration_ms: 2.7152
+  duration_ms: 2.2002
   type: 'test'
   ...
 # Subtest: brown: exhaustively enumerate every integer ticket
 ok 5 - brown: exhaustively enumerate every integer ticket
   ---
-  duration_ms: 1.949
+  duration_ms: 1.7887
   type: 'test'
   ...
 # Subtest: single draw boundaries and invalid RNG
 ok 6 - single draw boundaries and invalid RNG
   ---
-  duration_ms: 0.2998
+  duration_ms: 0.282
   type: 'test'
   ...
 # Subtest: all batch sizes conserve counts and aggregate duplicates
 ok 7 - all batch sizes conserve counts and aggregate duplicates
   ---
-  duration_ms: 2.1616
+  duration_ms: 1.6821
   type: 'test'
   ...
 # Subtest: first existing partial stack, not fullest or combined stacks
 ok 8 - first existing partial stack, not fullest or combined stacks
   ---
-  duration_ms: 0.2763
+  duration_ms: 0.1962
   type: 'test'
   ...
 # Subtest: inventory plan consumes one exact stack and leaves the next
 ok 9 - inventory plan consumes one exact stack and leaves the next
   ---
-  duration_ms: 0.6828
+  duration_ms: 0.5264
   type: 'test'
   ...
 # Subtest: full inventory preserves unrelated items and emits grouped overflow
 ok 10 - full inventory preserves unrelated items and emits grouped overflow
   ---
-  duration_ms: 0.5619
+  duration_ms: 0.4859
   type: 'test'
   ...
 # Subtest: matching plain stacks merge, named stacks are not overwritten
 ok 11 - matching plain stacks merge, named stacks are not overwritten
   ---
-  duration_ms: 0.2981
+  duration_ms: 0.2442
   type: 'test'
   ...
 # Subtest: changed source / nonconserved output fails before mutation
 ok 12 - changed source / nonconserved output fails before mutation
   ---
-  duration_ms: 0.1827
+  duration_ms: 0.183
   type: 'test'
   ...
 # Subtest: segmented progress addresses 0,29,30,31,59,60,90 independently
 ok 13 - segmented progress addresses 0,29,30,31,59,60,90 independently
   ---
-  duration_ms: 0.365
+  duration_ms: 0.3844
   type: 'test'
   ...
 # Subtest: one progress write per touched word and no duplicate NEW
 ok 14 - one progress write per touched word and no duplicate NEW
   ---
-  duration_ms: 0.2195
+  duration_ms: 0.2142
   type: 'test'
   ...
 # Subtest: food/effect boundaries: specimens cannot eat; puffball is crush
 ok 15 - food/effect boundaries: specimens cannot eat; puffball is crush
   ---
-  duration_ms: 0.2889
+  duration_ms: 0.2709
   type: 'test'
   ...
 1..15
@@ -98,101 +98,101 @@ ok 15 - food/effect boundaries: specimens cannot eat; puffball is crush
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 112.1724
+# duration_ms 116.0726
 
 $ node --experimental-loader ./tests/mock-loader.mjs --test tests/adapters.test.mjs
 TAP version 13
-# (node:18696) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# (node:22384) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
 # --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
 # (Use `node --trace-warnings ...` to show where the warning was created)
 # Subtest: adapter: one 37-stack becomes 37 results, next 64 untouched
 ok 1 - adapter: one 37-stack becomes 37 results, next 64 untouched
   ---
-  duration_ms: 3.1867
+  duration_ms: 3.0279
   type: 'test'
   ...
 # Subtest: adapter: invalid NPC before commit cannot consume input
 ok 2 - adapter: invalid NPC before commit cannot consume input
   ---
-  duration_ms: 0.3602
+  duration_ms: 0.3684
   type: 'test'
   ...
 # Subtest: adapter: synchronous slot-write exception rolls back cloned inventory
 ok 3 - adapter: synchronous slot-write exception rolls back cloned inventory
   ---
-  duration_ms: 13.8706
+  duration_ms: 13.4925
   type: 'test'
   ...
 # Subtest: adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once
 ok 4 - adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once
   ---
-  duration_ms: 0.651
+  duration_ms: 0.643
   type: 'test'
   ...
 # Subtest: adapter: crash-ambiguous inflight receipt is quarantined
 ok 5 - adapter: crash-ambiguous inflight receipt is quarantined
   ---
-  duration_ms: 0.1916
+  duration_ms: 0.1732
   type: 'test'
   ...
 # Subtest: adapter: legacy masks migrate without deleting old data
 ok 6 - adapter: legacy masks migrate without deleting old data
   ---
-  duration_ms: 0.2035
+  duration_ms: 0.1905
   type: 'test'
   ...
 # Subtest: adapter: bad saved progress is rejected, not zeroed
 ok 7 - adapter: bad saved progress is rejected, not zeroed
   ---
-  duration_ms: 0.2235
+  duration_ms: 0.2034
   type: 'test'
   ...
 # Subtest: adapter: poison is persistent before delay; repeated use cannot defer it
 ok 8 - adapter: poison is persistent before delay; repeated use cannot defer it
   ---
-  duration_ms: 0.5285
+  duration_ms: 0.5062
   type: 'test'
   ...
 # Subtest: adapter: R06 fixed health cost then strength; lethal cost gives no buff
 ok 9 - adapter: R06 fixed health cost then strength; lethal cost gives no buff
   ---
-  duration_ms: 0.5812
+  duration_ms: 0.5356
   type: 'test'
   ...
 # Subtest: adapter: normal/admin NPC is usable but drops no loot on death
 ok 10 - adapter: normal/admin NPC is usable but drops no loot on death
   ---
-  duration_ms: 0.5673
+  duration_ms: 0.5542
   type: 'test'
   ...
 # Subtest: adapter: active natural death gives exactly 64+64 once
 ok 11 - adapter: active natural death gives exactly 64+64 once
   ---
-  duration_ms: 0.2551
+  duration_ms: 0.2395
   type: 'test'
   ...
 # Subtest: adapter: stale loaded natural token is removed without loot
 ok 12 - adapter: stale loaded natural token is removed without loot
   ---
-  duration_ms: 0.1887
+  duration_ms: 0.1795
   type: 'test'
   ...
 # Subtest: adapter: unloaded unexpired natural lease is preserved on restart
 ok 13 - adapter: unloaded unexpired natural lease is preserved on restart
   ---
-  duration_ms: 0.3141
+  duration_ms: 0.2886
   type: 'test'
   ...
 # Subtest: adapter: grace only permits an existing session, then hard expires
 ok 14 - adapter: grace only permits an existing session, then hard expires
   ---
-  duration_ms: 0.1661
+  duration_ms: 0.1623
   type: 'test'
   ...
 # Subtest: adapter: natural spawn works without experimental isSolid; rejects unsafe floors
 ok 15 - adapter: natural spawn works without experimental isSolid; rejects unsafe floors
   ---
-  duration_ms: 1.1407
+  duration_ms: 1.0322
   type: 'test'
   ...
 1..15
@@ -203,11 +203,11 @@ ok 15 - adapter: natural spawn works without experimental isSolid; rejects unsaf
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 193.1051
+# duration_ms 190.936
 
 $ node --experimental-loader ./tests/mock-loader.mjs --test tests/field-guide.test.mjs
 TAP version 13
-# (node:24500) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# (node:20424) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
 # --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
 # (Use `node --trace-warnings ...` to show where the warning was created)
 # [Pinene Mycology] field guide: Error: expected closed form
@@ -221,13 +221,13 @@ TAP version 13
 # Subtest: portable guide displays only its reader discoveries; no NPC or item progress required
 ok 1 - portable guide displays only its reader discoveries; no NPC or item progress required
   ---
-  duration_ms: 1.9844
+  duration_ms: 3.1201
   type: 'test'
   ...
 # Subtest: portable guide rejects duplicate opens and NPC lock; releases its lock on close/error
 ok 2 - portable guide rejects duplicate opens and NPC lock; releases its lock on close/error
   ---
-  duration_ms: 0.5912
+  duration_ms: 1.0483
   type: 'test'
   ...
 1..2
@@ -238,4 +238,4 @@ ok 2 - portable guide rejects duplicate opens and NPC lock; releases its lock on
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 161.3396
+# duration_ms 184.6198
