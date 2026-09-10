@@ -5,8 +5,8 @@
     {
       "id": "pvp-island",
       "name": "PvP Island",
-      "summary": "島を舞台にした、独立したPvPコンテンツ。",
-      "description": "島の生成や保護、能力の制御を扱うコンテンツです。通常世界での利用条件や参加手順は確認中です。",
+      "summary": "専用の島を舞台に、対戦の遊びを広げるPvPコンテンツ。",
+      "description": "PvP Islandは、専用エリアでの対戦を軸にしたコンテンツです。島の土台を用意する仕組みや、特定のブロックを保護する仕組み、島の中で使う能力を制御する仕組みを備えています。対戦の舞台と専用のルールを組み合わせた遊びを目指して開発されています。現在公開しているのはコードで確認できた内容の紹介です。参加条件や利用できる装備、実際の対戦ルールは確認が取れ次第ご案内します。",
       "category": [
         "combat",
         "world"
@@ -44,10 +44,11 @@
         "kind": "concept"
       },
       "highlights": [
-        "島の生成・保護を扱うスクリプト",
-        "アイテム使用時の能力を振り分ける仕組み"
+        "専用エリアが舞台：PvP Islandのエリアを判定し、島での遊びを扱う仕組みがあります。",
+        "島の中で使う能力：専用の制御を通る能力は、対象エリアの外では実行しない処理になっています。すべての武器・効果の対応を保証するものではありません。",
+        "対戦の舞台を支える保護：島のコアなど、指定されたブロックの破壊を制御する処理があります。保護される範囲や例外を含む正式なルールは確認中です。"
       ],
-      "guide": "参加・入手の手順は確認中です。公開が確認できた案内を順次追加します。",
+      "guide": "参加用の接続先、島への移動手順、使用可能な装備は現在確認中です。公開後の案内で参加条件と対戦ルールを確認してから参加してください。このページでは、専用アイテムの入手方法や通常世界での使用可否を一律には案内していません。",
       "children": [],
       "related": [],
       "packBindings": [
@@ -72,15 +73,18 @@
           "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/manifest.json",
           "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/main.js",
           "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/ability_router.js",
-          "resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055/manifest.json"
+          "resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055/manifest.json",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/island_bootstrap.js",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/protection_service.js",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/ability_gate.js"
         ]
       }
     },
     {
       "id": "infinite-castle",
       "name": "無限城",
-      "summary": "つながる部屋を探索する、独自のダンジョン。",
-      "description": "部屋の接続とダンジョン生成を扱うコンテンツです。PvP Islandとは別のコンテンツとして紹介しています。深層や報酬の提供状況は確認中です。",
+      "summary": "廊下、階段、広間。その先のつながりをたどる探索ダンジョン。",
+      "description": "無限城は、さまざまな部屋をつないで探索空間を組み立てる独自のダンジョンです。まっすぐな廊下だけでなく、曲がり角や分岐、階段、広間、吹き抜けといった部屋の構成が定義されています。次の部屋へ進む道や上下のつながりが、探索の軸になります。部屋の向きや接続、再構築の仕組みを開発中で、現在の構成がそのまま本番で体験できるかは確認中です。",
       "category": [
         "exploration",
         "world"
@@ -118,10 +122,11 @@
         "kind": "concept"
       },
       "highlights": [
-        "部屋の接続を管理する仕組み",
-        "ダンジョン生成・再構築の処理"
+        "部屋をたどる探索：廊下や広間などの部屋ごとに、次の部屋へつながる接続口が定義されています。",
+        "上下にも続く構成：階段や吹き抜けには上下方向の接続があり、横方向だけに限らない空間を組み立てる仕組みです。",
+        "配置と再構築：部屋の向きやつながりを扱い、ダンジョンを生成・再構築する処理があります。実際に使われる構成や切り替わる条件は確認中です。"
       ],
-      "guide": "参加・入手の手順は確認中です。公開が確認できた案内を順次追加します。",
+      "guide": "入口の場所、移動・帰還の手順、探索時の注意事項は公開用の案内を準備中です。深層、隠しTier、敵の配置、宝箱や報酬の内容は、部屋カテゴリの名前だけでは提供を確認できないため掲載していません。PvP Islandとは独立したコンテンツです。",
       "children": [],
       "related": [
         "minecraft-dungeons"
@@ -148,15 +153,16 @@
           "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json",
           "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/main.js",
           "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js",
-          "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/manifest.json"
+          "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/manifest.json",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/roomRegistry.js"
         ]
       }
     },
     {
       "id": "minecraft-dungeons",
       "name": "Minecraft Dungeons",
-      "summary": "Mobや装備を中心に広がる、冒険のコンテンツ。",
-      "description": "Minecraft Dungeonsを題材とした追加コンテンツです。リポジトリ内にMobと装備の定義があります。自然出現・入手条件・本番での提供範囲は確認中です。",
+      "summary": "多彩なMobや装備を通して、戦闘と収集の楽しみを広げる。",
+      "description": "Minecraft Dungeonsを題材に、Mobや武器、アイテムを追加するコンテンツです。いつもの冒険に、出会う相手や集める装備の選択肢を加える方向で構成されています。現在のコードには、ヴィンディケーターを基にしたMobや、剣として定義された装備、独自のアイテムが含まれています。ここでは定義を確認できた範囲を紹介し、自然出現する場所や入手方法、戦闘時の性能は確認が取れたものから追加します。",
       "category": [
         "combat",
         "exploration",
@@ -195,10 +201,11 @@
         "kind": "concept"
       },
       "highlights": [
-        "Mobの定義",
-        "装備・アイテムの定義"
+        "追加のMob：既存のMobを基にした派生など、冒険中の相手になるMobの定義があります。実際の出現場所や条件は確認中です。",
+        "武器と装備：剣などの装備が定義され、見た目や使用時の処理が設定されています。攻撃力や特殊効果のゲーム内での動作は未確認です。",
+        "収集の手がかり：武器以外にも独自アイテムの定義があります。クラフト、ドロップ、取引などの入手経路はアイテムごとに確認して図鑑へ整理します。"
       ],
-      "guide": "参加・入手の手順は確認中です。公開が確認できた案内を順次追加します。",
+      "guide": "追加Mobの出現条件や装備の入手経路は整理中です。名前や見た目が原作と似ていても、同じ能力・レシピ・ドロップになるとは限りません。確認できたアイテムごとに、このサイトの図鑑へ入手方法と使い方を掲載する予定です。",
       "children": [],
       "related": [],
       "packBindings": [
@@ -221,16 +228,18 @@
         "commit": "aea85120954a8b74033b86253c17a04b691dab21",
         "paths": [
           "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json",
-          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json",
-          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json"
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/variant/vindicator_chef.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword_hawkbrand.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/book_of_heroes.json"
         ]
       }
     },
     {
       "id": "mycology",
       "name": "Mycology",
-      "summary": "キノコと出会い、鑑定や図鑑を楽しむ仕組み。",
-      "description": "キノコの鑑定と図鑑を扱うコンテンツです。現行コードに鑑定UI、図鑑、効果処理への接続を確認しています。入手方法とゲーム内での動作は確認中です。",
+      "summary": "身近なキノコを鑑定して、新しい発見を自分の図鑑へ。",
+      "description": "Mycologyは、キノコの鑑定と図鑑づくりを軸にした収集コンテンツです。現行コードでは、通常の赤色キノコ・茶色キノコを鑑定士に持ち込み、種類ごとのキノコへ鑑定する流れになっています。新しく見つけた種類はプレイヤーごとに記録され、図鑑で振り返る仕組みです。集めて終わりではなく、名前や特徴を知って発見を増やす楽しみを目指しています。鑑定士の出現とゲーム内の画面操作は未確認です。",
       "category": [
         "collection",
         "exploration",
@@ -269,10 +278,11 @@
         "kind": "concept"
       },
       "highlights": [
-        "キノコの鑑定UI",
-        "キノコ図鑑の仕組み"
+        "赤色・茶色から鑑定：コード上では通常の赤色キノコと茶色キノコが対象です。選んだ色の最初の該当スタックをまとめて鑑定し、別スロットの分は合算しません。",
+        "自分の発見を記録：鑑定で見つけた種類をプレイヤーごとに保存します。図鑑では発見済みの種類と、まだ見つけていない種類を分けて表示する構成です。",
+        "特徴を読む図鑑：名前、学名、レア度、ゲーム内の効果や解説を確認する画面が用意されています。食べるもの、握り潰して使うもの、使用できない研究標本を区別しています。"
       ],
-      "guide": "参加・入手の手順は確認中です。公開が確認できた案内を順次追加します。",
+      "guide": "コード上の基本の流れは、赤色または茶色のキノコを持つ → 鑑定士の画面で鑑定する色を選ぶ → 鑑定結果と新規発見を確認する → 図鑑で見直す、です。スタック単位で消費するため、鑑定する数量を確認してください。鑑定士に会える場所や実際の提供状況は確認中です。図鑑の効果・使い方はゲーム内の設定であり、現実のキノコの食用判断には使えません。",
       "children": [],
       "related": [],
       "packBindings": [
@@ -298,7 +308,11 @@
           "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js",
           "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/index.js",
           "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/field_guide.js",
-          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json"
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/ui.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/progress.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/config.js"
         ]
       }
     },
