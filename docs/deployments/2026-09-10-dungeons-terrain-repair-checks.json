@@ -1,0 +1,95 @@
+{
+  "upstream_structure_files": 104,
+  "different": [],
+  "sites": [
+    {
+      "site": "arch_1566",
+      "bounds": {
+        "min": [
+          1552,
+          69,
+          3336
+        ],
+        "max": [
+          1594,
+          96,
+          3392
+        ]
+      },
+      "stats": {
+        "repair_solid": 20053,
+        "repair_air": 155,
+        "already_exact": 43119,
+        "changed_since_update_preserved": 23,
+        "new_chunk_preserved": 6
+      },
+      "patch_sha256": "0721de8683ae7f3f93723c1e74b23a90e93502bdbef2f9ce9621f960308b7b4d",
+      "reference_sha256": {
+        "snapshot": "d52ffe692b644faccefe5709d307eeed36cb50673d39d1a4bd1ec463f7224281",
+        "fresh": "78dee4745eb0532d979dda6abaf87cfa22c3f186d61d56446f77313a0b5c3ebd"
+      }
+    },
+    {
+      "site": "arch_910",
+      "bounds": {
+        "min": [
+          896,
+          64,
+          4728
+        ],
+        "max": [
+          938,
+          91,
+          4784
+        ]
+      },
+      "stats": {
+        "already_exact": 49079,
+        "new_chunk_preserved": 91,
+        "repair_solid": 14037,
+        "changed_since_update_preserved": 63,
+        "repair_air": 86
+      },
+      "patch_sha256": "15c213f88e83c5aeb7b79b1258aaf1c39eb9f046e25cab773783e5b983b5bfdf",
+      "reference_sha256": {
+        "snapshot": "8cfa97233608e347dacd699313815fcbd0a75ce2b3f240351c49aeae4d10c474",
+        "fresh": "a54a0f2e07bdc334532f28945c24c17bab88a2cfe2462788e361166a3414e8d7"
+      }
+    }
+  ],
+  "independent_trial_check": [
+    {
+      "site": "arch_1566",
+      "outside_plan_differences": 0,
+      "post_mismatches": 0,
+      "restored_entities": [
+        "dungeons:diamond_chest",
+        "dungeons:arch_illager_resting"
+      ]
+    },
+    {
+      "site": "arch_910",
+      "outside_plan_differences": 0,
+      "post_mismatches": 0,
+      "restored_entities": [
+        "dungeons:diamond_chest",
+        "dungeons:arch_illager_resting"
+      ]
+    }
+  ],
+  "trial_bds": "1.26.45.1",
+  "trial_world_seed": "7721973230525737401",
+  "permanent_addon_changes": false,
+  "deployment": {
+    "status": "repaired",
+    "backup": "/opt/minecraft/server/_pinene_deploy_backups/terrain_20260910_085925",
+    "restored_blocks": 34331,
+    "restored_entities": 4,
+    "service": "active",
+    "post_restart_verified_files": 42,
+    "post_restart_bosses": 2,
+    "post_restart_chests": 2,
+    "temporary_pack_files_removed": true,
+    "live_addon_baseline_commit": "53e423e1678258a467e51f9f4cae895ab08d81d0"
+  }
+}
