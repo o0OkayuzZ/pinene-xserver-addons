@@ -1,4 +1,4 @@
-# 携帯用キノコ図鑑
+﻿# 携帯用キノコ図鑑
 
 `pinene:mushroom_field_guide` を追加しました。本＋赤キノコ＋茶キノコを作業台でクラフトして入手できます。手に持って使うと、鑑定士の近くでなくても個人のキノコ図鑑を開けます。使用しても消費されません。
 
@@ -27,4 +27,4 @@ give @s pinene:mushroom_field_guide 1
 - 実機で見つかったレシピのunlock不足を修正し、本の入手でレシピを解放する設定を追加。[公式レシピ仕様](https://learn.microsoft.com/en-us/minecraft/creator/documents/recipeintroduction?view=minecraft-bedrock-stable)に沿った修正です。修正後のクラフト実操作は未確認です。
 - 複数端末・タッチ操作・クラフト画面での実操作は未確認。
 
-本番サーバーへの配備・pushは行っていません。
+Gitへのpush・main統合は完了。本番配備は別作業中のためユーザー指示で待機しています。[最新の統合報告](../deployments/2026-09-10-foods-mycology.md)を参照してください。

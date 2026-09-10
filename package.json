@@ -1,0 +1,8 @@
+{
+  "name": "pinene-xserver-addons-validation",
+  "private": true,
+  "scripts": {
+    "test": "npm --prefix tools/mycology test && node --test tests/golden_foods/*.test.mjs",
+    "validate": "python -X utf8 tools/validate.py"
+  }
+}
