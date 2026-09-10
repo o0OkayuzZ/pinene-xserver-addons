@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/data';
+---
+<BaseLayout title="レシピ図鑑" current="database"><section class="page-hero"><div class="shell"><p class="eyebrow">FIELD GUIDE / COMING SOON</p><h1>レシピ図鑑</h1><p class="lede">準備中です。確認できた情報から順次整理します。</p></div></section><section class="section"><div class="shell reading"><div class="panel"><h2>発見の記録を準備しています</h2><p>所属コンテンツや入手条件、ゲーム内での動作を確認してから掲載します。</p><a class="text-link" href={withBase('/database/')}>図鑑の入口に戻る →</a></div></div></section></BaseLayout>

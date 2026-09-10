@@ -1,0 +1,5 @@
+---
+interface Props { status: string }
+const labels: Record<string, string> = { unknown: '確認中', partial: '一部実装を確認', implemented: 'コードを確認', planned: '計画中', dormant: '休眠・要確認', retired: '提供終了' };
+---
+<span class="status">{labels[Astro.props.status] ?? '確認中'}</span>

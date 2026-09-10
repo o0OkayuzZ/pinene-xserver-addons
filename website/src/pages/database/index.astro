@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/data';
+---
+<BaseLayout title="図鑑" current="database"><section class="page-hero"><div class="shell"><p class="eyebrow">THE FIELD GUIDE</p><h1>発見を、知識に。</h1><p class="lede">アイテム・Mob・レシピの図鑑は準備中です。</p></div></section><section class="section"><div class="shell database-grid">{[['items','アイテム','道具や装備、収集品を調べる。'],['mobs','Mob','冒険で出会う生き物を調べる。'],['recipes','レシピ','ものづくりの材料と手順を調べる。']].map(([id,name,description]) => <a class="panel" href={withBase(`/database/${id}/`)}><h2>{name} →</h2><p>{description}</p><span class="status">準備中</span></a>)}</div></section></BaseLayout>

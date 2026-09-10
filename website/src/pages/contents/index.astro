@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentCard from '../../components/ContentCard.astro';
+import { contents } from '../../lib/data';
+import { categories } from '../../site.config';
+---
+<BaseLayout title="コンテンツ" current="contents">
+<section class="page-hero"><div class="shell"><p class="eyebrow">FIND YOUR ADVENTURE</p><h1>次は、何をしよう。</h1><p class="lede">気になる遊びを、名前やカテゴリから探そう。各コンテンツの提供状況は確認中です。</p></div></section>
+<section class="section"><div class="shell"><div class="toolbar"><label for="content-search">コンテンツを検索</label><input id="content-search" class="search" type="search" placeholder="名前・説明で検索"/><div class="filters" role="group" aria-label="カテゴリ"><button type="button" class="filter" data-filter="all" aria-pressed="true">すべて</button>{categories.map(cat => <button type="button" class="filter" data-filter={cat.id} aria-pressed="false">{cat.name}</button>)}</div></div><noscript><p>検索・絞り込みにはJavaScriptが必要です。すべての公開コンテンツを表示しています。</p></noscript><p id="result-count" class="results-count" role="status" aria-live="polite">{contents.length}件のコンテンツ</p><div class="cards">{contents.map(content => <ContentCard content={content}/>)}</div><div id="no-results" class="empty-note" hidden><h2>該当するコンテンツはありません</h2><p>別の言葉やカテゴリで探してみてください。</p><button type="button" class="button" id="reset-search">条件をリセット</button></div></div></section>
+<script>
+const search = document.querySelector<HTMLInputElement>('#content-search')!;
+const buttons = [...document.querySelectorAll<HTMLButtonElement>('button[data-filter]')];
+const cards = [...document.querySelectorAll<HTMLElement>('[data-content-card]')];
+const empty = document.querySelector<HTMLElement>('#no-results')!;
+const count = document.querySelector<HTMLElement>('#result-count')!;
+let active = 'all';
+function apply(sync = true) {
+  const q = search.value.trim().normalize('NFKC').toLowerCase();
+  let shown = 0;
+  cards.forEach(card => { card.hidden = !((!q || (card.dataset.search ?? '').normalize('NFKC').includes(q)) && (active === 'all' || (card.dataset.categories ?? '').split(' ').includes(active))); if (!card.hidden) shown++; });
+  buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === active)));
+  empty.hidden = shown !== 0; count.textContent = `${shown}件のコンテンツ`;
+  if (sync) { const url = new URL(location.href); url.searchParams.delete('category'); url.searchParams.delete('q'); if (active !== 'all') url.searchParams.set('category', active); if (search.value.trim()) url.searchParams.set('q', search.value.trim()); history.replaceState(null, '', url); }
+}
+function restore() { const params = new URLSearchParams(location.search); const category = params.get('category'); active = buttons.some(b => b.dataset.filter === category) ? category! : 'all'; search.value = params.get('q') ?? ''; apply(false); }
+search.addEventListener('input', () => apply());
+buttons.forEach(button => button.addEventListener('click', () => { active = button.dataset.filter ?? 'all'; apply(); }));
+document.querySelector('#reset-search')?.addEventListener('click', () => { active = 'all'; search.value = ''; apply(); search.focus(); });
+window.addEventListener('popstate', restore); restore();
+</script></BaseLayout>

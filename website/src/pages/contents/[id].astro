@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+import { contents, packsForContent, relatedForContent, withBase } from '../../lib/data';
+export function getStaticPaths() { return contents.map(content => ({ params: { id: content.id }, props: { content } })); }
+const { content } = Astro.props;
+const related = relatedForContent(content);
+const physicalPacks = packsForContent(content);
+---
+<BaseLayout title={content.name} description={content.summary} current="contents">
+<section class="page-hero"><div class="shell"><nav class="breadcrumbs" aria-label="パンくず"><a href={withBase('/')}>ホーム</a><span>/</span><a href={withBase('/contents/')}>コンテンツ</a><span>/</span><span>{content.name}</span></nav><h1>{content.name}</h1><p class="lede">{content.summary}</p><StatusBadge status={content.implementation}/></div></section>
+<section class="section"><div class="shell detail-grid"><div><article class="panel"><h2>このコンテンツについて</h2><p>{content.description}</p><ul>{content.highlights.map((item: string) => <li>{item}</li>)}</ul></article><article class="panel"><h2>遊び方・入手方法</h2><p>{content.guide}</p><a class="text-link" href={withBase('/start/')}>参加方法・ご案内 →</a></article><article class="panel"><h2>関連するアイテム・レシピ</h2>{content.children.length ? <ul>{content.children.map(child => <li>{child.name}</li>)}</ul> : <p>所属や入手条件を整理中です。確認できたものから図鑑に追加します。</p>}<a class="text-link" href={withBase('/database/')}>図鑑の入口へ →</a></article><details class="tech"><summary>公開技術情報と確認状況</summary><p>コードの存在と、実際にサーバーで遊べる状態は別に確認しています。</p><ul><li>実装：一部のコードを確認</li><li>配備：リポジトリのみ確認。本番の状態は未確認</li><li>ゲーム内の操作・表示：未確認</li></ul>{physicalPacks.map(pack => <div class="tech-pack"><strong>{pack.name}</strong><p>v{pack.version} / {pack.registered ? 'リポジトリのworld登録と一致' : 'world登録は確認中'}</p><code>{pack.uuid}</code><p>役割：{pack.roles.join(' / ')}</p></div>)}<a class="text-link" href={withBase('/packs/')}>パック一覧 →</a></details></div><aside><figure><img class="detail-image" src={withBase(content.image.src)} alt={content.image.alt} width="800" height="450"/><figcaption class="caption">仮ビジュアル。実際のゲーム画面・ギャラリーは準備中です。</figcaption></figure><div class="panel"><h2>関連コンテンツ</h2>{related.length ? <div class="related-list">{related.map(item => <a href={withBase(`/contents/${item.id}/`)}>{item.name} →</a>)}</div> : <p>関連コンテンツは整理中です。</p>}</div></aside></div></section>
+</BaseLayout>

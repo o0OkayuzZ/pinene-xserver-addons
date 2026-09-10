@@ -1,0 +1,515 @@
+{
+  "schema_version": "0.2.0",
+  "source_commit": "aea85120954a8b74033b86253c17a04b691dab21",
+  "contents": [
+    {
+      "id": "pvp-island",
+      "name": "PvP Island",
+      "summary": "島を舞台にした、独立したPvPコンテンツ。",
+      "description": "島の生成や保護、能力の制御を扱うコンテンツです。通常世界での利用条件や参加手順は確認中です。",
+      "category": [
+        "combat",
+        "world"
+      ],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "server-start",
+          "result": "unknown"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "image": {
+        "src": "/images/pvp-island.svg",
+        "alt": "PvP Islandをイメージした仮イラスト。実際のゲーム画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "島の生成・保護を扱うスクリプト",
+        "アイテム使用時の能力を振り分ける仕組み"
+      ],
+      "guide": "参加・入手の手順は確認中です。公開が確認できた案内を順次追加します。",
+      "children": [],
+      "related": [],
+      "packBindings": [
+        {
+          "uuid": "c65bcd04-4708-4716-86bf-bbd6ab936fd3",
+          "roles": [
+            "runtime-script",
+            "behavior"
+          ]
+        },
+        {
+          "uuid": "ef57c45f-1b60-42a3-8d26-4998db1b5055",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/manifest.json",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/main.js",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/ability_router.js",
+          "resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "infinite-castle",
+      "name": "無限城",
+      "summary": "つながる部屋を探索する、独自のダンジョン。",
+      "description": "部屋の接続とダンジョン生成を扱うコンテンツです。PvP Islandとは別のコンテンツとして紹介しています。深層や報酬の提供状況は確認中です。",
+      "category": [
+        "exploration",
+        "world"
+      ],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "server-start",
+          "result": "unknown"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "image": {
+        "src": "/images/infinite-castle.svg",
+        "alt": "無限城をイメージした仮イラスト。実際のゲーム画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "部屋の接続を管理する仕組み",
+        "ダンジョン生成・再構築の処理"
+      ],
+      "guide": "参加・入手の手順は確認中です。公開が確認できた案内を順次追加します。",
+      "children": [],
+      "related": [
+        "minecraft-dungeons"
+      ],
+      "packBindings": [
+        {
+          "uuid": "3efecae8-a036-4e14-94d3-876e29fe0ae9",
+          "roles": [
+            "runtime-script",
+            "behavior"
+          ]
+        },
+        {
+          "uuid": "c6529ee0-0a34-4f28-b5ff-66d335fee9bc",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/main.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js",
+          "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "minecraft-dungeons",
+      "name": "Minecraft Dungeons",
+      "summary": "Mobや装備を中心に広がる、冒険のコンテンツ。",
+      "description": "Minecraft Dungeonsを題材とした追加コンテンツです。リポジトリ内にMobと装備の定義があります。自然出現・入手条件・本番での提供範囲は確認中です。",
+      "category": [
+        "combat",
+        "exploration",
+        "collection"
+      ],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "server-start",
+          "result": "unknown"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "image": {
+        "src": "/images/minecraft-dungeons.svg",
+        "alt": "Minecraft Dungeonsをイメージした仮イラスト。実際のゲーム画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "Mobの定義",
+        "装備・アイテムの定義"
+      ],
+      "guide": "参加・入手の手順は確認中です。公開が確認できた案内を順次追加します。",
+      "children": [],
+      "related": [],
+      "packBindings": [
+        {
+          "uuid": "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
+          "roles": [
+            "behavior",
+            "item-definition"
+          ]
+        },
+        {
+          "uuid": "ab296f68-bb16-4ede-a49c-d0ed99b5b87b",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "mycology",
+      "name": "Mycology",
+      "summary": "キノコと出会い、鑑定や図鑑を楽しむ仕組み。",
+      "description": "キノコの鑑定と図鑑を扱うコンテンツです。現行コードに鑑定UI、図鑑、効果処理への接続を確認しています。入手方法とゲーム内での動作は確認中です。",
+      "category": [
+        "collection",
+        "exploration",
+        "systems"
+      ],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "server-start",
+          "result": "unknown"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "image": {
+        "src": "/images/mycology.svg",
+        "alt": "Mycologyをイメージした仮イラスト。実際のゲーム画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "キノコの鑑定UI",
+        "キノコ図鑑の仕組み"
+      ],
+      "guide": "参加・入手の手順は確認中です。公開が確認できた案内を順次追加します。",
+      "children": [],
+      "related": [],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "runtime-script",
+            "item-definition"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/index.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/field_guide.js",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "better-structure-loot",
+      "name": "Better Structure Loot",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "more-geodes",
+      "name": "More Geodes",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "mystery-fossil",
+      "name": "謎の化石",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "figures",
+      "name": "フィギュア",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "gapple-cows",
+      "name": "Gapple Cows",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "blue-apple",
+      "name": "Blue Apple",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "golden-foods",
+      "name": "Golden Foods",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "pancakes",
+      "name": "Pancakes",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "deathnerite",
+      "name": "Deathnerite",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "pinenite",
+      "name": "Pinenite",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "zombie-gear",
+      "name": "Zombie Gear",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "grave",
+      "name": "Grave / 死亡回収",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "simple-waystone",
+      "name": "Simple Waystone",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "meitetsu-chest",
+      "name": "冥鉄の箱",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "xp-storage",
+      "name": "経験値ストレージ",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "inaka-furniture",
+      "name": "INAKA Furniture",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "pine-cds",
+      "name": "Pine CDs",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "vibrant-visuals",
+      "name": "Vibrant Visuals / Deferred",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "rare-material-trader",
+      "name": "希少素材商人",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    }
+  ]
+}
