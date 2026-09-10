@@ -4721,5 +4721,573 @@
         "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_cook_golden_potato.json"
       ]
     }
+  },
+  {
+    "id": "pancake-batter",
+    "name": "パンケーキ生地",
+    "kind": "item",
+    "contentId": "pancakes",
+    "summary": "焼いて仕上げるパンケーキの材料。",
+    "description": "パンケーキ生地の個別定義と製作方法を紹介します。生地から焼き上げ、ハチミツやベリーを加える構成です。",
+    "usage": "かまどで焼いてパンケーキを作る設定です。",
+    "obtaining": "関連する作業台レシピで材料を確認できます。",
+    "details": [
+      "最大スタック数の設定：64。",
+      "生地には食料の設定がありません。焼いてから使う材料です。"
+    ],
+    "image": {
+      "src": "/images/items/pancake-batter.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/pancake_batter.item.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/pancake.recipe.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/pancake_batter.png"
+      ]
+    }
+  },
+  {
+    "id": "pancake",
+    "name": "パンケーキ",
+    "kind": "item",
+    "contentId": "pancakes",
+    "summary": "冒険の食事に持っていくパンケーキ。",
+    "description": "パンケーキの個別定義と製作方法を紹介します。生地から焼き上げ、ハチミツやベリーを加える構成です。",
+    "usage": "手に持って食べる設定です。満腹時の使用は許可されていません。",
+    "obtaining": "パンケーキ生地をかまどで焼く定義があります。",
+    "details": [
+      "最大スタック数の設定：64。",
+      "満腹度の回復設定：6。実ゲームで測定した回復量ではありません。"
+    ],
+    "image": {
+      "src": "/images/items/pancake.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/pancake.item.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/pancake.recipe.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/pancake.png"
+      ]
+    }
+  },
+  {
+    "id": "honey-pancake",
+    "name": "ハニーパンケーキ",
+    "kind": "item",
+    "contentId": "pancakes",
+    "summary": "冒険の食事に持っていくパンケーキ。",
+    "description": "ハニーパンケーキの個別定義と製作方法を紹介します。生地から焼き上げ、ハチミツやベリーを加える構成です。",
+    "usage": "手に持って食べる設定です。満腹時の使用は許可されていません。",
+    "obtaining": "関連する作業台レシピで材料を確認できます。",
+    "details": [
+      "最大スタック数の設定：64。",
+      "満腹度の回復設定：8。実ゲームで測定した回復量ではありません。"
+    ],
+    "image": {
+      "src": "/images/items/honey-pancake.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/honey_pancake.item.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/pancake.recipe.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/honey_pancake.png"
+      ]
+    }
+  },
+  {
+    "id": "berry-honey-pancake",
+    "name": "ベリーハニーパンケーキ",
+    "kind": "item",
+    "contentId": "pancakes",
+    "summary": "冒険の食事に持っていくパンケーキ。",
+    "description": "ベリーハニーパンケーキの個別定義と製作方法を紹介します。生地から焼き上げ、ハチミツやベリーを加える構成です。",
+    "usage": "手に持って食べる設定です。満腹時の使用は許可されていません。",
+    "obtaining": "関連する作業台レシピで材料を確認できます。",
+    "details": [
+      "最大スタック数の設定：64。",
+      "満腹度の回復設定：10。実ゲームで測定した回復量ではありません。"
+    ],
+    "image": {
+      "src": "/images/items/berry-honey-pancake.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/berry_honey_pancake.item.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/pancake.recipe.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/berry_honey_pancake.png"
+      ]
+    }
+  },
+  {
+    "id": "waystone-warpstone",
+    "name": "ワープストーン",
+    "kind": "item",
+    "contentId": "simple-waystone",
+    "summary": "手に持って移動先の一覧を開く道具。",
+    "description": "使用するとWaystoneの一覧を開き、利用できる移動先を選ぶ処理があります。アイテムごとに消費や待ち時間の扱いが異なります。",
+    "usage": "手に持って使用し、一覧から移動先を選ぶ構成です。経験値レベルが必要コストを下回る場合は移動を止めます。",
+    "obtaining": "入手経路は確認中です。利用可能な移動先の登録も必要です。",
+    "details": [
+      "使用時の移動処理でクールダウンを設定します。時間は設定に依存するため固定値では紹介していません。",
+      "最大スタック数の設定：1。",
+      "実際の画面操作・移動先の安全性・経験値消費はゲーム内で未確認です。"
+    ],
+    "image": {
+      "src": "/images/items/waystone-warpstone.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/items/simple_waystone/warpstone.json",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/manifest.json",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/main.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/index.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/startUp.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/ui/listUI.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/teleportItem.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/itemAmount.js",
+        "resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4/textures/item_texture.json",
+        "resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4/textures/simple_waystone/items/warpstone.png"
+      ]
+    }
+  },
+  {
+    "id": "waystone-golden-feather",
+    "name": "金色の羽根",
+    "kind": "item",
+    "contentId": "simple-waystone",
+    "summary": "手に持って移動先の一覧を開く道具。",
+    "description": "使用するとWaystoneの一覧を開き、利用できる移動先を選ぶ処理があります。アイテムごとに消費や待ち時間の扱いが異なります。",
+    "usage": "手に持って使用し、一覧から移動先を選ぶ構成です。経験値レベルが必要コストを下回る場合は移動を止めます。",
+    "obtaining": "作業台レシピを関連項目に掲載しています。",
+    "details": [
+      "クリエイティブ以外では、移動直前に手に持った羽根を1個減らす処理があります。",
+      "最大スタック数の設定：1。",
+      "実際の画面操作・移動先の安全性・経験値消費はゲーム内で未確認です。"
+    ],
+    "image": {
+      "src": "/images/items/waystone-golden-feather.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/items/simple_waystone/golden_feather.json",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/manifest.json",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/main.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/index.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/startUp.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/ui/listUI.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/teleportItem.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/itemAmount.js",
+        "resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4/textures/item_texture.json",
+        "resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4/textures/simple_waystone/items/golden_feather.png"
+      ]
+    }
+  },
+  {
+    "id": "waystone-enchanted-golden-feather",
+    "name": "エンチャントされた金色の羽根",
+    "kind": "item",
+    "contentId": "simple-waystone",
+    "summary": "手に持って移動先の一覧を開く道具。",
+    "description": "使用するとWaystoneの一覧を開き、利用できる移動先を選ぶ処理があります。アイテムごとに消費や待ち時間の扱いが異なります。",
+    "usage": "手に持って使用し、一覧から移動先を選ぶ構成です。経験値レベルが必要コストを下回る場合は移動を止めます。",
+    "obtaining": "作業台レシピを関連項目に掲載しています。",
+    "details": [
+      "専用の移動処理には羽根を減らす処理がありません。ただし移動先の経験値コスト判定は共通です。",
+      "最大スタック数の設定：1。",
+      "実際の画面操作・移動先の安全性・経験値消費はゲーム内で未確認です。"
+    ],
+    "image": {
+      "src": "/images/items/waystone-enchanted-golden-feather.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/items/simple_waystone/enchanted_golden_feather.json",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/manifest.json",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/main.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/index.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/startUp.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/ui/listUI.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/teleportItem.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/itemAmount.js",
+        "resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4/textures/item_texture.json",
+        "resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4/textures/simple_waystone/items/enchanted_golden_feather.png"
+      ]
+    }
+  },
+  {
+    "id": "craft-pancake-batter",
+    "name": "パンケーキ生地のレシピ",
+    "kind": "recipe",
+    "contentId": "pancakes",
+    "summary": "配置自由でパンケーキ生地を作る設定。",
+    "description": "作業台用の定義から材料と完成数を確認しています。",
+    "usage": "下の材料を作業台で組み合わせます。",
+    "obtaining": "材料の入手と実際のクラフトは未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "ミルク入りバケツ",
+          "count": 1
+        },
+        {
+          "name": "卵",
+          "count": 4
+        },
+        {
+          "name": "小麦",
+          "count": 4
+        }
+      ],
+      "resultId": "pancake-batter",
+      "count": 16
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/pancake_batter.recipe.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-honey-pancake",
+    "name": "ハニーパンケーキのレシピ",
+    "kind": "recipe",
+    "contentId": "pancakes",
+    "summary": "配置自由でハニーパンケーキを作る設定。",
+    "description": "作業台用の定義から材料と完成数を確認しています。",
+    "usage": "下の材料を作業台で組み合わせます。",
+    "obtaining": "材料の入手と実際のクラフトは未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パンケーキ",
+          "count": 1
+        },
+        {
+          "name": "ハチミツ入りの瓶",
+          "count": 1
+        }
+      ],
+      "resultId": "honey-pancake",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/honey_pancake.recipe.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-berry-honey-pancake",
+    "name": "ベリーハニーパンケーキのレシピ",
+    "kind": "recipe",
+    "contentId": "pancakes",
+    "summary": "配置自由でベリーハニーパンケーキを作る設定。",
+    "description": "作業台用の定義から材料と完成数を確認しています。",
+    "usage": "下の材料を作業台で組み合わせます。",
+    "obtaining": "材料の入手と実際のクラフトは未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パンケーキ",
+          "count": 1
+        },
+        {
+          "name": "ハチミツ入りの瓶",
+          "count": 1
+        },
+        {
+          "name": "スイートベリー",
+          "count": 2
+        }
+      ],
+      "resultId": "berry-honey-pancake",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/berry_honey_pancake.recipe.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-berry-honey-pancake-from-honey",
+    "name": "ベリーハニーパンケーキのレシピ（ハニーから）",
+    "kind": "recipe",
+    "contentId": "pancakes",
+    "summary": "配置自由でベリーハニーパンケーキを作る設定。",
+    "description": "作業台用の定義から材料と完成数を確認しています。",
+    "usage": "下の材料を作業台で組み合わせます。",
+    "obtaining": "材料の入手と実際のクラフトは未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "ハニーパンケーキ",
+          "count": 1
+        },
+        {
+          "name": "スイートベリー",
+          "count": 2
+        }
+      ],
+      "resultId": "berry-honey-pancake",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/berry_honey_pancake_from_honey.recipe.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-waystone-golden-feather",
+    "name": "金色の羽根のレシピ",
+    "kind": "recipe",
+    "contentId": "simple-waystone",
+    "summary": "配置を合わせて金色の羽根を作る設定。",
+    "description": "作業台用の定義から材料と完成数を確認しています。",
+    "usage": "下の材料を作業台で組み合わせます。",
+    "obtaining": "材料の入手と実際のクラフトは未確認です。",
+    "details": [
+      "完成数の指定は省略されているため、既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "羽根",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金インゴット",
+          "count": 8
+        },
+        {
+          "name": "羽根",
+          "count": 1
+        }
+      ],
+      "resultId": "waystone-golden-feather",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/recipes/simple_waystone/golden_feather.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-waystone-enchanted-golden-feather",
+    "name": "エンチャントされた金色の羽根のレシピ",
+    "kind": "recipe",
+    "contentId": "simple-waystone",
+    "summary": "配置を合わせてエンチャントされた金色の羽根を作る設定。",
+    "description": "作業台用の定義から材料と完成数を確認しています。",
+    "usage": "下の材料を作業台で組み合わせます。",
+    "obtaining": "材料の入手と実際のクラフトは未確認です。",
+    "details": [
+      "完成数の指定は省略されているため、既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金色の羽根",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "金色の羽根",
+          "count": 1
+        }
+      ],
+      "resultId": "waystone-enchanted-golden-feather",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/recipes/simple_waystone/enchanted_golden_feather.json"
+      ]
+    }
+  },
+  {
+    "id": "cooking-pancake",
+    "name": "パンケーキの焼き方",
+    "kind": "feature",
+    "contentId": "pancakes",
+    "summary": "生地をかまどで焼いて、パンケーキに。",
+    "description": "生地から完成品へ変える調理レシピです。作業台で生地を作り、かまどで焼き上げる流れになります。",
+    "usage": "かまどにパンケーキ生地を入れる設定です。",
+    "obtaining": "生地はミルク入りバケツ1個・卵4個・小麦4個を組み合わせて16個作るレシピがあります。",
+    "details": [
+      "調理設備の登録はかまどのみです。燻製器や焚き火の対応はこの定義から確認できません。",
+      "調理時間・燃料消費・経験値と実ゲームでの動作は未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/pancake.recipe.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/pancake_batter.recipe.json"
+      ]
+    }
+  },
+  {
+    "id": "waystone-destination-lists",
+    "name": "移動先一覧の切り替え",
+    "kind": "feature",
+    "contentId": "simple-waystone",
+    "summary": "個人向けと公開中の移動先を切り替える。",
+    "description": "Waystoneの画面は、個人向け一覧と公開一覧を切り替える構成です。表示される移動先は登録状態と設定に依存します。",
+    "usage": "一覧の切り替えボタンから対象を変え、表示された移動先を選ぶ処理です。",
+    "obtaining": "利用可能なWaystoneの登録が必要です。実際の設置先や公開範囲は未確認です。",
+    "details": [
+      "異なるディメンションの候補を表示するかどうかも設定に依存します。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/manifest.json",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/main.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/index.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/startUp.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/ui/listUI.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/teleportItem.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/itemAmount.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/waystone/list.js"
+      ]
+    }
+  },
+  {
+    "id": "waystone-experience-cost",
+    "name": "移動の経験値コスト",
+    "kind": "feature",
+    "contentId": "simple-waystone",
+    "summary": "移動先を選ぶ前に、必要な経験値レベルを確認。",
+    "description": "移動先一覧では距離・ディメンション・割引設定からコストを求めます。クリエイティブ以外では必要レベルを確認し、移動時にそのレベルを差し引く処理です。",
+    "usage": "一覧に表示するコストを確認する構成です。固定の必要レベルとしては紹介していません。",
+    "obtaining": "移動用アイテムが消費されない場合でも、経験値のコスト判定は共通です。",
+    "details": [
+      "実際の消費量、移動が失敗したときの扱いは未検証です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/manifest.json",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/main.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/index.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/events/startUp.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/ui/listUI.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/teleportItem.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/item/itemAmount.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/lib/waystone/space.js",
+        "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/variables.js"
+      ]
+    }
   }
 ]

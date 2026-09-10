@@ -2,7 +2,7 @@
 
 Astro + TypeScriptによる、PINE SERVERのコンテンツ紹介サイトです。現行mainにwebsite/がなかったため、引き継ぎZIP v0.2のstarter/website/を土台として更新しました。
 
-現在はアイテム・ブロック84件、レシピ41件、小さな機能6件、合計131件を掲載しています。最新の追加内容と検証は [CRAFTING_REPORT.md](CRAFTING_REPORT.md) を参照してください。
+現在はアイテム・ブロック91件、レシピ47件、小さな機能9件、合計147件を掲載しています。最新の追加内容と検証は [FOOD_TRAVEL_REPORT.md](FOOD_TRAVEL_REPORT.md) を参照してください。
 
 ## 起動・検証
 
@@ -34,12 +34,12 @@ Astro 7のCLIはエージェント環境でpreviewを自動的にバックグラ
 
 - `src/site.config.ts`: ブランド、コピー、注目4件、カテゴリ、公開用接続先・招待URL。接続先は現在nullです。
 - `src/data/content-registry.json`: 固定slugで管理。実装・配備・個々の検証・公開状態を分離しています。
-- `src/data/pack-registry.json`: 選定済み14パック。canonical keyはmanifestのheader UUIDです。全パック数ではありません。
+- `src/data/pack-registry.json`: 選定済み16パック。canonical keyはmanifestのheader UUIDです。全パック数ではありません。
 - `src/data/field-guide.json`: アイテム、レシピ、小さな機能のレコード。公開フィールドはsrc/lib/field-guide.mjsで選別します。
 - `src/data/updates.json`: 人間が公開を確認したニュースのみ。現在は空です。
 - `audit/source-evidence.json`: 確認対象commitと相対ソースパス。サイトのビルド出力には含めません。
 
-`public/draft/private` はページ生成前の `src/lib/public-data.mjs` で分離し、さらにフィールドを明示的に選んでいます。検索はその公開済みカードだけを対象とします。draft候補は現状16件ありますが、固定件数を検証する仕様ではありません。非公開の実データをpublic/やクライアントスクリプトへ追加しないでください。
+`public/draft/private` はページ生成前の `src/lib/public-data.mjs` で分離し、さらにフィールドを明示的に選んでいます。検索はその公開済みカードだけを対象とします。draft候補は現状14件ありますが、固定件数を検証する仕様ではありません。非公開の実データをpublic/やクライアントスクリプトへ追加しないでください。
 
 `scripts/refresh-audit.py` はリポジトリのmanifest/world登録を読み取り専用で照合し、このWebの初期棚卸しデータを再生成する開発補助です。実行すると編集済みのレジストリとニュースを初期内容で上書きするため、通常の更新やビルドには使いません。コードを読んだ人による再確認なしに、検証済みの根拠として扱わないでください。
 

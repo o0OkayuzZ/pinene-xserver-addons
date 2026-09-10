@@ -449,13 +449,64 @@
     {
       "id": "pancakes",
       "name": "Pancakes",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "craft"
+      ],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "item-definition",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "生地を焼き、ハチミツとベリーで仕上げよう。",
+      "description": "生地と3種類のパンケーキを扱う食料コンテンツです。生地の作業台レシピ、かまどでの調理、トッピングの2通りの組み合わせを紹介します。",
+      "image": {
+        "src": "/images/pancakes.svg",
+        "alt": "Pancakesの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "生地は1回のレシピで16個",
+        "かまどで焼くパンケーキ",
+        "ハチミツとベリーで仕上げる食事"
+      ],
+      "guide": "関連するアイテム・レシピ・機能の図鑑で使い方を確認できます。実ゲームでの使用・表示・提供状況は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json"
+        ]
+      }
     },
     {
       "id": "deathnerite",
@@ -557,13 +608,65 @@
     {
       "id": "simple-waystone",
       "name": "Simple Waystone",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "exploration",
+        "systems"
+      ],
+      "packBindings": [
+        {
+          "uuid": "e05afa0d-aa45-46bd-82d0-243c605d9737",
+          "roles": [
+            "item-definition",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "4d6ce949-1de7-41ec-87ab-3068434459a4",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "登録された移動先を選び、拠点間の移動を支える。",
+      "description": "移動先一覧と携帯用のワープストーン・羽根を紹介します。移動の経験値コスト、道具の消費と待ち時間を分けて説明しています。実際の設置先と本番の利用条件は未確認です。",
+      "image": {
+        "src": "/images/simple-waystone.svg",
+        "alt": "Simple Waystoneの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "個人向け・公開中の移動先一覧",
+        "携帯できる3つの移動アイテム",
+        "経験値と消費条件を確認"
+      ],
+      "guide": "関連するアイテム・レシピ・機能の図鑑で使い方を確認できます。実ゲームでの使用・表示・提供状況は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/manifest.json",
+          "resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4/manifest.json"
+        ]
+      }
     },
     {
       "id": "meitetsu-chest",
