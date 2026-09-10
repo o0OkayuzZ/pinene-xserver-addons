@@ -2,7 +2,7 @@
 
 Astro + TypeScriptによる、PINE SERVERのコンテンツ紹介サイトです。現行mainにwebsite/がなかったため、引き継ぎZIP v0.2のstarter/website/を土台として更新しました。
 
-現在はアイテム・ブロック82件、レシピ11件、小さな機能5件、合計98件を掲載しています。最新の追加内容と検証は [FOOD_EQUIPMENT_REPORT.md](FOOD_EQUIPMENT_REPORT.md) を参照してください。
+現在はアイテム・ブロック84件、レシピ41件、小さな機能6件、合計131件を掲載しています。最新の追加内容と検証は [CRAFTING_REPORT.md](CRAFTING_REPORT.md) を参照してください。
 
 ## 起動・検証
 

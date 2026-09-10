@@ -3221,5 +3221,1505 @@
         "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js"
       ]
     }
+  },
+  {
+    "id": "food-gwheat",
+    "name": "金の小麦",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "金のパンを作るための小麦素材。",
+    "description": "パンの作業台レシピで使用する素材です。アイテム自体には食料の設定がありません。",
+    "usage": "小麦素材を3個、作業台で横一列に並べてパンを作る設定です。",
+    "obtaining": "小麦を金インゴット8個で囲むレシピがあります。",
+    "details": [
+      "最大スタック数の設定：64。",
+      "素材そのものを食べる処理はありません。"
+    ],
+    "image": {
+      "src": "/images/items/food-gwheat.png",
+      "alt": "金の小麦のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/gwheat.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/gwheat.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/gbread.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_wheat.png"
+      ]
+    }
+  },
+  {
+    "id": "food-egwheat",
+    "name": "エンチャントされた金の小麦",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "エンチャントされた金のパンを作る小麦素材。",
+    "description": "パンの作業台レシピで使用する素材です。アイテム自体には食料の設定がありません。",
+    "usage": "小麦素材を3個、作業台で横一列に並べてパンを作る設定です。",
+    "obtaining": "金の小麦を金ブロック8個で囲むレシピがあります。",
+    "details": [
+      "最大スタック数の設定：64。",
+      "素材そのものを食べる処理はありません。"
+    ],
+    "image": {
+      "src": "/images/items/food-egwheat.png",
+      "alt": "エンチャントされた金の小麦のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egwheat.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/egwheat.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/egbread.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_wheat.png"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-egbread-from-wheat",
+    "name": "エンチャントされた金のパンのレシピ（小麦から）",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされた金のパンを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "金のパンを金ブロックで囲む既掲載レシピとは別の作業台レシピです。同じ完成品を作ります。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "エンチャントされた金の小麦",
+          "エンチャントされた金の小麦",
+          "エンチャントされた金の小麦"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "エンチャントされた金の小麦",
+          "count": 3
+        }
+      ],
+      "resultId": "food-egbread",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/egbread.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-egwheat",
+    "name": "エンチャントされた金の小麦のレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされた金の小麦を作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金の小麦",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "金の小麦",
+          "count": 1
+        }
+      ],
+      "resultId": "food-egwheat",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/egwheat.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-golden-food-guide",
+    "name": "金食料図鑑のレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置自由で金食料図鑑を作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置自由で組み合わせます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "本",
+          "count": 1
+        },
+        {
+          "name": "金塊",
+          "count": 1
+        }
+      ],
+      "resultId": "golden-food-guide",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_food_guide.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-enchanted-baked-golden-potato",
+    "name": "エンチャントされたベイクド金ジャガイモのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされたベイクド金ジャガイモを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "ベイクド金ジャガイモ",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "ベイクド金ジャガイモ",
+          "count": 1
+        }
+      ],
+      "resultId": "food-enchanted-baked-golden-potato",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_enchanted_baked_potato.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-enchanted-golden-beetroot",
+    "name": "エンチャントされた金のビートルートのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされた金のビートルートを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金のビートルート",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "金のビートルート",
+          "count": 1
+        }
+      ],
+      "resultId": "food-enchanted-golden-beetroot",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_enchanted_beetroot.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-enchanted-golden-carrot",
+    "name": "エンチャントされた金のニンジンのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされた金のニンジンを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金のニンジン",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "金のニンジン",
+          "count": 1
+        }
+      ],
+      "resultId": "food-enchanted-golden-carrot",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_enchanted_carrot.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-enchanted-glistering-melon-slice",
+    "name": "エンチャントされたきらめくスイカの薄切りのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされたきらめくスイカの薄切りを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "きらめくスイカの薄切り",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "きらめくスイカの薄切り",
+          "count": 1
+        }
+      ],
+      "resultId": "food-enchanted-glistering-melon-slice",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_enchanted_melon.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-enchanted-golden-poisonous-potato",
+    "name": "エンチャントされた金の毒ジャガイモのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされた金の毒ジャガイモを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金の毒ジャガイモ",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "金の毒ジャガイモ",
+          "count": 1
+        }
+      ],
+      "resultId": "food-enchanted-golden-poisonous-potato",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_enchanted_poison.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-enchanted-golden-pumpkin-pie",
+    "name": "エンチャントされた金のパンプキンパイのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされた金のパンプキンパイを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金のパンプキンパイ",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "金のパンプキンパイ",
+          "count": 1
+        }
+      ],
+      "resultId": "food-enchanted-golden-pumpkin-pie",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_enchanted_pumpkin.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-golden-poisonous-potato",
+    "name": "金の毒ジャガイモのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせて金の毒ジャガイモを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "青くなったジャガイモ",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金インゴット",
+          "count": 8
+        },
+        {
+          "name": "青くなったジャガイモ",
+          "count": 1
+        }
+      ],
+      "resultId": "food-golden-poisonous-potato",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_golden_poison.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-golden-potato",
+    "name": "金のジャガイモのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせて金のジャガイモを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "ジャガイモ",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金インゴット",
+          "count": 8
+        },
+        {
+          "name": "ジャガイモ",
+          "count": 1
+        }
+      ],
+      "resultId": "food-golden-potato",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_golden_potato.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-golden-pumpkin-pie",
+    "name": "金のパンプキンパイのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせて金のパンプキンパイを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "パンプキンパイ",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金インゴット",
+          "count": 8
+        },
+        {
+          "name": "パンプキンパイ",
+          "count": 1
+        }
+      ],
+      "resultId": "food-golden-pumpkin-pie",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_golden_pumpkin.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-astew",
+    "name": "リンゴシチューのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置自由でリンゴシチューを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置自由で組み合わせます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "リンゴ",
+          "count": 1
+        },
+        {
+          "name": "ボウル",
+          "count": 1
+        }
+      ],
+      "resultId": "food-astew",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_legacy_astew.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-egmbucket",
+    "name": "エンチャントされた金のミルクのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされた金のミルクを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金のミルク",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "金のミルク",
+          "count": 1
+        }
+      ],
+      "resultId": "food-egmbucket",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_legacy_egmbucket.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-estew",
+    "name": "エンチャントされた金のリンゴシチューのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされた金のリンゴシチューを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金のリンゴシチュー",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "金のリンゴシチュー",
+          "count": 1
+        }
+      ],
+      "resultId": "food-estew",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_legacy_estew.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-gmbucket",
+    "name": "金のミルクのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせて金のミルクを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "ミルク入りバケツ",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金インゴット",
+          "count": 8
+        },
+        {
+          "name": "ミルク入りバケツ",
+          "count": 1
+        }
+      ],
+      "resultId": "food-gmbucket",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_legacy_gmbucket.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-gstew",
+    "name": "金のリンゴシチューのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせて金のリンゴシチューを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "リンゴシチュー",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金インゴット",
+          "count": 8
+        },
+        {
+          "name": "リンゴシチュー",
+          "count": 1
+        }
+      ],
+      "resultId": "food-gstew",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_legacy_gstew.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-gwheat",
+    "name": "金の小麦のレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせて金の小麦を作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "小麦",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金インゴット",
+          "count": 8
+        },
+        {
+          "name": "小麦",
+          "count": 1
+        }
+      ],
+      "resultId": "food-gwheat",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/gwheat.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-deathnerite-axe",
+    "name": "デスネライトの斧のレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置を合わせてデスネライトの斧を作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "デスネライトインゴット",
+          "デスネライトインゴット"
+        ],
+        [
+          "デスネライトインゴット",
+          "棒"
+        ],
+        [
+          "",
+          "棒"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "デスネライトインゴット",
+          "count": 3
+        },
+        {
+          "name": "棒",
+          "count": 2
+        }
+      ],
+      "resultId": "deathnerite-axe",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/deathnerite_axe.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-deathnerite-boots",
+    "name": "デスネライトのブーツのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置を合わせてデスネライトのブーツを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "デスネライトインゴット",
+          "",
+          "デスネライトインゴット"
+        ],
+        [
+          "デスネライトインゴット",
+          "",
+          "デスネライトインゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "デスネライトインゴット",
+          "count": 4
+        }
+      ],
+      "resultId": "deathnerite-boots",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/deathnerite_boots.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-deathnerite-chestplate",
+    "name": "デスネライトのチェストプレートのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置を合わせてデスネライトのチェストプレートを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "デスネライトインゴット",
+          "",
+          "デスネライトインゴット"
+        ],
+        [
+          "デスネライトインゴット",
+          "デスネライトインゴット",
+          "デスネライトインゴット"
+        ],
+        [
+          "デスネライトインゴット",
+          "デスネライトインゴット",
+          "デスネライトインゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "デスネライトインゴット",
+          "count": 8
+        }
+      ],
+      "resultId": "deathnerite-chestplate",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/deathnerite_chestplate.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-deathnerite-helmet",
+    "name": "デスネライトのヘルメットのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置を合わせてデスネライトのヘルメットを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "デスネライトインゴット",
+          "デスネライトインゴット",
+          "デスネライトインゴット"
+        ],
+        [
+          "デスネライトインゴット",
+          "",
+          "デスネライトインゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "デスネライトインゴット",
+          "count": 5
+        }
+      ],
+      "resultId": "deathnerite-helmet",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/deathnerite_helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-deathnerite-leggings",
+    "name": "デスネライトのレギンスのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置を合わせてデスネライトのレギンスを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "デスネライトインゴット",
+          "デスネライトインゴット",
+          "デスネライトインゴット"
+        ],
+        [
+          "デスネライトインゴット",
+          "",
+          "デスネライトインゴット"
+        ],
+        [
+          "デスネライトインゴット",
+          "",
+          "デスネライトインゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "デスネライトインゴット",
+          "count": 7
+        }
+      ],
+      "resultId": "deathnerite-leggings",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/deathnerite_leggings.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-deathnerite-pickaxe",
+    "name": "デスネライトのツルハシのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置を合わせてデスネライトのツルハシを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置表に合わせて並べます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "デスネライトインゴット",
+          "デスネライトインゴット",
+          "デスネライトインゴット"
+        ],
+        [
+          "",
+          "棒",
+          ""
+        ],
+        [
+          "",
+          "棒",
+          ""
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "デスネライトインゴット",
+          "count": 3
+        },
+        {
+          "name": "棒",
+          "count": 2
+        }
+      ],
+      "resultId": "deathnerite-pickaxe",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/deathnerite_pickaxe.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-parcanite-axe",
+    "name": "パーカナイトの斧のレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置自由でパーカナイトの斧を作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置自由で組み合わせます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。",
+      "作業台ではネザライトインゴットを使います。専用鍛冶台ではデスネライトインゴットを使う別の強化経路があります。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "デスネライトの斧",
+          "count": 1
+        },
+        {
+          "name": "パーカナイト強化",
+          "count": 1
+        },
+        {
+          "name": "ネザライトインゴット",
+          "count": 1
+        }
+      ],
+      "resultId": "parcanite-axe",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/parcanite_axe.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-parcanite-boots",
+    "name": "パーカナイトのブーツのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置自由でパーカナイトのブーツを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置自由で組み合わせます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。",
+      "作業台ではネザライトインゴットを使います。専用鍛冶台ではデスネライトインゴットを使う別の強化経路があります。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "デスネライトのブーツ",
+          "count": 1
+        },
+        {
+          "name": "パーカナイト強化",
+          "count": 1
+        },
+        {
+          "name": "ネザライトインゴット",
+          "count": 1
+        }
+      ],
+      "resultId": "parcanite-boots",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/parcanite_boots.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-parcanite-chestplate",
+    "name": "パーカナイトのチェストプレートのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置自由でパーカナイトのチェストプレートを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置自由で組み合わせます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。",
+      "作業台ではネザライトインゴットを使います。専用鍛冶台ではデスネライトインゴットを使う別の強化経路があります。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "デスネライトのチェストプレート",
+          "count": 1
+        },
+        {
+          "name": "パーカナイト強化",
+          "count": 1
+        },
+        {
+          "name": "ネザライトインゴット",
+          "count": 1
+        }
+      ],
+      "resultId": "parcanite-chestplate",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/parcanite_chestplate.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-parcanite-helmet",
+    "name": "パーカナイトのヘルメットのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置自由でパーカナイトのヘルメットを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置自由で組み合わせます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。",
+      "作業台ではネザライトインゴットを使います。専用鍛冶台ではデスネライトインゴットを使う別の強化経路があります。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "デスネライトのヘルメット",
+          "count": 1
+        },
+        {
+          "name": "パーカナイト強化",
+          "count": 1
+        },
+        {
+          "name": "ネザライトインゴット",
+          "count": 1
+        }
+      ],
+      "resultId": "parcanite-helmet",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/parcanite_helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-parcanite-leggings",
+    "name": "パーカナイトのレギンスのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置自由でパーカナイトのレギンスを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置自由で組み合わせます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。",
+      "作業台ではネザライトインゴットを使います。専用鍛冶台ではデスネライトインゴットを使う別の強化経路があります。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "デスネライトのレギンス",
+          "count": 1
+        },
+        {
+          "name": "パーカナイト強化",
+          "count": 1
+        },
+        {
+          "name": "ネザライトインゴット",
+          "count": 1
+        }
+      ],
+      "resultId": "parcanite-leggings",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/parcanite_leggings.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-parcanite-pickaxe",
+    "name": "パーカナイトのツルハシのレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置自由でパーカナイトのツルハシを作る設定。",
+    "description": "作業台用の定義から材料・配置・完成品を確認しました。",
+    "usage": "作業台で、下の材料を配置自由で組み合わせます。",
+    "obtaining": "材料の入手と本番でのクラフト動作は未確認です。",
+    "details": [
+      "元のレシピでは完成数が省略されています。既定の1個として表示しています。",
+      "作業台ではネザライトインゴットを使います。専用鍛冶台ではデスネライトインゴットを使う別の強化経路があります。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "デスネライトのツルハシ",
+          "count": 1
+        },
+        {
+          "name": "パーカナイト強化",
+          "count": 1
+        },
+        {
+          "name": "ネザライトインゴット",
+          "count": 1
+        }
+      ],
+      "resultId": "parcanite-pickaxe",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/parcanite_pickaxe.json"
+      ]
+    }
+  },
+  {
+    "id": "cooking-golden-potato",
+    "name": "金のジャガイモの調理",
+    "kind": "feature",
+    "contentId": "golden-foods",
+    "summary": "金のジャガイモを焼いて、ベイクド金ジャガイモへ。",
+    "description": "調理用レシピには、金のジャガイモをベイクド金ジャガイモに変える定義があります。作業台の配置レシピとは別です。",
+    "usage": "かまど・燻製器・焚き火・魂の焚き火が対応先として登録されています。",
+    "obtaining": "材料は金のジャガイモです。金のジャガイモ自体には作業台レシピがあります。",
+    "details": [
+      "焼き時間・燃料消費量・獲得経験値は、この定義には記載がないため掲載していません。",
+      "各設備での実際の調理動作は未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_cook_golden_potato.json"
+      ]
+    }
   }
 ]
