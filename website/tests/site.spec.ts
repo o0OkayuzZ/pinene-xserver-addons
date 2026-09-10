@@ -27,7 +27,7 @@ test('home layout, images, keyboard and navigation', async ({ page }, testInfo) 
 });
 test('category deep links, search, zero results and reset', async ({ page }, testInfo) => {
  await page.goto(base + 'contents/?category=collection');
- await expect(page.locator('[data-content-card]:visible')).toHaveCount(2);
+ await expect(page.locator('[data-content-card]:visible')).toHaveCount(4);
  await expect(page.getByRole('button',{name:'収集', exact:true})).toHaveAttribute('aria-pressed','true');
  const search = page.getByLabel('コンテンツを検索');
  await search.fill('Ｍｙｃｏｌｏｇｙ');

@@ -5289,5 +5289,386 @@
         "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/scripts/simple_waystone/variables.js"
       ]
     }
+  },
+  {
+    "id": "blue-apple",
+    "name": "青りんご",
+    "kind": "item",
+    "contentId": "blue-apple",
+    "summary": "葉から見つかる、強化の土台になる青りんご。",
+    "description": "Blue Appleの食料です。個別定義と、このアイテムIDを対象にした食事処理を照合しています。",
+    "usage": "手に持って食べる設定です。満腹時にも使用を許可しています。効果の実際の発動は未確認です。",
+    "obtaining": "オーク・ダークオークの葉をプレイヤーが壊したときの抽選対象です。",
+    "details": [
+      "満腹度の回復設定：8。満腹度の上限を超えて蓄えられることを示す値ではありません。",
+      "このアイテムは食事効果の追加処理の対象に入っていません。"
+    ],
+    "image": {
+      "src": "/images/items/blue-apple.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/items/blue_apple.item.json",
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/manifest.json",
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/scripts/main.js",
+        "resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78/textures/item_texture.json",
+        "resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78/textures/items/blue_apple.png"
+      ]
+    }
+  },
+  {
+    "id": "blue-diamond-apple",
+    "name": "ダイヤ青りんご",
+    "kind": "item",
+    "contentId": "blue-apple",
+    "summary": "ダイヤ素材で強化する、効果付きの青りんご。",
+    "description": "Blue Appleの食料です。個別定義と、このアイテムIDを対象にした食事処理を照合しています。",
+    "usage": "手に持って食べる設定です。満腹時にも使用を許可しています。効果の実際の発動は未確認です。",
+    "obtaining": "関連する作業台レシピで材料と配置を確認できます。",
+    "details": [
+      "満腹度の回復設定：18。満腹度の上限を超えて蓄えられることを示す値ではありません。",
+      "付与する効果の設定：再生 レベル2・30秒。",
+      "付与する効果の設定：水中呼吸 レベル1・720秒。",
+      "付与する効果の設定：暗視 レベル1・720秒。",
+      "付与する効果の設定：移動速度上昇 レベル2・360秒。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/items/blue_diamond_apple.item.json",
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/manifest.json",
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/scripts/main.js",
+        "resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "enchanted-blue-diamond-apple",
+    "name": "エンチャントされたダイヤ青りんご",
+    "kind": "item",
+    "contentId": "blue-apple",
+    "summary": "ダイヤ素材で強化する、効果付きの青りんご。",
+    "description": "Blue Appleの食料です。個別定義と、このアイテムIDを対象にした食事処理を照合しています。",
+    "usage": "手に持って食べる設定です。満腹時にも使用を許可しています。効果の実際の発動は未確認です。",
+    "obtaining": "関連する作業台レシピで材料と配置を確認できます。",
+    "details": [
+      "満腹度の回復設定：120。満腹度の上限を超えて蓄えられることを示す値ではありません。",
+      "付与する効果の設定：再生 レベル3・90秒。",
+      "付与する効果の設定：衝撃吸収 レベル4・1800秒。",
+      "付与する効果の設定：耐性 レベル2・1200秒。",
+      "付与する効果の設定：コンジットパワー レベル1・1800秒。",
+      "付与する効果の設定：水中呼吸 レベル1・1800秒。",
+      "付与する効果の設定：暗視 レベル1・1800秒。",
+      "付与する効果の設定：移動速度上昇 レベル2・1200秒。"
+    ],
+    "image": {
+      "src": "/images/items/enchanted-blue-diamond-apple.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/items/enchanted_blue_diamond_apple.item.json",
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/manifest.json",
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/scripts/main.js",
+        "resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78/textures/item_texture.json",
+        "resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78/textures/items/enchanted_blue_diamond_apple.png"
+      ]
+    }
+  },
+  {
+    "id": "craft-blue-diamond-apple",
+    "name": "ダイヤ青りんごのレシピ",
+    "kind": "recipe",
+    "contentId": "blue-apple",
+    "summary": "青りんごをダイヤ素材で囲んで強化。",
+    "description": "作業台用の材料・配置・完成品を定義から確認しました。",
+    "usage": "下の配置に合わせて材料を作業台へ並べる設定です。",
+    "obtaining": "材料の実際の入手とクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "ダイヤモンド",
+          "ダイヤモンド",
+          "ダイヤモンド"
+        ],
+        [
+          "ダイヤモンド",
+          "青りんご",
+          "ダイヤモンド"
+        ],
+        [
+          "ダイヤモンド",
+          "ダイヤモンド",
+          "ダイヤモンド"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "ダイヤモンド",
+          "count": 8
+        },
+        {
+          "name": "青りんご",
+          "count": 1
+        }
+      ],
+      "resultId": "blue-diamond-apple",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/recipes/blue_diamond_apple.recipe.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-enchanted-blue-diamond-apple",
+    "name": "エンチャントされたダイヤ青りんごのレシピ",
+    "kind": "recipe",
+    "contentId": "blue-apple",
+    "summary": "青りんごをダイヤ素材で囲んで強化。",
+    "description": "作業台用の材料・配置・完成品を定義から確認しました。",
+    "usage": "下の配置に合わせて材料を作業台へ並べる設定です。",
+    "obtaining": "材料の実際の入手とクラフト動作は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "ダイヤモンドブロック",
+          "ダイヤモンドブロック",
+          "ダイヤモンドブロック"
+        ],
+        [
+          "ダイヤモンドブロック",
+          "ダイヤ青りんご",
+          "ダイヤモンドブロック"
+        ],
+        [
+          "ダイヤモンドブロック",
+          "ダイヤモンドブロック",
+          "ダイヤモンドブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "ダイヤモンドブロック",
+          "count": 8
+        },
+        {
+          "name": "ダイヤ青りんご",
+          "count": 1
+        }
+      ],
+      "resultId": "enchanted-blue-diamond-apple",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/recipes/enchanted_blue_diamond_apple.recipe.json"
+      ]
+    }
+  },
+  {
+    "id": "blue-apple-leaf-drop",
+    "name": "葉からの青りんご抽選",
+    "kind": "feature",
+    "contentId": "blue-apple",
+    "summary": "オークとダークオークの葉を壊すと抽選。",
+    "description": "プレイヤーのブロック破壊イベントで葉の種類を確認し、青りんごを1個出す抽選を行う処理です。",
+    "usage": "対象の葉をプレイヤーが壊したときに判定します。自然消滅時の処理ではありません。",
+    "obtaining": "1回の対象イベントにつき確率0.0001（0.01%）の設定です。実測値ではありません。",
+    "details": [
+      "木を何本切れば必ず入手できる、という保証ではありません。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/scripts/main.js",
+        "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/manifest.json"
+      ]
+    }
+  },
+  {
+    "id": "figure-fossil",
+    "name": "フィギュア（化石）",
+    "kind": "item",
+    "contentId": "figures",
+    "summary": "集めて置ける、小さな展示用フィギュア。",
+    "description": "フィギュア（化石）は設置用エンティティと対応付けられた収集アイテムです。見た目の実ゲーム確認はまだ行っていません。",
+    "usage": "ブロックに向かって使用して設置する処理があります。設置済みの個体は攻撃、またはしゃがんで操作すると回収する処理です。",
+    "obtaining": "謎の化石の抽選報酬に登録されています。必ず手に入る報酬ではありません。",
+    "details": [
+      "最大スタック数の設定：1。",
+      "設置・回収の実動作やアイテム収支は未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/figure_fossil.item.json",
+        "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/entities/figure_fossil_placed.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/texts/ja_JP.lang",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "figure-spiral",
+    "name": "フィギュア（らせん）",
+    "kind": "item",
+    "contentId": "figures",
+    "summary": "集めて置ける、小さな展示用フィギュア。",
+    "description": "フィギュア（らせん）は設置用エンティティと対応付けられた収集アイテムです。見た目の実ゲーム確認はまだ行っていません。",
+    "usage": "ブロックに向かって使用して設置する処理があります。設置済みの個体は攻撃、またはしゃがんで操作すると回収する処理です。",
+    "obtaining": "謎の化石の抽選報酬に登録されています。必ず手に入る報酬ではありません。",
+    "details": [
+      "最大スタック数の設定：1。",
+      "設置・回収の実動作やアイテム収支は未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/figure_spiral.item.json",
+        "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/entities/figure_spiral_placed.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/texts/ja_JP.lang",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "figure-oyu",
+    "name": "フィギュア（おゆ）",
+    "kind": "item",
+    "contentId": "figures",
+    "summary": "集めて置ける、小さな展示用フィギュア。",
+    "description": "フィギュア（おゆ）は設置用エンティティと対応付けられた収集アイテムです。見た目の実ゲーム確認はまだ行っていません。",
+    "usage": "ブロックに向かって使用して設置する処理があります。設置済みの個体は攻撃、またはしゃがんで操作すると回収する処理です。",
+    "obtaining": "謎の化石の抽選報酬に登録されています。必ず手に入る報酬ではありません。",
+    "details": [
+      "最大スタック数の設定：1。",
+      "設置・回収の実動作やアイテム収支は未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/figure_oyu.item.json",
+        "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/entities/figure_oyu_placed.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/texts/ja_JP.lang",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "figure-placement-pickup",
+    "name": "フィギュアの設置と回収",
+    "kind": "feature",
+    "contentId": "figures",
+    "summary": "集めたフィギュアを飾り、場所を変えて楽しむ。",
+    "description": "手持ちアイテムを設置用エンティティに変え、回収時にアイテムを出す処理です。",
+    "usage": "ブロックに使用して設置します。攻撃や、しゃがんでの操作を回収の入口にしています。",
+    "obtaining": "対応するフィギュアアイテムが必要です。",
+    "details": [
+      "設置時の向きはプレイヤーの向きをもとに調整する処理があります。",
+      "実ゲームでの向き・見た目・重複回収の有無は未検証です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js"
+      ]
+    }
+  },
+  {
+    "id": "mystery-fossil",
+    "name": "謎の化石",
+    "kind": "item",
+    "contentId": "mystery-fossil",
+    "summary": "ブラシで調べる処理につながる、設置用の化石。",
+    "description": "アイテムは謎の化石ブロックを置く定義です。食料や装備とは別の、調査用ブロックとして扱います。",
+    "usage": "設置した謎の化石に、ブラシを持って操作する処理があります。",
+    "obtaining": "化石の抽選報酬に登録されています。自然生成の場所や採掘での入手条件は確認中です。",
+    "details": [
+      "最大スタック数の設定：64。",
+      "設置・調査と本番での入手は未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mystery_fossil.item.json",
+        "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/blocks/mystery_fossil.block.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json"
+      ]
+    }
+  },
+  {
+    "id": "mystery-fossil-brushing",
+    "name": "ブラシで化石を調べる",
+    "kind": "feature",
+    "contentId": "mystery-fossil",
+    "summary": "ブラシで調べ、抽選報酬を見つける。",
+    "description": "怪しげな砂、または謎の化石をブラシで操作すると演出処理を開始し、終了時に報酬を抽選する構成です。",
+    "usage": "対象ブロックへブラシを持って操作します。通常の発掘操作と同じ所要時間とは断定していません。",
+    "obtaining": "対象のブロックとブラシが必要です。抽選にはフィギュアや謎の化石などが含まれます。",
+    "details": [
+      "完了時に対象ブロックを空気へ変える処理があります。",
+      "演出、報酬の入手、経験値の量と収支はゲーム内で未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js",
+        "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/blocks/mystery_fossil.block.json"
+      ]
+    }
   }
 ]

@@ -341,24 +341,151 @@
     {
       "id": "mystery-fossil",
       "name": "謎の化石",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "exploration",
+        "collection"
+      ],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "ブラシで調べ、埋もれた発見を探そう。",
+      "description": "謎の化石の設置アイテムと、ブラシ操作から抽選報酬へ進む処理を紹介します。実際の生成場所・演出・入手は未確認です。",
+      "image": {
+        "src": "/images/mystery-fossil.svg",
+        "alt": "謎の化石の仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "ブラシを使う調査",
+        "フィギュアなどの抽選報酬",
+        "設置用の化石アイテム"
+      ],
+      "guide": "関連図鑑で使い方と確認できた入手条件を紹介します。ゲーム内動作と本番の提供範囲は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/manifest.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json"
+        ]
+      }
     },
     {
       "id": "figures",
       "name": "フィギュア",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "collection",
+        "world"
+      ],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture"
+          ]
+        },
+        {
+          "uuid": "608f921e-6be8-4a27-85d6-27945fa3a1ef",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "集めたフィギュアを、自分の場所に飾ろう。",
+      "description": "確認済みの化石・らせん・おゆの3種類と、共通の設置・回収処理を紹介します。ほかの種類は今後の確認対象です。",
+      "image": {
+        "src": "/images/figures.svg",
+        "alt": "フィギュアの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "3種類のフィギュアを紹介",
+        "手に持って使う設置操作",
+        "攻撃やしゃがみ操作で回収"
+      ],
+      "guide": "関連図鑑で使い方と確認できた入手条件を紹介します。ゲーム内動作と本番の提供範囲は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/manifest.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json",
+          "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/manifest.json"
+        ]
+      }
     },
     {
       "id": "gapple-cows",
@@ -374,13 +501,65 @@
     {
       "id": "blue-apple",
       "name": "Blue Apple",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "exploration",
+        "craft"
+      ],
+      "packBindings": [
+        {
+          "uuid": "969b1f80-d29c-454f-ab4e-9798b508c1fc",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "葉から見つけ、ダイヤで強化する青りんご。",
+      "description": "青りんごと2段階の強化食料を紹介します。葉を壊したときの抽選、作業台レシピ、追加効果をアイテムIDごとに確認しています。",
+      "image": {
+        "src": "/images/blue-apple.svg",
+        "alt": "Blue Appleの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "葉からの低確率の抽選",
+        "ダイヤ素材で2段階に強化",
+        "種類ごとの食事効果"
+      ],
+      "guide": "関連図鑑で使い方と確認できた入手条件を紹介します。ゲーム内動作と本番の提供範囲は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/manifest.json",
+          "resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78/manifest.json"
+        ]
+      }
     },
     {
       "id": "golden-foods",
