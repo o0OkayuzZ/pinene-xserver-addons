@@ -1,5 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { withBase } from '../../lib/data';
+import GuideCard from '../../components/GuideCard.astro';
+import { entries } from '../../lib/guide';
+import { contents } from '../../lib/data';
+const listing=entries.filter(entry => entry.kind !== 'recipe');
+const owners=contents.filter(content=>listing.some(entry=>entry.contentId===content.id));
 ---
-<BaseLayout title="アイテム図鑑" current="database"><section class="page-hero"><div class="shell"><p class="eyebrow">FIELD GUIDE / COMING SOON</p><h1>アイテム図鑑</h1><p class="lede">準備中です。確認できた情報から順次整理します。</p></div></section><section class="section"><div class="shell reading"><div class="panel"><h2>発見の記録を準備しています</h2><p>所属コンテンツや入手条件、ゲーム内での動作を確認してから掲載します。</p><a class="text-link" href={withBase('/database/')}>図鑑の入口に戻る →</a></div></div></section></BaseLayout>
+<BaseLayout title="アイテム・小さな機能" current="database">
+<section class="page-hero"><div class="shell"><p class="eyebrow">EVERY DISCOVERY HAS A STORY</p><h1>アイテムと、小さな発見。</h1><p class="lede">キノコ、道具、設備、便利な仕組み。気になるものの用途や使い方を調べよう。掲載はコード上の確認で、本番の動作は未確認です。</p></div></section>
+<section class="section"><div class="shell"><div class="toolbar"><label for="guide-search">名前・説明を検索</label><input id="guide-search" class="search" type="search" placeholder="キノコ、タンク、図鑑…"/><div class="guide-selects"><div><label for="guide-content">コンテンツ</label><select id="guide-content"><option value="all">すべて</option>{owners.map(content=><option value={content.id}>{content.name}</option>)}</select></div><div><label for="guide-kind">種類</label><select id="guide-kind"><option value="all">すべて</option><option value="item">アイテム・ブロック</option><option value="feature">小さな機能</option></select></div></div></div><noscript><p>検索・絞り込みにはJavaScriptが必要です。すべての公開項目を表示しています。</p></noscript><p id="guide-count" role="status" class="results-count">{listing.length}件の項目</p><div class="guide-grid">{listing.map(entry=><GuideCard entry={entry}/>)}</div><div id="guide-empty" class="empty-note" hidden><h2>該当する項目はありません</h2><p>別の言葉やコンテンツで探してみてください。</p><button id="guide-reset" type="button" class="button">条件をリセット</button></div></div></section>
+<script>
+const search=document.querySelector<HTMLInputElement>('#guide-search')!;
+const content=document.querySelector<HTMLSelectElement>('#guide-content')!;
+const kind=document.querySelector<HTMLSelectElement>('#guide-kind')!;
+const cards=[...document.querySelectorAll<HTMLElement>('[data-guide-entry]')];
+function apply(sync=true) { let shown=0; const q=search.value.normalize('NFKC').trim().toLowerCase(); cards.forEach(card=>{card.hidden=!((card.dataset.search??'').includes(q)&&(content.value==='all'||card.dataset.content===content.value)&&(kind.value==='all'||card.dataset.kind===kind.value));if(!card.hidden)shown++;});document.querySelector('#guide-count')!.textContent=`${shown}件の項目`;document.querySelector<HTMLElement>('#guide-empty')!.hidden=shown>0;if(sync){const url=new URL(location.href);for(const [key,value] of [['q',search.value.trim()],['content',content.value],['kind',kind.value]]){url.searchParams.delete(key);if(value&&value!=='all')url.searchParams.set(key,value);}history.replaceState(null,'',url);}}
+function restore(){const params=new URLSearchParams(location.search);search.value=params.get('q')??'';for(const [key,select] of [['content',content],['kind',kind]] as const){const value=params.get(key);select.value=[...select.options].some(option=>option.value===value)?value!:'all';}apply(false);}
+search.addEventListener('input',()=>apply());content.addEventListener('change',()=>apply());kind.addEventListener('change',()=>apply());document.querySelector('#guide-reset')?.addEventListener('click',()=>{search.value='';content.value='all';kind.value='all';apply();search.focus();});window.addEventListener('popstate',restore);restore();
+</script></BaseLayout>

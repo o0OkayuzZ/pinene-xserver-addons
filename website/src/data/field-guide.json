@@ -1,0 +1,1630 @@
+[
+  {
+    "id": "mycology-r01",
+    "name": "ベニヤマタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "再生の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのベニヤマタケです。ゲーム内のレア度設定は★1。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：再生 レベル1・3秒。",
+      "満腹度の回復設定：2。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r01.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r01.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r01.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r02",
+    "name": "アカヤマタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "暗闇・吐き気の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのアカヤマタケです。ゲーム内のレア度設定は★1。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：暗闇 レベル1・8秒、吐き気 レベル1・12秒。",
+      "満腹度の回復設定：1。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r02.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r02.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r02.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r03",
+    "name": "ヒイロタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "採掘速度上昇・空腹の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのヒイロタケです。ゲーム内のレア度設定は★1。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：採掘速度上昇 レベル1・45秒、空腹 レベル1・10秒。",
+      "満腹度の回復設定：1。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r03.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r03.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r03.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r04",
+    "name": "ベニナギナタタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "移動速度上昇・跳躍力上昇の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのベニナギナタタケです。ゲーム内のレア度設定は★2。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：移動速度上昇 レベル1・35秒、跳躍力上昇 レベル1・35秒。",
+      "満腹度の回復設定：2。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r04.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r04.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r04.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r05",
+    "name": "シュタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "耐性・移動速度低下の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのシュタケです。ゲーム内のレア度設定は★2。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：耐性 レベル1・30秒、移動速度低下 レベル1・10秒。",
+      "満腹度の回復設定：1。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r05.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r05.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r05.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r06",
+    "name": "チシオタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "攻撃力上昇の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのチシオタケです。ゲーム内のレア度設定は★2。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：攻撃力上昇 レベル1・30秒。",
+      "効果の前に体力を2HP消費します。体力が足りない場合は死亡する処理です。",
+      "満腹度の回復設定：1。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r06.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r06.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r06.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r07",
+    "name": "ベニイグチ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "使用時に特殊な効果を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのベニイグチです。ゲーム内のレア度設定は★3。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "追加効果は次の候補から重み付きで1つ抽選されます。",
+      "抽選候補：採掘速度上昇 レベル1・45秒。",
+      "抽選候補：耐性 レベル1・30秒。",
+      "抽選候補：攻撃力上昇 レベル1・25秒。",
+      "抽選候補：吐き気 レベル1・20秒、弱体化 レベル1・20秒。",
+      "満腹度の回復設定：2。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r07.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r07.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r07.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r08",
+    "name": "ベニセンコウタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "移動速度上昇・弱体化の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのベニセンコウタケです。ゲーム内のレア度設定は★3。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：移動速度上昇 レベル2・15秒、弱体化 レベル1・25秒。",
+      "満腹度の回復設定：1。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r08.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r08.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r08.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r09",
+    "name": "ヒメベニテングタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "吐き気・弱体化・移動速度低下の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのヒメベニテングタケです。ゲーム内のレア度設定は★3。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：吐き気 レベル1・25秒、弱体化 レベル1・30秒、移動速度低下 レベル1・15秒。",
+      "満腹度の回復設定：1。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r09.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r09.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r09.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r10",
+    "name": "タマゴタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "再生の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのタマゴタケです。ゲーム内のレア度設定は★4。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：再生 レベル1・6秒。",
+      "満腹度の回復設定：6。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r10.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r10.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r10.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r11",
+    "name": "ベニテングタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "吐き気・弱体化の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのベニテングタケです。ゲーム内のレア度設定は★4。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：吐き気 レベル2・30秒、弱体化 レベル1・30秒。",
+      "追加効果は次の候補から重み付きで1つ抽選されます。",
+      "抽選候補：移動速度上昇 レベル1・20秒、跳躍力上昇 レベル1・15秒。",
+      "抽選候補：移動速度低下 レベル2・15秒、採掘速度低下 レベル1・20秒。",
+      "満腹度の回復設定：1。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r11.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r11.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r11.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r12",
+    "name": "ベニチャワンタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "衝撃吸収の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのベニチャワンタケです。ゲーム内のレア度設定は★4。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：衝撃吸収 レベル1・45秒。",
+      "満腹度の回復設定：2。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r12.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r12.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r12.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r13",
+    "name": "アカイカタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "吐き気の設定を持つキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのアカイカタケです。ゲーム内のレア度設定は★9。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：吐き気 レベル1・10秒。",
+      "半径18ブロック以内の対象Mobを、使用後0・3・6秒に粒子で示す設定です。プレイヤー・鑑定士などは対象外です。",
+      "満腹度の回復設定：0。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r13.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r13.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r13.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r14",
+    "name": "カエンタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "時間差で効果が現れるキノコ。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのカエンタケです。ゲーム内のレア度設定は★6。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "遅延効果：2秒後に致死毒 レベル2・25秒、弱体化 レベル2・90秒、採掘速度低下 レベル2・60秒、吐き気 レベル2・20秒。",
+      "満腹度の回復設定：0。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r14.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r14.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r14.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-r15",
+    "name": "オオミノアカヤマタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "使って消費せず、発見を記録する研究標本。",
+    "description": "赤色キノコの鑑定結果として登録されている、Mycologyのオオミノアカヤマタケです。ゲーム内のレア度設定は★10。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内では研究標本として定義されています。食べる・握り潰す操作はありません。",
+    "obtaining": "通常の赤色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "使用時の効果は設定されていません。研究ポイントの付与も現在は無効です。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-r15.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r15.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r15.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b01",
+    "name": "シイタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "耐性の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのシイタケです。ゲーム内のレア度設定は★1。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：耐性 レベル1・20秒。",
+      "満腹度の回復設定：3。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b01.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b01.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b01.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b02",
+    "name": "ブナシメジ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "使用時に特殊な効果を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのブナシメジです。ゲーム内のレア度設定は★1。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "満腹度の回復設定：4。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b02.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b02.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b02.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b03",
+    "name": "ヒラタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "採掘速度上昇の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのヒラタケです。ゲーム内のレア度設定は★1。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：採掘速度上昇 レベル1・35秒。",
+      "満腹度の回復設定：3。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b03.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b03.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b03.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b04",
+    "name": "マイタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "衝撃吸収の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのマイタケです。ゲーム内のレア度設定は★2。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：衝撃吸収 レベル1・30秒。",
+      "満腹度の回復設定：4。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b04.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b04.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b04.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b05",
+    "name": "ナメコ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "移動速度上昇の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのナメコです。ゲーム内のレア度設定は★2。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：移動速度上昇 レベル1・20秒。",
+      "満腹度の回復設定：3。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b05.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b05.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b05.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b06",
+    "name": "ホコリタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "握り潰して使う、胞子の効果を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのホコリタケです。ゲーム内のレア度設定は★2。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "手に持って使用すると握り潰す処理です。食べるアイテムではありません。クリエイティブ以外では1個消費します。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：吐き気 レベル1・3秒。",
+      "半径4ブロック以内の対象Mobに移動速度低下 レベル2・5秒。プレイヤー・鑑定士などは対象外です。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b06.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b06.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b06.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b07",
+    "name": "アカヤマドリ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "攻撃力上昇の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのアカヤマドリです。ゲーム内のレア度設定は★3。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：攻撃力上昇 レベル1・20秒。",
+      "満腹度の回復設定：6。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b07.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b07.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b07.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b08",
+    "name": "カキシメジ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "吐き気・毒・弱体化の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのカキシメジです。ゲーム内のレア度設定は★3。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：吐き気 レベル2・25秒、毒 レベル1・15秒、弱体化 レベル1・30秒。",
+      "満腹度の回復設定：1。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b08.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b08.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b08.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b09",
+    "name": "ドクヤマドリ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "吐き気・毒・移動速度低下の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのドクヤマドリです。ゲーム内のレア度設定は★4。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：吐き気 レベル2・30秒、毒 レベル2・25秒、移動速度低下 レベル1・20秒。",
+      "満腹度の回復設定：0。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b09.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b09.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b09.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b10",
+    "name": "ツキヨタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "暗視・毒・吐き気の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのツキヨタケです。ゲーム内のレア度設定は★4。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：暗視 レベル1・30秒、毒 レベル2・25秒、吐き気 レベル2・20秒。",
+      "満腹度の回復設定：0。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b10.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b10.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b10.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b11",
+    "name": "ニセクロハツ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "弱体化・移動速度低下・採掘速度低下・衰弱の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのニセクロハツです。ゲーム内のレア度設定は★5。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：弱体化 レベル3・60秒、移動速度低下 レベル2・40秒、採掘速度低下 レベル2・45秒、衰弱 レベル2・12秒。",
+      "満腹度の回復設定：0。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b11.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b11.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b11.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b12",
+    "name": "コウタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "暗視・移動速度上昇の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのコウタケです。ゲーム内のレア度設定は★6。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：暗視 レベル1・60秒、移動速度上昇 レベル1・20秒。",
+      "満腹度の回復設定：5。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b12.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b12.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b12.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b13",
+    "name": "マツタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "衝撃吸収・再生の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのマツタケです。ゲーム内のレア度設定は★7。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：衝撃吸収 レベル1・60秒、再生 レベル1・8秒。",
+      "満腹度の回復設定：7。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b13.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b13.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b13.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b14",
+    "name": "ヤマドリタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "再生・耐性の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのヤマドリタケです。ゲーム内のレア度設定は★9。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：再生 レベル2・8秒、耐性 レベル1・30秒。",
+      "満腹度の回復設定：8。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b14.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b14.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b14.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b15",
+    "name": "ムニンヒメサカズキタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "使って消費せず、発見を記録する研究標本。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのムニンヒメサカズキタケです。ゲーム内のレア度設定は★10。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内では研究標本として定義されています。食べる・握り潰す操作はありません。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "使用時の効果は設定されていません。研究ポイントの付与も現在は無効です。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b15.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b15.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b15.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b16",
+    "name": "ドクツルタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "時間差で効果が現れるキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのドクツルタケです。ゲーム内のレア度設定は★5。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "遅延効果：20秒後に致死毒 レベル2・35秒、弱体化 レベル2・90秒、吐き気 レベル2・20秒。",
+      "満腹度の回復設定：0。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b16.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b16.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b16.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b17",
+    "name": "アミガサタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "吐き気・移動速度低下の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのアミガサタケです。ゲーム内のレア度設定は★6。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：吐き気 レベル2・20秒、移動速度低下 レベル1・20秒。",
+      "満腹度の回復設定：1。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b17.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b17.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b17.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b18",
+    "name": "キヌガサタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "低速落下・衝撃吸収の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのキヌガサタケです。ゲーム内のレア度設定は★8。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：低速落下 レベル1・90秒、衝撃吸収 レベル1・30秒。",
+      "満腹度の回復設定：5。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b18.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b18.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b18.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b19",
+    "name": "クサウラベニタケ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "吐き気・毒・弱体化の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのクサウラベニタケです。ゲーム内のレア度設定は★2。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：吐き気 レベル2・30秒、毒 レベル1・12秒、弱体化 レベル1・30秒。",
+      "満腹度の回復設定：0。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b19.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b19.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b19.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-b20",
+    "name": "ウラベニホテイシメジ",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "耐性の設定を持つキノコ。",
+    "description": "茶色キノコの鑑定結果として登録されている、Mycologyのウラベニホテイシメジです。ゲーム内のレア度設定は★3。以下は現行コードの効果設定であり、本番での動作は未確認です。",
+    "usage": "ゲーム内で食べて使用する設定です。有利な効果だけでなく、不利な効果や体力消費も確認してから使ってください。",
+    "obtaining": "通常の茶色キノコを鑑定する抽選テーブルに含まれます。特定の種類を確定で入手できる方法は確認していません。",
+    "details": [
+      "基本効果：耐性 レベル1・20秒。",
+      "満腹度の回復設定：4。",
+      "使用後のクールダウン設定：4秒。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-b20.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b20.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b20.png"
+      ]
+    }
+  },
+  {
+    "id": "mushroom-field-guide",
+    "name": "キノコ図鑑",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "手元から、自分のキノコの発見記録を開く。",
+    "description": "Mycologyの図鑑を開くための本です。発見記録は本そのものではなくプレイヤーごとに管理されます。",
+    "usage": "手に持って使用すると図鑑を開く処理が登録されています。実際の画面表示は未確認です。",
+    "obtaining": "作業台で本・赤色キノコ・茶色キノコを各1個使う、配置自由のレシピがあります。",
+    "details": [
+      "最大スタック数の設定は1です。",
+      "未発見のキノコは名前を伏せて表示する構成です。"
+    ],
+    "image": {
+      "src": "/images/items/mushroom-field-guide.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology_tools/field_guide.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/field_guide.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/ui.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/mycology_field_guide.json",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology_tools/field_guide.png"
+      ]
+    }
+  },
+  {
+    "id": "xp-tank",
+    "name": "経験値タンク",
+    "kind": "item",
+    "contentId": "xp-storage",
+    "summary": "経験値をためる、ストレージの中心になるブロック。",
+    "description": "経験値を蓄積し、接続した配管やタンクへ受け渡す処理があります。現在はコードの確認のみで、本番の動作は未確認です。",
+    "usage": "コード上ではタンクの上でスニークすると経験値を預ける処理です。十分な残量があると、ガラス瓶の使用で経験値の瓶を作る処理もあります。",
+    "obtaining": "作業台用のレシピ定義があります。材料と配置は関連レシピを参照してください。",
+    "details": [
+      "経験値の増減を伴います。容量・転送量・回収時の損失がないことはゲーム内で未検証です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/blocks/xp_tank.json",
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/scripts/index.js",
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/recipes/xp_tank.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-xp-tank",
+    "name": "経験値タンクのレシピ",
+    "kind": "recipe",
+    "contentId": "xp-storage",
+    "summary": "配置を合わせて経験値タンクを1個作る設定。",
+    "description": "作業台用のレシピファイルから、材料・配置・完成数を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "材料を用意して作業台を使う設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "レシピの解放条件や本番での提供状況は別途確認が必要です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "エメラルド",
+          "エメラルド",
+          "エメラルド"
+        ],
+        [
+          "ガラス",
+          "ガラス",
+          "ガラス"
+        ],
+        [
+          "ガラス",
+          "ガラス",
+          "ガラス"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "エメラルド",
+          "count": 3
+        },
+        {
+          "name": "ガラス",
+          "count": 6
+        }
+      ],
+      "resultId": "xp-tank",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/recipes/xp_tank.json"
+      ]
+    }
+  },
+  {
+    "id": "xp-pipe",
+    "name": "経験値パイプ",
+    "kind": "item",
+    "contentId": "xp-storage",
+    "summary": "タンクや抽出器をつなぐ、経験値の通り道。",
+    "description": "経験値を表す要素を配管に沿って移動させるためのブロックです。現在はコードの確認のみで、本番の動作は未確認です。",
+    "usage": "タンクや抽出器などと組み合わせて配置します。接続方向と流れを制御する処理がありますが、実際の配置例は未確認です。",
+    "obtaining": "作業台用のレシピ定義があります。材料と配置は関連レシピを参照してください。",
+    "details": [
+      "経験値の増減を伴います。容量・転送量・回収時の損失がないことはゲーム内で未検証です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/blocks/xp_pipe.json",
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/scripts/index.js",
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/recipes/xp_pipe.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-xp-pipe",
+    "name": "経験値パイプのレシピ",
+    "kind": "recipe",
+    "contentId": "xp-storage",
+    "summary": "配置を合わせて経験値パイプを4個作る設定。",
+    "description": "作業台用のレシピファイルから、材料・配置・完成数を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "材料を用意して作業台を使う設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "レシピの解放条件や本番での提供状況は別途確認が必要です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "ガラス",
+          "ガラス"
+        ],
+        [
+          "ガラス",
+          "ガラス"
+        ],
+        [
+          "ガラス",
+          "ガラス"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "ガラス",
+          "count": 6
+        }
+      ],
+      "resultId": "xp-pipe",
+      "count": 4
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/recipes/xp_pipe.json"
+      ]
+    }
+  },
+  {
+    "id": "xp-valve",
+    "name": "経験値バルブ",
+    "kind": "item",
+    "contentId": "xp-storage",
+    "summary": "配管の流れを切り替えるための部品。",
+    "description": "隣接するパイプの流れを切り替える処理を持つブロックです。現在はコードの確認のみで、本番の動作は未確認です。",
+    "usage": "コード上ではバルブへの使用操作で開閉状態を切り替えます。向きに応じた隣接パイプにも状態を反映します。",
+    "obtaining": "作業台用のレシピ定義があります。材料と配置は関連レシピを参照してください。",
+    "details": [
+      "経験値の増減を伴います。容量・転送量・回収時の損失がないことはゲーム内で未検証です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/blocks/xp_valve.json",
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/scripts/index.js",
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/recipes/xp_valve.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-xp-valve",
+    "name": "経験値バルブのレシピ",
+    "kind": "recipe",
+    "contentId": "xp-storage",
+    "summary": "配置を合わせて経験値バルブを1個作る設定。",
+    "description": "作業台用のレシピファイルから、材料・配置・完成数を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "材料を用意して作業台を使う設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "レシピの解放条件や本番での提供状況は別途確認が必要です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "経験値パイプ",
+          "エメラルド"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "経験値パイプ",
+          "count": 1
+        },
+        {
+          "name": "エメラルド",
+          "count": 1
+        }
+      ],
+      "resultId": "xp-valve",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/recipes/xp_valve.json"
+      ]
+    }
+  },
+  {
+    "id": "xp-extractor",
+    "name": "経験値抽出器",
+    "kind": "item",
+    "contentId": "xp-storage",
+    "summary": "プレイヤーの経験値を配管側へ取り出す入口。",
+    "description": "スニーク中のプレイヤーから経験値を取り出す処理があるブロックです。現在はコードの確認のみで、本番の動作は未確認です。",
+    "usage": "コード上ではプレイヤーの位置にあるブロックが抽出器かを判定します。配管への取り付け方や実際の操作はゲーム内での確認が必要です。",
+    "obtaining": "作業台用のレシピ定義があります。材料と配置は関連レシピを参照してください。",
+    "details": [
+      "経験値の増減を伴います。容量・転送量・回収時の損失がないことはゲーム内で未検証です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/blocks/xp_extractor.json",
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/scripts/index.js",
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/recipes/xp_extractor.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-xp-extractor",
+    "name": "経験値抽出器のレシピ",
+    "kind": "recipe",
+    "contentId": "xp-storage",
+    "summary": "配置を合わせて経験値抽出器を1個作る設定。",
+    "description": "作業台用のレシピファイルから、材料・配置・完成数を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "材料を用意して作業台を使う設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "レシピの解放条件や本番での提供状況は別途確認が必要です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "エメラルド",
+          "エメラルド",
+          "エメラルド"
+        ],
+        [
+          "ガラス",
+          "経験値パイプ",
+          "ガラス"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "エメラルド",
+          "count": 3
+        },
+        {
+          "name": "ガラス",
+          "count": 2
+        },
+        {
+          "name": "経験値パイプ",
+          "count": 1
+        }
+      ],
+      "resultId": "xp-extractor",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/recipes/xp_extractor.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-mushroom-field-guide",
+    "name": "キノコ図鑑のレシピ",
+    "kind": "recipe",
+    "contentId": "mycology",
+    "summary": "配置自由でキノコ図鑑を1個作る設定。",
+    "description": "作業台用のレシピファイルから、材料・配置・完成数を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "材料を用意して作業台を使う設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "レシピの解放条件や本番での提供状況は別途確認が必要です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "本",
+          "count": 1
+        },
+        {
+          "name": "赤色キノコ",
+          "count": 1
+        },
+        {
+          "name": "茶色キノコ",
+          "count": 1
+        }
+      ],
+      "resultId": "mushroom-field-guide",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/mycology_field_guide.json"
+      ]
+    }
+  },
+  {
+    "id": "mushroom-appraisal",
+    "name": "キノコの鑑定",
+    "kind": "feature",
+    "contentId": "mycology",
+    "summary": "赤色・茶色のキノコを、種類ごとのキノコへ。",
+    "description": "鑑定士の画面で色を選び、最初の該当スタックをまとめて鑑定する処理です。別スロットの同じキノコは合算しません。鑑定後は結果と新規発見を確認する構成です。",
+    "usage": "実際の画面操作と本番での利用状況は未確認です。",
+    "obtaining": "Mycologyに含まれる機能です。鑑定士に会える場所は確認中です。",
+    "details": [],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/ui.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js"
+      ]
+    }
+  },
+  {
+    "id": "mushroom-discoveries",
+    "name": "キノコの発見記録",
+    "kind": "feature",
+    "contentId": "mycology",
+    "summary": "集めた種類を、自分だけの図鑑に記録。",
+    "description": "鑑定で見つけた種類をプレイヤーごとに保存します。発見済みの項目は名前とレア度を表示し、未発見の項目は伏せる構成です。図鑑の本を別の人に渡しても、記録を本で受け渡す仕組みではありません。",
+    "usage": "実際の画面操作と本番での利用状況は未確認です。",
+    "obtaining": "Mycologyに含まれる機能です。鑑定士に会える場所は確認中です。",
+    "details": [],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/progress.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/ui.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/field_guide.js"
+      ]
+    }
+  },
+  {
+    "id": "mushroom-use-modes",
+    "name": "キノコの使い分け",
+    "kind": "feature",
+    "contentId": "mycology",
+    "summary": "食べる・握り潰す・標本を区別しよう。",
+    "description": "Mycologyには食べて使うもの、握り潰して使うもの、使用しない研究標本があります。食べる設定でも不利な効果がある場合があります。図鑑で個別の設定を確認してください。",
+    "usage": "実際の画面操作と本番での利用状況は未確認です。",
+    "obtaining": "Mycologyに含まれる機能です。鑑定士に会える場所は確認中です。",
+    "details": [],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/ui.js"
+      ]
+    }
+  },
+  {
+    "id": "hawkbrand",
+    "name": "ホークブランド",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "Dungeonsの剣装備。",
+    "description": "剣として登録されたDungeonsの装備です。独自の振り動作や耐久値、修理材料の設定があります。クリティカルなどの実際の発動条件やダメージ量は未確認のため掲載していません。",
+    "usage": "個別の操作や特殊な効果は確認中です。原作と同じ性能とは断定していません。",
+    "obtaining": "クラフト・ドロップ・取引などの入手経路は確認中です。",
+    "details": [],
+    "image": {
+      "src": "/images/items/hawkbrand.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword_hawkbrand.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/hawkbrand.png"
+      ]
+    }
+  },
+  {
+    "id": "book-of-heroes",
+    "name": "英雄の書",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "Dungeonsの本アイテム。",
+    "description": "Dungeonsの本アイテムです。専用の使用コンポーネントと「読む」の操作表示が定義されています。表示内容とコレクション機能のゲーム内動作は確認中です。",
+    "usage": "個別の操作や特殊な効果は確認中です。原作と同じ性能とは断定していません。",
+    "obtaining": "クラフト・ドロップ・取引などの入手経路は確認中です。",
+    "details": [],
+    "image": {
+      "src": "/images/items/book-of-heroes.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/book_of_heroes.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/book_of_heroes.png"
+      ]
+    }
+  }
+]

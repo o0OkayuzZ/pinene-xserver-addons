@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { withBase } from '../../lib/data';
+import { entries } from '../../lib/guide';
+const items=entries.filter(entry=>entry.kind==='item').length;
+const features=entries.filter(entry=>entry.kind==='feature').length;
+const recipes=entries.filter(entry=>entry.kind==='recipe').length;
 ---
-<BaseLayout title="図鑑" current="database"><section class="page-hero"><div class="shell"><p class="eyebrow">THE FIELD GUIDE</p><h1>発見を、知識に。</h1><p class="lede">アイテム・Mob・レシピの図鑑は準備中です。</p></div></section><section class="section"><div class="shell database-grid">{[['items','アイテム','道具や装備、収集品を調べる。'],['mobs','Mob','冒険で出会う生き物を調べる。'],['recipes','レシピ','ものづくりの材料と手順を調べる。']].map(([id,name,description]) => <a class="panel" href={withBase(`/database/${id}/`)}><h2>{name} →</h2><p>{description}</p><span class="status">準備中</span></a>)}</div></section></BaseLayout>
+<BaseLayout title="図鑑" current="database"><section class="page-hero"><div class="shell"><p class="eyebrow">THE FIELD GUIDE</p><h1>発見を、知識に。</h1><p class="lede">道具の使い方から小さな機能まで。コードで確認できた情報を、ひとつずつ紹介します。</p></div></section><section class="section"><div class="shell database-grid">{[['items/','アイテム・ブロック','道具や設備、収集品の用途と設定を調べる。',items+'件を掲載'],['items/?kind=feature','小さな機能','鑑定や発見記録など、遊びを支える仕組み。',features+'件を掲載'],['recipes/','レシピ','ものづくりの材料と配置を調べる。',recipes+'件を掲載'],['mobs/','Mob','冒険で出会う生き物を調べる。','準備中']].map(([id,name,description,status])=><a class="panel" href={withBase('/database/'+id)}><h2>{name} →</h2><p>{description}</p><span class="status">{status}</span></a>)}</div></section></BaseLayout>

@@ -473,13 +473,67 @@
     {
       "id": "xp-storage",
       "name": "経験値ストレージ",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "systems",
+        "craft"
+      ],
+      "packBindings": [
+        {
+          "uuid": "a881d6c5-7cf5-4823-a26c-1766d70acd8c",
+          "roles": [
+            "runtime-script",
+            "recipe",
+            "behavior"
+          ]
+        },
+        {
+          "uuid": "8cdb9fd9-ee9c-4144-ad3a-175445d20b19",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "経験値をためて、配管でつなぐストレージ。",
+      "description": "経験値タンク、パイプ、バルブ、抽出器を組み合わせるコンテンツです。プレイヤーから経験値を預ける処理、配管で受け渡す処理、流れを切り替える処理を確認しています。本番での動作や経験値の収支は未検証です。",
+      "image": {
+        "src": "/images/xp-storage.svg",
+        "alt": "経験値タンクと配管の仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "タンクに経験値を保管する仕組み",
+        "パイプとバルブによる接続・流れの切り替え",
+        "4種類のブロックに作業台レシピを定義"
+      ],
+      "guide": "各ブロックの説明とレシピを図鑑にまとめています。実際の設置や操作、経験値が失われないことの確認は未実施です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/manifest.json",
+          "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/scripts/index.js"
+        ]
+      }
     },
     {
       "id": "inaka-furniture",

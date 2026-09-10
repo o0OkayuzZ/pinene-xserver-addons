@@ -1,6 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { projectPublicData } from '../src/lib/public-data.mjs';
+import './validate-guide.mjs';
 const read = name => JSON.parse(readFileSync(new URL('../src/data/' + name, import.meta.url), 'utf8'));
 const { contents } = read('content-registry.json');
 const { packs } = read('pack-registry.json');

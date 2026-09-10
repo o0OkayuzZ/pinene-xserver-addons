@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
+import catalogue from '../src/data/content-registry.json' with { type: 'json' };
+const publicCount = catalogue.contents.filter(c => c.visibility === 'public').length;
 const base = '/pinene-xserver-addons/';
 test('home layout, images, keyboard and navigation', async ({ page }, testInfo) => {
  const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
@@ -34,7 +36,7 @@ test('category deep links, search, zero results and reset', async ({ page }, tes
  await expect(page.locator('[data-content-card]:visible')).toHaveCount(0);
  await expect(page.getByRole('heading',{name:'該当するコンテンツはありません'})).toBeVisible();
  await page.getByRole('button',{name:'条件をリセット'}).click();
- await expect(search).toBeFocused(); await expect(page.locator('[data-content-card]:visible')).toHaveCount(4);
+ await expect(search).toBeFocused(); await expect(page.locator('[data-content-card]:visible')).toHaveCount(publicCount);
  await page.getByRole('button',{name:'音楽',exact:true}).click();
  await expect(page.locator('[data-content-card]:visible')).toHaveCount(0);
  await page.getByRole('button',{name:'条件をリセット'}).click();
@@ -79,4 +81,3 @@ test('missing images retain an explicit fallback', async ({ page }) => {
  await card.scrollIntoViewIfNeeded();
  await expect(card.locator('.card-image')).toHaveClass(/image-unavailable/);
 });
-
