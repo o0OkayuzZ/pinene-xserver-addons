@@ -2,6 +2,8 @@
 
 Astro + TypeScriptによる、PINE SERVERのコンテンツ紹介サイトです。現行mainにwebsite/がなかったため、引き継ぎZIP v0.2のstarter/website/を土台として更新しました。
 
+公開先: https://o0okayuzz.github.io/pinene-xserver-addons/ 。ユーザーの公開承認を受けて、生成物専用の `gh-pages` ブランチをGitHub Pagesの公開元に設定しました。[公開記録](PUBLISH_REPORT.md)を参照してください。
+
 現在はアイテム・ブロック91件、レシピ47件、小さな機能9件、合計147件を掲載しています。最新の追加内容と検証は [FOOD_TRAVEL_REPORT.md](FOOD_TRAVEL_REPORT.md) を参照してください。
 
 ## 起動・検証
@@ -47,6 +49,6 @@ Astro 7のCLIはエージェント環境でpreviewを自動的にバックグラ
 
 public/images/直下のSVGは今回制作した独自の仮イラストで、実際のゲーム画面ではありません。参考モックやMinecraft公式素材のコピーではありません。OG画像は `node scripts/render-og.mjs` で独自SVGとHTML文字をブラウザ描画したものです。独自の木アイコン以外は画面上にも仮素材表示があります。外部フォント・外部画像リクエストはありません。
 
-静的生成物はdist/です。baseは既存repo名の `/pinene-xserver-addons`、siteはURL生成用の想定値です。公開URLの稼働を確認したという意味ではありません。Pages/CI workflowは追加していません。本番公開には別途レビューが必要です。
+静的生成物はdist/です。baseは `/pinene-xserver-addons`。GitHub Pagesは `gh-pages` ブランチ直下の生成物を配信します。ソースブランチへのpushだけでは公開サイトは更新されません。更新時は検証・ビルド・出力監査を行い、生成物を公開ブランチへ反映します。mainへの直接pushやPRの自動mergeは必要ありません。
 
 画面と検証結果は [IMPLEMENTATION_REPORT.md](IMPLEMENTATION_REPORT.md) を参照してください。
