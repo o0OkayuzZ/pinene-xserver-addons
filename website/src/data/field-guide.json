@@ -1626,5 +1626,1600 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/book_of_heroes.png"
       ]
     }
+  },
+  {
+    "id": "food-astew",
+    "name": "リンゴシチュー",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "満腹度を回復する食料。追加の基本効果はありません。",
+    "description": "Golden Foodsのリンゴシチューです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時の使用を許可する設定にはなっていません。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：4。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "この食事処理で付与する基本効果はありません。",
+      "使い終わるとボウルに変わる設定です。"
+    ],
+    "image": {
+      "src": "/images/items/food-astew.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/astew.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/astew.png"
+      ]
+    }
+  },
+  {
+    "id": "food-baked-golden-potato",
+    "name": "ベイクド金ジャガイモ",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "採掘速度上昇・移動速度上昇の基本効果を持つ食料。",
+    "description": "Golden Foodsのベイクド金ジャガイモです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：10。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：採掘速度上昇 レベル1・180秒。",
+      "基本効果：移動速度上昇 レベル1・180秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-baked-golden-potato.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/baked_golden_potato.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/baked_golden_potato.png"
+      ]
+    }
+  },
+  {
+    "id": "food-egbread",
+    "name": "エンチャントされた金のパン",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "再生・移動速度上昇・採掘速度上昇の基本効果を持つ食料。",
+    "description": "Golden Foodsのエンチャントされた金のパンです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：20。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：再生 レベル2・30秒。",
+      "基本効果：移動速度上昇 レベル2・180秒。",
+      "基本効果：採掘速度上昇 レベル2・180秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-egbread.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egbread.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_bread.png"
+      ]
+    }
+  },
+  {
+    "id": "food-egmbucket",
+    "name": "エンチャントされた金のミルク",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "再生・衝撃吸収の基本効果を持つ食料。",
+    "description": "Golden Foodsのエンチャントされた金のミルクです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って飲む設定です。満腹時にも使用できる設定があります。通常の牛乳と同じ状態異常解除は、この食事処理にはありません。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：8。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：再生 レベル2・20秒。",
+      "基本効果：衝撃吸収 レベル2・180秒。",
+      "使い終わるとバケツに変わる設定です。"
+    ],
+    "image": {
+      "src": "/images/items/food-egmbucket.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egmbucket.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/gmbucket.png"
+      ]
+    }
+  },
+  {
+    "id": "food-enchanted-baked-golden-potato",
+    "name": "エンチャントされたベイクド金ジャガイモ",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "採掘速度上昇・移動速度上昇の基本効果を持つ食料。",
+    "description": "Golden Foodsのエンチャントされたベイクド金ジャガイモです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：20。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：採掘速度上昇 レベル2・300秒。",
+      "基本効果：移動速度上昇 レベル1・300秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-enchanted-baked-golden-potato.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_baked_golden_potato.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/baked_golden_potato.png"
+      ]
+    }
+  },
+  {
+    "id": "food-enchanted-glistering-melon-slice",
+    "name": "エンチャントされたきらめくスイカの薄切り",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "火炎耐性・移動速度上昇の基本効果を持つ食料。",
+    "description": "Golden Foodsのエンチャントされたきらめくスイカの薄切りです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：12。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：火炎耐性 レベル1・300秒。",
+      "基本効果：移動速度上昇 レベル1・300秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-enchanted-glistering-melon-slice.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_glistering_melon_slice.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/glistering_melon_slice.png"
+      ]
+    }
+  },
+  {
+    "id": "food-enchanted-golden-beetroot",
+    "name": "エンチャントされた金のビートルート",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "移動速度上昇・採掘速度上昇・再生の基本効果を持つ食料。",
+    "description": "Golden Foodsのエンチャントされた金のビートルートです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：12。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：移動速度上昇 レベル2・240秒。",
+      "基本効果：採掘速度上昇 レベル2・240秒。",
+      "基本効果：再生 レベル1・240秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-enchanted-golden-beetroot.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_golden_beetroot.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_beetroot.png"
+      ]
+    }
+  },
+  {
+    "id": "food-enchanted-golden-carrot",
+    "name": "エンチャントされた金のニンジン",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "暗視の基本効果を持つ食料。",
+    "description": "Golden Foodsのエンチャントされた金のニンジンです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：6。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：暗視 レベル1・480秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-enchanted-golden-carrot.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_golden_carrot.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_carrot.png"
+      ]
+    }
+  },
+  {
+    "id": "food-enchanted-golden-poisonous-potato",
+    "name": "エンチャントされた金の毒ジャガイモ",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "満腹度を回復する食料。追加の基本効果はありません。",
+    "description": "Golden Foodsのエンチャントされた金の毒ジャガイモです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：8。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "この食事処理で付与する基本効果はありません。"
+    ],
+    "image": {
+      "src": "/images/items/food-enchanted-golden-poisonous-potato.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_golden_poisonous_potato.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_poisonous_potato.png"
+      ]
+    }
+  },
+  {
+    "id": "food-enchanted-golden-pumpkin-pie",
+    "name": "エンチャントされた金のパンプキンパイ",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "耐性・衝撃吸収・再生の基本効果を持つ食料。",
+    "description": "Golden Foodsのエンチャントされた金のパンプキンパイです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：20。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：耐性 レベル2・300秒。",
+      "基本効果：衝撃吸収 レベル4・180秒。",
+      "基本効果：再生 レベル2・30秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-enchanted-golden-pumpkin-pie.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_golden_pumpkin_pie.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_pumpkin_pie.png"
+      ]
+    }
+  },
+  {
+    "id": "food-estew",
+    "name": "エンチャントされた金のリンゴシチュー",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "再生・衝撃吸収の基本効果を持つ食料。",
+    "description": "Golden Foodsのエンチャントされた金のリンゴシチューです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：16。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：再生 レベル2・30秒。",
+      "基本効果：衝撃吸収 レベル2・120秒。",
+      "使い終わるとボウルに変わる設定です。"
+    ],
+    "image": {
+      "src": "/images/items/food-estew.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/estew.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/gstew.png"
+      ]
+    }
+  },
+  {
+    "id": "food-gbread",
+    "name": "金のパン",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "再生・移動速度上昇・採掘速度上昇の基本効果を持つ食料。",
+    "description": "Golden Foodsの金のパンです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：10。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：再生 レベル2・15秒。",
+      "基本効果：移動速度上昇 レベル1・90秒。",
+      "基本効果：採掘速度上昇 レベル1・90秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-gbread.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/gbread.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_bread.png"
+      ]
+    }
+  },
+  {
+    "id": "food-gmbucket",
+    "name": "金のミルク",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "再生・衝撃吸収の基本効果を持つ食料。",
+    "description": "Golden Foodsの金のミルクです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って飲む設定です。満腹時にも使用できる設定があります。通常の牛乳と同じ状態異常解除は、この食事処理にはありません。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：4。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：再生 レベル1・10秒。",
+      "基本効果：衝撃吸収 レベル1・120秒。",
+      "使い終わるとバケツに変わる設定です。"
+    ],
+    "image": {
+      "src": "/images/items/food-gmbucket.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/gmbucket.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/gmbucket.png"
+      ]
+    }
+  },
+  {
+    "id": "food-golden-beetroot",
+    "name": "金のビートルート",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "移動速度上昇・採掘速度上昇・再生の基本効果を持つ食料。",
+    "description": "Golden Foodsの金のビートルートです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：6。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：移動速度上昇 レベル1・120秒。",
+      "基本効果：採掘速度上昇 レベル1・120秒。",
+      "基本効果：再生 レベル1・10秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-golden-beetroot.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_beetroot.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_beetroot.png"
+      ]
+    }
+  },
+  {
+    "id": "food-golden-poisonous-potato",
+    "name": "金の毒ジャガイモ",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "衝撃吸収の基本効果を持つ食料。",
+    "description": "Golden Foodsの金の毒ジャガイモです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：4。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：衝撃吸収 レベル1・120秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-golden-poisonous-potato.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_poisonous_potato.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_poisonous_potato.png"
+      ]
+    }
+  },
+  {
+    "id": "food-golden-potato",
+    "name": "金のジャガイモ",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "満腹度を回復する食料。追加の基本効果はありません。",
+    "description": "Golden Foodsの金のジャガイモです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時の使用を許可する設定にはなっていません。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：1。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "この食事処理で付与する基本効果はありません。"
+    ],
+    "image": {
+      "src": "/images/items/food-golden-potato.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_potato.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_potato.png"
+      ]
+    }
+  },
+  {
+    "id": "food-golden-pumpkin-pie",
+    "name": "金のパンプキンパイ",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "耐性・再生・衝撃吸収の基本効果を持つ食料。",
+    "description": "Golden Foodsの金のパンプキンパイです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：12。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：耐性 レベル1・120秒。",
+      "基本効果：再生 レベル2・10秒。",
+      "基本効果：衝撃吸収 レベル2・120秒。"
+    ],
+    "image": {
+      "src": "/images/items/food-golden-pumpkin-pie.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_pumpkin_pie.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/golden_pumpkin_pie.png"
+      ]
+    }
+  },
+  {
+    "id": "food-gstew",
+    "name": "金のリンゴシチュー",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "再生の基本効果を持つ食料。",
+    "description": "Golden Foodsの金のリンゴシチューです。個別の食料定義と食べたときの処理を照合し、有効な基本効果を記載しています。効果を強く重ねることを保証するものではありません。",
+    "usage": "手に持って食べる設定です。満腹時にも使用できる設定があります。",
+    "obtaining": "入手経路はアイテムごとに確認中です。関連レシピが掲載されているものは、その材料と配置を参照してください。",
+    "details": [
+      "満腹度の回復設定：8。",
+      "食事の数値は現行コードの設定です。暫定値を含み、本番での回復量を測定した結果ではありません。",
+      "基本効果：再生 レベル2・15秒。",
+      "使い終わるとボウルに変わる設定です。"
+    ],
+    "image": {
+      "src": "/images/items/food-gstew.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/gstew.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/data.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/capabilities.js",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/gstew.png"
+      ]
+    }
+  },
+  {
+    "id": "golden-food-guide",
+    "name": "金食料図鑑",
+    "kind": "item",
+    "contentId": "golden-foods",
+    "summary": "金の食料の設定を、ゲーム内で読み返すための本。",
+    "description": "使用すると金食料図鑑の画面を開く処理があります。Webの図鑑とは別に、ゲーム内で食料を選んで情報を見る構成です。",
+    "usage": "手に持って使用する設定です。画面の実際の表示・操作は未確認です。",
+    "obtaining": "作業台用のレシピ定義があります。詳しい入手手順は確認中です。",
+    "details": [
+      "図鑑を開く処理は食事処理とは別に登録されています。",
+      "アイテム自体に食料コンポーネントはありません。"
+    ],
+    "image": {
+      "src": "/images/items/golden-food-guide.png",
+      "alt": "パック内のアイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_food_guide.json",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/guide.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_food_guide.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/item_texture.json",
+        "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/textures/pinene_golden_foods/guide.png"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-helmet",
+    "name": "デスネライトのヘルメット",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "頭に装備する、デスネライトの防具。",
+    "description": "Deathneriteに含まれるデスネライトのヘルメットです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "頭の防具スロットに装備する設定です。防御値・耐久値は下記を参照してください。特殊能力のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「ネザライトのヘルメット」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：488。",
+      "防御値の設定：4。実際の軽減率や他の効果を含めた耐久性は未確認です。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/armor/deathnerite_helmet.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-chestplate",
+    "name": "デスネライトのチェストプレート",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "胴に装備する、デスネライトの防具。",
+    "description": "Deathneriteに含まれるデスネライトのチェストプレートです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "胴の防具スロットに装備する設定です。防御値・耐久値は下記を参照してください。特殊能力のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「ネザライトのチェストプレート」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：710。",
+      "防御値の設定：9。実際の軽減率や他の効果を含めた耐久性は未確認です。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/armor/deathnerite_chestplate.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-leggings",
+    "name": "デスネライトのレギンス",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "脚に装備する、デスネライトの防具。",
+    "description": "Deathneriteに含まれるデスネライトのレギンスです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "脚の防具スロットに装備する設定です。防御値・耐久値は下記を参照してください。特殊能力のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「ネザライトのレギンス」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：662。",
+      "防御値の設定：7。実際の軽減率や他の効果を含めた耐久性は未確認です。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/armor/deathnerite_leggings.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-boots",
+    "name": "デスネライトのブーツ",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "足に装備する、デスネライトの防具。",
+    "description": "Deathneriteに含まれるデスネライトのブーツです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "足の防具スロットに装備する設定です。防御値・耐久値は下記を参照してください。特殊能力のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「ネザライトのブーツ」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：577。",
+      "防御値の設定：4。実際の軽減率や他の効果を含めた耐久性は未確認です。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/armor/deathnerite_boots.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-sword",
+    "name": "デスネライトの剣",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "手に持って攻撃に使う剣です。",
+    "description": "Deathneriteに含まれるデスネライトの剣です。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "手に持って攻撃に使う剣です。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「ネザライトの剣」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：2437。",
+      "アイテムのダメージ設定値：9。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/tools/deathnerite_sword.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-pickaxe",
+    "name": "デスネライトのツルハシ",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "石や鉱石などの採掘向けに定義されたツルハシです。",
+    "description": "Deathneriteに含まれるデスネライトのツルハシです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "石や鉱石などの採掘向けに定義されたツルハシです。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「ネザライトのツルハシ」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：2031。",
+      "アイテムのダメージ設定値：7。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/tools/deathnerite_pickaxe.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-axe",
+    "name": "デスネライトの斧",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "木材などの伐採向けに定義された斧です。",
+    "description": "Deathneriteに含まれるデスネライトの斧です。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "木材などの伐採向けに定義された斧です。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「ネザライトの斧」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：2437。",
+      "アイテムのダメージ設定値：8。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/tools/deathnerite_axe.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-shovel",
+    "name": "デスネライトのシャベル",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "土などを掘る道具として定義されたシャベルです。",
+    "description": "Deathneriteに含まれるデスネライトのシャベルです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "土などを掘る道具として定義されたシャベルです。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「ネザライトのシャベル」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：2437。",
+      "アイテムのダメージ設定値：6。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/tools/deathnerite_shovel.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-hoe",
+    "name": "デスネライトのクワ",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "耕作向けに定義されたクワです。",
+    "description": "Deathneriteに含まれるデスネライトのクワです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "耕作向けに定義されたクワです。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「ネザライトのクワ」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：2437。",
+      "アイテムのダメージ設定値：7。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/tools/deathnerite_hoe.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "parcanite-helmet",
+    "name": "パーカナイトのヘルメット",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "頭に装備する、パーカナイトの防具。",
+    "description": "Deathneriteに含まれるパーカナイトのヘルメットです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "頭の防具スロットに装備する設定です。防御値・耐久値は下記を参照してください。特殊能力のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「パーカナイト強化」・ベース「デスネライトのヘルメット」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：976。",
+      "防御値の設定：6。実際の軽減率や他の効果を含めた耐久性は未確認です。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/armor/parcanite_helmet.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "parcanite-chestplate",
+    "name": "パーカナイトのチェストプレート",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "胴に装備する、パーカナイトの防具。",
+    "description": "Deathneriteに含まれるパーカナイトのチェストプレートです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "胴の防具スロットに装備する設定です。防御値・耐久値は下記を参照してください。特殊能力のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「パーカナイト強化」・ベース「デスネライトのチェストプレート」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：1420。",
+      "防御値の設定：11。実際の軽減率や他の効果を含めた耐久性は未確認です。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/armor/parcanite_chestplate.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "parcanite-leggings",
+    "name": "パーカナイトのレギンス",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "脚に装備する、パーカナイトの防具。",
+    "description": "Deathneriteに含まれるパーカナイトのレギンスです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "脚の防具スロットに装備する設定です。防御値・耐久値は下記を参照してください。特殊能力のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「パーカナイト強化」・ベース「デスネライトのレギンス」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：1324。",
+      "防御値の設定：9。実際の軽減率や他の効果を含めた耐久性は未確認です。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/armor/parcanite_leggings.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "parcanite-boots",
+    "name": "パーカナイトのブーツ",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "足に装備する、パーカナイトの防具。",
+    "description": "Deathneriteに含まれるパーカナイトのブーツです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "足の防具スロットに装備する設定です。防御値・耐久値は下記を参照してください。特殊能力のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「パーカナイト強化」・ベース「デスネライトのブーツ」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：1154。",
+      "防御値の設定：6。実際の軽減率や他の効果を含めた耐久性は未確認です。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/armor/parcanite_boots.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "parcanite-sword",
+    "name": "パーカナイトの剣",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "手に持って攻撃に使う剣です。",
+    "description": "Deathneriteに含まれるパーカナイトの剣です。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "手に持って攻撃に使う剣です。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「パーカナイト強化」・ベース「デスネライトの剣」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：3633。",
+      "アイテムのダメージ設定値：11。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/tools/parcanite_sword.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "parcanite-pickaxe",
+    "name": "パーカナイトのツルハシ",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "石や鉱石などの採掘向けに定義されたツルハシです。",
+    "description": "Deathneriteに含まれるパーカナイトのツルハシです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "石や鉱石などの採掘向けに定義されたツルハシです。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「パーカナイト強化」・ベース「デスネライトのツルハシ」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：3633。",
+      "アイテムのダメージ設定値：9。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/tools/parcanite_pickaxe.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "parcanite-axe",
+    "name": "パーカナイトの斧",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "木材などの伐採向けに定義された斧です。",
+    "description": "Deathneriteに含まれるパーカナイトの斧です。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "木材などの伐採向けに定義された斧です。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「パーカナイト強化」・ベース「デスネライトの斧」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：3633。",
+      "アイテムのダメージ設定値：10。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/tools/parcanite_axe.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "parcanite-shovel",
+    "name": "パーカナイトのシャベル",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "土などを掘る道具として定義されたシャベルです。",
+    "description": "Deathneriteに含まれるパーカナイトのシャベルです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "土などを掘る道具として定義されたシャベルです。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「パーカナイト強化」・ベース「デスネライトのシャベル」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：3633。",
+      "アイテムのダメージ設定値：8。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/tools/parcanite_shovel.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "parcanite-hoe",
+    "name": "パーカナイトのクワ",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "耕作向けに定義されたクワです。",
+    "description": "Deathneriteに含まれるパーカナイトのクワです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "耕作向けに定義されたクワです。採掘速度や特殊なブロック操作のゲーム内動作は確認中です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「パーカナイト強化」・ベース「デスネライトのクワ」・追加素材「デスネライトインゴット」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [
+      "耐久値の設定：3633。",
+      "アイテムのダメージ設定値：9。実際の攻撃ダメージは対象・装備・効果などで変わるため、この値と同じとは限りません。",
+      "最大スタック数の設定：1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/tools/parcanite_scythe.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "deathnerite-ingot",
+    "name": "デスネライトインゴット",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "デスネライトの装備を作るための素材。",
+    "description": "Deathneriteに含まれるデスネライトインゴットです。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "装備の作業台レシピや、高度な鍛冶台の強化材料として使う設定があります。",
+    "obtaining": "作業台のレシピや専用の強化経路は、確認できたものから掲載します。",
+    "details": [],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/deathnerite_ingot.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "darkness-upgrade-smithing-template",
+    "name": "パーカナイト強化",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "パーカナイトへの強化に使う鍛冶素材。",
+    "description": "Deathneriteに含まれるパーカナイト強化です。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "パーカナイト装備の作業台レシピや、高度な鍛冶台のテンプレート欄で使う設定です。",
+    "obtaining": "高度な鍛冶台のコードでは、型「ネザライト強化用の鍛冶型」・ベース「デスネライトインゴット」・追加素材「残響の欠片」の組み合わせで作る設定があります。作業台レシピとは別の経路です。ゲーム内の変換は未確認です。",
+    "details": [],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/darkness_upgrade_smithing_template.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/textures/item_texture.json"
+      ]
+    }
+  },
+  {
+    "id": "special-smithing-table",
+    "name": "高度な鍛冶台",
+    "kind": "item",
+    "contentId": "deathnerite",
+    "summary": "型・元の装備・追加素材を組み合わせる専用の鍛冶台。",
+    "description": "Deathneriteに含まれる高度な鍛冶台です。個別定義で確認できた用途と設定を紹介しています。装備一式の性能や追加効果がすべて動作することを確認したものではありません。",
+    "usage": "設置後、専用インベントリの型・ベース・追加素材の欄を使う処理があります。対応する組み合わせでは各材料を1個ずつ消費し、結果を1個作る構成です。画面と実際の変換は未確認です。",
+    "obtaining": "作業台で鍛冶台・金インゴット・ネザライトインゴットを組み合わせる、配置自由のレシピがあります。",
+    "details": [],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/special_smithing_table_item.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js",
+        "resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3/texts/ja_JP.lang",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/special_smithing_table.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-gbread",
+    "name": "金のパンのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせて金のパンを作る設定。",
+    "description": "作業台用のレシピ定義から材料と完成品を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "作業台で材料を組み合わせる設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "材料の入手方法と、本番でのレシピ解放は確認中です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金の小麦",
+          "金の小麦",
+          "金の小麦"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金の小麦",
+          "count": 3
+        }
+      ],
+      "resultId": "food-gbread",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/gbread.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-egbread",
+    "name": "エンチャントされた金のパンのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせてエンチャントされた金のパンを作る設定。",
+    "description": "作業台用のレシピ定義から材料と完成品を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "作業台で材料を組み合わせる設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "材料の入手方法と、本番でのレシピ解放は確認中です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金のパン",
+          "金ブロック"
+        ],
+        [
+          "金ブロック",
+          "金ブロック",
+          "金ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金ブロック",
+          "count": 8
+        },
+        {
+          "name": "金のパン",
+          "count": 1
+        }
+      ],
+      "resultId": "food-egbread",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_enchanted_bread.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-food-golden-beetroot",
+    "name": "金のビートルートのレシピ",
+    "kind": "recipe",
+    "contentId": "golden-foods",
+    "summary": "配置を合わせて金のビートルートを作る設定。",
+    "description": "作業台用のレシピ定義から材料と完成品を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "作業台で材料を組み合わせる設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "材料の入手方法と、本番でのレシピ解放は確認中です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "ビートルート",
+          "金インゴット"
+        ],
+        [
+          "金インゴット",
+          "金インゴット",
+          "金インゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金インゴット",
+          "count": 8
+        },
+        {
+          "name": "ビートルート",
+          "count": 1
+        }
+      ],
+      "resultId": "food-golden-beetroot",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/recipes/golden_foods_golden_beetroot.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-deathnerite-sword",
+    "name": "デスネライトの剣のレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置を合わせてデスネライトの剣を作る設定。",
+    "description": "作業台用のレシピ定義から材料と完成品を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "作業台で材料を組み合わせる設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "材料の入手方法と、本番でのレシピ解放は確認中です。",
+    "details": [
+      "元のレシピでは完成数の指定が省略されています。ここでは既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "デスネライトインゴット"
+        ],
+        [
+          "デスネライトインゴット"
+        ],
+        [
+          "棒"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "デスネライトインゴット",
+          "count": 2
+        },
+        {
+          "name": "棒",
+          "count": 1
+        }
+      ],
+      "resultId": "deathnerite-sword",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/deathnerite_sword.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-parcanite-sword",
+    "name": "パーカナイトの剣のレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置自由でパーカナイトの剣を作る設定。",
+    "description": "作業台用のレシピ定義から材料と完成品を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "作業台で材料を組み合わせる設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "材料の入手方法と、本番でのレシピ解放は確認中です。",
+    "details": [
+      "元のレシピでは完成数の指定が省略されています。ここでは既定の1個として表示しています。",
+      "この作業台レシピの追加材料はネザライトインゴットです。高度な鍛冶台の強化処理ではデスネライトインゴットを使う別の組み合わせです。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "デスネライトの剣",
+          "count": 1
+        },
+        {
+          "name": "パーカナイト強化",
+          "count": 1
+        },
+        {
+          "name": "ネザライトインゴット",
+          "count": 1
+        }
+      ],
+      "resultId": "parcanite-sword",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/equipment/parcanite_sword.json"
+      ]
+    }
+  },
+  {
+    "id": "craft-special-smithing-table",
+    "name": "高度な鍛冶台のレシピ",
+    "kind": "recipe",
+    "contentId": "deathnerite",
+    "summary": "配置自由で高度な鍛冶台を作る設定。",
+    "description": "作業台用のレシピ定義から材料と完成品を確認しています。ゲーム内のクラフト動作は未確認です。",
+    "usage": "作業台で材料を組み合わせる設定です。配置指定がある場合は下の表を参照してください。",
+    "obtaining": "材料の入手方法と、本番でのレシピ解放は確認中です。",
+    "details": [
+      "元のレシピでは完成数の指定が省略されています。ここでは既定の1個として表示しています。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "鍛冶台",
+          "count": 1
+        },
+        {
+          "name": "金インゴット",
+          "count": 1
+        },
+        {
+          "name": "ネザライトインゴット",
+          "count": 1
+        }
+      ],
+      "resultId": "special-smithing-table",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/recipes/deathnerite_recipe/special_smithing_table.json"
+      ]
+    }
+  },
+  {
+    "id": "golden-food-effect-priority",
+    "name": "食事効果の優先ルール",
+    "kind": "feature",
+    "contentId": "golden-foods",
+    "summary": "食べ直しても、強い効果を弱い効果で上書きしない。",
+    "description": "Golden Foodsの基本効果では、すでに同じ種類の強い効果がある場合、その効果を優先する処理です。同じ強さでも、現在の残り時間が新しい食事効果以上なら変更しません。",
+    "usage": "食事時に適用される判定です。別のポーションやビーコンなどとの実際の組み合わせは未検証です。",
+    "obtaining": "専用操作や追加アイテムの入手は不要な、食事処理の一部です。",
+    "details": [
+      "効果の強さや時間を加算して増幅する仕組みではありません。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/core.js",
+        "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/scripts/golden_foods/main.js"
+      ]
+    }
+  },
+  {
+    "id": "special-smithing-process",
+    "name": "高度な鍛冶台での強化",
+    "kind": "feature",
+    "contentId": "deathnerite",
+    "summary": "型・元の装備・追加素材の3つを照合して強化。",
+    "description": "専用鍛冶台の処理では3種類の入力を組み合わせ、登録された強化先を作ります。材料を各1個消費して、完成品を1個出力する構成です。通常の作業台レシピとは材料が異なる場合があります。",
+    "usage": "対応する組み合わせを各アイテムの入手方法で確認してください。インベントリの実際の操作と引き継がれる装備情報は未検証です。",
+    "obtaining": "高度な鍛冶台の設置・使用を前提にした機能です。設置用アイテムには作業台レシピがあります。",
+    "details": [],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+        "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/SmithingRecipes.js"
+      ]
+    }
   }
 ]

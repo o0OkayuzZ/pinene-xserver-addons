@@ -385,13 +385,66 @@
     {
       "id": "golden-foods",
       "name": "Golden Foods",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "craft",
+        "systems"
+      ],
+      "packBindings": [
+        {
+          "uuid": "ef6e99cf-077d-4b55-9e11-f86bb9e66880",
+          "roles": [
+            "item-definition",
+            "runtime-script",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "608f921e-6be8-4a27-85d6-27945fa3a1ef",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "食事と基本効果で、冒険の準備を整える。",
+      "description": "金のパンや野菜、シチュー、ミルクなどを扱うコンテンツです。食事による回復と基本効果、ゲーム内図鑑の処理を確認しています。無効な追加能力や構想段階の機能は、使えるものとして紹介していません。",
+      "image": {
+        "src": "/images/golden-foods.svg",
+        "alt": "Golden Foodsの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "食料ごとに異なる満腹度と基本効果",
+        "ゲーム内で食料の説明を読む図鑑",
+        "強い既存効果を優先する食事処理"
+      ],
+      "guide": "関連アイテムの図鑑で、用途・使い方・確認できた入手経路を紹介しています。本番での入手、使用、表示は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json"
+        ]
+      }
     },
     {
       "id": "pancakes",
@@ -407,13 +460,66 @@
     {
       "id": "deathnerite",
       "name": "Deathnerite",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "combat",
+        "craft"
+      ],
+      "packBindings": [
+        {
+          "uuid": "90f045c3-0718-4981-a1ff-180976002a93",
+          "roles": [
+            "item-definition",
+            "runtime-script",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "6fefc83a-06f8-4d96-95d5-cd31718851d3",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "素材を集め、道具と防具を次の段階へ。",
+      "description": "デスネライトとパーカナイトの道具・防具、素材、専用の鍛冶台を扱うコンテンツです。個別装備の設定と作業台・専用鍛冶台の強化経路を区別して紹介します。特殊能力やゲーム内の変換は未確認です。",
+      "image": {
+        "src": "/images/deathnerite.svg",
+        "alt": "Deathneriteの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "道具・防具ごとの耐久値と基本設定",
+        "作業台のレシピと専用鍛冶台の強化",
+        "用途を確認できた素材と設置用アイテム"
+      ],
+      "guide": "関連アイテムの図鑑で、用途・使い方・確認できた入手経路を紹介しています。本番での入手、使用、表示は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json"
+        ]
+      }
     },
     {
       "id": "pinenite",

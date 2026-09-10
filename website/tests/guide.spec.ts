@@ -12,7 +12,7 @@ test('guide search, owner/kind filters, reset and detail links',async({page},inf
  await expect(page.getByLabel('名前・説明を検索')).toBeFocused();
  await expect(page.locator('[data-guide-entry]:visible')).toHaveCount(records.filter(e=>e.kind!=='recipe'&&e.visibility==='public').length);
  await page.getByLabel('種類',{exact:true}).selectOption('feature');
- await expect(page.locator('[data-guide-entry]:visible')).toHaveCount(3);
+ await expect(page.locator('[data-guide-entry]:visible')).toHaveCount(records.filter(e=>e.kind==='feature'&&e.visibility==='public').length);
  await page.getByLabel('種類',{exact:true}).selectOption('item');
  await page.getByLabel('コンテンツ',{exact:true}).selectOption('xp-storage');
  await page.screenshot({path:'artifacts/guide-'+info.project.name+'.png',fullPage:true});
