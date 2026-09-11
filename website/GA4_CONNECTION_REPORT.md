@@ -13,10 +13,14 @@
 
 ## 検証
 
-データ検証成功（655項目）。型確認50ファイルでエラー・警告なし。production build 681ページ。390px・768px・1440pxの計測ブラウザテスト6件、公開分離テスト4件、管理ロジック9件成功。
+データ検証成功（655項目）。型確認51ファイルでエラー・警告なし。production build 681ページ。390px・768px・1440pxの計測ブラウザテスト6件、公開分離テスト4件、管理ロジック9件成功。
 
 実Googleタグをローカルプレビューで読み込み、同意前の読み込みなし、同意後のタグ読み込み1回、`page_view`が1件、`scroll`と`pine_search`が指定ID宛てに生成されることを確認。ページURLのquery/fragmentと検索文のテスト文字列は収集リクエストに混入しませんでした。収集リクエストはブラウザで遮断しており、GA4での受信・集計成功を示す検証ではありません。動画・ダウンロード・外部リンクの実操作別通信は未確認です。
 
 [PCの同意画面](artifacts/analytics-consent-1440.png) / [スマホの同意画面](artifacts/analytics-consent-390.png)。表示には横はみ出しがありません。
 
 設定の根拠：[Googleのページビュー送信仕様](https://developers.google.com/analytics/devguides/collection/ga4/views?hl=ja)、[拡張計測の対象](https://support.google.com/analytics/answer/9216061?hl=ja)。
+
+## 公開確認
+
+実装commitは7517e5d6、公開生成物は6c2bde6d6a34e2fb33f6ad1457d286a654a4b0c8。[Pages配置](https://github.com/o0OkayuzZ/pine-server/actions/runs/34652165625)は成功しました。[ホーム](https://o0okayuzz.github.io/pine-server/)と[計測説明](https://o0okayuzz.github.io/pine-server/privacy/)を390px・768px・1440pxで開き、HTTP 200、正しい測定ID、同意前のタグ読み込みなし、同意後1回、取り消し後の再読み込みなし、横はみ出し・JavaScriptエラーなしを確認しました。上記スクリーンショットは公開サイトのものです。公開確認でも収集通信は遮断しており、GA4管理画面への実反映は利用者による確認待ちです。
