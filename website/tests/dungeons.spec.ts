@@ -8,13 +8,13 @@ test('Dungeons category navigation, expanded gear and recipe round trip', async 
  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Minecraft Dungeons');
  await page.getByRole('link', { name: '装備・レシピを見る', exact: true }).click();
  await expect(page).toHaveURL(/#dungeons-guide-title$/);
- await page.getByRole('navigation', { name: 'Dungeonsの種類別一覧' }).getByRole('link', { name: '防具 112' }).click();
+ await page.getByRole('navigation', { name: 'Dungeonsの種類別一覧' }).getByRole('link', { name: '防具 196' }).click();
  const armor = page.locator('#dungeons-armor');
  await expect(armor.locator('[data-guide-entry]:visible')).toHaveCount(4);
  await armor.locator('summary').click();
- await expect(armor.locator('[data-guide-entry]:visible')).toHaveCount(112);
+ await expect(armor.locator('[data-guide-entry]:visible')).toHaveCount(196);
  await armor.locator('[data-guide-entry]').last().getByRole('link').click();
- await expect(page).toHaveURL(/database\/entries\/dungeons-thief-leggings\/$/);
+ await expect(page).toHaveURL(/database\/entries\/dungeons-verdant-leggings\/$/);
  await page.goBack();
  await page.getByRole('link', { name: '英雄の書を作る', exact: true }).click();
  await expect(page.getByText('金インゴット × 4', { exact: true })).toBeVisible();

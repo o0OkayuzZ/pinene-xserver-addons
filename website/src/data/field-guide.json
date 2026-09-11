@@ -14900,5 +14900,2773 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
       ]
     }
+  },
+  {
+    "id": "dungeons-ghostly-boots",
+    "name": "ゴーストリーアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は2。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：190。",
+      "装備部位：足。防御値の設定：2。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ghostly-boots.png",
+      "alt": "ゴーストリーアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/ghostly/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_ghostly.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ghostly-chestplate",
+    "name": "ゴーストリーアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は4。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：220。",
+      "装備部位：胴。防御値の設定：4。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ghostly-chestplate.png",
+      "alt": "ゴーストリーアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/ghostly/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_ghostly.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ghostly-helmet",
+    "name": "ゴーストリーアーマーのフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は2。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：170。",
+      "装備部位：頭。防御値の設定：2。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ghostly-helmet.png",
+      "alt": "ゴーストリーアーマーのフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/ghostly/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_ghostly.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ghostly-leggings",
+    "name": "ゴーストリーアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は3。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：230。",
+      "装備部位：脚。防御値の設定：3。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ghostly-leggings.png",
+      "alt": "ゴーストリーアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/ghostly/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_ghostly.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-turtle-boots",
+    "name": "亀の防具のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は2。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：422。",
+      "装備部位：足。防御値の設定：2。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-turtle-boots.png",
+      "alt": "亀の防具のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/turtle_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_turtle.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-turtle-chestplate",
+    "name": "亀の防具のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は5。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：450。",
+      "装備部位：胴。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-turtle-chestplate.png",
+      "alt": "亀の防具のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/turtle_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_turtle.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-turtle-helmet",
+    "name": "亀の防具のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は5。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：342。",
+      "装備部位：頭。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-turtle-helmet.png",
+      "alt": "亀の防具のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/turtle_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_turtle.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-turtle-leggings",
+    "name": "亀の防具のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は4。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：442。",
+      "装備部位：脚。防御値の設定：4。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-turtle-leggings.png",
+      "alt": "亀の防具のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/turtle_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_turtle.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-black-spot-boots",
+    "name": "黒斑のアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：575。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-black-spot-boots.png",
+      "alt": "黒斑のアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/black_spot_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_black_spot.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-black-spot-chestplate",
+    "name": "黒斑のアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：710。",
+      "装備部位：胴。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-black-spot-chestplate.png",
+      "alt": "黒斑のアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/black_spot_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_black_spot.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-black-spot-helmet",
+    "name": "黒斑のアーマーのフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：605。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-black-spot-helmet.png",
+      "alt": "黒斑のアーマーのフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/black_spot_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_black_spot.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-black-spot-leggings",
+    "name": "黒斑のアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は10。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：695。",
+      "装備部位：脚。防御値の設定：10。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-black-spot-leggings.png",
+      "alt": "黒斑のアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/black_spot_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_black_spot.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-black-wolf-boots",
+    "name": "黒オオカミの鎧のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：494。",
+      "装備部位：足。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-black-wolf-boots.png",
+      "alt": "黒オオカミの鎧のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/black_wolf_armour/black_boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_black_wolf.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-black-wolf-chestplate",
+    "name": "黒オオカミの鎧のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：513。",
+      "装備部位：胴。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-black-wolf-chestplate.png",
+      "alt": "黒オオカミの鎧のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/black_wolf_armour/black_chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_black_wolf.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-black-wolf-helmet",
+    "name": "黒オオカミの鎧のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：482。",
+      "装備部位：頭。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-black-wolf-helmet.png",
+      "alt": "黒オオカミの鎧のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/black_wolf_armour/black_helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_black_wolf.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-black-wolf-leggings",
+    "name": "黒オオカミの鎧のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：519。",
+      "装備部位：脚。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-black-wolf-leggings.png",
+      "alt": "黒オオカミの鎧のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/black_wolf_armour/black_leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_black_wolf.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ember-boots",
+    "name": "残り火のローブのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：365。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ember-boots.png",
+      "alt": "残り火のローブのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ember_robes/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_ember.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ember-chestplate",
+    "name": "残り火のローブのローブ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は11。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：380。",
+      "装備部位：胴。防御値の設定：11。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ember-chestplate.png",
+      "alt": "残り火のローブのローブのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ember_robes/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_ember.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ember-helmet",
+    "name": "残り火のローブのハット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は5。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：355。",
+      "装備部位：頭。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ember-helmet.png",
+      "alt": "残り火のローブのハットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ember_robes/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_ember.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ember-leggings",
+    "name": "残り火のローブのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は10。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：385。",
+      "装備部位：脚。防御値の設定：10。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ember-leggings.png",
+      "alt": "残り火のローブのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ember_robes/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_ember.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ender-boots",
+    "name": "エンダーのアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：645。",
+      "装備部位：足。防御値の設定：8。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ender-boots.png",
+      "alt": "エンダーのアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ender_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_ender.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ender-chestplate",
+    "name": "エンダーのアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：680。",
+      "装備部位：胴。防御値の設定：12。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ender-chestplate.png",
+      "alt": "エンダーのアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ender_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_ender.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ender-helmet",
+    "name": "エンダーのアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：599。",
+      "装備部位：頭。防御値の設定：8。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ender-helmet.png",
+      "alt": "エンダーのアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ender_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_ender.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ender-leggings",
+    "name": "エンダーのアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は10。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：652。",
+      "装備部位：脚。防御値の設定：10。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ender-leggings.png",
+      "alt": "エンダーのアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ender_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_ender.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-boots",
+    "name": "フロストアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：438。",
+      "装備部位：足。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-frost-boots.png",
+      "alt": "フロストアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/frost/frost_boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_frost.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-chestplate",
+    "name": "フロストアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は14。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：487。",
+      "装備部位：胴。防御値の設定：14。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-frost-chestplate.png",
+      "alt": "フロストアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/frost/frost_chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_frost.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-helmet",
+    "name": "フロストアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：375。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-frost-helmet.png",
+      "alt": "フロストアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/frost/frost_helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_frost.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-leggings",
+    "name": "フロストアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：460。",
+      "装備部位：脚。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-frost-leggings.png",
+      "alt": "フロストアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/frost/frost_leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_frost.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-full-metal-boots",
+    "name": "フルメタルアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：745。",
+      "装備部位：足。防御値の設定：8。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-full-metal-boots.png",
+      "alt": "フルメタルアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/full_metal/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_full_metal.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-full-metal-chestplate",
+    "name": "フルメタルアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は18。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：790。",
+      "装備部位：胴。防御値の設定：18。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-full-metal-chestplate.png",
+      "alt": "フルメタルアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/full_metal/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_full_metal.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-full-metal-helmet",
+    "name": "フルメタルアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は10。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：715。",
+      "装備部位：頭。防御値の設定：10。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-full-metal-helmet.png",
+      "alt": "フルメタルアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/full_metal/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_full_metal.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-full-metal-leggings",
+    "name": "フルメタルアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：775。",
+      "装備部位：脚。防御値の設定：12。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-full-metal-leggings.png",
+      "alt": "フルメタルアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/full_metal/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_full_metal.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ghost-kindler-boots",
+    "name": "ゴーストキンドラーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：556。",
+      "装備部位：足。防御値の設定：6。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ghost-kindler-boots.png",
+      "alt": "ゴーストキンドラーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ghost_kindler/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_ghost_kindler.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ghost-kindler-chestplate",
+    "name": "ゴーストキンドラーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は10。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：575。",
+      "装備部位：胴。防御値の設定：10。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ghost-kindler-chestplate.png",
+      "alt": "ゴーストキンドラーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ghost_kindler/chest.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_ghost_kindler.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ghost-kindler-helmet",
+    "name": "ゴーストキンドラーのフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：544。",
+      "装備部位：頭。防御値の設定：6。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ghost-kindler-helmet.png",
+      "alt": "ゴーストキンドラーのフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ghost_kindler/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_ghost_kindler.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ghost-kindler-leggings",
+    "name": "ゴーストキンドラーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：582。",
+      "装備部位：脚。防御値の設定：8。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ghost-kindler-leggings.png",
+      "alt": "ゴーストキンドラーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/ghost_kindler/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_ghost_kindler.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-gilded-glory-boots",
+    "name": "金メッキの栄光のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：695。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-gilded-glory-boots.png",
+      "alt": "金メッキの栄光のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/gilded_glory/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_gilded_glory.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-gilded-glory-chestplate",
+    "name": "金メッキの栄光のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は16。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：725。",
+      "装備部位：胴。防御値の設定：16。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-gilded-glory-chestplate.png",
+      "alt": "金メッキの栄光のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/gilded_glory/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_gilded_glory.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-gilded-glory-helmet",
+    "name": "金メッキの栄光のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：665。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-gilded-glory-helmet.png",
+      "alt": "金メッキの栄光のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/gilded_glory/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_gilded_glory.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-gilded-glory-leggings",
+    "name": "金メッキの栄光のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：725。",
+      "装備部位：脚。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-gilded-glory-leggings.png",
+      "alt": "金メッキの栄光のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/gilded_glory/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_gilded_glory.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-glow-squid-boots",
+    "name": "発光するイカの防具のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：450。",
+      "装備部位：足。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-glow-squid-boots.png",
+      "alt": "発光するイカの防具のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/glow_squid/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_glow_squid.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-glow-squid-chestplate",
+    "name": "発光するイカの防具のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：510。",
+      "装備部位：胴。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-glow-squid-chestplate.png",
+      "alt": "発光するイカの防具のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/glow_squid/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_glow_squid.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-glow-squid-helmet",
+    "name": "発光するイカの防具のフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：478。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-glow-squid-helmet.png",
+      "alt": "発光するイカの防具のフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/glow_squid/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_glow_squid.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-glow-squid-leggings",
+    "name": "発光するイカの防具のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：468。",
+      "装備部位：脚。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-glow-squid-leggings.png",
+      "alt": "発光するイカの防具のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/glow_squid/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_glow_squid.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-golden-piglin-boots",
+    "name": "黄金のピグリンアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：430。",
+      "装備部位：足。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-golden-piglin-boots.png",
+      "alt": "黄金のピグリンアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/golden_piglin_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_golden_piglin.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-golden-piglin-chestplate",
+    "name": "黄金のピグリンアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は14。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：460。",
+      "装備部位：胴。防御値の設定：14。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-golden-piglin-chestplate.png",
+      "alt": "黄金のピグリンアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/golden_piglin_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_golden_piglin.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-golden-piglin-helmet",
+    "name": "黄金のピグリンアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：410。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-golden-piglin-helmet.png",
+      "alt": "黄金のピグリンアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/golden_piglin_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_golden_piglin.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-golden-piglin-leggings",
+    "name": "黄金のピグリンアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：450。",
+      "装備部位：脚。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-golden-piglin-leggings.png",
+      "alt": "黄金のピグリンアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/golden_piglin_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_golden_piglin.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-living-vines-boots",
+    "name": "生きたツタのアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：460。",
+      "装備部位：足。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-living-vines-boots.png",
+      "alt": "生きたツタのアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/living_vines_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_living_vines.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-living-vines-chestplate",
+    "name": "生きたツタのアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は10。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：600。",
+      "装備部位：胴。防御値の設定：10。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-living-vines-chestplate.png",
+      "alt": "生きたツタのアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/living_vines_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_living_vines.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-living-vines-helmet",
+    "name": "生きたツタのアーマーのフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：440。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-living-vines-helmet.png",
+      "alt": "生きたツタのアーマーのフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/living_vines_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_living_vines.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-living-vines-leggings",
+    "name": "生きたツタのアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：580。",
+      "装備部位：脚。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-living-vines-leggings.png",
+      "alt": "生きたツタのアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/living_vines_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_living_vines.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-nimble-turtle-boots",
+    "name": "軽快な亀の防具のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：672。",
+      "装備部位：足。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-nimble-turtle-boots.png",
+      "alt": "軽快な亀の防具のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/nimble_turtle/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_nimble_turtle.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-nimble-turtle-chestplate",
+    "name": "軽快な亀の防具のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：680。",
+      "装備部位：胴。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-nimble-turtle-chestplate.png",
+      "alt": "軽快な亀の防具のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/nimble_turtle/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_nimble_turtle.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-nimble-turtle-helmet",
+    "name": "軽快な亀の防具のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：581。",
+      "装備部位：頭。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-nimble-turtle-helmet.png",
+      "alt": "軽快な亀の防具のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/nimble_turtle/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_nimble_turtle.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-nimble-turtle-leggings",
+    "name": "軽快な亀の防具のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は10。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：684。",
+      "装備部位：脚。防御値の設定：10。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-nimble-turtle-leggings.png",
+      "alt": "軽快な亀の防具のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/nimble_turtle/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_nimble_turtle.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-opulent-boots",
+    "name": "豪華な鎧のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：695。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-opulent-boots.png",
+      "alt": "豪華な鎧のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/opulent_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_opulent.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-opulent-chestplate",
+    "name": "豪華な鎧のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は16。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：725。",
+      "装備部位：胴。防御値の設定：16。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-opulent-chestplate.png",
+      "alt": "豪華な鎧のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/opulent_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_opulent.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-opulent-helmet",
+    "name": "豪華な鎧のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：665。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-opulent-helmet.png",
+      "alt": "豪華な鎧のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/opulent_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_opulent.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-opulent-leggings",
+    "name": "豪華な鎧のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：725。",
+      "装備部位：脚。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-opulent-leggings.png",
+      "alt": "豪華な鎧のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/opulent_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_opulent.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-shadow-walker-boots",
+    "name": "影の衣のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：390。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-shadow-walker-boots.png",
+      "alt": "影の衣のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/shadow_walker/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_shadow_walker.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-shadow-walker-chestplate",
+    "name": "影の衣のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：480。",
+      "装備部位：胴。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-shadow-walker-chestplate.png",
+      "alt": "影の衣のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/shadow_walker/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_shadow_walker.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-shadow-walker-helmet",
+    "name": "影の衣のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：330。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-shadow-walker-helmet.png",
+      "alt": "影の衣のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/shadow_walker/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_shadow_walker.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-shadow-walker-leggings",
+    "name": "影の衣のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は10。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：450。",
+      "装備部位：脚。防御値の設定：10。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-shadow-walker-leggings.png",
+      "alt": "影の衣のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/shadow_walker/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_shadow_walker.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sturdy-shulker-boots",
+    "name": "丈夫なシュルカー防具のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：566。",
+      "装備部位：足。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sturdy-shulker-boots.png",
+      "alt": "丈夫なシュルカー防具のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/sturdy_shulker_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_sturdy_shulker.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sturdy-shulker-chestplate",
+    "name": "丈夫なシュルカー防具のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：681。",
+      "装備部位：胴。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sturdy-shulker-chestplate.png",
+      "alt": "丈夫なシュルカー防具のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/sturdy_shulker_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_sturdy_shulker.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sturdy-shulker-helmet",
+    "name": "丈夫なシュルカー防具のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：572。",
+      "装備部位：頭。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sturdy-shulker-helmet.png",
+      "alt": "丈夫なシュルカー防具のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/sturdy_shulker_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_sturdy_shulker.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sturdy-shulker-leggings",
+    "name": "丈夫なシュルカー防具のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：591。",
+      "装備部位：脚。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sturdy-shulker-leggings.png",
+      "alt": "丈夫なシュルカー防具のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/sturdy_shulker_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_sturdy_shulker.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-titans-shroud-boots",
+    "name": "タイタンの鎧のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：744。",
+      "装備部位：足。防御値の設定：8。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-titans-shroud-boots.png",
+      "alt": "タイタンの鎧のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/titans_shroud/titans_boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_titans_shroud.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-titans-shroud-chestplate",
+    "name": "タイタンの鎧のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は16。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：800。",
+      "装備部位：胴。防御値の設定：16。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-titans-shroud-chestplate.png",
+      "alt": "タイタンの鎧のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/titans_shroud/titans_chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_titans_shroud.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-titans-shroud-helmet",
+    "name": "タイタンの鎧のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：707。",
+      "装備部位：頭。防御値の設定：8。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-titans-shroud-helmet.png",
+      "alt": "タイタンの鎧のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/titans_shroud/titans_helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_titans_shroud.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-titans-shroud-leggings",
+    "name": "タイタンの鎧のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：782。",
+      "装備部位：脚。防御値の設定：12。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-titans-shroud-leggings.png",
+      "alt": "タイタンの鎧のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/titans_shroud/titans_leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_titans_shroud.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-troubadour-boots",
+    "name": "トルバドゥールのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：450。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-troubadour-boots.png",
+      "alt": "トルバドゥールのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/troubadour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_troubadour.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-troubadour-chestplate",
+    "name": "トルバドゥールのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：475。",
+      "装備部位：胴。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-troubadour-chestplate.png",
+      "alt": "トルバドゥールのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/troubadour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_troubadour.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-troubadour-helmet",
+    "name": "トルバドゥールのハット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は6。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：465。",
+      "装備部位：頭。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-troubadour-helmet.png",
+      "alt": "トルバドゥールのハットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/troubadour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_troubadour.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-troubadour-leggings",
+    "name": "トルバドゥールのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：485。",
+      "装備部位：脚。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-troubadour-leggings.png",
+      "alt": "トルバドゥールのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/troubadour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_troubadour.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-unstable-boots",
+    "name": "不安定なローブのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：455。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-unstable-boots.png",
+      "alt": "不安定なローブのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/unstable_robes/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_unstable.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-unstable-chestplate",
+    "name": "不安定なローブのローブ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：480。",
+      "装備部位：胴。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-unstable-chestplate.png",
+      "alt": "不安定なローブのローブのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/unstable_robes/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_unstable.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-unstable-helmet",
+    "name": "不安定なローブのフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：455。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-unstable-helmet.png",
+      "alt": "不安定なローブのフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/unstable_robes/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_unstable.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-unstable-leggings",
+    "name": "不安定なローブのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は12。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：485。",
+      "装備部位：脚。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-unstable-leggings.png",
+      "alt": "不安定なローブのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/unstable_robes/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_unstable.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-verdant-boots",
+    "name": "緑のローブのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "足に装備する防具。防御値の設定は8。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：365。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-verdant-boots.png",
+      "alt": "緑のローブのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/verdant_robes/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_verdant.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-verdant-chestplate",
+    "name": "緑のローブのローブ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "胴に装備する防具。防御値の設定は11。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：380。",
+      "装備部位：胴。防御値の設定：11。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-verdant-chestplate.png",
+      "alt": "緑のローブのローブのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/verdant_robes/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_verdant.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-verdant-helmet",
+    "name": "緑のローブのハット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "頭に装備する防具。防御値の設定は5。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：355。",
+      "装備部位：頭。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-verdant-helmet.png",
+      "alt": "緑のローブのハットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/verdant_robes/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_verdant.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-verdant-leggings",
+    "name": "緑のローブのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "脚に装備する防具。防御値の設定は10。",
+    "description": "同じ系列の頭・胴・脚・足をそろえるための防具です。個別の画像、部位、防御値、耐久値、修理材料を確認できます。",
+    "usage": "対応する防具スロットに装備します。シリーズ固有の効果や必要な組み合わせは、名称だけから推測していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：365。",
+      "装備部位：脚。防御値の設定：10。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-verdant-leggings.png",
+      "alt": "緑のローブのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/verdant_robes/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_verdant.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/helmet.json"
+      ]
+    }
   }
 ]
