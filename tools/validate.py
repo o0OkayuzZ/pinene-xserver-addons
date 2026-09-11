@@ -59,6 +59,11 @@ allowed.add('resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/manifest.
 allowed.add('behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/manifest.json')
 allowed.update(provenance['runtimeAdded'])
 allowed.update(release)
+# This later, explicitly approved consolidation has its own exact-diff checks.
+# Keep the original integration preservation check for every other runtime path.
+from test_blue_apple_consolidation import APPROVED_RUNTIME_PATHS
+subprocess.run([sys.executable,'-X','utf8','tools/test_blue_apple_consolidation.py'],cwd=ROOT,check=True)
+allowed.update(APPROVED_RUNTIME_PATHS)
 for rel in git('diff','--name-only',base).decode('utf-8').splitlines():
     if rel.startswith(('behavior_packs/','resource_packs/')):assert rel in allowed,f'Unexpected existing runtime change: {rel}'
 summary={'status':'integrated_static_passed','baseCommit':base,'runtimeFilesAdded':len(provenance['runtimeAdded']),'BPBytes':sum(p.stat().st_size for p in BP.rglob('*') if p.is_file()),'RPBytes':sum(p.stat().st_size for p in RP.rglob('*') if p.is_file()),'versions':provenance['versions'],'engineResults':'See INTEGRATION_REPORT.md; static validation does not certify engine acceptance.'}
