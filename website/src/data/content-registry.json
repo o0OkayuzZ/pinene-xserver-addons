@@ -776,13 +776,64 @@
     {
       "id": "grave",
       "name": "Grave / 死亡回収",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "systems"
+      ],
+      "packBindings": [
+        {
+          "uuid": "8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a",
+          "roles": [
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "9fc53a12-7b83-4d48-b161-d05ee0e45974",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "死亡後の回収を支える墓と鍵。",
+      "description": "鍵の付与、墓を開ける操作、座標移動に対応する鍵と見た目設定を紹介します。死亡時の保存・回収が実ゲームで確実に動くことを確認したものではありません。",
+      "image": {
+        "src": "/images/grave.svg",
+        "alt": "Grave / 死亡回収の仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "種類によって異なる鍵の操作",
+        "設定に応じた所有者の判定",
+        "墓のモデルと名前の色"
+      ],
+      "guide": "関連する図鑑で、使い方・設定条件・確認できた製作方法を紹介しています。ゲーム内の操作とアイテム収支は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/manifest.json",
+          "resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974/manifest.json"
+        ]
+      }
     },
     {
       "id": "simple-waystone",
@@ -850,13 +901,65 @@
     {
       "id": "meitetsu-chest",
       "name": "冥鉄の箱",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "craft",
+        "systems"
+      ],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "合言葉を設定して使う、拠点の収納。",
+      "description": "27枠の収納、最初の管理者登録、合言葉の設定と回収操作を紹介します。6通りの製作配置を図鑑で確認できます。",
+      "image": {
+        "src": "/images/meitetsu-chest.svg",
+        "alt": "冥鉄の箱の仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "27枠の収納設定",
+        "箱ごとの合言葉",
+        "管理メニューからの回収"
+      ],
+      "guide": "関連する図鑑で、使い方・設定条件・確認できた製作方法を紹介しています。ゲーム内の操作とアイテム収支は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json"
+        ]
+      }
     },
     {
       "id": "xp-storage",
