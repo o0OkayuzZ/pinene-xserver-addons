@@ -1,5 +1,8 @@
 # GitHub Pages公開記録
 
+More Geodesの更新：ソース `d5a4a376`、公開生成物 `5ebcec4`。213ページ・図鑑188項目へ更新しました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34556891618)は成功しました。公開URLのMore Geodes紹介、15件に絞り込んだ図鑑、ダイヤモンド結晶詳細を390px・1440pxで開き、HTTP 200、画像読み込み、詳細リンク、横はみ出しなし、JavaScriptエラーなしを確認しました。変更内容とスクリーンショットは[今回の報告](GEODES_REPORT.md)にあります。
+
+
 収納・死亡回収の更新：ソース `5b86709`、公開生成物 `d85ccac`。197ページ・図鑑173項目へ更新しました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34556064757)が成功。公開URLの冥鉄の箱・Grave紹介と個別アイテムを390px・1440pxで確認し、6つのレシピリンクと配置表への操作、横はみ出しなし、JavaScriptエラーなしを確認済みです。
 
 最新の更新：ソース `e686bd2`、公開生成物 `c6771a9`。Blue Apple・謎の化石・フィギュアを追加し、181ページへ更新しました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34517189658)は成功し、追加3コンテンツと青りんごの図鑑を公開URLで390px・1440px確認済みです。以下は初回公開時の記録です。
