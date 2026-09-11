@@ -36,7 +36,7 @@ private/draft識別データを投入した実ビルドと復元後のビルド�
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-harpoon-arrow-recipe/
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-wither-leggings/
 
-公開先の検証とcommitは[PUBLISH_REPORT.md](PUBLISH_REPORT.md)に記録します。
+上記4URLを公開先で390px・1440px確認済み。HTTP 200、画像、一覧展開、詳細リンク、横はみ出しとJavaScriptエラーがないことを確認しました。実装commitは`5654af1c`、公開生成物は`06c60ed`。配置記録は[PUBLISH_REPORT.md](PUBLISH_REPORT.md)にあります。
 
 ## 未確認事項
 

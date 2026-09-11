@@ -1,5 +1,8 @@
 # GitHub Pages公開記録
 
+Dungeons装備の追加更新：ソース `5654af1c`、公開生成物 `06c60ed`。106件を追加し、Dungeons174項目、Web全体360項目・385ページになりました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34597257051)は成功。Dungeons紹介、所属フィルター158件（レシピを除く）、銛の矢レシピ、ウィザーのレギンスを公開URLで390px・1440px確認済みです。HTTP 200、画像、防具48件と弾薬10件の展開、詳細リンク、横はみ出しなし、JavaScriptエラーなしを確認しました。[変更・検証](DUNGEONS_EXPANSION_REPORT.md) / [PC画面](artifacts/public-dungeons-expansion-1440.png) / [スマホ画面](artifacts/public-dungeons-expansion-390.png)。
+
+
 Minecraft Dungeons優先更新：ソース `e3d89694`、公開生成物 `116135f`。Dungeonsの図鑑を2件から68件へ増やし、Web全体は279ページ・254項目です。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34596199832)は成功。Dungeons紹介、所属フィルター57件（レシピを除く）、英雄の書レシピ、タマゴテングダケ詳細を公開URLで390px・1440px確認しました。HTTP 200、画像読み込み、防具16件の展開、レシピリンク、横はみ出しなし、JavaScriptエラーなしを確認済みです。[今回の変更・検証](DUNGEONS_REPORT.md) / [公開スマホ画面](artifacts/public-dungeons-390.png) / [公開PC画面](artifacts/public-dungeons-1440.png)。
 
 
