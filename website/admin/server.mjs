@@ -10,7 +10,8 @@ export const storage=process.env.PINE_ADMIN_DATA??join(process.env.LOCALAPPDATA?
 const port=Number(process.env.PINE_ADMIN_PORT??18473);
 const accessKey=randomBytes(32).toString('hex');
 const origin=`http://127.0.0.1:${port}`;
-let settings={},lastReport=null,busy=false;
+const websiteConfig=JSON.parse(await readFile(join(root,'../src/data/analytics-config.json'),'utf8'));
+let settings={provider:websiteConfig.cloudflareBeacon?'cloudflare':'ga4',measurementId:websiteConfig.measurementId??'',beaconToken:websiteConfig.cloudflareBeacon??''},lastReport=null,busy=false;
 async function atomic(path,text){const temp=path+'.'+randomBytes(6).toString('hex')+'.tmp';await writeFile(temp,text,{mode:0o600});await rename(temp,path);}
 export async function protect(text,decode=false){
  const script=decode?'$s=[Console]::In.ReadToEnd() | ConvertTo-SecureString; $p=[Runtime.InteropServices.Marshal]::SecureStringToBSTR($s); try {[Console]::Out.Write([Runtime.InteropServices.Marshal]::PtrToStringBSTR($p))} finally {[Runtime.InteropServices.Marshal]::ZeroFreeBSTR($p)}':'$s=[Console]::In.ReadToEnd(); [Console]::Out.Write((ConvertTo-SecureString $s -AsPlainText -Force | ConvertFrom-SecureString))';
