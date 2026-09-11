@@ -207,6 +207,341 @@
 			},
 			"dungeons:despawn": {
 				"minecraft:instant_despawn": {}
+			},
+			"infinite_castle:wraith_1": {
+				"minecraft:health": {
+					"value": 95,
+					"max": 95
+				},
+				"minecraft:attack": {
+					"damage": 9
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 6,
+					"speed_multiplier": 1,
+					"within_radius": 8
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 5,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 1,
+							"sprint_speed_multiplier": 1.15
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"avoid_water": true,
+					"can_path_over_water": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:wraith_lord_1": {
+				"minecraft:health": {
+					"value": 340,
+					"max": 340
+				},
+				"minecraft:attack": {
+					"damage": 9
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 6,
+					"speed_multiplier": 1,
+					"within_radius": 8
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 5,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 1,
+							"sprint_speed_multiplier": 1.15
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"avoid_water": true,
+					"can_path_over_water": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:wraith_lord_2": {
+				"minecraft:health": {
+					"value": 390.99999999999994,
+					"max": 390.99999999999994
+				},
+				"minecraft:attack": {
+					"damage": 9
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 6,
+					"speed_multiplier": 1,
+					"within_radius": 8
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 5,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 1,
+							"sprint_speed_multiplier": 1.15
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"avoid_water": true,
+					"can_path_over_water": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:wraith_lord_3": {
+				"minecraft:health": {
+					"value": 442,
+					"max": 442
+				},
+				"minecraft:attack": {
+					"damage": 9
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 6,
+					"speed_multiplier": 1,
+					"within_radius": 8
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 5,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 1,
+							"sprint_speed_multiplier": 1.15
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"avoid_water": true,
+					"can_path_over_water": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:wraith_lord_4": {
+				"minecraft:health": {
+					"value": 493,
+					"max": 493
+				},
+				"minecraft:attack": {
+					"damage": 9
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 6,
+					"speed_multiplier": 1,
+					"within_radius": 8
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 5,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 1,
+							"sprint_speed_multiplier": 1.15
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"avoid_water": true,
+					"can_path_over_water": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
 			}
 		},
 		"components": {
@@ -391,11 +726,21 @@
 		},
 		"events": {
 			"dungeons:become_enchanted": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					}
+				]
 			},
 			"minecraft:entity_spawned": {
 				"randomize": [
@@ -414,72 +759,253 @@
 				]
 			},
 			"dungeons:begin_teleport": {
-				"add": {
-					"component_groups": [
-						"dungeons:begin_teleport"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:can_teleport"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:begin_teleport"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:can_teleport"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:teleport_despawn": {
-				"add": {
-					"component_groups": [
-						"dungeons:begin_teleport_despawn"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:can_teleport"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:begin_teleport_despawn"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:can_teleport"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:despawn": {
-				"add": {
-					"component_groups": [
-						"dungeons:despawn"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:despawn"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:teleport": {
-				"remove": {
-					"component_groups": [
-						"dungeons:begin_teleport"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"dungeons:teleport"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:begin_teleport"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:teleport"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:finish_teleport": {
-				"remove": {
-					"component_groups": [
-						"dungeons:teleport"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"dungeons:cooldown_teleport"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:teleport"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:cooldown_teleport"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:can_teleport": {
-				"remove": {
-					"component_groups": [
-						"dungeons:cooldown_teleport"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"dungeons:can_teleport"
-					]
-				}
-			}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:cooldown_teleport"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:can_teleport"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:wraith_1": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:cooldown_teleport",
+								"dungeons:can_teleport",
+								"dungeons:begin_teleport",
+								"dungeons:teleport",
+								"dungeons:begin_teleport_despawn",
+								"dungeons:despawn"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:wraith_1"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:wraith_lord_1": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:cooldown_teleport",
+								"dungeons:can_teleport",
+								"dungeons:begin_teleport",
+								"dungeons:teleport",
+								"dungeons:begin_teleport_despawn",
+								"dungeons:despawn"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:wraith_lord_1"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:wraith_lord_2": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:cooldown_teleport",
+								"dungeons:can_teleport",
+								"dungeons:begin_teleport",
+								"dungeons:teleport",
+								"dungeons:begin_teleport_despawn",
+								"dungeons:despawn"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:wraith_lord_2"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:wraith_lord_3": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:cooldown_teleport",
+								"dungeons:can_teleport",
+								"dungeons:begin_teleport",
+								"dungeons:teleport",
+								"dungeons:begin_teleport_despawn",
+								"dungeons:despawn"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:wraith_lord_3"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:wraith_lord_4": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:cooldown_teleport",
+								"dungeons:can_teleport",
+								"dungeons:begin_teleport",
+								"dungeons:teleport",
+								"dungeons:begin_teleport_despawn",
+								"dungeons:despawn"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:wraith_lord_4"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:idle": {}
 		}
 	}
 }

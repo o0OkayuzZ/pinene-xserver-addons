@@ -179,6 +179,7 @@ function checkRoomEntries() {
 }
 
 function startDetection() {
+    if (!PROGRESSION_ENABLED) return; // Phase 1 owns movement and exit interaction.
     if (!activeRuntime || detectionRunId !== null) return;
     detectionRunId = system.runInterval(checkRoomEntries, ROOM_CHECK_INTERVAL_TICKS);
 }

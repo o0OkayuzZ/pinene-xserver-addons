@@ -1,0 +1,1 @@
+scriptevent infinite_castle:phase1_debug end_run

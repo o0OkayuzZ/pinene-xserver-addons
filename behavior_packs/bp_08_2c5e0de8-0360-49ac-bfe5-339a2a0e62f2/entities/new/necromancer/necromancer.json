@@ -14,6 +14,236 @@
 					"into": "dungeons:enchanted_necromancer<minecraft:entity_spawned>",
 					"preserve_equipment": true
 				}
+			},
+			"infinite_castle:necromancer_1": {
+				"minecraft:health": {
+					"value": 110,
+					"max": 110
+				},
+				"minecraft:attack": {
+					"damage": 4
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.walk": {
+					"is_amphibious": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:arch_curse_1": {
+				"minecraft:health": {
+					"value": 330,
+					"max": 330
+				},
+				"minecraft:attack": {
+					"damage": 4
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.walk": {
+					"is_amphibious": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:arch_curse_2": {
+				"minecraft:health": {
+					"value": 379.49999999999994,
+					"max": 379.49999999999994
+				},
+				"minecraft:attack": {
+					"damage": 4
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.walk": {
+					"is_amphibious": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:arch_curse_3": {
+				"minecraft:health": {
+					"value": 429,
+					"max": 429
+				},
+				"minecraft:attack": {
+					"damage": 4
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.walk": {
+					"is_amphibious": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:arch_curse_4": {
+				"minecraft:health": {
+					"value": 478.5,
+					"max": 478.5
+				},
+				"minecraft:attack": {
+					"damage": 4
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.walk": {
+					"is_amphibious": true,
+					"avoid_sun": true,
+					"can_walk": true
+				},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
 			}
 		},
 		"components": {
@@ -210,11 +440,21 @@
 		},
 		"events": {
 			"dungeons:become_enchanted": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					}
+				]
 			},
 			"minecraft:entity_spawned": {
 				"randomize": [
@@ -226,7 +466,98 @@
 						"weight": 9
 					}
 				]
-			}
+			},
+			"infinite_castle:necromancer_1": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:necromancer_1"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:arch_curse_1": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:arch_curse_1"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:arch_curse_2": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:arch_curse_2"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:arch_curse_3": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:arch_curse_3"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:arch_curse_4": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:arch_curse_4"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:idle": {}
 		}
 	}
 }

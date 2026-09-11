@@ -198,6 +198,36 @@
 					"uncertainty_base": 16,
 					"uncertainty_multiplier": 4
 				}
+			},
+			"infinite_castle:skeleton_arrow": {
+				"minecraft:projectile": {
+					"anchor": 1,
+					"gravity": 0.05,
+					"power": 1.6,
+					"hit_sound": "bow.hit",
+					"on_hit": {
+						"arrow_effect": {
+							"apply_effect_to_blocking_targets": false
+						},
+						"impact_damage": {
+							"damage": 8,
+							"knockback": true,
+							"destroy_on_hit": true,
+							"semi_random_diff_damage": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						}
+					},
+					"offset": [
+						0,
+						-0.1,
+						0
+					],
+					"should_bounce": true,
+					"uncertainty_base": 16,
+					"uncertainty_multiplier": 4
+				}
 			}
 		},
 		"events": {
@@ -270,6 +300,13 @@
 						}
 					}
 				]
+			},
+			"infinite_castle:skeleton_arrow": {
+				"add": {
+					"component_groups": [
+						"infinite_castle:skeleton_arrow"
+					]
+				}
 			}
 		}
 	}

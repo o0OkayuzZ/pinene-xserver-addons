@@ -682,15 +682,62 @@
 					"def": "minecraft:arrow",
 					"sound": "bow"
 				}
+			},
+			"infinite_castle:skeleton_1": {
+				"minecraft:health": {
+					"value": 65,
+					"max": 65
+				},
+				"minecraft:attack": {
+					"damage": 8
+				},
+				"minecraft:persistent": {},
+				"minecraft:environment_sensor": {
+					"triggers": []
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:jump.static": {},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.walk": {
+					"avoid_sun": true,
+					"is_amphibious": true,
+					"avoid_water": true
+				},
+				"minecraft:physics": {}
 			}
 		},
 		"events": {
 			"dungeons:become_enchanted": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					}
+				]
 			},
 			"become_stray_event": {
 				"add": {
@@ -839,6 +886,24 @@
 						"minecraft:lightning_immune"
 					]
 				}
+			},
+			"infinite_castle:skeleton_1": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:ranged_attack"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:skeleton_1"
+							]
+						}
+					}
+				]
 			}
 		}
 	}

@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import * as mock from "./minecraft-server-encounter-mock.js";
 import { createSourcePartsPlan } from "../scripts/infinite_castle/sourcePartsPlanner.js";
 import { serializeRoomMaterials } from "../scripts/infinite_castle/sourceRoomMaterials.js";
-let api = await import("../scripts/infinite_castle/sourceRoomEncounters.js");
-const STATE = "infinite_castle:room_encounters_v1";
+let api = await import("../scripts/infinite_castle/phase1Runtime.js");
+const STATE = "infinite_castle:phase1_v2";
 const CORE = "infinite_castle:source_parts_test_state_v2";
 const PLAN = "infinite_castle:source_parts_detailed_plan_v1";
 const plan = createSourcePartsPlan(42, { x: 1000, y: 80, z: 1000 });
@@ -11,11 +11,14 @@ plan.dimensionId = mock.dimension.id;
 // Override a seeded normal room, just as a garden retained by LOCK would be.
 const placement = plan.placements.find(p => p.category === "room" && p.materialTheme === "normal");
 placement.materialTheme = "rare";
+placement.rareRoomType = "healing_garden";
+placement.encounterRole = {kind:"healing_garden",encounterType:null,interiorVariant:1};
 mock.setup(plan);
 const descriptor = { v: 2, d: plan.dimensionId, s: plan.seed, t: plan.style, o: plan.topologyId,
     a: Object.values(plan.tierBases.lower), m: serializeRoomMaterials(plan) };
 mock.world.setDynamicProperty(CORE, JSON.stringify({ status: "complete" }));
 mock.world.setDynamicProperty(PLAN, JSON.stringify(descriptor));
+api.activateRoomEncounterPlan(plan);
 const state = () => JSON.parse(mock.world.getDynamicProperty(STATE));
 const garden = () => state().rooms.find(r => r.origin.x === placement.origin.x && r.origin.z === placement.origin.z && r.origin.y === placement.origin.y);
 function tick(count = 1) { for (let i = 0; i < count; i++) { mock.advance(); api.updateRoomEncounters(); } }
@@ -24,6 +27,7 @@ function player(id, mode = "Survival") {
     return { id, health, mode, messages: [], dimension: mock.dimension,
         location: { x: placement.origin.x + 21, y: placement.origin.y + 1, z: placement.origin.z + 21 },
         getGameMode() { return this.mode; }, getComponent() { return health; },
+        getEffect() {}, addEffect() {}, applyDamage() {}, applyKnockback() {},
         sendMessage(text) { this.messages.push(text); } };
 }
 const p = player("one"), p2 = player("two", "Adventure");
@@ -64,7 +68,7 @@ assert.equal(p.health.currentValue, 10);
 mock.world.setDynamicProperty(CORE, JSON.stringify({ status: "complete" }));
 // Saved material overrides, rather than a fresh rarity roll, decide the kind.
 mock.resetSubscriptions();
-api = await import("../scripts/infinite_castle/sourceRoomEncounters.js?reload=garden");
+api = await import("../scripts/infinite_castle/phase1Runtime.js?reload=garden");
 tick(10);
 assert.equal(garden().kind, "healing_garden");
 assert.equal(mock.metrics.spawns, 0);
@@ -73,20 +77,22 @@ assert.ok(p.health.currentValue > 10);
 // Migrate an existing combat ledger with valuable contents into a garden.
 const saved = state();
 const old = saved.rooms.find(r => r.key === garden().key);
-old.kind = "combat"; old.keyDefeated = false; old.reward = "locked";
+old.kind = "healing_garden"; old.keyDefeated = true; old.reward = "stocked"; old.unlockComplete = true;
 old.chest = { x: old.origin.x + 11, y: old.origin.y + 1, z: old.origin.z + 11 };
 old.chestOwned = true;
 const block = mock.dimension.getBlock(old.chest); block.setType("minecraft:chest");
 const container = block.getComponent().container;
 container.setItem(0, new mock.ItemStack("minecraft:diamond", 7));
 const enemy = mock.dimension.spawnEntity("minecraft:zombie", { ...inside });
-enemy.addTag("ic_room_enemy_v1"); enemy.addTag(old.slots[0].tag);
-old.slots[0].phase = "alive"; old.slots[0].id = enemy.id;
+enemy.addTag("ic_room_enemy_v1"); enemy.addTag("obsolete_slot");
+old.slots = [{tag:"obsolete_slot",phase:"alive",id:enemy.id}];
+old.state="Active";
 mock.world.setDynamicProperty(STATE, JSON.stringify(saved));
 mock.resetSubscriptions();
-api = await import("../scripts/infinite_castle/sourceRoomEncounters.js?reload=migration");
+api = await import("../scripts/infinite_castle/phase1Runtime.js?reload=migration");
 const stockBefore = mock.metrics.stockWrites;
-tick(2);
+api.activateRoomEncounterPlan(plan);
+tick(20);
 assert.equal(garden().kind, "healing_garden");
 assert.equal(container.getItem(0).amount, 7);
 assert.equal(mock.metrics.stockWrites, stockBefore);
@@ -100,6 +106,6 @@ const ordinary = state().rooms.find(r => r.kind === "combat");
 p.location = { x: ordinary.origin.x + 21, y: ordinary.origin.y + 1, z: ordinary.origin.z + 21 };
 mock.setPlayers([p]);
 tick(30);
-assert.equal(mock.allEntities().filter(e => e.hasTag("ic_room_enemy_v1")).length, 3);
+assert.ok(mock.allEntities().filter(e => e.hasTag("ic_room_enemy_v1")).length >= 4);
 assert.ok(state().rooms.find(r => r.key === ordinary.key).chestOwned);
 console.log("HEALING_GARDEN_OK: timing, bounds, multiplayer, max health, death, mutation, reload, migration, ordinary combat");

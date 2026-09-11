@@ -1,6 +1,8 @@
 import { BlockPermutation, BlockVolume, StructureAnimationMode, system, world } from "@minecraft/server";
 import { createSourcePartsPlan, sourcePartsTopologyIds } from "./sourcePartsPlanner.js";
-import { prepareRoomEncounterRemoval } from "./sourceRoomEncounters.js";
+import { prepareRoomEncounterRemoval, prepareEncounterRoles, activateRoomEncounterPlan, encounterProtection, beginEncounterReconstruction, endEncounterReconstruction, assertEncounterProtection, assertEncounterRevision } from "./sourceRoomEncounters.js";
+import { PHASE1 } from "./phase1Config.js";
+import { validateSocketContracts, containsPlacement } from "./phase1Sockets.js";
 import { materialVariantId, serializeRoomMaterials, restoreRoomMaterials } from "./sourceRoomMaterials.js";
 import { createRebuildStartCue } from "./sourcePartsRebuildFeedback.js";
 import { assertVisualTestSafety, beginVisualTest, endVisualTest } from "./sourcePartsVisualTestGuard.js";
@@ -65,8 +67,8 @@ const DYNAMIC_WAVE_TARGET_TICKS = 20 * 20;
 // Preserve the occupied authored room and its directly connected neighbours.
 // Two hops over-protected neighbours-of-neighbours and left too little freedom
 // once decorative infill was moved close to the playable castle.
-const DYNAMIC_PROTECTION_HOPS = 1;
-const DYNAMIC_CANDIDATE_ATTEMPTS = 1;
+const DYNAMIC_PROTECTION_HOPS = PHASE1.protectionHops;
+const DYNAMIC_CANDIDATE_ATTEMPTS = PHASE1.reconstructionCandidateAttempts;
 const DYNAMIC_SEED_STEP = 0x9e3779b9;
 const PLAYER_GUARD_WAIT_TICKS = 5;
 const PLAYER_GUARD_NOTICE_TICKS = 200;
@@ -81,6 +83,8 @@ const INTEGRITY_BATCH_SIZE = 256;
 const TICKING_AREA_LOAD_TIMEOUT_TICKS = 400;
 const DYNAMIC_TIER_ORDER = Object.freeze(["lower", "middle", "upper"]);
 let reconstructionInProgress = false;
+let hardLockedPlacements = [];
+const isHardLockedPoint = point => hardLockedPlacements.some(p => containsPlacement(p, point));
 
 function planDescriptor(plan) {
     const anchor = plan?.tierBases?.lower;
@@ -431,6 +435,7 @@ async function clearPlan(plan) {
                 `ic_v3_clear_${boundsIndex}_${sectionIndex}`,
                 async () => {
                     prepareRoomEncounterRemoval(dimension, current);
+                    assertEncounterRevision();
                     dimension.fillBlocks(new BlockVolume(current.from, current.to), "minecraft:air");
                 }
             );
@@ -749,9 +754,11 @@ async function sealDynamicLanePoints(
         let retained = 0;
         let blocked = 0;
         for (const point of unique) {
+            if (isHardLockedPoint(point)) { retained += 1; continue; }
             const block = dimension.getBlock(point);
             if (!block) throw new Error(`dynamic socket block is unloaded at ${pointKey(point)}`);
             if (isAir(block)) {
+                assertEncounterRevision();
                 dimension.setBlockType(point, "minecraft:oak_fence");
                 placed += 1;
             } else if (block.typeId === "minecraft:oak_fence") {
@@ -922,6 +929,7 @@ async function clearPlanExcept(plan, protectedPlacementIds, dimension) {
                             `clear:${boundsIndex}`
                         );
                         prepareRoomEncounterRemoval(dimension, section);
+                        assertEncounterRevision();
                         dimension.fillBlocks(
                             new BlockVolume(section.from, section.to),
                             "minecraft:air"
@@ -974,7 +982,10 @@ async function placePlan(
         const placement = ordered[index];
         const structureId = resolveStructureId(materialVariantId(placement), packIds);
         if (!structureId) throw new Error(`variant structure is not registered: ${placement.variantId}`);
-        await withLoadedBounds(dimension, placementBounds(placement), `ic_v3_build_${index}`, async () => {
+        const bounds = placementBounds(placement);
+        await withLoadedBounds(dimension, bounds, `ic_v3_build_${index}`, async () => {
+            assertEncounterProtection(bounds);
+            assertEncounterRevision();
             world.structureManager.place(structureId, dimension, placement.origin, {
                 // The rebuild command is a deterministic authoring/debug operation.
                 // Immediate placement prevents a tall Layers animation from freezing
@@ -1012,6 +1023,7 @@ async function placePlanExcept(plan, protectedPlacementIds, players, dimension) 
                 bounds,
                 `build:${placement.placementId}`
             );
+            assertEncounterRevision();
             world.structureManager.place(structureId, dimension, placement.origin, {
                 animationMode: StructureAnimationMode.None,
                 includeBlocks: true,
@@ -1048,6 +1060,7 @@ async function clearDynamicPlacement(
                         `clear:${placement.placementId}`
                     );
                     prepareRoomEncounterRemoval(dimension, section);
+                    assertEncounterRevision();
                     dimension.fillBlocks(
                         new BlockVolume(section.from, section.to),
                         "minecraft:air"
@@ -1091,6 +1104,7 @@ async function clearInterruptedDynamicPlan(
                             `recovery:${recoveryIndex}`
                         );
                         prepareRoomEncounterRemoval(dimension, section);
+                        assertEncounterRevision();
                         dimension.fillBlocks(
                             new BlockVolume(section.from, section.to),
                             "minecraft:air"
@@ -1223,6 +1237,7 @@ async function placeDynamicPlacement(placement, dimension, operationIndex, packI
                 bounds,
                 `build:${placement.placementId}`
             );
+            assertEncounterRevision();
             world.structureManager.place(structureId, dimension, placement.origin, {
                 animationMode: StructureAnimationMode.None,
                 includeBlocks: true,
@@ -1437,6 +1452,7 @@ async function replacePlacementForStability(
                     `repair:${placement.placementId}`
                 );
             }
+            assertEncounterRevision();
             world.structureManager.place(structureId, dimension, placement.origin, {
                 animationMode: StructureAnimationMode.None,
                 includeBlocks: true,
@@ -1580,6 +1596,7 @@ async function smoothPlanStairs(
                         permutation = BlockPermutation.resolve(operation.blockType, operation.states);
                         permutations.set(permutationKey, permutation);
                     }
+                    assertEncounterRevision();
                     block.setPermutation(permutation);
                     changed += 1;
                     if ((operationIndex + 1) % SMOOTHING_BATCH_SIZE === 0) await waitTicks(1);
@@ -1824,7 +1841,8 @@ async function openAuthoredSeam(dimension, connection, index, guardLivePlayers =
         if (guardLivePlayers) {
             await waitForLivePlayerClearance(dimension, bounds, `seam:${index}`);
         }
-        for (const point of carvePoints) dimension.setBlockType(point, "minecraft:air");
+        assertEncounterRevision();
+        for (const point of carvePoints) if (!isHardLockedPoint(point)) dimension.setBlockType(point, "minecraft:air");
         await waitTicks(1);
 
         const blocked = [];
@@ -1856,15 +1874,21 @@ async function openAuthoredSeam(dimension, connection, index, guardLivePlayers =
         }
         for (const supportPoint of clearance.supports) {
             const support = dimension.getBlock(supportPoint);
+            if (isHardLockedPoint(supportPoint)) {
+                if (isUnsupportedWalkSurface(support)) unsupported.push(pointKey(supportPoint));
+                continue;
+            }
             const stair = stairSupports.get(pointKey(supportPoint));
             if (stair && (!stair.retainLanding || support?.typeId === "minecraft:oak_stairs")) {
                 if (!support) throw new Error(`stair socket support is unloaded: ${pointKey(supportPoint)}`);
                 if (isUnsupportedWalkSurface(support) || ["minecraft:oak_planks", "minecraft:oak_stairs", "minecraft:oak_fence"].includes(support.typeId)) {
                     // Repairs the known legacy flat-carve damage without
                     // replacing the occupied stair or the neighbouring room.
+                    assertEncounterRevision();
                     support.setPermutation(BlockPermutation.resolve("minecraft:oak_stairs", stair.states));
                 }
             } else if (isUnsupportedWalkSurface(support)) {
+                assertEncounterRevision();
                 dimension.setBlockType(supportPoint, "minecraft:oak_planks");
             }
             const repaired = dimension.getBlock(supportPoint);
@@ -1938,6 +1962,7 @@ async function sealUnusedAuthoredSockets(
                     if (!block) throw new Error(`sealed socket block is unloaded at ${pointKey(point)}`);
                     if (isAir(block) || block.typeId.endsWith("_stairs")
                         || block.typeId.endsWith("_slab")) {
+                        assertEncounterRevision();
                         dimension.setBlockType(point, "minecraft:oak_fence");
                         placed += 1;
                     } else if (block.typeId === "minecraft:oak_fence") {
@@ -2086,6 +2111,7 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
         saveDetailedPlan(plan);
         saveReconstructionState("complete", [plan]);
         const demo = activateSourcePartsDemo(plan);
+        activateRoomEncounterPlan(plan);
         // Decorative pieces are deliberately outside plan.placements, so none
         // of the route validation, cap, seam, or progression systems can use them.
         const scenery = dimension.id === SCENERY_DIMENSION_ID
@@ -2167,6 +2193,7 @@ export async function selectSafeDynamicCandidate(
                 options,
                 () => waitTicks(1)
             );
+            validateSocketContracts(oldPlan, anchored.plan, anchored.protectedOldPlacementIds, anchored.protectedNewPlacementIds);
             // Start ticking-area/block work on a fresh tick as well.
             await waitTicks(1);
             return {
@@ -2221,7 +2248,7 @@ export async function reconstructSourcePartsAroundPlayers(
     const startedAt = Date.now();
     const timings = {};
     try {
-        messagePlayers(players, "[ic-rebuild] 在室・隣接棟を保護して配置を計画中です");
+        messagePlayers(players, "[ic-rebuild] 在室区画・発見済み出口を保護して配置を計画中です");
         oldPlan = restoreDetailedPlan(dimension);
         if (!oldPlan) throw new Error("current source-parts plan could not be restored");
         const storedPlans = loadStoredPlans();
@@ -2247,7 +2274,8 @@ export async function reconstructSourcePartsAroundPlayers(
         const playerZones = classifySourcePlayerLocations(
             oldPlan,
             playerLocations,
-            sceneryGuard.bounds
+            sceneryGuard.bounds,
+            0
         );
         if (playerZones.conflict.length > 0 || playerZones.invalid.length > 0) {
             const reason = playerZones.conflict.length > 0
@@ -2273,10 +2301,13 @@ export async function reconstructSourcePartsAroundPlayers(
             error.code = "SCENERY_STATE_INVALID";
             throw error;
         }
-        const requiredOldPlacementIds = sourcePlacementsIntersectingBounds(
-            oldPlan,
-            playerSafetyBounds
-        ).map((placement) => placement.placementId);
+        const requiredOldPlacementIds = [...new Set(playerZones.core.flatMap(entry => entry.placementIds))];
+        for (const room of encounterProtection().rooms) {
+            const placement = oldPlan.placements.find(p => p.category === "room"
+                && p.origin.x === room.origin.x && p.origin.y === room.origin.y && p.origin.z === room.origin.z);
+            if (placement && !requiredOldPlacementIds.includes(placement.placementId)) requiredOldPlacementIds.push(placement.placementId);
+        }
+        beginEncounterReconstruction();
         const anchored = await selectSafeDynamicCandidate(
             oldPlan,
             playerZones.anchorLocations,
@@ -2290,9 +2321,13 @@ export async function reconstructSourcePartsAroundPlayers(
                 sceneryExclusionClearance: SCENERY_CORE_CLEARANCE,
                 playerExclusionBounds: playerSafetyBounds,
                 requiredOldPlacementIds,
+                validateCandidate: candidate => validateSocketContracts(oldPlan, candidate.plan,
+                    candidate.protectedOldPlacementIds, candidate.protectedNewPlacementIds),
             }
         );
         const plan = anchored.plan;
+        hardLockedPlacements = oldPlan.placements.filter(p => anchored.protectedOldPlacementIds.includes(p.placementId));
+        prepareEncounterRoles(plan, anchored.protectedNewPlacementIds);
         timings.planningMs = Date.now() - startedAt;
         messagePlayers(players, `[ic-rebuild] 計画完了 ${(timings.planningMs / 1000).toFixed(1)}秒。安全確認・装飾退避中です`);
         const protectedNewIds = new Set(anchored.protectedNewPlacementIds);
@@ -2415,6 +2450,7 @@ export async function reconstructSourcePartsAroundPlayers(
         saveDetailedPlan(plan);
         saveReconstructionState("complete", [plan]);
         activateSourcePartsDemo(plan);
+        activateRoomEncounterPlan(plan);
         // Decoration has its own lower-priority clock. Only conflict evacuation
         // is mandatory here; replenishing all 36 pieces would delay core play.
         const scenery = {ok:true, deferred:true, reason:"independent_timer"};
@@ -2473,6 +2509,8 @@ export async function reconstructSourcePartsAroundPlayers(
         messagePlayers(players, `[infinite_castle] 部分再構築失敗: ${error}`);
         return { ok: false, reason: "error", error: String(error) };
     } finally {
+        hardLockedPlacements = [];
+        endEncounterReconstruction();
         reconstructionInProgress = false;
     }
 }

@@ -1,4 +1,4 @@
-import { createSourcePartsDemoProgression } from "./sourcePartsDemoProgression.js";
+import { allocateRoles } from "./phase1State.js";
 import { isHealingGarden } from "./sourceHealingGarden.js";
 
 // Provisional rarity, independent of ordinary reward chests and combat logic.
@@ -20,17 +20,14 @@ function rarityRoll(seed, id) {
 }
 
 export function assignRoomMaterials(plan) {
-    const rooms = createSourcePartsDemoProgression(plan.seed, plan).rooms;
-    const roles = new Map(rooms.map(room => [room.placementId, room.role]));
+    const roles = new Map(allocateRoles(plan).map(room => [room.placementId, room]));
     for (const placement of plan.placements) {
         if (placement.category !== "room") continue;
         const role = roles.get(placement.placementId);
-        placement.materialTheme = role === "miniboss" || role === "final" ? "boss"
-            : role === "reward" && rarityRoll(plan.seed, placement.placementId) < RARE_ROOM_CHANCE
-                ? "rare" : "normal";
-        placement.rareRoomType = placement.materialTheme === "rare"
-            ? (rarityRoll(plan.seed ^ 0x7661756c, placement.placementId) < 0.5 ? "healing_garden" : "treasure_vault")
-            : undefined;
+        placement.encounterRole = { kind: role.kind, encounterType: role.encounterType, interiorVariant: role.interiorVariant };
+        placement.materialTheme = role.encounterType === "elite" ? "boss"
+            : ["healing_garden", "treasure_vault"].includes(role.kind) ? "rare" : "normal";
+        placement.rareRoomType = placement.materialTheme === "rare" ? role.kind : undefined;
     }
     return plan;
 }
@@ -46,9 +43,7 @@ export function materialVariantId(placement) {
 
 export function serializeRoomMaterials(plan) {
     return plan.placements.filter(p => p.category === "room")
-        .map(p => p.materialTheme === "rare"
-            ? [p.placementId, "rare", p.rareRoomType ?? "healing_garden"]
-            : [p.placementId, p.materialTheme ?? "normal"]);
+        .map(p => [p.placementId, p.materialTheme ?? "normal", p.rareRoomType ?? null, p.encounterRole ?? null]);
 }
 
 export function restoreRoomMaterials(plan, saved) {
@@ -58,7 +53,7 @@ export function restoreRoomMaterials(plan, saved) {
     const byId = new Map();
     const roomIds = new Set(plan.placements.filter(p => p.category === "room").map(p => p.placementId));
     for (const entry of entries) {
-        if (!Array.isArray(entry) || ![2, 3].includes(entry.length) || !roomIds.has(entry[0])
+        if (!Array.isArray(entry) || ![2, 3, 4].includes(entry.length) || !roomIds.has(entry[0])
             || !Object.hasOwn(ROOM_MATERIAL_BLOCKS, entry[1]) || byId.has(entry[0])) {
             throw new Error("invalid saved room material entry");
         }
@@ -71,6 +66,7 @@ export function restoreRoomMaterials(plan, saved) {
         if (placement.category !== "room") continue;
         const entry = byId.get(placement.placementId);
         placement.materialTheme = entry?.[1] ?? "normal";
+        placement.encounterRole = entry?.[3] ?? undefined;
         // All previously saved rare rooms were gardens. Never reroll them.
         placement.rareRoomType = placement.materialTheme === "rare" ? entry?.[2] ?? "healing_garden" : undefined;
     }

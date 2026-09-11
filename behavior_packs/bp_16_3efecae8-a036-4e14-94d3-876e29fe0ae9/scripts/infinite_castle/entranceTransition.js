@@ -74,6 +74,8 @@ export function startEntranceTransition({
     landingLocation,
     soundId,
     onFinished,
+    beforeTeleport = () => {},
+    canTeleport = () => true,
     settings = ENTRANCE_TRANSITION,
     schedule = (callback, delayTicks) => system.runTimeout(callback, delayTicks),
 }) {
@@ -101,6 +103,8 @@ export function startEntranceTransition({
 
     if (!settings.enabled) {
         try {
+            if (!canTeleport()) throw new Error("Transfer cancelled");
+            beforeTeleport();
             player.teleport(landingLocation, { dimension: dungeonDimension });
             finish(true);
         } catch (error) {
@@ -124,6 +128,8 @@ export function startEntranceTransition({
     schedule(() => {
         if (finished) return;
         try {
+            if (!canTeleport()) throw new Error("Transfer cancelled");
+            beforeTeleport();
             player.teleport(landingLocation, { dimension: dungeonDimension });
         } catch (error) {
             finish(false, error);

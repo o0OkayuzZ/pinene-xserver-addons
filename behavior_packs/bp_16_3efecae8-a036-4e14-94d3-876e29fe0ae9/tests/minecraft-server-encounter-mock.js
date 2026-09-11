@@ -12,7 +12,7 @@ let serial = 0;
 let difficulty = "Normal";
 let deferred = [];
 let unloaded = false;
-export const metrics = { spawns: 0, removals: 0, writes: 0, stockWrites: 0 };
+export const metrics = { spawns: 0, removals: 0, writes: 0, stockWrites: 0, lootCalls: 0 };
 export class EnchantmentType { constructor(id) { this.id = id; } }
 export class ItemStack {
     constructor(typeId, amount = 1) { this.typeId = typeId; this.amount = amount; this.enchantments = []; }
@@ -35,6 +35,17 @@ function inventory() {
     };
 }
 export const dimension = {
+    playSound() {}, spawnParticle() {},
+    runCommand(command) {
+        const match = /^loot replace block (-?\d+) (-?\d+) (-?\d+) slot.container (\d+) 1 loot/.exec(command);
+        if (!match) throw new Error('unexpected command');
+        if (!/loot "chests\/infinite_castle\/slots\/[a-z_]+"$/.test(command))
+            throw new Error('Bedrock /loot adds loot_tables/ and .json itself');
+        metrics.lootCalls++;
+        const container=this.getBlock({x:+match[1],y:+match[2],z:+match[3]}).getComponent().container;
+        if (/_base"$/.test(command) || +match[4] % 7 === 0) container.setItem(+match[4],new ItemStack('minecraft:diamond',12));
+        return {successCount:1};
+    },
     id: "infinite_castle:dungeon", heightRange: { min: -64, max: 512 },
     getPlayers() { return players; },
     getBlock(point) {
@@ -45,7 +56,7 @@ export const dimension = {
                 && p.z >= r.origin.z && p.z <= r.origin.z + 42);
             const block = {
                 dimension, location: p, typeId: floor ? "minecraft:oak_planks" : "minecraft:air",
-                get isSolid() { return !["minecraft:air", "minecraft:light_block_15"].includes(this.typeId); },
+                get isLiquid() { return ["minecraft:water", "minecraft:lava"].includes(this.typeId); },
                 get isAir() { return this.typeId === "minecraft:air"; },
                 setType(typeId) { metrics.writes++; this.typeId = typeId; this.container = typeId === "minecraft:chest" ? inventory() : undefined; },
                 getComponent() { return this.container ? { container: this.container } : undefined; },
@@ -58,12 +69,18 @@ export const dimension = {
         return [...entities.values()].filter(e => e.loaded && e.dimension.id === this.id
             && (!query.tags || query.tags.every(tag => e.hasTag(tag))));
     },
-    spawnEntity(typeId, location) {
+    spawnEntity(typeId, location, spawnOptions = {}) {
         metrics.spawns++;
         const tags = new Set();
         const entity = {
+            spawnOptions,
+            health: {currentValue:20,effectiveMax:20,resetToMaxValue(){this.currentValue=this.effectiveMax;}},
+            getComponent(id) { return id === "minecraft:health" ? this.health : id === "minecraft:movement" ? {currentValue:.2,setCurrentValue(){}} : undefined; },
+            getEffect() {}, addEffect() {}, getViewDirection() { return {x:0,y:0,z:1}; },
+            teleport(p) { this.location=p; }, applyDamage(n) { this.health.currentValue-=n; },
+            applyKnockback() {}, setDynamicProperty() {}, triggerEvent() {},
             id: `enemy${++serial}`, typeId, location, dimension: this, loaded: true,
-            addTag(tag) { tags.add(tag); }, hasTag(tag) { return tags.has(tag); }, getTags() { return [...tags]; },
+            addTag(tag) { tags.add(tag); }, removeTag(tag) { tags.delete(tag); }, hasTag(tag) { return tags.has(tag); }, getTags() { return [...tags]; },
             matches(q) { return q.families?.includes("monster") && !["minecraft:wolf", "minecraft:item"].includes(typeId); },
             remove() { entities.delete(this.id); metrics.removals++; },
         };
@@ -73,7 +90,7 @@ export const dimension = {
     },
 };
 export const world = {
-    beforeEvents: { playerInteractWithBlock: signal("interact"), playerBreakBlock: signal("break"), explosion: signal("explosion") },
+    beforeEvents: { entityHurt: signal('hurtBefore'), playerInteractWithBlock: signal("interact"), playerBreakBlock: signal("break"), explosion: signal("explosion") },
     afterEvents: { entityDie: signal("die"), entitySpawn: signal("entitySpawn"), entityLoad: signal("entityLoad") },
     getDynamicProperty(key) { return properties.get(key); },
     setDynamicProperty(key, value) { if (value === undefined) properties.delete(key); else properties.set(key, value); },

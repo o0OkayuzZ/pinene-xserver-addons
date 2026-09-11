@@ -143,6 +143,80 @@
 					"can_walk": true,
 					"avoid_sun": false
 				}
+			},
+			"infinite_castle:plague_1": {
+				"minecraft:health": {
+					"value": 145,
+					"max": 145
+				},
+				"minecraft:attack": {
+					"damage": 3
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 999,
+					"attack_interval_min": 3600,
+					"attack_interval_max": 3600
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 6,
+					"speed_multiplier": 1,
+					"within_radius": 8
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 5,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 1,
+							"sprint_speed_multiplier": 1.15
+						}
+					]
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.generic": {
+					"is_amphibious": true,
+					"can_path_over_water": false,
+					"can_break_doors": false,
+					"can_swim": false,
+					"can_walk": true,
+					"avoid_sun": false
+				},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
 			}
 		},
 		"components": {
@@ -327,49 +401,79 @@
 				}
 			},
 			"dungeons:begin_shockwave": {
-				"add": {
-					"component_groups": [
-						"dungeons:shockwave"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:shockwave_ready"
-					]
-				},
-				"queue_command": {
-					"command": [
-						"playsound mob.drowned_necromancer.summon @a ~~~ 1.0 0.8",
-						"effect @s slowness 2 9 true",
-						"effect @s resistance 1 9 true",
-						"effect @s instant_damage 1 0 true",
-						"playanimation @s animation.drowned_necromancer.idle"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:shockwave"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:shockwave_ready"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"playsound mob.drowned_necromancer.summon @a ~~~ 1.0 0.8",
+								"effect @s slowness 2 9 true",
+								"effect @s resistance 1 9 true",
+								"effect @s instant_damage 1 0 true",
+								"playanimation @s animation.drowned_necromancer.idle"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:end_shockwave": {
-				"add": {
-					"component_groups": [
-						"dungeons:shockwave_cooldown"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:shockwave"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:shockwave_cooldown"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:shockwave"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:end_cooldown": {
-				"add": {
-					"component_groups": [
-						"dungeons:shockwave_ready"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:shockwave_cooldown"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:shockwave_ready"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:shockwave_cooldown"
+							]
+						}
+					}
+				]
 			},
 			"minecraft:has_target": {
 				"remove": {
@@ -394,7 +498,30 @@
 						"minecraft:wander_mode"
 					]
 				}
-			}
+			},
+			"infinite_castle:plague_1": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:shockwave_cooldown",
+								"dungeons:shockwave_ready",
+								"dungeons:shockwave",
+								"minecraft:hunter_mode",
+								"minecraft:wander_mode"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:plague_1"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:idle": {}
 		}
 	}
 }

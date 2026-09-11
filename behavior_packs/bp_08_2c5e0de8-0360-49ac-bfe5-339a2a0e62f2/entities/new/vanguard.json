@@ -128,6 +128,52 @@
 				"minecraft:knockback_resistance": {
 					"value": 0
 				}
+			},
+			"infinite_castle:vanguard_1": {
+				"minecraft:health": {
+					"value": 90,
+					"max": 90
+				},
+				"minecraft:attack": {
+					"damage": 9
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"is_amphibious": true,
+					"avoid_sun": false,
+					"avoid_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
 			}
 		},
 		"components": {
@@ -293,11 +339,21 @@
 		},
 		"events": {
 			"dungeons:become_enchanted": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					}
+				]
 			},
 			"minecraft:entity_spawned": {
 				"randomize": [
@@ -317,43 +373,97 @@
 				]
 			},
 			"dungeons:nameless_minion": {
-				"add": {
-					"component_groups": [
-						"dungeons:has_shield",
-						"dungeons:nameless_despawn"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:has_shield",
+								"dungeons:nameless_despawn"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:break_shield": {
-				"add": {
-					"component_groups": [
-						"dungeons:no_shield"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:has_shield"
-					]
-				},
-				"queue_command": {
-					"command": [
-						"playsound item.shield.block @a ~~~ 1.0 1.0",
-						"playsound random.break @a ~~~ 0.3 1.0"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:no_shield"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:has_shield"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"playsound item.shield.block @a ~~~ 1.0 1.0",
+								"playsound random.break @a ~~~ 0.3 1.0"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:instant_despawn": {
-				"add": {
-					"component_groups": [
-						"dungeons:instant_despawn"
-					]
-				},
-				"queue_command": {
-					"command": [
-						"particle dungeons:vanguard_despawn"
-					]
-				}
-			}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:instant_despawn"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"particle dungeons:vanguard_despawn"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:vanguard_1": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:instant_despawn",
+								"dungeons:nameless_despawn",
+								"dungeons:standard_despawn",
+								"dungeons:has_shield",
+								"dungeons:no_shield"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:vanguard_1"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:idle": {}
 		}
 	}
 }

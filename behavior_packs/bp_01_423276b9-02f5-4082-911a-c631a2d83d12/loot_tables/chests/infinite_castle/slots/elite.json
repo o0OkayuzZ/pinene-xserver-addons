@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/chests/infinite_castle/slots/elite_base.json",
+          "weight": 350
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 50
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 45
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 18
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 25
+        },
+        {
+          "type": "item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 8
+        },
+        {
+          "type": "empty",
+          "weight": 2104
+        }
+      ]
+    }
+  ]
+}

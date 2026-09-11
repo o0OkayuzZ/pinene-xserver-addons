@@ -826,29 +826,97 @@
 						"mob"
 					]
 				}
+			},
+			"infinite_castle:zombie_1": {
+				"minecraft:health": {
+					"value": 70,
+					"max": 70
+				},
+				"minecraft:attack": {
+					"damage": 8
+				},
+				"minecraft:persistent": {},
+				"minecraft:environment_sensor": {
+					"triggers": []
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:jump.static": {},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.walk": {
+					"can_break_doors": true,
+					"is_amphibious": true,
+					"can_pass_doors": true,
+					"can_walk": true
+				},
+				"minecraft:physics": {}
 			}
 		},
 		"events": {
 			"dungeons:become_enchanted_adult": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted_adult"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted_adult"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:become_enchanted_baby": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted_baby"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted_baby"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:become_enchanted_rider": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted_rider"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted_rider"
+							]
+						}
+					}
+				]
 			},
 			"minecraft:entity_born": {
 				"trigger": "minecraft:as_baby"
@@ -1049,6 +1117,27 @@
 						"minecraft:start_drowned_transformation"
 					]
 				}
+			},
+			"infinite_castle:zombie_1": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:zombie_default",
+								"minecraft:zombie_adult",
+								"minecraft:not_on_zombie_horse",
+								"minecraft:can_have_equipment"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:zombie_1"
+							]
+						}
+					}
+				]
 			}
 		}
 	}

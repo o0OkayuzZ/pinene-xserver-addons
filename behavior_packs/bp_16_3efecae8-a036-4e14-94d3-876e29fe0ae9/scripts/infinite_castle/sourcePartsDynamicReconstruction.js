@@ -288,6 +288,7 @@ function exactCandidateMatches(candidate, protectedOld) {
         if (index < 0) return null;
         // A protected room keeps its physical material across seed/role changes.
         available[index].materialTheme = oldPlacement.materialTheme ?? "normal";
+        available[index].encounterRole = oldPlacement.encounterRole;
         available[index].rareRoomType = oldPlacement.materialTheme === "rare"
             ? oldPlacement.rareRoomType ?? "healing_garden" : undefined;
         matched.push(available[index]);
@@ -474,6 +475,8 @@ function protectedOldPlacements(oldPlan, locations, protectionHops, requiredIds 
 }
 
 function guardCandidate(candidate, options) {
+    try { options.validateCandidate?.(candidate); }
+    catch (error) { error.code = "SOCKET_GUARD"; throw error; }
     const sceneryExclusions = (Array.isArray(options.sceneryExclusionBounds)
         ? options.sceneryExclusionBounds
         : (Array.isArray(options.exclusionBounds) ? options.exclusionBounds : []))
@@ -586,6 +589,7 @@ export function createAnchoredSourcePartsReconstruction(
         } catch (error) {
             if (error?.code === "SCENERY_GUARD") sceneryRejected += 1;
             else if (error?.code === "PLAYER_GUARD") playerRejected += 1;
+                    else if (error?.code === "SOCKET_GUARD") continue;
             else throw error;
         }
     }
@@ -709,6 +713,7 @@ export async function createAnchoredSourcePartsReconstructionAsync(
                 } catch (error) {
                     if (error?.code === "SCENERY_GUARD") sceneryRejected += 1;
                     else if (error?.code === "PLAYER_GUARD") playerRejected += 1;
+                    else if (error?.code === "SOCKET_GUARD") continue;
                     else throw error;
                 }
             }

@@ -8,10 +8,18 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import sys
+
+sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '8d98749d3abd30cad564b1c28fa5b24a2580ee90'
 BSL = 'behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12'
+CASTLE = 'behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9'
+FOODS = 'behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880'
+DUNGEONS = 'behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2'
+PHASE1 = (ROOT / BSL / 'loot_tables/chests/infinite_castle/guard.json').exists()
+BSL_VERSION = [1, 0, 17] if PHASE1 else [1, 0, 15]
 DOC = ROOT / 'docs/bsl'
 errors = []
 
@@ -64,7 +72,11 @@ def main():
     removed_item = removal['removedItem']
     for name, digest in removal['files'].items():
         path = ROOT / name
-        check(not path.exists() if digest is None else path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == digest,
+        registration_override = PHASE1 and name.endswith(('world_behavior_packs.json', 'world_resource_packs.json'))
+        # Git autocrlf may check out unchanged text as CRLF. Validate the exact
+        # canonical bytes as well; JSON semantics/registrations are audited below.
+        matches = path.is_file() and digest in {hashlib.sha256(path.read_bytes()).hexdigest(), hashlib.sha256(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest()}
+        check(not path.exists() if digest is None else matches or registration_override,
               f'Waystone removal differs: {name}')
     # Exact identifier boundaries avoid matching Simple Waystone's UI/tag namespace.
     pattern = re.compile(r'(?<![\w:])' + re.escape(removed_item) + r'(?![\w.])')
@@ -140,7 +152,32 @@ def main():
         visit(name, [])
 
     chest_prefix = BSL + '/loot_tables/chests/'
-    chests = {n.removeprefix(chest_prefix): d for n, d in tables.items() if n.startswith(chest_prefix)}
+    castle_prefix = chest_prefix + 'infinite_castle/'
+    castle_tables = {n.removeprefix(castle_prefix): d for n, d in tables.items() if n.startswith(castle_prefix)}
+    if PHASE1:
+        from build_castle_slot_loot import build
+        slot_tables = build()
+        check(set(castle_tables) == {n + '.json' for n in ['guard', 'curse', 'wraith', 'heavy', 'mixed', 'elite', 'treasure_vault']} | {'slots/' + n for n in slot_tables}, 'Phase 1 table set mismatch')
+        for name, expected_slot in slot_tables.items():
+            check(castle_tables.get('slots/' + name) == expected_slot, f'Slot expected yield changed: {name}')
+        def check_single_stack(path, chain=()):
+            check(path not in chain, f'Slot reference cycle: {path}')
+            if path in chain:
+                return
+            table = load(ROOT / BSL / path)
+            check(len(table['pools']) == 1 and table['pools'][0]['rolls'] == 1, f'Slot draw can overflow one stack: {path}')
+            for node in walk(table):
+                if node.get('type') == 'loot_table':
+                    check_single_stack(node['name'], (*chain, path))
+        for name in slot_tables:
+            check_single_stack('loot_tables/chests/infinite_castle/slots/' + name)
+        for name, table in castle_tables.items():
+            if name.startswith('slots/'):
+                continue
+            chances = [.5, .45, .18, .25] if name == 'elite.json' else [1, 1, .5, .6] if name == 'treasure_vault.json' else [.3, .22, .05, .1]
+            for index, suffix in enumerate(['food/pancakes', 'food/golden_foods', 'food/enchanted_golden_foods', 'collectibles/all']):
+                standalone(table, 'loot_tables/bsl/' + suffix + '.json', None if chances[index] == 1 else chances[index], 2 if name == 'treasure_vault.json' and index == 1 else 1)
+    chests = {n.removeprefix(chest_prefix): d for n, d in tables.items() if n.startswith(chest_prefix) and not n.startswith(castle_prefix)}
     check(set(chests) == set(provenance['profiles']) and len(chests) == 36, '36 chest profile set mismatch')
     bsl_custom = set()
     for name, table in tables.items():
@@ -160,7 +197,7 @@ def main():
             original['pools'] = [pool for pool in original['pools']
                                  if not (len(pool['entries']) == 1 and pool['entries'][0].get('name') == removed_item)]
             check(table == original, f'Changes beyond dedicated Waystone pool removal: {name}')
-        else:
+        elif not name.startswith(castle_prefix):
             check(table == json.loads(git('show', BASE + ':' + name)), f'Unrelated BSL table changed: {name}')
 
     for name, table in chests.items():
@@ -191,16 +228,19 @@ def main():
     check('true_dn:deathnerite_upgrade_smithing_template' not in bsl_custom, 'Nonexistent Deathnerite template')
     manifest = load(ROOT / BSL / 'manifest.json')
     before_manifest = json.loads(git('show', BASE + ':' + BSL + '/manifest.json'))
-    before_manifest['header']['version'] = [1, 0, 15]
+    before_manifest['header']['version'] = BSL_VERSION
     for module in before_manifest['modules']:
-        module['version'] = [1, 0, 15]
-    check(manifest == before_manifest, 'Manifest changed beyond version 1.0.15')
+        module['version'] = BSL_VERSION
+    check(manifest == before_manifest, 'BSL manifest changed beyond patch version')
     for path in registrations:
         before = json.loads(git('show', BASE + ':' + rel(path)))
         before = [row for row in before if row['pack_id'] not in removal['removedPackUUIDs']]
         for row in before:
             if row['pack_id'] == manifest['header']['uuid']:
-                row['version'] = [1, 0, 15]
+                row['version'] = BSL_VERSION
+            elif PHASE1 and row['pack_id'] in ['3efecae8-a036-4e14-94d3-876e29fe0ae9', 'ef6e99cf-077d-4b55-9e11-f86bb9e66880', '2c5e0de8-0360-49ac-bfe5-339a2a0e62f2']:
+                path_to_manifest = CASTLE if row['pack_id'].startswith('3efecae8') else FOODS if row['pack_id'].startswith('ef6e99cf') else DUNGEONS
+                row['version'] = load(ROOT / path_to_manifest / 'manifest.json')['header']['version']
         check(load(path) == before, f'Other pack registration changed: {rel(path)}')
 
     allowed = set(provenance['files']) | {rel(p) for p in registrations}
@@ -208,12 +248,20 @@ def main():
     allowed.add('tools/test_dungeons_boss_rewards.py')
     for path in [ROOT / 'world_resource_packs.json', *ROOT.glob('worlds/*/world_resource_packs.json')]:
         before = json.loads(git('show', removal['baseCommit'] + ':' + rel(path)))
-        check(load(path) == [row for row in before if row['pack_id'] not in removal['removedPackUUIDs']],
+        before = [row for row in before if row['pack_id'] not in removal['removedPackUUIDs']]
+        if PHASE1:
+            for row in before:
+                if row['pack_id'] == 'ab296f68-bb16-4ede-a49c-d0ed99b5b87b':
+                    row['version'] = load(ROOT / 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json')['header']['version']
+            allowed.add(rel(path))
+        check(load(path) == before,
               f'Other resource pack registration changed: {rel(path)}')
     changed = git('diff', '--name-only', BASE).decode().splitlines()
     added = git('ls-files', '--others', '--exclude-standard').decode().splitlines()
     for name in set(changed + added):
-        check(name in allowed or name.startswith('docs/bsl/') or name == 'tools/validate_bsl_phase05.py', f'Unexpected change: {name}')
+        phase1_scope = PHASE1 and (name.startswith((CASTLE + '/', FOODS + '/scripts/golden_foods/', DUNGEONS + '/entities/', castle_prefix, 'tests/golden_foods/', 'docs/infinite_castle/'))
+                                  or name in [FOODS + '/manifest.json', DUNGEONS + '/manifest.json', DUNGEONS + '/scripts/misc/entityBehaviour/endersent.js', 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json', 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/particles/infinite_castle_key_gold.json', 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/particles/infinite_castle_key_crimson.json', 'tools/validate_infinite_castle_phase1.py'])
+        check(name in allowed or phase1_scope or name.startswith('docs/bsl/') or name in ['tools/validate_bsl_phase05.py', 'tools/build_castle_slot_loot.py'], f'Unexpected change: {name}')
     report = {
         'status': 'PASS' if not errors else 'FAIL', 'baseCommit': BASE,
         'lootTables': len(tables), 'strictJSON': len(tables) - len(jsonc), 'existingJSONC': jsonc,

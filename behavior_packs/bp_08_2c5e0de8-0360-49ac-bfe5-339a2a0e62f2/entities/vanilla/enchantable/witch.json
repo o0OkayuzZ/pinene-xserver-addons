@@ -63,6 +63,64 @@
 			},
 			"minecraft:raid_persistence": {
 				"minecraft:persistent": {}
+			},
+			"infinite_castle:rot_1": {
+				"minecraft:health": {
+					"value": 130,
+					"max": 130
+				},
+				"minecraft:attack": {
+					"damage": 4
+				},
+				"minecraft:persistent": {},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 6,
+					"speed_multiplier": 1,
+					"within_radius": 8
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 5,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 1,
+							"sprint_speed_multiplier": 1.15
+						}
+					]
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 999,
+					"attack_interval_min": 3600,
+					"attack_interval_max": 3600
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true,
+					"avoid_water": false
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
 			}
 		},
 		"components": {
@@ -453,31 +511,61 @@
 		},
 		"events": {
 			"dungeons:become_enchanted": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:become_enchanted_for_raid": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted_raid"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted_raid"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:spawn_enchanter_for_raid": {
-				"queue_command": {
-					"command": [
-						"summon dungeons:enchanter ~1~~ ~~ minecraft:spawn_for_raid"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"minecraft:raid_configuration",
-						"minecraft:raid_persistence"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"queue_command": {
+							"command": [
+								"summon dungeons:enchanter ~1~~ ~~ minecraft:spawn_for_raid"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence"
+							]
+						}
+					}
+				]
 			},
 			"minecraft:entity_spawned": {
 				"randomize": [
@@ -550,6 +638,13 @@
 						}
 					}
 				]
+			},
+			"infinite_castle:rot_1": {
+				"add": {
+					"component_groups": [
+						"infinite_castle:rot_1"
+					]
+				}
 			}
 		}
 	}

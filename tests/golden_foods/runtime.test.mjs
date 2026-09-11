@@ -58,15 +58,17 @@ test("one completed meal applies each basic effect once without inventory writes
   const p=player();assert.equal(consumeFood({source:p,itemStack:{typeId:"a:gbread"}}),true);
   assert.equal(p.calls.length,3);
 });
-test("all unverified one-shot and persistent capabilities remain inactive",()=>{
-  assert.ok(Object.values(CAPABILITIES).every(v=>v===false));
+test("declared debuff counters are enabled while unrelated capabilities remain gated",()=>{
+  assert.equal(CAPABILITIES.cleanse_on_consume,true);
+  assert.equal(CAPABILITIES.prevent_effects,true);
+  assert.equal(CAPABILITIES.extinguish_on_consume,false);
   const p=player({poison:{duration:100,amplifier:0}});
   consumeFood({source:p,itemStack:{typeId:"pinene:enchanted_golden_poisonous_potato"}});
-  assert.deepEqual(p.calls,[]);
-  assert.deepEqual(effectLines(FOODS["pinene:enchanted_golden_poisonous_potato"]),[]);
+  assert.equal(p.values.has('poison'),false);
+  assert.ok(effectLines(FOODS["pinene:enchanted_golden_poisonous_potato"]).includes('食後に対象の状態異常を解除'));
 });
 test("UI uses data seconds; night vision eight minutes is level I",()=>{
-  assert.deepEqual(effectLines(FOODS["pinene:enchanted_golden_carrot"]),["暗視 I：480秒"]);
+  assert.equal(effectLines(FOODS["pinene:enchanted_golden_carrot"])[0],"暗視 I：480秒");
 });
 test("gated cleanse prototype only removes allowlisted effects",()=>{
   const p=player({poison:{duration:100,amplifier:0},bad_omen:{duration:100,amplifier:0}});
@@ -96,7 +98,8 @@ test("registration has one onConsume callback; only guide onUse opens UI",()=>{
   const code=readFileSync(path,"utf8").replace(/^import .*;$/gm,"");
   const components=new Map();let consumes=0, guides=0;
   const system={beforeEvents:{startup:{subscribe(cb){cb({itemComponentRegistry:{registerCustomComponent:(id,c)=>components.set(id,c)}});}}},run:cb=>cb()};
-  runInNewContext(code,{system,useExtension:()=>{},consumeFood:()=>consumes++,showGuide:()=>guides++,console});
+  const world={beforeEvents:{effectAdd:{subscribe(){}}},afterEvents:{playerLeave:{subscribe(){}}}};
+  runInNewContext(code,{system,world,useExtension:()=>{},consumeFood:()=>consumes++,showGuide:()=>guides++,console});
   const food=components.get("pinene:golden_food_consume"),guide=components.get("pinene:golden_food_guide");
   assert.deepEqual(Object.keys(food),["onConsume"]);assert.equal(consumes,0);
   food.onConsume({});assert.equal(consumes,1);assert.equal(guides,0);

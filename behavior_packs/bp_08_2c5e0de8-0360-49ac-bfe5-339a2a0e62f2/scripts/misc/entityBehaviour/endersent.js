@@ -10,6 +10,7 @@ const targetTeleportHiddenTime = 30
 import { isValidTarget, getDirection, makeVector } from "main.js"
 
 function isEndersent(mob) {
+    if (mob?.hasTag('ic_room_enemy_v1')) return false;
     if (!mob.isValid) return false;
     if (mob.matches({ families: ["endersent"] })) return true;
     return false;

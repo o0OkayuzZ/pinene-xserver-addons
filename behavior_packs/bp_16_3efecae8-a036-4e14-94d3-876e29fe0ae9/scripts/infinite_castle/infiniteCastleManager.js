@@ -31,6 +31,8 @@ import {
 import { acquireLoadedRoomChunks, releaseRoomTickingArea } from "./chunkLoading.js";
 import { inspectRoomConnectors } from "./connectionIntegrity.js";
 import { startEntranceTransition } from "./entranceTransition.js";
+import { PHASE1 } from "./phase1Config.js";
+import { phase1RunState, phase1Enter, phase1ArrivalGrace, phase1Exit, preparePhase1Landing, beginPhase1Run, failPhase1Build, setPhase1Handlers, updateRoomEncounters } from "./phase1Runtime.js";
 import { previewSourceParts } from "./sourcePartsPreview.js";
 import {
     clearSourcePartsV2,
@@ -61,7 +63,7 @@ const USE_SOURCE_PARTS_MAIN_CASTLE = true;
 const SOURCE_MAIN_MIGRATION_KEY = "infinite_castle:source_parts_main_v1";
 const SOURCE_MAIN_START_LOCATION = Object.freeze({ x: 1000, y: 80, z: 1000 });
 const SOURCE_MAIN_BUILD_OPTIONS = "castle seed=420320 smooth";
-const SOURCE_DYNAMIC_INTERVAL_TICKS = 15 * 60 * 20;
+const SOURCE_DYNAMIC_INTERVAL_TICKS = PHASE1.dynamicReconstructionIntervalMinutes * 60 * 20;
 const SOURCE_DYNAMIC_NEXT_TICK_KEY = "infinite_castle:source_dynamic_next_tick_v1";
 const SCENERY_INTERVAL_TICKS = 150 * 20;
 const SCENERY_NEXT_TICK_KEY = "infinite_castle:scenery_next_tick_v1";
@@ -628,6 +630,7 @@ async function runSourceDynamicReconstruction(dimension, requestedSeed) {
 
 function checkSourceDynamicReconstruction() {
     if (!USE_SOURCE_PARTS_MAIN_CASTLE) return;
+    if (phase1RunState() !== "ACTIVE") { setSourceDynamicNextTick(null); return; }
     let dimension;
     let players;
     try {
@@ -738,40 +741,36 @@ function resolveReturnDestination(player) {
 }
 
 function queueExitTransfer(player) {
+    if (arrivingPlayerIds.has(player.id)) return;
     arrivingPlayerIds.add(player.id);
     // 保存地点が入口マーカー直上でも、プレイヤーがそこから離れるまでは再入場を抑止する。
     setEntranceBlocked(player, true);
     const destination = resolveReturnDestination(player);
 
-    try {
-        player.playSound(TRANSFER_CONFIG.exitSoundId, { volume: 1, pitch: 1.0 });
-    } catch {
-        // noop
-    }
-
-    system.runTimeout(() => {
-        let teleported = false;
-        try {
-            player.teleport(destination.location, { dimension: destination.dimension });
-            teleported = true;
-            clearReturnPoint(player);
-            player.sendMessage("§6琵琶の音とともに、無限城から帰還した。");
-        } catch (error) {
-            lastExitCheckError = `teleport: ${error}`;
-            console.warn(`[infinite_castle] exit teleport failed: ${error?.stack ?? error}`);
-            try {
-                player.sendMessage(`[infinite_castle] 帰還処理失敗: ${error}`);
-            } catch {
-                // noop
+    startEntranceTransition({
+        player,
+        dungeonDimension: destination.dimension,
+        landingLocation: destination.location,
+        canTeleport: () => player.dimension.id === INFINITE_CASTLE_DIMENSION_ID && (player.getComponent("minecraft:health")?.currentValue ?? 0) > 0,
+        soundId: TRANSFER_CONFIG.entranceSoundId,
+        onFinished: ({ teleported, error }) => {
+            if (teleported) {
+                clearReturnPoint(player);
+                phase1Exit(player);
+            } else {
+                setEntranceBlocked(player, false);
+                console.warn(`[infinite_castle] return transition failed: ${error}`);
             }
-        } finally {
-            if (!teleported) setEntranceBlocked(player, false);
             system.runTimeout(() => arrivingPlayerIds.delete(player.id), ARRIVAL_COOLDOWN_TICKS);
-        }
-    }, TRANSFER_CONFIG.exitTeleportDelayTicks);
+        },
+    });
 }
 
-setSourcePartsDemoExitTransferHandler((player) => queueExitTransfer(player));
+setSourcePartsDemoExitTransferHandler(null);
+setPhase1Handlers({
+    exit: player => queueExitTransfer(player),
+    reconstruct: () => runSourceDynamicReconstruction(world.getDimension(INFINITE_CASTLE_DIMENSION_ID)),
+});
 
 function transitionPlayerToSourceCastle(player, target) {
     const dungeonDimension = world.getDimension(target.dimensionId);
@@ -779,18 +778,26 @@ function transitionPlayerToSourceCastle(player, target) {
         player,
         dungeonDimension,
         landingLocation: target.location,
+        beforeTeleport: () => phase1ArrivalGrace(player),
         soundId: TRANSFER_CONFIG.entranceSoundId,
         onFinished: ({ teleported, error }) => {
-            if (!teleported) {
-                console.warn(`[infinite_castle] source castle entrance teleport failed: ${error}`);
+            try {
+                if (!teleported) {
+                    console.warn(`[infinite_castle] source castle entrance teleport failed: ${error}`);
+                } else {
+                    phase1Enter(player);
+                }
+            } finally {
+                target.release?.();
+                system.runTimeout(() => arrivingPlayerIds.delete(player.id), ARRIVAL_COOLDOWN_TICKS);
             }
-            system.runTimeout(() => arrivingPlayerIds.delete(player.id), ARRIVAL_COOLDOWN_TICKS);
         },
     });
 }
 
 async function migrateAndEnterSourceCastle(player) {
     let transitionStarted = false;
+    let target;
     try {
         const dimension = world.getDimension(INFINITE_CASTLE_DIMENSION_ID);
         if (world.getDynamicProperty(SOURCE_MAIN_MIGRATION_KEY) !== true) {
@@ -803,8 +810,9 @@ async function migrateAndEnterSourceCastle(player) {
             if (!cleared) return;
         }
 
-        let target = getSourcePartsDemoEntranceTarget();
-        if (!target || target.dimensionId !== INFINITE_CASTLE_DIMENSION_ID) {
+        const newRunRequired = phase1RunState() !== "ACTIVE";
+        if (newRunRequired) beginPhase1Run();
+        if (newRunRequired) {
             player.sendMessage("[infinite_castle] 新しい三層・15室版の建築を開始します");
             const result = await rebuildSourcePartsAt(
                 player,
@@ -812,9 +820,10 @@ async function migrateAndEnterSourceCastle(player) {
                 SOURCE_MAIN_START_LOCATION,
                 SOURCE_MAIN_BUILD_OPTIONS
             );
-            if (!result?.ok) return;
-            target = getSourcePartsDemoEntranceTarget();
+            if (!result?.ok) { failPhase1Build(); return; }
+            updateRoomEncounters();
         }
+        target = await preparePhase1Landing();
         if (!target || target.dimensionId !== INFINITE_CASTLE_DIMENSION_ID) {
             throw new Error("new source castle entrance target is unavailable");
         }
@@ -824,6 +833,7 @@ async function migrateAndEnterSourceCastle(player) {
         transitionStarted = true;
     } catch (error) {
         console.warn(`[infinite_castle] source castle migration failed: ${error?.stack ?? error}`);
+        if (phase1RunState() !== "ACTIVE") failPhase1Build();
         try {
             player.sendMessage(`[infinite_castle] 新しい無限城への移行失敗: ${error}`);
         } catch {
@@ -833,6 +843,7 @@ async function migrateAndEnterSourceCastle(player) {
         dungeonResetInProgress = false;
         reconstructionInProgress = false;
         if (!transitionStarted) {
+            target?.release?.();
             arrivingPlayerIds.delete(player.id);
             clearReturnPoint(player);
         }
@@ -846,17 +857,11 @@ function startSourceCastleEntrance(player) {
         return;
     }
 
-    const target = getSourcePartsDemoEntranceTarget();
+    updateRoomEncounters();
     const migrated = world.getDynamicProperty(SOURCE_MAIN_MIGRATION_KEY) === true;
-    if (target && migrated && target.dimensionId === INFINITE_CASTLE_DIMENSION_ID) {
-        arrivingPlayerIds.add(player.id);
-        saveReturnPoint(player);
-        transitionPlayerToSourceCastle(player, target);
-        return;
-    }
 
     const dimension = world.getDimension(INFINITE_CASTLE_DIMENSION_ID);
-    if (dimension.getPlayers().length > 0) {
+    if (!migrated && dimension.getPlayers().length > 0) {
         player.sendMessage("[infinite_castle] 初回移行のため、無限城dimensionを一度無人にしてください");
         return;
     }
@@ -871,6 +876,7 @@ function startSourceCastleEntrance(player) {
 // 出口部屋に到達したプレイヤーを、入場前の場所へ帰す。
 // 監視自体の例外をすべて隔離し、1人の無効Entityでinterval全体が止まらないようにする。
 function checkExitRooms() {
+    if (USE_SOURCE_PARTS_MAIN_CASTLE) return;
     exitCheckTickCount += 1;
     lastExitCheckError = "none";
     if (!currentGraph) {

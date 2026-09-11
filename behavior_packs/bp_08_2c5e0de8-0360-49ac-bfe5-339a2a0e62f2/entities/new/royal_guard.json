@@ -214,6 +214,402 @@
 					"within_radius": 64,
 					"follow_distance": 5
 				}
+			},
+			"infinite_castle:royal_guard_1": {
+				"minecraft:health": {
+					"value": 140,
+					"max": 140
+				},
+				"minecraft:attack": {
+					"damage": 14
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:captain_1": {
+				"minecraft:health": {
+					"value": 360,
+					"max": 360
+				},
+				"minecraft:attack": {
+					"damage": 14
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:captain_2": {
+				"minecraft:health": {
+					"value": 413.99999999999994,
+					"max": 413.99999999999994
+				},
+				"minecraft:attack": {
+					"damage": 14
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:captain_3": {
+				"minecraft:health": {
+					"value": 468,
+					"max": 468
+				},
+				"minecraft:attack": {
+					"damage": 14
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:captain_4": {
+				"minecraft:health": {
+					"value": 522,
+					"max": 522
+				},
+				"minecraft:attack": {
+					"damage": 14
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:iron_general_1": {
+				"minecraft:health": {
+					"value": 480,
+					"max": 480
+				},
+				"minecraft:attack": {
+					"damage": 14
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:iron_general_2": {
+				"minecraft:health": {
+					"value": 552,
+					"max": 552
+				},
+				"minecraft:attack": {
+					"damage": 14
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:iron_general_3": {
+				"minecraft:health": {
+					"value": 624,
+					"max": 624
+				},
+				"minecraft:attack": {
+					"damage": 14
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
+			},
+			"infinite_castle:iron_general_4": {
+				"minecraft:health": {
+					"value": 696,
+					"max": 696
+				},
+				"minecraft:attack": {
+					"damage": 14
+				},
+				"minecraft:damage_sensor": {},
+				"minecraft:behavior.summon_entity": {
+					"priority": 999,
+					"summon_choices": []
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3600,
+					"time_down_event": {
+						"event": "infinite_castle:idle",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 48,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:jump.static": {},
+				"minecraft:physics": {}
 			}
 		},
 		"components": {
@@ -322,20 +718,40 @@
 		},
 		"events": {
 			"dungeons:become_enchanted": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:spawn_structure": {
-				"add": {
-					"component_groups": [
-						"minecraft:default_targeting",
-						"dungeons:has_shield",
-						"dungeons:has_home"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:default_targeting",
+								"dungeons:has_shield",
+								"dungeons:has_home"
+							]
+						}
+					}
+				]
 			},
 			"minecraft:entity_spawned": {
 				"add": {
@@ -355,41 +771,71 @@
 				}
 			},
 			"dungeons:harm_shield": {
-				"randomize": [
+				"sequence": [
 					{
-						"weight": 4,
-						"trigger": "dungeons:no_break_shield"
-					},
-					{
-						"weight": 5,
-						"trigger": "dungeons:break_shield"
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"randomize": [
+							{
+								"weight": 4,
+								"trigger": "dungeons:no_break_shield"
+							},
+							{
+								"weight": 5,
+								"trigger": "dungeons:break_shield"
+							}
+						]
 					}
 				]
 			},
 			"dungeons:no_break_shield": {
-				"queue_command": {
-					"command": [
-						"playsound item.shield.block @a ~~~ 1.0 0.5"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"queue_command": {
+							"command": [
+								"playsound item.shield.block @a ~~~ 1.0 0.5"
+							]
+						}
+					}
+				]
 			},
 			"dungeons:break_shield": {
-				"add": {
-					"component_groups": [
-						"dungeons:no_shield"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:has_shield"
-					]
-				},
-				"queue_command": {
-					"command": [
-						"playsound item.shield.block @a ~~~ 1.0 1.0",
-						"playsound random.break @a ~~~ 0.5 0.5"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "!=",
+							"value": "ic_room_enemy_v1"
+						},
+						"add": {
+							"component_groups": [
+								"dungeons:no_shield"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"dungeons:has_shield"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"playsound item.shield.block @a ~~~ 1.0 1.0",
+								"playsound random.break @a ~~~ 0.5 0.5"
+							]
+						}
+					}
+				]
 			},
 			"minecraft:become_aggro": {
 				"add": {
@@ -459,7 +905,260 @@
 						}
 					}
 				]
-			}
+			},
+			"infinite_castle:royal_guard_1": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:has_home",
+								"dungeons:has_shield",
+								"dungeons:no_shield",
+								"minecraft:celebrate",
+								"minecraft:vindicator_aggro",
+								"minecraft:default_targeting",
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence",
+								"minecraft:raid_despawn",
+								"minecraft:patrol_follower"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:royal_guard_1"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:captain_1": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:has_home",
+								"dungeons:has_shield",
+								"dungeons:no_shield",
+								"minecraft:celebrate",
+								"minecraft:vindicator_aggro",
+								"minecraft:default_targeting",
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence",
+								"minecraft:raid_despawn",
+								"minecraft:patrol_follower"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:captain_1"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:captain_2": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:has_home",
+								"dungeons:has_shield",
+								"dungeons:no_shield",
+								"minecraft:celebrate",
+								"minecraft:vindicator_aggro",
+								"minecraft:default_targeting",
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence",
+								"minecraft:raid_despawn",
+								"minecraft:patrol_follower"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:captain_2"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:captain_3": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:has_home",
+								"dungeons:has_shield",
+								"dungeons:no_shield",
+								"minecraft:celebrate",
+								"minecraft:vindicator_aggro",
+								"minecraft:default_targeting",
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence",
+								"minecraft:raid_despawn",
+								"minecraft:patrol_follower"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:captain_3"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:captain_4": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:has_home",
+								"dungeons:has_shield",
+								"dungeons:no_shield",
+								"minecraft:celebrate",
+								"minecraft:vindicator_aggro",
+								"minecraft:default_targeting",
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence",
+								"minecraft:raid_despawn",
+								"minecraft:patrol_follower"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:captain_4"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:iron_general_1": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:has_home",
+								"dungeons:has_shield",
+								"dungeons:no_shield",
+								"minecraft:celebrate",
+								"minecraft:vindicator_aggro",
+								"minecraft:default_targeting",
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence",
+								"minecraft:raid_despawn",
+								"minecraft:patrol_follower"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:iron_general_1"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:iron_general_2": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:has_home",
+								"dungeons:has_shield",
+								"dungeons:no_shield",
+								"minecraft:celebrate",
+								"minecraft:vindicator_aggro",
+								"minecraft:default_targeting",
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence",
+								"minecraft:raid_despawn",
+								"minecraft:patrol_follower"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:iron_general_2"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:iron_general_3": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:has_home",
+								"dungeons:has_shield",
+								"dungeons:no_shield",
+								"minecraft:celebrate",
+								"minecraft:vindicator_aggro",
+								"minecraft:default_targeting",
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence",
+								"minecraft:raid_despawn",
+								"minecraft:patrol_follower"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:iron_general_3"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:iron_general_4": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"dungeons:transform_to_enchanted",
+								"dungeons:has_home",
+								"dungeons:has_shield",
+								"dungeons:no_shield",
+								"minecraft:celebrate",
+								"minecraft:vindicator_aggro",
+								"minecraft:default_targeting",
+								"minecraft:raid_configuration",
+								"minecraft:raid_persistence",
+								"minecraft:raid_despawn",
+								"minecraft:patrol_follower"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"infinite_castle:iron_general_4"
+							]
+						}
+					}
+				]
+			},
+			"infinite_castle:idle": {}
 		}
 	}
 }

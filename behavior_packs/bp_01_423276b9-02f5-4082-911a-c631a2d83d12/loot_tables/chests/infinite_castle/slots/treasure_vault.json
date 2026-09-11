@@ -1,0 +1,48 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/chests/infinite_castle/slots/treasure_vault_base.json",
+          "weight": 500
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 100
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 200
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 50
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 60
+        },
+        {
+          "type": "item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 20
+        },
+        {
+          "type": "item",
+          "name": "minecraft:netherite_ingot",
+          "weight": 15
+        },
+        {
+          "type": "empty",
+          "weight": 1655
+        }
+      ]
+    }
+  ]
+}

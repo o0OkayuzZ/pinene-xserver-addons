@@ -11,12 +11,12 @@ for (const style of ["castle", "floating"]) {
     for (const topology of sourcePartsTopologyIds(style)) {
         for (let seed = 0; seed < 16; seed++) {
             const plan = createSourcePartsPlan(seed, { x: 1000, y: 96, z: 1000 }, { style, topology });
-            const roles = new Map(createSourcePartsDemoProgression(seed, plan).rooms.map(r => [r.placementId, r.role]));
-            assert.equal(plan.placements.filter(p => p.materialTheme === "boss").length, 3);
+            const roles = new Map(plan.placements.map(r => [r.placementId, r.encounterRole]));
+            assert.equal(plan.placements.filter(p => p.materialTheme === "boss").length, 1);
             for (const placement of plan.placements) {
                 const role = roles.get(placement.placementId);
-                if (["miniboss", "final"].includes(role)) assert.equal(placement.materialTheme, "boss");
-                if (placement.materialTheme === "rare") { assert.equal(role, "reward"); rare++; }
+                if (role?.encounterType === 'elite') assert.equal(placement.materialTheme, "boss");
+                if (placement.materialTheme === "rare") { assert.ok(['healing_garden','treasure_vault'].includes(role.kind)); rare++; }
                 if (placement.category !== "room") assert.equal(materialVariantId(placement), placement.variantId);
                 assert.ok(existsSync(new URL(`../structures/infinite_castle/generated_variants/${materialVariantId(placement)}.mcstructure`, import.meta.url)));
             }

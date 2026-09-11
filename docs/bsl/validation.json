@@ -1,8 +1,8 @@
 {
   "status": "PASS",
   "baseCommit": "8d98749d3abd30cad564b1c28fa5b24a2580ee90",
-  "lootTables": 425,
-  "strictJSON": 419,
+  "lootTables": 446,
+  "strictJSON": 440,
   "existingJSONC": [
     "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/basic.json",
     "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/desert.json",
@@ -11,9 +11,9 @@
     "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/mountains.json",
     "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/snowy.json"
   ],
-  "bslLootTables": 44,
+  "bslLootTables": 65,
   "chestProfiles": 36,
-  "nestedReferences": 291,
+  "nestedReferences": 354,
   "references": [
     {
       "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/abandoned_mineshaft.json",
@@ -765,6 +765,202 @@
       ]
     },
     {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/curse.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/curse.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/curse.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/curse.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/elite.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/elite.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/elite.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/elite.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/guard.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/guard.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/guard.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/guard.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/heavy.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/heavy.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/heavy.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/heavy.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/mixed.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/mixed.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/mixed.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/mixed.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/treasure_vault.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/treasure_vault.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/treasure_vault.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/treasure_vault.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/wraith.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/wraith.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/wraith.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/wraith.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
       "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/corridor.json",
       "target": "loot_tables/bsl/food/pancakes.json",
       "resolved": [
@@ -1039,6 +1235,251 @@
     },
     {
       "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_taiga_house.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/curse.json",
+      "target": "loot_tables/chests/infinite_castle/slots/curse_base.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/curse_base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/curse.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/curse.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/curse.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/curse.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/elite.json",
+      "target": "loot_tables/chests/infinite_castle/slots/elite_base.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/elite_base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/elite.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/elite.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/elite.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/elite.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/guard.json",
+      "target": "loot_tables/chests/infinite_castle/slots/guard_base.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/guard_base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/guard.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/guard.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/guard.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/guard.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/heavy.json",
+      "target": "loot_tables/chests/infinite_castle/slots/heavy_base.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/heavy_base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/heavy.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/heavy.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/heavy.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/heavy.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/mixed.json",
+      "target": "loot_tables/chests/infinite_castle/slots/mixed_base.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/mixed_base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/mixed.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/mixed.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/mixed.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/mixed.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/treasure_vault.json",
+      "target": "loot_tables/chests/infinite_castle/slots/treasure_vault_base.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/treasure_vault_base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/treasure_vault.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/treasure_vault.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/treasure_vault.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/treasure_vault.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/wraith.json",
+      "target": "loot_tables/chests/infinite_castle/slots/wraith_base.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/wraith_base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/wraith.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/wraith.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/wraith.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/wraith.json",
       "target": "loot_tables/bsl/collectibles/all.json",
       "resolved": [
         "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
