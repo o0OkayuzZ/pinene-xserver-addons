@@ -161,16 +161,16 @@
     {
       "id": "minecraft-dungeons",
       "name": "Minecraft Dungeons",
-      "summary": "多彩なMobや装備を通して、戦闘と収集の楽しみを広げる。",
-      "description": "Minecraft Dungeonsを題材に、Mobや武器、アイテムを追加するコンテンツです。いつもの冒険に、出会う相手や集める装備の選択肢を加える方向で構成されています。現在のコードには、ヴィンディケーターを基にしたMobや、剣として定義された装備、独自のアイテムが含まれています。ここでは定義を確認できた範囲を紹介し、自然出現する場所や入手方法、戦闘時の性能は確認が取れたものから追加します。",
+      "summary": "装備を集め、道具を作り、強敵との冒険へ。",
+      "description": "多彩な近接武器、弓とクロスボウ、4部位の防具、冒険を支えるアーティファクトを楽しむコンテンツです。英雄の書で収集状況を調べ、素材から道具を作り、ボスチェストの報酬を次の装備集めにつなげられます。ここでは現行コードと照合した装備・レシピを種類別に紹介します。",
       "category": [
         "combat",
         "exploration",
         "collection"
       ],
       "visibility": "public",
-      "implementation": "partial",
-      "deployment": "repo-only",
+      "implementation": "implemented",
+      "deployment": "deployed-recorded",
       "verification": [
         {
           "kind": "code",
@@ -184,7 +184,8 @@
         },
         {
           "kind": "server-start",
-          "result": "unknown"
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
         },
         {
           "kind": "gameplay",
@@ -201,11 +202,12 @@
         "kind": "concept"
       },
       "highlights": [
-        "追加のMob：既存のMobを基にした派生など、冒険中の相手になるMobの定義があります。実際の出現場所や条件は確認中です。",
-        "武器と装備：剣などの装備が定義され、見た目や使用時の処理が設定されています。攻撃力や特殊効果のゲーム内での動作は未確認です。",
-        "収集の手がかり：武器以外にも独自アイテムの定義があります。クラフト、ドロップ、取引などの入手経路はアイテムごとに確認して図鑑へ整理します。"
+        "近接・遠距離の装備を、実際のアイテム画像で比較。",
+        "英雄・勇者・フロストバイト・ファントムの防具を4部位ずつ紹介。",
+        "通常版アーティファクト8種類の用途と、素材を含む11件の製作配置。",
+        "英雄の書による収集と、14種類のボスチェスト報酬設定。"
       ],
-      "guide": "追加Mobの出現条件や装備の入手経路は整理中です。名前や見た目が原作と似ていても、同じ能力・レシピ・ドロップになるとは限りません。確認できたアイテムごとに、このサイトの図鑑へ入手方法と使い方を掲載する予定です。",
+      "guide": "はじめは本と金インゴットで英雄の書を製作。装備の収集状況を調べながら、ダイヤモンドの粉を使ったアーティファクト作りへ進めます。以下の種類別一覧から、使いたい道具の説明と関連レシピを開いてください。",
       "children": [],
       "related": [],
       "packBindings": [
@@ -213,7 +215,10 @@
           "uuid": "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
           "roles": [
             "behavior",
-            "item-definition"
+            "item-definition",
+            "runtime-script",
+            "recipe",
+            "loot"
           ]
         },
         {
@@ -229,9 +234,22 @@
         "paths": [
           "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json",
           "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json",
-          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/variant/vindicator_chef.json",
-          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword_hawkbrand.json",
-          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/book_of_heroes.json"
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/other/theBookOfHeroes.js",
+          "docs/deployments/2026-09-09-dungeons-2.0.3-ja.md",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/spooky_monstrosity.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
         ]
       }
     },

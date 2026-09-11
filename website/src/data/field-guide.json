@@ -1605,10 +1605,10 @@
     "name": "英雄の書",
     "kind": "item",
     "contentId": "minecraft-dungeons",
-    "summary": "Dungeonsの本アイテム。",
-    "description": "Dungeonsの本アイテムです。専用の使用コンポーネントと「読む」の操作表示が定義されています。表示内容とコレクション機能のゲーム内動作は確認中です。",
-    "usage": "個別の操作や特殊な効果は確認中です。原作と同じ性能とは断定していません。",
-    "obtaining": "クラフト・ドロップ・取引などの入手経路は確認中です。",
+    "summary": "装備の収集状況を確認する冒険の図鑑。",
+    "description": "近接武器・遠距離武器・防具・アーティファクトを調べるためのゲーム内の本です。収集状況や装備情報を開く画面が実装されています。",
+    "usage": "手に持って「読む」の使用操作で開きます。収集通知や画面表示の実機確認は残っています。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
     "details": [],
     "image": {
       "src": "/images/items/book-of-heroes.png",
@@ -1621,9 +1621,10 @@
       "commit": "aea85120954a8b74033b86253c17a04b691dab21",
       "paths": [
         "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/book_of_heroes.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/other/theBookOfHeroes.js",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/misc/bookOfHeroesCollection.js",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
-        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
-        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/book_of_heroes.png"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/book_of_heroes.json"
       ]
     }
   },
@@ -6685,6 +6686,2317 @@
         "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/rose_quartz/rose_quartz_crystal_block.json",
         "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/rose_quartz/budding_rose_quartz.json",
         "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sword",
+    "name": "剣",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ロングソード系列の近接装備。",
+    "description": "ロングソード系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：303。",
+      "近接ダメージ成分の設定値：6。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sword.png",
+      "alt": "剣のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sword.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-diamond-sword",
+    "name": "ダイヤモンドの剣",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ロングソード系列の近接装備。",
+    "description": "ロングソード系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1561。",
+      "近接ダメージ成分の設定値：7。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-diamond-sword.png",
+      "alt": "ダイヤモンドの剣のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword_diamond.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/diamond_sword.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-heartstealer",
+    "name": "心を奪うもの",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "クレイモア系列の近接装備。",
+    "description": "クレイモア系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1861。",
+      "近接ダメージ成分の設定値：8。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-heartstealer.png",
+      "alt": "心を奪うもののパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore_heartstealer.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/heartstealer.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-masters-katana",
+    "name": "達人の刀",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "刀系列の近接装備。",
+    "description": "刀系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1199。",
+      "近接ダメージ成分の設定値：8。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-masters-katana.png",
+      "alt": "達人の刀のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/katana/katana_masters.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/master_katana.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-fighters-bindings",
+    "name": "闘士の締め具",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ガントレット系列の近接装備。",
+    "description": "ガントレット系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1222。",
+      "近接ダメージ成分の設定値：7。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-fighters-bindings.png",
+      "alt": "闘士の締め具のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets_fighters_bindings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/fighters_bindings.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-cursed-axe",
+    "name": "呪いの斧",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "両刃斧系列の近接装備。",
+    "description": "両刃斧系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1739。",
+      "近接ダメージ成分の設定値：7。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-cursed-axe.png",
+      "alt": "呪いの斧のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/double_axe/double_cursed.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/cursed_axe.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-whirlwind",
+    "name": "ワールウィンド",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "両刃斧系列の近接装備。",
+    "description": "両刃斧系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1739。",
+      "近接ダメージ成分の設定値：7。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-whirlwind.png",
+      "alt": "ワールウィンドのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/double_axe/double_whirlwind.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/whirlwind.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-stormlander",
+    "name": "ストームランダー",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ハンマー系列の近接装備。",
+    "description": "ハンマー系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：2004。",
+      "近接ダメージ成分の設定値：10。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-stormlander.png",
+      "alt": "ストームランダーのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/hammer/hammer_stormlander.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/stormlander.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sickles",
+    "name": "鎌",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "鎌系列の近接装備。",
+    "description": "鎌系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：210。",
+      "近接ダメージ成分の設定値：4。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sickles.png",
+      "alt": "鎌のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/sickles/sickles.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sickles.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-nightmares-bite",
+    "name": "悪夢の刃",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "鎌系列の近接装備。",
+    "description": "鎌系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1223。",
+      "近接ダメージ成分の設定値：5。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-nightmares-bite.png",
+      "alt": "悪夢の刃のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/sickles/nightmares_bite.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/nightmares_bite.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-flail",
+    "name": "フレイル",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "メイス系列の近接装備。",
+    "description": "メイス系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1912。",
+      "近接ダメージ成分の設定値：8。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-flail.png",
+      "alt": "フレイルのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/mace/flail.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/flail.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-rush-spear",
+    "name": "槍",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "槍系列の近接装備。",
+    "description": "槍系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：244。",
+      "近接ダメージ成分の設定値：3。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-rush-spear.png",
+      "alt": "槍のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rush_spear/rush_spear.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/rush_spear.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-whispering-spear",
+    "name": "ささやく槍",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "槍系列の近接装備。",
+    "description": "槍系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1244。",
+      "近接ダメージ成分の設定値：4。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-whispering-spear.png",
+      "alt": "ささやく槍のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rush_spear/whispering_spear.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/whispering_spear.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-starless-night",
+    "name": "星なき夜",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "黒曜石の大剣系列の近接装備。",
+    "description": "黒曜石の大剣系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：3500。",
+      "近接ダメージ成分の設定値：17。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-starless-night.png",
+      "alt": "星なき夜のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/obsidian_claymore/obsidian_starless_night.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/starless_night.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-encrusted-anchor",
+    "name": "覆われたイカリ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "錨系列の近接装備。",
+    "description": "錨系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：1957。",
+      "近接ダメージ成分の設定値：18。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-encrusted-anchor.png",
+      "alt": "覆われたイカリのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/anchor/anchor_encrusted.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/encrusted_anchor.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-growing-staff",
+    "name": "成長するスタッフ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "バトルスタッフ系列の近接装備。",
+    "description": "バトルスタッフ系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
+    "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：800。",
+      "近接ダメージ成分の設定値：5。最終ダメージは攻撃処理や相手によって変わります。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-growing-staff.png",
+      "alt": "成長するスタッフのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/battlestaff/battlestaff_growing.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/growing_staff.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-power-bow",
+    "name": "力の弓",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "弓系列の遠距離装備。",
+    "description": "弓として弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "最大引き絞り時間の設定：0.8秒。",
+      "耐久値の設定：211。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-power-bow.png",
+      "alt": "力の弓のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/power_bow/power_bow.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/power_bow/standby.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-elite-power-bow",
+    "name": "良質な力の弓",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "弓系列の遠距離装備。",
+    "description": "弓として弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "最大引き絞り時間の設定：0.8秒。",
+      "耐久値の設定：451。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-elite-power-bow.png",
+      "alt": "良質な力の弓のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/power_bow/elite_power_bow.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/elite_power_bow/standby.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-bubble-bow",
+    "name": "バブルの弓",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "弓系列の遠距離装備。",
+    "description": "弓として弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "最大引き絞り時間の設定：1秒。",
+      "耐久値の設定：250。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-bubble-bow.png",
+      "alt": "バブルの弓のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/bubble/bubble_bow.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/bubble_bow/standby.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-bubble-burster",
+    "name": "バブルバースター",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "弓系列の遠距離装備。",
+    "description": "弓として弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "最大引き絞り時間の設定：1秒。",
+      "耐久値の設定：590。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-bubble-burster.png",
+      "alt": "バブルバースターのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/bubble/bubble_burster.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/bubble_burster/standby.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-red-snake",
+    "name": "レッドスネーク",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "弓系列の遠距離装備。",
+    "description": "弓として弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "最大引き絞り時間の設定：1.5秒。",
+      "耐久値の設定：741。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-red-snake.png",
+      "alt": "レッドスネークのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/longbow/red_snake.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/red_snake/standby.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-bow-of-lost-souls",
+    "name": "失われた魂のボウ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "弓系列の遠距離装備。",
+    "description": "弓として弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "最大引き絞り時間の設定：0.75秒。",
+      "耐久値の設定：502。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-bow-of-lost-souls.png",
+      "alt": "失われた魂のボウのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/soulbow/bow_of_lost_souls.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/bow_of_lost_souls/standby.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-harp-crossbow",
+    "name": "ハープクロスボウ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "クロスボウ系列の遠距離装備。",
+    "description": "クロスボウとして弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "最大引き絞り時間の設定：1.25秒。",
+      "耐久値の設定：691。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-harp-crossbow.png",
+      "alt": "ハープクロスボウのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/scatter/harp.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/harp_crossbow/standby.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-lightning-harp-crossbow",
+    "name": "輝くハープクロスボウ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "クロスボウ系列の遠距離装備。",
+    "description": "クロスボウとして弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "最大引き絞り時間の設定：1.25秒。",
+      "耐久値の設定：691。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-lightning-harp-crossbow.png",
+      "alt": "輝くハープクロスボウのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/scatter/lightning.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/lightning_harp_crossbow/standby.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-dual-crossbows",
+    "name": "デュアルクロスボウ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "クロスボウ系列の遠距離装備。",
+    "description": "クロスボウとして弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "最大引き絞り時間の設定：1秒。",
+      "耐久値の設定：466。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-dual-crossbows.png",
+      "alt": "デュアルクロスボウのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/dual/dual_crossbows.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/dual_crossbows/helditem.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-spellbound-crossbows",
+    "name": "スペルバウンドクロスボウ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "クロスボウ系列の遠距離装備。",
+    "description": "クロスボウとして弾を撃つ装備です。通常の矢を弾薬に使う設定を確認しています。",
+    "usage": "矢を用意して使用操作で狙います。追加の矢・特殊な射撃効果の動作は未検証です。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "最大引き絞り時間の設定：1秒。",
+      "耐久値の設定：766。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-spellbound-crossbows.png",
+      "alt": "スペルバウンドクロスボウのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/dual/spellbound_crossbows.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/spellbound_crossbows/helditem.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-heros-boots",
+    "name": "英雄のアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "英雄系列の防具。",
+    "description": "英雄系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：687。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-heros-boots.png",
+      "alt": "英雄のアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/hero_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_heros.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-heros-chestplate",
+    "name": "英雄のアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "英雄系列の防具。",
+    "description": "英雄系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：725。",
+      "装備部位：胴。防御値の設定：14。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-heros-chestplate.png",
+      "alt": "英雄のアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/hero_armour/chest.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_heros.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-heros-helmet",
+    "name": "英雄のアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "英雄系列の防具。",
+    "description": "英雄系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：642。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-heros-helmet.png",
+      "alt": "英雄のアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/hero_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_heros.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-heros-leggings",
+    "name": "英雄のアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "英雄系列の防具。",
+    "description": "英雄系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：712。",
+      "装備部位：脚。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-heros-leggings.png",
+      "alt": "英雄のアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/hero_armour/legs.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_heros.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-champions-boots",
+    "name": "勇者のアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "勇者系列の防具。",
+    "description": "勇者系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：287。",
+      "装備部位：足。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-champions-boots.png",
+      "alt": "勇者のアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/champion_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_champions.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-champions-chestplate",
+    "name": "勇者のアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "勇者系列の防具。",
+    "description": "勇者系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：329。",
+      "装備部位：胴。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-champions-chestplate.png",
+      "alt": "勇者のアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/champion_armour/chest.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_champions.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-champions-helmet",
+    "name": "勇者のアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "勇者系列の防具。",
+    "description": "勇者系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：242。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-champions-helmet.png",
+      "alt": "勇者のアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/champion_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_champions.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-champions-leggings",
+    "name": "勇者のアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "勇者系列の防具。",
+    "description": "勇者系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：312。",
+      "装備部位：脚。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-champions-leggings.png",
+      "alt": "勇者のアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/champion_armour/legs.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_champions.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-bite-boots",
+    "name": "フロストバイトのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "フロストバイト系列の防具。",
+    "description": "フロストバイト系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：664。",
+      "装備部位：足。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-frost-bite-boots.png",
+      "alt": "フロストバイトのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/frost_bite/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_frost_bite.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-bite-chestplate",
+    "name": "フロストバイトのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "フロストバイト系列の防具。",
+    "description": "フロストバイト系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：732。",
+      "装備部位：胴。防御値の設定：14。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-frost-bite-chestplate.png",
+      "alt": "フロストバイトのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/frost_bite/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_frost_bite.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-bite-helmet",
+    "name": "フロストバイトのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "フロストバイト系列の防具。",
+    "description": "フロストバイト系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：612。",
+      "装備部位：頭。防御値の設定：8。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-frost-bite-helmet.png",
+      "alt": "フロストバイトのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/frost_bite/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_frost_bite.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-bite-leggings",
+    "name": "フロストバイトのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "フロストバイト系列の防具。",
+    "description": "フロストバイト系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "details": [
+      "耐久値の設定：632。",
+      "装備部位：脚。防御値の設定：12。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-frost-bite-leggings.png",
+      "alt": "フロストバイトのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/unique/frost_bite/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_frost_bite.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/base.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/helmet.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-phantom-boots",
+    "name": "ファントムの防具のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ファントム系列の防具。",
+    "description": "ファントム系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：264。",
+      "装備部位：足。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-phantom-boots.png",
+      "alt": "ファントムの防具のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/phantom_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_phantom.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-phantom-chestplate",
+    "name": "ファントムの防具のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ファントム系列の防具。",
+    "description": "ファントム系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：290。",
+      "装備部位：胴。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-phantom-chestplate.png",
+      "alt": "ファントムの防具のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/phantom_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_phantom.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-phantom-helmet",
+    "name": "ファントムの防具のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ファントム系列の防具。",
+    "description": "ファントム系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：246。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-phantom-helmet.png",
+      "alt": "ファントムの防具のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/phantom_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_phantom.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-phantom-leggings",
+    "name": "ファントムの防具のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ファントム系列の防具。",
+    "description": "ファントム系列の4部位のうちの1つです。装備部位・耐久値・防御値の設定を確認できます。",
+    "usage": "対応する防具スロットに装備します。セット効果は必要部位や処理の検証が残るため、ここでは断定していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "details": [
+      "耐久値の設定：289。",
+      "装備部位：脚。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-phantom-leggings.png",
+      "alt": "ファントムの防具のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/phantom_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_phantom.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-death-cap-mushroom",
+    "name": "タマゴテングダケ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "攻撃力と移動速度を一時的に上げる。",
+    "description": "通常版は攻撃力上昇と移動速度上昇を200tick付与する処理です。",
+    "usage": "手に持って使用します。記載は通常版のコード設定で、実際の操作・効果・持続時間はゲーム内未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [
+      "時間は20tickで1秒を基準とした設定です。処理負荷による実時間の差は未検証です。",
+      "再使用待ち時間の基本設定：40秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-death-cap-mushroom.png",
+      "alt": "タマゴテングダケのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/death_cap.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/deathCap.js",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/death_cap.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/death_cap_mushroom.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-iron-hide-amulet",
+    "name": "アイアンハイドアミュレット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "短時間の守りを補助するお守り。",
+    "description": "通常版は耐性IIを150tick付与する処理です。",
+    "usage": "手に持って使用します。記載は通常版のコード設定で、実際の操作・効果・持続時間はゲーム内未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [
+      "時間は20tickで1秒を基準とした設定です。処理負荷による実時間の差は未検証です。",
+      "再使用待ち時間の基本設定：25秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-iron-hide-amulet.png",
+      "alt": "アイアンハイドアミュレットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/iron_hide.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/ironHide.js",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/iron_hide.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/iron_hide.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-boots-of-swiftness",
+    "name": "俊足のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "短時間の移動を助けるブーツ。",
+    "description": "通常版は移動速度上昇IIを60tick付与する処理です。防具ではなく、使用するアーティファクトです。",
+    "usage": "手に持って使用します。記載は通常版のコード設定で、実際の操作・効果・持続時間はゲーム内未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [
+      "時間は20tickで1秒を基準とした設定です。処理負荷による実時間の差は未検証です。",
+      "再使用待ち時間の基本設定：5秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-boots-of-swiftness.png",
+      "alt": "俊足のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/boots_of_swiftness.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/swiftnessBoot.js",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/boots_swiftness.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/boots_swiftness.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-light-feather",
+    "name": "フワフワの羽根",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "向いている方向へ飛び出す羽根。",
+    "description": "使用者に移動の力を加え、近くの有効な対象へ短時間の鈍足を付ける処理です。",
+    "usage": "手に持って使用します。記載は通常版のコード設定で、実際の操作・効果・持続時間はゲーム内未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [
+      "時間は20tickで1秒を基準とした設定です。処理負荷による実時間の差は未検証です。",
+      "再使用待ち時間の基本設定：5秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-light-feather.png",
+      "alt": "フワフワの羽根のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/light_feather.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/lightFeather.js",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/light_feather.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/light_feather.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-totem-of-regeneration",
+    "name": "回復のトーテム",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "周囲の回復を補助するトーテム。",
+    "description": "トーテムを呼び出し、回復イベントで周囲のプレイヤーの体力を戻す処理です。所有者への回復増量は断定していません。",
+    "usage": "手に持って使用します。記載は通常版のコード設定で、実際の操作・効果・持続時間はゲーム内未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [
+      "時間は20tickで1秒を基準とした設定です。処理負荷による実時間の差は未検証です。",
+      "再使用待ち時間の基本設定：40秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-totem-of-regeneration.png",
+      "alt": "回復のトーテムのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_regeneration.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/totemRegeneration.js",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/totem_regen.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_r.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-tasty-bone",
+    "name": "骨付き肉",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ペットのオオカミを呼び出す骨。",
+    "description": "使用者の位置へ専用のオオカミを呼び出し、使用者になつかせる処理です。",
+    "usage": "手に持って使用します。記載は通常版のコード設定で、実際の操作・効果・持続時間はゲーム内未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [
+      "時間は20tickで1秒を基準とした設定です。処理負荷による実時間の差は未検証です。",
+      "再使用待ち時間の基本設定：35秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-tasty-bone.png",
+      "alt": "骨付き肉のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/tasty_bone.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/tastyBone.js",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/tasty_bone.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/tasty_bone.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-golem-kit",
+    "name": "ゴーレムキット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ペットのゴーレムを呼び出す道具。",
+    "description": "使用者の位置へ専用のアイアンゴーレムを呼び出し、使用者になつかせる処理です。",
+    "usage": "手に持って使用します。記載は通常版のコード設定で、実際の操作・効果・持続時間はゲーム内未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [
+      "時間は20tickで1秒を基準とした設定です。処理負荷による実時間の差は未検証です。",
+      "再使用待ち時間の基本設定：120秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-golem-kit.png",
+      "alt": "ゴーレムキットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/golem_kit.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/golemKit.js",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/golem_kit.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/golem_kit.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ghost-cloak",
+    "name": "幽霊のマント",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "一時的に姿を隠して移動を補助する。",
+    "description": "通常版は移動速度上昇・耐性II・透明化を40tick付与する処理です。壁抜けや完全な無敵を保証する効果ではありません。",
+    "usage": "手に持って使用します。記載は通常版のコード設定で、実際の操作・効果・持続時間はゲーム内未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [
+      "時間は20tickで1秒を基準とした設定です。処理負荷による実時間の差は未検証です。",
+      "再使用待ち時間の基本設定：7秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ghost-cloak.png",
+      "alt": "幽霊のマントのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/ghost_cloak.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/ghostCloak.js",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/ghost_cloak.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/ghost_cloak.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-diamond-dust",
+    "name": "ダイヤモンドの粉",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "アーティファクト製作に使う素材。",
+    "description": "ダイヤモンドブロックとウサギの皮から作る素材です。今回掲載した通常版アーティファクトの製作材料にも使います。",
+    "usage": "関連レシピの材料と配置を確認して製作に使います。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [],
+    "image": {
+      "src": "/images/items/dungeons-diamond-dust.png",
+      "alt": "ダイヤモンドの粉のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/diamond_dust.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/diamond_dust.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/diamond_dust.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-blue-print",
+    "name": "青色の設計図",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "紙とダイヤモンドの粉から作る設計図。",
+    "description": "青色の設計図の製作配置を紹介します。具体的な装備の強化手順は、別途確認してから掲載します。",
+    "usage": "関連レシピの材料と配置を確認して製作に使います。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピから材料・配置・完成数を確認できます。",
+    "details": [],
+    "image": {
+      "src": "/images/items/dungeons-blue-print.png",
+      "alt": "青色の設計図のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/blueprint.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/blue_print.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/blue_print.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-boots-of-swiftness-recipe",
+    "name": "俊足のブーツのレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "俊足のブーツを作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "羽根",
+          "ダイヤモンドの粉",
+          "砂糖"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "革のブーツ",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "砂糖",
+          "ダイヤモンドの粉",
+          "羽根"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "羽根",
+          "count": 2
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "砂糖",
+          "count": 2
+        },
+        {
+          "name": "革のブーツ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-boots-of-swiftness",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/boots_swiftness.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-death-cap-mushroom-recipe",
+    "name": "タマゴテングダケのレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "タマゴテングダケを作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "ブレイズパウダー",
+          "ダイヤモンドの粉",
+          "砂糖"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "赤いキノコ",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "砂糖",
+          "ダイヤモンドの粉",
+          "ブレイズパウダー"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "ブレイズパウダー",
+          "count": 2
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "砂糖",
+          "count": 2
+        },
+        {
+          "name": "赤いキノコ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-death-cap-mushroom",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/death_cap_mushroom.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ghost-cloak-recipe",
+    "name": "幽霊のマントのレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "幽霊のマントを作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "アメジストの欠片",
+          "ダイヤモンドの粉",
+          "アメジストの欠片"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "羊毛",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "アメジストの欠片",
+          "ダイヤモンドの粉",
+          "アメジストの欠片"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "アメジストの欠片",
+          "count": 4
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "羊毛",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-ghost-cloak",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/ghost_cloak.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-golem-kit-recipe",
+    "name": "ゴーレムキットのレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "ゴーレムキットを作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "鉄ブロック",
+          "ダイヤモンドの粉",
+          "鉄ブロック"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "くり抜かれたカボチャ",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "鉄ブロック",
+          "ダイヤモンドの粉",
+          "鉄ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "鉄ブロック",
+          "count": 4
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "くり抜かれたカボチャ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-golem-kit",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/golem_kit.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-iron-hide-amulet-recipe",
+    "name": "アイアンハイドアミュレットのレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "アイアンハイドアミュレットを作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "鉄ブロック",
+          "ダイヤモンドの粉",
+          "鉄ブロック"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "エメラルドブロック",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "鉄ブロック",
+          "ダイヤモンドの粉",
+          "鉄ブロック"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "鉄ブロック",
+          "count": 4
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "エメラルドブロック",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-iron-hide-amulet",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/iron_hide.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-light-feather-recipe",
+    "name": "フワフワの羽根のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "フワフワの羽根を作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "羽根",
+          "ダイヤモンドの粉",
+          "羽根"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "羽根",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "羽根",
+          "ダイヤモンドの粉",
+          "羽根"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "羽根",
+          "count": 5
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        }
+      ],
+      "resultId": "dungeons-light-feather",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/light_feather.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-tasty-bone-recipe",
+    "name": "骨付き肉のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "骨付き肉を作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "骨",
+          "ダイヤモンドの粉",
+          "骨"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "金色のタンポポ（仮訳）",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "骨",
+          "ダイヤモンドの粉",
+          "骨"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "骨",
+          "count": 4
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "金色のタンポポ（仮訳）",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-tasty-bone",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/tasty_bone.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-totem-of-regeneration-recipe",
+    "name": "回復のトーテムのレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "回復のトーテムを作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "棒",
+          "ダイヤモンドの粉",
+          "棒"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "金ブロック",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "棒",
+          "ダイヤモンドの粉",
+          "棒"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "棒",
+          "count": 4
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "金ブロック",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-totem-of-regeneration",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_r.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-blue-print-recipe",
+    "name": "青色の設計図のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "青色の設計図を作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "",
+          "紙",
+          ""
+        ],
+        [
+          "紙",
+          "ダイヤモンドの粉",
+          "紙"
+        ],
+        [
+          "",
+          "紙",
+          ""
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "紙",
+          "count": 4
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-blue-print",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/blue_print.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "book-of-heroes-recipe",
+    "name": "英雄の書のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "英雄の書を作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "",
+          "金インゴット",
+          ""
+        ],
+        [
+          "金インゴット",
+          "本",
+          "金インゴット"
+        ],
+        [
+          "",
+          "金インゴット",
+          ""
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "金インゴット",
+          "count": 4
+        },
+        {
+          "name": "本",
+          "count": 1
+        }
+      ],
+      "resultId": "book-of-heroes",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/book_of_heroes.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-diamond-dust-recipe",
+    "name": "ダイヤモンドの粉のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "ダイヤモンドの粉を作る材料と配置。",
+    "description": "作業台の配置付きレシピです。材料の個数と完成数を確認できます。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "製作レシピの定義を確認しています。実際のワールドでの解放表示と製作は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "ウサギの皮",
+          "ダイヤモンドブロック",
+          "ウサギの皮"
+        ],
+        [
+          "",
+          "ウサギの皮",
+          ""
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "ウサギの皮",
+          "count": 3
+        },
+        {
+          "name": "ダイヤモンドブロック",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-diamond-dust",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/diamond_dust.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-collection",
+    "name": "英雄の書とコレクション",
+    "kind": "feature",
+    "contentId": "minecraft-dungeons",
+    "summary": "集めた装備をゲーム内の本で確認。",
+    "description": "英雄の書には近接・遠距離・防具・アーティファクトの分類と収集状況を表示する画面があります。インベントリ変更から収集を記録する処理も確認できます。",
+    "usage": "英雄の書を製作して使用します。未収集品と収集済み品の画面や通知は実機での確認が残っています。",
+    "obtaining": "本1冊と金インゴット4個から製作できます。",
+    "details": [],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/other/theBookOfHeroes.js",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/misc/bookOfHeroesCollection.js",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/book_of_heroes.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-boss-rewards",
+    "name": "ボスチェストの報酬",
+    "kind": "feature",
+    "contentId": "minecraft-dungeons",
+    "summary": "武器、防具、アーティファクトを集める手がかり。",
+    "description": "14種類のボスチェスト報酬テーブルがあります。通常の近接・遠距離・アーティファクト枠に加え、防具や製作素材などの抽選が設定されています。",
+    "usage": "アイテムの図鑑で、ボス報酬の候補に含まれるか確認できます。抽選を繰り返しても同じ装備が選ばれることがあります。",
+    "obtaining": "鍵の入手条件、ボスの出現場所、チェストを開く実操作は今回未検証です。",
+    "details": [
+      "防具枠からはDungeons装備のほか、バニラ防具を選ぶ場合があります。",
+      "ハロウィンなどは枠構成が異なります。全ボスが同じ報酬になるわけではありません。",
+      "確定ドロップやフルセット入手を約束する紹介ではありません。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/spooky_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-artifact-crafting",
+    "name": "アーティファクトの製作",
+    "kind": "feature",
+    "contentId": "minecraft-dungeons",
+    "summary": "素材を集めて、冒険を支える道具を作る。",
+    "description": "ダイヤモンドの粉と、作りたい道具ごとの材料を使います。今回は通常版8種類の製作配置を掲載しています。",
+    "usage": "まずダイヤモンドの粉のレシピを確認し、各アーティファクトの関連レシピへ進んでください。",
+    "obtaining": "粉はダイヤモンドブロック1個とウサギの皮3個から1個製作する定義です。",
+    "details": [
+      "通常版とレア版を混同せず、掲載レシピの完成品を確認してください。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/diamond_dust.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/death_cap_mushroom.json"
       ]
     }
   }
