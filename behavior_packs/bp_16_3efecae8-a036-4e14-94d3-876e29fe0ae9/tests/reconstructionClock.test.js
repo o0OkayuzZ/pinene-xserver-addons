@@ -74,7 +74,7 @@ function timerHarness({ deferScenery = false, playersPresent = true } = {}) {
     ]);
     let tick = 0;
     const sounds = [], attempts = [], cores = [];
-    const players = [{ playSound: (id, options) => sounds.push({ id, options, tick }) }];
+    const players = [{ location: { x: 0, y: 80, z: 0 }, playSound: (id, options) => sounds.push({ id, options, tick }) }];
     const dimension = { id: "infinite_castle:dungeon", getPlayers: () => playersPresent ? players : [] };
     world.getDimension = () => dimension;
     const context = vm.createContext({
@@ -112,9 +112,10 @@ test("real manager updates scenery with koto every 150 seconds and core at 15 mi
     await h.advance(18000);
     assert.deepEqual(h.attempts, [200, 3200, 6200, 9200, 12200, 15200]);
     assert.deepEqual(h.cores, [18000]);
-    assert.equal(h.sounds.filter(s => s.options.volume === 0.55).length, 6);
-    assert.equal(h.sounds.filter(s => s.options.volume === 1).length, 1);
-    assert.ok(h.sounds.every(s => s.id === "infinite_castle.koto"));
+    assert.equal(h.sounds.filter(s => s.id === "infinite_castle.koto_distant").length, 6);
+    assert.equal(h.sounds.filter(s => s.id === "infinite_castle.koto").length, 1);
+    assert.ok(h.sounds.filter(s => s.id === "infinite_castle.koto_distant").every(s => s.options.location));
+    assert.ok(h.sounds.filter(s => s.id === "infinite_castle.koto").every(s => !s.options.location));
 });
 
 test("player safety deferral still retries after 20 seconds without a false start sound", async () => {

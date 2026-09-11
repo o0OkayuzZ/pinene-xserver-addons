@@ -1,0 +1,170 @@
+{
+  "versions": {
+    "behavior": [
+      0,
+      2,
+      4
+    ],
+    "resource": [
+      0,
+      1,
+      7
+    ]
+  },
+  "audio": [
+    {
+      "variant": "a",
+      "originalUnchanged": true,
+      "distantMono": true,
+      "sampleRate": 44100,
+      "nearSeconds": 0.8470975056689343,
+      "farSeconds": 1.3170975056689342,
+      "peak": 0.6518248319625854,
+      "rms": 0.08703807321259557,
+      "tailRms": 0.007426373940663045,
+      "sha256": "7c657804cb6efa209e30c5d0d91dcc28b0b915a015a5bea14c880aacebcdf4ee"
+    },
+    {
+      "variant": "b",
+      "originalUnchanged": true,
+      "distantMono": true,
+      "sampleRate": 44100,
+      "nearSeconds": 0.7970975056689342,
+      "farSeconds": 1.2670975056689342,
+      "peak": 0.6191062927246094,
+      "rms": 0.07304532002452686,
+      "tailRms": 0.003669803430507313,
+      "sha256": "745323f4c62b7deecbbcc162be027b9834d7c1560f8510e3319c3591b04c03a9"
+    }
+  ],
+  "tests": {
+    "passed": 8,
+    "failed": 0,
+    "clientGameplayTest": false
+  },
+  "local": [
+    {
+      "world": "IC_Phase1_Fresh_20260911",
+      "backup": "%USERPROFILE%/.codex/backups/ic-sound-20260912-034005/IC_Phase1_Fresh_20260911",
+      "versions": {
+        "3efecae8-a036-4e14-94d3-876e29fe0ae9": {
+          "old": [
+            0,
+            2,
+            3
+          ],
+          "new": [
+            0,
+            2,
+            4
+          ]
+        },
+        "c6529ee0-0a34-4f28-b5ff-66d335fee9bc": {
+          "old": [
+            0,
+            1,
+            6
+          ],
+          "new": [
+            0,
+            1,
+            7
+          ]
+        }
+      },
+      "files": {
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": "78a97e75eea23c3187e8f3b0fd0daa6bc752295742bb575df6d782daaa128615",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js": "b0ca29381e8f131ba576a546cafa11b7b77663112a5daa5b834a5f5a14090527",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/sourcePartsRebuildFeedback.js": "791021f1c7deaebda61b1b7c80bf650ac5ffe0cbc44876187f1bcbdcb649b009",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/rebuildSound.test.js": "af970c428d41f6092dedf53a4f4a9eab969eec8f124d0a22348c8947b69065ee",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionClock.test.js": "d03c07b15fc0a6b69cccca8a2faa318aece85ed3a410a66fb84bd51b966957fd",
+        "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/manifest.json": "ab07d1f853af2907026179256da61d411c0879f6183174a981f6bb7d7c73f659",
+        "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/sounds/infinite_castle/koto_a_distant.ogg": "7c657804cb6efa209e30c5d0d91dcc28b0b915a015a5bea14c880aacebcdf4ee",
+        "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/sounds/infinite_castle/koto_b_distant.ogg": "745323f4c62b7deecbbcc162be027b9834d7c1560f8510e3319c3591b04c03a9",
+        "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/sounds/sound_definitions.json": "3dd069c38e672aa5da86494ba792b8bd5a10d90d31f62e28212849180d630565"
+      },
+      "saveDataWrites": 0,
+      "requiresWorldReload": true
+    },
+    {
+      "world": "8v9pvwiD6QQ=",
+      "backup": "%USERPROFILE%/.codex/backups/ic-sound-20260912-034005/8v9pvwiD6QQ=",
+      "versions": {
+        "3efecae8-a036-4e14-94d3-876e29fe0ae9": {
+          "old": [
+            0,
+            2,
+            3
+          ],
+          "new": [
+            0,
+            2,
+            4
+          ]
+        },
+        "c6529ee0-0a34-4f28-b5ff-66d335fee9bc": {
+          "old": [
+            0,
+            1,
+            6
+          ],
+          "new": [
+            0,
+            1,
+            7
+          ]
+        }
+      },
+      "files": {
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": "78a97e75eea23c3187e8f3b0fd0daa6bc752295742bb575df6d782daaa128615",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js": "b0ca29381e8f131ba576a546cafa11b7b77663112a5daa5b834a5f5a14090527",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/sourcePartsRebuildFeedback.js": "791021f1c7deaebda61b1b7c80bf650ac5ffe0cbc44876187f1bcbdcb649b009",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/rebuildSound.test.js": "af970c428d41f6092dedf53a4f4a9eab969eec8f124d0a22348c8947b69065ee",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionClock.test.js": "d03c07b15fc0a6b69cccca8a2faa318aece85ed3a410a66fb84bd51b966957fd",
+        "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/manifest.json": "ab07d1f853af2907026179256da61d411c0879f6183174a981f6bb7d7c73f659",
+        "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/sounds/infinite_castle/koto_a_distant.ogg": "7c657804cb6efa209e30c5d0d91dcc28b0b915a015a5bea14c880aacebcdf4ee",
+        "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/sounds/infinite_castle/koto_b_distant.ogg": "745323f4c62b7deecbbcc162be027b9834d7c1560f8510e3319c3591b04c03a9",
+        "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/sounds/sound_definitions.json": "3dd069c38e672aa5da86494ba792b8bd5a10d90d31f62e28212849180d630565"
+      },
+      "saveDataWrites": 0,
+      "requiresWorldReload": true
+    }
+  ],
+  "server": {
+    "version": "0.2.4",
+    "resourceVersion": "0.1.7",
+    "backup": "/opt/minecraft/server/_pinene_deploy_backups/sound_20260912_034119",
+    "changedFiles": {
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": "78a97e75eea23c3187e8f3b0fd0daa6bc752295742bb575df6d782daaa128615",
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js": "b0ca29381e8f131ba576a546cafa11b7b77663112a5daa5b834a5f5a14090527",
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/sourcePartsRebuildFeedback.js": "791021f1c7deaebda61b1b7c80bf650ac5ffe0cbc44876187f1bcbdcb649b009",
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/rebuildSound.test.js": "af970c428d41f6092dedf53a4f4a9eab969eec8f124d0a22348c8947b69065ee",
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionClock.test.js": "d03c07b15fc0a6b69cccca8a2faa318aece85ed3a410a66fb84bd51b966957fd",
+      "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/manifest.json": "ab07d1f853af2907026179256da61d411c0879f6183174a981f6bb7d7c73f659",
+      "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/sounds/infinite_castle/koto_a_distant.ogg": "7c657804cb6efa209e30c5d0d91dcc28b0b915a015a5bea14c880aacebcdf4ee",
+      "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/sounds/infinite_castle/koto_b_distant.ogg": "745323f4c62b7deecbbcc162be027b9834d7c1560f8510e3319c3591b04c03a9",
+      "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/sounds/sound_definitions.json": "3dd069c38e672aa5da86494ba792b8bd5a10d90d31f62e28212849180d630565"
+    },
+    "referenceFiles": [
+      "world_behavior_packs.json",
+      "world_resource_packs.json",
+      "worlds/Bedrock level/world_behavior_packs.json",
+      "worlds/Bedrock level/world_resource_packs.json"
+    ],
+    "saveFilesUnchanged": 402,
+    "verified": true,
+    "completedUtc": "2026-09-11T18:41:58.217713+00:00"
+  },
+  "startup": {
+    "checkedUtc": "2026-09-11T18:43:05.428187+00:00",
+    "active": true,
+    "started": true,
+    "versionLines": [
+      "[2026-09-12 03:41:59:719 INFO] Pack Stack - [14] 無限城ビヘイビアーパック (id: 3efecae8-a036-4e14-94d3-876e29fe0ae9, version: 0.2.4) @ behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9"
+    ],
+    "contentLogs": {
+      "ContentLog2026-09-12_03-41-59_1.txt": ""
+    },
+    "errorLines": []
+  }
+}
