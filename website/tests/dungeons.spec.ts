@@ -35,6 +35,19 @@ test('Dungeons category navigation, expanded gear and recipe round trip', async 
  await expect(page.locator('main')).toContainText('13を消費');
  await expect(page.locator('main')).toContainText('ソウル不足時は召喚せず');
  await page.goto(base + 'contents/minecraft-dungeons/');
+ await page.getByRole('navigation', { name: 'Dungeonsの種類別一覧' }).getByRole('link', { name: '防具の製作レシピ 88' }).click();
+ const armorRecipes = page.locator('#dungeons-armor-recipes');
+ await expect(armorRecipes.locator('[data-guide-entry]:visible')).toHaveCount(4);
+ await armorRecipes.locator('summary').click();
+ await expect(armorRecipes.locator('[data-guide-entry]:visible')).toHaveCount(88);
+ await armorRecipes.locator('a[href$="/dungeons-beenest-chestplate-recipe/"]').click();
+ await expect(page.getByText('ハニカム × 7', { exact: true })).toBeVisible();
+ await expect(page.getByText('ミツバチの巣 × 1', { exact: true })).toBeVisible();
+ await page.getByRole('link', { name: /の説明 →$/ }).click();
+ await expect(page).toHaveURL(/database\/entries\/dungeons-beenest-chestplate\/$/);
+ await page.locator('a[href$="/dungeons-beenest-chestplate-recipe/"]').click();
+ await expect(page.locator('.craft-grid')).toBeVisible();
+ await page.goto(base + 'contents/minecraft-dungeons/');
  await page.locator('img:visible').evaluateAll(images => Promise.all(images.map(image => {
   const img = image as HTMLImageElement; img.loading = 'eager'; return img.decode();
  })));
