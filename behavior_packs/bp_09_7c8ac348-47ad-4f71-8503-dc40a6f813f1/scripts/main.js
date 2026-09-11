@@ -27,7 +27,7 @@ const VANILLA_FOOD_IDS = new Set([
 ]);
 
 const ZOMBIE_ITEMS = {
-  stemCell: "minecraft:totem_of_undying",
+  stemCell: "pinematerials:zonbikansaibou",
   armor: {
     helmet: [
       "zombiegear:zombie_helmet",
@@ -195,12 +195,15 @@ function consumeOneSelectedItem(player, expectedTypeId) {
   return true;
 }
 
+function isStemCellItem(typeId) {
+  return typeId === ZOMBIE_ITEMS.stemCell;
+}
+
 function applyBonusNaturalRegen(player) {
   if (!isFullZombieArmor(player)) {
     return;
   }
 
-  // [CHAR]
   if (isDaytime()) {
     return;
   }
@@ -338,9 +341,13 @@ const COMBAT_TICKS = 400;
 const MAX_CHARGE = MAX_REVIVES;
 const BONUS_REGEN_HEAL = 1;
 const BONUS_REGEN_MIN_FOOD = 8;
+const FOOD_SICKNESS_TICKS = 400;
+const ROTTEN_FLESH_HEAL = 8;
+const ROTTEN_FLESH_REPAIR_FRACTION = 0.20;
 const mismatchWarnings = new Set();
 const ownedHealthBoost = new Map();
 const chargeSnapshots = new Map();
+const foodSnapshots = new Map();
 
 function corruption(player) {
   const armor = getArmor(player);
@@ -362,6 +369,54 @@ function initializePlayer(player) {
   }
   player.removeTag("zs_zombie_aura");
   player.removeTag("zs_zombie_heal_bypass");
+}
+
+function isFoodItem(stack) {
+  if (!stack || stack.typeId === "minecraft:milk_bucket") return false;
+  if (stack.typeId === "minecraft:rotten_flesh") return true;
+  return VANILLA_FOOD_IDS.has(stack.typeId) || !!stack.getComponent("minecraft:food");
+}
+
+function getFoodComponent(player, componentName) {
+  try {
+    return player.getComponent(componentName);
+  } catch (error) {
+    return undefined;
+  }
+}
+
+function snapshotFoodState(player, itemStack) {
+  if (!isFullZombieArmor(player) || !isFoodItem(itemStack)) return;
+  foodSnapshots.set(player.id, {
+    typeId: itemStack.typeId,
+    hunger: getFoodComponent(player, "minecraft:player.hunger")?.currentValue,
+    saturation: getFoodComponent(player, "minecraft:player.saturation")?.currentValue
+  });
+}
+
+function restoreFoodValue(player, componentName, value) {
+  if (typeof value !== "number") return;
+  const component = getFoodComponent(player, componentName);
+  if (!component) return;
+  try {
+    component.currentValue = value;
+  } catch (error) {
+    try {
+      component.setCurrentValue(value);
+    } catch (ignored) {
+      // Some runtime builds expose the food values as read-only.
+    }
+  }
+}
+
+function applyFullSetFoodAftermath(player, itemStack) {
+  if (!isFullZombieArmor(player) || !isFoodItem(itemStack)) return;
+  const snapshot = foodSnapshots.get(player.id);
+  foodSnapshots.delete(player.id);
+  restoreFoodValue(player, "minecraft:player.hunger", snapshot?.hunger);
+  restoreFoodValue(player, "minecraft:player.saturation", snapshot?.saturation);
+  player.addEffect("nausea", FOOD_SICKNESS_TICKS, { amplifier: 0, showParticles: true });
+  player.addEffect("blindness", FOOD_SICKNESS_TICKS, { amplifier: 0, showParticles: true });
 }
 
 function revives(player) {
@@ -521,7 +576,7 @@ installGearControls({
       full: isFullZombieArmor(player), corruption: corruption(player), revives: revives(player),
       infection: combat.infectionStage(player), charging: isCharging(player),
       chargeEnd: getScore(player, SCORE.chargeEnd), combat: inCombat(player),
-      holdingTotem: player.getComponent("minecraft:inventory")?.container?.getItem(player.selectedSlotIndex)?.typeId === ZOMBIE_ITEMS.stemCell
+      holdingTotem: isStemCellItem(player.getComponent("minecraft:inventory")?.container?.getItem(player.selectedSlotIndex)?.typeId)
     };
   },
   start: beginCharge,
@@ -530,30 +585,27 @@ installGearControls({
 
 world.afterEvents.itemUse.subscribe(ev => {
   const player = ev.source;
-  if (player.typeId !== "minecraft:player" || ev.itemStack.typeId !== ZOMBIE_ITEMS.stemCell) return;
+  if (player.typeId !== "minecraft:player" || !isStemCellItem(ev.itemStack.typeId)) return;
   initializePlayer(player);
   if (!isFullZombieArmor(player) || inCombat(player) || isCharging(player) || revives(player) >= MAX_REVIVES) {
     player.sendMessage("[ZombieGear] チャージには非戦闘・4部位装備・空き蘇生枠が必要です");
     return;
   }
   beginCharge(player);
-  player.sendMessage("[ZombieGear] チャージ開始 (8秒・完了時にトーテム消費)");
+  player.sendMessage("[ZombieGear] チャージ開始 (8秒・完了時にゾンビ幹細胞を消費)");
 });
 
-// Preserve the old zombie diet, sunlight and regeneration rules for FULL sets.
-// Partial gear supplies only its own armor/modifiers. Milk is always permitted.
+// Full sets may eat any food, but food does not restore hunger/saturation.
 world.beforeEvents.itemUse.subscribe(ev => {
-  if (!isFullZombieArmor(ev.source)) return;
-  const id = ev.itemStack.typeId;
-  if (id === "minecraft:rotten_flesh" || id === "minecraft:milk_bucket") return;
-  if (VANILLA_FOOD_IDS.has(id) || ev.itemStack.getComponent("minecraft:food")) ev.cancel = true;
+  snapshotFoodState(ev.source, ev.itemStack);
 });
 
 world.afterEvents.itemCompleteUse.subscribe(ev => {
-  if (ev.itemStack.typeId !== "minecraft:rotten_flesh" || !isFullZombieArmor(ev.source)) return;
-  heal(ev.source, 4);
-  repairArmor(ev.source, 0.10);
-  ev.source.addEffect("saturation", 2, { amplifier: 0, showParticles: false });
+  if (!isFullZombieArmor(ev.source)) return;
+  applyFullSetFoodAftermath(ev.source, ev.itemStack);
+  if (ev.itemStack.typeId !== "minecraft:rotten_flesh") return;
+  heal(ev.source, ROTTEN_FLESH_HEAL);
+  repairArmor(ev.source, ROTTEN_FLESH_REPAIR_FRACTION);
 });
 
 world.beforeEvents.effectAdd.subscribe(ev => {
@@ -576,6 +628,7 @@ world.afterEvents.playerSpawn.subscribe(ev => {
 world.afterEvents.playerLeave.subscribe(ev => {
   ownedHealthBoost.delete(ev.playerId);
   chargeSnapshots.delete(ev.playerId);
+  foodSnapshots.delete(ev.playerId);
   mismatchWarnings.delete(ev.playerId);
 });
 

@@ -1,5 +1,7 @@
 // Pure rules: ticks are 20 Hz. Infection is sampled before the current hit.
-export const CORRUPTION_ATTACK = Object.freeze([1, 1.1, 1.3, 1.7, 2.5]);
+export const ZOMBIE_GEAR_ATTACK_BONUS = 0.2;
+export const CORRUPTION_ATTACK_BONUS = Object.freeze([0, 0.1, 0.3, 0.7, 1.5]);
+export const CORRUPTION_ATTACK = Object.freeze(CORRUPTION_ATTACK_BONUS.map(n => 1 + n));
 export const INFECTION_ATTACK = Object.freeze([1, 0.9, 0.8, 0.7]);
 export const MAX_REVIVES = 4;
 export const REVIVE_TICKS = 60;
@@ -17,7 +19,9 @@ export function infectionAt(record, tick) {
 }
 
 export function damageMultiplier(corruption, attackerInfection, victimInfection, fullSet) {
-  const attack = corruption >= 0 ? CORRUPTION_ATTACK[clampStage(corruption)] : 1;
+  const attackBonus = fullSet ? ZOMBIE_GEAR_ATTACK_BONUS : 0;
+  const corruptionBonus = corruption >= 0 ? CORRUPTION_ATTACK_BONUS[clampStage(corruption)] : 0;
+  const attack = 1 + attackBonus + corruptionBonus;
   const infectionAttack = INFECTION_ATTACK[clampStage(attackerInfection, 3)];
   // A 30% defense loss is represented as dividing incoming damage by 0.7.
   const defense = 1 / INFECTION_ATTACK[clampStage(victimInfection, 3)];

@@ -15,13 +15,13 @@ export function installGearControls(gear) {
         if (state.charging && sneakCharging.has(player.id) && !player.isSneaking) {
           gear.cancel(player);
           sneakCharging.delete(player.id);
-          show(player, "§7チャージ中断：しゃがみを解除しました（トーテム未消費）");
+          show(player, "§7チャージ中断：しゃがみを解除しました（ゾンビ幹細胞未消費）");
           continue;
         }
         if (state.charging && (!state.full || !state.holdingTotem || state.combat)) {
           gear.cancel(player);
           sneakCharging.delete(player.id);
-          show(player, "§7チャージ中断：装備・持ち物・戦闘状態を確認してください（トーテム未消費）");
+          show(player, "§7チャージ中断：装備・持ち物・戦闘状態を確認してください（ゾンビ幹細胞未消費）");
           continue;
         }
         if (state.charging) {
@@ -42,7 +42,7 @@ export function installGearControls(gear) {
         if (held.get(player.id) === key) continue;
         held.set(player.id, key);
         const corruption = state.corruption < 0 ? "不一致（倍率・蘇生無効）" : STAGES[state.corruption];
-        const action = state.combat ? "戦闘終了後にチャージ可能" : state.revives >= 4 ? "蘇生チャージ満タン" : "トーテムを持って8秒しゃがむ → 蘇生＋1";
+        const action = state.combat ? "戦闘終了後にチャージ可能" : state.revives >= 4 ? "蘇生チャージ満タン" : "ゾンビ幹細胞を持って8秒しゃがむ → 蘇生＋1";
         show(player, `§a蘇生 ${state.revives}/4 §7| §6腐敗 ${corruption}${state.infection ? ` §7| §c感染 ${STAGES[state.infection]}` : ""}\n§f${action}`);
       } catch (error) {
         // Entity can leave between getAllPlayers and reading its components.

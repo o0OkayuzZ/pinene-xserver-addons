@@ -4,7 +4,7 @@ Status: implemented, validated with local tooling, applied to the two requested 
 
 ## Scope
 
-- Updated the existing Zombie Gear BP/RP to version 1.1.0.
+- Updated the existing Zombie Gear BP/RP to version 1.1.1.
 - Preserved the latest core BP dependency at `2b9dbf4f-7f7a-4e97-9687-4864e4f6f501` version `1.0.66`.
 - Updated `@minecraft/server` to `2.6.0` and the BP minimum engine version to `1.26.40`.
 - Integrated the v4 HD armor assets from the handoff: 20 attachables, 20 geometries, 20 armor textures, 20 merged item icons, and one render controller.
@@ -18,8 +18,14 @@ Status: implemented, validated with local tooling, applied to the two requested 
 - Revives consume one stored charge, advance all four equipped armor pieces by one corruption stage, and preserve item metadata such as durability, names, lore, enchantments, locks, keep-on-death, and dynamic properties.
 - Full set grants HP 80 through owned health boost tracking, while partial gear keeps only base item stats.
 - Full set death handling cancels lethal hits and the short post-revive knockback window, then applies queued HP damage directly.
-- Combat scaling is centralized in `scripts/combat.js` with corruption multipliers `[1, 1.1, 1.3, 1.7, 2.5]`, infection attack/defense modifiers, melee infection, decay, and milk clearing.
-- Totem charge UI now supports hold-sneak for 8 seconds, progress feedback, release cancellation, and completion-only totem consumption.
+- Combat scaling is centralized in `scripts/combat.js`. Full Zombie Gear now adds a constant physical attack bonus of +20%, and corruption adds `[0%, 10%, 30%, 70%, 150%]` on top of that, so same-family attack bonuses are additive.
+- Infection attack/defense modifiers, melee infection, decay, and milk clearing remain in `scripts/combat.js`.
+- Zombie stem cell charge UI supports hold-sneak for 8 seconds, progress feedback, release cancellation, and completion-only zombie stem cell consumption.
+- The charge item is `pinematerials:zonbikansaibou`; the earlier `minecraft:totem_of_undying` check was replaced so the crafted zombie stem cell can actually charge revives.
+- Full Zombie Gear no longer blocks food use. Any food can be eaten, then hunger and saturation are restored to the pre-eat values and nausea plus blindness are applied for 20 seconds.
+- Rotten flesh is the only food that directly heals HP for a full Zombie Gear wearer. Its direct heal is now 8 HP and armor repair is now 20%.
+- Night natural healing remains a full-set Zombie Gear ability.
+- Regeneration, absorption, and instant health effects remain blocked for full Zombie Gear.
 
 ## Local Worlds Applied
 
@@ -28,7 +34,7 @@ Applied to both requested worlds:
 - `8v9pvwiD6QQ=` / `開発用ワールド`
 - `IC_Phase1_Fresh_20260911` / `IC Phase 1 - FRESH TEST 20260911`
 
-Each world received 109 changed Zombie Gear pack files. The applied files were hash-checked against the publish worktree, and both world registrations now point to BP/RP version `1.1.0`.
+Each world received the changed Zombie Gear pack files. The applied files were hash-checked against the publish worktree, and both world registrations now point to BP/RP version `1.1.1`.
 
 Backup directory:
 
@@ -36,7 +42,7 @@ Backup directory:
 
 ## Validation
 
-- `node tools/zombie_gear_v4/test_gameplay.cjs`: 24 gameplay mock tests passed.
+- `node tools/zombie_gear_v4/test_gameplay.cjs`: 28 gameplay mock tests passed.
 - `py -3.12 tools/zombie_gear_v4/validate_assets.py`: JSON, armor IDs, protections, icons, geometries, textures, first-person visibility, UUIDs, and registration versions passed.
 - TypeScript `allowJs/checkJs` check passed against `@minecraft/server` 2.6.0 typings.
 
