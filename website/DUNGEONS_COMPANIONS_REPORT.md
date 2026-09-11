@@ -38,7 +38,7 @@
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-soul-lantern-recipe/
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-soul-lantern/
 
-公開先の最終確認とcommitは[PUBLISH_REPORT.md](PUBLISH_REPORT.md)に記録します。
+上記4URLを公開先で390px・1440px確認済みです。HTTP 200、画像、一覧展開、詳細リンク、横はみ出しとJavaScriptエラーがないことを確認しました。実装commitは`dba72d9f`、公開生成物は`c7d3d9a`。配置記録は[PUBLISH_REPORT.md](PUBLISH_REPORT.md)にあります。
 
 ## 未確認事項
 
