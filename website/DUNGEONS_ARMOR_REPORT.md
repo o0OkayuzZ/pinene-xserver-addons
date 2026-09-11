@@ -51,6 +51,6 @@ private/draft識別データを投入した実ビルドと復元後ビルドの�
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/items/?content=minecraft-dungeons
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-verdant-leggings/
 
-公開先の検証とcommitは[PUBLISH_REPORT.md](PUBLISH_REPORT.md)に記録します。
+上記3URLを公開先で390px・1440px確認済みです。HTTP 200、画像、一覧展開、最後の装備への移動、横はみ出しとJavaScriptエラーがないことを確認しました。実装commitは`61a37b74`、公開生成物は`7234c24`。配置記録は[PUBLISH_REPORT.md](PUBLISH_REPORT.md)にあります。
 
 ゲーム内の戦闘・セット効果・修理・実際の入手操作は今回未検証です。参加URLは未設定、大きな紹介イラストは仮素材です。Web以外のゲームパック、UUID、manifest、ワールド、読み込み順、Xserver設定は変更しません。専用Webブランチ・PR #1を更新し、mainへの直接push・自動mergeは行いません。

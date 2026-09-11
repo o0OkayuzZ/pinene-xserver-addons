@@ -1,5 +1,8 @@
 # GitHub Pages公開記録
 
+Dungeons通常防具の更新：ソース `61a37b74`、公開生成物 `7234c24`。84部位を追加し、Dungeons334項目、Web全体520項目・545ページになりました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34600473478)は成功。Dungeons紹介、所属フィルター312件（レシピを除く）、深緑の脚装備詳細を公開URLで390px・1440px確認済みです。HTTP 200、画像、防具196件の展開、最後の詳細リンク、横はみ出しなし、JavaScriptエラーなしを確認しました。[変更・残数・検証](DUNGEONS_ARMOR_REPORT.md) / [PC画面](artifacts/public-dungeons-armor-1440.png) / [スマホ画面](artifacts/public-dungeons-armor-390.png)。
+
+
 Dungeons防具・召喚道具の更新：ソース `dba72d9f`、公開生成物 `c7d3d9a`。76件追加、Dungeons250項目、Web全体436項目・461ページになりました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34598132066)は成功。Dungeons紹介、所属フィルター228件（レシピを除く）、魂のランタンのレシピと詳細を公開URLで390px・1440px確認済みです。HTTP 200、画像、防具112件とアーティファクト14件の展開、詳細リンク、横はみ出しなし、JavaScriptエラーなしを確認しました。[変更と検証](DUNGEONS_COMPANIONS_REPORT.md) / [PC画面](artifacts/public-dungeons-companions-1440.png) / [スマホ画面](artifacts/public-dungeons-companions-390.png)。
 
 
