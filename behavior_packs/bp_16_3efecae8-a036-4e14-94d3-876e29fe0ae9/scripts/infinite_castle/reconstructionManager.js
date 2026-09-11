@@ -1,6 +1,7 @@
 // 城の再構築(タイミング計算・保護部屋を残した再生成)を担当する。
 // ブロックの実配置(japaneseRoomBuilder)には関与しない。
 import { world } from "@minecraft/server";
+import { reconstructionNow } from "./reconstructionClock.js";
 import { RECONSTRUCTION_INTERVAL_MINUTES, RECONSTRUCTION_SOUND_ID } from "./config.js";
 import { addCell } from "./connector.js";
 import { cellKey } from "./gridUtils.js";
@@ -13,7 +14,7 @@ import {
 import { generateDungeon } from "./topologyDungeonGenerator.js";
 import { trackPlayersInDimension } from "./playerRoomTracker.js";
 
-const NEXT_RECONSTRUCTION_TICK_KEY = "infinite_castle:next_reconstruction_absolute_time_v2";
+const NEXT_RECONSTRUCTION_TICK_KEY = "infinite_castle:reconstruction_elapsed_due_v3";
 const TICKS_PER_MINUTE = 20 * 60;
 
 function randomIntervalTicks() {
@@ -25,7 +26,7 @@ function randomIntervalTicks() {
 // 次回再構築時刻(絶対tick)を新しく決めて保存する。ワールド再起動後も
 // world dynamic propertyから復元できる。
 export function scheduleNextReconstruction() {
-    const next = world.getAbsoluteTime() + randomIntervalTicks();
+    const next = reconstructionNow() + randomIntervalTicks();
     world.setDynamicProperty(NEXT_RECONSTRUCTION_TICK_KEY, next);
     return next;
 }
@@ -37,12 +38,12 @@ export function getNextReconstructionTick() {
 
 export function isReconstructionDue() {
     const next = getNextReconstructionTick();
-    return next !== null && world.getAbsoluteTime() >= next;
+    return next !== null && reconstructionNow() >= next;
 }
 
 // デバッグ用: 次回チェックで即座に再構築が走るようにする(通常は使わない)。
 export function forceReconstructionNow() {
-    world.setDynamicProperty(NEXT_RECONSTRUCTION_TICK_KEY, world.getAbsoluteTime());
+    world.setDynamicProperty(NEXT_RECONSTRUCTION_TICK_KEY, reconstructionNow());
 }
 
 function playReconstructionSound(dimension) {

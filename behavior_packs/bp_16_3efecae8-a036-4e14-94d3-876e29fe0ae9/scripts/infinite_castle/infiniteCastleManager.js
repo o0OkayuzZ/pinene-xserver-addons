@@ -1,6 +1,7 @@
 // 無限城アドオン全体のエントリポイント。各モジュールを束ねるだけで、
 // グラフ生成/接続判定/建築などの実処理は既存モジュールに委譲する。
 import { world, system } from "@minecraft/server";
+import { reconstructionNow } from "./reconstructionClock.js";
 import { INFINITE_CASTLE_DIMENSION_ID } from "./dimensionSetup.js";
 import "./infiniteCastleAtmosphere.js";
 import { generateDungeon } from "./topologyDungeonGenerator.js";
@@ -56,7 +57,7 @@ const ENTRANCE_CHECK_INTERVAL_TICKS = 5;
 const EXIT_CHECK_INTERVAL_TICKS = 5;
 const RECONSTRUCTION_CHECK_INTERVAL_TICKS = 20;
 const ARRIVAL_COOLDOWN_TICKS = 40;
-const PACK_BUILD_ID = "0.1.45-room-encounters";
+const PACK_BUILD_ID = "0.2.3-daylight-independent-clock";
 const CURRENT_RENDERER_VERSION = 9;
 const RENDERER_VERSION_KEY = "infinite_castle:renderer_version";
 const USE_SOURCE_PARTS_MAIN_CASTLE = true;
@@ -64,9 +65,10 @@ const SOURCE_MAIN_MIGRATION_KEY = "infinite_castle:source_parts_main_v1";
 const SOURCE_MAIN_START_LOCATION = Object.freeze({ x: 1000, y: 80, z: 1000 });
 const SOURCE_MAIN_BUILD_OPTIONS = "castle seed=420320 smooth";
 const SOURCE_DYNAMIC_INTERVAL_TICKS = PHASE1.dynamicReconstructionIntervalMinutes * 60 * 20;
-const SOURCE_DYNAMIC_NEXT_TICK_KEY = "infinite_castle:source_dynamic_next_tick_v1";
+// v2 deadlines use elapsed server ticks; discard the old daylight deadlines.
+const SOURCE_DYNAMIC_NEXT_TICK_KEY = "infinite_castle:source_dynamic_elapsed_due_v2";
 const SCENERY_INTERVAL_TICKS = 150 * 20;
-const SCENERY_NEXT_TICK_KEY = "infinite_castle:scenery_next_tick_v1";
+const SCENERY_NEXT_TICK_KEY = "infinite_castle:scenery_elapsed_due_v2";
 let sceneryClockInProgress = false;
 
 const returnPoints = new Map(); // playerId -> { dimensionId, location }
@@ -78,7 +80,7 @@ const ENTRANCE_BLOCKED_PROPERTY_KEY = "infinite_castle:entrance_blocked";
 const SEED_KEY = "infinite_castle:seed";
 const GRAPH_KEY = "infinite_castle:graph_state";
 const ENTRANCE_CELL_KEY = "infinite_castle:entrance_cell";
-const NEXT_RECONSTRUCTION_TICK_KEY = "infinite_castle:next_reconstruction_absolute_time_v2";
+const NEXT_RECONSTRUCTION_TICK_KEY = "infinite_castle:reconstruction_elapsed_due_v3";
 
 let currentGraph = null;
 let currentEntranceCell = null;
@@ -618,13 +620,13 @@ async function runSourceDynamicReconstruction(dimension, requestedSeed) {
         ].includes(result?.reason)) {
             console.warn(`[infinite_castle] live-anchor rebuild did not complete: ${result?.reason}`);
         }
-        if (result?.ok) world.setDynamicProperty(SCENERY_NEXT_TICK_KEY, world.getAbsoluteTime() + 200);
+        if (result?.ok) world.setDynamicProperty(SCENERY_NEXT_TICK_KEY, reconstructionNow() + 200);
     } catch (error) {
         console.warn(`[infinite_castle] live-anchor rebuild failed: ${error?.stack ?? error}`);
         broadcastToDungeon(dimension, `[infinite_castle] 部分再構築失敗: ${error}`);
     } finally {
         sourceDynamicReconstructionInProgress = false;
-        setSourceDynamicNextTick(world.getAbsoluteTime() + SOURCE_DYNAMIC_INTERVAL_TICKS);
+        setSourceDynamicNextTick(reconstructionNow() + SOURCE_DYNAMIC_INTERVAL_TICKS);
     }
 }
 
@@ -649,7 +651,7 @@ function checkSourceDynamicReconstruction() {
         || sourceDynamicReconstructionInProgress
         || isSourcePartsReconstructionInProgress()) return;
 
-    const now = world.getAbsoluteTime();
+    const now = reconstructionNow();
     const next = getSourceDynamicNextTick();
     if (next === null) {
         setSourceDynamicNextTick(now + SOURCE_DYNAMIC_INTERVAL_TICKS);
@@ -673,7 +675,7 @@ async function runSceneryClock(dimension) {
             shouldYield: () => {
                 const coreNext = getSourceDynamicNextTick();
                 return sourceDynamicReconstructionInProgress || dungeonResetInProgress
-                    || (coreNext !== null && coreNext <= world.getAbsoluteTime() + 100);
+                    || (coreNext !== null && coreNext <= reconstructionNow() + 100);
             },
         });
         retrySoon = result?.deferred === true || result?.ok === false;
@@ -683,7 +685,7 @@ async function runSceneryClock(dimension) {
     } finally {
         sceneryClockInProgress = false;
         world.setDynamicProperty(SCENERY_NEXT_TICK_KEY,
-            world.getAbsoluteTime() + (retrySoon ? 400 : SCENERY_INTERVAL_TICKS));
+            reconstructionNow() + (retrySoon ? 400 : SCENERY_INTERVAL_TICKS));
     }
 }
 
@@ -694,7 +696,7 @@ function checkSceneryClock() {
     let dimension;
     try { dimension = world.getDimension(INFINITE_CASTLE_DIMENSION_ID); } catch { return; }
     if (dimension.getPlayers().length === 0 || !getSourcePartsDemoEntranceTarget()) return;
-    const now = world.getAbsoluteTime();
+    const now = reconstructionNow();
     const coreNext = getSourceDynamicNextTick();
     if (coreNext !== null && coreNext <= now + 100) return;
     const due = world.getDynamicProperty(SCENERY_NEXT_TICK_KEY);
@@ -976,7 +978,7 @@ function checkPendingVisualUpgrade() {
     if (!pendingVisualUpgrade || !currentGraph) return;
     if (dungeonResetInProgress || reconstructionInProgress) return;
     if (autoVisualUpgradeAttemptedThisSession) return;
-    const now = world.getAbsoluteTime();
+    const now = reconstructionNow();
     if (now - lastVisualUpgradeAttemptTime < 20 * 60) return;
     try {
         const dimension = world.getDimension(INFINITE_CASTLE_DIMENSION_ID);
@@ -1419,7 +1421,7 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
             return;
         }
         if (sceneryClockInProgress) {
-            setSourceDynamicNextTick(world.getAbsoluteTime());
+            setSourceDynamicNextTick(reconstructionNow());
             player.sendMessage("[infinite_castle] 装飾更新を区切って攻略城の再構築を優先します");
             return;
         }
@@ -1501,7 +1503,7 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
     );
     const sourceNext = getSourceDynamicNextTick();
     event.sourceEntity?.sendMessage(
-        `[ic-debug] sourceDynamic=15m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - world.getAbsoluteTime()) / 20))} inProgress=${sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()} progression=off`
+        `[ic-debug] sourceDynamic=15m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - reconstructionNow()) / 20))} inProgress=${sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()} progression=off`
     );
     const scenery = getSourcePartsSceneryStatus();
     event.sourceEntity?.sendMessage(
@@ -1554,8 +1556,8 @@ async function runVisualFullRebuild(player) {
     try {
         const result = await rebuildAllSourcePartsForVisualTest(player);
         if (result?.ok) {
-            setSourceDynamicNextTick(world.getAbsoluteTime() + SOURCE_DYNAMIC_INTERVAL_TICKS);
-            world.setDynamicProperty(SCENERY_NEXT_TICK_KEY, world.getAbsoluteTime() + SCENERY_INTERVAL_TICKS);
+            setSourceDynamicNextTick(reconstructionNow() + SOURCE_DYNAMIC_INTERVAL_TICKS);
+            world.setDynamicProperty(SCENERY_NEXT_TICK_KEY, reconstructionNow() + SCENERY_INTERVAL_TICKS);
             player.sendMessage(`[infinite_castle] 総入れ替え完了 core=${result.plan.placements.length} scenery=${result.scenery.placements} seed=${result.plan.seed}`);
         }
     } catch (error) {
@@ -1590,7 +1592,7 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
     if (event.id !== "infinite_castle:force_scenery_cycle") return;
     const player = event.sourceEntity;
     if (player?.dimension.id !== INFINITE_CASTLE_DIMENSION_ID) return;
-    world.setDynamicProperty(SCENERY_NEXT_TICK_KEY, world.getAbsoluteTime());
+    world.setDynamicProperty(SCENERY_NEXT_TICK_KEY, reconstructionNow());
     player.sendMessage("[infinite_castle] 装飾の一群を更新予約しました。攻略城の再構築中は完了後に実行します");
 });
 
@@ -1712,17 +1714,17 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
             // Keep -1 as the diagnostic value.
         }
         player.sendMessage(
-            `[ic-debug] sourceDynamic=15m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - world.getAbsoluteTime()) / 20))} `
+            `[ic-debug] sourceDynamic=15m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - reconstructionNow()) / 20))} `
             + `inProgress=${sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()} `
             + `dungeonPlayers=${dungeonPlayers} progression=off`
-            + ` sceneryInterval=150s sceneryNext=${Number.isFinite(sceneryNext) ? Math.max(0, Math.ceil((sceneryNext - world.getAbsoluteTime()) / 20)) : "idle"}`
+            + ` sceneryInterval=150s sceneryNext=${Number.isFinite(sceneryNext) ? Math.max(0, Math.ceil((sceneryNext - reconstructionNow()) / 20)) : "idle"}`
             + ` sceneryInProgress=${sceneryClockInProgress}`
         );
         return;
     }
     const next = getNextReconstructionTick();
     player.sendMessage(
-        `[ic-debug] castleSeed=${world.getDynamicProperty(SEED_KEY) ?? "none"} currentTick=${system.currentTick} absoluteTime=${world.getAbsoluteTime()} next=${next} due=${isReconstructionDue()} inProgress=${reconstructionInProgress} hasGraph=${!!currentGraph} exitChecks=${exitCheckTickCount} dungeonPlayers=${lastExitPlayerCount} lastExitError=${lastExitCheckError}`
+        `[ic-debug] castleSeed=${world.getDynamicProperty(SEED_KEY) ?? "none"} currentTick=${system.currentTick} elapsedTicks=${reconstructionNow()} daylightTime=${world.getAbsoluteTime()} next=${next} due=${isReconstructionDue()} inProgress=${reconstructionInProgress} hasGraph=${!!currentGraph} exitChecks=${exitCheckTickCount} dungeonPlayers=${lastExitPlayerCount} lastExitError=${lastExitCheckError}`
     );
 });
 

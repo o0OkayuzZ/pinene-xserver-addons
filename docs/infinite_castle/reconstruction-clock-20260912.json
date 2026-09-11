@@ -1,0 +1,86 @@
+{
+  "cause": {
+    "world": "IC_Phase1_Fresh_20260911",
+    "beforeDeployment": {
+      "daylightTime": 6000,
+      "serverTick": 91328,
+      "doDaylightCycle": false,
+      "sceneryDeadline": 6200,
+      "coreDeadline": 24000
+    },
+    "duringIssue": {
+      "daylightTime": 6000,
+      "serverTick": 103272,
+      "doDaylightCycle": false
+    },
+    "coreState": "complete",
+    "sceneryState": "complete",
+    "runState": "ACTIVE"
+  },
+  "tests": {
+    "passed": 45,
+    "failed": 0,
+    "newClockRegressionTests": 6,
+    "clientGameplayTest": false
+  },
+  "local": [
+    {
+      "world": "IC_Phase1_Fresh_20260911",
+      "backup": "%USERPROFILE%/.codex/backups/ic-clock-20260912-032853/IC_Phase1_Fresh_20260911",
+      "version": "0.2.3",
+      "files": {
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": "61fc02d64a663fac9c1532b7259efe969cecbaa88e1ce012eb5a54302a6225ba",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js": "8d4543eba18f18063d07358994a810b737f804d63c2660809f77e1c9038136c7",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/reconstructionManager.js": "be6b8523bd586c1c86d5d4595b4e766bedad6a9250a2320ef6fde178d27faf3c",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/reconstructionClock.js": "fd816b8d3f832d61750a0eaf1898f34209900bd3f9d89298d373a729ca7eaefb",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionClock.test.js": "91e5512373afe985436340fea8e3b5f4db100a773f91271d2490d277e4314d3a"
+      },
+      "saveDataWrites": 0,
+      "requiresWorldReload": true
+    },
+    {
+      "world": "8v9pvwiD6QQ=",
+      "backup": "%USERPROFILE%/.codex/backups/ic-clock-20260912-032853/8v9pvwiD6QQ=",
+      "version": "0.2.3",
+      "files": {
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": "61fc02d64a663fac9c1532b7259efe969cecbaa88e1ce012eb5a54302a6225ba",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js": "8d4543eba18f18063d07358994a810b737f804d63c2660809f77e1c9038136c7",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/reconstructionManager.js": "be6b8523bd586c1c86d5d4595b4e766bedad6a9250a2320ef6fde178d27faf3c",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/reconstructionClock.js": "fd816b8d3f832d61750a0eaf1898f34209900bd3f9d89298d373a729ca7eaefb",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionClock.test.js": "91e5512373afe985436340fea8e3b5f4db100a773f91271d2490d277e4314d3a"
+      },
+      "saveDataWrites": 0,
+      "requiresWorldReload": true
+    }
+  ],
+  "server": {
+    "version": "0.2.3",
+    "backup": "/opt/minecraft/server/_pinene_deploy_backups/clock_20260912_033022",
+    "changedFiles": {
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": "61fc02d64a663fac9c1532b7259efe969cecbaa88e1ce012eb5a54302a6225ba",
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js": "8d4543eba18f18063d07358994a810b737f804d63c2660809f77e1c9038136c7",
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/reconstructionManager.js": "be6b8523bd586c1c86d5d4595b4e766bedad6a9250a2320ef6fde178d27faf3c",
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/reconstructionClock.js": "fd816b8d3f832d61750a0eaf1898f34209900bd3f9d89298d373a729ca7eaefb",
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionClock.test.js": "91e5512373afe985436340fea8e3b5f4db100a773f91271d2490d277e4314d3a"
+    },
+    "referenceFiles": [
+      "world_behavior_packs.json",
+      "worlds/Bedrock level/world_behavior_packs.json"
+    ],
+    "saveFilesUnchanged": 409,
+    "verified": true,
+    "completedUtc": "2026-09-11T18:31:05.799205+00:00"
+  },
+  "startup": {
+    "checkedUtc": "2026-09-11T18:32:01.693154+00:00",
+    "active": true,
+    "started": true,
+    "versionLines": [
+      "[2026-09-12 03:31:09:977 INFO] Pack Stack - [14] 無限城ビヘイビアーパック (id: 3efecae8-a036-4e14-94d3-876e29fe0ae9, version: 0.2.3) @ behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9"
+    ],
+    "contentLogs": {
+      "ContentLog2026-09-12_03-31-08_1.txt": ""
+    },
+    "errorLines": []
+  }
+}
