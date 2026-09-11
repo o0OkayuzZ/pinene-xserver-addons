@@ -1,5 +1,13 @@
 # GitHub Pages公開記録
 
+最新版Dungeonsの更新：ソース `0cfcb6b1`、公開生成物 `5d7120108d71ea556a71371f195b40c684dc8bf9`。main `4a948e25`（Dungeons 2.0.6）との照合と遠距離レシピ32件の追加で、Dungeons454項目、Web全体640項目・665ページになりました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34633490594)は成功。以下の公開URLをChromiumの390px・1440pxで開き、HTTP 200、画像、横はみ出しなし、JavaScriptエラーなし、バージョン2.0.6、32件の展開、設計図の配置表と完成品へのリンクを確認しました。
+
+- https://o0okayuzz.github.io/pinene-xserver-addons/contents/minecraft-dungeons/
+- https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-harp-crossbow-blueprint-recipe/
+- https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-dual-crossbows-recipe/
+
+[変更・検証・未確認事項](DUNGEONS_LATEST_REPORT.md) / [PC一覧](artifacts/public-dungeons-latest-1440.png) / [スマホ一覧](artifacts/public-dungeons-latest-390.png) / [PC設計図](artifacts/public-dungeons-blueprint-1440.png) / [スマホ設計図](artifacts/public-dungeons-blueprint-390.png)。更新はWeb専用ブランチとPR #1、承認済みのPages生成物に限定。mainへの直接push・merge、ゲームファイルやXserver設定の変更はありません。
+
 Dungeons防具レシピの更新：ソース `7e386484`、公開生成物 `5e1b910`。88件追加、Dungeons422項目、Web全体608項目・633ページになりました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34631977421)は成功。Dungeons紹介、ビーネスト系列の胴装備レシピ、完成品詳細を公開URLで390px・1440px確認済みです。HTTP 200、レシピ88件の展開、詳細リンク、配置表、画像、横はみ出しなし、JavaScriptエラーなしを確認しました。[変更・検証](DUNGEONS_ARMOR_RECIPES_REPORT.md) / [PC画面](artifacts/public-armor-recipes-1440.png) / [スマホ画面](artifacts/public-armor-recipes-390.png)。
 
 

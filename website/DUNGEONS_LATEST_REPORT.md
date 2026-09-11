@@ -30,10 +30,10 @@
 
 [PC全体](artifacts/dungeons-desktop-1440.png) / [スマホ全体](artifacts/dungeons-mobile-390.png) / [タブレット全体](artifacts/dungeons-tablet-768.png)
 
-## 確認対象URL
+## 実際に確認した公開URL
 
 - https://o0okayuzz.github.io/pinene-xserver-addons/contents/minecraft-dungeons/
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-harp-crossbow-blueprint-recipe/
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-dual-crossbows-recipe/
 
-公開先の最終確認・commitは[PUBLISH_REPORT.md](PUBLISH_REPORT.md)に記録します。Web以外のBP/RP、UUID、manifest、ワールド、読み込み順、Xserver設定は変更しません。専用ブランチと既存PR #1へ追加し、mainへの直接push・自動mergeは行いません。参加URLとゲーム実機での製作・操作確認は引き続き未設定・未確認です。
+上記3URLを公開先のChromiumで390px・1440px確認し、HTTP 200、画像・リンク・32件展開・v2.0.6表示・横はみ出しなし・JavaScriptエラーなしを確認しました。[PC](artifacts/public-dungeons-latest-1440.png) / [スマホ](artifacts/public-dungeons-latest-390.png) / [設計図のスマホ表示](artifacts/public-dungeons-blueprint-390.png)。ソースcommitは`0cfcb6b1`、配置は成功。詳細は[PUBLISH_REPORT.md](PUBLISH_REPORT.md)に記録しました。Web以外のBP/RP、UUID、manifest、ワールド、読み込み順、Xserver設定は変更していません。専用ブランチと既存PR #1へ追加し、mainへの直接push・自動mergeは行っていません。参加URLとゲーム実機での製作・操作確認は引き続き未設定・未確認です。
