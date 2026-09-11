@@ -9,6 +9,7 @@ const updates = read('updates.json');
 const analytics=read('analytics-config.json');
 if(!['ga4','cloudflare'].includes(analytics.provider)||typeof analytics.enabled!=='boolean')throw new Error('Invalid analytics settings');
 if(Object.keys(analytics).some(key=>!['provider','enabled','measurementId','cloudflareBeacon'].includes(key)))throw new Error('Unexpected analytics settings: never store private keys here');
+if(analytics.cloudflareBeacon&&!/^[a-f0-9]{32}$/i.test(analytics.cloudflareBeacon))throw new Error('Invalid public Cloudflare beacon token');
 if(analytics.enabled&&!(analytics.provider==='ga4'?/^G-[A-Z0-9]{4,20}$/.test(analytics.measurementId):/^[a-f0-9]{32}$/i.test(analytics.cloudflareBeacon)))throw new Error('Missing public analytics ID');
 export function validate(contents, packs, updates) {
  const errors = [];

@@ -1,5 +1,23 @@
 import { test,expect } from '@playwright/test';
 import { fileURLToPath } from 'node:url';
+test.beforeEach(async({page})=>{
+ await page.route('https://static.cloudflareinsights.com/**',route=>route.fulfill({status:200,body:''}));
+ await page.route('https://cloudflareinsights.com/**',route=>route.abort());
+});
+test('Cloudflare basic statistics remain independent of GA4 consent',async({page})=>{
+ let cfLoads=0,gaLoads=0;
+ await page.route('https://static.cloudflareinsights.com/**',route=>{cfLoads++;return route.fulfill({status:200,body:''});});
+ await page.route('https://www.googletagmanager.com/**',route=>{gaLoads++;return route.fulfill({status:200,body:''});});
+ await page.goto('/pine-server/');
+ const beacon=page.locator('script[data-cf-beacon]');
+ await expect(beacon).toHaveCount(1);
+ expect(JSON.parse(await beacon.getAttribute('data-cf-beacon')??'{}').token).toBe('0fa81803fc1848d193df8428579409d3');
+ expect(cfLoads).toBe(1);expect(gaLoads).toBe(0);
+ await page.locator('[data-consent="no"]').click();await page.reload();
+ expect(cfLoads).toBe(2);expect(gaLoads).toBe(0);
+ await page.locator('#analytics-settings').click();await page.locator('[data-consent="yes"]').click();
+ await expect.poll(()=>gaLoads).toBe(1);expect(cfLoads).toBe(2);
+});
 test('published GA4 configuration respects consent on the real page',async({page})=>{
  let loads=0;
  await page.route('https://www.googletagmanager.com/**',route=>{loads++;return route.fulfill({status:200,body:''});});

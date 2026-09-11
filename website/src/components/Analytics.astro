@@ -7,11 +7,12 @@ const slug=path.split('/').filter(Boolean).at(-1);
 const entry=path.includes('/database/entries/')?entries.find(e=>e.id===slug):undefined;
 const owner=entry?.contentId??(path.includes('/contents/')?slug:undefined)??'site';
 const ga4=config.enabled&&config.provider==='ga4'&&/^G-[A-Z0-9]{4,20}$/.test(config.measurementId);
-const cf=config.enabled&&config.provider==='cloudflare'&&/^[a-f0-9]{32}$/i.test(config.cloudflareBeacon);
+// Basic Cloudflare statistics run independently of opt-in GA4.
+const cf=config.enabled&&/^[a-f0-9]{32}$/i.test(config.cloudflareBeacon);
 ---
 {ga4 && <div id="pine-analytics" data-measurement-id={config.measurementId} data-content-group={owner} data-entry-kind={entry?.kind??''} data-entry-id={entry?.id??''}>
  <section class="analytics-choice" id="analytics-choice" aria-label="アクセス計測の選択" hidden>
-  <p>サイト改善のため、閲覧ページや図鑑の操作をGoogle Analyticsで集計してもよいですか？ 検索に入力した文章は送りません。<a href={withBase('/privacy/')}>計測について</a></p>
+  <p>サイト改善のため、閲覧ページや図鑑の操作をGoogle Analyticsで集計してもよいですか？ 検索に入力した文章は送りません。{cf && '基本のアクセス集計には、Cookieを使わないCloudflare Web Analyticsを使用しています。'}<a href={withBase('/privacy/')}>計測について</a></p>
   <div><button type="button" data-consent="yes">許可する</button><button type="button" data-consent="no">許可しない</button></div>
  </section>
  <button type="button" id="analytics-settings" class="analytics-settings">アクセス計測の設定</button>
