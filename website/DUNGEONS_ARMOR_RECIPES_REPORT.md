@@ -33,6 +33,6 @@ private/draft識別データを投入した実ビルドと復元後ビルドの�
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-beenest-chestplate-recipe/
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-beenest-chestplate/
 
-公開先の最終確認とcommitは[PUBLISH_REPORT.md](PUBLISH_REPORT.md)に記録します。
+上記3URLを公開先で390px・1440px確認済みです。HTTP 200、88件の展開、配置表と詳細リンク、画像、横はみ出しとJavaScriptエラーがないことを確認しました。実装commitは`7e386484`、公開生成物は`5e1b910`。配置記録は[PUBLISH_REPORT.md](PUBLISH_REPORT.md)にあります。
 
 実ゲームでの製作・解放表示、左右反転の受付、装備性能や入手操作は未検証です。参加URLは未設定、紹介の大きなイラストは仮素材です。Web以外のゲームパック、UUID、manifest、ワールド、読み込み順、Xserver設定は変更しません。専用WebブランチとPR #1を更新し、mainへの直接push・自動mergeは行いません。

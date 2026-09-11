@@ -1,5 +1,8 @@
 # GitHub Pages公開記録
 
+Dungeons防具レシピの更新：ソース `7e386484`、公開生成物 `5e1b910`。88件追加、Dungeons422項目、Web全体608項目・633ページになりました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34631977421)は成功。Dungeons紹介、ビーネスト系列の胴装備レシピ、完成品詳細を公開URLで390px・1440px確認済みです。HTTP 200、レシピ88件の展開、詳細リンク、配置表、画像、横はみ出しなし、JavaScriptエラーなしを確認しました。[変更・検証](DUNGEONS_ARMOR_RECIPES_REPORT.md) / [PC画面](artifacts/public-armor-recipes-1440.png) / [スマホ画面](artifacts/public-armor-recipes-390.png)。
+
+
 Dungeons通常防具の更新：ソース `61a37b74`、公開生成物 `7234c24`。84部位を追加し、Dungeons334項目、Web全体520項目・545ページになりました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34600473478)は成功。Dungeons紹介、所属フィルター312件（レシピを除く）、深緑の脚装備詳細を公開URLで390px・1440px確認済みです。HTTP 200、画像、防具196件の展開、最後の詳細リンク、横はみ出しなし、JavaScriptエラーなしを確認しました。[変更・残数・検証](DUNGEONS_ARMOR_REPORT.md) / [PC画面](artifacts/public-dungeons-armor-1440.png) / [スマホ画面](artifacts/public-dungeons-armor-390.png)。
 
 
