@@ -175,17 +175,17 @@
         {
           "kind": "code",
           "result": "confirmed",
-          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+          "commit": "4a948e25ad9930a4a0667c093de670230bf3d9fc"
         },
         {
           "kind": "registration",
           "result": "confirmed",
-          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+          "commit": "4a948e25ad9930a4a0667c093de670230bf3d9fc"
         },
         {
           "kind": "server-start",
           "result": "confirmed",
-          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+          "commit": "4a948e25ad9930a4a0667c093de670230bf3d9fc"
         },
         {
           "kind": "gameplay",
@@ -207,7 +207,8 @@
         "通常版アーティファクト14種類の用途と、素材を含む17件の製作配置。",
         "英雄の書による収集と、14種類のボスチェスト報酬設定。",
         "5種類の特殊な矢と、配置自由の製作レシピ。",
-        "22系列・88部位の防具の製作配置と、完成品への相互リンク。"
+        "22系列・88部位の防具の製作配置と、完成品への相互リンク。",
+        "遠距離装備の製作3件と、元の装備が必要な設計図レシピ29件。"
       ],
       "guide": "はじめは本と金インゴットで英雄の書を製作。装備の収集状況を調べながら、ダイヤモンドの粉を使ったアーティファクト作りへ進めます。以下の種類別一覧から、使いたい道具の説明と関連レシピを開いてください。",
       "children": [],
@@ -232,7 +233,7 @@
         }
       ],
       "evidence": {
-        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "commit": "4a948e25ad9930a4a0667c093de670230bf3d9fc",
         "paths": [
           "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json",
           "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json",
@@ -251,7 +252,8 @@
           "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/spooky_monstrosity.json",
           "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
           "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
-          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+          "docs/deployments/2026-09-12-release.md"
         ]
       }
     },

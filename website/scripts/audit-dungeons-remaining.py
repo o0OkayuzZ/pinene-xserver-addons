@@ -1,9 +1,13 @@
 """Count source definitions versus published Dungeons entries, without inferring availability."""
-import json
+import json,subprocess
 from pathlib import Path
 from collections import Counter, defaultdict
 web=Path(__file__).resolve().parents[1];repo=web.parent
 bp=next((repo/'behavior_packs').glob('bp_08_*'))
+revision='4a948e25ad9930a4a0667c093de670230bf3d9fc'
+# Local game files are retained; their item/recipe trees must match the audited revision.
+for folder in ['items','recipes']:
+    assert not subprocess.check_output(['git','diff','--name-only','aea85120954a8b74033b86253c17a04b691dab21',revision,'--',(bp/folder).relative_to(repo).as_posix()],cwd=repo)
 records=json.loads((web/'src/data/field-guide.json').read_text(encoding='utf-8'))
 published=[e for e in records if e['contentId']=='minecraft-dungeons' and e['visibility']=='public']
 ids={e['id'] for e in published};totals=Counter();missing=defaultdict(list);seen=set()
@@ -22,7 +26,7 @@ recipe_categories=Counter()
 for p in recipe_sources-covered:
     parts=Path(p).relative_to(bp.relative_to(repo)/'recipes').parts
     recipe_categories[parts[0] if len(parts)>1 else 'root']+=1
-report={'sourceCommit':'aea85120954a8b74033b86253c17a04b691dab21',
+report={'sourceCommit':revision,
  'publishedGuideEntries':len(published),'sourceItemDefinitions':len(seen),'publishedItems':sum(e['kind']=='item' for e in published),
  'unpublishedItemDefinitions':sum(len(v) for v in missing.values()),'itemsByCategory':dict(totals),'unpublishedItemsByCategory':dict(missing),
  'sourceRecipeFiles':len(recipe_sources),'coveredRecipeFiles':len(covered),'unpublishedRecipeFiles':len(recipe_sources-covered),
