@@ -36,7 +36,7 @@ Chromiumの390px・768px・1440pxで24テスト成功。各幅で全254図鑑ペ
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/book-of-heroes-recipe/
 - https://o0okayuzz.github.io/pinene-xserver-addons/database/entries/dungeons-death-cap-mushroom/
 
-公開先での最終確認とcommitは[PUBLISH_REPORT.md](PUBLISH_REPORT.md)に追記します。
+上記4URLを公開先で390px・1440px確認済みです。HTTP 200、画像、一覧展開、レシピへの移動、横はみ出しとJavaScriptエラーがないことを確認しました。実装commitは`e3d89694`、公開生成物は`116135f`。配置記録は[PUBLISH_REPORT.md](PUBLISH_REPORT.md)にあります。
 
 ## 未確認事項
 

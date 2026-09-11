@@ -1,5 +1,8 @@
 # GitHub Pages公開記録
 
+Minecraft Dungeons優先更新：ソース `e3d89694`、公開生成物 `116135f`。Dungeonsの図鑑を2件から68件へ増やし、Web全体は279ページ・254項目です。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34596199832)は成功。Dungeons紹介、所属フィルター57件（レシピを除く）、英雄の書レシピ、タマゴテングダケ詳細を公開URLで390px・1440px確認しました。HTTP 200、画像読み込み、防具16件の展開、レシピリンク、横はみ出しなし、JavaScriptエラーなしを確認済みです。[今回の変更・検証](DUNGEONS_REPORT.md) / [公開スマホ画面](artifacts/public-dungeons-390.png) / [公開PC画面](artifacts/public-dungeons-1440.png)。
+
+
 More Geodesの更新：ソース `d5a4a376`、公開生成物 `5ebcec4`。213ページ・図鑑188項目へ更新しました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34556891618)は成功しました。公開URLのMore Geodes紹介、15件に絞り込んだ図鑑、ダイヤモンド結晶詳細を390px・1440pxで開き、HTTP 200、画像読み込み、詳細リンク、横はみ出しなし、JavaScriptエラーなしを確認しました。変更内容とスクリーンショットは[今回の報告](GEODES_REPORT.md)にあります。
 
 
