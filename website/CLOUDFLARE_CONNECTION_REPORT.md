@@ -17,3 +17,9 @@
 Cloudflare管理画面での受信・集計表示は未確認です。公開用トークンではデータの読み取りはできず、本人用管理画面・GitHubレポートへの取得には、アカウントID・サイトID・読み取りAPIトークン等の設定が必要です。秘密キーはチャットやGitに貼らずローカル管理画面へ入力します。
 
 [Cloudflare公式の設置手順](https://developers.cloudflare.com/web-analytics/get-started/)。MinecraftのBP/RPやXserver設定は変更していません。
+
+## 公開確認
+
+ソースcommit 4b19d0ec、公開生成物46abd28dbfbdad8e0696d5074451a088501e29f8。[Pages配置](https://github.com/o0OkayuzZ/pine-server/actions/runs/34653546899)成功。[ホーム](https://o0okayuzz.github.io/pine-server/)と[計測説明](https://o0okayuzz.github.io/pine-server/privacy/)を390px・768px・1440pxで開き、HTTP 200、CloudflareとGA4の独立した同意動作、横はみ出しなし、JavaScriptエラーなしを確認しました。公開ブラウザ確認では外部タグをモックし、テスト訪問は収集先へ送りませんでした。
+
+[PC画面](artifacts/cloudflare-consent-1440.png) / [スマホ画面](artifacts/cloudflare-consent-390.png)。
