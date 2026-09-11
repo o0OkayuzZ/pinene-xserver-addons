@@ -1,5 +1,27 @@
 import { test,expect } from '@playwright/test';
 import { fileURLToPath } from 'node:url';
+test('published GA4 configuration respects consent on the real page',async({page})=>{
+ let loads=0;
+ await page.route('https://www.googletagmanager.com/**',route=>{loads++;return route.fulfill({status:200,body:''});});
+ await page.route('https://*.google-analytics.com/**',route=>route.abort());
+ await page.goto('/pine-server/?q=PRIVATE_QUERY#PRIVATE_FRAGMENT');
+ await expect(page.locator('#pine-analytics')).toHaveAttribute('data-measurement-id','G-11K0Q4T42N');
+ await expect(page.locator('#analytics-choice')).toBeVisible();
+ expect(loads).toBe(0);
+ await page.locator('[data-consent="yes"]').click();
+ await expect.poll(()=>loads).toBe(1);
+ const commands=await page.evaluate(()=>((window as any).dataLayer as IArguments[]).map(x=>Array.from(x)));
+ const views=commands.filter(x=>x[0]==='event'&&x[1]==='page_view');
+ expect(views).toHaveLength(1);
+ expect(JSON.stringify(commands)).not.toMatch(/PRIVATE_QUERY|PRIVATE_FRAGMENT/);
+ expect(commands.find(x=>x[0]==='config')?.[2]).toMatchObject({send_page_view:false});
+ await page.locator('#analytics-settings').click();
+ await page.locator('[data-consent="no"]').click();
+ await page.reload();
+ expect(loads).toBe(1);
+ await expect(page.locator('#analytics-choice')).toBeHidden();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
 test('GA4 waits for consent, strips queries and never sends search input',async({page})=>{
  let downloads=0;
  await page.route('https://www.googletagmanager.com/**',route=>{downloads++;return route.fulfill({status:200,body:''});});

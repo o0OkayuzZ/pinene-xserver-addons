@@ -2,7 +2,7 @@ const $=id=>document.getElementById(id);
 let key=location.hash.slice(1)||sessionStorage.getItem('pine-admin-session');
 if(location.hash){sessionStorage.setItem('pine-admin-session',key);history.replaceState(null,'',location.pathname);}
 let report=null,group='pages',limit=50;
-const names={page_view:'ページ表示',pine_search:'図鑑検索を使用',pine_filter:'図鑑の絞り込み',pine_expand:'一覧・説明を展開',pine_recipe_view:'レシピの閲覧',pine_item_view:'アイテムの閲覧',pine_guide_open:'図鑑の詳細を開く',pine_join_open:'参加案内を開く',pine_content_open:'コンテンツを開く',scroll:'スクロール',user_engagement:'ページへの関与',session_start:'訪問開始',first_visit:'初回訪問'};
+const names={page_view:'ページ表示',pine_search:'図鑑検索を使用',pine_filter:'図鑑の絞り込み',pine_expand:'一覧・説明を展開',pine_recipe_view:'レシピの閲覧',pine_item_view:'アイテムの閲覧',pine_guide_open:'図鑑の詳細を開く',pine_join_open:'参加案内を開く',pine_content_open:'コンテンツを開く',scroll:'スクロール',click:'外部リンクを開く',file_download:'ダウンロードリンクをクリック',video_start:'動画の再生開始',video_progress:'動画の再生進捗',video_complete:'動画の再生完了',user_engagement:'ページへの関与',session_start:'訪問開始',first_visit:'初回訪問'};
 function notice(text,type=''){const node=$('notice');node.textContent=text;node.className='notice '+type;}
 async function api(path,body){const res=await fetch('/api/'+path,{method:body?'POST':'GET',headers:{Authorization:'Bearer '+key,...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{})});const data=await res.json();if(!res.ok)throw new Error(data.error??'取得に失敗しました。');return data;}
 function metric(id,value,suffix=''){$(id).textContent=value==null?'—':Number(value).toLocaleString('ja-JP',{maximumFractionDigits:1})+suffix;}
