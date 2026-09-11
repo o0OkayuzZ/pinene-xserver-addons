@@ -1,4 +1,5 @@
 import { GENERATED_SOURCE_VARIANTS } from "./sourcePartsGeneratedCatalog.js";
+import { assignRoomMaterials } from "./sourceRoomMaterials.js";
 
 const HORIZONTAL_DIRECTIONS = new Set(["north", "south", "west", "east"]);
 const DIRECTION_VECTOR = Object.freeze({
@@ -816,7 +817,7 @@ export function createSourcePartsPlan(seed, anchor, options = {}) {
     connectTierRoutes(state, tiers, selectedTopology);
     validateLayeredState(state);
     const sealedSockets = sealedSocketsForPlan(state.placements);
-    return {
+    return assignRoomMaterials({
         schemaVersion: 6,
         seed,
         style,
@@ -828,5 +829,5 @@ export function createSourcePartsPlan(seed, anchor, options = {}) {
         placements: state.placements.map(serializePlacement),
         connections: state.connections,
         sealedSockets,
-    };
+    });
 }

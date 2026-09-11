@@ -1,6 +1,7 @@
 import { BlockPermutation, BlockVolume, StructureAnimationMode, system, world } from "@minecraft/server";
 import { createSourcePartsPlan, sourcePartsTopologyIds } from "./sourcePartsPlanner.js";
 import { prepareRoomEncounterRemoval } from "./sourceRoomEncounters.js";
+import { materialVariantId, serializeRoomMaterials, restoreRoomMaterials } from "./sourceRoomMaterials.js";
 import { createRebuildStartCue } from "./sourcePartsRebuildFeedback.js";
 import { assertVisualTestSafety, beginVisualTest, endVisualTest } from "./sourcePartsVisualTestGuard.js";
 import { parseSourcePartsPlans, serializeSourcePartsState } from "./sourcePartsState.js";
@@ -91,6 +92,7 @@ function planDescriptor(plan) {
         s: plan.seed >>> 0,
         t: plan.style,
         o: plan.topologyId,
+        m: serializeRoomMaterials(plan),
         a: [Math.trunc(anchor.x), Math.trunc(anchor.y), Math.trunc(anchor.z)],
     };
 }
@@ -121,6 +123,7 @@ function planFromDescriptor(dimension) {
             // through the planner's legacy-per-style default.
             ...(value.v === 2 ? { topology: value.o } : {}),
         });
+        restoreRoomMaterials(plan, value.m);
         plan.dimensionId = dimension.id;
         fitPlanToHeightRange(plan, dimension.heightRange);
         return plan;
@@ -969,7 +972,7 @@ async function placePlan(
     );
     for (let index = 0; index < ordered.length; index += 1) {
         const placement = ordered[index];
-        const structureId = resolveStructureId(placement.variantId, packIds);
+        const structureId = resolveStructureId(materialVariantId(placement), packIds);
         if (!structureId) throw new Error(`variant structure is not registered: ${placement.variantId}`);
         await withLoadedBounds(dimension, placementBounds(placement), `ic_v3_build_${index}`, async () => {
             world.structureManager.place(structureId, dimension, placement.origin, {
@@ -1000,7 +1003,7 @@ async function placePlanExcept(plan, protectedPlacementIds, players, dimension) 
         );
     for (let index = 0; index < ordered.length; index += 1) {
         const placement = ordered[index];
-        const structureId = resolveStructureId(placement.variantId, packIds);
+        const structureId = resolveStructureId(materialVariantId(placement), packIds);
         if (!structureId) throw new Error(`variant structure is not registered: ${placement.variantId}`);
         const bounds = placementBounds(placement);
         await withLoadedBounds(dimension, bounds, `ic_dyn_build_${index}`, async () => {
@@ -1207,7 +1210,7 @@ async function recoverInterruptedDynamicState(
 }
 
 async function placeDynamicPlacement(placement, dimension, operationIndex, packIds) {
-    const structureId = resolveStructureId(placement.variantId, packIds);
+    const structureId = resolveStructureId(materialVariantId(placement), packIds);
     if (!structureId) throw new Error(`variant structure is not registered: ${placement.variantId}`);
     const bounds = placementBounds(placement);
     await withLoadedBounds(
@@ -1420,7 +1423,7 @@ async function replacePlacementForStability(
 ) {
     const packIds = world.structureManager.getPackStructureIds();
     const placement = group.placement;
-    const structureId = resolveStructureId(placement.variantId, packIds);
+    const structureId = resolveStructureId(materialVariantId(placement), packIds);
     if (!structureId) throw new Error(`variant structure is not registered: ${placement.variantId}`);
     await withLoadedBounds(
         dimension,
@@ -2004,7 +2007,7 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
 
         const packIds = world.structureManager.getPackStructureIds();
         const missing = plan.placements.filter((placement) =>
-            !resolveStructureId(placement.variantId, packIds)
+            !resolveStructureId(materialVariantId(placement), packIds)
         );
         if (missing.length > 0) {
             throw new Error(`missing generated variants: ${missing.map((item) => item.variantId).join(", ")}`);
@@ -2020,7 +2023,7 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
                 heightRange: dimension.heightRange,
             }, () => waitTicks(1));
             preparedScenery.dimensionId = dimension.id;
-            if (preparedScenery.placements.some((placement) => !resolveStructureId(placement.variantId, packIds))) {
+            if (preparedScenery.placements.some((placement) => !resolveStructureId(materialVariantId(placement), packIds))) {
                 throw new Error("総入れ替えに必要な装飾素材が登録されていません");
             }
             assertVisualTestSafety(dimension);
@@ -2295,7 +2298,7 @@ export async function reconstructSourcePartsAroundPlayers(
         const protectedNewIds = new Set(anchored.protectedNewPlacementIds);
         const packIds = world.structureManager.getPackStructureIds();
         const missing = plan.placements.filter((placement) =>
-            !resolveStructureId(placement.variantId, packIds)
+            !resolveStructureId(materialVariantId(placement), packIds)
         );
         if (missing.length > 0) {
             throw new Error(`missing generated variants: ${missing.map((item) => item.variantId).join(", ")}`);

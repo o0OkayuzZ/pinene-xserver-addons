@@ -286,6 +286,10 @@ function exactCandidateMatches(candidate, protectedOld) {
             && samePoint(placement.size, oldPlacement.size)
         );
         if (index < 0) return null;
+        // A protected room keeps its physical material across seed/role changes.
+        available[index].materialTheme = oldPlacement.materialTheme ?? "normal";
+        available[index].rareRoomType = oldPlacement.materialTheme === "rare"
+            ? oldPlacement.rareRoomType ?? "healing_garden" : undefined;
         matched.push(available[index]);
         available.splice(index, 1);
     }

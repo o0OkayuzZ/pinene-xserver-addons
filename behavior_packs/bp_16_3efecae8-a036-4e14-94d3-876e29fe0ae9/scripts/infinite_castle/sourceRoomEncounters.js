@@ -1,6 +1,9 @@
 import { ItemStack, system, world } from "@minecraft/server";
 import { createSourcePartsPlan } from "./sourcePartsPlanner.js";
 import { fitPlanToHeightRange } from "./sourcePartsVolumes.js";
+import { restoreRoomMaterials } from "./sourceRoomMaterials.js";
+import { isHealingGarden, createGardenHealing } from "./sourceHealingGarden.js";
+import { isTreasureVault, createVaultReward } from "./sourceTreasureVault.js";
 import {
     ROOM_ENCOUNTER_CONFIG as CONFIG, ROOM_CHEST_CANDIDATES, ROOM_SPAWN_CANDIDATES,
     ROOM_LIGHT_CANDIDATES, roomWorldPoint, roomIdentity, roomInterior,
@@ -23,6 +26,7 @@ let lastWarningTick = -1200;
 const lightProgress = new Map();
 const missingSince = new Map();
 const notices = new Map();
+const healGardenPlayers = createGardenHealing();
 
 function warn(error) {
     lastError = String(error?.message ?? error);
@@ -128,12 +132,23 @@ export function activateRoomEncounterPlan(plan) {
     state.rooms = placements.map(placement => {
         const key = roomIdentity(placement);
         const existing = previous.get(key);
-        if (existing && !existing.retired) return existing;
+        const kind = isHealingGarden(placement) ? "healing_garden"
+            : isTreasureVault(placement) ? "treasure_vault" : "combat";
+        if (existing && !existing.retired) {
+            // Existing loot stays owned and accessible. Retire hostile tokens
+            // before collectEnemies so migration never awards a key-holder kill.
+            existing.kind = kind;
+            if (kind !== "combat") {
+                existing.slots.forEach(slot => { slot.phase = "dead"; });
+                existing.keyDefeated = true;
+            }
+            return existing;
+        }
         return {
-            key, origin: { ...placement.origin }, generation: ++state.serial,
-            retired: false, keyDefeated: false, reward: "locked", chest: null,
+            key, kind, origin: { ...placement.origin }, generation: ++state.serial,
+            retired: false, keyDefeated: kind !== "combat", reward: "locked", chest: null,
             chestOwned: false, chestPlacing: false,
-            slots: CONFIG.enemies.map(() => ({ tag: nextToken(), phase: "new", id: null })),
+            slots: CONFIG.enemies.map(() => ({ tag: nextToken(), phase: kind !== "combat" ? "dead" : "new", id: null })),
         };
     });
     lightProgress.clear();
@@ -167,12 +182,14 @@ function syncPlan() {
     const plan = createSourcePartsPlan(d.s, { x: d.a[0], y: d.a[1], z: d.a[2] }, {
         style: d.t, ...(d.v === 2 ? { topology: d.o } : {}),
     });
+    restoreRoomMaterials(plan, d.m);
     plan.dimensionId = d.d;
     fitPlanToHeightRange(plan, dimension.heightRange);
     activateRoomEncounterPlan(plan);
 }
 
 function installChest(dimension, room) {
+    if (room.kind === "healing_garden") return false;
     if (!room.chest) {
         const offset = room.generation % ROOM_CHEST_CANDIDATES.length;
         for (let i = 0; i < ROOM_CHEST_CANDIDATES.length; i++) {
@@ -205,6 +222,7 @@ function installChest(dimension, room) {
 }
 
 function stockReward(dimension, room) {
+    if (room.kind === "healing_garden") return;
     if (!room.keyDefeated || room.reward === "stocked") return;
     const container = containerAt(dimension, room);
     if (!container) return;
@@ -219,8 +237,10 @@ function stockReward(dimension, room) {
     }
     const empty = [];
     for (let i = 0; i < container.size; i++) if (!container.getItem(i)) empty.push(i);
-    if (empty.length < CONFIG.loot.length) return;
-    const items = CONFIG.loot.map(item => new ItemStack(item.typeId, item.amount));
+    const needed = room.kind === "treasure_vault" ? 4 : CONFIG.loot.length;
+    if (empty.length < needed) return;
+    const items = room.kind === "treasure_vault" ? createVaultReward()
+        : CONFIG.loot.map(item => new ItemStack(item.typeId, item.amount));
     room.reward = "stocking";
     persist();
     // No yields between receipt, fixed-slot writes and commit.
@@ -275,6 +295,7 @@ function collectEnemies(dimension) {
 }
 
 function spawnOne(dimension, room, players, enemies) {
+    if (room.kind === "healing_garden" || room.kind === "treasure_vault") return;
     if ((lightProgress.get(room.key) ?? 0) < GROUND_LIGHT_COUNT) return;
     if (enemies.size >= CONFIG.maxLoadedEnemies || String(world.getDifficulty()).toLowerCase() === "peaceful") return;
     if (!players.some(p => combatPlayer(p) && roomContains(roomInterior(room.origin, true), p.location))) return;
@@ -325,10 +346,11 @@ export function updateRoomEncounters() {
         syncPlan();
         const dimension = world.getDimension(CONFIG.dimensionId);
         const players = dimension.getPlayers();
-        if (!players.length) return;
+        if (!players.length) { healGardenPlayers([], [], system.currentTick); return; }
         const enemies = collectEnemies(dimension);
         if (!ready) return; // do not write blocks or respawn during core mutation
         const rooms = activeRooms();
+        healGardenPlayers(players, rooms, system.currentTick);
         // Finish lighting nearby rooms in bounded batches; no ticking areas.
         const nearby = rooms.filter(room => players.some(p => Math.hypot(
             p.location.x - room.origin.x - 21, p.location.y - room.origin.y - 10,
@@ -341,7 +363,7 @@ export function updateRoomEncounters() {
             installChest(dimension, room);
             stockReward(dimension, room);
         }
-        const occupied = nearby.filter(room => players.some(p => combatPlayer(p)
+        const occupied = nearby.filter(room => !["healing_garden", "treasure_vault"].includes(room.kind) && players.some(p => combatPlayer(p)
             && roomContains(roomInterior(room.origin, true), p.location)));
         if (occupied.length) {
             // Round-robin combat avoids starving a second player's room.
@@ -422,6 +444,8 @@ world.afterEvents?.entitySpawn?.subscribe(event => {
 export function roomEncounterStatus() {
     const rooms = activeRooms();
     return `rooms=${rooms.length} keyDefeated=${rooms.filter(r => r.keyDefeated).length} `
+        + `gardens=${rooms.filter(r => r.kind === "healing_garden").length} `
+        + `vaults=${rooms.filter(r => r.kind === "treasure_vault").length} `
         + `rewarded=${rooms.filter(r => r.reward === "stocked").length} `
         + `alive=${rooms.flatMap(r => r.slots).filter(s => s.phase === "alive").length} `
         + `ready=${ready} difficulty=${world.getDifficulty()} error=${lastError || "none"}`;
