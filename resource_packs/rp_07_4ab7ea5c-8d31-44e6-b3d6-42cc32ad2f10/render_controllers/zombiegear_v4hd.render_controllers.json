@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.zombiegear.organic_v4hd": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "variable.is_enchanted ? Material.enchanted : Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default",
+        "Texture.enchanted"
+      ],
+      "part_visibility": [
+        {
+          "*": "!query.is_first_person"
+        }
+      ]
+    }
+  }
+}
