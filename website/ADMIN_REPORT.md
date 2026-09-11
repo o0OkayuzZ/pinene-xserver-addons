@@ -26,6 +26,8 @@
 
 ## ファイル・URL・画像
 
+実装commitは `d2f4178d`、[PR #1](https://github.com/o0OkayuzZ/pinene-xserver-addons/pull/1)に反映済みです。公開生成物 `4342a8b275ed3b1b790747326e0b2c8773506d15` の[配置](https://github.com/o0OkayuzZ/pine-server/actions/runs/34639312184)は成功しました。実際の [ホーム](https://o0okayuzz.github.io/pine-server/) と [計測説明](https://o0okayuzz.github.io/pine-server/privacy/) を390px・1440pxで確認し、HTTP 200、横はみ出しなし、JavaScriptエラーなし、計測通信なしでした。公開先の `admin/server.mjs` と `api/state` は404です。GA4の実認証・実データの取得は引き続き未確認です。
+
 主な変更は`admin/`、`src/components/Analytics.astro`、`src/data/analytics-config.json`、`src/layouts/BaseLayout.astro`、`src/pages/privacy.astro`、`public/analytics.js`、`scripts/validate-data.mjs`、`tests/analytics.spec.ts`、この報告とスクリーンショットです。公開コンテンツ655項目は維持しています。
 
 - 本人用ローカルUI：デスクトップの「PINE SERVER 管理画面」から起動（127.0.0.1:18473、起動キーが必要）。

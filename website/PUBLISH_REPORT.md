@@ -1,5 +1,13 @@
 # GitHub Pages公開記録
 
+## 非公開管理画面・GA4計測準備（2026-09-12）
+
+実装ソースは専用Webブランチの `d2f4178d`、公開生成物は `4342a8b275ed3b1b790747326e0b2c8773506d15` です。[Pages配置](https://github.com/o0OkayuzZ/pine-server/actions/runs/34639312184)は成功し、公開ページは681ページになりました。GA4の実アカウントは未接続のため、計測は無効のままです。
+
+Chromiumの390px・1440pxで [ホーム](https://o0okayuzz.github.io/pine-server/) と [アクセス計測の説明](https://o0okayuzz.github.io/pine-server/privacy/) を開き、HTTP 200、横はみ出しなし、JavaScriptエラーなし、計測スクリプトと計測通信なしを確認しました。公開先の `admin/server.mjs` と `api/state` は404です。
+
+本人用管理画面はデスクトップの「PINE SERVER 管理画面」から起動します。[GitHubレポート](https://github.com/o0OkayuzZ/pine-server-stats)はprivateで、保存commitは `5ee03744575e55970bd0266398c1a4abcc14def2`。現在の内容は接続待ちの状態であり、実訪問者の集計値はまだありません。[変更・検証・接続手順](ADMIN_REPORT.md)を参照してください。
+
 ## 現在の公開先：pine-server（2026-09-12）
 
 ユーザー指定により、公開URLを **https://o0okayuzz.github.io/pine-server/** へ移行しました。無限城12項目とMycologyの新しい鑑定案内3項目を追加し、Web全体655項目・680ページを公開しています。
