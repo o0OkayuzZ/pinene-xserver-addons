@@ -330,13 +330,66 @@
     {
       "id": "more-geodes",
       "name": "More Geodes",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "exploration",
+        "world"
+      ],
+      "packBindings": [
+        {
+          "uuid": "228eb1da-6372-4a9b-9050-a40256149144",
+          "roles": [
+            "item-definition",
+            "worldgen"
+          ]
+        },
+        {
+          "uuid": "d68eee7e-653f-474a-a385-e1a76fdd28bd",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "地下に広がる、さまざまな結晶の空洞。",
+      "description": "ダイヤモンド・エメラルド・ローズクォーツの3系列を紹介します。結晶の芽と塊の設置アイテム、ジオードの生成設定を個別の図鑑で確認できます。",
+      "image": {
+        "src": "/images/more-geodes.svg",
+        "alt": "結晶の空洞を描いた仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "3系列・12種類の結晶アイテム",
+        "小・中・大の芽と結晶の塊",
+        "結晶を含むジオードの生成設定"
+      ],
+      "guide": "関連する図鑑で、設置アイテムと生成候補を紹介しています。採掘による入手と成長条件は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+          "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/manifest.json"
+        ]
+      }
     },
     {
       "id": "mystery-fossil",

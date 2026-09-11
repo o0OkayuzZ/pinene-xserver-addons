@@ -6222,5 +6222,470 @@
         "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/scripts/functions.js"
       ]
     }
+  },
+  {
+    "id": "geode-diamond-cluster",
+    "name": "ダイヤモンド原石結晶",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "ダイヤモンドの結晶の塊を設置するアイテム。",
+    "description": "More Geodesのダイヤモンド系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-diamond-cluster.png",
+      "alt": "ダイヤモンド原石結晶のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/diamond/diamond_cluster.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/diamond/diamond_cluster.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/diamond/diamond_cluster.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-large-diamond-bud",
+    "name": "大きなダイヤモンドの芽",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "ダイヤモンドの大きな芽を設置するアイテム。",
+    "description": "More Geodesのダイヤモンド系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-large-diamond-bud.png",
+      "alt": "大きなダイヤモンドの芽のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/diamond/large_diamond_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/diamond/large_diamond_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/diamond/large_diamond_bud.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-medium-diamond-bud",
+    "name": "中くらいのダイヤモンドの芽",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "ダイヤモンドの中くらいの芽を設置するアイテム。",
+    "description": "More Geodesのダイヤモンド系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-medium-diamond-bud.png",
+      "alt": "中くらいのダイヤモンドの芽のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/diamond/medium_diamond_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/diamond/medium_diamond_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/diamond/medium_diamond_bud.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-small-diamond-bud",
+    "name": "小さなダイヤモンドの芽",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "ダイヤモンドの小さな芽を設置するアイテム。",
+    "description": "More Geodesのダイヤモンド系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-small-diamond-bud.png",
+      "alt": "小さなダイヤモンドの芽のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/diamond/small_diamond_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/diamond/small_diamond_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/diamond/small_diamond_bud.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-generation-diamond",
+    "name": "ダイヤモンドジオードの生成設定",
+    "kind": "feature",
+    "contentId": "more-geodes",
+    "summary": "ダイヤモンドの結晶を含む空洞の生成候補。",
+    "description": "ジオードの内側に結晶ブロックと芽生えた結晶を使い、中間層に方解石、外側に黒曜石を使う定義です。",
+    "usage": "探索で出会う地形候補として紹介しています。すでに生成済みの場所に新しく出現することを確認したものではありません。",
+    "obtaining": "生成候補の高さはY=-30〜30の設定です。空洞全体がこの範囲だけに収まることや、必ず見つかることを保証する値ではありません。",
+    "details": [
+      "小さな結晶の芽を内側へ配置する定義があります。",
+      "生成頻度・実際の場所・成長・採掘による入手はゲーム内で未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/feature_rules/diamond_geode.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/features/diamond_geode_feature.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/diamond/diamond_crystal_block.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/diamond/budding_diamond.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json"
+      ]
+    }
+  },
+  {
+    "id": "geode-emerald-cluster",
+    "name": "エメラルドクラスター",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "エメラルドの結晶の塊を設置するアイテム。",
+    "description": "More Geodesのエメラルド系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-emerald-cluster.png",
+      "alt": "エメラルドクラスターのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/emerald/emerald_cluster.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/emerald/emerald_cluster.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/emerald/emerald_cluster.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-large-emerald-bud",
+    "name": "大きなエメラルドの芽",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "エメラルドの大きな芽を設置するアイテム。",
+    "description": "More Geodesのエメラルド系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-large-emerald-bud.png",
+      "alt": "大きなエメラルドの芽のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/emerald/large_emerald_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/emerald/large_emerald_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/emerald/large_emerald_bud.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-medium-emerald-bud",
+    "name": "中くらいのエメラルドの芽",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "エメラルドの中くらいの芽を設置するアイテム。",
+    "description": "More Geodesのエメラルド系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-medium-emerald-bud.png",
+      "alt": "中くらいのエメラルドの芽のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/emerald/medium_emerald_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/emerald/medium_emerald_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/emerald/medium_emerald_bud.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-small-emerald-bud",
+    "name": "小さなエメラルドの芽",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "エメラルドの小さな芽を設置するアイテム。",
+    "description": "More Geodesのエメラルド系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-small-emerald-bud.png",
+      "alt": "小さなエメラルドの芽のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/emerald/small_emerald_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/emerald/small_emerald_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/emerald/small_emerald_bud.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-generation-emerald",
+    "name": "エメラルドジオードの生成設定",
+    "kind": "feature",
+    "contentId": "more-geodes",
+    "summary": "エメラルドの結晶を含む空洞の生成候補。",
+    "description": "ジオードの内側に結晶ブロックと芽生えた結晶を使い、中間層に方解石、外側に黒曜石を使う定義です。",
+    "usage": "探索で出会う地形候補として紹介しています。すでに生成済みの場所に新しく出現することを確認したものではありません。",
+    "obtaining": "生成候補の高さはY=-30〜30の設定です。空洞全体がこの範囲だけに収まることや、必ず見つかることを保証する値ではありません。",
+    "details": [
+      "小さな結晶の芽を内側へ配置する定義があります。",
+      "生成頻度・実際の場所・成長・採掘による入手はゲーム内で未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/feature_rules/emerald_geode.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/features/emerald_geode_feature.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/emerald/emerald_crystal_block.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/emerald/budding_emerald.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json"
+      ]
+    }
+  },
+  {
+    "id": "geode-large-rose-quartz-bud",
+    "name": "大きなローズクォーツの芽",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "ローズクォーツの大きな芽を設置するアイテム。",
+    "description": "More Geodesのローズクォーツ系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-large-rose-quartz-bud.png",
+      "alt": "大きなローズクォーツの芽のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/rose_quartz/large_quartz_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/rose_quartz/large_rose_quartz_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/rose_quartz/large_rose_quartz_bud.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-medium-rose-quartz-bud",
+    "name": "中くらいのローズクォーツの芽",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "ローズクォーツの中くらいの芽を設置するアイテム。",
+    "description": "More Geodesのローズクォーツ系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-medium-rose-quartz-bud.png",
+      "alt": "中くらいのローズクォーツの芽のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/rose_quartz/medium_quartz_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/rose_quartz/medium_rose_quartz_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/rose_quartz/medium_rose_quartz_bud.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-rose-quartz-cluster",
+    "name": "ローズクォーツ原石結晶",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "ローズクォーツの結晶の塊を設置するアイテム。",
+    "description": "More Geodesのローズクォーツ系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-rose-quartz-cluster.png",
+      "alt": "ローズクォーツ原石結晶のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/rose_quartz/quartz_cluster.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/rose_quartz/rose_quartz_cluster.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/rose_quartz/rose_quartz_cluster.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-small-rose-quartz-bud",
+    "name": "小さなローズクォーツの芽",
+    "kind": "item",
+    "contentId": "more-geodes",
+    "summary": "ローズクォーツの小さな芽を設置するアイテム。",
+    "description": "More Geodesのローズクォーツ系列です。個別アイテムから、同じIDの設置先ブロックへの対応を確認しています。",
+    "usage": "手に持ってブロックを設置する定義です。設置面による向きや見た目は実ゲームで未確認です。",
+    "obtaining": "入手経路と採掘条件は確認中です。生成される結晶をそのまま回収できるとは断定していません。",
+    "details": [
+      "この系列には小・中・大の芽と結晶の塊の定義があります。",
+      "成長速度、採掘時の報酬、道具やエンチャントの条件は未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/geode-small-rose-quartz-bud.png",
+      "alt": "小さなローズクォーツの芽のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/items/rose_quartz/small_quartz_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/rose_quartz/small_rose_quartz_bud.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/item_texture.json",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/texts/ja_JP.lang",
+        "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/textures/items/rose_quartz/small_rose_quartz_bud.png"
+      ]
+    }
+  },
+  {
+    "id": "geode-generation-rose-quartz",
+    "name": "ローズクォーツジオードの生成設定",
+    "kind": "feature",
+    "contentId": "more-geodes",
+    "summary": "ローズクォーツの結晶を含む空洞の生成候補。",
+    "description": "ジオードの内側に結晶ブロックと芽生えた結晶を使い、中間層に方解石、外側に滑らかな玄武岩を使う定義です。",
+    "usage": "探索で出会う地形候補として紹介しています。すでに生成済みの場所に新しく出現することを確認したものではありません。",
+    "obtaining": "生成候補の高さはY=-30〜30の設定です。空洞全体がこの範囲だけに収まることや、必ず見つかることを保証する値ではありません。",
+    "details": [
+      "小さな結晶の芽を内側へ配置する定義があります。",
+      "生成頻度・実際の場所・成長・採掘による入手はゲーム内で未確認です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/feature_rules/rose_quartz_geode.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/features/rose_quartz_feature.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/rose_quartz/rose_quartz_crystal_block.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/blocks/rose_quartz/budding_rose_quartz.json",
+        "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json"
+      ]
+    }
   }
 ]
