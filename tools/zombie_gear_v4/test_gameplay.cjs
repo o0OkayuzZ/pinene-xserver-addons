@@ -66,20 +66,20 @@ function hit(attacker,victim,n,cause='entityAttack', projectile=false) {
 const sandbox = { world, system, ItemStack, EquipmentSlot, EntityDamageCause, console: {info(){},warn:m=>warnings.push(m),error:m=>warnings.push(m)} };
 vm.createContext(sandbox);
 const code = ['rules.js','combat.js','controls.js','main.js'].map(f => fs.readFileSync(path.join(scriptDir,f),'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'')).join('\n');
-vm.runInContext(code + '\nglobalThis.api={infectionAt,damageMultiplier,corruption,revives,tryRevive,initializePlayer,forceMaxHpState,createArmorVariantItem,setCorruption,tickChargeCompletion,getScore,setScore,SCORE};',sandbox);
+vm.runInContext(code + '\nglobalThis.api={infectionAt,damageMultiplier,corruption,revives,tryRevive,initializePlayer,forceMaxHpState,createArmorVariantItem,setCorruption,tickChargeCompletion,getScore,setScore,SCORE,beginCharge,syncStrengthBoost};',sandbox);
 flush();
 const api = sandbox.api;
 const near = (actual, expected) => assert.ok(Math.abs(actual-expected)<1e-8, `${actual} != ${expected}`);
 function init(e,n=0) { api.initializePlayer(e); api.setScore(e,api.SCORE.revives,n); api.forceMaxHpState(e); }
 
-test('full zombie gear has constant additive physical attack bonus', () => {
-  [1.2,1.3,1.5,1.9,2.7].forEach((n,i)=>near(api.damageMultiplier(i,0,0,true),n));
+test('corruption damage multiplier excludes the zombie gear strength slot bonus', () => {
+  [1,1.1,1.3,1.7,2.5].forEach((n,i)=>near(api.damageMultiplier(i,0,0,true),n));
   [1,1.1,1.3,1.7,2.5].forEach((n,i)=>near(api.damageMultiplier(i,0,0,false),n));
 });
 test('infection attack/defense and c4 severe product', () => {
   [1,.9,.8,.7].forEach((n,i)=>{near(api.damageMultiplier(-1,i,0,false),n);near(api.damageMultiplier(-1,0,i,false),1/n);});
-  near(api.damageMultiplier(4,0,3,true),3.24/.7);
-  near(api.damageMultiplier(4,3,3,true),3.24);
+  near(api.damageMultiplier(4,0,3,true),3/.7);
+  near(api.damageMultiplier(4,3,3,true),3);
 });
 test('infection decay boundaries 10/15/20/25 seconds', () => {
   for (const [tick,n] of [[0,3],[200,3],[299,3],[300,2],[399,2],[400,1],[499,1],[500,0]]) assert.equal(api.infectionAt({stage:3,lastHit:0},tick),n);
@@ -106,12 +106,15 @@ test('swap preserves durability enchantments name lore locks and dynamic propert
   const p=entity(0);init(p,1);Object.assign(p.slots.head,{nameTag:'Named',lore:['Lore'],keepOnDeath:true,lockMode:'slot',dynamic:{'test:value':42},enchantments:[{type:'protection',level:2}],destroy:['stone'],place:['dirt']});p.slots.head.durability.damage=47;
   assert.ok(api.tryRevive(p));const i=p.slots.head;assert.equal(i.durability.damage,47);assert.equal(i.nameTag,'Named');assert.deepEqual(i.lore,['Lore']);assert.equal(i.keepOnDeath,true);assert.equal(i.lockMode,'slot');assert.equal(i.dynamic['test:value'],42);assert.equal(i.enchantments[0].level,2);assert.deepEqual(i.destroy,['stone']);
 });
-test('8-second charge consumes one zombie stem cell only at completion, keeps c0', () => {
-  const p=entity(0);init(p);p.selected=new ItemStack('pinematerials:zonbikansaibou',2);system.currentTick=1000;afterEvents.itemUse.emit({source:p,itemStack:p.selected});assert.equal(p.selected.amount,2);system.currentTick=1159;api.tickChargeCompletion(p);assert.equal(api.revives(p),0);system.currentTick=1160;api.tickChargeCompletion(p);assert.equal(api.revives(p),1);assert.equal(p.selected.amount,1);assert.equal(api.corruption(p),0);
+test('using a zombie stem cell alone does not start or complete a charge', () => {
+  const p=entity(0);init(p);p.selected=new ItemStack('pinematerials:zonbikansaibou',2);system.currentTick=1000;afterEvents.itemUse.emit({source:p,itemStack:p.selected});assert.equal(api.getScore(p,api.SCORE.charging),0);system.currentTick=1160;api.tickChargeCompletion(p);assert.equal(api.revives(p),0);assert.equal(p.selected.amount,2);
+});
+test('8-second sneak charge consumes one zombie stem cell only at completion, keeps c0', () => {
+  const p=entity(0);init(p);p.selected=new ItemStack('pinematerials:zonbikansaibou',2);system.currentTick=1000;api.beginCharge(p);assert.equal(p.selected.amount,2);system.currentTick=1159;api.tickChargeCompletion(p);assert.equal(api.revives(p),0);system.currentTick=1160;api.tickChargeCompletion(p);assert.equal(api.revives(p),1);assert.equal(p.selected.amount,1);assert.equal(api.corruption(p),0);
 });
 test('four zombie stem cells can fill all four revive charges', () => {
   const p=entity(0);init(p);p.selected=new ItemStack('pinematerials:zonbikansaibou',4);
-  for (let i=1;i<=4;i++) { system.currentTick=10000+i*200;afterEvents.itemUse.emit({source:p,itemStack:p.selected});system.currentTick+=160;api.tickChargeCompletion(p);assert.equal(api.revives(p),i);assert.equal(p.selected?.amount ?? 0,4-i); }
+  for (let i=1;i<=4;i++) { system.currentTick=10000+i*200;api.beginCharge(p);system.currentTick+=160;api.tickChargeCompletion(p);assert.equal(api.revives(p),i);assert.equal(p.selected?.amount ?? 0,4-i); }
   assert.equal(api.corruption(p),0);
 });
 test('melee infection has 40-tick pair cooldown; projectiles do not infect', () => {
@@ -119,7 +122,7 @@ test('melee infection has 40-tick pair cooldown; projectiles do not infect', () 
   system.currentTick=2000;hit(a,v,10);near(hit(undefined,v,10,'fire').damage,10/.9);
   system.currentTick=2039;hit(a,v,10);near(hit(undefined,v,10,'fire').damage,10/.9);
   system.currentTick=2040;hit(a,v,10);near(hit(undefined,v,10,'fire').damage,10/.8);
-  system.currentTick=2080;hit(a,v,10);near(hit(a,v,10).damage,14.4/.7);
+  system.currentTick=2080;hit(a,v,10);near(hit(a,v,10).damage,12/.7);
   const fresh=entity(-1,false);fresh.health.currentValue=100;hit(a,fresh,1,'projectile',true);near(hit(undefined,fresh,10,'fire').damage,10);
 });
 test('milk clears infection and is not blocked by full-set diet', () => {
@@ -136,18 +139,18 @@ test('multiple same-tick lethal hits consume distinct revives; no immunity', () 
   const p=entity(0);init(p,2);p.health.currentValue=5;system.currentTick=5000;hit(undefined,p,6,'fire');hit(undefined,p,50,'fire');hit(undefined,p,50,'fire');flush();assert.equal(api.revives(p),0);assert.equal(p.health.currentValue,0);assert.equal(api.corruption(p),2);
 });
 test('partial armor has no diet restriction', () => {const p=entity(0);delete p.slots.feet;const ev={source:p,itemStack:new ItemStack('minecraft:apple'),cancel:false};beforeEvents.itemUse.emit(ev);assert.equal(ev.cancel,false);});
-test('full set can eat all food but keeps hunger and saturation unchanged', () => {
+test('full set normal food keeps hunger and saturation unchanged with nausea only', () => {
   const p=entity(0);init(p);p.hunger.currentValue=7;p.saturation.currentValue=1;p.health.currentValue=50;
   const stack=new ItemStack('minecraft:apple');const ev={source:p,itemStack:stack,cancel:false};beforeEvents.itemUse.emit(ev);assert.equal(ev.cancel,false);
   p.hunger.currentValue=11;p.saturation.currentValue=5;afterEvents.itemCompleteUse.emit(ev);
   assert.equal(p.hunger.currentValue,7);assert.equal(p.saturation.currentValue,1);assert.equal(p.health.currentValue,50);
-  assert.equal(p.effects.nausea.duration,400);assert.equal(p.effects.blindness.duration,400);
+  assert.equal(p.effects.nausea.duration,400);assert.equal(p.effects.blindness,undefined);
 });
 test('rotten flesh is the only food that directly heals full zombie gear', () => {
   const p=entity(0);init(p);p.health.currentValue=50;p.hunger.currentValue=7;p.saturation.currentValue=1;
   const ev={source:p,itemStack:new ItemStack('minecraft:rotten_flesh'),cancel:false};beforeEvents.itemUse.emit(ev);
   p.hunger.currentValue=11;p.saturation.currentValue=5;afterEvents.itemCompleteUse.emit(ev);
-  assert.equal(p.hunger.currentValue,7);assert.equal(p.saturation.currentValue,1);assert.equal(p.health.currentValue,58);
+  assert.equal(p.hunger.currentValue,11);assert.equal(p.saturation.currentValue,5);assert.equal(p.health.currentValue,58);assert.equal(p.effects.nausea,undefined);assert.equal(p.effects.blindness,undefined);
 });
 test('night natural healing remains a full-set zombie gear ability', () => {
   const update20=intervals.filter(([,n])=>n===20).at(-1)[0];const p=entity(0);init(p);p.health.currentValue=50;p.hunger.currentValue=12;
@@ -163,6 +166,12 @@ test('relogging with own HP boost does not restore HP80 after unequipping', () =
 });
 test('pre-existing external health boost is restored on removal', () => {
   const p=entity();p.addEffect('health_boost',600,{amplifier:2});equip(p,0);init(p);assert.equal(p.health.effectiveMax,80);delete p.slots.head;api.forceMaxHpState(p);assert.equal(p.health.effectiveMax,32);
+});
+
+test('full zombie gear manages strength in the potion slot and adds one level', () => {
+  const p=entity(0);init(p);api.syncStrengthBoost(p,true);assert.equal(p.effects.strength.amplifier,0);
+  const q=entity();q.addEffect('strength',500,{amplifier:1});equip(q,0);init(q);api.syncStrengthBoost(q,true);assert.equal(q.effects.strength.amplifier,2);
+  delete q.slots.head;api.syncStrengthBoost(q,false);assert.equal(q.effects.strength.amplifier,1);
 });
 test('infection debuffs apply once to infected mob outgoing damage', () => {
   const a=entity(0),v=entity(-1,false),target=entity(-1,false);init(a);v.health.currentValue=1000;target.health.currentValue=1000;system.currentTick=6000;

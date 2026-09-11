@@ -344,8 +344,11 @@ const BONUS_REGEN_MIN_FOOD = 8;
 const FOOD_SICKNESS_TICKS = 400;
 const ROTTEN_FLESH_HEAL = 8;
 const ROTTEN_FLESH_REPAIR_FRACTION = 0.20;
+const STRENGTH_EFFECT_TICKS = 80;
 const mismatchWarnings = new Set();
 const ownedHealthBoost = new Map();
+const ownedStrengthBase = new Map();
+const strengthApplying = new Set();
 const chargeSnapshots = new Map();
 const foodSnapshots = new Map();
 
@@ -386,7 +389,7 @@ function getFoodComponent(player, componentName) {
 }
 
 function snapshotFoodState(player, itemStack) {
-  if (!isFullZombieArmor(player) || !isFoodItem(itemStack)) return;
+  if (!isFullZombieArmor(player) || !isFoodItem(itemStack) || itemStack.typeId === "minecraft:rotten_flesh") return;
   foodSnapshots.set(player.id, {
     typeId: itemStack.typeId,
     hunger: getFoodComponent(player, "minecraft:player.hunger")?.currentValue,
@@ -410,14 +413,78 @@ function restoreFoodValue(player, componentName, value) {
 }
 
 function applyFullSetFoodAftermath(player, itemStack) {
-  if (!isFullZombieArmor(player) || !isFoodItem(itemStack)) return;
+  if (!isFullZombieArmor(player) || !isFoodItem(itemStack) || itemStack.typeId === "minecraft:rotten_flesh") return;
   const snapshot = foodSnapshots.get(player.id);
   foodSnapshots.delete(player.id);
   restoreFoodValue(player, "minecraft:player.hunger", snapshot?.hunger);
   restoreFoodValue(player, "minecraft:player.saturation", snapshot?.saturation);
   player.addEffect("nausea", FOOD_SICKNESS_TICKS, { amplifier: 0, showParticles: true });
-  player.addEffect("blindness", FOOD_SICKNESS_TICKS, { amplifier: 0, showParticles: true });
 }
+
+function rememberExternalStrength(player, effect) {
+  if (!effect) {
+    ownedStrengthBase.delete(player.id);
+    return;
+  }
+  const duration = Number.isFinite(effect.duration) ? Math.max(1, effect.duration) : STRENGTH_EFFECT_TICKS;
+  const amplifier = Number.isFinite(effect.amplifier) ? effect.amplifier : 0;
+  ownedStrengthBase.set(player.id, { amplifier, endTick: system.currentTick + duration });
+}
+
+function currentExternalStrength(player) {
+  const base = ownedStrengthBase.get(player.id);
+  if (!base) return undefined;
+  if (base.endTick <= system.currentTick) {
+    ownedStrengthBase.delete(player.id);
+    return undefined;
+  }
+  return base;
+}
+
+function addManagedStrength(player, duration, amplifier) {
+  strengthApplying.add(player.id);
+  try {
+    player.addEffect("strength", duration, { amplifier, showParticles: false });
+    player.setDynamicProperty("zombiegear:strength_boost_owned", true);
+  } finally {
+    strengthApplying.delete(player.id);
+  }
+}
+
+function syncStrengthBoost(player, full) {
+  const owned = !!player.getDynamicProperty("zombiegear:strength_boost_owned");
+  const current = player.getEffect("strength");
+  if (!full) {
+    if (owned) {
+      player.removeEffect("strength");
+      const base = currentExternalStrength(player);
+      if (base) player.addEffect("strength", Math.max(1, base.endTick - system.currentTick), { amplifier: base.amplifier, showParticles: true });
+    }
+    ownedStrengthBase.delete(player.id);
+    player.setDynamicProperty("zombiegear:strength_boost_owned", undefined);
+    return;
+  }
+  if (current && !owned) rememberExternalStrength(player, current);
+  const base = currentExternalStrength(player);
+  const desiredAmplifier = (base ? base.amplifier : -1) + 1;
+  const desiredDuration = base ? Math.max(STRENGTH_EFFECT_TICKS, base.endTick - system.currentTick) : STRENGTH_EFFECT_TICKS;
+  if (!current || current.amplifier !== desiredAmplifier || current.duration < 40 || !owned) {
+    addManagedStrength(player, desiredDuration, desiredAmplifier);
+  }
+}
+
+function effectAddId(ev) {
+  const raw = ev.effectType?.id ?? ev.effectType ?? ev.effect?.typeId ?? ev.effect?.type?.id ?? "";
+  return String(raw).replace("minecraft:", "");
+}
+
+function effectAddSnapshot(ev) {
+  return {
+    amplifier: Number.isFinite(ev.amplifier) ? ev.amplifier : Number.isFinite(ev.effect?.amplifier) ? ev.effect.amplifier : 0,
+    duration: Number.isFinite(ev.duration) ? ev.duration : Number.isFinite(ev.effect?.duration) ? ev.effect.duration : STRENGTH_EFFECT_TICKS
+  };
+}
+
 
 function revives(player) {
   return clampStage(getScore(player, SCORE.revives));
@@ -556,7 +623,7 @@ function tickChargeCompletion(player) {
   stopCharging(player);
   chargeSnapshots.delete(player.id);
   if (revives(player) >= MAX_REVIVES || !consumeOneSelectedItem(player, ZOMBIE_ITEMS.stemCell)) {
-    player.sendMessage("[ZombieGear] チャージ失敗: トーテムを手に持ち続けてください");
+    player.sendMessage("[ZombieGear] チャージ失敗: ゾンビ幹細胞を手に持ち続けてください");
     return;
   }
   setScore(player, SCORE.revives, revives(player) + 1);
@@ -566,6 +633,9 @@ function tickChargeCompletion(player) {
 const combat = installCombat({ isFull: isFullZombieArmor, corruption, canRevive, tryRevive, markCombat });
 
 function beginCharge(player) {
+  initializePlayer(player);
+  if (!isFullZombieArmor(player) || inCombat(player) || isCharging(player) || revives(player) >= MAX_REVIVES ||
+      !isStemCellItem(player.getComponent("minecraft:inventory")?.container?.getItem(player.selectedSlotIndex)?.typeId)) return;
   startCharging(player);
   chargeSnapshots.set(player.id, JSON.stringify(Object.values(getArmor(player)).map(i => i?.typeId)));
 }
@@ -581,18 +651,6 @@ installGearControls({
   },
   start: beginCharge,
   cancel(player) { stopCharging(player); chargeSnapshots.delete(player.id); }
-});
-
-world.afterEvents.itemUse.subscribe(ev => {
-  const player = ev.source;
-  if (player.typeId !== "minecraft:player" || !isStemCellItem(ev.itemStack.typeId)) return;
-  initializePlayer(player);
-  if (!isFullZombieArmor(player) || inCombat(player) || isCharging(player) || revives(player) >= MAX_REVIVES) {
-    player.sendMessage("[ZombieGear] チャージには非戦闘・4部位装備・空き蘇生枠が必要です");
-    return;
-  }
-  beginCharge(player);
-  player.sendMessage("[ZombieGear] チャージ開始 (8秒・完了時にゾンビ幹細胞を消費)");
 });
 
 // Full sets may eat any food, but food does not restore hunger/saturation.
@@ -611,8 +669,13 @@ world.afterEvents.itemCompleteUse.subscribe(ev => {
 world.beforeEvents.effectAdd.subscribe(ev => {
   const entity = ev.entity;
   if (!isFullZombieArmor(entity)) return;
-  const id = (ev.effectType ?? "").replace("minecraft:", "");
+  const id = effectAddId(ev);
   if (["regeneration", "absorption", "instant_health"].includes(id)) ev.cancel = true;
+  if (id === "strength" && !strengthApplying.has(entity.id)) {
+    ev.cancel = true;
+    rememberExternalStrength(entity, effectAddSnapshot(ev));
+    system.run(() => { if (entity.isValid) syncStrengthBoost(entity, true); });
+  }
 });
 
 world.afterEvents.playerSpawn.subscribe(ev => {
@@ -627,6 +690,8 @@ world.afterEvents.playerSpawn.subscribe(ev => {
 });
 world.afterEvents.playerLeave.subscribe(ev => {
   ownedHealthBoost.delete(ev.playerId);
+  ownedStrengthBase.delete(ev.playerId);
+  strengthApplying.delete(ev.playerId);
   chargeSnapshots.delete(ev.playerId);
   foodSnapshots.delete(ev.playerId);
   mismatchWarnings.delete(ev.playerId);
@@ -655,6 +720,7 @@ system.runInterval(() => {
           console.warn(`[ZombieGear] mismatched corruption for ${player.id}: multiplier/revive disabled; items unchanged`);
         }
       } else mismatchWarnings.delete(player.id);
+      syncStrengthBoost(player, full);
       if (!full) continue;
       applyBonusNaturalRegen(player);
       const hunger = player.getEffect("hunger");
