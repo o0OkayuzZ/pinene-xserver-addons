@@ -1,0 +1,23 @@
+import { test,expect } from '@playwright/test';
+import { fileURLToPath } from 'node:url';
+test('GA4 waits for consent, strips queries and never sends search input',async({page})=>{
+ let downloads=0;
+ await page.route('https://www.googletagmanager.com/**',route=>{downloads++;return route.fulfill({status:200,body:''});});
+ await page.route('https://*.google-analytics.com/**',route=>route.abort());
+ await page.goto('/pine-server/database/items/?q=PRIVATE_TEXT');
+ await page.evaluate(()=>localStorage.removeItem('pine-analytics-consent-v1'));
+ await page.setContent('<div id="pine-analytics" data-measurement-id="G-TEST1234" data-content-group="mycology" data-entry-kind="recipe" data-entry-id="test-recipe"><section id="analytics-choice" hidden><button data-consent="yes">許可する</button><button data-consent="no">許可しない</button></section><button id="analytics-settings">設定</button></div><input id="guide-search">');
+ await page.addScriptTag({path:fileURLToPath(new URL('../public/analytics.js',import.meta.url))});
+ expect(downloads).toBe(0);
+ await page.getByRole('button',{name:'許可しない',exact:true}).click();expect(downloads).toBe(0);
+ await page.getByRole('button',{name:'設定',exact:true}).click();await page.getByRole('button',{name:'許可する',exact:true}).click();
+ await expect.poll(()=>downloads).toBe(1);
+ await page.locator('#guide-search').fill('DO_NOT_SEND_THIS');
+ await expect.poll(()=>page.evaluate(()=>JSON.stringify((window as any).dataLayer))).toContain('pine_search');
+ const data=await page.evaluate(()=>JSON.stringify((window as any).dataLayer));
+ expect(data).not.toContain('PRIVATE_TEXT');expect(data).not.toContain('DO_NOT_SEND_THIS');expect(data).toContain('pine_recipe_view');
+ await page.getByRole('button',{name:'設定',exact:true}).click();await page.getByRole('button',{name:'許可しない',exact:true}).click();
+ const count=await page.evaluate(()=>(window as any).dataLayer.length);
+ await page.locator('#guide-search').fill('another search');await page.waitForTimeout(1200);
+ expect(await page.evaluate(()=>(window as any).dataLayer.length)).toBe(count);
+});

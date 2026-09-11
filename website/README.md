@@ -6,6 +6,8 @@ Astro + TypeScriptによる、PINE SERVERのコンテンツ紹介サイトです
 
 現在はアイテム・ブロック421件、レシピ197件、小さな機能37件、合計655件を掲載しています。最新の追加内容と検証は [EXPLORATION_URL_REPORT.md](EXPLORATION_URL_REPORT.md) を参照してください。
 
+本人用のアクセス管理画面はデスクトップの「PINE SERVER 管理画面」から起動します。GA4の実接続は設定待ちです。[管理画面の実装・検証](ADMIN_REPORT.md) / [初回設定](admin/README.md)。
+
 ## 起動・検証
 
 Node.js 22.12以上の対応する偶数系リリースを使用してください。今回の検証環境はNode 24.21.0 / npm 11.19.0です。
