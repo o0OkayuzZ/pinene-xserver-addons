@@ -1,441 +1,657 @@
 {
-    "pools":  [
-                  {
-                      "rolls":  {
-                                    "min":  4,
-                                    "max":  8
-                                },
-                      "entries":  [
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:obsidian",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  2
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  40
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:crying_obsidian",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  2
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  40
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:flint",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  4
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  40
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:iron_nugget",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  9,
-                                                                              "max":  18
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  40
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:flint_and_steel",
-                                          "weight":  40
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:fireball",
-                                          "weight":  40
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:gold_nugget",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  4,
-                                                                              "max":  24
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_sword",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_randomly"
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_spear",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_randomly"
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_axe",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_randomly"
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_hoe",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_randomly"
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_shovel",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_randomly"
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_pickaxe",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_randomly"
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_boots",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_randomly"
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_chestplate",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_randomly"
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_leggings",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_randomly"
-                                                            }
-                                                        ],
-                                          "weight":  15
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:glistering_melon_slice",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  4,
-                                                                              "max":  12
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_horse_armor",
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:light_weighted_pressure_plate",
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_carrot",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  4,
-                                                                              "max":  12
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:clock",
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:gold_ingot",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  2,
-                                                                              "max":  8
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:respawn_anchor",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:bell",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:gold_block",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  2
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  1
-                                      }
-                                  ]
-                  },
-                  {
-                      "rolls":  1,
-                      "entries":  [
-                                      {
-                                          "type":  "empty",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:lodestone",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  2
-                                                                          }
-                                                            }
-                                                        ],
-                                          "weight":  2
-                                      }
-                                  ]
-                  },
-                  {
-                      "rolls":  1,
-                      "entries":  [
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:diamond",
-                                          "weight":  14
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:emerald",
-                                          "weight":  12
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:iron_block",
-                                          "weight":  10
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:gold_block",
-                                          "weight":  8
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:golden_apple",
-                                          "weight":  8
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:enchanted_golden_apple",
-                                          "weight":  2
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:diamond_pickaxe",
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:name_tag",
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "resetapple:blue_apple",
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "waystone:waystone",
-                                          "weight":  3
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "ws:warpstone",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:figure_oyu",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:figure_fossil",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:figure_spiral",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:gengar",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:goamagara",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:hitomoshi",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:jack",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:meltan",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:metamon",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:mimikkyu",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:shini",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:soubraze",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:utyuuneko",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_01",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_02",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_03",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_04",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_05",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_06",
-                                          "weight":  1
-                                      }
-                                  ]
-                  }
-              ]
+  "pools": [
+    {
+      "rolls": {
+        "min": 4,
+        "max": 5
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:obsidian",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:crying_obsidian",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_block",
+          "weight": 9,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_ingot",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 24
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:lodestone",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "minecraft:flint_and_steel",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 6,
+        "max": 7
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:iron_ingot",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 24
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_ingot",
+          "weight": 14,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 6,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "weight": 13,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:copper_ingot",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 10,
+                "max": 32
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:lapis_lazuli",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 12,
+                "max": 36
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:redstone",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 12,
+                "max": 36
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 3,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:iron_block",
+          "weight": 13,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_block",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald_block",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_block",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:golden_carrot",
+          "weight": 14,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:golden_apple",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:cooked_beef",
+          "weight": 11,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:cooked_porkchop",
+          "weight": 11,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:pumpkin_pie",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:baked_potato",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:honey_bottle",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 3,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:experience_bottle",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:name_tag",
+          "weight": 8
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bundle",
+          "weight": 6
+        },
+        {
+          "type": "item",
+          "name": "minecraft:ender_pearl",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:torch",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 24
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:lantern",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bucket",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 3,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:iron_pickaxe",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_pickaxe",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_sword",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_chestplate",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_chestplate",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bow",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:crossbow",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "true_dn:deathnerite_ingot"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.01
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/pancakes.json"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.24
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/golden_foods.json"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.24
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.08
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/collectibles/all.json"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.16
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "waystone:waystone"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.03
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "ws:warpstone"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.01
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "resetapple:blue_apple"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.003
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,2241 @@
+{
+  "status": "PASS",
+  "baseCommit": "8d98749d3abd30cad564b1c28fa5b24a2580ee90",
+  "lootTables": 425,
+  "strictJSON": 419,
+  "existingJSONC": [
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/basic.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/desert.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/end.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/jungle.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/mountains.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/vault/snowy.json"
+  ],
+  "bslLootTables": 44,
+  "chestProfiles": 36,
+  "nestedReferences": 291,
+  "references": [
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/abandoned_mineshaft.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/abandoned_mineshaft.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/abandoned_mineshaft.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/abandoned_mineshaft.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city_ice_box.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city_ice_box.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city_ice_box.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city_ice_box.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_bridge.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_bridge.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_bridge.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_bridge.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_hoglin_stable.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_hoglin_stable.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_hoglin_stable.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_hoglin_stable.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_other.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_other.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_other.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_other.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_treasure.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_treasure.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_treasure.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_treasure.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/buriedtreasure.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/buriedtreasure.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/buriedtreasure.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/buriedtreasure.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/desert_pyramid.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/desert_pyramid.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/desert_pyramid.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/desert_pyramid.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/end_city_treasure.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/end_city_treasure.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/end_city_treasure.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/end_city_treasure.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/igloo_chest.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/igloo_chest.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/igloo_chest.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/igloo_chest.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/jungle_temple.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/jungle_temple.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/jungle_temple.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/jungle_temple.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/nether_bridge.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/nether_bridge.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/nether_bridge.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/nether_bridge.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/pillager_outpost.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/pillager_outpost.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/pillager_outpost.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/pillager_outpost.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ruined_portal.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ruined_portal.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ruined_portal.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ruined_portal.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwreck.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwreck.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwreck.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwreck.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecksupply.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecksupply.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecksupply.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecksupply.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecktreasure.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecktreasure.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecktreasure.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecktreasure.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/simple_dungeon.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/simple_dungeon.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/simple_dungeon.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/simple_dungeon.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/spawn_bonus_chest.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/spawn_bonus_chest.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/spawn_bonus_chest.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/spawn_bonus_chest.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_corridor.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_corridor.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_corridor.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_corridor.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_crossing.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_crossing.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_crossing.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_crossing.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_library.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_library.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_library.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_library.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_big.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_big.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_big.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_big.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_small.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_small.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_small.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_small.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/woodland_mansion.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/woodland_mansion.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/woodland_mansion.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/woodland_mansion.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json",
+      "target": "loot_tables/bsl/collectibles/common.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/common.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json",
+      "target": "loot_tables/bsl/collectibles/rare.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/rare.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json",
+      "target": "loot_tables/bsl/collectibles/special.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/special.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/corridor.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/corridor.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/corridor.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/corridor.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/entrance.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/entrance.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/entrance.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/entrance.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection_barrel.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection_barrel.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection_barrel.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection_barrel.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/supply.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/supply.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/supply.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/supply.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_desert_house.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_desert_house.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_desert_house.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_desert_house.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_plains_house.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_plains_house.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_plains_house.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_plains_house.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_savanna_house.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_savanna_house.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_savanna_house.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_savanna_house.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_snowy_house.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_snowy_house.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_snowy_house.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_snowy_house.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_taiga_house.json",
+      "target": "loot_tables/bsl/food/pancakes.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_taiga_house.json",
+      "target": "loot_tables/bsl/food/golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_taiga_house.json",
+      "target": "loot_tables/bsl/food/enchanted_golden_foods.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_taiga_house.json",
+      "target": "loot_tables/bsl/collectibles/all.json",
+      "resolved": [
+        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/entities/royal_guard_raid.json",
+      "target": "loot_tables/entities/royal_guard.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/entities/royal_guard.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/entities/royal_guard_raid.json",
+      "target": "loot_tables/entities/raider_drops.json",
+      "resolved": [
+        "vanilla"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/calcite_key_ominous.json",
+      "target": "loot_tables/trial_arena/ominous_loot.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/ominous_loot.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/mossy_key_ominous.json",
+      "target": "loot_tables/trial_arena/ominous_loot.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/ominous_loot.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/stone_key_ominous.json",
+      "target": "loot_tables/trial_arena/ominous_loot.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/ominous_loot.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/void_key_ominous.json",
+      "target": "loot_tables/trial_arena/ominous_loot.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/ominous_loot.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+      "target": "loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+      "target": "loot_tables/chests/diamond_chest/armor/glow_squid/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+      "target": "loot_tables/chests/diamond_chest/armor/souldancer/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/souldancer/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+      "target": "loot_tables/chests/diamond_chest/armor/beehive/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/beehive/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+      "target": "loot_tables/chests/diamond_chest/armor/living_vines/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+      "target": "loot_tables/chests/diamond_chest/armor/golden_piglin/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ember/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+      "target": "loot_tables/chests/diamond_chest/armor/verdant/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ender/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+      "target": "loot_tables/chests/diamond_chest/armor/troubadour/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+      "target": "loot_tables/chests/diamond_chest/armor/titans_shroud/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+      "target": "loot_tables/chests/diamond_chest/armor/spider/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spider/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+      "target": "loot_tables/chests/diamond_chest/armor/shadow_walker/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_spot/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+      "target": "loot_tables/chests/diamond_chest/armor/fox/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/fox/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_wolf/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+      "target": "loot_tables/chests/diamond_chest/armor/wither/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/wither/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+      "target": "loot_tables/chests/diamond_chest/armor/heros/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost_bite/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/spooky_monstrosity.json",
+      "target": "loot_tables/chests/diamond_chest/armor/spooky_gourdian/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spooky_gourdian/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/spooky_monstrosity.json",
+      "target": "loot_tables/chests/diamond_chest/armor/cauldron/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/cauldron/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/spooky_monstrosity.json",
+      "target": "loot_tables/chests/diamond_chest/armor/cloaked_skull/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/cloaked_skull/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+      "target": "loot_tables/chests/diamond_chest/armor/gilded_glory/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+      "target": "loot_tables/chests/diamond_chest/armor/opulent/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+      "target": "loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+      "target": "loot_tables/chests/diamond_chest/armor/unstable/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+      "target": "loot_tables/chests/diamond_chest/armor/full_metal/base.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/base.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/beehive/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/beehive/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/beehive/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/beehive/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/beehive/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/beehive/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/beehive/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/beehive/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/beehive/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/beehive/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/beehive/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/beehive/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_spot/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_spot/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_spot/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_spot/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_spot/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_wolf/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_wolf/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_wolf/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/black_wolf/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/black_wolf/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ember/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ember/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ember/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ember/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ember/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ender/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ender/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ender/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ender/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ender/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/fox/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/fox/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/fox/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/fox/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/fox/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/fox/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/fox/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/fox/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/fox/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/fox/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/fox/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/fox/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost_bite/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost_bite/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost_bite/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/frost_bite/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/frost_bite/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/full_metal/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/full_metal/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/full_metal/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/full_metal/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/full_metal/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ghost_kindler/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ghost_kindler/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ghost_kindler/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/ghost_kindler/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/ghost_kindler/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/gilded_glory/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/gilded_glory/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/gilded_glory/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/gilded_glory/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/gilded_glory/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/glow_squid/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/glow_squid/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/glow_squid/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/glow_squid/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/glow_squid/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/golden_piglin/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/golden_piglin/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/golden_piglin/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/golden_piglin/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/golden_piglin/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/heros/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/heros/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/heros/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/heros/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/heros/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/living_vines/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/living_vines/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/living_vines/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/living_vines/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/living_vines/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/nimble_turtle/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/nimble_turtle/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/nimble_turtle/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/nimble_turtle/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/nimble_turtle/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/opulent/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/opulent/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/opulent/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/opulent/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/opulent/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/shadow_walker/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/shadow_walker/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/shadow_walker/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/shadow_walker/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/shadow_walker/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/souldancer/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/souldancer/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/souldancer/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/souldancer/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/souldancer/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/souldancer/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/souldancer/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/souldancer/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/souldancer/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/souldancer/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/souldancer/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/souldancer/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spider/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/spider/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spider/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spider/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/spider/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spider/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spider/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/spider/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spider/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spider/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/spider/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/spider/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/sturdy_shulker/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/sturdy_shulker/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/sturdy_shulker/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/sturdy_shulker/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/sturdy_shulker/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/titans_shroud/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/titans_shroud/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/titans_shroud/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/titans_shroud/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/titans_shroud/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/troubadour/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/troubadour/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/troubadour/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/troubadour/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/troubadour/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/unstable/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/unstable/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/unstable/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/unstable/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/unstable/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/verdant/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/verdant/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/verdant/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/verdant/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/verdant/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/wither/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/wither/helmet.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/wither/helmet.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/wither/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/wither/chestplate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/wither/chestplate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/wither/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/wither/leggings.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/wither/leggings.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/wither/base.json",
+      "target": "loot_tables/chests/diamond_chest/armor/wither/boots.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/armor/wither/boots.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/armor.json",
+      "target": "loot_tables/trial_arena/equipment/armor_iron.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/armor_iron.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/armor.json",
+      "target": "loot_tables/trial_arena/equipment/armor_diamond.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/armor_diamond.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/armor.json",
+      "target": "loot_tables/trial_arena/equipment/armor_plate.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/armor_plate.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/ominous_melee.json",
+      "target": "loot_tables/trial_arena/equipment/armor.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/armor.json"
+      ]
+    },
+    {
+      "source": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/ominous_ranged.json",
+      "target": "loot_tables/trial_arena/equipment/armor.json",
+      "resolved": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/trial_arena/equipment/armor.json"
+      ]
+    }
+  ],
+  "customItemCount": 520,
+  "bslCustomItemCount": 57,
+  "bslCustomDefinitions": {
+    "a:egbread": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egbread.json"
+    ],
+    "a:egwheat": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egwheat.json"
+    ],
+    "a:gbread": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/gbread.json"
+    ],
+    "a:gwheat": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/gwheat.json"
+    ],
+    "kyuden:sunshine_doll": [
+      "behavior_packs/bp_13_7e0c44d2-1b23-4073-b749-c81514e2ed94/blocks/natu/sunshine_doll.json"
+    ],
+    "myname:figure_fossil": [
+      "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/figure_fossil.item.json"
+    ],
+    "myname:figure_oyu": [
+      "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/figure_oyu.item.json"
+    ],
+    "myname:figure_spiral": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/figure_spiral.item.json"
+    ],
+    "myname:gengar": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/gengar.item.json"
+    ],
+    "myname:goamagara": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/goamagara.item.json"
+    ],
+    "myname:hitomoshi": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/hitomoshi.item.json"
+    ],
+    "myname:jack": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/jack.item.json"
+    ],
+    "myname:meltan": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/meltan.item.json"
+    ],
+    "myname:metamon": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/metamon.item.json"
+    ],
+    "myname:mimikkyu": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/mimikkyu.item.json"
+    ],
+    "myname:mystery_fossil": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/blocks/mystery_fossil.block.json",
+      "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mystery_fossil.item.json"
+    ],
+    "myname:pancake": [
+      "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/pancake.item.json"
+    ],
+    "myname:shini": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/shini.item.json"
+    ],
+    "myname:soubraze": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/soubraze.item.json"
+    ],
+    "myname:utyuuneko": [
+      "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/items/utyuuneko.item.json"
+    ],
+    "pinebento:berry_honey_pancake": [
+      "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/berry_honey_pancake.item.json"
+    ],
+    "pinebento:honey_pancake": [
+      "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/honey_pancake.item.json"
+    ],
+    "pinecd:cd_01": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_01.item.json"
+    ],
+    "pinecd:cd_02": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_02.item.json"
+    ],
+    "pinecd:cd_03": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_03.item.json"
+    ],
+    "pinecd:cd_04": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_04.item.json"
+    ],
+    "pinecd:cd_05": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_05.item.json"
+    ],
+    "pinecd:cd_06": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_06.item.json"
+    ],
+    "pinecd:cd_07": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_07.item.json"
+    ],
+    "pinecd:cd_08": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_08.item.json"
+    ],
+    "pinecd:cd_09": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_09.item.json"
+    ],
+    "pinecd:cd_10": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_10.item.json"
+    ],
+    "pinecd:cd_11": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_11.item.json"
+    ],
+    "pinecd:cd_12": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_12.item.json"
+    ],
+    "pinecd:cd_13": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_13.item.json"
+    ],
+    "pinecd:cd_14": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_14.item.json"
+    ],
+    "pinecd:cd_15": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_15.item.json"
+    ],
+    "pinecd:cd_16": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_16.item.json"
+    ],
+    "pinecd:cd_17": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_17.item.json"
+    ],
+    "pinecd:cd_18": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_18.item.json"
+    ],
+    "pinecd:cd_19": [
+      "behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/items/compat_pinecd_cd_19.item.json"
+    ],
+    "pinene:baked_golden_potato": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/baked_golden_potato.json"
+    ],
+    "pinene:enchanted_baked_golden_potato": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_baked_golden_potato.json"
+    ],
+    "pinene:enchanted_glistering_melon_slice": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_glistering_melon_slice.json"
+    ],
+    "pinene:enchanted_golden_beetroot": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_golden_beetroot.json"
+    ],
+    "pinene:enchanted_golden_carrot": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_golden_carrot.json"
+    ],
+    "pinene:enchanted_golden_poisonous_potato": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_golden_poisonous_potato.json"
+    ],
+    "pinene:enchanted_golden_pumpkin_pie": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/enchanted_golden_pumpkin_pie.json"
+    ],
+    "pinene:golden_beetroot": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_beetroot.json"
+    ],
+    "pinene:golden_poisonous_potato": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_poisonous_potato.json"
+    ],
+    "pinene:golden_potato": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_potato.json"
+    ],
+    "pinene:golden_pumpkin_pie": [
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_pumpkin_pie.json"
+    ],
+    "resetapple:blue_apple": [
+      "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/items/blue_apple.item.json"
+    ],
+    "true_dn:darkness_upgrade_smithing_template": [
+      "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/parcanite/darkness_upgrade_smithing_template.json"
+    ],
+    "true_dn:deathnerite_ingot": [
+      "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/deathnerite_ingot.json"
+    ],
+    "waystone:waystone": [
+      "behavior_packs/bp_10_6b1f1e2b-2f6f-4e06-bfd7-2da2f9f5d2a1/items/waystone.item.json"
+    ],
+    "ws:warpstone": [
+      "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/items/simple_waystone/warpstone.json"
+    ]
+  },
+  "dungeonDefinitionCount": 516,
+  "errors": [],
+  "notes": [
+    "Game engine acceptance, actual chest slots and stack merging are not tested.",
+    "Six unchanged Dungeon tables use comments and pass JSONC, not strict JSON.",
+    "Vanilla raider_drops.json verified at https://raw.githubusercontent.com/Mojang/bedrock-samples/main/behavior_pack/loot_tables/entities/raider_drops.json",
+    "BSL marker script still displays pre-existing 1.0.7; manifest is authoritative.",
+    "Unchanged BSL pots/trial_chambers/corridor.json contains heavy_core; outside the 36 chest tables and not reachable from them."
+  ]
+}

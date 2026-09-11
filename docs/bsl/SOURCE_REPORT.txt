@@ -1,0 +1,27 @@
+BSL Phase 0.5 v1.0.15
+Generated from main baseline commit: 8d98749d3abd30cad564b1c28fa5b24a2580ee90
+
+Changes
+- Rewrites all 36 BSL chest loot tables.
+- Adds shared Pancake, Golden Food, Enchanted Golden Food and Collectible subtables.
+- Separates rare categories into independent random_chance pools.
+- Blue Apple: Early 0.15%, Mid 0.30%, High 0.40%, End 0.60%, major Special 1.20%.
+- Waystone: structure-specific values, End 5.5%, major Special 12%.
+- Ice Box: Golden Food vault with 2-4 normal Golden Food rolls and 1-3 enchanted Golden Food rolls.
+- Buried Treasure: high-density resource/ocean Special chest.
+- Bastion Treasure: Netherite template guaranteed; Parcanite template 10%; Deathnerite-tier reward is Deathnerite Ingot 18%.
+- Removes Mace / Heavy Core from ordinary Trial Chamber chests.
+- Removes Dragon Egg from ordinary End City chests.
+- Dungeon-addon-specific rewards are not added to general BSL structure chests.
+- Manifest bumped 1.0.14 -> 1.0.15.
+
+Important Deathnerite note
+The repository does not contain an active item definition for true_dn:deathnerite_upgrade_smithing_template.
+Deathnerite equipment is crafted from true_dn:deathnerite_ingot, while Parcanite uses
+true_dn:darkness_upgrade_smithing_template. Therefore the agreed Deathnerite progression
+slot is implemented with true_dn:deathnerite_ingot rather than a nonexistent template item.
+
+Density simulation
+Generated-stack simulation after tuning places normal structure chests roughly in the
+23-27 stack range on average. Special chests are tuned around 26-27 generated stacks.
+Actual Bedrock slot placement/stack merging still requires in-game validation.

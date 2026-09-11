@@ -1,698 +1,729 @@
 {
-    "pools":  [
-                  {
-                      "rolls":  {
-                                    "min":  5,
-                                    "max":  10.0
-                                },
-                      "bonus_rolls":  0,
-                      "entries":  [
-                                      {
-                                          "type":  "item",
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  2.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:enchanted_golden_apple",
-                                          "weight":  2
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:music_disc_otherside",
-                                          "weight":  2
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  2,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  1,
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:compass"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  2,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  2.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:sculk_catalyst"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  4,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  1,
-                                                                "add":  false
-                                                            },
-                                                            {
-                                                                "function":  "set_damage",
-                                                                "damage":  {
-                                                                               "min":  0.8,
-                                                                               "max":  1.0
-                                                                           },
-                                                                "add":  false
-                                                            },
-                                                            {
-                                                                "function":  "enchant_with_levels",
-                                                                "levels":  {
-                                                                               "min":  30,
-                                                                               "max":  50.0
-                                                                           },
-                                                                "treasure":  true
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:diamond_hoe"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  2,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  1,
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:lead"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  1,
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:diamond_horse_armor"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  1,
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:wolf_armor"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  4,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  5,
-                                                                              "max":  14
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:leather"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  4,
-                                          "name":  "minecraft:music_disc_13"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  4,
-                                          "name":  "minecraft:music_disc_cat"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  4,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_with_levels",
-                                                                "levels":  {
-                                                                               "min":  30,
-                                                                               "max":  50.0
-                                                                           },
-                                                                "treasure":  true
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:diamond_leggings"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  4,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_with_levels",
-                                                                "levels":  {
-                                                                               "min":  30,
-                                                                               "max":  50.0
-                                                                           },
-                                                                "treasure":  true
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:diamond_spear"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  4,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_with_levels",
-                                                                "levels":  {
-                                                                               "min":  30,
-                                                                               "max":  50.0
-                                                                           },
-                                                                "treasure":  true
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:crossbow"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  3,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  4,
-                                                                              "max":  10.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:sculk"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  3,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  3.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:sculk_sensor"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  3,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  4.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:candle"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  6,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  20.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:amethyst_shard"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  1,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  1,
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:diamond_block"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  5,
-                                                                              "max":  10.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:diamond"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  1,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  1,
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:emerald_block"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  5,
-                                                                              "max":  25.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:emerald"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  3,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  2.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:ender_pearl"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  7.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:resin_clump"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  4.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:resin_brick"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  1,
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:mourner_pottery_sherd"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  6,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  16.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:experience_bottle"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  6,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  15.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:glow_berries"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  6,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "enchant_with_levels",
-                                                                "levels":  {
-                                                                               "min":  20,
-                                                                               "max":  39.0
-                                                                           },
-                                                                "treasure":  true
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:iron_leggings"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  8,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  6.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:echo_shard"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  8,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  6.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:disc_fragment_5"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  3.0
-                                                                          },
-                                                                "add":  false
-                                                            },
-                                                            {
-                                                                "function":  "set_potion",
-                                                                "id":  "strong_regeneration"
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:potion"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  10,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  20.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:bone"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  15.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:soul_torch"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  5,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  1,
-                                                                              "max":  4.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:soul_lantern"
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "weight":  14,
-                                          "functions":  [
-                                                            {
-                                                                "function":  "set_count",
-                                                                "count":  {
-                                                                              "min":  6,
-                                                                              "max":  30.0
-                                                                          },
-                                                                "add":  false
-                                                            }
-                                                        ],
-                                          "name":  "minecraft:coal"
-                                      }
-                                  ]
-                  },
-                  {
-                      "rolls":  1,
-                      "entries":  [
-                                      {
-                                          "type":  "empty",
-                                          "weight":  75
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:ward_armor_trim_smithing_template",
-                                          "weight":  8
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:silence_armor_trim_smithing_template",
-                                          "weight":  2
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:figure_fossil",
-                                          "weight":  5
-                                      }
-                                  ]
-                  },
-                  {
-                      "rolls":  1,
-                      "entries":  [
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:diamond_block",
-                                          "weight":  12
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:emerald_block",
-                                          "weight":  12
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:gold_block",
-                                          "weight":  10
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:netherite_ingot",
-                                          "weight":  8
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:enchanted_golden_apple",
-                                          "weight":  6
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:totem_of_undying",
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:nether_star",
-                                          "weight":  3
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "minecraft:trident",
-                                          "weight":  4
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "waystone:waystone",
-                                          "weight":  5
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "ws:warpstone",
-                                          "weight":  3
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "resetapple:blue_apple",
-                                          "weight":  4
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:figure_fossil",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:figure_oyu",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:figure_spiral",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:gengar",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:goamagara",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:hitomoshi",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:jack",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:meltan",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:metamon",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:mimikkyu",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:shini",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:soubraze",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "myname:utyuuneko",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_01",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_02",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_03",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_04",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_05",
-                                          "weight":  1
-                                      },
-                                      {
-                                          "type":  "item",
-                                          "name":  "pinecd:cd_06",
-                                          "weight":  1
-                                      }
-                                  ]
-                  }
-              ]
+  "pools": [
+    {
+      "rolls": {
+        "min": 4,
+        "max": 5
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:echo_shard",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:disc_fragment_5",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:sculk_catalyst",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:experience_bottle",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 16,
+                "max": 48
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 18,
+                "max": 40
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 9,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 6,
+        "max": 8
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:iron_ingot",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 16,
+                "max": 48
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_ingot",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 16,
+                "max": 48
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 12,
+                "max": 40
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:lapis_lazuli",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 24,
+                "max": 64
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:redstone",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 24,
+                "max": 64
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "weight": 22,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 16,
+                "max": 48
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 3,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:iron_block",
+          "weight": 9,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_block",
+          "weight": 13,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald_block",
+          "weight": 13,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_block",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:golden_carrot",
+          "weight": 14,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:golden_apple",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:cooked_beef",
+          "weight": 11,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:cooked_porkchop",
+          "weight": 11,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:pumpkin_pie",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:baked_potato",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:honey_bottle",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:experience_bottle",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:name_tag",
+          "weight": 8
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bundle",
+          "weight": 6
+        },
+        {
+          "type": "item",
+          "name": "minecraft:ender_pearl",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:torch",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 24
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:lantern",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bucket",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 3,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:diamond_sword",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_pickaxe",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_axe",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_chestplate",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_leggings",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_helmet",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_boots",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bow",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:crossbow",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:ward_armor_trim_smithing_template"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.08
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:silence_armor_trim_smithing_template"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.02
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:enchanted_golden_apple",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.15
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:nether_star"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.01
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/pancakes.json"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/golden_foods.json"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.27
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/collectibles/all.json"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.15
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "waystone:waystone"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.055
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "ws:warpstone"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.015
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "resetapple:blue_apple"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.006
+        }
+      ]
+    }
+  ]
 }

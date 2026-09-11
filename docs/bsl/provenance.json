@@ -1,0 +1,721 @@
+{
+  "baseCommit": "8d98749d3abd30cad564b1c28fa5b24a2580ee90",
+  "sourceZIP": "BSL_Phase_0_5_v1.0.15.zip",
+  "sourceSHA256": "2472af4d5c747efa4d1629567fc76955de651b34f082db05556e5f91acfe1f47",
+  "profileNote": "Explicit audit grouping by progression rates in the supplied ZIP; structure-specific food, resource and equipment variants remain byte-for-byte ZIP data. Igloo and all Trial chests use High rare rates, while supply-style base pools differ. End includes ancient city and ordinary bastions.",
+  "profiles": {
+    "abandoned_mineshaft.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.25,
+        "loot_tables/bsl/food/golden_foods.json": 0.2,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.06,
+        "loot_tables/bsl/collectibles/all.json": 0.11,
+        "waystone:waystone": 0.03,
+        "ws:warpstone": 0.0075,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "ancient_city.json": {
+      "profile": "End",
+      "independentChances": {
+        "minecraft:ward_armor_trim_smithing_template": 0.08,
+        "minecraft:silence_armor_trim_smithing_template": 0.02,
+        "minecraft:enchanted_golden_apple": 0.15,
+        "minecraft:nether_star": 0.01,
+        "loot_tables/bsl/food/pancakes.json": 0.3,
+        "loot_tables/bsl/food/golden_foods.json": 0.27,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.1,
+        "loot_tables/bsl/collectibles/all.json": 0.15,
+        "waystone:waystone": 0.055,
+        "ws:warpstone": 0.015,
+        "resetapple:blue_apple": 0.006
+      },
+      "rollOverrides": {}
+    },
+    "ancient_city_ice_box.json": {
+      "profile": "Special",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.5,
+        "minecraft:enchanted_golden_apple": 0.35,
+        "loot_tables/bsl/collectibles/all.json": 0.3,
+        "waystone:waystone": 0.12,
+        "ws:warpstone": 0.04,
+        "resetapple:blue_apple": 0.012
+      },
+      "rollOverrides": {
+        "loot_tables/bsl/food/pancakes.json": {
+          "min": 1,
+          "max": 2
+        }
+      }
+    },
+    "bastion_bridge.json": {
+      "profile": "End",
+      "independentChances": {
+        "minecraft:netherite_upgrade_smithing_template": 0.18,
+        "minecraft:snout_armor_trim_smithing_template": 0.15,
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.25,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.09,
+        "loot_tables/bsl/collectibles/all.json": 0.14,
+        "waystone:waystone": 0.055,
+        "ws:warpstone": 0.015,
+        "resetapple:blue_apple": 0.006
+      },
+      "rollOverrides": {}
+    },
+    "bastion_hoglin_stable.json": {
+      "profile": "End",
+      "independentChances": {
+        "minecraft:netherite_upgrade_smithing_template": 0.18,
+        "minecraft:snout_armor_trim_smithing_template": 0.15,
+        "loot_tables/bsl/food/pancakes.json": 0.32,
+        "loot_tables/bsl/food/golden_foods.json": 0.28,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.09,
+        "loot_tables/bsl/collectibles/all.json": 0.14,
+        "waystone:waystone": 0.055,
+        "ws:warpstone": 0.015,
+        "resetapple:blue_apple": 0.006
+      },
+      "rollOverrides": {}
+    },
+    "bastion_other.json": {
+      "profile": "End",
+      "independentChances": {
+        "minecraft:netherite_upgrade_smithing_template": 0.18,
+        "minecraft:snout_armor_trim_smithing_template": 0.15,
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.25,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.09,
+        "loot_tables/bsl/collectibles/all.json": 0.14,
+        "waystone:waystone": 0.055,
+        "ws:warpstone": 0.015,
+        "resetapple:blue_apple": 0.006
+      },
+      "rollOverrides": {}
+    },
+    "bastion_treasure.json": {
+      "profile": "Special",
+      "independentChances": {
+        "minecraft:snout_armor_trim_smithing_template": 0.2,
+        "loot_tables/bsl/food/pancakes.json": 0.32,
+        "loot_tables/bsl/food/golden_foods.json": 0.3,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.25,
+        "loot_tables/bsl/collectibles/all.json": 0.3,
+        "waystone:waystone": 0.12,
+        "ws:warpstone": 0.04,
+        "resetapple:blue_apple": 0.012
+      },
+      "rollOverrides": {}
+    },
+    "buriedtreasure.json": {
+      "profile": "Special",
+      "independentChances": {
+        "minecraft:trident": 0.18,
+        "minecraft:enchanted_golden_apple": 0.3,
+        "loot_tables/bsl/food/pancakes.json": 0.35,
+        "loot_tables/bsl/food/golden_foods.json": 0.32,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.3,
+        "loot_tables/bsl/collectibles/all.json": 0.3,
+        "waystone:waystone": 0.12,
+        "ws:warpstone": 0.04,
+        "resetapple:blue_apple": 0.012
+      },
+      "rollOverrides": {}
+    },
+    "desert_pyramid.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "minecraft:dune_armor_trim_smithing_template": 0.2,
+        "loot_tables/bsl/food/pancakes.json": 0.25,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.07,
+        "loot_tables/bsl/collectibles/all.json": 0.13,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.0075,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "end_city_treasure.json": {
+      "profile": "End",
+      "independentChances": {
+        "minecraft:spire_armor_trim_smithing_template": 0.12,
+        "minecraft:enchanted_golden_apple": 0.2,
+        "loot_tables/bsl/food/pancakes.json": 0.32,
+        "loot_tables/bsl/food/golden_foods.json": 0.28,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.1,
+        "loot_tables/bsl/collectibles/all.json": 0.15,
+        "waystone:waystone": 0.055,
+        "ws:warpstone": 0.015,
+        "resetapple:blue_apple": 0.006
+      },
+      "rollOverrides": {}
+    },
+    "igloo_chest.json": {
+      "profile": "High",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.35,
+        "loot_tables/bsl/food/golden_foods.json": 0.35,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.12,
+        "loot_tables/bsl/collectibles/all.json": 0.18,
+        "waystone:waystone": 0.02,
+        "ws:warpstone": 0.005,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "jungle_temple.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "minecraft:wild_armor_trim_smithing_template": 0.2,
+        "loot_tables/bsl/food/pancakes.json": 0.25,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.07,
+        "loot_tables/bsl/collectibles/all.json": 0.13,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.0075,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "nether_bridge.json": {
+      "profile": "High",
+      "independentChances": {
+        "minecraft:rib_armor_trim_smithing_template": 0.1,
+        "loot_tables/bsl/food/pancakes.json": 0.24,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.08,
+        "loot_tables/bsl/collectibles/all.json": 0.12,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.01,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "pillager_outpost.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "minecraft:sentry_armor_trim_smithing_template": 0.2,
+        "loot_tables/bsl/food/pancakes.json": 0.25,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.07,
+        "loot_tables/bsl/collectibles/all.json": 0.16,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.0075,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "ruined_portal.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "true_dn:deathnerite_ingot": 0.01,
+        "loot_tables/bsl/food/pancakes.json": 0.24,
+        "loot_tables/bsl/food/golden_foods.json": 0.24,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.08,
+        "loot_tables/bsl/collectibles/all.json": 0.16,
+        "waystone:waystone": 0.03,
+        "ws:warpstone": 0.01,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "shipwreck.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "minecraft:coast_armor_trim_smithing_template": 0.15,
+        "loot_tables/bsl/food/pancakes.json": 0.18,
+        "loot_tables/bsl/food/golden_foods.json": 0.15,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.05,
+        "loot_tables/bsl/collectibles/all.json": 0.08,
+        "waystone:waystone": 0.02,
+        "ws:warpstone": 0.005,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "shipwrecksupply.json": {
+      "profile": "Early",
+      "independentChances": {
+        "minecraft:coast_armor_trim_smithing_template": 0.12,
+        "loot_tables/bsl/food/pancakes.json": 0.35,
+        "loot_tables/bsl/food/golden_foods.json": 0.26,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.06,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.01,
+        "ws:warpstone": 0.003,
+        "resetapple:blue_apple": 0.0015
+      },
+      "rollOverrides": {}
+    },
+    "shipwrecktreasure.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "minecraft:coast_armor_trim_smithing_template": 0.18,
+        "loot_tables/bsl/food/pancakes.json": 0.25,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.07,
+        "loot_tables/bsl/collectibles/all.json": 0.13,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.0075,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "simple_dungeon.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.065,
+        "loot_tables/bsl/collectibles/all.json": 0.12,
+        "waystone:waystone": 0.0325,
+        "ws:warpstone": 0.0075,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "spawn_bonus_chest.json": {
+      "profile": "Early",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.3,
+        "loot_tables/bsl/food/golden_foods.json": 0.2,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.05,
+        "loot_tables/bsl/collectibles/all.json": 0.08,
+        "waystone:waystone": 0.0025,
+        "ws:warpstone": 0.001,
+        "resetapple:blue_apple": 0.0015
+      },
+      "rollOverrides": {}
+    },
+    "stronghold_corridor.json": {
+      "profile": "High",
+      "independentChances": {
+        "minecraft:eye_armor_trim_smithing_template": 0.12,
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.24,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.075,
+        "loot_tables/bsl/collectibles/all.json": 0.13,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.01,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "stronghold_crossing.json": {
+      "profile": "High",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.24,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.075,
+        "loot_tables/bsl/collectibles/all.json": 0.13,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.01,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "stronghold_library.json": {
+      "profile": "High",
+      "independentChances": {
+        "minecraft:eye_armor_trim_smithing_template": 0.12,
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.24,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.075,
+        "loot_tables/bsl/collectibles/all.json": 0.15,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.01,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "trial_chambers/corridor.json": {
+      "profile": "High",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.23,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.07,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.02,
+        "ws:warpstone": 0.005,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "trial_chambers/entrance.json": {
+      "profile": "High",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.3,
+        "loot_tables/bsl/food/golden_foods.json": 0.24,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.07,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.02,
+        "ws:warpstone": 0.005,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "trial_chambers/intersection.json": {
+      "profile": "High",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.24,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.08,
+        "loot_tables/bsl/collectibles/all.json": 0.13,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.01,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "trial_chambers/intersection_barrel.json": {
+      "profile": "High",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.24,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.08,
+        "loot_tables/bsl/collectibles/all.json": 0.13,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.01,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "trial_chambers/supply.json": {
+      "profile": "High",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.32,
+        "loot_tables/bsl/food/golden_foods.json": 0.25,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.07,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.02,
+        "ws:warpstone": 0.005,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    },
+    "underwater_ruin_big.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.27,
+        "loot_tables/bsl/food/golden_foods.json": 0.23,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.07,
+        "loot_tables/bsl/collectibles/all.json": 0.13,
+        "waystone:waystone": 0.035,
+        "ws:warpstone": 0.0075,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "underwater_ruin_small.json": {
+      "profile": "Mid",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.06,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.02,
+        "ws:warpstone": 0.005,
+        "resetapple:blue_apple": 0.003
+      },
+      "rollOverrides": {}
+    },
+    "village/village_desert_house.json": {
+      "profile": "Early",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.055,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.005,
+        "ws:warpstone": 0.001,
+        "resetapple:blue_apple": 0.0015
+      },
+      "rollOverrides": {}
+    },
+    "village/village_plains_house.json": {
+      "profile": "Early",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.055,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.005,
+        "ws:warpstone": 0.001,
+        "resetapple:blue_apple": 0.0015
+      },
+      "rollOverrides": {}
+    },
+    "village/village_savanna_house.json": {
+      "profile": "Early",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.055,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.005,
+        "ws:warpstone": 0.001,
+        "resetapple:blue_apple": 0.0015
+      },
+      "rollOverrides": {}
+    },
+    "village/village_snowy_house.json": {
+      "profile": "Early",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.055,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.005,
+        "ws:warpstone": 0.001,
+        "resetapple:blue_apple": 0.0015
+      },
+      "rollOverrides": {}
+    },
+    "village/village_taiga_house.json": {
+      "profile": "Early",
+      "independentChances": {
+        "loot_tables/bsl/food/pancakes.json": 0.28,
+        "loot_tables/bsl/food/golden_foods.json": 0.22,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.055,
+        "loot_tables/bsl/collectibles/all.json": 0.1,
+        "waystone:waystone": 0.005,
+        "ws:warpstone": 0.001,
+        "resetapple:blue_apple": 0.0015
+      },
+      "rollOverrides": {}
+    },
+    "woodland_mansion.json": {
+      "profile": "High",
+      "independentChances": {
+        "minecraft:totem_of_undying": 0.2,
+        "minecraft:vex_armor_trim_smithing_template": 0.2,
+        "loot_tables/bsl/food/pancakes.json": 0.3,
+        "loot_tables/bsl/food/golden_foods.json": 0.25,
+        "loot_tables/bsl/food/enchanted_golden_foods.json": 0.08,
+        "loot_tables/bsl/collectibles/all.json": 0.15,
+        "waystone:waystone": 0.04,
+        "ws:warpstone": 0.01,
+        "resetapple:blue_apple": 0.004
+      },
+      "rollOverrides": {}
+    }
+  },
+  "files": {
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/all.json": {
+      "zipSHA256": "1a3a6001086fb3555a2d4f520d38b4d34657aa5ca42605247a0b62a12439d258",
+      "semanticSHA256": "a2d1fb9bb573d0b526ad1345a3aed80912373b975dbb300bddd0dd494242b206"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/common.json": {
+      "zipSHA256": "06895bdc17d2a11bb6c8da052598621c6ca944f0a4accc5a5bc7f6d0e516effd",
+      "semanticSHA256": "b2117756379ab0f1ee5abba03e38a2ff8559319ce12a72a5855489d3d6c2c926"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/rare.json": {
+      "zipSHA256": "7d6227369a2531a8906ec602340c377e21bc001eaba988164be7cde40ea92892",
+      "semanticSHA256": "d87aea1352d73b1890609fc54b4917bac7d79e07e1d9e9ce9d4497497304c82a"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/collectibles/special.json": {
+      "zipSHA256": "5223d7466580cc55932e5b19c8fa19076f252c2b7cbad1801932506649ebb657",
+      "semanticSHA256": "8c093e42d914f01a18c583b6e84316ee952dba718464ab51ef06838368e7280a"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/enchanted_golden_foods.json": {
+      "zipSHA256": "52188fc4b8b122df3181d32ddfa9e1009e6f73c0c17add3a813ce65d977d31ff",
+      "semanticSHA256": "472c355c5fda373c0f7b19b7907a2ad690dd7e5f952427c54827e3157efa15bf"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/golden_foods.json": {
+      "zipSHA256": "8003e8087a76b8659f27c13d58d4e7a5119bf4ba5330c3ec7120adde3b630ce8",
+      "semanticSHA256": "69f0d5d5bbdb307f2c0359b9ff01a0c669e8c6c38047c6d238e5755955edfc8a"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/bsl/food/pancakes.json": {
+      "zipSHA256": "ea87a4a71e0e3896dee3a5f5293cf3ddf6d845fbff19c3df70464d6cbe47b891",
+      "semanticSHA256": "5f4c5a2e47182768d5fab47c70547cf6ca0e363e2be1965f6c1f1be924840bdf"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/abandoned_mineshaft.json": {
+      "zipSHA256": "b554a58f618fd51868eac6107061d7041c9d3565a72cc33118f8674a689d6412",
+      "semanticSHA256": "d9d8fbfe891001d0bec0b9d6ffc5fddd68d71fe70b23639c0f42a03ce5a404e6"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city.json": {
+      "zipSHA256": "bc102bcae745e916a9db7953f039ba4371a9b8a0f38d6afc8285a7e3b031c03b",
+      "semanticSHA256": "58670566b400446624b68795df94dfc4db1b2ddd864ac2aae7225a7ad7b97480"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ancient_city_ice_box.json": {
+      "zipSHA256": "ce46350f0a848a4d227744031258d2e16feb0e84f3f6fae858027cc96040d0e8",
+      "semanticSHA256": "338fa1103dcf6e75773e4ad0c665aee167535b61fb7d7432d89cb67f90a0464a"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_bridge.json": {
+      "zipSHA256": "552ee92f9c56ae7afcbcd7a2af07c890abd5a2b5f6d8280aa6fe8d05221bef69",
+      "semanticSHA256": "1b2d0bf9547e0c84d520bbd16f06c25838ffed1b9693816c2f11057437185e59"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_hoglin_stable.json": {
+      "zipSHA256": "ae4762f4af842d6dc530eedcdedf5fc035c203632ec6b594f6910cfaf52377de",
+      "semanticSHA256": "a284bdcd52aeb5f64bf75ed2ac369c5550c1101a8f040296d4f21dd817d330e9"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_other.json": {
+      "zipSHA256": "1710b53a4f3ff640c2e7b44dbc2c440e7f8c75082dfc784dd7dacd7ec792148d",
+      "semanticSHA256": "e32ad4f8ecf02ac3929345968284dd001b88865a6232e3bdb93a879c4b08e97e"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/bastion_treasure.json": {
+      "zipSHA256": "d64eebca7ae9790aa0ad2f135c7a10e25473d2e0adeddcc5fd13965dafdbb0df",
+      "semanticSHA256": "fd1ae73cbc726cf9249adaa279ad9564b5749747d14f19fa720cdfad9bfce33d"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/buriedtreasure.json": {
+      "zipSHA256": "f45e62e1bc69f240512ca49323becd6e2e3ad924be5f0721648651270f5b8509",
+      "semanticSHA256": "84787ea770a4d5d439dea3e61c7fa8c2a45f5f125ce3154ace0597e4156a6d8d"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/desert_pyramid.json": {
+      "zipSHA256": "c084f5f33e49e0e3ff08e19416d703d27e6e5bae06bcccf87ec931bd5302c33e",
+      "semanticSHA256": "f7e6390a921a2a3be1639606f16c39bcbdc7be2835511938ee81bec4eaff59bd"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/end_city_treasure.json": {
+      "zipSHA256": "3a0c7b513587a14022594ce0c55ff2b6a693d218e4cacf8c7f7492738ebb0b3d",
+      "semanticSHA256": "535bd96afbd95609b844b41785665beecf46bbab40182243fe10eee0d25ba04b"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/igloo_chest.json": {
+      "zipSHA256": "82bf730a2a5b319d77f35b4addad9baed1750bd7638fadbbcb243eb644fa49c3",
+      "semanticSHA256": "da61441e60c29e9f1f330380cd1db2a214275c5c5f72e0cd3363789f0ea154d6"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/jungle_temple.json": {
+      "zipSHA256": "6689a8dac2561f3d4f362a41d751a0b79abe52b55a14d2ede3bc56718c98ac26",
+      "semanticSHA256": "f5632706c6c93ef2f2907b27d0115ff63ffe4dfcbccb7f8f28460c9dd047c210"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/nether_bridge.json": {
+      "zipSHA256": "0906bd9c95c7a33a4586fcbfec23fd8aead87bd8c5d7f437b5796d860cbba3d2",
+      "semanticSHA256": "485447956865d353c9878f481f6caf2fa165f8a5bbdf3080ac78ce07f61fb9f1"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/pillager_outpost.json": {
+      "zipSHA256": "0fde78ae8f10578bd6b9e95cee901ee8a8be8dcc388618dce1f776e63684254a",
+      "semanticSHA256": "0f1bf1167668350a7353c7829cb40f63ea32a12713812b3a964fb1ed67ed347a"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/ruined_portal.json": {
+      "zipSHA256": "694250d6cfdaa4c0296e8ee1bdd5d9a21922e853f480b0192419fce0ce617da2",
+      "semanticSHA256": "cbf420ce4ce87bc15b75a317c610b1b16e4c026bc136bc71c8f2f46d53a4293b"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwreck.json": {
+      "zipSHA256": "9b86e6648b51c905857fe0e3ddc366d70af19b422087cff1598bbe54cccc67b9",
+      "semanticSHA256": "fb97822bd5724dd7dac50b959756454bbfba67fd703221403ac0ac60e03ba367"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecksupply.json": {
+      "zipSHA256": "2a06d8e5f1cac0abee40f1e1e410e6682b7e691893740f955e6c306995778049",
+      "semanticSHA256": "17b09f40cbadb9f535c20154b4011f05942ec732b72febdacff612a6da7bc7a9"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/shipwrecktreasure.json": {
+      "zipSHA256": "7f201d808e11443fed0bf94c6a9221c09d5bea58e73f8b3e0989384e6657d40d",
+      "semanticSHA256": "1c355f95fbd78b3316f1d5f0e3fee207d7a4694ecfd5915cd81375e837f5bdd3"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/simple_dungeon.json": {
+      "zipSHA256": "80d805ad24c417339a775ed4fc3838befa0a1811e6defe7a1618785510373f1d",
+      "semanticSHA256": "13c4b9fbc1632dacaca6f5615bd4f10e7c68d1f7383c0b60350840fbea65f908"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/spawn_bonus_chest.json": {
+      "zipSHA256": "44ef4b9eb02933d5687ac77ee2b696b4796327d2eea90ee4014b4a6f596ffe10",
+      "semanticSHA256": "5551f640a23f4a29aa521828fdd68ca7480a88ffe2bf49eb6b71c25441abf5c3"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_corridor.json": {
+      "zipSHA256": "2fa7f03b2f7154abdd9f477ef6b37170ca2874860764359bc246e20bfd3c72d6",
+      "semanticSHA256": "f5c272b700157c2f977a5d8b92f38da5168454f703ebcbcc531df46f405d04f9"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_crossing.json": {
+      "zipSHA256": "be21dc1bc2590cf4a736e0bad4c57a395e01be0a1c6051c9bd02a9171fda3904",
+      "semanticSHA256": "a6dfd0e650b521c672d993be95337b93fd42a0e9dedce42c6ea300ee15e79a29"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/stronghold_library.json": {
+      "zipSHA256": "df8bd5c2e3851b3928a5014d00a8d14ce0c3dba837ff84ebf7a428a60a683304",
+      "semanticSHA256": "c8ac7c94f998e4ffa51974dd82876cd819ac0868eb37e33ccfab6688c3070256"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/corridor.json": {
+      "zipSHA256": "5068dcc348a8eec28ef3d6fb5ad32c635b97fabb91731056c18ac2c4b9fa7542",
+      "semanticSHA256": "be5d5564d864e7b6cb66bf8c8755d1277086a45e771dab778314d4e860de8d58"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/entrance.json": {
+      "zipSHA256": "003fce92af5a29bf36870acb4fa8658792f928e767fba7be5ee65f51f70e019c",
+      "semanticSHA256": "052aa9b4dc8e414b7e6cb0835605cbfb89a9a330e4574abce9923e9a7b0191d8"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection.json": {
+      "zipSHA256": "3d9ada5ba909e28da9e0ddb540ee60529ade648ed0bef7e7f41e9ab310fd5b39",
+      "semanticSHA256": "3ed25fc461904da4fb4436f99d032038f97d61f3c9e851038c5ac428cb9d847b"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/intersection_barrel.json": {
+      "zipSHA256": "3d9ada5ba909e28da9e0ddb540ee60529ade648ed0bef7e7f41e9ab310fd5b39",
+      "semanticSHA256": "3ed25fc461904da4fb4436f99d032038f97d61f3c9e851038c5ac428cb9d847b"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/trial_chambers/supply.json": {
+      "zipSHA256": "329acd44e36f2f3e9d4400b743c691b768c1093b815638454828a5f6d3fd0002",
+      "semanticSHA256": "846554bda58d5698e7901c2e00b69d06293d4f640826d54d647cc15d3f5ad1c1"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_big.json": {
+      "zipSHA256": "2234f02d9ad025af053eb0ee7064c27aea5b101fab40540227c88d84df0ccbf7",
+      "semanticSHA256": "d03317db578e3bc01241d10a668413a456f8895693845fad1a869fdcbc6e94fa"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/underwater_ruin_small.json": {
+      "zipSHA256": "529fd58e664686c72aabccea12ff249f6b4b76b29cfb1f141e4c6564c632a2bc",
+      "semanticSHA256": "e455bcd92272cb0e5adc5bed18c752f3d7bf9afa0587d808ef94d4e344b39140"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_desert_house.json": {
+      "zipSHA256": "38adf3243b32bab2ccdaa8f0b664e80406977d80f991703dc64060dbe5ef0870",
+      "semanticSHA256": "b301036569349c69a776461042aa75dcaba3493b8f7b52122b649362e9251509"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_plains_house.json": {
+      "zipSHA256": "aecd76c46beacb57e20f6b449116cb4a8a6b5bd247acff24ee6b31b393feaff7",
+      "semanticSHA256": "d7b91c73c12f4ef5ce01fff3c393d11919a39e04338c1fc83bff2607d973893b"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_savanna_house.json": {
+      "zipSHA256": "873adc129880d61cc37a3b8ce22353019074d324eb9d23c6bfb68eb99d3906e7",
+      "semanticSHA256": "035e9aab6c6e1bcfddd81e9a8b8cdf6bad84207a0bd5383dbac10edeff6a4f8b"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_snowy_house.json": {
+      "zipSHA256": "3404f4fd6c5108731a7872fecd02ccf67e7e5c5c7cecc5f1a0d63b1ccf6c0879",
+      "semanticSHA256": "1d8654ca68f64d8f2bf522b86201f8d9cc800b81454d767271be67403a3567ce"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/village/village_taiga_house.json": {
+      "zipSHA256": "798f008880627f72d05446114545e715306ca28cdd8267b978f90c281c188f72",
+      "semanticSHA256": "15076a87e82e819aa477658012b0f85f4a97c3a38b24627f0a8b10288876a9d2"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/woodland_mansion.json": {
+      "zipSHA256": "6500c0c04ac85f8f7efa4b2dfbb975fada0679d087d49a3c73c0f17fe8eb36c2",
+      "semanticSHA256": "10064a3da034da579470e14b066434674f17ee723ad7b93e1c33365e917749e9"
+    },
+    "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/manifest.json": {
+      "zipSHA256": "88744cb6cb572de50a82180ba7b0907bf5dda034ba1ef8b971268889a0132432",
+      "semanticSHA256": "93574880deabc50108b38fe422bc3dde0fddcc0c29d92cd5d3b8bf6ba1b1ebaf"
+    }
+  },
+  "collectibleItems": [
+    "kyuden:sunshine_doll",
+    "myname:figure_fossil",
+    "myname:figure_oyu",
+    "myname:figure_spiral",
+    "myname:gengar",
+    "myname:goamagara",
+    "myname:hitomoshi",
+    "myname:jack",
+    "myname:meltan",
+    "myname:metamon",
+    "myname:mimikkyu",
+    "myname:mystery_fossil",
+    "myname:shini",
+    "myname:soubraze",
+    "myname:utyuuneko",
+    "pinecd:cd_01",
+    "pinecd:cd_02",
+    "pinecd:cd_03",
+    "pinecd:cd_04",
+    "pinecd:cd_05",
+    "pinecd:cd_06",
+    "pinecd:cd_07",
+    "pinecd:cd_08",
+    "pinecd:cd_09",
+    "pinecd:cd_10",
+    "pinecd:cd_11",
+    "pinecd:cd_12",
+    "pinecd:cd_13",
+    "pinecd:cd_14",
+    "pinecd:cd_15",
+    "pinecd:cd_16",
+    "pinecd:cd_17",
+    "pinecd:cd_18",
+    "pinecd:cd_19"
+  ]
+}

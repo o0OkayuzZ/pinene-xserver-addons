@@ -1,0 +1,24 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/collectibles/common.json",
+          "weight": 70
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/collectibles/rare.json",
+          "weight": 25
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/collectibles/special.json",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}
