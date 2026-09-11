@@ -1261,7 +1261,6 @@ const MYSTERY_FOSSIL_REWARDS = [
     { itemId: "pinecd:cd_17", weight: 4, amount: 1 },
     { itemId: "pinecd:cd_18", weight: 4, amount: 1 },
     { itemId: "pinecd:cd_19", weight: 4, amount: 1 },
-    { itemId: "waystone:waystone", weight: 8, amount: 1 },
     { itemId: "myname:hitomoshi", weight: 6, amount: 1 },
     { itemId: "myname:gengar", weight: 6, amount: 1 },
     { itemId: "myname:metamon", weight: 6, amount: 1 },

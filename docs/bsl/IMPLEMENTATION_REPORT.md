@@ -1,5 +1,12 @@
 # Better Structure Loot Phase 0.5 / v1.0.15
 
+**追記：使用不能な `waystone:waystone` は、その後のユーザー指示により完全撤去した。**
+36 BSLチェストの専用Pool、Dungeon 15テーブルの候補、謎の化石の報酬候補、専用BP/RPと両ワールド登録を削除。
+`ws:warpstone` と青リンゴ等の独立確率は維持。Dungeon・謎の化石の混在枠は削除後の残存重みで抽選される。
+以下のZIPとの一致・Waystone確率・ファイル数は初回統合時点の記録であり、現在はこの撤去が優先される。
+変更一覧は[waystone-removal.json](waystone-removal.json)、最新の内部検証は[validation.json](validation.json)を参照。
+既存ワールド内の所持品・保存済みチェストの実データ削除は未実施（ゲーム・サーバーへ未配備）。
+
 2026-09-11。ゲーム内テスト前の静的検証完了。
 
 基準: `o0OkayuzZ/pinene-xserver-addons` の取得時点の最新main、`8d98749d3abd30cad564b1c28fa5b24a2580ee90`。

@@ -2053,8 +2053,8 @@
       ]
     }
   ],
-  "customItemCount": 520,
-  "bslCustomItemCount": 57,
+  "customItemCount": 519,
+  "bslCustomItemCount": 56,
   "bslCustomDefinitions": {
     "a:egbread": [
       "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egbread.json"
@@ -2222,15 +2222,14 @@
     "true_dn:deathnerite_ingot": [
       "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/deathnerite/deathnerite_ingot.json"
     ],
-    "waystone:waystone": [
-      "behavior_packs/bp_10_6b1f1e2b-2f6f-4e06-bfd7-2da2f9f5d2a1/items/waystone.item.json"
-    ],
     "ws:warpstone": [
       "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/items/simple_waystone/warpstone.json"
     ]
   },
   "dungeonDefinitionCount": 516,
   "errors": [],
+  "removedItem": "waystone:waystone",
+  "removedItemRuntimeReferences": 0,
   "notes": [
     "Game engine acceptance, actual chest slots and stack merging are not tested.",
     "Six unchanged Dungeon tables use comments and pass JSONC, not strict JSON.",

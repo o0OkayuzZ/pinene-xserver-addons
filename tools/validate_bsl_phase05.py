@@ -60,6 +60,18 @@ def standalone(table, name, chance=None, rolls=1):
 
 def main():
     provenance = load(DOC / 'provenance.json')
+    removal = load(DOC / 'waystone-removal.json')
+    removed_item = removal['removedItem']
+    for name, digest in removal['files'].items():
+        path = ROOT / name
+        check(not path.exists() if digest is None else path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == digest,
+              f'Waystone removal differs: {name}')
+    # Exact identifier boundaries avoid matching Simple Waystone's UI/tag namespace.
+    pattern = re.compile(r'(?<![\w:])' + re.escape(removed_item) + r'(?![\w.])')
+    for folder in ['behavior_packs', 'resource_packs']:
+        for path in (ROOT / folder).rglob('*'):
+            if path.suffix in {'.json', '.js', '.lang', '.mcfunction'}:
+                check(not pattern.search(path.read_text(encoding='utf-8-sig')), f'Removed item reference: {rel(path)}')
     registrations = [ROOT / 'world_behavior_packs.json', *ROOT.glob('worlds/*/world_behavior_packs.json')]
     active = {r['pack_id'] for r in load(registrations[0])}
     packs = [p.parent for p in ROOT.glob('behavior_packs/*/manifest.json') if load(p)['header']['uuid'] in active]
@@ -143,13 +155,19 @@ def main():
                 if ':' in item and not item.startswith('minecraft:'):
                     bsl_custom.add(item)
         if name in provenance['files']:
-            check(canonical(table) == provenance['files'][name]['semanticSHA256'], f'ZIP semantics changed: {name}')
+            original = json.loads(git('show', removal['baseCommit'] + ':' + name))
+            check(canonical(original) == provenance['files'][name]['semanticSHA256'], f'ZIP baseline mismatch: {name}')
+            original['pools'] = [pool for pool in original['pools']
+                                 if not (len(pool['entries']) == 1 and pool['entries'][0].get('name') == removed_item)]
+            check(table == original, f'Changes beyond dedicated Waystone pool removal: {name}')
         else:
             check(table == json.loads(git('show', BASE + ':' + name)), f'Unrelated BSL table changed: {name}')
 
     for name, table in chests.items():
         expected = provenance['profiles'][name]
         for item, chance in expected['independentChances'].items():
+            if item == removed_item:
+                continue
             standalone(table, item, chance, expected.get('rollOverrides', {}).get(item, 1))
         # CD/figurines may only be reached through the dedicated collectible branch.
         for node in walk(table):
@@ -179,12 +197,19 @@ def main():
     check(manifest == before_manifest, 'Manifest changed beyond version 1.0.15')
     for path in registrations:
         before = json.loads(git('show', BASE + ':' + rel(path)))
+        before = [row for row in before if row['pack_id'] not in removal['removedPackUUIDs']]
         for row in before:
             if row['pack_id'] == manifest['header']['uuid']:
                 row['version'] = [1, 0, 15]
         check(load(path) == before, f'Other pack registration changed: {rel(path)}')
 
     allowed = set(provenance['files']) | {rel(p) for p in registrations}
+    allowed.update(removal['files'])
+    allowed.add('tools/test_dungeons_boss_rewards.py')
+    for path in [ROOT / 'world_resource_packs.json', *ROOT.glob('worlds/*/world_resource_packs.json')]:
+        before = json.loads(git('show', removal['baseCommit'] + ':' + rel(path)))
+        check(load(path) == [row for row in before if row['pack_id'] not in removal['removedPackUUIDs']],
+              f'Other resource pack registration changed: {rel(path)}')
     changed = git('diff', '--name-only', BASE).decode().splitlines()
     added = git('ls-files', '--others', '--exclude-standard').decode().splitlines()
     for name in set(changed + added):
@@ -196,6 +221,7 @@ def main():
         'nestedReferences': len(refs), 'references': refs, 'customItemCount': len(custom),
         'bslCustomItemCount': len(bsl_custom), 'bslCustomDefinitions': {i: definitions.get(i) for i in sorted(bsl_custom)},
         'dungeonDefinitionCount': len(dungeon_ids), 'errors': errors,
+        'removedItem': removed_item, 'removedItemRuntimeReferences': 0 if not any('Removed item reference:' in e for e in errors) else 'FAIL',
         'notes': ['Game engine acceptance, actual chest slots and stack merging are not tested.',
                   'Six unchanged Dungeon tables use comments and pass JSONC, not strict JSON.',
                   'Vanilla raider_drops.json verified at https://raw.githubusercontent.com/Mojang/bedrock-samples/main/behavior_pack/loot_tables/entities/raider_drops.json',

@@ -75,14 +75,15 @@ class BossRewards(unittest.TestCase):
     def test_world_manifest_versions_and_order(self):
         manifests = [read(p) for p in ROOT.glob('*_packs/*/manifest.json')]
         headers = {m['header']['uuid']: m['header']['version'] for m in manifests}
-        self.assertEqual(len(headers), 37)
+        # The unused standalone Waystone item BP/RP have been removed.
+        self.assertEqual(len(headers), 35)
         for manifest in manifests:
             for module in manifest['modules']:
                 self.assertEqual(module['version'], manifest['header']['version'])
             for dep in manifest.get('dependencies', []):
                 if 'uuid' in dep:
                     self.assertEqual(dep['version'], headers[dep['uuid']])
-        for kind, count in [('behavior', 17), ('resource', 20)]:
+        for kind, count in [('behavior', 16), ('resource', 19)]:
             path = ROOT / f'world_{kind}_packs.json'
             self.assertEqual(path.read_bytes(), (ROOT / 'worlds/Bedrock level' / path.name).read_bytes())
             rows = read(path)
