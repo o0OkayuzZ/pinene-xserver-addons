@@ -2,9 +2,9 @@
 
 Astro + TypeScriptによる、PINE SERVERのコンテンツ紹介サイトです。現行mainにwebsite/がなかったため、引き継ぎZIP v0.2のstarter/website/を土台として更新しました。
 
-公開先: https://o0okayuzz.github.io/pinene-xserver-addons/ 。ユーザーの公開承認を受けて、生成物専用の `gh-pages` ブランチをGitHub Pagesの公開元に設定しました。[公開記録](PUBLISH_REPORT.md)を参照してください。
+公開先: https://o0okayuzz.github.io/pine-server/ 。ユーザーの公開承認を受けて、Web公開用リポジトリ `o0OkayuzZ/pine-server` の生成物専用 `gh-pages` ブランチをGitHub Pagesの公開元に設定しました。[公開記録](PUBLISH_REPORT.md)を参照してください。
 
-現在はアイテム・ブロック421件、レシピ197件、小さな機能22件、合計640件を掲載しています。最新の追加内容と検証は [DUNGEONS_LATEST_REPORT.md](DUNGEONS_LATEST_REPORT.md) を参照してください。
+現在はアイテム・ブロック421件、レシピ197件、小さな機能37件、合計655件を掲載しています。最新の追加内容と検証は [EXPLORATION_URL_REPORT.md](EXPLORATION_URL_REPORT.md) を参照してください。
 
 ## 起動・検証
 
@@ -23,7 +23,7 @@ node scripts/test-build-publication.mjs
 npm run preview -- --host 127.0.0.1 --port 4321
 ```
 
-ローカルURL: http://127.0.0.1:4321/pinene-xserver-addons/
+ローカルURL: http://127.0.0.1:4321/pine-server/
 
 Astro 7のCLIはエージェント環境でpreviewを自動的にバックグラウンド起動する場合があります。停止は `npm run preview -- stop`。PlaywrightはプログラムAPIを使う `scripts/preview-test.mjs` でテスト用サーバーを管理します。
 

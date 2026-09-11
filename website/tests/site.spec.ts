@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
 import catalogue from '../src/data/content-registry.json' with { type: 'json' };
 const publicCount = catalogue.contents.filter(c => c.visibility === 'public').length;
-const base = '/pinene-xserver-addons/';
+const base = '/pine-server/';
 test('home layout, images, keyboard and navigation', async ({ page }, testInfo) => {
  const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
  await page.goto(base);

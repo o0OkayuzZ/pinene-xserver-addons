@@ -84,28 +84,29 @@
       "id": "infinite-castle",
       "name": "無限城",
       "summary": "廊下、階段、広間。その先のつながりをたどる探索ダンジョン。",
-      "description": "無限城は、さまざまな部屋をつないで探索空間を組み立てる独自のダンジョンです。まっすぐな廊下だけでなく、曲がり角や分岐、階段、広間、吹き抜けといった部屋の構成が定義されています。次の部屋へ進む道や上下のつながりが、探索の軸になります。部屋の向きや接続、再構築の仕組みを開発中で、現在の構成がそのまま本番で体験できるかは確認中です。",
+      "description": "廊下や階段、広間をたどり、戦闘部屋や特別な部屋を探す独立した探索ダンジョンです。衛兵・呪術・怨霊・重装・混成・Eliteの6種類の戦闘は2段階で進み、鍵持ちの撃破が宝箱の封印解除につながります。癒やしの庭で休み、帰還陣を探しながら、変化する城を探索する構成です。ここでは最新版のコードで確認できた仕組みを紹介します。",
       "category": [
         "exploration",
         "world"
       ],
       "visibility": "public",
       "implementation": "partial",
-      "deployment": "repo-only",
+      "deployment": "deployed-recorded",
       "verification": [
         {
           "kind": "code",
           "result": "confirmed",
-          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
         },
         {
           "kind": "registration",
           "result": "confirmed",
-          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
         },
         {
           "kind": "server-start",
-          "result": "unknown"
+          "result": "confirmed",
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
         },
         {
           "kind": "gameplay",
@@ -122,11 +123,12 @@
         "kind": "concept"
       },
       "highlights": [
-        "部屋をたどる探索：廊下や広間などの部屋ごとに、次の部屋へつながる接続口が定義されています。",
-        "上下にも続く構成：階段や吹き抜けには上下方向の接続があり、横方向だけに限らない空間を組み立てる仕組みです。",
-        "配置と再構築：部屋の向きやつながりを扱い、ダンジョンを生成・再構築する処理があります。実際に使われる構成や切り替わる条件は確認中です。"
+        "6種類の戦闘部屋。それぞれの第2波に異なる鍵持ちが登場する設定です。",
+        "鍵の飛翔と宝箱の封印解除。報酬は枠ごとに抽選し、空欄も含まれます。",
+        "癒やしの庭・宝物庫・帰還陣など、戦闘以外の探索要素も掲載。",
+        "再構成はプレイヤーや戦闘中の部屋を保護しながら進行。背景と城本体で琴の聞こえ方を分けています。"
       ],
-      "guide": "入口の場所、移動・帰還の手順、探索時の注意事項は公開用の案内を準備中です。深層、隠しTier、敵の配置、宝箱や報酬の内容は、部屋カテゴリの名前だけでは提供を確認できないため掲載していません。PvP Islandとは独立したコンテンツです。",
+      "guide": "入口の場所と参加条件は案内を準備中です。城内では部屋ごとの戦闘と鍵持ちに注目し、出口を見つけたら帰還陣の中心でしゃがむ流れが実装されています。各説明はコードを照合したもので、全戦闘・報酬・帰還・最新の音を実機で受け入れ確認したものではありません。PvP Islandとは別コンテンツです。",
       "children": [],
       "related": [
         "minecraft-dungeons"
@@ -148,13 +150,24 @@
         }
       ],
       "evidence": {
-        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80",
         "paths": [
           "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json",
           "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/main.js",
           "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js",
           "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/manifest.json",
-          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/roomRegistry.js"
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/roomRegistry.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/entranceTransition.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Combat.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Config.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Interiors.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Rewards.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Runtime.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1State.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/sourceHealingGarden.js",
+          "docs/infinite_castle/distant-koto-20260912.md",
+          "docs/infinite_castle/reconstruction-clock-20260912.md",
+          "docs/infinite_castle/distant-koto-20260912.md"
         ]
       }
     },
@@ -261,7 +274,7 @@
       "id": "mycology",
       "name": "Mycology",
       "summary": "身近なキノコを鑑定して、新しい発見を自分の図鑑へ。",
-      "description": "Mycologyは、キノコの鑑定と図鑑づくりを軸にした収集コンテンツです。現行コードでは、通常の赤色キノコ・茶色キノコを鑑定士に持ち込み、種類ごとのキノコへ鑑定する流れになっています。新しく見つけた種類はプレイヤーごとに記録され、図鑑で振り返る仕組みです。集めて終わりではなく、名前や特徴を知って発見を増やす楽しみを目指しています。鑑定士の出現とゲーム内の画面操作は未確認です。",
+      "description": "赤色・茶色のキノコを鑑定して、35種類の発見を自分の図鑑に集めるコンテンツです。鑑定結果では最高レアや新規発見、図鑑の進み具合を確認できます。結果を開封する演出には種類ごとの音色があり、じっくり・短縮・OFFを選べます。以下の一覧から、鑑定の使い方と各キノコのゲーム内設定を調べられます。",
       "category": [
         "collection",
         "exploration",
@@ -269,21 +282,22 @@
       ],
       "visibility": "public",
       "implementation": "partial",
-      "deployment": "repo-only",
+      "deployment": "deployed-recorded",
       "verification": [
         {
           "kind": "code",
           "result": "confirmed",
-          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
         },
         {
           "kind": "registration",
           "result": "confirmed",
-          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
         },
         {
           "kind": "server-start",
-          "result": "unknown"
+          "result": "confirmed",
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
         },
         {
           "kind": "gameplay",
@@ -300,9 +314,10 @@
         "kind": "concept"
       },
       "highlights": [
-        "赤色・茶色から鑑定：コード上では通常の赤色キノコと茶色キノコが対象です。選んだ色の最初の該当スタックをまとめて鑑定し、別スロットの分は合算しません。",
-        "自分の発見を記録：鑑定で見つけた種類をプレイヤーごとに保存します。図鑑では発見済みの種類と、まだ見つけていない種類を分けて表示する構成です。",
-        "特徴を読む図鑑：名前、学名、レア度、ゲーム内の効果や解説を確認する画面が用意されています。食べるもの、握り潰して使うもの、使用できない研究標本を区別しています。"
+        "赤色15種類・茶色20種類を掲載。ゲーム内の図鑑では自分の未発見の名前を伏せて表示します。",
+        "最初の該当スタックを全量鑑定。別スロットの分は合算せず、鑑定料なしと表示する構成です。",
+        "鑑定の最高レア・NEW・発見数の変化を確認し、次のスタックへ進めます。",
+        "鑑定演出は長さとサウンドを設定でき、しゃがみでスキップできます。最新演出の聴感・表示は実機未確認です。"
       ],
       "guide": "コード上の基本の流れは、赤色または茶色のキノコを持つ → 鑑定士の画面で鑑定する色を選ぶ → 鑑定結果と新規発見を確認する → 図鑑で見直す、です。スタック単位で消費するため、鑑定する数量を確認してください。鑑定士に会える場所や実際の提供状況は確認中です。図鑑の効果・使い方はゲーム内の設定であり、現実のキノコの食用判断には使えません。",
       "children": [],
@@ -324,7 +339,7 @@
         }
       ],
       "evidence": {
-        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80",
         "paths": [
           "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
           "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js",
@@ -334,7 +349,86 @@
           "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/ui.js",
           "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
           "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/progress.js",
-          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/config.js"
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/config.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b01.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b02.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b03.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b04.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b05.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b06.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b07.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b08.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b09.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b10.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b11.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b12.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b13.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b14.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b15.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b16.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b17.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b18.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b19.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b20.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r01.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r02.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r03.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r04.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r05.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r06.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r07.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r08.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r09.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r10.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r11.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r12.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r13.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r14.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r15.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology_tools/field_guide.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/mycology_field_guide.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/reveal.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/reveal_sounds.js",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b01.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b02.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b03.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b04.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b05.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b06.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b07.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b08.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b09.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b10.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b11.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b12.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b13.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b14.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b15.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b16.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b17.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b18.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b19.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b20.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r01.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r02.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r03.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r04.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r05.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r06.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r07.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r08.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r09.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r10.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r11.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r12.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r13.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r14.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r15.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology_tools/field_guide.png",
+          "docs/deployments/2026-09-12-mycology-reveal.md"
         ]
       }
     },

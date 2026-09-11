@@ -1,6 +1,6 @@
 # PINE SERVER Web 実装・検証記録
 
-以下は初回実装の記録です。現在は665ページ・図鑑640項目に拡張しています。最新の追加範囲・検証は [DUNGEONS_LATEST_REPORT.md](DUNGEONS_LATEST_REPORT.md) を参照してください。
+以下は初回実装の記録です。現在は680ページ・図鑑655項目に拡張しています。最新の追加範囲・検証は [EXPLORATION_URL_REPORT.md](EXPLORATION_URL_REPORT.md) を参照してください。
 
 2026-09-11 JST。取得時main: `aea85120954a8b74033b86253c17a04b691dab21`。
 作業ブランチ: `web/pine-server-refresh-20260911`。

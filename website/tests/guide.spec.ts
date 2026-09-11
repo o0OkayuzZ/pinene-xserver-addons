@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import records from '../src/data/field-guide.json' with { type: 'json' };
-const base='/pinene-xserver-addons/';
+const base='/pine-server/';
 test('guide search, owner/kind filters, reset and detail links',async({page},info)=>{
  await page.goto(base+'database/items/?content=xp-storage');
  await expect(page.locator('[data-guide-entry]:visible')).toHaveCount(4);

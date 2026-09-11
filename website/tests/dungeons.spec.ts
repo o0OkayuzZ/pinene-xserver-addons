@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Dungeons category navigation, expanded gear and recipe round trip', async ({ page }, info) => {
- const base = '/pinene-xserver-addons/';
+ const base = '/pine-server/';
  const errors: string[] = [];
  page.on('pageerror', error => errors.push(error.message));
  await page.goto(base + 'contents/minecraft-dungeons/');

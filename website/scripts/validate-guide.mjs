@@ -27,4 +27,15 @@ export function validateGuide(records, contents) {
  return publishEntries(records,new Set(contents.filter(c=>c.visibility==='public').map(c=>c.id)));
 }
 const published=validateGuide(read('field-guide.json'),read('content-registry.json').contents);
+const allEntries=read('field-guide.json');
+for(const guide of read('exploration-guides.json')){
+ const ids=guide.groups.flatMap(group=>group.entries);
+ if(new Set(ids).size!==ids.length)throw new Error('Duplicate exploration entry');
+ if(new Set(guide.groups.map(group=>group.id)).size!==guide.groups.length)throw new Error('Duplicate exploration group');
+ for(const group of guide.groups){
+  if(!/^[a-z0-9-]+$/.test(group.id)||!group.title||!group.entries.length)throw new Error('Invalid exploration group');
+  for(const id of group.entries)if(!allEntries.some(entry=>entry.id===id&&entry.contentId===guide.contentId))throw new Error('Broken exploration entry: '+id);
+ }
+ for(const entry of published.filter(e=>e.contentId===guide.contentId))if(!ids.includes(entry.id))throw new Error('Missing exploration entry: '+entry.id);
+}
 console.log('Guide validation PASS: '+published.length+' public entries.');
