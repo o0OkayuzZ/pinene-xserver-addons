@@ -8983,7 +8983,7 @@
     "kind": "feature",
     "contentId": "minecraft-dungeons",
     "summary": "素材を集めて、冒険を支える道具を作る。",
-    "description": "ダイヤモンドの粉と、作りたい道具ごとの材料を使います。今回は通常版8種類の製作配置を掲載しています。",
+    "description": "ダイヤモンドの粉と、作りたい道具ごとの材料を使います。今回は通常版14種類の製作配置を掲載しています。",
     "usage": "まずダイヤモンドの粉のレシピを確認し、各アーティファクトの関連レシピへ進んでください。",
     "obtaining": "粉はダイヤモンドブロック1個とウサギの皮3個から1個製作する定義です。",
     "details": [
@@ -12408,6 +12408,2496 @@
       "commit": "aea85120954a8b74033b86253c17a04b691dab21",
       "paths": [
         "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/torment_arrow.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-dark-boots",
+    "name": "闇のアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ダーク系列の防具。",
+    "description": "ダーク系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：295。",
+      "装備部位：足。防御値の設定：2。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-dark-boots.png",
+      "alt": "闇のアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/dark_armour/dark_boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_dark.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-dark-chestplate",
+    "name": "闇のアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ダーク系列の防具。",
+    "description": "ダーク系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：340。",
+      "装備部位：胴。防御値の設定：7。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-dark-chestplate.png",
+      "alt": "闇のアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/dark_armour/dark_chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_dark.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-dark-helmet",
+    "name": "闇のアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ダーク系列の防具。",
+    "description": "ダーク系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：265。",
+      "装備部位：頭。防御値の設定：3。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-dark-helmet.png",
+      "alt": "闇のアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/dark_armour/dark_helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_dark.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-dark-leggings",
+    "name": "闇のアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ダーク系列の防具。",
+    "description": "ダーク系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：325。",
+      "装備部位：脚。防御値の設定：5。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-dark-leggings.png",
+      "alt": "闇のアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/dark_armour/dark_leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_dark.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-emerald-boots",
+    "name": "エメラルド装備のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "エメラルド系列の防具。",
+    "description": "エメラルド系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：295。",
+      "装備部位：足。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-emerald-boots.png",
+      "alt": "エメラルド装備のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/emerald_gear/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_emerald.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-emerald-chestplate",
+    "name": "エメラルド装備のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "エメラルド系列の防具。",
+    "description": "エメラルド系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：325。",
+      "装備部位：胴。防御値の設定：7。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-emerald-chestplate.png",
+      "alt": "エメラルド装備のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/emerald_gear/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_emerald.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-emerald-helmet",
+    "name": "エメラルド装備のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "エメラルド系列の防具。",
+    "description": "エメラルド系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：265。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-emerald-helmet.png",
+      "alt": "エメラルド装備のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/emerald_gear/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_emerald.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-emerald-leggings",
+    "name": "エメラルド装備のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "エメラルド系列の防具。",
+    "description": "エメラルド系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：325。",
+      "装備部位：脚。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-emerald-leggings.png",
+      "alt": "エメラルド装備のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/emerald_gear/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_emerald.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-entertainer-boots",
+    "name": "エンターテイナーの衣装のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "芸人系列の防具。",
+    "description": "芸人系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：150。",
+      "装備部位：足。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-entertainer-boots.png",
+      "alt": "エンターテイナーの衣装のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/entertainer_garb/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_entertainer.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-entertainer-chestplate",
+    "name": "エンターテイナーの衣装のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "芸人系列の防具。",
+    "description": "芸人系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：175。",
+      "装備部位：胴。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-entertainer-chestplate.png",
+      "alt": "エンターテイナーの衣装のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/entertainer_garb/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_entertainer.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-entertainer-helmet",
+    "name": "エンターテイナーの衣装のハット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "芸人系列の防具。",
+    "description": "芸人系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：165。",
+      "装備部位：頭。防御値の設定：2。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-entertainer-helmet.png",
+      "alt": "エンターテイナーの衣装のハットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/entertainer_garb/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_entertainer.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-entertainer-leggings",
+    "name": "エンターテイナーの衣装のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "芸人系列の防具。",
+    "description": "芸人系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：185。",
+      "装備部位：脚。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-entertainer-leggings.png",
+      "alt": "エンターテイナーの衣装のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/entertainer_garb/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_entertainer.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-evocation-boots",
+    "name": "魔術師のローブのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "エヴォケーションローブ系列の防具。",
+    "description": "エヴォケーションローブ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：115。",
+      "装備部位：足。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-evocation-boots.png",
+      "alt": "魔術師のローブのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/evocation_robes/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_evocation.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-evocation-chestplate",
+    "name": "魔術師のローブのローブ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "エヴォケーションローブ系列の防具。",
+    "description": "エヴォケーションローブ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：130。",
+      "装備部位：胴。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-evocation-chestplate.png",
+      "alt": "魔術師のローブのローブのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/evocation_robes/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_evocation.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-evocation-helmet",
+    "name": "魔術師のローブのハット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "エヴォケーションローブ系列の防具。",
+    "description": "エヴォケーションローブ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：105。",
+      "装備部位：頭。防御値の設定：1。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-evocation-helmet.png",
+      "alt": "魔術師のローブのハットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/evocation_robes/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_evocation.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-evocation-leggings",
+    "name": "魔術師のローブのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "エヴォケーションローブ系列の防具。",
+    "description": "エヴォケーションローブ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：135。",
+      "装備部位：脚。防御値の設定：4。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-evocation-leggings.png",
+      "alt": "魔術師のローブのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/evocation_robes/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_evocation.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-grim-boots",
+    "name": "グリムアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "不気味系列の防具。",
+    "description": "不気味系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：190。",
+      "装備部位：足。防御値の設定：2。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-grim-boots.png",
+      "alt": "グリムアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/grim_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_grim.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-grim-chestplate",
+    "name": "グリムアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "不気味系列の防具。",
+    "description": "不気味系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：220。",
+      "装備部位：胴。防御値の設定：5。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-grim-chestplate.png",
+      "alt": "グリムアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/grim_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_grim.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-grim-helmet",
+    "name": "グリムアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "不気味系列の防具。",
+    "description": "不気味系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：170。",
+      "装備部位：頭。防御値の設定：3。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-grim-helmet.png",
+      "alt": "グリムアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/grim_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_grim.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-grim-leggings",
+    "name": "グリムアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "不気味系列の防具。",
+    "description": "不気味系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：230。",
+      "装備部位：脚。防御値の設定：4。",
+      "修理材料の設定に含まれるもの：骨。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-grim-leggings.png",
+      "alt": "グリムアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/grim_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_grim.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-guard-boots",
+    "name": "衛兵のアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "衛兵系列の防具。",
+    "description": "衛兵系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：245。",
+      "装備部位：足。防御値の設定：3。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-guard-boots.png",
+      "alt": "衛兵のアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/guard_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_guard.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-guard-chestplate",
+    "name": "衛兵のアーマーチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "衛兵系列の防具。",
+    "description": "衛兵系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：290。",
+      "装備部位：胴。防御値の設定：5。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-guard-chestplate.png",
+      "alt": "衛兵のアーマーチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/guard_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_guard.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-guard-helmet",
+    "name": "衛兵のアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "衛兵系列の防具。",
+    "description": "衛兵系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：215。",
+      "装備部位：頭。防御値の設定：3。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-guard-helmet.png",
+      "alt": "衛兵のアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/guard_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_guard.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-guard-leggings",
+    "name": "衛兵のアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "衛兵系列の防具。",
+    "description": "衛兵系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：275。",
+      "装備部位：脚。防御値の設定：4。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-guard-leggings.png",
+      "alt": "衛兵のアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/guard_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_guard.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ocelot-boots",
+    "name": "ヤマネコのアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ヤマネコ系列の防具。",
+    "description": "ヤマネコ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：130。",
+      "装備部位：足。防御値の設定：2。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ocelot-boots.png",
+      "alt": "ヤマネコのアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/ocelot_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_ocelot.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ocelot-chestplate",
+    "name": "ヤマネコのアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ヤマネコ系列の防具。",
+    "description": "ヤマネコ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：160。",
+      "装備部位：胴。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ocelot-chestplate.png",
+      "alt": "ヤマネコのアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/ocelot_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_ocelot.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ocelot-helmet",
+    "name": "ヤマネコのアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ヤマネコ系列の防具。",
+    "description": "ヤマネコ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：110。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ocelot-helmet.png",
+      "alt": "ヤマネコのアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/ocelot_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_ocelot.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-ocelot-leggings",
+    "name": "ヤマネコのアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ヤマネコ系列の防具。",
+    "description": "ヤマネコ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：150。",
+      "装備部位：脚。防御値の設定：4。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-ocelot-leggings.png",
+      "alt": "ヤマネコのアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/ocelot_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_ocelot.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-piglin-boots",
+    "name": "ピグリンアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ピグリン系列の防具。",
+    "description": "ピグリン系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：130。",
+      "装備部位：足。防御値の設定：2。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-piglin-boots.png",
+      "alt": "ピグリンアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/piglin_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_piglin.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-piglin-chestplate",
+    "name": "ピグリンアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ピグリン系列の防具。",
+    "description": "ピグリン系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：160。",
+      "装備部位：胴。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-piglin-chestplate.png",
+      "alt": "ピグリンアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/piglin_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_piglin.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-piglin-helmet",
+    "name": "ピグリンアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ピグリン系列の防具。",
+    "description": "ピグリン系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：110。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-piglin-helmet.png",
+      "alt": "ピグリンアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/piglin_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_piglin.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-piglin-leggings",
+    "name": "ピグリンアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ピグリン系列の防具。",
+    "description": "ピグリン系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：150。",
+      "装備部位：脚。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-piglin-leggings.png",
+      "alt": "ピグリンアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/piglin_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_piglin.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-plate-boots",
+    "name": "プレートアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "プレート系列の防具。",
+    "description": "プレート系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：445。",
+      "装備部位：足。防御値の設定：3。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-plate-boots.png",
+      "alt": "プレートアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/plate_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_plate.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-plate-chestplate",
+    "name": "プレートアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "プレート系列の防具。",
+    "description": "プレート系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：490。",
+      "装備部位：胴。防御値の設定：8。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-plate-chestplate.png",
+      "alt": "プレートアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/plate_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_plate.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-plate-helmet",
+    "name": "プレートアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "プレート系列の防具。",
+    "description": "プレート系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：415。",
+      "装備部位：頭。防御値の設定：4。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-plate-helmet.png",
+      "alt": "プレートアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/plate_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_plate.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-plate-leggings",
+    "name": "プレートアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "プレート系列の防具。",
+    "description": "プレート系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：475。",
+      "装備部位：脚。防御値の設定：5。",
+      "修理材料の設定に含まれるもの：鉄インゴット。修復量や操作はゲーム内で未検証です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-plate-leggings.png",
+      "alt": "プレートアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/plate_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_plate.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-root-rot-boots",
+    "name": "根腐れのアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "根腐れ系列の防具。",
+    "description": "根腐れ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：225。",
+      "装備部位：足。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-root-rot-boots.png",
+      "alt": "根腐れのアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/root_rot_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_root_rot.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-root-rot-chestplate",
+    "name": "根腐れのアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "根腐れ系列の防具。",
+    "description": "根腐れ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：270。",
+      "装備部位：胴。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-root-rot-chestplate.png",
+      "alt": "根腐れのアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/root_rot_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_root_rot.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-root-rot-helmet",
+    "name": "根腐れのアーマーのフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "根腐れ系列の防具。",
+    "description": "根腐れ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：195。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-root-rot-helmet.png",
+      "alt": "根腐れのアーマーのフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/root_rot_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_root_rot.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-root-rot-leggings",
+    "name": "根腐れのアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "根腐れ系列の防具。",
+    "description": "根腐れ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：255。",
+      "装備部位：脚。防御値の設定：4。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-root-rot-leggings.png",
+      "alt": "根腐れのアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/root_rot_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_root_rot.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-shulker-boots",
+    "name": "シュルカー防具のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "シュルカー系列の防具。",
+    "description": "シュルカー系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：395。",
+      "装備部位：足。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-shulker-boots.png",
+      "alt": "シュルカー防具のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/shulker_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_shulker.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-shulker-chestplate",
+    "name": "シュルカー防具のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "シュルカー系列の防具。",
+    "description": "シュルカー系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：440。",
+      "装備部位：胴。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-shulker-chestplate.png",
+      "alt": "シュルカー防具のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/shulker_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_shulker.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-shulker-helmet",
+    "name": "シュルカー防具のヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "シュルカー系列の防具。",
+    "description": "シュルカー系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：365。",
+      "装備部位：頭。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-shulker-helmet.png",
+      "alt": "シュルカー防具のヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/shulker_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_shulker.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-shulker-leggings",
+    "name": "シュルカー防具のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "シュルカー系列の防具。",
+    "description": "シュルカー系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：425。",
+      "装備部位：脚。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-shulker-leggings.png",
+      "alt": "シュルカー防具のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/shulker_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_shulker.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-snow-boots",
+    "name": "スノーアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "スノー系列の防具。",
+    "description": "スノー系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：100。",
+      "装備部位：足。防御値の設定：2。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-snow-boots.png",
+      "alt": "スノーアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/snow_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_snow.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-snow-chestplate",
+    "name": "スノーアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "スノー系列の防具。",
+    "description": "スノー系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：130。",
+      "装備部位：胴。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-snow-chestplate.png",
+      "alt": "スノーアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/snow_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_snow.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-snow-helmet",
+    "name": "スノーアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "スノー系列の防具。",
+    "description": "スノー系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：80。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-snow-helmet.png",
+      "alt": "スノーアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/snow_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_snow.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-snow-leggings",
+    "name": "スノーアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "スノー系列の防具。",
+    "description": "スノー系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：140。",
+      "装備部位：脚。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-snow-leggings.png",
+      "alt": "スノーアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/snow_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_snow.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sprout-boots",
+    "name": "スプラウトアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "芽生え系列の防具。",
+    "description": "芽生え系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：125。",
+      "装備部位：足。防御値の設定：2。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sprout-boots.png",
+      "alt": "スプラウトアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/sprout_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_sprout.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sprout-chestplate",
+    "name": "スプラウトアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "芽生え系列の防具。",
+    "description": "芽生え系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：170。",
+      "装備部位：胴。防御値の設定：4。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sprout-chestplate.png",
+      "alt": "スプラウトアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/sprout_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_sprout.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sprout-helmet",
+    "name": "スプラウトアーマーのフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "芽生え系列の防具。",
+    "description": "芽生え系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：95。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sprout-helmet.png",
+      "alt": "スプラウトアーマーのフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/sprout_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_sprout.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sprout-leggings",
+    "name": "スプラウトアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "芽生え系列の防具。",
+    "description": "芽生え系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：155。",
+      "装備部位：脚。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-sprout-leggings.png",
+      "alt": "スプラウトアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/sprout_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_sprout.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-squid-boots",
+    "name": "イカの防具のブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "イカ系列の防具。",
+    "description": "イカ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：150。",
+      "装備部位：足。防御値の設定：2。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-squid-boots.png",
+      "alt": "イカの防具のブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/squid_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_squid.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-squid-chestplate",
+    "name": "イカの防具のチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "イカ系列の防具。",
+    "description": "イカ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：200。",
+      "装備部位：胴。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-squid-chestplate.png",
+      "alt": "イカの防具のチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/squid_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_squid.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-squid-helmet",
+    "name": "イカの防具のフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "イカ系列の防具。",
+    "description": "イカ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：190。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-squid-helmet.png",
+      "alt": "イカの防具のフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/squid_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_squid.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-squid-leggings",
+    "name": "イカの防具のレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "イカ系列の防具。",
+    "description": "イカ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：180。",
+      "装備部位：脚。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-squid-leggings.png",
+      "alt": "イカの防具のレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/squid_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_squid.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-teleportation-boots",
+    "name": "テレポートのローブのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "テレポーテーションローブ系列の防具。",
+    "description": "テレポーテーションローブ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：155。",
+      "装備部位：足。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-teleportation-boots.png",
+      "alt": "テレポートのローブのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/teleportation_robes/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_teleportation.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-teleportation-chestplate",
+    "name": "テレポートのローブのローブ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "テレポーテーションローブ系列の防具。",
+    "description": "テレポーテーションローブ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：180。",
+      "装備部位：胴。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-teleportation-chestplate.png",
+      "alt": "テレポートのローブのローブのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/teleportation_robes/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_teleportation.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-teleportation-helmet",
+    "name": "テレポートのローブのフード",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "テレポーテーションローブ系列の防具。",
+    "description": "テレポーテーションローブ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：155。",
+      "装備部位：頭。防御値の設定：3。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-teleportation-helmet.png",
+      "alt": "テレポートのローブのフードのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/teleportation_robes/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_teleportation.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-teleportation-leggings",
+    "name": "テレポートのローブのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "テレポーテーションローブ系列の防具。",
+    "description": "テレポーテーションローブ系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：185。",
+      "装備部位：脚。防御値の設定：6。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-teleportation-leggings.png",
+      "alt": "テレポートのローブのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/teleportation_robes/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_teleportation.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-thief-boots",
+    "name": "盗人のアーマーのブーツ",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "盗人系列の防具。",
+    "description": "盗人系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：175。",
+      "装備部位：足。防御値の設定：2。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-thief-boots.png",
+      "alt": "盗人のアーマーのブーツのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/thief_armour/boots.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/boots_thief.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-thief-chestplate",
+    "name": "盗人のアーマーのチェストプレート",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "盗人系列の防具。",
+    "description": "盗人系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：220。",
+      "装備部位：胴。防御値の設定：5。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-thief-chestplate.png",
+      "alt": "盗人のアーマーのチェストプレートのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/thief_armour/chestplate.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/chestplate_thief.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-thief-helmet",
+    "name": "盗人のアーマーのヘルメット",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "盗人系列の防具。",
+    "description": "盗人系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：145。",
+      "装備部位：頭。防御値の設定：2。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-thief-helmet.png",
+      "alt": "盗人のアーマーのヘルメットのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/thief_armour/helmet.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/helmet_thief.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-thief-leggings",
+    "name": "盗人のアーマーのレギンス",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "盗人系列の防具。",
+    "description": "盗人系列の頭・胴・脚・足のうちの1部位です。画像、装備部位、防御値、耐久値、修理材料を比較できます。",
+    "usage": "対応する防具スロットに装備します。セット効果や敵からの狙われ方などは、名称から推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前から入手先を推測していません。",
+    "details": [
+      "耐久値の設定：205。",
+      "装備部位：脚。防御値の設定：4。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-thief-leggings.png",
+      "alt": "盗人のアーマーのレギンスのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/armor/common/thief_armour/leggings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/armor/leggings_thief.png"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-enchanted-grass",
+    "name": "魅惑の草",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "専用のヒツジを呼び出す草。",
+    "description": "使用者の位置に専用のヒツジを1体呼び出し、使用者になつかせる処理です。",
+    "usage": "通常版を手に持って使用します。召喚後の行動や実際の効果・操作はゲーム内で未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+    "details": [
+      "基本クールダウンの設定：60秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-enchanted-grass.png",
+      "alt": "魅惑の草のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/enchanted_grass.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/enchanted_grass.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/enchantedGrass.js",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/enchanted_sheep.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/enchanted_grass.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-enchanted-grass-recipe",
+    "name": "魅惑の草のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "魅惑の草を作る材料と配置。",
+    "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "レシピの定義を確認しています。実際の製作・解放表示は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "ラピスラズリ",
+          "ダイヤモンドの粉",
+          "アメジストの欠片"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "草ブロック",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "アメジストの欠片",
+          "ダイヤモンドの粉",
+          "ラピスラズリ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "ラピスラズリ",
+          "count": 2
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "アメジストの欠片",
+          "count": 2
+        },
+        {
+          "name": "草ブロック",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-enchanted-grass",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/enchanted_grass.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-wonderful-wheat",
+    "name": "上質な小麦",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ペットのラマを呼び出す小麦。",
+    "description": "使用者の位置に専用のラマを1体呼び出し、使用者になつかせる処理です。",
+    "usage": "通常版を手に持って使用します。召喚後の行動や実際の効果・操作はゲーム内で未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+    "details": [
+      "基本クールダウンの設定：37秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-wonderful-wheat.png",
+      "alt": "上質な小麦のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/wonderful_wheat.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/wonderful_wheat.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/wonderfulWheat.js",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/llama.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/wonderful_wheat.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-wonderful-wheat-recipe",
+    "name": "上質な小麦のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "上質な小麦を作る材料と配置。",
+    "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "レシピの定義を確認しています。実際の製作・解放表示は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "干草の俵",
+          "ダイヤモンドの粉",
+          "干草の俵"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "金色のタンポポ（仮訳）",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "干草の俵",
+          "ダイヤモンドの粉",
+          "干草の俵"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "干草の俵",
+          "count": 4
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "金色のタンポポ（仮訳）",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-wonderful-wheat",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/wonderful_wheat.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-buzzy-nest",
+    "name": "バジーネスト",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ハチを呼び出す巣を置く道具。",
+    "description": "使用者にひも付いた専用の巣を呼び出します。巣のイベントからペットのハチを呼び出し、同じ所有者になつかせる処理があります。",
+    "usage": "通常版を手に持って使用します。召喚後の行動や実際の効果・操作はゲーム内で未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+    "details": [
+      "ハチの発生間隔・同時数・実際の存続時間は未検証です。",
+      "基本クールダウンの設定：50秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-buzzy-nest.png",
+      "alt": "バジーネストのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/buzzy_nest.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/buzzy_nest.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/buzzyNest.js",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/buzzy_nest.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/guardian_bee.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/buzzy_nest.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-buzzy-nest-recipe",
+    "name": "バジーネストのレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "バジーネストを作る材料と配置。",
+    "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "レシピの定義を確認しています。実際の製作・解放表示は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "ハニカム",
+          "ダイヤモンドの粉",
+          "ハチミツ入りの瓶"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "ミツバチの巣",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "ハチミツ入りの瓶",
+          "ダイヤモンドの粉",
+          "ハニカム"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "ハニカム",
+          "count": 2
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "ハチミツ入りの瓶",
+          "count": 2
+        },
+        {
+          "name": "ミツバチの巣",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-buzzy-nest",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/buzzy_nest.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-vexing-chant",
+    "name": "ヴェックス召喚の歌",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "3か所に守護ヴェックスを呼び出す本。",
+    "description": "使用者の周囲3か所へ専用のヴェックスを呼び出し、使用者になつかせる処理です。",
+    "usage": "通常版を手に持って使用します。召喚後の行動や実際の効果・操作はゲーム内で未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+    "details": [
+      "3か所への召喚処理を確認しています。地形ごとの成功や戦闘中の挙動は未検証です。",
+      "基本クールダウンの設定：90秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-vexing-chant.png",
+      "alt": "ヴェックス召喚の歌のパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/vexing_chant.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/vexing_chant.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/vexingChant.js",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/guardian_vex.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/vexing_chant.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-vexing-chant-recipe",
+    "name": "ヴェックス召喚の歌のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "ヴェックス召喚の歌を作る材料と配置。",
+    "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "レシピの定義を確認しています。実際の製作・解放表示は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "エンドロッド",
+          "ダイヤモンドの粉",
+          "鉄インゴット"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "紙",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "鉄インゴット",
+          "ダイヤモンドの粉",
+          "エンドロッド"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "エンドロッド",
+          "count": 2
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "鉄インゴット",
+          "count": 2
+        },
+        {
+          "name": "紙",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-vexing-chant",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/vexing_chant.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-soul-lantern",
+    "name": "魂のランタン",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "ソウルを使って仲間を呼び出すランタン。",
+    "description": "ソウルゲージが13以上あるときに13を消費し、専用のソウルウィザードを呼び出して使用者になつかせる処理です。",
+    "usage": "通常版を手に持って使用します。召喚後の行動や実際の効果・操作はゲーム内で未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+    "details": [
+      "ソウル不足時は召喚せず、ソウルを集めるよう案内する処理があります。",
+      "ソウルの獲得手段やゲージ表示の実機確認は残っています。",
+      "基本クールダウンの設定：50秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-soul-lantern.png",
+      "alt": "魂のランタンのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/soul_lantern.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/soul_lantern.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/soulLantern.js",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/soul_wizard.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/soul_lantern.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-soul-lantern-recipe",
+    "name": "魂のランタンのレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "魂のランタンを作る材料と配置。",
+    "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "レシピの定義を確認しています。実際の製作・解放表示は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "ラピスラズリ",
+          "ダイヤモンドの粉",
+          "ラピスラズリ"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "魂のランタン（バニラ）",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "ラピスラズリ",
+          "ダイヤモンドの粉",
+          "ラピスラズリ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "ラピスラズリ",
+          "count": 4
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "魂のランタン（バニラ）",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-soul-lantern",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/soul_lantern.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-wind-horn",
+    "name": "風のホルン",
+    "kind": "item",
+    "contentId": "minecraft-dungeons",
+    "summary": "周囲の対象を押し返すホルン。",
+    "description": "使用者から7ブロック以内の有効な対象を外側へ押し返し、鈍足を付与する処理です。通常版とレア版では押し返す力の設定が異なります。",
+    "usage": "通常版を手に持って使用します。召喚後の行動や実際の効果・操作はゲーム内で未検証です。",
+    "obtaining": "作業台で製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+    "details": [
+      "今回の掲載は通常版です。対象ごとの有効・無効や実際の飛距離は未検証です。",
+      "基本クールダウンの設定：10秒。装備などによる補正は別です。"
+    ],
+    "image": {
+      "src": "/images/items/dungeons-wind-horn.png",
+      "alt": "風のホルンのパック内画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/wind_horn.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/wind_horn.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/windHorn.js",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/wind_horn.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-wind-horn-recipe",
+    "name": "風のホルンのレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "風のホルンを作る材料と配置。",
+    "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "レシピの定義を確認しています。実際の製作・解放表示は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "鉄インゴット",
+          "ダイヤモンドの粉",
+          "羽根"
+        ],
+        [
+          "ダイヤモンドの粉",
+          "ヤギの角笛",
+          "ダイヤモンドの粉"
+        ],
+        [
+          "羽根",
+          "ダイヤモンドの粉",
+          "鉄インゴット"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "鉄インゴット",
+          "count": 2
+        },
+        {
+          "name": "ダイヤモンドの粉",
+          "count": 4
+        },
+        {
+          "name": "羽根",
+          "count": 2
+        },
+        {
+          "name": "ヤギの角笛",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-wind-horn",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/wind_horn.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
       ]
     }
   }

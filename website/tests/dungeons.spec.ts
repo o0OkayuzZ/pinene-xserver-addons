@@ -8,13 +8,13 @@ test('Dungeons category navigation, expanded gear and recipe round trip', async 
  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Minecraft Dungeons');
  await page.getByRole('link', { name: '装備・レシピを見る', exact: true }).click();
  await expect(page).toHaveURL(/#dungeons-guide-title$/);
- await page.getByRole('navigation', { name: 'Dungeonsの種類別一覧' }).getByRole('link', { name: '防具 48' }).click();
+ await page.getByRole('navigation', { name: 'Dungeonsの種類別一覧' }).getByRole('link', { name: '防具 112' }).click();
  const armor = page.locator('#dungeons-armor');
  await expect(armor.locator('[data-guide-entry]:visible')).toHaveCount(4);
  await armor.locator('summary').click();
- await expect(armor.locator('[data-guide-entry]:visible')).toHaveCount(48);
+ await expect(armor.locator('[data-guide-entry]:visible')).toHaveCount(112);
  await armor.locator('[data-guide-entry]').last().getByRole('link').click();
- await expect(page).toHaveURL(/database\/entries\/dungeons-wither-leggings\/$/);
+ await expect(page).toHaveURL(/database\/entries\/dungeons-thief-leggings\/$/);
  await page.goBack();
  await page.getByRole('link', { name: '英雄の書を作る', exact: true }).click();
  await expect(page.getByText('金インゴット × 4', { exact: true })).toBeVisible();
@@ -27,6 +27,13 @@ test('Dungeons category navigation, expanded gear and recipe round trip', async 
  await expect(page.locator('.craft-grid')).toHaveCount(0);
  await page.getByRole('link', { name: /の説明 →$/ }).click();
  await expect(page).toHaveURL(/database\/entries\/dungeons-harpoon-arrow\/$/);
+ await page.goto(base + 'database/entries/dungeons-soul-lantern-recipe/');
+ await expect(page.locator('.craft-grid')).toBeVisible();
+ await expect(page.getByText('魂のランタン（バニラ） × 1', { exact: true })).toBeVisible();
+ await page.getByRole('link', { name: /の説明 →$/ }).click();
+ await expect(page).toHaveURL(/database\/entries\/dungeons-soul-lantern\/$/);
+ await expect(page.locator('main')).toContainText('13を消費');
+ await expect(page.locator('main')).toContainText('ソウル不足時は召喚せず');
  await page.goto(base + 'contents/minecraft-dungeons/');
  await page.locator('img:visible').evaluateAll(images => Promise.all(images.map(image => {
   const img = image as HTMLImageElement; img.loading = 'eager'; return img.decode();

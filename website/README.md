@@ -4,7 +4,7 @@ Astro + TypeScriptによる、PINE SERVERのコンテンツ紹介サイトです
 
 公開先: https://o0okayuzz.github.io/pinene-xserver-addons/ 。ユーザーの公開承認を受けて、生成物専用の `gh-pages` ブランチをGitHub Pagesの公開元に設定しました。[公開記録](PUBLISH_REPORT.md)を参照してください。
 
-現在はアイテム・ブロック267件、レシピ71件、小さな機能22件、合計360件を掲載しています。最新の追加内容と検証は [DUNGEONS_EXPANSION_REPORT.md](DUNGEONS_EXPANSION_REPORT.md) を参照してください。
+現在はアイテム・ブロック337件、レシピ77件、小さな機能22件、合計436件を掲載しています。最新の追加内容と検証は [DUNGEONS_COMPANIONS_REPORT.md](DUNGEONS_COMPANIONS_REPORT.md) を参照してください。
 
 ## 起動・検証
 
