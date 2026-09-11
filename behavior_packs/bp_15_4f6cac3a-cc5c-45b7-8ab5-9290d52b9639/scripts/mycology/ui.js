@@ -4,74 +4,11 @@ import { counts,seen } from './progress.js';
 import { appraise,owned,recoverDelivery } from './appraisal.js';
 import { requireUsable,canUse } from './npc.js';
 import { sessions } from './sessions.js';
+import { rarityColor,rarityTier,stars,coloredSpecies,rarityHeadline,progressBar } from './rarity_ui.js';
+import { revealAppraisal,revealPreferences,cycleRevealMode,toggleRevealSound } from './reveal.js';
 import { entityById,tell,logError,tr } from './util.js';
 
 function label(d,suffix){return tr(`myco.${d.id.toLowerCase()}.${suffix}`);}
-
-/*
- * Mycology UI rarity palette
- *
- * ★1  gray
- * ★2  green
- * ★3  aqua
- * ★4  blue
- * ★5  light purple
- * ★6  dark purple
- * ★7  yellow
- * ★8  gold
- * ★9  red + bold
- * ★10 gold + bold
- *
- * Keep this mapping centralized so encyclopedia/detail/result screens never drift.
- */
-function rarityColor(rarity){
-  switch(rarity){
-    case 1:return '§7';
-    case 2:return '§a';
-    case 3:return '§b';
-    case 4:return '§9';
-    case 5:return '§d';
-    case 6:return '§5';
-    case 7:return '§e';
-    case 8:return '§6';
-    case 9:return '§c§l';
-    case 10:return '§6§l';
-    default:return '§f';
-  }
-}
-
-function rarityTier(rarity){
-  if(rarity===10)return 'LEGENDARY';
-  if(rarity===9)return 'MYTHIC';
-  if(rarity===8)return 'ULTRA RARE';
-  if(rarity===7)return 'SUPER RARE';
-  if(rarity>=5)return 'RARE';
-  if(rarity>=3)return 'UNCOMMON';
-  return 'COMMON';
-}
-
-function stars(rarity){
-  return `${rarityColor(rarity)}${'★'.repeat(rarity)}§8${'☆'.repeat(10-rarity)}§r`;
-}
-
-function coloredSpecies(d){
-  return `${rarityColor(d.rarity)}${d.id} ${d.nameJa}§r`;
-}
-
-function rarityHeadline(d){
-  const c=rarityColor(d.rarity);
-  if(d.rarity===10)return `${c}✦ LEGENDARY ✦§r`;
-  if(d.rarity===9)return `${c}✦ MYTHIC ✦§r`;
-  if(d.rarity===8)return `${c}◆ ULTRA RARE ◆§r`;
-  if(d.rarity===7)return `${c}◆ SUPER RARE ◆§r`;
-  return `${c}${rarityTier(d.rarity)}§r`;
-}
-
-function progressBar(current,total,width=20){
-  if(total<=0)return '';
-  const filled=Math.max(0,Math.min(width,Math.round(current/total*width)));
-  return `§a${'█'.repeat(filled)}§8${'░'.repeat(width-filled)}§r`;
-}
 
 function effectsText(d){
   const names={
@@ -251,6 +188,9 @@ async function batchLoop(player,npcId,group){
       summary.push(`§e入りきらない ${b.dropped}個を足元に置きました。§r`);
     }
 
+    const presentation=await revealAppraisal(player,b,sorted);
+    if(presentation==='aborted')return 'aborted';
+
     const next=owned(player,group);
     const nextAmount=next.first?.amount??0;
     const form=new ActionFormData()
@@ -300,7 +240,8 @@ function appraisalButton(group,info){
 
 export async function openAppraiser(player,npc){
   if(sessions.has(player.id)||!canUse(player,npc,false))return;
-  sessions.set(player.id,{npcId:npc.id,openedAt:Date.now()});
+  const session={npcId:npc.id,openedAt:Date.now()};
+  sessions.set(player.id,session);
 
   try{
     recoverDelivery(player);
@@ -312,6 +253,7 @@ export async function openAppraiser(player,npc){
       const brown=owned(player,'brown');
       const c=counts(player);
 
+      const prefs=revealPreferences(player);
       const result=await new ActionFormData()
         .title('§2§lキノコ鑑定士§r')
         .body(
@@ -331,25 +273,31 @@ export async function openAppraiser(player,npc){
         )
         .button('§aキノコ図鑑§r','textures/ui/mycology/unknown')
         .button('閉じる')
+        .button(`演出：${{full:'じっくり',quick:'短縮',off:'OFF'}[prefs.mode]}\n押して切替 / しゃがみでスキップ`)
+        .button(`サウンド：${prefs.sound?'ON':'OFF'}\n鑑定した自分だけに再生`)
         .show(player);
 
       if(result.canceled||result.selection===3)return;
+
+      if(result.selection===4){cycleRevealMode(player);continue;}
+      if(result.selection===5){toggleRevealSound(player);continue;}
 
       if(result.selection===2){
         await encyclopedia(player);
         continue;
       }
 
-      await batchLoop(
+      const outcome=await batchLoop(
         player,
         npc.id,
         result.selection===0?'red':'brown'
       );
+      if(outcome==='aborted')return;
     }
   }catch(error){
     logError('appraiser form',error);
     tell(player,'§e'+(error?.message??'画面を開けませんでした。')+'§r');
   }finally{
-    sessions.delete(player.id);
+    if(sessions.get(player.id)===session)sessions.delete(player.id);
   }
 }
