@@ -12,7 +12,7 @@
 
 ## URL
 
-ユーザー指定により公開URLを `https://o0okayuzz.github.io/pine-server/` に移行します。ゲーム用リポジトリ `o0OkayuzZ/pinene-xserver-addons` は改名せず、実装ソースは既存のWeb専用ブランチとPR #1に保持。新しいWeb公開用リポジトリ `o0OkayuzZ/pine-server` の `gh-pages` に生成物だけを置きます。
+ユーザー指定により公開URLを `https://o0okayuzz.github.io/pine-server/` に移行しました。ゲーム用リポジトリ `o0OkayuzZ/pinene-xserver-addons` は改名せず、実装ソースは既存のWeb専用ブランチとPR #1に保持。新しいWeb公開用リポジトリ `o0OkayuzZ/pine-server` の `gh-pages` に生成物だけを配置済みです。
 
 AstroのbaseとブラウザテストのURLを変更し、出力監査で旧baseが混入しないことも検査します。旧Pagesは各ページから新URLの同じパスへ転送し、検索条件とページ内リンクを引き継ぎます。過去のレポート内の旧URLは当時の記録として保持します。
 
@@ -28,7 +28,7 @@ AstroのbaseとブラウザテストのURLを変更し、出力監査で旧base�
 
 全6種類の戦闘バランス、報酬の実抽選、帰還の全条件、最新の琴と鑑定演出の実機での聞こえ方・見え方は今回確認していません。実装数値と20 TPS換算を区別しています。入口の場所・参加URL・鑑定士の所在は未設定/案内準備中です。現実のキノコの食用情報や未確認ニュースは追加していません。
 
-## 確認対象
+## 実際に確認した新公開URL
 
 - https://o0okayuzz.github.io/pine-server/
 - https://o0okayuzz.github.io/pine-server/contents/infinite-castle/
@@ -36,4 +36,6 @@ AstroのbaseとブラウザテストのURLを変更し、出力監査で旧base�
 - https://o0okayuzz.github.io/pine-server/database/entries/castle-return-circle/
 - https://o0okayuzz.github.io/pine-server/database/entries/mushroom-reveal-settings/
 
-公開後の検証、commit・配置実行、PC/スマホの画像は[PUBLISH_REPORT.md](PUBLISH_REPORT.md)に追記します。
+上記5URLを公開先のChromium 390px・1440pxで確認しました。旧URLのホーム・キノコ図鑑のページ内リンク・検索条件付き一覧・Dungeonsレシピからの転送も成功し、JavaScript無効時の同一ページへの転送も確認済みです。ソースcommitは`8af9d2c7`、新公開生成物は`bd3546c8`、旧URL転送は`832fa69e`。配置はいずれも成功しています。詳細は[PUBLISH_REPORT.md](PUBLISH_REPORT.md)。
+
+[公開無限城PC](artifacts/public-infinite-castle-1440.png) / [公開無限城スマホ](artifacts/public-infinite-castle-390.png) / [公開キノコPC](artifacts/public-mycology-1440.png) / [公開キノコスマホ](artifacts/public-mycology-390.png)。

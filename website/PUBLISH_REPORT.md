@@ -1,5 +1,21 @@
 # GitHub Pages公開記録
 
+## 現在の公開先：pine-server（2026-09-12）
+
+ユーザー指定により、公開URLを **https://o0okayuzz.github.io/pine-server/** へ移行しました。無限城12項目とMycologyの新しい鑑定案内3項目を追加し、Web全体655項目・680ページを公開しています。
+
+- 実装ソース：`o0OkayuzZ/pinene-xserver-addons` の専用Webブランチ、commit `8af9d2c7`、[PR #1](https://github.com/o0OkayuzZ/pinene-xserver-addons/pull/1)。ゲーム用リポジトリは改名していません。
+- 新公開先：`o0OkayuzZ/pine-server` の `gh-pages` / `/`。生成物commit `bd3546c80098a980deab3041c069f8ce03f44685`。[配置実行](https://github.com/o0OkayuzZ/pine-server/actions/runs/34636507527)成功、Pages状態built。
+- 旧公開先：`o0OkayuzZ/pinene-xserver-addons` の `gh-pages` に680ページの転送案内。commit `832fa69e8773801d1b0decb3bc4256dec54fa7be`。[転送配置](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34636680390)成功。
+
+新公開URLのホーム、`contents/infinite-castle/`、`contents/mycology/`、`database/entries/castle-return-circle/`、`database/entries/mushroom-reveal-settings/`をChromium 390px・1440pxで開き、HTTP 200、画像、分類展開、詳細リンク、横はみ出しなし、JavaScriptエラーなしを確認しました。新サイト内のリンクに旧baseが混入していないことも確認しています。
+
+旧URLのホーム、`contents/mycology/#guide-brown`、`database/items/?content=mycology`、Dungeonsのハープクロスボウ設計図レシピから、新URLの同一パス・検索条件・フラグメントへ転送することを両画面幅で確認。JavaScript無効でも無限城の同一ページへ転送できることを確認しました（検索条件・フラグメントの引き継ぎはJavaScript有効時）。
+
+[変更・検証・未確認事項](EXPLORATION_URL_REPORT.md) / [無限城PC](artifacts/public-infinite-castle-1440.png) / [無限城スマホ](artifacts/public-infinite-castle-390.png) / [キノコPC](artifacts/public-mycology-1440.png) / [キノコスマホ](artifacts/public-mycology-390.png)。今後の生成物更新は新しい`o0OkayuzZ/pine-server`の`gh-pages`へ行い、旧公開先を通常サイトで上書きしないでください。mainへの直接push・merge、ゲームパックやXserver設定の変更は行っていません。
+
+以下は旧URLで公開していた時点の履歴です。
+
 最新版Dungeonsの更新：ソース `0cfcb6b1`、公開生成物 `5d7120108d71ea556a71371f195b40c684dc8bf9`。main `4a948e25`（Dungeons 2.0.6）との照合と遠距離レシピ32件の追加で、Dungeons454項目、Web全体640項目・665ページになりました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34633490594)は成功。以下の公開URLをChromiumの390px・1440pxで開き、HTTP 200、画像、横はみ出しなし、JavaScriptエラーなし、バージョン2.0.6、32件の展開、設計図の配置表と完成品へのリンクを確認しました。
 
 - https://o0okayuzz.github.io/pinene-xserver-addons/contents/minecraft-dungeons/
