@@ -1,5 +1,7 @@
 # GitHub Pages公開記録
 
+収納・死亡回収の更新：ソース `5b86709`、公開生成物 `d85ccac`。197ページ・図鑑173項目へ更新しました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34556064757)が成功。公開URLの冥鉄の箱・Grave紹介と個別アイテムを390px・1440pxで確認し、6つのレシピリンクと配置表への操作、横はみ出しなし、JavaScriptエラーなしを確認済みです。
+
 最新の更新：ソース `e686bd2`、公開生成物 `c6771a9`。Blue Apple・謎の化石・フィギュアを追加し、181ページへ更新しました。[配置実行](https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/34517189658)は成功し、追加3コンテンツと青りんごの図鑑を公開URLで390px・1440px確認済みです。以下は初回公開時の記録です。
 
 ユーザーからGitHub Pagesでの公開承認を受け、以下を設定しました。過去の実装記録の「本番未公開」は、その記録時点の状態です。
