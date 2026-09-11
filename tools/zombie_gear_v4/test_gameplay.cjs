@@ -139,12 +139,12 @@ test('multiple same-tick lethal hits consume distinct revives; no immunity', () 
   const p=entity(0);init(p,2);p.health.currentValue=5;system.currentTick=5000;hit(undefined,p,6,'fire');hit(undefined,p,50,'fire');hit(undefined,p,50,'fire');flush();assert.equal(api.revives(p),0);assert.equal(p.health.currentValue,0);assert.equal(api.corruption(p),2);
 });
 test('partial armor has no diet restriction', () => {const p=entity(0);delete p.slots.feet;const ev={source:p,itemStack:new ItemStack('minecraft:apple'),cancel:false};beforeEvents.itemUse.emit(ev);assert.equal(ev.cancel,false);});
-test('full set normal food keeps hunger and saturation unchanged with nausea only', () => {
+test('full set normal food keeps hunger and saturation unchanged but allows item buffs', () => {
   const p=entity(0);init(p);p.hunger.currentValue=7;p.saturation.currentValue=1;p.health.currentValue=50;
   const stack=new ItemStack('minecraft:apple');const ev={source:p,itemStack:stack,cancel:false};beforeEvents.itemUse.emit(ev);assert.equal(ev.cancel,false);
   p.hunger.currentValue=11;p.saturation.currentValue=5;afterEvents.itemCompleteUse.emit(ev);
   assert.equal(p.hunger.currentValue,7);assert.equal(p.saturation.currentValue,1);assert.equal(p.health.currentValue,50);
-  assert.equal(p.effects.nausea.duration,400);assert.equal(p.effects.blindness,undefined);
+  assert.equal(p.effects.nausea,undefined);assert.equal(p.effects.blindness,undefined);
 });
 test('rotten flesh is the only food that directly heals full zombie gear', () => {
   const p=entity(0);init(p);p.health.currentValue=50;p.hunger.currentValue=7;p.saturation.currentValue=1;
@@ -189,8 +189,12 @@ test('sneak control shows progress; release cancels without eating a zombie stem
 test('finished sneak charge needs release before another starts', () => {
   const update=intervals.find(([,n])=>n===5)[0];const p=entity(0);init(p);p.selected=new ItemStack('pinematerials:zonbikansaibou',2);p.isSneaking=true;system.currentTick=8000;update();system.currentTick=8160;api.tickChargeCompletion(p);update();assert.equal(api.revives(p),1);assert.equal(api.getScore(p,api.SCORE.charging),0);update();assert.equal(api.getScore(p,api.SCORE.charging),0);p.isSneaking=false;update();p.isSneaking=true;update();assert.equal(api.getScore(p,api.SCORE.charging),1);
 });
-test('full-set recovery potion restriction uses the real string effectType', () => {
-  const p=entity(0);const ev={entity:p,effectType:'minecraft:regeneration',cancel:false};beforeEvents.effectAdd.emit(ev);assert.equal(ev.cancel,true);delete p.slots.feet;const partial={...ev,cancel:false};beforeEvents.effectAdd.emit(partial);assert.equal(partial.cancel,false);
+test('full-set recovery potion restriction allows absorption but blocks regeneration and instant health', () => {
+  const p=entity(0);const regen={entity:p,effectType:'minecraft:regeneration',cancel:false};beforeEvents.effectAdd.emit(regen);assert.equal(regen.cancel,true);
+  const instant={entity:p,effectType:'minecraft:instant_health',cancel:false};beforeEvents.effectAdd.emit(instant);assert.equal(instant.cancel,true);
+  const absorption={entity:p,effectType:'minecraft:absorption',cancel:false};beforeEvents.effectAdd.emit(absorption);assert.equal(absorption.cancel,false);
+  p.addEffect('absorption',200,{amplifier:1});const update20=intervals.filter(([,n])=>n===20).at(-1)[0];update20();assert.equal(p.effects.absorption.amplifier,1);
+  delete p.slots.feet;const partial={entity:p,effectType:'minecraft:regeneration',cancel:false};beforeEvents.effectAdd.emit(partial);assert.equal(partial.cancel,false);
 });
 test('milk/damage correction cannot accidentally invoke the old healing penalty', () => assert.ok(!code.includes('allowedHealMap') && !code.includes('NIGHT_BONUS') && !code.includes('REVIVE_BOOST_TICKS')));
 console.log(`${checks} gameplay tests passed (API mock; not an engine test)`);

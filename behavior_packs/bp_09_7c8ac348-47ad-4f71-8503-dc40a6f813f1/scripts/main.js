@@ -341,9 +341,8 @@ const COMBAT_TICKS = 400;
 const MAX_CHARGE = MAX_REVIVES;
 const BONUS_REGEN_HEAL = 1;
 const BONUS_REGEN_MIN_FOOD = 8;
-const FOOD_SICKNESS_TICKS = 400;
 const ROTTEN_FLESH_HEAL = 8;
-const ROTTEN_FLESH_REPAIR_FRACTION = 0.20;
+const ROTTEN_FLESH_REPAIR_FRACTION = 0.10;
 const STRENGTH_EFFECT_TICKS = 80;
 const mismatchWarnings = new Set();
 const ownedHealthBoost = new Map();
@@ -418,7 +417,6 @@ function applyFullSetFoodAftermath(player, itemStack) {
   foodSnapshots.delete(player.id);
   restoreFoodValue(player, "minecraft:player.hunger", snapshot?.hunger);
   restoreFoodValue(player, "minecraft:player.saturation", snapshot?.saturation);
-  player.addEffect("nausea", FOOD_SICKNESS_TICKS, { amplifier: 0, showParticles: true });
 }
 
 function rememberExternalStrength(player, effect) {
@@ -653,7 +651,7 @@ installGearControls({
   cancel(player) { stopCharging(player); chargeSnapshots.delete(player.id); }
 });
 
-// Full sets may eat any food, but food does not restore hunger/saturation.
+// Full sets may eat normal food for item buffs only; rotten flesh keeps its normal food recovery.
 world.beforeEvents.itemUse.subscribe(ev => {
   snapshotFoodState(ev.source, ev.itemStack);
 });
@@ -670,7 +668,7 @@ world.beforeEvents.effectAdd.subscribe(ev => {
   const entity = ev.entity;
   if (!isFullZombieArmor(entity)) return;
   const id = effectAddId(ev);
-  if (["regeneration", "absorption", "instant_health"].includes(id)) ev.cancel = true;
+  if (["regeneration", "instant_health"].includes(id)) ev.cancel = true;
   if (id === "strength" && !strengthApplying.has(entity.id)) {
     ev.cancel = true;
     rememberExternalStrength(entity, effectAddSnapshot(ev));
@@ -725,7 +723,7 @@ system.runInterval(() => {
       applyBonusNaturalRegen(player);
       const hunger = player.getEffect("hunger");
       if (!hunger || hunger.duration < 30) player.addEffect("hunger", 60, { amplifier: 1, showParticles: false });
-      for (const id of ["regeneration", "absorption", "instant_health"]) if (player.getEffect(id)) player.removeEffect(id);
+      for (const id of ["regeneration", "instant_health"]) if (player.getEffect(id)) player.removeEffect(id);
       if (tick20 % 2 === 0) applySunPenalty(player);
     } catch (error) {
       console.error(`[ZombieGear] player update failed: ${error}`);

@@ -4,7 +4,7 @@ Status: implemented, validated with local tooling, applied to the two requested 
 
 ## Scope
 
-- Updated the existing Zombie Gear BP/RP to version 1.1.2.
+- Updated the existing Zombie Gear BP/RP to version 1.1.3.
 - Preserved the latest core BP dependency at `2b9dbf4f-7f7a-4e97-9687-4864e4f6f501` version `1.0.66`.
 - Updated `@minecraft/server` to `2.6.0` and the BP minimum engine version to `1.26.40`.
 - Integrated the v4 HD armor assets from the handoff: 20 attachables, 20 geometries, 20 armor textures, 20 merged item icons, and one render controller.
@@ -22,10 +22,10 @@ Status: implemented, validated with local tooling, applied to the two requested 
 - Infection attack/defense modifiers, melee infection, decay, and milk clearing remain in `scripts/combat.js`.
 - Zombie stem cell charge UI supports hold-sneak for 8 seconds, progress feedback, release cancellation, and completion-only zombie stem cell consumption. Normal item use no longer starts a charge.
 - The charge item is `pinematerials:zonbikansaibou`; the earlier `minecraft:totem_of_undying` check was replaced so the crafted zombie stem cell can actually charge revives.
-- Full Zombie Gear no longer blocks food use. Normal foods can be eaten, then hunger and saturation are restored to the pre-eat values and nausea is applied for 20 seconds. Blindness is no longer applied by eating.
-- Rotten flesh is the only food that directly heals HP for a full Zombie Gear wearer. Rotten flesh keeps its normal hunger/saturation recovery, does not apply nausea/blindness, heals 8 HP, and repairs Zombie Gear armor by 20%.
+- Full Zombie Gear no longer blocks food use. Normal foods can be eaten for their item effects only: hunger and saturation are restored to the pre-eat values, and Zombie Gear no longer adds nausea or blindness after eating.
+- Rotten flesh is the only food that directly heals HP for a full Zombie Gear wearer. Rotten flesh keeps its normal hunger/saturation recovery, does not apply nausea/blindness, heals 8 HP, and repairs Zombie Gear armor by 10%.
 - Night natural healing remains a full-set Zombie Gear ability.
-- Regeneration, absorption, and instant health effects remain blocked for full Zombie Gear.
+- Regeneration and instant health effects remain blocked for full Zombie Gear; absorption is allowed.
 
 ## Local Worlds Applied
 
@@ -34,7 +34,7 @@ Applied to both requested worlds:
 - `8v9pvwiD6QQ=` / `開発用ワールド`
 - `IC_Phase1_Fresh_20260911` / `IC Phase 1 - FRESH TEST 20260911`
 
-Each world received the changed Zombie Gear pack files. The applied files were hash-checked against the publish worktree, and both world registrations now point to BP/RP version `1.1.2`.
+Each world received the changed Zombie Gear pack files. The applied files were hash-checked against the publish worktree, and both world registrations now point to BP/RP version `1.1.3`.
 
 Backup directory:
 
