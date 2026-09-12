@@ -1,0 +1,96 @@
+{
+  "version": "0.2.5",
+  "distribution": {
+    "type": "normal truncated at +/-3 sigma; reject outliers",
+    "core": {
+      "minimumSeconds": 300,
+      "maximumSeconds": 900,
+      "meanSeconds": 600,
+      "parentSigmaSeconds": 100
+    },
+    "scenery": {
+      "minimumSeconds": 15,
+      "maximumSeconds": 120,
+      "meanSeconds": 67.5,
+      "parentSigmaSeconds": 17.5
+    }
+  },
+  "tests": {
+    "passed": 51,
+    "failed": 0,
+    "distributionSamplesPerTimer": 100000,
+    "clientGameplayTest": false
+  },
+  "local": [
+    {
+      "world": "IC_Phase1_Fresh_20260911",
+      "backup": "%USERPROFILE%/.codex/backups/ic-interval-20260912-105237/IC_Phase1_Fresh_20260911",
+      "versions": {
+        "3efecae8-a036-4e14-94d3-876e29fe0ae9": {
+          "old": [
+            0,
+            2,
+            4
+          ],
+          "new": [
+            0,
+            2,
+            5
+          ]
+        }
+      },
+      "files": {
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": "a82ff785e981dfef1f8e0ac6f560b6c5432eaf23491e0017bd999095f8b5d2ee",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js": "77a25798922d8063fd25e13ce8601be917f067babbfc38d201f8f9b0ca526849",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Config.js": "71d5433d856f2e1c13ddd817a15a42fa0830e0c1cc52dab7e456e2fff9446e64",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/reconstructionIntervals.js": "9ddbc70cc7d1a24911dd643e03f8c11c94598dc4eeb51294591d3a4d5c88a281",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionClock.test.js": "956b20e56b85d84508deb550250ee7ab9255e941fb75c7e791ee1c002a989dce",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionIntervals.test.js": "3369d313073512ac1d0af1d13dcb59c49dde827997a67160965cd9b6508ab580"
+      },
+      "saveDataWrites": 0,
+      "requiresWorldReload": true
+    },
+    {
+      "world": "8v9pvwiD6QQ=",
+      "backup": "%USERPROFILE%/.codex/backups/ic-interval-20260912-105237/8v9pvwiD6QQ=",
+      "versions": {
+        "3efecae8-a036-4e14-94d3-876e29fe0ae9": {
+          "old": [
+            0,
+            2,
+            4
+          ],
+          "new": [
+            0,
+            2,
+            5
+          ]
+        }
+      },
+      "files": {
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": "a82ff785e981dfef1f8e0ac6f560b6c5432eaf23491e0017bd999095f8b5d2ee",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js": "77a25798922d8063fd25e13ce8601be917f067babbfc38d201f8f9b0ca526849",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Config.js": "71d5433d856f2e1c13ddd817a15a42fa0830e0c1cc52dab7e456e2fff9446e64",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/reconstructionIntervals.js": "9ddbc70cc7d1a24911dd643e03f8c11c94598dc4eeb51294591d3a4d5c88a281",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionClock.test.js": "956b20e56b85d84508deb550250ee7ab9255e941fb75c7e791ee1c002a989dce",
+        "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/reconstructionIntervals.test.js": "3369d313073512ac1d0af1d13dcb59c49dde827997a67160965cd9b6508ab580"
+      },
+      "saveDataWrites": 0,
+      "requiresWorldReload": true
+    }
+  ],
+  "server": {
+    "status": "queued to apply automatically when player count reaches zero; user selected wait until players leave",
+    "stage": "/tmp/pinene-interval-20260912_105238",
+    "archiveSha256": "e368b70d553ce13a0a2ca5a55d05539747cae0da25e5020c9fd05d7989bcd194",
+    "queue": {
+      "unit": "pinene-interval-20260912-105238.service",
+      "stage": "/tmp/pinene-interval-20260912_105238",
+      "statusFile": "/tmp/pinene-interval-20260912_105238/queue-status.json",
+      "resultFile": "/tmp/pinene-interval-20260912_105238/result.json",
+      "condition": "zero connected players; fresh second check immediately before stop",
+      "payloadSha256": "e368b70d553ce13a0a2ca5a55d05539747cae0da25e5020c9fd05d7989bcd194"
+    }
+  },
+  "startup": null
+}

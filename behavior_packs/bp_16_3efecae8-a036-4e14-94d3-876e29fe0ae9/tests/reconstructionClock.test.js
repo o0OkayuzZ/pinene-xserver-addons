@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import vm from "node:vm";
 import { createReconstructionClock } from "../scripts/infinite_castle/reconstructionClock.js";
 import { createRebuildStartCue } from "../scripts/infinite_castle/sourcePartsRebuildFeedback.js";
-import { PHASE1 } from "../scripts/infinite_castle/phase1Config.js";
+import { drawReconstructionDelayTicks } from "../scripts/infinite_castle/reconstructionIntervals.js";
 
 function storage(entries = []) {
     const values = new Map(entries);
@@ -65,7 +65,7 @@ test("multiple reads in one tick do not advance the clock or write repeatedly", 
 // Execute the real manager's timer functions. Stub only the engine and the
 // expensive block builders, so a regression to daylight time fails this test.
 const manager = readFileSync(new URL("../scripts/infinite_castle/infiniteCastleManager.js", import.meta.url), "utf8");
-const constants = manager.slice(manager.indexOf("const SOURCE_DYNAMIC_INTERVAL_TICKS"), manager.indexOf("const returnPoints"));
+const constants = manager.slice(manager.indexOf("const SOURCE_DYNAMIC_NEXT_TICK_KEY"), manager.indexOf("const returnPoints"));
 const functions = manager.slice(manager.indexOf("function getSourceDynamicNextTick()"), manager.indexOf("system.runInterval(checkSceneryClock"));
 function timerHarness({ deferScenery = false, playersPresent = true } = {}) {
     const world = storage([
@@ -73,12 +73,12 @@ function timerHarness({ deferScenery = false, playersPresent = true } = {}) {
         ["infinite_castle:source_dynamic_next_tick_v1", 24000],
     ]);
     let tick = 0;
-    const sounds = [], attempts = [], cores = [];
+    const sounds = [], attempts = [], cores = [], draws = [];
     const players = [{ location: { x: 0, y: 80, z: 0 }, playSound: (id, options) => sounds.push({ id, options, tick }) }];
     const dimension = { id: "infinite_castle:dungeon", getPlayers: () => playersPresent ? players : [] };
     world.getDimension = () => dimension;
     const context = vm.createContext({
-        world, PHASE1, reconstructionNow: createReconstructionClock(world, () => tick),
+        world, drawReconstructionDelayTicks: kind => { draws.push({ kind, tick }); return drawReconstructionDelayTicks(kind, () => 0); }, reconstructionNow: createReconstructionClock(world, () => tick),
         USE_SOURCE_PARTS_MAIN_CASTLE: true, INFINITE_CASTLE_DIMENSION_ID: dimension.id,
         sourceDynamicReconstructionInProgress: false, dungeonResetInProgress: false, reconstructionInProgress: false,
         phase1RunState: () => "ACTIVE", getSourcePartsDemoEntranceTarget: () => ({ dimensionId: dimension.id }),
@@ -96,7 +96,7 @@ function timerHarness({ deferScenery = false, playersPresent = true } = {}) {
         },
     });
     vm.runInContext(constants + functions, context);
-    return { sounds, attempts, cores, context,
+    return { sounds, attempts, cores, draws, context,
         async advance(to) {
             for (; tick <= to; tick += 20) {
                 context.checkSourceDynamicReconstruction();
@@ -107,12 +107,12 @@ function timerHarness({ deferScenery = false, playersPresent = true } = {}) {
     };
 }
 
-test("real manager updates scenery with koto every 150 seconds and core at 15 minutes under Always Day", async () => {
+test("real manager updates scenery with koto at sampled intervals under fixed daylight under Always Day", async () => {
     const h = timerHarness();
-    await h.advance(18000);
-    assert.deepEqual(h.attempts, [200, 3200, 6200, 9200, 12200, 15200]);
-    assert.deepEqual(h.cores, [18000]);
-    assert.equal(h.sounds.filter(s => s.id === "infinite_castle.koto_distant").length, 6);
+    await h.advance(12000);
+    assert.deepEqual(h.attempts, [1360, 2720, 4080, 5440, 6800, 8160, 9520, 10880]);
+    assert.deepEqual(h.cores, [12000]);
+    assert.equal(h.sounds.filter(s => s.id === "infinite_castle.koto_distant").length, 8);
     assert.equal(h.sounds.filter(s => s.id === "infinite_castle.koto").length, 1);
     assert.ok(h.sounds.filter(s => s.id === "infinite_castle.koto_distant").every(s => s.options.location));
     assert.ok(h.sounds.filter(s => s.id === "infinite_castle.koto").every(s => !s.options.location));
@@ -120,9 +120,19 @@ test("real manager updates scenery with koto every 150 seconds and core at 15 mi
 
 test("player safety deferral still retries after 20 seconds without a false start sound", async () => {
     const h = timerHarness({ deferScenery: true });
-    await h.advance(1000);
-    assert.deepEqual(h.attempts, [200, 600, 1000]);
+    await h.advance(2160);
+    assert.deepEqual(h.attempts, [1360, 1760, 2160]);
     assert.equal(h.sounds.length, 0);
+    assert.equal(h.draws.length, 2, "deferred work does not reroll the regular interval");
+});
+
+test("checking a pending deadline does not redraw it; completion schedules the next draw once", async () => {
+    const h = timerHarness();
+    await h.advance(1000);
+    assert.deepEqual(h.draws, [{ kind: "core", tick: 0 }, { kind: "scenery", tick: 0 }]);
+    await h.advance(1360);
+    assert.deepEqual(h.draws.at(-1), { kind: "scenery", tick: 1360 });
+    assert.equal(h.draws.length, 3);
 });
 
 test("no players means no background or core reconstruction", async () => {

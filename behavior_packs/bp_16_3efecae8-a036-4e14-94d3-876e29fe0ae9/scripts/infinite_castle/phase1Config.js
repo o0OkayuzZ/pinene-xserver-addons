@@ -1,6 +1,7 @@
 // Phase 1 tuning. Physical placement and authored geometry are independent.
 export const PHASE1 = Object.freeze({
-    dynamicReconstructionIntervalMinutes: 15,
+    dynamicReconstructionIntervalMinutes: Object.freeze({ min: 5, max: 15 }),
+    sceneryReconstructionIntervalSeconds: Object.freeze({ min: 15, max: 120 }),
     protectionHops: 0,
     reconstructionCandidateAttempts: 4,
     playerCheckTicks: 10,
