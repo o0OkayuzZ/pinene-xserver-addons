@@ -1,6 +1,6 @@
 # Zombie Gear FINAL 実装・検証報告
 
-この文書は基準コミット `e5b7ef42` の記録です。後続の腐敗・夜間再生・同調報酬の仕様と検証結果は [SYNCHRONY_UPDATE.md](SYNCHRONY_UPDATE.md) を参照してください。
+この文書は基準コミット `e5b7ef42` の記録です。現行仕様と検証結果は [FINAL_MAIN_UPDATE.md](FINAL_MAIN_UPDATE.md) を参照してください。[SYNCHRONY_UPDATE.md](SYNCHRONY_UPDATE.md) は中間版の履歴です。
 
 2026-09-13。`CODEX_START_HERE.md`、FINAL仕様、承認済み参照画像に基づく実装。
 元ZIPは `ZombieGear_Codex_Handoff_FINAL_20260913.zip`。引き継ぎ資料は `handoff/` に保存。

@@ -46,7 +46,7 @@ function entity(gearStage = -1, isPlayer = true) {
     },
     triggerEvent(n) { if(n.startsWith('zombiegear:health')){this.baseHealth=n.endsWith('80')?80:20;this.health.effectiveMax=this.baseHealth+4*((this.effects.health_boost?.amplifier??-1)+1);}else this.kbEvent=n; },
     getEffect(n) { return this.effects[n]; },
-    addEffect(n,d,o) { const old=this.effects[n];const ev={entity:this,effectType:n,duration:d,cancel:false};if(!old)beforeEvents.effectAdd.emit(ev);if(ev.cancel)return;this.effects[n] = { typeId:n,duration:d, ...o }; if (n === 'health_boost') this.health.effectiveMax = (this.baseHealth??20) + 4*(o.amplifier+1); if(n==='absorption')this.absorption=4*(o.amplifier+1); if(!old)afterEvents.effectAdd.emit({entity:this,effect:this.effects[n]}); },
+    addEffect(n,d,o) { const old=this.effects[n];const ev={entity:this,effectType:n,duration:d,cancel:false};if(!old)beforeEvents.effectAdd.emit(ev);if(ev.cancel)return;this.effects[n] = { typeId:n,duration:d, ...o }; if (n === 'absorption') this.absorption=4*(o.amplifier+1); if (n === 'health_boost') this.health.effectiveMax = (this.baseHealth??20) + 4*(o.amplifier+1); if(!old)afterEvents.effectAdd.emit({entity:this,effect:this.effects[n]}); },
     removeEffect(n) { delete this.effects[n]; if(n==='absorption')this.absorption=0; if (n === 'health_boost') this.health.effectiveMax = this.baseHealth??20; },
     hasTag(t) { return this.tags.has(t); }, addTag(t) { this.tags.add(t); }, removeTag(t) { this.tags.delete(t); },
     getDynamicProperty(k) { return this.dynamic[k]; }, setDynamicProperty(k,v) { this.dynamic[k] = v; },
@@ -71,7 +71,7 @@ function hit(attacker,victim,n,cause='entityAttack', projectile=false) {
 const sandbox = { world, system, ItemStack, EquipmentSlot, EntityDamageCause, console: {info(){},warn:m=>warnings.push(m),error:m=>warnings.push(m)} };
 vm.createContext(sandbox);
 const code = ['rules.js','effects.js','diet.js','knockback.js','combat.js','controls.js','main.js'].map(f => fs.readFileSync(path.join(scriptDir,f),'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'')).join('\n');
-vm.runInContext(code + '\nglobalThis.api={infectionAt,damageMultiplier,corruption,revives,tryRevive,initializePlayer,forceMaxHpState,createArmorVariantItem,setCorruption,tickChargeCompletion,getScore,setScore,SCORE,beginCharge,syncStrengthBoost,reviveCap,knockback,applyBonusNaturalRegen};',sandbox);
+vm.runInContext(code + '\nglobalThis.api={infectionAt,damageMultiplier,corruption,revives,tryRevive,initializePlayer,forceMaxHpState,createArmorVariantItem,setCorruption,tickChargeCompletion,getScore,setScore,SCORE,beginCharge,syncStrengthBoost,reviveCap,knockback,applyBonusNaturalRegen,combat};',sandbox);
 flush();
 const api = sandbox.api;
 const near = (actual, expected) => assert.ok(Math.abs(actual-expected)<1e-8, `${actual} != ${expected}`);
@@ -81,10 +81,10 @@ test('corruption damage multiplier excludes the zombie gear strength slot bonus'
   [1,1.1,1.3,1.7,2.5].forEach((n,i)=>near(api.damageMultiplier(i,0,0,true),n));
   [1,1.1,1.3,1.7,2.5].forEach((n,i)=>near(api.damageMultiplier(i,0,0,false),n));
 });
-test('infection attack/defense and c4 severe product', () => {
-  [1,.9,.8,.7].forEach((n,i)=>{near(api.damageMultiplier(-1,i,0,false),n);near(api.damageMultiplier(-1,0,i,false),1/n);});
-  near(api.damageMultiplier(4,0,3,true),3/.7);
-  near(api.damageMultiplier(4,3,3,true),3);
+test('infection outgoing and incoming use separate tables with III capped at 1.30', () => {
+  [1,.9,.8,.7].forEach((n,i)=>{near(api.damageMultiplier(-1,i,0,false),n);near(api.damageMultiplier(-1,0,i,false),[1,1.1,1.2,1.3][i]);});
+  near(api.damageMultiplier(4,0,3,true),2.5*1.3);
+  near(api.damageMultiplier(4,3,3,true),2.5*.7*1.3);
 });
 test('infection decay boundaries 10/15/20/25 seconds', () => {
   for (const [tick,n] of [[0,3],[200,3],[299,3],[300,2],[399,2],[400,1],[499,1],[500,0]]) assert.equal(api.infectionAt({stage:3,lastHit:0},tick),n);
@@ -100,8 +100,8 @@ test('four revives consume resources and advance all four stages', () => {
   const p=entity(0);init(p,4);
   for(let i=1;i<=4;i++){assert.equal(api.tryRevive(p),true);assert.equal(api.corruption(p),i);assert.equal(api.revives(p),4-i);}
   assert.equal(api.tryRevive(p),false);
-  assert.equal(Object.keys(p.effects).sort().join(','),'absorption,resistance,speed');
-  assert.equal(p.effects.speed.duration,80);assert.equal(p.effects.speed.amplifier,2);
+  assert.equal(Object.keys(p.effects).sort().join(','),'speed');
+  assert.equal(p.effects.speed.duration,60);assert.equal(p.effects.speed.amplifier,1);
 });
 test('c4 stock clamps to zero and cannot revive',()=>{const p=entity(4);init(p,4);assert.equal(api.revives(p),0);assert.equal(api.tryRevive(p),false);});
 test('revive uses visible red flash and layered local revive sounds', () => {
@@ -118,11 +118,11 @@ test('revive uses visible red flash and layered local revive sounds', () => {
   assert.ok(p.sounds.some(s=>s.target==='player'));
   assert.ok(p.sounds.some(s=>s.target==='dimension'));
 });
-test('mixed stages use minimum C without rewriting, successful revive advances each piece',()=>{
+test('mixed stages use minimum C without rewriting, successful revive normalizes',()=>{
  const p=entity(4);p.slots.feet=new ItemStack('zombiegear:zombie_boots_c1');init(p,4);
  assert.equal(api.corruption(p),1);assert.equal(api.revives(p),3);assert.equal(p.slots.head.typeId,'zombiegear:zombie_helmet_c4');
  assert.ok(api.tryRevive(p));assert.equal(api.corruption(p),2);assert.equal(api.revives(p),2);
- assert.equal(p.slots.head.typeId,'zombiegear:zombie_helmet_c4');assert.equal(p.slots.feet.typeId,'zombiegear:zombie_boots_c2');
+ assert.ok(Object.values(p.slots).every(i=>i.typeId.endsWith('_c2')));
 });
 test('swap preserves durability enchantments name lore locks and dynamic properties', () => {
   const p=entity(0);init(p,1);Object.assign(p.slots.head,{nameTag:'Named',lore:['Lore'],keepOnDeath:true,lockMode:'slot',dynamic:{'test:value':42},enchantments:[{type:'protection',level:2}],destroy:['stone'],place:['dirt']});p.slots.head.durability.damage=47;
@@ -141,10 +141,10 @@ test('four single-stack zombie stem cells can fill all four revive charges', () 
 });
 test('melee infection has 40-tick pair cooldown; projectiles do not infect', () => {
   const a=entity(0), v=entity(-1,false);init(a);v.health.currentValue=1000;
-  system.currentTick=2000;hit(a,v,10);near(hit(undefined,v,10,'fire').damage,10/.9);
-  system.currentTick=2039;hit(a,v,10);near(hit(undefined,v,10,'fire').damage,10/.9);
-  system.currentTick=2040;hit(a,v,10);near(hit(undefined,v,10,'fire').damage,10/.8);
-  system.currentTick=2080;hit(a,v,10);near(hit(a,v,10).damage,12/.7);
+  system.currentTick=2000;hit(a,v,10);near(hit(undefined,v,10,'fire').damage,11);
+  system.currentTick=2039;hit(a,v,10);near(hit(undefined,v,10,'fire').damage,11);
+  system.currentTick=2040;hit(a,v,10);near(hit(undefined,v,10,'fire').damage,12);
+  system.currentTick=2080;hit(a,v,10);near(hit(a,v,10).damage,13);
   const fresh=entity(-1,false);fresh.health.currentValue=100;hit(a,fresh,1,'projectile',true);near(hit(undefined,fresh,10,'fire').damage,10);
 });
 test('milk clears infection and is not blocked by full-set diet', () => {
@@ -153,12 +153,12 @@ test('milk clears infection and is not blocked by full-set diet', () => {
 });
 test('nonlethal low-HP hit cannot consume a revive', () => {const p=entity(0);init(p,1);p.health.currentValue=10;hit(undefined,p,6,'fire');flush();assert.equal(api.revives(p),1);assert.equal(p.health.currentValue,4);});
 test('lethal hit revives, next queued hit still damages during recovery', () => {
-  const p=entity(0);init(p,2);p.health.currentValue=5;system.currentTick=4000;assert.equal(hit(undefined,p,6,'fire').cancel,true);hit(undefined,p,8,'fire');flush();assert.equal(api.revives(p),1);assert.equal(p.health.currentValue,60);
-  system.currentTick=4059;assert.equal(hit(undefined,p,2,'fire').cancel,false);flush();assert.equal(p.health.currentValue,58);
-  system.currentTick=4060;assert.equal(hit(undefined,p,2,'fire').cancel,false);assert.equal(p.health.currentValue,56);
+  const p=entity(0);init(p,2);p.health.currentValue=5;system.currentTick=4000;assert.equal(hit(undefined,p,6,'fire').cancel,true);hit(undefined,p,8,'fire');flush();assert.equal(api.revives(p),1);assert.equal(p.health.currentValue,32);
+  system.currentTick=4059;assert.equal(hit(undefined,p,2,'fire').cancel,false);flush();assert.equal(p.health.currentValue,30);
+  system.currentTick=4060;assert.equal(hit(undefined,p,2,'fire').cancel,false);assert.equal(p.health.currentValue,28);
 });
 test('multiple same-tick lethal hits consume distinct revives; native remainder', () => {
-  const p=entity(0);init(p,2);p.health.currentValue=5;system.currentTick=5000;hit(undefined,p,6,'fire');hit(undefined,p,100,'fire');hit(undefined,p,100,'fire');flush();flush();assert.equal(api.revives(p),0);assert.equal(p.health.currentValue,0);assert.equal(api.corruption(p),2);
+  const p=entity(0);init(p,2);p.health.currentValue=5;system.currentTick=5000;hit(undefined,p,6,'fire');hit(undefined,p,50,'fire');hit(undefined,p,50,'fire');flush();flush();assert.equal(api.revives(p),0);assert.equal(p.health.currentValue,0);assert.equal(api.corruption(p),2);
 });
 test('post-hurt and death cannot consume stock on a dead entity',()=>{
  const p=entity(0);init(p,1);p.health.currentValue=0;
@@ -240,7 +240,7 @@ test('environmental damage allows charge; attacker damage cancels it',()=>{
 });
 test('native damage and absorption remain active during recovery',()=>{
  const p=entity(0);init(p,2);p.health.currentValue=5;hit(undefined,p,10,'fire');flush();
- p.absorption=8;const native=p.nativeHits;assert.equal(hit(undefined,p,6,'fire').cancel,false);assert.equal(p.health.currentValue,64);assert.equal(p.absorption,2);assert.equal(p.nativeHits,native+1);
+ p.absorption=8;const native=p.nativeHits;assert.equal(hit(undefined,p,6,'fire').cancel,false);assert.equal(p.health.currentValue,40);assert.equal(p.absorption,2);assert.equal(p.nativeHits,native+1);
 });
 test('all native KB stages and mixed C1 select one group',()=>{
  [0,.1,.2,.3].forEach(()=>{});
@@ -303,31 +303,6 @@ test('C2 C3 C4 C2 remains a full set at minimum C2 without passive conversion',(
 });
 function mixed(stages,stock=1){const p=entity();for(const [i,[slot,part]]of Object.entries({head:'helmet',chest:'chestplate',legs:'leggings',feet:'boots'}).entries())p.slots[slot]=new ItemStack('zombiegear:zombie_'+part+(stages[i]?'_c'+stages[i]:''));init(p,stock);return p;}
 function stagesOf(p){return Object.values(p.slots).map(i=>Number(i.typeId.match(/_c(\d)$/)?.[1]??0));}
-for(const [before,after]of [[[0,1,2,3],[1,2,3,4]],[[1,3,4,4],[2,4,4,4]]])test('independent revive '+before,()=>{const p=mixed(before);assert.ok(api.tryRevive(p));assert.deepEqual(stagesOf(p),after);});
-for(const [count,stages,hp,amp,duration]of [[1,[1,4,4,4],8,1,60],[2,[1,1,3,4],16,1,60],[3,[2,2,2,4],32,1,60],[4,[3,3,3,3],64,2,80]])test('pre-transition synchrony '+count+' HP and rewards',()=>{
- const p=mixed(stages);p.fire=true;assert.ok(api.tryRevive(p));assert.equal(p.health.currentValue,hp);
- assert.equal(p.effects.speed.amplifier,amp);assert.equal(p.effects.speed.duration,duration);
- assert.equal(p.effects.absorption?.amplifier,count>=2?0:undefined);assert.equal(p.effects.absorption?.duration,count>=2?80:undefined);
- assert.equal(p.effects.resistance?.amplifier,count>=3?(count===4?1:0):undefined);assert.equal(p.effects.resistance?.duration,count>=3?80:undefined);
- assert.equal(p.effects.strength,undefined);assert.equal(p.fire,false);assert.equal(p.kbEvent,'zombiegear:kb_recovery');
- system.currentTick+=59;api.knockback.sync(p);assert.equal(p.kbEvent,'zombiegear:kb_recovery');system.currentTick++;api.knockback.sync(p);assert.equal(p.kbEvent,'zombiegear:kb_c'+api.corruption(p));
-});
-test('cleanse independently lowers high pieces even at effective C0 stock4',()=>{
- for(const [before,after,stock]of [[[2,4,4,4],[1,3,3,3],1],[[0,4,4,4],[0,3,3,3],4]]){
-  const p=mixed(before,stock);p.selected=new ItemStack('pinematerials:zonbikansaibou');system.currentTick+=500;api.beginCharge(p);assert.equal(api.getScore(p,api.SCORE.charging),1);system.currentTick+=160;api.tickChargeCompletion(p);assert.deepEqual(stagesOf(p),after);assert.equal(p.selected,undefined);assert.equal(api.revives(p),Math.min(4,stock+1));
- }
-});
-for(let c=0;c<5;c++)test('night regen C'+c+' interval and combat eligibility',()=>{
- const p=entity(c);init(p);p.health.currentValue=20;p.hunger.currentValue=8;api.setScore(p,api.SCORE.combatEnd,system.currentTick+10000);
- for(let seconds=1;seconds<=12;seconds++){api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,20+(c===4?0:Math.floor(seconds/(c+1))));}
-});
-test('regen resets for hunger, daytime, partial sets and corruption changes',()=>{
- const p=entity(2);init(p);p.health.currentValue=20;p.hunger.currentValue=8;
- api.applyBonusNaturalRegen(p);api.applyBonusNaturalRegen(p);p.hunger.currentValue=7;api.applyBonusNaturalRegen(p);p.hunger.currentValue=8;api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,20);
- world.getTimeOfDay=()=>1000;api.applyBonusNaturalRegen(p);world.getTimeOfDay=()=>14000;api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,20);
- delete p.slots.head;api.applyBonusNaturalRegen(p);equip(p,3);for(let i=0;i<3;i++)api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,20);api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,21);
- equip(p,4);for(let i=0;i<8;i++)api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,21);
-});
 function decorate(p){for(const [i,item]of Object.values(p.slots).entries())Object.assign(item,{nameTag:'named'+i,lore:['lore'+i],keepOnDeath:true,lockMode:'slot',dynamic:{'test:value':i},enchantments:[{type:{id:'protection'},level:2}],destroy:['stone'],place:['dirt'],durability:{maxDurability:110,damage:31+i}});}
 for(const action of ['revive','cleanse'])for(let fail=1;fail<=4;fail++)test(action+' rollback at slot '+fail+' preserves all resources and metadata',()=>{
  const p=mixed([1,2,3,4],2);decorate(p);p.health.currentValue=7;p.selected=new ItemStack('pinematerials:zonbikansaibou',3);
@@ -348,28 +323,118 @@ test('cell write that throws after mutation restores the cell and original mixed
  p.getComponent=n=>{const c=get(n);if(n.endsWith('inventory')){const set=c.container.setItem;c.container.setItem=(s,i)=>{set(s,i);if(first){first=false;throw Error('write failed after mutation');}};}return c;};
  api.tickChargeCompletion(p);assert.deepEqual(structuredClone(p.slots),original);assert.deepEqual(structuredClone(p.selected),cell);assert.equal(api.revives(p),1);assert.equal(p.health.currentValue,17);
 });
-test('old lethal absorption is settled before the new reward shield is granted',()=>{
- const p=mixed([1,1,3,4],2);p.health.currentValue=5;p.addEffect('absorption',200,{amplifier:0});
- hit(undefined,p,10,'override');flush();assert.equal(p.health.currentValue,16);assert.equal(p.absorption,4);assert.equal(api.revives(p),1);
- hit(undefined,p,3,'override');assert.equal(p.health.currentValue,16);assert.equal(p.absorption,1);
-});
-test('refreshed reward shield prevents a false lethal candidate with no effectAdd update event',()=>{
- const p=mixed([1,1,3,4],2);p.health.currentValue=5;p.addEffect('absorption',200,{amplifier:0});
- hit(undefined,p,10,'override');flush();const stock=api.revives(p);
- const candidate=hit(undefined,p,17,'override');assert.equal(candidate.cancel,false);flush();assert.equal(api.revives(p),stock);assert.equal(p.health.currentValue,3);
-});
-test('deferred old shield settlement event cannot erase the new reward shield ledger',()=>{
- const p=mixed([1,1,3,4],2);p.health.currentValue=5;p.addEffect('absorption',200,{amplifier:0});
- const emit=afterEvents.entityHurt.emit,events=[];afterEvents.entityHurt.emit=e=>events.push(e);
- try{hit(undefined,p,10,'override');flush();}finally{afterEvents.entityHurt.emit=emit;}
- events.forEach(emit);const stock=api.revives(p);assert.equal(hit(undefined,p,17,'override').cancel,false);flush();assert.equal(api.revives(p),stock);assert.equal(p.health.currentValue,3);
-});
-test('successful independent changes preserve every piece metadata',()=>{
+test('successful normalized changes preserve every piece metadata',()=>{
  const p=mixed([0,1,2,3],4);decorate(p);const originals=structuredClone(p.slots);assert.ok(api.tryRevive(p));
  for(const [slot,item]of Object.entries(p.slots)){const actual=structuredClone(item),expected=originals[slot];delete actual.typeId;delete expected.typeId;assert.deepEqual(actual,expected);}
 });
 test('C4 still accepts rotten flesh nutrition HP8 and repair',()=>{
  const p=entity(4);init(p);p.health.currentValue=20;p.slots.head.durability.damage=50;
  afterEvents.itemCompleteUse.emit({source:p,itemStack:new ItemStack('minecraft:rotten_flesh')});assert.equal(p.health.currentValue,28);assert.equal(p.slots.head.durability.damage,39);assert.equal(api.revives(p),0);near(api.damageMultiplier(4,0,0,true),2.5);
+});
+
+for(let c=0;c<=4;c++)test('native melee C'+c+' multiplier and infection',()=>{
+ const a=entity(c),v=entity(-1,false);init(a);v.health.currentValue=1000;
+ near(hit(a,v,10).damage,10*[1,1.1,1.3,1.7,2.5][c]);assert.equal(api.combat.infectionStage(v),1);
+});
+for(const [label,cause,projectile] of [
+ ['arrow','projectile',true],['crossbow','projectile',true],['thrown trident','projectile',true],
+ ['projectile with melee cause','entityAttack',true],['projectile without object','projectile',false],
+ ...['poison','wither','fire','fireTick','entityExplosion','blockExplosion','magic','fall','suffocation','drowning','override','addon_special'].map(c=>[c,c,false])
+])test('C4 excludes '+label+' from corruption and infection',()=>{
+ const a=entity(4),v=entity(-1,false);init(a);v.health.currentValue=1000;
+ near(hit(a,v,10,cause,projectile).damage,10);assert.equal(api.combat.infectionStage(v),0);
+});
+test('summoned mob does not inherit owner corruption or infection',()=>{
+ const owner=entity(4),summon=entity(-1,false),v=entity(-1,false);init(owner);summon.owner=owner;v.health.currentValue=1000;
+ near(hit(summon,v,10).damage,10);assert.equal(api.combat.infectionStage(v),0);
+});
+test('infection III incoming factor is 1.30 with or without full attacker',()=>{
+ const a=entity(4),v=entity(-1,false);init(a);v.health.currentValue=1000;
+ for(let i=0;i<3;i++){system.currentTick+=40;hit(a,v,1);}
+ near(hit(undefined,v,10,'fire').damage,13);
+ near(hit(a,v,10).damage,32.5);
+ near(hit(a,v,10,'projectile',true).damage,13);
+});
+test('internal lethal fallback replay applies infection and corruption multipliers once',()=>{
+ const a=entity(4),p=entity(0),infecter=entity(0);init(a);init(p,1);init(infecter);a.health.currentValue=80;
+ hit(infecter,a,1);hit(a,p,1);p.health.currentValue=20;
+ const original=p.applyDamage.bind(p),amounts=[];p.applyDamage=(n,source)=>{amounts.push(n);original(n,source);};
+ const get=p.getComponent.bind(p);let writes=0;
+ p.getComponent=n=>{const c=get(n);if(n.endsWith('equippable')){const set=c.setEquipment;c.setEquipment=(s,i)=>++writes===2?false:set(s,i);}return c;};
+ assert.equal(hit(a,p,10).cancel,true);flush();
+ assert.equal(amounts.length,1);near(amounts[0],10*2.5*.9*1.1);assert.equal(p.health.currentValue,0);assert.equal(api.revives(p),1);
+ assert.equal(api.combat.infectionStage(p),1);
+});
+test('native absorption prevents false revive and is spent by lethal recovery',()=>{
+ const p=entity(0);init(p,2);p.health.currentValue=5;p.addEffect('absorption',200,{amplifier:1});
+ assert.equal(hit(undefined,p,6,'override').cancel,false);flush();assert.equal(api.revives(p),2);assert.equal(p.health.currentValue,5);assert.equal(p.absorption,2);
+ assert.equal(hit(undefined,p,8,'override').cancel,true);flush();assert.equal(api.revives(p),1);assert.equal(p.health.currentValue,40);assert.equal(p.absorption,0);
+});
+for(const stages of [[4,4,4,1],[2,3,4,2],[4,1,3,2]])test('mixed '+stages+' preserves full abilities and IDs until success',()=>{
+ const p=mixed(stages,4),before=stagesOf(p),c=Math.min(...stages);p.health.currentValue=40;
+ api.syncStrengthBoost(p,true);api.knockback.sync(p);api.applyBonusNaturalRegen(p);
+ assert.equal(p.health.effectiveMax,80);assert.equal(p.effects.strength.amplifier,0);assert.equal(p.health.currentValue,41);
+ near(api.knockback.resistance(p),[.4,.56,.72,.88,1][c]);assert.deepEqual(stagesOf(p),before);
+ const v=entity(-1,false);v.health.currentValue=1000;near(hit(p,v,10).damage,10*[1,1.1,1.3,1.7,2.5][c]);assert.equal(api.combat.infectionStage(v),1);
+ assert.ok(api.tryRevive(p));assert.deepEqual(stagesOf(p),[c+1,c+1,c+1,c+1]);assert.equal(p.health.currentValue,40);
+});
+for(const before of [[2,4,4,4],[0,1,2,3]])test('successful mixed cleanse normalizes '+before,()=>{
+ const p=mixed(before,1);decorate(p);const originals=structuredClone(p.slots);p.selected=new ItemStack('pinematerials:zonbikansaibou');
+ system.currentTick+=500;api.beginCharge(p);system.currentTick+=160;api.tickChargeCompletion(p);
+ const c=Math.max(0,Math.min(...before)-1);assert.deepEqual(stagesOf(p),[c,c,c,c]);assert.equal(api.revives(p),2);assert.equal(p.selected,undefined);
+ for(const [slot,item]of Object.entries(p.slots)){const actual=structuredClone(item),expected=originals[slot];delete actual.typeId;delete expected.typeId;assert.deepEqual(actual,expected);}
+});
+test('equipment change clamps raw Player Entity score by the next tick for all stages',()=>{
+ const update=intervals.filter(([,n])=>n===1).at(-1)[0];
+ for(let c=0;c<=4;c++){const p=entity(0);init(p,4);equip(p,c);assert.equal(api.revives(p),4-c);update();assert.equal(api.getScore(p,api.SCORE.revives),4-c);}
+});
+for(let c=0;c<=4;c++)test('C'+c+' night regen remains 1 HP per second during combat',()=>{
+ const p=entity(c);init(p);p.health.currentValue=20;p.hunger.currentValue=8;api.setScore(p,api.SCORE.combatEnd,system.currentTick+10000);
+ for(let seconds=1;seconds<=12;seconds++){api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,20+seconds);}
+});
+test('night regen respects hunger daytime partial armor and living HP',()=>{
+ const p=entity(4);init(p);p.health.currentValue=20;p.hunger.currentValue=7;api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,20);
+ p.hunger.currentValue=8;world.getTimeOfDay=()=>1000;api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,20);world.getTimeOfDay=()=>14000;
+ delete p.slots.head;api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,20);equip(p,4);p.health.currentValue=0;api.applyBonusNaturalRegen(p);assert.equal(p.health.currentValue,0);
+});
+test('Strength external none I II gains one level and restores',()=>{
+ for(const amp of [-1,0,1]){const p=entity();if(amp>=0)p.addEffect('strength',600,{amplifier:amp});equip(p,0);init(p);api.syncStrengthBoost(p,true);assert.equal(p.effects.strength.amplifier,amp+1);delete p.slots.head;api.syncStrengthBoost(p,false);assert.equal(p.effects.strength?.amplifier,amp<0?undefined:amp);}
+});
+for(const action of ['revive','cleanse'])test(action+' rejected score write restores HP gear stock and cell',()=>{
+ const p=mixed([1,2,3,4],2);decorate(p);p.health.currentValue=7;p.selected=new ItemStack('pinematerials:zonbikansaibou',3);
+ const original=structuredClone(p.slots),cell=structuredClone(p.selected),obj=objectives.get(api.SCORE.revives),set=obj.setScore;let first=true;
+ if(action==='cleanse'){system.currentTick+=500;api.beginCharge(p);system.currentTick+=160;}
+ obj.setScore=(who,n)=>{if(who===p&&first){first=false;throw Error('score rejected');}set(who,n);};
+ try{if(action==='revive')assert.equal(api.tryRevive(p),false);else api.tickChargeCompletion(p);}finally{obj.setScore=set;}
+ assert.deepEqual(structuredClone(p.slots),original);assert.deepEqual(structuredClone(p.selected),cell);assert.equal(api.revives(p),2);assert.equal(p.health.currentValue,7);
+});
+for(const action of ['revive','cleanse'])test(action+' metadata construction failure leaves four originals and resources',()=>{
+ const p=mixed([1,2,3,4],2);decorate(p);p.selected=new ItemStack('pinematerials:zonbikansaibou',3);p.health.currentValue=7;
+ const originals=structuredClone(p.slots),cell=structuredClone(p.selected);
+ if(action==='cleanse'){system.currentTick+=500;api.beginCharge(p);system.currentTick+=160;}
+ const set=ItemStack.prototype.setDynamicProperty;ItemStack.prototype.setDynamicProperty=function(){throw Error('metadata rejected');};
+ try{if(action==='revive')assert.equal(api.tryRevive(p),false);else api.tickChargeCompletion(p);}finally{ItemStack.prototype.setDynamicProperty=set;}
+ assert.deepEqual(structuredClone(p.slots),originals);assert.deepEqual(structuredClone(p.selected),cell);assert.equal(api.revives(p),2);assert.equal(p.health.currentValue,7);
+});
+test('all twenty armor items use protection 2/4/4/1 and no additive KB',()=>{
+ for(let c=0;c<=4;c++){let total=0;for(const [part,n]of [['helmet',2],['chestplate',4],['leggings',4],['boots',1]]){
+ const item=JSON.parse(fs.readFileSync(path.join(scriptDir,'../items/zombie_'+part+(c?'_c'+c:'')+'.item.json'),'utf8'))['minecraft:item'].components;
+ assert.equal(item['minecraft:wearable'].protection,n);assert.equal(item['minecraft:attribute_modifiers'],undefined);total+=n;}assert.equal(total,11);}
+});
+test('revive HP40 fire clear Speed II and native recovery KB last three seconds',()=>{
+ const p=mixed([4,4,4,1],1);p.fire=true;assert.ok(api.tryRevive(p));assert.equal(p.health.currentValue,40);assert.equal(p.fire,false);
+ assert.equal(p.effects.speed.amplifier,1);assert.equal(p.effects.speed.duration,60);assert.equal(p.effects.absorption,undefined);assert.equal(p.effects.resistance,undefined);
+ assert.equal(p.kbEvent,'zombiegear:kb_recovery');system.currentTick+=59;api.knockback.sync(p);assert.equal(p.kbEvent,'zombiegear:kb_recovery');system.currentTick++;api.knockback.sync(p);assert.equal(p.kbEvent,'zombiegear:kb_c2');
+});
+test('silent cell write rejection restores armor and leaves stock unchanged',()=>{
+ const p=mixed([2,4,4,4],1);p.selected=new ItemStack('pinematerials:zonbikansaibou');const originals=structuredClone(p.slots);
+ system.currentTick+=500;api.beginCharge(p);system.currentTick+=160;const get=p.getComponent.bind(p);
+ p.getComponent=n=>{const c=get(n);if(n.endsWith('inventory'))c.container.setItem=()=>{};return c;};
+ api.tickChargeCompletion(p);assert.deepEqual(structuredClone(p.slots),originals);assert.equal(api.revives(p),1);assert.equal(p.selected.amount,1);
+});
+test('normal food retains speed resistance and absorption effects',()=>{
+ const p=entity(0);init(p);const e={source:p,itemStack:new ItemStack('minecraft:golden_apple')};beforeEvents.itemUse.emit(e);
+ for(const id of ['speed','resistance','absorption'])p.addEffect(id,200,{amplifier:0});
+ afterEvents.itemCompleteUse.emit(e);for(const id of ['speed','resistance','absorption'])assert.equal(p.effects[id].duration,200);
 });
 console.log(`${checks} gameplay tests passed (API mock; not an engine test)`);

@@ -2,17 +2,10 @@
 export const CORRUPTION_ATTACK_BONUS = Object.freeze([0, 0.1, 0.3, 0.7, 1.5]);
 export const CORRUPTION_ATTACK = Object.freeze(CORRUPTION_ATTACK_BONUS.map(n => 1 + n));
 export const INFECTION_ATTACK = Object.freeze([1, 0.9, 0.8, 0.7]);
+export const INFECTION_INCOMING = Object.freeze([1, 1.1, 1.2, 1.3]);
 export const MAX_REVIVES = 4;
 export const REVIVE_TICKS = 60;
 export const REVIVE_SPEED_AMPLIFIER = 1;
-export const NIGHT_REGEN_SECONDS = Object.freeze([1, 2, 3, 4, 0]);
-export function reviveReward(syncCount) {
-  const count = Math.max(1, clampStage(syncCount));
-  return { hp: Math.min(80, 8 * 2 ** (count - 1)),
-    speed: { amplifier: count === 4 ? 2 : 1, duration: count === 4 ? 80 : 60 },
-    absorption: count >= 2 ? { amplifier: 0, duration: 80 } : null,
-    resistance: count >= 3 ? { amplifier: count === 4 ? 1 : 0, duration: 80 } : null };
-}
 export const INFECTION_CD = 40;
 
 export function clampStage(value, max = 4) {
@@ -25,14 +18,12 @@ export function infectionAt(record, tick) {
   return Math.max(0, record.stage - steps);
 }
 
-export function damageMultiplier(corruption, attackerInfection, victimInfection, fullSet) {
+export function damageMultiplier(corruption, attackerInfection, victimInfection) {
   const corruptionBonus = corruption >= 0 ? CORRUPTION_ATTACK_BONUS[clampStage(corruption)] : 0;
   const attack = 1 + corruptionBonus;
   const infectionAttack = INFECTION_ATTACK[clampStage(attackerInfection, 3)];
-  // A 30% defense loss is represented as dividing incoming damage by 0.7.
-  const defense = 1 / INFECTION_ATTACK[clampStage(victimInfection, 3)];
-  const severe = fullSet && victimInfection === 3 ? 1.2 : 1;
-  return attack * infectionAttack * defense * severe;
+  const incoming = INFECTION_INCOMING[clampStage(victimInfection, 3)];
+  return attack * infectionAttack * incoming;
 }
 
 export const KNOCKBACK_RESISTANCE = Object.freeze([0.40, 0.56, 0.72, 0.88, 1]);

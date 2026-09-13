@@ -1,7 +1,9 @@
 # Zombie Gear FINAL：腐敗・同調報酬の更新
 
+これは `a9929d9a` 時点の旧仕様の記録です。現行仕様・検証結果は [FINAL_MAIN_UPDATE.md](FINAL_MAIN_UPDATE.md) を参照してください。各部位独立変換・同調報酬・段階別夜間回復は後続依頼により置き換えられています。
+
 基準：`e5b7ef42de070f7ce9729bb7cf94b22d5a78d239`。
-この文書が今回の変更仕様。`handoff/`、`IMPLEMENTATION_REPORT.md`、既存`engine-smoke.log`は基準実装時点の記録として保持している。
+`handoff/`、`IMPLEMENTATION_REPORT.md`、既存`engine-smoke.log`は基準実装時点の記録として保持している。
 
 ## 仕様
 
