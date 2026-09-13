@@ -24203,8 +24203,8 @@
     "usage": "封印中の宝箱は開けません。解除後に「報酬を準備しています」と出る場合は投入処理を待ちます。",
     "obtaining": "無限城内の探索で扱う機能です。入口の場所や参加条件は公開案内を準備中です。",
     "details": [
-      "報酬は宝箱の27枠に対して抽選する設定です。1枠を基本報酬から選び、ほかの26枠は空欄も含めて抽選します。",
-      "すべての枠が埋まることや、特定のアイテムが必ず出ることを示すものではありません。",
+      "報酬は通常16〜20枠、Elite19〜23枠、宝物庫23〜27枠に入り、選ばれた枠はすべて空欄なしの報酬テーブルで抽選します。",
+      "特定のアイテムが必ず出ることを示すものではありません。",
       "受け取り済みの宝箱を再起動で補充し直さない処理があります。",
       "鍵持ちを倒したあとも残敵は続行します。"
     ],
@@ -24212,7 +24212,7 @@
     "recipe": null,
     "visibility": "public",
     "evidence": {
-      "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80",
+      "commit": "e2577119d778901ad116d1cbd231b76058584db9",
       "paths": [
         "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Runtime.js",
         "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Combat.js",
@@ -37712,23 +37712,22 @@
     "name": "無限城の宝箱抽選",
     "kind": "feature",
     "contentId": "better-structure-loot",
-    "summary": "最低1枠の報酬と、26枠の追加抽選。",
-    "description": "27枠からランダムに1枠を選び基本報酬を保証し、残り26枠は空欄も含めて個別抽選します。同じアイテムが別の枠に出ることもあります。",
+    "summary": "通常16〜20枠、Elite19〜23枠、宝物庫23〜27枠。",
+    "description": "抽選した数の枠をランダムに選び、各枠に同じ重み付き報酬テーブルから1回ずつ報酬を入れます。同じアイテムが別の枠に出ることもあります。",
     "usage": "無限城の戦闘を終え、宝箱の封印を解除します。",
     "obtaining": "新しく生成される無限城報酬に適用します。",
     "details": [
-      "7種類は報酬区分の数で、アイテムの種類数ではありません。",
-      "配布済みのチェストは再抽選・再配置・再補充しません。",
-      "処理の再開時にも、確定済みの枠を再抽選しない仕組みです。"
+      "腐肉・キノコ・パンケーキ・金などを基本報酬に、部屋別の素材・ポーション・進行素材を抽選します。",
+      "配布済みの箱は再抽選・再補充しません。",
+      "実機の報酬表示とポーション出力は引き続き確認対象です。"
     ],
     "image": null,
     "recipe": null,
     "visibility": "public",
     "evidence": {
-      "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be",
+      "commit": "e2577119d778901ad116d1cbd231b76058584db9",
       "paths": [
-        "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/guard.json",
-        "docs/infinite_castle/slot-rewards-20260912.md"
+        "docs/bsl/CASTLE_V4_UPDATE.md"
       ]
     }
   },

@@ -1,6 +1,6 @@
 {
   "schema_version": "0.2.0",
-  "source_commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be",
+  "source_commit": "e2577119d778901ad116d1cbd231b76058584db9",
   "contents": [
     {
       "id": "pvp-island",
@@ -456,12 +456,12 @@
         {
           "kind": "code",
           "result": "confirmed",
-          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
+          "commit": "e2577119d778901ad116d1cbd231b76058584db9"
         },
         {
           "kind": "registration",
           "result": "confirmed",
-          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
+          "commit": "e2577119d778901ad116d1cbd231b76058584db9"
         },
         {
           "kind": "gameplay",
@@ -470,30 +470,30 @@
         {
           "kind": "server-start",
           "result": "confirmed",
-          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
+          "commit": "e2577119d778901ad116d1cbd231b76058584db9"
         }
       ],
       "summary": "構造物と無限城の宝箱に、探索の報酬を。",
-      "description": "構造物の宝箱に食料・素材・収集品などの報酬を設定する仕組みです。無限城では宝箱の27枠を個別に抽選し、最低1枠の基本報酬と空欄を含む追加報酬を組み合わせます。",
+      "description": "構造物の宝箱に食料・素材・収集品などの報酬を設定します。通常チェスト33種類は少量ずつ繰り返し抽選し、レア報酬は独立して抽選します。無限城は通常16〜20枠、Elite19〜23枠、宝物庫23〜27枠に報酬を入れます。",
       "image": {
         "src": "/images/infinite-castle.svg",
         "alt": "宝箱を探す無限城のイメージ。実際のゲーム画面ではありません。",
         "kind": "concept"
       },
       "highlights": [
-        "無限城の27枠から1枠を選び、基本報酬を保証。",
-        "残り26枠は空欄も含めて個別に抽選。",
-        "衛兵・怨霊・呪術・混成・重装・Elite・宝物庫の7種類の報酬設定。",
-        "配布済みの宝箱は再抽選や補充を行いません。"
+        "通常チェスト：Early 13〜17回、Mid 14〜18回、High 14〜19回、End 15〜20回の基本抽選。",
+        "無限城：通常16〜20枠、Elite19〜23枠、宝物庫23〜27枠。",
+        "青リンゴ・食品・収集品などの独立レア抽選と、特別な3種類の宝箱を維持。",
+        "生成済み・配布済みの宝箱は再抽選や補充を行いません。"
       ],
-      "guide": "新しく報酬が生成される宝箱が対象です。無限城では戦闘を終え、鍵持ちを倒して宝箱の封印を解除してください。空欄があっても抽選結果として確定していることがあります。",
+      "guide": "新しく報酬が生成される宝箱が対象です。通常構造物の抽選回数は、実際に埋まる枠数とは異なります。無限城では鍵持ちを倒し、宝箱の封印を解除してください。",
       "children": [],
       "evidence": {
-        "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be",
+        "commit": "e2577119d778901ad116d1cbd231b76058584db9",
         "paths": [
-          "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/manifest.json",
-          "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/guard.json",
-          "docs/infinite_castle/slot-rewards-20260912.md"
+          "docs/bsl/WEIGHTED_REBALANCE_V2_UPDATE.md",
+          "docs/bsl/CASTLE_V4_UPDATE.md",
+          "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/manifest.json"
         ]
       }
     },

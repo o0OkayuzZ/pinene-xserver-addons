@@ -17,7 +17,12 @@ test('September release publishes Zombie Gear FINAL and its crafting materials',
 test('September release publishes BSL and preserved temporary castle rules',async({page})=>{
  await page.goto('/pine-server/contents/better-structure-loot/');
  await expect(page.getByRole('heading',{level:1})).toHaveText('Better Structure Loot');
- await expect(page.locator('body')).toContainText('27枠');
+ await expect(page.locator('body')).toContainText('16〜20枠');
+ await expect(page.locator('body')).toContainText('Early 13〜17回');
+ await expect(page.locator('body')).toContainText('End 15〜20回');
+ await expect(page.locator('body')).not.toContainText('残り26枠');
+ await page.goto('/pine-server/database/entries/bsl-castle-slot-rewards/');
+ await expect(page.locator('body')).toContainText('Elite19〜23枠');
  await page.goto('/pine-server/database/entries/castle-reconstruction/');
  await expect(page.locator('body')).toContainText('5〜15分');
  await page.goto('/pine-server/database/entries/castle-temporary-death/');
