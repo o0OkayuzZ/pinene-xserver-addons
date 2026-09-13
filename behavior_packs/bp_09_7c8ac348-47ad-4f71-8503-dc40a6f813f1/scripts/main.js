@@ -1,30 +1,12 @@
 import { world, system, EquipmentSlot, ItemStack } from "@minecraft/server";
+import { installManagedEffects } from "./effects.js";
+import { installDiet } from "./diet.js";
+import { installKnockback } from "./knockback.js";
 import { installCombat } from "./combat.js";
 import { installGearControls } from "./controls.js";
-import { MAX_REVIVES, REVIVE_TICKS, REVIVE_SPEED_AMPLIFIER, clampStage } from "./rules.js";
+import { MAX_REVIVES, REVIVE_TICKS, REVIVE_SPEED_AMPLIFIER, clampStage, reviveCap } from "./rules.js";
 
-// バニラ食料IDセット（スクリプティングAPIはバニラItemのfoodコンポーネントを返さないため手動リスト）
-const VANILLA_FOOD_IDS = new Set([
-  "minecraft:apple", "minecraft:golden_apple", "minecraft:enchanted_golden_apple",
-  "minecraft:bread", "minecraft:cookie", "minecraft:pumpkin_pie",
-  "minecraft:carrot", "minecraft:golden_carrot", "minecraft:potato",
-  "minecraft:baked_potato", "minecraft:poisonous_potato",
-  "minecraft:beef", "minecraft:cooked_beef",
-  "minecraft:porkchop", "minecraft:cooked_porkchop",
-  "minecraft:chicken", "minecraft:cooked_chicken",
-  "minecraft:mutton", "minecraft:cooked_mutton",
-  "minecraft:rabbit", "minecraft:cooked_rabbit",
-  "minecraft:cod", "minecraft:cooked_cod",
-  "minecraft:salmon", "minecraft:cooked_salmon",
-  "minecraft:tropical_fish", "minecraft:pufferfish",
-  "minecraft:melon_slice", "minecraft:sweet_berries", "minecraft:glow_berries",
-  "minecraft:beetroot", "minecraft:beetroot_soup",
-  "minecraft:mushroom_stew", "minecraft:rabbit_stew",
-  "minecraft:suspicious_stew", "minecraft:dried_kelp",
-  "minecraft:honey_bottle", "minecraft:milk_bucket",
-  "minecraft:spider_eye", "minecraft:chorus_fruit",
-  "minecraft:egg" // チキンジョッキー用（食べられる）
-]);
+
 
 const ZOMBIE_ITEMS = {
   stemCell: "pinematerials:zonbikansaibou",
@@ -72,6 +54,7 @@ function getHealth(player) {
 }
 
 function getEquippable(player) {
+  if (!player?.isValid) return undefined;
   return player.getComponent("equippable");
 }
 
@@ -133,7 +116,7 @@ function getScore(player, name) {
     return 0;
   }
   try {
-    const value = obj.getScore(player.scoreboardIdentity);
+    const value = obj.getScore(player);
     return typeof value === "number" ? value : 0;
   } catch (e) {
     return 0;
@@ -146,7 +129,7 @@ function setScore(player, name, value) {
     return;
   }
   try {
-    obj.setScore(player.scoreboardIdentity, value);
+    obj.setScore(player, value);
   } catch (e) {
     // Player identity can disappear during logout/death ticks.
   }
@@ -344,24 +327,19 @@ const BONUS_REGEN_MIN_FOOD = 8;
 const ROTTEN_FLESH_HEAL = 8;
 const ROTTEN_FLESH_REPAIR_FRACTION = 0.10;
 const STRENGTH_EFFECT_TICKS = 80;
-const mismatchWarnings = new Set();
-const ownedHealthBoost = new Map();
-const ownedStrengthBase = new Map();
-const strengthApplying = new Set();
 const chargeSnapshots = new Map();
-const foodSnapshots = new Map();
 
 function corruption(player) {
   const armor = getArmor(player);
   const stages = Object.entries(ARMOR_SLOT_KEYS).map(([key]) => getArmorTypeIds(key).indexOf(armor[key]?.typeId));
-  return stages[0] >= 0 && stages.every(n => n === stages[0]) ? stages[0] : -1;
+  return stages.every(n => n >= 0) ? Math.min(...stages) : -1;
 }
 
 function initializePlayer(player) {
   if (getScore(player, SCORE.migrated)) return;
   // Preserve the old equipped, uniform charge count once, without rewriting IDs.
   // Inventory/unequipped cN items now mean corruption and do not grant resources.
-  setScore(player, SCORE.revives, Math.max(0, corruption(player)));
+  setScore(player, SCORE.revives, Math.min(reviveCap(corruption(player)), Math.max(0, corruption(player))));
   setScore(player, SCORE.migrated, 1);
   stopCharging(player);
   setScore(player, SCORE.combatEnd, 0);
@@ -373,119 +351,12 @@ function initializePlayer(player) {
   player.removeTag("zs_zombie_heal_bypass");
 }
 
-function isFoodItem(stack) {
-  if (!stack || stack.typeId === "minecraft:milk_bucket") return false;
-  if (stack.typeId === "minecraft:rotten_flesh") return true;
-  return VANILLA_FOOD_IDS.has(stack.typeId) || !!stack.getComponent("minecraft:food");
-}
-
-function getFoodComponent(player, componentName) {
-  try {
-    return player.getComponent(componentName);
-  } catch (error) {
-    return undefined;
-  }
-}
-
-function snapshotFoodState(player, itemStack) {
-  if (!isFullZombieArmor(player) || !isFoodItem(itemStack) || itemStack.typeId === "minecraft:rotten_flesh") return;
-  foodSnapshots.set(player.id, {
-    typeId: itemStack.typeId,
-    hunger: getFoodComponent(player, "minecraft:player.hunger")?.currentValue,
-    saturation: getFoodComponent(player, "minecraft:player.saturation")?.currentValue
-  });
-}
-
-function restoreFoodValue(player, componentName, value) {
-  if (typeof value !== "number") return;
-  const component = getFoodComponent(player, componentName);
-  if (!component) return;
-  try {
-    component.currentValue = value;
-  } catch (error) {
-    try {
-      component.setCurrentValue(value);
-    } catch (ignored) {
-      // Some runtime builds expose the food values as read-only.
-    }
-  }
-}
-
-function applyFullSetFoodAftermath(player, itemStack) {
-  if (!isFullZombieArmor(player) || !isFoodItem(itemStack) || itemStack.typeId === "minecraft:rotten_flesh") return;
-  const snapshot = foodSnapshots.get(player.id);
-  foodSnapshots.delete(player.id);
-  restoreFoodValue(player, "minecraft:player.hunger", snapshot?.hunger);
-  restoreFoodValue(player, "minecraft:player.saturation", snapshot?.saturation);
-}
-
-function rememberExternalStrength(player, effect) {
-  if (!effect) {
-    ownedStrengthBase.delete(player.id);
-    return;
-  }
-  const duration = Number.isFinite(effect.duration) ? Math.max(1, effect.duration) : STRENGTH_EFFECT_TICKS;
-  const amplifier = Number.isFinite(effect.amplifier) ? effect.amplifier : 0;
-  ownedStrengthBase.set(player.id, { amplifier, endTick: system.currentTick + duration });
-}
-
-function currentExternalStrength(player) {
-  const base = ownedStrengthBase.get(player.id);
-  if (!base) return undefined;
-  if (base.endTick <= system.currentTick) {
-    ownedStrengthBase.delete(player.id);
-    return undefined;
-  }
-  return base;
-}
-
-function addManagedStrength(player, duration, amplifier) {
-  strengthApplying.add(player.id);
-  try {
-    player.addEffect("strength", duration, { amplifier, showParticles: false });
-    player.setDynamicProperty("zombiegear:strength_boost_owned", true);
-  } finally {
-    strengthApplying.delete(player.id);
-  }
-}
-
-function syncStrengthBoost(player, full) {
-  const owned = !!player.getDynamicProperty("zombiegear:strength_boost_owned");
-  const current = player.getEffect("strength");
-  if (!full) {
-    if (owned) {
-      player.removeEffect("strength");
-      const base = currentExternalStrength(player);
-      if (base) player.addEffect("strength", Math.max(1, base.endTick - system.currentTick), { amplifier: base.amplifier, showParticles: true });
-    }
-    ownedStrengthBase.delete(player.id);
-    player.setDynamicProperty("zombiegear:strength_boost_owned", undefined);
-    return;
-  }
-  if (current && !owned) rememberExternalStrength(player, current);
-  const base = currentExternalStrength(player);
-  const desiredAmplifier = (base ? base.amplifier : -1) + 1;
-  const desiredDuration = base ? Math.max(STRENGTH_EFFECT_TICKS, base.endTick - system.currentTick) : STRENGTH_EFFECT_TICKS;
-  if (!current || current.amplifier !== desiredAmplifier || current.duration < 40 || !owned) {
-    addManagedStrength(player, desiredDuration, desiredAmplifier);
-  }
-}
-
-function effectAddId(ev) {
-  const raw = ev.effectType?.id ?? ev.effectType ?? ev.effect?.typeId ?? ev.effect?.type?.id ?? "";
-  return String(raw).replace("minecraft:", "");
-}
-
-function effectAddSnapshot(ev) {
-  return {
-    amplifier: Number.isFinite(ev.amplifier) ? ev.amplifier : Number.isFinite(ev.effect?.amplifier) ? ev.effect.amplifier : 0,
-    duration: Number.isFinite(ev.duration) ? ev.duration : Number.isFinite(ev.effect?.duration) ? ev.effect.duration : STRENGTH_EFFECT_TICKS
-  };
-}
-
+const managedEffects = installManagedEffects(isFullZombieArmor);
+function forceMaxHpState(player) { managedEffects.syncHealth(player, isFullZombieArmor(player)); }
+function syncStrengthBoost(player, full) { managedEffects.syncStrength(player, full); }
 
 function revives(player) {
-  return clampStage(getScore(player, SCORE.revives));
+  return Math.min(clampStage(getScore(player, SCORE.revives)), reviveCap(corruption(player)));
 }
 
 function createArmorVariantItem(sourceItem, targetTypeId) {
@@ -577,73 +448,49 @@ function applyReviveVision(player) {
   }
 }
 
-function tryRevive(player) {
-  if (!canRevive(player)) return false;
-  if (!setCorruption(player, Math.min(4, corruption(player) + 1))) return false;
-  setScore(player, SCORE.revives, revives(player) - 1);
-  forceMaxHpState(player);
-  const h = getHealth(player);
-  h.setCurrentValue(Math.min(h.effectiveMax, 40));
-  player.extinguishFire(true);
-  player.addEffect("speed", REVIVE_TICKS, { amplifier: REVIVE_SPEED_AMPLIFIER, showParticles: true });
-  playReviveSounds(player);
-  applyReviveVision(player);
-  player.sendMessage(`[ZombieGear] 蘇生: 残り${revives(player)}/4・腐敗${corruption(player)}/4`);
-  return true;
+function armorSnapshot(player) {
+  const eq = getEquippable(player);
+  return [EquipmentSlot.Head, EquipmentSlot.Chest, EquipmentSlot.Legs, EquipmentSlot.Feet]
+    .map(slot => [slot, eq.getEquipment(slot)]);
 }
 
-function tryEmergencyRevive(player, reason) {
-  if (player?.typeId !== "minecraft:player" || !player.isValid || !canRevive(player)) return false;
-  const health = getHealth(player);
-  if (!health || health.currentValue > 0) return false;
+function rollbackArmor(player, originals) {
+  const eq = getEquippable(player);
+  for (const [slot, item] of originals) {
+    if (!eq.setEquipment(slot, item)) throw new Error(`Armor rollback failed: ${slot}`);
+  }
+  setScore(player, SCORE.corruption, corruption(player));
+}
+
+function tryRevive(player) {
+  const h = getHealth(player);
+  // Dead entities must never consume resources, even if isValid remains true.
+  if (!player.isValid || !h || h.currentValue <= 0 || !canRevive(player)) return false;
+  const stock = revives(player), target = Math.min(4, corruption(player) + 1);
+  const originals = armorSnapshot(player), previousHp = h.currentValue;
+  if (!setCorruption(player, target)) return false;
+  try {
+    forceMaxHpState(player);
+    h.setCurrentValue(Math.min(h.effectiveMax, 40));
+    if (h.currentValue < Math.min(h.effectiveMax, 40)) throw new Error("HP recovery did not succeed");
+    setScore(player, SCORE.revives, Math.min(stock - 1, reviveCap(target)));
+  } catch (error) {
+    rollbackArmor(player, originals);
+    setScore(player, SCORE.revives, stock);
+    h.setCurrentValue(previousHp);
+    console.error(`[ZombieGear] revive rolled back: ${error}`);
+    return false;
+  }
   stopCharging(player);
   chargeSnapshots.delete(player.id);
-  const revived = tryRevive(player);
-  if (revived) {
-    setCombatNow(player);
-    player.addEffect("resistance", REVIVE_TICKS, { amplifier: 4, showParticles: false });
-    console.warn(`[ZombieGear] emergency revive recovered ${player.id} after ${reason}`);
-  }
-  return revived;
-}
-
-function forceMaxHpState(player) {
-  if (isFullZombieArmor(player)) {
-    const effect = player.getEffect("health_boost");
-    if (!ownedHealthBoost.has(player.id)) {
-      // Save a pre-existing boost so unequipping does not erase another addon.
-      const alreadyOwned = player.getDynamicProperty("zombiegear:health_boost_owned");
-      const saved = player.getDynamicProperty("zombiegear:prior_health_boost");
-      let prior = null;
-      if (alreadyOwned && typeof saved === "string") {
-        try { prior = JSON.parse(saved); } catch (error) { /* discard invalid legacy metadata */ }
-      } else if (!alreadyOwned && effect && effect.amplifier !== 14) {
-        prior = { amplifier: effect.amplifier, end: Date.now() + effect.duration * 50 };
-      }
-      ownedHealthBoost.set(player.id, prior);
-      player.setDynamicProperty("zombiegear:prior_health_boost", prior ? JSON.stringify(prior) : undefined);
-      player.setDynamicProperty("zombiegear:health_boost_owned", true);
-    }
-    if (!effect || effect.amplifier !== 14 || effect.duration < 100) {
-      player.addEffect("health_boost", 600, { amplifier: 14, showParticles: false });
-    }
-  } else if (ownedHealthBoost.has(player.id) || player.getDynamicProperty("zombiegear:health_boost_owned")) {
-    let prior = ownedHealthBoost.get(player.id);
-    if (!ownedHealthBoost.has(player.id)) {
-      try { prior = JSON.parse(player.getDynamicProperty("zombiegear:prior_health_boost") ?? "null"); } catch (error) { prior = null; }
-    }
-    if (player.getEffect("health_boost")?.amplifier === 14) {
-      player.removeEffect("health_boost");
-      if (prior && prior.end > Date.now()) {
-        player.addEffect("health_boost", Math.max(1, Math.ceil((prior.end - Date.now()) / 50)), { amplifier: prior.amplifier, showParticles: false });
-      }
-    }
-    ownedHealthBoost.delete(player.id);
-    player.setDynamicProperty("zombiegear:health_boost_owned", undefined);
-    player.setDynamicProperty("zombiegear:prior_health_boost", undefined);
-    const h = getHealth(player);
-    if (h && h.currentValue > h.effectiveMax) h.setCurrentValue(h.effectiveMax);
-  }
+  try {
+    player.extinguishFire(true);
+    player.addEffect("speed", REVIVE_TICKS, { amplifier: REVIVE_SPEED_AMPLIFIER, showParticles: true });
+    playReviveSounds(player);
+    applyReviveVision(player);
+    player.sendMessage(`[ZombieGear] 蘇生: 残り${revives(player)}/${reviveCap(target)}・腐敗${target}/4`);
+  } catch (error) { console.warn(`[ZombieGear] revive feedback: ${error}`); }
+  return true;
 }
 
 function heal(player, amount) {
@@ -661,84 +508,69 @@ function markCombat(entity) {
   }
 }
 
-function tickChargeCompletion(player) {
-  if (!isCharging(player)) return;
-  if (!isFullZombieArmor(player) || inCombat(player) ||
-      JSON.stringify(Object.values(getArmor(player)).map(i => i?.typeId)) !== chargeSnapshots.get(player.id)) {
-    stopCharging(player);
-    chargeSnapshots.delete(player.id);
-    return;
-  }
-  if (system.currentTick < getScore(player, SCORE.chargeEnd)) return;
-  stopCharging(player);
-  chargeSnapshots.delete(player.id);
-  if (revives(player) >= MAX_REVIVES || !consumeOneSelectedItem(player, ZOMBIE_ITEMS.stemCell)) {
-    player.sendMessage("[ZombieGear] チャージ失敗: ゾンビ幹細胞を手に持ち続けてください");
-    return;
-  }
-  setScore(player, SCORE.revives, revives(player) + 1);
-  player.sendMessage(`[ZombieGear] チャージ完了: ${revives(player)}/4`);
+function chargeSignature(player) {
+  return JSON.stringify(armorSnapshot(player).map(([slot, item]) => [slot, item?.typeId,
+    item?.nameTag, item?.getLore(), item?.getDynamicPropertyIds().map(id => [id, item.getDynamicProperty(id)]),
+    item?.getComponent("minecraft:enchantable")?.getEnchantments().map(e => [e.type.id, e.level])]));
 }
 
-const combat = installCombat({ isFull: isFullZombieArmor, corruption, canRevive, tryRevive, markCombat });
+function holdingStemCell(player) {
+  return isStemCellItem(player.getComponent("minecraft:inventory")?.container?.getItem(player.selectedSlotIndex)?.typeId);
+}
+
+function tickChargeCompletion(player) {
+  if (!isCharging(player)) return;
+  const snapshot = chargeSnapshots.get(player.id);
+  if (!snapshot || !player.isSneaking || !holdingStemCell(player) || !isFullZombieArmor(player) || inCombat(player) ||
+      snapshot.slot !== player.selectedSlotIndex || chargeSignature(player) !== snapshot.armor) {
+    stopCharging(player); chargeSnapshots.delete(player.id); return;
+  }
+  if (system.currentTick < getScore(player, SCORE.chargeEnd)) return;
+  stopCharging(player); chargeSnapshots.delete(player.id);
+  const stage = corruption(player), stock = revives(player);
+  if (stage === 0 && stock >= MAX_REVIVES) return;
+  const originals = armorSnapshot(player), target = Math.max(0, stage - 1);
+  if (!setCorruption(player, target)) return;
+  try {
+    if (!consumeOneSelectedItem(player, ZOMBIE_ITEMS.stemCell)) throw new Error("Stem cell is no longer selected");
+  } catch (error) {
+    rollbackArmor(player, originals);
+    console.warn(`[ZombieGear] charge rolled back: ${error}`);
+    return;
+  }
+  setScore(player, SCORE.revives, Math.min(stock + 1, reviveCap(target)));
+  player.sendMessage(`[ZombieGear] 浄化・チャージ完了: 腐敗${target} / 蘇生${revives(player)}/${reviveCap(target)}`);
+}
+
+const knockback = installKnockback({ corruption, getArmor });
+const combat = installCombat({ isFull: isFullZombieArmor, corruption, canRevive, tryRevive, markCombat, knockback });
 
 function beginCharge(player) {
   initializePlayer(player);
-  if (!isFullZombieArmor(player) || inCombat(player) || isCharging(player) || revives(player) >= MAX_REVIVES ||
-      !isStemCellItem(player.getComponent("minecraft:inventory")?.container?.getItem(player.selectedSlotIndex)?.typeId)) return;
+  if (!player.isSneaking || !isFullZombieArmor(player) || inCombat(player) || isCharging(player) ||
+      (corruption(player) === 0 && revives(player) >= MAX_REVIVES) || !holdingStemCell(player)) return;
   startCharging(player);
-  chargeSnapshots.set(player.id, JSON.stringify(Object.values(getArmor(player)).map(i => i?.typeId)));
+  chargeSnapshots.set(player.id, { slot: player.selectedSlotIndex, armor: chargeSignature(player) });
 }
 
 installGearControls({
   state(player) {
     return {
       full: isFullZombieArmor(player), corruption: corruption(player), revives: revives(player),
-      infection: combat.infectionStage(player), charging: isCharging(player),
-      chargeEnd: getScore(player, SCORE.chargeEnd), combat: inCombat(player),
-      holdingTotem: isStemCellItem(player.getComponent("minecraft:inventory")?.container?.getItem(player.selectedSlotIndex)?.typeId)
+      maxRevives: reviveCap(corruption(player)), infection: combat.infectionStage(player), charging: isCharging(player),
+      chargeEnd: getScore(player, SCORE.chargeEnd), combat: inCombat(player), holdingStemCell: holdingStemCell(player)
     };
   },
   start: beginCharge,
   cancel(player) { stopCharging(player); chargeSnapshots.delete(player.id); }
 });
 
-// Full sets may eat normal food for item buffs only; rotten flesh keeps its normal food recovery.
-world.beforeEvents.itemUse.subscribe(ev => {
-  snapshotFoodState(ev.source, ev.itemStack);
-});
+installDiet({ isFull: isFullZombieArmor, heal, repairArmor });
 
-world.afterEvents.itemCompleteUse.subscribe(ev => {
-  if (!isFullZombieArmor(ev.source)) return;
-  applyFullSetFoodAftermath(ev.source, ev.itemStack);
-  if (ev.itemStack.typeId !== "minecraft:rotten_flesh") return;
-  heal(ev.source, ROTTEN_FLESH_HEAL);
-  repairArmor(ev.source, ROTTEN_FLESH_REPAIR_FRACTION);
-});
-
-world.afterEvents.entityHurt.subscribe(ev => {
-  const entity = ev.hurtEntity;
-  if (entity?.typeId !== "minecraft:player") return;
-  tryEmergencyRevive(entity, "post-hurt lethal damage");
-});
-
-world.beforeEvents.effectAdd.subscribe(ev => {
-  const entity = ev.entity;
-  if (!isFullZombieArmor(entity)) return;
-  const id = effectAddId(ev);
-  if (["regeneration", "instant_health"].includes(id)) ev.cancel = true;
-  if (id === "strength" && !strengthApplying.has(entity.id)) {
-    ev.cancel = true;
-    rememberExternalStrength(entity, effectAddSnapshot(ev));
-    system.run(() => { if (entity.isValid) syncStrengthBoost(entity, true); });
-  }
-});
-
+// Death is cleanup only; recovery must happen before native death is committed.
 world.afterEvents.entityDie.subscribe(ev => {
-  const entity = ev.deadEntity;
-  if (entity?.typeId !== "minecraft:player") return;
-  tryEmergencyRevive(entity, "death event");
-  system.run(() => { if (entity.isValid) tryEmergencyRevive(entity, "deferred death event"); });
+  if (ev.deadEntity.typeId !== "minecraft:player") return;
+  chargeSnapshots.delete(ev.deadEntity.id);
 });
 
 world.afterEvents.playerSpawn.subscribe(ev => {
@@ -751,19 +583,27 @@ world.afterEvents.playerSpawn.subscribe(ev => {
     forceMaxHpState(ev.player);
   });
 });
-world.afterEvents.playerLeave.subscribe(ev => {
-  ownedHealthBoost.delete(ev.playerId);
-  ownedStrengthBase.delete(ev.playerId);
-  strengthApplying.delete(ev.playerId);
-  chargeSnapshots.delete(ev.playerId);
-  foodSnapshots.delete(ev.playerId);
-  mismatchWarnings.delete(ev.playerId);
-});
+world.afterEvents.playerLeave.subscribe(ev => { chargeSnapshots.delete(ev.playerId); });
+
+// Completion and resource clamping run every tick, independently of the 1-second aura.
+system.runInterval(() => {
+  for (const player of world.getAllPlayers()) {
+    try {
+      initializePlayer(player);
+      const stock = revives(player);
+      if (stock !== getScore(player, SCORE.revives)) setScore(player, SCORE.revives, stock);
+      tickChargeCompletion(player);
+      knockback.sync(player);
+      forceMaxHpState(player);
+      syncStrengthBoost(player, isFullZombieArmor(player));
+    } catch (error) { if (player.isValid) console.warn(`[ZombieGear] tick failed: ${error}`); }
+  }
+}, 1);
 
 system.run(() => {
   ensureObjectives();
   for (const player of world.getAllPlayers()) initializePlayer(player);
-  console.info("[ZombieGear] v4 HD gameplay boot OK; server API 2.6.0");
+  console.info("[ZombieGear] FINAL gameplay boot OK; server API 2.6.0");
 });
 
 let tick20 = 0;
@@ -773,16 +613,11 @@ system.runInterval(() => {
     try {
       initializePlayer(player);
       forceMaxHpState(player);
-      tickChargeCompletion(player);
       const full = isFullZombieArmor(player);
       const current = corruption(player);
       setScore(player, SCORE.corruption, current);
-      if (full && current < 0) {
-        if (!mismatchWarnings.has(player.id)) {
-          mismatchWarnings.add(player.id);
-          console.warn(`[ZombieGear] mismatched corruption for ${player.id}: multiplier/revive disabled; items unchanged`);
-        }
-      } else mismatchWarnings.delete(player.id);
+
+
       syncStrengthBoost(player, full);
       if (!full) continue;
       applyBonusNaturalRegen(player);

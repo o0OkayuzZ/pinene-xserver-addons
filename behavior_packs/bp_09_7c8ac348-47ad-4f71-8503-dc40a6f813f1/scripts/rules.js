@@ -26,3 +26,6 @@ export function damageMultiplier(corruption, attackerInfection, victimInfection,
   const severe = fullSet && victimInfection === 3 ? 1.2 : 1;
   return attack * infectionAttack * defense * severe;
 }
+
+export const KNOCKBACK_RESISTANCE = Object.freeze([0.40, 0.56, 0.72, 0.88, 1]);
+export function reviveCap(stage) { return stage < 0 ? MAX_REVIVES : MAX_REVIVES - clampStage(stage); }

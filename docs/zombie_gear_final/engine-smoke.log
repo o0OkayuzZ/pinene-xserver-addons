@@ -1,0 +1,235 @@
+18:39:38[Scripting][verbose]-Plugin Discovered [ZombieGear FINAL TEST behavior_packs] PackId [3170f843-c9a5-5cd4-8588-ffd0788bae0e_1.2.0] ModuleId [bc64001b-2de0-54b5-9fe0-020364bcb2fd]
+
+
+18:39:39[Scripting][verbose]-Plugin [ZombieGear FINAL TEST behavior_packs] - promoted [@minecraft/server] from [2.6.0] to [2.9.0] requested by [ZombieGear FINAL TEST behavior_packs - 1.2.0].
+
+
+18:39:39[Scripting][verbose]-Plugin [ZombieGear FINAL TEST behavior_packs] - promoted [@minecraft/server-bindings] from [2.6.0] to [2.9.0] requested by [@minecraft/server - 2.6.0].
+
+
+18:39:40[Scripting][inform]-[ZombieGear] FINAL gameplay boot OK; server API 2.6.0
+
+
+18:39:48[Scripting][warning]-[ZG-EFFECT-NAMES] minecraft:instant_damage,minecraft:weakness,minecraft:invisibility,minecraft:empty,minecraft:absorption,minecraft:strength,minecraft:haste,minecraft:resistance,minecraft:speed,minecraft:slowness,minecraft:trial_omen,minecraft:mining_fatigue,minecraft:instant_health,minecraft:jump_boost,minecraft:weaving,minecraft:regeneration,minecraft:nausea,minecraft:fire_resistance,minecraft:infested,minecraft:saturation,minecraft:water_breathing,minecraft:blindness,minecraft:night_vision,minecraft:hunger,minecraft:poison,minecraft:wither,minecraft:health_boost,minecraft:levitation,minecraft:fatal_poison,minecraft:conduit_power,minecraft:slow_falling,minecraft:bad_omen,minecraft:village_hero,minecraft:darkness,minecraft:wind_charged,minecraft:oozing,minecraft:raid_omen,minecraft:breath_of_the_nautilus
+
+
+18:39:48[Scripting][warning]-[ZG-FINAL] PASS instant health blocked: actual=40 expected=40
+
+
+18:39:48[Scripting][warning]-[ZG-FINAL] PASS regeneration blocked: actual=0 expected=0
+
+
+18:39:49[Scripting][warning]-[ZG-FINAL] PASS HP80: actual=80 expected=80
+
+
+18:39:49[Scripting][warning]-[ZG-FINAL] PASS armor11: actual=11 expected=11
+
+
+18:39:49[Scripting][warning]-[ZG-FINAL] BEFORE damage=7.599998474121094 hp=72.4000015258789 cancel=false cause=entityAttack
+
+
+18:39:49[Scripting][warning]-[ZG-FINAL] AFTER damage=7.599998474121094 hp=72.4000015258789
+
+
+18:39:50[Scripting][warning]-[ZG-FINAL] armor probe native HP loss=7.599998474121094
+
+
+18:39:50[Scripting][warning]-[ZG-FINAL] BEFORE damage=6 hp=74 cancel=false cause=override
+
+
+18:39:50[Scripting][warning]-[ZG-FINAL] AFTER damage=6 hp=80
+
+
+18:39:51[Scripting][warning]-[ZG-FINAL] absorption probe native HP loss=0
+
+
+18:39:51[Scripting][warning]-[ZG-FINAL] BEFORE damage=10 hp=-5 cancel=true cause=override
+
+
+18:39:52[Scripting][warning]-[ZG-FINAL] PASS lethal stock3: actual=3 expected=3
+
+
+18:39:52[Scripting][warning]-[ZG-FINAL] PASS lethal C1: actual=1 expected=1
+
+
+18:39:52[Scripting][warning]-[ZG-FINAL] PASS revive HP40: actual=40 expected=40
+
+
+18:39:53[Scripting][warning]-[ZG-FINAL] BEFORE damage=6 hp=34 cancel=false cause=override
+
+
+18:39:53[Scripting][warning]-[ZG-FINAL] AFTER damage=6 hp=40
+
+
+18:39:53[Scripting][warning]-[ZG-FINAL] PASS recovery absorption protects HP: actual=40 expected=40
+
+
+18:39:53[Scripting][warning]-[ZG-FINAL] PASS recovery native stock unchanged: actual=3 expected=3
+
+
+18:39:54[Scripting][warning]-[ZG-FINAL] BEFORE damage=6 hp=-4 cancel=false cause=override
+
+
+18:39:54[Scripting][warning]-[ZG-FINAL] AFTER damage=6 hp=2
+
+
+18:39:54[Scripting][warning]-[ZG-FINAL] PASS absorption prevents false lethal revive: actual=3 expected=3
+
+
+18:39:54[Scripting][warning]-[ZG-FINAL] PASS absorbed low HP hit: actual=2 expected=2
+
+
+18:39:54[Scripting][warning]-[ZG-FINAL] PASS external Strength II + gear III: actual=2 expected=2
+
+
+18:39:54[Scripting][warning]-[ZG-FINAL] PASS restore Strength II: actual=1 expected=1
+
+
+18:39:54[Scripting][warning]-[ZG-FINAL] PASS restore external health boost14: actual=14 expected=14
+
+
+18:39:54[Scripting][warning]-[ZG-FINAL] PASS mixed minimum1: actual=1 expected=1
+
+
+18:39:54[Scripting][warning]-[ZG-FINAL] PASS mixed cap3: actual=3 expected=3
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS C4 stock0: actual=0 expected=0
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS revive transition C1: actual=1 expected=1
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS revive stock 3: actual=3 expected=3
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS revive transition C2: actual=2 expected=2
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS revive stock 2: actual=2 expected=2
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS revive transition C3: actual=3 expected=3
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS revive stock 1: actual=1 expected=1
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS revive transition C4: actual=4 expected=4
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS revive stock 0: actual=0 expected=0
+
+
+18:39:55[Scripting][warning]-[ZG-FINAL] PASS fifth denied: actual=0 expected=0
+
+
+18:40:00[Scripting][warning]-[ZG-FINAL] PASS native unequipped HP20: actual=20 expected=20
+
+
+18:40:01[Scripting][warning]-[ZG-FINAL] BEFORE damage=3 hp=17 cancel=false cause=entityAttack
+
+
+18:40:01[Scripting][warning]-[ZG-FINAL] AFTER damage=3 hp=17
+
+
+18:40:01[Sound][inform]-No sound found for block type 'normal'
+
+
+18:40:04[Scripting][warning]-[ZG-FINAL] BEFORE damage=1.8600006103515625 hp=78.13999938964844 cancel=false cause=entityAttack
+
+
+18:40:04[Scripting][warning]-[ZG-FINAL] AFTER damage=1.8600006103515625 hp=78.13999938964844
+
+
+18:40:07[Scripting][warning]-[ZG-FINAL] BEFORE damage=1.8600006103515625 hp=78.13999938964844 cancel=false cause=entityAttack
+
+
+18:40:07[Scripting][warning]-[ZG-FINAL] AFTER damage=1.8600006103515625 hp=78.13999938964844
+
+
+18:40:10[Scripting][warning]-[ZG-FINAL] BEFORE damage=1.8600006103515625 hp=78.13999938964844 cancel=false cause=entityAttack
+
+
+18:40:10[Scripting][warning]-[ZG-FINAL] AFTER damage=1.8600006103515625 hp=78.13999938964844
+
+
+18:40:13[Scripting][warning]-[ZG-FINAL] BEFORE damage=1.8600006103515625 hp=78.13999938964844 cancel=false cause=entityAttack
+
+
+18:40:13[Scripting][warning]-[ZG-FINAL] AFTER damage=1.8600006103515625 hp=78.13999938964844
+
+
+18:40:16[Scripting][warning]-[ZG-FINAL] BEFORE damage=1.8600006103515625 hp=78.13999938964844 cancel=false cause=entityAttack
+
+
+18:40:16[Scripting][warning]-[ZG-FINAL] AFTER damage=1.8600006103515625 hp=78.13999938964844
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] BEFORE damage=1.8600006103515625 hp=78.13999938964844 cancel=false cause=entityAttack
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] AFTER damage=1.8600006103515625 hp=78.13999938964844
+
+
+18:40:19[Scripting][warning]-[ZG-KB-PROBE] [{"c":-1,"attacked":true,"distance":2.0131687145393036,"vertical":1.153106689453125,"origin":{"x":-0.38618141412734985,"y":-62.599998474121094,"z":-0.10423004627227783}},{"c":0,"attacked":true,"distance":1.08551346356165,"vertical":0.5015830993652344,"origin":{"x":-0.22489255666732788,"y":-62.75120162963867,"z":-0.08380541205406189}},{"c":1,"attacked":true,"distance":0.7076087421577058,"vertical":0.27211761474609375,"origin":{"x":-0.16991984844207764,"y":-62.827999114990234,"z":-0.04586121439933777}},{"c":2,"attacked":true,"distance":0.3805056349683864,"vertical":0.11009597778320312,"origin":{"x":-0.1081308051943779,"y":-62.90480041503906,"z":-0.029184401035308838}},{"c":3,"attacked":true,"distance":0.12688446383840207,"vertical":0,"origin":{"x":-0.045814722776412964,"y":-62.98160171508789,"z":0.014293253421783447}},{"c":4,"attacked":true,"distance":0.000037139481496034576,"vertical":0,"origin":{"x":0.0000011324882507324219,"y":-63,"z":-3.5762786865234375e-7}},{"c":5,"attacked":true,"distance":0.7072660330565045,"vertical":0.2686920166015625,"origin":{"x":-0.16991984844207764,"y":-62.827999114990234,"z":-0.04586121439933777}}]
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] PASS native melee baseline moves: actual=1 expected=1
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] PASS native C4 immune: actual=1 expected=1
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] PASS native measured KB C0: actual=0.39999992835873355 expected=0.4
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] PASS native measured KB C1: actual=0.5599999405827993 expected=0.56
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] PASS native measured KB C2: actual=0.7199999854668533 expected=0.72
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] PASS native measured KB C3: actual=0.8800185925536325 expected=0.88
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] PASS native measured KB C4: actual=0.9999970309645467 expected=1
+
+
+18:40:19[Scripting][warning]-[ZG-FINAL] PASS native measured KB mixed C1: actual=0.5599999405827993 expected=0.56
+
+
+18:40:20[Scripting][warning]-[ZG-FINAL] PASS mid-gear external health boost HP80: actual=80 expected=80
+
+
+18:40:20[Scripting][warning]-[ZG-FINAL] PASS mid-gear external health boost restored: actual=2 expected=2
+
+
+18:40:20[Scripting][warning]-[ZG-FINAL] DONE
+
+
+18:40:20[Scripting][warning]-[ZG-FOOD] READY
+
+
+18:40:45[Scripting][warning]-[ZG-FINAL] PASS native apple hunger unchanged: actual=5 expected=5
+
+
+18:40:45[Scripting][warning]-[ZG-FINAL] PASS native apple saturation unchanged: actual=0 expected=0
+
+
+18:40:47[Scripting][warning]-[ZG-FINAL] PASS native rotten HP8: actual=8 expected=8
+
+
+18:40:47[Scripting][warning]-[ZG-FINAL] PASS native rotten hunger gain: actual=4 expected=4
+
+
+18:40:47[Scripting][warning]-[ZG-FINAL] PASS native rotten repair10%: actual=89 expected=89
+
+
+18:41:50[Scripting][warning]-[ZG-FINAL] PASS native cake hunger unchanged: actual=9 expected=9
+
+
+18:41:50[Scripting][warning]-[ZG-FINAL] PASS native cake saturation unchanged: actual=0 expected=0
+
+
+18:41:50[Scripting][warning]-[ZG-FOOD] DONE
