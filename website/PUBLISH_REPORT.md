@@ -1,5 +1,7 @@
 # GitHub Pages公開記録
 
+> 2026-09-13：Dungeons未掲載分を243項目まとめて追加し、図鑑950項目・976ページを公開しました。生成物bc25dd48、配置成功。[追加内容・全件分類・公開URL・画像](DUNGEONS_BULK_REPORT.md)。
+
 > 2026-09-13：Dungeonsの近接レシピ52件を追加し、733ページを公開。[変更・検証・残数](DUNGEONS_MELEE_RECIPES_REPORT.md)。
 
 > 最新：Cloudflareの基本集計をGA4と併用する更新を公開しました。[変更・公開検証・未確認事項](CLOUDFLARE_CONNECTION_REPORT.md)。

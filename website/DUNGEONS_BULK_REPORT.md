@@ -38,3 +38,16 @@
 公開分離単体4件と、識別用の非公開・下書きデータを入れた実ビルドの混入検査が成功。出力995テキスト資産に内部パス・生JSON・旧ブランド等の混入はありません。根拠のクロスレビューでは武器37レシピを全件、アーティファクトの例外的な効果指定や一部レシピを独立照合しました。テスト中の計測スクリプトは遮断し、架空の訪問集計を作っていません。
 
 [PCのアーティファクト](artifacts/dungeons-bulk-artifact-1440.png) / [スマホのアーティファクト](artifacts/dungeons-bulk-artifact-390.png) / [PCのレシピ検索](artifacts/dungeons-bulk-search-1440.png) / [スマホのレシピ検索](artifacts/dungeons-bulk-search-390.png)
+
+## 実際の公開URL・commit
+
+実装commit `643f644e`、公開生成物 `bc25dd48c363171f3b920b08c570b41f7a95b7d2`。[Pages配置](https://github.com/o0OkayuzZ/pine-server/actions/runs/34733995246)は成功しました。以下を390px・768px・1440pxで確認し、HTTP 200、画像表示、横はみ出しなし、JavaScriptエラーなしでした。
+
+- [Dungeons紹介](https://o0okayuzz.github.io/pine-server/contents/minecraft-dungeons/)：749項目と追加した7分類を確認。
+- [Dungeonsのレシピ検索](https://o0okayuzz.github.io/pine-server/database/recipes/?content=minecraft-dungeons)：267件から「ダイヤモンドの粉」で40件へ絞り込み。
+- [ガーディアンの目・レア](https://o0okayuzz.github.io/pine-server/database/entries/dungeons-rare-eye-of-the-guardian/)
+- [古代の鍵](https://o0okayuzz.github.io/pine-server/database/entries/dungeons-ancient-key/)
+- [砂漠のレンガ](https://o0okayuzz.github.io/pine-server/database/entries/dungeons-desert-bricks/)
+- [弱化ドラ・レア](https://o0okayuzz.github.io/pine-server/database/entries/dungeons-rare-gong-of-weakening/)：ダメージ補正の対象外条件を含む最終説明を確認。
+
+上のスクリーンショットは公開サイトで撮影したものです。専用Webブランチへpushし、[PR #1](https://github.com/o0OkayuzZ/pinene-xserver-addons/pull/1)の説明も現在の実装・検証結果へ更新しました。
