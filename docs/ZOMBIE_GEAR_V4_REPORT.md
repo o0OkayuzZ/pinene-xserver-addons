@@ -4,14 +4,16 @@ Status: implemented, validated with local tooling, applied to the two requested 
 
 ## Scope
 
-- Updated the existing Zombie Gear BP/RP to version 1.1.3.
-- Preserved the latest core BP dependency at `2b9dbf4f-7f7a-4e97-9687-4864e4f6f501` version `1.0.66`.
+- Updated the existing Zombie Gear BP/RP to version 1.1.4.
+- Preserved the latest core BP dependency at `2b9dbf4f-7f7a-4e97-9687-4864e4f6f501` version `1.0.67`.
 - Updated `@minecraft/server` to `2.6.0` and the BP minimum engine version to `1.26.40`.
 - Integrated the v4 HD armor assets from the handoff: 20 attachables, 20 geometries, 20 armor textures, 20 merged item icons, and one render controller.
 - Replaced the zombie stem cell item texture with a 32x32 transparent icon derived from the supplied image. The final palette keeps the original silhouette, uses muted rotten red/olive tones, and adds restrained sacred gold highlights.
 - Added the unique RP texture path `textures/items/zombiegear_v4_stem_cell` and mapped `zonbikansaibou`, `zombie_stem_cell`, and `pm_zombie_stem_cell` to it.
 
 ## Gameplay
+
+- Zombie stem cell recipe now uses a TNT-like 3x3 shape: 4 totems on the four side centers and 5 rotten flesh in the corners plus center, outputting 1 zombie stem cell.
 
 - Revive charges are stored per player in `zs_revives` from 0 to 4.
 - Gear corruption stage is represented by item IDs: base, `_c1`, `_c2`, `_c3`, `_c4`.
@@ -34,7 +36,7 @@ Applied to both requested worlds:
 - `8v9pvwiD6QQ=` / `開発用ワールド`
 - `IC_Phase1_Fresh_20260911` / `IC Phase 1 - FRESH TEST 20260911`
 
-Each world received the changed Zombie Gear pack files. The applied files were hash-checked against the publish worktree, and both world registrations now point to BP/RP version `1.1.3`.
+Each world received the changed Zombie Gear pack files. The applied files were hash-checked against the publish worktree, and both world registrations now point to BP/RP version `1.1.4`.
 
 Backup directory:
 
