@@ -1,0 +1,4597 @@
+{
+  "sourceCommit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+  "baseWebsiteCommit": "90cae3be",
+  "entries": [
+    {
+      "id": "dungeons-blast-fungus",
+      "name": "ブラスト茸",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "爆発するキノコを5発放つ道具。",
+      "description": "視線方向へ、少しずつ向きの違うキノコの弾を5発続けて放ちます。着弾点から4ブロック以内の有効な対象へ爆発ダメージを与え、命中成功時に吐き気を付与する処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "爆発ダメージ処理に渡す基礎値は11。吐き気の設定は100ティック（5秒）です。",
+        "基本クールダウン：9秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-blast-fungus.png",
+        "alt": "ブラスト茸のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/blast_fungus.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/blastFungus.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/blast_fungus.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/blast_fungus.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/blast_fungus.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-corrupted-beacon",
+      "name": "壊れたビーコン",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "ソウルを消費して光線を撃ち続ける道具。",
+      "description": "ソウルが1以上あると起動し、手に持っている間、視線方向へ光線の弾を連続発射します。発射を続けるとソウルを1ずつ消費し、持ち替えやソウル不足で停止する処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "発射中は使用者へ強い鈍足を付与する処理があります。",
+        "基本クールダウン：1秒。装備やトーテムの補正は別です。",
+        "ソウル1を使って発射カウンターを延ばす値は4ティックです。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-corrupted-beacon.png",
+        "alt": "壊れたビーコンのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/corrupted_beacon.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/corruptedBeacon.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/utility/corrupted_beacon_ammo.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/corrupted_beacon.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/corrupted_beacon.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-corrupted-seeds",
+      "name": "汚染された種",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "周囲へ毒と鈍足を付与する種。",
+      "description": "使用者から5ブロック以内の有効な対象へ、致死性の毒と鈍足を付与する処理です。周囲の敵の動きを抑える用途を持つアーティファクトです。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "毒と鈍足の継続設定は160ティック（8秒）です。対象の耐性や他の攻撃処理による違いは実機未検証です。",
+        "基本クールダウン：15秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-corrupted-seeds.png",
+        "alt": "汚染された種のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/corrupted_seeds.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/corruptedSeeds.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/corrupted_seeds.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/corrupted_seeds.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-enchanters-tome",
+      "name": "エンチャンターの書",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "自分の対応ペットを強化する本。",
+      "description": "16ブロック以内にいる自分のペットのうち、強化対象に指定された種類へエンチャント化イベントと短時間の再生を与える処理です。すでに強化済みの対象は再度強化しません。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "すべての動物が対象ではありません。ペット側が対応している必要があります。",
+        "基本クールダウン：25秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-enchanters-tome.png",
+        "alt": "エンチャンターの書のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/enchanters_tome.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/enchantersTome.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/enchanters_tome.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/enchanters_tome.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-eye-of-the-guardian",
+      "name": "ガーディアンの目",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "一定時間、視線方向へ光線を放つ目。",
+      "description": "使用すると一定時間、視線方向へ専用の光線の弾を連続発射します。手に持つ道具を替えると停止し、発射中は使用者へ強い鈍足を付与する処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "基本クールダウン：15秒。装備やトーテムの補正は別です。",
+        "発射時間の設定は70ティック（3.5秒）です。持ち替えると早く止まります。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-eye-of-the-guardian.png",
+        "alt": "ガーディアンの目のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/eye_of_the_guardian.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/eyeGuardian.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/utility/eye_guardian_ammo.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/eye_of_the_guardian.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/eye_of_the_guardian.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-gong-of-weakening",
+      "name": "弱体化のドラ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "周囲の対象を弱らせるドラ。",
+      "description": "使用者から6ブロック以内の有効な対象に弱体化と専用の虚無効果を付与します。虚無効果中は、対象が受けるダメージを増やす処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "虚無効果の補正は、ボス分類の対象では1.25倍、それ以外では2倍。ただし、ダメージの原因がoverrideの場合は対象外です。別の補正を含む最終ダメージは実機未検証です。",
+        "基本クールダウン：25秒。装備やトーテムの補正は別です。",
+        "弱体化と虚無効果の継続設定：100ティック（5秒）。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-gong-of-weakening.png",
+        "alt": "弱体化のドラのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/gong_weakening.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/gongWeakening.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/misc/voidedEffect.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/gong_weakening.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/gong_weakening.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-harvester",
+      "name": "ハーベスター",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "ソウル15を使う周囲への爆発攻撃。",
+      "description": "ソウル15を消費し、少し遅れて使用者の周囲へソウル属性の爆発ダメージを与える処理です。ソウル不足では起動しません。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "基本クールダウン：4秒。装備やトーテムの補正は別です。",
+        "範囲とダメージ処理の基礎値：5ブロック／15。相手や別の補正で最終ダメージは変わります。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-harvester.png",
+        "alt": "ハーベスターのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/harvester.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/harvester.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/harvester.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/harvester.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-ice-wand",
+      "name": "氷の杖",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "狙った位置に氷の塊を呼ぶ杖。",
+      "description": "視線方向の32ブロック以内にある対象やブロックの位置へ、専用の氷の塊を呼び出します。氷の命中イベントでは、周囲3ブロックの有効な対象へ凍結ダメージ、鈍足、押し返しを与える処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "氷の命中時のダメージ処理へ渡す基礎値は10です。狙える地形や当たり判定は実機未検証です。",
+        "基本クールダウン：15秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-ice-wand.png",
+        "alt": "氷の杖のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/ice_wand.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/iceWand.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/ice_chunk_player.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/ice_wand.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/ice_wand.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-lightning-rod",
+      "name": "避雷針",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "ソウル8で狙った場所へ雷撃を起こす杖。",
+      "description": "ソウル8を消費し、視線方向の24ブロック以内で狙った場所へ、20ティック（1秒）後に範囲雷撃を起こします。クリーパーには帯電イベントを発生させ、通常の対象とは異なるダメージ分岐を使います。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "基本クールダウン：5秒。装備やトーテムの補正は別です。",
+        "範囲と通常対象へのダメージ処理の基礎値：3.5ブロック／15。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-lightning-rod.png",
+        "alt": "避雷針のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/lightning_rod.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/lightningRod.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/lightning_rod.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/lightning_rod.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-love-medallion",
+      "name": "愛のメダル",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "対応する敵を一時的に味方にするメダル。",
+      "description": "8ブロック以内の対応対象から、まだ手なずけられていない最大2体を使用者の味方にする処理です。400ティック（20秒）の時間設定があり、時間切れには対象を消す処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "恒久的なペットの入手手段ではありません。魅了できる種類は専用の対象分類に限定されます。",
+        "基本クールダウン：50秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-love-medallion.png",
+        "alt": "愛のメダルのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/love_medallion.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/loveMedallion.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/love_medallion.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/love_medallion.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-powershaker",
+      "name": "パワーシェイカー",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "近接攻撃に最大5回の爆発を加える道具。",
+      "description": "使用後の一定時間、プレイヤーの近接攻撃をきっかけに、命中位置の周囲へ爆発を起こす処理です。爆発の使用回数は最大5回で、時間切れでも終了します。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "爆発範囲は命中した対象から4ブロック、ダメージ処理に渡す基礎値は8です。",
+        "基本クールダウン：30秒。装備やトーテムの補正は別です。",
+        "効果時間の上限設定：300ティック（15秒）。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-powershaker.png",
+        "alt": "パワーシェイカーのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/powershaker.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/powershaker.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/powershaker.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/powershaker.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-satchel-of-elements",
+      "name": "エレメントの鞄",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "氷・炎・雷のいずれかを周囲へ放つ袋。",
+      "description": "8ブロック以内の有効な対象へ、使用時に選ばれた氷・炎・雷のいずれかを適用する処理です。氷は鈍足、炎は火属性の攻撃と着火、雷は雷属性の攻撃を行います。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "1回の使用で選ぶ属性は1つです。対象がいなければ効果を実行しない分岐があります。",
+        "基本クールダウン：12秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-satchel-of-elements.png",
+        "alt": "エレメントの鞄のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_elements.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/satchelElements.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/satchel_of_elements.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/satchel_elements.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-satchel-of-elixirs",
+      "name": "エリクサーの鞄",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "攻撃力・移動速度・影の姿から効果を得る袋。",
+      "description": "使用者へ、攻撃力上昇・移動速度上昇・影の姿のいずれかを付与する処理です。すでに同系統の効果がある場合に再抽選する分岐があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "継続設定は攻撃力上昇20秒、移動速度上昇27.5秒、影の姿9秒。影の姿は攻撃で早く終了する場合があります。",
+        "基本クールダウン：30秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-satchel-of-elixirs.png",
+        "alt": "エリクサーの鞄のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_elixirs.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/satchelElixirs.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/misc/shadowForm.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/satchel_of_elixirs.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/satchel_of_elixirs.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-satchel-of-snacks",
+      "name": "お菓子の鞄",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "体力と満腹度を補う袋。",
+      "description": "使用者の体力を上限までの範囲でランダムに回復し、満腹度を補う効果を与える処理です。体力と満腹度が両方とも最大なら使用を止めます。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "回復量の計算は「2＋1〜3の乱数」が基本です。表示上のハート数と体力の内部値は区別してください。",
+        "基本クールダウン：25秒。装備やトーテムの補正は別です。",
+        "満腹度を補う効果の継続値は、1〜3の乱数を用いる計算です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-satchel-of-snacks.png",
+        "alt": "お菓子の鞄のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_of_snacks.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/satchelSnacks.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/satchel_of_snacks.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/satchel_of_snacks.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-scatter-mines",
+      "name": "敷き地雷",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "周囲の最大3か所へ地雷を置く道具。",
+      "description": "使用者の周囲3か所で地面の高さを調べ、上下5ブロックの条件を満たした位置に専用地雷を置きます。爆発時は地雷から3ブロック以内の有効な対象へダメージと押し返しを与える処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "地形によって設置数が減る場合があります。爆発のダメージ処理に渡す基礎値は20です。",
+        "基本クールダウン：40秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-scatter-mines.png",
+        "alt": "敷き地雷のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/scatter_mines.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/scatterMines.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/player_scatter_mines.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/scatter_mines.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/scatter_mines.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-shadow-shifter",
+      "name": "影の断片",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "ソウル12で影の姿になる道具。",
+      "description": "ソウル12を消費して、透明化を伴う専用の影の姿を使用者へ付与します。影の姿の攻撃補正と、攻撃後に姿を解除する処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "すでに影の姿であるときや、ソウルが足りないときには起動しません。",
+        "基本クールダウン：15秒。装備やトーテムの補正は別です。",
+        "影の姿の継続設定：220ティック（11秒）。攻撃で早く終了する場合があります。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-shadow-shifter.png",
+        "alt": "影の断片のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/shadow_shifter.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/shadowShifter.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/misc/shadowForm.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/shadow_shifter.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/shadow_shifter.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-shock-powder",
+      "name": "ショックパウダー",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "周囲の動きと攻撃を抑える粉。",
+      "description": "使用者から5ブロック以内の有効な対象へ、弱体化・鈍足・採掘速度低下を付与する処理です。各効果の強さには高い設定値が使われています。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "基本クールダウン：15秒。装備やトーテムの補正は別です。",
+        "3つの効果の継続設定：3.5秒。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-shock-powder.png",
+        "alt": "ショックパウダーのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/shock_powder.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/shockPowder.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/shock_powder.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/shock_powder.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-healer",
+      "name": "魂のヒーラー",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "ソウル10を使って自分を回復する道具。",
+      "description": "体力が減っているときにソウル10を消費し、使用者の体力を回復する処理です。最大体力を超える分は切り捨て、一部をソウルとして返す分岐があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "返却するソウルは最大4です。体力が満タンのときは回復処理を開始しません。",
+        "基本クールダウン：5秒。装備やトーテムの補正は別です。",
+        "体力の回復量設定：7。ハートの個数ではなく、体力の内部値です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-soul-healer.png",
+        "alt": "魂のヒーラーのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/soul_healer.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/soulHealer.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/soul_healer.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/soul_healer.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-spinblade",
+      "name": "スピンブレード",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "投げた刃が持ち主へ戻る道具。",
+      "description": "視線方向へ回転する刃を投げ、帰還イベントで持ち主の方へ戻す処理です。飛行中は再使用の待ち時間を延長し、受け取りイベントで短縮します。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "アイテムの基本待ち時間とは別に、刃が戻るまで再使用を待たせる処理があります。実際の帰還や地形との衝突は未検証です。",
+        "基本クールダウン：4秒。装備やトーテムの補正は別です。",
+        "刃の直接命中ダメージの設定：11。周囲攻撃や実際の最終ダメージとは別の値です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-spinblade.png",
+        "alt": "スピンブレードのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/spinblade.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/spinblade.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/spinblade_projectile.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/spinblade.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/spinblade.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-tome-of-duplication",
+      "name": "複製の書",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "直前のアーティファクト使用を再現する本。",
+      "description": "直前に使ったアーティファクトの記録を参照し、対応する使用処理を再実行する仕組みです。アイテムの個数を増やす製作レシピとは異なります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "対象となる使用記録がなければ再現できません。必要ソウルや対象条件は、再現する道具側の処理でも確認されます。",
+        "すべてのアーティファクトの組み合わせを実機で確認したものではありません。",
+        "基本クールダウン：20秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-tome-of-duplication.png",
+        "alt": "複製の書のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/tome_duplication.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/tomeDuplication.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/tome_of_duplication.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/tome_of_duplication.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-totem-of-casting",
+      "name": "詠唱のトーテム",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "ソウル12で再使用を助けるトーテムを置く。",
+      "description": "ソウル12を消費し、使用者にひも付いたトーテムを置く処理です。周囲5ブロック以内の該当トーテム数に応じて、アーティファクトの再使用待ち時間を短縮する共通処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "トーテムが1つの場合、待ち時間の倍率へ0.3を掛けます。装備などの補正も別に適用され、最終倍率の下限は0.1です。",
+        "基本クールダウン：15秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-totem-of-casting.png",
+        "alt": "詠唱のトーテムのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_casting.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/totemCasting.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/totem/totem_of_casting.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/totem_casting.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_c.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-totem-of-shielding",
+      "name": "守護のトーテム",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "周囲の守りと飛び道具への対処を助けるトーテム。",
+      "description": "トーテムを置き、作動イベントで周囲4ブロックのプレイヤーへ耐性を与えます。また、周囲7ブロックの対象となる飛び道具の進行方向を変える処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "持ち主が放った飛び道具は除外します。PvP設定による除外もあり、すべての飛び道具を防ぐとは保証していません。",
+        "基本クールダウン：33秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-totem-of-shielding.png",
+        "alt": "守護のトーテムのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_shielding.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/totemShielding.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/totem/totem_of_shielding.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/totem_shield.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_s.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-totem-of-soul-protection",
+      "name": "蘇生のトーテム",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "ソウルを使って守護用トーテムを置く道具。",
+      "description": "ソウル5を消費し、使用者にひも付いた専用トーテムを置く処理を確認しています。周囲のプレイヤーを守る処理も定義されていますが、致命傷を防ぐ実際の発動は未検証です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "自動復活や死亡回避を保証する道具としては案内していません。安全な検証用ワールドでの発動確認が必要です。",
+        "基本クールダウン：25秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-totem-of-soul-protection.png",
+        "alt": "蘇生のトーテムのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_soul_protection.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/totemSoulProtection.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/totem/totem_of_soul_protection.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/totem_soul_protection.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_of_soul_protection.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-updraft-tome",
+      "name": "アップドラフトの書",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "周囲の対象を風で打ち上げる本。",
+      "description": "使用者から7.5ブロック以内の有効な対象へ、10ティック（0.5秒）後に風属性の攻撃と上向きの押し返しを与える処理です。ダメージが成功した対象を最大7体まで数えます。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "作業台で通常版を製作するレシピがあります。関連レシピで材料の個数・配置・完成数を確認できます。",
+      "details": [
+        "ダメージ処理に渡す基礎値は5。実際の打ち上げ高さや落下ダメージは対象・地形ごとに未検証です。",
+        "基本クールダウン：15秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-updraft-tome.png",
+        "alt": "アップドラフトの書のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/updraft_tome.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/updraftTome.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/updraft_tome.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/updraft_tome.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-corrupted-pumpkin",
+      "name": "悪のカボチャ（季節限定）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "ソウルで光線を放つ季節限定アーティファクト。",
+      "description": "ソウルが1以上あると起動し、手に持っている間、視線方向へ専用の光線の弾を連続発射します。発射を続けるとソウルを1ずつ消費し、持ち替えやソウル不足で停止する処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 季節限定の報酬候補です。現在のイベント開催・実際の入手可否は未確認です。",
+      "details": [
+        "季節限定タグが付いています。現在の開催期間・入手可能期間は未確認です。",
+        "基本クールダウン：1秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-corrupted-pumpkin.png",
+        "alt": "悪のカボチャ（季節限定）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/limited/corrupted_pumpkin.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/corruptedPumpkin.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/utility/corrupted_pumpkin_ammo.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/corrupted_pumpkin.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/spooky_monstrosity.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-blast-fungus",
+      "name": "ブラスト茸（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。爆発するキノコを5発放つ道具。",
+      "description": "視線方向へ、少しずつ向きの違うキノコの弾を5発続けて放ちます。着弾点から4ブロック以内の有効な対象へ爆発ダメージを与え、命中成功時に吐き気を付与する処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "爆発ダメージ処理に渡す基礎値は11。吐き気の設定は100ティック（5秒）です。",
+        "基本クールダウン：レア版7秒／通常版9秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-blast-fungus.png",
+        "alt": "ブラスト茸（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/blast_fungus.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/blastFungus.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/blast_fungus.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/blast_fungus.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/blast_fungus.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-boots-of-swiftness",
+      "name": "俊足のブーツ（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。短時間の移動速度上昇を得るブーツ。",
+      "description": "使用者へ移動速度上昇IIを短時間付与するアーティファクトです。防具スロットへ装備するブーツとは操作が異なり、手に持って使用します。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版5秒／通常版5秒。装備やトーテムの補正は別です。",
+        "速度上昇IIの継続設定：90ティック（4.5秒）。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-boots-of-swiftness.png",
+        "alt": "俊足のブーツ（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/boots_of_swiftness.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/swiftnessBoot.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/boots_of_swiftness.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/boots_swiftness.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-buzzy-nest",
+      "name": "バジーネスト（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。ハチを呼び出す専用の巣を置く道具。",
+      "description": "使用者にひも付いた専用の巣を置きます。巣のイベントからペットのハチを呼び出し、同じ持ち主になつかせる処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "ハチの同時数・戦闘中の生存時間は実機未検証です。",
+        "基本クールダウン：レア版35秒／通常版50秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-buzzy-nest.png",
+        "alt": "バジーネスト（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/buzzy_nest.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/buzzyNest.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/buzzy_nest.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/buzzy_nest.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/guardian_bee.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/buzzy_nest.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-corrupted-beacon",
+      "name": "壊れたビーコン（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。ソウルを消費して光線を撃ち続ける道具。",
+      "description": "ソウルが1以上あると起動し、手に持っている間、視線方向へ光線の弾を連続発射します。発射を続けるとソウルを1ずつ消費し、持ち替えやソウル不足で停止する処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "発射中は使用者へ強い鈍足を付与する処理があります。",
+        "基本クールダウン：レア版1秒／通常版1秒。装備やトーテムの補正は別です。",
+        "ソウル1を使って発射カウンターを延ばす値は6ティックです。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-corrupted-beacon.png",
+        "alt": "壊れたビーコン（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/corrupted_beacon.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/corruptedBeacon.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/corrupted_beacon.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/utility/corrupted_beacon_ammo.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/corrupted_beacon.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-corrupted-seeds",
+      "name": "汚染された種（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。周囲へ毒と鈍足を付与する種。",
+      "description": "使用者から5ブロック以内の有効な対象へ、致死性の毒と鈍足を付与する処理です。周囲の敵の動きを抑える用途を持つアーティファクトです。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "毒と鈍足の継続設定は160ティック（8秒）です。対象の耐性や他の攻撃処理による違いは実機未検証です。",
+        "基本クールダウン：レア版12秒／通常版15秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-corrupted-seeds.png",
+        "alt": "汚染された種（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/corrupted_seeds.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/corruptedSeeds.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/corrupted_seeds.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/corrupted_seeds.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-death-cap-mushroom",
+      "name": "タマゴテングダケ（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。攻撃力と移動速度を一時的に高めるキノコ。",
+      "description": "使用者へ攻撃力上昇と移動速度上昇を付与する処理です。通常版とレア版は効果の継続時間が異なります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版40秒／通常版40秒。装備やトーテムの補正は別です。",
+        "2つの効果の継続設定：300ティック（15秒）。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-death-cap-mushroom.png",
+        "alt": "タマゴテングダケ（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/death_cap.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/deathCap.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/death_cap.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/death_cap.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-enchanted-grass",
+      "name": "魅惑の草（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。専用のヒツジを呼び出す草。",
+      "description": "使用者の位置へ専用のヒツジを1体呼び出し、使用者になつかせる処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版45秒／通常版60秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-enchanted-grass.png",
+        "alt": "魅惑の草（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/enchanted_grass.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/enchantedGrass.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/enchanted_grass.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/enchanted_sheep.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/enchanted_grass.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-enchanters-tome",
+      "name": "エンチャンターの書（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。自分の対応ペットを強化する本。",
+      "description": "16ブロック以内にいる自分のペットのうち、強化対象に指定された種類へエンチャント化イベントと短時間の再生を与える処理です。すでに強化済みの対象は再度強化しません。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "すべての動物が対象ではありません。ペット側が対応している必要があります。",
+        "基本クールダウン：レア版10秒／通常版25秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-enchanters-tome.png",
+        "alt": "エンチャンターの書（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/enchanters_tome.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/enchantersTome.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/enchanters_tome.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/enchanters_tome.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-eye-of-the-guardian",
+      "name": "ガーディアンの目（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。一定時間、視線方向へ光線を放つ目。",
+      "description": "使用すると一定時間、視線方向へ専用の光線の弾を連続発射します。手に持つ道具を替えると停止し、発射中は使用者へ強い鈍足を付与する処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版15秒／通常版15秒。装備やトーテムの補正は別です。",
+        "発射時間の設定は121ティック（約6.05秒）です。持ち替えると早く止まります。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-eye-of-the-guardian.png",
+        "alt": "ガーディアンの目（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/eye_of_the_guardian.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/eyeGuardian.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/eye_of_the_guardian.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/utility/eye_guardian_ammo.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/eye_of_the_guardian.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-ghost-cloak",
+      "name": "幽霊のマント（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。短時間、透明化と耐性を得るマント。",
+      "description": "使用者へ40ティック（2秒）の透明化・耐性II・移動速度上昇を付与する処理です。壁をすり抜けられるとは案内していません。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版7秒／通常版7秒。装備やトーテムの補正は別です。",
+        "移動速度上昇はIIの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-ghost-cloak.png",
+        "alt": "幽霊のマント（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/ghost_cloak.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/ghostCloak.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/ghost_cloak.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/ghost_cloak.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-golem-kit",
+      "name": "ゴーレムキット（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。味方のアイアンゴーレムを呼び出すキット。",
+      "description": "使用者の位置へ専用のアイアンゴーレムを1体呼び出し、使用者になつかせる処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版100秒／通常版120秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-golem-kit.png",
+        "alt": "ゴーレムキット（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/golem_kit.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/golemKit.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/golem_kit.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/golem.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/golem_kit.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-gong-of-weakening",
+      "name": "弱体化のドラ（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。周囲の対象を弱らせるドラ。",
+      "description": "使用者から6ブロック以内の有効な対象に弱体化と専用の虚無効果を付与します。虚無効果中は、対象が受けるダメージを増やす処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "虚無効果の補正は、ボス分類の対象では1.25倍、それ以外では2倍。ただし、ダメージの原因がoverrideの場合は対象外です。別の補正を含む最終ダメージは実機未検証です。",
+        "基本クールダウン：レア版25秒／通常版25秒。装備やトーテムの補正は別です。",
+        "現在のアイテム定義は通常版と同じ効果を呼び出します。レア表記だけを理由に効果が強いとは案内していません。",
+        "弱体化と虚無効果の継続設定：100ティック（5秒）。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-gong-of-weakening.png",
+        "alt": "弱体化のドラ（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/gong_weakening.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/gongWeakening.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/gong_weakening.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/misc/voidedEffect.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/gong_weakening.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-harvester",
+      "name": "ハーベスター（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。ソウル15を使う周囲への爆発攻撃。",
+      "description": "ソウル15を消費し、少し遅れて使用者の周囲へソウル属性の爆発ダメージを与える処理です。ソウル不足では起動しません。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版4秒／通常版4秒。装備やトーテムの補正は別です。",
+        "現在のアイテム定義は通常版と同じ効果を呼び出します。レア表記だけを理由に効果が強いとは案内していません。",
+        "範囲とダメージ処理の基礎値：5ブロック／15。相手や別の補正で最終ダメージは変わります。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-harvester.png",
+        "alt": "ハーベスター（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/harvester.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/harvester.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/harvester.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/harvester.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-ice-wand",
+      "name": "氷の杖（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。狙った位置に氷の塊を呼ぶ杖。",
+      "description": "視線方向の32ブロック以内にある対象やブロックの位置へ、専用の氷の塊を呼び出します。氷の命中イベントでは、周囲3ブロックの有効な対象へ凍結ダメージ、鈍足、押し返しを与える処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "氷の命中時のダメージ処理へ渡す基礎値は10です。狙える地形や当たり判定は実機未検証です。",
+        "基本クールダウン：レア版10秒／通常版15秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-ice-wand.png",
+        "alt": "氷の杖（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/ice_wand.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/iceWand.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/ice_wand.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/ice_chunk_player.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/ice_wand.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-iron-hide-amulet",
+      "name": "アイアンハイドアミュレット（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。耐性IIを得る守りのアミュレット。",
+      "description": "使用者へ耐性IIを付与する処理です。通常版とレア版は効果の継続時間が異なります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版25秒／通常版25秒。装備やトーテムの補正は別です。",
+        "耐性IIの継続設定：250ティック（12.5秒）。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-iron-hide-amulet.png",
+        "alt": "アイアンハイドアミュレット（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/iron_hide.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/ironHide.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/iron_hide.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/iron_hide.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-light-feather",
+      "name": "フワフワの羽根（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。向いている方向へ素早く移動する羽根。",
+      "description": "視線方向への押し出しと短時間の耐性を使用者へ与え、周囲3.5ブロックの有効な対象には短時間の鈍足を付与する処理です。滑空中は移動の強さが変わります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "実際の移動距離は地形や姿勢に左右されるため固定距離としては案内していません。",
+        "基本クールダウン：レア版4秒／通常版5秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-light-feather.png",
+        "alt": "フワフワの羽根（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/light_feather.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/lightFeather.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/light_feather.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/light_feather.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-lightning-rod",
+      "name": "避雷針（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。ソウル8で狙った場所へ雷撃を起こす杖。",
+      "description": "ソウル8を消費し、視線方向の24ブロック以内で狙った場所へ、20ティック（1秒）後に範囲雷撃を起こします。クリーパーには帯電イベントを発生させ、通常の対象とは異なるダメージ分岐を使います。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版5秒／通常版5秒。装備やトーテムの補正は別です。",
+        "範囲と通常対象へのダメージ処理の基礎値：4.5ブロック／20。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-lightning-rod.png",
+        "alt": "避雷針（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/lightning_rod.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/lightningRod.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/lightning_rod.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/lightning_rod.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-love-medallion",
+      "name": "愛のメダル（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。対応する敵を一時的に味方にするメダル。",
+      "description": "8ブロック以内の対応対象から、まだ手なずけられていない最大2体を使用者の味方にする処理です。400ティック（20秒）の時間設定があり、時間切れには対象を消す処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "恒久的なペットの入手手段ではありません。魅了できる種類は専用の対象分類に限定されます。",
+        "基本クールダウン：レア版30秒／通常版50秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-love-medallion.png",
+        "alt": "愛のメダル（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/love_medallion.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/loveMedallion.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/love_medallion.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/love_medallion.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-powershaker",
+      "name": "パワーシェイカー（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。近接攻撃に最大5回の爆発を加える道具。",
+      "description": "使用後の一定時間、プレイヤーの近接攻撃をきっかけに、命中位置の周囲へ爆発を起こす処理です。爆発の使用回数は最大5回で、時間切れでも終了します。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "爆発範囲は命中した対象から4ブロック、ダメージ処理に渡す基礎値は8です。",
+        "基本クールダウン：レア版30秒／通常版30秒。装備やトーテムの補正は別です。",
+        "効果時間の上限設定：400ティック（20秒）。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-powershaker.png",
+        "alt": "パワーシェイカー（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/powershaker.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/powershaker.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/powershaker.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/powershaker.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-satchel-of-elements",
+      "name": "エレメントの鞄（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。氷・炎・雷のいずれかを周囲へ放つ袋。",
+      "description": "8ブロック以内の有効な対象へ、使用時に選ばれた氷・炎・雷のいずれかを適用する処理です。氷は鈍足、炎は火属性の攻撃と着火、雷は雷属性の攻撃を行います。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "1回の使用で選ぶ属性は1つです。対象がいなければ効果を実行しない分岐があります。",
+        "基本クールダウン：レア版9秒／通常版12秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-satchel-of-elements.png",
+        "alt": "エレメントの鞄（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/satchel_elements.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/satchelElements.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_elements.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/satchel_of_elements.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-satchel-of-elixirs",
+      "name": "エリクサーの鞄（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。攻撃力・移動速度・影の姿から効果を得る袋。",
+      "description": "使用者へ、攻撃力上昇・移動速度上昇・影の姿のいずれかを付与する処理です。すでに同系統の効果がある場合に再抽選する分岐があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "継続設定は攻撃力上昇20秒、移動速度上昇27.5秒、影の姿9秒。影の姿は攻撃で早く終了する場合があります。",
+        "基本クールダウン：レア版22秒／通常版30秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-satchel-of-elixirs.png",
+        "alt": "エリクサーの鞄（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/satchel_of_elixirs.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/satchelElixirs.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_elixirs.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/misc/shadowForm.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/satchel_of_elixirs.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-satchel-of-snacks",
+      "name": "お菓子の鞄（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。体力と満腹度を補う袋。",
+      "description": "使用者の体力を上限までの範囲でランダムに回復し、満腹度を補う効果を与える処理です。体力と満腹度が両方とも最大なら使用を止めます。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "回復量の計算は「2＋1〜3の乱数」が基本です。表示上のハート数と体力の内部値は区別してください。",
+        "基本クールダウン：レア版25秒／通常版25秒。装備やトーテムの補正は別です。",
+        "満腹度を補う効果の継続値は、3＋1〜3の乱数を用いる計算です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-satchel-of-snacks.png",
+        "alt": "お菓子の鞄（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/satchel_of_snacks.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/satchelSnacks.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_of_snacks.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/satchel_of_snacks.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-scatter-mines",
+      "name": "敷き地雷（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。周囲の最大3か所へ地雷を置く道具。",
+      "description": "使用者の周囲3か所で地面の高さを調べ、上下5ブロックの条件を満たした位置に専用地雷を置きます。爆発時は地雷から3ブロック以内の有効な対象へダメージと押し返しを与える処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "地形によって設置数が減る場合があります。爆発のダメージ処理に渡す基礎値は20です。",
+        "基本クールダウン：レア版32秒／通常版40秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-scatter-mines.png",
+        "alt": "敷き地雷（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/scatter_mines.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/scatterMines.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/scatter_mines.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/player_scatter_mines.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/scatter_mines.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-shadow-shifter",
+      "name": "影の断片（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。ソウル12で影の姿になる道具。",
+      "description": "ソウル12を消費して、透明化を伴う専用の影の姿を使用者へ付与します。影の姿の攻撃補正と、攻撃後に姿を解除する処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "すでに影の姿であるときや、ソウルが足りないときには起動しません。",
+        "基本クールダウン：レア版15秒／通常版15秒。装備やトーテムの補正は別です。",
+        "影の姿の継続設定：340ティック（17秒）。攻撃で早く終了する場合があります。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-shadow-shifter.png",
+        "alt": "影の断片（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/shadow_shifter.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/shadowShifter.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/shadow_shifter.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/misc/shadowForm.js",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/shadow_shifter.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-shock-powder",
+      "name": "ショックパウダー（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。周囲の動きと攻撃を抑える粉。",
+      "description": "使用者から5ブロック以内の有効な対象へ、弱体化・鈍足・採掘速度低下を付与する処理です。各効果の強さには高い設定値が使われています。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版15秒／通常版15秒。装備やトーテムの補正は別です。",
+        "3つの効果の継続設定：6秒。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-shock-powder.png",
+        "alt": "ショックパウダー（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/shock_powder.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/shockPowder.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/shock_powder.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/shock_powder.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-soul-healer",
+      "name": "魂のヒーラー（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。ソウル10を使って自分を回復する道具。",
+      "description": "体力が減っているときにソウル10を消費し、使用者の体力を回復する処理です。最大体力を超える分は切り捨て、一部をソウルとして返す分岐があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "返却するソウルは最大4です。体力が満タンのときは回復処理を開始しません。",
+        "基本クールダウン：レア版5秒／通常版5秒。装備やトーテムの補正は別です。",
+        "体力の回復量設定：11。ハートの個数ではなく、体力の内部値です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-soul-healer.png",
+        "alt": "魂のヒーラー（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/soul_healer.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/soulHealer.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/soul_healer.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/soul_healer.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-soul-lantern",
+      "name": "魂のランタン（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。ソウル13で味方を呼ぶランタン。",
+      "description": "ソウル13を消費し、専用のソウルウィザードを呼び出して使用者になつかせる処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "ソウルが足りないときは召喚しません。",
+        "基本クールダウン：レア版40秒／通常版50秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-soul-lantern.png",
+        "alt": "魂のランタン（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/soul_lantern.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/soulLantern.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/soul_lantern.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/soul_wizard.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/soul_lantern.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-spinblade",
+      "name": "スピンブレード（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。投げた刃が持ち主へ戻る道具。",
+      "description": "視線方向へ回転する刃を投げ、帰還イベントで持ち主の方へ戻す処理です。飛行中は再使用の待ち時間を延長し、受け取りイベントで短縮します。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "アイテムの基本待ち時間とは別に、刃が戻るまで再使用を待たせる処理があります。実際の帰還や地形との衝突は未検証です。",
+        "基本クールダウン：レア版4秒／通常版4秒。装備やトーテムの補正は別です。",
+        "刃の直接命中ダメージの設定：15。周囲攻撃や実際の最終ダメージとは別の値です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-spinblade.png",
+        "alt": "スピンブレード（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/spinblade.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/spinblade.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/spinblade.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/rare_spinblade_projectile.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/spinblade.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-tasty-bone",
+      "name": "骨付き肉（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。味方のオオカミを呼び出す骨。",
+      "description": "使用者の位置へ専用のオオカミを1体呼び出し、使用者になつかせる処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版28秒／通常版35秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-tasty-bone.png",
+        "alt": "骨付き肉（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/tasty_bone.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/tastyBone.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/tasty_bone.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/wolf.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/tasty_bone.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-tome-of-duplication",
+      "name": "複製の書（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。直前のアーティファクト使用を再現する本。",
+      "description": "直前に使ったアーティファクトの記録を参照し、対応する使用処理を再実行する仕組みです。アイテムの個数を増やす製作レシピとは異なります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "対象となる使用記録がなければ再現できません。必要ソウルや対象条件は、再現する道具側の処理でも確認されます。",
+        "すべてのアーティファクトの組み合わせを実機で確認したものではありません。",
+        "基本クールダウン：レア版20秒／通常版20秒。装備やトーテムの補正は別です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-tome-of-duplication.png",
+        "alt": "複製の書（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/tome_of_duplication.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/tomeDuplication.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/tome_duplication.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/tome_of_duplication.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-totem-of-casting",
+      "name": "詠唱のトーテム（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。ソウル12で再使用を助けるトーテムを置く。",
+      "description": "ソウル12を消費し、使用者にひも付いたトーテムを置く処理です。周囲5ブロック以内の該当トーテム数に応じて、アーティファクトの再使用待ち時間を短縮する共通処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "トーテムが1つの場合、待ち時間の倍率へ0.3を掛けます。装備などの補正も別に適用され、最終倍率の下限は0.1です。",
+        "基本クールダウン：レア版12秒／通常版15秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-totem-of-casting.png",
+        "alt": "詠唱のトーテム（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/totem_of_casting.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/totemCasting.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_casting.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/totem/totem_of_casting.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/totem_casting.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-totem-of-regeneration",
+      "name": "回復のトーテム（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。周囲のプレイヤーを回復するトーテム。",
+      "description": "専用トーテムを置き、回復イベントのたびに周囲4ブロックのプレイヤーの体力を上限までの範囲で0.4ずつ回復する処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "所有者だけ回復量が多いとは確認できません。1回のイベントでの回復値と、1秒あたりの回復量は異なります。",
+        "基本クールダウン：レア版30秒／通常版40秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-totem-of-regeneration.png",
+        "alt": "回復のトーテム（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/totem_of_regeneration.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/totemRegeneration.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_regeneration.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/totem/totem_of_regeneration.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/totem_regen.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-totem-of-shielding",
+      "name": "守護のトーテム（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。周囲の守りと飛び道具への対処を助けるトーテム。",
+      "description": "トーテムを置き、作動イベントで周囲4ブロックのプレイヤーへ耐性を与えます。また、周囲7ブロックの対象となる飛び道具の進行方向を変える処理があります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "持ち主が放った飛び道具は除外します。PvP設定による除外もあり、すべての飛び道具を防ぐとは保証していません。",
+        "基本クールダウン：レア版25秒／通常版33秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-totem-of-shielding.png",
+        "alt": "守護のトーテム（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/totem_of_shielding.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/totemShielding.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_shielding.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/totem/totem_of_shielding.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/totem_shield.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-totem-of-soul-protection",
+      "name": "蘇生のトーテム（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。ソウルを使って守護用トーテムを置く道具。",
+      "description": "ソウル5を消費し、使用者にひも付いた専用トーテムを置く処理を確認しています。周囲のプレイヤーを守る処理も定義されていますが、致命傷を防ぐ実際の発動は未検証です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "自動復活や死亡回避を保証する道具としては案内していません。安全な検証用ワールドでの発動確認が必要です。",
+        "基本クールダウン：レア版15秒／通常版25秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-totem-of-soul-protection.png",
+        "alt": "蘇生のトーテム（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/totem_of_soul_protection.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/totemSoulProtection.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_soul_protection.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/totem/totem_of_soul_protection.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/totem_soul_protection.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-updraft-tome",
+      "name": "アップドラフトの書（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。周囲の対象を風で打ち上げる本。",
+      "description": "使用者から7.5ブロック以内の有効な対象へ、10ティック（0.5秒）後に風属性の攻撃と上向きの押し返しを与える処理です。ダメージが成功した対象を最大7体まで数えます。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "ダメージ処理に渡す基礎値は5。実際の打ち上げ高さや落下ダメージは対象・地形ごとに未検証です。",
+        "基本クールダウン：レア版10秒／通常版15秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-updraft-tome.png",
+        "alt": "アップドラフトの書（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/updraft_tome.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/updraftTome.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/updraft_tome.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/updraft_tome.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-vexing-chant",
+      "name": "ヴェックス召喚の歌（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。周囲3か所に守護ヴェックスを呼び出す本。",
+      "description": "使用者の周囲3か所へ専用のヴェックスを呼び出し、使用者になつかせる処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "地形ごとの召喚成功や戦闘中の挙動は実機未検証です。",
+        "基本クールダウン：レア版60秒／通常版90秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-vexing-chant.png",
+        "alt": "ヴェックス召喚の歌（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/vexing_chant.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/vexingChant.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/vexing_chant.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/guardian_vex.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/vexing_chant.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-wind-horn",
+      "name": "風のホルン（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。周囲の対象を押し返すホルン。",
+      "description": "使用者から7ブロック以内の有効な対象を外側へ押し返し、鈍足を付与する処理です。通常版とレア版は押し返しの強さと鈍足の継続設定が異なります。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "対象の耐性や地形による実際の飛距離は未検証です。",
+        "基本クールダウン：レア版10秒／通常版10秒。装備やトーテムの補正は別です。",
+        "押し返しの水平の強さ：4.5。鈍足の継続設定：6.5秒。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-wind-horn.png",
+        "alt": "風のホルン（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/wind_horn.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/windHorn.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/wind_horn.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/wind_horn.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rare-wonderful-wheat",
+      "name": "上質な小麦（レア）",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "レア版。味方のラマを呼び出す小麦。",
+      "description": "使用者の位置へ専用のラマを1体呼び出し、使用者になつかせる処理です。",
+      "usage": "手に持って使用します。再使用までの待ち時間や、対象・必要ソウルの条件を確認してください。",
+      "obtaining": "ボスチェスト報酬テーブルの抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+      "details": [
+        "基本クールダウン：レア版30秒／通常版37秒。装備やトーテムの補正は別です。",
+        "使用時の効果は通常版と共通の処理です。比較できる違いは、確認できた待ち時間などの設定です。",
+        "説明は現在のコードにある処理を照合したものです。ゲーム内での操作・効果・入手の実証は未完了です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rare-wonderful-wheat.png",
+        "alt": "上質な小麦（レア）のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/wonderful_wheat.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/wonderfulWheat.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/artefacts/artefactCooldown.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/wonderful_wheat.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/entities/artefact/pet/llama.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/artifact/wonderful_wheat.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-blast-fungus-recipe",
+      "name": "ブラスト茸のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ブラスト茸を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "歪んだウォートブロック",
+            "ダイヤモンドの粉",
+            "ネザーウォートブロック"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "TNT",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "ネザーウォートブロック",
+            "ダイヤモンドの粉",
+            "歪んだウォートブロック"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "歪んだウォートブロック",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "ネザーウォートブロック",
+            "count": 2
+          },
+          {
+            "name": "TNT",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-blast-fungus",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/blast_fungus.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/blast_fungus.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-corrupted-beacon-recipe",
+      "name": "壊れたビーコンのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "壊れたビーコンを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "アメジストの欠片",
+            "ダイヤモンドの粉",
+            "アメジストの欠片"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "エンドクリスタル",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "アメジストの欠片",
+            "ダイヤモンドの粉",
+            "アメジストの欠片"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "アメジストの欠片",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "エンドクリスタル",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-corrupted-beacon",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/corrupted_beacon.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/corrupted_beacon.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-corrupted-seeds-recipe",
+      "name": "汚染された種のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "汚染された種を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "発酵したクモの目",
+            "ダイヤモンドの粉",
+            "苔ブロック"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "アメジストの欠片",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "苔ブロック",
+            "ダイヤモンドの粉",
+            "発酵したクモの目"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "発酵したクモの目",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "苔ブロック",
+            "count": 2
+          },
+          {
+            "name": "アメジストの欠片",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-corrupted-seeds",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/corrupted_seeds.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/corrupted_seeds.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-enchanters-tome-recipe",
+      "name": "エンチャンターの書のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "エンチャンターの書を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "金インゴット",
+            "ダイヤモンドの粉",
+            "ラピスラズリ"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "本",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "ラピスラズリ",
+            "ダイヤモンドの粉",
+            "金インゴット"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "金インゴット",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "ラピスラズリ",
+            "count": 2
+          },
+          {
+            "name": "本",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-enchanters-tome",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/enchanters_tome.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/enchanters_tome.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-eye-of-the-guardian-recipe",
+      "name": "ガーディアンの目のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ガーディアンの目を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "ガラス",
+            "ダイヤモンドの粉",
+            "ガラス"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "シーランタン",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "ガラス",
+            "ダイヤモンドの粉",
+            "ガラス"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "ガラス",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "シーランタン",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-eye-of-the-guardian",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/eye_of_the_guardian.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/eye_of_the_guardian.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-gong-of-weakening-recipe",
+      "name": "弱体化のドラのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "弱体化のドラを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄ブロック",
+            "ダイヤモンドの粉",
+            "鉄ブロック"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "アメジストブロック",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "鉄ブロック",
+            "ダイヤモンドの粉",
+            "鉄ブロック"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄ブロック",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "アメジストブロック",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-gong-of-weakening",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/gong_weakening.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/gong_weakening.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-harvester-recipe",
+      "name": "ハーベスターのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ハーベスターを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "骨ブロック",
+            "ダイヤモンドの粉",
+            "ソウルソイル"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "本",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "ソウルソイル",
+            "ダイヤモンドの粉",
+            "骨ブロック"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "骨ブロック",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "ソウルソイル",
+            "count": 2
+          },
+          {
+            "name": "本",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-harvester",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/harvester.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/harvester.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-ice-wand-recipe",
+      "name": "氷の杖のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "氷の杖を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "氷塊",
+            "ダイヤモンドの粉",
+            "青氷"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "エメラルド",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "青氷",
+            "ダイヤモンドの粉",
+            "氷塊"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "氷塊",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "青氷",
+            "count": 2
+          },
+          {
+            "name": "エメラルド",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-ice-wand",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/ice_wand.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/ice_wand.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-lightning-rod-recipe",
+      "name": "避雷針のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "避雷針を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "銅インゴット",
+            "ダイヤモンドの粉",
+            "金インゴット"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "ラピスラズリ",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "金インゴット",
+            "ダイヤモンドの粉",
+            "銅インゴット"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "銅インゴット",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "金インゴット",
+            "count": 2
+          },
+          {
+            "name": "ラピスラズリ",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-lightning-rod",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/lightning_rod.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/lightning_rod.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-love-medallion-recipe",
+      "name": "愛のメダルのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "愛のメダルを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "金インゴット",
+            "ダイヤモンドの粉",
+            "金インゴット"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "エンチャントの瓶",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "金インゴット",
+            "ダイヤモンドの粉",
+            "金インゴット"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "金インゴット",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "エンチャントの瓶",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-love-medallion",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/love_medallion.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/love_medallion.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-powershaker-recipe",
+      "name": "パワーシェイカーのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "パワーシェイカーを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "TNT",
+            "ダイヤモンドの粉",
+            "TNT"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "小麦",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "TNT",
+            "ダイヤモンドの粉",
+            "TNT"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "TNT",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "小麦",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-powershaker",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/powershaker.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/powershaker.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-satchel-of-elements-recipe",
+      "name": "エレメントの鞄のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "エレメントの鞄を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "青氷",
+            "ダイヤモンドの粉",
+            "ブレイズパウダー"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "ラピスラズリ",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "銅インゴット",
+            "ダイヤモンドの粉",
+            "アメジストの欠片"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "青氷",
+            "count": 1
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "ブレイズパウダー",
+            "count": 1
+          },
+          {
+            "name": "ラピスラズリ",
+            "count": 1
+          },
+          {
+            "name": "銅インゴット",
+            "count": 1
+          },
+          {
+            "name": "アメジストの欠片",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-satchel-of-elements",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/satchel_elements.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_elements.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-satchel-of-elixirs-recipe",
+      "name": "エリクサーの鞄のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "エリクサーの鞄を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "砂糖",
+            "ダイヤモンドの粉",
+            "ブレイズパウダー"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "革",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "エンダーパール",
+            "ダイヤモンドの粉",
+            "ネザーウォート"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "砂糖",
+            "count": 1
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "ブレイズパウダー",
+            "count": 1
+          },
+          {
+            "name": "革",
+            "count": 1
+          },
+          {
+            "name": "エンダーパール",
+            "count": 1
+          },
+          {
+            "name": "ネザーウォート",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-satchel-of-elixirs",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/satchel_of_elixirs.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_elixirs.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-satchel-of-snacks-recipe",
+      "name": "お菓子の鞄のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "お菓子の鞄を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "パン",
+            "ダイヤモンドの粉",
+            "生の豚肉"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "革",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "熱帯魚",
+            "ダイヤモンドの粉",
+            "リンゴ"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "パン",
+            "count": 1
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "生の豚肉",
+            "count": 1
+          },
+          {
+            "name": "革",
+            "count": 1
+          },
+          {
+            "name": "熱帯魚",
+            "count": 1
+          },
+          {
+            "name": "リンゴ",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-satchel-of-snacks",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/satchel_of_snacks.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_of_snacks.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-scatter-mines-recipe",
+      "name": "敷き地雷のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "敷き地雷を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "レッドストーンダスト",
+            "ダイヤモンドの粉",
+            "レッドストーンダスト"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "レッドストーンゴーレムの頭",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "レッドストーンダスト",
+            "ダイヤモンドの粉",
+            "レッドストーンダスト"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "レッドストーンダスト",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "レッドストーンゴーレムの頭",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-scatter-mines",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/scatter_mines.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/scatter_mines.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-shadow-shifter-recipe",
+      "name": "影の断片のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "影の断片を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "金インゴット",
+            "ダイヤモンドの粉",
+            "金インゴット"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "コーラスフルーツ",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "金インゴット",
+            "ダイヤモンドの粉",
+            "金インゴット"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "金インゴット",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "コーラスフルーツ",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-shadow-shifter",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/shadow_shifter.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/shadow_shifter.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-shock-powder-recipe",
+      "name": "ショックパウダーのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ショックパウダーを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "銅インゴット",
+            "ダイヤモンドの粉",
+            "鉄インゴット"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "避雷針",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "鉄インゴット",
+            "ダイヤモンドの粉",
+            "銅インゴット"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "銅インゴット",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 2
+          },
+          {
+            "name": "避雷針",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-shock-powder",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/shock_powder.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/shock_powder.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-healer-recipe",
+      "name": "魂のヒーラーのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "魂のヒーラーを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "骨ブロック",
+            "ダイヤモンドの粉",
+            "ソウルソイル"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "残響の欠片",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "ソウルソイル",
+            "ダイヤモンドの粉",
+            "骨ブロック"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "骨ブロック",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "ソウルソイル",
+            "count": 2
+          },
+          {
+            "name": "残響の欠片",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-soul-healer",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/soul_healer.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/soul_healer.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-spinblade-recipe",
+      "name": "スピンブレードのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "スピンブレードを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄インゴット",
+            "ダイヤモンドの粉",
+            "鉄インゴット"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "銅ブロック",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "鉄インゴット",
+            "ダイヤモンドの粉",
+            "鉄インゴット"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "銅ブロック",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-spinblade",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/spinblade.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/spinblade.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-tome-of-duplication-recipe",
+      "name": "複製の書のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "複製の書を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "金ブロック",
+            "ダイヤモンドの粉",
+            "アメジストブロック"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "本",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "アメジストブロック",
+            "ダイヤモンドの粉",
+            "金ブロック"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "金ブロック",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "アメジストブロック",
+            "count": 2
+          },
+          {
+            "name": "本",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-tome-of-duplication",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/tome_of_duplication.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/tome_duplication.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-totem-of-casting-recipe",
+      "name": "詠唱のトーテムのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "詠唱のトーテムを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "ダイヤモンド",
+            "ダイヤモンドの粉",
+            "ダイヤモンド"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "ソウルサンド",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "ダイヤモンド",
+            "ダイヤモンドの粉",
+            "ダイヤモンド"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "ダイヤモンド",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "ソウルサンド",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-totem-of-casting",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_c.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_casting.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-totem-of-soul-protection-recipe",
+      "name": "蘇生のトーテムのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "蘇生のトーテムを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄インゴット",
+            "ダイヤモンドの粉",
+            "ラピスラズリ"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "不死のトーテム",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "ラピスラズリ",
+            "ダイヤモンドの粉",
+            "鉄インゴット"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "ラピスラズリ",
+            "count": 2
+          },
+          {
+            "name": "不死のトーテム",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-totem-of-soul-protection",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_of_soul_protection.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_soul_protection.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-totem-of-shielding-recipe",
+      "name": "守護のトーテムのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "守護のトーテムを作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "金インゴット",
+            "ダイヤモンドの粉",
+            "金インゴット"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "鉄ブロック",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "金インゴット",
+            "ダイヤモンドの粉",
+            "金インゴット"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "金インゴット",
+            "count": 4
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "鉄ブロック",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-totem-of-shielding",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_s.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_shielding.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-updraft-tome-recipe",
+      "name": "アップドラフトの書のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "アップドラフトの書を作る材料と配置。",
+      "description": "通常版アーティファクトの配置付きレシピです。ダイヤモンドの粉と、道具ごとの材料を使います。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "完成するのは通常版です。レア版への強化レシピではありません。",
+        "レシピ解放条件にはダイヤモンドの粉が設定されています。実際の解放表示は未検証です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "金インゴット",
+            "ダイヤモンドの粉",
+            "羽根"
+          ],
+          [
+            "ダイヤモンドの粉",
+            "本",
+            "ダイヤモンドの粉"
+          ],
+          [
+            "羽根",
+            "ダイヤモンドの粉",
+            "金インゴット"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "金インゴット",
+            "count": 2
+          },
+          {
+            "name": "ダイヤモンドの粉",
+            "count": 4
+          },
+          {
+            "name": "羽根",
+            "count": 2
+          },
+          {
+            "name": "本",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-updraft-tome",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/updraft_tome.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/updraft_tome.json"
+        ]
+      }
+    }
+  ],
+  "groupEntries": {
+    "artifacts": [
+      "dungeons-blast-fungus",
+      "dungeons-corrupted-beacon",
+      "dungeons-corrupted-seeds",
+      "dungeons-enchanters-tome",
+      "dungeons-eye-of-the-guardian",
+      "dungeons-gong-of-weakening",
+      "dungeons-harvester",
+      "dungeons-ice-wand",
+      "dungeons-lightning-rod",
+      "dungeons-love-medallion",
+      "dungeons-powershaker",
+      "dungeons-satchel-of-elements",
+      "dungeons-satchel-of-elixirs",
+      "dungeons-satchel-of-snacks",
+      "dungeons-scatter-mines",
+      "dungeons-shadow-shifter",
+      "dungeons-shock-powder",
+      "dungeons-soul-healer",
+      "dungeons-spinblade",
+      "dungeons-tome-of-duplication",
+      "dungeons-totem-of-casting",
+      "dungeons-totem-of-shielding",
+      "dungeons-totem-of-soul-protection",
+      "dungeons-updraft-tome"
+    ],
+    "crafting": [
+      "dungeons-blast-fungus-recipe",
+      "dungeons-corrupted-beacon-recipe",
+      "dungeons-corrupted-seeds-recipe",
+      "dungeons-enchanters-tome-recipe",
+      "dungeons-eye-of-the-guardian-recipe",
+      "dungeons-gong-of-weakening-recipe",
+      "dungeons-harvester-recipe",
+      "dungeons-ice-wand-recipe",
+      "dungeons-lightning-rod-recipe",
+      "dungeons-love-medallion-recipe",
+      "dungeons-powershaker-recipe",
+      "dungeons-satchel-of-elements-recipe",
+      "dungeons-satchel-of-elixirs-recipe",
+      "dungeons-satchel-of-snacks-recipe",
+      "dungeons-scatter-mines-recipe",
+      "dungeons-shadow-shifter-recipe",
+      "dungeons-shock-powder-recipe",
+      "dungeons-soul-healer-recipe",
+      "dungeons-spinblade-recipe",
+      "dungeons-tome-of-duplication-recipe",
+      "dungeons-totem-of-casting-recipe",
+      "dungeons-totem-of-soul-protection-recipe",
+      "dungeons-totem-of-shielding-recipe",
+      "dungeons-updraft-tome-recipe"
+    ]
+  },
+  "newGroups": [
+    {
+      "id": "rare-artifacts",
+      "title": "レアアーティファクト",
+      "intro": "通常版38種のレア版。待ち時間や、コードで確認できた効果の違いを比較できます。",
+      "entries": [
+        "dungeons-rare-blast-fungus",
+        "dungeons-rare-boots-of-swiftness",
+        "dungeons-rare-buzzy-nest",
+        "dungeons-rare-corrupted-beacon",
+        "dungeons-rare-corrupted-seeds",
+        "dungeons-rare-death-cap-mushroom",
+        "dungeons-rare-enchanted-grass",
+        "dungeons-rare-enchanters-tome",
+        "dungeons-rare-eye-of-the-guardian",
+        "dungeons-rare-ghost-cloak",
+        "dungeons-rare-golem-kit",
+        "dungeons-rare-gong-of-weakening",
+        "dungeons-rare-harvester",
+        "dungeons-rare-ice-wand",
+        "dungeons-rare-iron-hide-amulet",
+        "dungeons-rare-light-feather",
+        "dungeons-rare-lightning-rod",
+        "dungeons-rare-love-medallion",
+        "dungeons-rare-powershaker",
+        "dungeons-rare-satchel-of-elements",
+        "dungeons-rare-satchel-of-elixirs",
+        "dungeons-rare-satchel-of-snacks",
+        "dungeons-rare-scatter-mines",
+        "dungeons-rare-shadow-shifter",
+        "dungeons-rare-shock-powder",
+        "dungeons-rare-soul-healer",
+        "dungeons-rare-soul-lantern",
+        "dungeons-rare-spinblade",
+        "dungeons-rare-tasty-bone",
+        "dungeons-rare-tome-of-duplication",
+        "dungeons-rare-totem-of-casting",
+        "dungeons-rare-totem-of-regeneration",
+        "dungeons-rare-totem-of-shielding",
+        "dungeons-rare-totem-of-soul-protection",
+        "dungeons-rare-updraft-tome",
+        "dungeons-rare-vexing-chant",
+        "dungeons-rare-wind-horn",
+        "dungeons-rare-wonderful-wheat"
+      ]
+    },
+    {
+      "id": "limited-artifacts",
+      "title": "季節限定アーティファクト",
+      "intro": "季節限定タグと報酬テーブルに登録された道具。現在の開催・入手可能期間は未確認です。",
+      "entries": [
+        "dungeons-corrupted-pumpkin"
+      ]
+    }
+  ],
+  "excluded": [],
+  "accountedItems": [
+    {
+      "identifier": "dungeons:blast_fungus",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/blast_fungus.json",
+      "status": "added",
+      "entryId": "dungeons-blast-fungus"
+    },
+    {
+      "identifier": "dungeons:boots_of_swiftness",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/boots_of_swiftness.json",
+      "status": "already-published",
+      "entryId": "dungeons-boots-of-swiftness"
+    },
+    {
+      "identifier": "dungeons:buzzy_nest",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/buzzy_nest.json",
+      "status": "already-published",
+      "entryId": "dungeons-buzzy-nest"
+    },
+    {
+      "identifier": "dungeons:corrupted_beacon",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/corrupted_beacon.json",
+      "status": "added",
+      "entryId": "dungeons-corrupted-beacon"
+    },
+    {
+      "identifier": "dungeons:corrupted_seeds",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/corrupted_seeds.json",
+      "status": "added",
+      "entryId": "dungeons-corrupted-seeds"
+    },
+    {
+      "identifier": "dungeons:death_cap_mushroom",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/death_cap.json",
+      "status": "already-published",
+      "entryId": "dungeons-death-cap-mushroom"
+    },
+    {
+      "identifier": "dungeons:enchanted_grass",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/enchanted_grass.json",
+      "status": "already-published",
+      "entryId": "dungeons-enchanted-grass"
+    },
+    {
+      "identifier": "dungeons:enchanters_tome",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/enchanters_tome.json",
+      "status": "added",
+      "entryId": "dungeons-enchanters-tome"
+    },
+    {
+      "identifier": "dungeons:eye_of_the_guardian",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/eye_of_the_guardian.json",
+      "status": "added",
+      "entryId": "dungeons-eye-of-the-guardian"
+    },
+    {
+      "identifier": "dungeons:ghost_cloak",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/ghost_cloak.json",
+      "status": "already-published",
+      "entryId": "dungeons-ghost-cloak"
+    },
+    {
+      "identifier": "dungeons:golem_kit",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/golem_kit.json",
+      "status": "already-published",
+      "entryId": "dungeons-golem-kit"
+    },
+    {
+      "identifier": "dungeons:gong_of_weakening",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/gong_weakening.json",
+      "status": "added",
+      "entryId": "dungeons-gong-of-weakening"
+    },
+    {
+      "identifier": "dungeons:harvester",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/harvester.json",
+      "status": "added",
+      "entryId": "dungeons-harvester"
+    },
+    {
+      "identifier": "dungeons:ice_wand",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/ice_wand.json",
+      "status": "added",
+      "entryId": "dungeons-ice-wand"
+    },
+    {
+      "identifier": "dungeons:iron_hide_amulet",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/iron_hide.json",
+      "status": "already-published",
+      "entryId": "dungeons-iron-hide-amulet"
+    },
+    {
+      "identifier": "dungeons:light_feather",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/light_feather.json",
+      "status": "already-published",
+      "entryId": "dungeons-light-feather"
+    },
+    {
+      "identifier": "dungeons:lightning_rod",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/lightning_rod.json",
+      "status": "added",
+      "entryId": "dungeons-lightning-rod"
+    },
+    {
+      "identifier": "dungeons:love_medallion",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/love_medallion.json",
+      "status": "added",
+      "entryId": "dungeons-love-medallion"
+    },
+    {
+      "identifier": "dungeons:powershaker",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/powershaker.json",
+      "status": "added",
+      "entryId": "dungeons-powershaker"
+    },
+    {
+      "identifier": "dungeons:satchel_of_elements",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_elements.json",
+      "status": "added",
+      "entryId": "dungeons-satchel-of-elements"
+    },
+    {
+      "identifier": "dungeons:satchel_of_elixirs",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_elixirs.json",
+      "status": "added",
+      "entryId": "dungeons-satchel-of-elixirs"
+    },
+    {
+      "identifier": "dungeons:satchel_of_snacks",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/satchel_of_snacks.json",
+      "status": "added",
+      "entryId": "dungeons-satchel-of-snacks"
+    },
+    {
+      "identifier": "dungeons:scatter_mines",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/scatter_mines.json",
+      "status": "added",
+      "entryId": "dungeons-scatter-mines"
+    },
+    {
+      "identifier": "dungeons:shadow_shifter",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/shadow_shifter.json",
+      "status": "added",
+      "entryId": "dungeons-shadow-shifter"
+    },
+    {
+      "identifier": "dungeons:shock_powder",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/shock_powder.json",
+      "status": "added",
+      "entryId": "dungeons-shock-powder"
+    },
+    {
+      "identifier": "dungeons:soul_healer",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/soul_healer.json",
+      "status": "added",
+      "entryId": "dungeons-soul-healer"
+    },
+    {
+      "identifier": "dungeons:soul_lantern",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/soul_lantern.json",
+      "status": "already-published",
+      "entryId": "dungeons-soul-lantern"
+    },
+    {
+      "identifier": "dungeons:spinblade",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/spinblade.json",
+      "status": "added",
+      "entryId": "dungeons-spinblade"
+    },
+    {
+      "identifier": "dungeons:tasty_bone",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/tasty_bone.json",
+      "status": "already-published",
+      "entryId": "dungeons-tasty-bone"
+    },
+    {
+      "identifier": "dungeons:tome_of_duplication",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/tome_duplication.json",
+      "status": "added",
+      "entryId": "dungeons-tome-of-duplication"
+    },
+    {
+      "identifier": "dungeons:totem_of_casting",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_casting.json",
+      "status": "added",
+      "entryId": "dungeons-totem-of-casting"
+    },
+    {
+      "identifier": "dungeons:totem_of_regeneration",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_regeneration.json",
+      "status": "already-published",
+      "entryId": "dungeons-totem-of-regeneration"
+    },
+    {
+      "identifier": "dungeons:totem_of_shielding",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_shielding.json",
+      "status": "added",
+      "entryId": "dungeons-totem-of-shielding"
+    },
+    {
+      "identifier": "dungeons:totem_of_soul_protection",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/totem_of_soul_protection.json",
+      "status": "added",
+      "entryId": "dungeons-totem-of-soul-protection"
+    },
+    {
+      "identifier": "dungeons:updraft_tome",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/updraft_tome.json",
+      "status": "added",
+      "entryId": "dungeons-updraft-tome"
+    },
+    {
+      "identifier": "dungeons:vexing_chant",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/vexing_chant.json",
+      "status": "already-published",
+      "entryId": "dungeons-vexing-chant"
+    },
+    {
+      "identifier": "dungeons:wind_horn",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/wind_horn.json",
+      "status": "already-published",
+      "entryId": "dungeons-wind-horn"
+    },
+    {
+      "identifier": "dungeons:wonderful_wheat",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/common/wonderful_wheat.json",
+      "status": "already-published",
+      "entryId": "dungeons-wonderful-wheat"
+    },
+    {
+      "identifier": "dungeons:corrupted_pumpkin",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/limited/corrupted_pumpkin.json",
+      "status": "added",
+      "entryId": "dungeons-corrupted-pumpkin"
+    },
+    {
+      "identifier": "dungeons:rare_blast_fungus",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/blast_fungus.json",
+      "status": "added",
+      "entryId": "dungeons-rare-blast-fungus"
+    },
+    {
+      "identifier": "dungeons:rare_boots_of_swiftness",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/boots_of_swiftness.json",
+      "status": "added",
+      "entryId": "dungeons-rare-boots-of-swiftness"
+    },
+    {
+      "identifier": "dungeons:rare_buzzy_nest",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/buzzy_nest.json",
+      "status": "added",
+      "entryId": "dungeons-rare-buzzy-nest"
+    },
+    {
+      "identifier": "dungeons:rare_corrupted_beacon",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/corrupted_beacon.json",
+      "status": "added",
+      "entryId": "dungeons-rare-corrupted-beacon"
+    },
+    {
+      "identifier": "dungeons:rare_corrupted_seeds",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/corrupted_seeds.json",
+      "status": "added",
+      "entryId": "dungeons-rare-corrupted-seeds"
+    },
+    {
+      "identifier": "dungeons:rare_death_cap_mushroom",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/death_cap.json",
+      "status": "added",
+      "entryId": "dungeons-rare-death-cap-mushroom"
+    },
+    {
+      "identifier": "dungeons:rare_enchanted_grass",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/enchanted_grass.json",
+      "status": "added",
+      "entryId": "dungeons-rare-enchanted-grass"
+    },
+    {
+      "identifier": "dungeons:rare_enchanters_tome",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/enchanters_tome.json",
+      "status": "added",
+      "entryId": "dungeons-rare-enchanters-tome"
+    },
+    {
+      "identifier": "dungeons:rare_eye_of_the_guardian",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/eye_of_the_guardian.json",
+      "status": "added",
+      "entryId": "dungeons-rare-eye-of-the-guardian"
+    },
+    {
+      "identifier": "dungeons:rare_ghost_cloak",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/ghost_cloak.json",
+      "status": "added",
+      "entryId": "dungeons-rare-ghost-cloak"
+    },
+    {
+      "identifier": "dungeons:rare_golem_kit",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/golem_kit.json",
+      "status": "added",
+      "entryId": "dungeons-rare-golem-kit"
+    },
+    {
+      "identifier": "dungeons:rare_gong_of_weakening",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/gong_weakening.json",
+      "status": "added",
+      "entryId": "dungeons-rare-gong-of-weakening"
+    },
+    {
+      "identifier": "dungeons:rare_harvester",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/harvester.json",
+      "status": "added",
+      "entryId": "dungeons-rare-harvester"
+    },
+    {
+      "identifier": "dungeons:rare_ice_wand",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/ice_wand.json",
+      "status": "added",
+      "entryId": "dungeons-rare-ice-wand"
+    },
+    {
+      "identifier": "dungeons:rare_iron_hide_amulet",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/iron_hide.json",
+      "status": "added",
+      "entryId": "dungeons-rare-iron-hide-amulet"
+    },
+    {
+      "identifier": "dungeons:rare_light_feather",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/light_feather.json",
+      "status": "added",
+      "entryId": "dungeons-rare-light-feather"
+    },
+    {
+      "identifier": "dungeons:rare_lightning_rod",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/lightning_rod.json",
+      "status": "added",
+      "entryId": "dungeons-rare-lightning-rod"
+    },
+    {
+      "identifier": "dungeons:rare_love_medallion",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/love_medallion.json",
+      "status": "added",
+      "entryId": "dungeons-rare-love-medallion"
+    },
+    {
+      "identifier": "dungeons:rare_powershaker",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/powershaker.json",
+      "status": "added",
+      "entryId": "dungeons-rare-powershaker"
+    },
+    {
+      "identifier": "dungeons:rare_satchel_of_elements",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/satchel_elements.json",
+      "status": "added",
+      "entryId": "dungeons-rare-satchel-of-elements"
+    },
+    {
+      "identifier": "dungeons:rare_satchel_of_elixirs",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/satchel_of_elixirs.json",
+      "status": "added",
+      "entryId": "dungeons-rare-satchel-of-elixirs"
+    },
+    {
+      "identifier": "dungeons:rare_satchel_of_snacks",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/satchel_of_snacks.json",
+      "status": "added",
+      "entryId": "dungeons-rare-satchel-of-snacks"
+    },
+    {
+      "identifier": "dungeons:rare_scatter_mines",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/scatter_mines.json",
+      "status": "added",
+      "entryId": "dungeons-rare-scatter-mines"
+    },
+    {
+      "identifier": "dungeons:rare_shadow_shifter",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/shadow_shifter.json",
+      "status": "added",
+      "entryId": "dungeons-rare-shadow-shifter"
+    },
+    {
+      "identifier": "dungeons:rare_shock_powder",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/shock_powder.json",
+      "status": "added",
+      "entryId": "dungeons-rare-shock-powder"
+    },
+    {
+      "identifier": "dungeons:rare_soul_healer",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/soul_healer.json",
+      "status": "added",
+      "entryId": "dungeons-rare-soul-healer"
+    },
+    {
+      "identifier": "dungeons:rare_soul_lantern",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/soul_lantern.json",
+      "status": "added",
+      "entryId": "dungeons-rare-soul-lantern"
+    },
+    {
+      "identifier": "dungeons:rare_spinblade",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/spinblade.json",
+      "status": "added",
+      "entryId": "dungeons-rare-spinblade"
+    },
+    {
+      "identifier": "dungeons:rare_tasty_bone",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/tasty_bone.json",
+      "status": "added",
+      "entryId": "dungeons-rare-tasty-bone"
+    },
+    {
+      "identifier": "dungeons:rare_tome_of_duplication",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/tome_of_duplication.json",
+      "status": "added",
+      "entryId": "dungeons-rare-tome-of-duplication"
+    },
+    {
+      "identifier": "dungeons:rare_totem_of_casting",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/totem_of_casting.json",
+      "status": "added",
+      "entryId": "dungeons-rare-totem-of-casting"
+    },
+    {
+      "identifier": "dungeons:rare_totem_of_regeneration",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/totem_of_regeneration.json",
+      "status": "added",
+      "entryId": "dungeons-rare-totem-of-regeneration"
+    },
+    {
+      "identifier": "dungeons:rare_totem_of_shielding",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/totem_of_shielding.json",
+      "status": "added",
+      "entryId": "dungeons-rare-totem-of-shielding"
+    },
+    {
+      "identifier": "dungeons:rare_totem_of_soul_protection",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/totem_of_soul_protection.json",
+      "status": "added",
+      "entryId": "dungeons-rare-totem-of-soul-protection"
+    },
+    {
+      "identifier": "dungeons:rare_updraft_tome",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/updraft_tome.json",
+      "status": "added",
+      "entryId": "dungeons-rare-updraft-tome"
+    },
+    {
+      "identifier": "dungeons:rare_vexing_chant",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/vexing_chant.json",
+      "status": "added",
+      "entryId": "dungeons-rare-vexing-chant"
+    },
+    {
+      "identifier": "dungeons:rare_wind_horn",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/wind_horn.json",
+      "status": "added",
+      "entryId": "dungeons-rare-wind-horn"
+    },
+    {
+      "identifier": "dungeons:rare_wonderful_wheat",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/artifact/rare/wonderful_wheat.json",
+      "status": "added",
+      "entryId": "dungeons-rare-wonderful-wheat"
+    }
+  ],
+  "accountedRecipes": [
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/blast_fungus.json",
+      "status": "added",
+      "entryId": "dungeons-blast-fungus-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/boots_swiftness.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/buzzy_nest.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/corrupted_beacon.json",
+      "status": "added",
+      "entryId": "dungeons-corrupted-beacon-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/corrupted_seeds.json",
+      "status": "added",
+      "entryId": "dungeons-corrupted-seeds-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/death_cap_mushroom.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/enchanted_grass.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/enchanters_tome.json",
+      "status": "added",
+      "entryId": "dungeons-enchanters-tome-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/eye_of_the_guardian.json",
+      "status": "added",
+      "entryId": "dungeons-eye-of-the-guardian-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/ghost_cloak.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/golem_kit.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/gong_weakening.json",
+      "status": "added",
+      "entryId": "dungeons-gong-of-weakening-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/harvester.json",
+      "status": "added",
+      "entryId": "dungeons-harvester-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/ice_wand.json",
+      "status": "added",
+      "entryId": "dungeons-ice-wand-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/iron_hide.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/light_feather.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/lightning_rod.json",
+      "status": "added",
+      "entryId": "dungeons-lightning-rod-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/love_medallion.json",
+      "status": "added",
+      "entryId": "dungeons-love-medallion-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/powershaker.json",
+      "status": "added",
+      "entryId": "dungeons-powershaker-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/satchel_elements.json",
+      "status": "added",
+      "entryId": "dungeons-satchel-of-elements-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/satchel_of_elixirs.json",
+      "status": "added",
+      "entryId": "dungeons-satchel-of-elixirs-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/satchel_of_snacks.json",
+      "status": "added",
+      "entryId": "dungeons-satchel-of-snacks-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/scatter_mines.json",
+      "status": "added",
+      "entryId": "dungeons-scatter-mines-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/shadow_shifter.json",
+      "status": "added",
+      "entryId": "dungeons-shadow-shifter-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/shock_powder.json",
+      "status": "added",
+      "entryId": "dungeons-shock-powder-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/soul_healer.json",
+      "status": "added",
+      "entryId": "dungeons-soul-healer-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/soul_lantern.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/spinblade.json",
+      "status": "added",
+      "entryId": "dungeons-spinblade-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/tasty_bone.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/tome_of_duplication.json",
+      "status": "added",
+      "entryId": "dungeons-tome-of-duplication-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_c.json",
+      "status": "added",
+      "entryId": "dungeons-totem-of-casting-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_of_soul_protection.json",
+      "status": "added",
+      "entryId": "dungeons-totem-of-soul-protection-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_r.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/totem_s.json",
+      "status": "added",
+      "entryId": "dungeons-totem-of-shielding-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/updraft_tome.json",
+      "status": "added",
+      "entryId": "dungeons-updraft-tome-recipe"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/vexing_chant.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/wind_horn.json",
+      "status": "already-published"
+    },
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/artefacts/wonderful_wheat.json",
+      "status": "already-published"
+    }
+  ],
+  "auditNotes": [
+    "rare_gong_of_weakening と rare_harvester は type:common を渡すため通常の効果設定で掲載。",
+    "totem_of_soul_protection は被ダメージ前に現在HP > 0 で終了する条件があるため、死亡回避・復活を保証しない。",
+    "tome_of_duplication の boots_of_swiftness 成分名は登録名 boots_of_switfness と一致しない。すべての複製組み合わせが動くとは案内しない。",
+    "corrupted_pumpkin は seasonal_item タグを持つが spooky_monstrosity の報酬テーブルに正の重み3で登録。現在のイベント開催は未確認。"
+  ]
+}

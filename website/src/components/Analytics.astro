@@ -1,0 +1,25 @@
+---
+import config from '../data/analytics-config.json';
+import { entries } from '../lib/guide';
+import { withBase } from '../lib/data';
+const path=Astro.url.pathname;
+const slug=path.split('/').filter(Boolean).at(-1);
+const entry=path.includes('/database/entries/')?entries.find(e=>e.id===slug):undefined;
+const owner=entry?.contentId??(path.includes('/contents/')?slug:undefined)??'site';
+const ga4=config.enabled&&config.provider==='ga4'&&/^G-[A-Z0-9]{4,20}$/.test(config.measurementId);
+// Basic Cloudflare statistics run independently of opt-in GA4.
+const cf=config.enabled&&/^[a-f0-9]{32}$/i.test(config.cloudflareBeacon);
+---
+{ga4 && <div id="pine-analytics" data-measurement-id={config.measurementId} data-content-group={owner} data-entry-kind={entry?.kind??''} data-entry-id={entry?.id??''}>
+ <section class="analytics-choice" id="analytics-choice" aria-label="アクセス計測の選択" hidden>
+  <p>サイト改善のため、閲覧ページや図鑑の操作をGoogle Analyticsで集計してもよいですか？ 検索に入力した文章は送りません。{cf && '基本のアクセス集計には、Cookieを使わないCloudflare Web Analyticsを使用しています。'}<a href={withBase('/privacy/')}>計測について</a></p>
+  <div><button type="button" data-consent="yes">許可する</button><button type="button" data-consent="no">許可しない</button></div>
+ </section>
+ <button type="button" id="analytics-settings" class="analytics-settings">アクセス計測の設定</button>
+</div>}
+{ga4 && <script is:inline src={withBase('/analytics.js')} defer></script>}
+{cf && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({token:config.cloudflareBeacon})}></script>}
+<style>
+ .analytics-choice{position:fixed;bottom:1rem;left:1rem;right:1rem;z-index:100;background:#fff;color:#223328;border:2px solid #385834;padding:1rem;box-shadow:0 4px 18px #0003;max-width:800px;margin:auto}
+ .analytics-choice[hidden]{display:none}.analytics-choice p{font-size:.9rem;margin:0 0 .6rem}.analytics-choice div{display:flex;gap:.8rem;flex-wrap:wrap}.analytics-choice button{padding:.55rem .8rem;background:#eff5eb;border:1px solid #345c2a;cursor:pointer;font:inherit}.analytics-settings{display:block;margin:1rem auto;background:#f4f5ee;color:#223328;border:1px solid #56724b;padding:.4rem .7rem;font:inherit;font-size:.75rem;cursor:pointer}
+</style>

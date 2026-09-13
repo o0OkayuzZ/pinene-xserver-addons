@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { updates } from '../lib/data';
+---
+<BaseLayout title="更新情報" current="updates"><section class="page-hero"><div class="shell"><p class="eyebrow">LATEST UPDATES</p><h1>更新情報</h1><p class="lede">公開が確認されたお知らせをお届けします。</p></div></section><section class="section"><div class="shell reading">{updates.length ? updates.map(update => <article class="panel"><h2>{update.title}</h2>{update.date && <time datetime={update.date}>{update.date}</time>}<p>{update.body}</p></article>) : <article class="panel"><h2>お知らせを準備中です</h2><p>現在、公開できる更新記事はありません。確認できた情報から掲載します。</p></article>}</div></section></BaseLayout>

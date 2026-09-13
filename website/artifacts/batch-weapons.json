@@ -1,0 +1,4408 @@
+{
+  "sourceCommit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+  "baselineWebCommit": "90cae3be44968b6a0da952261cc4736e0fd532cf",
+  "entries": [
+    {
+      "id": "dungeons-anchor",
+      "name": "イカリ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値1341・ダメージ成分15の近接装備。",
+      "description": "イカリのアイテム画像、基礎性能と修理材料を確認できます。耐久値は1341、近接ダメージ成分は15に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：1341。",
+        "近接ダメージ成分の設定値：15。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：2.5秒。",
+        "振り動作の時間設定：1.5秒。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の12.5%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：イカリ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-anchor.png",
+        "alt": "イカリのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/anchor/anchor.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/anchor.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/anchor.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-axe",
+      "name": "斧",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値289・ダメージ成分6の近接装備。",
+      "description": "斧のアイテム画像、基礎性能と修理材料を確認できます。耐久値は289、近接ダメージ成分は6に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：289。",
+        "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：斧。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-axe.png",
+        "alt": "斧のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/axe/axe.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/axe.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/axe.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-backstabber",
+      "name": "裏切りの刃",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値401・ダメージ成分5の近接装備。",
+      "description": "裏切りの刃のアイテム画像、基礎性能と修理材料を確認できます。耐久値は401、近接ダメージ成分は5に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：401。",
+        "近接ダメージ成分の設定値：5。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "振り動作の時間設定：0.2秒。",
+        "修理材料の設定：金インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：裏切りの刃。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-backstabber.png",
+        "alt": "裏切りの刃のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/backstabber/backstabber.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/backstabber.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/backstabber.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-battlestaff",
+      "name": "バトルスタッフ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値100・ダメージ成分4の近接装備。",
+      "description": "バトルスタッフのアイテム画像、基礎性能と修理材料を確認できます。耐久値は100、近接ダメージ成分は4に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：100。",
+        "近接ダメージ成分の設定値：4。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "振り動作の時間設定：0.4秒。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：バトルスタッフ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-battlestaff.png",
+        "alt": "バトルスタッフのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/battlestaff/battlestaff.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/battlestaff.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/battlestaff.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-bone-club",
+      "name": "ボーンクラブ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値800・ダメージ成分9の近接装備。",
+      "description": "ボーンクラブのアイテム画像、基礎性能と修理材料を確認できます。耐久値は800、近接ダメージ成分は9に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：800。",
+        "近接ダメージ成分の設定値：9。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：0.55秒。",
+        "振り動作の時間設定：0.76秒。",
+        "修理材料の設定：玄武岩。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：ボーンクラブ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-bone-club.png",
+        "alt": "ボーンクラブのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/boneclub/bone_club.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/bone_club.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/bone_club.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-broken-sawblade",
+      "name": "壊れたソーブレード",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値150・ダメージ成分5の近接装備。",
+      "description": "壊れたソーブレードのアイテム画像、基礎性能と修理材料を確認できます。耐久値は150、近接ダメージ成分は5に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：150。",
+        "近接ダメージ成分の設定値：5。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：0.1秒。",
+        "振り動作の時間設定：0.3秒。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：壊れたソーブレード。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-broken-sawblade.png",
+        "alt": "壊れたソーブレードのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/broken_sawblade/broken_sawblade.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/broken_sawblade.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/broken_sawblade.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-claymore",
+      "name": "クレイモア",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値555・ダメージ成分7の近接装備。",
+      "description": "クレイモアのアイテム画像、基礎性能と修理材料を確認できます。耐久値は555、近接ダメージ成分は7に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：555。",
+        "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：クレイモア。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-claymore.png",
+        "alt": "クレイモアのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/claymore.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/claymore.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-coral-blade",
+      "name": "サンゴのブレード",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値115・ダメージ成分5の近接装備。",
+      "description": "サンゴのブレードのアイテム画像、基礎性能と修理材料を確認できます。耐久値は115、近接ダメージ成分は5に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：115。",
+        "近接ダメージ成分の設定値：5。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "振り動作の時間設定：0.25秒。",
+        "修理材料の設定：脳サンゴ。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：サンゴのブレード。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-coral-blade.png",
+        "alt": "サンゴのブレードのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/coral_blade/coral_blade.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/coral_blade.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/coral_blade.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-cutlass",
+      "name": "カトラス",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値210・ダメージ成分7の近接装備。",
+      "description": "カトラスのアイテム画像、基礎性能と修理材料を確認できます。耐久値は210、近接ダメージ成分は7に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：210。",
+        "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：カトラス。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-cutlass.png",
+        "alt": "カトラスのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/cutlass/cutlass.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/cutlass.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/cutlass.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-sparkler",
+      "name": "手持ち花火",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "期間限定のチェスト開封処理に登録された近接装備。",
+      "description": "手持ち花火のアイテム画像、基礎性能と修理材料を確認できます。耐久値は1320、近接ダメージ成分は8に設定されています。 季節限定アイテムのタグと、期間を判定する専用の入手処理があります。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "実行環境の日付が6月18日〜7月3日のとき、Dungeonsのダイヤモンドチェスト開封イベントで約3分の1の抽選を行い、当選時に1個を生成するコードがあります。現在の本番での開催・取得は未確認です。",
+      "details": [
+        "耐久値の設定：1320。",
+        "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：カトラス。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。",
+        "判定には実行環境のDateが使われます。日本時間での開始・終了や、現在の配布を保証しません。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-sparkler.png",
+        "alt": "手持ち花火のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/cutlass/sparkler.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sparkler_icon.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/misc/sparklerLoot.js",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/main.js"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-daggers",
+      "name": "ダガー",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値180・ダメージ成分4の近接装備。",
+      "description": "ダガーのアイテム画像、基礎性能と修理材料を確認できます。耐久値は180、近接ダメージ成分は4に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：180。",
+        "近接ダメージ成分の設定値：4。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "振り動作の時間設定：0.3秒。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：ダガー。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-daggers.png",
+        "alt": "ダガーのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/daggers/daggers.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/daggers.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/daggers.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-double-axe",
+      "name": "両刃斧",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値400・ダメージ成分6の近接装備。",
+      "description": "両刃斧のアイテム画像、基礎性能と修理材料を確認できます。耐久値は400、近接ダメージ成分は6に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：400。",
+        "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：両刃斧。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-double-axe.png",
+        "alt": "両刃斧のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/double_axe/double_axe.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/double_axe.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/double_axe.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-gauntlets",
+      "name": "ガントレット",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値300・ダメージ成分5の近接装備。",
+      "description": "ガントレットのアイテム画像、基礎性能と修理材料を確認できます。耐久値は300、近接ダメージ成分は5に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：300。",
+        "近接ダメージ成分の設定値：5。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "修理材料の設定：革。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：ガントレット。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-gauntlets.png",
+        "alt": "ガントレットのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/gauntlets.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/gauntlets.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-glaive",
+      "name": "グレイブ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値322・ダメージ成分7の近接装備。",
+      "description": "グレイブのアイテム画像、基礎性能と修理材料を確認できます。耐久値は322、近接ダメージ成分は7に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：322。",
+        "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：1.2秒。",
+        "振り動作の時間設定：1.2秒。",
+        "突き攻撃の通常射程設定：最小2・最大4.5。実際の当たり判定は未検証です。",
+        "同じ系列の装備を使う修理設定：グレイブ。修復量は材料側の残り耐久値などで変わります。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-glaive.png",
+        "alt": "グレイブのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/glaive/glaive.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/glaive.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/glaive.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-great-hammer",
+      "name": "グレートハンマー",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値1120・ダメージ成分8の近接装備。",
+      "description": "グレートハンマーのアイテム画像、基礎性能と修理材料を確認できます。耐久値は1120、近接ダメージ成分は8に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：1120。",
+        "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：1秒。",
+        "振り動作の時間設定：0.6秒。",
+        "修理材料の設定：丸石。1個あたり最大耐久値の12.5%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：グレートハンマー。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-great-hammer.png",
+        "alt": "グレートハンマーのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/hammer/great_hammer.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/great_hammer.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/great_hammer.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-katana",
+      "name": "刀",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値199・ダメージ成分7の近接装備。",
+      "description": "刀のアイテム画像、基礎性能と修理材料を確認できます。耐久値は199、近接ダメージ成分は7に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：199。",
+        "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：刀。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-katana.png",
+        "alt": "刀のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/katana/katana.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/katana.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/katana.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-mace",
+      "name": "メイス",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値512・ダメージ成分7の近接装備。",
+      "description": "メイスのアイテム画像、基礎性能と修理材料を確認できます。耐久値は512、近接ダメージ成分は7に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：512。",
+        "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：0.75秒。",
+        "振り動作の時間設定：0.6秒。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：メイス。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-mace.png",
+        "alt": "メイスのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/mace/mace.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/iron_mace.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/iron_mace.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-obsidian-claymore",
+      "name": "黒曜石クレイモア",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値1500・ダメージ成分9の近接装備。",
+      "description": "黒曜石クレイモアのアイテム画像、基礎性能と修理材料を確認できます。耐久値は1500、近接ダメージ成分は9に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：1500。",
+        "近接ダメージ成分の設定値：9。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：2秒。",
+        "振り動作の時間設定：1秒。",
+        "修理材料の設定：黒曜石。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：黒曜石クレイモア。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-obsidian-claymore.png",
+        "alt": "黒曜石クレイモアのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/obsidian_claymore/obsidian_claymore.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/obsidian_claymore.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/obsidian_claymore.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-sharpened-pickaxe",
+      "name": "ツルハシ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値362・ダメージ成分5の近接装備。",
+      "description": "ツルハシのアイテム画像、基礎性能と修理材料を確認できます。耐久値は362、近接ダメージ成分は5に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：362。",
+        "近接ダメージ成分の設定値：5。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "ツルハシの破壊対象タグを持つブロックに、採掘速度6が設定されています。すべてのブロックへの適用を意味しません。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：ツルハシ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-sharpened-pickaxe.png",
+        "alt": "ツルハシのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/pickaxe/sharpened_pickaxe.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sharpened_pickaxe.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/sharpened_pickaxe.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-rapier",
+      "name": "レイピア",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値133・ダメージ成分6の近接装備。",
+      "description": "レイピアのアイテム画像、基礎性能と修理材料を確認できます。耐久値は133、近接ダメージ成分は6に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用レシピの定義はありますが、行幅に不整合があります（上から3・3・2文字）。ゲーム内での製作可否が未確認のため、製作可能なレシピとしては掲載していません。",
+      "details": [
+        "耐久値の設定：133。",
+        "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "振り動作の時間設定：0.2秒。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：レイピア。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-rapier.png",
+        "alt": "レイピアのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rapier/rapier.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/rapier.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/rapier.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-scythe",
+      "name": "魂のサイス",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値699・ダメージ成分7の近接装備。",
+      "description": "魂のサイスのアイテム画像、基礎性能と修理材料を確認できます。耐久値は699、近接ダメージ成分は7に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：699。",
+        "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：0.75秒。",
+        "振り動作の時間設定：0.5秒。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：魂のサイス。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-soul-scythe.png",
+        "alt": "魂のサイスのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/scythe/soul_scythe.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/soul_scythe.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/soul_scythe.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-knife",
+      "name": "魂のナイフ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値412・ダメージ成分6の近接装備。",
+      "description": "魂のナイフのアイテム画像、基礎性能と修理材料を確認できます。耐久値は412、近接ダメージ成分は6に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：412。",
+        "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：0.55秒。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：魂のナイフ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-soul-knife.png",
+        "alt": "魂のナイフのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/soul_knife/soul_knife.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/soul_knife.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/soul_knife.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-tempest-knife",
+      "name": "テンペストナイフ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値206・ダメージ成分6の近接装備。",
+      "description": "テンペストナイフのアイテム画像、基礎性能と修理材料を確認できます。耐久値は206、近接ダメージ成分は6に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：206。",
+        "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "修理材料の設定：鉄インゴット。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：テンペストナイフ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-tempest-knife.png",
+        "alt": "テンペストナイフのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/tempest_knife/tempest_knife.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/tempest_knife.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/tempest_knife.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-void-touched-blades",
+      "name": "虚無の力を帯びし双剣",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値333・ダメージ成分4の近接装備。",
+      "description": "虚無の力を帯びし双剣のアイテム画像、基礎性能と修理材料を確認できます。耐久値は333、近接ダメージ成分は4に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：333。",
+        "近接ダメージ成分の設定値：4。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "修理材料の設定：エンダーパール。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：虚無の力を帯びし双剣。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-void-touched-blades.png",
+        "alt": "虚無の力を帯びし双剣のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/void_blades/void_touched_blades.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/void_touched_blades.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/void_touched_blades.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-whip",
+      "name": "鞭",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "耐久値177・ダメージ成分5の近接装備。",
+      "description": "鞭のアイテム画像、基礎性能と修理材料を確認できます。耐久値は177、近接ダメージ成分は5に設定されています。",
+      "usage": "手に持って近接戦闘に使う装備です。特殊効果や連続攻撃、実際の攻撃間隔はゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：177。",
+        "近接ダメージ成分の設定値：5。特殊攻撃や相手の防御を含む最終ダメージではありません。",
+        "攻撃クールダウンの設定：0.75秒。",
+        "振り動作の時間設定：0.5秒。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：鞭。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-whip.png",
+        "alt": "鞭のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/whip/whip.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/whip.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/whip.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-longbow",
+      "name": "長弓",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1.5秒・耐久値421の弓。",
+      "description": "弓として矢を撃つ装備です。最大引き絞り時間は1.5秒、耐久値は421に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：421。",
+        "最大引き絞り時間の設定：1.5秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：長弓。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-longbow.png",
+        "alt": "長弓のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/longbow/longbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/longbow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/longbow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-snow-bow",
+      "name": "雪の弓",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1秒・耐久値361の弓。",
+      "description": "弓として矢を撃つ装備です。最大引き絞り時間は1秒、耐久値は361に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：361。",
+        "最大引き絞り時間の設定：1秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：雪の弓。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-snow-bow.png",
+        "alt": "雪の弓のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/snowbow/snow_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/snow_bow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/snow_bow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-bow",
+      "name": "魂の弓",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り0.75秒・耐久値198の弓。",
+      "description": "弓として矢を撃つ装備です。最大引き絞り時間は0.75秒、耐久値は198に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：198。",
+        "最大引き絞り時間の設定：0.75秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：魂の弓。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-soul-bow.png",
+        "alt": "魂の弓のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/soulbow/soul_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/soul_bow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/soul_bow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-twisting-vine-bow",
+      "name": "ねじれたツタの弓",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り2秒・耐久値199の弓。",
+      "description": "弓として矢を撃つ装備です。最大引き絞り時間は2秒、耐久値は199に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：199。",
+        "最大引き絞り時間の設定：2秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：ねじれツタ。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：ねじれたツタの弓。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-twisting-vine-bow.png",
+        "alt": "ねじれたツタの弓のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/vinebow/twisting_vine_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/twisting_vine_bow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/twisting_vine_bow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-void-bow",
+      "name": "虚無の弓",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1秒・耐久値333の弓。",
+      "description": "弓として矢を撃つ装備です。最大引き絞り時間は1秒、耐久値は333に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：333。",
+        "最大引き絞り時間の設定：1秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：虚無の弓。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-void-bow.png",
+        "alt": "虚無の弓のパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/voidbow/void_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/void_bow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/void_bow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-wind-bow",
+      "name": "ウィンドボウ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1.5秒・耐久値399の弓。",
+      "description": "弓として矢を撃つ装備です。最大引き絞り時間は1.5秒、耐久値は399に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：399。",
+        "最大引き絞り時間の設定：1.5秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：ウィンドボウ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-wind-bow.png",
+        "alt": "ウィンドボウのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/windbow/wind_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/wind_bow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/wind_bow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-burst-crossbow",
+      "name": "バーストクロスボウ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1.25秒・耐久値465のクロスボウ。",
+      "description": "クロスボウとして矢を撃つ装備です。最大引き絞り時間は1.25秒、耐久値は465に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：465。",
+        "最大引き絞り時間の設定：1.25秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：バーストクロスボウ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-burst-crossbow.png",
+        "alt": "バーストクロスボウのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/burst/burst_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/burst_crossbow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/burst_crossbow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-cog-crossbow",
+      "name": "コグクロスボウ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り2秒・耐久値500のクロスボウ。",
+      "description": "クロスボウとして矢を撃つ装備です。最大引き絞り時間は2秒、耐久値は500に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：500。",
+        "最大引き絞り時間の設定：2秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：コグクロスボウ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-cog-crossbow.png",
+        "alt": "コグクロスボウのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/cog/cog_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/cog_crossbow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/cog_crossbow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-exploding-crossbow",
+      "name": "爆発のクロスボウ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り2秒・耐久値489のクロスボウ。",
+      "description": "クロスボウとして矢を撃つ装備です。最大引き絞り時間は2秒、耐久値は489に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：489。",
+        "最大引き絞り時間の設定：2秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：爆発のクロスボウ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-exploding-crossbow.png",
+        "alt": "爆発のクロスボウのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/exploding/exploding_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/exploding_crossbow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/exploding_crossbow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-harpoon-crossbow",
+      "name": "ハープーンクロスボウ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1.25秒・耐久値321のクロスボウ。",
+      "description": "クロスボウとして矢を撃つ装備です。最大引き絞り時間は1.25秒、耐久値は321に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：321。",
+        "最大引き絞り時間の設定：1.25秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：ハープーンクロスボウ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-harpoon-crossbow.png",
+        "alt": "ハープーンクロスボウのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/harpoon/harpoon_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/harpoon_crossbow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/harpoon_crossbow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-heavy-crossbow",
+      "name": "ヘビークロスボウ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1.5秒・耐久値696のクロスボウ。",
+      "description": "クロスボウとして矢を撃つ装備です。最大引き絞り時間は1.5秒、耐久値は696に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：696。",
+        "最大引き絞り時間の設定：1.5秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：ヘビークロスボウ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-heavy-crossbow.png",
+        "alt": "ヘビークロスボウのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/heavy/heavy_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/heavy_crossbow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/heavy_crossbow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-scatter-crossbow",
+      "name": "乱射のクロスボウ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1.25秒・耐久値365のクロスボウ。",
+      "description": "クロスボウとして矢を撃つ装備です。最大引き絞り時間は1.25秒、耐久値は365に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：365。",
+        "最大引き絞り時間の設定：1.25秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：乱射のクロスボウ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-scatter-crossbow.png",
+        "alt": "乱射のクロスボウのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/scatter/scatter.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/scatter_crossbow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/scatter_crossbow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-shadow-crossbow",
+      "name": "影のクロスボウ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1.3秒・耐久値444のクロスボウ。",
+      "description": "クロスボウとして矢を撃つ装備です。最大引き絞り時間は1.3秒、耐久値は444に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：444。",
+        "最大引き絞り時間の設定：1.3秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：影のクロスボウ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-shadow-crossbow.png",
+        "alt": "影のクロスボウのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/shadow/shadow_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/shadow_crossbow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/shadow_crossbow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-crossbow",
+      "name": "魂のクロスボウ",
+      "kind": "item",
+      "contentId": "minecraft-dungeons",
+      "summary": "引き絞り1秒・耐久値281のクロスボウ。",
+      "description": "クロスボウとして矢を撃つ装備です。最大引き絞り時間は1秒、耐久値は281に設定されています。通常の矢と5種類の特殊な矢が弾薬候補に含まれます。",
+      "usage": "対応する矢を用意し、使用操作で狙います。射撃時の追加効果、弾道、最終ダメージはゲーム内で未検証です。",
+      "obtaining": "作業台用の素材レシピが登録されています。関連レシピで材料の個数、配置と完成数を確認できます。実際の製作・解放表示は未検証です。",
+      "details": [
+        "耐久値の設定：281。",
+        "最大引き絞り時間の設定：1秒。",
+        "対応弾薬：矢、花火の矢、炎上の矢、銛の矢、雷鳴の矢、苦痛の矢。",
+        "修理材料の設定：糸。1個あたり最大耐久値の25%に相当する修復量です。",
+        "修理材料の設定：棒。1個あたり最大耐久値の25%に相当する修復量です。",
+        "同じ系列の装備を使う修理設定：魂のクロスボウ。修復量は材料側の残り耐久値などで変わります。",
+        "修理操作、特殊効果、実ワールドでの動作は未検証です。"
+      ],
+      "image": {
+        "src": "/images/items/dungeons-soul-crossbow.png",
+        "alt": "魂のクロスボウのパック内画像",
+        "kind": "pack-texture"
+      },
+      "recipe": null,
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/soul/soul_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/ranged/soul_crossbow/standby.png",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/soul_crossbow.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-anchor-recipe",
+      "name": "イカリのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "イカリを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄ブロック",
+            "鉄ブロック",
+            "鉄ブロック"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            ""
+          ],
+          [
+            "鉄塊",
+            "鉄インゴット",
+            "鉄塊"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄ブロック",
+            "count": 3
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 2
+          },
+          {
+            "name": "鉄塊",
+            "count": 2
+          }
+        ],
+        "resultId": "dungeons-anchor",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/anchor.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/anchor/anchor.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-axe-recipe",
+      "name": "斧のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "斧を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "鉄インゴット",
+            "棒"
+          ],
+          [
+            "棒",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 3
+          },
+          {
+            "name": "棒",
+            "count": 2
+          }
+        ],
+        "resultId": "dungeons-axe",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/axe.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/axe/axe.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-backstabber-recipe",
+      "name": "裏切りの刃のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "裏切りの刃を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "黒曜石",
+            "金インゴット"
+          ],
+          [
+            "黒曜石",
+            "金インゴット"
+          ],
+          [
+            "棒",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "黒曜石",
+            "count": 2
+          },
+          {
+            "name": "金インゴット",
+            "count": 2
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-backstabber",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/backstabber.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/backstabber/backstabber.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-battlestaff-recipe",
+      "name": "バトルスタッフのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "バトルスタッフを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "",
+            "棒"
+          ],
+          [
+            "",
+            "革",
+            ""
+          ],
+          [
+            "棒",
+            "",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 2
+          },
+          {
+            "name": "革",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-battlestaff",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/battlestaff.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/battlestaff/battlestaff.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-bone-club-recipe",
+      "name": "ボーンクラブのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ボーンクラブを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "玄武岩",
+            "骨ブロック",
+            "玄武岩"
+          ],
+          [
+            "革",
+            "骨ブロック",
+            "革"
+          ],
+          [
+            "",
+            "棒",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "玄武岩",
+            "count": 2
+          },
+          {
+            "name": "骨ブロック",
+            "count": 2
+          },
+          {
+            "name": "革",
+            "count": 2
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-bone-club",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/bone_club.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/boneclub/bone_club.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-broken-sawblade-recipe",
+      "name": "壊れたソーブレードのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "壊れたソーブレードを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "鉄インゴット",
+            "銅インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "棒",
+            "鉄インゴット",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 5
+          },
+          {
+            "name": "銅インゴット",
+            "count": 1
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-broken-sawblade",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/broken_sawblade.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/broken_sawblade/broken_sawblade.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-burst-crossbow-recipe",
+      "name": "バーストクロスボウのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "バーストクロスボウを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "棒",
+            "トリップワイヤーフック",
+            "棒"
+          ],
+          [
+            "糸",
+            "トリップワイヤーフック",
+            "糸"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 2
+          },
+          {
+            "name": "トリップワイヤーフック",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 2
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-burst-crossbow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/burst_crossbow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/burst/burst_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-claymore-recipe",
+      "name": "クレイモアのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "クレイモアを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "鉄インゴット",
+            ""
+          ],
+          [
+            "鉄インゴット",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "",
+            "棒",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 4
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-claymore",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/claymore.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-cog-crossbow-recipe",
+      "name": "コグクロスボウのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "コグクロスボウを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄インゴット",
+            "棒",
+            "鉄インゴット"
+          ],
+          [
+            "糸",
+            "トリップワイヤーフック",
+            "糸"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 3
+          },
+          {
+            "name": "棒",
+            "count": 1
+          },
+          {
+            "name": "糸",
+            "count": 2
+          },
+          {
+            "name": "トリップワイヤーフック",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-cog-crossbow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/cog_crossbow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/cog/cog_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-coral-blade-recipe",
+      "name": "サンゴのブレードのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "サンゴのブレードを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "脳サンゴ"
+          ],
+          [
+            "脳サンゴ"
+          ],
+          [
+            "棒"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "脳サンゴ",
+            "count": 2
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-coral-blade",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/coral_blade.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/coral_blade/coral_blade.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-cutlass-recipe",
+      "name": "カトラスのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "カトラスを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "",
+            "鉄インゴット"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "棒",
+            "金インゴット",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 3
+          },
+          {
+            "name": "棒",
+            "count": 1
+          },
+          {
+            "name": "金インゴット",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-cutlass",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/cutlass.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/cutlass/cutlass.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-daggers-recipe",
+      "name": "ダガーのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ダガーを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄塊",
+            "",
+            "鉄塊"
+          ],
+          [
+            "鉄インゴット",
+            "",
+            "鉄インゴット"
+          ],
+          [
+            "棒",
+            "",
+            "棒"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄塊",
+            "count": 2
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 2
+          },
+          {
+            "name": "棒",
+            "count": 2
+          }
+        ],
+        "resultId": "dungeons-daggers",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/daggers.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/daggers/daggers.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-double-axe-recipe",
+      "name": "両刃斧のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "両刃斧を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄インゴット",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "鉄インゴット",
+            "棒",
+            "鉄インゴット"
+          ],
+          [
+            "",
+            "棒",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 5
+          },
+          {
+            "name": "棒",
+            "count": 2
+          }
+        ],
+        "resultId": "dungeons-double-axe",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/double_axe.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/double_axe/double_axe.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-exploding-crossbow-recipe",
+      "name": "爆発のクロスボウのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "爆発のクロスボウを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "棒",
+            "鉄インゴット",
+            "棒"
+          ],
+          [
+            "糸",
+            "TNT",
+            "糸"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 2
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 2
+          },
+          {
+            "name": "TNT",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-exploding-crossbow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/exploding_crossbow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/exploding/exploding_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-gauntlets-recipe",
+      "name": "ガントレットのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ガントレットを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄インゴット",
+            "",
+            "鉄インゴット"
+          ],
+          [
+            "革",
+            "",
+            "革"
+          ],
+          [
+            "鉄塊",
+            "",
+            "鉄塊"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 2
+          },
+          {
+            "name": "革",
+            "count": 2
+          },
+          {
+            "name": "鉄塊",
+            "count": 2
+          }
+        ],
+        "resultId": "dungeons-gauntlets",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/gauntlets.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-glaive-recipe",
+      "name": "グレイブのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "グレイブを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "",
+            "鉄インゴット"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "棒",
+            "鉄インゴット",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 4
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-glaive",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/glaive.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/glaive/glaive.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-great-hammer-recipe",
+      "name": "グレートハンマーのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "グレートハンマーを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "滑らかな石",
+            "滑らかな石",
+            "滑らかな石"
+          ],
+          [
+            "滑らかな石",
+            "鉄ブロック",
+            "滑らかな石"
+          ],
+          [
+            "",
+            "棒",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "滑らかな石",
+            "count": 5
+          },
+          {
+            "name": "鉄ブロック",
+            "count": 1
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-great-hammer",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/great_hammer.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/hammer/great_hammer.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-harpoon-crossbow-recipe",
+      "name": "ハープーンクロスボウのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ハープーンクロスボウを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "棒",
+            "鉄インゴット",
+            "棒"
+          ],
+          [
+            "糸",
+            "銛の矢",
+            "糸"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 2
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 2
+          },
+          {
+            "name": "銛の矢",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-harpoon-crossbow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/harpoon_crossbow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/harpoon/harpoon_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-heavy-crossbow-recipe",
+      "name": "ヘビークロスボウのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ヘビークロスボウを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "棒",
+            "鉄ブロック",
+            "棒"
+          ],
+          [
+            "糸",
+            "トリップワイヤーフック",
+            "糸"
+          ],
+          [
+            "",
+            "棒",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 3
+          },
+          {
+            "name": "鉄ブロック",
+            "count": 1
+          },
+          {
+            "name": "糸",
+            "count": 2
+          },
+          {
+            "name": "トリップワイヤーフック",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-heavy-crossbow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/heavy_crossbow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/heavy/heavy_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-katana-recipe",
+      "name": "刀のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "刀を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "",
+            "鉄インゴット"
+          ],
+          [
+            "金インゴット",
+            "鉄インゴット",
+            ""
+          ],
+          [
+            "棒",
+            "金インゴット",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 2
+          },
+          {
+            "name": "金インゴット",
+            "count": 2
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-katana",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/katana.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/katana/katana.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-longbow-recipe",
+      "name": "長弓のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "長弓を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "棒",
+            "糸"
+          ],
+          [
+            "鉄インゴット",
+            "",
+            "糸"
+          ],
+          [
+            "",
+            "棒",
+            "糸"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 3
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-longbow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/longbow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/longbow/longbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-mace-recipe",
+      "name": "メイスのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "メイスを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "棒",
+            "",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 4
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-mace",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/iron_mace.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/mace/mace.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-obsidian-claymore-recipe",
+      "name": "黒曜石クレイモアのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "黒曜石クレイモアを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "黒曜石",
+            "黒曜石"
+          ],
+          [
+            "黒曜石",
+            "泣く黒曜石",
+            "黒曜石"
+          ],
+          [
+            "棒",
+            "黒曜石",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "黒曜石",
+            "count": 5
+          },
+          {
+            "name": "泣く黒曜石",
+            "count": 1
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-obsidian-claymore",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/obsidian_claymore.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/obsidian_claymore/obsidian_claymore.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-scatter-crossbow-recipe",
+      "name": "乱射のクロスボウのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "乱射のクロスボウを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "棒",
+            "トリップワイヤーフック",
+            "棒"
+          ],
+          [
+            "棒",
+            "トリップワイヤーフック",
+            "棒"
+          ],
+          [
+            "糸",
+            "鉄インゴット",
+            "糸"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 4
+          },
+          {
+            "name": "トリップワイヤーフック",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 2
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-scatter-crossbow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/scatter_crossbow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/scatter/scatter.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-shadow-crossbow-recipe",
+      "name": "影のクロスボウのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "影のクロスボウを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "棒",
+            "鉄インゴット",
+            "棒"
+          ],
+          [
+            "糸",
+            "コーラスフルーツ",
+            "糸"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 2
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 2
+          },
+          {
+            "name": "コーラスフルーツ",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-shadow-crossbow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/shadow_crossbow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/shadow/shadow_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-sharpened-pickaxe-recipe",
+      "name": "ツルハシのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ツルハシを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "鉄塊",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "",
+            "棒",
+            "鉄インゴット"
+          ],
+          [
+            "棒",
+            "",
+            "鉄塊"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄塊",
+            "count": 2
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 3
+          },
+          {
+            "name": "棒",
+            "count": 2
+          }
+        ],
+        "resultId": "dungeons-sharpened-pickaxe",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/sharpened_pickaxe.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/pickaxe/sharpened_pickaxe.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-snow-bow-recipe",
+      "name": "雪の弓のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "雪の弓を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "棒",
+            "糸"
+          ],
+          [
+            "氷塊",
+            "",
+            "糸"
+          ],
+          [
+            "",
+            "棒",
+            "糸"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 3
+          },
+          {
+            "name": "氷塊",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-snow-bow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/snow_bow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/snowbow/snow_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-bow-recipe",
+      "name": "魂の弓のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "魂の弓を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "棒",
+            "糸"
+          ],
+          [
+            "魂のたいまつ",
+            "",
+            "糸"
+          ],
+          [
+            "",
+            "棒",
+            "糸"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 3
+          },
+          {
+            "name": "魂のたいまつ",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-soul-bow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/soul_bow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/soulbow/soul_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-crossbow-recipe",
+      "name": "魂のクロスボウのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "魂のクロスボウを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "棒",
+            "鉄インゴット",
+            "棒"
+          ],
+          [
+            "糸",
+            "トリップワイヤーフック",
+            "糸"
+          ],
+          [
+            "ソウルサンド",
+            "棒",
+            "ソウルサンド"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 3
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 1
+          },
+          {
+            "name": "糸",
+            "count": 2
+          },
+          {
+            "name": "トリップワイヤーフック",
+            "count": 1
+          },
+          {
+            "name": "ソウルサンド",
+            "count": 2
+          }
+        ],
+        "resultId": "dungeons-soul-crossbow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/soul_crossbow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/soul/soul_crossbow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-knife-recipe",
+      "name": "魂のナイフのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "魂のナイフを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "鉄塊",
+            "鉄塊"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            ""
+          ],
+          [
+            "棒",
+            "",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄塊",
+            "count": 2
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 1
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-soul-knife",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/soul_knife.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/soul_knife/soul_knife.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-soul-scythe-recipe",
+      "name": "魂のサイスのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "魂のサイスを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "鉄インゴット",
+            "",
+            "棒"
+          ],
+          [
+            "",
+            "",
+            "棒"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 3
+          },
+          {
+            "name": "棒",
+            "count": 2
+          }
+        ],
+        "resultId": "dungeons-soul-scythe",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/soul_scythe.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/scythe/soul_scythe.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-tempest-knife-recipe",
+      "name": "テンペストナイフのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "テンペストナイフを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "鉄インゴット",
+            "鉄インゴット"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            ""
+          ],
+          [
+            "棒",
+            "",
+            ""
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "鉄インゴット",
+            "count": 3
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-tempest-knife",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/tempest_knife.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/tempest_knife/tempest_knife.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-twisting-vine-bow-recipe",
+      "name": "ねじれたツタの弓のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ねじれたツタの弓を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "ねじれツタ",
+            "糸"
+          ],
+          [
+            "ねじれツタ",
+            "",
+            "糸"
+          ],
+          [
+            "",
+            "ねじれツタ",
+            "糸"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "ねじれツタ",
+            "count": 3
+          },
+          {
+            "name": "糸",
+            "count": 3
+          }
+        ],
+        "resultId": "dungeons-twisting-vine-bow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/twisting_vine_bow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/vinebow/twisting_vine_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-void-bow-recipe",
+      "name": "虚無の弓のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "虚無の弓を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [
+        "材料の「ヴォイド」はブロックとして定義されています。通常プレイでの材料の入手経路は未確認です。"
+      ],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "棒",
+            "糸"
+          ],
+          [
+            "ヴォイド",
+            "",
+            "糸"
+          ],
+          [
+            "",
+            "棒",
+            "糸"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 3
+          },
+          {
+            "name": "ヴォイド",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-void-bow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/void_bow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/voidbow/void_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/blocks/void_fluid.json"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-void-touched-blades-recipe",
+      "name": "虚無の力を帯びし双剣のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "虚無の力を帯びし双剣を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "焼いたコーラスフルーツ",
+            "",
+            "焼いたコーラスフルーツ"
+          ],
+          [
+            "エンダーパール",
+            "",
+            "エンダーパール"
+          ],
+          [
+            "棒",
+            "",
+            "棒"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "焼いたコーラスフルーツ",
+            "count": 2
+          },
+          {
+            "name": "エンダーパール",
+            "count": 2
+          },
+          {
+            "name": "棒",
+            "count": 2
+          }
+        ],
+        "resultId": "dungeons-void-touched-blades",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/void_touched_blades.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/void_blades/void_touched_blades.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-whip-recipe",
+      "name": "鞭のレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "鞭を1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "糸",
+            "糸"
+          ],
+          [
+            "",
+            "鉄インゴット",
+            "糸"
+          ],
+          [
+            "棒",
+            "",
+            "糸"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "糸",
+            "count": 4
+          },
+          {
+            "name": "鉄インゴット",
+            "count": 1
+          },
+          {
+            "name": "棒",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-whip",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/whip.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/whip/whip.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    },
+    {
+      "id": "dungeons-wind-bow-recipe",
+      "name": "ウィンドボウのレシピ",
+      "kind": "recipe",
+      "contentId": "minecraft-dungeons",
+      "summary": "ウィンドボウを1個作る素材と配置。",
+      "description": "作業台用の素材レシピです。元になる同じ装備や青色の設計図を使わず、掲載された素材を組み合わせる定義になっています。",
+      "usage": "作業台で下の配置どおりに材料を並べます。",
+      "obtaining": "最新版リポジトリのレシピ定義を確認しています。実際の製作・解放表示は未検証です。",
+      "details": [],
+      "image": null,
+      "recipe": {
+        "shaped": true,
+        "grid": [
+          [
+            "",
+            "棒",
+            "羽根"
+          ],
+          [
+            "棒",
+            "",
+            "糸"
+          ],
+          [
+            "",
+            "棒",
+            "羽根"
+          ]
+        ],
+        "ingredients": [
+          {
+            "name": "棒",
+            "count": 3
+          },
+          {
+            "name": "羽根",
+            "count": 2
+          },
+          {
+            "name": "糸",
+            "count": 1
+          }
+        ],
+        "resultId": "dungeons-wind-bow",
+        "count": 1
+      },
+      "visibility": "public",
+      "evidence": {
+        "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/wind_bow.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/windbow/wind_bow.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang"
+        ]
+      }
+    }
+  ],
+  "groupEntries": {
+    "melee": [
+      "dungeons-anchor",
+      "dungeons-axe",
+      "dungeons-backstabber",
+      "dungeons-battlestaff",
+      "dungeons-bone-club",
+      "dungeons-broken-sawblade",
+      "dungeons-claymore",
+      "dungeons-coral-blade",
+      "dungeons-cutlass",
+      "dungeons-sparkler",
+      "dungeons-daggers",
+      "dungeons-double-axe",
+      "dungeons-gauntlets",
+      "dungeons-glaive",
+      "dungeons-great-hammer",
+      "dungeons-katana",
+      "dungeons-mace",
+      "dungeons-obsidian-claymore",
+      "dungeons-sharpened-pickaxe",
+      "dungeons-rapier",
+      "dungeons-soul-scythe",
+      "dungeons-soul-knife",
+      "dungeons-tempest-knife",
+      "dungeons-void-touched-blades",
+      "dungeons-whip"
+    ],
+    "ranged": [
+      "dungeons-longbow",
+      "dungeons-snow-bow",
+      "dungeons-soul-bow",
+      "dungeons-twisting-vine-bow",
+      "dungeons-void-bow",
+      "dungeons-wind-bow",
+      "dungeons-burst-crossbow",
+      "dungeons-cog-crossbow",
+      "dungeons-exploding-crossbow",
+      "dungeons-harpoon-crossbow",
+      "dungeons-heavy-crossbow",
+      "dungeons-scatter-crossbow",
+      "dungeons-shadow-crossbow",
+      "dungeons-soul-crossbow"
+    ],
+    "melee-recipes": [
+      "dungeons-anchor-recipe",
+      "dungeons-axe-recipe",
+      "dungeons-backstabber-recipe",
+      "dungeons-battlestaff-recipe",
+      "dungeons-bone-club-recipe",
+      "dungeons-broken-sawblade-recipe",
+      "dungeons-claymore-recipe",
+      "dungeons-coral-blade-recipe",
+      "dungeons-cutlass-recipe",
+      "dungeons-daggers-recipe",
+      "dungeons-double-axe-recipe",
+      "dungeons-gauntlets-recipe",
+      "dungeons-glaive-recipe",
+      "dungeons-great-hammer-recipe",
+      "dungeons-katana-recipe",
+      "dungeons-mace-recipe",
+      "dungeons-obsidian-claymore-recipe",
+      "dungeons-sharpened-pickaxe-recipe",
+      "dungeons-soul-knife-recipe",
+      "dungeons-soul-scythe-recipe",
+      "dungeons-tempest-knife-recipe",
+      "dungeons-void-touched-blades-recipe",
+      "dungeons-whip-recipe"
+    ],
+    "ranged-recipes": [
+      "dungeons-burst-crossbow-recipe",
+      "dungeons-cog-crossbow-recipe",
+      "dungeons-exploding-crossbow-recipe",
+      "dungeons-harpoon-crossbow-recipe",
+      "dungeons-heavy-crossbow-recipe",
+      "dungeons-longbow-recipe",
+      "dungeons-scatter-crossbow-recipe",
+      "dungeons-shadow-crossbow-recipe",
+      "dungeons-snow-bow-recipe",
+      "dungeons-soul-bow-recipe",
+      "dungeons-soul-crossbow-recipe",
+      "dungeons-twisting-vine-bow-recipe",
+      "dungeons-void-bow-recipe",
+      "dungeons-wind-bow-recipe"
+    ]
+  },
+  "excluded": [
+    {
+      "identifier": "dungeons:alylicleaver",
+      "reason": "unobtainable配下。単独のloot_tables/whatt.jsonへの登録はありますが、通常プレイからこの表を使う経路を確認できません。",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/unobtainable/alylicleaver.json"
+      ]
+    },
+    {
+      "identifier": "dungeons:ladle",
+      "reason": "unobtainable配下。料理人ヴィンディケーターの装備用テーブルにありますが、プレイヤーが取得できるドロップ経路は未確認です。",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/unobtainable/ladle.json"
+      ]
+    }
+  ],
+  "excludedRecipes": [
+    {
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/rapier.json",
+      "identifier": "dungeons:rapier",
+      "reason": "レシピ配置の行幅が3・3・2文字と不揃い。ゲーム内での製作可否が未確認のため、元定義を補正して公開しない。"
+    }
+  ],
+  "accountedItems": [
+    {
+      "identifier": "dungeons:anchor",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/anchor/anchor.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:encrusted_anchor",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/anchor/anchor_encrusted.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:axe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/axe/axe.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:firebrand",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/axe/axe_firebrand.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:highlands_axe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/axe/axe_highlands.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:backstabber",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/backstabber/backstabber.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:swift_striker",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/backstabber/backstabber_swift_striker.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:battlestaff",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/battlestaff/battlestaff.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:growing_staff",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/battlestaff/battlestaff_growing.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:battlestaff_of_terror",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/battlestaff/battlestaff_terror.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:bone_club",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/boneclub/bone_club.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:bone_cudgel",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/boneclub/bone_cudgel.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:broken_sawblade",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/broken_sawblade/broken_sawblade.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:mechanised_sawblade",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/broken_sawblade/sawblade_mechanised.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:claymore",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:great_axeblade",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore_axeblade.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:broadsword",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore_broadsword.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:heartstealer",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore_heartstealer.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:coral_blade",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/coral_blade/coral_blade.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:sponge_striker",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/coral_blade/coral_blade_sponge.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:cutlass",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/cutlass/cutlass.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:dancers_sword",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/cutlass/cutlass_dancers.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:nameless_blade",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/cutlass/cutlass_nameless.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:sparkler",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/cutlass/sparkler.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:daggers",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/daggers/daggers.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:frost_knives",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/daggers/daggers_frost.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:moon_daggers",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/daggers/daggers_moon.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:sheer_daggers",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/daggers/daggers_sheer.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:double_axe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/double_axe/double_axe.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:cursed_axe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/double_axe/double_cursed.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:whirlwind",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/double_axe/double_whirlwind.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:gauntlets",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:fighters_bindings",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets_fighters_bindings.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:maulers",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets_maulers.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:soul_fists",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets_soul_fists.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:cackling_broom",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/glaive/cackling_broom.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:glaive",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/glaive/glaive.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:grave_bane",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/glaive/glaive_grave.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:venom_glaive",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/glaive/glaive_venom.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:bonehead_hammer",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/hammer/bonehead_hammer.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:great_hammer",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/hammer/great_hammer.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:hammer_of_gravity",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/hammer/hammer_gravity.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:stormlander",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/hammer/hammer_stormlander.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:katana",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/katana/katana.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:dark_katana",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/katana/katana_dark.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:masters_katana",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/katana/katana_masters.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:sinister_sword",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sinister_sword.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:sword",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:diamond_sword",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword_diamond.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:hawkbrand",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword_hawkbrand.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:flail",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/mace/flail.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:mace",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/mace/mace.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:suns_grace",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/mace/suns_grace.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:obsidian_claymore",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/obsidian_claymore/obsidian_claymore.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:starless_night",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/obsidian_claymore/obsidian_starless_night.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:sharpened_diamond_pickaxe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/pickaxe/sharpened_diamond_pickaxe.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:sharpened_pickaxe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/pickaxe/sharpened_pickaxe.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:the_monkey_motivator",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/pickaxe/the_monkey_motivator.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:rapier",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rapier/rapier.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:bee_stinger",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rapier/rapier_bee.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:freezing_foil",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rapier/rapier_freezing.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:fortune_spear",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rush_spear/fortune_spear.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:rush_spear",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rush_spear/rush_spear.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:whispering_spear",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rush_spear/whispering_spear.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:frost_scythe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/scythe/scythe_frost.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:jailors_scythe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/scythe/scythe_jailor.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:skull_scythe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/scythe/skull_scythe.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:soul_scythe",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/scythe/soul_scythe.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:nightmares_bite",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/sickles/nightmares_bite.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:sickles",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/sickles/sickles.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:the_last_laugh",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/sickles/the_last_laugh.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:soul_knife",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/soul_knife/soul_knife.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:eternal_knife",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/soul_knife/soul_knife_eternal.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:truthseeker",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/soul_knife/soul_knife_truthseeker.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:tempest_knife",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/tempest_knife/tempest_knife.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:chill_gale_knife",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/tempest_knife/tempest_knife_chill.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:resolute_tempest_knife",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/tempest_knife/tempest_knife_resolute.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:alylicleaver",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/unobtainable/alylicleaver.json",
+      "status": "excluded"
+    },
+    {
+      "identifier": "dungeons:ladle",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/unobtainable/ladle.json",
+      "status": "excluded"
+    },
+    {
+      "identifier": "dungeons:the_beginning_and_the_end",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/void_blades/void_tbate.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:void_touched_blades",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/void_blades/void_touched_blades.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:vine_whip",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/whip/vine_whip.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:whip",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/whip/whip.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:burning_arrow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/arrows/burning_arrow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:firework_arrow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/arrows/firework_arrow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:harpoon_arrow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/arrows/harpoon_arrow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:thundering_arrow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/arrows/thundering_arrow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:torment_arrow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/arrows/torment_arrow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:bubble_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/bubble/bubble_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:bubble_burster",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/bubble/bubble_burster.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:guardian_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/longbow/guardian_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:longbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/longbow/longbow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:red_snake",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/longbow/red_snake.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:elite_power_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/power_bow/elite_power_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:power_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/power_bow/power_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:sabrewing",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/power_bow/sabrewing.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:snow_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/snowbow/snow_bow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:webbed_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/snowbow/webbed_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:winters_touch",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/snowbow/winters_touch.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:bow_of_lost_souls",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/soulbow/bow_of_lost_souls.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:nocturnal_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/soulbow/nocturnal_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:soul_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/soulbow/soul_bow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:bonebow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/vanillabow/bonebow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:haunted_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/vanillabow/haunted_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:twin_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/vanillabow/twin_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:twisting_vine_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/vinebow/twisting_vine_bow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:weeping_vine_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/vinebow/weeping_vine_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:call_of_the_void",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/voidbow/call_of_the_void.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:void_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/voidbow/void_bow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:burst_gale_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/windbow/burst_gale_bow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:echo_of_the_valley",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/windbow/echo_of_the_valley.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:wind_bow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/bow/windbow/wind_bow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:burst_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/burst/burst_crossbow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:corrupted_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/burst/corrupted_crossbow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:soul_hunter_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/burst/soul_hunter_crossbow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:cog_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/cog/cog_crossbow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:pride_of_the_piglins",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/cog/pride_of_the_piglins.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:baby_crossbows",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/dual/baby_crossbows.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:dual_crossbows",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/dual/dual_crossbows.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:spellbound_crossbows",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/dual/spellbound_crossbows.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:exploding_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/exploding/exploding_crossbow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:firebolt_thrower",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/exploding/firebolt_thrower.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:imploding_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/exploding/imploding_crossbow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:harpoon_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/harpoon/harpoon_crossbow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:nautical_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/harpoon/nautical_crossbow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:doom_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/heavy/doom_crossbow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:heavy_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/heavy/heavy_crossbow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:slayer_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/heavy/slayer_crossbow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:harp_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/scatter/harp.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:lightning_harp_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/scatter/lightning.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:scatter_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/scatter/scatter.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:shadow_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/shadow/shadow_crossbow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:shrieking_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/shadow/shrieking_crossbow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:veiled_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/shadow/veiled_crossbow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:feral_soul_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/soul/feral_soul_crossbow.json",
+      "status": "previously-published"
+    },
+    {
+      "identifier": "dungeons:soul_crossbow",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/soul/soul_crossbow.json",
+      "status": "added"
+    },
+    {
+      "identifier": "dungeons:voidcaller",
+      "path": "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/ranged/crossbow/soul/voidcaller.json",
+      "status": "previously-published"
+    }
+  ],
+  "coveredRecipePaths": [
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/baby_crossbows.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/bonebow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/bow_of_lost_souls.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/bubble_burster.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/burst_gale_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/call_of_the_void.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/corrupted_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/doom_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/echo_of_the_valley.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/elite_power_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/feral_soul_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/firebolt_thrower.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/guardian_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/harp_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/imploding_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/lightning_harp_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/nautical_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/nocturnal_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/pride_of_the_piglins.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/red_snake.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/sabrewing.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/slayer_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/soul_hunter_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/spellbound_crossbows.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/twin_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/veiled_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/voidcaller.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/weeping_vine_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/blue_print/winters_touch.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/bubble_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/burst_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/cog_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/dual_crossbows.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/exploding_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/harpoon_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/heavy_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/longbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/powerbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/scatter_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/shadow_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/snow_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/soul_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/soul_crossbow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/twisting_vine_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/void_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/ranged/wind_bow.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/anchor.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/axe.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/backstabber.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/battlestaff.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/battlestaff_of_terror.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/bee_stinger.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/bone_cudgel.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/broadsword.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/chill_gale_knife.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/cursed_axe.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/dancers_sword.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/dark_katana.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/diamond_sword.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/encrusted_anchor.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/eternal_knife.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/fighters_bindings.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/firebrand.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/flail.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/fortune_spear.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/freezing_foil.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/frost_knives.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/frost_scythe.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/grave_bane.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/great_axeblade.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/growing_staff.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/hammer_of_gravity.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/hawkbrand.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/heartstealer.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/highlands_axe.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/jailors_scythe.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/masters_katana.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/maulers.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/mechanised_sawblade.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/moon_daggers.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/nameless_blade.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/nightmares_bite.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/resolute_tempest_knife.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/sharpened_diamond_pickaxe.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/sheer_daggers.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/soul_fists.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/sponge_striker.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/starless_night.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/stormlander.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/suns_grace.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/swift_striker.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/the_beginning_and_the_end.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/the_last_laugh.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/the_monkey_motivator.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/truthseeker.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/venom_glaive.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/vine_whip.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/whirlwind.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/whispering_spear.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/bone_club.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/broken_sawblade.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/claymore.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/coral_blade.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/cutlass.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/daggers.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/double_axe.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/gauntlets.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/glaive.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/great_hammer.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/iron_mace.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/katana.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/obsidian_claymore.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/rapier.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/rush_spear.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/sharpened_pickaxe.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/sickles.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/soul_knife.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/soul_scythe.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/sword.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/tempest_knife.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/void_touched_blades.json",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/whip.json"
+  ]
+}

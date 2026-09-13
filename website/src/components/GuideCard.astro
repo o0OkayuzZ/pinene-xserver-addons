@@ -1,0 +1,14 @@
+---
+import { withBase, contentMap } from '../lib/data';
+import { kindLabels } from '../lib/guide';
+import type { GuideEntry } from '../lib/field-guide.mjs';
+interface Props { entry: GuideEntry }
+const { entry } = Astro.props;
+const owner = contentMap.get(entry.contentId)!;
+---
+<article class="guide-card" data-guide-entry data-kind={entry.kind} data-content={entry.contentId} data-search={`${entry.name} ${entry.summary} ${entry.description} ${owner.name} ${entry.recipe?.ingredients.map(item=>item.name).join(' ')??''}`.normalize('NFKC').toLowerCase()}>
+ <a href={withBase(`/database/entries/${entry.id}/`)}>
+  <div class="guide-thumb">{entry.image ? <img src={withBase(entry.image.src)} alt={`${entry.name}のパック内アイテム画像`} width="80" height="80" loading="lazy"/> : <span class="no-guide-image">{entry.kind === 'recipe' ? '▦' : entry.kind === 'feature' ? '▤' : '◇'}<small>{entry.kind === 'item' ? '画像準備中' : kindLabels[entry.kind]}</small></span>}</div>
+  <div><p class="eyebrow">{owner.name}</p><h2>{entry.name} <span aria-hidden="true">↗</span></h2><p>{entry.summary}</p><span class="status">{kindLabels[entry.kind]} / コード確認</span></div>
+ </a>
+</article>

@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContentCard from '../components/ContentCard.astro';
+import { contentMap, updates, withBase } from '../lib/data';
+import { site, categories } from '../site.config';
+const featured = site.featured.flatMap(id => { const content = contentMap.get(id); return content ? [content] : []; });
+---
+<BaseLayout current="home">
+<section class="hero"><img class="hero-landscape" src={withBase('/images/landscape.svg')} alt="青空と川、緑の島々を描いた仮のブロック風景。実際のゲーム画面ではありません。" width="1600" height="800" fetchpriority="high"/><div class="hero-shade"></div><div class="shell hero-content"><p class="eyebrow">WELCOME TO YOUR NEXT ADVENTURE</p><h1>PINE SERVER</h1><h2>{site.tagline}</h2><p class="hero-description">{site.description}</p><div class="hero-actions"><a class="button" href={withBase('/start/')}>参加方法を見る <span aria-hidden="true">↗</span></a><a class="button secondary" href={withBase('/contents/')}>コンテンツを見る <span aria-hidden="true">→</span></a></div></div><span class="hero-caption">CONCEPT ART / 仮の風景イラスト・実際のゲーム画面ではありません</span></section>
+<section class="section featured"><div class="shell"><div class="section-head"><div><p class="eyebrow">PICK YOUR NEXT ADVENTURE</p><h2>次の冒険を見つけよう</h2></div><a class="text-link" href={withBase('/contents/')}>すべてのコンテンツ →</a></div><div class="cards">{featured.map(content => <ContentCard content={content}/>)}</div><p class="section-note">掲載内容はコードをもとに整理中です。現在の提供状況・ゲーム内の動作は確認中です。</p></div></section>
+<section class="section discovery"><div class="shell discovery-grid"><div><p class="eyebrow">WHAT WILL YOU DISCOVER?</p><h2>やりたいことから探す</h2><div class="categories">{categories.map(category => <a href={withBase(`/contents/?category=${category.id}`)}><span class="category-icon" aria-hidden="true">{category.icon}</span><strong>{category.name}</strong><small>{category.english}</small></a>)}</div></div><div class="latest"><p class="eyebrow">LATEST UPDATES</p><h2>サーバーからのお知らせ</h2>{updates.length ? updates.slice(0, 3).map(update => <article><h3>{update.title}</h3><p>{update.body}</p></article>) : <div class="empty-news"><span aria-hidden="true">▤</span><h3>新しいお知らせを準備中</h3><p>公開が確認された更新情報を、ここにお届けします。</p></div>}<a class="text-link" href={withBase('/updates/')}>更新情報を見る →</a></div></div></section>
+</BaseLayout>

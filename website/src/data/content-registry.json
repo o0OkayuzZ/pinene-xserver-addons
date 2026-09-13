@@ -1,0 +1,1242 @@
+{
+  "schema_version": "0.2.0",
+  "source_commit": "aea85120954a8b74033b86253c17a04b691dab21",
+  "contents": [
+    {
+      "id": "pvp-island",
+      "name": "PvP Island",
+      "summary": "専用の島を舞台に、対戦の遊びを広げるPvPコンテンツ。",
+      "description": "PvP Islandは、専用エリアでの対戦を軸にしたコンテンツです。島の土台を用意する仕組みや、特定のブロックを保護する仕組み、島の中で使う能力を制御する仕組みを備えています。対戦の舞台と専用のルールを組み合わせた遊びを目指して開発されています。現在公開しているのはコードで確認できた内容の紹介です。参加条件や利用できる装備、実際の対戦ルールは確認が取れ次第ご案内します。",
+      "category": [
+        "combat",
+        "world"
+      ],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "server-start",
+          "result": "unknown"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "image": {
+        "src": "/images/pvp-island.svg",
+        "alt": "PvP Islandをイメージした仮イラスト。実際のゲーム画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "専用エリアが舞台：PvP Islandのエリアを判定し、島での遊びを扱う仕組みがあります。",
+        "島の中で使う能力：専用の制御を通る能力は、対象エリアの外では実行しない処理になっています。すべての武器・効果の対応を保証するものではありません。",
+        "対戦の舞台を支える保護：島のコアなど、指定されたブロックの破壊を制御する処理があります。保護される範囲や例外を含む正式なルールは確認中です。"
+      ],
+      "guide": "参加用の接続先、島への移動手順、使用可能な装備は現在確認中です。公開後の案内で参加条件と対戦ルールを確認してから参加してください。このページでは、専用アイテムの入手方法や通常世界での使用可否を一律には案内していません。",
+      "children": [],
+      "related": [],
+      "packBindings": [
+        {
+          "uuid": "c65bcd04-4708-4716-86bf-bbd6ab936fd3",
+          "roles": [
+            "runtime-script",
+            "behavior"
+          ]
+        },
+        {
+          "uuid": "ef57c45f-1b60-42a3-8d26-4998db1b5055",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/manifest.json",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/main.js",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/ability_router.js",
+          "resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055/manifest.json",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/island_bootstrap.js",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/protection_service.js",
+          "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/ability_gate.js"
+        ]
+      }
+    },
+    {
+      "id": "infinite-castle",
+      "name": "無限城",
+      "summary": "廊下、階段、広間。その先のつながりをたどる探索ダンジョン。",
+      "description": "廊下や階段、広間をたどり、戦闘部屋や特別な部屋を探す独立した探索ダンジョンです。衛兵・呪術・怨霊・重装・混成・Eliteの6種類の戦闘は2段階で進み、鍵持ちの撃破が宝箱の封印解除につながります。癒やしの庭で休み、帰還陣を探しながら、変化する城を探索する構成です。ここでは最新版のコードで確認できた仕組みを紹介します。",
+      "category": [
+        "exploration",
+        "world"
+      ],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "deployed-recorded",
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "image": {
+        "src": "/images/infinite-castle.svg",
+        "alt": "無限城をイメージした仮イラスト。実際のゲーム画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "6種類の戦闘部屋。それぞれの第2波に異なる鍵持ちが登場する設定です。",
+        "鍵の飛翔と宝箱の封印解除。報酬は枠ごとに抽選し、空欄も含まれます。",
+        "癒やしの庭・宝物庫・帰還陣など、戦闘以外の探索要素も掲載。",
+        "再構成はプレイヤーや戦闘中の部屋を保護しながら進行。背景と城本体で琴の聞こえ方を分けています。"
+      ],
+      "guide": "入口の場所と参加条件は案内を準備中です。城内では部屋ごとの戦闘と鍵持ちに注目し、出口を見つけたら帰還陣の中心でしゃがむ流れが実装されています。各説明はコードを照合したもので、全戦闘・報酬・帰還・最新の音を実機で受け入れ確認したものではありません。PvP Islandとは別コンテンツです。",
+      "children": [],
+      "related": [
+        "minecraft-dungeons"
+      ],
+      "packBindings": [
+        {
+          "uuid": "3efecae8-a036-4e14-94d3-876e29fe0ae9",
+          "roles": [
+            "runtime-script",
+            "behavior"
+          ]
+        },
+        {
+          "uuid": "c6529ee0-0a34-4f28-b5ff-66d335fee9bc",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "evidence": {
+        "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80",
+        "paths": [
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/main.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js",
+          "resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc/manifest.json",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/roomRegistry.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/entranceTransition.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Combat.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Config.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Interiors.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Rewards.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Runtime.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1State.js",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/sourceHealingGarden.js",
+          "docs/infinite_castle/distant-koto-20260912.md",
+          "docs/infinite_castle/reconstruction-clock-20260912.md",
+          "docs/infinite_castle/distant-koto-20260912.md"
+        ]
+      }
+    },
+    {
+      "id": "minecraft-dungeons",
+      "name": "Minecraft Dungeons",
+      "summary": "装備を集め、道具を作り、強敵との冒険へ。",
+      "description": "多彩な近接武器、弓とクロスボウ、4部位の防具、冒険を支えるアーティファクトを楽しむコンテンツです。英雄の書で収集状況を調べ、素材から道具を作り、ボスチェストの報酬を次の装備集めにつなげられます。ここでは現行コードと照合した装備・レシピを種類別に紹介します。",
+      "category": [
+        "combat",
+        "exploration",
+        "collection"
+      ],
+      "visibility": "public",
+      "implementation": "implemented",
+      "deployment": "deployed-recorded",
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "4a948e25ad9930a4a0667c093de670230bf3d9fc"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "4a948e25ad9930a4a0667c093de670230bf3d9fc"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "4a948e25ad9930a4a0667c093de670230bf3d9fc"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "image": {
+        "src": "/images/minecraft-dungeons.svg",
+        "alt": "Minecraft Dungeonsをイメージした仮イラスト。実際のゲーム画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "近接武器・弓・クロスボウを、画像と基礎設定、修理材料で比較。",
+        "通常・ユニーク防具196部位に加え、期間限定の12部位も区別して掲載。",
+        "通常版38種・レア版38種・限定1種のアーティファクトと、確認できた使用条件。",
+        "鍵、ルーン、絵画、建築ブロックなどの収集品と使い道。",
+        "英雄の書による収集と、14種類のボスチェスト報酬設定。",
+        "素材から作るレシピと元の装備が必要な設計図を区別。材料名でも検索できます。"
+      ],
+      "guide": "はじめは本と金インゴットで英雄の書を製作。装備の収集状況を調べながら、ダイヤモンドの粉を使ったアーティファクト作りへ進めます。以下の種類別一覧から、使いたい道具の説明と関連レシピを開いてください。",
+      "children": [],
+      "related": [],
+      "packBindings": [
+        {
+          "uuid": "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
+          "roles": [
+            "behavior",
+            "item-definition",
+            "runtime-script",
+            "recipe",
+            "loot"
+          ]
+        },
+        {
+          "uuid": "ab296f68-bb16-4ede-a49c-d0ed99b5b87b",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "evidence": {
+        "commit": "4a948e25ad9930a4a0667c093de670230bf3d9fc",
+        "paths": [
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json",
+          "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/scripts/components/other/theBookOfHeroes.js",
+          "docs/deployments/2026-09-09-dungeons-2.0.3-ja.md",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/spooky_monstrosity.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+          "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+          "docs/deployments/2026-09-12-release.md"
+        ]
+      }
+    },
+    {
+      "id": "mycology",
+      "name": "Mycology",
+      "summary": "身近なキノコを鑑定して、新しい発見を自分の図鑑へ。",
+      "description": "赤色・茶色のキノコを鑑定して、35種類の発見を自分の図鑑に集めるコンテンツです。鑑定結果では最高レアや新規発見、図鑑の進み具合を確認できます。結果を開封する演出には種類ごとの音色があり、じっくり・短縮・OFFを選べます。以下の一覧から、鑑定の使い方と各キノコのゲーム内設定を調べられます。",
+      "category": [
+        "collection",
+        "exploration",
+        "systems"
+      ],
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "deployed-recorded",
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "image": {
+        "src": "/images/mycology.svg",
+        "alt": "Mycologyをイメージした仮イラスト。実際のゲーム画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "赤色15種類・茶色20種類を掲載。ゲーム内の図鑑では自分の未発見の名前を伏せて表示します。",
+        "最初の該当スタックを全量鑑定。別スロットの分は合算せず、鑑定料なしと表示する構成です。",
+        "鑑定の最高レア・NEW・発見数の変化を確認し、次のスタックへ進めます。",
+        "鑑定演出は長さとサウンドを設定でき、しゃがみでスキップできます。最新演出の聴感・表示は実機未確認です。"
+      ],
+      "guide": "コード上の基本の流れは、赤色または茶色のキノコを持つ → 鑑定士の画面で鑑定する色を選ぶ → 鑑定結果と新規発見を確認する → 図鑑で見直す、です。スタック単位で消費するため、鑑定する数量を確認してください。鑑定士に会える場所や実際の提供状況は確認中です。図鑑の効果・使い方はゲーム内の設定であり、現実のキノコの食用判断には使えません。",
+      "children": [],
+      "related": [],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "runtime-script",
+            "item-definition"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "evidence": {
+        "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/main.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/index.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/field_guide.js",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/ui.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/appraisal.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/progress.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/config.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b01.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b02.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b03.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b04.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b05.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b06.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b07.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b08.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b09.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b10.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b11.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b12.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b13.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b14.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b15.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b16.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b17.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b18.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b19.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/b20.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r01.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r02.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r03.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r04.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r05.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r06.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r07.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r08.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r09.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r10.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r11.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r12.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r13.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r14.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/r15.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology_tools/field_guide.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/recipes/mycology_field_guide.json",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/effects.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/reveal.js",
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/reveal_sounds.js",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/item_texture.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b01.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b02.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b03.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b04.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b05.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b06.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b07.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b08.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b09.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b10.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b11.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b12.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b13.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b14.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b15.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b16.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b17.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b18.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b19.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/b20.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r01.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r02.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r03.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r04.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r05.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r06.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r07.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r08.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r09.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r10.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r11.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r12.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r13.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r14.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/r15.png",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology_tools/field_guide.png",
+          "docs/deployments/2026-09-12-mycology-reveal.md"
+        ]
+      }
+    },
+    {
+      "id": "better-structure-loot",
+      "name": "Better Structure Loot",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "more-geodes",
+      "name": "More Geodes",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "exploration",
+        "world"
+      ],
+      "packBindings": [
+        {
+          "uuid": "228eb1da-6372-4a9b-9050-a40256149144",
+          "roles": [
+            "item-definition",
+            "worldgen"
+          ]
+        },
+        {
+          "uuid": "d68eee7e-653f-474a-a385-e1a76fdd28bd",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "地下に広がる、さまざまな結晶の空洞。",
+      "description": "ダイヤモンド・エメラルド・ローズクォーツの3系列を紹介します。結晶の芽と塊の設置アイテム、ジオードの生成設定を個別の図鑑で確認できます。",
+      "image": {
+        "src": "/images/more-geodes.svg",
+        "alt": "結晶の空洞を描いた仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "3系列・12種類の結晶アイテム",
+        "小・中・大の芽と結晶の塊",
+        "結晶を含むジオードの生成設定"
+      ],
+      "guide": "関連する図鑑で、設置アイテムと生成候補を紹介しています。採掘による入手と成長条件は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144/manifest.json",
+          "resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "mystery-fossil",
+      "name": "謎の化石",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "exploration",
+        "collection"
+      ],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "ブラシで調べ、埋もれた発見を探そう。",
+      "description": "謎の化石の設置アイテムと、ブラシ操作から抽選報酬へ進む処理を紹介します。実際の生成場所・演出・入手は未確認です。",
+      "image": {
+        "src": "/images/mystery-fossil.svg",
+        "alt": "謎の化石の仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "ブラシを使う調査",
+        "フィギュアなどの抽選報酬",
+        "設置用の化石アイテム"
+      ],
+      "guide": "関連図鑑で使い方と確認できた入手条件を紹介します。ゲーム内動作と本番の提供範囲は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/manifest.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "figures",
+      "name": "フィギュア",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "collection",
+        "world"
+      ],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture"
+          ]
+        },
+        {
+          "uuid": "608f921e-6be8-4a27-85d6-27945fa3a1ef",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "集めたフィギュアを、自分の場所に飾ろう。",
+      "description": "確認済みの化石・らせん・おゆの3種類と、共通の設置・回収処理を紹介します。ほかの種類は今後の確認対象です。",
+      "image": {
+        "src": "/images/figures.svg",
+        "alt": "フィギュアの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "3種類のフィギュアを紹介",
+        "手に持って使う設置操作",
+        "攻撃やしゃがみ操作で回収"
+      ],
+      "guide": "関連図鑑で使い方と確認できた入手条件を紹介します。ゲーム内動作と本番の提供範囲は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/manifest.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json",
+          "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "gapple-cows",
+      "name": "Gapple Cows",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "blue-apple",
+      "name": "Blue Apple",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "exploration",
+        "craft"
+      ],
+      "packBindings": [
+        {
+          "uuid": "969b1f80-d29c-454f-ab4e-9798b508c1fc",
+          "roles": [
+            "item-definition",
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "葉から見つけ、ダイヤで強化する青りんご。",
+      "description": "青りんごと2段階の強化食料を紹介します。葉を壊したときの抽選、作業台レシピ、追加効果をアイテムIDごとに確認しています。",
+      "image": {
+        "src": "/images/blue-apple.svg",
+        "alt": "Blue Appleの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "葉からの低確率の抽選",
+        "ダイヤ素材で2段階に強化",
+        "種類ごとの食事効果"
+      ],
+      "guide": "関連図鑑で使い方と確認できた入手条件を紹介します。ゲーム内動作と本番の提供範囲は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc/manifest.json",
+          "resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "golden-foods",
+      "name": "Golden Foods",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "craft",
+        "systems"
+      ],
+      "packBindings": [
+        {
+          "uuid": "ef6e99cf-077d-4b55-9e11-f86bb9e66880",
+          "roles": [
+            "item-definition",
+            "runtime-script",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "608f921e-6be8-4a27-85d6-27945fa3a1ef",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "食事と基本効果で、冒険の準備を整える。",
+      "description": "金のパンや野菜、シチュー、ミルクなどを扱うコンテンツです。食事による回復と基本効果、ゲーム内図鑑の処理を確認しています。無効な追加能力や構想段階の機能は、使えるものとして紹介していません。",
+      "image": {
+        "src": "/images/golden-foods.svg",
+        "alt": "Golden Foodsの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "食料ごとに異なる満腹度と基本効果",
+        "ゲーム内で食料の説明を読む図鑑",
+        "強い既存効果を優先する食事処理"
+      ],
+      "guide": "関連アイテムの図鑑で、用途・使い方・確認できた入手経路を紹介しています。本番での入手、使用、表示は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "pancakes",
+      "name": "Pancakes",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "craft"
+      ],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "item-definition",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "生地を焼き、ハチミツとベリーで仕上げよう。",
+      "description": "生地と3種類のパンケーキを扱う食料コンテンツです。生地の作業台レシピ、かまどでの調理、トッピングの2通りの組み合わせを紹介します。",
+      "image": {
+        "src": "/images/pancakes.svg",
+        "alt": "Pancakesの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "生地は1回のレシピで16個",
+        "かまどで焼くパンケーキ",
+        "ハチミツとベリーで仕上げる食事"
+      ],
+      "guide": "関連するアイテム・レシピ・機能の図鑑で使い方を確認できます。実ゲームでの使用・表示・提供状況は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "deathnerite",
+      "name": "Deathnerite",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "combat",
+        "craft"
+      ],
+      "packBindings": [
+        {
+          "uuid": "90f045c3-0718-4981-a1ff-180976002a93",
+          "roles": [
+            "item-definition",
+            "runtime-script",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "6fefc83a-06f8-4d96-95d5-cd31718851d3",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "素材を集め、道具と防具を次の段階へ。",
+      "description": "デスネライトとパーカナイトの道具・防具、素材、専用の鍛冶台を扱うコンテンツです。個別装備の設定と作業台・専用鍛冶台の強化経路を区別して紹介します。特殊能力やゲーム内の変換は未確認です。",
+      "image": {
+        "src": "/images/deathnerite.svg",
+        "alt": "Deathneriteの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "道具・防具ごとの耐久値と基本設定",
+        "作業台のレシピと専用鍛冶台の強化",
+        "用途を確認できた素材と設置用アイテム"
+      ],
+      "guide": "関連アイテムの図鑑で、用途・使い方・確認できた入手経路を紹介しています。本番での入手、使用、表示は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "pinenite",
+      "name": "Pinenite",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "zombie-gear",
+      "name": "Zombie Gear",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "grave",
+      "name": "Grave / 死亡回収",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "systems"
+      ],
+      "packBindings": [
+        {
+          "uuid": "8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a",
+          "roles": [
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "9fc53a12-7b83-4d48-b161-d05ee0e45974",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "死亡後の回収を支える墓と鍵。",
+      "description": "鍵の付与、墓を開ける操作、座標移動に対応する鍵と見た目設定を紹介します。死亡時の保存・回収が実ゲームで確実に動くことを確認したものではありません。",
+      "image": {
+        "src": "/images/grave.svg",
+        "alt": "Grave / 死亡回収の仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "種類によって異なる鍵の操作",
+        "設定に応じた所有者の判定",
+        "墓のモデルと名前の色"
+      ],
+      "guide": "関連する図鑑で、使い方・設定条件・確認できた製作方法を紹介しています。ゲーム内の操作とアイテム収支は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/manifest.json",
+          "resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "simple-waystone",
+      "name": "Simple Waystone",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "exploration",
+        "systems"
+      ],
+      "packBindings": [
+        {
+          "uuid": "e05afa0d-aa45-46bd-82d0-243c605d9737",
+          "roles": [
+            "item-definition",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "4d6ce949-1de7-41ec-87ab-3068434459a4",
+          "roles": [
+            "texture"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "登録された移動先を選び、拠点間の移動を支える。",
+      "description": "移動先一覧と携帯用のワープストーン・羽根を紹介します。移動の経験値コスト、道具の消費と待ち時間を分けて説明しています。実際の設置先と本番の利用条件は未確認です。",
+      "image": {
+        "src": "/images/simple-waystone.svg",
+        "alt": "Simple Waystoneの仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "個人向け・公開中の移動先一覧",
+        "携帯できる3つの移動アイテム",
+        "経験値と消費条件を確認"
+      ],
+      "guide": "関連するアイテム・レシピ・機能の図鑑で使い方を確認できます。実ゲームでの使用・表示・提供状況は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737/manifest.json",
+          "resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "meitetsu-chest",
+      "name": "冥鉄の箱",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "craft",
+        "systems"
+      ],
+      "packBindings": [
+        {
+          "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+          "roles": [
+            "runtime-script"
+          ]
+        },
+        {
+          "uuid": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "合言葉を設定して使う、拠点の収納。",
+      "description": "27枠の収納、最初の管理者登録、合言葉の設定と回収操作を紹介します。6通りの製作配置を図鑑で確認できます。",
+      "image": {
+        "src": "/images/meitetsu-chest.svg",
+        "alt": "冥鉄の箱の仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "27枠の収納設定",
+        "箱ごとの合言葉",
+        "管理メニューからの回収"
+      ],
+      "guide": "関連する図鑑で、使い方・設定条件・確認できた製作方法を紹介しています。ゲーム内の操作とアイテム収支は未確認です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/manifest.json",
+          "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/manifest.json"
+        ]
+      }
+    },
+    {
+      "id": "xp-storage",
+      "name": "経験値ストレージ",
+      "visibility": "public",
+      "implementation": "partial",
+      "deployment": "repo-only",
+      "category": [
+        "systems",
+        "craft"
+      ],
+      "packBindings": [
+        {
+          "uuid": "a881d6c5-7cf5-4823-a26c-1766d70acd8c",
+          "roles": [
+            "runtime-script",
+            "recipe",
+            "behavior"
+          ]
+        },
+        {
+          "uuid": "8cdb9fd9-ee9c-4144-ad3a-175445d20b19",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "related": [],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "aea85120954a8b74033b86253c17a04b691dab21"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "経験値をためて、配管でつなぐストレージ。",
+      "description": "経験値タンク、パイプ、バルブ、抽出器を組み合わせるコンテンツです。プレイヤーから経験値を預ける処理、配管で受け渡す処理、流れを切り替える処理を確認しています。本番での動作や経験値の収支は未検証です。",
+      "image": {
+        "src": "/images/xp-storage.svg",
+        "alt": "経験値タンクと配管の仮イラスト。実画面ではありません。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "タンクに経験値を保管する仕組み",
+        "パイプとバルブによる接続・流れの切り替え",
+        "4種類のブロックに作業台レシピを定義"
+      ],
+      "guide": "各ブロックの説明とレシピを図鑑にまとめています。実際の設置や操作、経験値が失われないことの確認は未実施です。",
+      "children": [],
+      "evidence": {
+        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "paths": [
+          "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/manifest.json",
+          "behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c/scripts/index.js"
+        ]
+      }
+    },
+    {
+      "id": "inaka-furniture",
+      "name": "INAKA Furniture",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "pine-cds",
+      "name": "Pine CDs",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "vibrant-visuals",
+      "name": "Vibrant Visuals / Deferred",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    },
+    {
+      "id": "rare-material-trader",
+      "name": "希少素材商人",
+      "visibility": "draft",
+      "implementation": "unknown",
+      "deployment": "unknown",
+      "category": [],
+      "packBindings": [],
+      "related": [],
+      "verification": []
+    }
+  ]
+}
