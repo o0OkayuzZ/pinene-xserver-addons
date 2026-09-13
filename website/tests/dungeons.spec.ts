@@ -1,13 +1,32 @@
 import { test, expect } from '@playwright/test';
+import sections from '../src/data/dungeons-guide.json' with { type: 'json' };
+import records from '../src/data/field-guide.json' with { type: 'json' };
+const categoryCount=(id:string)=>sections.find(section=>section.id===id)!.entries.length;
 test.beforeEach(async({page})=>{
  await page.addInitScript(()=>localStorage.setItem('pine-analytics-consent-v1','no'));
  await page.route('https://static.cloudflareinsights.com/**',r=>r.fulfill({status:200,body:''}));
+});
+test('recipe search filters Dungeons by material and preserves the URL',async({page})=>{
+ const recipes=records.filter(entry=>entry.contentId==='minecraft-dungeons'&&entry.kind==='recipe'&&entry.visibility==='public');
+ await page.goto('/pine-server/database/recipes/?content=minecraft-dungeons');
+ await expect(page.locator('[data-guide-entry]:visible')).toHaveCount(recipes.length);
+ await page.getByLabel('名前・材料・説明を検索').fill('鉄インゴット');
+ const matches=recipes.filter(entry=>[entry.name,entry.summary,entry.description,...entry.recipe!.ingredients.map(item=>item.name)].join(' ').includes('鉄インゴット'));
+ await expect(page.locator('[data-guide-entry]:visible')).toHaveCount(matches.length);
+ await page.reload();
+ await expect(page.getByLabel('名前・材料・説明を検索')).toHaveValue('鉄インゴット');
+ await expect(page.locator('[data-guide-entry]:visible')).toHaveCount(matches.length);
+ await page.getByLabel('名前・材料・説明を検索').fill('該当なしテスト用');
+ await expect(page.getByRole('heading',{name:'該当するレシピはありません'})).toBeVisible();
+ await page.getByRole('button',{name:'条件をリセット'}).click();
+ await expect(page.getByLabel('名前・材料・説明を検索')).toBeFocused();
+ await expect(page.locator('[data-guide-entry]:visible')).toHaveCount(records.filter(entry=>entry.kind==='recipe'&&entry.visibility==='public').length);
 });
 test('melee recipes show materials, blueprint prerequisites and result links',async({page})=>{
  await page.goto('/pine-server/contents/minecraft-dungeons/');
  const section=page.locator('#dungeons-melee-recipes');
  await section.locator('summary').click();
- await expect(section.locator('[data-guide-entry]:visible')).toHaveCount(52);
+ await expect(section.locator('[data-guide-entry]:visible')).toHaveCount(categoryCount('melee-recipes'));
  await section.locator('a[href$="/dungeons-sword-recipe/"]').click();
  await expect(page.getByText('鉄インゴット × 2',{exact:true})).toBeVisible();
  await expect(page.getByText('棒 × 1',{exact:true})).toBeVisible();
@@ -51,10 +70,10 @@ test('Dungeons category navigation, expanded gear and recipe round trip', async 
  await page.goto(base + 'contents/minecraft-dungeons/');
  await page.locator('.tech summary').click();
  await expect(page.locator('.tech')).toContainText('v2.0.6');
- await page.getByRole('navigation', { name: 'Dungeonsの種類別一覧' }).getByRole('link', { name: '弓・クロスボウのレシピ 32' }).click();
+ await page.getByRole('navigation', { name: 'Dungeonsの種類別一覧' }).getByRole('link', { name: `弓・クロスボウのレシピ ${categoryCount('ranged-recipes')}` }).click();
  const rangedRecipes = page.locator('#dungeons-ranged-recipes');
  await rangedRecipes.locator('summary').click();
- await expect(rangedRecipes.locator('[data-guide-entry]:visible')).toHaveCount(32);
+ await expect(rangedRecipes.locator('[data-guide-entry]:visible')).toHaveCount(categoryCount('ranged-recipes'));
  await rangedRecipes.locator('a[href$="/dungeons-harp-crossbow-blueprint-recipe/"]').click();
  await expect(page.getByText('完成数：2個', { exact: true })).toBeVisible();
  await expect(page.getByText('青色の設計図 × 1', { exact: true })).toBeVisible();

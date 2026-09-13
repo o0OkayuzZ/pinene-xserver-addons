@@ -4,9 +4,9 @@ Astro + TypeScriptによる、PINE SERVERのコンテンツ紹介サイトです
 
 公開先: https://o0okayuzz.github.io/pine-server/ 。ユーザーの公開承認を受けて、Web公開用リポジトリ `o0OkayuzZ/pine-server` の生成物専用 `gh-pages` ブランチをGitHub Pagesの公開元に設定しました。[公開記録](PUBLISH_REPORT.md)を参照してください。
 
-現在はアイテム・ブロック421件、レシピ197件、小さな機能37件、合計655件を掲載しています。最新の追加内容と検証は [EXPLORATION_URL_REPORT.md](EXPLORATION_URL_REPORT.md) を参照してください。
+現在はアイテム・ブロック591件、レシピ322件、小さな機能37件、合計950件を掲載しています。Dungeonsは749項目で、今回243項目を一括追加しました。[追加範囲・除外理由・検証](DUNGEONS_BULK_REPORT.md)を参照してください。レシピ図鑑は名前・材料・コンテンツで検索できます。
 
-本人用のアクセス管理画面はデスクトップの「PINE SERVER 管理画面」から起動します。GA4の実接続は設定待ちです。[管理画面の実装・検証](ADMIN_REPORT.md) / [初回設定](admin/README.md)。
+本人用のアクセス管理画面はデスクトップの「PINE SERVER 管理画面」から起動します。公開WebにはCloudflareの基本集計と許可時のGA4を設置済みで、管理画面への読み取り用認証は設定待ちです。[管理画面の実装・検証](ADMIN_REPORT.md) / [初回設定](admin/README.md)。
 
 ## 起動・検証
 

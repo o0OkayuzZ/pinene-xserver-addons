@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 import records from '../src/data/field-guide.json' with { type: 'json' };
 const base='/pine-server/';
+test.beforeEach(async({page})=>{
+ await page.addInitScript(()=>localStorage.setItem('pine-analytics-consent-v1','no'));
+ await page.route('https://static.cloudflareinsights.com/**',r=>r.fulfill({status:200,body:''}));
+});
 test('guide search, owner/kind filters, reset and detail links',async({page},info)=>{
  await page.goto(base+'database/items/?content=xp-storage');
  await expect(page.locator('[data-guide-entry]:visible')).toHaveCount(4);
@@ -25,7 +29,7 @@ test('guide search, owner/kind filters, reset and detail links',async({page},inf
  await page.screenshot({path:'artifacts/recipe-'+info.project.name+'.png',fullPage:true});
 });
 test('every published guide page renders, links and selected textures resolve',async({page,request})=>{
- test.setTimeout(90000);
+ test.setTimeout(180000);
  const resources=new Set<string>();
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  for(const entry of records.filter(e=>e.visibility==='public')){

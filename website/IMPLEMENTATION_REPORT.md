@@ -1,6 +1,6 @@
 # PINE SERVER Web 実装・検証記録
 
-以下は初回実装の記録です。現在は681ページ・図鑑655項目に拡張しています。最新の追加範囲・検証は [EXPLORATION_URL_REPORT.md](EXPLORATION_URL_REPORT.md) を参照してください。
+以下は初回実装の記録です。現在は976ページ・図鑑950項目に拡張しています。最新の追加範囲・検証は [DUNGEONS_BULK_REPORT.md](DUNGEONS_BULK_REPORT.md) を参照してください。
 
 本人用のアクセス管理画面は[ADMIN_REPORT.md](ADMIN_REPORT.md)を参照してください。
 

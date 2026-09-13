@@ -14,6 +14,7 @@ const total = entries.filter(entry => entry.contentId === 'minecraft-dungeons').
   <p class="eyebrow">GEAR UP FOR YOUR NEXT ADVENTURE</p>
   <h2 id="dungeons-guide-title">次の冒険は、どの装備で？</h2>
   <p class="lede">画像で選び、使い道を調べ、材料をそろえる。Dungeonsの図鑑{total}項目を種類別に紹介します。</p>
+  <div class="hero-actions"><a class="button" href={withBase('/database/items/?content=minecraft-dungeons')}>アイテムを検索する</a><a class="text-link" href={withBase('/database/recipes/?content=minecraft-dungeons')}>名前・材料からレシピを探す →</a></div>
   <nav class="dungeons-nav" aria-label="Dungeonsの種類別一覧">
    {groups.map(group => <a href={`#dungeons-${group.id}`}>{group.title} <span>{group.items.length}</span></a>)}
   </nav>

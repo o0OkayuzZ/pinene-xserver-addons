@@ -28,6 +28,14 @@ export function validateGuide(records, contents) {
 }
 const published=validateGuide(read('field-guide.json'),read('content-registry.json').contents);
 const allEntries=read('field-guide.json');
+const dungeonGroups=read('dungeons-guide.json');
+const dungeonIds=dungeonGroups.flatMap(group=>group.entries);
+if(new Set(dungeonGroups.map(group=>group.id)).size!==dungeonGroups.length||new Set(dungeonIds).size!==dungeonIds.length)throw new Error('Duplicate Dungeons group or entry');
+for(const group of dungeonGroups){
+ if(!/^[a-z0-9-]+$/.test(group.id)||!group.title||!group.intro||!group.entries.length)throw new Error('Invalid Dungeons group');
+ for(const id of group.entries)if(!published.some(entry=>entry.id===id&&entry.contentId==='minecraft-dungeons'))throw new Error('Broken or hidden Dungeons entry: '+id);
+}
+for(const entry of published.filter(e=>e.contentId==='minecraft-dungeons'))if(!dungeonIds.includes(entry.id))throw new Error('Missing Dungeons entry: '+entry.id);
 for(const guide of read('exploration-guides.json')){
  const ids=guide.groups.flatMap(group=>group.entries);
  if(new Set(ids).size!==ids.length)throw new Error('Duplicate exploration entry');
