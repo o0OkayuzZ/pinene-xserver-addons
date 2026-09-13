@@ -1,3 +1,4 @@
+import { beginTemporaryCastleVisit, finishTemporaryCastleVisit } from "./castleTemporaryDeathPolicy.js";
 // 無限城への入場演出だけを担当する。
 // ダンジョン生成や帰還地点保存から分離し、演出APIが失敗しても転送自体は継続する。
 import { system } from "@minecraft/server";
@@ -105,7 +106,15 @@ export function startEntranceTransition({
         try {
             if (!canTeleport()) throw new Error("Transfer cancelled");
             beforeTeleport();
-            player.teleport(landingLocation, { dimension: dungeonDimension });
+            const enteringCastle = dungeonDimension.id === "infinite_castle:dungeon" && player.dimension.id !== dungeonDimension.id;
+            if (enteringCastle) beginTemporaryCastleVisit(player);
+            try {
+                player.teleport(landingLocation, { dimension: dungeonDimension });
+            } catch (error) {
+                if (enteringCastle) finishTemporaryCastleVisit(player);
+                throw error;
+            }
+            if (player.dimension.id !== "infinite_castle:dungeon") finishTemporaryCastleVisit(player);
             finish(true);
         } catch (error) {
             finish(false, error);
@@ -130,7 +139,15 @@ export function startEntranceTransition({
         try {
             if (!canTeleport()) throw new Error("Transfer cancelled");
             beforeTeleport();
-            player.teleport(landingLocation, { dimension: dungeonDimension });
+            const enteringCastle = dungeonDimension.id === "infinite_castle:dungeon" && player.dimension.id !== dungeonDimension.id;
+            if (enteringCastle) beginTemporaryCastleVisit(player);
+            try {
+                player.teleport(landingLocation, { dimension: dungeonDimension });
+            } catch (error) {
+                if (enteringCastle) finishTemporaryCastleVisit(player);
+                throw error;
+            }
+            if (player.dimension.id !== "infinite_castle:dungeon") finishTemporaryCastleVisit(player);
         } catch (error) {
             finish(false, error);
         }

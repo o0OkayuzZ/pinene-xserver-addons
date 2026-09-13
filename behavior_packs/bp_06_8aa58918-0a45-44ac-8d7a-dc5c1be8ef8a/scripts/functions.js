@@ -254,6 +254,8 @@ export function getColorCode(p) {
 
 
 export function dead_event(p) {
+    // Defense at the inventory-moving boundary, including any future callers.
+    if (p.dimension.id === "infinite_castle:dungeon") return;
 	const location = {
 		x: Math.floor(p.location.x),
 		y: Math.floor(p.location.y),

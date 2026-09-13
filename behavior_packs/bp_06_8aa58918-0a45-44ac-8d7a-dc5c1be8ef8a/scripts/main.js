@@ -90,6 +90,8 @@ world.afterEvents.playerSpawn.subscribe(spawn => {
 
 world.afterEvents.entityDie.subscribe(dead => {
   const p = dead.deadEntity;
+  // Castle deaths use its temporary carry-in policy, never tomb/key creation.
+  if (p.dimension.id === "infinite_castle:dungeon") return;
   if (!p.hasTag('dead')) {
     if(!world.getDynamicProperty("empty_inv")){
       if(!p.hasTag("empty") || p.hasTag("getHead") || p.hasTag("getChest") || p.hasTag("getLegs") || p.hasTag("getFFeet") || p.hasTag("getOff")){
@@ -138,10 +140,11 @@ function getKeyDestination(itemStack) {
 world.afterEvents.itemUse.subscribe((data) => {
   const p = data.source;
   const itemStack = data.itemStack;
+  if (p.dimension.id === "infinite_castle:dungeon") return;
   if(world.getDynamicProperty("show_cords_item")){
     if (itemStack.typeId == "new:key") {
       const destination = getKeyDestination(itemStack);
-      if (destination) {
+      if (destination && destination.dimensionId !== "infinite_castle:dungeon") {
         try {
           p.teleport(
             { x: destination.x + 0.5, y: destination.y + 1, z: destination.z + 0.5 },
@@ -176,6 +179,7 @@ entityHitSignal?.subscribe(ev => {
   const hit = ev.hitEntity;
   const entity = ev.damagingEntity ?? ev.entity;
   if (!hit || !entity) return;
+  if (entity.dimension.id === "infinite_castle:dungeon") return;
   const equip = entity.getComponent(EntityEquippableComponent.componentId);
   const hand = equip?.getEquipment(EquipmentSlot.Mainhand);
   const item = new ItemStack("minecraft:air")

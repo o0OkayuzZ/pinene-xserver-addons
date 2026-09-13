@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/data';
+---
+<BaseLayout title="ページが見つかりません"><section class="section"><div class="shell reading"><p class="eyebrow">404 / OFF THE MAP</p><h1>ここは、まだ地図の外。</h1><p class="lede">お探しのページは見つかりませんでした。</p><p><a class="button" href={withBase('/')}>ホームに戻る →</a></p></div></section></BaseLayout>

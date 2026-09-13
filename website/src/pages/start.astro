@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+import { withBase } from '../lib/data';
+---
+<BaseLayout title="参加方法" current="start"><section class="page-hero"><div class="shell"><p class="eyebrow">YOUR ADVENTURE STARTS HERE</p><h1>冒険の準備をしよう。</h1><p class="lede">PINE SERVERへの参加方法をご案内します。</p></div></section><section class="section"><div class="shell reading"><article class="panel"><h2>接続先のご案内</h2>{site.connection ? <p>公開接続先：<code>{site.connection}</code></p> : <p><strong>接続先は未設定です。</strong><br/>公開用のサーバーアドレス・ポートと対応バージョンを確認してから、参加手順を掲載します。</p>}{site.invitation ? <a class="button" href={site.invitation}>公開招待リンクを開く ↗</a> : <p>招待URL・連絡先も現在は未設定です。</p>}</article><article class="panel"><h2>ルール・参加条件</h2><p>公開用のルールと参加条件は準備中です。案内が掲載されるまでお待ちください。</p></article><article class="panel"><h2>まずはコンテンツを見てみよう</h2><p>探索や収集など、気になる遊びを探せます。掲載は現在の提供を保証するものではありません。</p><a class="button" href={withBase('/contents/')}>コンテンツを見る →</a></article></div></section></BaseLayout>

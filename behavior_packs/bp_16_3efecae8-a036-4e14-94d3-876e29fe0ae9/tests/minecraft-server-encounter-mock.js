@@ -14,6 +14,7 @@ let deferred = [];
 let unloaded = false;
 export const metrics = { spawns: 0, removals: 0, writes: 0, stockWrites: 0, lootCalls: 0 };
 export class EnchantmentType { constructor(id) { this.id = id; } }
+export const EquipmentSlot = { Head:'head', Chest:'chest', Legs:'legs', Feet:'feet', Offhand:'offhand' };
 export class ItemStack {
     constructor(typeId, amount = 1) { this.typeId = typeId; this.amount = amount; this.enchantments = []; }
     getComponent(id) {
@@ -91,7 +92,7 @@ export const dimension = {
 };
 export const world = {
     beforeEvents: { entityHurt: signal('hurtBefore'), playerInteractWithBlock: signal("interact"), playerBreakBlock: signal("break"), explosion: signal("explosion") },
-    afterEvents: { entityDie: signal("die"), entitySpawn: signal("entitySpawn"), entityLoad: signal("entityLoad") },
+    afterEvents: { entityDie: signal("die"), playerSpawn: signal("playerSpawn"), entitySpawn: signal("entitySpawn"), entityLoad: signal("entityLoad") },
     getDynamicProperty(key) { return properties.get(key); },
     setDynamicProperty(key, value) { if (value === undefined) properties.delete(key); else properties.set(key, value); },
     getDimension() { return dimension; }, getDifficulty() { return difficulty; },

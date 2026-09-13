@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import { entries } from '../../lib/guide';
+import { contents } from '../../lib/data';
+const listing=entries.filter(entry=>entry.kind==='recipe');
+const owners=contents.filter(content=>listing.some(entry=>entry.contentId===content.id));
+---
+<BaseLayout title="レシピ図鑑" current="database">
+<section class="page-hero"><div class="shell"><p class="eyebrow">MAKE YOUR NEXT DISCOVERY</p><h1>材料から、新しい道具へ。</h1><p class="lede">作りたいものや手持ちの材料から探そう。掲載はコード上の確認で、ゲーム内でのクラフト動作は未確認です。</p></div></section>
+<section class="section"><div class="shell">
+ <div class="toolbar"><label for="guide-search">名前・材料・説明を検索</label><input id="guide-search" class="search" type="search" placeholder="剣、ダイヤモンドの粉、設計図…"/><label for="guide-content">コンテンツ</label><select id="guide-content"><option value="all">すべて</option>{owners.map(content=><option value={content.id}>{content.name}</option>)}</select></div>
+ <noscript><p>検索・絞り込みにはJavaScriptが必要です。すべての公開レシピを表示しています。</p></noscript>
+ <p id="guide-count" role="status" class="results-count">{listing.length}件のレシピ</p>
+ <div class="guide-grid">{listing.map(entry=><GuideCard entry={entry}/>)}</div>
+ <div id="guide-empty" class="empty-note" hidden><h2>該当するレシピはありません</h2><p>別の名前や材料で探してみてください。</p><button id="guide-reset" type="button" class="button">条件をリセット</button></div>
+</div></section>
+<script>
+ const search=document.querySelector<HTMLInputElement>('#guide-search')!;
+ const content=document.querySelector<HTMLSelectElement>('#guide-content')!;
+ const cards=[...document.querySelectorAll<HTMLElement>('[data-guide-entry]')];
+ function apply(sync=true){
+  let count=0;const query=search.value.normalize('NFKC').trim().toLowerCase();
+  for(const card of cards){card.hidden=!((card.dataset.search??'').includes(query)&&(content.value==='all'||card.dataset.content===content.value));if(!card.hidden)count++;}
+  document.querySelector('#guide-count')!.textContent=`${count}件のレシピ`;
+  document.querySelector<HTMLElement>('#guide-empty')!.hidden=count>0;
+  if(sync){const url=new URL(location.href);for(const [key,value] of [['q',search.value.trim()],['content',content.value]]){url.searchParams.delete(key);if(value&&value!=='all')url.searchParams.set(key,value);}history.replaceState(null,'',url);}
+ }
+ function restore(){const params=new URLSearchParams(location.search);search.value=params.get('q')??'';const value=params.get('content');content.value=[...content.options].some(option=>option.value===value)?value!:'all';apply(false);}
+ search.addEventListener('input',()=>apply());content.addEventListener('change',()=>apply());window.addEventListener('popstate',restore);
+ document.querySelector('#guide-reset')!.addEventListener('click',()=>{search.value='';content.value='all';apply();search.focus();});restore();
+</script>
+<style>
+ .toolbar label{display:block;margin-bottom:.35rem;font-weight:700}
+ #guide-content{display:block;width:100%;min-height:48px;padding:.7rem;border:2px solid #7c8574;background:#fff;font:inherit}
+ #guide-search{margin-bottom:1rem}
+</style>
+</BaseLayout>

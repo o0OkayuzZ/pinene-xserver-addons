@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { packs } from '../lib/data';
+---
+<BaseLayout title="パック情報" current="packs"><section class="page-hero"><div class="shell"><p class="eyebrow">BEHIND THE ADVENTURE</p><h1>パック情報</h1><p class="lede">紹介中のコンテンツを支えるパック。公開対象として選定した情報のみ掲載しています。全パックの一覧ではありません。</p></div></section><section class="section"><div class="shell"><div class="toolbar"><label for="pack-search">パック名・UUIDで検索</label><input id="pack-search" type="search" class="search"/><div class="filters" role="group" aria-label="パックの種類">{[['all','すべて'],['behavior','ビヘイビアー'],['resource','リソース']].map(([kind,label]) => <button class="filter" type="button" data-pack-filter={kind} aria-pressed={kind === 'all' ? 'true' : 'false'}>{label}</button>)}</div></div><p class="results-count" id="pack-count" role="status">{packs.length}件のパック</p><div class="table-wrap"><table><caption>選定済みパックのmanifest情報（本番の稼働状況は未確認）</caption><thead><tr><th scope="col">パック</th><th scope="col">種類</th><th scope="col">バージョン</th><th scope="col">UUID / 登録</th></tr></thead><tbody>{packs.map(pack => <tr data-pack-row data-kind={pack.kind} data-search={`${pack.name} ${pack.uuid}`.toLowerCase()}><td>{pack.name}</td><td>{pack.kind === 'behavior' ? 'BP' : 'RP'}</td><td>{pack.version}</td><td><code>{pack.uuid}</code><br/>{pack.registered ? 'リポジトリのworld登録と一致' : '登録は確認中'}</td></tr>)}</tbody></table></div><div class="empty-note" id="pack-empty" hidden><p>該当するパックはありません。</p><button id="pack-reset" class="button" type="button">条件をリセット</button></div></div></section>
+<script>
+const input = document.querySelector<HTMLInputElement>('#pack-search')!;
+const buttons = [...document.querySelectorAll<HTMLButtonElement>('button[data-pack-filter]')];
+const rows = [...document.querySelectorAll<HTMLElement>('[data-pack-row]')];
+let kind = 'all';
+function apply() { const q = input.value.trim().toLowerCase(); let shown = 0; rows.forEach(row => { row.hidden = !((kind === 'all' || row.dataset.kind === kind) && (row.dataset.search ?? '').includes(q)); if (!row.hidden) shown++; }); buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.packFilter === kind))); document.querySelector<HTMLElement>('#pack-empty')!.hidden = shown !== 0; document.querySelector('#pack-count')!.textContent = `${shown}件のパック`; }
+input.addEventListener('input', apply); buttons.forEach(button => button.addEventListener('click', () => { kind = button.dataset.packFilter ?? 'all'; apply(); }));
+document.querySelector('#pack-reset')?.addEventListener('click', () => { kind = 'all'; input.value = ''; apply(); input.focus(); });
+</script></BaseLayout>

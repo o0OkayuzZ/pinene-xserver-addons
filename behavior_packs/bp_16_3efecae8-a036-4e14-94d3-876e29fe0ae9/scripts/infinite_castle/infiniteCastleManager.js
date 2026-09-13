@@ -1,3 +1,4 @@
+import { installTemporaryCastleDeathReturn } from "./castleTemporaryDeathPolicy.js";
 // 無限城アドオン全体のエントリポイント。各モジュールを束ねるだけで、
 // グラフ生成/接続判定/建築などの実処理は既存モジュールに委譲する。
 import { world, system } from "@minecraft/server";
@@ -1785,4 +1786,14 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
             `[ic-debug] exit cell=${room.cell.x},${room.cell.y},${room.cell.z} worldXZ=${min.x}..${max.x},${min.z}..${max.z} y=${min.y}..${max.y} protected=${!!room.isProtected} connectors=${room.resolvedConnectors.map((c) => c.direction).join(",")}`
         );
     }
+});
+
+// Temporary death rules: reuse the saved normal-dimension entrance and run cleanup.
+installTemporaryCastleDeathReturn(player => {
+    const destination = resolveReturnDestination(player);
+    setEntranceBlocked(player, true);
+    player.teleport(destination.location, { dimension: destination.dimension });
+    phase1Exit(player);
+    clearReturnPoint(player);
+    arrivingPlayerIds.delete(player.id);
 });

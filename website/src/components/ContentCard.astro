@@ -1,0 +1,12 @@
+---
+import { withBase, type Content } from '../lib/data';
+import StatusBadge from './StatusBadge.astro';
+interface Props { content: Content }
+const { content } = Astro.props;
+---
+<article class="content-card" data-content-card data-search={`${content.name} ${content.summary}`.toLowerCase()} data-categories={content.category.join(' ')}>
+  <a href={withBase(`/contents/${content.id}/`)} class="card-link">
+    <div class="card-image"><img src={withBase(content.image.src)} alt={content.image.alt} width="800" height="450" loading="lazy" /><span class="image-label">仮ビジュアル</span></div>
+    <div class="card-body"><h3>{content.name}<span aria-hidden="true">↗</span></h3><p>{content.summary}</p><StatusBadge status={content.implementation} /></div>
+  </a>
+</article>
