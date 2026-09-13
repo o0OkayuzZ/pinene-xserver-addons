@@ -34,7 +34,8 @@ for kind in ['behavior_packs','resource_packs']:
   uuid=record['pack_id'];candidates=list((root/kind).glob('*/manifest.json'))
   for file in candidates:
    name=file.relative_to(root).as_posix();source=stage/'files'/name if name in plan['updates'] else file
-   m=json.loads(source.read_text(encoding='utf-8-sig'))
+   try:m=json.loads(source.read_text(encoding='utf-8-sig'))
+   except (UnicodeError,json.JSONDecodeError):continue
    if m.get('header',{}).get('uuid')==uuid:
     assert m['header']['version']==record['version'],('Manifest registration version',name)
     manifests[uuid]=m;break
@@ -88,12 +89,14 @@ except BaseException:
  raise
 finally:
  if server and (stopped or applied):
+  startup_offset=(root/'latest.log').stat().st_size
   started=time.time();subprocess.run(['systemctl','start','minecraft-server.service'],check=True)
 if server:
  latest=''
  for _ in range(50):
-  time.sleep(1);latest=(root/'latest.log').read_text(errors='replace')
+  time.sleep(1);raw=(root/'latest.log').read_bytes();latest=raw[startup_offset if len(raw)>=startup_offset else 0:].decode(errors='replace')
   if 'Server started.' in latest:break
+ time.sleep(8);raw=(root/'latest.log').read_bytes();latest=raw[startup_offset if len(raw)>=startup_offset else 0:].decode(errors='replace')
  service=subprocess.check_output(['systemctl','is-active','minecraft-server.service'],text=True).strip()
  content=[{'name':p.name,'text':p.read_text(errors='replace')} for folder in [root,root/'logs'] for p in folder.glob('ContentLog*.txt') if p.is_file() and p.stat().st_mtime>=started]
  errors=[l for text in [latest]+[c['text'] for c in content] for l in text.splitlines() if re.search(r'\b(error|exception)\b',l,re.I)]
