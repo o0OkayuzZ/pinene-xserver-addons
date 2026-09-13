@@ -542,27 +542,35 @@ function canRevive(player) {
   return player.typeId === "minecraft:player" && corruption(player) >= 0 && revives(player) > 0;
 }
 
-function playReviveSounds(player) {
+function playReviveSound(player, id, options) {
   const location = player.location ?? { x: 0, y: 0, z: 0 };
+  try { player.dimension?.playSound(id, location, options); } catch (error) {
+    // Some sound ids are runtime/version dependent; keep revive logic independent.
+  }
+  try { player.playSound(id, options); } catch (error) {
+    // Player-local playback is best-effort and improves audibility when dimension sound is quiet.
+  }
+}
+
+function playReviveSounds(player) {
   const sounds = [
-    { id: "mob.zombie.say", options: { volume: 2.8, pitch: 0.55 } },
-    { id: "mob.warden.heartbeat", options: { volume: 2.4, pitch: 0.75 } },
-    { id: "random.totem", options: { volume: 2.6, pitch: 0.85 } }
+    { id: "mob.zombie.say", options: { volume: 4.6, pitch: 0.45 } },
+    { id: "mob.zombie.death", options: { volume: 4.0, pitch: 0.55 } },
+    { id: "mob.zombie.say", options: { volume: 3.2, pitch: 0.75 } },
+    { id: "mob.warden.heartbeat", options: { volume: 5.0, pitch: 0.62 } },
+    { id: "mob.warden.heartbeat", options: { volume: 4.2, pitch: 0.88 } },
+    { id: "random.totem", options: { volume: 3.2, pitch: 0.85 } }
   ];
   for (const sound of sounds) {
-    try {
-      player.dimension?.playSound(sound.id, location, sound.options);
-    } catch (error) {
-      try { player.playSound(sound.id, sound.options); } catch (ignored) { /* sound id may be unavailable on some runtimes */ }
-    }
+    playReviveSound(player, sound.id, sound.options);
   }
 }
 
 function applyReviveVision(player) {
   try {
     player.camera?.fade({
-      fadeColor: { red: 0.75, green: 0.02, blue: 0.02 },
-      fadeTime: { fadeInTime: 0.15, holdTime: 2.2, fadeOutTime: 0.75 }
+      fadeColor: { red: 0.55, green: 0.04, blue: 0.02 },
+      fadeTime: { fadeInTime: 0.05, holdTime: 0, fadeOutTime: 2.4 }
     });
   } catch (error) {
     // Camera fade can be unavailable in some runtime contexts; revive must still succeed.

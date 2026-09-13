@@ -201,6 +201,25 @@ test('four revives consume resources and advance all four stages', () => {
 
 test('c4 stays c4 while independently consuming a recharged revive', () => {const p=entity(4);init(p,1);assert.ok(api.tryRevive(p));assert.equal(api.corruption(p),4);assert.equal(api.revives(p),0);});
 
+test('revive uses visible red flash and layered local revive sounds', () => {
+
+  const p=entity(0);init(p,1);assert.ok(api.tryRevive(p));
+
+  assert.equal(p.fades.length,1);
+  assert.equal(p.fades[0].fadeTime.holdTime,0);
+  assert.ok(p.fades[0].fadeTime.fadeOutTime >= 2);
+  assert.ok(p.fades[0].fadeColor.red < 0.7);
+
+  const ids=p.sounds.map(s=>s.id);
+  assert.ok(ids.filter(id=>id==='mob.warden.heartbeat').length >= 4);
+  assert.ok(ids.filter(id=>id==='mob.zombie.say').length >= 4);
+  assert.ok(ids.includes('mob.zombie.death'));
+  assert.ok(ids.includes('random.totem'));
+  assert.ok(p.sounds.some(s=>s.target==='player'));
+  assert.ok(p.sounds.some(s=>s.target==='dimension'));
+
+});
+
 test('mismatch does not rewrite gear or consume resources', () => {
 
   const p=entity(1);p.slots.head=new ItemStack('zombiegear:zombie_helmet_c4');init(p,4);const ids=Object.values(p.slots).map(i=>i.typeId);assert.equal(api.tryRevive(p),false);assert.equal(api.revives(p),4);assert.deepEqual(Object.values(p.slots).map(i=>i.typeId),ids);

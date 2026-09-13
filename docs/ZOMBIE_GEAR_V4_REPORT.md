@@ -4,7 +4,7 @@ Status: implemented, validated with local tooling, applied to the two requested 
 
 ## Scope
 
-- Updated the existing Zombie Gear BP/RP to version 1.1.7.
+- Updated the existing Zombie Gear BP/RP to version 1.1.8.
 - Preserved the latest core BP dependency at `2b9dbf4f-7f7a-4e97-9687-4864e4f6f501` version `1.0.68`.
 - Updated `@minecraft/server` to `2.6.0` and the BP minimum engine version to `1.26.40`.
 - Integrated the v4 HD armor assets from the handoff: 20 attachables, 20 geometries, 20 armor textures, 20 merged item icons, and one render controller.
@@ -41,7 +41,7 @@ Applied to both requested worlds:
 - `8v9pvwiD6QQ=` / `開発用ワールド`
 - `IC_Phase1_Fresh_20260911` / `IC Phase 1 - FRESH TEST 20260911`
 
-Each world received the changed Zombie Gear pack files. The applied files were hash-checked against the publish worktree, and both world registrations now point to BP/RP version `1.1.7`.
+Each world received the changed Zombie Gear pack files. The applied files were hash-checked against the publish worktree, and both world registrations now point to BP/RP version `1.1.8`.
 
 Backup directory:
 
