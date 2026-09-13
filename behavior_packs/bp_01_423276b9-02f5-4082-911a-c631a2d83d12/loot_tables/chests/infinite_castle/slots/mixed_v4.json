@@ -1,0 +1,164 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "myname:mystery_fossil",
+          "weight": 123203
+        },
+        {
+          "type": "item",
+          "name": "pinematerials:zonbikansaibou",
+          "weight": 70767
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 89882
+        },
+        {
+          "type": "item",
+          "name": "minecraft:netherite_ingot",
+          "weight": 8393
+        },
+        {
+          "type": "item",
+          "name": "true_dn:deathnerite_ingot",
+          "weight": 8393
+        },
+        {
+          "type": "item",
+          "name": "true_dn:deathnerite_block",
+          "weight": 278
+        },
+        {
+          "type": "item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 2784
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/chests/infinite_castle/v4/collectibles.json",
+          "weight": 14056
+        },
+        {
+          "type": "item",
+          "name": "ws:warpstone",
+          "weight": 4181
+        },
+        {
+          "type": "item",
+          "name": "resetapple:blue_apple",
+          "weight": 1669
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/chests/infinite_castle/v4/trims.json",
+          "weight": 1669
+        },
+        {
+          "type": "item",
+          "name": "minecraft:netherite_upgrade_smithing_template",
+          "weight": 556
+        },
+        {
+          "type": "item",
+          "name": "true_dn:darkness_upgrade_smithing_template",
+          "weight": 167
+        },
+        {
+          "type": "item",
+          "name": "minecraft:red_mushroom",
+          "weight": 1257620,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:brown_mushroom",
+          "weight": 1257620,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:rotten_flesh",
+          "weight": 1741320,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 1064140
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_ingot",
+          "weight": 1257620,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_block",
+          "weight": 677180,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/chests/infinite_castle/v4/mycology.json",
+          "weight": 386960
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/chests/infinite_castle/v4/potions_mixed.json",
+          "weight": 677180
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/chests/infinite_castle/v4/theme_mixed.json",
+          "weight": 1354362
+        }
+      ]
+    }
+  ]
+}

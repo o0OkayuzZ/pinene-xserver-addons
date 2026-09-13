@@ -5,7 +5,7 @@ export function inventoryHasItems(container) {
     for (let i = 0; i < container.size; i++) if (container.getItem(i)) return true;
     return false;
 }
-export function deliverRoomReward(room, container, { insert, persist, random = Math.random }) {
+export function deliverLegacyRoomReward(room, container, { insert, persist, random = Math.random }) {
     if (room.debug || (!room.unlockComplete && room.kind !== "treasure_vault")) return false;
     if (!container) return false;
     if (container.size !== 27) throw new Error("reward chest merged with unrelated inventory");
@@ -65,5 +65,87 @@ export function deliverRoomReward(room, container, { insert, persist, random = M
     room.reward = "stocked";
     delete room.rewardError;
     persist();
+    return true;
+}
+
+export const CURRENT_REWARD_VERSION = 4;
+export function rewardSlotRange(room) {
+    if (room.kind === "treasure_vault") return [23, 27];
+    if (room.encounterType === "elite") return [19, 23];
+    return [16, 20];
+}
+export function selectRewardSlots(room, random = Math.random) {
+    const [min, max] = rewardSlotRange(room);
+    const roll = n => Math.min(n - 1, Math.max(0, Math.floor(random() * n)));
+    const count = min + roll(max - min + 1);
+    const slots = Array.from({ length: 27 }, (_, i) => i);
+    for (let i = 26; i > 0; i--) {
+        const j = roll(i + 1);
+        [slots[i], slots[j]] = [slots[j], slots[i]];
+    }
+    return slots.slice(0, count);
+}
+export function deliverRoomReward(room, container, api) {
+    if (room.debug || (!room.unlockComplete && room.kind !== "treasure_vault")) return false;
+    if (!container) return false;
+    if (container.size !== 27) throw new Error("reward chest merged with unrelated inventory");
+    // Never reinterpret partially delivered V3 draws using the V4 distribution.
+    if (room.rewardVersion === 3 && room.reward === "stocking" && room.rewardDraw) {
+        return deliverLegacyRoomReward(room, container, { ...api, insert: api.insertLegacy });
+    }
+    if (room.reward === "stocked") return true;
+    if (!["locked", "stocking"].includes(room.reward)) return false;
+    if (!room.rewardDraw || room.rewardVersion !== CURRENT_REWARD_VERSION) {
+        if (inventoryHasItems(container)) {
+            if (room.reward === "stocking") {
+                room.reward = "stocked";
+                api.persist();
+                return true;
+            }
+            throw new Error("unclaimed reward chest already contains items");
+        }
+        room.rewardDraw = { selectedSlots: selectRewardSlots(room, api.random), next: 0 };
+        room.rewardVersion = CURRENT_REWARD_VERSION;
+        room.reward = "stocking";
+        api.persist();
+    }
+    const draw = room.rewardDraw;
+    const [min, max] = rewardSlotRange(room);
+    if (!Array.isArray(draw.selectedSlots) || draw.selectedSlots.length < min || draw.selectedSlots.length > max
+        || new Set(draw.selectedSlots).size !== draw.selectedSlots.length
+        || draw.selectedSlots.some(s => !Number.isInteger(s) || s < 0 || s > 26)
+        || !Number.isInteger(draw.next) || draw.next < 0 || draw.next > draw.selectedSlots.length)
+        throw new Error("invalid V4 reward receipt; retained for recovery");
+    if (draw.pending !== undefined) {
+        if (draw.pending !== draw.next || draw.pending >= draw.selectedSlots.length)
+            throw new Error("invalid pending V4 reward receipt");
+        // A restart cannot distinguish a failed call from a reward taken by a
+        // player. Preserve the receipt and never redraw an ambiguous slot.
+        draw.next++;
+        delete draw.pending;
+        api.persist();
+    }
+    while (draw.next < draw.selectedSlots.length) {
+        const slot = draw.selectedSlots[draw.next];
+        if (container.getItem(slot)) throw new Error("undrawn reward slot already contains items");
+        draw.pending = draw.next;
+        api.persist();
+        try {
+            api.insert(slot);
+            if (!container.getItem(slot)) throw new Error("non-empty BSL draw inserted no items");
+        } catch (error) {
+            if (container.getItem(slot)) draw.next++;
+            delete draw.pending;
+            room.rewardError = String(error?.message ?? error);
+            api.persist();
+            throw error;
+        }
+        draw.next++;
+        delete draw.pending;
+        api.persist();
+    }
+    room.reward = "stocked";
+    delete room.rewardError;
+    api.persist();
     return true;
 }

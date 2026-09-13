@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { deliverRoomReward } from "../scripts/infinite_castle/phase1Rewards.js";
+import { deliverLegacyRoomReward as deliverRoomReward } from "../scripts/infinite_castle/phase1Rewards.js";
 import { slotLootTableFor } from "../scripts/infinite_castle/phase1Config.js";
 function fixture(overrides = {}) {
     const items = Array(27), room = { kind: "combat", unlockComplete: true, reward: "locked", rewardVersion: 3, ...overrides };

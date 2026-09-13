@@ -40,11 +40,11 @@ export const dimension = {
     runCommand(command) {
         const match = /^loot replace block (-?\d+) (-?\d+) (-?\d+) slot.container (\d+) 1 loot/.exec(command);
         if (!match) throw new Error('unexpected command');
-        if (!/loot "chests\/infinite_castle\/slots\/[a-z_]+"$/.test(command))
+        if (!/loot "chests\/infinite_castle\/slots\/[a-z_0-9]+"$/.test(command))
             throw new Error('Bedrock /loot adds loot_tables/ and .json itself');
         metrics.lootCalls++;
         const container=this.getBlock({x:+match[1],y:+match[2],z:+match[3]}).getComponent().container;
-        if (/_base"$/.test(command) || +match[4] % 7 === 0) container.setItem(+match[4],new ItemStack('minecraft:diamond',12));
+        if (/_v4"$/.test(command) || /_base"$/.test(command) || +match[4] % 7 === 0) container.setItem(+match[4],new ItemStack('minecraft:diamond',12));
         return {successCount:1};
     },
     id: "infinite_castle:dungeon", heightRange: { min: -64, max: 512 },

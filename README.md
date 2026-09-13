@@ -8,7 +8,7 @@ The current deployment contains 16 custom behavior packs and 19 custom resource 
 
 | Directory | Name | Version |
 | --- | --- | --- |
-| behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12 | [戦利品] Better Structure Loot BP | 1.0.17 |
+| behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12 | [戦利品] Better Structure Loot BP | 1.0.18 |
 | behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880 | [モブ] ギャップルカウズ BP | 1.0.33 |
 | behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc | [保守] 青リンゴ状態リセット BP | 1.0.6 |
 | behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9 | [音楽] ピネCDアイテム BP | 1.0.27 |
@@ -22,7 +22,7 @@ The current deployment contains 16 custom behavior packs and 19 custom resource 
 | behavior_packs/bp_13_7e0c44d2-1b23-4073-b749-c81514e2ed94 | [建築] INAKA家具 BP | 1.1.5 |
 | behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c | [保管] 経験値ストレージ BP | 1.0.5 |
 | behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639 | ピネン統合ビヘイビアーパック | 1.0.68 |
-| behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9 | 無限城ビヘイビアーパック | 0.2.5 |
+| behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9 | 無限城ビヘイビアーパック | 0.2.6 |
 | behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3 | Pinene PvP Island BP | 0.2.16 |
 | resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784 | [音楽] ピネCD音源 RP | 1.0.27 |
 | resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a | ピーネン統合リソースパック | 1.0.57 |
