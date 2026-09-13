@@ -1,0 +1,28 @@
+npx.cmd : [WebServer] (node:18012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+At line:2 char:459
++ ... output.mjs; npx.cmd playwright test --grep 'category deep|September r ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([WebServer] (no... env being set.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 9 tests using 1 worker
+
+(node:16252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [mobile-390] › tests\release.spec.ts:2:1 › September release publishes Zombie Gear FINAL and its crafting materials (962ms)
+  ok 2 [mobile-390] › tests\release.spec.ts:17:1 › September release publishes BSL and preserved temporary castle rules (432ms)
+  ok 3 [mobile-390] › tests\site.spec.ts:28:1 › category deep links, search, zero results and reset (1.1s)
+(node:9992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 4 [tablet-768] › tests\release.spec.ts:2:1 › September release publishes Zombie Gear FINAL and its crafting materials (508ms)
+  ok 5 [tablet-768] › tests\release.spec.ts:17:1 › September release publishes BSL and preserved temporary castle rules (417ms)
+  ok 6 [tablet-768] › tests\site.spec.ts:28:1 › category deep links, search, zero results and reset (865ms)
+(node:10936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 7 [desktop-1440] › tests\release.spec.ts:2:1 › September release publishes Zombie Gear FINAL and its crafting materials (465ms)
+  ok 8 [desktop-1440] › tests\release.spec.ts:17:1 › September release publishes BSL and preserved temporary castle rules (364ms)
+  ok 9 [desktop-1440] › tests\site.spec.ts:28:1 › category deep links, search, zero results and reset (879ms)
+
+  9 passed (12.2s)

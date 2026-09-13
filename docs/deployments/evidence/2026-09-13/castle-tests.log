@@ -1,0 +1,374 @@
+TAP version 13
+# (node:11080) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: captain commands, formation spacing, and sweep use scheduled telegraphs
+ok 1 - captain commands, formation spacing, and sweep use scheduled telegraphs
+  ---
+  duration_ms: 7.2711
+  type: 'test'
+  ...
+# Subtest: arch curse summons are bounded and threshold field is once only
+ok 2 - arch curse summons are bounded and threshold field is once only
+  ---
+  duration_ms: 2.4477
+  type: 'test'
+  ...
+# Subtest: wraith fire, escape and safe-center burst
+ok 3 - wraith fire, escape and safe-center burst
+  ---
+  duration_ms: 0.9098
+  type: 'test'
+  ...
+# Subtest: iron general rage increases speed once; crimson transform delays shockwave
+ok 4 - iron general rage increases speed once; crimson transform delays shockwave
+  ---
+  duration_ms: 0.4253
+  type: 'test'
+  ...
+# Subtest: overseer uses only its two persisted abilities
+ok 5 - overseer uses only its two persisted abilities
+  ---
+  duration_ms: 0.8411
+  type: 'test'
+  ...
+# Subtest: debuffer projectiles, two distinct plague effects, clones and coordinate hazards
+ok 6 - debuffer projectiles, two distinct plague effects, clones and coordinate hazards
+  ---
+  duration_ms: 0.9028
+  type: 'test'
+  ...
+# Subtest: gold key flight unlocks once and cleanup cancels pending work
+ok 7 - gold key flight unlocks once and cleanup cancels pending work
+  ---
+  duration_ms: 1.2064
+  type: 'test'
+  ...
+# Subtest: crimson key becomes gold before arrival; retired rooms never unlock
+ok 8 - crimson key becomes gold before arrival; retired rooms never unlock
+  ---
+  duration_ms: 0.3804
+  type: 'test'
+  ...
+# Subtest: cone rejects rear and vertical targets
+ok 9 - cone rejects rear and vertical targets
+  ---
+  duration_ms: 0.3521
+  type: 'test'
+  ...
+# (node:15384) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: stable Block objects without preview isSolid allow authored floors and airborne projectiles
+ok 10 - stable Block objects without preview isSolid allow authored floors and airborne projectiles
+  ---
+  duration_ms: 3.3946
+  type: 'test'
+  ...
+# Subtest: unloaded arrival waits before block validation and holds chunks through teleport
+ok 11 - unloaded arrival waits before block validation and holds chunks through teleport
+  ---
+  duration_ms: 3.4363
+  type: 'test'
+  ...
+# Subtest: blocked landing and validator exceptions release their temporary area
+ok 12 - blocked landing and validator exceptions release their temporary area
+  ---
+  duration_ms: 0.8209
+  type: 'test'
+  ...
+# Subtest: native creation promise cannot hang forever; capacity failure creates no area
+ok 13 - native creation promise cannot hang forever; capacity failure creates no area
+  ---
+  duration_ms: 3.8564
+  type: 'test'
+  ...
+# (node:26052) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: occupied rooms, crosses and stairs lock only themselves; every stair approach fits
+ok 14 - occupied rooms, crosses and stairs lock only themselves; every stair approach fits
+  ---
+  duration_ms: 747.4845
+  type: 'test'
+  ...
+# Subtest: socket rejection continues asynchronous search without expanding hard locks
+ok 15 - socket rejection continues asynchronous search without expanding hard locks
+  ---
+  duration_ms: 502.4912
+  type: 'test'
+  ...
+# (node:9520) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: slot commands use relative BSL paths
+ok 16 - slot commands use relative BSL paths
+  ---
+  duration_ms: 1.8149
+  type: 'test'
+  ...
+# Subtest: each slot is drawn once; empty outcomes stay empty and native item metadata stays in place
+ok 17 - each slot is drawn once; empty outcomes stay empty and native item metadata stays in place
+  ---
+  duration_ms: 1.9538
+  type: 'test'
+  ...
+# Subtest: all possible guaranteed positions cover all 27 slots without collisions
+ok 18 - all possible guaranteed positions cover all 27 slots without collisions
+  ---
+  duration_ms: 2.9281
+  type: 'test'
+  ...
+# Subtest: a missing guaranteed reward stays retryable instead of accepting a falsely successful command
+ok 19 - a missing guaranteed reward stays retryable instead of accepting a falsely successful command
+  ---
+  duration_ms: 0.5729
+  type: 'test'
+  ...
+# Subtest: old broken receipts repair once while version 2 and 3 claimed rewards never refill
+ok 20 - old broken receipts repair once while version 2 and 3 claimed rewards never refill
+  ---
+  duration_ms: 0.3769
+  type: 'test'
+  ...
+# Subtest: a partial failure resumes at the unfilled slot without redrawing earlier slots
+ok 21 - a partial failure resumes at the unfilled slot without redrawing earlier slots
+  ---
+  duration_ms: 0.5071
+  type: 'test'
+  ...
+# Subtest: a write followed by an exception is not repeated
+ok 22 - a write followed by an exception is not repeated
+  ---
+  duration_ms: 0.3507
+  type: 'test'
+  ...
+# Subtest: reloaded pending empty outcomes are not rerolled and incomplete draws finish
+ok 23 - reloaded pending empty outcomes are not rerolled and incomplete draws finish
+  ---
+  duration_ms: 5.8159
+  type: 'test'
+  ...
+# Subtest: old interrupted inserts reconcile inventory; protected and foreign chests stay untouched
+ok 24 - old interrupted inserts reconcile inventory; protected and foreign chests stay untouched
+  ---
+  duration_ms: 3.2277
+  type: 'test'
+  ...
+# (node:24544) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PHASE1_RUNTIME_OK: waves, arrival/exit grace, rewards, restart, run rebuild, cap45, anchor revision
+# Subtest: tests\\phase1Runtime.test.js
+ok 5 - tests\\phase1Runtime.test.js
+  ---
+  duration_ms: 897.4426
+  type: 'test'
+  ...
+# (node:15628) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: absolute special probability boundaries
+ok 26 - absolute special probability boundaries
+  ---
+  duration_ms: 2.1463
+  type: 'test'
+  ...
+# Subtest: initial 15 rooms guarantee all encounters and a distant exit across seeds
+ok 27 - initial 15 rooms guarantee all encounters and a distant exit across seeds
+  ---
+  duration_ms: 2927.7012
+  type: 'test'
+  ...
+# Subtest: Hard Locks preserve role, retired elite is replaced, entrance is not regenerated
+ok 28 - Hard Locks preserve role, retired elite is replaced, entrance is not regenerated
+  ---
+  duration_ms: 26.1609
+  type: 'test'
+  ...
+# Subtest: multiplayer snapshots stop at 4; exact base wave rosters and key only in wave 2
+ok 29 - multiplayer snapshots stop at 4; exact base wave rosters and key only in wave 2
+  ---
+  duration_ms: 0.4115
+  type: 'test'
+  ...
+# Subtest: wave thresholds include pending and scaling, exclude summons; timeout retains wave 1
+ok 30 - wave thresholds include pending and scaling, exclude summons; timeout retains wave 1
+  ---
+  duration_ms: 0.214
+  type: 'test'
+  ...
+# Subtest: instance and receipt persist only for retained instances; restart recovers without reroll
+ok 31 - instance and receipt persist only for retained instances; restart recovers without reroll
+  ---
+  duration_ms: 0.4171
+  type: 'test'
+  ...
+# Subtest: all participants must normally exit; disconnect/death/restart leave participation active
+ok 32 - all participants must normally exit; disconnect/death/restart leave participation active
+  ---
+  duration_ms: 0.2391
+  type: 'test'
+  ...
+# Subtest: socket contracts reject open/sealed, floor, width, landing and direction changes
+ok 33 - socket contracts reject open/sealed, floor, width, landing and direction changes
+  ---
+  duration_ms: 60.41
+  type: 'test'
+  ...
+# Subtest: three gardens and two vaults have distinct interiors confined away from sockets
+ok 34 - three gardens and two vaults have distinct interiors confined away from sockets
+  ---
+  duration_ms: 2.8944
+  type: 'test'
+  ...
+# (node:6128) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: transfer reserves arrival grace immediately before teleport and finishes once
+ok 35 - transfer reserves arrival grace immediately before teleport and finishes once
+  ---
+  duration_ms: 4.3968
+  type: 'test'
+  ...
+# Subtest: death during exit animation cancels teleport and never records a normal exit
+ok 36 - death during exit animation cancels teleport and never records a normal exit
+  ---
+  duration_ms: 0.5608
+  type: 'test'
+  ...
+# (node:24812) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# [ic-koto] start=scenery listeners=2
+# [ic-koto] start=core listeners=2
+# [ic-koto] start=scenery listeners=1
+# Subtest: scenery uses each listener's position at mutation time; core remains close and clear
+ok 37 - scenery uses each listener's position at mutation time; core remains close and clear
+  ---
+  duration_ms: 2.6653
+  type: 'test'
+  ...
+# Subtest: disconnecting listener does not suppress others, and disabled or wrong-dimension cues stay silent
+ok 38 - disconnecting listener does not suppress others, and disabled or wrong-dimension cues stay silent
+  ---
+  duration_ms: 0.5115
+  type: 'test'
+  ...
+# (node:16052) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: elapsed clock advances with frozen daylight and ignores time changes
+ok 39 - elapsed clock advances with frozen daylight and ignores time changes
+  ---
+  duration_ms: 1.4666
+  type: 'test'
+  ...
+# Subtest: clock resumes after reload with a reset server tick and saved deadline
+ok 40 - clock resumes after reload with a reset server tick and saved deadline
+  ---
+  duration_ms: 0.2199
+  type: 'test'
+  ...
+# Subtest: multiple reads in one tick do not advance the clock or write repeatedly
+ok 41 - multiple reads in one tick do not advance the clock or write repeatedly
+  ---
+  duration_ms: 1.3709
+  type: 'test'
+  ...
+# [ic-koto] start=scenery listeners=1
+# [ic-koto] start=scenery listeners=1
+# [ic-koto] start=scenery listeners=1
+# [ic-koto] start=scenery listeners=1
+# [ic-koto] start=scenery listeners=1
+# [ic-koto] start=scenery listeners=1
+# [ic-koto] start=scenery listeners=1
+# [ic-koto] start=scenery listeners=1
+# [ic-koto] start=core listeners=1
+# Subtest: real manager updates scenery with koto at sampled intervals under fixed daylight under Always Day
+ok 42 - real manager updates scenery with koto at sampled intervals under fixed daylight under Always Day
+  ---
+  duration_ms: 30.7271
+  type: 'test'
+  ...
+# Subtest: player safety deferral still retries after 20 seconds without a false start sound
+ok 43 - player safety deferral still retries after 20 seconds without a false start sound
+  ---
+  duration_ms: 6.327
+  type: 'test'
+  ...
+# [ic-koto] start=scenery listeners=1
+# Subtest: checking a pending deadline does not redraw it; completion schedules the next draw once
+ok 44 - checking a pending deadline does not redraw it; completion schedules the next draw once
+  ---
+  duration_ms: 3.7383
+  type: 'test'
+  ...
+# Subtest: no players means no background or core reconstruction
+ok 45 - no players means no background or core reconstruction
+  ---
+  duration_ms: 22.1256
+  type: 'test'
+  ...
+# (node:26872) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# {"kind":"core","samples":100000,"mean":599.7862489999964,"sigma":98.5964394056041,"bins":[3510,23791,45518,23732,3449],"middleSigma":68389,"endpoints":0}
+# {"kind":"scenery","samples":100000,"mean":67.46252550000014,"sigma":17.25436893910697,"bins":[3503,23761,45516,23764,3456],"middleSigma":68459,"endpoints":2}
+# Subtest: 100,000 seeded draws per timer stay bounded, symmetric and bell shaped
+ok 46 - 100,000 seeded draws per timer stay bounded, symmetric and bell shaped
+  ---
+  duration_ms: 89.6793
+  type: 'test'
+  ...
+# Subtest: out-of-range Gaussian values are rejected and sampled again, without boundary clipping
+ok 47 - out-of-range Gaussian values are rejected and sampled again, without boundary clipping
+  ---
+  duration_ms: 0.3677
+  type: 'test'
+  ...
+# Subtest: broken RNG has a bounded fallback rather than blocking a server tick
+ok 48 - broken RNG has a bounded fallback rather than blocking a server tick
+  ---
+  duration_ms: 0.6607
+  type: 'test'
+  ...
+# (node:24232) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# HEALING_GARDEN_OK: timing, bounds, multiplayer, max health, death, mutation, reload, migration, ordinary combat
+# Subtest: tests\\sourceHealingGarden.test.js
+ok 11 - tests\\sourceHealingGarden.test.js
+  ---
+  duration_ms: 683.429
+  type: 'test'
+  ...
+# (node:26300) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# ROOM_MATERIALS_OK plans=128 rare=64 protected=4
+# Subtest: tests\\sourceRoomMaterials.test.js
+ok 12 - tests\\sourceRoomMaterials.test.js
+  ---
+  duration_ms: 7756.0306
+  type: 'test'
+  ...
+# (node:26168) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# TREASURE_VAULT_OK: loot, book, multiplayer, no enemies/healing, no refill, repair, crash recovery, migration; gardens=70 vaults=41
+# Subtest: tests\\sourceTreasureVault.test.js
+ok 13 - tests\\sourceTreasureVault.test.js
+  ---
+  duration_ms: 6326.4438
+  type: 'test'
+  ...
+1..51
+# tests 51
+# suites 0
+# pass 51
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8057.6956
