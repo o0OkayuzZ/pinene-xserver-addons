@@ -1,5 +1,7 @@
 # Infinite Castle BSL V4
 
+Follow-up: [BSL 1.0.19 also applies the normal-structure rebalance](WEIGHTED_REBALANCE_V2_UPDATE.md). The Castle V4 behavior below is unchanged.
+
 The September 13 `BSL_weighted_rebalance_v2_spec.md` was present in Downloads but
 was not included in the earlier 1.0.17 release. This change implements its Infinite
 Castle section. It does not apply the separate normal-structure BSL conversion.

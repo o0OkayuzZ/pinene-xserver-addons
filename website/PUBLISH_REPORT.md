@@ -1,3 +1,8 @@
+## BSL weighted v2 full release (2026-09-13)
+
+Normal BSL and Castle guides updated; 1008 pages built; live checks 6/6.
+[Verified release report](../docs/deployments/2026-09-13-bsl-weighted-v2.md).
+
 # GitHub Pages公開記録
 
 > 2026-09-13 最終一括反映：Zombie Gear FINAL・BSLを公開し、無限城のタイマー・仮死亡ルールを更新。980図鑑項目・1008ページ。生成物`c8dabc9c922d510fa4cf9c93249500d023a34bd5`、[Pages配置成功](https://github.com/o0OkayuzZ/pine-server/actions/runs/34759106767)。11ページ×スマホ/PCの22確認が成功。[Web・両ローカルワールド・Xserver・Git統合の報告](../docs/deployments/2026-09-13-release.md)。
