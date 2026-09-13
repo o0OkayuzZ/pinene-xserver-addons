@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,shutil,subprocess,collections
 web=Path(__file__).resolve().parents[1];root=web.parent
-revision='67cc2108bbf366ace426fc4b923f54a256ea7827'
+revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
 bp='behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/'
 rp='resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/'
 core='behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/'
@@ -52,6 +52,13 @@ entry('zombie-infection-diet','近接感染と食事','feature','zombie-gear','�
 entry('bsl-castle-slot-rewards','無限城の宝箱抽選','feature','better-structure-loot','最低1枠の報酬と、26枠の追加抽選。','27枠からランダムに1枠を選び基本報酬を保証し、残り26枠は空欄も含めて個別抽選します。同じアイテムが別の枠に出ることもあります。','無限城の戦闘を終え、宝箱の封印を解除します。','新しく生成される無限城報酬に適用します。',['7種類は報酬区分の数で、アイテムの種類数ではありません。','配布済みのチェストは再抽選・再配置・再補充しません。','処理の再開時にも、確定済みの枠を再抽選しない仕組みです。'],[bsl+'loot_tables/chests/infinite_castle/slots/guard.json','docs/infinite_castle/slot-rewards-20260912.md'])
 reconstruction=byid['castle-reconstruction'];reconstruction['description']='城本体は5〜15分、背景の飾りは15秒〜2分の範囲で、中央の待ち時間が出やすい抽選をします。背景には遠くに響く琴、城本体には近くで明瞭に鳴る琴を使います。'
 reconstruction['details']=['本体は10分前後、飾りは67.5秒前後が出やすく、毎回固定のタイマーではありません。','昼夜を固定しても進む経過tick時計を使い、抽選済みの期限は再起動後も継続します。','在室プレイヤー・戦闘・出口を保護するため、実際の開始が遅れる場合があります。無人では再構成しません。','城内の夕暮れの霧と、背景・本体で異なる琴の演出を組み合わせています。'];reconstruction['evidence']=evidence([castle+'scripts/infinite_castle/phase1Config.js',castle+'scripts/infinite_castle/infiniteCastleManager.js','docs/infinite_castle/bell-intervals-20260912.md'])
+entry('castle-temporary-death','城内で倒れたとき（仮設定）','feature','infinite-castle','持ち込み品を保持し、城内の入手品を失って帰還。','現在の仮設定では、城への入場時に持っていた品を保護します。城内で死亡した後は城内で得た持ち物を失い、保存された帰還地点へ戻ります。正式な城ルールが決まるまでの設定です。','城へ入る前に持ち物を確認してください。城内では墓の生成と鍵による墓への移動を利用しません。','無限城への入場から帰還までに適用します。',['持ち込み品には入場中だけ目印が付き、正常な帰還時に元の説明文と死亡時保持設定へ戻ります。','Zombie Gearの腐敗変換でも持ち込み品の目印を保持します。','導入前から城内にいたプレイヤーは由来が分からないため、最初の帰還では持ち物を削除しません。','最新の仮設定と他の復活・墓機能を組み合わせた操作は、引き続き実機確認が必要です。'],[castle+'scripts/infinite_castle/castleTemporaryDeathPolicy.js',castle+'scripts/infinite_castle/entranceTransition.js','behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/scripts/main.js'])
+guides=read('exploration-guides.json');cg=next(g for g in guides if g['contentId']=='infinite-castle')
+if not any(g['id']=='temporary-death' for g in cg['groups']):cg['groups'].append({'id':'temporary-death','title':'城内で倒れたとき（仮設定）','entries':['castle-temporary-death']})
+write('exploration-guides.json',guides)
+grave=owners['grave'];note='無限城内では仮の持ち込み品保護ルールを使うため、墓の生成と鍵による墓への移動は無効です。'
+if note not in grave['guide']:grave['guide']+=' '+note
+grave['evidence']=evidence(['behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/scripts/main.js','behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/scripts/functions.js'])
 contents['source_commit']=revision
 write('content-registry.json',contents);write('pack-registry.json',packs);write('field-guide.json',entries)
 write('updates.json',[{'id':'release-20260913','title':'Zombie Gear FINALと9月12・13日の更新','body':'Zombie Gearの防具20種類・幹細胞・蘇生と浄化、BSLの宝箱抽選を公開しました。無限城の再構成間隔を最新仕様へ更新し、Dungeonsの装備・レシピ、Mycologyの鑑定演出の案内と合わせて確認できます。','date':'2026-09-13','visibility':'public'}])

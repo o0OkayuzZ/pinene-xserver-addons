@@ -4,7 +4,9 @@ Astro + TypeScriptによる、PINE SERVERのコンテンツ紹介サイトです
 
 公開先: https://o0okayuzz.github.io/pine-server/ 。ユーザーの公開承認を受けて、Web公開用リポジトリ `o0OkayuzZ/pine-server` の生成物専用 `gh-pages` ブランチをGitHub Pagesの公開元に設定しました。[公開記録](PUBLISH_REPORT.md)を参照してください。
 
-現在はアイテム・ブロック591件、レシピ322件、小さな機能37件、合計950件を掲載しています。Dungeonsは749項目で、今回243項目を一括追加しました。[追加範囲・除外理由・検証](DUNGEONS_BULK_REPORT.md)を参照してください。レシピ図鑑は名前・材料・コンテンツで検索できます。
+2026-09-13更新：Zombie Gear FINAL、BSL、無限城の現行タイマーと仮の死亡ルールを掲載。1008ページを生成します。
+
+現在はアイテム・ブロック612件、レシピ327件、小さな機能41件、合計980件を掲載しています。Dungeonsは749項目で、今回243項目を一括追加しました。[追加範囲・除外理由・検証](DUNGEONS_BULK_REPORT.md)を参照してください。レシピ図鑑は名前・材料・コンテンツで検索できます。
 
 本人用のアクセス管理画面はデスクトップの「PINE SERVER 管理画面」から起動します。公開WebにはCloudflareの基本集計と許可時のGA4を設置済みで、管理画面への読み取り用認証は設定待ちです。[管理画面の実装・検証](ADMIN_REPORT.md) / [初回設定](admin/README.md)。
 
@@ -38,7 +40,7 @@ Astro 7のCLIはエージェント環境でpreviewを自動的にバックグラ
 
 - `src/site.config.ts`: ブランド、コピー、注目4件、カテゴリ、公開用接続先・招待URL。接続先は現在nullです。
 - `src/data/content-registry.json`: 固定slugで管理。実装・配備・個々の検証・公開状態を分離しています。
-- `src/data/pack-registry.json`: 選定済み22パック。canonical keyはmanifestのheader UUIDです。全パック数ではありません。
+- `src/data/pack-registry.json`: 選定済み25パック。canonical keyはmanifestのheader UUIDです。全パック数ではありません。
 - `src/data/field-guide.json`: アイテム、レシピ、小さな機能のレコード。公開フィールドはsrc/lib/field-guide.mjsで選別します。
 - `src/data/updates.json`: 人間が公開を確認したニュースのみ。現在は空です。
 - `audit/source-evidence.json`: 確認対象commitと相対ソースパス。サイトのビルド出力には含めません。
@@ -51,6 +53,6 @@ Astro 7のCLIはエージェント環境でpreviewを自動的にバックグラ
 
 public/images/直下のSVGは今回制作した独自の仮イラストで、実際のゲーム画面ではありません。参考モックやMinecraft公式素材のコピーではありません。OG画像は `node scripts/render-og.mjs` で独自SVGとHTML文字をブラウザ描画したものです。独自の木アイコン以外は画面上にも仮素材表示があります。外部フォント・外部画像リクエストはありません。
 
-静的生成物はdist/です。baseは `/pinene-xserver-addons`。GitHub Pagesは `gh-pages` ブランチ直下の生成物を配信します。ソースブランチへのpushだけでは公開サイトは更新されません。更新時は検証・ビルド・出力監査を行い、生成物を公開ブランチへ反映します。mainへの直接pushやPRの自動mergeは必要ありません。
+静的生成物はdist/です。baseは `/pine-server`。GitHub Pagesは `gh-pages` ブランチ直下の生成物を配信します。ソースブランチへのpushだけでは公開サイトは更新されません。更新時は検証・ビルド・出力監査を行い、生成物を公開ブランチへ反映します。mainへの直接pushやPRの自動mergeは必要ありません。
 
 画面と検証結果は [IMPLEMENTATION_REPORT.md](IMPLEMENTATION_REPORT.md) を参照してください。

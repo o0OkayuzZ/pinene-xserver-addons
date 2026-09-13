@@ -1,6 +1,6 @@
 {
   "schema_version": "0.2.0",
-  "source_commit": "67cc2108bbf366ace426fc4b923f54a256ea7827",
+  "source_commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be",
   "contents": [
     {
       "id": "pvp-island",
@@ -106,7 +106,7 @@
         {
           "kind": "server-start",
           "result": "confirmed",
-          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         },
         {
           "kind": "gameplay",
@@ -198,7 +198,7 @@
         {
           "kind": "server-start",
           "result": "confirmed",
-          "commit": "4a948e25ad9930a4a0667c093de670230bf3d9fc"
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         },
         {
           "kind": "gameplay",
@@ -296,7 +296,7 @@
         {
           "kind": "server-start",
           "result": "confirmed",
-          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         },
         {
           "kind": "gameplay",
@@ -436,7 +436,7 @@
       "name": "Better Structure Loot",
       "visibility": "public",
       "implementation": "implemented",
-      "deployment": "repo-only",
+      "deployment": "deployed-recorded",
       "category": [
         "exploration",
         "collection"
@@ -456,16 +456,21 @@
         {
           "kind": "code",
           "result": "confirmed",
-          "commit": "67cc2108bbf366ace426fc4b923f54a256ea7827"
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         },
         {
           "kind": "registration",
           "result": "confirmed",
-          "commit": "67cc2108bbf366ace426fc4b923f54a256ea7827"
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         },
         {
           "kind": "gameplay",
           "result": "unknown"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         }
       ],
       "summary": "構造物と無限城の宝箱に、探索の報酬を。",
@@ -484,7 +489,7 @@
       "guide": "新しく報酬が生成される宝箱が対象です。無限城では戦闘を終え、鍵持ちを倒して宝箱の封印を解除してください。空欄があっても抽選結果として確定していることがあります。",
       "children": [],
       "evidence": {
-        "commit": "67cc2108bbf366ace426fc4b923f54a256ea7827",
+        "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be",
         "paths": [
           "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/manifest.json",
           "behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12/loot_tables/chests/infinite_castle/slots/guard.json",
@@ -784,7 +789,7 @@
       "name": "Golden Foods",
       "visibility": "public",
       "implementation": "partial",
-      "deployment": "repo-only",
+      "deployment": "deployed-recorded",
       "category": [
         "craft",
         "systems"
@@ -820,6 +825,11 @@
         {
           "kind": "appearance",
           "result": "unknown"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         }
       ],
       "summary": "食事と基本効果で、冒険の準備を整える。",
@@ -985,7 +995,7 @@
       "name": "Zombie Gear",
       "visibility": "public",
       "implementation": "implemented",
-      "deployment": "repo-only",
+      "deployment": "deployed-recorded",
       "category": [
         "combat",
         "craft"
@@ -1015,16 +1025,21 @@
         {
           "kind": "code",
           "result": "confirmed",
-          "commit": "67cc2108bbf366ace426fc4b923f54a256ea7827"
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         },
         {
           "kind": "registration",
           "result": "confirmed",
-          "commit": "67cc2108bbf366ace426fc4b923f54a256ea7827"
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         },
         {
           "kind": "gameplay",
           "result": "unknown"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         }
       ],
       "summary": "腐敗を力に変え、幹細胞で浄化する4部位の防具。",
@@ -1043,7 +1058,7 @@
       "guide": "防具4部位を装備し、幹細胞を持って8秒しゃがむと浄化と残機補充ができます。持ち替え・しゃがみ解除・装備変更・戦闘で中断します。C4でも夜間回復や腐った肉の効果は使えますが、残機は持てません。",
       "children": [],
       "evidence": {
-        "commit": "67cc2108bbf366ace426fc4b923f54a256ea7827",
+        "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be",
         "paths": [
           "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts/main.js",
           "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts/rules.js",
@@ -1056,7 +1071,7 @@
       "name": "Grave / 死亡回収",
       "visibility": "public",
       "implementation": "partial",
-      "deployment": "repo-only",
+      "deployment": "deployed-recorded",
       "category": [
         "systems"
       ],
@@ -1089,6 +1104,11 @@
         {
           "kind": "appearance",
           "result": "unknown"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
         }
       ],
       "summary": "死亡後の回収を支える墓と鍵。",
@@ -1103,13 +1123,13 @@
         "設定に応じた所有者の判定",
         "墓のモデルと名前の色"
       ],
-      "guide": "関連する図鑑で、使い方・設定条件・確認できた製作方法を紹介しています。ゲーム内の操作とアイテム収支は未確認です。",
+      "guide": "関連する図鑑で、使い方・設定条件・確認できた製作方法を紹介しています。ゲーム内の操作とアイテム収支は未確認です。 無限城内では仮の持ち込み品保護ルールを使うため、墓の生成と鍵による墓への移動は無効です。",
       "children": [],
       "evidence": {
-        "commit": "aea85120954a8b74033b86253c17a04b691dab21",
+        "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be",
         "paths": [
-          "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/manifest.json",
-          "resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974/manifest.json"
+          "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/scripts/main.js",
+          "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/scripts/functions.js"
         ]
       }
     },
