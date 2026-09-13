@@ -1,6 +1,6 @@
 // Runs only inside a disposable test world.
 import { world, system, ItemStack, EquipmentSlot, EntityDamageCause, EffectTypes, EnchantmentTypes } from "@minecraft/server";
-import { corruption, revives, tryRevive, setScore, SCORE, forceMaxHpState, syncStrengthBoost, knockback } from "./main.js";
+import { corruption, revives, tryRevive, setScore, SCORE, forceMaxHpState, syncStrengthBoost, knockback, beginCharge, tickChargeCompletion } from "./main.js";
 const report = (name, actual, expected) => console.warn(`[ZG-FINAL] ${Math.abs(actual-expected)<0.001 ? "PASS" : "FAIL"} ${name}: actual=${actual} expected=${expected}`);
 const pause = ticks => new Promise(resolve => system.runTimeout(resolve, ticks));
 let started = false;
@@ -33,7 +33,7 @@ world.afterEvents.playerSpawn.subscribe(ev => {
       console.warn(`[ZG-FINAL] absorption probe native HP loss=${80-hp.currentValue}`);
       p.removeEffect("absorption");setScore(p,SCORE.revives,4);hp.setCurrentValue(5);
       p.applyDamage(10,{cause:EntityDamageCause.override});await pause(3);
-      report("lethal stock3",revives(p),3);report("lethal C1",corruption(p),1);report("revive HP40",hp.currentValue,40);
+      report("lethal stock3",revives(p),3);report("lethal C1",corruption(p),1);report("sync4 revive HP64",hp.currentValue,64);
       await pause(22);p.addEffect("absorption",600,{amplifier:1});hp.setCurrentValue(40);
       p.applyDamage(6,{cause:EntityDamageCause.override});await pause(3);
       report("recovery absorption protects HP",hp.currentValue,40);report("recovery native stock unchanged",revives(p),3);
@@ -52,6 +52,35 @@ world.afterEvents.playerSpawn.subscribe(ev => {
       equip([0,0,0,0]);setScore(p,SCORE.revives,4);
       for(let i=1;i<=4;i++){report(`revive transition C${i}`,tryRevive(p)?corruption(p):-1,i);report(`revive stock ${4-i}`,revives(p),4-i);}
       report("fifth denied",tryRevive(p)?1:0,0);
+      for(const [stages,health,sync]of [[[1,4,4,4],8,1],[[1,1,3,4],16,2],[[2,2,2,4],32,3],[[3,3,3,3],64,4]]){
+        for(const name of ['speed','absorption','resistance'])p.removeEffect(name);
+        equip(stages);setScore(p,SCORE.revives,1);await pause(2);hp.setCurrentValue(5);
+        p.applyDamage(10,{cause:EntityDamageCause.override});await pause(3);
+        report(`sync${sync} native HP`,hp.currentValue,health);
+        report(`sync${sync} native speed`,p.getEffect('speed')?.amplifier??-1,sync===4?2:1);
+        report(`sync${sync} native absorption`,p.getEffect('absorption')?.amplifier??-1,sync>=2?0:-1);
+        report(`sync${sync} native resistance`,p.getEffect('resistance')?.amplifier??-1,sync>=3?(sync===4?1:0):-1);
+        slots.forEach(([slot],i)=>report(`sync${sync} slot${i} C`,Number(eq.getEquipment(slot).typeId.match(/_c(\d)$/)?.[1]??0),Math.min(4,stages[i]+1)));
+        await pause(22);
+      }
+      // Night timing is measured over exact multiples of each C's period.
+      for(let c=0;c<=4;c++){
+        eq.setEquipment(EquipmentSlot.Head,undefined);forceMaxHpState(p);await pause(22);
+        p.getComponent('minecraft:player.hunger').setCurrentValue(20);equip([c,c,c,c]);await pause(2);hp.setCurrentValue(20);
+        setScore(p,SCORE.combatEnd,system.currentTick+1000);await pause(240);
+        report(`C${c} night regen in combat over12s`,hp.currentValue,20+(c===4?0:12/(c+1)));
+      }
+      // The player must hold sneak during this interactive check.
+      system.afterEvents.scriptEventReceive.subscribe(async e=>{
+        if(e.id!=='zombiegear:test_cleanse'||e.sourceEntity?.id!==p.id)return;
+        equip([2,4,4,4]);setScore(p,SCORE.revives,1);setScore(p,SCORE.combatEnd,0);
+        p.getComponent('minecraft:inventory').container.setItem(p.selectedSlotIndex,new ItemStack('pinematerials:zonbikansaibou'));
+        p.sendMessage('[ZG FINAL] Hold sneak now for the mixed cleanse test.');beginCharge(p);
+        for(let t=0;t<200&&world.scoreboard.getObjective(SCORE.charging)?.getScore(p)!==1;t++)await pause(1);
+        if(world.scoreboard.getObjective(SCORE.charging)?.getScore(p)!==1){report('mixed cleanse started',0,1);return;}
+        await pause(160);tickChargeCompletion(p);
+        slots.forEach(([slot],i)=>report(`cleanse mixed slot${i}`,Number(eq.getEquipment(slot).typeId.match(/_c(\d)$/)?.[1]??0),[1,3,3,3][i]));
+      });
       // Native knockback baseline and all configured resistances, without recovery.
       await pause(80);
       p.runCommand('difficulty normal');

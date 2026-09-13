@@ -5,6 +5,14 @@ export const INFECTION_ATTACK = Object.freeze([1, 0.9, 0.8, 0.7]);
 export const MAX_REVIVES = 4;
 export const REVIVE_TICKS = 60;
 export const REVIVE_SPEED_AMPLIFIER = 1;
+export const NIGHT_REGEN_SECONDS = Object.freeze([1, 2, 3, 4, 0]);
+export function reviveReward(syncCount) {
+  const count = Math.max(1, clampStage(syncCount));
+  return { hp: Math.min(80, 8 * 2 ** (count - 1)),
+    speed: { amplifier: count === 4 ? 2 : 1, duration: count === 4 ? 80 : 60 },
+    absorption: count >= 2 ? { amplifier: 0, duration: 80 } : null,
+    resistance: count >= 3 ? { amplifier: count === 4 ? 1 : 0, duration: 80 } : null };
+}
 export const INFECTION_CD = 40;
 
 export function clampStage(value, max = 4) {

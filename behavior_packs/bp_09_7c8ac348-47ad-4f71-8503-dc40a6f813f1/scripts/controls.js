@@ -31,18 +31,18 @@ export function installGearControls(gear) {
           continue;
         }
         if (!state.full || !state.holdingStemCell) { held.delete(player.id); continue; }
-        if (player.isSneaking && !latched.has(player.id) && !state.combat && (state.corruption > 0 || state.revives < 4)) {
+        if (player.isSneaking && !latched.has(player.id) && !state.combat && state.canCleanse) {
           latched.add(player.id);
           sneakCharging.add(player.id);
           gear.start(player);
           continue;
         }
         // Context hint once per state change, not a permanent HUD replacement.
-        const key = `${state.revives}/${state.corruption}/${state.infection}/${state.combat}`;
+        const key = `${state.revives}/${state.corruption}/${state.infection}/${state.combat}/${state.canCleanse}`;
         if (held.get(player.id) === key) continue;
         held.set(player.id, key);
         const corruption = STAGES[state.corruption];
-        const action = state.combat ? "戦闘終了後にチャージ可能" : state.corruption === 0 && state.revives >= 4 ? "蘇生チャージ満タン" : "ゾンビ幹細胞を持って8秒しゃがむ → 腐敗−1・蘇生＋1";
+        const action = state.combat ? "戦闘終了後にチャージ可能" : !state.canCleanse ? "蘇生チャージ満タン" : "ゾンビ幹細胞を持って8秒しゃがむ → 各部位の腐敗−1・蘇生＋1（上限まで）";
         show(player, `§a蘇生 ${state.revives}/${state.maxRevives} §7| §6腐敗 ${corruption}${state.infection ? ` §7| §c感染 ${STAGES[state.infection]}` : ""}\n§f${action}`);
       } catch (error) {
         // Entity can leave between getAllPlayers and reading its components.

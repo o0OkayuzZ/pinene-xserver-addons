@@ -9,6 +9,6 @@ bp=matches[0]/'behavior_packs/zombiegear_final_test'
 source=ROOT/'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1'
 for name in ['scripts','entities']:shutil.copytree(source/name,bp/name,dirs_exist_ok=True)
 main=bp/'scripts/main.js'
-main.write_text(main.read_text(encoding='utf-8')+'\nexport { corruption, revives, tryRevive, setScore, SCORE, forceMaxHpState, syncStrengthBoost, knockback };\nimport "./engine-smoke.js";\n',encoding='utf-8')
+main.write_text(main.read_text(encoding='utf-8')+'\nexport { corruption, revives, tryRevive, setScore, SCORE, forceMaxHpState, syncStrengthBoost, knockback, beginCharge, tickChargeCompletion };\nimport "./engine-smoke.js";\n',encoding='utf-8')
 shutil.copyfile(ROOT/'tools/zombie_gear_v4/engine-final-smoke.js',bp/'scripts/engine-smoke.js')
 print(bp)

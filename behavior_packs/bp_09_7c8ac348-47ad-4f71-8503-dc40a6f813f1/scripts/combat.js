@@ -89,11 +89,11 @@ export function installCombat(gear) {
       const health = victim.getComponent("minecraft:health");
       if (!health || health.currentValue <= 0) break;
       markCombat(victim, hit.source);
-      if (hit.damage >= health.currentValue + absorptionLeft(victim) && gear.tryRevive(victim)) {
-        const absorbed = absorptionLeft(victim);
+      const absorbed = absorptionLeft(victim);
+      if (hit.damage >= health.currentValue + absorbed && gear.tryRevive(victim, () => {
         if (absorbed > 0) replay(victim, { damage: absorbed, source: hit.source });
+      })) {
         infect(victim, hit.source);
-        gear.knockback.onRevive(victim);
       } else replay(victim, hit);
     }
   }
@@ -174,5 +174,16 @@ export function installCombat(gear) {
       if (!victims.size) pairCooldowns.delete(attacker);
     }
   }, 20);
-  return { infectionStage: stage };
+  return {
+    infectionStage: stage,
+    onReviveAbsorption(entity) {
+      const effect = entity.getEffect("absorption");
+      // A same-amplifier native refresh may not emit effectAdd. The old shield
+      // settlement's deferred after-event must not consume this new reward.
+      if (effect?.amplifier !== 0) return;
+      nativeHits.delete(entity.id);
+      rememberAbsorption(entity, 4);
+      absorptionEffects.set(entity.id, { amplifier: 0, duration: effect.duration, tick: system.currentTick });
+    }
+  };
 }

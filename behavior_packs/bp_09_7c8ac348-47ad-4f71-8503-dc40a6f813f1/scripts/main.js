@@ -4,7 +4,7 @@ import { installDiet } from "./diet.js";
 import { installKnockback } from "./knockback.js";
 import { installCombat } from "./combat.js";
 import { installGearControls } from "./controls.js";
-import { MAX_REVIVES, REVIVE_TICKS, REVIVE_SPEED_AMPLIFIER, clampStage, reviveCap } from "./rules.js";
+import { MAX_REVIVES, NIGHT_REGEN_SECONDS, reviveReward, clampStage, reviveCap } from "./rules.js";
 
 
 
@@ -183,29 +183,33 @@ function isStemCellItem(typeId) {
 }
 
 function applyBonusNaturalRegen(player) {
-  if (!isFullZombieArmor(player)) {
-    return;
-  }
-
-  if (isDaytime()) {
+  const stage = corruption(player), period = NIGHT_REGEN_SECONDS[stage];
+  if (!period || isDaytime()) {
+    nightRegen.delete(player.id);
     return;
   }
 
   try {
     const hunger = player.getComponent("minecraft:player.hunger");
     if (!hunger || hunger.currentValue < BONUS_REGEN_MIN_FOOD) {
+      nightRegen.delete(player.id);
       return;
     }
   } catch (e) {
+    nightRegen.delete(player.id);
     return;
   }
 
   const health = getHealth(player);
-  if (!health || health.currentValue >= health.effectiveMax) {
+  if (!health || health.currentValue <= 0 || health.currentValue >= health.effectiveMax) {
+    nightRegen.delete(player.id);
     return;
   }
 
-  heal(player, BONUS_REGEN_HEAL);
+  const previous = nightRegen.get(player.id);
+  const seconds = (previous?.stage === stage ? previous.seconds : 0) + 1;
+  nightRegen.set(player.id, { stage, seconds: seconds >= period ? 0 : seconds });
+  if (seconds >= period) heal(player, BONUS_REGEN_HEAL);
 }
 
 function isDaytime() {
@@ -328,6 +332,7 @@ const ROTTEN_FLESH_HEAL = 8;
 const ROTTEN_FLESH_REPAIR_FRACTION = 0.10;
 const STRENGTH_EFFECT_TICKS = 80;
 const chargeSnapshots = new Map();
+const nightRegen = new Map();
 
 function corruption(player) {
   const armor = getArmor(player);
@@ -381,7 +386,7 @@ function createArmorVariantItem(sourceItem, targetTypeId) {
   return next;
 }
 
-function setCorruption(player, value) {
+function setCorruption(player, delta) {
   if (corruption(player) < 0) return false;
   const eq = getEquippable(player);
   const slots = [[EquipmentSlot.Head, "head"], [EquipmentSlot.Chest, "chest"],
@@ -390,13 +395,14 @@ function setCorruption(player, value) {
   try {
     // Construct all four BEFORE replacing any: metadata errors must not eat gear.
     const next = slots.map(([, key], i) => {
-      const id = getArmorTypeIds(key)[clampStage(value)];
+      const ids = getArmorTypeIds(key);
+      const id = ids[clampStage(ids.indexOf(originals[i].typeId) + delta)];
       return originals[i].typeId === id ? originals[i].clone() : createArmorVariantItem(originals[i], id);
     });
     for (let i = 0; i < slots.length; i++) {
       if (!eq.setEquipment(slots[i][0], next[i])) throw new Error("setEquipment failed");
     }
-    setScore(player, SCORE.corruption, clampStage(value));
+    setScore(player, SCORE.corruption, corruption(player));
     return true;
   } catch (error) {
     for (let i = 0; i < slots.length; i++) {
@@ -462,18 +468,21 @@ function rollbackArmor(player, originals) {
   setScore(player, SCORE.corruption, corruption(player));
 }
 
-function tryRevive(player) {
+function tryRevive(player, settleAbsorption = () => {}) {
   const h = getHealth(player);
   // Dead entities must never consume resources, even if isValid remains true.
   if (!player.isValid || !h || h.currentValue <= 0 || !canRevive(player)) return false;
-  const stock = revives(player), target = Math.min(4, corruption(player) + 1);
+  const stock = revives(player), stage = corruption(player), target = Math.min(4, stage + 1);
   const originals = armorSnapshot(player), previousHp = h.currentValue;
-  if (!setCorruption(player, target)) return false;
+  const syncCount = Object.entries(getArmor(player)).filter(([key, item]) => getArmorTypeIds(key).indexOf(item.typeId) === stage).length;
+  const reward = reviveReward(syncCount);
+  if (!setCorruption(player, 1)) return false;
   try {
     forceMaxHpState(player);
-    h.setCurrentValue(Math.min(h.effectiveMax, 40));
-    if (h.currentValue < Math.min(h.effectiveMax, 40)) throw new Error("HP recovery did not succeed");
+    h.setCurrentValue(Math.min(h.effectiveMax, reward.hp));
+    if (h.currentValue !== Math.min(h.effectiveMax, reward.hp)) throw new Error("HP recovery did not succeed");
     setScore(player, SCORE.revives, Math.min(stock - 1, reviveCap(target)));
+    if (getScore(player, SCORE.revives) !== Math.min(stock - 1, reviveCap(target))) throw new Error("Revive stock write failed");
   } catch (error) {
     rollbackArmor(player, originals);
     setScore(player, SCORE.revives, stock);
@@ -483,12 +492,19 @@ function tryRevive(player) {
   }
   stopCharging(player);
   chargeSnapshots.delete(player.id);
+  // Settle the canceled hit's old shield before granting a fresh reward shield.
+  try { settleAbsorption(); } catch (error) { console.warn(`[ZombieGear] shield settlement: ${error}`); }
   try {
     player.extinguishFire(true);
-    player.addEffect("speed", REVIVE_TICKS, { amplifier: REVIVE_SPEED_AMPLIFIER, showParticles: true });
+    knockback.onRevive(player);
+    for (const name of ["speed", "absorption", "resistance"]) {
+      const effect = reward[name];
+      if (effect) player.addEffect(name, effect.duration, { amplifier: effect.amplifier, showParticles: true });
+      if (name === "absorption" && effect) combat.onReviveAbsorption(player);
+    }
     playReviveSounds(player);
     applyReviveVision(player);
-    player.sendMessage(`[ZombieGear] 蘇生: 残り${revives(player)}/${reviveCap(target)}・腐敗${target}/4`);
+    player.sendMessage(`[ZombieGear] 蘇生: 同調${syncCount}・HP${reward.hp} / 残り${revives(player)}/${reviveCap(target)}・腐敗${target}/4`);
   } catch (error) { console.warn(`[ZombieGear] revive feedback: ${error}`); }
   return true;
 }
@@ -518,6 +534,11 @@ function holdingStemCell(player) {
   return isStemCellItem(player.getComponent("minecraft:inventory")?.container?.getItem(player.selectedSlotIndex)?.typeId);
 }
 
+function canCleanse(player) {
+  return corruption(player) >= 0 && (revives(player) < MAX_REVIVES ||
+    Object.entries(getArmor(player)).some(([key, item]) => getArmorTypeIds(key).indexOf(item.typeId) > 0));
+}
+
 function tickChargeCompletion(player) {
   if (!isCharging(player)) return;
   const snapshot = chargeSnapshots.get(player.id);
@@ -528,17 +549,22 @@ function tickChargeCompletion(player) {
   if (system.currentTick < getScore(player, SCORE.chargeEnd)) return;
   stopCharging(player); chargeSnapshots.delete(player.id);
   const stage = corruption(player), stock = revives(player);
-  if (stage === 0 && stock >= MAX_REVIVES) return;
+  if (!canCleanse(player)) return;
   const originals = armorSnapshot(player), target = Math.max(0, stage - 1);
-  if (!setCorruption(player, target)) return;
+  const inventory = player.getComponent("inventory")?.container, selectedSlot = player.selectedSlotIndex;
+  const selected = inventory?.getItem(selectedSlot)?.clone();
+  if (!setCorruption(player, -1)) return;
   try {
     if (!consumeOneSelectedItem(player, ZOMBIE_ITEMS.stemCell)) throw new Error("Stem cell is no longer selected");
+    setScore(player, SCORE.revives, Math.min(stock + 1, reviveCap(target)));
+    if (getScore(player, SCORE.revives) !== Math.min(stock + 1, reviveCap(target))) throw new Error("Charge stock write failed");
   } catch (error) {
     rollbackArmor(player, originals);
+    inventory?.setItem(selectedSlot, selected);
+    setScore(player, SCORE.revives, stock);
     console.warn(`[ZombieGear] charge rolled back: ${error}`);
     return;
   }
-  setScore(player, SCORE.revives, Math.min(stock + 1, reviveCap(target)));
   player.sendMessage(`[ZombieGear] 浄化・チャージ完了: 腐敗${target} / 蘇生${revives(player)}/${reviveCap(target)}`);
 }
 
@@ -548,7 +574,7 @@ const combat = installCombat({ isFull: isFullZombieArmor, corruption, canRevive,
 function beginCharge(player) {
   initializePlayer(player);
   if (!player.isSneaking || !isFullZombieArmor(player) || inCombat(player) || isCharging(player) ||
-      (corruption(player) === 0 && revives(player) >= MAX_REVIVES) || !holdingStemCell(player)) return;
+      !canCleanse(player) || !holdingStemCell(player)) return;
   startCharging(player);
   chargeSnapshots.set(player.id, { slot: player.selectedSlotIndex, armor: chargeSignature(player) });
 }
@@ -557,6 +583,7 @@ installGearControls({
   state(player) {
     return {
       full: isFullZombieArmor(player), corruption: corruption(player), revives: revives(player),
+      canCleanse: canCleanse(player),
       maxRevives: reviveCap(corruption(player)), infection: combat.infectionStage(player), charging: isCharging(player),
       chargeEnd: getScore(player, SCORE.chargeEnd), combat: inCombat(player), holdingStemCell: holdingStemCell(player)
     };
@@ -571,6 +598,7 @@ installDiet({ isFull: isFullZombieArmor, heal, repairArmor });
 world.afterEvents.entityDie.subscribe(ev => {
   if (ev.deadEntity.typeId !== "minecraft:player") return;
   chargeSnapshots.delete(ev.deadEntity.id);
+  nightRegen.delete(ev.deadEntity.id);
 });
 
 world.afterEvents.playerSpawn.subscribe(ev => {
@@ -583,7 +611,7 @@ world.afterEvents.playerSpawn.subscribe(ev => {
     forceMaxHpState(ev.player);
   });
 });
-world.afterEvents.playerLeave.subscribe(ev => { chargeSnapshots.delete(ev.playerId); });
+world.afterEvents.playerLeave.subscribe(ev => { chargeSnapshots.delete(ev.playerId); nightRegen.delete(ev.playerId); });
 
 // Completion and resource clamping run every tick, independently of the 1-second aura.
 system.runInterval(() => {
@@ -619,8 +647,8 @@ system.runInterval(() => {
 
 
       syncStrengthBoost(player, full);
-      if (!full) continue;
       applyBonusNaturalRegen(player);
+      if (!full) continue;
       const hunger = player.getEffect("hunger");
       if (!hunger || hunger.duration < 30) player.addEffect("hunger", 60, { amplifier: 1, showParticles: false });
       for (const id of ["regeneration", "instant_health"]) if (player.getEffect(id)) player.removeEffect(id);
