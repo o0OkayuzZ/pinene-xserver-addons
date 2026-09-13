@@ -555,6 +555,21 @@ function tryRevive(player) {
   return true;
 }
 
+function tryEmergencyRevive(player, reason) {
+  if (player?.typeId !== "minecraft:player" || !player.isValid || !canRevive(player)) return false;
+  const health = getHealth(player);
+  if (!health || health.currentValue > 0) return false;
+  stopCharging(player);
+  chargeSnapshots.delete(player.id);
+  const revived = tryRevive(player);
+  if (revived) {
+    setCombatNow(player);
+    player.addEffect("resistance", REVIVE_TICKS, { amplifier: 4, showParticles: false });
+    console.warn(`[ZombieGear] emergency revive recovered ${player.id} after ${reason}`);
+  }
+  return revived;
+}
+
 function forceMaxHpState(player) {
   if (isFullZombieArmor(player)) {
     const effect = player.getEffect("health_boost");
@@ -664,6 +679,12 @@ world.afterEvents.itemCompleteUse.subscribe(ev => {
   repairArmor(ev.source, ROTTEN_FLESH_REPAIR_FRACTION);
 });
 
+world.afterEvents.entityHurt.subscribe(ev => {
+  const entity = ev.hurtEntity;
+  if (entity?.typeId !== "minecraft:player") return;
+  tryEmergencyRevive(entity, "post-hurt lethal damage");
+});
+
 world.beforeEvents.effectAdd.subscribe(ev => {
   const entity = ev.entity;
   if (!isFullZombieArmor(entity)) return;
@@ -674,6 +695,13 @@ world.beforeEvents.effectAdd.subscribe(ev => {
     rememberExternalStrength(entity, effectAddSnapshot(ev));
     system.run(() => { if (entity.isValid) syncStrengthBoost(entity, true); });
   }
+});
+
+world.afterEvents.entityDie.subscribe(ev => {
+  const entity = ev.deadEntity;
+  if (entity?.typeId !== "minecraft:player") return;
+  tryEmergencyRevive(entity, "death event");
+  system.run(() => { if (entity.isValid) tryEmergencyRevive(entity, "deferred death event"); });
 });
 
 world.afterEvents.playerSpawn.subscribe(ev => {
