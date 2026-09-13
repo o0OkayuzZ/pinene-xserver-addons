@@ -1,4 +1,23 @@
 import { test, expect } from '@playwright/test';
+test.beforeEach(async({page})=>{
+ await page.addInitScript(()=>localStorage.setItem('pine-analytics-consent-v1','no'));
+ await page.route('https://static.cloudflareinsights.com/**',r=>r.fulfill({status:200,body:''}));
+});
+test('melee recipes show materials, blueprint prerequisites and result links',async({page})=>{
+ await page.goto('/pine-server/contents/minecraft-dungeons/');
+ const section=page.locator('#dungeons-melee-recipes');
+ await section.locator('summary').click();
+ await expect(section.locator('[data-guide-entry]:visible')).toHaveCount(52);
+ await section.locator('a[href$="/dungeons-sword-recipe/"]').click();
+ await expect(page.getByText('鉄インゴット × 2',{exact:true})).toBeVisible();
+ await expect(page.getByText('棒 × 1',{exact:true})).toBeVisible();
+ await expect(page.getByText('完成数：1個',{exact:true})).toBeVisible();
+ await page.goto('/pine-server/database/entries/dungeons-fighters-bindings-blueprint-recipe/');
+ await expect(page.getByText('完成数：2個',{exact:true})).toBeVisible();
+ await expect(page.locator('main')).toContainText('元になる装備が必要');
+ await page.locator('a[href$="/dungeons-fighters-bindings/"]').first().click();
+ await expect(page).toHaveURL(/dungeons-fighters-bindings\/$/);
+});
 
 test('Dungeons category navigation, expanded gear and recipe round trip', async ({ page }, info) => {
  const base = '/pine-server/';

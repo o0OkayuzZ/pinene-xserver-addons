@@ -1589,7 +1589,7 @@
     "summary": "Dungeonsの剣装備。",
     "description": "剣として登録されたDungeonsの装備です。独自の振り動作や耐久値、修理材料の設定があります。クリティカルなどの実際の発動条件やダメージ量は未確認のため掲載していません。",
     "usage": "個別の操作や特殊な効果は確認中です。原作と同じ性能とは断定していません。",
-    "obtaining": "クラフト・ドロップ・取引などの入手経路は確認中です。",
+    "obtaining": "クラフト・ドロップ・取引などの入手経路は確認中です。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [],
     "image": {
       "src": "/images/items/hawkbrand.png",
@@ -1604,7 +1604,8 @@
         "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword_hawkbrand.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
-        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/hawkbrand.png"
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/hawkbrand.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/hawkbrand.json"
       ]
     }
   },
@@ -6705,7 +6706,7 @@
     "summary": "ロングソード系列の近接装備。",
     "description": "ロングソード系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。 作業台で製作するレシピもあります。",
     "details": [
       "耐久値の設定：303。",
       "近接ダメージ成分の設定値：6。最終ダメージは攻撃処理や相手によって変わります。"
@@ -6723,7 +6724,8 @@
         "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
-        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sword.png"
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sword.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/sword.json"
       ]
     }
   },
@@ -6735,7 +6737,7 @@
     "summary": "ロングソード系列の近接装備。",
     "description": "ロングソード系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1561。",
       "近接ダメージ成分の設定値：7。最終ダメージは攻撃処理や相手によって変わります。"
@@ -6754,7 +6756,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/diamond_sword.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/diamond_sword.json"
       ]
     }
   },
@@ -6766,7 +6769,7 @@
     "summary": "クレイモア系列の近接装備。",
     "description": "クレイモア系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1861。",
       "近接ダメージ成分の設定値：8。最終ダメージは攻撃処理や相手によって変わります。"
@@ -6785,7 +6788,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/heartstealer.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/heartstealer.json"
       ]
     }
   },
@@ -6797,7 +6801,7 @@
     "summary": "刀系列の近接装備。",
     "description": "刀系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1199。",
       "近接ダメージ成分の設定値：8。最終ダメージは攻撃処理や相手によって変わります。"
@@ -6816,7 +6820,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/master_katana.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/masters_katana.json"
       ]
     }
   },
@@ -6828,7 +6833,7 @@
     "summary": "ガントレット系列の近接装備。",
     "description": "ガントレット系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1222。",
       "近接ダメージ成分の設定値：7。最終ダメージは攻撃処理や相手によって変わります。"
@@ -6847,7 +6852,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/fighters_bindings.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/fighters_bindings.json"
       ]
     }
   },
@@ -6859,7 +6865,7 @@
     "summary": "両刃斧系列の近接装備。",
     "description": "両刃斧系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1739。",
       "近接ダメージ成分の設定値：7。最終ダメージは攻撃処理や相手によって変わります。"
@@ -6878,7 +6884,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/cursed_axe.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/cursed_axe.json"
       ]
     }
   },
@@ -6890,7 +6897,7 @@
     "summary": "両刃斧系列の近接装備。",
     "description": "両刃斧系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1739。",
       "近接ダメージ成分の設定値：7。最終ダメージは攻撃処理や相手によって変わります。"
@@ -6909,7 +6916,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/whirlwind.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/whirlwind.json"
       ]
     }
   },
@@ -6921,7 +6929,7 @@
     "summary": "ハンマー系列の近接装備。",
     "description": "ハンマー系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：2004。",
       "近接ダメージ成分の設定値：10。最終ダメージは攻撃処理や相手によって変わります。"
@@ -6940,7 +6948,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/stormlander.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/stormlander.json"
       ]
     }
   },
@@ -6952,7 +6961,7 @@
     "summary": "鎌系列の近接装備。",
     "description": "鎌系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。 作業台で製作するレシピもあります。",
     "details": [
       "耐久値の設定：210。",
       "近接ダメージ成分の設定値：4。最終ダメージは攻撃処理や相手によって変わります。"
@@ -6970,7 +6979,8 @@
         "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/sickles/sickles.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
-        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sickles.png"
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sickles.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/sickles.json"
       ]
     }
   },
@@ -6982,7 +6992,7 @@
     "summary": "鎌系列の近接装備。",
     "description": "鎌系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1223。",
       "近接ダメージ成分の設定値：5。最終ダメージは攻撃処理や相手によって変わります。"
@@ -7001,7 +7011,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/nightmares_bite.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/nightmares_bite.json"
       ]
     }
   },
@@ -7013,7 +7024,7 @@
     "summary": "メイス系列の近接装備。",
     "description": "メイス系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1912。",
       "近接ダメージ成分の設定値：8。最終ダメージは攻撃処理や相手によって変わります。"
@@ -7032,7 +7043,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/flail.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/flail.json"
       ]
     }
   },
@@ -7044,7 +7056,7 @@
     "summary": "槍系列の近接装備。",
     "description": "槍系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。",
+    "obtaining": "個別の入手経路は確認中です。名前からドロップ元や製作方法を推測していません。 作業台で製作するレシピもあります。",
     "details": [
       "耐久値の設定：244。",
       "近接ダメージ成分の設定値：3。最終ダメージは攻撃処理や相手によって変わります。"
@@ -7062,7 +7074,8 @@
         "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rush_spear/rush_spear.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
-        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/rush_spear.png"
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/rush_spear.png",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/rush_spear.json"
       ]
     }
   },
@@ -7074,7 +7087,7 @@
     "summary": "槍系列の近接装備。",
     "description": "槍系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1244。",
       "近接ダメージ成分の設定値：4。最終ダメージは攻撃処理や相手によって変わります。"
@@ -7093,7 +7106,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/whispering_spear.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/whispering_spear.json"
       ]
     }
   },
@@ -7105,7 +7119,7 @@
     "summary": "黒曜石の大剣系列の近接装備。",
     "description": "黒曜石の大剣系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：3500。",
       "近接ダメージ成分の設定値：17。最終ダメージは攻撃処理や相手によって変わります。"
@@ -7124,7 +7138,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/starless_night.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/starless_night.json"
       ]
     }
   },
@@ -7136,7 +7151,7 @@
     "summary": "錨系列の近接装備。",
     "description": "錨系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1957。",
       "近接ダメージ成分の設定値：18。最終ダメージは攻撃処理や相手によって変わります。"
@@ -7155,7 +7170,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/encrusted_anchor.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/encrusted_anchor.json"
       ]
     }
   },
@@ -7167,7 +7183,7 @@
     "summary": "バトルスタッフ系列の近接装備。",
     "description": "バトルスタッフ系列の武器です。個別画像と耐久値、近接ダメージ成分を比較できます。",
     "usage": "手に持って近接戦闘に使う装備です。特殊効果や実際の攻撃間隔はゲーム内での確認が残っています。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。毎回の入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：800。",
       "近接ダメージ成分の設定値：5。最終ダメージは攻撃処理や相手によって変わります。"
@@ -7186,7 +7202,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/growing_staff.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/growing_staff.json"
       ]
     }
   },
@@ -9030,7 +9047,7 @@
     "summary": "斧系列の近接装備。",
     "description": "斧系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1622。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9050,7 +9067,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/firebrand.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/firebrand.json"
       ]
     }
   },
@@ -9062,7 +9080,7 @@
     "summary": "斧系列の近接装備。",
     "description": "斧系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1622。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9082,7 +9100,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/highlands_axe.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/highlands_axe.json"
       ]
     }
   },
@@ -9094,7 +9113,7 @@
     "summary": "バックスタバー系列の近接装備。",
     "description": "バックスタバー系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1621。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9114,7 +9133,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/swift_striker.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/swift_striker.json"
       ]
     }
   },
@@ -9126,7 +9146,7 @@
     "summary": "バトルスタッフ系列の近接装備。",
     "description": "バトルスタッフ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：800。",
       "近接ダメージ成分の設定値：5。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9146,7 +9166,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/battlestaff_of_terror.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/battlestaff_of_terror.json"
       ]
     }
   },
@@ -9158,7 +9179,7 @@
     "summary": "骨のこん棒系列の近接装備。",
     "description": "骨のこん棒系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1963。",
       "近接ダメージ成分の設定値：11。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9178,7 +9199,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/bone_cudgel.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/bone_cudgel.json"
       ]
     }
   },
@@ -9190,7 +9212,7 @@
     "summary": "ソーブレード系列の近接装備。",
     "description": "ソーブレード系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：912。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9210,7 +9232,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/mechanised_sawblade.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/boss_wildfire.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/mechanised_sawblade.json"
       ]
     }
   },
@@ -9222,7 +9245,7 @@
     "summary": "クレイモア系列の近接装備。",
     "description": "クレイモア系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1861。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9242,7 +9265,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/great_axeblade.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/great_axeblade.json"
       ]
     }
   },
@@ -9254,7 +9278,7 @@
     "summary": "クレイモア系列の近接装備。",
     "description": "クレイモア系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1861。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9274,7 +9298,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/broadsword.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/mooshroom_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/broadsword.json"
       ]
     }
   },
@@ -9286,7 +9311,7 @@
     "summary": "サンゴの剣系列の近接装備。",
     "description": "サンゴの剣系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：715。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9306,7 +9331,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sponge_striker.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/ancient_guardian.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/sponge_striker.json"
       ]
     }
   },
@@ -9318,7 +9344,7 @@
     "summary": "カトラス系列の近接装備。",
     "description": "カトラス系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1320。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9338,7 +9364,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/dancers_sword.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/dancers_sword.json"
       ]
     }
   },
@@ -9350,7 +9377,7 @@
     "summary": "カトラス系列の近接装備。",
     "description": "カトラス系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1320。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9370,7 +9397,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/nameless_blade.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/nameless_blade.json"
       ]
     }
   },
@@ -9382,7 +9410,7 @@
     "summary": "ダガー系列の近接装備。",
     "description": "ダガー系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1153。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9402,7 +9430,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/frost_knives.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/frost_knives.json"
       ]
     }
   },
@@ -9414,7 +9443,7 @@
     "summary": "ダガー系列の近接装備。",
     "description": "ダガー系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1153。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9434,7 +9463,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/moon_daggers.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/moon_daggers.json"
       ]
     }
   },
@@ -9446,7 +9476,7 @@
     "summary": "ダガー系列の近接装備。",
     "description": "ダガー系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1153。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9466,7 +9496,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sheer_daggers.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/corrupted_cauldron.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/sheer_daggers.json"
       ]
     }
   },
@@ -9478,7 +9509,7 @@
     "summary": "ガントレット系列の近接装備。",
     "description": "ガントレット系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1222。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9498,7 +9529,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/maulers.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/maulers.json"
       ]
     }
   },
@@ -9510,7 +9542,7 @@
     "summary": "ガントレット系列の近接装備。",
     "description": "ガントレット系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1222。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9530,7 +9562,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/soul_fists.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/soul_fists.json"
       ]
     }
   },
@@ -9574,7 +9607,7 @@
     "summary": "グレイブ系列の近接装備。",
     "description": "グレイブ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1599。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9594,7 +9627,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/grave_bane.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/grave_bane.json"
       ]
     }
   },
@@ -9606,7 +9640,7 @@
     "summary": "グレイブ系列の近接装備。",
     "description": "グレイブ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1599。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9626,7 +9660,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/venom_glaive.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/endersent.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/venom_glaive.json"
       ]
     }
   },
@@ -9670,7 +9705,7 @@
     "summary": "ハンマー系列の近接装備。",
     "description": "ハンマー系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：2004。",
       "近接ダメージ成分の設定値：10。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9690,7 +9725,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/hammer_of_gravity.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/hammer_of_gravity.json"
       ]
     }
   },
@@ -9702,7 +9738,7 @@
     "summary": "刀系列の近接装備。",
     "description": "刀系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1199。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9722,7 +9758,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/dark_katana.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/fiery_forge.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/dark_katana.json"
       ]
     }
   },
@@ -9766,7 +9803,7 @@
     "summary": "メイス系列の近接装備。",
     "description": "メイス系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1912。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9786,7 +9823,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/suns_grace.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/suns_grace.json"
       ]
     }
   },
@@ -9798,7 +9836,7 @@
     "summary": "戦闘用ツルハシ系列の近接装備。",
     "description": "戦闘用ツルハシ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1603。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9818,7 +9856,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/sharpened_diamond_pickaxe.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/sharpened_diamond_pickaxe.json"
       ]
     }
   },
@@ -9830,7 +9869,7 @@
     "summary": "戦闘用ツルハシ系列の近接装備。",
     "description": "戦闘用ツルハシ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1603。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9850,7 +9889,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/the_monkey_motivator.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/obsidian_monstrosity.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/the_monkey_motivator.json"
       ]
     }
   },
@@ -9862,7 +9902,7 @@
     "summary": "レイピア系列の近接装備。",
     "description": "レイピア系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1011。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9882,7 +9922,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/bee_stinger.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/bee_stinger.json"
       ]
     }
   },
@@ -9894,7 +9935,7 @@
     "summary": "レイピア系列の近接装備。",
     "description": "レイピア系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1011。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9914,7 +9955,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/freezing_foil.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/wretched_wraith.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/freezing_foil.json"
       ]
     }
   },
@@ -9926,7 +9968,7 @@
     "summary": "槍系列の近接装備。",
     "description": "槍系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1244。",
       "近接ダメージ成分の設定値：4。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9946,7 +9988,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/fortune_spear.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/fortune_spear.json"
       ]
     }
   },
@@ -9958,7 +10001,7 @@
     "summary": "大鎌系列の近接装備。",
     "description": "大鎌系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1722。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -9978,7 +10021,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/frost_scythe.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/frost_scythe.json"
       ]
     }
   },
@@ -9990,7 +10034,7 @@
     "summary": "大鎌系列の近接装備。",
     "description": "大鎌系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1722。",
       "近接ダメージ成分の設定値：8。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -10010,7 +10054,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/jailors_scythe.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/jailors_scythe.json"
       ]
     }
   },
@@ -10054,7 +10099,7 @@
     "summary": "鎌系列の近接装備。",
     "description": "鎌系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1223。",
       "近接ダメージ成分の設定値：5。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -10074,7 +10119,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/last_laugh.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/arch_illager.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/the_last_laugh.json"
       ]
     }
   },
@@ -10086,7 +10132,7 @@
     "summary": "ソウルナイフ系列の近接装備。",
     "description": "ソウルナイフ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1666。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -10106,7 +10152,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/eternal_knife.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/eternal_knife.json"
       ]
     }
   },
@@ -10118,7 +10165,7 @@
     "summary": "ソウルナイフ系列の近接装備。",
     "description": "ソウルナイフ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1666。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -10138,7 +10185,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/truthseeker.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/nameless_one.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/truthseeker.json"
       ]
     }
   },
@@ -10150,7 +10198,7 @@
     "summary": "テンペストナイフ系列の近接装備。",
     "description": "テンペストナイフ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1237。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -10170,7 +10218,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/chill_gale_knife.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/chill_gale_knife.json"
       ]
     }
   },
@@ -10182,7 +10231,7 @@
     "summary": "テンペストナイフ系列の近接装備。",
     "description": "テンペストナイフ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1237。",
       "近接ダメージ成分の設定値：7。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -10202,7 +10251,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/resolute_tempest_knife.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/tempest_golem.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/resolute_tempest_knife.json"
       ]
     }
   },
@@ -10214,7 +10264,7 @@
     "summary": "ヴォイドブレード系列の近接装備。",
     "description": "ヴォイドブレード系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：2023。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -10234,7 +10284,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/the_beginning_and_the_end.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/vengeful_heart_of_ender.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/the_beginning_and_the_end.json"
       ]
     }
   },
@@ -10246,7 +10297,7 @@
     "summary": "ムチ系列の近接装備。",
     "description": "ムチ系列の1本です。実際のアイテム画像と、耐久・ダメージ成分・修理材料の設定を比較できます。",
     "usage": "手に持って近接戦闘に使います。特殊効果や連続攻撃の実際の動作は未検証です。",
-    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。",
+    "obtaining": "ボスチェスト報酬の抽選候補に含まれます。確定入手や、すべてのボスからの入手を保証するものではありません。 同じ装備1個と青色の設計図を使うレシピを掲載しています。",
     "details": [
       "耐久値の設定：1239。",
       "近接ダメージ成分の設定値：6。特殊攻撃や相手の防御を含む最終ダメージではありません。",
@@ -10266,7 +10317,8 @@
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/item_texture.json",
         "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/weapon/vine_whip.png",
-        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json"
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/loot_tables/chests/diamond_chest/jungle_abomination.json",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/vine_whip.json"
       ]
     }
   },
@@ -24239,6 +24291,2476 @@
         "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/infiniteCastleManager.js",
         "docs/infinite_castle/distant-koto-20260912.md",
         "docs/infinite_castle/reconstruction-clock-20260912.md"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-battlestaff-of-terror-blueprint-recipe",
+    "name": "恐怖のバトルスタッフの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "恐怖のバトルスタッフ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "恐怖のバトルスタッフ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-battlestaff-of-terror",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/battlestaff_of_terror.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/battlestaff/battlestaff_terror.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-bee-stinger-blueprint-recipe",
+    "name": "ビースティンガーの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ビースティンガー"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ビースティンガー",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-bee-stinger",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/bee_stinger.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rapier/rapier_bee.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-bone-cudgel-blueprint-recipe",
+    "name": "骨のこん棒の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "骨のこん棒"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "骨のこん棒",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-bone-cudgel",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/bone_cudgel.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/boneclub/bone_cudgel.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-broadsword-blueprint-recipe",
+    "name": "ブロードソードの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ブロードソード"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ブロードソード",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-broadsword",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/broadsword.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore_broadsword.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-chill-gale-knife-blueprint-recipe",
+    "name": "チルゲイルナイフの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "チルゲイルナイフ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "チルゲイルナイフ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-chill-gale-knife",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/chill_gale_knife.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/tempest_knife/tempest_knife_chill.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-cursed-axe-blueprint-recipe",
+    "name": "呪いの斧の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "呪いの斧"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "呪いの斧",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-cursed-axe",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/cursed_axe.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/double_axe/double_cursed.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-dancers-sword-blueprint-recipe",
+    "name": "踊り子の剣の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "踊り子の剣"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "踊り子の剣",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-dancers-sword",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/dancers_sword.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/cutlass/cutlass_dancers.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-dark-katana-blueprint-recipe",
+    "name": "闇の刀の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "闇の刀"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "闇の刀",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-dark-katana",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/dark_katana.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/katana/katana_dark.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-diamond-sword-blueprint-recipe",
+    "name": "ダイヤモンドの剣の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ダイヤモンドの剣"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ダイヤモンドの剣",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-diamond-sword",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/diamond_sword.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword_diamond.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-encrusted-anchor-blueprint-recipe",
+    "name": "覆われたイカリの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "覆われたイカリ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "覆われたイカリ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-encrusted-anchor",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/encrusted_anchor.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/anchor/anchor_encrusted.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-eternal-knife-blueprint-recipe",
+    "name": "不滅のナイフの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "不滅のナイフ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "不滅のナイフ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-eternal-knife",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/eternal_knife.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/soul_knife/soul_knife_eternal.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-fighters-bindings-blueprint-recipe",
+    "name": "闘士の締め具の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "闘士の締め具"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "闘士の締め具",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-fighters-bindings",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/fighters_bindings.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets_fighters_bindings.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-firebrand-blueprint-recipe",
+    "name": "ファイアブランドの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ファイアブランド"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ファイアブランド",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-firebrand",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/firebrand.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/axe/axe_firebrand.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-flail-blueprint-recipe",
+    "name": "フレイルの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "フレイル"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "フレイル",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-flail",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/flail.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/mace/flail.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-fortune-spear-blueprint-recipe",
+    "name": "幸運の槍の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "幸運の槍"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "幸運の槍",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-fortune-spear",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/fortune_spear.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rush_spear/fortune_spear.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-freezing-foil-blueprint-recipe",
+    "name": "凍てつく金属片の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "凍てつく金属片"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "凍てつく金属片",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-freezing-foil",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/freezing_foil.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rapier/rapier_freezing.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-knives-blueprint-recipe",
+    "name": "氷の牙の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "氷の牙"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "氷の牙",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-frost-knives",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/frost_knives.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/daggers/daggers_frost.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-frost-scythe-blueprint-recipe",
+    "name": "フロストサイスの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "フロストサイス"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "フロストサイス",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-frost-scythe",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/frost_scythe.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/scythe/scythe_frost.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-grave-bane-blueprint-recipe",
+    "name": "大いなる破滅の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "大いなる破滅"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "大いなる破滅",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-grave-bane",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/grave_bane.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/glaive/glaive_grave.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-great-axeblade-blueprint-recipe",
+    "name": "グレートアックスブレードの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "グレートアックスブレード"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "グレートアックスブレード",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-great-axeblade",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/great_axeblade.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore_axeblade.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-growing-staff-blueprint-recipe",
+    "name": "成長するスタッフの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "成長するスタッフ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "成長するスタッフ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-growing-staff",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/growing_staff.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/battlestaff/battlestaff_growing.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-hammer-of-gravity-blueprint-recipe",
+    "name": "重力のハンマーの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "重力のハンマー"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "重力のハンマー",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-hammer-of-gravity",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/hammer_of_gravity.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/hammer/hammer_gravity.json"
+      ]
+    }
+  },
+  {
+    "id": "hawkbrand-blueprint-recipe",
+    "name": "ホークブランドの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ホークブランド"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ホークブランド",
+          "count": 1
+        }
+      ],
+      "resultId": "hawkbrand",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/hawkbrand.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword_hawkbrand.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-heartstealer-blueprint-recipe",
+    "name": "心を奪うものの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "心を奪うもの"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "心を奪うもの",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-heartstealer",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/heartstealer.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/claymore/claymore_heartstealer.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-highlands-axe-blueprint-recipe",
+    "name": "ハイランドアックスの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ハイランドアックス"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ハイランドアックス",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-highlands-axe",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/highlands_axe.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/axe/axe_highlands.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-jailors-scythe-blueprint-recipe",
+    "name": "看守のサイスの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "看守のサイス"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "看守のサイス",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-jailors-scythe",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/jailors_scythe.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/scythe/scythe_jailor.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-masters-katana-blueprint-recipe",
+    "name": "達人の刀の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "達人の刀"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "達人の刀",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-masters-katana",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/masters_katana.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/katana/katana_masters.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-maulers-blueprint-recipe",
+    "name": "マウラーズの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "マウラーズ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "マウラーズ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-maulers",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/maulers.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets_maulers.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-mechanised-sawblade-blueprint-recipe",
+    "name": "機械化ソーブレードの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "機械化ソーブレード"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "機械化ソーブレード",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-mechanised-sawblade",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/mechanised_sawblade.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/broken_sawblade/sawblade_mechanised.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-moon-daggers-blueprint-recipe",
+    "name": "月のダガーの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "月のダガー"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "月のダガー",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-moon-daggers",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/moon_daggers.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/daggers/daggers_moon.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-nameless-blade-blueprint-recipe",
+    "name": "名もなき刃の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "名もなき刃"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "名もなき刃",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-nameless-blade",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/nameless_blade.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/cutlass/cutlass_nameless.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-nightmares-bite-blueprint-recipe",
+    "name": "悪夢の刃の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "悪夢の刃"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "悪夢の刃",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-nightmares-bite",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/nightmares_bite.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/sickles/nightmares_bite.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-resolute-tempest-knife-blueprint-recipe",
+    "name": "リゾルトテンペストナイフの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "リゾルトテンペストナイフ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "リゾルトテンペストナイフ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-resolute-tempest-knife",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/resolute_tempest_knife.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/tempest_knife/tempest_knife_resolute.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sharpened-diamond-pickaxe-blueprint-recipe",
+    "name": "ダイヤモンドのツルハシの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ダイヤモンドのツルハシ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ダイヤモンドのツルハシ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-sharpened-diamond-pickaxe",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/sharpened_diamond_pickaxe.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/pickaxe/sharpened_diamond_pickaxe.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sheer-daggers-blueprint-recipe",
+    "name": "シアーダガーの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "シアーダガー"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "シアーダガー",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-sheer-daggers",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/sheer_daggers.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/daggers/daggers_sheer.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-soul-fists-blueprint-recipe",
+    "name": "魂のフィストの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "魂のフィスト"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "魂のフィスト",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-soul-fists",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/soul_fists.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/gauntlets/gauntlets_soul_fists.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sponge-striker-blueprint-recipe",
+    "name": "スポンジストライカーの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "スポンジストライカー"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "スポンジストライカー",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-sponge-striker",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/sponge_striker.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/coral_blade/coral_blade_sponge.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-starless-night-blueprint-recipe",
+    "name": "星なき夜の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "星なき夜"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "星なき夜",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-starless-night",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/starless_night.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/obsidian_claymore/obsidian_starless_night.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-stormlander-blueprint-recipe",
+    "name": "ストームランダーの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ストームランダー"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ストームランダー",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-stormlander",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/stormlander.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/hammer/hammer_stormlander.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-suns-grace-blueprint-recipe",
+    "name": "太陽の愛の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "太陽の愛"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "太陽の愛",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-suns-grace",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/suns_grace.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/mace/suns_grace.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-swift-striker-blueprint-recipe",
+    "name": "スイフトストライカーの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "スイフトストライカー"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "スイフトストライカー",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-swift-striker",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/swift_striker.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/backstabber/backstabber_swift_striker.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-the-beginning-and-the-end-blueprint-recipe",
+    "name": "誕生と終焉の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "誕生と終焉"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "誕生と終焉",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-the-beginning-and-the-end",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/the_beginning_and_the_end.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/void_blades/void_tbate.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-the-last-laugh-blueprint-recipe",
+    "name": "ラストラーフの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ラストラーフ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ラストラーフ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-the-last-laugh",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/the_last_laugh.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/sickles/the_last_laugh.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-the-monkey-motivator-blueprint-recipe",
+    "name": "モンキーモチベーターの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "モンキーモチベーター"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "モンキーモチベーター",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-the-monkey-motivator",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/the_monkey_motivator.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/pickaxe/the_monkey_motivator.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-truthseeker-blueprint-recipe",
+    "name": "トゥルースシーカーの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "トゥルースシーカー"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "トゥルースシーカー",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-truthseeker",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/truthseeker.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/soul_knife/soul_knife_truthseeker.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-venom-glaive-blueprint-recipe",
+    "name": "ベノムグレイブの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ベノムグレイブ"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ベノムグレイブ",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-venom-glaive",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/venom_glaive.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/glaive/glaive_venom.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-vine-whip-blueprint-recipe",
+    "name": "つたの鞭の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "つたの鞭"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "つたの鞭",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-vine-whip",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/vine_whip.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/whip/vine_whip.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-whirlwind-blueprint-recipe",
+    "name": "ワールウィンドの設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ワールウィンド"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ワールウィンド",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-whirlwind",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/whirlwind.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/double_axe/double_whirlwind.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-whispering-spear-blueprint-recipe",
+    "name": "ささやく槍の設計図レシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "同じ装備と青色の設計図を使うレシピ。",
+    "description": "青色の設計図1枚と、同じ装備1個を材料に使うレシピです。結果欄には同じ装備が1個ずつ2枠、合計2個登録されています。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [
+      "元になる装備が必要です。素材だけから初めて入手するためのレシピではありません。",
+      "結果欄の2枠を合計して表示しています。耐久値・エンチャントの引き継ぎや実際の製作結果は未検証です。"
+    ],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "青色の設計図"
+        ],
+        [
+          "ささやく槍"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "青色の設計図",
+          "count": 1
+        },
+        {
+          "name": "ささやく槍",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-whispering-spear",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/blue_print/whispering_spear.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rush_spear/whispering_spear.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-rush-spear-recipe",
+    "name": "槍のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "槍を作る材料と配置。",
+    "description": "作業台で材料から製作するレシピです。材料の個数、配置の有無と完成数を確認できます。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "",
+          "鉄塊",
+          "鉄インゴット"
+        ],
+        [
+          "",
+          "棒",
+          "鉄塊"
+        ],
+        [
+          "棒",
+          "",
+          ""
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "鉄塊",
+          "count": 2
+        },
+        {
+          "name": "鉄インゴット",
+          "count": 1
+        },
+        {
+          "name": "棒",
+          "count": 2
+        }
+      ],
+      "resultId": "dungeons-rush-spear",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/rush_spear.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/rush_spear/rush_spear.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sickles-recipe",
+    "name": "鎌のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "鎌を作る材料と配置。",
+    "description": "作業台で材料から製作するレシピです。材料の個数、配置の有無と完成数を確認できます。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "鉄塊",
+          "鉄インゴット",
+          "鉄インゴット"
+        ],
+        [
+          "鉄塊",
+          "鉄インゴット",
+          "鉄インゴット"
+        ],
+        [
+          "",
+          "棒",
+          "棒"
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "鉄塊",
+          "count": 2
+        },
+        {
+          "name": "鉄インゴット",
+          "count": 4
+        },
+        {
+          "name": "棒",
+          "count": 2
+        }
+      ],
+      "resultId": "dungeons-sickles",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/sickles.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/sickles/sickles.json"
+      ]
+    }
+  },
+  {
+    "id": "dungeons-sword-recipe",
+    "name": "剣のレシピ",
+    "kind": "recipe",
+    "contentId": "minecraft-dungeons",
+    "summary": "剣を作る材料と配置。",
+    "description": "作業台で材料から製作するレシピです。材料の個数、配置の有無と完成数を確認できます。",
+    "usage": "作業台で、下の配置どおりに材料を並べます。",
+    "obtaining": "最新版リポジトリのレシピ定義を照合しています。実際の製作・解放表示は未検証です。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "",
+          "",
+          "鉄インゴット"
+        ],
+        [
+          "",
+          "鉄インゴット",
+          ""
+        ],
+        [
+          "棒",
+          "",
+          ""
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "鉄インゴット",
+          "count": 2
+        },
+        {
+          "name": "棒",
+          "count": 1
+        }
+      ],
+      "resultId": "dungeons-sword",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "3b66fddebe8006ea5f3656d509bf833d7594a09f",
+      "paths": [
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/recipes/weapon/sword.json",
+        "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/texts/ja_JP.lang",
+        "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/items/melee/longsword/sword.json"
       ]
     }
   }

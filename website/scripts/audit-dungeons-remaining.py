@@ -4,7 +4,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 web=Path(__file__).resolve().parents[1];repo=web.parent
 bp=next((repo/'behavior_packs').glob('bp_08_*'))
-revision='4a948e25ad9930a4a0667c093de670230bf3d9fc'
+revision='3b66fddebe8006ea5f3656d509bf833d7594a09f'
 # Local game files are retained; their item/recipe trees must match the audited revision.
 for folder in ['items','recipes']:
     assert not subprocess.check_output(['git','diff','--name-only','aea85120954a8b74033b86253c17a04b691dab21',revision,'--',(bp/folder).relative_to(repo).as_posix()],cwd=repo)
