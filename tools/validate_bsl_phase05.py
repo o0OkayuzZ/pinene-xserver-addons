@@ -282,4 +282,10 @@ def main():
 
 
 if __name__ == '__main__':
+    if (DOC / 'weighted-rebalance-v2.json').is_file():
+        # The original validator below checks the historical ZIP byte-for-byte.
+        # The new release has its own baseline/preservation and distribution audit.
+        for script in ['validate_bsl_weighted_rebalance.py', 'validate_castle_rewards_v4.py']:
+            subprocess.run([sys.executable, '-B', '-X', 'utf8', str(ROOT / 'tools' / script)], check=True)
+        raise SystemExit(0)
     raise SystemExit(main())
