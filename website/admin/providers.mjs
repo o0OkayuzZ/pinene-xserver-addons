@@ -32,7 +32,7 @@ export async function repositoryTraffic(api=github){
   return {status:'ok',views:views.count,uniques:views.uniques,daily:views.views,referrers,paths,days:14};
  }catch{return {status:'unavailable',message:'GitHubにログインしているアカウントのアクセス権を確認してください。'};}
 }
-const unwrap=type=>type?.name??unwrap(type?.ofType);
+const unwrap=type=>type ? (type.name||unwrap(type.ofType)) : undefined;
 const typeFragment='kind name ofType { kind name ofType { kind name ofType { kind name } } }';
 const schemas=new Map();
 async function cloudflare(query,config,fetcher){
@@ -46,7 +46,7 @@ async function cloudflare(query,config,fetcher){
 // Never pretend an unavailable metric is zero or silently query another site.
 export function discover(schema){
  const types=schema.types;
- const node=types.flatMap(t=>t.fields??[]).find(f=>f.name==='rumPageloadEventsAdaptiveGroups');
+ const node=types.flatMap(t=>t.fields??[]).find(f=>f.name==='rumPageloadEventsAdaptiveGroups'&&f.args?.some(a=>a.name==='filter'));
  if(!node)throw new Error('このアカウントでWeb Analyticsのデータセットを確認できません。');
  const type=name=>types.find(t=>t.name===name);
  const fields=type(unwrap(node.type))?.fields??[];
@@ -65,7 +65,7 @@ export function queryFor(model,config,range){
  const filter=`datetime_geq:${JSON.stringify(range.start)},datetime_lt:${JSON.stringify(range.end)},siteTag:${JSON.stringify(config.siteTag)}${model.pathFilter?',requestPath_like:"/pine-server/%"':''}`;
  const metric='count'+(model.visits?' sum { visits }':'');
  const node=(alias,dimension)=>`${alias}:rumPageloadEventsAdaptiveGroups(limit:${dimension?1000:1},filter:{${filter}}){${metric}${dimension?` dimensions { ${dimension} }`:''}}`;
- return `{viewer{accounts(filter:{accountTag:${JSON.stringify(config.accountId)}}){${node('total',null)} ${Object.entries(model.dimensions).filter(([,v])=>v).map(([key,v])=>node(key,v)).join(' ')}}}`;
+ return `{viewer{accounts(filter:{accountTag:${JSON.stringify(config.accountId)}}){${node('total',null)} ${Object.entries(model.dimensions).filter(([,v])=>v).map(([key,v])=>node(key,v)).join(' ')}}}}`;
 }
 const numeric=value=>typeof value==='number'&&Number.isFinite(value)&&value>=0;
 export function normalizeAnalytics(data,model,range){

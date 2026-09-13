@@ -24,6 +24,10 @@
 
 ## 検証・資料
 
+2026-09-13: 保存済みの読み取り専用設定でCloudflareの実集計取得、390px・768px・1440pxでの管理画面表示、privateリポジトリへの保存を確認しました。実データのスクリーンショットはローカルの管理データフォルダーに保存し、このリポジトリには含めません。GA4 Data APIの接続は別途必要です。CloudflareはサイトID・期間・対応時は`/pine-server/`のパスで絞ります。ダッシュボードURLの`excludeBots=Yes`はAPIに引き継いでいないため、同じ期間でもダッシュボードと値が異なる場合があります。
+
+Cloudflareの同名Settings項目を除外してデータセットを探索し、名前が空の型ラッパーと任意項目の欠落に対応しました。生成クエリの閉じ括弧も修正し、回帰テストを含む管理画面の10テストが通っています。
+
 `npm test`は権限境界、値の検証、取得対象フィルター、レポート出力を確認します。実アカウントが未接続の場合、Google/Cloudflareの認証成功や本物の訪問集計は未確認です。数値の例を実データとして表示しません。
 
 - [GA4 Data APIの指標](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema)

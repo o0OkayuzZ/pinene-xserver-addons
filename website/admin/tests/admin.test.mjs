@@ -2,7 +2,17 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { allowedRequest, validateSettings, protect } from '../server.mjs';
 import { requestFor, reportRows, ga4Analytics } from '../ga4.mjs';
-import { period, normalizeAnalytics, queryFor, webAnalytics, reportMarkdown } from '../providers.mjs';
+import { discover, period, normalizeAnalytics, queryFor, webAnalytics, reportMarkdown } from '../providers.mjs';
+test('Cloudflare discovery skips settings fields and handles unnamed wrappers and absent optional metrics',()=>{
+ const ref=name=>({name:'',ofType:{name}});
+ const model=discover({types:[
+  {name:'Settings',fields:[{name:'rumPageloadEventsAdaptiveGroups',args:[],type:ref('Settings')}]},
+  {name:'Account',fields:[{name:'rumPageloadEventsAdaptiveGroups',args:[{name:'filter',type:ref('Filter')}],type:ref('Group')}]},
+  {name:'Filter',inputFields:['datetime_geq','datetime_lt','siteTag'].map(name=>({name}))},
+  {name:'Group',fields:[{name:'count'}]},
+ ]});
+ assert.equal(model.visits,false);assert.equal(model.dimensions.pages,null);
+});
 test('local API requires exact host, key and same-origin requests',()=>{
  const req={headers:{host:'127.0.0.1:18473',authorization:'Bearer local-test-key'}};
  assert.equal(allowedRequest(req,'local-test-key'),true);
@@ -40,6 +50,7 @@ test('Cloudflare query pins account, site and optional public path scope',()=>{
  const config={accountId:'a'.repeat(32),siteTag:'b'.repeat(32)};
  const query=queryFor({visits:true,dimensions:{pages:'requestPath'},pathFilter:true},config,period(7));
  assert.ok(query.includes('siteTag:"'+config.siteTag+'"'));assert.ok(query.includes('/pine-server/%'));
+ let depth=0;for(const char of query){if(char==='{')depth++;if(char==='}')depth--;assert.ok(depth>=0);}assert.equal(depth,0);
  assert.throws(()=>queryFor({dimensions:{}},{accountId:'malicious'},period(7)));
 });
 test('private report uses aggregate fields and distinguishes repository traffic',()=>{
