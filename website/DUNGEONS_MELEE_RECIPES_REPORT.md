@@ -13,3 +13,11 @@ Dungeonsは506項目（アイテム309・レシピ194・機能3）、Web全体70
 `src/data/field-guide.json`、`src/data/dungeons-guide.json`、`scripts/add-dungeons-melee-recipes.py`、`scripts/audit-dungeons-remaining.py`、`tests/dungeons.spec.ts`、`artifacts/dungeons-melee-recipes-audit.json`、`artifacts/dungeons-remaining-audit.json`、検証画像・この報告。
 
 専用Webブランチと[PR #1](https://github.com/o0OkayuzZ/pinene-xserver-addons/pull/1)へ反映します。mainへの直接push・mergeや、MinecraftのBP/RP・UUID・manifest・ワールド・Xserver設定の変更は行いません。
+
+## 検証・公開
+
+依存関係の変更なし。データ検証成功、型確認51ファイルでエラー・警告なし、production build 733ページ。390px・768px・1440pxのDungeonsブラウザテスト6件、公開分離テスト4件が成功しました。ソース5da96261、公開生成物c69e9f1d009c110a95fdb01e4ba7f3f014b2154a。[配置](https://github.com/o0OkayuzZ/pine-server/actions/runs/34733053582)成功。
+
+実際に[公開Dungeons](https://o0okayuzz.github.io/pine-server/contents/minecraft-dungeons/)で52件を展開し、[剣のレシピ](https://o0okayuzz.github.io/pine-server/database/entries/dungeons-sword-recipe/)と[ファイターズバインディングの設計図](https://o0okayuzz.github.io/pine-server/database/entries/dungeons-fighters-bindings-blueprint-recipe/)を390px・1440pxで開きました。HTTP 200、横はみ出しなし、JavaScriptエラーなし。
+
+[PCのレシピ](artifacts/public-dungeons-sword-recipe-1440.png) / [スマホのレシピ](artifacts/public-dungeons-sword-recipe-390.png) / [PCの設計図](artifacts/public-dungeons-fighters-bindings-blueprint-recipe-1440.png) / [スマホの設計図](artifacts/public-dungeons-fighters-bindings-blueprint-recipe-390.png)。
