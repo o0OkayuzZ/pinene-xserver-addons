@@ -64,9 +64,10 @@ const EntityDamageCause = { entityAttack:'entityAttack', projectile:'projectile'
 
 function entity(gearStage = -1, isPlayer = true) {
 
-  const e = { id: 'e'+(++uid), typeId: isPlayer ? 'minecraft:player' : 'minecraft:zombie', isValid: true, tags: new Set(), effects: {}, dynamic: {}, slots: {}, messages: [], sounds: [], selectedSlotIndex: 0,
+  const e = { id: 'e'+(++uid), typeId: isPlayer ? 'minecraft:player' : 'minecraft:zombie', isValid: true, tags: new Set(), effects: {}, dynamic: {}, slots: {}, messages: [], sounds: [], fades: [], selectedSlotIndex: 0,
 
     onScreenDisplay: { setActionBar(text) { this.text = text; } },
+    camera: { fade(options) { e.fades.push(options); } },
 
     health: { currentValue: 20, effectiveMax: 20, setCurrentValue(n) { this.currentValue = n; } },
 

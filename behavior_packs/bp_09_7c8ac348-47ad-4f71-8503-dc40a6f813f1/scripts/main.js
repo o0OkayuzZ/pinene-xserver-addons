@@ -546,7 +546,8 @@ function playReviveSounds(player) {
   const location = player.location ?? { x: 0, y: 0, z: 0 };
   const sounds = [
     { id: "mob.zombie.say", options: { volume: 2.8, pitch: 0.55 } },
-    { id: "mob.warden.heartbeat", options: { volume: 2.4, pitch: 0.75 } }
+    { id: "mob.warden.heartbeat", options: { volume: 2.4, pitch: 0.75 } },
+    { id: "random.totem", options: { volume: 2.6, pitch: 0.85 } }
   ];
   for (const sound of sounds) {
     try {
@@ -554,6 +555,17 @@ function playReviveSounds(player) {
     } catch (error) {
       try { player.playSound(sound.id, sound.options); } catch (ignored) { /* sound id may be unavailable on some runtimes */ }
     }
+  }
+}
+
+function applyReviveVision(player) {
+  try {
+    player.camera?.fade({
+      fadeColor: { red: 0.75, green: 0.02, blue: 0.02 },
+      fadeTime: { fadeInTime: 0.15, holdTime: 2.2, fadeOutTime: 0.75 }
+    });
+  } catch (error) {
+    // Camera fade can be unavailable in some runtime contexts; revive must still succeed.
   }
 }
 
@@ -567,6 +579,7 @@ function tryRevive(player) {
   player.extinguishFire(true);
   player.addEffect("speed", REVIVE_TICKS, { amplifier: REVIVE_SPEED_AMPLIFIER, showParticles: true });
   playReviveSounds(player);
+  applyReviveVision(player);
   player.sendMessage(`[ZombieGear] 蘇生: 残り${revives(player)}/4・腐敗${corruption(player)}/4`);
   return true;
 }
