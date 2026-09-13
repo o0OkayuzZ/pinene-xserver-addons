@@ -542,6 +542,21 @@ function canRevive(player) {
   return player.typeId === "minecraft:player" && corruption(player) >= 0 && revives(player) > 0;
 }
 
+function playReviveSounds(player) {
+  const location = player.location ?? { x: 0, y: 0, z: 0 };
+  const sounds = [
+    { id: "mob.zombie.say", options: { volume: 2.8, pitch: 0.55 } },
+    { id: "mob.warden.heartbeat", options: { volume: 2.4, pitch: 0.75 } }
+  ];
+  for (const sound of sounds) {
+    try {
+      player.dimension?.playSound(sound.id, location, sound.options);
+    } catch (error) {
+      try { player.playSound(sound.id, sound.options); } catch (ignored) { /* sound id may be unavailable on some runtimes */ }
+    }
+  }
+}
+
 function tryRevive(player) {
   if (!canRevive(player)) return false;
   if (!setCorruption(player, Math.min(4, corruption(player) + 1))) return false;
@@ -551,6 +566,7 @@ function tryRevive(player) {
   h.setCurrentValue(Math.min(h.effectiveMax, 40));
   player.extinguishFire(true);
   player.addEffect("speed", REVIVE_TICKS, { amplifier: REVIVE_SPEED_AMPLIFIER, showParticles: true });
+  playReviveSounds(player);
   player.sendMessage(`[ZombieGear] 蘇生: 残り${revives(player)}/4・腐敗${corruption(player)}/4`);
   return true;
 }
