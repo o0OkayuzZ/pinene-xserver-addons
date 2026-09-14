@@ -1,0 +1,780 @@
+{
+  "updates": [
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_boots.json",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_chestplate.json",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_helmet.json",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_leggings.json",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/pinenite/main.js",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/pinenite/probe.js",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/pinenite/rules.js",
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/animations/pinenite_sync.animation.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_boots.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_chestplate.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_helmet.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_leggings.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/boots_glow.geo.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/chestplate_glow.geo.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/helmet_glow.geo.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/leggings_glow.geo.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/particles/pinenite_frame.particle.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/particles/pinenite_reflect.particle.json",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/render_controllers/pinenite.render_controllers.json"
+  ],
+  "before": {
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_boots.json": "462b86e99ca6de59bab7e5d4f5349dc25446ab2c5b395a16302cb9cd60a899ed",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_chestplate.json": "315ff89c93abe3e8a40c5ba38190269c979c01df3a60d40cfdcd7af078cf520a",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_helmet.json": "0e7b26817f042306f89bc24e60e57bf3f60f59fb02ec606e9fa66ce2366e5836",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_leggings.json": "16759a24b1cd532df93097a92cf9cad24fcd7304f9e96180c4551baf2b24f5ab",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json": "1e45f297f8e7c79cf799b11f8233fb1fe9bf487569eebdc69f62ef18dc9f2fd7",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js": "4b5134a5fa4da61e3ab76660020930d891f29402d921e4fac21ce1a4cea596c6",
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/pinenite/main.js": null,
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/pinenite/probe.js": null,
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/pinenite/rules.js": null,
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json": "7c44c34618d9ec5ad22123e098e211a59d67fb717c5d90608fcf144092645434",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/animations/pinenite_sync.animation.json": null,
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_boots.json": "846b7e02fa060f93c56bc7e7405c73408da8f27836d883d0d0fd38a563aa8d91",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_chestplate.json": "4aaeb586746bc2815d564fea5b639c31b431dbaa6ef85441d2601e361ab7170e",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_helmet.json": "0a5d4612fccb2c4bde7823e7207682540805a25b7f2f1f00848abd4de9190b3b",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_leggings.json": "95b5b343134b68c8662f755d748a5e417f7530931caa4bf3a004c30dd7d09a12",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json": "5f35a58eaeaf351f423c64181d31f6a5dbcd7bc89b505234a34a3d522f13f3a9",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/boots_glow.geo.json": null,
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/chestplate_glow.geo.json": null,
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/helmet_glow.geo.json": null,
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/leggings_glow.geo.json": null,
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/particles/pinenite_frame.particle.json": null,
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/particles/pinenite_reflect.particle.json": null,
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/render_controllers/pinenite.render_controllers.json": "b71e0d346165cc05d011337dd5cd4d2de2f2641632a55a5c1443c789604011d1",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/boots.geo.json": "5132c03707b7c3f8f94a01df8a67a29f4fc593bb7ecc13f75b8dffc0cb8140fc",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/chestplate.geo.json": "ec81a3d52ea3051786d19be9c66221e42e4506987583fd885b31a1a2bfeb35d7",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/helmet.geo.json": "8a2230a56d491ffa91053e0b329c4b7ce0fc00682c41d1d9c9b2ff504a5afdb1",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/leggings.geo.json": "768e977d624e543ef4d180a94235303c7590a3f2cc99571fde51994672a4f568",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/models/armor/pinenite_boots.png": "ec0fe77a2d9bab5696fbce3abe1e89a25b86e1dd61c9c812b11afef2ff963136",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/models/armor/pinenite_chestplate.png": "73a97686941acd81c28948024803712837bdcac535609e010f715349d37d89be",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/models/armor/pinenite_helmet.png": "cf8cd41e1ad81974ed14e768228b34a63666e6ef05f2d7a3f2785560f5cd172a",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/models/armor/pinenite_leggings.png": "62bc6d721bd0156c709d243ee7582b4111441892e2032f13835719f1fc6dc8ed",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/pinenite_boots.png": "95ba890c9267c958856834dac6e47ea28e250000893614d99f13840576a93084",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/pinenite_chestplate.png": "5c014f5ce876e1073bf651485cdcb13798315ce6f0ce6cf4766bd44dc433516c",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/pinenite_helmet.png": "806938452187452ab0e71ee45c4b76719f424b0d933edf75230d4223a063e811",
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/pinenite_leggings.png": "5ec7f000c64a49a301b4c4db782ced789b983a6ea9d6265c4700ea947c937639"
+  },
+  "desired": {
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_boots.json": {
+      "sha": "013468751c8cfa31c13ff9b02bc7e3929e446ec8a98c0a1dc3256ae2b3b198bf",
+      "normalized": "013468751c8cfa31c13ff9b02bc7e3929e446ec8a98c0a1dc3256ae2b3b198bf"
+    },
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_chestplate.json": {
+      "sha": "a48197446ca60fe3ed98f4871654df22adddfd2770af31341f3ccd72b8f054dd",
+      "normalized": "a48197446ca60fe3ed98f4871654df22adddfd2770af31341f3ccd72b8f054dd"
+    },
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_helmet.json": {
+      "sha": "5e7c2aeb125686a8b6a4d743b0dc17dc519eb612551de1f3b3b70ed09f6e6b53",
+      "normalized": "5e7c2aeb125686a8b6a4d743b0dc17dc519eb612551de1f3b3b70ed09f6e6b53"
+    },
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/items/Deathnerite-Add-On/pinenite/armor/pinenite_leggings.json": {
+      "sha": "a83ac99a32a65fe1e71448a3f5d2d8b9e0e54c96acfd0d74387ffd05ec79c584",
+      "normalized": "a83ac99a32a65fe1e71448a3f5d2d8b9e0e54c96acfd0d74387ffd05ec79c584"
+    },
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json": {
+      "sha": "78fb6526946758b58fb4015e4df5b7769fc0303c00ae3f3bff4b0549187e3e7a",
+      "normalized": "95e2034a709c4cac2fd4ecf661ff0668aaf36d583150decb57ba05f6029f3b02"
+    },
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/main.js": {
+      "sha": "2cfeb78ea16f23ec0f16bc833d4e42c0c33e63cf0023419a9925c41054ceafa4",
+      "normalized": "9a70eb6e43ee623f4d3396a34ed58d8b12c0b8814e6f969aa764e3f2cdd49e7c"
+    },
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/pinenite/main.js": {
+      "sha": "5c1da284b4ba0df49fd0f5dd83c87f96b51aff630b644f7b142e1ef30db951e1",
+      "normalized": "5c1da284b4ba0df49fd0f5dd83c87f96b51aff630b644f7b142e1ef30db951e1"
+    },
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/pinenite/probe.js": {
+      "sha": "4004deb1629e696e1dc2a7cdbd5e46d85c77b6d208d05d5888877f853cb59b3a",
+      "normalized": "4004deb1629e696e1dc2a7cdbd5e46d85c77b6d208d05d5888877f853cb59b3a"
+    },
+    "behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/scripts/pinenite/rules.js": {
+      "sha": "b7c4003bf06fd9f51477035ed8cb731ce86bc6e3fe93a33315fe5b658ac0753d",
+      "normalized": "b7c4003bf06fd9f51477035ed8cb731ce86bc6e3fe93a33315fe5b658ac0753d"
+    },
+    "behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json": {
+      "sha": "7c0eb546926bbf76d6b77916d8da507026091240a876b5ce863d431332a28844",
+      "normalized": "b0ffd239e747fe7c2d6e7c044a4b9fedf684c87e8448a91ddf6059dc064a6207"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/animations/pinenite_sync.animation.json": {
+      "sha": "ed09f0c37b9dd335e3ca2605beaee395f05a0b117f8620d2d3cdfef75d67dd39",
+      "normalized": "ed09f0c37b9dd335e3ca2605beaee395f05a0b117f8620d2d3cdfef75d67dd39"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_boots.json": {
+      "sha": "ca70168ff0e7c4586dd978592ebf15e8cdfe526e61ef7373abc51eb304aba92b",
+      "normalized": "ca70168ff0e7c4586dd978592ebf15e8cdfe526e61ef7373abc51eb304aba92b"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_chestplate.json": {
+      "sha": "3b429d636bac18937b39370b9db0d349839a388958637553ccf270e804405cb4",
+      "normalized": "3b429d636bac18937b39370b9db0d349839a388958637553ccf270e804405cb4"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_helmet.json": {
+      "sha": "48537a3eee43185a12c5ea572c26ef79b745cf9c72263796cf2550ed9ac993a7",
+      "normalized": "48537a3eee43185a12c5ea572c26ef79b745cf9c72263796cf2550ed9ac993a7"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/attachables/deathnerite/pinenite/pinenite_leggings.json": {
+      "sha": "3f9d2d063ea4d5b0cbd98083e1099cddec6c047ae1b2a4b026739e03d2a5ace9",
+      "normalized": "3f9d2d063ea4d5b0cbd98083e1099cddec6c047ae1b2a4b026739e03d2a5ace9"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json": {
+      "sha": "3bb914ce6b9f275fc9e9d867a3ab9a2e00febca8c119d1b3434f16534213b7e4",
+      "normalized": "8eb994d933898aad4f031c3aca9dc14ead3a61e54098e93e125a54c3378d8e78"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/boots_glow.geo.json": {
+      "sha": "1da9d4a586659cf5b3985907a37d38159e889ea1cf35f1e5aac64ffba78eb72c",
+      "normalized": "1da9d4a586659cf5b3985907a37d38159e889ea1cf35f1e5aac64ffba78eb72c"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/chestplate_glow.geo.json": {
+      "sha": "e2e574adecd3bad8729aa007039d1118432d445876f4b579029dd8fed36f67d2",
+      "normalized": "e2e574adecd3bad8729aa007039d1118432d445876f4b579029dd8fed36f67d2"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/helmet_glow.geo.json": {
+      "sha": "075ba016df2ffd446186f12c051d79406647e506b375a3e8ec6991124179489f",
+      "normalized": "075ba016df2ffd446186f12c051d79406647e506b375a3e8ec6991124179489f"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/leggings_glow.geo.json": {
+      "sha": "d0525602fa4061669b9bdb1a1e23add8170cfb287c90d6cc13d9a675e5e6a97d",
+      "normalized": "d0525602fa4061669b9bdb1a1e23add8170cfb287c90d6cc13d9a675e5e6a97d"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/particles/pinenite_frame.particle.json": {
+      "sha": "186c100fdf2cabd6608a950f0bbdc95d8eab82f6b89ae8e7d703518d000c8d37",
+      "normalized": "186c100fdf2cabd6608a950f0bbdc95d8eab82f6b89ae8e7d703518d000c8d37"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/particles/pinenite_reflect.particle.json": {
+      "sha": "d82e8ab44bade3069ee9adfe0e89fbd59252f1f4a96756c7b910d53ae4edaca8",
+      "normalized": "d82e8ab44bade3069ee9adfe0e89fbd59252f1f4a96756c7b910d53ae4edaca8"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/render_controllers/pinenite.render_controllers.json": {
+      "sha": "3df3395e48e2355467b4339e3807174e4f5e2b089889ec3c858078271cd1bd22",
+      "normalized": "3df3395e48e2355467b4339e3807174e4f5e2b089889ec3c858078271cd1bd22"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/boots.geo.json": {
+      "sha": "5132c03707b7c3f8f94a01df8a67a29f4fc593bb7ecc13f75b8dffc0cb8140fc",
+      "normalized": "8f7dbb107ebc8ce09cd2fc712289489647aa8763634c1fccfc31502357f179fd"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/chestplate.geo.json": {
+      "sha": "ec81a3d52ea3051786d19be9c66221e42e4506987583fd885b31a1a2bfeb35d7",
+      "normalized": "9591af244f1f47bf1c23e209c62c6e42a2a9e3e0e47a984815dd3a3a8deeb949"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/helmet.geo.json": {
+      "sha": "8a2230a56d491ffa91053e0b329c4b7ce0fc00682c41d1d9c9b2ff504a5afdb1",
+      "normalized": "ca221638d422c150a34c406a22f25e961ba501ef1be6965040b4bd6875dc2fe0"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/models/entity/pinenite/leggings.geo.json": {
+      "sha": "768e977d624e543ef4d180a94235303c7590a3f2cc99571fde51994672a4f568",
+      "normalized": "216367104fc98d875d07487af2a2d224704d66cd8638b28d7e9c515a027313da"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/models/armor/pinenite_boots.png": {
+      "sha": "ec0fe77a2d9bab5696fbce3abe1e89a25b86e1dd61c9c812b11afef2ff963136",
+      "normalized": "6153bf84b9073afeffdf7e1c4c19a7c76aec1df9828735f6311609e776352cbf"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/models/armor/pinenite_chestplate.png": {
+      "sha": "73a97686941acd81c28948024803712837bdcac535609e010f715349d37d89be",
+      "normalized": "442906350218bad0ada9a04fee675b6caa1bb3f27e3f957007408ef441994e47"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/models/armor/pinenite_helmet.png": {
+      "sha": "cf8cd41e1ad81974ed14e768228b34a63666e6ef05f2d7a3f2785560f5cd172a",
+      "normalized": "454f717a95226bc05d610dcf5a2f83a6b093de30a275c2a771bd5449846b8eb8"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/models/armor/pinenite_leggings.png": {
+      "sha": "62bc6d721bd0156c709d243ee7582b4111441892e2032f13835719f1fc6dc8ed",
+      "normalized": "3fa0f4bb9a4ea8889d88430f3c6a7800f99d357c5432d0bd838fbe81b6813576"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/pinenite_boots.png": {
+      "sha": "95ba890c9267c958856834dac6e47ea28e250000893614d99f13840576a93084",
+      "normalized": "3b3e52a660a0bd22f14b1abd19b17968cceefba64c86e73ff9d0ea4a78fbe063"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/pinenite_chestplate.png": {
+      "sha": "5c014f5ce876e1073bf651485cdcb13798315ce6f0ce6cf4766bd44dc433516c",
+      "normalized": "81274bbdbbc9922fb8402c88a40daa0fd4194280f3101823739716a5d08e6862"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/pinenite_helmet.png": {
+      "sha": "806938452187452ab0e71ee45c4b76719f424b0d933edf75230d4223a063e811",
+      "normalized": "7e433077ccb53ef832e06338351d372cb0dcd039e2041a4afe59ad1e6d6bb1b8"
+    },
+    "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/textures/items/pinenite_leggings.png": {
+      "sha": "5ec7f000c64a49a301b4c4db782ced789b983a6ea9d6265c4700ea947c937639",
+      "normalized": "bc1842db00d941e39d3a430859f09b03e9d7e52d99e3a666422bc9c37d30e85c"
+    }
+  },
+  "referencesBefore": {
+    "world_behavior_packs.json": [
+      {
+        "pack_id": "423276b9-02f5-4082-911a-c631a2d83d12",
+        "version": [
+          1,
+          0,
+          19
+        ]
+      },
+      {
+        "pack_id": "ef6e99cf-077d-4b55-9e11-f86bb9e66880",
+        "version": [
+          1,
+          0,
+          33
+        ]
+      },
+      {
+        "pack_id": "969b1f80-d29c-454f-ab4e-9798b508c1fc",
+        "version": [
+          1,
+          0,
+          6
+        ]
+      },
+      {
+        "pack_id": "b29dadb1-6c0e-42f6-a56e-f52e01dff8e9",
+        "version": [
+          1,
+          0,
+          27
+        ]
+      },
+      {
+        "pack_id": "90f045c3-0718-4981-a1ff-180976002a93",
+        "version": [
+          2,
+          12,
+          18
+        ]
+      },
+      {
+        "pack_id": "8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a",
+        "version": [
+          1,
+          0,
+          11
+        ]
+      },
+      {
+        "pack_id": "228eb1da-6372-4a9b-9050-a40256149144",
+        "version": [
+          1,
+          0,
+          23
+        ]
+      },
+      {
+        "pack_id": "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
+        "version": [
+          2,
+          0,
+          6
+        ]
+      },
+      {
+        "pack_id": "7c8ac348-47ad-4f71-8503-dc40a6f813f1",
+        "version": [
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "pack_id": "e05afa0d-aa45-46bd-82d0-243c605d9737",
+        "version": [
+          8,
+          2,
+          6
+        ]
+      },
+      {
+        "pack_id": "87a4083d-6ba7-4667-957b-dfee8b23e1b9",
+        "version": [
+          1,
+          1,
+          8
+        ]
+      },
+      {
+        "pack_id": "7e0c44d2-1b23-4073-b749-c81514e2ed94",
+        "version": [
+          1,
+          1,
+          5
+        ]
+      },
+      {
+        "pack_id": "a881d6c5-7cf5-4823-a26c-1766d70acd8c",
+        "version": [
+          1,
+          0,
+          5
+        ]
+      },
+      {
+        "pack_id": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+        "version": [
+          1,
+          0,
+          68
+        ]
+      },
+      {
+        "pack_id": "3efecae8-a036-4e14-94d3-876e29fe0ae9",
+        "version": [
+          0,
+          2,
+          7
+        ]
+      },
+      {
+        "pack_id": "c65bcd04-4708-4716-86bf-bbd6ab936fd3",
+        "version": [
+          0,
+          2,
+          16
+        ]
+      }
+    ],
+    "world_resource_packs.json": [
+      {
+        "pack_id": "1497b511-a764-46d4-b726-dd0f5c5d7784",
+        "version": [
+          1,
+          0,
+          27
+        ]
+      },
+      {
+        "pack_id": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+        "version": [
+          1,
+          0,
+          57
+        ]
+      },
+      {
+        "pack_id": "9fc53a12-7b83-4d48-b161-d05ee0e45974",
+        "version": [
+          1,
+          0,
+          8
+        ]
+      },
+      {
+        "pack_id": "d68eee7e-653f-474a-a385-e1a76fdd28bd",
+        "version": [
+          1,
+          0,
+          13
+        ]
+      },
+      {
+        "pack_id": "608f921e-6be8-4a27-85d6-27945fa3a1ef",
+        "version": [
+          1,
+          0,
+          41
+        ]
+      },
+      {
+        "pack_id": "ab296f68-bb16-4ede-a49c-d0ed99b5b87b",
+        "version": [
+          2,
+          0,
+          6
+        ]
+      },
+      {
+        "pack_id": "4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10",
+        "version": [
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "pack_id": "4f927a7a-fc68-4051-8686-43ab94ed1c5b",
+        "version": [
+          1,
+          0,
+          39
+        ]
+      },
+      {
+        "pack_id": "3554695d-d627-4971-8420-dc4ece2f8613",
+        "version": [
+          1,
+          1,
+          13
+        ]
+      },
+      {
+        "pack_id": "917aab9c-5273-1000-ba5e-087a4328aa6b",
+        "subpack": "Default Featured",
+        "version": [
+          1,
+          3,
+          21
+        ]
+      },
+      {
+        "pack_id": "4d6ce949-1de7-41ec-87ab-3068434459a4",
+        "version": [
+          8,
+          2,
+          8
+        ]
+      },
+      {
+        "pack_id": "fdcac724-cba1-46b2-9510-a433d666ed70",
+        "version": [
+          1,
+          1,
+          12
+        ]
+      },
+      {
+        "pack_id": "8f8c7cdb-60c5-4b4b-bc1c-334eb8f24b9a",
+        "version": [
+          1,
+          0,
+          5
+        ]
+      },
+      {
+        "pack_id": "6fefc83a-06f8-4d96-95d5-cd31718851d3",
+        "version": [
+          1,
+          0,
+          105
+        ]
+      },
+      {
+        "pack_id": "47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78",
+        "version": [
+          1,
+          0,
+          4
+        ]
+      },
+      {
+        "pack_id": "9a12d1e1-d6c3-43b6-8551-cdc1bb582f82",
+        "version": [
+          1,
+          1,
+          6
+        ]
+      },
+      {
+        "pack_id": "8cdb9fd9-ee9c-4144-ad3a-175445d20b19",
+        "version": [
+          1,
+          0,
+          4
+        ]
+      },
+      {
+        "pack_id": "c6529ee0-0a34-4f28-b5ff-66d335fee9bc",
+        "version": [
+          0,
+          1,
+          8
+        ]
+      },
+      {
+        "pack_id": "ef57c45f-1b60-42a3-8d26-4998db1b5055",
+        "version": [
+          0,
+          2,
+          16
+        ]
+      }
+    ]
+  },
+  "references": {
+    "world_behavior_packs.json": [
+      {
+        "pack_id": "423276b9-02f5-4082-911a-c631a2d83d12",
+        "version": [
+          1,
+          0,
+          19
+        ]
+      },
+      {
+        "pack_id": "ef6e99cf-077d-4b55-9e11-f86bb9e66880",
+        "version": [
+          1,
+          0,
+          33
+        ]
+      },
+      {
+        "pack_id": "969b1f80-d29c-454f-ab4e-9798b508c1fc",
+        "version": [
+          1,
+          0,
+          6
+        ]
+      },
+      {
+        "pack_id": "b29dadb1-6c0e-42f6-a56e-f52e01dff8e9",
+        "version": [
+          1,
+          0,
+          27
+        ]
+      },
+      {
+        "pack_id": "90f045c3-0718-4981-a1ff-180976002a93",
+        "version": [
+          2,
+          12,
+          19
+        ]
+      },
+      {
+        "pack_id": "8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a",
+        "version": [
+          1,
+          0,
+          11
+        ]
+      },
+      {
+        "pack_id": "228eb1da-6372-4a9b-9050-a40256149144",
+        "version": [
+          1,
+          0,
+          23
+        ]
+      },
+      {
+        "pack_id": "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
+        "version": [
+          2,
+          0,
+          7
+        ]
+      },
+      {
+        "pack_id": "7c8ac348-47ad-4f71-8503-dc40a6f813f1",
+        "version": [
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "pack_id": "e05afa0d-aa45-46bd-82d0-243c605d9737",
+        "version": [
+          8,
+          2,
+          6
+        ]
+      },
+      {
+        "pack_id": "87a4083d-6ba7-4667-957b-dfee8b23e1b9",
+        "version": [
+          1,
+          1,
+          8
+        ]
+      },
+      {
+        "pack_id": "7e0c44d2-1b23-4073-b749-c81514e2ed94",
+        "version": [
+          1,
+          1,
+          5
+        ]
+      },
+      {
+        "pack_id": "a881d6c5-7cf5-4823-a26c-1766d70acd8c",
+        "version": [
+          1,
+          0,
+          5
+        ]
+      },
+      {
+        "pack_id": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+        "version": [
+          1,
+          0,
+          68
+        ]
+      },
+      {
+        "pack_id": "3efecae8-a036-4e14-94d3-876e29fe0ae9",
+        "version": [
+          0,
+          2,
+          7
+        ]
+      },
+      {
+        "pack_id": "c65bcd04-4708-4716-86bf-bbd6ab936fd3",
+        "version": [
+          0,
+          2,
+          16
+        ]
+      }
+    ],
+    "world_resource_packs.json": [
+      {
+        "pack_id": "1497b511-a764-46d4-b726-dd0f5c5d7784",
+        "version": [
+          1,
+          0,
+          27
+        ]
+      },
+      {
+        "pack_id": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+        "version": [
+          1,
+          0,
+          57
+        ]
+      },
+      {
+        "pack_id": "9fc53a12-7b83-4d48-b161-d05ee0e45974",
+        "version": [
+          1,
+          0,
+          8
+        ]
+      },
+      {
+        "pack_id": "d68eee7e-653f-474a-a385-e1a76fdd28bd",
+        "version": [
+          1,
+          0,
+          13
+        ]
+      },
+      {
+        "pack_id": "608f921e-6be8-4a27-85d6-27945fa3a1ef",
+        "version": [
+          1,
+          0,
+          41
+        ]
+      },
+      {
+        "pack_id": "ab296f68-bb16-4ede-a49c-d0ed99b5b87b",
+        "version": [
+          2,
+          0,
+          7
+        ]
+      },
+      {
+        "pack_id": "4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10",
+        "version": [
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "pack_id": "4f927a7a-fc68-4051-8686-43ab94ed1c5b",
+        "version": [
+          1,
+          0,
+          39
+        ]
+      },
+      {
+        "pack_id": "3554695d-d627-4971-8420-dc4ece2f8613",
+        "version": [
+          1,
+          1,
+          13
+        ]
+      },
+      {
+        "pack_id": "917aab9c-5273-1000-ba5e-087a4328aa6b",
+        "subpack": "Default Featured",
+        "version": [
+          1,
+          3,
+          21
+        ]
+      },
+      {
+        "pack_id": "4d6ce949-1de7-41ec-87ab-3068434459a4",
+        "version": [
+          8,
+          2,
+          8
+        ]
+      },
+      {
+        "pack_id": "fdcac724-cba1-46b2-9510-a433d666ed70",
+        "version": [
+          1,
+          1,
+          12
+        ]
+      },
+      {
+        "pack_id": "8f8c7cdb-60c5-4b4b-bc1c-334eb8f24b9a",
+        "version": [
+          1,
+          0,
+          5
+        ]
+      },
+      {
+        "pack_id": "6fefc83a-06f8-4d96-95d5-cd31718851d3",
+        "version": [
+          1,
+          0,
+          105
+        ]
+      },
+      {
+        "pack_id": "47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78",
+        "version": [
+          1,
+          0,
+          4
+        ]
+      },
+      {
+        "pack_id": "9a12d1e1-d6c3-43b6-8551-cdc1bb582f82",
+        "version": [
+          1,
+          1,
+          6
+        ]
+      },
+      {
+        "pack_id": "8cdb9fd9-ee9c-4144-ad3a-175445d20b19",
+        "version": [
+          1,
+          0,
+          4
+        ]
+      },
+      {
+        "pack_id": "c6529ee0-0a34-4f28-b5ff-66d335fee9bc",
+        "version": [
+          0,
+          1,
+          8
+        ]
+      },
+      {
+        "pack_id": "ef57c45f-1b60-42a3-8d26-4998db1b5055",
+        "version": [
+          0,
+          2,
+          16
+        ]
+      }
+    ]
+  }
+}

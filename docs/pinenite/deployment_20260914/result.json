@@ -1,0 +1,63 @@
+{
+  "sourceCommit": "d1536bced6d01ad522f339ce12915fbb2cc3c337",
+  "targets": [
+    {
+      "sourceCommit": "d1536bced6d01ad522f339ce12915fbb2cc3c337",
+      "target": "server",
+      "changedPackFiles": 23,
+      "verifiedPackFiles": 35,
+      "saveFilesUnchanged": 458,
+      "backup": "/opt/minecraft/server/_pinene_deploy_backups/pinenite-20260914_171722",
+      "success": true,
+      "clientGameplayTest": "not_run",
+      "service": "active",
+      "startupConfirmed": true,
+      "errors": [],
+      "contentLogFiles": 1,
+      "finishedUtc": "2026-09-14T08:22:48.942228+00:00"
+    },
+    {
+      "sourceCommit": "d1536bced6d01ad522f339ce12915fbb2cc3c337",
+      "target": "development",
+      "changedPackFiles": 23,
+      "verifiedPackFiles": 35,
+      "saveFilesUnchanged": 13059,
+      "backup": "C:\\Users\\はーにゃ。\\Downloads\\pinenite-deploy-20260914\\backups\\development-20260914_171722",
+      "success": true,
+      "clientGameplayTest": "not_run",
+      "finishedUtc": "2026-09-14T08:25:46.770404+00:00"
+    },
+    {
+      "sourceCommit": "d1536bced6d01ad522f339ce12915fbb2cc3c337",
+      "target": "latest",
+      "changedPackFiles": 23,
+      "verifiedPackFiles": 35,
+      "saveFilesUnchanged": 8,
+      "backup": "C:\\Users\\はーにゃ。\\Downloads\\pinenite-deploy-20260914\\backups\\latest-20260914_171722",
+      "success": true,
+      "clientGameplayTest": "not_run",
+      "finishedUtc": "2026-09-14T08:23:26.471044+00:00"
+    }
+  ],
+  "localDeathneritePacks": {
+    "files": 38,
+    "backup": "C:\\Users\\はーにゃ。\\Downloads\\pinenite-deploy-20260914\\backups\\development-packs-20260914_172240",
+    "targets": [
+      "C:\\Users\\はーにゃ。\\AppData\\Roaming\\Minecraft Bedrock\\Users\\Shared\\games\\com.mojang\\behavior_packs\\[NEW]DeathBP",
+      "C:\\Users\\はーにゃ。\\AppData\\Roaming\\Minecraft Bedrock\\Users\\Shared\\games\\com.mojang\\resource_packs\\[NEW]Death"
+    ],
+    "verified": true,
+    "versions": [
+      2,
+      12,
+      13
+    ]
+  },
+  "tests": {
+    "total": 140,
+    "pinenite": 39,
+    "failed": 0,
+    "assetChecks": 154
+  },
+  "clientGameplayTest": "not_run"
+}
