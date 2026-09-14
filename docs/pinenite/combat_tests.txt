@@ -1,0 +1,953 @@
+
+> test
+> npm --prefix tools/mycology test && node --test tests/golden_foods/*.test.mjs && npm run test:pinenite
+
+
+> pinene-mycology-codex@1.3.0-handoff test
+> node --test tests/core.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/adapters.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/field-guide.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/ui.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/reveal.test.mjs
+
+TAP version 13
+# Subtest: 35 immutable species, 15 red / 20 brown
+ok 1 - 35 immutable species, 15 red / 20 brown
+  ---
+  duration_ms: 1.1428
+  type: 'test'
+  ...
+# Subtest: weights 512..1, reject rarity zero and 11
+ok 2 - weights 512..1, reject rarity zero and 11
+  ---
+  duration_ms: 1.0504
+  type: 'test'
+  ...
+# Subtest: exact current sums: 2899 and 3183
+ok 3 - exact current sums: 2899 and 3183
+  ---
+  duration_ms: 0.2101
+  type: 'test'
+  ...
+# Subtest: red: exhaustively enumerate every integer ticket
+ok 4 - red: exhaustively enumerate every integer ticket
+  ---
+  duration_ms: 2.3152
+  type: 'test'
+  ...
+# Subtest: brown: exhaustively enumerate every integer ticket
+ok 5 - brown: exhaustively enumerate every integer ticket
+  ---
+  duration_ms: 1.5004
+  type: 'test'
+  ...
+# Subtest: single draw boundaries and invalid RNG
+ok 6 - single draw boundaries and invalid RNG
+  ---
+  duration_ms: 0.1965
+  type: 'test'
+  ...
+# Subtest: all batch sizes conserve counts and aggregate duplicates
+ok 7 - all batch sizes conserve counts and aggregate duplicates
+  ---
+  duration_ms: 1.6632
+  type: 'test'
+  ...
+# Subtest: first existing partial stack, not fullest or combined stacks
+ok 8 - first existing partial stack, not fullest or combined stacks
+  ---
+  duration_ms: 0.1891
+  type: 'test'
+  ...
+# Subtest: inventory plan consumes one exact stack and leaves the next
+ok 9 - inventory plan consumes one exact stack and leaves the next
+  ---
+  duration_ms: 1.6418
+  type: 'test'
+  ...
+# Subtest: full inventory preserves unrelated items and emits grouped overflow
+ok 10 - full inventory preserves unrelated items and emits grouped overflow
+  ---
+  duration_ms: 0.8059
+  type: 'test'
+  ...
+# Subtest: matching plain stacks merge, named stacks are not overwritten
+ok 11 - matching plain stacks merge, named stacks are not overwritten
+  ---
+  duration_ms: 0.3255
+  type: 'test'
+  ...
+# Subtest: changed source / nonconserved output fails before mutation
+ok 12 - changed source / nonconserved output fails before mutation
+  ---
+  duration_ms: 0.1959
+  type: 'test'
+  ...
+# Subtest: segmented progress addresses 0,29,30,31,59,60,90 independently
+ok 13 - segmented progress addresses 0,29,30,31,59,60,90 independently
+  ---
+  duration_ms: 0.3944
+  type: 'test'
+  ...
+# Subtest: one progress write per touched word and no duplicate NEW
+ok 14 - one progress write per touched word and no duplicate NEW
+  ---
+  duration_ms: 0.2581
+  type: 'test'
+  ...
+# Subtest: food/effect boundaries: specimens cannot eat; puffball is crush
+ok 15 - food/effect boundaries: specimens cannot eat; puffball is crush
+  ---
+  duration_ms: 0.3347
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 130.9084
+TAP version 13
+# (node:27184) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: adapter: one 37-stack becomes 37 results, next 64 untouched
+ok 1 - adapter: one 37-stack becomes 37 results, next 64 untouched
+  ---
+  duration_ms: 4.2946
+  type: 'test'
+  ...
+# Subtest: adapter: invalid NPC before commit cannot consume input
+ok 2 - adapter: invalid NPC before commit cannot consume input
+  ---
+  duration_ms: 0.4153
+  type: 'test'
+  ...
+# Subtest: adapter: synchronous slot-write exception rolls back cloned inventory
+ok 3 - adapter: synchronous slot-write exception rolls back cloned inventory
+  ---
+  duration_ms: 14.1615
+  type: 'test'
+  ...
+# Subtest: adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once
+ok 4 - adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once
+  ---
+  duration_ms: 0.9124
+  type: 'test'
+  ...
+# Subtest: adapter: crash-ambiguous inflight receipt is quarantined
+ok 5 - adapter: crash-ambiguous inflight receipt is quarantined
+  ---
+  duration_ms: 0.1892
+  type: 'test'
+  ...
+# Subtest: adapter: legacy masks migrate without deleting old data
+ok 6 - adapter: legacy masks migrate without deleting old data
+  ---
+  duration_ms: 0.1555
+  type: 'test'
+  ...
+# Subtest: adapter: bad saved progress is rejected, not zeroed
+ok 7 - adapter: bad saved progress is rejected, not zeroed
+  ---
+  duration_ms: 0.2241
+  type: 'test'
+  ...
+# Subtest: adapter: poison is persistent before delay; repeated use cannot defer it
+ok 8 - adapter: poison is persistent before delay; repeated use cannot defer it
+  ---
+  duration_ms: 0.5603
+  type: 'test'
+  ...
+# Subtest: adapter: R06 fixed health cost then strength; lethal cost gives no buff
+ok 9 - adapter: R06 fixed health cost then strength; lethal cost gives no buff
+  ---
+  duration_ms: 0.7043
+  type: 'test'
+  ...
+# Subtest: adapter: normal/admin NPC is usable but drops no loot on death
+ok 10 - adapter: normal/admin NPC is usable but drops no loot on death
+  ---
+  duration_ms: 0.5723
+  type: 'test'
+  ...
+# Subtest: adapter: active natural death gives exactly 64+64 once
+ok 11 - adapter: active natural death gives exactly 64+64 once
+  ---
+  duration_ms: 0.2465
+  type: 'test'
+  ...
+# Subtest: adapter: stale loaded natural token is removed without loot
+ok 12 - adapter: stale loaded natural token is removed without loot
+  ---
+  duration_ms: 0.3429
+  type: 'test'
+  ...
+# Subtest: adapter: unloaded unexpired natural lease is preserved on restart
+ok 13 - adapter: unloaded unexpired natural lease is preserved on restart
+  ---
+  duration_ms: 0.308
+  type: 'test'
+  ...
+# Subtest: adapter: grace only permits an existing session, then hard expires
+ok 14 - adapter: grace only permits an existing session, then hard expires
+  ---
+  duration_ms: 0.6342
+  type: 'test'
+  ...
+# Subtest: adapter: natural spawn works without experimental isSolid; rejects unsafe floors
+ok 15 - adapter: natural spawn works without experimental isSolid; rejects unsafe floors
+  ---
+  duration_ms: 1.0419
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 203.4593
+TAP version 13
+# (node:20748) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# [Pinene Mycology] field guide: Error: expected closed form
+#     at file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/tests/field-guide.test.mjs:28:36
+#     at ActionFormData.show (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/tests/mock-forms.mjs:8:115)
+#     at encyclopedia (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/pack/BP/scripts/mycology/ui.js:84:29)
+#     at openFieldGuide (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/pack/BP/scripts/mycology/field_guide.js:11:12)
+#     at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/tests/field-guide.test.mjs:29:8)
+#     at async Test.run (node:internal/test_runner/test:1054:7)
+#     at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+# Subtest: portable guide displays only its reader discoveries; no NPC or item progress required
+ok 1 - portable guide displays only its reader discoveries; no NPC or item progress required
+  ---
+  duration_ms: 1.9904
+  type: 'test'
+  ...
+# Subtest: portable guide rejects duplicate opens and NPC lock; releases its lock on close/error
+ok 2 - portable guide rejects duplicate opens and NPC lock; releases its lock on close/error
+  ---
+  duration_ms: 0.6954
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 170.9015
+TAP version 13
+# (node:25412) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: result UI: 1 items, NEW, committed receipt, no next stack
+ok 1 - result UI: 1 items, NEW, committed receipt, no next stack
+  ---
+  duration_ms: 4.1982
+  type: 'test'
+  ...
+# Subtest: result UI: 37 items, NEW, committed receipt, no next stack
+ok 2 - result UI: 37 items, NEW, committed receipt, no next stack
+  ---
+  duration_ms: 0.6299
+  type: 'test'
+  ...
+# Subtest: result UI: 64 items, NEW, committed receipt, no next stack
+ok 3 - result UI: 64 items, NEW, committed receipt, no next stack
+  ---
+  duration_ms: 0.6223
+  type: 'test'
+  ...
+# Subtest: next batch button displays first stack 12, not total
+ok 4 - next batch button displays first stack 12, not total
+  ---
+  duration_ms: 0.6163
+  type: 'test'
+  ...
+# Subtest: next batch button displays first stack 64, not total
+ok 5 - next batch button displays first stack 64, not total
+  ---
+  duration_ms: 0.5335
+  type: 'test'
+  ...
+# Subtest: unknown encyclopedia entries hide name and rarity, including after selection
+ok 6 - unknown encyclopedia entries hide name and rarity, including after selection
+  ---
+  duration_ms: 0.6003
+  type: 'test'
+  ...
+# Subtest: all ten rarity colors match in known list and detail; formatting resets
+ok 7 - all ten rarity colors match in known list and detail; formatting resets
+  ---
+  duration_ms: 4.8501
+  type: 'test'
+  ...
+# Subtest: mixed batch is sorted by rarity, with highest banner and distinct NEW count
+ok 8 - mixed batch is sorted by rarity, with highest banner and distinct NEW count
+  ---
+  duration_ms: 13.8508
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 193.8189
+TAP version 13
+# (node:27432) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# [Pinene Mycology] reveal sound: Error: expected missing sound
+#     at p.playSound (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/tests/reveal.test.mjs:88:65)
+#     at revealAppraisal (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/pack/BP/scripts/mycology/reveal.js:124:20)
+#     at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/tests/reveal.test.mjs:89:27)
+#     at async Test.run (node:internal/test_runner/test:1054:7)
+#     at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+# [Pinene Mycology] reveal presentation: Error: expected screen failure
+#     at p.onScreenDisplay.setTitle (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/tests/reveal.test.mjs:95:68)
+#     at revealAppraisal (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/pack/BP/scripts/mycology/reveal.js:120:15)
+#     at batchLoop (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/pack/BP/scripts/mycology/ui.js:191:30)
+#     at openAppraiser (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/Downloads/pinenite-combat-final/tools/mycology/pack/BP/scripts/mycology/ui.js:290:27)
+# Subtest: cinematic is bounded, deterministic, uses actual species, and has high-rarity musical ending
+ok 1 - cinematic is bounded, deterministic, uses actual species, and has high-rarity musical ending
+  ---
+  duration_ms: 4.53
+  type: 'test'
+  ...
+# Subtest: personal preferences cycle full/quick/off and sound independently, persisted per player
+ok 2 - personal preferences cycle full/quick/off and sound independently, persisted per player
+  ---
+  duration_ms: 0.5613
+  type: 'test'
+  ...
+# Subtest: full reveal plays personal sound and finishes cleanly
+ok 3 - full reveal plays personal sound and finishes cleanly
+  ---
+  duration_ms: 3.2375
+  type: 'test'
+  ...
+# Subtest: cancel on sneak with no trailing cues
+ok 4 - cancel on sneak with no trailing cues
+  ---
+  duration_ms: 0.3603
+  type: 'test'
+  ...
+# Subtest: cancel on leave with no trailing cues
+ok 5 - cancel on leave with no trailing cues
+  ---
+  duration_ms: 0.3703
+  type: 'test'
+  ...
+# Subtest: cancel on death with no trailing cues
+ok 6 - cancel on death with no trailing cues
+  ---
+  duration_ms: 0.1897
+  type: 'test'
+  ...
+# Subtest: cancel on dimension with no trailing cues
+ok 7 - cancel on dimension with no trailing cues
+  ---
+  duration_ms: 0.2388
+  type: 'test'
+  ...
+# Subtest: cancel on new session with no trailing cues
+ok 8 - cancel on new session with no trailing cues
+  ---
+  duration_ms: 0.182
+  type: 'test'
+  ...
+# Subtest: mute retains animation, OFF is instant; missing sound does not block result
+ok 9 - mute retains animation, OFF is instant; missing sound does not block result
+  ---
+  duration_ms: 6.7151
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through full
+ok 10 - real appraisal remains committed through full
+  ---
+  duration_ms: 12.1394
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through skip
+ok 11 - real appraisal remains committed through skip
+  ---
+  duration_ms: 0.6862
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through display failure
+ok 12 - real appraisal remains committed through display failure
+  ---
+  duration_ms: 0.7818
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through disconnect
+ok 13 - real appraisal remains committed through disconnect
+  ---
+  duration_ms: 0.7518
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through new session
+ok 14 - real appraisal remains committed through new session
+  ---
+  duration_ms: 1.1644
+  type: 'test'
+  ...
+# Subtest: next-stack amount is refreshed after animation, not captured before it
+ok 15 - next-stack amount is refreshed after animation, not captured before it
+  ---
+  duration_ms: 1.7426
+  type: 'test'
+  ...
+# Subtest: menu preference buttons do not appraise and survive reopening
+ok 16 - menu preference buttons do not appraise and survive reopening
+  ---
+  duration_ms: 0.3144
+  type: 'test'
+  ...
+# Subtest: all species have themed musical identities and every 64-stack stays within 15–25 seconds
+ok 17 - all species have themed musical identities and every 64-stack stays within 15–25 seconds
+  ---
+  duration_ms: 17.192
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 215.616
+TAP version 13
+# Subtest: carrot cleans blindness/darkness and prevents only the declared effects for 480s
+ok 1 - carrot cleans blindness/darkness and prevents only the declared effects for 480s
+  ---
+  duration_ms: 1.4413
+  type: 'test'
+  ...
+# Subtest: potato prevents poison, halves incoming hunger/nausea, survives serialization
+ok 2 - potato prevents poison, halves incoming hunger/nausea, survives serialization
+  ---
+  duration_ms: 0.217
+  type: 'test'
+  ...
+# Subtest: poison conversion obeys cooldown and does not invent immunity to hunger
+ok 3 - poison conversion obeys cooldown and does not invent immunity to hunger
+  ---
+  duration_ms: 0.2536
+  type: 'test'
+  ...
+# Subtest: non-counter food adds no feature
+ok 4 - non-counter food adds no feature
+  ---
+  duration_ms: 0.1555
+  type: 'test'
+  ...
+# Subtest: four identifiers, eight ingots/blocks, no edible component, matching enchanted texture and glint
+ok 5 - four identifiers, eight ingots/blocks, no edible component, matching enchanted texture and glint
+  ---
+  duration_ms: 3.3313
+  type: 'test'
+  ...
+# Subtest: projectile definitions have zero damage, zero knockback, no hatching and bounded lifetime
+ok 6 - projectile definitions have zero damage, zero knockback, no hatching and bounded lifetime
+  ---
+  duration_ms: 0.5819
+  type: 'test'
+  ...
+# Subtest: homing selects smallest angle, excludes owner, out-of-range and occluded targets
+ok 7 - homing selects smallest angle, excludes owner, out-of-range and occluded targets
+  ---
+  duration_ms: 0.4125
+  type: 'test'
+  ...
+# Subtest: homing preserves speed, turns at most 6 degrees and handles zero/opposite vectors
+ok 8 - homing preserves speed, turns at most 6 degrees and handles zero/opposite vectors
+  ---
+  duration_ms: 0.4961
+  type: 'test'
+  ...
+# Subtest: absolute and relative coordinate parsing rejects commands, NaN and infinities
+ok 9 - absolute and relative coordinate parsing rejects commands, NaN and infinities
+  ---
+  duration_ms: 0.5466
+  type: 'test'
+  ...
+# Subtest: blink ranges are 24/64/96 and coordinate ranges are 256/256/1024
+ok 10 - blink ranges are 24/64/96 and coordinate ranges are 256/256/1024
+  ---
+  duration_ms: 0.1552
+  type: 'test'
+  ...
+# Subtest: clear ground reaches limit; walls and one-block ceilings block blinks
+ok 11 - clear ground reaches limit; walls and one-block ceilings block blinks
+  ---
+  duration_ms: 9.6428
+  type: 'test'
+  ...
+# Subtest: safe destinations refuse lava, magma, void, unloaded chunks and unknown floors
+ok 12 - safe destinations refuse lava, magma, void, unloaded chunks and unknown floors
+  ---
+  duration_ms: 0.5958
+  type: 'test'
+  ...
+# Subtest: long coordinate paths cannot skip one-block walls, including diagonal corner clipping
+ok 13 - long coordinate paths cannot skip one-block walls, including diagonal corner clipping
+  ---
+  duration_ms: 2.4211
+  type: 'test'
+  ...
+# Subtest: coordinate destination uses nearby safe space but never bypasses walls or distance limits
+ok 14 - coordinate destination uses nearby safe space but never bypasses walls or distance limits
+  ---
+  duration_ms: 10.0419
+  type: 'test'
+  ...
+# Subtest: egg consumes exactly once and buffs players only, never mobs or double-hit overlap
+ok 15 - egg consumes exactly once and buffs players only, never mobs or double-hit overlap
+  ---
+  duration_ms: 4.8884
+  type: 'test'
+  ...
+# Subtest: enchanted egg exact buffs, no resistance/fire resistance, no amplifier stacking
+ok 16 - enchanted egg exact buffs, no resistance/fire resistance, no amplifier stacking
+  ---
+  duration_ms: 1.8606
+  type: 'test'
+  ...
+# Subtest: projectile disappears on blocks and after lifetime; missing homing target retains forward velocity
+ok 17 - projectile disappears on blocks and after lifetime; missing homing target retains forward velocity
+  ---
+  duration_ms: 3.1544
+  type: 'test'
+  ...
+# Subtest: ordinary chorus use blinks and consumes only on success without UI; failed teleport never consumes
+ok 18 - ordinary chorus use blinks and consumes only on success without UI; failed teleport never consumes
+  ---
+  duration_ms: 14.015
+  type: 'test'
+  ...
+# Subtest: only enchanted sneaking opens UI; cancel and changed held item are nonconsuming
+ok 19 - only enchanted sneaking opens UI; cancel and changed held item are nonconsuming
+  ---
+  duration_ms: 15.786
+  type: 'test'
+  ...
+# Subtest: End void anchor saves pre-warp safe point for 60 seconds, rescues once before death, clears on dimension change
+ok 20 - End void anchor saves pre-warp safe point for 60 seconds, rescues once before death, clears on dimension change
+  ---
+  duration_ms: 22.5928
+  type: 'test'
+  ...
+# Subtest: expired anchors do not rescue
+ok 21 - expired anchors do not rescue
+  ---
+  duration_ms: 12.3786
+  type: 'test'
+  ...
+# Subtest: aimed entity and block shorten enhanced blink to the near side of the target
+ok 22 - aimed entity and block shorten enhanced blink to the near side of the target
+  ---
+  duration_ms: 5.6048
+  type: 'test'
+  ...
+# Subtest: coordinate UI accepts relative values; invalid input and dimension change never consume
+ok 23 - coordinate UI accepts relative values; invalid input and dimension change never consume
+  ---
+  duration_ms: 3.5191
+  type: 'test'
+  ...
+# Subtest: homing discards dead target and relocks a visible player; swept-wall hits never grant buffs
+ok 24 - homing discards dead target and relocks a visible player; swept-wall hits never grant buffs
+  ---
+  duration_ms: 1.8796
+  type: 'test'
+  ...
+# Subtest: guide includes four new non-edible/utility entries and never restores ordinary apple stew
+ok 25 - guide includes four new non-edible/utility entries and never restores ordinary apple stew
+  ---
+  duration_ms: 4.6163
+  type: 'test'
+  ...
+# Subtest: legacy consumables have Japanese names, one effect owner, native container return and matching guide nutrition
+ok 26 - legacy consumables have Japanese names, one effect owner, native container return and matching guide nutrition
+  ---
+  duration_ms: 2.5248
+  type: 'test'
+  ...
+# Subtest: milk and stew consume once, have no regeneration V, do not clear other buffs or touch inventory
+ok 27 - milk and stew consume once, have no regeneration V, do not clear other buffs or touch inventory
+  ---
+  duration_ms: 0.5199
+  type: 'test'
+  ...
+# Subtest: all 19 golden guide detail screens render names, chemistry, design rationale and real effect values
+ok 28 - all 19 golden guide detail screens render names, chemistry, design rationale and real effect values
+  ---
+  duration_ms: 16.9038
+  type: 'test'
+  ...
+# Subtest: seconds converted once and level II remains amplifier 1
+ok 29 - seconds converted once and level II remains amplifier 1
+  ---
+  duration_ms: 2.24
+  type: 'test'
+  ...
+# Subtest: weaker food cannot weaken or extend a stronger external effect
+ok 30 - weaker food cannot weaken or extend a stronger external effect
+  ---
+  duration_ms: 0.2474
+  type: 'test'
+  ...
+# Subtest: same level refresh uses max remaining/new, never sum
+ok 31 - same level refresh uses max remaining/new, never sum
+  ---
+  duration_ms: 0.1346
+  type: 'test'
+  ...
+# Subtest: new stronger food does not inherit lower-tier long duration
+ok 32 - new stronger food does not inherit lower-tier long duration
+  ---
+  duration_ms: 0.138
+  type: 'test'
+  ...
+# Subtest: infinite same-level effect is not shortened
+ok 33 - infinite same-level effect is not shortened
+  ---
+  duration_ms: 0.2553
+  type: 'test'
+  ...
+# Subtest: invalid settings cannot emit invalid addEffect calls
+ok 34 - invalid settings cannot emit invalid addEffect calls
+  ---
+  duration_ms: 0.2174
+  type: 'test'
+  ...
+# Subtest: different foods coexist without amplifier sum or global cooldown
+ok 35 - different foods coexist without amplifier sum or global cooldown
+  ---
+  duration_ms: 0.4546
+  type: 'test'
+  ...
+# Subtest: unknown items and nonfood wheat never apply buffs
+ok 36 - unknown items and nonfood wheat never apply buffs
+  ---
+  duration_ms: 0.1584
+  type: 'test'
+  ...
+# Subtest: one completed meal applies each basic effect once without inventory writes
+ok 37 - one completed meal applies each basic effect once without inventory writes
+  ---
+  duration_ms: 0.4132
+  type: 'test'
+  ...
+# Subtest: declared debuff counters are enabled while unrelated capabilities remain gated
+ok 38 - declared debuff counters are enabled while unrelated capabilities remain gated
+  ---
+  duration_ms: 0.739
+  type: 'test'
+  ...
+# Subtest: UI uses data seconds; night vision eight minutes is level I
+ok 39 - UI uses data seconds; night vision eight minutes is level I
+  ---
+  duration_ms: 0.2292
+  type: 'test'
+  ...
+# Subtest: gated cleanse prototype only removes allowlisted effects
+ok 40 - gated cleanse prototype only removes allowlisted effects
+  ---
+  duration_ms: 0.9327
+  type: 'test'
+  ...
+# Subtest: gated one-shot shortening keeps amplifier and shortens once
+ok 41 - gated one-shot shortening keeps amplifier and shortens once
+  ---
+  duration_ms: 0.1702
+  type: 'test'
+  ...
+# Subtest: invalidating native Effect handle is not read after removal
+ok 42 - invalidating native Effect handle is not read after removal
+  ---
+  duration_ms: 0.2281
+  type: 'test'
+  ...
+# Subtest: failed gated shortening restores the captured duration
+ok 43 - failed gated shortening restores the captured duration
+  ---
+  duration_ms: 0.2193
+  type: 'test'
+  ...
+# Subtest: registration has one onConsume callback; only guide onUse opens UI
+ok 44 - registration has one onConsume callback; only guide onUse opens UI
+  ---
+  duration_ms: 1.6032
+  type: 'test'
+  ...
+1..44
+# tests 44
+# suites 0
+# pass 44
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 255.5832
+
+> test:pinenite
+> node --test tests/pinenite/*.test.mjs
+
+TAP version 13
+# Subtest: all armor values and complete Parcanite components inherited, IDs preserved
+ok 1 - all armor values and complete Parcanite components inherited, IDs preserved
+  ---
+  duration_ms: 5.0306
+  type: 'test'
+  ...
+# Subtest: original four geometries and eight PNGs preserved against investigated main
+ok 2 - original four geometries and eight PNGs preserved against investigated main
+  ---
+  duration_ms: 573.6706
+  type: 'test'
+  ...
+# Subtest: glow is additive core/crystal subset with original UVs, pivots and textures
+ok 3 - glow is additive core/crystal subset with original UVs, pivots and textures
+  ---
+  duration_ms: 34.8245
+  type: 'test'
+  ...
+# Subtest: particle/animation resolve without new player or Mob entity definitions
+ok 4 - particle/animation resolve without new player or Mob entity definitions
+  ---
+  duration_ms: 300.1365
+  type: 'test'
+  ...
+# Subtest: BP requires stable 2.6.0 and 26.40; original API consumers and shared renderer untouched
+ok 5 - BP requires stable 2.6.0 and 26.40; original API consumers and shared renderer untouched
+  ---
+  duration_ms: 122.3346
+  type: 'test'
+  ...
+# Subtest: base health and armor spec
+ok 6 - base health and armor spec
+  ---
+  duration_ms: 3.3663
+  type: 'test'
+  ...
+# Subtest: analysis thresholds apply on hits 2, 4, 6, cap at 1.30
+ok 7 - analysis thresholds apply on hits 2, 4, 6, cap at 1.30
+  ---
+  duration_ms: 0.4904
+  type: 'test'
+  ...
+# Subtest: only direct player-owned source causes qualify; DOT and synthetic excluded
+ok 8 - only direct player-owned source causes qualify; DOT and synthetic excluded
+  ---
+  duration_ms: 0.2854
+  type: 'test'
+  ...
+# Subtest: adaptation 0/10/20/30 percent; cooldown throttles learning only
+ok 9 - adaptation 0/10/20/30 percent; cooldown throttles learning only
+  ---
+  duration_ms: 0.3588
+  type: 'test'
+  ...
+# Subtest: learning cooldown is independent for attackers
+ok 10 - learning cooldown is independent for attackers
+  ---
+  duration_ms: 0.5251
+  type: 'test'
+  ...
+# Subtest: memory remains through 30s; steps at 40/50/60s; repeated decay is idempotent
+ok 11 - memory remains through 30s; steps at 40/50/60s; repeated decay is idempotent
+  ---
+  duration_ms: 0.2425
+  type: 'test'
+  ...
+# Subtest: combat refreshes decay; one remaining hit also disappears at 60s
+ok 12 - combat refreshes decay; one remaining hit also disappears at 60s
+  ---
+  duration_ms: 0.2128
+  type: 'test'
+  ...
+# Subtest: symbiosis requires full equipment and both stage III, no duplicate multiplier
+ok 13 - symbiosis requires full equipment and both stage III, no duplicate multiplier
+  ---
+  duration_ms: 0.1734
+  type: 'test'
+  ...
+# Subtest: unlimited independent entity IDs (including same type), 15 second expiry; proximity never refreshes
+ok 14 - unlimited independent entity IDs (including same type), 15 second expiry; proximity never refreshes
+  ---
+  duration_ms: 1.8433
+  type: 'test'
+  ...
+# Subtest: decay pauses while linked, damage refresh does not require learning cooldown
+ok 15 - decay pauses while linked, damage refresh does not require learning cooldown
+  ---
+  duration_ms: 0.4404
+  type: 'test'
+  ...
+# Subtest: raw 20 gives normal regen 5 even when adaptation reduces to 14
+ok 16 - raw 20 gives normal regen 5 even when adaptation reduces to 14
+  ---
+  duration_ms: 0.1863
+  type: 'test'
+  ...
+# Subtest: linked raw 20 gives 7; reflects raw 30, zero incoming and no new regen
+ok 17 - linked raw 20 gives 7; reflects raw 30, zero incoming and no new regen
+  ---
+  duration_ms: 0.1477
+  type: 'test'
+  ...
+# Subtest: deterministic uniform trials hit precisely 10 percent boundary
+ok 18 - deterministic uniform trials hit precisely 10 percent boundary
+  ---
+  duration_ms: 2.4478
+  type: 'test'
+  ...
+# Subtest: six second linear regen finishes; total pending is unbounded
+ok 19 - six second linear regen finishes; total pending is unbounded
+  ---
+  duration_ms: 10.7476
+  type: 'test'
+  ...
+# Subtest: low HP linked speed doubles ALL existing reservations; changes back above half
+ok 20 - low HP linked speed doubles ALL existing reservations; changes back above half
+  ---
+  duration_ms: 0.338
+  type: 'test'
+  ...
+# Subtest: overheal consumed immediately, never returned after later damage
+ok 21 - overheal consumed immediately, never returned after later damage
+  ---
+  duration_ms: 0.2271
+  type: 'test'
+  ...
+# Subtest: missing parts cannot use their abilities
+ok 22 - missing parts cannot use their abilities
+  ---
+  duration_ms: 0.1645
+  type: 'test'
+  ...
+# Subtest: synthetic guard covers reentry, delayed override, exceptions, then permits genuine hit
+ok 23 - synthetic guard covers reentry, delayed override, exceptions, then permits genuine hit
+  ---
+  duration_ms: 0.4297
+  type: 'test'
+  ...
+# Subtest: frame samples actual bounding box edges for arbitrary dimensions
+ok 24 - frame samples actual bounding box edges for arbitrary dimensions
+  ---
+  duration_ms: 0.8771
+  type: 'test'
+  ...
+# Subtest: leap requires grounded sneak, seven second cooldown and no airborne reuse
+ok 25 - leap requires grounded sneak, seven second cooldown and no airborne reuse
+  ---
+  duration_ms: 0.1284
+  type: 'test'
+  ...
+# Subtest: runtime stores pre-adaptation value, mock armor does not contaminate reservations
+ok 26 - runtime stores pre-adaptation value, mock armor does not contaminate reservations
+  ---
+  duration_ms: 5.8227
+  type: 'test'
+  ...
+# Subtest: two fully linked players: no reflection recursion (synchronous)
+ok 27 - two fully linked players: no reflection recursion (synchronous)
+  ---
+  duration_ms: 4.1973
+  type: 'test'
+  ...
+# Subtest: two fully linked players: no reflection recursion (delayed)
+ok 28 - two fully linked players: no reflection recursion (delayed)
+  ---
+  duration_ms: 2.2551
+  type: 'test'
+  ...
+# Subtest: reflection on an unarmored attacker sends original 30, not adapted 21
+ok 29 - reflection on an unarmored attacker sends original 30, not adapted 21
+  ---
+  duration_ms: 2.8313
+  type: 'test'
+  ...
+# Subtest: cancelled, zero and unconfirmed hits cannot learn or regenerate
+ok 30 - cancelled, zero and unconfirmed hits cannot learn or regenerate
+  ---
+  duration_ms: 1.9741
+  type: 'test'
+  ...
+# Subtest: interleaved before/after from different attackers preserves both targets and regen reservations
+ok 31 - interleaved before/after from different attackers preserves both targets and regen reservations
+  ---
+  duration_ms: 1.2056
+  type: 'test'
+  ...
+# Subtest: projectile direct owner counts; summon, DOT and synthetic cannot advance analysis
+ok 32 - projectile direct owner counts; summon, DOT and synthetic cannot advance analysis
+  ---
+  duration_ms: 1.1468
+  type: 'test'
+  ...
+# Subtest: attributed boss explosion learns adaptation but cannot count as direct analysis; DOT cannot refresh
+ok 33 - attributed boss explosion learns adaptation but cannot count as direct analysis; DOT cannot refresh
+  ---
+  duration_ms: 3.1565
+  type: 'test'
+  ...
+# Subtest: lethal hit never queues regeneration or revives
+ok 34 - lethal hit never queues regeneration or revives
+  ---
+  duration_ms: 3.3394
+  type: 'test'
+  ...
+# Subtest: max HP effect level follows 4/8/12/20 and is removed on unequip
+ok 35 - max HP effect level follows 4/8/12/20 and is removed on unequip
+  ---
+  duration_ms: 1.9516
+  type: 'test'
+  ...
+# Subtest: removing chest or helmet clears relevant memory and symbiosis; leggings clear regen
+ok 36 - removing chest or helmet clears relevant memory and symbiosis; leggings clear regen
+  ---
+  duration_ms: 1.4319
+  type: 'test'
+  ...
+# Subtest: death, leave, invalid target and dimension change clean independent state
+ok 37 - death, leave, invalid target and dimension change clean independent state
+  ---
+  duration_ms: 1.3498
+  type: 'test'
+  ...
+# Subtest: jump input uses impulse (engine collision), cannot repeat in air
+ok 38 - jump input uses impulse (engine collision), cannot repeat in air
+  ---
+  duration_ms: 2.2626
+  type: 'test'
+  ...
+# Subtest: wearer pulse has a 30 tick period, no target stacking, and a 10 tick fade
+ok 39 - wearer pulse has a 30 tick period, no target stacking, and a 10 tick fade
+  ---
+  duration_ms: 4.2026
+  type: 'test'
+  ...
+1..39
+# tests 39
+# suites 0
+# pass 39
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1137.8524

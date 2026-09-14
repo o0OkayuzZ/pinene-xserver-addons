@@ -17,6 +17,7 @@ BP = ROOT / 'behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93'
 RP = ROOT / 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b'
 PARTS = dict(helmet='head', chestplate='chest', leggings='legs', boots='feet')
 checks = []
+preexisting_warnings = []
 
 
 def check(label, condition):
@@ -49,12 +50,13 @@ for part, slot in PARTS.items():
     attach = read(RP / f'attachables/deathnerite/pinenite/pinenite_{part}.json')['minecraft:attachable']['description']
     geo = read(RP / f'models/entity/pinenite/{part}.geo.json')['minecraft:geometry'][0]
     check(part + ': identifiers agree', item['description']['identifier'] == attach['identifier'] == identifier)
-    check(part + ': wearable slot, zero protection', comp['minecraft:wearable'] == {'slot': 'slot.armor.' + slot, 'protection': 0})
-    check(part + ': visual-only components', set(comp) == {'minecraft:wearable', 'minecraft:icon', 'minecraft:display_name', 'minecraft:max_stack_size'})
+    check(part + ': wearable slot, FINAL protection', comp['minecraft:wearable'] == {'slot': 'slot.armor.' + slot, 'protection': dict(helmet=8, chestplate=14, leggings=11, boots=8)[part]})
+    inherited = read(BP / f'items/Deathnerite-Add-On/parcanite/armor/parcanite_{part}.json')['minecraft:item']['components']
+    check(part + ': Parcanite traits inherited', all(comp.get(k) == v for k, v in inherited.items() if k not in {'minecraft:icon', 'minecraft:wearable'}))
     check(part + ': creative equipment, single stack', item['description']['menu_category']['category'] == 'equipment' and comp['minecraft:max_stack_size'] == 1)
     check(part + ': geometry reference resolves', geo['description']['identifier'] == attach['geometry']['default'])
     check(part + ': controller references resolve', all(c in controllers for c in attach['render_controllers']))
-    check(part + ': transparent material, no custom animation', attach['materials'] == {'default': 'entity_alphatest'} and 'animations' not in attach)
+    check(part + ': original transparent material plus additive glow', attach['materials'] == {'default': 'entity_alphatest', 'glow': 'entity_emissive_alpha'} and 'animations' not in attach)
     for tex in attach['textures'].values():
         check(part + ': worn texture exists', (RP / (tex + '.png')).is_file())
     texture = Image.open(RP / (attach['textures']['default'] + '.png'))
@@ -130,13 +132,13 @@ for folder, kind in [('behavior_packs', 'items'), ('resource_packs', 'attachable
         key = 'minecraft:item' if kind == 'items' else 'minecraft:attachable'
         definitions[data[key]['description']['identifier']] += 1
     check(kind + ': no duplicate Pinenite identifiers', definitions == collections.Counter({f'true_dn:pinenite_{p}': 1 for p in PARTS}))
-for folder in ['recipes', 'loot_tables', 'scripts']:
+for folder in ['recipes', 'loot_tables']:
     hits = [p for p in (ROOT / 'behavior_packs').glob(f'*/{folder}/**/*') if p.is_file() and b'true_dn:pinenite_' in p.read_bytes()]
     check('no Pinenite integration in ' + folder, not hits)
 
 manifests = [read(p) for p in ROOT.glob('*_packs/*/manifest.json')]
 headers = {m['header']['uuid']: m['header']['version'] for m in manifests}
-check('33 existing packs; no standalone preview pack', len(headers) == len(manifests) == 33)
+check('35 existing main packs; no standalone preview pack', len(headers) == len(manifests) == 35)
 for m in manifests:
     check('module versions ' + m['header']['uuid'], all(mod['version'] == m['header']['version'] for mod in m['modules']))
     for dep in m.get('dependencies', []):
@@ -145,31 +147,50 @@ for m in manifests:
             check('dependency ' + dep['uuid'], headers[dep['uuid']] == dep['version'])
 for path in ROOT.glob('world_*_packs.json'):
     data = read(path)
-    check('registration versions ' + path.name, all(headers[e['pack_id']] == e['version'] for e in data))
+    owned = {read(BP / 'manifest.json')['header']['uuid'], read(RP / 'manifest.json')['header']['uuid'], '2c5e0de8-0360-49ac-bfe5-339a2a0e62f2'}
+    for entry in data:
+        if headers.get(entry['pack_id']) != entry['version']:
+            preexisting_warnings.append({'file': path.name, 'pack_id': entry['pack_id'], 'registered': entry['version'], 'manifest': headers.get(entry['pack_id'])})
+    main_registration = json.loads(subprocess.check_output(['git', 'show', '196d0921f74dabf52f5692d5cb5251c1a733c13d:' + path.name], cwd=ROOT))
+    for entry in main_registration:
+        if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
+    check('other registrations preserved from main ' + path.name, data == main_registration)
     for copy in ROOT.glob('worlds/*/' + path.name):
-        check('root/world registration agreement ' + path.name, copy.read_bytes() == path.read_bytes())
+        original_copy = json.loads(subprocess.check_output(['git', 'show', '196d0921f74dabf52f5692d5cb5251c1a733c13d:' + copy.relative_to(ROOT).as_posix()], cwd=ROOT))
+        for entry in original_copy:
+            if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
+        check('world registration preserved from main ' + copy.as_posix(), read(copy) == original_copy)
 
 # Verify preservation against the clean checkout recorded at integration time.
 source = read(ROOT / 'docs/pinenite/source.json')
 git = ['git', '-c', 'safe.directory=' + ROOT.as_posix()]
-baseline = source['baseline_commit']
+baseline = '196d0921f74dabf52f5692d5cb5251c1a733c13d'
 def original(path):
     return subprocess.check_output(git + ['show', baseline + ':' + path.relative_to(ROOT).as_posix()], cwd=ROOT)
 
 old_atlas = json.loads(original(RP / 'textures/item_texture.json'))
 new_atlas = read(RP / 'textures/item_texture.json')
-for part in PARTS:
-    del new_atlas['texture_data']['pinenite_' + part]
 check('all pre-existing atlas entries preserved', new_atlas == old_atlas)
 check('existing Japanese localization bytes preserved', (RP / 'texts/ja_JP.lang').read_bytes().startswith(original(RP / 'texts/ja_JP.lang')))
 changed_tracked = subprocess.check_output(git + ['diff', '--name-only', '--diff-filter=MDRT', baseline], cwd=ROOT, text=True, encoding='utf-8').splitlines()
-allowed = set(source['files']) | {'docs/pinenite/README.md', 'docs/pinenite/validation_report.json', 'tools/validate_pinenite.py'}
+allowed = {
+    'package.json', 'tools/validate_pinenite.py',
+    (BP / 'manifest.json').relative_to(ROOT).as_posix(),
+    (BP / 'scripts/main.js').relative_to(ROOT).as_posix(),
+    (RP / 'manifest.json').relative_to(ROOT).as_posix(),
+    'behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json',
+    'world_behavior_packs.json', 'world_resource_packs.json',
+    'worlds/Bedrock level/world_behavior_packs.json', 'worlds/Bedrock level/world_resource_packs.json',
+    (RP / 'render_controllers/pinenite.render_controllers.json').relative_to(ROOT).as_posix(),
+} | {(BP / f'items/Deathnerite-Add-On/pinenite/armor/pinenite_{part}.json').relative_to(ROOT).as_posix() for part in PARTS} | {
+    (RP / f'attachables/deathnerite/pinenite/pinenite_{part}.json').relative_to(ROOT).as_posix() for part in PARTS}
 check('only documented existing files changed', set(changed_tracked) <= allowed)
-check('no existing equipment, scripts or shared renderer changed', not any('/items/' in p or '/models/' in p or '/attachables/' in p or '/scripts/' in p or '/render_controllers/' in p or p.endswith('.png') for p in changed_tracked))
+check('existing geometry and all textures unchanged', not any('/models/' in p or p.endswith('.png') for p in changed_tracked))
 
 report = {'static_validation': 'passed', 'check_count': len(checks), 'checks': checks,
+          'preexisting_registration_warnings': preexisting_warnings,
           'cube_counts': counts, 'total_cubes': sum(counts.values()),
           'minecraft_import_tested': False, 'minecraft_wear_and_animation_tested': False,
           'content_log_tested': False, 'server_deployed': False}
-(ROOT / 'docs/pinenite/validation_report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+(ROOT / 'docs/pinenite/combat_validation.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(json.dumps({k: v for k, v in report.items() if k != 'checks'}, indent=2))

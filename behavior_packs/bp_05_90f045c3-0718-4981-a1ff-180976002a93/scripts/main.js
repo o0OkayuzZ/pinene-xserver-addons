@@ -2,6 +2,7 @@ import { afterEvents, cloneItemStackInfo, Vector } from "./libraries/utils";
 import { ItemStack, system } from "@minecraft/server";
 import SmithingRecipes from "./SmithingRecipes";
 import "./components/main";
+import "./pinenite/main.js";
 const ItemTemplates = new Map();
 afterEvents.worldLoad.subscribe(() => {
     ItemTemplates.set('next', new ItemStack('true:next'));

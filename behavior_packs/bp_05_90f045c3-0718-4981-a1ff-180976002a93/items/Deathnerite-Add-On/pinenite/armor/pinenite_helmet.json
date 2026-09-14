@@ -9,18 +9,49 @@
       }
     },
     "components": {
-      "minecraft:display_name": {
-        "value": "item.true_dn:pinenite_helmet.name"
+      "minecraft:liquid_clipped": true,
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "true_dn:lore": [
+        "§r§4+1 Tireless"
+      ],
+      "true_dn:anti_knockback": {
+        "resistance": 0.25
+      },
+      "true_dn:remove_effects": {
+        "effect_ids": [
+          "mining_fatigue"
+        ]
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:trimmable_armors"
+        ]
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 50,
+        "slot": "armor_head"
+      },
+      "minecraft:durability": {
+        "max_durability": 976,
+        "damage_chance": {
+          "min": 60,
+          "max": 100
+        }
       },
       "minecraft:icon": {
         "textures": {
           "default": "pinenite_helmet"
         }
       },
-      "minecraft:max_stack_size": 1,
       "minecraft:wearable": {
         "slot": "slot.armor.head",
-        "protection": 0
+        "protection": 8
+      },
+      "minecraft:display_name": {
+        "value": "item.true_dn:pinenite_helmet.name"
       }
     }
   }
