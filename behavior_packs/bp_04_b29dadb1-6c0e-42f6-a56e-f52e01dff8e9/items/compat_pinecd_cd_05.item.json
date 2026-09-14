@@ -1,11 +1,11 @@
-{
-    "format_version":  "1.26.30",
+﻿{
+    "format_version":  "1.21.50",
     "minecraft:item":  {
                            "description":  {
                                                "identifier":  "pinecd:cd_05",
                                                "menu_category":  {
                                                                      "category":  "items",
-                                                                     "group":  "minecraft:itemGroup.name.record"
+                                                                     "group":  "itemGroup.name.record"
                                                                  }
                                            },
                            "components":  {
@@ -17,7 +17,7 @@
                                               "minecraft:record":  {
                                                                        "comparator_signal":  10,
                                                                        "duration":  199,
-                                                                       "sound_event":  "pinecd.record.05"
+                                                                       "sound_event":  "record.far"
                                                                    },
                                               "minecraft:icon":  {
                                                                      "textures":  {
