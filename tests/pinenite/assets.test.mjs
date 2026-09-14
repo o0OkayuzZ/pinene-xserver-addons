@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const bp = 'behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93';
 const rp = 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b';
-const base = '08b41ef55689c1dce2f5119f10ecbb1294f18812';
+const base = '196d0921f74dabf52f5692d5cb5251c1a733c13d';
 const parts = ['helmet', 'chestplate', 'leggings', 'boots'];
 const read = p => JSON.parse(readFileSync(root + p, 'utf8').replace(/^\uFEFF/, ''));
 const git = (...args) => execFileSync('git', args, { cwd: root });

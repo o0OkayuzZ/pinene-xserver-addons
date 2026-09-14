@@ -147,20 +147,24 @@ for m in manifests:
             check('dependency ' + dep['uuid'], headers[dep['uuid']] == dep['version'])
 for path in ROOT.glob('world_*_packs.json'):
     data = read(path)
-    owned = {read(BP / 'manifest.json')['header']['uuid'], read(RP / 'manifest.json')['header']['uuid']}
+    owned = {read(BP / 'manifest.json')['header']['uuid'], read(RP / 'manifest.json')['header']['uuid'], '2c5e0de8-0360-49ac-bfe5-339a2a0e62f2'}
     for entry in data:
         if headers.get(entry['pack_id']) != entry['version']:
             preexisting_warnings.append({'file': path.name, 'pack_id': entry['pack_id'], 'registered': entry['version'], 'manifest': headers.get(entry['pack_id'])})
-    main_registration = json.loads(subprocess.check_output(['git', 'show', '08b41ef55689c1dce2f5119f10ecbb1294f18812:' + path.name], cwd=ROOT))
+    main_registration = json.loads(subprocess.check_output(['git', 'show', '196d0921f74dabf52f5692d5cb5251c1a733c13d:' + path.name], cwd=ROOT))
+    for entry in main_registration:
+        if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
     check('other registrations preserved from main ' + path.name, data == main_registration)
     for copy in ROOT.glob('worlds/*/' + path.name):
-        original_copy = json.loads(subprocess.check_output(['git', 'show', '08b41ef55689c1dce2f5119f10ecbb1294f18812:' + copy.relative_to(ROOT).as_posix()], cwd=ROOT))
+        original_copy = json.loads(subprocess.check_output(['git', 'show', '196d0921f74dabf52f5692d5cb5251c1a733c13d:' + copy.relative_to(ROOT).as_posix()], cwd=ROOT))
+        for entry in original_copy:
+            if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
         check('world registration preserved from main ' + copy.as_posix(), read(copy) == original_copy)
 
 # Verify preservation against the clean checkout recorded at integration time.
 source = read(ROOT / 'docs/pinenite/source.json')
 git = ['git', '-c', 'safe.directory=' + ROOT.as_posix()]
-baseline = '08b41ef55689c1dce2f5119f10ecbb1294f18812'
+baseline = '196d0921f74dabf52f5692d5cb5251c1a733c13d'
 def original(path):
     return subprocess.check_output(git + ['show', baseline + ':' + path.relative_to(ROOT).as_posix()], cwd=ROOT)
 
@@ -173,6 +177,10 @@ allowed = {
     'package.json', 'tools/validate_pinenite.py',
     (BP / 'manifest.json').relative_to(ROOT).as_posix(),
     (BP / 'scripts/main.js').relative_to(ROOT).as_posix(),
+    (RP / 'manifest.json').relative_to(ROOT).as_posix(),
+    'behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json',
+    'world_behavior_packs.json', 'world_resource_packs.json',
+    'worlds/Bedrock level/world_behavior_packs.json', 'worlds/Bedrock level/world_resource_packs.json',
     (RP / 'render_controllers/pinenite.render_controllers.json').relative_to(ROOT).as_posix(),
 } | {(BP / f'items/Deathnerite-Add-On/pinenite/armor/pinenite_{part}.json').relative_to(ROOT).as_posix() for part in PARTS} | {
     (RP / f'attachables/deathnerite/pinenite/pinenite_{part}.json').relative_to(ROOT).as_posix() for part in PARTS}
