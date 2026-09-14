@@ -1,0 +1,306 @@
+{
+  "status": "PASS",
+  "baseline": "c60934c0",
+  "updatedTables": 33,
+  "specialUnchanged": [
+    "ancient_city_ice_box.json",
+    "bastion_treasure.json",
+    "buriedtreasure.json"
+  ],
+  "castleAndCommonTablesUnchanged": 57,
+  "activeLootTables": 475,
+  "existingJSONC": 6,
+  "nestedReferences": 424,
+  "simulations": {
+    "Mid": {
+      "table": "abandoned_mineshaft.json",
+      "chests": 10000,
+      "meanBaseDraws": 15.9964,
+      "physicalSlots": "not simulated; native merging/splitting requires game verification"
+    },
+    "End": {
+      "table": "ancient_city.json",
+      "chests": 10000,
+      "meanBaseDraws": 17.4794,
+      "physicalSlots": "not simulated; native merging/splitting requires game verification"
+    },
+    "High": {
+      "table": "igloo_chest.json",
+      "chests": 10000,
+      "meanBaseDraws": 16.4876,
+      "physicalSlots": "not simulated; native merging/splitting requires game verification"
+    },
+    "Early": {
+      "table": "shipwrecksupply.json",
+      "chests": 10000,
+      "meanBaseDraws": 14.9866,
+      "physicalSlots": "not simulated; native merging/splitting requires game verification"
+    }
+  },
+  "tables": {
+    "abandoned_mineshaft.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 6
+    },
+    "ancient_city.json": {
+      "profile": "End",
+      "baseDraws": {
+        "min": 15,
+        "max": 20
+      },
+      "preservedPools": 10
+    },
+    "bastion_bridge.json": {
+      "profile": "End",
+      "baseDraws": {
+        "min": 15,
+        "max": 20
+      },
+      "preservedPools": 8
+    },
+    "bastion_hoglin_stable.json": {
+      "profile": "End",
+      "baseDraws": {
+        "min": 15,
+        "max": 20
+      },
+      "preservedPools": 8
+    },
+    "bastion_other.json": {
+      "profile": "End",
+      "baseDraws": {
+        "min": 15,
+        "max": 20
+      },
+      "preservedPools": 8
+    },
+    "desert_pyramid.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 7
+    },
+    "end_city_treasure.json": {
+      "profile": "End",
+      "baseDraws": {
+        "min": 15,
+        "max": 20
+      },
+      "preservedPools": 8
+    },
+    "igloo_chest.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 6
+    },
+    "jungle_temple.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 7
+    },
+    "nether_bridge.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 7
+    },
+    "pillager_outpost.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 7
+    },
+    "ruined_portal.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 7
+    },
+    "shipwreck.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 7
+    },
+    "shipwrecksupply.json": {
+      "profile": "Early",
+      "baseDraws": {
+        "min": 13,
+        "max": 17
+      },
+      "preservedPools": 7
+    },
+    "shipwrecktreasure.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 7
+    },
+    "simple_dungeon.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 6
+    },
+    "spawn_bonus_chest.json": {
+      "profile": "Early",
+      "baseDraws": {
+        "min": 13,
+        "max": 17
+      },
+      "preservedPools": 6
+    },
+    "stronghold_corridor.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 7
+    },
+    "stronghold_crossing.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 6
+    },
+    "stronghold_library.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 7
+    },
+    "trial_chambers/corridor.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 6
+    },
+    "trial_chambers/entrance.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 6
+    },
+    "trial_chambers/intersection.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 6
+    },
+    "trial_chambers/intersection_barrel.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 6
+    },
+    "trial_chambers/supply.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 6
+    },
+    "underwater_ruin_big.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 6
+    },
+    "underwater_ruin_small.json": {
+      "profile": "Mid",
+      "baseDraws": {
+        "min": 14,
+        "max": 18
+      },
+      "preservedPools": 6
+    },
+    "village/village_desert_house.json": {
+      "profile": "Early",
+      "baseDraws": {
+        "min": 13,
+        "max": 17
+      },
+      "preservedPools": 6
+    },
+    "village/village_plains_house.json": {
+      "profile": "Early",
+      "baseDraws": {
+        "min": 13,
+        "max": 17
+      },
+      "preservedPools": 6
+    },
+    "village/village_savanna_house.json": {
+      "profile": "Early",
+      "baseDraws": {
+        "min": 13,
+        "max": 17
+      },
+      "preservedPools": 6
+    },
+    "village/village_snowy_house.json": {
+      "profile": "Early",
+      "baseDraws": {
+        "min": 13,
+        "max": 17
+      },
+      "preservedPools": 6
+    },
+    "village/village_taiga_house.json": {
+      "profile": "Early",
+      "baseDraws": {
+        "min": 13,
+        "max": 17
+      },
+      "preservedPools": 6
+    },
+    "woodland_mansion.json": {
+      "profile": "High",
+      "baseDraws": {
+        "min": 14,
+        "max": 19
+      },
+      "preservedPools": 8
+    }
+  }
+}

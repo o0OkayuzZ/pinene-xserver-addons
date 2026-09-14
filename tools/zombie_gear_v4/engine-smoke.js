@@ -1,4 +1,5 @@
-// Copy into the isolated test pack only; production does not import this file.
+// Historical v4 probe, retained for the old report only. For FINAL use engine-final-smoke.js.
+// Do not copy this old probe into FINAL packs.
 import { world, system, ItemStack, EquipmentSlot, EntityDamageCause } from "@minecraft/server";
 import { corruption, revives, tryRevive, setScore, SCORE, forceMaxHpState } from "./main.js";
 const report = (name, actual, expected) => console.warn(`[ZG-ENGINE] ${Math.abs(actual-expected)<0.001 ? "PASS" : "FAIL"} ${name}: actual=${actual} expected=${expected}`);

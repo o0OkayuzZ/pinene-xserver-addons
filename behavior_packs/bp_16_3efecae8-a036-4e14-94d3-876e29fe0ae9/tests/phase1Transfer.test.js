@@ -5,6 +5,8 @@ test("transfer reserves arrival grace immediately before teleport and finishes o
     const calls = [],
         scheduled = [];
     const player = {
+        getDynamicProperty() {}, setDynamicProperty() {},
+        getComponent(id) { return id.endsWith('inventory') ? {container:{size:0}} : {getEquipment(){}}; },
         location: { x: 0, y: 0, z: 0 },
         dimension: { spawnParticle() {} },
         camera: { setCamera() {}, clear() {}, fade() {} },

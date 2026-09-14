@@ -1,13 +1,46 @@
 import { world, system, EntityDamageCause } from "@minecraft/server";
-import { infectionAt, damageMultiplier, INFECTION_CD, REVIVE_TICKS } from "./rules.js";
+import { infectionAt, damageMultiplier, INFECTION_CD } from "./rules.js";
 
-// No global entity/player JSON override: this pack coexists with the other addons.
+// Attacker attribution alone does not make projectiles or scripted damage melee.
+function isDirectMelee(source) {
+  return source.cause === EntityDamageCause.entityAttack && !source.damagingProjectile &&
+    !!source.damagingEntity;
+}
+
+// Combat leaves nonlethal native armor, enchantment and absorption processing intact.
 export function installCombat(gear) {
   const infections = new Map();
   const pairCooldowns = new Map();
-  const recoveryUntil = new Map();
   const pending = new Map();
-  const syntheticDamage = new Set();
+  const replaying = new Set();
+  const absorption = new Map();
+  const absorptionEffects = new Map();
+  const nativeHits = new Map();
+
+  function absorptionLeft(entity) {
+    const effect = entity.getEffect("absorption");
+    if (!effect) { absorption.delete(entity.id); absorptionEffects.delete(entity.id); return 0; }
+    const previous = absorptionEffects.get(entity.id);
+    if (previous && (effect.amplifier !== previous.amplifier ||
+        effect.duration > previous.duration - (system.currentTick - previous.tick) + 1)) {
+      rememberAbsorption(entity, 4 * (effect.amplifier + 1));
+    }
+    absorptionEffects.set(entity.id, {amplifier:effect.amplifier,duration:effect.duration,tick:system.currentTick});
+    const saved = entity.getDynamicProperty("zombiegear:absorption_left");
+    return absorption.get(entity.id) ?? (typeof saved === "number" ? saved : 4 * (entity.getEffect("absorption").amplifier + 1));
+  }
+  function rememberAbsorption(entity, amount) {
+    absorption.set(entity.id, Math.max(0, amount));
+    entity.setDynamicProperty("zombiegear:absorption_left", Math.max(0, amount));
+  }
+  world.afterEvents.effectAdd.subscribe(ev => {
+    let effectId;
+    try { effectId = ev.effect.typeId; } catch { return; }
+    if (ev.entity.isValid && effectId.replace("minecraft:", "") === "absorption") {
+      rememberAbsorption(ev.entity, 4 * (ev.effect.amplifier + 1));
+      absorptionEffects.set(ev.entity.id, {amplifier:ev.effect.amplifier,duration:ev.effect.duration,tick:system.currentTick});
+    }
+  });
 
   function stage(entity) {
     return entity ? infectionAt(infections.get(entity.id), system.currentTick) : 0;
@@ -22,8 +55,7 @@ export function installCombat(gear) {
 
   function infect(victim, source) {
     const attacker = source.damagingEntity;
-    if (!attacker || source.damagingProjectile || source.cause !== EntityDamageCause.entityAttack ||
-        !gear.isFull(attacker)) return;
+    if (!isDirectMelee(source) || !gear.isFull(attacker)) return;
     let victims = pairCooldowns.get(attacker.id);
     if (!victims) pairCooldowns.set(attacker.id, victims = new Map());
     if ((victims.get(victim.id) ?? -Infinity) > system.currentTick) return;
@@ -35,21 +67,23 @@ export function installCombat(gear) {
   }
 
   function markCombat(victim, source) {
+    const attacker = source.damagingEntity;
+    if (!attacker || attacker.id === victim.id) return;
     gear.markCombat(victim);
-    if (source.damagingEntity) gear.markCombat(source.damagingEntity);
+    gear.markCombat(attacker);
   }
 
-  // Used only for the fatal remainder of a canceled hit. The guard covers both
-  // before/after callbacks, so it cannot multiply damage or infect a second time.
-  function finishFatalDamage(victim, source) {
-    syntheticDamage.add(victim.id);
+  // Canceled lethal candidates are replayed only when a transaction cannot recover.
+  // Normal and post-revive damage always use the native path (including absorption).
+  function replay(victim, hit) {
+    replaying.add(victim.id);
     try {
+      /** @type {import("@minecraft/server").EntityApplyDamageOptions} */
+      // hit.damage is already armor-mitigated by the native before event.
       const options = { cause: EntityDamageCause.override };
-      if (source.damagingEntity?.isValid) options.damagingEntity = source.damagingEntity;
-      victim.applyDamage(1000000, options);
-    } finally {
-      syntheticDamage.delete(victim.id);
-    }
+      if (hit.source.damagingEntity?.isValid) options.damagingEntity = hit.source.damagingEntity;
+      victim.applyDamage(hit.damage, options);
+    } finally { replaying.delete(victim.id); }
   }
 
   function flush(victim) {
@@ -60,33 +94,35 @@ export function installCombat(gear) {
       const health = victim.getComponent("minecraft:health");
       if (!health || health.currentValue <= 0) break;
       markCombat(victim, hit.source);
-      infect(victim, hit.source);
-      if (hit.damage >= health.currentValue && gear.tryRevive(victim)) {
-        recoveryUntil.set(victim.id, system.currentTick + REVIVE_TICKS);
-      } else if (hit.damage >= health.currentValue) {
-        finishFatalDamage(victim, hit.source);
-        break;
-      } else {
-        // Canceling the native hurt avoids knockback. Health still decreases for
-        // EVERY queued hit; no resistance, repeated healing, or immunity timer.
-        health.setCurrentValue(health.currentValue - hit.damage);
-      }
+      if (hit.damage >= health.currentValue + absorptionLeft(victim) && gear.tryRevive(victim)) {
+        const absorbed = absorptionLeft(victim);
+        if (absorbed > 0) replay(victim, { damage: absorbed, source: hit.source });
+        infect(victim, hit.source);
+      } else replay(victim, hit);
     }
   }
 
   world.beforeEvents.entityHurt.subscribe(ev => {
     const victim = ev.hurtEntity;
-    if (ev.cancel || syntheticDamage.has(victim.id) || ev.damage <= 0) return;
-    const attacker = ev.damageSource.damagingEntity;
-    const full = !!attacker && gear.isFull(attacker);
-    const corruption = full ? gear.corruption(attacker) : -1;
-    const multiplier = damageMultiplier(corruption, stage(attacker), stage(victim), full);
-    ev.damage *= multiplier;
+    if (ev.cancel || ev.damage <= 0) return;
     const health = victim.getComponent("minecraft:health");
     if (!health) return;
-    const recovering = (recoveryUntil.get(victim.id) ?? 0) > system.currentTick && gear.isFull(victim);
-    const lethal = ev.damage >= health.currentValue && gear.canRevive(victim);
-    if (!pending.has(victim.id) && !recovering && !lethal) return;
+    // Bedrock 1.26.45 exposes provisional post-hit HP here, BEFORE absorption.
+    const beforeHp = health.currentValue + ev.damage;
+    if (replaying.has(victim.id)) {
+      nativeHits.set(victim.id, { beforeHp, damage: ev.damage, absorption: absorptionLeft(victim), synthetic: true });
+      return;
+    }
+    const attacker = ev.damageSource.damagingEntity;
+    const full = !!attacker && gear.isFull(attacker);
+    const corruption = full && isDirectMelee(ev.damageSource) ? gear.corruption(attacker) : -1;
+    const multiplier = damageMultiplier(corruption, stage(attacker), stage(victim));
+    ev.damage *= multiplier;
+    const lethal = ev.damage >= beforeHp + absorptionLeft(victim) && beforeHp > 0 && gear.canRevive(victim);
+    if (!pending.has(victim.id) && !lethal) {
+      nativeHits.set(victim.id, { beforeHp, damage: ev.damage, absorption: absorptionLeft(victim) });
+      return;
+    }
 
     ev.cancel = true;
     let hits = pending.get(victim.id);
@@ -98,7 +134,16 @@ export function installCombat(gear) {
   });
 
   world.afterEvents.entityHurt.subscribe(ev => {
-    if (ev.damage <= 0 || syntheticDamage.has(ev.hurtEntity.id)) return;
+    const hit = nativeHits.get(ev.hurtEntity.id);
+    nativeHits.delete(ev.hurtEntity.id);
+    if (hit && ev.hurtEntity.isValid) {
+      const afterHp = ev.hurtEntity.getComponent("minecraft:health")?.currentValue;
+      if (afterHp !== undefined) {
+        const absorbed = Math.min(hit.absorption, Math.max(0, afterHp - (hit.beforeHp - ev.damage)));
+        rememberAbsorption(ev.hurtEntity, hit.absorption - absorbed);
+      }
+    }
+    if (ev.damage <= 0 || hit?.synthetic || replaying.has(ev.hurtEntity.id)) return;
     markCombat(ev.hurtEntity, ev.damageSource);
     infect(ev.hurtEntity, ev.damageSource);
   });
@@ -109,8 +154,10 @@ export function installCombat(gear) {
 
   function clear(id) {
     infections.delete(id);
-    recoveryUntil.delete(id);
     pending.delete(id);
+    absorption.delete(id);
+    absorptionEffects.delete(id);
+    nativeHits.delete(id);
     pairCooldowns.delete(id);
     for (const victims of pairCooldowns.values()) victims.delete(id);
   }
@@ -126,7 +173,6 @@ export function installCombat(gear) {
       }
       if (!current) infections.delete(id);
     }
-    for (const [id, until] of recoveryUntil) if (until <= system.currentTick) recoveryUntil.delete(id);
     for (const [attacker, victims] of pairCooldowns) {
       for (const [victim, until] of victims) if (until <= system.currentTick) victims.delete(victim);
       if (!victims.size) pairCooldowns.delete(attacker);

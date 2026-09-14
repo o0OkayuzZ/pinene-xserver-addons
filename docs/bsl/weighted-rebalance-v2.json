@@ -1,0 +1,703 @@
+{
+  "schema": 1,
+  "baseline": "c60934c0",
+  "profileRolls": {
+    "Early": {
+      "min": 13,
+      "max": 17
+    },
+    "Mid": {
+      "min": 14,
+      "max": 18
+    },
+    "High": {
+      "min": 14,
+      "max": 19
+    },
+    "End": {
+      "min": 15,
+      "max": 20
+    }
+  },
+  "specialUntouched": [
+    "ancient_city_ice_box.json",
+    "bastion_treasure.json",
+    "buriedtreasure.json"
+  ],
+  "tables": {
+    "abandoned_mineshaft.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 42,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "ancient_city.json": {
+      "status": "rebuilt",
+      "profile": "End",
+      "newBaseRolls": {
+        "min": 15,
+        "max": 20
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 10,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent",
+        "pool 14: independent",
+        "pool 15: independent"
+      ],
+      "normalizedWeightTotal": 100000
+    },
+    "ancient_city_ice_box.json": {
+      "profile": "Special",
+      "status": "untouched"
+    },
+    "bastion_bridge.json": {
+      "status": "rebuilt",
+      "profile": "End",
+      "newBaseRolls": {
+        "min": 15,
+        "max": 20
+      },
+      "ordinaryEntryCount": 43,
+      "preservedPoolCount": 8,
+      "preservedPools": [
+        "pool 7: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent",
+        "pool 14: independent",
+        "pool 15: independent"
+      ],
+      "normalizedWeightTotal": 100002
+    },
+    "bastion_hoglin_stable.json": {
+      "status": "rebuilt",
+      "profile": "End",
+      "newBaseRolls": {
+        "min": 15,
+        "max": 20
+      },
+      "ordinaryEntryCount": 42,
+      "preservedPoolCount": 8,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent",
+        "pool 14: independent"
+      ],
+      "normalizedWeightTotal": 100002
+    },
+    "bastion_other.json": {
+      "status": "rebuilt",
+      "profile": "End",
+      "newBaseRolls": {
+        "min": 15,
+        "max": 20
+      },
+      "ordinaryEntryCount": 42,
+      "preservedPoolCount": 8,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent",
+        "pool 14: independent"
+      ],
+      "normalizedWeightTotal": 100006
+    },
+    "bastion_treasure.json": {
+      "profile": "Special",
+      "status": "untouched"
+    },
+    "buriedtreasure.json": {
+      "profile": "Special",
+      "status": "untouched"
+    },
+    "desert_pyramid.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 39,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "end_city_treasure.json": {
+      "status": "rebuilt",
+      "profile": "End",
+      "newBaseRolls": {
+        "min": 15,
+        "max": 20
+      },
+      "ordinaryEntryCount": 42,
+      "preservedPoolCount": 8,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent"
+      ],
+      "normalizedWeightTotal": 100002
+    },
+    "igloo_chest.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 33,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100007
+    },
+    "jungle_temple.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 39,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent"
+      ],
+      "normalizedWeightTotal": 100000
+    },
+    "nether_bridge.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 43,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent"
+      ],
+      "normalizedWeightTotal": 100004
+    },
+    "pillager_outpost.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 40,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent"
+      ],
+      "normalizedWeightTotal": 99998
+    },
+    "ruined_portal.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 40,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent"
+      ],
+      "normalizedWeightTotal": 100000
+    },
+    "shipwreck.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 43,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent"
+      ],
+      "normalizedWeightTotal": 99999
+    },
+    "shipwrecksupply.json": {
+      "status": "rebuilt",
+      "profile": "Early",
+      "newBaseRolls": {
+        "min": 13,
+        "max": 17
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "shipwrecktreasure.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 44,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "simple_dungeon.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100000
+    },
+    "spawn_bonus_chest.json": {
+      "status": "rebuilt",
+      "profile": "Early",
+      "newBaseRolls": {
+        "min": 13,
+        "max": 17
+      },
+      "ordinaryEntryCount": 38,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100003
+    },
+    "stronghold_corridor.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 40,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "stronghold_crossing.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 40,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 99999
+    },
+    "stronghold_library.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 40,
+      "preservedPoolCount": 7,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "trial_chambers/corridor.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "trial_chambers/entrance.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "trial_chambers/intersection.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "trial_chambers/intersection_barrel.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "trial_chambers/supply.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100001
+    },
+    "underwater_ruin_big.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 44,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent"
+      ],
+      "normalizedWeightTotal": 100005
+    },
+    "underwater_ruin_small.json": {
+      "status": "rebuilt",
+      "profile": "Mid",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 18
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent"
+      ],
+      "normalizedWeightTotal": 99999
+    },
+    "village/village_desert_house.json": {
+      "status": "rebuilt",
+      "profile": "Early",
+      "newBaseRolls": {
+        "min": 13,
+        "max": 17
+      },
+      "ordinaryEntryCount": 36,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 99998
+    },
+    "village/village_plains_house.json": {
+      "status": "rebuilt",
+      "profile": "Early",
+      "newBaseRolls": {
+        "min": 13,
+        "max": 17
+      },
+      "ordinaryEntryCount": 36,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 99999
+    },
+    "village/village_savanna_house.json": {
+      "status": "rebuilt",
+      "profile": "Early",
+      "newBaseRolls": {
+        "min": 13,
+        "max": 17
+      },
+      "ordinaryEntryCount": 36,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100000
+    },
+    "village/village_snowy_house.json": {
+      "status": "rebuilt",
+      "profile": "Early",
+      "newBaseRolls": {
+        "min": 13,
+        "max": 17
+      },
+      "ordinaryEntryCount": 36,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 99999
+    },
+    "village/village_taiga_house.json": {
+      "status": "rebuilt",
+      "profile": "Early",
+      "newBaseRolls": {
+        "min": 13,
+        "max": 17
+      },
+      "ordinaryEntryCount": 36,
+      "preservedPoolCount": 6,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent"
+      ],
+      "normalizedWeightTotal": 100000
+    },
+    "woodland_mansion.json": {
+      "status": "rebuilt",
+      "profile": "High",
+      "newBaseRolls": {
+        "min": 14,
+        "max": 19
+      },
+      "ordinaryEntryCount": 41,
+      "preservedPoolCount": 8,
+      "preservedPools": [
+        "pool 6: independent",
+        "pool 7: independent",
+        "pool 8: independent",
+        "pool 9: independent",
+        "pool 10: independent",
+        "pool 11: independent",
+        "pool 12: independent",
+        "pool 13: independent"
+      ],
+      "normalizedWeightTotal": 99998
+    }
+  },
+  "summary": {
+    "rebuilt": 33,
+    "specialUntouched": 3,
+    "profiles": {
+      "Early": 7,
+      "Mid": 10,
+      "High": 11,
+      "End": 5,
+      "Special": 3
+    }
+  }
+}

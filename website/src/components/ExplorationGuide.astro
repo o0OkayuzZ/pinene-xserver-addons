@@ -1,0 +1,45 @@
+---
+import GuideCard from './GuideCard.astro';
+import { entries } from '../lib/guide';
+import { withBase } from '../lib/data';
+import guides from '../data/exploration-guides.json';
+interface Props { contentId: string }
+const { contentId } = Astro.props;
+const guide = guides.find(item => item.contentId === contentId);
+const groups = guide?.groups.map(group => ({ ...group, items: group.entries.flatMap(id => {
+  const entry = entries.find(item => item.id === id && item.contentId === contentId);
+  return entry ? [entry] : [];
+}) })).filter(group => group.items.length) ?? [];
+---
+{guide && <section class="section exploration-guide" aria-labelledby="exploration-guide-title">
+ <div class="shell">
+  <h2 id="exploration-guide-title">{guide.title}</h2>
+  <p class="lede">{guide.intro}</p>
+  <nav class="exploration-nav" aria-label="種類別の図鑑一覧">
+   {groups.map(group => <a href={`#guide-${group.id}`}>{group.title} <span>{group.items.length}</span></a>)}
+  </nav>
+  {contentId === 'mycology' && <div class="panel guide-start"><h3>まずは、持ち歩けるキノコ図鑑を。</h3><p>本・赤色キノコ・茶色キノコを各1個使う、配置自由のレシピです。</p><a class="button" href={withBase('/database/entries/craft-mushroom-field-guide/')}>キノコ図鑑を作る</a><p class="caption">以下はゲーム内の設定です。現実のキノコの食用判断には使えません。</p></div>}
+  {groups.map(group => <section id={`guide-${group.id}`} class="exploration-group" aria-labelledby={`guide-title-${group.id}`}>
+   <h3 id={`guide-title-${group.id}`}>{group.title} <small>{group.items.length}件</small></h3>
+   <div class="guide-grid">{group.items.slice(0,4).map(entry => <GuideCard entry={entry}/>)}</div>
+   {group.items.length > 4 && <details class="exploration-more"><summary>{group.title}の残り{group.items.length - 4}件を見る</summary><div class="guide-grid">{group.items.slice(4).map(entry => <GuideCard entry={entry}/>)}</div></details>}
+  </section>)}
+  <p class="caption">説明はコードで確認した内容です。最新のゲーム内操作・演出の見え方をすべて実機確認したものではありません。</p>
+  <a class="button" href={withBase(`/database/items/?content=${contentId}`)}>このコンテンツの図鑑を検索する</a>
+ </div>
+</section>}
+<style>
+ .exploration-guide{background:#e9ece3}
+ .exploration-nav{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.5rem 0 2rem}
+ .exploration-nav a{background:#fff;border:2px solid #262d22;padding:.7rem .8rem;font-weight:800;text-decoration:none;color:#222}
+ .exploration-nav span{margin-left:.5rem;color:#446c31}
+ .guide-start{border-left:6px solid #548837}
+ .exploration-group{scroll-margin-top:6rem;margin:3rem 0}
+ .exploration-group h3{font-size:clamp(1.35rem,3vw,2rem)}
+ .exploration-group small{font-size:.85rem;color:#526346;white-space:nowrap}
+ .exploration-more{margin-top:1rem;border:2px solid #bcc5b2;background:#f6f7f2}
+ .exploration-more summary{padding:1rem;cursor:pointer;font-weight:800}
+ .exploration-more[open] .guide-grid{padding:0 1rem 1rem}
+ .exploration-more summary:focus-visible{outline:3px solid #3b6d20;outline-offset:3px}
+ @media(max-width:600px){.exploration-nav a{flex:1 1 43%;font-size:.85rem}.exploration-more[open] .guide-grid{padding:0 .5rem .5rem}}
+</style>

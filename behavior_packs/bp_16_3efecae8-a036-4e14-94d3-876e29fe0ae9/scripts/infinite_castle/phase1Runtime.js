@@ -407,7 +407,10 @@ function stockReward(r) {
     try {
         deliverRoomReward(r, c, {
             persist,
-            insert: (slot, guaranteed) => dim().runCommand(
+            insert: slot => dim().runCommand(
+                `loot replace block ${p.x} ${p.y} ${p.z} slot.container ${slot} 1 loot "chests/infinite_castle/slots/${r.kind === "treasure_vault" ? "treasure_vault" : r.encounterType}_v4"`,
+            ),
+            insertLegacy: (slot, guaranteed) => dim().runCommand(
                 `loot replace block ${p.x} ${p.y} ${p.z} slot.container ${slot} 1 loot "${slotLootTableFor(r.kind === "treasure_vault" ? "treasure_vault" : r.encounterType, guaranteed)}"`,
             ),
         });

@@ -2,20 +2,20 @@
   "pools": [
     {
       "rolls": {
-        "min": 3,
-        "max": 5
+        "min": 14,
+        "max": 18
       },
       "entries": [
         {
           "type": "item",
           "name": "minecraft:rail",
-          "weight": 16,
+          "weight": 4354,
           "functions": [
             {
               "function": "set_count",
               "count": {
-                "min": 16,
-                "max": 40
+                "min": 4,
+                "max": 10
               }
             }
           ]
@@ -23,13 +23,13 @@
         {
           "type": "item",
           "name": "minecraft:powered_rail",
-          "weight": 8,
+          "weight": 2177,
           "functions": [
             {
               "function": "set_count",
               "count": {
-                "min": 6,
-                "max": 18
+                "min": 2,
+                "max": 5
               }
             }
           ]
@@ -37,13 +37,13 @@
         {
           "type": "item",
           "name": "minecraft:detector_rail",
-          "weight": 5,
+          "weight": 1361,
           "functions": [
             {
               "function": "set_count",
               "count": {
-                "min": 4,
-                "max": 12
+                "min": 1,
+                "max": 3
               }
             }
           ]
@@ -51,13 +51,13 @@
         {
           "type": "item",
           "name": "minecraft:activator_rail",
-          "weight": 5,
+          "weight": 1361,
           "functions": [
             {
               "function": "set_count",
               "count": {
-                "min": 4,
-                "max": 12
+                "min": 1,
+                "max": 3
               }
             }
           ]
@@ -65,13 +65,13 @@
         {
           "type": "item",
           "name": "minecraft:glow_berries",
-          "weight": 10,
+          "weight": 2721,
           "functions": [
             {
               "function": "set_count",
               "count": {
-                "min": 4,
-                "max": 12
+                "min": 1,
+                "max": 3
               }
             }
           ]
@@ -79,225 +79,7 @@
         {
           "type": "item",
           "name": "minecraft:lantern",
-          "weight": 7,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 2,
-                "max": 8
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:name_tag",
-          "weight": 5
-        },
-        {
-          "type": "item",
-          "name": "minecraft:diamond_pickaxe",
-          "weight": 4,
-          "functions": [
-            {
-              "function": "enchant_randomly"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 7,
-        "max": 9
-      },
-      "entries": [
-        {
-          "type": "item",
-          "name": "minecraft:iron_ingot",
-          "weight": 15,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 8,
-                "max": 24
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:gold_ingot",
-          "weight": 14,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 6,
-                "max": 20
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:emerald",
-          "weight": 13,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 5,
-                "max": 16
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:copper_ingot",
-          "weight": 10,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 10,
-                "max": 32
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:lapis_lazuli",
-          "weight": 8,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 12,
-                "max": 36
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:redstone",
-          "weight": 8,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 12,
-                "max": 36
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:diamond",
-          "weight": 12,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 4,
-                "max": 12
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 2,
-        "max": 3
-      },
-      "entries": [
-        {
-          "type": "item",
-          "name": "minecraft:iron_block",
-          "weight": 13,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 4
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:gold_block",
-          "weight": 12,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 4
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:emerald_block",
-          "weight": 12,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 4
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:diamond_block",
-          "weight": 4,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 3,
-        "max": 5
-      },
-      "entries": [
-        {
-          "type": "item",
-          "name": "minecraft:golden_carrot",
-          "weight": 14,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 2,
-                "max": 8
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:golden_apple",
-          "weight": 8,
+          "weight": 1905,
           "functions": [
             {
               "function": "set_count",
@@ -310,36 +92,23 @@
         },
         {
           "type": "item",
-          "name": "minecraft:cooked_beef",
-          "weight": 11,
+          "name": "minecraft:name_tag",
+          "weight": 1361
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_pickaxe",
+          "weight": 1088,
           "functions": [
             {
-              "function": "set_count",
-              "count": {
-                "min": 4,
-                "max": 12
-              }
+              "function": "enchant_randomly"
             }
           ]
         },
         {
           "type": "item",
-          "name": "minecraft:cooked_porkchop",
-          "weight": 11,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 4,
-                "max": 12
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:pumpkin_pie",
-          "weight": 8,
+          "name": "minecraft:iron_ingot",
+          "weight": 6122,
           "functions": [
             {
               "function": "set_count",
@@ -352,101 +121,41 @@
         },
         {
           "type": "item",
-          "name": "minecraft:baked_potato",
-          "weight": 10,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 4,
-                "max": 12
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:honey_bottle",
-          "weight": 6,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 4
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 3,
-        "max": 4
-      },
-      "entries": [
-        {
-          "type": "item",
-          "name": "minecraft:experience_bottle",
-          "weight": 15,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 4,
-                "max": 16
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:name_tag",
-          "weight": 8
-        },
-        {
-          "type": "item",
-          "name": "minecraft:bundle",
-          "weight": 6
-        },
-        {
-          "type": "item",
-          "name": "minecraft:ender_pearl",
-          "weight": 8,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 4
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:torch",
-          "weight": 8,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 8,
-                "max": 24
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:lantern",
-          "weight": 6,
+          "name": "minecraft:gold_ingot",
+          "weight": 5714,
           "functions": [
             {
               "function": "set_count",
               "count": {
                 "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "weight": 5306,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:copper_ingot",
+          "weight": 4082,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
                 "max": 8
               }
             }
@@ -454,13 +163,239 @@
         },
         {
           "type": "item",
-          "name": "minecraft:bucket",
-          "weight": 5
+          "name": "minecraft:lapis_lazuli",
+          "weight": 3265,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 9
+              }
+            }
+          ]
         },
         {
           "type": "item",
-          "name": "minecraft:book",
-          "weight": 7,
+          "name": "minecraft:redstone",
+          "weight": 3265,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 9
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "weight": 4898,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_block",
+          "weight": 3235,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_block",
+          "weight": 2987,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald_block",
+          "weight": 2987,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_block",
+          "weight": 996,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:golden_carrot",
+          "weight": 3361,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:golden_apple",
+          "weight": 1921,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:cooked_beef",
+          "weight": 2641,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:cooked_porkchop",
+          "weight": 2641,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:pumpkin_pie",
+          "weight": 1921,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:baked_potato",
+          "weight": 2401,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:honey_bottle",
+          "weight": 1441,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:experience_bottle",
+          "weight": 3401,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:name_tag",
+          "weight": 1814
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bundle",
+          "weight": 1361
+        },
+        {
+          "type": "item",
+          "name": "minecraft:ender_pearl",
+          "weight": 1814,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:torch",
+          "weight": 1814,
           "functions": [
             {
               "function": "set_count",
@@ -470,19 +405,44 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 2,
-        "max": 3
-      },
-      "entries": [
+        },
+        {
+          "type": "item",
+          "name": "minecraft:lantern",
+          "weight": 1361,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bucket",
+          "weight": 1134
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 1587,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
         {
           "type": "item",
           "name": "minecraft:iron_pickaxe",
-          "weight": 5,
+          "weight": 1244,
           "functions": [
             {
               "function": "enchant_randomly"
@@ -492,7 +452,7 @@
         {
           "type": "item",
           "name": "minecraft:diamond_pickaxe",
-          "weight": 5,
+          "weight": 1244,
           "functions": [
             {
               "function": "enchant_randomly"
@@ -502,7 +462,7 @@
         {
           "type": "item",
           "name": "minecraft:diamond_sword",
-          "weight": 4,
+          "weight": 996,
           "functions": [
             {
               "function": "enchant_randomly"
@@ -512,7 +472,7 @@
         {
           "type": "item",
           "name": "minecraft:iron_chestplate",
-          "weight": 5,
+          "weight": 1244,
           "functions": [
             {
               "function": "enchant_randomly"
@@ -522,7 +482,7 @@
         {
           "type": "item",
           "name": "minecraft:diamond_chestplate",
-          "weight": 3,
+          "weight": 747,
           "functions": [
             {
               "function": "enchant_randomly"
@@ -532,7 +492,7 @@
         {
           "type": "item",
           "name": "minecraft:book",
-          "weight": 8,
+          "weight": 1991,
           "functions": [
             {
               "function": "enchant_randomly"
@@ -542,7 +502,7 @@
         {
           "type": "item",
           "name": "minecraft:bow",
-          "weight": 6,
+          "weight": 1493,
           "functions": [
             {
               "function": "enchant_randomly"
@@ -552,7 +512,7 @@
         {
           "type": "item",
           "name": "minecraft:crossbow",
-          "weight": 5,
+          "weight": 1244,
           "functions": [
             {
               "function": "enchant_randomly"

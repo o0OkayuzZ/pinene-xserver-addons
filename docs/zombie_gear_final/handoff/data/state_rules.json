@@ -1,0 +1,49 @@
+{
+  "effectiveCorruption": "minimum equipped stage across all 4 Zombie Gear pieces",
+  "maxRevivesByEffectiveC": [
+    4,
+    3,
+    2,
+    1,
+    0
+  ],
+  "knockbackResistanceTotalByEffectiveC": [
+    0.4,
+    0.56,
+    0.72,
+    0.88,
+    1.0
+  ],
+  "corruptionAttackMultiplierByEffectiveC": [
+    1.0,
+    1.1,
+    1.3,
+    1.7,
+    2.5
+  ],
+  "defenseProtection": {
+    "helmet": 2,
+    "chestplate": 4,
+    "leggings": 4,
+    "boots": 1
+  },
+  "onRevive": {
+    "stockDelta": -1,
+    "targetStage": "min(4, effectiveC + 1)",
+    "normalizeEquippedPiecesToTarget": true,
+    "restoreHp": 40
+  },
+  "onStemCellCharge": {
+    "durationTicks": 160,
+    "ifEffectiveCGreaterThan0": {
+      "targetStage": "effectiveC - 1",
+      "normalizeEquippedPiecesToTarget": true,
+      "stockDelta": 1
+    },
+    "ifEffectiveCEquals0": {
+      "targetStage": 0,
+      "stockDelta": 1,
+      "maxStock": 4
+    }
+  }
+}

@@ -1,0 +1,48 @@
+﻿PASS corruption damage multiplier excludes the zombie gear strength slot bonus
+PASS infection attack/defense and c4 severe product
+PASS infection decay boundaries 10/15/20/25 seconds
+PASS HP80 full / HP20 partial / no boost removal for unrelated player
+PASS one-time legacy charge migration keeps item IDs
+PASS four revives consume resources and advance all four stages
+PASS c4 stock clamps to zero and cannot revive
+PASS revive uses visible red flash and layered local revive sounds
+PASS mixed stages use minimum C without rewriting, successful revive normalizes
+PASS swap preserves durability enchantments name lore locks and dynamic properties
+PASS using a zombie stem cell alone does not start or complete a charge
+PASS 8-second sneak charge consumes one zombie stem cell only at completion, keeps c0
+PASS four single-stack zombie stem cells can fill all four revive charges
+PASS melee infection has 40-tick pair cooldown; projectiles do not infect
+PASS milk clears infection and is not blocked by full-set diet
+PASS nonlethal low-HP hit cannot consume a revive
+PASS lethal hit revives, next queued hit still damages during recovery
+PASS multiple same-tick lethal hits consume distinct revives; native remainder
+PASS post-hurt and death cannot consume stock on a dead entity
+PASS partial armor has no diet restriction
+PASS full set normal food keeps hunger and saturation unchanged but allows item buffs
+PASS rotten flesh is the only food that directly heals full zombie gear
+PASS night natural healing remains a full-set zombie gear ability
+PASS failed equipment write rolls back all slots and retains revive
+PASS relogging with own HP boost does not restore HP80 after unequipping
+PASS pre-existing external health boost is restored on removal
+PASS full zombie gear manages strength in the potion slot and adds one level
+PASS infection debuffs apply once to infected mob outgoing damage
+PASS sneak control shows progress; release cancels without eating a zombie stem cell
+PASS finished sneak charge needs release before another starts
+PASS full-set recovery potion restriction allows absorption but blocks regeneration and instant health
+PASS milk/damage correction cannot accidentally invoke the old healing penalty
+PASS all reverse transitions work even at current revive cap
+PASS charge aborts on held slot change, release, or equipment change
+PASS environmental damage allows charge; attacker damage cancels it
+PASS native damage and absorption remain active during recovery
+PASS all native KB stages and mixed C1 select one group
+PASS native silent Strength replacement is observed and restored
+PASS equal amplifier 14 external Health Boost is preserved
+PASS cake restores hunger/saturation through block interaction
+PASS failed cleanse rolls back mixed originals and does not consume cell
+PASS legacy health ownership restores saved external boost even when loading unequipped
+PASS localized Japanese effect names block healing without blocking absorption
+PASS removed native effect objects are harmless in deferred after events
+PASS native flesh nutrition survives either side of the completion event
+PASS holding flesh without completing consumption cannot authorize food gains
+PASS C2 C3 C4 C2 remains a full set at minimum C2 without passive conversion
+47 gameplay tests passed (API mock; not an engine test)

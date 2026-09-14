@@ -1,3 +1,4 @@
+import { installTemporaryCastleDeathReturn } from "./castleTemporaryDeathPolicy.js";
 // 無限城アドオン全体のエントリポイント。各モジュールを束ねるだけで、
 // グラフ生成/接続判定/建築などの実処理は既存モジュールに委譲する。
 import { world, system } from "@minecraft/server";
@@ -57,7 +58,7 @@ const ENTRANCE_CHECK_INTERVAL_TICKS = 5;
 const EXIT_CHECK_INTERVAL_TICKS = 5;
 const RECONSTRUCTION_CHECK_INTERVAL_TICKS = 20;
 const ARRIVAL_COOLDOWN_TICKS = 40;
-const PACK_BUILD_ID = "0.2.5-bell-shaped-intervals";
+const PACK_BUILD_ID = "0.2.6-bsl-rewards-v4";
 const CURRENT_RENDERER_VERSION = 9;
 const RENDERER_VERSION_KEY = "infinite_castle:renderer_version";
 const USE_SOURCE_PARTS_MAIN_CASTLE = true;
@@ -1785,4 +1786,14 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
             `[ic-debug] exit cell=${room.cell.x},${room.cell.y},${room.cell.z} worldXZ=${min.x}..${max.x},${min.z}..${max.z} y=${min.y}..${max.y} protected=${!!room.isProtected} connectors=${room.resolvedConnectors.map((c) => c.direction).join(",")}`
         );
     }
+});
+
+// Temporary death rules: reuse the saved normal-dimension entrance and run cleanup.
+installTemporaryCastleDeathReturn(player => {
+    const destination = resolveReturnDestination(player);
+    setEntranceBlocked(player, true);
+    player.teleport(destination.location, { dimension: destination.dimension });
+    phase1Exit(player);
+    clearReturnPoint(player);
+    arrivingPlayerIds.delete(player.id);
 });

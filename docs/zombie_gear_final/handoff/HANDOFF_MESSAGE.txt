@@ -1,0 +1,22 @@
+Codexへ:
+
+添付ZIPを展開し、最初に `CODEX_START_HERE.md` を読んでください。
+今回のZombie Gearを最終仕様へ更新してください。
+
+特に重要:
+- `references/ACCEPTED_ZOMBIE_GEAR_REFERENCE.png` がビジュアル最終版です。過去素材より優先。
+- 4部位×C0〜C4の20 runtime IDは残す。
+- 20個の32×32正面アイコンと、20段階分の装着3Dモデル/テクスチャをこのreferenceに合わせる。
+- chestplateだけ、player-left肩（正面からviewer-right）に目玉。C0〜C4すべて。
+- 段階混在時は最低CをeffectiveCとして扱い、能力を無効化しない。
+- 防御 2/4/4/1、KB total C0..C4 = 0.40/0.56/0.72/0.88/1.00。
+- revive stock上限 = 4-effectiveC。
+- 蘇生で stock-1 / C+1、Stem Cell 8秒チャージで stock+1 / C-1（C0ではstockだけ+1）。
+- 状態遷移成功時だけ4部位をtargetCへ揃える。
+- docsに書いた既知バグも全件修正する。
+- 日本語名を20variantすべて用意する。
+- 既存プレイヤーアイテムのdurability/enchant/lore等を保つ。
+- ローカルに新しい変更があれば絶対にhard resetしない。
+- 最後に `docs/ACCEPTANCE_TESTS.md` を実機含め確認し、変更ファイル・テスト結果・残リスクを報告。
+
+仕様の曖昧さがコード側で見つかった場合、勝手に旧仕様へ戻さず、このZIPのFINAL SPECを優先してください。

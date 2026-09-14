@@ -14,6 +14,7 @@ let deferred = [];
 let unloaded = false;
 export const metrics = { spawns: 0, removals: 0, writes: 0, stockWrites: 0, lootCalls: 0 };
 export class EnchantmentType { constructor(id) { this.id = id; } }
+export const EquipmentSlot = { Head:'head', Chest:'chest', Legs:'legs', Feet:'feet', Offhand:'offhand' };
 export class ItemStack {
     constructor(typeId, amount = 1) { this.typeId = typeId; this.amount = amount; this.enchantments = []; }
     getComponent(id) {
@@ -39,11 +40,11 @@ export const dimension = {
     runCommand(command) {
         const match = /^loot replace block (-?\d+) (-?\d+) (-?\d+) slot.container (\d+) 1 loot/.exec(command);
         if (!match) throw new Error('unexpected command');
-        if (!/loot "chests\/infinite_castle\/slots\/[a-z_]+"$/.test(command))
+        if (!/loot "chests\/infinite_castle\/slots\/[a-z_0-9]+"$/.test(command))
             throw new Error('Bedrock /loot adds loot_tables/ and .json itself');
         metrics.lootCalls++;
         const container=this.getBlock({x:+match[1],y:+match[2],z:+match[3]}).getComponent().container;
-        if (/_base"$/.test(command) || +match[4] % 7 === 0) container.setItem(+match[4],new ItemStack('minecraft:diamond',12));
+        if (/_v4"$/.test(command) || /_base"$/.test(command) || +match[4] % 7 === 0) container.setItem(+match[4],new ItemStack('minecraft:diamond',12));
         return {successCount:1};
     },
     id: "infinite_castle:dungeon", heightRange: { min: -64, max: 512 },
@@ -91,7 +92,7 @@ export const dimension = {
 };
 export const world = {
     beforeEvents: { entityHurt: signal('hurtBefore'), playerInteractWithBlock: signal("interact"), playerBreakBlock: signal("break"), explosion: signal("explosion") },
-    afterEvents: { entityDie: signal("die"), entitySpawn: signal("entitySpawn"), entityLoad: signal("entityLoad") },
+    afterEvents: { entityDie: signal("die"), playerSpawn: signal("playerSpawn"), entitySpawn: signal("entitySpawn"), entityLoad: signal("entityLoad") },
     getDynamicProperty(key) { return properties.get(key); },
     setDynamicProperty(key, value) { if (value === undefined) properties.delete(key); else properties.set(key, value); },
     getDimension() { return dimension; }, getDifficulty() { return difficulty; },
