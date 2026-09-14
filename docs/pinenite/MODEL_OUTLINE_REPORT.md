@@ -33,6 +33,12 @@
 - クライアント実機の要確認：通常／細腕／Personaスキン、第三者から見た装着者、装備への変数伝達、歩行・攻撃・飛行・小型個体、透明部分、反射時の強調、描画距離への出入り、複数人・多数対象、Vibrant Visualsを含む描画設定。自動テストとBDSログだけでは描画の成否は判定できない。
 - 防御値 `8/14/11/8` の実効値・エンジン上限と実際のダメージ順序は前回から引き続き実機確認項目。数値を変更していない。
 
-反映結果とContent Logの確認結果は、作業完了後の配置記録に追記する。
+## 配置記録（2026-09-14 20:39 JST）
+
+- GitHub main：実装コミット `ddaac8ad4c4c54c622a06c1be5308cd8502e2450` を反映済み。全変更パスは [model_outline_files.json](model_outline_files.json)。
+- XServer：反映・再起動成功。269ファイル更新、285ファイル照合、セーブデータ454ファイルが変更されていないことを確認。`minecraft-server.service` はactive、20:39:22に起動完了。バックアップは `/opt/minecraft/server/_pinene_deploy_backups/pinenite-20260914_203643`。
+- 今回のBDS起動ログの検出エラーは0。新規 `ContentLog2026-09-14_20-39-16_1.txt` は空。**クライアントのContent Logと実際の輪郭描画は未確認**。サーバーログが正常なことは、クライアント描画の成功を証明しない。
+- ローカル：開発ワールド・最新ワールドとも、現在ファイルと新規RP／依存関係の配置前検証に成功。インストール済み開発パック側も270ファイル分を準備済み。Minecraftが起動中（確認時PID 24256）のため、実ワールドとインストール済みパックへの書き込みは未実施。ユーザーには保存・終了を依頼済み。ローカル反映が残っており、「すべて反映済み」ではない。
+- [配置証跡](model_outline_deployment_20260914/result.json)、[BDS Content Log](model_outline_deployment_20260914/content.json)、[全体テストログ](model_outline_deployment_20260914/tests.log)、[最終ピネナイトテストログ](model_outline_deployment_20260914/pinenite-final-tests.log)。
 
 参考：[公式マテリアル仕様](https://learn.microsoft.com/en-us/minecraft/creator/documents/material-files)、[公式バニラサンプル](https://github.com/Mojang/bedrock-samples/tree/v1.26.40.05)。カスタムマテリアルの実行時動作は描画エンジン・バージョンに依存する。

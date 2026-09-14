@@ -1,0 +1,314 @@
+
+> test:pinenite
+> node --test tests/pinenite/*.test.mjs
+
+TAP version 13
+# Subtest: all armor values and complete Parcanite components inherited, IDs preserved
+ok 1 - all armor values and complete Parcanite components inherited, IDs preserved
+  ---
+  duration_ms: 5.8187
+  type: 'test'
+  ...
+# Subtest: original four geometries and eight PNGs preserved against investigated main
+ok 2 - original four geometries and eight PNGs preserved against investigated main
+  ---
+  duration_ms: 582.8932
+  type: 'test'
+  ...
+# Subtest: glow is additive core/crystal subset with original UVs, pivots and textures
+ok 3 - glow is additive core/crystal subset with original UVs, pivots and textures
+  ---
+  duration_ms: 5.4189
+  type: 'test'
+  ...
+# Subtest: original packs are preserved; entity additions belong only to the approved outline RP
+ok 4 - original packs are preserved; entity additions belong only to the approved outline RP
+  ---
+  duration_ms: 280.0986
+  type: 'test'
+  ...
+# Subtest: BP requires stable 2.6.0 and 26.40; original API consumers and shared renderer untouched
+ok 5 - BP requires stable 2.6.0 and 26.40; original API consumers and shared renderer untouched
+  ---
+  duration_ms: 156.2579
+  type: 'test'
+  ...
+# Subtest: all compatibility entities retain the full original client definition
+ok 6 - all compatibility entities retain the full original client definition
+  ---
+  duration_ms: 69.2287
+  type: 'test'
+  ...
+# Subtest: outline geometry aliases and render passes resolve, including small variants and player
+ok 7 - outline geometry aliases and render passes resolve, including small variants and player
+  ---
+  duration_ms: 44.9917
+  type: 'test'
+  ...
+# Subtest: wearer armor outline includes every original cube with identical bones and UVs
+ok 8 - wearer armor outline includes every original cube with identical bones and UVs
+  ---
+  duration_ms: 13.6893
+  type: 'test'
+  ...
+# Subtest: existing RP assets and all Zombie Gear files remain unchanged
+ok 9 - existing RP assets and all Zombie Gear files remain unchanged
+  ---
+  duration_ms: 91.3395
+  type: 'test'
+  ...
+# Subtest: outline material retains depth testing and texture alpha, with no global material override
+ok 10 - outline material retains depth testing and texture alpha, with no global material override
+  ---
+  duration_ms: 0.4611
+  type: 'test'
+  ...
+# Subtest: release preflight handles a new RP (validates without writes)
+ok 11 - release preflight handles a new RP (validates without writes)
+  ---
+  duration_ms: 146.9833
+  type: 'test'
+  ...
+# Subtest: release preflight handles a new RP (rejects mismatched registration)
+ok 12 - release preflight handles a new RP (rejects mismatched registration)
+  ---
+  duration_ms: 132.1922
+  type: 'test'
+  ...
+# Subtest: base health and armor spec
+ok 13 - base health and armor spec
+  ---
+  duration_ms: 2.4317
+  type: 'test'
+  ...
+# Subtest: analysis thresholds apply on hits 2, 4, 6, cap at 1.30
+ok 14 - analysis thresholds apply on hits 2, 4, 6, cap at 1.30
+  ---
+  duration_ms: 0.5725
+  type: 'test'
+  ...
+# Subtest: only direct player-owned source causes qualify; DOT and synthetic excluded
+ok 15 - only direct player-owned source causes qualify; DOT and synthetic excluded
+  ---
+  duration_ms: 0.3721
+  type: 'test'
+  ...
+# Subtest: adaptation 0/10/20/30 percent; cooldown throttles learning only
+ok 16 - adaptation 0/10/20/30 percent; cooldown throttles learning only
+  ---
+  duration_ms: 0.7546
+  type: 'test'
+  ...
+# Subtest: learning cooldown is independent for attackers
+ok 17 - learning cooldown is independent for attackers
+  ---
+  duration_ms: 0.4815
+  type: 'test'
+  ...
+# Subtest: memory remains through 30s; steps at 40/50/60s; repeated decay is idempotent
+ok 18 - memory remains through 30s; steps at 40/50/60s; repeated decay is idempotent
+  ---
+  duration_ms: 0.2749
+  type: 'test'
+  ...
+# Subtest: combat refreshes decay; one remaining hit also disappears at 60s
+ok 19 - combat refreshes decay; one remaining hit also disappears at 60s
+  ---
+  duration_ms: 0.2125
+  type: 'test'
+  ...
+# Subtest: symbiosis requires full equipment and both stage III, no duplicate multiplier
+ok 20 - symbiosis requires full equipment and both stage III, no duplicate multiplier
+  ---
+  duration_ms: 0.2039
+  type: 'test'
+  ...
+# Subtest: unlimited independent entity IDs (including same type), 15 second expiry; proximity never refreshes
+ok 21 - unlimited independent entity IDs (including same type), 15 second expiry; proximity never refreshes
+  ---
+  duration_ms: 2.7329
+  type: 'test'
+  ...
+# Subtest: decay pauses while linked, damage refresh does not require learning cooldown
+ok 22 - decay pauses while linked, damage refresh does not require learning cooldown
+  ---
+  duration_ms: 0.7086
+  type: 'test'
+  ...
+# Subtest: raw 20 gives normal regen 5 even when adaptation reduces to 14
+ok 23 - raw 20 gives normal regen 5 even when adaptation reduces to 14
+  ---
+  duration_ms: 0.3201
+  type: 'test'
+  ...
+# Subtest: linked raw 20 gives 7; reflects raw 30, zero incoming and no new regen
+ok 24 - linked raw 20 gives 7; reflects raw 30, zero incoming and no new regen
+  ---
+  duration_ms: 0.2751
+  type: 'test'
+  ...
+# Subtest: deterministic uniform trials hit precisely 10 percent boundary
+ok 25 - deterministic uniform trials hit precisely 10 percent boundary
+  ---
+  duration_ms: 3.1401
+  type: 'test'
+  ...
+# Subtest: six second linear regen finishes; total pending is unbounded
+ok 26 - six second linear regen finishes; total pending is unbounded
+  ---
+  duration_ms: 11.555
+  type: 'test'
+  ...
+# Subtest: low HP linked speed doubles ALL existing reservations; changes back above half
+ok 27 - low HP linked speed doubles ALL existing reservations; changes back above half
+  ---
+  duration_ms: 0.2632
+  type: 'test'
+  ...
+# Subtest: overheal consumed immediately, never returned after later damage
+ok 28 - overheal consumed immediately, never returned after later damage
+  ---
+  duration_ms: 0.1884
+  type: 'test'
+  ...
+# Subtest: missing parts cannot use their abilities
+ok 29 - missing parts cannot use their abilities
+  ---
+  duration_ms: 0.1564
+  type: 'test'
+  ...
+# Subtest: synthetic guard covers reentry, delayed override, exceptions, then permits genuine hit
+ok 30 - synthetic guard covers reentry, delayed override, exceptions, then permits genuine hit
+  ---
+  duration_ms: 0.3903
+  type: 'test'
+  ...
+# Subtest: frame samples actual bounding box edges for arbitrary dimensions
+ok 31 - frame samples actual bounding box edges for arbitrary dimensions
+  ---
+  duration_ms: 0.8435
+  type: 'test'
+  ...
+# Subtest: leap requires grounded sneak, seven second cooldown and no airborne reuse
+ok 32 - leap requires grounded sneak, seven second cooldown and no airborne reuse
+  ---
+  duration_ms: 0.1333
+  type: 'test'
+  ...
+# Subtest: runtime stores pre-adaptation value, mock armor does not contaminate reservations
+ok 33 - runtime stores pre-adaptation value, mock armor does not contaminate reservations
+  ---
+  duration_ms: 5.4676
+  type: 'test'
+  ...
+# Subtest: two fully linked players: no reflection recursion (synchronous)
+ok 34 - two fully linked players: no reflection recursion (synchronous)
+  ---
+  duration_ms: 3.8149
+  type: 'test'
+  ...
+# Subtest: two fully linked players: no reflection recursion (delayed)
+ok 35 - two fully linked players: no reflection recursion (delayed)
+  ---
+  duration_ms: 1.9979
+  type: 'test'
+  ...
+# Subtest: reflection on an unarmored attacker sends original 30, not adapted 21
+ok 36 - reflection on an unarmored attacker sends original 30, not adapted 21
+  ---
+  duration_ms: 2.7337
+  type: 'test'
+  ...
+# Subtest: cancelled, zero and unconfirmed hits cannot learn or regenerate
+ok 37 - cancelled, zero and unconfirmed hits cannot learn or regenerate
+  ---
+  duration_ms: 2.5012
+  type: 'test'
+  ...
+# Subtest: interleaved before/after from different attackers preserves both targets and regen reservations
+ok 38 - interleaved before/after from different attackers preserves both targets and regen reservations
+  ---
+  duration_ms: 1.6754
+  type: 'test'
+  ...
+# Subtest: projectile direct owner counts; summon, DOT and synthetic cannot advance analysis
+ok 39 - projectile direct owner counts; summon, DOT and synthetic cannot advance analysis
+  ---
+  duration_ms: 1.5562
+  type: 'test'
+  ...
+# Subtest: attributed boss explosion learns adaptation but cannot count as direct analysis; DOT cannot refresh
+ok 40 - attributed boss explosion learns adaptation but cannot count as direct analysis; DOT cannot refresh
+  ---
+  duration_ms: 2.691
+  type: 'test'
+  ...
+# Subtest: lethal hit never queues regeneration or revives
+ok 41 - lethal hit never queues regeneration or revives
+  ---
+  duration_ms: 4.3435
+  type: 'test'
+  ...
+# Subtest: max HP effect level follows 4/8/12/20 and is removed on unequip
+ok 42 - max HP effect level follows 4/8/12/20 and is removed on unequip
+  ---
+  duration_ms: 2.4229
+  type: 'test'
+  ...
+# Subtest: removing chest or helmet clears relevant memory and symbiosis; leggings clear regen
+ok 43 - removing chest or helmet clears relevant memory and symbiosis; leggings clear regen
+  ---
+  duration_ms: 1.9518
+  type: 'test'
+  ...
+# Subtest: death, leave, invalid target and dimension change clean independent state
+ok 44 - death, leave, invalid target and dimension change clean independent state
+  ---
+  duration_ms: 1.9326
+  type: 'test'
+  ...
+# Subtest: jump input uses impulse (engine collision), cannot repeat in air
+ok 45 - jump input uses impulse (engine collision), cannot repeat in air
+  ---
+  duration_ms: 3.6321
+  type: 'test'
+  ...
+# Subtest: wearer pulse has a 30 tick period, no target stacking, and a 10 tick fade
+ok 46 - wearer pulse has a 30 tick period, no target stacking, and a 10 tick fade
+  ---
+  duration_ms: 3.4551
+  type: 'test'
+  ...
+# Subtest: enemy outline follows the model channel without sampling the collision box
+ok 47 - enemy outline follows the model channel without sampling the collision box
+  ---
+  duration_ms: 2.5929
+  type: 'test'
+  ...
+# Subtest: two owners emit one merged enemy outline; removing one owner preserves the other
+ok 48 - two owners emit one merged enemy outline; removing one owner preserves the other
+  ---
+  duration_ms: 2.5893
+  type: 'test'
+  ...
+# Subtest: outline resets outside render range and on dimension change without erasing remote memory
+ok 49 - outline resets outside render range and on dimension change without erasing remote memory
+  ---
+  duration_ms: 2.2724
+  type: 'test'
+  ...
+# Subtest: stage I model outline really switches off between flashes
+ok 50 - stage I model outline really switches off between flashes
+  ---
+  duration_ms: 3.1896
+  type: 'test'
+  ...
+1..50
+# tests 50
+# suites 0
+# pass 50
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1160.6109
