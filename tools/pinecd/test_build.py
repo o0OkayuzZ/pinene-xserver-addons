@@ -18,6 +18,10 @@ class CatalogTests(unittest.TestCase):
 
     def test_current_catalog(self):
         self.assertEqual(len(self.render()), len(self.catalog['tracks']) + 2)
+        for p, d in self.render().items():
+            if p.parent == build.BP / 'items':
+                self.assertEqual(d['minecraft:item']['description']['menu_category']['group'],
+                                 'minecraft:itemGroup.name.record')
 
     def test_duplicate_id(self):
         self.catalog['tracks'].append(copy.deepcopy(self.catalog['tracks'][0]))

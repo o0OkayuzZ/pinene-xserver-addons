@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 from build import ROOT, BP, RP, load, outputs
 
-BASE = '196d0921f74dabf52f5692d5cb5251c1a733c13d'
+BASE = '56b2ab24'
 REMUXED = (RP / 'sounds/records/pinecd_track_09.ogg').relative_to(ROOT).as_posix()
 
 
@@ -52,6 +52,7 @@ def main():
         p = owners[f'pinecd:cd_{i:02d}'][0]
         before = json.loads(old(p)); after = load(p)
         before['format_version'] = '1.26.30'
+        before['minecraft:item']['description']['menu_category']['group'] = 'minecraft:itemGroup.name.record'
         before['minecraft:item']['components']['minecraft:record']['sound_event'] = f'pinecd.record.{i:02d}'
         assert before == after, f'Existing item changed: {p}'
     sound_owners = collections.defaultdict(list)

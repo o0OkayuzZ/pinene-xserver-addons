@@ -11,7 +11,7 @@ The current deployment contains 16 custom behavior packs and 19 custom resource 
 | behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12 | [戦利品] Better Structure Loot BP | 1.0.19 |
 | behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880 | [モブ] ギャップルカウズ BP | 1.0.33 |
 | behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc | [保守] 青リンゴ状態リセット BP | 1.0.6 |
-| behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9 | [音楽] ピネCDアイテム BP | 1.0.28 |
+| behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9 | [音楽] ピネCDアイテム BP | 1.0.29 |
 | behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93 | [装備] Deathnerite BP | 2.12.18 |
 | behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a | [墓] 死亡回収・墓 BP | 1.0.11 |
 | behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144 | [鉱石] モアジオード BP | 1.0.23 |

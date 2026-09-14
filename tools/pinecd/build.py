@@ -36,7 +36,7 @@ def outputs():
         filenames.add(t['item_file'])
         item = {'format_version': '1.26.30', 'minecraft:item': {
             'description': {'identifier': ident, 'menu_category': {
-                'category': 'items', 'group': 'itemGroup.name.record'}},
+                'category': 'items', 'group': 'minecraft:itemGroup.name.record'}},
             'components': {
                 'minecraft:max_stack_size': 1,
                 'minecraft:display_name': {'value': t['display_name']},
