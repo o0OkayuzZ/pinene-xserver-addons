@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:pinene_tuna",
+      "materials": {
+        "default": "salmon",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/fish/salmon"
+      },
+      "geometry": {
+        "default": "geometry.salmon",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_salmon"
+      },
+      "render_controllers": [
+        "controller.render.salmon",
+        {
+          "controller.render.pinenite_outline.myname_pinene_tuna_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "true_dn:pinenite_leggings",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/models/armor/pinenite_leggings"
+      },
+      "geometry": {
+        "default": "geometry.true_dn.pinenite_leggings",
+        "glow": "geometry.true_dn.pinenite_leggings_glow",
+        "pn_outline": "geometry.pinenite_outline.armor_leggings"
+      },
+      "scripts": {
+        "parent_setup": "variable.leg_layer_visible = 0.0;"
+      },
+      "render_controllers": [
+        "controller.render.true_dn.pinenite_armor",
+        "controller.render.pinenite_outline.armor"
+      ]
+    }
+  }
+}

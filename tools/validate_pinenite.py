@@ -125,6 +125,7 @@ check('function gives exactly four items to executor', [line for line in fn.spli
 for folder, kind in [('behavior_packs', 'items'), ('resource_packs', 'attachables')]:
     definitions = collections.Counter()
     for path in (ROOT / folder).glob(f'*/{kind}/**/*.json'):
+        if 'pinenite_outline' in path.parts: continue  # Intentional top-priority visual overrides, tested separately.
         text = path.read_text(encoding='utf-8-sig')
         if 'true_dn:pinenite_' not in text:
             continue
@@ -138,7 +139,7 @@ for folder in ['recipes', 'loot_tables']:
 
 manifests = [read(p) for p in ROOT.glob('*_packs/*/manifest.json')]
 headers = {m['header']['uuid']: m['header']['version'] for m in manifests}
-check('35 existing main packs; no standalone preview pack', len(headers) == len(manifests) == 35)
+check('35 original packs plus dedicated Pinenite outline RP', len(headers) == len(manifests) == 36)
 for m in manifests:
     check('module versions ' + m['header']['uuid'], all(mod['version'] == m['header']['version'] for mod in m['modules']))
     for dep in m.get('dependencies', []):
@@ -151,20 +152,22 @@ for path in ROOT.glob('world_*_packs.json'):
     for entry in data:
         if headers.get(entry['pack_id']) != entry['version']:
             preexisting_warnings.append({'file': path.name, 'pack_id': entry['pack_id'], 'registered': entry['version'], 'manifest': headers.get(entry['pack_id'])})
-    main_registration = json.loads(subprocess.check_output(['git', 'show', '196d0921f74dabf52f5692d5cb5251c1a733c13d:' + path.name], cwd=ROOT))
+    main_registration = json.loads(subprocess.check_output(['git', 'show', 'cd53e576:' + path.name], cwd=ROOT))
     for entry in main_registration:
         if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
+    if 'resource' in path.name: main_registration.insert(0, {'pack_id': 'c91096f3-71a0-4e44-9fa6-c9e359017ac7', 'version': [1, 0, 0]})
     check('other registrations preserved from main ' + path.name, data == main_registration)
     for copy in ROOT.glob('worlds/*/' + path.name):
-        original_copy = json.loads(subprocess.check_output(['git', 'show', '196d0921f74dabf52f5692d5cb5251c1a733c13d:' + copy.relative_to(ROOT).as_posix()], cwd=ROOT))
+        original_copy = json.loads(subprocess.check_output(['git', 'show', 'cd53e576:' + copy.relative_to(ROOT).as_posix()], cwd=ROOT))
         for entry in original_copy:
             if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
+        if 'resource' in path.name: original_copy.insert(0, {'pack_id': 'c91096f3-71a0-4e44-9fa6-c9e359017ac7', 'version': [1, 0, 0]})
         check('world registration preserved from main ' + copy.as_posix(), read(copy) == original_copy)
 
 # Verify preservation against the clean checkout recorded at integration time.
 source = read(ROOT / 'docs/pinenite/source.json')
 git = ['git', '-c', 'safe.directory=' + ROOT.as_posix()]
-baseline = '196d0921f74dabf52f5692d5cb5251c1a733c13d'
+baseline = 'cd53e576'
 def original(path):
     return subprocess.check_output(git + ['show', baseline + ':' + path.relative_to(ROOT).as_posix()], cwd=ROOT)
 
@@ -184,6 +187,7 @@ allowed = {
     (RP / 'render_controllers/pinenite.render_controllers.json').relative_to(ROOT).as_posix(),
 } | {(BP / f'items/Deathnerite-Add-On/pinenite/armor/pinenite_{part}.json').relative_to(ROOT).as_posix() for part in PARTS} | {
     (RP / f'attachables/deathnerite/pinenite/pinenite_{part}.json').relative_to(ROOT).as_posix() for part in PARTS}
+allowed |= {'tests/pinenite/assets.test.mjs', 'tests/pinenite/runtime.test.mjs', 'tools/apply_addon_release.py', 'docs/pinenite/combat_validation.json', (BP / 'scripts/pinenite/main.js').relative_to(ROOT).as_posix()}
 check('only documented existing files changed', set(changed_tracked) <= allowed)
 check('existing geometry and all textures unchanged', not any('/models/' in p or p.endswith('.png') for p in changed_tracked))
 

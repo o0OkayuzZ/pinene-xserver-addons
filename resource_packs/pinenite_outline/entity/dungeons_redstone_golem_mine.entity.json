@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:redstone_golem_mine",
+      "materials": {
+        "default": "entity_emissive",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/redstone_golem/mine"
+      },
+      "geometry": {
+        "default": "geometry.redstone_mine",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_redstone_mine"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        {
+          "controller.render.pinenite_outline.dungeons_redstone_golem_mine_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "animations": {
+        "particles": "animation.redstone_mine.particles"
+      },
+      "particle_effects": {
+        "mine": "dungeons:scatter_mine"
+      },
+      "scripts": {
+        "animate": [
+          "particles"
+        ]
+      }
+    }
+  }
+}

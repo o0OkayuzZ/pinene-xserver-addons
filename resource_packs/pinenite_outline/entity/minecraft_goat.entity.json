@@ -1,0 +1,54 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:goat",
+      "materials": {
+        "default": "goat",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/goat/goat",
+        "baby": "textures/entity/goat/goat_baby"
+      },
+      "geometry": {
+        "default": "geometry.goat",
+        "baby": "geometry.goat.baby",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_goat",
+        "pn_outline_baby": "geometry.pinenite_outline.geometry_goat_baby"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg_goat"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos_right_side = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos_left_side = -variable.tcos_right_side;",
+          "variable.attack_head_rot =  Math.sin(variable.attack_time * 180.0) * -37.3;",
+          "variable.ram_head_rot = Math.sin(variable.should_bow_head * 90.0) * 37.3;"
+        ],
+        "animate": [
+          "walk",
+          "look_at_target",
+          {
+            "attack": "variable.has_target && variable.attack_time >= 0.0"
+          },
+          "ram_attack"
+        ],
+        "scale": "query.is_baby ? 2.0 : 1.0"
+      },
+      "animations": {
+        "walk": "animation.goat.walk",
+        "look_at_target": "animation.goat.look_at_target",
+        "attack": "animation.goat.attack",
+        "ram_attack": "animation.goat.ram_attack"
+      },
+      "render_controllers": [
+        "controller.render.goat.v2",
+        {
+          "controller.render.pinenite_outline.minecraft_goat_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ]
+    }
+  }
+}

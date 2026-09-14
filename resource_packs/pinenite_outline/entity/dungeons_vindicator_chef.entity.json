@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:vindicator_chef",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "entity_alphatest",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/illager/vindicator_chef"
+      },
+      "geometry": {
+        "default": "geometry.vindicator_chef",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_vindicator_chef"
+      },
+      "spawn_egg": {
+        "texture": "egg_vindicator_chef"
+      },
+      "scripts": {
+        "scale": "0.9375",
+        "animate": [
+          "vindicator_base",
+          "vindicator_walk",
+          "controller_look_at_target",
+          "controller_vindicator_base",
+          "controller_riding"
+        ]
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "riding.arms": "animation.vindicator.riding.arms",
+        "riding.legs": "animation.vindicator.riding.legs",
+        "vindicator_base": "animation.vindicator.base",
+        "vindicator_attack": "animation.vindicator.attack",
+        "vindicator_walk": "animation.vindicator.walk",
+        "celebrating": "animation.humanoid.celebrating",
+        "controller_look_at_target": "controller.animation.humanoid.look_at_target",
+        "controller_vindicator_base": "controller.animation.vindicator.base",
+        "controller_riding": "controller.animation.humanoid.riding",
+        "vindicator_hand_attack": "animation.vindicator.hand_attack"
+      },
+      "render_controllers": [
+        "controller.render.vindicator_vanilla",
+        {
+          "controller.render.pinenite_outline.dungeons_vindicator_chef_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "enable_attachables": true,
+      "hide_armor": true
+    }
+  }
+}

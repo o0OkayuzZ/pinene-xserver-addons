@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:blight_eye_resting",
+      "materials": {
+        "default": "entity_alphatest",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/items/enchanted_eye"
+      },
+      "geometry": {
+        "default": "geometry.resting_endersent",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_resting_endersent"
+      },
+      "render_controllers": [
+        "controller.render.resting_endersent",
+        {
+          "controller.render.pinenite_outline.dungeons_blight_eye_resting_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "animations": {
+        "resting": "animation.resting_endersent.idle",
+        "awaken": "animation.resting_endersent.awaken",
+        "wake_controller": "controller.animation.redstone_monstrosity.rest"
+      },
+      "scripts": {
+        "animate": [
+          "wake_controller"
+        ]
+      },
+      "sound_effects": {
+        "awaken": "mob.endersent.awaken"
+      },
+      "spawn_egg": {
+        "texture": "egg_enchanted_endersent"
+      }
+    }
+  }
+}

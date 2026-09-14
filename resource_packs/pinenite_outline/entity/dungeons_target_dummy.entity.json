@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:target_dummy",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "entity_alphatest",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/dummy"
+      },
+      "animations": {
+        "controller.wiggling": "controller.animation.target_dummy.wiggle",
+        "wiggle": "animation.target_dummy.wiggle"
+      },
+      "scripts": {
+        "initialize": [
+          "variable.armor_stand.hurt_time = 0;"
+        ],
+        "animate": [
+          "controller.wiggling"
+        ]
+      },
+      "geometry": {
+        "default": "geometry.dummy",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_dummy"
+      },
+      "render_controllers": [
+        "controller.render.dummy",
+        {
+          "controller.render.pinenite_outline.dungeons_target_dummy_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "enable_attachables": true
+    }
+  }
+}

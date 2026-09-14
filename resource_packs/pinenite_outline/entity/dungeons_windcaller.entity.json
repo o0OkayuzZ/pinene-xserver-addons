@@ -1,0 +1,57 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:windcaller",
+      "min_engine_version": "1.10.0",
+      "materials": {
+        "default": "entity_alphatest",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/illager/windcaller"
+      },
+      "geometry": {
+        "default": "geometry.windcaller",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_windcaller"
+      },
+      "scripts": {
+        "animate": [
+          "idle",
+          "wind_sounds",
+          "wind_particles",
+          "move_controller",
+          "summon_controller"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "summon_controller": "controller.animation.necromancer.cast",
+        "cast": "animation.windcaller.cast_spell",
+        "move_controller": "controller.animation.windcaller.move",
+        "move": "animation.windcaller.walk",
+        "idle": "animation.windcaller.idle",
+        "wind_sounds": "animation.windcaller.wind_sounds",
+        "wind_particles": "animation.windcaller.wind_particles"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        {
+          "controller.render.pinenite_outline.dungeons_windcaller_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "sound_effects": {
+        "spell": "mob.windcaller.spell",
+        "yell": "mob.windcaller.spell_voice",
+        "wind": "mob.windcaller.fly"
+      },
+      "particle_effects": {
+        "wind": "dungeons:windcaller_cloud",
+        "magic": "dungeons:windcaller_spell"
+      },
+      "spawn_egg": {
+        "texture": "egg_windcaller"
+      }
+    }
+  }
+}

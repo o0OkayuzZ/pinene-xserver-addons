@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:pinene_bomb_cow",
+      "materials": {
+        "default": "cow",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/cow/cow"
+      },
+      "geometry": {
+        "default": "geometry.cow",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_cow"
+      },
+      "animations": {
+        "setup": "animation.cow.setup.v1.0",
+        "walk": "animation.quadruped.walk",
+        "look_at_target": "animation.common.look_at_target",
+        "hurt_sound": "animation.pinene_bomb_cow.hurt_layered",
+        "hurt_sound_controller": "controller.animation.pinene_bomb_cow.hurt_sound"
+      },
+      "sound_effects": {
+        "bomb_hurt_cow": "mob.cow.hurt"
+      },
+      "scripts": {
+        "animate": [
+          "setup",
+          {
+            "walk": "query.modified_move_speed"
+          },
+          "look_at_target",
+          "hurt_sound_controller"
+        ],
+        "scale": "query.property('myname:is_fusing') ? (query.property('myname:blink_on') ? 1.08 : 1.0) : 1.0"
+      },
+      "render_controllers": [
+        "controller.render.pinene_bomb_cow",
+        {
+          "controller.render.pinenite_outline.myname_pinene_bomb_cow_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_cow"
+      }
+    }
+  }
+}

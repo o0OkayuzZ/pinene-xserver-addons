@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:wind_totem_right",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "entity_emissive",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/totem1",
+        "on": "textures/entity/totem2"
+      },
+      "geometry": {
+        "default": "geometry.wind_totem",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_wind_totem"
+      },
+      "render_controllers": [
+        "controller.render.wind_totem",
+        {
+          "controller.render.pinenite_outline.dungeons_wind_totem_right_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "enable_attachables": false
+    }
+  }
+}

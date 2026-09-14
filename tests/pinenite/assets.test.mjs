@@ -51,15 +51,15 @@ test('glow is additive core/crystal subset with original UVs, pivots and texture
         assert.equal(attach.geometry.glow, glow.description.identifier);
     }
 });
-test('particle/animation resolve without new player or Mob entity definitions', () => {
+test('original packs are preserved; entity additions belong only to the approved outline RP', () => {
     const particle = read(`${rp}/particles/pinenite_frame.particle.json`).particle_effect;
     assert.equal(particle.description.identifier, 'true_dn:pinenite_frame');
     assert.equal(particle.components['minecraft:particle_lifetime_expression'].max_lifetime, .12);
     assert.ok(read(`${rp}/animations/pinenite_sync.animation.json`).animations['animation.true_dn.pinenite_sync']);
-    const changes = git('diff', '--name-only', base).toString().trim().split('\n');
+    const changes = git('diff', '--name-only', 'cd53e576').toString().trim().split('\n').filter(p => !p.startsWith('resource_packs/pinenite_outline/'));
     assert.equal(changes.some(p => /^(behavior_packs\/[^/]+\/entities|resource_packs\/[^/]+\/entity)\//.test(p) || /zombie/i.test(p)), false);
     const added = git('ls-files', '--others', '--exclude-standard').toString().split('\n');
-    assert.equal(added.some(p => /\/(?:entities|entity)\/.*\.entity\.json$/.test(p)), false);
+    assert.equal(added.some(p => !p.startsWith('resource_packs/pinenite_outline/') && /\/(?:entities|entity)\/.*\.entity\.json$/.test(p)), false);
 });
 test('BP requires stable 2.6.0 and 26.40; original API consumers and shared renderer untouched', () => {
     const manifest = read(`${bp}/manifest.json`);

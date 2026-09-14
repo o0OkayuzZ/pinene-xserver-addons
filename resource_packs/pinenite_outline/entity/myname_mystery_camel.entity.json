@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myname:mystery_camel",
+      "materials": {
+        "default": "cow",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/camel/camel"
+      },
+      "geometry": {
+        "default": "geometry.cow",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_cow"
+      },
+      "render_controllers": [
+        "controller.render.pinene_bomb_cow",
+        {
+          "controller.render.pinenite_outline.myname_mystery_camel_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ]
+    }
+  }
+}

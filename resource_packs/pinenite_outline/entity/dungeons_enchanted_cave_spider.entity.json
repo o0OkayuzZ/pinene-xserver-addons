@@ -1,0 +1,49 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:enchanted_cave_spider",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "spider",
+        "invisible": "spider_invisible",
+        "enchanted": "dungeons_entity_enchant",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/enchanted_mob/cave_spider",
+        "enchanted": "textures/misc/enchanted_entity_glint"
+      },
+      "geometry": {
+        "default": "geometry.spider.v1.8",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_spider_v1_8"
+      },
+      "scripts": {
+        "scale": "0.7"
+      },
+      "animations": {
+        "default_leg_pose": "animation.spider.default_leg_pose",
+        "look_at_target": "animation.spider.look_at_target",
+        "walk": "animation.spider.walk"
+      },
+      "animation_controllers": [
+        {
+          "move": "controller.animation.spider.move"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.spider",
+        "controller.render.dungeons_entity_enchanted",
+        {
+          "controller.render.pinenite_outline.dungeons_enchanted_cave_spider_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        },
+        {
+          "controller.render.pinenite_outline.dungeons_enchanted_cave_spider_1": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "egg_enchanted_cave_spider"
+      }
+    }
+  }
+}

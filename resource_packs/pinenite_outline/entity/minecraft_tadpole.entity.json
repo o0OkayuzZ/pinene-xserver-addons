@@ -1,0 +1,36 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:tadpole",
+      "materials": {
+        "default": "tadpole",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/tadpole/tadpole"
+      },
+      "geometry": {
+        "default": "geometry.tadpole",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_tadpole"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg_tadpole"
+      },
+      "animations": {
+        "swim": "animation.tadpole.swim"
+      },
+      "animation_controllers": [
+        {
+          "general": "controller.animation.tadpole.general"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.tadpole",
+        {
+          "controller.render.pinenite_outline.minecraft_tadpole_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ]
+    }
+  }
+}

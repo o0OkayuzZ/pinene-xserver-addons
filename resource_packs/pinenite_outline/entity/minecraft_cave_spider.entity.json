@@ -1,0 +1,43 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:cave_spider",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "spider",
+        "invisible": "spider_invisible",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/spider/cave_spider"
+      },
+      "geometry": {
+        "default": "geometry.spider.v1.8",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_spider_v1_8"
+      },
+      "scripts": {
+        "scale": "0.7"
+      },
+      "animations": {
+        "default_leg_pose": "animation.spider.default_leg_pose",
+        "look_at_target": "animation.spider.look_at_target",
+        "walk": "animation.spider.walk"
+      },
+      "animation_controllers": [
+        {
+          "move": "controller.animation.spider.move"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.spider",
+        {
+          "controller.render.pinenite_outline.minecraft_cave_spider_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_cave_spider"
+      }
+    }
+  }
+}

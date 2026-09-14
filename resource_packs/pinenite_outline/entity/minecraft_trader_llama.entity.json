@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:trader_llama",
+      "materials": {
+        "default": "entity_alphatest",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/suspicious_trader_llama"
+      },
+      "geometry": {
+        "default": "geometry.llama",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_llama"
+      },
+      "render_controllers": [
+        "controller.render.llama",
+        {
+          "controller.render.pinenite_outline.minecraft_trader_llama_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ]
+    }
+  }
+}

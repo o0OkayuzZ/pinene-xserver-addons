@@ -1,0 +1,55 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:guardian_vex",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "dungeons_entity_enchant",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/vex/guardian_vex",
+        "glow": "textures/entity/enchanted_mob/guardian_vex",
+        "enchanted": "textures/misc/enchanted_entity_glint"
+      },
+      "geometry": {
+        "default": "geometry.guardian_vex",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_guardian_vex"
+      },
+      "particle_effects": {
+        "glow": "dungeons:vex_glow"
+      },
+      "spawn_egg": {
+        "texture": "egg_guardian_vex"
+      },
+      "scripts": {
+        "animate": [
+          "idle",
+          "look_at_target",
+          "particles"
+        ]
+      },
+      "animations": {
+        "particles": "animation.guardian_vex.particles",
+        "look_at_target": "animation.common.look_at_target",
+        "idle": "animation.guardian_vex.idle",
+        "charging": "animation.guardian_vex.charging"
+      },
+      "render_controllers": [
+        "controller.render.guardian_vex",
+        {
+          "controller.render.dungeons_entity_enchanted": "q.is_saddled==1"
+        },
+        {
+          "controller.render.pinenite_outline.dungeons_guardian_vex_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        },
+        {
+          "controller.render.pinenite_outline.dungeons_guardian_vex_1": "(q.is_saddled==1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "hide_armor": true,
+      "enable_attachables": true
+    }
+  }
+}

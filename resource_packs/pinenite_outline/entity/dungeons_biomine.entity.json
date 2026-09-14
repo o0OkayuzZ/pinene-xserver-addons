@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:biomine",
+      "materials": {
+        "default": "entity_emissive",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/ancient_guardian/biomine"
+      },
+      "geometry": {
+        "default": "geometry.biomine",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_biomine"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        {
+          "controller.render.pinenite_outline.dungeons_biomine_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "animations": {
+        "idle": "animation.biomine.idle",
+        "move": "animation.biomine.roll",
+        "move_controller": "controller.animation.biomine.move"
+      },
+      "scripts": {
+        "animate": [
+          "idle",
+          "move_controller"
+        ]
+      }
+    }
+  }
+}

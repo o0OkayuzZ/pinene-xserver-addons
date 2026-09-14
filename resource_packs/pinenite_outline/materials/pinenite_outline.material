@@ -1,0 +1,17 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "pinenite_outline:entity_alphatest": {
+      "+states": [
+        "InvertCulling",
+        "Blending"
+      ],
+      "-states": [
+        "DisableCulling"
+      ],
+      "+defines": [
+        "USE_OVERLAY"
+      ]
+    }
+  }
+}

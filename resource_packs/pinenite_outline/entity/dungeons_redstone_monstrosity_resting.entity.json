@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:redstone_monstrosity_resting",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/redstone_monstrosity/monstrosity",
+        "none": "textures/misc/void",
+        "redstone": "textures/entity/redstone_monstrosity/monstrosity_redstone"
+      },
+      "geometry": {
+        "default": "geometry.redstone_monstrosity",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_redstone_monstrosity"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        "controller.render.monstrosity_awaken",
+        {
+          "controller.render.pinenite_outline.dungeons_redstone_monstrosity_resting_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        },
+        {
+          "controller.render.pinenite_outline.dungeons_redstone_monstrosity_resting_1": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "animations": {
+        "resting": "animation.redstone_monstrosity_v2.resting",
+        "activate": "animation.redstone_monstrosity_v2.activate",
+        "wake_controller": "controller.animation.redstone_monstrosity_v2.activate"
+      },
+      "scripts": {
+        "animate": [
+          "wake_controller"
+        ]
+      },
+      "sound_effects": {
+        "awaken": "mob.redstone_monstrosity.awaken"
+      },
+      "spawn_egg": {
+        "texture": "egg_redstone_monstrosity"
+      }
+    }
+  }
+}

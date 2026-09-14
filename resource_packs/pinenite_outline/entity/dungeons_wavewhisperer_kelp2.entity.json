@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:wavewhisperer_kelp2",
+      "min_engine_version": "1.10.0",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/whisperer/wavewhisperer_kelp"
+      },
+      "geometry": {
+        "default": "geometry.whisperer_vine",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_whisperer_vine"
+      },
+      "scripts": {
+        "animate": [
+          "attack"
+        ]
+      },
+      "animations": {
+        "attack": "animation.whisperer_vine.q_attack"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        {
+          "controller.render.pinenite_outline.dungeons_wavewhisperer_kelp2_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "base_color": "#204B16",
+        "overlay_color": "#769849"
+      }
+    }
+  }
+}

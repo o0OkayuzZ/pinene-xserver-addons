@@ -1,0 +1,42 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:jungle_abomination_resting",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/jungle_abomination/jungle_abomination"
+      },
+      "geometry": {
+        "default": "geometry.jungle_abomination",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_jungle_abomination"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        {
+          "controller.render.pinenite_outline.dungeons_jungle_abomination_resting_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "animations": {
+        "resting": "animation.jungle_abomination_v2.sleep",
+        "activate": "animation.jungle_abomination_v2.activate",
+        "wake_controller": "controller.animation.jungle_abomination_v2.activate"
+      },
+      "scripts": {
+        "animate": [
+          "wake_controller"
+        ]
+      },
+      "sound_effects": {
+        "awaken": "mob.jungle_abomination.awaken",
+        "activate": "mob.jungle_abomination.activate"
+      },
+      "spawn_egg": {
+        "texture": "egg_jungle_abomination"
+      }
+    }
+  }
+}

@@ -38,7 +38,7 @@ function harness({ delayedReflection = false } = {}) {
             getEffect: name => effects.get(name),
             addEffect(name, duration, options) { effects.set(name, { duration, ...options }); },
             removeEffect(name) { effects.delete(name); },
-            playAnimation() {}, getViewDirection: () => ({ x: 1, y: 0, z: 0 }), applyImpulse(v) { this.impulse = v; },
+            animations: [], playAnimation(name, options) { this.animations.push({ name, ...options }); }, getViewDirection: () => ({ x: 1, y: 0, z: 0 }), applyImpulse(v) { this.impulse = v; },
             applyDamage(amount, source) {
                 const run = () => hit(p, undefined, amount, source.cause);
                 if (delayedReflection) jobs.push(run); else run();
@@ -181,4 +181,36 @@ test('wearer pulse has a 30 tick period, no target stacking, and a 10 tick fade'
     h.get('p').targets.clear(); h.tick(); const start = h.get('p').glow;
     h.tick(5); assert.ok(Math.abs(h.get('p').glow - start / 2) < 1e-9);
     h.tick(5); assert.equal(h.get('p').glow, 0);
+});
+
+const outlineCalls = entity => entity.animations.filter(a => a.controller === 'pinenite_model_outline');
+const outlineAlpha = entity => Number(outlineCalls(entity).at(-1).stopExpression.match(/pinenite_outline = ([\d.]+)/)[1]);
+test('enemy outline follows the model channel without sampling the collision box', () => {
+    const h = harness(), p = h.entity('p', full), mob = h.entity('m', [], 'minecraft:zombie');
+    mob.getAABB = () => { throw Error('collision box must not drive outline'); };
+    h.link(p, mob); h.tick();
+    assert.ok(outlineAlpha(mob) > .65);
+    assert.match(outlineCalls(mob)[0].stopExpression, /query.life_time \+ 0\.3; return 1;/);
+});
+test('two owners emit one merged enemy outline; removing one owner preserves the other', () => {
+    const h = harness(), a = h.entity('a', full), b = h.entity('b', full), mob = h.entity('m', [], 'minecraft:zombie');
+    h.link(a, mob); h.link(b, mob); h.tick();
+    assert.equal(outlineCalls(mob).length, 1);
+    h.emit('playerLeave', { playerId: 'a' }); a.gear = []; h.tick();
+    assert.equal(outlineCalls(mob).length, 2); assert.ok(outlineAlpha(mob) > 0);
+    b.gear = []; h.tick(); assert.equal(outlineAlpha(mob), 0);
+});
+test('outline resets outside render range and on dimension change without erasing remote memory', () => {
+    const h = harness(), p = h.entity('p', full), mob = h.entity('m', [], 'minecraft:zombie');
+    h.link(p, mob); h.tick(); mob.location = { x: 100, y: 0, z: 0 }; h.tick();
+    assert.equal(outlineAlpha(mob), 0); assert.equal(h.get('p').targets.size, 1);
+    mob.location = { x: 0, y: 0, z: 0 }; h.tick(); assert.ok(outlineAlpha(mob) > 0);
+    h.emit('playerDimensionChange', { player: p }); h.tick(); assert.equal(outlineAlpha(mob), 0);
+});
+test('stage I model outline really switches off between flashes', () => {
+    const h = harness(), p = h.entity('p', full), mob = h.entity('m', [], 'minecraft:zombie');
+    const target = h.link(p, mob); target.adaptationHits = 2; target.symbiosisUntil = 0;
+    h.tick(); assert.equal(outlineAlpha(mob), .22);
+    h.tick(7); assert.equal(outlineAlpha(mob), 0);
+    h.tick(12); assert.equal(outlineAlpha(mob), .22);
 });

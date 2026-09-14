@@ -1,0 +1,60 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:fox",
+      "materials": {
+        "default": "fox",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "red": "textures/entity/fox/fox",
+        "arctic": "textures/entity/fox/arctic_fox",
+        "baby_red": "textures/entity/fox/fox_baby",
+        "baby_arctic": "textures/entity/fox/fox_snow_baby",
+        "baby_sleep_red": "textures/entity/fox/fox_sleep_baby",
+        "baby_sleep_arctic": "textures/entity/fox/fox_snow_sleep_baby"
+      },
+      "geometry": {
+        "default": "geometry.fox",
+        "baby": "geometry.fox.baby",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_fox",
+        "pn_outline_baby": "geometry.pinenite_outline.geometry_fox_baby"
+      },
+      "animations": {
+        "walk": "animation.quadruped.walk",
+        "look_at_target": "animation.common.look_at_target",
+        "baby_transform": "animation.fox.baby_transform",
+        "crouch": "animation.fox.crouch",
+        "sleep": "animation.fox.sleep",
+        "setup": "animation.fox.setup",
+        "sit": "animation.fox.sit",
+        "wiggle": "animation.fox.wiggle",
+        "stuck": "animation.fox.stuck",
+        "pounce": "animation.fox.pounce",
+        "move": "controller.animation.fox.move",
+        "baby_walk": "animation.fox.baby_walk",
+        "baby_pounce": "animation.fox.baby_pounce",
+        "baby_sit": "animation.fox.baby_sit",
+        "baby_sleep": "animation.fox.baby_sleep",
+        "baby_wiggle": "animation.fox.baby_wiggle"
+      },
+      "scripts": {
+        "animate": [
+          "setup",
+          "move"
+        ],
+        "scale": "query.is_baby ? 2.0 : 1.0"
+      },
+      "render_controllers": [
+        "controller.render.fox.v2",
+        {
+          "controller.render.pinenite_outline.minecraft_fox_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_fox"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:totem_of_shielding",
+      "materials": {
+        "default": "entity_alphatest",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/totem_of_shielding",
+        "glow": "textures/entity/totem_of_shielding"
+      },
+      "geometry": {
+        "default": "geometry.totem_shield",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_totem_shield"
+      },
+      "render_controllers": [
+        "controller.render.guardian_vex",
+        {
+          "controller.render.pinenite_outline.dungeons_totem_of_shielding_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ]
+    }
+  }
+}

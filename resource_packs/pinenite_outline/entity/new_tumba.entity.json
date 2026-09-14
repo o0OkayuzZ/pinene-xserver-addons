@@ -1,0 +1,73 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "new:tumba",
+      "materials": {
+        "default": "skeleton",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/tomb_1",
+        "var1": "textures/entity/tomb_1_quartz",
+        "var2": "textures/entity/tomb_2",
+        "var3": "textures/entity/tomb_3",
+        "var4": "textures/entity/tomb_4",
+        "var5": "textures/entity/tomb_5",
+        "var6": "textures/entity/tomb_6",
+        "var7": "textures/entity/tomb_7",
+        "var8": "textures/entity/tomb_8",
+        "var9": "textures/entity/tomb_9",
+        "var10": "textures/entity/tomb_10",
+        "var11": "textures/entity/tomb_one",
+        "var12": "textures/entity/tomb_two",
+        "var13": "textures/entity/tomb_three",
+        "var14": "textures/entity/tomb_four",
+        "var15": "textures/entity/tomb_five",
+        "var16": "textures/entity/tomb_six"
+      },
+      "geometry": {
+        "default": "geometry.tumba0",
+        "var1": "geometry.tumba1",
+        "var2": "geometry.tumba2",
+        "var3": "geometry.tumba3",
+        "var4": "geometry.tumba4",
+        "var5": "geometry.tumba5",
+        "var6": "geometry.tumba6",
+        "var7": "geometry.tumba7",
+        "var8": "geometry.tumba8",
+        "var9": "geometry.tumba9",
+        "var10": "geometry.tumba10",
+        "var11": "geometry.tomb_one",
+        "var12": "geometry.tomb_two",
+        "var13": "geometry.tomb_three",
+        "var14": "geometry.tomb_four",
+        "var15": "geometry.tomb_five",
+        "var16": "geometry.tomb_six",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_tumba0",
+        "pn_outline_var1": "geometry.pinenite_outline.geometry_tumba1",
+        "pn_outline_var2": "geometry.pinenite_outline.geometry_tumba2",
+        "pn_outline_var3": "geometry.pinenite_outline.geometry_tumba3",
+        "pn_outline_var4": "geometry.pinenite_outline.geometry_tumba4",
+        "pn_outline_var5": "geometry.pinenite_outline.geometry_tumba5",
+        "pn_outline_var6": "geometry.pinenite_outline.geometry_tumba6",
+        "pn_outline_var7": "geometry.pinenite_outline.geometry_tumba7",
+        "pn_outline_var8": "geometry.pinenite_outline.geometry_tumba8",
+        "pn_outline_var9": "geometry.pinenite_outline.geometry_tumba9",
+        "pn_outline_var10": "geometry.pinenite_outline.geometry_tumba10",
+        "pn_outline_var11": "geometry.pinenite_outline.geometry_tomb_one",
+        "pn_outline_var12": "geometry.pinenite_outline.geometry_tomb_two",
+        "pn_outline_var13": "geometry.pinenite_outline.geometry_tomb_three",
+        "pn_outline_var14": "geometry.pinenite_outline.geometry_tomb_four",
+        "pn_outline_var15": "geometry.pinenite_outline.geometry_tomb_five",
+        "pn_outline_var16": "geometry.pinenite_outline.geometry_tomb_six"
+      },
+      "render_controllers": [
+        "controller.render.tumba",
+        {
+          "controller.render.pinenite_outline.new_tumba_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ]
+    }
+  }
+}

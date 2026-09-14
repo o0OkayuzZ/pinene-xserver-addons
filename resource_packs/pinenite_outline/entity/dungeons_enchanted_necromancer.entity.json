@@ -1,0 +1,60 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:enchanted_necromancer",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "glow": "entity_emissive",
+        "enchanted": "dungeons_entity_enchant",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/enchanted_mob/necromancer",
+        "enchanted": "textures/misc/enchanted_entity_glint"
+      },
+      "geometry": {
+        "default": "geometry.necromancer",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_necromancer"
+      },
+      "render_controllers": [
+        "controller.render.necromancer",
+        "controller.render.dungeons_entity_enchanted",
+        {
+          "controller.render.pinenite_outline.dungeons_enchanted_necromancer_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        },
+        {
+          "controller.render.pinenite_outline.dungeons_enchanted_necromancer_1": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "animations": {
+        "walk": "animation.necromancer.walk",
+        "cast_controller": "controller.animation.necromancer.cast",
+        "particles": "animation.necromancer_shot.particles",
+        "cast": "animation.necromancer.cast",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "head_controller": "controller.animation.humanoid.look_at_target"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          "particles",
+          "walk",
+          "head_controller",
+          "cast_controller"
+        ]
+      },
+      "particle_effects": {
+        "energy": "dungeons:necromancer_orb",
+        "summon": "dungeons:necromancer_summon"
+      },
+      "spawn_egg": {
+        "texture": "egg_enchanted_necromancer"
+      }
+    }
+  }
+}

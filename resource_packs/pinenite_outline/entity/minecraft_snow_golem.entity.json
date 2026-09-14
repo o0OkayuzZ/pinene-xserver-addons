@@ -1,0 +1,39 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:snow_golem",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "snow_golem",
+        "head": "snow_golem_pumpkin",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/snow_golem"
+      },
+      "geometry": {
+        "default": "geometry.snowgolem.v1.8",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_snowgolem_v1_8"
+      },
+      "animations": {
+        "move": "animation.snowgolem.move.v1.8",
+        "look_at_target": "animation.common.look_at_target"
+      },
+      "animation_controllers": [
+        {
+          "move": "controller.animation.snowgolem.move.v1.8"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.snowgolem",
+        {
+          "controller.render.pinenite_outline.minecraft_snow_golem_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_snow_golem"
+      }
+    }
+  }
+}

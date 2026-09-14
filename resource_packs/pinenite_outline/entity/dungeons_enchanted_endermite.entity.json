@@ -1,0 +1,42 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:enchanted_endermite",
+      "materials": {
+        "default": "entity_emissive",
+        "enchanted": "dungeons_entity_enchant",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/enchanted_mob/endermite",
+        "enchanted": "textures/misc/enchanted_entity_glint"
+      },
+      "geometry": {
+        "default": "geometry.endermite",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_endermite"
+      },
+      "animations": {
+        "move": "animation.endermite.move"
+      },
+      "animation_controllers": [
+        {
+          "move": "controller.animation.endermite.move"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.endermite",
+        "controller.render.dungeons_entity_enchanted",
+        {
+          "controller.render.pinenite_outline.dungeons_enchanted_endermite_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        },
+        {
+          "controller.render.pinenite_outline.dungeons_enchanted_endermite_1": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "egg_enchanted_endermite"
+      }
+    }
+  }
+}

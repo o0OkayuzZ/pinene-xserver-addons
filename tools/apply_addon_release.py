@@ -30,8 +30,10 @@ for rel,data in plan['references'].items():
 # Every proposed active pack and UUID dependency must agree before restart.
 manifests={}
 for kind in ['behavior_packs','resource_packs']:
- for record in plan['references']['world_'+kind+'.json']:
+ for record in plan['references'][('worlds/Bedrock level/' if server else '')+'world_'+kind+'.json']:
   uuid=record['pack_id'];candidates=list((root/kind).glob('*/manifest.json'))
+  # A newly registered pack exists only in the reviewed stage until application.
+  candidates += [target(rel) for rel in plan['updates'] if rel.startswith(kind+'/') and rel.endswith('/manifest.json') and target(rel) not in candidates]
   for file in candidates:
    name=file.relative_to(root).as_posix();source=stage/'files'/name if name in plan['updates'] else file
    try:m=json.loads(source.read_text(encoding='utf-8-sig'))
@@ -43,6 +45,9 @@ for kind in ['behavior_packs','resource_packs']:
 for m in manifests.values():
  for dep in m.get('dependencies',[]):
   if 'uuid' in dep:assert dep['uuid'] in manifests and dep['version']==manifests[dep['uuid']]['header']['version'],('Dependency mismatch',m['header']['name'],dep)
+if '--validate-only' in sys.argv[2:]:
+ print('Release preflight passed; no files or services changed')
+ sys.exit(0)
 if server:
  assert str(root)=='/opt/minecraft/server'
  was_active=subprocess.run(['systemctl','is-active','--quiet','minecraft-server.service']).returncode==0

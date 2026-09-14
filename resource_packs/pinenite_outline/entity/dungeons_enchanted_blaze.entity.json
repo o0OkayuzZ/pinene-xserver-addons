@@ -1,0 +1,51 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:enchanted_blaze",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "body": "blaze_body",
+        "head": "blaze_head",
+        "enchanted": "dungeons_entity_enchant",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/enchanted_mob/blaze",
+        "enchanted": "textures/misc/enchanted_entity_glint"
+      },
+      "geometry": {
+        "default": "geometry.blaze",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_blaze"
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.blaze.move"
+      },
+      "particle_effects": {
+        "charged_flames": "minecraft:mobflame_emitter"
+      },
+      "animation_controllers": [
+        {
+          "move": "controller.animation.blaze.move"
+        },
+        {
+          "flame": "controller.animation.blaze.flame"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.blaze",
+        "controller.render.dungeons_entity_enchanted",
+        {
+          "controller.render.pinenite_outline.dungeons_enchanted_blaze_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        },
+        {
+          "controller.render.pinenite_outline.dungeons_enchanted_blaze_1": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "egg_enchanted_blaze"
+      }
+    }
+  }
+}

@@ -1,0 +1,1887 @@
+{
+  "source": "cd53e576",
+  "samples": "v1.26.40.05",
+  "entities": [
+    {
+      "id": "a:applecow",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/applecow.entity.json",
+      "file": "entity/a_applecow.entity.json",
+      "sourceSha256": "18a378c520a6af6dd95d8f1235fe6e76e1f71e6a5a64de4d99808f7783d39241",
+      "addedControllers": 1
+    },
+    {
+      "id": "a:egapplecow",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/egapplecow.entity.json",
+      "file": "entity/a_egapplecow.entity.json",
+      "sourceSha256": "67a4374014366c0018bb1c6f5e8855b9658ea16067745a0f47aacb6c0580a3c8",
+      "addedControllers": 2
+    },
+    {
+      "id": "a:gapplecow",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/gapplecow.entity.json",
+      "file": "entity/a_gapplecow.entity.json",
+      "sourceSha256": "5a3c2e53bfab77e52d1f427aa5c6dba50ef1a306699c90ee235ff5cd3e50c3ef",
+      "addedControllers": 1
+    },
+    {
+      "id": "a:tcow",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/tcow.entity.json",
+      "file": "entity/a_tcow.entity.json",
+      "sourceSha256": "da212f6c2a8cd6db08148c07a7468b35614d1c098c52ffc7a8306b1f46a200ac",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:abomination_quick_vine",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/jungle/vine_quick.json",
+      "file": "entity/dungeons_abomination_quick_vine.entity.json",
+      "sourceSha256": "82d9a24a146d370149ffc851d79adb0e19caecdf7e1811f146d0978663e2f222",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:abomination_vine",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/jungle/vine.json",
+      "file": "entity/dungeons_abomination_vine.entity.json",
+      "sourceSha256": "5a3b8d6e4acc5ebb1c5be6a58d3f940f346f8c2c41ccddba403131a1e7a2c080",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:ancient_guardian",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/ancient_guardian/ancient_guardian.json",
+      "file": "entity/dungeons_ancient_guardian.entity.json",
+      "sourceSha256": "e02e2285947b2e74ae89673c25527bcbfa839e947f6cb053c4de2a5299b95916",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:ancient_guardian_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/ancient_guardian/sleeping_guardian.json",
+      "file": "entity/dungeons_ancient_guardian_resting.entity.json",
+      "sourceSha256": "7d959ef46e87f629223abe9b610cc43fa9b4857f68f50ddcb0b501595ac03306",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:angry_mooshroom",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/mooshroom/summon_mooshroom.entity.json",
+      "file": "entity/dungeons_angry_mooshroom.entity.json",
+      "sourceSha256": "128fe255053090ff884f64f3c9ab973f74738576b1e9ab12553ac5aced0ab8eb",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:arch_illager",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/arch_illager/arch_illager.json",
+      "file": "entity/dungeons_arch_illager.entity.json",
+      "sourceSha256": "3ccb623b01b0d00ceb199a22fa61a381be3cf0e2912c2d447fb9c082b9466106",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:arch_illager_death_animation",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/arch_illager/arch_illager_death_animation.json",
+      "file": "entity/dungeons_arch_illager_death_animation.entity.json",
+      "sourceSha256": "a1dee5c44c27916a92d57d318adc745ab78545c66659b537daad8cac32566bc1",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:arch_illager_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/arch_illager/arch_illager_resting.json",
+      "file": "entity/dungeons_arch_illager_resting.entity.json",
+      "sourceSha256": "3869583f25557e7e10644fc17ec81494def0363f31854051745b8f9aad0a9b25",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:baby_ghast",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/baby_ghast.json",
+      "file": "entity/dungeons_baby_ghast.entity.json",
+      "sourceSha256": "7498ef8e17793dcd84427a42c5c03177961996d1d31f9b6b9238575d8d87dd74",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:binding_eye",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/binding_eye.json",
+      "file": "entity/dungeons_binding_eye.entity.json",
+      "sourceSha256": "6be5e5d603c179001148b918851a3b196e09c05d51040cefde76262fda27e495",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:binding_eye_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/binding_eye_resting.json",
+      "file": "entity/dungeons_binding_eye_resting.entity.json",
+      "sourceSha256": "43b1e8d94f769d40243d0f6400279abbd72314429535899c8c876f6a622cb1e5",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:biomine",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/ancient_guardian/mine.json",
+      "file": "entity/dungeons_biomine.entity.json",
+      "sourceSha256": "1fb84a5718c220f3f66d69376acf81b4057f835d454c0a76e2d527af90874166",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:blastling",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/blastling.entity.json",
+      "file": "entity/dungeons_blastling.entity.json",
+      "sourceSha256": "3fa79c3cd63bc73155728ab9eedce5fb9ec1e997aa06a8f5b879199edea20b5d",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:blight_eye",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/blight_eye.json",
+      "file": "entity/dungeons_blight_eye.entity.json",
+      "sourceSha256": "f818eb37186b40b0b6531f7a3915c47a7bcd1d829097c0798e85f5f65b2f0211",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:blight_eye_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/blight_eye_resting.json",
+      "file": "entity/dungeons_blight_eye_resting.entity.json",
+      "sourceSha256": "78347146bba3f8b994eaf8ea5a14cb4708ee0d3d5322cc36f373a1193f19cfbc",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:boss_wildfire",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/bossWildfire/wildfire.json",
+      "file": "entity/dungeons_boss_wildfire.entity.json",
+      "sourceSha256": "caab4d6d854dd3df5e4a0d857a368139d0232dc34ee4bff959b69143ed38da28",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:boss_wildfire_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/bossWildfire/wildfireR.json",
+      "file": "entity/dungeons_boss_wildfire_resting.entity.json",
+      "sourceSha256": "a0773f32216e86e3ba54dd8381476308cd5ec1ba82fbcf613861dac33f41f190",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:buzzy_nest",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/pet/buzzy_nest.json",
+      "file": "entity/dungeons_buzzy_nest.entity.json",
+      "sourceSha256": "391daf53ec44ab228b33c387aa406395d7f788310ddfccba660c9401c1d673a9",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:cauldron_slime",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/cauldron/slime.entity.json",
+      "file": "entity/dungeons_cauldron_slime.entity.json",
+      "sourceSha256": "5f524f6e128a310fd9677495bac904ecbf60a68ad199807023906caf26e44f86",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:corrupted_cauldron",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/cauldron/active_cauldron.json",
+      "file": "entity/dungeons_corrupted_cauldron.entity.json",
+      "sourceSha256": "2883db1001dcb6894efba96ebf89702a9a42c9bc70de71942b0cc517b46ab3e4",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:corrupted_cauldron_fire",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/cauldron/cauldron_fire.json",
+      "file": "entity/dungeons_corrupted_cauldron_fire.entity.json",
+      "sourceSha256": "9c8c214c0ecc8db4c4e15c9aabc276963146d72222d48b377d58cdd4903a79cc",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:corrupted_cauldron_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/cauldron/dormant_cauldron.json",
+      "file": "entity/dungeons_corrupted_cauldron_resting.entity.json",
+      "sourceSha256": "4b5807def6aa486963fae95ffbe11936d9d7565cebaf187f304ee1366076b0a7",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:cursed_presence",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/ancient/cursed_presence.json",
+      "file": "entity/dungeons_cursed_presence.entity.json",
+      "sourceSha256": "e25a52f758e5994ccbc96c7a5329c1407476147e1e98cd36b0dbb0114be27605",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:cursed_presence_guard",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/ancient/cursed_presence_guard.json",
+      "file": "entity/dungeons_cursed_presence_guard.entity.json",
+      "sourceSha256": "ca01358c53161a870fd80997c6cbaeb2d76e4513726aaad16488ad956c28444e",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:drowned_necromancer",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/drowned_necromancer.json",
+      "file": "entity/dungeons_drowned_necromancer.entity.json",
+      "sourceSha256": "d8a58416304e571dd08514a3fa5b571f86f9959bc6f55ae85a4b74efbb3f93c5",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:dummy",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/dummy.entity.json",
+      "file": "entity/dungeons_dummy.entity.json",
+      "sourceSha256": "d24818aca3968a9a14ec8a3a876e6b481220e561b942c0a6b2a0b86ff8320a63",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:enchanted_blastling",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_blastling.entity.json",
+      "file": "entity/dungeons_enchanted_blastling.entity.json",
+      "sourceSha256": "7aa51ce972eada046ed08362ed828933402e043807a6463d4078ae963229e33b",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_blaze",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_blaze.entity.json",
+      "file": "entity/dungeons_enchanted_blaze.entity.json",
+      "sourceSha256": "b41b7b7ecc9cfe150c51b32fcc5974e39b610d0ca3c7a248f73bfb60f4aa1ccd",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_bogged",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_bogged.entity.json",
+      "file": "entity/dungeons_enchanted_bogged.entity.json",
+      "sourceSha256": "5b2318b94ff5122cafd8e414cf08e71583ff335f7b0c7f0a88f9d8dd2587acad",
+      "addedControllers": 4
+    },
+    {
+      "id": "dungeons:enchanted_cave_spider",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_cave_spider.entity.json",
+      "file": "entity/dungeons_enchanted_cave_spider.entity.json",
+      "sourceSha256": "8ef036b22c0f15929f322801e2fe8ea7142d5b7709c9c112ee5770f37e33c6b8",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_creeper",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_creeper.entity.json",
+      "file": "entity/dungeons_enchanted_creeper.entity.json",
+      "sourceSha256": "8c45aecceb4ff5442d7792b9c9bace8748e7ff92e8817b283cc0bfad9e863bf1",
+      "addedControllers": 3
+    },
+    {
+      "id": "dungeons:enchanted_drowned",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/drowned.entity.json",
+      "file": "entity/dungeons_enchanted_drowned.entity.json",
+      "sourceSha256": "9014658deea75464e0638588af91b87c89bb57df2d3709ea5e55cef766dc1e86",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_enderman",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_enderman.entity.json",
+      "file": "entity/dungeons_enchanted_enderman.entity.json",
+      "sourceSha256": "f9fad94aeb0762d8163da4259a03d3a9ebbbeafbfa2849308b856925ff10bb6f",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_endermite",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_endermite.entity.json",
+      "file": "entity/dungeons_enchanted_endermite.entity.json",
+      "sourceSha256": "87a9af427369a862e1fe481a0bec161462d52727ea5051d6173f0ce357e7cbf9",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_fire",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/firetrail.json",
+      "file": "entity/dungeons_enchanted_fire.entity.json",
+      "sourceSha256": "26a04812f2e19ab7ade259bd3c2261f4b44b1fd203fc9d71b05b992529d2048f",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:enchanted_frozen_zombie",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_frozen_zombie.entity.json.json",
+      "file": "entity/dungeons_enchanted_frozen_zombie.entity.json",
+      "sourceSha256": "00b10fc4fd5356108d51d284c24b4b12f629c4287d5b2547f0c396d33e1bcf62",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_husk",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_husk.entity.json",
+      "file": "entity/dungeons_enchanted_husk.entity.json",
+      "sourceSha256": "c4515a754060bf50bd6ecb5f9dcc00483e48b82d47fef11937b6c79389a37b3a",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_iceologer",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_iceologer.entity.json",
+      "file": "entity/dungeons_enchanted_iceologer.entity.json",
+      "sourceSha256": "7b78d639a8e08667442352f8f3239b9a05ba2a6fadce589bc83f5409dd8ea3a0",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_icy_creeper",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_icy_creeper.json",
+      "file": "entity/dungeons_enchanted_icy_creeper.entity.json",
+      "sourceSha256": "3f04c69186a69c86a78b2eef1b4530999d623f2780f65312a45ad63ff2feabd5",
+      "addedControllers": 3
+    },
+    {
+      "id": "dungeons:enchanted_jungle_zombie",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_jungle_zombie.entity.json",
+      "file": "entity/dungeons_enchanted_jungle_zombie.entity.json",
+      "sourceSha256": "cfdcda260e1c122d0c3aca1fcc461d7a597f8f5f72dba49ee9d0d63e6423a62b",
+      "addedControllers": 3
+    },
+    {
+      "id": "dungeons:enchanted_necromancer",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_necromancer.entity.json",
+      "file": "entity/dungeons_enchanted_necromancer.entity.json",
+      "sourceSha256": "420f28560e3e58555eab08addb493ca785edae86be7a76d88c89bd7f5c15da19",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_parched",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_parched.entity.json",
+      "file": "entity/dungeons_enchanted_parched.entity.json",
+      "sourceSha256": "81f2e1d4f17561629868423050ddec942b012fb15c340c6f003c5bf22dbf0333",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_pillager",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_pillager.entity.json",
+      "file": "entity/dungeons_enchanted_pillager.entity.json",
+      "sourceSha256": "7321977f9902a4b29da77bc10dcbe9582bb3c075d398c7502469a4fd62c4e557",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_royal_guard",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_royal_guard.json",
+      "file": "entity/dungeons_enchanted_royal_guard.entity.json",
+      "sourceSha256": "fc96fae54baf6ea43f62b4cf2438c4b4a0e1c08de893a84f23c92813aff95321",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_sheep",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/pet/enchanted_sheep.entity.json",
+      "file": "entity/dungeons_enchanted_sheep.entity.json",
+      "sourceSha256": "6857568a4c579347cd636fafc79246f20c02c5283a0b07a7f14bd42dcbc92154",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_silverfish",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_silverfish.entity.json",
+      "file": "entity/dungeons_enchanted_silverfish.entity.json",
+      "sourceSha256": "b60664c7241656014ad462a731a969966c35c7f4b217369904d4baae2fd86f1f",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_skeleton",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_skeleton.entity.json",
+      "file": "entity/dungeons_enchanted_skeleton.entity.json",
+      "sourceSha256": "251d1dc7dea83490460d4b1e6c0733303492874995b419378bdab65772463039",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_snareling",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_snareling.entity.json",
+      "file": "entity/dungeons_enchanted_snareling.entity.json",
+      "sourceSha256": "87078c460e59c15c8ca1079f8fab0d5ba28900eabbad4d91509e57f12a75a05c",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_spider",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_spider.entity.json",
+      "file": "entity/dungeons_enchanted_spider.entity.json",
+      "sourceSha256": "87965f0efc832517113bef407f6528a3fc6aab3c3da6b58e95d5e4be293f8e9d",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_stray",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_stray.entity.json",
+      "file": "entity/dungeons_enchanted_stray.entity.json",
+      "sourceSha256": "a0f8d5516935aceea97a64bc9291d8587e3e7bb5fba6b768467539a692841f2d",
+      "addedControllers": 4
+    },
+    {
+      "id": "dungeons:enchanted_sunken_skeleton",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_sunken_skeleton.json",
+      "file": "entity/dungeons_enchanted_sunken_skeleton.entity.json",
+      "sourceSha256": "68ff2b6eb0568e3be55349ef9358d98e9d3c829e4c37dc921c5895b2ce656796",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_vanguard",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_vanguard.entity.json",
+      "file": "entity/dungeons_enchanted_vanguard.entity.json",
+      "sourceSha256": "00379e3f29f124ecaa00e7298c273a2dd95df4b97ae5d1fdbffb4ae9806157fe",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_vindicator",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_vindicator.entity.json",
+      "file": "entity/dungeons_enchanted_vindicator.entity.json",
+      "sourceSha256": "562c22cd31730b817d8aca6279cf79d1469285036f7d14738cf48fa177898b96",
+      "addedControllers": 4
+    },
+    {
+      "id": "dungeons:enchanted_watchling",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_watchling.entity.json",
+      "file": "entity/dungeons_enchanted_watchling.entity.json",
+      "sourceSha256": "fd1b9956e85a81e108664ff70f615ba4a07a3cd392b193dcb5037145d63c2812",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_witch",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_witch.entity.json",
+      "file": "entity/dungeons_enchanted_witch.entity.json",
+      "sourceSha256": "9c68eec01a17d20028fcc6196dc8370ea00eaa5c1e668d98eb14644772845d1b",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_wither_skeleton",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_wither_skeleton.json",
+      "file": "entity/dungeons_enchanted_wither_skeleton.entity.json",
+      "sourceSha256": "0e75d4d159631ffc1424981bbe2a48f151c46a0ba126f9e26a56bd04c540c88a",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_wraith",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/new/enchanted_wraith.entity.json",
+      "file": "entity/dungeons_enchanted_wraith.entity.json",
+      "sourceSha256": "b41a1bc6db0882a4812bd42d61a56c4a5497b19fd327e05977c21f6f74834161",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanted_zombie",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/enchanted/vanilla/enchanted_zombie.entity.json",
+      "file": "entity/dungeons_enchanted_zombie.entity.json",
+      "sourceSha256": "583c4cfcb018d31a5e5b6566443659466c4145a2b465994ad49f48a6b3a0fc4a",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:enchanter",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/enchanter.json",
+      "file": "entity/dungeons_enchanter.entity.json",
+      "sourceSha256": "a916baf234ec24b2be2863f4284fd05c488661a8edf2a87ac7080b48689fcbc2",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:endersent",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent.entity.json",
+      "file": "entity/dungeons_endersent.entity.json",
+      "sourceSha256": "f9c7a1fea0a6af09842297142552b6e31ee812c1fdfac9b17d475126e991af99",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:frozen_zombie",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/frozen_zombie/frozen_zombie.entity.json.json",
+      "file": "entity/dungeons_frozen_zombie.entity.json",
+      "sourceSha256": "7fcfd047951e70bd1c891b0aced276b025497dbce89b2e5f1ed4c5be33c99836",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:guardian_vex",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/pet/guardian_vex.json",
+      "file": "entity/dungeons_guardian_vex.entity.json",
+      "sourceSha256": "9468446922b43255b5ba6e1d927025bc0f58c5b671ab0ada399c5a71f6e21857",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:heart_of_ender",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/arch_illager/heart_of_ender/heart_of_ender.json",
+      "file": "entity/dungeons_heart_of_ender.entity.json",
+      "sourceSha256": "7060466382998e14d9f1c363773661d0769037be01441def9425bf18bc1bc480",
+      "addedControllers": 3
+    },
+    {
+      "id": "dungeons:heart_of_ender_head",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/arch_illager/heart_of_ender/heart_of_ender_head.json",
+      "file": "entity/dungeons_heart_of_ender_head.entity.json",
+      "sourceSha256": "cefbfb090fe2b6807b9fc798e87af2cef7a95435e20ccfec293e23de6a1b475c",
+      "addedControllers": 3
+    },
+    {
+      "id": "dungeons:heart_of_ender_laser",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/arch_illager/heart_of_ender/heart_of_ender_laser.json",
+      "file": "entity/dungeons_heart_of_ender_laser.entity.json",
+      "sourceSha256": "088843058f79ae432d373a1b8469e7733cf30522fd8a09813f64fefa253dcd9f",
+      "addedControllers": 3
+    },
+    {
+      "id": "dungeons:heart_of_ender_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/arch_illager/heart_of_ender/heart_of_ender_resting.json",
+      "file": "entity/dungeons_heart_of_ender_resting.entity.json",
+      "sourceSha256": "cebcb282d9006b8a794485d482f0b857f3566348622f2fae9d361cae3b8ff7bc",
+      "addedControllers": 3
+    },
+    {
+      "id": "dungeons:heart_of_ender_scatter_mine",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/arch_illager/heart_of_ender/heart_of_ender_scatter_mine.json",
+      "file": "entity/dungeons_heart_of_ender_scatter_mine.entity.json",
+      "sourceSha256": "8f7db5fb22b795e361fdf2825a508ed91877540e669bf57bbe4a3143a604d769",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:ice_chunk",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/ice_chunk.entity.json",
+      "file": "entity/dungeons_ice_chunk.entity.json",
+      "sourceSha256": "f73c88b2b4f3e4eb9205d9da32a2918d19630b4a068e6f4f2158b16bd39a4ebe",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:ice_chunk_player",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/ice_chunk_player.entity.json",
+      "file": "entity/dungeons_ice_chunk_player.entity.json",
+      "sourceSha256": "2cdc86cabf3d380ce32276d0c9da12f3f623eaa10f0657317319feb036ddf9c5",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:iceologer",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/iceologer.entity.json",
+      "file": "entity/dungeons_iceologer.entity.json",
+      "sourceSha256": "d47ba61376188dbe34ac0c870626d335a35fc410ba37523146df9ac3bb30d5fc",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:icy_creeper",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/icy_creeper.entity.json",
+      "file": "entity/dungeons_icy_creeper.entity.json",
+      "sourceSha256": "4950e85d5478e5ed921be0c801af03433cd1cd0587da4b4c5d846d42e6850e3b",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:illusioner",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/illusioner.json",
+      "file": "entity/dungeons_illusioner.entity.json",
+      "sourceSha256": "4f152bc130dc88530984773df94034bb96227206ecdf0f73ad6653d6791cfcd5",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:illusioner_clone",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/illusioner_clone.json",
+      "file": "entity/dungeons_illusioner_clone.entity.json",
+      "sourceSha256": "f45e1d9ac11e069b4c2d7e3767c8114a9e9669c45d4eac43103a03c8d5952182",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:jungle_abomination",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/jungle/abomination.json",
+      "file": "entity/dungeons_jungle_abomination.entity.json",
+      "sourceSha256": "cee6bddc5c1300b2d2622bc2fd48a431e46546fa9f52e2b09b3135ba7cc00cfb",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:jungle_abomination_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/jungle/sleeping_abomination.json",
+      "file": "entity/dungeons_jungle_abomination_resting.entity.json",
+      "sourceSha256": "fcca2bc6449893306bf37573b7f3afa7a981ae2724a407635fa3154923741dcc",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:jungle_zombie",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/jungle_zombie.entity.json",
+      "file": "entity/dungeons_jungle_zombie.entity.json",
+      "sourceSha256": "892398d9978315b866ad45ff92db4bdfdc53eba47045c5f2cdb21b213b184a0f",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:leapleaf",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/leapleaf.entity.json",
+      "file": "entity/dungeons_leapleaf.entity.json",
+      "sourceSha256": "ae3cecdcd0752a91640cff0297fde8ff3ca866b4596bde0e9a21cc4aa75faa55",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:mooshroom_monstrosity",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/mooshroom/mooshroom_monstrosity.json",
+      "file": "entity/dungeons_mooshroom_monstrosity.entity.json",
+      "sourceSha256": "1f28716f2d774ec248ee54d3401d61b3d1f6aa3dedebb551a4c061f5602e971b",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:mooshroom_monstrosity_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/mooshroom/mooshroom_monstrosity_resting.json",
+      "file": "entity/dungeons_mooshroom_monstrosity_resting.entity.json",
+      "sourceSha256": "833ce20ba171eb668bf16eac8392a00adbf7ba46cea60e418f5df115e89684d3",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:nameless_one",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/nameless/nameless_one.json",
+      "file": "entity/dungeons_nameless_one.entity.json",
+      "sourceSha256": "dbe9cb409ba6933b623629d933a8c794ed92b86d040fb28bbdb8b2d417bcfc61",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:nameless_one_illusion",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/nameless/poser_one.json",
+      "file": "entity/dungeons_nameless_one_illusion.entity.json",
+      "sourceSha256": "885b753bf9d0b22e570670474efe9a0f29a74b5225516a7b97f75dd40fcc9b64",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:nameless_one_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/nameless/sleeping_one.json",
+      "file": "entity/dungeons_nameless_one_resting.entity.json",
+      "sourceSha256": "97ba990fe40203f6c4656afc7196fc703f71468e20000a38a1f7f832e3470070",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:nameless_vanguard",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/nameless_vanguard.json",
+      "file": "entity/dungeons_nameless_vanguard.entity.json",
+      "sourceSha256": "bd1246bd1674fc3768b9bc3585926066c31ad52f5140eaf17fde73ae03e9e647",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:necromancer",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/necromancer.entity.json",
+      "file": "entity/dungeons_necromancer.entity.json",
+      "sourceSha256": "f3b1e676e3de411635f55ab804e57517dc6abcc8d672ca3bcf32fa16898b7029",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:obsidian_monstrosity",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/obsidian/obsidian_monstrosity.json",
+      "file": "entity/dungeons_obsidian_monstrosity.entity.json",
+      "sourceSha256": "b7e2b7495938d1d433c8e9d491c32a4111a4d55be0f670b618dd10a75f31da8f",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:obsidian_monstrosity_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/obsidian/obsidian_monstrosity_resting.json",
+      "file": "entity/dungeons_obsidian_monstrosity_resting.entity.json",
+      "sourceSha256": "efbb20fa75a16c0a05f80ec730efecdb9b7b7d328b36ddb2453e113a2de682b8",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:obsidian_scatter_mine",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/obsidian/obsidian_scatter_mine.json",
+      "file": "entity/dungeons_obsidian_scatter_mine.entity.json",
+      "sourceSha256": "50e19e2cfbc36f9b2c03da90b18c4b18bcb8f56a320402f178923f8875b0a24f",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:pet_bee",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/pet/busy_bee.json",
+      "file": "entity/dungeons_pet_bee.entity.json",
+      "sourceSha256": "ded559f8f6b17da7f9a28450ce01859db0cae2392f6ea43f1b8e74b1ef782d21",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:pet_iron_golem",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/pet/pet_golem.entity.json",
+      "file": "entity/dungeons_pet_iron_golem.entity.json",
+      "sourceSha256": "3a2613cec82ae90e243466d034b965f07dfb4007f8230bec731db7372809f218",
+      "addedControllers": 3
+    },
+    {
+      "id": "dungeons:pet_llama",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/pet/llama.entity.json",
+      "file": "entity/dungeons_pet_llama.entity.json",
+      "sourceSha256": "872969adc70a6a213e3fa84d008121d939f021b12bb9706e039359ef217d48e7",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:pet_wolf",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/pet/wolf.entity.json",
+      "file": "entity/dungeons_pet_wolf.entity.json",
+      "sourceSha256": "6b7b1ff5675c2dfcd78dd7c16ccddcccb4a88ff926fbd7a736f665cbb26ad1db",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:piglin_fungus_thrower",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/fungus_thrower.json",
+      "file": "entity/dungeons_piglin_fungus_thrower.entity.json",
+      "sourceSha256": "99dac73b9a3627b9647d944d322b61551506b4e4b72eba4ed64893c013f5ddb0",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:player_scatter_mine",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/player_scatter_mine.json",
+      "file": "entity/dungeons_player_scatter_mine.entity.json",
+      "sourceSha256": "9fab3744015e302e30f811354136428ddf9450ec50ad4ad2e72e76437459aded",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:ravenous_eye",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/ravenous_eye.json",
+      "file": "entity/dungeons_ravenous_eye.entity.json",
+      "sourceSha256": "7bb83ac9a9a3d94ff04374f7153362216ce83fa1792d72486fbe367bc87a66ff",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:ravenous_eye_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/ravenous_eye_resting.json",
+      "file": "entity/dungeons_ravenous_eye_resting.entity.json",
+      "sourceSha256": "fbfbedde114948b545663ccfe0a32cd1c3230f12a56249cb5f1cfc3ed573b3bd",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:reaping_eye",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/reaping_eye.json",
+      "file": "entity/dungeons_reaping_eye.entity.json",
+      "sourceSha256": "e877b6e5f1a66fe949e80a28e6d052893f69995701ad93596ba70e53e6ef6afc",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:reaping_eye_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/reaping_eye_resting.json",
+      "file": "entity/dungeons_reaping_eye_resting.entity.json",
+      "sourceSha256": "47e1b4a36a1bd4b83dfe796d2e8d03b2fa75c42e9ebe9c8f619ef40f9046fb4f",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:redstone_cube",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/redstone_cube.json",
+      "file": "entity/dungeons_redstone_cube.entity.json",
+      "sourceSha256": "4a62017fb446fee0f9e24d6f21c08e612ee4df6c3e2897fae1e7eb814afc6c8c",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:redstone_golem",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/redstone_golem.entity.json",
+      "file": "entity/dungeons_redstone_golem.entity.json",
+      "sourceSha256": "2779725018d4a417016eb711b378095fc2b33ea1df59a2fdc98832ff976187a2",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:redstone_golem_mine",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/redstone_golem_mine.entity.json",
+      "file": "entity/dungeons_redstone_golem_mine.entity.json",
+      "sourceSha256": "12f04cc7997f3076678882adda3473cc87a3de8d2f96ab05804e2ff50950998b",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:redstone_golem_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/sleeping_golem.json",
+      "file": "entity/dungeons_redstone_golem_resting.entity.json",
+      "sourceSha256": "7f851a43d9b10846b12166da5d6997793948d664b5e52ee309be4cd8be6ceac0",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:redstone_monstrosity",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/monstrosity/redstone_monstrosity.json",
+      "file": "entity/dungeons_redstone_monstrosity.entity.json",
+      "sourceSha256": "58b14bc91298f7f0cdb3cae571dfd59853b321df141661325a38ea37d1dfe026",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:redstone_monstrosity_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/monstrosity/sleeping_monstrosity.json",
+      "file": "entity/dungeons_redstone_monstrosity_resting.entity.json",
+      "sourceSha256": "1943b80210a9644820c077fe4ab3c0069c582324dae5ff2c3c28dd7c6ce7ae0b",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:rolling_flame",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/spookyMonstrosity/cube.json",
+      "file": "entity/dungeons_rolling_flame.entity.json",
+      "sourceSha256": "dd47178bf5bc87b07d6c453094efc49bb1b6d90b6be6d6b96c3477dde6e303db",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:royal_guard",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/royal_guard.entity.json",
+      "file": "entity/dungeons_royal_guard.entity.json",
+      "sourceSha256": "b6342e5c765e53b912f3378fd6029188207a61a403e21146839c5aebfc006034",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:savage_eye",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/savage_eye.json",
+      "file": "entity/dungeons_savage_eye.entity.json",
+      "sourceSha256": "4a1dcf76a6a23f8c60b296b0862c14dd6baf55badd4cbb1d47217267a2df709a",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:savage_eye_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/savage_eye_resting.json",
+      "file": "entity/dungeons_savage_eye_resting.entity.json",
+      "sourceSha256": "89ce3987166e86341e1a4aa0256ab2b823af5ef7c5f916e0a76e201286588d69",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:snareling",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/snareling.entity.json",
+      "file": "entity/dungeons_snareling.entity.json",
+      "sourceSha256": "eda97635f8fdb7f4e136eea8c091228d40f0eee819c64e56a623f415a1ede9dc",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:soul_wizard",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/pet/soul_wizard.json",
+      "file": "entity/dungeons_soul_wizard.entity.json",
+      "sourceSha256": "bb9c051c7ea8c0664ff09a42f415599bb125b32f342008fda6e56b9900a1f98f",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:spiked_eye",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/spiked_eye.json",
+      "file": "entity/dungeons_spiked_eye.entity.json",
+      "sourceSha256": "4156bc634bcf1c0a17c257d09a704f24417e9f52a11aa272c6d2f7d38083ff90",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:spiked_eye_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/endersent/spiked_eye_resting.json",
+      "file": "entity/dungeons_spiked_eye_resting.entity.json",
+      "sourceSha256": "856c54574eda5985ba40016519a256774e6b3e1f594d719f84f1c50bea32ab86",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:spooky_monstrosity",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/spookyMonstrosity/spooky_monstrosity.json",
+      "file": "entity/dungeons_spooky_monstrosity.entity.json",
+      "sourceSha256": "7ca249b1ceb31fb9ca6129fe53eb88d324d91446f7c82deda8f4f57cee448e09",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:spooky_monstrosity_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/spookyMonstrosity/sleeping_monstrosity.json",
+      "file": "entity/dungeons_spooky_monstrosity_resting.entity.json",
+      "sourceSha256": "9c2abec284a3e65d1b3dd7ec7a6d6ade02132d91433c6da37286c98cf715a1fd",
+      "addedControllers": 2
+    },
+    {
+      "id": "dungeons:squall_golem",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/squall_golem.json",
+      "file": "entity/dungeons_squall_golem.entity.json",
+      "sourceSha256": "0ce65d3e906c868d21f1af19ae3e04942ffbfc6f7c9ce555c58e55c390bd006a",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:squall_golem_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/sleeping_squall_golem.json",
+      "file": "entity/dungeons_squall_golem_resting.entity.json",
+      "sourceSha256": "6bb94b9654df17333a30c207756f486ffa6d302775a7e8e1817170f265568072",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:sunken_skeleton",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/sunken_skeleton.entity.json",
+      "file": "entity/dungeons_sunken_skeleton.entity.json",
+      "sourceSha256": "7b5bf0a27fa5bc582bbc048a4875191ae223de5419a52a3c75a7784718931df6",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:target_dummy",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/target_dummy.entity.json",
+      "file": "entity/dungeons_target_dummy.entity.json",
+      "sourceSha256": "861ed8b7babac2d9334271a16d6642ceb51a64b6022401673146847f421e8ed4",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:tempest_golem",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/tempest/tempest.json",
+      "file": "entity/dungeons_tempest_golem.entity.json",
+      "sourceSha256": "8d0d1cec674eeaccdc219f2f08b930faf9f359c7aaba921b15be3b8db94dd201",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:tempest_golem_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/tempest/sleeping_tempest.json",
+      "file": "entity/dungeons_tempest_golem_resting.entity.json",
+      "sourceSha256": "2b783b867959f100746c6c22813b86a9873c95983e383716b34788b8abab1889",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:totem_of_casting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/totem_casting.json",
+      "file": "entity/dungeons_totem_of_casting.entity.json",
+      "sourceSha256": "2ad3625f9ca7eb9dcc80bf97ecd47fb3173c043a40695adaf181638b75077c94",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:totem_of_regeneration",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/totem_regeneration.entity.json",
+      "file": "entity/dungeons_totem_of_regeneration.entity.json",
+      "sourceSha256": "1e113054a840616309379c34bace5c406dcf4b54d2b4b1c45ed39ec3b1783864",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:totem_of_shielding",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/totem_shield.entity.json",
+      "file": "entity/dungeons_totem_of_shielding.entity.json",
+      "sourceSha256": "13adccb5dfe3160e5752f31b6b87766d24523f2975a144083da29ac5405f9d80",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:totem_of_soul_protection",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/totem_soul_protection.json",
+      "file": "entity/dungeons_totem_of_soul_protection.entity.json",
+      "sourceSha256": "b81d4f18f6215c4f231f726cbc7fa32992e0e4cdeec741e42c469997fb2df580",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:tower_wraith",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/tower_wraith.json",
+      "file": "entity/dungeons_tower_wraith.entity.json",
+      "sourceSha256": "f59af618ee510e76569ada1442d7b4bbc09e9b420f7f4efcb3b8dd0bf088bfe8",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:vanguard",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/vanguard.entity.json",
+      "file": "entity/dungeons_vanguard.entity.json",
+      "sourceSha256": "73650b93264942ba8c6c5ae91064c6794f553f955890a437650377f6bc1c0e20",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:vengeful_endermite",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/variant/endermite.entity.json",
+      "file": "entity/dungeons_vengeful_endermite.entity.json",
+      "sourceSha256": "39437f5228bb4ac57d7ba6c2ae1b1dd1d2984fec07bc3d476d272c6b9c648d83",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:vengeful_heart_of_ender",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/vengeful_heart/the_big_man.json",
+      "file": "entity/dungeons_vengeful_heart_of_ender.entity.json",
+      "sourceSha256": "7a9a27dd760d5f68360c7affa359543e0509c3e852eb7a755c044c03cb803559",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:vengeful_heart_of_ender_death",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/vengeful_heart/death.json",
+      "file": "entity/dungeons_vengeful_heart_of_ender_death.entity.json",
+      "sourceSha256": "e7b4ae438e0700a2aefae09e4eb429622e5bd18d4142376a7348c68df41c0f88",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:vengeful_heart_of_ender_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/vengeful_heart/resting_heart.json",
+      "file": "entity/dungeons_vengeful_heart_of_ender_resting.entity.json",
+      "sourceSha256": "bef02c1ed8ef31c1cf745d1b5aee76ce697bf73ae640ccdb87f092df1217cf00",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:vhoe_bomb",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/vengeful_heart/vhoe_bomb.json",
+      "file": "entity/dungeons_vhoe_bomb.entity.json",
+      "sourceSha256": "b942bbe1b417ae053c2bb647344b8bfcf614dc912cb9e76338f1d4d41b18ba74",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:vhoe_flame",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/vengeful_heart/vhoe_flame.json",
+      "file": "entity/dungeons_vhoe_flame.entity.json",
+      "sourceSha256": "af532292304d0dfad47ec5aa25c9966a0ea0c8280c1b42f8cccc32454f59e02e",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:vindicator_chef",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/variant/vindicator_chef.entity.json",
+      "file": "entity/dungeons_vindicator_chef.entity.json",
+      "sourceSha256": "a5d22a661cd02da180249a9dfcc03218ed35d8db03f748fc4196973ec796c503",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:void_portal",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/vengeful_heart/void_portal.json",
+      "file": "entity/dungeons_void_portal.entity.json",
+      "sourceSha256": "a1e79e90dc4347e47e5acc5316caf23138ab6659c26b13223464e6551767fa06",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:watchling",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/watchling.entity.json",
+      "file": "entity/dungeons_watchling.entity.json",
+      "sourceSha256": "a3589ea39d08f65a2c03a9b84955379948bf4d547c325f7bceaaedf402331a58",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wavewhisperer",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/wavewhisperer.entity.json",
+      "file": "entity/dungeons_wavewhisperer.entity.json",
+      "sourceSha256": "8a5ca1fc99c5a79118525f3e0b6aaa898bfe0f58d091489a2528b5f91655ddb9",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wavewhisperer_kelp",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/wavewhisperer_vine.entity.json",
+      "file": "entity/dungeons_wavewhisperer_kelp.entity.json",
+      "sourceSha256": "c64daf519463747a7cc996d77d65e8bb15a7c2909c71a1e8578560ac87d6e41c",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wavewhisperer_kelp2",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/wavewhisperer_vine2.entity.json",
+      "file": "entity/dungeons_wavewhisperer_kelp2.entity.json",
+      "sourceSha256": "9f1527bd028478bc978c8ecde1b266ae8f0a9c57bed44ee854948d07d370e583",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:whisperer",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/whisperer.entity.json",
+      "file": "entity/dungeons_whisperer.entity.json",
+      "sourceSha256": "3aaead666bddd879d3b57832536ab3f98854803db59596559c7eed0125097336",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:whisperer_vine",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/whisperer_vine.entity.json",
+      "file": "entity/dungeons_whisperer_vine.entity.json",
+      "sourceSha256": "32dc7fc2e40069a9d90b607128261ecefcd02e32fd25f3d22fcea429b56cc457",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:whisperer_vine2",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/utility/whisperer_vine2.entity.json",
+      "file": "entity/dungeons_whisperer_vine2.entity.json",
+      "sourceSha256": "7c1397de23c058d3e3d47430c3a7b635843a29ca38e3d068e0e77a728d6c3292",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wildfire",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/wildfire.entity.json",
+      "file": "entity/dungeons_wildfire.entity.json",
+      "sourceSha256": "814dc5d0f4580a0afbfcb45001d9a653efade7ef09de454a66cec343678c9f88",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wind_totem_left",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/tempest/wind_totem_left.json",
+      "file": "entity/dungeons_wind_totem_left.entity.json",
+      "sourceSha256": "0d64f6b8ea0eeeb59db630891f5930f075c1e0aeb3b9dcfb934ebf8ae7ebb2aa",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wind_totem_right",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/tempest/wind_totem_right.json",
+      "file": "entity/dungeons_wind_totem_right.entity.json",
+      "sourceSha256": "909f208e02ba31a8af03e68712984c995793a4ea8bd557d10c36555c4faf1270",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:windcaller",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/windcaller.json",
+      "file": "entity/dungeons_windcaller.entity.json",
+      "sourceSha256": "f64244cf12fbad44ede028232a654b83cf23ddb02bf1f15d6990bf3bb651e997",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wraith",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/wraith/wraith.entity.json",
+      "file": "entity/dungeons_wraith.entity.json",
+      "sourceSha256": "027ad18e92fa60170fc237d8677e187a73253b0cb228c22df395347db005f92c",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wraith_fire",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/wraith/wraith_fire.entity.json",
+      "file": "entity/dungeons_wraith_fire.entity.json",
+      "sourceSha256": "ff9b83bb5390ff7904875c2fbd01d7f5950e4ec610d567b01cc83bb40328b123",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wretched_wraith",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/wretched/wretched_wraith.json",
+      "file": "entity/dungeons_wretched_wraith.entity.json",
+      "sourceSha256": "53a324e12ae25bbbd8dec03fa0a3e3859bb804042d6aac4efeffa53b4fe52290",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wretched_wraith_fire",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/wretched/wraith_fire.entity.json",
+      "file": "entity/dungeons_wretched_wraith_fire.entity.json",
+      "sourceSha256": "cd9ae4081b77d61238a3f4bc559175d0751fbd7214095913fd8d286a91deb45d",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:wretched_wraith_resting",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/boss/wretched/sleeping_wraith.json",
+      "file": "entity/dungeons_wretched_wraith_resting.entity.json",
+      "sourceSha256": "d9b5d38c3bad844313cd6e9b5b9d8c622f6b4908017fda6ff335c033c535203a",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:zombified_piglin_brute",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/variant/zombie_pigman_brute.entity.json",
+      "file": "entity/dungeons_zombified_piglin_brute.entity.json",
+      "sourceSha256": "6ecdc155111e1f0af119ebcf8ff0cfdcee5a5f054647509ba427ad374c14f14c",
+      "addedControllers": 1
+    },
+    {
+      "id": "dungeons:zombified_piglin_fungus_thrower",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/new/zombie_fungus_thrower.json",
+      "file": "entity/dungeons_zombified_piglin_fungus_thrower.entity.json",
+      "sourceSha256": "e9dc95348299d72a3079b979e95f907ed8459f8413e5d4ecc007ad976100bc06",
+      "addedControllers": 1
+    },
+    {
+      "id": "himaz:neko_okimono_2",
+      "source": "resource_packs/rp_17_9a12d1e1-d6c3-43b6-8551-cdc1bb582f82/entity/neko_okimono_2.entity.json",
+      "file": "entity/himaz_neko_okimono_2.entity.json",
+      "sourceSha256": "a30a6dc7284636c56efa959916e08014741146864b5d627df40a51d4f0563394",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:allay",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/allay.entity.json",
+      "file": "entity/minecraft_allay.entity.json",
+      "sourceSha256": "5c6345103f8b5b9595be6843f24bd629a40147fa57b075bccf581d9fd48f9bc1",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:armadillo",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/armadillo.entity.json",
+      "file": "entity/minecraft_armadillo.entity.json",
+      "sourceSha256": "e1e1947ee003ddbe9128b25fd87ecd72bbf357679db63977ec6db9349243b242",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:armor_stand",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/armor_stand.entity.json",
+      "file": "entity/minecraft_armor_stand.entity.json",
+      "sourceSha256": "b79091e98078ddbf2f95f7622636d1d7785235178034903aca439f0e2e1d709b",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:axolotl",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/axolotl.entity.json",
+      "file": "entity/minecraft_axolotl.entity.json",
+      "sourceSha256": "c478892a2a4842ee509ae97dd8bbb4acc4d0a37b4fdc7f535aca4853b85e61f2",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:bat",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/bat.entity.json",
+      "file": "entity/minecraft_bat.entity.json",
+      "sourceSha256": "1f738bc98f8943742533eb63fbb66c1a75b90d93c73cb0673aea9883b05ede7c",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:bee",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/bee.entity.json",
+      "file": "entity/minecraft_bee.entity.json",
+      "sourceSha256": "43f4854ec33fe648a19a736d716796cd2ac73b6e5a611dcbd481f616f3617b31",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:blaze",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/blaze.entity.json",
+      "file": "entity/minecraft_blaze.entity.json",
+      "sourceSha256": "fa2eb9a48f816cd30a272d4fd5db7aba8b8376b51f7762328cbf417e3c6feed8",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:bogged",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/bogged.entity.json",
+      "file": "entity/minecraft_bogged.entity.json",
+      "sourceSha256": "a7c862da7b83ac4ef4bc7513e4e4eb242c9ffb501f206d733d79f54f185453be",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:breeze",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/breeze.entity.json",
+      "file": "entity/minecraft_breeze.entity.json",
+      "sourceSha256": "f94a7f47580fb9ec8cb7bdc9e5c6cd40474d8b0001e4e70f6760f3d52538649f",
+      "addedControllers": 5
+    },
+    {
+      "id": "minecraft:camel",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/camel.entity.json",
+      "file": "entity/minecraft_camel.entity.json",
+      "sourceSha256": "2fdf2453a4c7b2ff85126174af3f96e62fd80de85a78994e0b281eb6a8c96c72",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:camel_husk",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/camel_husk.entity.json",
+      "file": "entity/minecraft_camel_husk.entity.json",
+      "sourceSha256": "2a3e21c96b771080cd6912de0b9a4f0dcc4c8c4882f84dd4257ba6ab3acc3681",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:cat",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/cat.entity.json",
+      "file": "entity/minecraft_cat.entity.json",
+      "sourceSha256": "985d682f1274b556c772c1318d0e6b71de3572e89a5aa252c62271409291b0da",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:cave_spider",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/cave_spider.entity.json",
+      "file": "entity/minecraft_cave_spider.entity.json",
+      "sourceSha256": "9cab79d8212ba7a1082438da863e9b2015576e50b0540d0ca9bca85695bfee73",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:chicken",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/chicken.entity.json",
+      "file": "entity/minecraft_chicken.entity.json",
+      "sourceSha256": "4a0441b992ed2e85f599826eac53ef98436fe25870f415113976f1d92431f1ca",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:cod",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/cod.entity.json",
+      "file": "entity/minecraft_cod.entity.json",
+      "sourceSha256": "5d0e7fbcda994edbee15f5f0b7ecb68445831b73ba4f2efdbf787133da007c63",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:copper_golem",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/copper_golem.entity.json",
+      "file": "entity/minecraft_copper_golem.entity.json",
+      "sourceSha256": "28d988ac453a8c35fe7beb886ea2df550ccaa54123bcd6fb8b5f79fde19e9664",
+      "addedControllers": 3
+    },
+    {
+      "id": "minecraft:cow",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/cow.entity.json",
+      "file": "entity/minecraft_cow.entity.json",
+      "sourceSha256": "0be89465ee2c340fe1f8292d0ecf8d7932032ebcc77f7c3e5b0e6efc2b66da12",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:creaking",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/creaking.entity.json",
+      "file": "entity/minecraft_creaking.entity.json",
+      "sourceSha256": "509a01b1ca88cc2d47b3c84b3c6367a9747942ca8e10026025a620baee35c7f5",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:creeper",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/creeper.entity.json",
+      "file": "entity/minecraft_creeper.entity.json",
+      "sourceSha256": "1276ad0215b6c832ab4b7ae3f9d2c22c07c4cb752f99e29ada48a8adfc5768c5",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:dolphin",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/dolphin.entity.json",
+      "file": "entity/minecraft_dolphin.entity.json",
+      "sourceSha256": "ccb0d738d933e055142166ae06200b41bf8dbe648689e009f6cac54391878aa1",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:donkey",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/donkey_v3.entity.json",
+      "file": "entity/minecraft_donkey.entity.json",
+      "sourceSha256": "126af5c350c8165d768afa241d694d67876e04c3b4d58bad7a2b61be5b8fdb88",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:drowned",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/vanilla/drowned.entity.json",
+      "file": "entity/minecraft_drowned.entity.json",
+      "sourceSha256": "575e9a7b311649dc42058a0da516debf16b5ad537c2526a8745412f6ae7c11c6",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:elder_guardian",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/elder_guardian.entity.json",
+      "file": "entity/minecraft_elder_guardian.entity.json",
+      "sourceSha256": "f7966831871a49aa5726545947c046c154c573ef7dc85f576f77eb00df25676f",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:ender_crystal",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/ender_crystal.entity.json",
+      "file": "entity/minecraft_ender_crystal.entity.json",
+      "sourceSha256": "26c33ca60a32a6c9a8d542b5d91b27a015893456f5f22fbe4f34280a1c60b7a3",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:ender_dragon",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/ender_dragon.entity.json",
+      "file": "entity/minecraft_ender_dragon.entity.json",
+      "sourceSha256": "339da4313e6a8ddf3a60bf4ee693bc6f0b790c9d9b451b56ebe9381cff9b719a",
+      "addedControllers": 3
+    },
+    {
+      "id": "minecraft:enderman",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/enderman.entity.json",
+      "file": "entity/minecraft_enderman.entity.json",
+      "sourceSha256": "8333403886d72ca9931d8baa0eec6d5009408dade8d049d1d5498132dae42e16",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:endermite",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/vanilla/endermite.entity.json",
+      "file": "entity/minecraft_endermite.entity.json",
+      "sourceSha256": "a7469d7114ddd35009b2912b04a82385e2dca361322e8ed282db0ade8d806ab5",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:evocation_illager",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/evocation_illager.entity.json",
+      "file": "entity/minecraft_evocation_illager.entity.json",
+      "sourceSha256": "5c10798b2ade52741dd326a796edba709b6afcc4bf76fff15da5fdc8f6a16b76",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:fox",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/fox.entity.json",
+      "file": "entity/minecraft_fox.entity.json",
+      "sourceSha256": "c7f8c23f0085ce64c2405b96f51f0365cc064067377b8669c73589f0f30bbf83",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:frog",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/frog.entity.json",
+      "file": "entity/minecraft_frog.entity.json",
+      "sourceSha256": "ed5ef6e5b41a5e1ee0edfd39efb2d84dc1a9f5e70184a69276bfaa2191037a0f",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:ghast",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/ghast.entity.json",
+      "file": "entity/minecraft_ghast.entity.json",
+      "sourceSha256": "88010e649c9f0626e9056caa7b879873d835e09bb8580b500573018cc80741ce",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:glow_squid",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/glow_squid.entity.json",
+      "file": "entity/minecraft_glow_squid.entity.json",
+      "sourceSha256": "27f09cb22cf34aa9b64f58032977953a20d06e98e64c0f27c9be9791f7440a6c",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:goat",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/goat.entity.json",
+      "file": "entity/minecraft_goat.entity.json",
+      "sourceSha256": "19fdd8e29489de26546f860251161b0d761041bf1b66b0ed9f404fcbb1859149",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:guardian",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/guardian.entity.json",
+      "file": "entity/minecraft_guardian.entity.json",
+      "sourceSha256": "294dee20792f50ec4e898e68116c4ea61b0149462bd527c6292452e16f2ea745",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:happy_ghast",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/happy_ghast.entity.json",
+      "file": "entity/minecraft_happy_ghast.entity.json",
+      "sourceSha256": "0d7819efb6b98cd4d1939a3e625200a8914a986e6fae236f160257cd244bee98",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:hoglin",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/hoglin.entity.json",
+      "file": "entity/minecraft_hoglin.entity.json",
+      "sourceSha256": "c953bd2fb2cdf4777dcc4cb1b9c57a4ef9efe9b594827050de8068b541f85d28",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:horse",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/horse_v3.entity.json",
+      "file": "entity/minecraft_horse.entity.json",
+      "sourceSha256": "fbdac98a67589eccd438c87208abf0baed5e11cffffbf1f980a4e96a934b16dc",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:husk",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/husk.entity.json",
+      "file": "entity/minecraft_husk.entity.json",
+      "sourceSha256": "5cf4b2551560114701c577adcc52744e80a492169b47331e35a663c914980391",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:iron_golem",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/iron_golem.entity.json",
+      "file": "entity/minecraft_iron_golem.entity.json",
+      "sourceSha256": "f9dda016a96d032183e036f8f33a5bc5bc358ef74130a512841aa1e5e164de23",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:llama",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/llama.entity.json",
+      "file": "entity/minecraft_llama.entity.json",
+      "sourceSha256": "a692f6effd4e21b388242f6e4a8c8d041ba13d3838ca6bd82675d014d66051b6",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:magma_cube",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/magma_cube.entity.json",
+      "file": "entity/minecraft_magma_cube.entity.json",
+      "sourceSha256": "44ba94999ca1c75f23ed99dbc37baafd007c439284bddfc0327d6f38e86c7dfd",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:mooshroom",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/mooshroom.entity.json",
+      "file": "entity/minecraft_mooshroom.entity.json",
+      "sourceSha256": "cd29a0608dfc338a4f758a44d2bc67b6460b3063b07edb662c824e28e51f6bbc",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:mule",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/mule_v3.entity.json",
+      "file": "entity/minecraft_mule.entity.json",
+      "sourceSha256": "297b577006230fcc2eaedf488bba06319a68e2759ac72a3aef71113aefbbe798",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:nautilus",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/nautilus.entity.json",
+      "file": "entity/minecraft_nautilus.entity.json",
+      "sourceSha256": "f6976e5411f6dc2accc7bd6f67d5da52a10ad556b7e69cf96394e90517214fa9",
+      "addedControllers": 3
+    },
+    {
+      "id": "minecraft:ocelot",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/ocelot.entity.json",
+      "file": "entity/minecraft_ocelot.entity.json",
+      "sourceSha256": "c249d43f22b26d1b0fa54d5a97df7847641913006d0604e945cd7ecaf65d4d55",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:panda",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/panda.entity.json",
+      "file": "entity/minecraft_panda.entity.json",
+      "sourceSha256": "7d187d87df05576cf80c8e0f1180e025fd42286d51fec5a4bf25cfa3c1622a93",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:parched",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/parched.entity.json",
+      "file": "entity/minecraft_parched.entity.json",
+      "sourceSha256": "7451c32d755b90534494c017b756a4ee73011644cb664bba97cfc38067135266",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:parrot",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/parrot.entity.json",
+      "file": "entity/minecraft_parrot.entity.json",
+      "sourceSha256": "436925984d10530b9d9ac06f01d1b4083c8de7173a822d0d713f4d97624364a9",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:phantom",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/phantom.entity.json",
+      "file": "entity/minecraft_phantom.entity.json",
+      "sourceSha256": "0c6bee814372fafbd73e8caf0f3a2f6d483c56bd70230fe749d01dd9bb9fa447",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:pig",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/pig.entity.json",
+      "file": "entity/minecraft_pig.entity.json",
+      "sourceSha256": "9dbc8544f05599372a0f2f807d489b335e83cc13ae448b0d599b46cb10419150",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:piglin",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/vanilla/piglin.entity.json",
+      "file": "entity/minecraft_piglin.entity.json",
+      "sourceSha256": "e6f7f257ff0baa8bb7f316f24aff51b58a873215ed2d3c89f295d97115a9a59f",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:piglin_brute",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/piglin_brute.entity.json",
+      "file": "entity/minecraft_piglin_brute.entity.json",
+      "sourceSha256": "53a608478052a00b918273ecbc9647f2a2f5bdf228e289aac1a839b284e5c00f",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:pillager",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/vanilla/pillager.entity.json",
+      "file": "entity/minecraft_pillager.entity.json",
+      "sourceSha256": "cff96974c2571a3e8177268c4d048149b4c15fdeff7593652eb7c5741d835577",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:player",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/player.entity.json",
+      "file": "entity/minecraft_player.entity.json",
+      "sourceSha256": "50b1b759579dbe853ca586950f85908e7b44fb363bc80a0b415da5b78654b54a",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:polar_bear",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/polar_bear.entity.json",
+      "file": "entity/minecraft_polar_bear.entity.json",
+      "sourceSha256": "3a36e9d3b9e9e577d2322ce5eb4fea51ab0d6fc3741f4660a58b8b03ed8085bc",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:pufferfish",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/pufferfish.entity.json",
+      "file": "entity/minecraft_pufferfish.entity.json",
+      "sourceSha256": "11a4ffb0f8d2d72bc6a4d9d4ab1909cf829b0e7528d9a2fe59b810beb98cb1e8",
+      "addedControllers": 3
+    },
+    {
+      "id": "minecraft:rabbit",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/rabbit.entity.json",
+      "file": "entity/minecraft_rabbit.entity.json",
+      "sourceSha256": "69a7a8bd0674116701062485842edf3c25165766aedf71b684609eeffbc808d9",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:ravager",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/ravager.entity.json",
+      "file": "entity/minecraft_ravager.entity.json",
+      "sourceSha256": "8764a1935545507fda6a5ecb8f89fe4ab03c689bd4f29d36123f0f63646fd6a5",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:salmon",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/salmon.entity.json",
+      "file": "entity/minecraft_salmon.entity.json",
+      "sourceSha256": "5c81ab941c2dafdaf8aa6fc06935a5a199133c7ae37577822551cc47bec9ecc5",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:sheep",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/sheep.entity.json",
+      "file": "entity/minecraft_sheep.entity.json",
+      "sourceSha256": "4b2241f8e27502ce718ef429de8b6229a93343acd4894320b5fdfce053c75947",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:shulker",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/shulker.entity.json",
+      "file": "entity/minecraft_shulker.entity.json",
+      "sourceSha256": "6118197e20d2c991843a6fbb8c514688a5dfef2b2a8518fa79869ecadf701c04",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:silverfish",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/silverfish.entity.json",
+      "file": "entity/minecraft_silverfish.entity.json",
+      "sourceSha256": "0ea7a5c61e7c15d7923260e2f812c0db65047a867ed69377eded8c75154821a9",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:skeleton",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/skeleton.entity.json",
+      "file": "entity/minecraft_skeleton.entity.json",
+      "sourceSha256": "bb186d509c2c72e1c223466ec3022ca96383da25ba488d4caaa719748bd5ae94",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:skeleton_horse",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/skeleton_horse_v3.entity.json",
+      "file": "entity/minecraft_skeleton_horse.entity.json",
+      "sourceSha256": "6e5a5dab7c5248cd033ff829d663cac19acd9f5dadb892ed37564f4da22dc989",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:slime",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/slime.entity.json",
+      "file": "entity/minecraft_slime.entity.json",
+      "sourceSha256": "fa98dbf07156039b1229443d68aed77091a43c3ed8ee3590b82745648c37841e",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:sniffer",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/sniffer.entity.json",
+      "file": "entity/minecraft_sniffer.entity.json",
+      "sourceSha256": "52640a9283f3bf6731a55846b1bdb7e8610ce1c5e532e31fcd0242bfbc0f56ec",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:snow_golem",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/snow_golem.entity.json",
+      "file": "entity/minecraft_snow_golem.entity.json",
+      "sourceSha256": "781ef26b5a383572f7ed14034a6ac638fea5b5c77971a662cb3683ea2cde1993",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:spider",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/spider.entity.json",
+      "file": "entity/minecraft_spider.entity.json",
+      "sourceSha256": "6fdc265906ee24f2bbf470c69dc9b39d434d47f8bef1775dcf11a681fd3df35c",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:squid",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/squid.entity.json",
+      "file": "entity/minecraft_squid.entity.json",
+      "sourceSha256": "c3ce1740f5166871e37cf2c03bace71b7d9a6114aa68cf68260e6d3c3adb26ed",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:stray",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/stray.entity.json",
+      "file": "entity/minecraft_stray.entity.json",
+      "sourceSha256": "b13a1a90df7d1043da5ad362f497e3042389a73e2667ee665432dcbd01a5e72d",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:strider",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/strider.entity.json",
+      "file": "entity/minecraft_strider.entity.json",
+      "sourceSha256": "34df53f8eed9ce1e871323b8415ac3c58581347f27edbf02491c94006d783c68",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:sulfur_cube",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/sulfur_cube.entity.json",
+      "file": "entity/minecraft_sulfur_cube.entity.json",
+      "sourceSha256": "01073149822701b9007df0b6a6ef452da50dc4192f1834d1e142375c4bac87dd",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:tadpole",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/tadpole.entity.json",
+      "file": "entity/minecraft_tadpole.entity.json",
+      "sourceSha256": "8771a119c203b7d427f51adb9ab372ca3679a13e11afc89085f9f968b904eade",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:trader_llama",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/trader_llama.entity.json",
+      "file": "entity/minecraft_trader_llama.entity.json",
+      "sourceSha256": "84e257d2ee24a7384a7cb06a5109ed32f5867d8ecb8fc22af7032cbaa68edd1e",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:tripod_camera",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/tripod_camera.entity.json",
+      "file": "entity/minecraft_tripod_camera.entity.json",
+      "sourceSha256": "5bbd3f798f8c25b14ff7dda52d3246ca9c2940b4b2ec211e14db6f8a3aa6fa38",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:tropicalfish",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/tropicalfish.entity.json",
+      "file": "entity/minecraft_tropicalfish.entity.json",
+      "sourceSha256": "cd008beb07461d4faa2251b7c34d0a509242b52bbec4230b5bf3d603aa8e5ce5",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:turtle",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/turtle.entity.json",
+      "file": "entity/minecraft_turtle.entity.json",
+      "sourceSha256": "0f4199b2c06b2fc96e513c916e5bbc65d1c09d36fdc335cb6d5dff275c21d5cb",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:vex",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/vex.entity.json",
+      "file": "entity/minecraft_vex.entity.json",
+      "sourceSha256": "cc2238d6870989dd95162133ea12d084d3462d42f1c4982ea0a34cd1fb071598",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:villager",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/villager.entity.json",
+      "file": "entity/minecraft_villager.entity.json",
+      "sourceSha256": "78a3c3ca222f3b65aa55a72dd47f300e2470a2f537b7edfccfc183bbfe02f6aa",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:villager_v2",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/villager_v2.entity.json",
+      "file": "entity/minecraft_villager_v2.entity.json",
+      "sourceSha256": "b9f508d80d62e4ae038df7c96accd81ed94036093b108ea3781a069802375a2d",
+      "addedControllers": 3
+    },
+    {
+      "id": "minecraft:vindicator",
+      "source": "resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/entity/vanilla/vindicator.entity.json",
+      "file": "entity/minecraft_vindicator.entity.json",
+      "sourceSha256": "26aa810343f0b881861e885fe0e766d7471deb73d9e79da6e150b1b3b5f14e3b",
+      "addedControllers": 2
+    },
+    {
+      "id": "minecraft:wandering_trader",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/wandering_trader.entity.json",
+      "file": "entity/minecraft_wandering_trader.entity.json",
+      "sourceSha256": "92b3dd594d0788d4294a3fec2d5f41cf0654f160490cbeebbe2253fd1f5022b8",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:warden",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/warden.entity.json",
+      "file": "entity/minecraft_warden.entity.json",
+      "sourceSha256": "f65da6c4bca7b14e88df643cfae730f7906d486ec0f65581adc3ebf678afa69b",
+      "addedControllers": 6
+    },
+    {
+      "id": "minecraft:witch",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/witch.entity.json",
+      "file": "entity/minecraft_witch.entity.json",
+      "sourceSha256": "aa3df393e4fbd4b44bcad06728b23864c367b907e3769baa6fc98d3ec1b8c58f",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:wither",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/wither.entity.json",
+      "file": "entity/minecraft_wither.entity.json",
+      "sourceSha256": "18e31d1e5d9430dfd43e9faa8d1f2262bd8ece45bd9776173f960180585106c7",
+      "addedControllers": 3
+    },
+    {
+      "id": "minecraft:wither_skeleton",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/wither_skeleton.entity.json",
+      "file": "entity/minecraft_wither_skeleton.entity.json",
+      "sourceSha256": "1cf0439b61347e8d6963af877d210a38a27c66731c9ff6c9f91866046529535e",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:wolf",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/wolf.entity.json",
+      "file": "entity/minecraft_wolf.entity.json",
+      "sourceSha256": "38a55c1647bc4725da8d99cf8386ad12ab435738e179fa43fe3282c19e1ed64b",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:xp_orb",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/experience_orb.entity.json",
+      "file": "entity/minecraft_xp_orb.entity.json",
+      "sourceSha256": "57ae76bcbe9d39d45c936b763a71d8a4d628530be805e4609c45d54d254b02ec",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:zoglin",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/zoglin.entity.json",
+      "file": "entity/minecraft_zoglin.entity.json",
+      "sourceSha256": "94b2b658edb7d9359ceef3d8a684b0287dca9c3ed8a309f320ea1b0143968dd3",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:zombie",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/zombie.entity.json",
+      "file": "entity/minecraft_zombie.entity.json",
+      "sourceSha256": "ece8aa68372c3b523769e3da93533dade913814c5909adbb8cc3b8c99d0db625",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:zombie_horse",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/zombie_horse_v3.entity.json",
+      "file": "entity/minecraft_zombie_horse.entity.json",
+      "sourceSha256": "7b7518bc4bea906a1b50c2e9ceaf13184f8f5cc46f0e9b9083ec37df7990b8dd",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:zombie_nautilus",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/zombie_nautilus.entity.json",
+      "file": "entity/minecraft_zombie_nautilus.entity.json",
+      "sourceSha256": "0fe39759036f3a7f65f87fb1ec7ee86a5ecabebb0e384fbac353d0840fe35581",
+      "addedControllers": 3
+    },
+    {
+      "id": "minecraft:zombie_pigman",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/zombie_pigman.entity.json",
+      "file": "entity/minecraft_zombie_pigman.entity.json",
+      "sourceSha256": "057c779dea4b80952f34d9a45eb594147138052a6ac05fd744bb9354856b4ba4",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:zombie_villager",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/zombie_villager.entity.json",
+      "file": "entity/minecraft_zombie_villager.entity.json",
+      "sourceSha256": "c6c0c8d746563e7399f731de147c1774c398da963d2ab3ad69a61db42f67de55",
+      "addedControllers": 1
+    },
+    {
+      "id": "minecraft:zombie_villager_v2",
+      "source": "Mojang/bedrock-samples@v1.26.40.05/entity/zombie_villager_v2.entity.json",
+      "file": "entity/minecraft_zombie_villager_v2.entity.json",
+      "sourceSha256": "fbc13e0519dfb9436b111ca551c134970fb190eac380380d72d58be09422506f",
+      "addedControllers": 2
+    },
+    {
+      "id": "myname:figure_fossil_placed",
+      "source": "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/entity/figure_fossil_placed.entity.json",
+      "file": "entity/myname_figure_fossil_placed.entity.json",
+      "sourceSha256": "cc8d34befd631322b2bfe9dc8a3e1472563e47f757fc991b7342c0bfe901ea15",
+      "addedControllers": 1
+    },
+    {
+      "id": "myname:mystery_camel",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/mystery_camel.entity.json",
+      "file": "entity/myname_mystery_camel.entity.json",
+      "sourceSha256": "293d9d3fae269283cd17ea4c2c97413078309db11f91881905ba85fd570facd2",
+      "addedControllers": 1
+    },
+    {
+      "id": "myname:pinene_bomb_cow",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/pinene_bomb_cow.entity.json",
+      "file": "entity/myname_pinene_bomb_cow.entity.json",
+      "sourceSha256": "31cb9242dc3be1b2084235cbd9e5ab3708d1c9d7ed76f35b0f998538f0388e7a",
+      "addedControllers": 1
+    },
+    {
+      "id": "myname:pinene_tuna",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/pinene_tuna.entity.json",
+      "file": "entity/myname_pinene_tuna.entity.json",
+      "sourceSha256": "7185c9a0073f3ce9fed679ab4e49a04f6624dd5c9995e9b595e5a168e4fb52fa",
+      "addedControllers": 1
+    },
+    {
+      "id": "new:tumba",
+      "source": "resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974/entity/tumba.json",
+      "file": "entity/new_tumba.entity.json",
+      "sourceSha256": "7ef3efded27d302e7b7b6bb417e81b659a63b067f7a4c23ee53e8c234f3aed85",
+      "addedControllers": 1
+    },
+    {
+      "id": "pinene:mushroom_appraiser",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/mushroom_appraiser.entity.json",
+      "file": "entity/pinene_mushroom_appraiser.entity.json",
+      "sourceSha256": "5b365928133bd9cebe9de71cc17db993df49091f9556029a9ab75c1fa77b6d98",
+      "addedControllers": 1
+    }
+  ],
+  "excluded": [
+    {
+      "id": "myname:figure_oyu_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/figure_oyu_placed.entity.json"
+    },
+    {
+      "id": "myname:figure_spiral_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef/entity/figure_spiral_placed.entity.json"
+    },
+    {
+      "id": "myname:gengar_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/gengar_placed.entity.json"
+    },
+    {
+      "id": "myname:goamagara_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/goamagara_placed.entity.json"
+    },
+    {
+      "id": "myname:hitomoshi_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/hitomoshi_placed.entity.json"
+    },
+    {
+      "id": "myname:jack_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/jack_placed.entity.json"
+    },
+    {
+      "id": "myname:meltan_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/meltan_placed.entity.json"
+    },
+    {
+      "id": "myname:metamon_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/metamon_placed.entity.json"
+    },
+    {
+      "id": "myname:mimikkyu_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/mimikkyu_placed.entity.json"
+    },
+    {
+      "id": "myname:shini_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/shini_placed.entity.json"
+    },
+    {
+      "id": "myname:soubraze_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/soubraze_placed.entity.json"
+    },
+    {
+      "id": "myname:utyuuneko_placed",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/utyuuneko_placed.entity.json"
+    },
+    {
+      "id": "pinene:meitetsu_chest_container",
+      "reason": "no model render pass",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/meitetsu_chest_container.entity.json"
+    },
+    {
+      "id": "pinene_pvp:dragon_relic_display",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/dragon_relic_display.entity.json"
+    },
+    {
+      "id": "pinene_pvp:dragon_relic_dropped",
+      "reason": "poly_mesh requires a separate normal-based outline",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/dragon_relic_dropped.entity.json"
+    },
+    {
+      "id": "true:special_smithing_table",
+      "reason": "no model render pass",
+      "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/special_smithing_table.entity.json"
+    }
+  ]
+}

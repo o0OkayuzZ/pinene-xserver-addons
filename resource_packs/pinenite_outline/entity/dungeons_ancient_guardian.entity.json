@@ -1,0 +1,62 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:ancient_guardian",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/ancient_guardian/ancient_guardian"
+      },
+      "geometry": {
+        "default": "geometry.ancient_guardian",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_ancient_guardian"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        {
+          "controller.render.pinenite_outline.dungeons_ancient_guardian_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "animations": {
+        "idle": "animation.ancient_guardian.idle",
+        "move": "animation.ancient_guardian.swim",
+        "hurt": "animation.ancient_guardian.hurt",
+        "spikes_in": "animation.ancient_guardian.spikes_in",
+        "has_target": "animation.ancient_guardian.eye_follow",
+        "no_target": "animation.ancient_guardian.eye_no_target",
+        "scale": "animation.ancient_guardian.scale",
+        "start_shooting": "animation.ancient_guardian.shoot_start",
+        "hold_shooting": "animation.ancient_guardian.shoot_hold",
+        "stop_shooting": "animation.ancient_guardian.shoot_end",
+        "summon": "animation.ancient_guardian.cast",
+        "aim": "animation.ancient_guardian.look_at_target",
+        "charge": "animation.ancient_guardian.charge",
+        "summon_controller": "controller.animation.ancient_guardian.summon",
+        "move_controller": "controller.animation.ancient_guardian.move",
+        "eye_controller": "controller.animation.ancient_guardian.eye",
+        "shoot_controller": "controller.animation.ancient_guardian.shooting",
+        "charge_controller": "controller.animation.ancient_guardian.charge"
+      },
+      "sound_effects": {
+        "melee": "mob.ancient_guardian.melee"
+      },
+      "particle_effects": {
+        "melee": "dungeons:ancient_melee"
+      },
+      "scripts": {
+        "animate": [
+          "idle",
+          "scale",
+          "eye_controller",
+          "move_controller",
+          "shoot_controller",
+          "summon_controller",
+          "charge_controller"
+        ]
+      }
+    }
+  }
+}

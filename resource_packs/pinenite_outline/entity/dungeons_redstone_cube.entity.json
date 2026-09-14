@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:redstone_cube",
+      "materials": {
+        "default": "entity_emissive",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/redstone_monstrosity/redstone_cube"
+      },
+      "geometry": {
+        "default": "geometry.redstone_cube",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_redstone_cube"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        {
+          "controller.render.pinenite_outline.dungeons_redstone_cube_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "animations": {
+        "move": "animation.redstone_cube.roll",
+        "move_controller": "controller.animation.redstone_cube.move"
+      },
+      "scripts": {
+        "animate": [
+          "move_controller"
+        ]
+      },
+      "spawn_egg": {
+        "texture": "egg_redstone_cube"
+      }
+    }
+  }
+}

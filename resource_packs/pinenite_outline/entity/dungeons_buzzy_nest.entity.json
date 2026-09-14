@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:buzzy_nest",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "entity",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/buzzy_nest"
+      },
+      "animations": {
+        "spawn": "animation.buzzy_nest.spawn",
+        "fall": "animation.buzzy_nest.fall",
+        "fall_controller": "controller.animation.buzzy_nest.fall"
+      },
+      "scripts": {
+        "animate": [
+          "spawn",
+          "fall_controller"
+        ]
+      },
+      "geometry": {
+        "default": "geometry.buzzy_nest",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_buzzy_nest"
+      },
+      "render_controllers": [
+        "controller.render.dummy",
+        {
+          "controller.render.pinenite_outline.dungeons_buzzy_nest_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "enable_attachables": false
+    }
+  }
+}

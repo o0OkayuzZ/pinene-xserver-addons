@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:sheep",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "sheep",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/sheep/sheep",
+        "baby": "textures/entity/sheep/sheep_baby"
+      },
+      "geometry": {
+        "default": "geometry.sheep.v1.8",
+        "sheared": "geometry.sheep.sheared.v1.8",
+        "baby": "geometry.sheep.baby",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_sheep_v1_8",
+        "pn_outline_sheared": "geometry.pinenite_outline.geometry_sheep_sheared_v1_8",
+        "pn_outline_baby": "geometry.pinenite_outline.geometry_sheep_baby"
+      },
+      "animations": {
+        "setup": "animation.sheep.setup.v2",
+        "grazing": "animation.sheep.grazing.v2",
+        "walk": "animation.quadruped.walk",
+        "look_at_target": "animation.common.look_at_target",
+        "baby_transform": "animation.sheep.baby_transform",
+        "move": "controller.animation.sheep.move"
+      },
+      "scripts": {
+        "animate": [
+          "setup",
+          "look_at_target",
+          "move"
+        ],
+        "scale": "query.is_baby ? 2.0 : 1.0"
+      },
+      "render_controllers": [
+        "controller.render.sheep.v2",
+        {
+          "controller.render.pinenite_outline.minecraft_sheep_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_sheep"
+      }
+    }
+  }
+}

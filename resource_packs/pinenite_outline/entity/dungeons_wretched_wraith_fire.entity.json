@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:wretched_wraith_fire",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/wretched_wraith/wraith_fire"
+      },
+      "geometry": {
+        "default": "geometry.wraith.fire",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_wraith_fire"
+      },
+      "render_controllers": [
+        "controller.render.default",
+        {
+          "controller.render.pinenite_outline.dungeons_wretched_wraith_fire_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "animations": {
+        "spawn": "animation.wraith_fire.animation",
+        "idle": "animation.wraith_fire.move",
+        "scale": "animation.wraith_fire.scale"
+      },
+      "scripts": {
+        "animate": [
+          "scale",
+          "idle",
+          "spawn"
+        ]
+      }
+    }
+  }
+}

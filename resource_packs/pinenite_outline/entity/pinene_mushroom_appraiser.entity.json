@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "pinene:mushroom_appraiser",
+      "materials": {
+        "default": "entity_alphatest",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/mycology/mushroom_appraiser"
+      },
+      "geometry": {
+        "default": "geometry.pinene.mushroom_appraiser",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_pinene_mushroom_appraiser"
+      },
+      "animations": {
+        "walk": "animation.pinene.myco.walk",
+        "look": "animation.pinene.myco.look"
+      },
+      "scripts": {
+        "animate": [
+          "walk",
+          "look"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.pinene.myco",
+        {
+          "controller.render.pinenite_outline.pinene_mushroom_appraiser_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "base_color": "#A84035",
+        "overlay_color": "#D9C59F"
+      }
+    }
+  }
+}

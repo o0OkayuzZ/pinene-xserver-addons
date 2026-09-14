@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:ice_chunk_player",
+      "materials": {
+        "default": "entity_alphatest",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/ice_chunk"
+      },
+      "geometry": {
+        "default": "geometry.ice_chunk2",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_ice_chunk2"
+      },
+      "animations": {
+        "root": "animation.ice_chunk.root"
+      },
+      "particle_effects": {
+        "frost_idle": "dungeons:frost_idle",
+        "frost_boom": "dungeons:frost_boom"
+      },
+      "scripts": {
+        "animate": [
+          "root"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.ice_chunk",
+        {
+          "controller.render.pinenite_outline.dungeons_ice_chunk_player_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ]
+    }
+  }
+}

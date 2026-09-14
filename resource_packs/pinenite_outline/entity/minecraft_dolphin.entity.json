@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:dolphin",
+      "materials": {
+        "default": "dolphin",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/dolphin",
+        "baby": "textures/entity/dolphin/dolphin_baby"
+      },
+      "geometry": {
+        "default": "geometry.dolphin",
+        "baby": "geometry.dolphin.baby",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_dolphin",
+        "pn_outline_baby": "geometry.pinenite_outline.geometry_dolphin_baby"
+      },
+      "animations": {
+        "move": "animation.dolphin.move",
+        "move_controller": "controller.animation.dolphin.general"
+      },
+      "scripts": {
+        "animate": [
+          "move_controller"
+        ],
+        "scale": "query.is_baby ? (1 / 0.65) : 1.0"
+      },
+      "particle_effects": {
+        "dolphin_move_particle": "minecraft:dolphin_move_particle"
+      },
+      "render_controllers": [
+        "controller.render.dolphin.v2",
+        {
+          "controller.render.pinenite_outline.minecraft_dolphin_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_dolphin"
+      }
+    }
+  }
+}

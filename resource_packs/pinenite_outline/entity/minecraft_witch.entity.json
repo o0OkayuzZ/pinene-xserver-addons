@@ -1,0 +1,46 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:witch",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "witch",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/witch"
+      },
+      "geometry": {
+        "default": "geometry.villager.witch.v1.8",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_villager_witch_v1_8"
+      },
+      "scripts": {
+        "scale": "0.9375"
+      },
+      "animations": {
+        "villager_general": "animation.villager.general",
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.villager.move",
+        "general": "animation.witch.general"
+      },
+      "animation_controllers": [
+        {
+          "general": "controller.animation.witch.general"
+        },
+        {
+          "move": "controller.animation.villager.move"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.witch",
+        {
+          "controller.render.pinenite_outline.minecraft_witch_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_witch"
+      }
+    }
+  }
+}

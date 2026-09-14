@@ -1,11 +1,36 @@
 import './probe.js';
 import { world, system, EquipmentSlot, InputButton, ButtonState, MolangVariableMap, EntityDamageCause } from '@minecraft/server';
 import { BONUS_HP, PARTS, newPlayerState, targetState, attack, incoming, regenerate,
-    adaptationStage, decay, symbiotic, direct, attributed, SyntheticGuard, framePoints, leapReady } from './rules.js';
+    adaptationStage, decay, symbiotic, direct, attributed, SyntheticGuard, leapReady } from './rules.js';
 
 const slots = [EquipmentSlot.Head, EquipmentSlot.Chest, EquipmentSlot.Legs, EquipmentSlot.Feet];
 const players = new Map(), pending = new Map(), guard = new SyntheticGuard();
 const warned = new Set();
+// Visual requests are merged once per tick. Combat memories remain per wearer.
+const rendered = new Map(), flashes = new Map();
+function outline(requests, entity, alpha) {
+    if (alpha > 0) requests.set(entity.id, { entity, alpha: Math.max(alpha, requests.get(entity.id)?.alpha ?? 0) });
+}
+function flushOutlines(requests, tick) {
+    for (const [id, entry] of flashes) {
+        if (entry.until <= tick || !entry.entity.isValid) flashes.delete(id);
+        else outline(requests, entry.entity, 1);
+    }
+    for (const [id, entity] of rendered) if (!requests.has(id) && entity.isValid) requests.set(id, { entity, alpha: 0 });
+    rendered.clear();
+    for (const { entity, alpha } of requests.values()) {
+        if (!entity.isValid) continue;
+        try {
+            // One-shot assignments plus a client-side lease prevent stale glow
+            // after unload, disconnect or script interruption.
+            entity.playAnimation('animation.true_dn.pinenite_sync', {
+                controller: 'pinenite_model_outline', blendOutTime: 0,
+                stopExpression: `variable.pinenite_outline = ${alpha.toFixed(4)}; variable.pinenite_outline_until = query.life_time + 0.3; return 1;`
+            });
+            if (alpha > 0) rendered.set(entity.id, entity);
+        } catch (e) { warn('outline', e); }
+    }
+}
 function warn(key, error) {
     if (!warned.has(key)) { warned.add(key); console.warn(`[Pinenite] ${key}: ${error}`); }
 }
@@ -40,7 +65,7 @@ function flash(p, target) {
     state(p).flashUntil = system.currentTick + 4;
     if (target?.isValid) {
         target.dimension.spawnParticle('true_dn:pinenite_reflect', target.getAABB().center);
-        for (const point of framePoints(target.getAABB())) particle(target.dimension, point, 1, 0.055);
+        flashes.set(target.id, { entity: target, until: system.currentTick + 4 });
     }
 }
 
@@ -123,7 +148,7 @@ function updateHealth(p, s, gear) {
         if (bonus) { p.addEffect('health_boost', 40, { amplifier: amp, showParticles: false }); s.healthAmp = amp; }
     }
 }
-function visual(p, s, tick, full) {
+function visual(p, s, tick, full, requests) {
     let linked = false;
     const pulse = 0.5 - 0.5 * Math.cos(tick * Math.PI * 2 / 30);
     for (const [id, t] of s.targets) {
@@ -139,24 +164,16 @@ function visual(p, s, tick, full) {
         if (Math.hypot(entity.location.x - p.location.x, entity.location.y - p.location.y,
             entity.location.z - p.location.z) > 64) continue;
         if (!stage || (stage === 1 && tick % 20 >= 8) || (stage === 2 && tick % 20 >= 18)) continue;
-        if (tick % 2 === 0) {
-            const alpha = active ? 0.65 + 0.35 * pulse : [0, 0.22, 0.55, 0.9][stage];
-            for (const point of framePoints(entity.getAABB())) particle(entity.dimension, point, alpha);
-        }
+        const alpha = active ? 0.65 + 0.35 * pulse : [0, 0.22, 0.55, 0.9][stage];
+        outline(requests, entity, alpha);
     }
     if (!linked && s.wasLinked) { s.fadeFrom = s.glow ?? 0; s.fadeStarted = tick; }
     const intensity = linked ? 0.4 + 0.6 * pulse : (s.fadeFrom ?? 0) * Math.max(0, 1 - (tick - (s.fadeStarted ?? tick)) / 10);
     s.wasLinked = linked;
     s.glow = intensity;
-    // A namespaced animation channel transmits only cosmetic variables; no
-    // player/Mob JSON override and no bone transforms.
-    if (intensity > 0 || s.wasGlowing) {
-        const value = (s.flashUntil ?? 0) > tick ? 1 : intensity;
-        p.playAnimation('animation.true_dn.pinenite_sync', {
-            controller: 'pinenite_combat_sync', blendOutTime: 0,
-            stopExpression: `variable.pinenite_glow = ${value.toFixed(4)}; return 0;`
-        });
-    }
+    // Armor and body share the same requested outline intensity. Existing
+    // animations and geometry transforms remain owned by the entity renderer.
+    outline(requests, p, (s.flashUntil ?? 0) > tick ? 1 : intensity);
     s.wasGlowing = intensity > 0;
     return linked;
 }
@@ -178,7 +195,7 @@ world.afterEvents.playerButtonInput.subscribe(ev => {
     }
 });
 system.runInterval(() => {
-    const tick = system.currentTick;
+    const tick = system.currentTick, requests = new Map();
     for (const [id, queue] of pending) {
         const fresh = queue.filter(item => item.tick >= tick);
         if (fresh.length) pending.set(id, fresh); else pending.delete(id);
@@ -193,12 +210,13 @@ system.runInterval(() => {
             updateHealth(p, s, gear);
             if (!gear[0]) for (const t of s.targets.values()) t.analysisHits = 0;
             if (!gear[1]) for (const t of s.targets.values()) t.adaptationHits = 0;
-            const linked = visual(p, s, tick, gear.every(Boolean));
+            const linked = visual(p, s, tick, gear.every(Boolean), requests);
             if (!gear[2]) s.regen = [];
             if (s.regen.length) health.setCurrentValue(regenerate(s, health.currentValue, health.effectiveMax, linked));
             if (!gear.some(Boolean) && !s.wasGlowing) players.delete(p.id);
         } catch (e) { warn('update', e); }
     }
+    flushOutlines(requests, tick);
 }, 1);
 world.afterEvents.entityDie.subscribe(({ deadEntity }) => {
     players.delete(deadEntity.id);

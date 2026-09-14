@@ -1,0 +1,38 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:ghast",
+      "materials": {
+        "default": "ghast",
+        "pn_outline": "pinenite_outline"
+      },
+      "textures": {
+        "default": "textures/entity/ghast/ghast",
+        "shooting": "textures/entity/ghast/ghast_shooting"
+      },
+      "geometry": {
+        "default": "geometry.ghast",
+        "pn_outline_default": "geometry.pinenite_outline.geometry_ghast"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg_ghast"
+      },
+      "animations": {
+        "move": "animation.ghast.move",
+        "scale": "animation.ghast.scale"
+      },
+      "animation_controllers": [
+        {
+          "move": "controller.animation.ghast.move"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.ghast",
+        {
+          "controller.render.pinenite_outline.minecraft_ghast_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
+        }
+      ]
+    }
+  }
+}
