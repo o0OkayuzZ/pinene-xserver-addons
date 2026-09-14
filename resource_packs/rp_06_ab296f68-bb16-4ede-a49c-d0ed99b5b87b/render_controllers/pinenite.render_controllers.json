@@ -16,6 +16,29 @@
           "*": "!query.is_first_person"
         }
       ]
+    },
+    "controller.render.true_dn.pinenite_glow": {
+      "geometry": "Geometry.glow",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        {
+          "*": "!query.is_first_person && (variable.pinenite_glow ?? 0) > 0"
+        }
+      ],
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": "variable.pinenite_glow ?? 0"
+      },
+      "ignore_lighting": true
     }
   }
 }
