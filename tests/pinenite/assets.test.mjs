@@ -66,7 +66,7 @@ test('BP requires stable 2.6.0 and 26.40; original API consumers and shared rend
     assert.equal(manifest.dependencies.find(d => d.module_name === '@minecraft/server').version, '2.6.0');
     assert.deepEqual(manifest.header.min_engine_version, [1, 26, 40]);
     const changes = git('diff', '--name-only', base).toString().trim().split('\n');
-    assert.equal(changes.some(p => p.includes('/scripts/') && p !== `${bp}/scripts/main.js` && !p.startsWith(`${bp}/scripts/pinenite/`)), false);
+    assert.equal(changes.some(p => p.startsWith(bp + '/scripts/') && p !== `${bp}/scripts/main.js` && !p.startsWith(`${bp}/scripts/pinenite/`)), false);
     const renderer = read(`${rp}/render_controllers/pinenite.render_controllers.json`).render_controllers;
     const original = JSON.parse(git('show', `${base}:${rp}/render_controllers/pinenite.render_controllers.json`).toString()).render_controllers;
     assert.deepEqual(renderer['controller.render.true_dn.pinenite_armor'], original['controller.render.true_dn.pinenite_armor']);

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:shulker",
@@ -48,21 +48,19 @@
           "variable.Shulker.XOffset = -variable.Shulker.WestFacing * 7.99 + variable.Shulker.EastFacing * 7.99;",
           "variable.Shulker.YOffset = variable.Shulker.UpFacing * 16 + variable.Shulker.NorthFacing * 7.99 + variable.Shulker.SouthFacing * 7.99 + variable.Shulker.WestFacing * 7.99 + variable.Shulker.EastFacing * 7.99;",
           "variable.Shulker.ZOffset = variable.Shulker.NorthFacing * 7.99 - variable.Shulker.SouthFacing * 7.99;"
+        ],
+        "animate": [
+          "pn_legacy_facing",
+          "pn_legacy_move"
         ]
       },
       "animations": {
         "facing": "animation.shulker.facing",
         "move": "animation.shulker.move",
-        "look_at_target": "animation.common.look_at_target"
+        "look_at_target": "animation.common.look_at_target",
+        "pn_legacy_facing": "controller.animation.shulker.facing",
+        "pn_legacy_move": "controller.animation.shulker.move"
       },
-      "animation_controllers": [
-        {
-          "facing": "controller.animation.shulker.facing"
-        },
-        {
-          "move": "controller.animation.shulker.move"
-        }
-      ],
       "render_controllers": [
         "controller.render.shulker",
         {

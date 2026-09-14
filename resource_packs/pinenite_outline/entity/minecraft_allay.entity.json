@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:allay",
@@ -20,6 +20,12 @@
       "scripts": {
         "pre_animation": [
           "variable.holding_trident = query.is_item_name_any('slot.weapon.mainhand', 'minecraft:trident');"
+        ],
+        "animate": [
+          "pn_legacy_general",
+          "pn_legacy_look_at_target",
+          "pn_legacy_holding",
+          "pn_legacy_dancing"
         ]
       },
       "animations": {
@@ -28,22 +34,12 @@
         "hold_item": "animation.allay.hold_item",
         "dance": "animation.allay.dance",
         "hold_item_fly": "animation.allay.hold_item_fly",
-        "look_at_target_default": "animation.allay.look_at_target.default"
+        "look_at_target_default": "animation.allay.look_at_target.default",
+        "pn_legacy_general": "controller.animation.allay.general",
+        "pn_legacy_look_at_target": "controller.animation.allay.look_at_target",
+        "pn_legacy_holding": "controller.animation.allay.holding",
+        "pn_legacy_dancing": "controller.animation.allay.dancing"
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.allay.general"
-        },
-        {
-          "look_at_target": "controller.animation.allay.look_at_target"
-        },
-        {
-          "holding": "controller.animation.allay.holding"
-        },
-        {
-          "dancing": "controller.animation.allay.dancing"
-        }
-      ],
       "render_controllers": [
         "controller.render.allay",
         {

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:snow_golem",
@@ -18,13 +18,9 @@
       },
       "animations": {
         "move": "animation.snowgolem.move.v1.8",
-        "look_at_target": "animation.common.look_at_target"
+        "look_at_target": "animation.common.look_at_target",
+        "pn_legacy_move": "controller.animation.snowgolem.move.v1.8"
       },
-      "animation_controllers": [
-        {
-          "move": "controller.animation.snowgolem.move.v1.8"
-        }
-      ],
       "render_controllers": [
         "controller.render.snowgolem",
         {
@@ -33,6 +29,11 @@
       ],
       "spawn_egg": {
         "texture": "spawn_egg_snow_golem"
+      },
+      "scripts": {
+        "animate": [
+          "pn_legacy_move"
+        ]
       }
     }
   }

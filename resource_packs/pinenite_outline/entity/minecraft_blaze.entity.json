@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:blaze",
@@ -18,19 +18,13 @@
       },
       "animations": {
         "look_at_target": "animation.common.look_at_target",
-        "move": "animation.blaze.move"
+        "move": "animation.blaze.move",
+        "pn_legacy_move": "controller.animation.blaze.move",
+        "pn_legacy_flame": "controller.animation.blaze.flame"
       },
       "particle_effects": {
         "charged_flames": "minecraft:mobflame_emitter"
       },
-      "animation_controllers": [
-        {
-          "move": "controller.animation.blaze.move"
-        },
-        {
-          "flame": "controller.animation.blaze.flame"
-        }
-      ],
       "render_controllers": [
         "controller.render.blaze",
         {
@@ -39,6 +33,12 @@
       ],
       "spawn_egg": {
         "texture": "spawn_egg_blaze"
+      },
+      "scripts": {
+        "animate": [
+          "pn_legacy_move",
+          "pn_legacy_flame"
+        ]
       }
     }
   }

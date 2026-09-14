@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:frog",
@@ -22,6 +22,11 @@
       "scripts": {
         "pre_animation": [
           "variable.moving = query.ground_speed > 0 || query.vertical_speed > 0;"
+        ],
+        "animate": [
+          "pn_legacy_general",
+          "pn_legacy_croaking",
+          "pn_legacy_eat_mob"
         ]
       },
       "animations": {
@@ -31,19 +36,11 @@
         "walk": "animation.frog.walk",
         "swim": "animation.frog.swim",
         "idle_water": "animation.frog.idle.water",
-        "look_at_target": "animation.common.look_at_target"
+        "look_at_target": "animation.common.look_at_target",
+        "pn_legacy_general": "controller.animation.frog.general",
+        "pn_legacy_croaking": "controller.animation.frog.croaking",
+        "pn_legacy_eat_mob": "controller.animation.frog.eat_mob"
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.frog.general"
-        },
-        {
-          "croaking": "controller.animation.frog.croaking"
-        },
-        {
-          "eat_mob": "controller.animation.frog.eat_mob"
-        }
-      ],
       "render_controllers": [
         "controller.render.frog",
         {

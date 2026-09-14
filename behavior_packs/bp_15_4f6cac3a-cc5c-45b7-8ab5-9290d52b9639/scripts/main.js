@@ -1182,7 +1182,7 @@ safeSubscribe(world?.afterEvents?.playerInteractWithEntity, (event) => {
 safeSubscribe(world?.afterEvents?.entityDie, (event) => {
     const entity = event.deadEntity;
     if (!entity) return;
-    if (safeHasTag(entity, PICKUP_MARKER_TAG)) return;
+    if (pineHasTag(entity, PICKUP_MARKER_TAG)) return;
 
     let typeId;
     try {

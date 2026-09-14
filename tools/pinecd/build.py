@@ -39,6 +39,7 @@ def outputs():
                 'category': 'items', 'group': 'minecraft:itemGroup.name.record'}},
             'components': {
                 'minecraft:max_stack_size': 1,
+                'minecraft:tags': {'tags': ['minecraft:music_disc']},
                 'minecraft:display_name': {'value': t['display_name']},
                 'minecraft:rarity': 'rare',
                 'minecraft:record': {k: t[k] for k in

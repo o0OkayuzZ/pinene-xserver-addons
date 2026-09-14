@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:villager",
@@ -20,25 +20,22 @@
         "pn_outline_default": "geometry.pinenite_outline.geometry_villager_v1_8"
       },
       "scripts": {
-        "scale": "0.9375"
+        "scale": "0.9375",
+        "animate": [
+          "pn_legacy_general",
+          "pn_legacy_move",
+          "pn_legacy_baby"
+        ]
       },
       "animations": {
         "general": "animation.villager.general",
         "look_at_target": "animation.common.look_at_target",
         "move": "animation.villager.move",
-        "baby_transform": "animation.villager.baby_transform"
+        "baby_transform": "animation.villager.baby_transform",
+        "pn_legacy_general": "controller.animation.villager.general",
+        "pn_legacy_move": "controller.animation.villager.move",
+        "pn_legacy_baby": "controller.animation.villager.baby"
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.villager.general"
-        },
-        {
-          "move": "controller.animation.villager.move"
-        },
-        {
-          "baby": "controller.animation.villager.baby"
-        }
-      ],
       "render_controllers": [
         "controller.render.villager",
         {

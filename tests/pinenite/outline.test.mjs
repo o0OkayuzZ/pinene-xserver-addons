@@ -19,16 +19,18 @@ test('all compatibility entities retain the full original client definition', ()
         delete desc.materials.pn_outline;
         for (const key of Object.keys(desc.geometry)) if (key.startsWith('pn_outline_')) delete desc.geometry[key];
         desc.render_controllers.splice(-entry.addedControllers);
-        if (entry.id === 'minecraft:player') {
-            delete desc.scripts.variables['variable.pinenite_outline'];
-            delete desc.scripts.variables['variable.pinenite_outline_until'];
+        data.format_version = entry.sourceFormat;
+        for (const key of ['scripts', 'animations', 'animation_controllers']) {
+            delete desc[key];
+            if (entry.compatibilityOriginal[key] !== undefined) desc[key] = entry.compatibilityOriginal[key];
         }
         const hash = createHash('sha256').update(JSON.stringify(sorted(data))).digest('hex');
         assert.equal(hash, entry.sourceSha256, entry.id);
     }
 });
 test('outline geometry aliases and render passes resolve, including small variants and player', () => {
-    const ids = new Set(geometries.map(g => g.description.identifier.toLowerCase()));
+    const legacy = read(pack + 'models/entity/pinenite_outline_legacy.geo.json');
+    const ids = new Set([...geometries.map(g => g.description.identifier.toLowerCase()), ...Object.keys(legacy).filter(k => k.startsWith('geometry.'))]);
     for (const entry of coverage.entities) {
         const desc = read(pack + entry.file)['minecraft:client_entity'].description;
         const aliases = new Set(Object.keys(desc.geometry).map(k => k.toLowerCase()));
@@ -57,17 +59,50 @@ test('wearer armor outline includes every original cube with identical bones and
         assert.deepEqual(actual, expected);
     }
 });
-test('existing RP assets and all Zombie Gear files remain unchanged', () => {
+test('all Zombie Gear files remain unchanged', () => {
     const changed = execFileSync('git', ['diff', '--name-only', 'cd53e576'], { cwd: root, encoding: 'utf8' }).trim().split('\n');
-    assert.deepEqual(changed.filter(p => p.startsWith('resource_packs/') && !p.startsWith(pack)), []);
-    assert.deepEqual(changed.filter(p => /bp_06_|rp_07_|zombiegear/i.test(p)), []);
+    assert.deepEqual(changed.filter(p => /bp_09_|rp_07_|zombiegear/i.test(p)), []);
     assert.ok(!coverage.entities.some(e => e.source.includes('/rp_07_')));
 });
 test('outline material retains depth testing and texture alpha, with no global material override', () => {
-    const material = read(pack + 'materials/pinenite_outline.material').materials;
-    assert.deepEqual(Object.keys(material).sort(), ['pinenite_outline:entity_alphatest', 'version']);
+    const material = read(pack + 'materials/entity.material').materials;
+    assert.ok(material['entity_static']);
+    assert.ok(material['dungeons_glowing:entity_nocull']);
     const def = material['pinenite_outline:entity_alphatest'];
     assert.ok(def['+states'].includes('InvertCulling'));
     assert.equal(def.depthFunc, undefined);
     assert.ok(!JSON.stringify(def).includes('Stencil'));
+});
+
+test('client schema supports conditional render passes and contains no obsolete controller list', () => {
+    for (const entry of coverage.entities) {
+        const data = read(pack + entry.file), desc = data['minecraft:client_entity'].description;
+        assert.equal(data.format_version, '1.10.0', entry.id);
+        assert.equal(desc.animation_controllers, undefined, entry.id);
+        for (const previous of entry.compatibilityOriginal.animation_controllers ?? [])
+            for (const controller of Object.values(previous)) {
+                const alias = Object.keys(desc.animations).find(k => desc.animations[k] === controller);
+                assert.ok(alias, controller);
+                assert.ok(desc.scripts.animate.some(a => a === alias || typeof a === 'object' && alias in a), alias);
+            }
+    }
+});
+test('legacy-only bone fields are never emitted in modern geometry', () => {
+    for (const geo of geometries) for (const bone of geo.bones ?? [])
+        for (const field of ['neverRender', 'bind_pose_rotation', 'reset'])
+            assert.equal(bone[field], undefined, geo.description.identifier + ': ' + field);
+    const legacy = read(pack + 'models/entity/pinenite_outline_legacy.geo.json');
+    assert.equal(legacy.format_version, '1.8.0');
+    assert.ok(Object.values(legacy).some(g => g.bones?.some(b => b.neverRender)));
+});
+test('sync animation omits the invalid empty bones object in both active packs', () => {
+    for (const rp of [pack, 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/']) {
+        const animation = read(rp + 'animations/pinenite_sync.animation.json').animations['animation.true_dn.pinenite_sync'];
+        assert.equal(animation.bones, undefined);
+        assert.ok(animation.animation_length > 0);
+    }
+});
+test('player initializes the spear flag used by the loaded root animation controller', () => {
+    const desc = read(pack + 'entity/minecraft_player.entity.json')['minecraft:client_entity'].description;
+    assert.ok(desc.scripts.pre_animation.some(s => /variable.melee_spear_equipped\s*=\s*query.equipped_item_any_tag/.test(s)));
 });

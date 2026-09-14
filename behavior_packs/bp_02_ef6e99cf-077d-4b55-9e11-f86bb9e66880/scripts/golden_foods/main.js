@@ -29,7 +29,7 @@ system.beforeEvents.startup.subscribe(({ itemComponentRegistry }) => {
 // Incoming-event adapter: no player scan and no recursive remove/re-add loop.
 const reservedProc=new Map();
 world.beforeEvents.effectAdd.subscribe(event=>{
-  if(event.entity.typeId!=='minecraft:player')return;
+  if(!event.entity.isValid || event.entity.typeId!=='minecraft:player')return;
   try {
     const player=event.entity,now=world.getAbsoluteTime(),state=counterState(player);
     state.nextPoisonProc=Math.max(state.nextPoisonProc??0,reservedProc.get(player.id)??0);
@@ -37,7 +37,7 @@ world.beforeEvents.effectAdd.subscribe(event=>{
     if(decision.cancel)event.cancel=true;else event.duration=decision.duration;
     if(decision.convert){
       const f=decision.convert,until=now+f.cooldown_s*20;reservedProc.set(player.id,until);
-      system.run(()=>{try{const current=counterState(player);current.nextPoisonProc=until;player.setDynamicProperty(COUNTER_KEY,JSON.stringify(current));
+      system.run(()=>{try{if(!player.isValid)return;const current=counterState(player);current.nextPoisonProc=until;player.setDynamicProperty(COUNTER_KEY,JSON.stringify(current));
         const existing=player.getEffect(f.proc_effect.effect),duration=f.proc_effect.duration_s*20,amplifier=f.proc_effect.amplifier_zero_based;
         if(!existing||(existing.amplifier<=amplifier&&existing.duration<duration))player.addEffect(f.proc_effect.effect,duration,{amplifier});
       }catch(error){reportError(error);}});

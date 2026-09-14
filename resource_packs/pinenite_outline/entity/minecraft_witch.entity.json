@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:witch",
@@ -16,22 +16,20 @@
         "pn_outline_default": "geometry.pinenite_outline.geometry_villager_witch_v1_8"
       },
       "scripts": {
-        "scale": "0.9375"
+        "scale": "0.9375",
+        "animate": [
+          "pn_legacy_general",
+          "pn_legacy_move"
+        ]
       },
       "animations": {
         "villager_general": "animation.villager.general",
         "look_at_target": "animation.common.look_at_target",
         "move": "animation.villager.move",
-        "general": "animation.witch.general"
+        "general": "animation.witch.general",
+        "pn_legacy_general": "controller.animation.witch.general",
+        "pn_legacy_move": "controller.animation.villager.move"
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.witch.general"
-        },
-        {
-          "move": "controller.animation.villager.move"
-        }
-      ],
       "render_controllers": [
         "controller.render.witch",
         {

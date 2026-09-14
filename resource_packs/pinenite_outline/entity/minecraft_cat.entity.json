@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:cat",
@@ -68,16 +68,10 @@
         "baby_transform": "animation.cat.baby_transform",
         "lie_down": "animation.cat.lie_down",
         "baby_lie_down": "animation.cat.baby_lie_down",
-        "baby_sit": "animation.cat.baby_sit"
+        "baby_sit": "animation.cat.baby_sit",
+        "pn_legacy_look_at_target": "controller.animation.cat.look_at_target",
+        "pn_legacy_move": "controller.animation.cat.move"
       },
-      "animation_controllers": [
-        {
-          "look_at_target": "controller.animation.cat.look_at_target"
-        },
-        {
-          "move": "controller.animation.cat.move"
-        }
-      ],
       "render_controllers": [
         "controller.render.cat.v2",
         {
@@ -88,7 +82,11 @@
         "texture": "spawn_egg_cat"
       },
       "scripts": {
-        "scale": "query.is_baby ? (1 / 0.4) : 1.0"
+        "scale": "query.is_baby ? (1 / 0.4) : 1.0",
+        "animate": [
+          "pn_legacy_look_at_target",
+          "pn_legacy_move"
+        ]
       }
     }
   }

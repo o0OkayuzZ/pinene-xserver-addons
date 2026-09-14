@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.pinenite_compat.dungeons_crossbow": {
+      "arrays": {
+        "geometries": {
+          "Array.pn_crossbow_geometry": [
+            "Geometry.crossbow_standby",
+            "Geometry.crossbow_pulling_0",
+            "Geometry.crossbow_pulling_1",
+            "Geometry.crossbow_pulling_2",
+            "Geometry.crossbow_ready"
+          ]
+        },
+        "textures": {
+          "Array.pn_crossbow_texture": [
+            "Texture.bow_standby",
+            "Texture.bow_pulling_0",
+            "Texture.bow_pulling_1",
+            "Texture.bow_pulling_2",
+            "Texture.bow_ready"
+          ]
+        }
+      },
+      "geometry": "Array.pn_crossbow_geometry[query.item_is_charged ? 4 : math.clamp(math.floor(variable.charge_amount), 0, 3)]",
+      "materials": [
+        {
+          "*": "variable.is_enchanted ? Material.enchanted : Material.default"
+        }
+      ],
+      "textures": [
+        "Array.pn_crossbow_texture[query.item_is_charged ? 4 : math.clamp(math.floor(variable.charge_amount), 0, 3)]",
+        "Texture.enchanted"
+      ]
+    }
+  }
+}

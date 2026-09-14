@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "dungeons:zombified_piglin_fungus_thrower",
@@ -21,6 +21,24 @@
       "scripts": {
         "pre_animation": [
           "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          "pn_legacy_humanoid_baby_big_head",
+          "pn_legacy_humanoid_base_pose",
+          "pn_legacy_look_at_target",
+          "pn_legacy_move",
+          "pn_legacy_riding",
+          "pn_legacy_holding",
+          "pn_legacy_brandish_spear",
+          "pn_legacy_charging",
+          "pn_legacy_attack",
+          "pn_legacy_sneaking",
+          "pn_legacy_bob",
+          "pn_legacy_damage_nearby_mobs",
+          "pn_legacy_bow_and_arrow",
+          "pn_legacy_swimming",
+          "pn_legacy_use_item_progress",
+          "pn_legacy_zombie_attack_bare_hand"
         ]
       },
       "animations": {
@@ -42,58 +60,24 @@
         "bow_and_arrow": "animation.humanoid.bow_and_arrow",
         "swimming": "animation.humanoid.swimming",
         "use_item_progress": "animation.humanoid.use_item_progress",
-        "zombie_attack_bare_hand": "animation.zombie.attack_bare_hand"
+        "zombie_attack_bare_hand": "animation.zombie.attack_bare_hand",
+        "pn_legacy_humanoid_baby_big_head": "controller.animation.humanoid.baby_big_head",
+        "pn_legacy_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+        "pn_legacy_look_at_target": "controller.animation.humanoid.look_at_target",
+        "pn_legacy_move": "controller.animation.humanoid.move",
+        "pn_legacy_riding": "controller.animation.humanoid.riding",
+        "pn_legacy_holding": "controller.animation.humanoid.holding",
+        "pn_legacy_brandish_spear": "controller.animation.humanoid.brandish_spear",
+        "pn_legacy_charging": "controller.animation.humanoid.charging",
+        "pn_legacy_attack": "controller.animation.humanoid.attack",
+        "pn_legacy_sneaking": "controller.animation.humanoid.sneaking",
+        "pn_legacy_bob": "controller.animation.humanoid.bob",
+        "pn_legacy_damage_nearby_mobs": "controller.animation.humanoid.damage_nearby_mobs",
+        "pn_legacy_bow_and_arrow": "controller.animation.humanoid.bow_and_arrow",
+        "pn_legacy_swimming": "controller.animation.humanoid.swimming",
+        "pn_legacy_use_item_progress": "controller.animation.humanoid.use_item_progress",
+        "pn_legacy_zombie_attack_bare_hand": "controller.animation.zombie.attack_bare_hand"
       },
-      "animation_controllers": [
-        {
-          "humanoid_baby_big_head": "controller.animation.humanoid.baby_big_head"
-        },
-        {
-          "humanoid_base_pose": "controller.animation.humanoid.base_pose"
-        },
-        {
-          "look_at_target": "controller.animation.humanoid.look_at_target"
-        },
-        {
-          "move": "controller.animation.humanoid.move"
-        },
-        {
-          "riding": "controller.animation.humanoid.riding"
-        },
-        {
-          "holding": "controller.animation.humanoid.holding"
-        },
-        {
-          "brandish_spear": "controller.animation.humanoid.brandish_spear"
-        },
-        {
-          "charging": "controller.animation.humanoid.charging"
-        },
-        {
-          "attack": "controller.animation.humanoid.attack"
-        },
-        {
-          "sneaking": "controller.animation.humanoid.sneaking"
-        },
-        {
-          "bob": "controller.animation.humanoid.bob"
-        },
-        {
-          "damage_nearby_mobs": "controller.animation.humanoid.damage_nearby_mobs"
-        },
-        {
-          "bow_and_arrow": "controller.animation.humanoid.bow_and_arrow"
-        },
-        {
-          "swimming": "controller.animation.humanoid.swimming"
-        },
-        {
-          "use_item_progress": "controller.animation.humanoid.use_item_progress"
-        },
-        {
-          "zombie_attack_bare_hand": "controller.animation.zombie.attack_bare_hand"
-        }
-      ],
       "render_controllers": [
         "controller.render.default",
         {

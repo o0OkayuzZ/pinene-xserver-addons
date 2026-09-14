@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:sniffer",
@@ -15,7 +15,17 @@
         "pre_animation": [
           "variable.moving = math.min(1.0, query.modified_move_speed * 10);"
         ],
-        "scale": "query.is_baby ? (1 / 0.45) : 1.0"
+        "scale": "query.is_baby ? (1 / 0.45) : 1.0",
+        "animate": [
+          "pn_legacy_general",
+          "pn_legacy_walk",
+          "pn_legacy_sniffsniff",
+          "pn_legacy_long_sniff",
+          "pn_legacy_search",
+          "pn_legacy_dig",
+          "pn_legacy_stand_up",
+          "pn_legacy_feeling_happy"
+        ]
       },
       "geometry": {
         "default": "geometry.sniffer",
@@ -32,34 +42,16 @@
         "search": "animation.sniffer.search",
         "dig": "animation.sniffer.dig",
         "stand_up": "animation.sniffer.stand_up",
-        "feeling_happy": "animation.sniffer.feeling_happy"
+        "feeling_happy": "animation.sniffer.feeling_happy",
+        "pn_legacy_general": "controller.animation.sniffer.general",
+        "pn_legacy_walk": "controller.animation.sniffer.walk",
+        "pn_legacy_sniffsniff": "controller.animation.sniffer.sniffsniff",
+        "pn_legacy_long_sniff": "controller.animation.sniffer.long_sniff",
+        "pn_legacy_search": "controller.animation.sniffer.search",
+        "pn_legacy_dig": "controller.animation.sniffer.dig",
+        "pn_legacy_stand_up": "controller.animation.sniffer.stand_up",
+        "pn_legacy_feeling_happy": "controller.animation.sniffer.feeling_happy"
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.sniffer.general"
-        },
-        {
-          "walk": "controller.animation.sniffer.walk"
-        },
-        {
-          "sniffsniff": "controller.animation.sniffer.sniffsniff"
-        },
-        {
-          "long_sniff": "controller.animation.sniffer.long_sniff"
-        },
-        {
-          "search": "controller.animation.sniffer.search"
-        },
-        {
-          "dig": "controller.animation.sniffer.dig"
-        },
-        {
-          "stand_up": "controller.animation.sniffer.stand_up"
-        },
-        {
-          "feeling_happy": "controller.animation.sniffer.feeling_happy"
-        }
-      ],
       "render_controllers": [
         "controller.render.sniffer.v2",
         {

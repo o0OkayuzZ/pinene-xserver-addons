@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:tripod_camera",
@@ -15,19 +15,20 @@
         "pn_outline_default": "geometry.pinenite_outline.geometry_tripod_camera"
       },
       "animations": {
-        "neutral": "animation.tripod_camera.neutral"
+        "neutral": "animation.tripod_camera.neutral",
+        "pn_legacy_base": "controller.animation.tripod_camera.base_pose"
       },
-      "animation_controllers": [
-        {
-          "base": "controller.animation.tripod_camera.base_pose"
-        }
-      ],
       "render_controllers": [
         "controller.render.tripod_camera",
         {
           "controller.render.pinenite_outline.minecraft_tripod_camera_0": "(1) && ((variable.pinenite_outline ?? 0) > 0 && query.life_time < (variable.pinenite_outline_until ?? 0))"
         }
-      ]
+      ],
+      "scripts": {
+        "animate": [
+          "pn_legacy_base"
+        ]
+      }
     }
   }
 }

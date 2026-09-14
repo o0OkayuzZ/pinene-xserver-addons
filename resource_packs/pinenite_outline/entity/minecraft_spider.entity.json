@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:spider",
@@ -19,13 +19,9 @@
       "animations": {
         "default_leg_pose": "animation.spider.default_leg_pose",
         "look_at_target": "animation.spider.look_at_target",
-        "walk": "animation.spider.walk"
+        "walk": "animation.spider.walk",
+        "pn_legacy_move": "controller.animation.spider.move"
       },
-      "animation_controllers": [
-        {
-          "move": "controller.animation.spider.move"
-        }
-      ],
       "render_controllers": [
         "controller.render.spider",
         {
@@ -34,6 +30,11 @@
       ],
       "spawn_egg": {
         "texture": "spawn_egg_spider"
+      },
+      "scripts": {
+        "animate": [
+          "pn_legacy_move"
+        ]
       }
     }
   }

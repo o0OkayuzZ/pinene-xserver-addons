@@ -53,7 +53,7 @@ controllers['render_controllers']['controller.render.true_dn.pinenite_glow'] = {
 }
 write(path, controllers)
 write(RP / 'animations/pinenite_sync.animation.json', {'format_version': '1.8.0', 'animations': {
-    'animation.true_dn.pinenite_sync': {'loop': True, 'animation_length': 1, 'bones': {}}
+    'animation.true_dn.pinenite_sync': {'loop': True, 'animation_length': 1}
 }})
 write(RP / 'particles/pinenite_frame.particle.json', {
     'format_version': '1.10.0', 'particle_effect': {

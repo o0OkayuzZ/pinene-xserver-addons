@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:camel",
@@ -31,7 +31,11 @@
           "variable.xHeadRot = variable.dash_cooldown_progress > 0 ? math.clamp(variable.xTargetRot + (45 * (1 - variable.dash_cooldown_progress)), -25, 70) : variable.xTargetRot;",
           "variable.yHeadRot = math.clamp(query.target_y_rotation, -30, 30);"
         ],
-        "scale": "query.is_baby ? (1 / 0.45) : 1.0"
+        "scale": "query.is_baby ? (1 / 0.45) : 1.0",
+        "animate": [
+          "pn_legacy_general",
+          "pn_legacy_idle"
+        ]
       },
       "animations": {
         "moving": "animation.camel.walk",
@@ -47,21 +51,15 @@
         "baby_sitting": "animation.camel.baby_sit",
         "baby_stand_up": "animation.camel.baby_stand_up",
         "baby_dashing": "animation.camel.baby_dash",
-        "baby_idle": "animation.camel.baby_idle"
+        "baby_idle": "animation.camel.baby_idle",
+        "pn_legacy_general": "controller.animation.camel.general",
+        "pn_legacy_idle": "controller.animation.camel.idle"
       },
       "sound_effects": {
         "sit_down": "mob.camel.sit",
         "stand_up": "mob.camel.stand",
         "dash": "mob.camel.dash"
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.camel.general"
-        },
-        {
-          "idle": "controller.animation.camel.idle"
-        }
-      ],
       "render_controllers": [
         "controller.render.camel.v2",
         {

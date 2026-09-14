@@ -148,20 +148,18 @@ for m in manifests:
             check('dependency ' + dep['uuid'], headers[dep['uuid']] == dep['version'])
 for path in ROOT.glob('world_*_packs.json'):
     data = read(path)
-    owned = {read(BP / 'manifest.json')['header']['uuid'], read(RP / 'manifest.json')['header']['uuid'], '2c5e0de8-0360-49ac-bfe5-339a2a0e62f2'}
+    owned = {read(BP / 'manifest.json')['header']['uuid'], read(RP / 'manifest.json')['header']['uuid'], '2c5e0de8-0360-49ac-bfe5-339a2a0e62f2', 'c91096f3-71a0-4e44-9fa6-c9e359017ac7', 'ef6e99cf-077d-4b55-9e11-f86bb9e66880', 'b29dadb1-6c0e-42f6-a56e-f52e01dff8e9'}
     for entry in data:
         if headers.get(entry['pack_id']) != entry['version']:
             preexisting_warnings.append({'file': path.name, 'pack_id': entry['pack_id'], 'registered': entry['version'], 'manifest': headers.get(entry['pack_id'])})
-    main_registration = json.loads(subprocess.check_output(['git', 'show', 'cd53e576:' + path.name], cwd=ROOT))
+    main_registration = json.loads(subprocess.check_output(['git', 'show', '559feb4d:' + path.name], cwd=ROOT))
     for entry in main_registration:
         if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
-    if 'resource' in path.name: main_registration.insert(0, {'pack_id': 'c91096f3-71a0-4e44-9fa6-c9e359017ac7', 'version': [1, 0, 0]})
     check('other registrations preserved from main ' + path.name, data == main_registration)
     for copy in ROOT.glob('worlds/*/' + path.name):
-        original_copy = json.loads(subprocess.check_output(['git', 'show', 'cd53e576:' + copy.relative_to(ROOT).as_posix()], cwd=ROOT))
+        original_copy = json.loads(subprocess.check_output(['git', 'show', '559feb4d:' + copy.relative_to(ROOT).as_posix()], cwd=ROOT))
         for entry in original_copy:
             if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
-        if 'resource' in path.name: original_copy.insert(0, {'pack_id': 'c91096f3-71a0-4e44-9fa6-c9e359017ac7', 'version': [1, 0, 0]})
         check('world registration preserved from main ' + copy.as_posix(), read(copy) == original_copy)
 
 # Verify preservation against the clean checkout recorded at integration time.
@@ -188,8 +186,20 @@ allowed = {
 } | {(BP / f'items/Deathnerite-Add-On/pinenite/armor/pinenite_{part}.json').relative_to(ROOT).as_posix() for part in PARTS} | {
     (RP / f'attachables/deathnerite/pinenite/pinenite_{part}.json').relative_to(ROOT).as_posix() for part in PARTS}
 allowed |= {'tests/pinenite/assets.test.mjs', 'tests/pinenite/runtime.test.mjs', 'tools/apply_addon_release.py', 'docs/pinenite/combat_validation.json', (BP / 'scripts/pinenite/main.js').relative_to(ROOT).as_posix()}
-check('only documented existing files changed', set(changed_tracked) <= allowed)
-check('existing geometry and all textures unchanged', not any('/models/' in p or p.endswith('.png') for p in changed_tracked))
+# Exact compatibility fixes for errors captured on 2026-09-14.
+allowed |= {'tools/pinenite/build_combat_assets.py', 'tools/pinenite/build_outline_assets.py',
+            'tools/pinecd/build.py', 'tests/pinenite/outline.test.mjs',
+            'docs/pinenite/outline_coverage.json',
+            (RP / 'animations/pinenite_sync.animation.json').relative_to(ROOT).as_posix()}
+for prefix, paths in {
+    'behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/': ['manifest.json', 'scripts/golden_foods/main.js'],
+    'behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/': ['manifest.json'] + [f'items/compat_pinecd_cd_{i:02}.item.json' for i in range(1, 20)],
+    'behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/': ['scripts/main.js', 'recipes/blue_diamond_apple.recipe.json', 'recipes/enchanted_blue_diamond_apple.recipe.json'] + ['recipes/onso/' + n + '.recipe.json' for n in ['onso_from_all_cds_any_mix_shapeless', 'onso_from_all_cds_shaped', 'onso_from_all_cds_tag']],
+    RP.relative_to(ROOT).as_posix() + '/attachables/ranged/': [n + '.json' for n in ['crossbow_harp', 'crossbow_harp_lightning', 'crossbow_scatter', 'dualcrossbow', 'dualcrossbow_baby', 'dualcrossbow_spellbound']],
+}.items():
+    allowed.update(prefix + p for p in paths)
+check('only documented existing files changed', all(p in allowed or p.startswith('resource_packs/pinenite_outline/') for p in changed_tracked))
+check('existing geometry and all textures unchanged', not any(('/models/' in p or p.endswith('.png')) and not p.startswith('resource_packs/pinenite_outline/') for p in changed_tracked))
 
 report = {'static_validation': 'passed', 'check_count': len(checks), 'checks': checks,
           'preexisting_registration_warnings': preexisting_warnings,

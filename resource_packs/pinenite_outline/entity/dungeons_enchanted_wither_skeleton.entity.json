@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "dungeons:enchanted_wither_skeleton",
@@ -23,6 +23,21 @@
           "variable.riding_y_offset_with_respect_to_player = -1.0;",
           "variable.riding_y_offset_on_vehicle_where_other_entites_can_stand = query.is_riding_any_entity_of_type('minecraft:minecart', 'minecraft:boat', 'minecraft:chest_boat') ? -3.0 : 0.0;",
           "variable.riding_y_offset = variable.riding_y_offset_with_respect_to_player + variable.riding_y_offset_on_vehicle_where_other_entites_can_stand;"
+        ],
+        "animate": [
+          "pn_legacy_look_at_target",
+          "pn_legacy_move",
+          "pn_legacy_riding",
+          "pn_legacy_holding",
+          "pn_legacy_brandish_spear",
+          "pn_legacy_charging",
+          "pn_legacy_attack",
+          "pn_legacy_sneaking",
+          "pn_legacy_damage_nearby_mobs",
+          "pn_legacy_bow_and_arrow",
+          "pn_legacy_use_item_progress",
+          "pn_legacy_wither_skeleton_attack",
+          "pn_legacy_swimming"
         ]
       },
       "animations": {
@@ -43,49 +58,21 @@
         "use_item_progress": "animation.humanoid.use_item_progress",
         "wither_skeleton_attack": "animation.wither_skeleton.attack",
         "swimming": "animation.zombie.swimming",
-        "riding.body": "animation.humanoid.riding.body"
+        "riding.body": "animation.humanoid.riding.body",
+        "pn_legacy_look_at_target": "controller.animation.humanoid.look_at_target",
+        "pn_legacy_move": "controller.animation.humanoid.move",
+        "pn_legacy_riding": "controller.animation.humanoid.riding",
+        "pn_legacy_holding": "controller.animation.humanoid.holding",
+        "pn_legacy_brandish_spear": "controller.animation.humanoid.brandish_spear",
+        "pn_legacy_charging": "controller.animation.humanoid.charging",
+        "pn_legacy_attack": "controller.animation.humanoid.attack",
+        "pn_legacy_sneaking": "controller.animation.humanoid.sneaking",
+        "pn_legacy_damage_nearby_mobs": "controller.animation.humanoid.damage_nearby_mobs",
+        "pn_legacy_bow_and_arrow": "controller.animation.humanoid.bow_and_arrow",
+        "pn_legacy_use_item_progress": "controller.animation.humanoid.use_item_progress",
+        "pn_legacy_wither_skeleton_attack": "controller.animation.wither_skeleton.attack",
+        "pn_legacy_swimming": "controller.animation.zombie.swimming"
       },
-      "animation_controllers": [
-        {
-          "look_at_target": "controller.animation.humanoid.look_at_target"
-        },
-        {
-          "move": "controller.animation.humanoid.move"
-        },
-        {
-          "riding": "controller.animation.humanoid.riding"
-        },
-        {
-          "holding": "controller.animation.humanoid.holding"
-        },
-        {
-          "brandish_spear": "controller.animation.humanoid.brandish_spear"
-        },
-        {
-          "charging": "controller.animation.humanoid.charging"
-        },
-        {
-          "attack": "controller.animation.humanoid.attack"
-        },
-        {
-          "sneaking": "controller.animation.humanoid.sneaking"
-        },
-        {
-          "damage_nearby_mobs": "controller.animation.humanoid.damage_nearby_mobs"
-        },
-        {
-          "bow_and_arrow": "controller.animation.humanoid.bow_and_arrow"
-        },
-        {
-          "use_item_progress": "controller.animation.humanoid.use_item_progress"
-        },
-        {
-          "wither_skeleton_attack": "controller.animation.wither_skeleton.attack"
-        },
-        {
-          "swimming": "controller.animation.zombie.swimming"
-        }
-      ],
       "render_controllers": [
         "controller.render.wither_skeleton",
         "controller.render.dungeons_entity_enchanted",

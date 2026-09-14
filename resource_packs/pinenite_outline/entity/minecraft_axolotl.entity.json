@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:axolotl",
@@ -41,23 +41,21 @@
         "baby_idle_float": "animation.axolotl.baby_idle_underwater",
         "baby_swim": "animation.axolotl.baby_swim",
         "baby_walk_floor": "animation.axolotl.baby_walk_floor",
-        "baby_walk_floor_water": "animation.axolotl.baby_walk_floor_underwater"
+        "baby_walk_floor_water": "animation.axolotl.baby_walk_floor_underwater",
+        "pn_legacy_general": "controller.animation.axolotl.general",
+        "pn_legacy_move": "controller.animation.axolotl.move.v2"
       },
       "scripts": {
         "pre_animation": [
           "variable.moving = query.ground_speed > 0 || query.vertical_speed > 0;",
           "variable.pitch = query.body_x_rotation;"
         ],
-        "scale": "query.is_baby ? 2.0 : 1.0"
+        "scale": "query.is_baby ? 2.0 : 1.0",
+        "animate": [
+          "pn_legacy_general",
+          "pn_legacy_move"
+        ]
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.axolotl.general"
-        },
-        {
-          "move": "controller.animation.axolotl.move.v2"
-        }
-      ],
       "render_controllers": [
         "controller.render.axolotl.v2",
         {

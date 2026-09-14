@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:vex",
@@ -21,7 +21,12 @@
           "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
           "variable.empty_handed  = !query.is_item_equipped(0) && !query.is_item_equipped(1);"
         ],
-        "scale": "1.0"
+        "scale": "1.0",
+        "animate": [
+          "pn_legacy_look_at_target",
+          "pn_legacy_vex_charge",
+          "pn_legacy_vex_idle"
+        ]
       },
       "animations": {
         "look_at_target_default": "animation.humanoid.look_at_target.default",
@@ -42,19 +47,11 @@
         "use_item_progress": "animation.humanoid.use_item_progress",
         "vex_move": "animation.vex.move",
         "vex_charge": "animation.vex.charge",
-        "vex_idle": "animation.vex.idle"
+        "vex_idle": "animation.vex.idle",
+        "pn_legacy_look_at_target": "controller.animation.humanoid.look_at_target",
+        "pn_legacy_vex_charge": "controller.animation.vex.charge",
+        "pn_legacy_vex_idle": "controller.animation.vex.idle"
       },
-      "animation_controllers": [
-        {
-          "look_at_target": "controller.animation.humanoid.look_at_target"
-        },
-        {
-          "vex_charge": "controller.animation.vex.charge"
-        },
-        {
-          "vex_idle": "controller.animation.vex.idle"
-        }
-      ],
       "render_controllers": [
         "controller.render.vex",
         {

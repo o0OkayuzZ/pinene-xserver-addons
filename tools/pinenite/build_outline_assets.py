@@ -45,6 +45,7 @@ def inflated(geo, identifier):
 
 def build(samples):
     entities, geometries, controllers, living = {}, {}, {}, set()
+    materials = {'version': '1.0.0'}
     versions = read(ROOT / 'world_resource_packs.json')
     packs = {read(p / 'manifest.json')['header']['uuid']: p for p in (ROOT / 'resource_packs').iterdir()
              if (p / 'manifest.json').exists() and p != OUT}
@@ -59,6 +60,8 @@ def build(samples):
                 living.add(data.get('description', {}).get('identifier'))
     living.add('minecraft:player')
     for pack in layers:
+        material_file = pack / 'materials/entity.material'
+        if material_file.exists(): materials.update(read(material_file)['materials'])
         provenance = 'Mojang/bedrock-samples@v1.26.40.05' if pack == layers[0] else pack.relative_to(ROOT).as_posix()
         layer_entities = {}
         for path in sorted((pack / 'entity').rglob('*.json')):
@@ -115,7 +118,25 @@ def build(samples):
             report['excluded'].append({'id': identifier, 'reason': 'Zombie Gear is protected'})
             continue
         data = copy.deepcopy(source)
+        data['format_version'] = '1.10.0'
         desc = data['minecraft:client_entity']['description']
+        compatibility_original = {key: copy.deepcopy(desc[key]) for key in ('scripts', 'animations', 'animation_controllers') if key in desc}
+        # The official export contains both the legacy list and migrated aliases
+        # for some vanilla mobs. 1.10 accepts only animations + scripts.animate.
+        for entry in desc.pop('animation_controllers', []):
+            for old_alias, controller in entry.items():
+                animations = desc.setdefault('animations', {})
+                alias = next((a for a, value in animations.items() if value == controller), None)
+                if alias is None:
+                    alias = 'pn_legacy_' + old_alias
+                    animations[alias] = controller
+                animate = desc.setdefault('scripts', {}).setdefault('animate', [])
+                if not any(alias == a or isinstance(a, dict) and alias in a for a in animate): animate.append(alias)
+        if identifier == 'minecraft:player':
+            desc.setdefault('scripts', {}).setdefault('pre_animation', []).append(
+                "variable.melee_spear_equipped = query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear');")
+        if identifier in ('dungeons:illusioner', 'dungeons:royal_guard'):
+            desc.setdefault('animations', {}).setdefault('riding.body', 'animation.humanoid.riding.body')
         aliases, additions, local_rc, local_geos = {}, [], {}, {}
         try:
             for alias, geo_id in desc.get('geometry', {}).items():
@@ -185,6 +206,7 @@ def build(samples):
         relative = 'entity/' + name(identifier) + '.entity.json'
         write(OUT / relative, data)
         report['entities'].append({'id': identifier, 'source': provenance, 'file': relative,
+                                   'sourceFormat': source['format_version'], 'compatibilityOriginal': compatibility_original,
                                    'sourceSha256': hashlib.sha256(json.dumps(source, sort_keys=True, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest(),
                                    'addedControllers': len(additions)})
     armor_rp = ROOT / 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b'
@@ -205,14 +227,29 @@ def build(samples):
         'overlay_color': {'r': 57 / 255, 'g': 197 / 255, 'b': 187 / 255, 'a': 1},
         'color': {'r': 1, 'g': 1, 'b': 1, 'a': 'variable.pinenite_outline ?? 0'}}
     write(OUT / 'animations/pinenite_sync.animation.json', read(armor_rp / 'animations/pinenite_sync.animation.json'))
-    write(OUT / 'models/entity/pinenite_outline.geo.json', {'format_version': '1.21.0', 'minecraft:geometry': list(output_geos.values())})
+    modern, legacy = [], {'format_version': '1.8.0'}
+    for key, geo in output_geos.items():
+        if not any(any(field in bone for field in ('neverRender', 'bind_pose_rotation', 'reset')) for bone in geo.get('bones', [])):
+            modern.append(geo)
+            continue
+        desc = copy.deepcopy(geo['description'])
+        desc.pop('identifier')
+        desc['texturewidth'] = desc.pop('texture_width', 64)
+        desc['textureheight'] = desc.pop('texture_height', 32)
+        legacy[key] = {**desc, 'bones': geo.get('bones', [])}
+    write(OUT / 'models/entity/pinenite_outline.geo.json', {'format_version': '1.21.0', 'minecraft:geometry': modern})
+    write(OUT / 'models/entity/pinenite_outline_legacy.geo.json', legacy)
     write(OUT / 'render_controllers/pinenite_outline.json', {'format_version': '1.8.0', 'render_controllers': output_rc})
-    write(OUT / 'materials/pinenite_outline.material', {'materials': {'version': '1.0.0', 'pinenite_outline:entity_alphatest': {
-        '+states': ['InvertCulling', 'Blending'], '-states': ['DisableCulling'], '+defines': ['USE_OVERLAY']}}})
+    materials['pinenite_outline:entity_alphatest'] = {
+        '+states': ['InvertCulling', 'Blending'], '-states': ['DisableCulling'], '+defines': ['USE_OVERLAY']}
+    # Bedrock loads entity materials from this catalog path. Preserve every
+    # lower-pack entry when adding ours so custom Dungeons materials still work.
+    write(OUT / 'materials/entity.material', {'materials': materials})
+    write(OUT / 'materials/pinenite_outline.material', {'materials': {'version': '1.0.0'}})
     write(OUT / 'manifest.json', {'format_version': 2, 'header': {
         'name': 'Pinenite Model Outlines', 'description': 'Additive model outlines for Pinenite adaptation and symbiosis.',
-        'uuid': UUID, 'version': [1, 0, 0], 'min_engine_version': [1, 26, 40]},
-        'modules': [{'type': 'resources', 'uuid': '7f8a080c-bbb5-4d36-84fd-8b5f6920761f', 'version': [1, 0, 0]}]})
+        'uuid': UUID, 'version': [1, 0, 1], 'min_engine_version': [1, 26, 40]},
+        'modules': [{'type': 'resources', 'uuid': '7f8a080c-bbb5-4d36-84fd-8b5f6920761f', 'version': [1, 0, 1]}]})
     (OUT / 'VANILLA_LICENSE.md').write_bytes((samples / 'LICENSE.md').read_bytes())
     write(ROOT / 'docs/pinenite/outline_coverage.json', report)
     print(json.dumps({'supported': len(report['entities']), 'excluded': report['excluded'], 'geometries': len(output_geos)}, indent=2))

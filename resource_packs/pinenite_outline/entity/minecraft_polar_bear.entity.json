@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:polar_bear",
@@ -21,16 +21,15 @@
         "walk": "animation.quadruped.walk",
         "move": "animation.polarbear.move",
         "look_at_target": "animation.common.look_at_target",
-        "baby_transform": "animation.polarbear.baby_transform"
+        "baby_transform": "animation.polarbear.baby_transform",
+        "pn_legacy_move": "controller.animation.polar_bear.move"
       },
       "scripts": {
-        "scale": "query.is_baby ? 2.0 : 1.2"
+        "scale": "query.is_baby ? 2.0 : 1.2",
+        "animate": [
+          "pn_legacy_move"
+        ]
       },
-      "animation_controllers": [
-        {
-          "move": "controller.animation.polar_bear.move"
-        }
-      ],
       "render_controllers": [
         "controller.render.polar_bear.v2",
         {

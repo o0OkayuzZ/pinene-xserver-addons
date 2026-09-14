@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:panda",
@@ -40,19 +40,11 @@
         "lying": "animation.panda.lying",
         "baby_sitting": "animation.panda.baby_sitting",
         "baby_rolling": "animation.panda.baby_rolling",
-        "baby_lying": "animation.panda.baby_lying"
+        "baby_lying": "animation.panda.baby_lying",
+        "pn_legacy_move": "controller.animation.panda.move",
+        "pn_legacy_unhappy": "controller.animation.panda.unhappy",
+        "pn_legacy_sneezing": "controller.animation.panda.sneezing"
       },
-      "animation_controllers": [
-        {
-          "move": "controller.animation.panda.move"
-        },
-        {
-          "unhappy": "controller.animation.panda.unhappy"
-        },
-        {
-          "sneezing": "controller.animation.panda.sneezing"
-        }
-      ],
       "render_controllers": [
         "controller.render.panda.v2",
         {
@@ -63,7 +55,12 @@
         "texture": "spawn_egg_panda"
       },
       "scripts": {
-        "scale": "query.is_baby ? (1 / 0.4) : 1.0"
+        "scale": "query.is_baby ? (1 / 0.4) : 1.0",
+        "animate": [
+          "pn_legacy_move",
+          "pn_legacy_unhappy",
+          "pn_legacy_sneezing"
+        ]
       }
     }
   }

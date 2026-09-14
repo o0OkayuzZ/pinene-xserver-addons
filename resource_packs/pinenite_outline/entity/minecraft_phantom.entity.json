@@ -27,23 +27,17 @@
         ],
         "animate": [
           "phantom_base_pose_controller",
-          "move"
+          "move",
+          "pn_legacy_move"
         ],
         "should_update_effects_offscreen": "1.0"
       },
       "animations": {
         "phantom_base_pose": "animation.phantom.base_pose",
         "move": "animation.phantom.move",
-        "phantom_base_pose_controller": "controller.animation.phantom.base_pose"
+        "phantom_base_pose_controller": "controller.animation.phantom.base_pose",
+        "pn_legacy_move": "controller.animation.phantom.move"
       },
-      "animation_controllers": [
-        {
-          "phantom_base_pose": "controller.animation.phantom.base_pose"
-        },
-        {
-          "move": "controller.animation.phantom.move"
-        }
-      ],
       "particle_effects": {
         "wing_dust": "minecraft:phantom_trail_particle"
       },

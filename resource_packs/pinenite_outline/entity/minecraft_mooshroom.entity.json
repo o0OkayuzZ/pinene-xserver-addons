@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:mooshroom",
@@ -24,16 +24,10 @@
         "setup": "animation.mooshroom.setup",
         "walk": "animation.quadruped.walk",
         "look_at_target": "animation.common.look_at_target",
-        "baby_transform": "animation.mooshroom.baby_transform"
+        "baby_transform": "animation.mooshroom.baby_transform",
+        "pn_legacy_setup": "controller.animation.mooshroom.setup",
+        "pn_legacy_move": "controller.animation.mooshroom.move"
       },
-      "animation_controllers": [
-        {
-          "setup": "controller.animation.mooshroom.setup"
-        },
-        {
-          "move": "controller.animation.mooshroom.move"
-        }
-      ],
       "render_controllers": [
         "controller.render.mooshroom.v2",
         {
@@ -44,7 +38,11 @@
         "texture": "spawn_egg_mooshroom"
       },
       "scripts": {
-        "scale": "query.is_baby ? 2.0 : 1.0"
+        "scale": "query.is_baby ? 2.0 : 1.0",
+        "animate": [
+          "pn_legacy_setup",
+          "pn_legacy_move"
+        ]
       }
     }
   }

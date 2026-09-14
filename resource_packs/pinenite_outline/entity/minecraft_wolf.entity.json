@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:wolf",
@@ -84,7 +84,16 @@
           "variable.head_roll_progress = Math.clamp(variable.body_shake_angle / 1.8, 0, 1);",
           "variable.head_rot_z = (Math.sin(variable.head_roll_progress * 180) * Math.sin(variable.head_roll_progress * 1980) * 27) - variable.body_rot_z;"
         ],
-        "scale": "query.is_baby ? 2.0 : 1.0"
+        "scale": "query.is_baby ? 2.0 : 1.0",
+        "animate": [
+          "pn_legacy_wolf_setup",
+          "pn_legacy_wolf_look_at",
+          "pn_legacy_wolf_head_rot_z",
+          "pn_legacy_wolf_tail_default",
+          "pn_legacy_wolf_angry",
+          "pn_legacy_wolf_sitting",
+          "pn_legacy_wolf_shaking"
+        ]
       },
       "animations": {
         "wolf_setup": "animation.wolf.setup",
@@ -96,31 +105,15 @@
         "wolf_sitting": "animation.wolf.sitting",
         "wolf_shaking": "animation.wolf.shaking",
         "wolf_leg_default": "animation.wolf.leg_default",
-        "wolf_baby_sitting": "animation.wolf.baby_sitting"
+        "wolf_baby_sitting": "animation.wolf.baby_sitting",
+        "pn_legacy_wolf_setup": "controller.animation.wolf.setup",
+        "pn_legacy_wolf_look_at": "controller.animation.wolf.look_at",
+        "pn_legacy_wolf_head_rot_z": "controller.animation.wolf.head_rot_z",
+        "pn_legacy_wolf_tail_default": "controller.animation.wolf.tail_default",
+        "pn_legacy_wolf_angry": "controller.animation.wolf.angry",
+        "pn_legacy_wolf_sitting": "controller.animation.wolf.sitting",
+        "pn_legacy_wolf_shaking": "controller.animation.wolf.shaking"
       },
-      "animation_controllers": [
-        {
-          "wolf_setup": "controller.animation.wolf.setup"
-        },
-        {
-          "wolf_look_at": "controller.animation.wolf.look_at"
-        },
-        {
-          "wolf_head_rot_z": "controller.animation.wolf.head_rot_z"
-        },
-        {
-          "wolf_tail_default": "controller.animation.wolf.tail_default"
-        },
-        {
-          "wolf_angry": "controller.animation.wolf.angry"
-        },
-        {
-          "wolf_sitting": "controller.animation.wolf.sitting"
-        },
-        {
-          "wolf_shaking": "controller.animation.wolf.shaking"
-        }
-      ],
       "render_controllers": [
         "controller.render.wolf.v2",
         {

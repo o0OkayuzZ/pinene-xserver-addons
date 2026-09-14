@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:wither",
@@ -36,18 +36,17 @@
         ],
         "scalex": "variable.scale_xz * variable.base_scale",
         "scaley": "variable.scale_y * variable.base_scale",
-        "scalez": "variable.scale_xz * variable.base_scale"
+        "scalez": "variable.scale_xz * variable.base_scale",
+        "animate": [
+          "pn_legacy_move"
+        ]
       },
       "animations": {
         "scale": "animation.wither_boss.scale",
         "move": "animation.wither_boss.move",
-        "look_at_target": "animation.wither_boss.look_at_target"
+        "look_at_target": "animation.wither_boss.look_at_target",
+        "pn_legacy_move": "controller.animation.wither_boss.move"
       },
-      "animation_controllers": [
-        {
-          "move": "controller.animation.wither_boss.move"
-        }
-      ],
       "render_controllers": [
         "controller.render.wither_boss",
         "controller.render.wither_boss_armor_white",

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "dungeons:angry_mooshroom",
@@ -19,19 +19,11 @@
         "setup": "animation.mooshroom.setup",
         "walk": "animation.quadruped.walk",
         "look_at_target": "animation.common.look_at_target",
-        "baby_transform": "animation.mooshroom.baby_transform"
+        "baby_transform": "animation.mooshroom.baby_transform",
+        "pn_legacy_setup": "controller.animation.mooshroom.setup",
+        "pn_legacy_move": "controller.animation.mooshroom.move",
+        "pn_legacy_baby": "controller.animation.mooshroom.baby"
       },
-      "animation_controllers": [
-        {
-          "setup": "controller.animation.mooshroom.setup"
-        },
-        {
-          "move": "controller.animation.mooshroom.move"
-        },
-        {
-          "baby": "controller.animation.mooshroom.baby"
-        }
-      ],
       "render_controllers": [
         "controller.render.default",
         {
@@ -41,6 +33,13 @@
       "spawn_egg": {
         "base_color": "#8B1E1E",
         "overlay_color": "#F2E6D8"
+      },
+      "scripts": {
+        "animate": [
+          "pn_legacy_setup",
+          "pn_legacy_move",
+          "pn_legacy_baby"
+        ]
       }
     }
   }

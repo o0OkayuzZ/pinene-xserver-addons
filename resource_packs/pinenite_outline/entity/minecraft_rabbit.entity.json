@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:rabbit",
@@ -35,13 +35,9 @@
         "baby_transform": "animation.rabbit.baby_transform",
         "look_at_target": "animation.common.look_at_target",
         "move_baby": "animation.rabbit.move.baby",
-        "idle_head_tilt": "animation.rabbit.idle_head_tilt"
+        "idle_head_tilt": "animation.rabbit.idle_head_tilt",
+        "pn_legacy_general": "controller.animation.rabbit.general.v2"
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.rabbit.general.v2"
-        }
-      ],
       "render_controllers": [
         "controller.render.rabbit.v2",
         {
@@ -60,6 +56,9 @@
           "variable.idle_cooldown = ((!variable.moving && variable.was_moving) || (variable.idle_cooldown ?? 0) <= 0) ? variable.random_cooldown : (variable.idle_cooldown ?? variable.random_cooldown);",
           "variable.idle_cooldown = math.max(0, variable.idle_cooldown - query.delta_time);",
           "variable.should_idle = variable.idle_cooldown <= 0;"
+        ],
+        "animate": [
+          "pn_legacy_general"
         ]
       }
     }

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:hoglin",
@@ -26,25 +26,22 @@
           "variable.tcos_left_side = -variable.tcos_right_side;",
           "variable.attack_head_rot =  Math.sin(variable.attack_time * 180.0) * -37.3;"
         ],
-        "scale": "query.is_baby ? 2.0 : 1.0"
+        "scale": "query.is_baby ? 2.0 : 1.0",
+        "animate": [
+          "pn_legacy_look_at_target",
+          "pn_legacy_walk",
+          "pn_legacy_attack"
+        ]
       },
       "animations": {
         "walk": "animation.hoglin.walk",
         "look_at_target": "animation.hoglin.look_at_target",
         "attack": "animation.hoglin.attack",
-        "hoglin_baby_scaling": "animation.hoglin.baby_scaling"
+        "hoglin_baby_scaling": "animation.hoglin.baby_scaling",
+        "pn_legacy_look_at_target": "controller.animation.hoglin.look_at_target",
+        "pn_legacy_walk": "controller.animation.hoglin.walk",
+        "pn_legacy_attack": "controller.animation.hoglin.attack"
       },
-      "animation_controllers": [
-        {
-          "look_at_target": "controller.animation.hoglin.look_at_target"
-        },
-        {
-          "walk": "controller.animation.hoglin.walk"
-        },
-        {
-          "attack": "controller.animation.hoglin.attack"
-        }
-      ],
       "render_controllers": [
         "controller.render.hoglin.v2",
         {
