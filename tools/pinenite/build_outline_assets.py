@@ -229,6 +229,15 @@ def build(samples):
     write(OUT / 'animations/pinenite_sync.animation.json', read(armor_rp / 'animations/pinenite_sync.animation.json'))
     modern, legacy = [], {'format_version': '1.8.0'}
     for key, geo in output_geos.items():
+        # Some inherited models mix legacy visibility with modern cube rotation.
+        # A hidden bone still transforms its children; remove only its own cubes.
+        modern_cubes = any(isinstance(c.get('uv'), dict) or 'rotation' in c or 'pivot' in c
+                           for b in geo.get('bones', []) for c in b.get('cubes', []))
+        if modern_cubes and any('neverRender' in b for b in geo.get('bones', [])):
+            assert not any('reset' in b or 'bind_pose_rotation' in b for b in geo['bones']), key
+            geo = copy.deepcopy(geo)
+            for bone in geo['bones']:
+                if bone.pop('neverRender', False): bone.pop('cubes', None)
         if not any(any(field in bone for field in ('neverRender', 'bind_pose_rotation', 'reset')) for bone in geo.get('bones', [])):
             modern.append(geo)
             continue
@@ -248,8 +257,8 @@ def build(samples):
     write(OUT / 'materials/pinenite_outline.material', {'materials': {'version': '1.0.0'}})
     write(OUT / 'manifest.json', {'format_version': 2, 'header': {
         'name': 'Pinenite Model Outlines', 'description': 'Additive model outlines for Pinenite adaptation and symbiosis.',
-        'uuid': UUID, 'version': [1, 0, 1], 'min_engine_version': [1, 26, 40]},
-        'modules': [{'type': 'resources', 'uuid': '7f8a080c-bbb5-4d36-84fd-8b5f6920761f', 'version': [1, 0, 1]}]})
+        'uuid': UUID, 'version': [1, 0, 2], 'min_engine_version': [1, 26, 40]},
+        'modules': [{'type': 'resources', 'uuid': '7f8a080c-bbb5-4d36-84fd-8b5f6920761f', 'version': [1, 0, 2]}]})
     (OUT / 'VANILLA_LICENSE.md').write_bytes((samples / 'LICENSE.md').read_bytes())
     write(ROOT / 'docs/pinenite/outline_coverage.json', report)
     print(json.dumps({'supported': len(report['entities']), 'excluded': report['excluded'], 'geometries': len(output_geos)}, indent=2))

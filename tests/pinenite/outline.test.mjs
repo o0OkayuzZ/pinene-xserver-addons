@@ -94,6 +94,16 @@ test('legacy-only bone fields are never emitted in modern geometry', () => {
     const legacy = read(pack + 'models/entity/pinenite_outline_legacy.geo.json');
     assert.equal(legacy.format_version, '1.8.0');
     assert.ok(Object.values(legacy).some(g => g.bones?.some(b => b.neverRender)));
+    for (const geo of Object.values(legacy)) for (const bone of geo.bones ?? [])
+        for (const cube of bone.cubes ?? []) {
+            assert.ok(!cube.uv || Array.isArray(cube.uv));
+            assert.equal(cube.rotation, undefined);
+            assert.equal(cube.pivot, undefined);
+        }
+    const dummy = geometries.find(g => g.description.identifier === 'geometry.pinenite_outline.geometry_dummy');
+    assert.ok(dummy.bones.find(b => b.name === 'head').cubes[0].rotation);
+    assert.equal(dummy.bones.find(b => b.name === 'hat').cubes, undefined);
+    assert.equal(dummy.bones.find(b => b.name === 'head').parent, 'body');
 });
 test('sync animation omits the invalid empty bones object in both active packs', () => {
     for (const rp of [pack, 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/']) {

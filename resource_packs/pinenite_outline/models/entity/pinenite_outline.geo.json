@@ -32856,6 +32856,241 @@
     },
     {
       "description": {
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [
+          0,
+          1,
+          0
+        ],
+        "identifier": "geometry.pinenite_outline.geometry_dummy",
+        "texture_width": 64,
+        "texture_height": 64
+      },
+      "bones": [
+        {
+          "name": "body",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4,
+                12,
+                -2
+              ],
+              "size": [
+                8,
+                12,
+                4
+              ],
+              "uv": [
+                16,
+                16
+              ],
+              "inflate": 0.06
+            }
+          ],
+          "parent": "waist"
+        },
+        {
+          "name": "waist",
+          "pivot": [
+            0,
+            12,
+            0
+          ],
+          "parent": "base"
+        },
+        {
+          "name": "base",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "head",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4,
+                24,
+                -4
+              ],
+              "size": [
+                8,
+                8,
+                8
+              ],
+              "rotation": [
+                -25,
+                0,
+                0
+              ],
+              "uv": [
+                0,
+                0
+              ],
+              "inflate": 0.06
+            }
+          ],
+          "parent": "body"
+        },
+        {
+          "name": "hat",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "parent": "head"
+        },
+        {
+          "name": "rightArm",
+          "pivot": [
+            -5,
+            22,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                12,
+                -2
+              ],
+              "size": [
+                4,
+                12,
+                4
+              ],
+              "uv": [
+                40,
+                16
+              ],
+              "inflate": 0.06
+            }
+          ],
+          "parent": "body"
+        },
+        {
+          "name": "rightItem",
+          "pivot": [
+            -6,
+            15,
+            1
+          ],
+          "parent": "rightArm"
+        },
+        {
+          "name": "leftArm",
+          "pivot": [
+            5,
+            22,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                4,
+                12,
+                -2
+              ],
+              "size": [
+                4,
+                12,
+                4
+              ],
+              "uv": [
+                40,
+                16
+              ],
+              "inflate": 0.06
+            }
+          ],
+          "mirror": true,
+          "parent": "body"
+        },
+        {
+          "name": "leftItem",
+          "pivot": [
+            6,
+            15,
+            1
+          ],
+          "parent": "leftArm"
+        },
+        {
+          "name": "rightLeg",
+          "pivot": [
+            -1.9,
+            12,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.9,
+                0,
+                -2
+              ],
+              "size": [
+                4,
+                12,
+                4
+              ],
+              "uv": [
+                0,
+                16
+              ],
+              "inflate": 0.06
+            }
+          ],
+          "parent": "body"
+        },
+        {
+          "name": "leftLeg",
+          "pivot": [
+            1.9,
+            12,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -0.1,
+                0,
+                -2
+              ],
+              "size": [
+                4,
+                12,
+                4
+              ],
+              "uv": [
+                0,
+                16
+              ],
+              "inflate": 0.06
+            }
+          ],
+          "mirror": true,
+          "parent": "body"
+        }
+      ]
+    },
+    {
+      "description": {
         "visible_bounds_width": 1.5,
         "visible_bounds_height": 2,
         "visible_bounds_offset": [

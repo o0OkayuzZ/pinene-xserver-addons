@@ -8,7 +8,7 @@
 |---|---|
 | `pinenite_outline` material 未定義 | Bedrock が読む `materials/entity.material` に定義。下位 RP の既存 material 定義を保持して追加する。旧ファイルは空のカタログとして残す。 |
 | 条件付き render controller が文字列以外として拒否される | 輪郭 RP の client entity を 1.10.0 に統一。旧 `animation_controllers` は既存 alias と animate を保持して移行。 |
-| `neverRender` / `bind_pose_rotation` / `reset` が modern geometry で不正 | 該当モデルを 1.8.0 の別 geometry ファイルへ分離。元の骨・UV・変形指定を削除しない。 |
+| `neverRender` / `bind_pose_rotation` / `reset` が modern geometry で不正 | 該当モデルを 1.8.0 の別 geometry ファイルへ分離。混在形式の dummy は modern 形式で、非表示骨の自身の cube のみを除外し、子骨・回転を保持。元アドオンのモデルには変更しない。 |
 | `variable.melee_spear_equipped` 未定義（31,448 回） | player の pre_animation で装備タグから初期化。 |
 | 同期 animation の空 bones が拒否される | 空の bones キーを省略し、同期 animation の時間と loop を保持。 |
 | illusioner / royal_guard の `riding.body` 未定義 | 公式 vanilla に存在する `animation.humanoid.riding.body` alias を補完。 |
@@ -25,7 +25,7 @@
 - Pinenite の元モデル・PNG・ID・防御値 8/14/11/8・戦闘計算は変更していない。元ダメージ、反射再帰防止、対象別共生状態、15 秒更新の既存テストも再実行。
 - Zombie Gear の BP (`bp_09`) / RP (`rp_07`) は変更ゼロ。
 - Pine main BP は Zombie Gear がバージョンを固定して依存するため、既存 1.0.69 を維持し、修正ファイルのハッシュで配布確認する。共有インストール済み Death ペアも既存登録を壊さないよう 2.12.14 を維持。
-- 統合ワールドでは Outline RP 1.0.1、Death BP 2.12.21、Dungeons ペア 2.0.8、PineCD BP 1.0.31、GoldenFoods BP 1.0.34。登録順序・他パックの登録は保持。
+- 統合ワールドでは Outline RP 1.0.2、Death BP 2.12.22、Dungeons ペア 2.0.8、PineCD BP 1.0.31、GoldenFoods BP 1.0.34。登録順序・他パックの登録は保持。
 
 ## 検証
 
@@ -36,6 +36,8 @@
 - ローカル 2 ワールドへの反映前検査成功。実際の配布結果は同ディレクトリの rollout 記録を参照。
 
 今回、旧テストが検出できなかった実際の client schema / material 読み込みエラーを修正した。自動テスト成功はクライアントの描画成功を意味しない。
+
+旧 geometry の cube は rotation / pivot を受け付けないため、これらが旧形式ファイルへ混入しない検査も追加した。形式の根拠は [Microsoft の geometry 1.8.0 スキーマ](https://learn.microsoft.com/en-us/minecraft/creator/reference/content/schemasreference/schemas/minecraftschema_geometry_1.8.0?view=minecraft-bedrock-stable)。変更ファイルと検証記録は [content_log_fixes_20260914](content_log_fixes_20260914/) を参照。
 
 ## 残る実機確認
 
