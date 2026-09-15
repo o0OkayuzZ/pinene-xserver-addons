@@ -51,15 +51,16 @@ test('glow is additive core/crystal subset with original UVs, pivots and texture
         assert.equal(attach.geometry.glow, glow.description.identifier);
     }
 });
-test('original packs are preserved; entity additions belong only to the approved outline RP', () => {
+test('original packs are preserved except the outline RP and invisible repair vault fix', () => {
     const particle = read(`${rp}/particles/pinenite_frame.particle.json`).particle_effect;
     assert.equal(particle.description.identifier, 'true_dn:pinenite_frame');
     assert.equal(particle.components['minecraft:particle_lifetime_expression'].max_lifetime, .12);
     assert.ok(read(`${rp}/animations/pinenite_sync.animation.json`).animations['animation.true_dn.pinenite_sync']);
-    const changes = git('diff', '--name-only', 'cd53e576').toString().trim().split('\n').filter(p => !p.startsWith('resource_packs/pinenite_outline/'));
+    const approved = p => p.startsWith('resource_packs/pinenite_outline/') || p === 'resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055/entity/repair_vault.entity.json';
+    const changes = git('diff', '--name-only', 'cd53e576').toString().trim().split('\n').filter(p => !approved(p));
     assert.equal(changes.some(p => /^(behavior_packs\/[^/]+\/entities|resource_packs\/[^/]+\/entity)\//.test(p) || /zombie/i.test(p)), false);
     const added = git('ls-files', '--others', '--exclude-standard').toString().split('\n');
-    assert.equal(added.some(p => !p.startsWith('resource_packs/pinenite_outline/') && /\/(?:entities|entity)\/.*\.entity\.json$/.test(p)), false);
+    assert.equal(added.some(p => !approved(p) && /\/(?:entities|entity)\/.*\.entity\.json$/.test(p)), false);
 });
 test('BP requires stable 2.6.0 and 26.40; original API consumers and shared renderer untouched', () => {
     const manifest = read(`${bp}/manifest.json`);

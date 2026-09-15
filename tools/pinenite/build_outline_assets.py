@@ -33,6 +33,23 @@ def name(value):
     return re.sub(r'[^a-z0-9_]', '_', value.lower())
 
 
+def join_molang_sections(expressions):
+    """A pre_animation entry is parsed separately; scopes cannot cross entries."""
+    result, pending, depth = [], [], 0
+    for expression in expressions:
+        pending.append(expression)
+        code = re.sub(r"'[^']*'", '', expression)
+        depth += code.count('{') - code.count('}')
+        if depth < 0:
+            raise ValueError('Unmatched Molang closing brace')
+        if depth == 0:
+            result.append(' '.join(pending))
+            pending = []
+    if pending:
+        raise ValueError('Unclosed Molang section')
+    return result
+
+
 def inflated(geo, identifier):
     result = copy.deepcopy(geo)
     result['description']['identifier'] = identifier
@@ -121,6 +138,11 @@ def build(samples):
         data['format_version'] = '1.10.0'
         desc = data['minecraft:client_entity']['description']
         compatibility_original = {key: copy.deepcopy(desc[key]) for key in ('scripts', 'animations', 'animation_controllers') if key in desc}
+        if 'held_item_scale' in desc or 'hide_held_items' in desc.get('scripts', {}):
+            data['format_version'] = source['format_version']
+        for key in ('pre_animation', 'initialize'):
+            if key in desc.get('scripts', {}):
+                desc['scripts'][key] = join_molang_sections(desc['scripts'][key])
         # The official export contains both the legacy list and migrated aliases
         # for some vanilla mobs. 1.10 accepts only animations + scripts.animate.
         for entry in desc.pop('animation_controllers', []):

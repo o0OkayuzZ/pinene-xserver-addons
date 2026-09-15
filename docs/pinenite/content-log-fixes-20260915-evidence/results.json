@@ -1,0 +1,105 @@
+{
+  "sourceBase": "21e81fd3598c1e465647ddcdefb678e1c3917d51",
+  "tests": {
+    "command": "npm test",
+    "groups": [
+      15,
+      15,
+      2,
+      8,
+      17,
+      44,
+      67,
+      110
+    ],
+    "total": 278,
+    "failed": 0
+  },
+  "targets": {
+    "server": {
+      "label": "server",
+      "success": true,
+      "files": 40,
+      "backup": "/opt/minecraft/server/_pinene_deploy_backups/ic_reliability_20260915_230405",
+      "hashesVerified": true,
+      "clientGameplayTest": "not_run",
+      "service": "active",
+      "startupConfirmed": true,
+      "errors": [],
+      "finishedUtc": "2026-09-15T14:05:50.863978+00:00"
+    },
+    "development": {
+      "label": "development",
+      "success": true,
+      "files": 38,
+      "backup": "C:\\work\\content-log-fixes-20260915\\backups\\development_20260915_230405",
+      "hashesVerified": true,
+      "clientGameplayTest": "not_run",
+      "finishedUtc": "2026-09-15T14:04:35.385654+00:00"
+    },
+    "latest": {
+      "label": "latest",
+      "success": true,
+      "files": 38,
+      "backup": "C:\\work\\content-log-fixes-20260915\\backups\\latest_20260915_230405",
+      "hashesVerified": true,
+      "clientGameplayTest": "not_run",
+      "finishedUtc": "2026-09-15T14:04:35.838632+00:00"
+    },
+    "aurealis": {
+      "label": "aurealis",
+      "success": true,
+      "files": 8,
+      "backup": "C:\\work\\content-log-fixes-20260915\\backups\\aurealis_20260915_230405",
+      "hashesVerified": true,
+      "clientGameplayTest": "not_run",
+      "finishedUtc": "2026-09-15T14:04:36.008782+00:00"
+    },
+    "shared": {
+      "label": "shared",
+      "success": true,
+      "files": 63,
+      "backup": "C:\\work\\content-log-fixes-20260915\\backups\\shared_20260915_230405",
+      "hashesVerified": true,
+      "clientGameplayTest": "not_run",
+      "finishedUtc": "2026-09-15T14:04:34.861113+00:00"
+    }
+  },
+  "postInstallRegistrationChanges": [
+    {
+      "target": "development",
+      "file": "world_behavior_packs.json",
+      "note": "Minecraft reformatted registration; all entries and versions match"
+    },
+    {
+      "target": "development",
+      "file": "world_resource_packs.json",
+      "note": "Minecraft reformatted registration; all entries and versions match"
+    }
+  ],
+  "clientLog": {
+    "file": "ContentLog2026-09-15_23-05-52_1.txt",
+    "bytes": 46174,
+    "sha256": "6eae0ff565d0feb768e51611f6e43943da2648e15138f1d70b9748ec640313a7",
+    "checkedUtc": "2026-09-15T14:09:48.182480+00:00",
+    "errors": [],
+    "normalSoundMessages": 472,
+    "tail": [
+      "",
+      "",
+      "23:09:44[Sound][inform]-No sound found for block type 'normal'",
+      "",
+      "",
+      "23:09:44[Sound][inform]-No sound found for block type 'normal'",
+      "",
+      "",
+      "23:09:44[Sound][inform]-No sound found for block type 'normal'",
+      "",
+      "",
+      "23:09:44[Sound][inform]-No sound found for block type 'normal'",
+      "",
+      "",
+      "23:09:44[Sound][inform]-No s"
+    ]
+  }
+}

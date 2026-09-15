@@ -1,0 +1,52 @@
+{
+  "block_sounds": {
+    "normal": {
+      "volume": 1.0,
+      "pitch": 1.0,
+      "events": {
+        "default": "",
+        "item.use.on": {
+          "sound": "use.stone",
+          "pitch": 0.8
+        },
+        "break": {
+          "sound": "dig.stone",
+          "volume": 1.0,
+          "pitch": [
+            0.8,
+            1.0
+          ]
+        },
+        "hit": {
+          "sound": "hit.stone",
+          "volume": 0.27,
+          "pitch": 0.5
+        },
+        "place": {
+          "sound": "place.stone",
+          "volume": 1.0,
+          "pitch": [
+            0.8,
+            1.0
+          ]
+        },
+        "power.on": {
+          "sound": "block.click",
+          "pitch": 0.6
+        },
+        "power.off": {
+          "sound": "block.click",
+          "pitch": 0.5
+        },
+        "brush": {
+          "sound": "brush.generic",
+          "volume": 1.0,
+          "pitch": [
+            0.8,
+            1.0
+          ]
+        }
+      }
+    }
+  }
+}

@@ -87,7 +87,8 @@ test('outline material retains depth testing and texture alpha, with no global m
 test('client schema supports conditional render passes and contains no obsolete controller list', () => {
     for (const entry of coverage.entities) {
         const data = read(pack + entry.file), desc = data['minecraft:client_entity'].description;
-        assert.equal(data.format_version, '1.10.0', entry.id);
+        const modern = entry.id === 'minecraft:sulfur_cube';
+        assert.equal(data.format_version, modern ? '1.26.0' : '1.10.0', entry.id);
         assert.equal(desc.animation_controllers, undefined, entry.id);
         for (const previous of entry.compatibilityOriginal.animation_controllers ?? [])
             for (const controller of Object.values(previous)) {
