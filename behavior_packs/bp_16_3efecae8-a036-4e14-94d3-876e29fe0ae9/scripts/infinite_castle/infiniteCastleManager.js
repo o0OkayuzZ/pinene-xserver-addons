@@ -32,6 +32,7 @@ import {
 } from "./japaneseRoomBuilder.js";
 import { acquireLoadedRoomChunks, releaseRoomTickingArea } from "./chunkLoading.js";
 import { inspectRoomConnectors } from "./connectionIntegrity.js";
+import { selectTransferParty, shareTransferTarget } from "./transferParty.js";
 import { startEntranceTransition } from "./entranceTransition.js";
 import { drawReconstructionDelayTicks } from "./reconstructionIntervals.js";
 import { phase1RunState, phase1Enter, phase1ArrivalGrace, phase1Exit, preparePhase1Landing, beginPhase1Run, failPhase1Build, setPhase1Handlers, updateRoomEncounters } from "./phase1Runtime.js";
@@ -41,6 +42,9 @@ import {
     clearSourcePartsSceneryForPlayer,
     isSourcePartsReconstructionInProgress,
     reconstructSourcePartsAroundPlayers,
+    recoverSourceParts,
+    sourcePartsRecoveryRequired,
+    requestSourcePartsRecovery,
     rebuildSourcePartsSceneryForPlayer,
     repairSourcePartsOpenings,
     rebuildSourcePartsAt,
@@ -58,7 +62,7 @@ const ENTRANCE_CHECK_INTERVAL_TICKS = 5;
 const EXIT_CHECK_INTERVAL_TICKS = 5;
 const RECONSTRUCTION_CHECK_INTERVAL_TICKS = 20;
 const ARRIVAL_COOLDOWN_TICKS = 40;
-const PACK_BUILD_ID = "0.2.6-bsl-rewards-v4";
+const PACK_BUILD_ID = "0.2.6-bsl-rewards-v4-loading-fix1";
 const CURRENT_RENDERER_VERSION = 9;
 const RENDERER_VERSION_KEY = "infinite_castle:renderer_version";
 const USE_SOURCE_PARTS_MAIN_CASTLE = true;
@@ -606,6 +610,7 @@ function setSourceDynamicNextTick(value) {
 async function runSourceDynamicReconstruction(dimension, requestedSeed) {
     if (sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()) return;
     sourceDynamicReconstructionInProgress = true;
+    let retrySoon = true;
     try {
         const result = await reconstructSourcePartsAroundPlayers(
             dimension,
@@ -619,18 +624,30 @@ async function runSourceDynamicReconstruction(dimension, requestedSeed) {
         ].includes(result?.reason)) {
             console.warn(`[infinite_castle] live-anchor rebuild did not complete: ${result?.reason}`);
         }
-        if (result?.ok) world.setDynamicProperty(SCENERY_NEXT_TICK_KEY, reconstructionNow() + drawReconstructionDelayTicks("scenery"));
+        retrySoon = !result?.ok || result?.deferred === true || result?.changedPlacements === 0;
+        if (result?.ok && !retrySoon) world.setDynamicProperty(SCENERY_NEXT_TICK_KEY, reconstructionNow() + drawReconstructionDelayTicks("scenery"));
     } catch (error) {
         console.warn(`[infinite_castle] live-anchor rebuild failed: ${error?.stack ?? error}`);
         broadcastToDungeon(dimension, `[infinite_castle] 部分再構築失敗: ${error}`);
     } finally {
         sourceDynamicReconstructionInProgress = false;
-        setSourceDynamicNextTick(reconstructionNow() + drawReconstructionDelayTicks("core"));
+        setSourceDynamicNextTick(reconstructionNow() + drawReconstructionDelayTicks(retrySoon ? "retry" : "core"));
     }
+}
+
+let nextRecoveryTick = 0;
+function checkSourceRecovery() {
+    if (!sourcePartsRecoveryRequired()) return false;
+    if (system.currentTick < nextRecoveryTick || dungeonResetInProgress || reconstructionInProgress
+        || sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()) return true;
+    nextRecoveryTick = system.currentTick + 100;
+    void recoverSourceParts(world.getDimension(INFINITE_CASTLE_DIMENSION_ID));
+    return true;
 }
 
 function checkSourceDynamicReconstruction() {
     if (!USE_SOURCE_PARTS_MAIN_CASTLE) return;
+    if (checkSourceRecovery()) return;
     if (phase1RunState() !== "ACTIVE") { setSourceDynamicNextTick(null); return; }
     let dimension;
     let players;
@@ -651,12 +668,16 @@ function checkSourceDynamicReconstruction() {
         || isSourcePartsReconstructionInProgress()) return;
 
     const now = reconstructionNow();
-    const next = getSourceDynamicNextTick();
+    let next = getSourceDynamicNextTick();
+    if (next !== null && next > now + 5 * 60 * 20) {
+        next = now + drawReconstructionDelayTicks("core");
+        setSourceDynamicNextTick(next);
+    }
     if (next === null) {
         setSourceDynamicNextTick(now + drawReconstructionDelayTicks("core"));
         broadcastToDungeon(
             dimension,
-            "[infinite_castle] 在室パーツ保護型の再構築タイマーを開始しました（5〜15分・平均10分）"
+            "[infinite_castle] 在室パーツ保護型の再構築タイマーを開始しました（3〜5分・平均4分）"
         );
         return;
     }
@@ -689,6 +710,7 @@ async function runSceneryClock(dimension) {
 }
 
 function checkSceneryClock() {
+    if (sourcePartsRecoveryRequired()) return;
     if (!USE_SOURCE_PARTS_MAIN_CASTLE || sceneryClockInProgress
         || dungeonResetInProgress || reconstructionInProgress
         || sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()) return;
@@ -741,7 +763,13 @@ function resolveReturnDestination(player) {
     }
 }
 
-function queueExitTransfer(player) {
+function queueExitTransfer(player, afterReturn, single = false) {
+    if (!single && !afterReturn) {
+        if (arrivingPlayerIds.has(player.id)) return;
+        const party = selectTransferParty(player, player.dimension.getPlayers(), arrivingPlayerIds);
+        for (const member of party) queueExitTransfer(member, undefined, true);
+        return;
+    }
     if (arrivingPlayerIds.has(player.id)) return;
     arrivingPlayerIds.add(player.id);
     // 保存地点が入口マーカー直上でも、プレイヤーがそこから離れるまでは再入場を抑止する。
@@ -762,7 +790,10 @@ function queueExitTransfer(player) {
                 setEntranceBlocked(player, false);
                 console.warn(`[infinite_castle] return transition failed: ${error}`);
             }
-            system.runTimeout(() => arrivingPlayerIds.delete(player.id), ARRIVAL_COOLDOWN_TICKS);
+            system.runTimeout(() => {
+                arrivingPlayerIds.delete(player.id);
+                if (teleported) afterReturn?.();
+            }, ARRIVAL_COOLDOWN_TICKS);
         },
     });
 }
@@ -770,15 +801,49 @@ function queueExitTransfer(player) {
 setSourcePartsDemoExitTransferHandler(null);
 setPhase1Handlers({
     exit: player => queueExitTransfer(player),
+    rejoin: player => queueExitTransfer(player, function enterNextRun() {
+        if (player.isValid === false) return;
+        // Evacuate returning members before the existing full-build entry flow.
+        if (dungeonResetInProgress || reconstructionInProgress
+            || (phase1RunState() !== "ACTIVE" && world.getDimension(INFINITE_CASTLE_DIMENSION_ID).getPlayers().length > 0)) {
+            system.runTimeout(enterNextRun, 20);
+            return;
+        }
+        startSourceCastleEntrance(player);
+    }),
     reconstruct: () => runSourceDynamicReconstruction(world.getDimension(INFINITE_CASTLE_DIMENSION_ID)),
+    recover: () => { requestSourcePartsRecovery(); checkSourceRecovery(); },
+    recoveryPending: sourcePartsRecoveryRequired,
+    recoveryBusy: () => dungeonResetInProgress || reconstructionInProgress
+        || sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress(),
 });
 
 function transitionPlayerToSourceCastle(player, target) {
+    const party = selectTransferParty(player, player.dimension.getPlayers(), arrivingPlayerIds);
+    const targets = shareTransferTarget(target, party.length);
+    for (let index = 0; index < party.length; index++) {
+        const member = party[index];
+        try {
+            if (member.id !== player.id) {
+                saveReturnPoint(member);
+                arrivingPlayerIds.add(member.id);
+            }
+            transitionSinglePlayerToSourceCastle(member, targets[index]);
+        } catch (error) {
+            targets[index].release();
+            arrivingPlayerIds.delete(member.id);
+            console.warn(`[infinite_castle] group entrance failed: ${error}`);
+        }
+    }
+}
+
+function transitionSinglePlayerToSourceCastle(player, target) {
     const dungeonDimension = world.getDimension(target.dimensionId);
     startEntranceTransition({
         player,
         dungeonDimension,
         landingLocation: target.location,
+        canTeleport: () => player.dimension.id !== INFINITE_CASTLE_DIMENSION_ID && (player.getComponent("minecraft:health")?.currentValue ?? 0) > 0,
         beforeTeleport: () => phase1ArrivalGrace(player),
         soundId: TRANSFER_CONFIG.entranceSoundId,
         onFinished: ({ teleported, error }) => {
@@ -847,12 +912,19 @@ async function migrateAndEnterSourceCastle(player) {
             target?.release?.();
             arrivingPlayerIds.delete(player.id);
             clearReturnPoint(player);
+            // Require stepping off before another full build after a failed attempt.
+            setEntranceBlocked(player, true);
         }
     }
 }
 
 function startSourceCastleEntrance(player) {
     if (!player || arrivingPlayerIds.has(player.id)) return;
+    if (sourcePartsRecoveryRequired()) {
+        checkSourceRecovery();
+        player.sendMessage("§e無限城を復旧中です…");
+        return;
+    }
     if (dungeonResetInProgress || reconstructionInProgress) {
         player.sendMessage("[infinite_castle] 新しい無限城を準備中です。完了後にもう一度入口へ入ってください");
         return;
@@ -1541,7 +1613,11 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
     void previewSourceParts(event.sourceEntity);
 });
 
-async function runVisualFullRebuild(player) {
+async function runVisualFullRebuild(player, recording = false) {
+    if (recording && String(player?.getGameMode?.()).toLowerCase() !== "creative") {
+        player?.sendMessage("[infinite_castle] rebuild_record はクリエイティブで実行してください");
+        return;
+    }
     if (player?.dimension?.id !== INFINITE_CASTLE_DIMENSION_ID) {
         player?.sendMessage("[infinite_castle] 総入れ替えは無限城内で実行してください");
         return;
@@ -1553,11 +1629,12 @@ async function runVisualFullRebuild(player) {
     }
     dungeonResetInProgress = true;
     try {
-        const result = await rebuildAllSourcePartsForVisualTest(player);
+        const result = await rebuildAllSourcePartsForVisualTest(player, { allowCreative: recording });
         if (result?.ok) {
             setSourceDynamicNextTick(reconstructionNow() + drawReconstructionDelayTicks("core"));
             world.setDynamicProperty(SCENERY_NEXT_TICK_KEY, reconstructionNow() + drawReconstructionDelayTicks("scenery"));
-            player.sendMessage(`[infinite_castle] 総入れ替え完了 core=${result.plan.placements.length} scenery=${result.scenery.placements} seed=${result.plan.seed}`);
+            if (result.plan) player.sendMessage(`[infinite_castle] 総入れ替え完了 core=${result.plan.placements.length} scenery=${result.scenery.placements} seed=${result.plan.seed}`);
+            else player.sendMessage("[infinite_castle] 中断状態を復旧しました。録画用の再構成コマンドをもう一度実行してください");
         }
     } catch (error) {
         console.warn(`[infinite_castle] visual full rebuild failed: ${error?.stack ?? error}`);
@@ -1570,6 +1647,11 @@ async function runVisualFullRebuild(player) {
 system.afterEvents.scriptEventReceive.subscribe((event) => {
     if (event.id !== "infinite_castle:rebuild_all") return;
     void runVisualFullRebuild(event.sourceEntity);
+});
+
+system.afterEvents.scriptEventReceive.subscribe((event) => {
+    if (event.id !== "infinite_castle:rebuild_record") return;
+    void runVisualFullRebuild(event.sourceEntity, true);
 });
 
 system.afterEvents.scriptEventReceive.subscribe((event) => {

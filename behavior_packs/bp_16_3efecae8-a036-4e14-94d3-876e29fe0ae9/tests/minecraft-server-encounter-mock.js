@@ -91,7 +91,7 @@ export const dimension = {
     },
 };
 export const world = {
-    beforeEvents: { entityHurt: signal('hurtBefore'), playerInteractWithBlock: signal("interact"), playerBreakBlock: signal("break"), explosion: signal("explosion") },
+    beforeEvents: { playerPlaceBlock: signal('place'), entityHurt: signal('hurtBefore'), playerInteractWithBlock: signal("interact"), playerBreakBlock: signal("break"), explosion: signal("explosion") },
     afterEvents: { entityDie: signal("die"), playerSpawn: signal("playerSpawn"), entitySpawn: signal("entitySpawn"), entityLoad: signal("entityLoad") },
     getDynamicProperty(key) { return properties.get(key); },
     setDynamicProperty(key, value) { if (value === undefined) properties.delete(key); else properties.set(key, value); },

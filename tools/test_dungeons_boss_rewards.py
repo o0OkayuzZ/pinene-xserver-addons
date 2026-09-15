@@ -75,20 +75,23 @@ class BossRewards(unittest.TestCase):
     def test_world_manifest_versions_and_order(self):
         manifests = [read(p) for p in ROOT.glob('*_packs/*/manifest.json')]
         headers = {m['header']['uuid']: m['header']['version'] for m in manifests}
-        # The unused standalone Waystone item BP/RP have been removed.
-        self.assertEqual(len(headers), 35)
+        # Match the current pack registry, including subsequently added packs.
+        self.assertEqual(len(headers), len(manifests))
         for manifest in manifests:
             for module in manifest['modules']:
                 self.assertEqual(module['version'], manifest['header']['version'])
             for dep in manifest.get('dependencies', []):
                 if 'uuid' in dep:
                     self.assertEqual(dep['version'], headers[dep['uuid']])
-        for kind, count in [('behavior', 16), ('resource', 19)]:
+        for kind in ['behavior', 'resource']:
+            expected = {read(p)['header']['uuid'] for p in ROOT.glob(f'{kind}_packs/*/manifest.json')}
+            count = len(expected)
             path = ROOT / f'world_{kind}_packs.json'
             self.assertEqual(path.read_bytes(), (ROOT / 'worlds/Bedrock level' / path.name).read_bytes())
             rows = read(path)
             self.assertEqual(len(rows), count)
             self.assertEqual(len({r['pack_id'] for r in rows}), count)
+            self.assertEqual({r['pack_id'] for r in rows}, expected)
             for row in rows:
                 self.assertEqual(row['version'], headers[row['pack_id']])
 

@@ -59,9 +59,9 @@ test("native creation promise cannot hang forever; capacity failure creates no a
     let waits = 0;
     await assert.rejects(acquireLandingArea(f.manager, dimension, bounds,
         () => assert.fail("unloaded blocks must not be checked"), async () => { waits++; }), /timed out/);
-    assert.equal(waits, 400);
-    assert.equal(f.removed, 1);
+    assert.equal(waits, 1204);
+    assert.equal(f.removed, 3);
     f.manager.hasCapacity = () => false;
     await assert.rejects(acquireLandingArea(f.manager, dimension, bounds, () => null, f.wait), /capacity/);
-    assert.equal(f.removed, 1);
+    assert.equal(f.removed, 3);
 });

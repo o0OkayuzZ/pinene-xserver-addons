@@ -32,14 +32,14 @@ test("100,000 seeded draws per timer stay bounded, symmetric and bell shaped", (
 
 test("out-of-range Gaussian values are rejected and sampled again, without boundary clipping", () => {
     const draws = [0.9999, 0, 0, 0];
-    assert.equal(drawReconstructionDelayTicks("core", () => draws.shift()), 12000);
+    assert.equal(drawReconstructionDelayTicks("core", () => draws.shift()), 4800);
     assert.equal(draws.length, 0);
-    assert.equal(drawReconstructionDelayTicks("scenery", () => 0), 1350);
+    assert.equal(drawReconstructionDelayTicks("scenery", () => 0), 900);
 });
 
 test("broken RNG has a bounded fallback rather than blocking a server tick", () => {
     let calls = 0;
-    assert.equal(drawReconstructionDelayTicks("scenery", () => { calls++; return 1; }), 1350);
+    assert.equal(drawReconstructionDelayTicks("scenery", () => { calls++; return 1; }), 900);
     assert.equal(calls, 64);
     assert.throws(() => drawReconstructionDelayTicks("unknown"), /Unknown/);
 });

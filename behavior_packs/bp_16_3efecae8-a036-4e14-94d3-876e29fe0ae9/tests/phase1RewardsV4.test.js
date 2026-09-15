@@ -7,13 +7,13 @@ function fixture(overrides={}) {
     const container={size:27,getItem:i=>items[i]};
     const api={random:()=>.5,persist(){},insert(slot){
         assert.equal(room.rewardDraw.pending,room.rewardDraw.next);
-        assert.equal(room.rewardVersion,4);
+        assert.ok([4,5].includes(room.rewardVersion));
         calls.push(slot); items[slot]={typeId:'minecraft:potion',amount:1,potion:'strong_healing'};
     },insertLegacy(slot,guaranteed){calls.push(slot);if(guaranteed)items[slot]={typeId:'minecraft:iron_ingot'};}};
     return {room,items,calls,api,container,deliver:()=>deliverRoomReward(room,container,api)};
 }
 test('V4 uses exact distinct slot counts and keeps identical native items in separate slots',()=>{
-    for(const [kind,encounterType,expected] of [['combat','guard',18],['combat','elite',21],['treasure_vault',null,25]]) {
+    for(const [kind,encounterType,expected] of [['combat','guard',19],['combat','elite',22],['treasure_vault',null,26]]) {
         const f=fixture({kind,encounterType});f.deliver();
         assert.equal(f.calls.length,expected);assert.equal(new Set(f.calls).size,expected);
         assert.equal(f.items.filter(Boolean).length,expected);
@@ -53,12 +53,12 @@ test('failed native write retries the same selected slot; successful write then 
     assert.equal(f.room.rewardDraw.next,1);
     f.api.insert=good;f.deliver();assert.deepEqual(f.calls,selected);
 });
-test('restart never rerolls a pending outcome even when an item may have been taken',()=>{
+test('restart retries an empty pending slot and advances occupied pending without duplication',()=>{
     for(const occupied of [false,true]) {
         const f=fixture();const slots=selectRewardSlots(f.room,()=>.5);
         f.room.rewardVersion=4;f.room.reward='stocking';f.room.rewardDraw={selectedSlots:slots,next:2,pending:2};
         if(occupied)f.items[slots[2]]={typeId:'minecraft:diamond'};
-        f.deliver();assert.deepEqual(f.calls,slots.slice(3));assert.equal(f.room.reward,'stocked');
+        f.deliver();assert.deepEqual(f.calls,slots.slice(occupied ? 3 : 2));assert.equal(f.room.reward,'stocked');
     }
 });
 test('empty successful command is rejected; protected chests and invalid receipts are not overwritten',()=>{

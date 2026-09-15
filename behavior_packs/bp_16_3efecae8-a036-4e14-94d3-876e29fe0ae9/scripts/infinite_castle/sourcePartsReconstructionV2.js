@@ -1,3 +1,6 @@
+import { normalizeReconstructionStatus, needsReconstructionRecovery, commitRecoveredPlan } from "./reconstructionLifecycle.js";
+import { captureEncounterRollback, restoreEncounterRollback, finishEncounterRollback, prepareVisualEncounterRebuild } from "./phase1Runtime.js";
+import { clearCastleSection } from "./castleClearLighting.js";
 import { BlockPermutation, BlockVolume, StructureAnimationMode, system, world } from "@minecraft/server";
 import { createSourcePartsPlan, sourcePartsTopologyIds } from "./sourcePartsPlanner.js";
 import { prepareRoomEncounterRemoval, prepareEncounterRoles, activateRoomEncounterPlan, encounterProtection, beginEncounterReconstruction, endEncounterReconstruction, assertEncounterProtection, assertEncounterRevision } from "./sourceRoomEncounters.js";
@@ -21,6 +24,7 @@ import {
 import {
     activateSourcePartsDemo,
     deactivateSourcePartsDemo,
+    pauseSourcePartsDemo,
     getSourcePartsDemoLayoutSnapshot,
 } from "./sourcePartsDemoRuntime.js";
 import { clipBoundsToHeight, fitPlanToHeightRange, splitBoundsForFill } from "./sourcePartsVolumes.js";
@@ -49,6 +53,9 @@ import {
 
 // Keep the V2 key so the first V3 rebuild can remove the previously generated test castle.
 const STATE_KEY = "infinite_castle:source_parts_test_state_v2";
+const ROLLBACK_KEY = "infinite_castle:reconstruction_rollback_v1";
+let recoveryRequested = false;
+let diagnosticPlans = [];
 const DETAILED_PLAN_KEY = "infinite_castle:source_parts_detailed_plan_v1";
 const SCENERY_DIMENSION_ID = "infinite_castle:dungeon";
 // Builds made before the compact V2 state was introduced used this key.  Read it
@@ -107,8 +114,7 @@ function saveDetailedPlan(plan) {
     world.setDynamicProperty(DETAILED_PLAN_KEY, JSON.stringify(descriptor));
 }
 
-function planFromDescriptor(dimension) {
-    const raw = world.getDynamicProperty(DETAILED_PLAN_KEY);
+function planFromDescriptor(dimension, raw = world.getDynamicProperty(DETAILED_PLAN_KEY)) {
     if (typeof raw !== "string") return null;
     try {
         const value = JSON.parse(raw);
@@ -138,7 +144,11 @@ function planFromDescriptor(dimension) {
 }
 
 function restoreDetailedPlan(dimension) {
-    const saved = planFromDescriptor(dimension);
+    const rollback = world.getDynamicProperty(ROLLBACK_KEY);
+    const state = JSON.parse(world.getDynamicProperty(STATE_KEY) ?? "null");
+    const saved = planFromDescriptor(dimension, rollback)
+        ?? planFromDescriptor(dimension, state?.descriptors?.[0] ? JSON.stringify(state.descriptors[0]) : undefined)
+        ?? planFromDescriptor(dimension);
     if (saved) return saved;
     const restored = restoreSourcePartsPlanFromRoomSnapshot(
         getSourcePartsDemoLayoutSnapshot(),
@@ -294,11 +304,9 @@ async function waitForTickingAreaLoaded(manager, name, options) {
     );
     for (let elapsed = 0; elapsed < TICKING_AREA_LOAD_TIMEOUT_TICKS; elapsed += 1) {
         if (creationError) throw creationError;
-        const area = manager.getTickingArea(name);
-        // The documented promise has no timeout guarantee.  Bedrock can leave
-        // it pending even after the temporary area reports itself fully loaded,
-        // so accept either independently verifiable completion signal.
-        if (creationResolved || area?.isFullyLoaded === true) return;
+        // A loaded flag must not hide a later rejection of the native request.
+        // A stuck promise times out and enters the same recoverable failure path.
+        if (creationResolved) return;
         await waitTicks(1);
     }
     const area = manager.getTickingArea(name);
@@ -311,22 +319,33 @@ async function waitForTickingAreaLoaded(manager, name, options) {
 }
 
 async function withLoadedBounds(dimension, bounds, name, callback) {
-    assertVisualTestSafety(dimension);
     const manager = world.tickingAreaManager;
-    if (!manager) throw new Error("world.tickingAreaManager is unavailable");
-    const expanded = clipBoundsToHeight(expandBounds(bounds), dimension.heightRange);
-    if (!expanded) throw new Error(`loaded bounds are outside dimension height: ${name}`);
-    const options = { dimension, from: expanded.from, to: expanded.to };
-    releaseArea(name, manager);
-    if (!manager.hasCapacity(options)) throw new Error(`insufficient ticking area capacity: ${name}`);
+    let expanded = bounds;
+    let stage = "preflight";
     try {
+        assertVisualTestSafety(dimension);
+        if (!manager) throw new Error("world.tickingAreaManager is unavailable");
+        expanded = clipBoundsToHeight(expandBounds(bounds), dimension.heightRange);
+        if (!expanded) throw new Error(`loaded bounds are outside dimension height: ${name}`);
+        const options = { dimension, from: expanded.from, to: expanded.to };
+        releaseArea(name, manager);
+        if (!manager.hasCapacity(options)) throw new Error(`insufficient ticking area capacity: ${name}`);
+        stage = "create/load";
         await waitForTickingAreaLoaded(manager, name, options);
         assertVisualTestSafety(dimension);
+        stage = "callback";
         return await callback();
+    } catch (error) {
+        const rollback = JSON.parse(world.getDynamicProperty(ROLLBACK_KEY) ?? "null");
+        console.warn(`[ic-loaded-bounds-error] ${JSON.stringify({ stage, temporaryAreaName: name,
+            bounds: expanded ?? bounds, chunkCount: manager?.chunkCount ?? null,
+            maxChunkCount: manager?.maxChunkCount ?? null, reconstructionStatus: loadReconstructionStateStatus(),
+            oldPlanSeed: rollback?.s ?? diagnosticPlans[0]?.seed ?? null,
+            newPlanSeed: rollback?.newSeed ?? diagnosticPlans[1]?.seed ?? null,
+            playerCount: dimension.getPlayers().length, error: String(error?.stack ?? error) })}`);
+        throw error;
     } finally {
         releaseArea(name, manager);
-        // Do not remove one temporary area and create the next in the same
-        // engine tick; the native manager can otherwise retain a pending load.
         await waitTicks(1);
     }
 }
@@ -350,7 +369,7 @@ function loadReconstructionStateStatus() {
     if (typeof raw !== "string") return null;
     try {
         const value = JSON.parse(raw);
-        return typeof value?.status === "string" ? value.status : null;
+        return typeof value?.status === "string" ? normalizeReconstructionStatus(value.status) : null;
     } catch {
         return null;
     }
@@ -386,14 +405,63 @@ function recoveryPlanGeometrySignature(plan) {
 }
 
 function interruptedDynamicStatus(status) {
-    return status === "dynamic_rebuilding"
-        || status === "dynamic_recovering"
-        || status === "dynamic_recovery_sync"
-        || status === "dynamic_recovered";
+    return needsReconstructionRecovery(status);
+}
+
+export function sourcePartsRecoveryRequired() {
+    return recoveryRequested || world.getDynamicProperty(ROLLBACK_KEY) !== undefined
+        || interruptedDynamicStatus(loadReconstructionStateStatus());
+}
+
+export function requestSourcePartsRecovery() {
+    recoveryRequested = true;
 }
 
 function saveReconstructionState(status, plans) {
-    world.setDynamicProperty(STATE_KEY, serializeSourcePartsState(status, plans));
+    status = normalizeReconstructionStatus(status);
+    diagnosticPlans = plans;
+    const rollback = JSON.parse(world.getDynamicProperty(ROLLBACK_KEY) ?? "null");
+    if (rollback && Number.isFinite(plans[1]?.seed)) {
+        rollback.newSeed = plans[1].seed;
+        world.setDynamicProperty(ROLLBACK_KEY, JSON.stringify(rollback));
+    }
+    const state = JSON.parse(serializeSourcePartsState(status, plans));
+    const previous = JSON.parse(world.getDynamicProperty(STATE_KEY) ?? "null");
+    state.descriptors = plans.map(planDescriptor).filter(Boolean);
+    if (rollback && status !== "COMPLETE") {
+        state.descriptors = [rollback, ...state.descriptors.filter(d =>
+            d.s !== rollback.s || d.o !== rollback.o || JSON.stringify(d.a) !== JSON.stringify(rollback.a))];
+    }
+    if (!state.descriptors.length && previous?.descriptors) state.descriptors = previous.descriptors;
+    state.seeds = plans.map(p => p.seed ?? null);
+    if (state.seeds.every(s => s === null) && previous?.seeds) state.seeds = previous.seeds;
+    const raw = JSON.stringify(state);
+    if (raw.length > 32767) throw new Error("reconstruction state exceeds property budget");
+    world.setDynamicProperty(STATE_KEY, raw);
+}
+
+function beginRollback(plan) {
+    // Write the rollback target before PREPARING, including material/room roles.
+    // A later COMMITTING crash cannot replace this with the candidate descriptor.
+    const descriptor = planDescriptor(plan);
+    if (!descriptor) throw new Error("missing rollback descriptor");
+    const remaining = loadStoredPlans().filter(p => recoveryPlanGeometrySignature(p) !== recoveryPlanGeometrySignature(plan));
+    captureEncounterRollback();
+    world.setDynamicProperty(ROLLBACK_KEY, JSON.stringify(descriptor));
+    saveReconstructionState("PREPARING", [plan, ...remaining]);
+}
+
+function requireRecovery(error) {
+    recoveryRequested = true;
+    pauseSourcePartsDemo();
+    saveReconstructionState("RECOVERY_REQUIRED", loadStoredPlans());
+    console.warn(`[ic-recovery-required] ${String(error?.stack ?? error)}`);
+}
+
+function finishRollback() {
+    finishEncounterRollback();
+    world.setDynamicProperty(ROLLBACK_KEY, undefined);
+    recoveryRequested = false;
 }
 
 function clearLegacyReconstructionState() {
@@ -436,7 +504,7 @@ async function clearPlan(plan) {
                 async () => {
                     prepareRoomEncounterRemoval(dimension, current);
                     assertEncounterRevision();
-                    dimension.fillBlocks(new BlockVolume(current.from, current.to), "minecraft:air");
+                    clearCastleSection(dimension, current, clipped);
                 }
             );
             clearedRegions += 1;
@@ -930,10 +998,7 @@ async function clearPlanExcept(plan, protectedPlacementIds, dimension) {
                         );
                         prepareRoomEncounterRemoval(dimension, section);
                         assertEncounterRevision();
-                        dimension.fillBlocks(
-                            new BlockVolume(section.from, section.to),
-                            "minecraft:air"
-                        );
+                        clearCastleSection(dimension, section, safePieces[pieceIndex]);
                     }
                 );
                 clearedRegions += 1;
@@ -1061,10 +1126,7 @@ async function clearDynamicPlacement(
                     );
                     prepareRoomEncounterRemoval(dimension, section);
                     assertEncounterRevision();
-                    dimension.fillBlocks(
-                        new BlockVolume(section.from, section.to),
-                        "minecraft:air"
-                    );
+                    clearCastleSection(dimension, section, safePieces[pieceIndex]);
                 }
             );
             clearedRegions += 1;
@@ -1105,10 +1167,7 @@ async function clearInterruptedDynamicPlan(
                         );
                         prepareRoomEncounterRemoval(dimension, section);
                         assertEncounterRevision();
-                        dimension.fillBlocks(
-                            new BlockVolume(section.from, section.to),
-                            "minecraft:air"
-                        );
+                        clearCastleSection(dimension, section, safePieces[pieceIndex]);
                     }
                 );
                 clearedRegions += 1;
@@ -1145,7 +1204,7 @@ async function recoverInterruptedDynamicState(
         players,
         `[infinite_castle] 中断された再構築を安全復旧します residual=${remaining.length}`
     );
-    saveReconstructionState("dynamic_recovering", [oldPlan, ...remaining]);
+    saveReconstructionState("RECOVERING", [oldPlan, ...remaining]);
 
     let clearedRegions = 0;
     const recoveredPlans = remaining.length;
@@ -1185,17 +1244,20 @@ async function recoverInterruptedDynamicState(
         // and connection sections completed. A failure midway therefore keeps
         // the complete conservative envelope available to the next retry.
         remaining = remaining.slice(1);
-        saveReconstructionState("dynamic_recovering", [oldPlan, ...remaining]);
+        saveReconstructionState("RECOVERING", [oldPlan, ...remaining]);
     }
 
     // A failed candidate can leave a temporary fence on a retained socket or
     // an authored opening in the wrong state. Re-establish the baseline socket
     // contract before a fresh candidate is allowed to mutate the castle.
-    saveReconstructionState("dynamic_recovery_sync", [oldPlan]);
+    saveReconstructionState("RECOVERING", [oldPlan]);
+    await placePlanExcept(oldPlan, protectedOldPlacementIds, players, requestedDimension);
+    await prepareFastDynamicPlanGeometry(oldPlan, requestedDimension,
+        DEFAULT_STAIR_SMOOTHING_STYLE, protectedOld);
     const caps = await sealUnusedAuthoredSockets(
         oldPlan,
         requestedDimension,
-        new Set(),
+        protectedOld,
         true
     );
     let reopenedSeamBlocks = 0;
@@ -1207,7 +1269,12 @@ async function recoverInterruptedDynamicState(
             true
         );
     }
-    saveReconstructionState("dynamic_recovered", [oldPlan]);
+    await commitRecoveredPlan(oldPlan, {
+        saveDetailedPlan, saveState: saveReconstructionState,
+        activateSource: activateSourcePartsDemo,
+        activateEncounters: plan => { restoreEncounterRollback(); activateRoomEncounterPlan(plan); },
+        finish: finishRollback,
+    });
     messagePlayers(
         players,
         `[infinite_castle] 中断復旧完了 residual=${recoveredPlans} `
@@ -1990,8 +2057,17 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
         safeSendMessage(player, "[infinite_castle] 素材建築の再構築はすでに進行中です");
         return { ok: false, reason: "busy" };
     }
+    if (sourcePartsRecoveryRequired()) return recoverSourceParts(target?.dimension ?? player.dimension);
     reconstructionInProgress = true;
+    const buildStartedAt = Date.now();
+    let stageStartedAt = buildStartedAt;
+    const recordBuildStage = stage => {
+        const now = Date.now();
+        console.warn(`[ic-build-profile] ${JSON.stringify({stage, milliseconds:now-stageStartedAt, totalMs:now-buildStartedAt})}`);
+        stageStartedAt = now;
+    };
     let visualTestStarted = false;
+    let rollbackStarted = false;
     try {
         const options = parseSourcePartsRebuildOptions(rawOptions);
         const stairSmoothingStyle = normalizeStairSmoothingStyle(
@@ -2006,7 +2082,7 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
         const playStartCue = createRebuildStartCue(dimension);
         let previous = null;
         if (target?.visualTest) {
-            beginVisualTest(dimension);
+            beginVisualTest(dimension, { allowCreative: target.allowCreative === true });
             visualTestStarted = true;
             previous = restoreDetailedPlan(dimension);
             if (previous?.seed === seed) seed = (seed + 1) >>> 0;
@@ -2025,7 +2101,10 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
         });
         plan.dimensionId = dimension.id;
         const heightFit = fitPlanToHeightRange(plan, dimension.heightRange);
+        const baseline = restoreDetailedPlan(dimension);
         const storedPlans = loadStoredPlans();
+        beginRollback(baseline ?? plan);
+        rollbackStarted = true;
         if (target?.visualTest && storedPlans.some((stored) => stored.dimensionId !== dimension.id)) {
             throw new Error("別ディメンションの保存済み建築があるため総入れ替えを停止しました");
         }
@@ -2052,8 +2131,9 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
                 throw new Error("総入れ替えに必要な装飾素材が登録されていません");
             }
             assertVisualTestSafety(dimension);
+            prepareVisualEncounterRebuild();
             playStartCue();
-            deactivateSourcePartsDemo();
+            pauseSourcePartsDemo();
             const cleared = await clearSourcePartsScenery(player, dimension);
             if (!cleared?.ok) throw new Error(`装飾の全消去に失敗: ${cleared?.error ?? cleared?.reason}`);
         }
@@ -2076,19 +2156,23 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
             + `seed=${seed} attempt=${plan.attempt + 1}/${plan.attemptLimit} yShift=${heightFit.shiftY}`
         );
         playStartCue();
-        deactivateSourcePartsDemo();
+        pauseSourcePartsDemo();
         // Keep only the already-persisted plans while clearing. If the script stops
         // here, the next run safely clears the same regions again; the new plan is
         // persisted immediately before its first structure is placed.
-        saveReconstructionState("clearing", storedPlans);
+        saveReconstructionState("REBUILDING", storedPlans);
         await clearStoredPlans(storedPlans, player);
         clearLegacyReconstructionState();
-        saveReconstructionState("building", [plan]);
+        saveReconstructionState("REBUILDING", [...storedPlans, plan]);
+        recordBuildStage("planning_and_clear");
         await placePlan(plan, player, dimension, startLocation);
+        recordBuildStage("placement");
+        saveReconstructionState("VERIFYING", [...storedPlans, plan]);
         const geometry = await prepareStablePlanGeometry(
             plan, dimension, stairSmoothingStyle, player
         );
         const smoothing = geometry.smoothing;
+        recordBuildStage("geometry_validation");
         safeSendMessage(player,
             `[ic-rebuild] stairStyle=${smoothing.style} stairParts=${smoothing.placements} `
             + `changed=${smoothing.changed} retained=${smoothing.retained} `
@@ -2108,17 +2192,18 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
         }
         // Publish the detailed restore target before the terminal compact
         // marker, matching the dynamic path's crash-consistent commit order.
+        saveReconstructionState("COMMITTING", [...storedPlans, plan]);
         saveDetailedPlan(plan);
-        saveReconstructionState("complete", [plan]);
+        saveReconstructionState("COMPLETE", [plan]);
         const demo = activateSourcePartsDemo(plan);
         activateRoomEncounterPlan(plan);
+        recordBuildStage("connections_and_activation");
         // Decorative pieces are deliberately outside plan.placements, so none
         // of the route validation, cap, seam, or progression systems can use them.
-        const scenery = dimension.id === SCENERY_DIMENSION_ID
-            ? await ensureSourcePartsScenery(plan, dimension, player, target?.visualTest
-                ? {force:true, density:preparedScenery.density, preparedPlan:preparedScenery, startCue:false}
-                : {startCue:false})
-            : { ok: true, skipped: "non_dungeon_dimension" };
+        const scenery = dimension.id === SCENERY_DIMENSION_ID && target?.visualTest
+            ? await ensureSourcePartsScenery(plan, dimension, player,
+                {force:true, density:preparedScenery.density, preparedPlan:preparedScenery, startCue:false})
+            : { ok: true, deferred: true, reason: "independent_timer" };
         if (target?.visualTest && (!scenery.ok || scenery.partial || scenery.skipped > 0)) {
             throw new Error(`攻略棟は完成しましたが装飾が未完了です。総入れ替えを再実行してください: ${scenery.error ?? scenery.reason ?? "partial"}`);
         }
@@ -2135,8 +2220,10 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
         safeSendMessage(player,
             `[infinite_castle] 再構築完了 buildings=${plan.placements.length} connections=${plan.connections.length}`
         );
+        finishRollback();
         return { ok: true, plan, demo, scenery };
     } catch (error) {
+        if (rollbackStarted) requireRecovery(error);
         console.warn(`[infinite_castle] source reconstruction v3 failed: ${error?.stack ?? error}`);
         safeSendMessage(player, `[infinite_castle] 素材建築の再構築失敗: ${error}`);
         return { ok: false, reason: "error", error: String(error) };
@@ -2146,13 +2233,13 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
     }
 }
 
-export function rebuildAllSourcePartsForVisualTest(player) {
+export function rebuildAllSourcePartsForVisualTest(player, { allowCreative = false } = {}) {
     if (player?.dimension?.id !== SCENERY_DIMENSION_ID) {
         safeSendMessage(player, "[infinite_castle] 総入れ替えは無限城内で実行してください");
         return Promise.resolve({ok:false, reason:"dimension"});
     }
     return rebuildSourcePartsV2(player, "", {
-        dimension:player.dimension, startLocation:{x:1000,y:80,z:1000}, visualTest:true,
+        dimension:player.dimension, startLocation:{x:1000,y:80,z:1000}, visualTest:true, allowCreative,
     });
 }
 
@@ -2166,6 +2253,45 @@ function messagePlayers(players, message) {
 
 export function isSourcePartsReconstructionInProgress() {
     return reconstructionInProgress || isSourcePartsSceneryInProgress();
+}
+
+async function recoverSourcePartsOwned(dimension) {
+    const oldPlan = restoreDetailedPlan(dimension);
+    if (!oldPlan) throw new Error("recovery has no valid old plan descriptor or runtime snapshot");
+    const players = dimension.getPlayers();
+    const rollback = JSON.parse(world.getDynamicProperty(ROLLBACK_KEY) ?? "null");
+    diagnosticPlans = [oldPlan];
+    const protectedIds = new Set(encounterProtection().rooms.map(r => {
+        return oldPlan.placements.find(p => p.origin.x === r.origin.x && p.origin.y === r.origin.y && p.origin.z === r.origin.z)?.placementId;
+    }).filter(Boolean));
+    for (const id of rollback?.protectedPlacementIds ?? []) protectedIds.add(id);
+    // Keep entire occupied structures; all remaining writes recheck live players.
+    for (const p of oldPlan.placements) {
+        if (players.some(player => intersectBounds(placementBounds(p), sourcePlayerSafetyBounds(player.location))))
+            protectedIds.add(p.placementId);
+    }
+    hardLockedPlacements = oldPlan.placements.filter(p => protectedIds.has(p.placementId));
+    pauseSourcePartsDemo();
+    beginEncounterReconstruction();
+    const result = await recoverInterruptedDynamicState(oldPlan, loadStoredPlans(), "RECOVERY_REQUIRED",
+        [...protectedIds], players, dimension, players.map(p => sourcePlayerSafetyBounds(p.location)).filter(Boolean));
+    if (!result.ok) throw new Error(`recovery deferred: ${result.reason}`);
+    return result;
+}
+
+export async function recoverSourceParts(dimension) {
+    if (isSourcePartsReconstructionInProgress()) return { ok: false, reason: "busy" };
+    reconstructionInProgress = true;
+    try {
+        return await recoverSourcePartsOwned(dimension);
+    } catch (error) {
+        requireRecovery(error);
+        return { ok: false, reason: "recovery_required", error: String(error) };
+    } finally {
+        hardLockedPlacements = [];
+        endEncounterReconstruction();
+        reconstructionInProgress = false;
+    }
 }
 
 export async function selectSafeDynamicCandidate(
@@ -2239,12 +2365,12 @@ export async function reconstructSourcePartsAroundPlayers(
     if (reconstructionInProgress || isSourcePartsSceneryInProgress()) {
         return { ok: false, reason: "busy" };
     }
+    if (sourcePartsRecoveryRequired()) return recoverSourceParts(dimension);
     const players = dimension.getPlayers();
     if (players.length === 0) return { ok: false, reason: "no_players" };
 
     reconstructionInProgress = true;
     let oldPlan = null;
-    let dynamicMutationStarted = false;
     const startedAt = Date.now();
     const timings = {};
     try {
@@ -2253,15 +2379,7 @@ export async function reconstructSourcePartsAroundPlayers(
         if (!oldPlan) throw new Error("current source-parts plan could not be restored");
         const storedPlans = loadStoredPlans();
         const stateStatus = loadReconstructionStateStatus();
-        const baselineSignature = recoveryPlanGeometrySignature(oldPlan);
-        const recoveryPending = interruptedDynamicStatus(stateStatus)
-            || storedPlans.some((plan) =>
-                recoveryPlanGeometrySignature(plan) !== baselineSignature
-            );
-        // A non-terminal compact state means the baseline may already contain
-        // holes even before this invocation starts. Never advertise it as an
-        // intact runtime from the outer catch path until recovery resynchronizes it.
-        if (recoveryPending) dynamicMutationStarted = true;
+        beginRollback(oldPlan);
         const sceneryGuard = getSourcePartsSceneryGuard(dimension.id);
         if (!sceneryGuard.known) {
             const error = new Error(
@@ -2285,6 +2403,8 @@ export async function reconstructSourcePartsAroundPlayers(
                 players,
                 "[infinite_castle] プレイヤー位置の安全判定が矛盾したため、ブロック変更前に停止しました"
             );
+            saveReconstructionState("COMPLETE", [oldPlan]);
+            finishRollback();
             return { ok: false, reason };
         }
         const playerSafetyBounds = playerLocations
@@ -2325,7 +2445,18 @@ export async function reconstructSourcePartsAroundPlayers(
                     candidate.protectedOldPlacementIds, candidate.protectedNewPlacementIds),
             }
         );
+        // Preserve the interrupted-build recovery path; a healthy unchanged
+        // layout needs no destructive refresh and must not reset room rewards.
+        if (anchored.changedPlacements === 0 && !needsReconstructionRecovery(stateStatus)) {
+            console.warn("[ic-rebuild] deferred: no safe moving layout; retry in 30-60 seconds");
+            saveReconstructionState("COMPLETE", [oldPlan]);
+            finishRollback();
+            return { ok: true, deferred: true, reason: "unchanged_layout", changedPlacements: 0 };
+        }
         const plan = anchored.plan;
+        const rollback = JSON.parse(world.getDynamicProperty(ROLLBACK_KEY));
+        rollback.protectedPlacementIds = [...anchored.protectedOldPlacementIds];
+        world.setDynamicProperty(ROLLBACK_KEY, JSON.stringify(rollback));
         hardLockedPlacements = oldPlan.placements.filter(p => anchored.protectedOldPlacementIds.includes(p.placementId));
         prepareEncounterRoles(plan, anchored.protectedNewPlacementIds);
         timings.planningMs = Date.now() - startedAt;
@@ -2371,6 +2502,8 @@ export async function reconstructSourcePartsAroundPlayers(
             }
         );
         if (!sceneryRelocation?.ok) {
+            saveReconstructionState("COMPLETE", [oldPlan]);
+            finishRollback();
             messagePlayers(
                 players,
                 "[infinite_castle] 装飾城郭の安全区画を通過中のため、攻略城の再構築を今回は待機します"
@@ -2396,11 +2529,10 @@ export async function reconstructSourcePartsAroundPlayers(
             + `sceneryEvacuated=${sceneryRelocation.evacuated ?? 0} `
             + `recovered=${recovery.required ? recovery.plans : 0}`
         );
-        deactivateSourcePartsDemo();
+        pauseSourcePartsDemo();
         // Persist both physical envelopes before touching blocks.  A manual
         // recovery rebuild can therefore clear either side after interruption.
-        saveReconstructionState("dynamic_rebuilding", [oldPlan, plan]);
-        dynamicMutationStarted = true;
+        saveReconstructionState("REBUILDING", [oldPlan, plan]);
         const phased = await runPhasedDynamicRebuild(
             oldPlan,
             plan,
@@ -2409,6 +2541,7 @@ export async function reconstructSourcePartsAroundPlayers(
             players,
             dimension
         );
+        saveReconstructionState("VERIFYING", [oldPlan, plan]);
         const clearedRegions = phased.clearedRegions;
         const placed = phased.placed;
         timings.waveMs = Date.now() - waveStartedAt;
@@ -2447,10 +2580,12 @@ export async function reconstructSourcePartsAroundPlayers(
         // Publish the full descriptor before changing the compact state to its
         // terminal marker.  A crash can therefore never advertise "complete"
         // while restoreDetailedPlan still points at the old physical layout.
+        saveReconstructionState("COMMITTING", [oldPlan, plan]);
         saveDetailedPlan(plan);
-        saveReconstructionState("complete", [plan]);
+        saveReconstructionState("COMPLETE", [plan]);
         activateSourcePartsDemo(plan);
         activateRoomEncounterPlan(plan);
+        finishRollback();
         // Decoration has its own lower-priority clock. Only conflict evacuation
         // is mandatory here; replenishing all 36 pieces would delay core play.
         const scenery = {ok:true, deferred:true, reason:"independent_timer"};
@@ -2485,12 +2620,13 @@ export async function reconstructSourcePartsAroundPlayers(
         };
     } catch (error) {
         console.warn(`[infinite_castle] anchored source reconstruction failed: ${error?.stack ?? error}`);
-        if (oldPlan && !dynamicMutationStarted) {
-            try {
-                activateSourcePartsDemo(oldPlan);
-            } catch {
-                // Keep the physically protected room even if runtime recovery fails.
-            }
+        requireRecovery(error);
+        try {
+            endEncounterReconstruction();
+            const recovery = await recoverSourcePartsOwned(dimension);
+            return { ok: false, reason: "recovered", recovery, error: String(error) };
+        } catch (recoveryError) {
+            requireRecovery(recoveryError);
         }
         if (error?.code === "SCENERY_GUARD") {
             messagePlayers(
@@ -2550,9 +2686,10 @@ export async function repairSourcePartsOpenings(player) {
 }
 
 export async function updateSourcePartsScenery(dimension, options = {}) {
+    if (sourcePartsRecoveryRequired()) return { ok: false, reason: "recovery_required" };
     if (dimension?.id !== SCENERY_DIMENSION_ID) return {ok:false, reason:"dimension"};
     if (reconstructionInProgress || isSourcePartsSceneryInProgress()) return {ok:false, reason:"busy"};
-    if (loadReconstructionStateStatus() !== "complete") return {ok:false, reason:"core_incomplete"};
+    if (loadReconstructionStateStatus() !== "COMPLETE") return {ok:false, reason:"core_incomplete"};
     const players = dimension.getPlayers();
     if (players.length === 0) return {ok:false, reason:"no_players"};
     reconstructionInProgress = true;
@@ -2595,7 +2732,8 @@ export async function clearSourcePartsV2(player, rawOptions = "") {
         }
         deactivateSourcePartsDemo();
         if (storedPlans.length === 0) {
-            saveReconstructionState("empty", []);
+            world.setDynamicProperty(STATE_KEY, undefined);
+            finishRollback();
             world.setDynamicProperty(DETAILED_PLAN_KEY, undefined);
             clearLegacyReconstructionState();
             safeSendMessage(
@@ -2607,13 +2745,14 @@ export async function clearSourcePartsV2(player, rawOptions = "") {
 
         // Persist every still-known plan before touching blocks.  If the job is
         // interrupted, the next clear/rebuild safely retries the same volumes.
-        saveReconstructionState("clearing", storedPlans);
+        saveReconstructionState("REBUILDING", storedPlans);
         safeSendMessage(
             player,
             `[infinite_castle] 素材建築の消去を開始します plans=${storedPlans.length}`
         );
         const clearedRegions = await clearStoredPlans(storedPlans, player);
-        saveReconstructionState("empty", []);
+        world.setDynamicProperty(STATE_KEY, undefined);
+        finishRollback();
         world.setDynamicProperty(DETAILED_PLAN_KEY, undefined);
         clearLegacyReconstructionState();
         safeSendMessage(
@@ -2694,4 +2833,11 @@ export async function clearSourcePartsSceneryForPlayer(player, rawOptions = "") 
     } finally {
         reconstructionInProgress = false;
     }
+}
+
+// Read the current, completed layout for sparse cosmetic light placement.
+export function getSourcePartsLightingPlan(dimension) {
+    if (dimension?.id !== SCENERY_DIMENSION_ID || reconstructionInProgress
+        || loadReconstructionStateStatus() !== "COMPLETE") return null;
+    return restoreDetailedPlan(dimension);
 }

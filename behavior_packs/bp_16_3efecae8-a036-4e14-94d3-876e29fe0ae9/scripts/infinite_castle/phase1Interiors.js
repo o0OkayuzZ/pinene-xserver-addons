@@ -102,3 +102,17 @@ export function decorationProtected(room, position, typeId) {
         return true;
     return interiorBlocks(room).some((b) => ["x", "y", "z"].every((a) => b.position[a] === position[a]));
 }
+
+// decorated is only an initialization cache. Inspect every physical exit tile.
+export function repairExitFloor(dimension, room, canWrite = () => true) {
+    if (room.kind !== "exit" || !canWrite()) return 0;
+    let repaired = 0;
+    for (const expected of interiorBlocks(room)) {
+        const block = dimension.getBlock(expected.position);
+        if (!block || block.typeId === expected.typeId) continue;
+        if (!canWrite()) break;
+        block.setType(expected.typeId);
+        repaired++;
+    }
+    return repaired;
+}

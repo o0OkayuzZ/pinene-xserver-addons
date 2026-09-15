@@ -96,7 +96,7 @@ assert.equal(room(guard.roomInstanceId).state, "Active");
 tick(13);
 assert.equal(room(guard.roomInstanceId).reward, "stocked");
 const rewardCount = room(guard.roomInstanceId).rewardDraw.selectedSlots.length;
-assert.ok(rewardCount >= 16 && rewardCount <= 20);
+assert.ok(rewardCount >= 17 && rewardCount <= 21);
 assert.equal(mock.metrics.lootCalls, before + rewardCount);
 assert.ok(mock.allEntities().length > 0, "survivors remain after key death");
 tick(8);
@@ -156,7 +156,8 @@ mock.emit("entitySpawn", { entity: {
 mock.advance();
 assert.deepEqual(shotEvents, ["infinite_castle:necromancer_shot"]);
 assert.ok(Buffer.byteLength(mock.world.getDynamicProperty(KEY), "utf8") < 20000, "persistent ledger stays compact at the cap");
-assert.ok(JSON.parse(mock.world.getDynamicProperty(KEY)).rooms.every(r => r.slots.length === 0), "restart-only state omits live actor queues");
+assert.ok(JSON.parse(mock.world.getDynamicProperty(KEY)).rooms.flatMap(r => r.slots)
+    .every(s => Array.isArray(s) && s.length === 4), "restart state keeps compact combat receipts without entity handles");
 assert.ok(
     ledger()
         .rooms.flatMap((r) => r.slots)

@@ -83,6 +83,8 @@ function timerHarness({ deferScenery = false, playersPresent = true } = {}) {
         sourceDynamicReconstructionInProgress: false, dungeonResetInProgress: false, reconstructionInProgress: false,
         phase1RunState: () => "ACTIVE", getSourcePartsDemoEntranceTarget: () => ({ dimensionId: dimension.id }),
         isSourcePartsReconstructionInProgress: () => false, broadcastToDungeon() {}, console,
+        sourcePartsRecoveryRequired: () => false,
+        system: { get currentTick() { return tick; } },
         async updateSourcePartsScenery(d, options) {
             attempts.push(tick);
             if (deferScenery || options.shouldYield()) return { ok: true, deferred: true };
@@ -110,10 +112,10 @@ function timerHarness({ deferScenery = false, playersPresent = true } = {}) {
 test("real manager updates scenery with koto at sampled intervals under fixed daylight under Always Day", async () => {
     const h = timerHarness();
     await h.advance(12000);
-    assert.deepEqual(h.attempts, [1360, 2720, 4080, 5440, 6800, 8160, 9520, 10880]);
-    assert.deepEqual(h.cores, [12000]);
-    assert.equal(h.sounds.filter(s => s.id === "infinite_castle.koto_distant").length, 8);
-    assert.equal(h.sounds.filter(s => s.id === "infinite_castle.koto").length, 1);
+    assert.deepEqual(h.attempts, [900, 1800, 2700, 3600, 4500, 5700, 6600, 7500, 8400, 9300, 10500, 11400]);
+    assert.deepEqual(h.cores, [4800, 9600]);
+    assert.equal(h.sounds.filter(s => s.id === "infinite_castle.koto_distant").length, 12);
+    assert.equal(h.sounds.filter(s => s.id === "infinite_castle.koto").length, 2);
     assert.ok(h.sounds.filter(s => s.id === "infinite_castle.koto_distant").every(s => s.options.location));
     assert.ok(h.sounds.filter(s => s.id === "infinite_castle.koto").every(s => !s.options.location));
 });
@@ -121,17 +123,17 @@ test("real manager updates scenery with koto at sampled intervals under fixed da
 test("player safety deferral still retries after 20 seconds without a false start sound", async () => {
     const h = timerHarness({ deferScenery: true });
     await h.advance(2160);
-    assert.deepEqual(h.attempts, [1360, 1760, 2160]);
+    assert.deepEqual(h.attempts, [900, 1300, 1700, 2100]);
     assert.equal(h.sounds.length, 0);
     assert.equal(h.draws.length, 2, "deferred work does not reroll the regular interval");
 });
 
 test("checking a pending deadline does not redraw it; completion schedules the next draw once", async () => {
     const h = timerHarness();
-    await h.advance(1000);
+    await h.advance(800);
     assert.deepEqual(h.draws, [{ kind: "core", tick: 0 }, { kind: "scenery", tick: 0 }]);
-    await h.advance(1360);
-    assert.deepEqual(h.draws.at(-1), { kind: "scenery", tick: 1360 });
+    await h.advance(900);
+    assert.deepEqual(h.draws.at(-1), { kind: "scenery", tick: 900 });
     assert.equal(h.draws.length, 3);
 });
 
@@ -141,4 +143,14 @@ test("no players means no background or core reconstruction", async () => {
     assert.equal(h.attempts.length, 0);
     assert.equal(h.cores.length, 0);
     assert.equal(h.sounds.length, 0);
+});
+
+test('manager recovers before inactive run, absent players or missing entrance checks',async()=>{
+    const h=timerHarness({playersPresent:false});let calls=0;
+    h.context.sourcePartsRecoveryRequired=()=>true;
+    h.context.phase1RunState=()=>{throw Error('run check must follow recovery');};
+    h.context.getSourcePartsDemoEntranceTarget=()=>{throw Error('entrance check must follow recovery');};
+    h.context.recoverSourceParts=async()=>{calls++;return {ok:true};};
+    h.context.checkSourceDynamicReconstruction();
+    assert.equal(calls,1);
 });

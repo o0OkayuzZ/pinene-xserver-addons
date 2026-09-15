@@ -1,0 +1,46 @@
+{
+  "baseCommit": "d033ab99695c30c71fbcdbe4cdf0370923ad31b6",
+  "nodeVersion": "24.21.0",
+  "recordedAt": "2026-09-15T13:11:45.660516+00:00",
+  "npmTest": {
+    "passed": 272,
+    "failed": 0,
+    "suiteCounts": [
+      15,
+      15,
+      2,
+      8,
+      17,
+      44,
+      61,
+      110
+    ]
+  },
+  "bedrockEngine": {
+    "performed": false,
+    "contentLog": false,
+    "multiplayer": false,
+    "reason": "Server startup checked during rollout; client swing and multiplayer recovery require in-game confirmation."
+  },
+  "bslAudit": {
+    "tables": 94,
+    "changedTables": 1,
+    "change": "Remove only minecraft:heavy_core from pots/trial_chambers/corridor.json"
+  },
+  "syntax": {
+    "javascriptFiles": 35,
+    "result": "passed"
+  },
+  "diffCheck": "passed",
+  "totalPassed": 272,
+  "supplementaryPreviousRun": {
+    "dungeons": 4,
+    "pinecd": 6,
+    "temporaryCastlePolicy": 5,
+    "zombieGear": 106
+  },
+  "legacyValidator": {
+    "result": "failed",
+    "reason": "tools/validate.py asserts historical Mycology release hashes; first failure is unchanged egbread.json (checkout EOL)."
+  }
+}

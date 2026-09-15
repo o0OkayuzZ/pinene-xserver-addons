@@ -59,9 +59,19 @@ test('wearer armor outline includes every original cube with identical bones and
         assert.deepEqual(actual, expected);
     }
 });
-test('all Zombie Gear files remain unchanged', () => {
+test('Zombie Gear content remains unchanged apart from dependency version metadata', () => {
     const changed = execFileSync('git', ['diff', '--name-only', 'cd53e576'], { cwd: root, encoding: 'utf8' }).trim().split('\n');
-    assert.deepEqual(changed.filter(p => /bp_09_|rp_07_|zombiegear/i.test(p)), []);
+    for (const path of changed.filter(p => /bp_09_|rp_07_|zombiegear/i.test(p))) {
+        assert.ok(path.endsWith('/manifest.json'), path);
+        const before = JSON.parse(execFileSync('git', ['show', `cd53e576:${path}`], { cwd: root, encoding: 'utf8' }));
+        const after = read(path);
+        const omitVersions = manifest => {
+            delete manifest.header.version;
+            for (const row of [...manifest.modules, ...(manifest.dependencies ?? [])]) delete row.version;
+            return manifest;
+        };
+        assert.deepEqual(omitVersions(after), omitVersions(before), path);
+    }
     assert.ok(!coverage.entities.some(e => e.source.includes('/rp_07_')));
 });
 test('outline material retains depth testing and texture alpha, with no global material override', () => {

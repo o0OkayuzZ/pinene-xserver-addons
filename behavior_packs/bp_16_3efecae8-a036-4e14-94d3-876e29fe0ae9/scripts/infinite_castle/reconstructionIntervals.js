@@ -7,6 +7,7 @@ function profile(min, max) {
 // Limits are mean +/- 3 sigma. Reject outliers rather than piling them up at
 // the endpoints. Units are seconds; the daylight-independent clock uses ticks.
 export const RECONSTRUCTION_INTERVALS = Object.freeze({
+    retry: profile(30, 60),
     core: profile(PHASE1.dynamicReconstructionIntervalMinutes.min * 60,
         PHASE1.dynamicReconstructionIntervalMinutes.max * 60),
     scenery: profile(PHASE1.sceneryReconstructionIntervalSeconds.min,

@@ -1,3 +1,4 @@
+import { restoreCombatSlots, suspendCombatSlots } from "./phase1Reliability.js";
 import { PHASE1, ENCOUNTER_TYPES, WAVES, EXTRA_MOBS, OVERSEER_ABILITIES } from "./phase1Config.js";
 
 export function seededRandom(seed) {
@@ -164,11 +165,12 @@ export function createRoom(run, placement, role) {
     };
 }
 export function restoreCombat(room) {
+    room.slots = restoreCombatSlots(room.slots);
+    delete room.spawnEmptySince;
     if (room.keyDefeated) room.unlockComplete = true;
     if (room.state === "Active") {
         room.state = room.keyDefeated ? "Cleared" : "Dormant";
-        room.slots = [];
-        room.wave = 0;
+        suspendCombatSlots(room);
     }
     // Reconcile interrupted insertion against the loaded chest, not the ledger
     // alone; otherwise a failed command permanently produces an empty reward.

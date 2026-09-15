@@ -75,9 +75,10 @@ test("reloaded pending empty outcomes are not rerolled and incomplete draws fini
     const first=fixture({reward:"stocking",rewardDraw:{anchor:13,next:0,pending:0}});
     first.deliver(); assert.equal(first.calls.length,27);
 });
-test("old interrupted inserts reconcile inventory; protected and foreign chests stay untouched", () => {
+test("old interrupted inserts without a receipt retain foreign inventory and stop", () => {
     const old=fixture({reward:"stocking",rewardVersion:2}); old.items[2]={typeId:"minecraft:emerald"};
-    old.deliver(); assert.equal(old.calls.length,0);
+    assert.throws(old.deliver,/already contains/); assert.equal(old.calls.length,0);
+    assert.equal(old.room.reward,"stocking");
     for(const o of [{debug:true},{unlockComplete:false}]) {const h=fixture(o);h.deliver();assert.equal(h.calls.length,0);}
     const h=fixture();h.container.size=54;assert.throws(h.deliver,/merged/);
     h.container.size=27;h.items[5]={typeId:"minecraft:stone"};assert.throws(h.deliver,/already contains/);

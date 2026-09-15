@@ -178,7 +178,9 @@ function checkRoomEntries() {
     }
 }
 
+let detectionPaused = false;
 function startDetection() {
+    if (detectionPaused) return;
     if (!PROGRESSION_ENABLED) return; // Phase 1 owns movement and exit interaction.
     if (!activeRuntime || detectionRunId !== null) return;
     detectionRunId = system.runInterval(checkRoomEntries, ROOM_CHECK_INTERVAL_TICKS);
@@ -377,6 +379,7 @@ export function activateSourcePartsDemo(plan) {
     };
     enteredRoomByPlayerId.clear();
     lastDetectionError = null;
+    detectionPaused = false;
     startDetection();
     // During live-anchor reconstruction players remain inside their preserved
     // room.  Seed the cache so a newly assigned exit never ejects them merely
@@ -390,7 +393,14 @@ export function activateSourcePartsDemo(plan) {
     };
 }
 
+export function pauseSourcePartsDemo() {
+    detectionPaused = true;
+    stopDetection();
+    // Retain both the live snapshot and its persistent property for recovery.
+}
+
 export function deactivateSourcePartsDemo() {
+    detectionPaused = false;
     stopDetection();
     activeRuntime = null;
     enteredRoomByPlayerId.clear();

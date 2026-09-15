@@ -134,6 +134,8 @@ def build(samples):
                 if not any(alias == a or isinstance(a, dict) and alias in a for a in animate): animate.append(alias)
         if identifier == 'minecraft:player':
             desc.setdefault('scripts', {}).setdefault('pre_animation', []).append(
+                "variable.first_person_item_rotation_factor = math.sin((1 - variable.attack_time) * 180.0);")
+            desc.setdefault('scripts', {}).setdefault('pre_animation', []).append(
                 "variable.melee_spear_equipped = query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear');")
         if identifier in ('dungeons:illusioner', 'dungeons:royal_guard'):
             desc.setdefault('animations', {}).setdefault('riding.body', 'animation.humanoid.riding.body')

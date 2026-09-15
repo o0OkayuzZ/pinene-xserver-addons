@@ -1,0 +1,51 @@
+{
+  "baseCommit": "d033ab99695c30c71fbcdbe4cdf0370923ad31b6",
+  "tablesScanned": 94,
+  "scope": "All BSL loot tables; exact item/enchantment values, including nested functions",
+  "preserved": {
+    "minecraft:trial_key": [
+      {
+        "table": "chests/trial_chambers/corridor.json",
+        "pointer": "/pools/0/entries/5/name"
+      },
+      {
+        "table": "chests/trial_chambers/entrance.json",
+        "pointer": "/pools/0/entries/5/name"
+      },
+      {
+        "table": "chests/trial_chambers/intersection.json",
+        "pointer": "/pools/0/entries/0/name"
+      },
+      {
+        "table": "chests/trial_chambers/intersection_barrel.json",
+        "pointer": "/pools/0/entries/0/name"
+      },
+      {
+        "table": "chests/trial_chambers/supply.json",
+        "pointer": "/pools/0/entries/5/name"
+      },
+      {
+        "table": "pots/trial_chambers/corridor.json",
+        "pointer": "/pools/0/entries/3/name"
+      }
+    ],
+    "minecraft:ominous_trial_key": [
+      {
+        "table": "pots/trial_chambers/corridor.json",
+        "pointer": "/pools/0/entries/11/name"
+      }
+    ],
+    "wind_burst": [
+      {
+        "table": "pots/trial_chambers/corridor.json",
+        "pointer": "/pools/0/entries/12/functions/0/enchants/0/id"
+      }
+    ],
+    "minecraft:ominous_bottle": [
+      {
+        "table": "pots/trial_chambers/corridor.json",
+        "pointer": "/pools/0/entries/6/name"
+      }
+    ]
+  }
+}

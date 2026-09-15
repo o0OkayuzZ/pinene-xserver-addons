@@ -1,3 +1,5 @@
+import { normalizeReconstructionStatus } from "./reconstructionLifecycle.js";
+import { rewardPlacementBlocked, updateRunAbsence, suspendCombatSlots, resumeCombatSlots, serializeCombatSlots, combatWatchdog, readyWatchdog } from "./phase1Reliability.js";
 import { system, world } from "@minecraft/server";
 import { createSourcePartsPlan } from "./sourcePartsPlanner.js";
 import { fitPlanToHeightRange } from "./sourcePartsVolumes.js";
@@ -26,12 +28,13 @@ import {
     shouldStartWave2,
 } from "./phase1State.js";
 import { createCombatScheduler, inCone } from "./phase1Combat.js";
-import { decorateSpecialRoom, decorationProtected } from "./phase1Interiors.js";
+import { decorateSpecialRoom, decorationProtected, repairExitFloor } from "./phase1Interiors.js";
 import { containsPlacement } from "./phase1Sockets.js";
 import { acquireLandingArea, isSafeCastleFloor, blocksCastleProjectile } from "./phase1Landing.js";
-import { deliverRoomReward } from "./phase1Rewards.js";
+import { deliverRoomReward, assertOwnedRewardInventory } from "./phase1Rewards.js";
 
 const STATE_KEY = "infinite_castle:phase1_v2",
+    ROLLBACK_KEY = "infinite_castle:phase1_rollback_v1",
     LEGACY_KEY = "infinite_castle:room_encounters_v1",
     CORE_KEY = "infinite_castle:source_parts_test_state_v2",
     PLAN_KEY = "infinite_castle:source_parts_detailed_plan_v1";
@@ -47,6 +50,10 @@ let state,
     lastWarn = -1200,
     exitHandler,
     reconstructHandler,
+    recoveryHandler,
+    rejoinHandler,
+    recoveryBusy = () => false,
+    recoveryPending = () => false,
     lastMovement = -10,
     mutationRevision = null;
 const entities = new Map(),
@@ -62,6 +69,7 @@ const heal = createGardenHealing(),
     dim = () => world.getDimension(CONFIG.dimensionId),
     tick = () => system.currentTick;
 let observedPlayers = [];
+const readyHealth = {};
 const eligible = (p) =>
     ["survival", "adventure"].includes(String(p.getGameMode()).toLowerCase()) &&
     (p.getComponent("minecraft:health")?.currentValue ?? 1) > 0;
@@ -82,9 +90,8 @@ function warn(e) {
     }
 }
 function persist() {
-    // Active actors are discarded on every restart, so persisting their
-    // tokens/queues would only consume the dynamic property's 32 KiB budget.
-    const json = JSON.stringify(state, (key, value) => key === "slots" ? [] : value);
+    // Keep compact death/suspension receipts within the 32 KiB property budget.
+    const json = JSON.stringify(state, (key, value) => key === "slots" ? serializeCombatSlots(value) : value);
     if (json.length > 30000) throw new Error("Phase 1 ledger exceeds safe size");
     world.setDynamicProperty(STATE_KEY, json);
 }
@@ -111,7 +118,7 @@ function safeStanding(p) {
         [0, 1, 2].every((dy) => air(blockAt({ ...p, y: p.y + dy })))
     );
 }
-function safePoint(room, from, min = 0, max = 30) {
+function safePoint(room, from, min = 0, max = 30, accept = () => true) {
     const candidates = [];
     for (let x = 10; x <= 32; x += 4)
         for (let z = 10; z <= 32; z += 4) candidates.push(roomWorldPoint(room.origin, { x, y: 1, z }));
@@ -119,7 +126,7 @@ function safePoint(room, from, min = 0, max = 30) {
     for (let i = 0; i < candidates.length; i++) {
         const p = candidates[(offset + i) % candidates.length],
             d = Math.hypot(p.x - from.x, p.y - from.y, p.z - from.z);
-        if (d >= min && d <= max && safeStanding(p)) return { x: p.x + 0.5, y: p.y, z: p.z + 0.5 };
+        if (d >= min && d <= max && safeStanding(p) && accept({x:p.x+0.5,y:p.y,z:p.z+0.5})) return { x: p.x + 0.5, y: p.y, z: p.z + 0.5 };
     }
     return null;
 }
@@ -192,9 +199,10 @@ function containerAt(r) {
     const b = blockAt(r.chest);
     return b?.typeId === "minecraft:chest" ? b.getComponent("minecraft:inventory")?.container : null;
 }
-function cleanup(r) {
+function cleanup(r, suspend = false) {
     // Revoke tokens before remove: cleanup is never a key-holder kill.
-    for (const s of r.slots) s.phase = "dead";
+    if (suspend) suspendCombatSlots(r);
+    else for (const s of r.slots) s.phase = "dead";
     persist();
     for (const [id, e] of byEntity)
         if (e.room === r) {
@@ -207,7 +215,7 @@ function cleanup(r) {
             byEntity.delete(id);
         }
     combat.clear(r);
-    r.slots = [];
+    if (!suspend) r.slots = [];
     delete r.emptySince;
 }
 function retire(r) {
@@ -225,14 +233,15 @@ export function prepareRoomEncounterRemoval(dimension, bounds) {
         const volume = roomInterior(r.origin);
         volume.from.y = r.origin.y;
         if (!roomBoundsIntersect(volume, bounds)) continue;
-        if (!r.retired) retire(r);
         if (r.chest && roomContains(bounds, r.chest)) {
             const c = containerAt(r);
             if (c) {
-                if (c.size !== 27) throw new Error("owned chest joined to unrelated chest");
+                try { assertOwnedRewardInventory(r, c); }
+                catch (error) { logRewardError(r, c, error); throw error; }
                 c.clearAll();
             }
         }
+        if (!r.retired) retire(r);
     }
 }
 export function encounterProtection() {
@@ -255,6 +264,7 @@ export function assertEncounterProtection(bounds) {
 }
 export function beginEncounterReconstruction() {
     mutationRevision = ensureState().protectionRevision;
+    ready = false;
     return mutationRevision;
 }
 export function assertEncounterRevision() {
@@ -263,6 +273,42 @@ export function assertEncounterRevision() {
 }
 export function endEncounterReconstruction() {
     mutationRevision = null;
+}
+export function captureEncounterRollback() {
+    ensureState();
+    persist();
+    world.setDynamicProperty(ROLLBACK_KEY, world.getDynamicProperty(STATE_KEY));
+}
+export function restoreEncounterRollback() {
+    const raw = world.getDynamicProperty(ROLLBACK_KEY);
+    if (typeof raw !== "string") return; // Legacy interrupted saves have no ledger snapshot.
+    const baseline = JSON.parse(raw);
+    const current = new Map(rooms().map(r => [r.roomInstanceId, r]));
+    const ids = new Set(baseline.rooms.map(r => r.roomInstanceId));
+    for (const r of rooms()) if (!ids.has(r.roomInstanceId)) cleanup(r);
+    baseline.rooms = baseline.rooms.map(saved => {
+        const live = current.get(saved.roomInstanceId);
+        if (live && !live.retired) return live; // Keep deaths/exits during the job.
+        const restored = restoreCombat(saved);
+        restored.decorated = false;
+        return restored;
+    });
+    baseline.participants = state.participants;
+    baseline.serial = Math.max(baseline.serial, state.serial);
+    baseline.protectionRevision = state.protectionRevision;
+    state = baseline;
+    persist();
+}
+export function finishEncounterRollback() {
+    world.setDynamicProperty(ROLLBACK_KEY, undefined);
+}
+export function prepareVisualEncounterRebuild() {
+    // The full visual job has already captured its rollback ledger and checked
+    // every observer's game mode. Release old combat/exit locks for full replacement.
+    ready = false;
+    for (const r of rooms()) retire(r);
+    state.protectionRevision++;
+    persist();
 }
 export function prepareEncounterRoles(nextPlan, protectedNewIds = []) {
     ensureState();
@@ -324,7 +370,7 @@ export function activateRoomEncounterPlan(nextPlan) {
                 if (old) {
                     r.chest = old.chest;
                     r.chestOwned = old.chestOwned;
-                    if (["stocked", "stocking"].includes(old.reward)) {
+                    if (old.reward === "stocked") {
                         r.reward = "stocked";
                         r.keyDefeated = true;
                         r.unlockComplete = true;
@@ -345,11 +391,14 @@ export function activateRoomEncounterPlan(nextPlan) {
 function syncPlan() {
     const rawCore = world.getDynamicProperty(CORE_KEY),
         core = typeof rawCore === "string" ? JSON.parse(rawCore) : null;
-    ready = core?.status === "complete" && ensureState().runState === "ACTIVE";
+    ready = normalizeReconstructionStatus(core?.status) === "COMPLETE"
+        && mutationRevision === null && !recoveryPending() && ensureState().runState === "ACTIVE";
     if (ensureState().runState !== "ACTIVE") return;
     if (!ready) return;
     const raw = world.getDynamicProperty(PLAN_KEY);
-    if (typeof raw !== "string" || raw === lastDescriptor) return;
+    ready = false;
+    if (typeof raw !== "string") return;
+    if (raw === lastDescriptor && plan) { ready = true; return; }
     const d = JSON.parse(raw);
     if (![1, 2].includes(d?.v) || d.d !== CONFIG.dimensionId || !Array.isArray(d.a))
         throw new Error("invalid physical descriptor");
@@ -369,7 +418,7 @@ function installChest(r) {
         for (const local of ROOM_CHEST_CANDIDATES) {
             const p = roomWorldPoint(r.origin, local);
             if (
-                !safeStanding(p) ||
+                !safeStanding(p) || !rewardAreaIsolated(p) ||
                 [
                     [1, 0],
                     [-1, 0],
@@ -399,12 +448,28 @@ function installChest(r) {
     }
     return !!containerAt(r);
 }
+function rewardAreaIsolated(p) {
+    const transport = new Set(["minecraft:chest", "minecraft:trapped_chest", "minecraft:hopper",
+        "minecraft:dropper", "minecraft:dispenser", "minecraft:rail", "minecraft:golden_rail",
+        "minecraft:detector_rail", "minecraft:activator_rail"]);
+    for (let x = -1; x <= 1; x++) for (let y = -1; y <= 1; y++) for (let z = -1; z <= 1; z++) {
+        if (x === 0 && y === 0 && z === 0) continue;
+        const block = blockAt({ x: p.x+x, y: p.y+y, z: p.z+z });
+        if (!block || transport.has(block.typeId)) return false;
+    }
+    return !dim().getEntities({ type: "minecraft:hopper_minecart", location: p, maxDistance: 3 })
+        .some(e => e.typeId === "minecraft:hopper_minecart"
+            && Math.hypot(e.location.x-p.x, e.location.y-p.y, e.location.z-p.z) <= 3);
+}
 function stockReward(r) {
+    if (!ready || mutationRevision !== null || recoveryBusy()) return;
     if (tick() < (rewardRetries.get(r.roomInstanceId) ?? 0)) return;
     const c = containerAt(r);
     if (!c) return;
     const p = r.chest;
     try {
+        assertOwnedRewardInventory(r, c);
+        if (r.reward !== "stocked" && !rewardAreaIsolated(p)) throw new Error("reward chest automation isolation is not established");
         deliverRoomReward(r, c, {
             persist,
             insert: slot => dim().runCommand(
@@ -417,8 +482,15 @@ function stockReward(r) {
         rewardRetries.delete(r.roomInstanceId);
     } catch (error) {
         rewardRetries.set(r.roomInstanceId, tick() + 100);
+        logRewardError(r, c, error);
         warn(error);
     }
+}
+function logRewardError(r, c, error) {
+    console.warn(`[ic-reward-error] ${JSON.stringify({ roomInstanceId: r.roomInstanceId,
+        coordinates: r.chest, containerSize: c.size,
+        occupiedSlots: Array.from({length: c.size}, (_, i) => i).filter(i => c.getItem(i)),
+        error: String(error?.message ?? error) })}`);
 }
 function nextSlot(r, mob, wave, priority, owner = null) {
     return {
@@ -446,7 +518,12 @@ function startRoom(r) {
     r.state = "Active";
     state.protectionRevision++;
     persist();
-    startWave(r, 1);
+    if (r.wave > 0 && r.slots.length) {
+        resumeCombatSlots(r);
+        for (const s of r.slots) if (s.phase === "new") s.tag = `${SLOT_PREFIX}${state.runId}_${++state.serial}`;
+        r.waveStarted = tick();
+        persist();
+    } else startWave(r, 1);
 }
 function queueSummons(r, owner, count, limit, mob) {
     const living = r.slots.filter((s) => s.priority === 2 && s.owner === owner && s.phase !== "dead").length,
@@ -515,9 +592,9 @@ function spawnPending() {
             (s.priority === 1 ? 3 : 2)
     )
         return;
-    const point = safePoint(r, roomWorldPoint(r.origin, { x: 21, y: 1, z: 21 }), 0, 25);
-    if (!point || members(r).some((p) => Math.hypot(p.location.x - point.x, p.location.z - point.z) < 3))
-        return;
+    const point = safePoint(r, roomWorldPoint(r.origin, { x: 21, y: 1, z: 21 }), 0, 25,
+        candidate => members(r).every(p => Math.hypot(p.location.x-candidate.x, p.location.z-candidate.z) >= 3));
+    if (!point) return;
     let e;
     spawning = true;
     try {
@@ -531,9 +608,10 @@ function spawnPending() {
         try {
             e?.remove();
         } catch {}
-        s.phase = "new";
+        s.phase = (s.spawnFailures = (s.spawnFailures ?? 0) + 1) >= 3 ? "failed" : "new";
         s.id = null;
-        throw new Error(`spawn ${s.mob}: ${error}`);
+        persist();
+        warn(new Error(`spawn ${s.mob}: ${error}`));
     } finally {
         spawning = false;
     }
@@ -636,11 +714,21 @@ function reconcile() {
 export function updateRoomEncounters() {
     try {
         ensureState();
-        syncPlan();
+        try { syncPlan(); } catch (error) { ready = false; warn(error); }
         const players = dim().getPlayers();
         if (tick() - lastMovement >= PHASE1.playerCheckTicks) {
             lastMovement = tick();
             movement(players);
+        }
+        const online = players.filter(p => eligible(p) && state.participants[p.id] === "active").length;
+        const absentBefore = state.noOnlineSince;
+        if (updateRunAbsence(state, online, Date.now()) && !recoveryBusy() && mutationRevision === null) endRun();
+        else if (absentBefore !== state.noOnlineSince) persist();
+        const health = readyWatchdog(readyHealth, { ready, now: tick(), players: players.length, busy: recoveryBusy() });
+        if (health.notice) for (const p of players) p.onScreenDisplay.setActionBar("§e無限城を復旧中です…");
+        if (health.request && state.runState === "ACTIVE") recoveryHandler?.();
+        if (state.runState === "ENDED_PENDING_REBUILD") {
+            for (const p of players) if (eligible(p) && state.participants[p.id] === "active") rejoinHandler?.(p);
         }
         if (tick() % 100 === 0) reconcile();
         for (const r of rooms())
@@ -648,9 +736,8 @@ export function updateRoomEncounters() {
                 if (members(r).length) delete r.emptySince;
                 else r.emptySince ??= tick();
                 if (r.emptySince !== undefined && tick() - r.emptySince >= PHASE1.exitGraceTicks) {
-                    cleanup(r);
+                    cleanup(r, true);
                     r.state = r.keyDefeated ? "Cleared" : "Dormant";
-                    r.wave = 0;
                     state.protectionRevision++;
                     persist();
                     continue;
@@ -662,8 +749,28 @@ export function updateRoomEncounters() {
                     persist();
                 }
             }
-        combat.update(tick());
+        if (ready) for (const r of rooms().filter(r => r.kind === "combat" && r.state === "Active")) {
+            const action = combatWatchdog(r, {
+                now: tick(), occupied: members(r).length > 0,
+                living: [...byEntity].filter(([id, e]) => e.room === r && world.getEntity(id)).length,
+                pending: r.slots.filter(s => s.phase === "new").length,
+                complete: r.wave === 2 && r.slots.length > 0 && r.slots.every(s => s.phase === "dead"),
+            });
+            if (action === "repair") {
+                if (!r.slots.length) startWave(r, r.wave || 1);
+                for (const s of r.slots) if (s.phase !== "dead") {
+                    s.phase = "new"; s.id = null; s.spawnFailures = 0;
+                }
+                persist();
+            } else if (action === "quarantine") {
+                console.warn(`[ic-combat-quarantine] ${JSON.stringify({ roomInstanceId: r.roomInstanceId, origin: r.origin, wave: r.wave })}`);
+                state.protectionRevision++;
+                persist();
+            }
+        }
+        if (ready) combat.update(tick());
         if (!ready || state.runState !== "ACTIVE") return;
+        spawnPending();
         heal(players, rooms(), tick());
         let budget = CONFIG.lightWritesPerUpdate,
             decoratedThisTick = false;
@@ -682,6 +789,11 @@ export function updateRoomEncounters() {
                     budget--;
                 }
                 lights.set(r.roomInstanceId, i);
+                if (r.kind === "exit" && mutationRevision === null && !recoveryBusy()
+                    && members(r).some(p => Math.hypot(p.location.x - r.origin.x - 21,
+                        p.location.y - r.origin.y - 1, p.location.z - r.origin.z - 21) < 32)) {
+                    repairExitFloor(dim(), r, () => ready && mutationRevision === null && !recoveryBusy());
+                }
                 installChest(r);
                 if (!r.decorated && !decoratedThisTick && decorateSpecialRoom(dim(), r)) {
                     r.decorated = true;
@@ -690,7 +802,6 @@ export function updateRoomEncounters() {
                 }
                 stockReward(r);
             }
-        spawnPending();
         lastError = "";
     } catch (e) {
         warn(e);
@@ -703,8 +814,19 @@ function chestRoom(b) {
           )
         : null;
 }
+// The place event uses the destination block. The interaction guard also
+// covers minecart placement and engines without the beta place event.
+world.beforeEvents.playerPlaceBlock?.subscribe(e => {
+    if (e.dimension.id === CONFIG.dimensionId && rewardPlacementBlocked(ensureState().rooms, e.block.location)) e.cancel = true;
+});
 world.beforeEvents.playerInteractWithBlock.subscribe((e) => {
     try {
+        if (e.block.dimension.id === CONFIG.dimensionId && e.itemStack) {
+            const offset = { Up: [0,1,0], Down: [0,-1,0], North: [0,0,-1], South: [0,0,1], East: [1,0,0], West: [-1,0,0] }[e.blockFace];
+            const p = e.block.location;
+            const destination = offset ? { x:p.x+offset[0], y:p.y+offset[1], z:p.z+offset[2] } : p;
+            if (rewardPlacementBlocked(ensureState().rooms, p) || rewardPlacementBlocked(ensureState().rooms, destination)) e.cancel = true;
+        }
         const r = chestRoom(e.block);
         if (r && ((!r.unlockComplete && r.kind !== "treasure_vault") || (!r.debug && r.reward !== "stocked"))) {
             e.cancel = true;
@@ -856,7 +978,10 @@ world.afterEvents.entitySpawn.subscribe((e) => {
         const mob =
             Object.keys(MOB_BALANCE).find(
                 (k) => MOB_BALANCE[k].typeId === entity.typeId && !MOB_BALANCE[k].keyHolder,
-            ) ?? "zombie";
+            );
+        // An unrelated monster cannot receive zombie-specific authored events.
+        // Keep it out of the encounter ledger instead of creating a broken slot.
+        if (!mob) { entity.remove(); return; }
         const s = nextSlot(r, mob, 0, 2, "native");
         r.slots.push(s);
         registerEntity(r, s, entity);
@@ -949,6 +1074,10 @@ export async function preparePhase1Landing() {
 export function setPhase1Handlers(h) {
     exitHandler = h.exit;
     reconstructHandler = h.reconstruct;
+    recoveryHandler = h.recover;
+    rejoinHandler = h.rejoin;
+    recoveryBusy = h.recoveryBusy ?? (() => false);
+    recoveryPending = h.recoveryPending ?? (() => false);
 }
 export function roomEncounterStatus(player) {
     ensureState();
@@ -959,6 +1088,9 @@ export function roomEncounterStatus(player) {
         rebuildEpoch: state.rebuildEpoch,
         roomInstanceId: r?.roomInstanceId,
         encounterType: r?.encounterType,
+        kind: r?.kind,
+        origin: r?.origin,
+        pendingSpawns: r?.slots.filter(s => s.phase === "new").length,
         state: r?.state,
         wave: r?.wave,
         waveTimer: r ? tick() - r.waveStarted : 0,
