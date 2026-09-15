@@ -111,6 +111,42 @@ test('ready watchdog resets its elapsed timer after readiness returns',()=>{
     readyWatchdog(memory,{ready:true,now:401,players:1,busy:false});
     assert.deepEqual(readyWatchdog(memory,{ready:false,now:402,players:1,busy:false}),{notice:false,request:false});
 });
+
+test('creative observer in an ended run never gets a false recovery notice, including after reload',async()=>{
+    const h=await setup(),original=Date.now;let now=0;Date.now=()=>now;
+    try {
+        h.player.getGameMode=()=> 'Creative';mock.setPlayers([h.player]);
+        let requests=0;h.api.setPhase1Handlers({recover:()=>requests++});h.tick(2);
+        now=60000;h.tick(100);
+        assert.equal(h.api.phase1RunState(),'ENDED_PENDING_REBUILD');
+        assert.deepEqual(h.player.notices,[]);assert.equal(requests,0);
+        const saved=mock.world.getDynamicProperty(KEY);
+        mock.resetSubscriptions();
+        const reboot=await import(`../scripts/infinite_castle/phase1Runtime.js?creativeReload=${serial}`);
+        reboot.setPhase1Handlers({recover:()=>requests++});
+        for(let i=0;i<100;i++){mock.advance();reboot.updateRoomEncounters();}
+        assert.equal(reboot.phase1RunState(),'ENDED_PENDING_REBUILD');
+        assert.deepEqual(h.player.notices,[]);assert.equal(requests,0);
+        assert.equal(mock.world.getDynamicProperty(KEY),saved);
+    }finally{Date.now=original;}
+});
+
+test('an ended run with an actual recovery journal still notifies and requests its owner',async()=>{
+    const h=await setup(),original=Date.now;let now=0;Date.now=()=>now;
+    try {
+        h.player.getGameMode=()=> 'Creative';mock.setPlayers([h.player]);h.tick(2);
+        now=60000;h.tick(2);assert.equal(h.api.phase1RunState(),'ENDED_PENDING_REBUILD');
+        let requests=0;h.api.setPhase1Handlers({recover:()=>requests++,recoveryPending:()=>true});
+        h.tick(82);assert.ok(h.player.notices.length>0);assert.equal(requests,1);
+    }finally{Date.now=original;}
+});
+
+test('idle watchdog clears stale timers before the next active run',()=>{
+    const memory={since:0,requestedAt:400};
+    assert.deepEqual(readyWatchdog(memory,{ready:false,expected:false,now:1000,players:1,busy:false}),{notice:false,request:false});
+    assert.deepEqual(memory,{});
+    assert.deepEqual(readyWatchdog(memory,{ready:false,expected:true,now:1001,players:1,busy:false}),{notice:false,request:false});
+});
 test('full visual rebuild releases old encounter locks after snapshot and can restore on failure',async()=>{
     const h=await setup();mock.setPlayers([h.player]);h.api.phase1Enter(h.player);h.tick(30);
     assert.ok(h.api.encounterProtection().rooms.length>0);

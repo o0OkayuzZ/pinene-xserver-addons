@@ -1,0 +1,130 @@
+{
+  "sourceBase": "cb1b5a25ce12e291bef05dc4553428ab95e6946d",
+  "tests": {
+    "command": "npm run test:castle",
+    "passed": 113,
+    "failed": 0
+  },
+  "targets": {
+    "server": {
+      "label": "server",
+      "success": true,
+      "files": 5,
+      "backup": "/opt/minecraft/server/_pinene_deploy_backups/ic_reliability_20260915_231409",
+      "hashesVerified": true,
+      "clientGameplayTest": "not_run",
+      "service": "active",
+      "startupConfirmed": true,
+      "errors": [],
+      "finishedUtc": "2026-09-15T14:16:04.120728+00:00"
+    },
+    "development": {
+      "label": "development",
+      "success": true,
+      "files": 5,
+      "backup": "C:\\work\\ic-idle-recovery-release\\backups\\development_20260915_231409",
+      "hashesVerified": true,
+      "clientGameplayTest": "not_run",
+      "finishedUtc": "2026-09-15T14:14:35.081834+00:00"
+    },
+    "latest": {
+      "label": "latest",
+      "success": true,
+      "files": 4,
+      "backup": "C:\\work\\ic-idle-recovery-release\\backups\\latest_20260915_231409",
+      "hashesVerified": true,
+      "clientGameplayTest": "not_run",
+      "finishedUtc": "2026-09-15T14:14:35.244643+00:00"
+    },
+    "aurealis": {
+      "label": "aurealis",
+      "success": true,
+      "files": 0,
+      "note": "Uses shared packs or has no affected embedded pack"
+    },
+    "shared": {
+      "label": "shared",
+      "success": true,
+      "files": 2,
+      "backup": "C:\\work\\ic-idle-recovery-release\\backups\\shared_20260915_231409",
+      "hashesVerified": true,
+      "clientGameplayTest": "not_run",
+      "finishedUtc": "2026-09-15T14:14:34.899883+00:00"
+    }
+  },
+  "files": {
+    "server": {
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": {
+        "before": "b2688d922ca6891667402cbd75b8984e799acddb07b3cfd309d0962c65421e96",
+        "after": "7974a938f1e7aa962bb54e78dea066d931ab5b2b2fea240d58c99f1fc04e4ab0"
+      },
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Runtime.js": {
+        "before": "babf3b08e3c60d61044ce55009ef4cf20f01f7a74c636628dc68cc80a620f5ed",
+        "after": "e6fc178871cde3ef532ba904aa899f6be50372607568b91ddb79c65b35af164c"
+      },
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Reliability.js": {
+        "before": "6f19fd297e55ea9d23c552bc6db5f42876bbc2abb618825c6aee7468d8cb0444",
+        "after": "bd421eeb895e8f7b7c56e9e8db70d5c1ccd0f86899e9f27ea0940686530422d6"
+      },
+      "world_behavior_packs.json": {
+        "before": "fcb3577089612baec7d20d5dab856e45c675cdadf509f3e389ffd9a8fc5f7102",
+        "after": "e635b965e698b67ee2e327a04740f1ae1f2330733c4d0ad2cc7af7d18da80666"
+      },
+      "worlds/Bedrock level/world_behavior_packs.json": {
+        "before": "fcb3577089612baec7d20d5dab856e45c675cdadf509f3e389ffd9a8fc5f7102",
+        "after": "e635b965e698b67ee2e327a04740f1ae1f2330733c4d0ad2cc7af7d18da80666"
+      }
+    },
+    "development": {
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": {
+        "before": "b2688d922ca6891667402cbd75b8984e799acddb07b3cfd309d0962c65421e96",
+        "after": "7974a938f1e7aa962bb54e78dea066d931ab5b2b2fea240d58c99f1fc04e4ab0"
+      },
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Runtime.js": {
+        "before": "babf3b08e3c60d61044ce55009ef4cf20f01f7a74c636628dc68cc80a620f5ed",
+        "after": "e6fc178871cde3ef532ba904aa899f6be50372607568b91ddb79c65b35af164c"
+      },
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Reliability.js": {
+        "before": "6f19fd297e55ea9d23c552bc6db5f42876bbc2abb618825c6aee7468d8cb0444",
+        "after": "bd421eeb895e8f7b7c56e9e8db70d5c1ccd0f86899e9f27ea0940686530422d6"
+      },
+      "world_behavior_packs.json": {
+        "before": "d4ae0e8c4a29ff1fb97c055590bc3028743819778c5ec6b975828f84a64e7534",
+        "after": "e635b965e698b67ee2e327a04740f1ae1f2330733c4d0ad2cc7af7d18da80666"
+      },
+      "world_resource_packs.json": {
+        "before": "93aa361315b48c49b83b7c7ce01afa1049b6adc6a92b64c6af27a852e78bcccf",
+        "after": "0239809fd142dba4ec36ca317cdecd1155b2273ac926330482a9b4a162360b59"
+      }
+    },
+    "latest": {
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json": {
+        "before": "8afa867a80b89dbabdbfd2dcee3b3b31dd45cf1bf0fee5fcab6629d43d32a67a",
+        "after": "82cdc149d85df8b4cc650af341e0c19a4d1af6a45746b27146a1155df7be9e80"
+      },
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Runtime.js": {
+        "before": "babf3b08e3c60d61044ce55009ef4cf20f01f7a74c636628dc68cc80a620f5ed",
+        "after": "e6fc178871cde3ef532ba904aa899f6be50372607568b91ddb79c65b35af164c"
+      },
+      "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/phase1Reliability.js": {
+        "before": "6f19fd297e55ea9d23c552bc6db5f42876bbc2abb618825c6aee7468d8cb0444",
+        "after": "bd421eeb895e8f7b7c56e9e8db70d5c1ccd0f86899e9f27ea0940686530422d6"
+      },
+      "world_behavior_packs.json": {
+        "before": "fcb3577089612baec7d20d5dab856e45c675cdadf509f3e389ffd9a8fc5f7102",
+        "after": "e635b965e698b67ee2e327a04740f1ae1f2330733c4d0ad2cc7af7d18da80666"
+      }
+    },
+    "aurealis": {},
+    "shared": {
+      "development_behavior_packs/無限城/scripts/infinite_castle/phase1Runtime.js": {
+        "before": "babf3b08e3c60d61044ce55009ef4cf20f01f7a74c636628dc68cc80a620f5ed",
+        "after": "e6fc178871cde3ef532ba904aa899f6be50372607568b91ddb79c65b35af164c"
+      },
+      "development_behavior_packs/無限城/scripts/infinite_castle/phase1Reliability.js": {
+        "before": "6f19fd297e55ea9d23c552bc6db5f42876bbc2abb618825c6aee7468d8cb0444",
+        "after": "bd421eeb895e8f7b7c56e9e8db70d5c1ccd0f86899e9f27ea0940686530422d6"
+      }
+    }
+  }
+}

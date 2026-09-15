@@ -52,8 +52,8 @@ export function combatWatchdog(room, { now, occupied, living, pending, complete 
     return "quarantine";
 }
 
-export function readyWatchdog(memory, { ready, now, players, busy }) {
-    if (ready || !players) {
+export function readyWatchdog(memory, { ready, now, players, busy, expected = true }) {
+    if (!expected || ready || !players) {
         delete memory.since;
         delete memory.requestedAt;
         return { notice: false, request: false };

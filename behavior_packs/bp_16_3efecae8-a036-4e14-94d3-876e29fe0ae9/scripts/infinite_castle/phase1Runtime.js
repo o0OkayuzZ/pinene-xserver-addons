@@ -724,9 +724,13 @@ export function updateRoomEncounters() {
         const absentBefore = state.noOnlineSince;
         if (updateRunAbsence(state, online, Date.now()) && !recoveryBusy() && mutationRevision === null) endRun();
         else if (absentBefore !== state.noOnlineSince) persist();
-        const health = readyWatchdog(readyHealth, { ready, now: tick(), players: players.length, busy: recoveryBusy() });
+        // Ended runs intentionally have no ready encounter plan. Creative observers
+        // can stay in the physical castle without starting another survival run.
+        const pendingRecovery = recoveryPending(), busy = recoveryBusy();
+        const health = readyWatchdog(readyHealth, { ready, now: tick(), players: players.length, busy,
+            expected: state.runState === "ACTIVE" || pendingRecovery || busy });
         if (health.notice) for (const p of players) p.onScreenDisplay.setActionBar("§e無限城を復旧中です…");
-        if (health.request && state.runState === "ACTIVE") recoveryHandler?.();
+        if (health.request && (state.runState === "ACTIVE" || pendingRecovery)) recoveryHandler?.();
         if (state.runState === "ENDED_PENDING_REBUILD") {
             for (const p of players) if (eligible(p) && state.participants[p.id] === "active") rejoinHandler?.(p);
         }
