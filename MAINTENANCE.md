@@ -2,7 +2,7 @@
 
 ## 2026-09-19: Separate the rendering pack
 
-Moved `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) out of the integrated addon set. It is now maintained independently as `Pinene_Visuals_RP` with header and module version `1.3.24`. The independent copy preserves the original UUIDs and assets and includes the verified atmosphere, color-grading, and water identifiers using the `1.21.70` client-biome schema for forest, ocean, plains, and river.
+Moved `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) out of the integrated addon set. It is now maintained independently as `Pinene_Visuals_RP` with header and module version `1.3.25`. The independent copy preserves the original UUIDs and assets and includes the verified atmosphere, color-grading, and water identifiers using the `1.21.70` client-biome schema for forest, ocean, plains, and river.
 
 Removed RP10 from both active repository registration files and from the current pack table. Historical deployment evidence and `snapshot-files.json` remain unchanged because they describe earlier snapshots in which RP10 was integrated. The live world's registration remains separate from this repository and must match the independent manifest version.
 
