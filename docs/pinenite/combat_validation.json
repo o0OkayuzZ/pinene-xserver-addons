@@ -1,6 +1,6 @@
 {
   "static_validation": "passed",
-  "check_count": 157,
+  "check_count": 163,
   "checks": [
     "helmet: identifiers agree",
     "helmet: wearable slot, FINAL protection",
@@ -90,7 +90,14 @@
     "attachables: no duplicate Pinenite identifiers",
     "no Pinenite integration in recipes",
     "no Pinenite integration in loot_tables",
-    "35 original packs plus dedicated Pinenite outline RP",
+    "34 integrated packs plus dedicated Pinenite outline RP",
+    "outline keeps Vibrant Visuals PBR active",
+    "Deathnerite BP depends on current outline version",
+    "PineCD keeps Vibrant Visuals PBR active",
+    "PineCD BP depends on current RP version",
+    "pinenite_outline: global entity material declares PBR",
+    "rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974: global entity material declares PBR",
+    "rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b: global entity material declares PBR",
     "module versions 423276b9-02f5-4082-911a-c631a2d83d12",
     "module versions ef6e99cf-077d-4b55-9e11-f86bb9e66880",
     "dependency 608f921e-6be8-4a27-85d6-27945fa3a1ef",
@@ -137,7 +144,6 @@
     "dependency 7c8ac348-47ad-4f71-8503-dc40a6f813f1",
     "module versions 4f927a7a-fc68-4051-8686-43ab94ed1c5b",
     "module versions 3554695d-d627-4971-8420-dc4ece2f8613",
-    "module versions 917aab9c-5273-1000-ba5e-087a4328aa6b",
     "module versions 4d6ce949-1de7-41ec-87ab-3068434459a4",
     "dependency e05afa0d-aa45-46bd-82d0-243c605d9737",
     "module versions fdcac724-cba1-46b2-9510-a433d666ed70",
@@ -151,16 +157,143 @@
     "dependency a881d6c5-7cf5-4823-a26c-1766d70acd8c",
     "module versions c6529ee0-0a34-4f28-b5ff-66d335fee9bc",
     "module versions ef57c45f-1b60-42a3-8d26-4998db1b5055",
-    "other registrations preserved from main world_behavior_packs.json",
-    "world registration preserved from main C:/Users/はーにゃ。/Downloads/pinenite-combat-final/worlds/Bedrock level/world_behavior_packs.json",
-    "other registrations preserved from main world_resource_packs.json",
-    "world registration preserved from main C:/Users/はーにゃ。/Downloads/pinenite-combat-final/worlds/Bedrock level/world_resource_packs.json",
+    "other registrations preserved from HEAD world_behavior_packs.json",
+    "world registration preserved from HEAD C:/Users/はーにゃ。/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/ピーネン実験導入3/_workspace/pinene-xserver-addons/worlds/Bedrock level/world_behavior_packs.json",
+    "other registrations preserved from HEAD world_resource_packs.json",
+    "world registration preserved from HEAD C:/Users/はーにゃ。/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/ピーネン実験導入3/_workspace/pinene-xserver-addons/worlds/Bedrock level/world_resource_packs.json",
     "all pre-existing atlas entries preserved",
     "existing Japanese localization bytes preserved",
     "only documented existing files changed",
     "existing geometry and all textures unchanged"
   ],
-  "preexisting_registration_warnings": [],
+  "preexisting_registration_warnings": [
+    {
+      "file": "world_behavior_packs.json",
+      "pack_id": "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
+      "registered": [
+        2,
+        0,
+        9
+      ],
+      "manifest": [
+        2,
+        0,
+        10
+      ]
+    },
+    {
+      "file": "world_behavior_packs.json",
+      "pack_id": "7c8ac348-47ad-4f71-8503-dc40a6f813f1",
+      "registered": [
+        1,
+        2,
+        2
+      ],
+      "manifest": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "world_behavior_packs.json",
+      "pack_id": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+      "registered": [
+        1,
+        0,
+        70
+      ],
+      "manifest": [
+        1,
+        0,
+        71
+      ]
+    },
+    {
+      "file": "world_behavior_packs.json",
+      "pack_id": "3efecae8-a036-4e14-94d3-876e29fe0ae9",
+      "registered": [
+        0,
+        2,
+        11
+      ],
+      "manifest": [
+        0,
+        2,
+        12
+      ]
+    },
+    {
+      "file": "world_behavior_packs.json",
+      "pack_id": "c65bcd04-4708-4716-86bf-bbd6ab936fd3",
+      "registered": [
+        0,
+        2,
+        16
+      ],
+      "manifest": [
+        0,
+        2,
+        22
+      ]
+    },
+    {
+      "file": "world_resource_packs.json",
+      "pack_id": "3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a",
+      "registered": [
+        1,
+        0,
+        59
+      ],
+      "manifest": [
+        1,
+        0,
+        60
+      ]
+    },
+    {
+      "file": "world_resource_packs.json",
+      "pack_id": "ab296f68-bb16-4ede-a49c-d0ed99b5b87b",
+      "registered": [
+        2,
+        0,
+        9
+      ],
+      "manifest": [
+        2,
+        0,
+        10
+      ]
+    },
+    {
+      "file": "world_resource_packs.json",
+      "pack_id": "4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10",
+      "registered": [
+        1,
+        2,
+        2
+      ],
+      "manifest": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "world_resource_packs.json",
+      "pack_id": "ef57c45f-1b60-42a3-8d26-4998db1b5055",
+      "registered": [
+        0,
+        2,
+        16
+      ],
+      "manifest": [
+        0,
+        2,
+        22
+      ]
+    }
+  ],
   "cube_counts": {
     "helmet": 54,
     "chestplate": 100,

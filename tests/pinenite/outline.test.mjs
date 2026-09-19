@@ -12,6 +12,32 @@ const geometries = read(pack + 'models/entity/pinenite_outline.geo.json')['minec
 const controllers = read(pack + 'render_controllers/pinenite_outline.json').render_controllers;
 const sorted = value => Array.isArray(value) ? value.map(sorted) : value && typeof value === 'object'
     ? Object.fromEntries(Object.keys(value).sort().map(k => [k, sorted(value[k])])) : value;
+test('outline declares PBR compatibility and Deathnerite requires its current version', () => {
+    const manifest = read(pack + 'manifest.json');
+    assert.deepEqual(manifest.header.version, [1, 0, 6]);
+    assert.deepEqual(manifest.capabilities, ['pbr']);
+    assert.ok(manifest.modules.every(module => JSON.stringify(module.version) === JSON.stringify(manifest.header.version)));
+    const deathnerite = read('behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json');
+    const dependency = deathnerite.dependencies.find(entry => entry.uuid === manifest.header.uuid);
+    assert.deepEqual(dependency.version, manifest.header.version);
+});
+test('every global entity material catalog declares PBR compatibility', () => {
+    for (const path of [
+        'resource_packs/pinenite_outline/manifest.json',
+        'resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974/manifest.json',
+        'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/manifest.json',
+    ]) {
+        assert.ok(read(path).capabilities.includes('pbr'), path);
+    }
+});
+test('PineCD declares PBR compatibility and its behavior pack requires that version', () => {
+    const manifest = read('resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784/manifest.json');
+    assert.deepEqual(manifest.header.version, [1, 0, 31]);
+    assert.deepEqual(manifest.capabilities, ['pbr']);
+    const bp = read('behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/manifest.json');
+    const dependency = bp.dependencies.find(entry => entry.uuid === manifest.header.uuid);
+    assert.deepEqual(dependency.version, manifest.header.version);
+});
 test('all compatibility entities retain the full original client definition', () => {
     assert.ok(coverage.entities.length > 200);
     for (const entry of coverage.entities) {

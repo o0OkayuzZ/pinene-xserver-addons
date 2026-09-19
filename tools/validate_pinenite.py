@@ -15,6 +15,11 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / 'behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93'
 RP = ROOT / 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b'
+OUTLINE = ROOT / 'resource_packs/pinenite_outline'
+GRAVE_BP = ROOT / 'behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a'
+GRAVE_RP = ROOT / 'resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974'
+PINECD_BP = ROOT / 'behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9'
+PINECD_RP = ROOT / 'resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784'
 PARTS = dict(helmet='head', chestplate='chest', leggings='legs', boots='feet')
 checks = []
 preexisting_warnings = []
@@ -139,7 +144,25 @@ for folder in ['recipes', 'loot_tables']:
 
 manifests = [read(p) for p in ROOT.glob('*_packs/*/manifest.json')]
 headers = {m['header']['uuid']: m['header']['version'] for m in manifests}
-check('35 original packs plus dedicated Pinenite outline RP', len(headers) == len(manifests) == 36)
+check('34 integrated packs plus dedicated Pinenite outline RP', len(headers) == len(manifests) == 35)
+outline_manifest = read(OUTLINE / 'manifest.json')
+check('outline keeps Vibrant Visuals PBR active',
+      outline_manifest['header']['version'] == [1, 0, 6] and outline_manifest.get('capabilities') == ['pbr'])
+outline_dependency = [dep for dep in read(BP / 'manifest.json')['dependencies']
+                      if dep.get('uuid') == outline_manifest['header']['uuid']]
+check('Deathnerite BP depends on current outline version',
+      len(outline_dependency) == 1 and outline_dependency[0]['version'] == outline_manifest['header']['version'])
+pinecd_manifest = read(PINECD_RP / 'manifest.json')
+check('PineCD keeps Vibrant Visuals PBR active',
+      pinecd_manifest['header']['version'] == [1, 0, 31] and pinecd_manifest.get('capabilities') == ['pbr'])
+pinecd_dependency = [dep for dep in read(PINECD_BP / 'manifest.json')['dependencies']
+                     if dep.get('uuid') == pinecd_manifest['header']['uuid']]
+check('PineCD BP depends on current RP version',
+      len(pinecd_dependency) == 1 and pinecd_dependency[0]['version'] == pinecd_manifest['header']['version'])
+for material_path in ROOT.glob('resource_packs/*/materials/entity.material'):
+    material_manifest = read(material_path.parents[1] / 'manifest.json')
+    check(material_path.parents[1].name + ': global entity material declares PBR',
+          'pbr' in material_manifest.get('capabilities', []))
 for m in manifests:
     check('module versions ' + m['header']['uuid'], all(mod['version'] == m['header']['version'] for mod in m['modules']))
     for dep in m.get('dependencies', []):
@@ -148,19 +171,26 @@ for m in manifests:
             check('dependency ' + dep['uuid'], headers[dep['uuid']] == dep['version'])
 for path in ROOT.glob('world_*_packs.json'):
     data = read(path)
-    owned = {read(BP / 'manifest.json')['header']['uuid'], read(RP / 'manifest.json')['header']['uuid'], '2c5e0de8-0360-49ac-bfe5-339a2a0e62f2', 'c91096f3-71a0-4e44-9fa6-c9e359017ac7', 'ef6e99cf-077d-4b55-9e11-f86bb9e66880', 'b29dadb1-6c0e-42f6-a56e-f52e01dff8e9'}
+    owned = {
+        read(BP / 'manifest.json')['header']['uuid'],
+        outline_manifest['header']['uuid'],
+        read(GRAVE_BP / 'manifest.json')['header']['uuid'],
+        read(GRAVE_RP / 'manifest.json')['header']['uuid'],
+        read(PINECD_BP / 'manifest.json')['header']['uuid'],
+        pinecd_manifest['header']['uuid'],
+    }
     for entry in data:
         if headers.get(entry['pack_id']) != entry['version']:
             preexisting_warnings.append({'file': path.name, 'pack_id': entry['pack_id'], 'registered': entry['version'], 'manifest': headers.get(entry['pack_id'])})
-    main_registration = json.loads(subprocess.check_output(['git', 'show', '559feb4d:' + path.name], cwd=ROOT))
+    main_registration = json.loads(subprocess.check_output(['git', 'show', 'HEAD:' + path.name], cwd=ROOT))
     for entry in main_registration:
         if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
-    check('other registrations preserved from main ' + path.name, data == main_registration)
+    check('other registrations preserved from HEAD ' + path.name, data == main_registration)
     for copy in ROOT.glob('worlds/*/' + path.name):
-        original_copy = json.loads(subprocess.check_output(['git', 'show', '559feb4d:' + copy.relative_to(ROOT).as_posix()], cwd=ROOT))
+        original_copy = json.loads(subprocess.check_output(['git', 'show', 'HEAD:' + copy.relative_to(ROOT).as_posix()], cwd=ROOT))
         for entry in original_copy:
             if entry['pack_id'] in owned: entry['version'] = headers[entry['pack_id']]
-        check('world registration preserved from main ' + copy.as_posix(), read(copy) == original_copy)
+        check('world registration preserved from HEAD ' + copy.as_posix(), read(copy) == original_copy)
 
 # Verify preservation against the clean checkout recorded at integration time.
 source = read(ROOT / 'docs/pinenite/source.json')
@@ -173,14 +203,19 @@ old_atlas = json.loads(original(RP / 'textures/item_texture.json'))
 new_atlas = read(RP / 'textures/item_texture.json')
 check('all pre-existing atlas entries preserved', new_atlas == old_atlas)
 check('existing Japanese localization bytes preserved', (RP / 'texts/ja_JP.lang').read_bytes().startswith(original(RP / 'texts/ja_JP.lang')))
-changed_tracked = subprocess.check_output(git + ['diff', '--name-only', '--diff-filter=MDRT', baseline], cwd=ROOT, text=True, encoding='utf-8').splitlines()
+changed_tracked = subprocess.check_output(git + ['diff', '--name-only', '--diff-filter=MDRT', 'HEAD'], cwd=ROOT, text=True, encoding='utf-8').splitlines()
 allowed = {
-    'package.json', 'tools/validate_pinenite.py',
+    'package.json', 'tools/validate_pinenite.py', 'README.md', 'MAINTENANCE.md',
     (BP / 'manifest.json').relative_to(ROOT).as_posix(),
+    (GRAVE_BP / 'manifest.json').relative_to(ROOT).as_posix(),
+    (GRAVE_RP / 'manifest.json').relative_to(ROOT).as_posix(),
+    (PINECD_BP / 'manifest.json').relative_to(ROOT).as_posix(),
+    (PINECD_RP / 'manifest.json').relative_to(ROOT).as_posix(),
     (BP / 'scripts/main.js').relative_to(ROOT).as_posix(),
     (RP / 'manifest.json').relative_to(ROOT).as_posix(),
     'behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2/manifest.json',
     'world_behavior_packs.json', 'world_resource_packs.json',
+    'website/src/data/pack-registry.json',
     'worlds/Bedrock level/world_behavior_packs.json', 'worlds/Bedrock level/world_resource_packs.json',
     (RP / 'render_controllers/pinenite.render_controllers.json').relative_to(ROOT).as_posix(),
 } | {(BP / f'items/Deathnerite-Add-On/pinenite/armor/pinenite_{part}.json').relative_to(ROOT).as_posix() for part in PARTS} | {

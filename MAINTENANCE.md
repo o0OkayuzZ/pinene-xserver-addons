@@ -2,9 +2,11 @@
 
 ## 2026-09-19: Separate the rendering pack
 
-Moved `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) out of the integrated addon set. It is now maintained independently as `Pinene_Visuals_RP` with header and module version `1.3.25`. The independent copy preserves the original UUIDs and assets and includes the verified atmosphere, color-grading, and water identifiers using the `1.21.70` client-biome schema for forest, ocean, plains, and river.
+Moved `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) out of the integrated addon set. It is now maintained independently as `Pinene_Visuals_RP` with header and module version `1.3.32`. The independent copy preserves the original `09ee3dc5` visual assets and settings, with current-engine compatibility for PBR scope, global water placement, explicit biome lighting, and namespaced `1.21.120` client-biome definitions.
 
 Removed RP10 from both active repository registration files and from the current pack table. Historical deployment evidence and `snapshot-files.json` remain unchanged because they describe earlier snapshots in which RP10 was integrated. The live world's registration remains separate from this repository and must match the independent manifest version.
+
+All active resource packs that provide a global `materials/entity.material` catalog must declare the `pbr` capability. `Pinenite Model Outlines` 1.0.6 and `[墓] 死亡回収・墓 RP` 1.0.9 now do so. An isolated pack-stack test also proved that `[音楽] ピネCD音源 RP` 1.0.30 independently disabled deferred rendering until it declared `pbr`; this is fixed in 1.0.31. Their dependent behavior packs and active registrations were versioned together. Omitting these capabilities makes the full world fall back from the deferred/PBR renderer even when `Pinene_Visuals_RP` itself is valid.
 
 ## 2026-09-08: Waystone Portuguese text
 
