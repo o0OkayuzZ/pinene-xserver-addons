@@ -2,7 +2,7 @@
 
 Snapshot: 2026-09-07, from `/opt/minecraft/server`.
 
-The current deployment contains 16 custom behavior packs and 19 custom resource packs. Existing packs retain their UUIDs and directories. Root and world pack reference files preserve the load order. Vanilla server packs and world database are outside this addon snapshot.
+The current deployment contains 16 custom behavior packs and 18 integrated custom resource packs. Existing integrated packs retain their UUIDs and directories. Root and world pack reference files preserve their relative load order. Vanilla server packs, independently managed packs, and the world database are outside this addon snapshot.
 
 ## Packs
 
@@ -33,7 +33,6 @@ The current deployment contains 16 custom behavior packs and 19 custom resource 
 | resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10 | [装備互換] ゾンビ装備＋クロスボウ RP | 1.2.2 |
 | resource_packs/rp_08_4f927a7a-fc68-4051-8686-43ab94ed1c5b | [モブ] ギャップルカウズ RP | 1.0.39 |
 | resource_packs/rp_09_3554695d-d627-4971-8420-dc4ece2f8613 | [素材元] System Crossbow RP | 1.1.13 |
-| resource_packs/rp_10_917aab9c-5273-1000-ba5e-087a4328aa6b | [描画] Vibrant Visuals・Deferred RP | 1.3.21 |
 | resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4 | [移動] Simple Waystone RP | 8.2.8 |
 | resource_packs/rp_13_fdcac724-cba1-46b2-9510-a433d666ed70 | [音楽連携] 追加レコード音源 RP | 1.1.13 |
 | resource_packs/rp_14_8f8c7cdb-60c5-4b4b-bc1c-334eb8f24b9a | [食料] ピネの弁当 RP | 1.0.5 |
@@ -43,6 +42,8 @@ The current deployment contains 16 custom behavior packs and 19 custom resource 
 | resource_packs/rp_18_8cdb9fd9-ee9c-4144-ad3a-175445d20b19 | [保管] 経験値ストレージ RP | 1.0.4 |
 | resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc | 無限城リソースパック | 0.1.7 |
 | resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055 | Pinene PvP Island RP | 0.2.16 |
+
+The rendering pack `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) is maintained independently as `Pinene_Visuals_RP` and is no longer shipped or registered by this repository.
 
 `snapshot-files.json` contains the size and SHA-256 hash of each original file. Files were verified against the remote snapshot before committing.
 

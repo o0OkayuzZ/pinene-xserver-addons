@@ -1,5 +1,11 @@
 # Resource pack maintenance
 
+## 2026-09-19: Separate the rendering pack
+
+Moved `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) out of the integrated addon set. It is now maintained independently as `Pinene_Visuals_RP` with header and module version `1.3.23`. The independent copy preserves the original UUIDs and assets and includes the verified atmosphere, color-grading, and water identifiers for the forest, ocean, plains, and river client biomes.
+
+Removed RP10 from both active repository registration files and from the current pack table. Historical deployment evidence and `snapshot-files.json` remain unchanged because they describe earlier snapshots in which RP10 was integrated. The live world's registration remains separate from this repository and must match the independent manifest version.
+
 ## 2026-09-08: Waystone Portuguese text
 
 Restored 117 corrupted values in `resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4/texts/pt_BR.lang`, including Portuguese accents and the section sign used by formatting codes. The previous audit's 116-line heuristic missed one additional recoverable value. Each changed value was reversed from the mistaken CP932 interpretation of UTF-8 bytes and verified by a lossless round trip. Translation keys, placeholders, line endings, and all other languages are preserved.

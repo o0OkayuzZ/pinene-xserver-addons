@@ -5,6 +5,8 @@ ROOT=Path(__file__).resolve().parents[1]
 AUTHOR=ROOT/'tools/mycology'
 BP=ROOT/'behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639'
 RP=ROOT/'resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a'
+EXTERNALIZED_RP_UUID='917aab9c-5273-1000-ba5e-087a4328aa6b'
+EXTERNALIZED_RP_PREFIX='resource_packs/rp_10_917aab9c-5273-1000-ba5e-087a4328aa6b/'
 def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def git(*args):return subprocess.check_output(['git','-c',f'safe.directory={ROOT.as_posix()}',*args],cwd=ROOT)
 provenance=load(ROOT/'docs/mycology/provenance.json')
@@ -50,7 +52,8 @@ for p in manifests:
         if dep.get('uuid') in versions:assert dep['version']==versions[dep['uuid']],p
 for p in [ROOT/'world_behavior_packs.json',ROOT/'world_resource_packs.json',*ROOT.glob('worlds/*/world_*_packs.json')]:
     refs=load(p); before=json.loads(old(p))
-    assert [r['pack_id'] for r in refs]==[r['pack_id'] for r in before],p
+    expected=[r['pack_id'] for r in before if r['pack_id'] != EXTERNALIZED_RP_UUID]
+    assert [r['pack_id'] for r in refs]==expected,p
     for ref in refs:
         if ref['pack_id'] in versions:assert ref['version']==versions[ref['pack_id']],p
 # Inspect all changes to tracked runtime files, not only the known merge targets.
@@ -60,7 +63,8 @@ allowed.add('behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/manifest.
 allowed.update(provenance['runtimeAdded'])
 allowed.update(release)
 for rel in git('diff','--name-only',base).decode('utf-8').splitlines():
-    if rel.startswith(('behavior_packs/','resource_packs/')):assert rel in allowed,f'Unexpected existing runtime change: {rel}'
+    if rel.startswith(('behavior_packs/','resource_packs/')):
+        assert rel in allowed or rel.startswith(EXTERNALIZED_RP_PREFIX),f'Unexpected existing runtime change: {rel}'
 summary={'status':'integrated_static_passed','baseCommit':base,'runtimeFilesAdded':len(provenance['runtimeAdded']),'BPBytes':sum(p.stat().st_size for p in BP.rglob('*') if p.is_file()),'RPBytes':sum(p.stat().st_size for p in RP.rglob('*') if p.is_file()),'versions':provenance['versions'],'engineResults':'See INTEGRATION_REPORT.md; static validation does not certify engine acceptance.'}
 (ROOT/'docs/mycology/integrated-validation.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(summary,indent=2))

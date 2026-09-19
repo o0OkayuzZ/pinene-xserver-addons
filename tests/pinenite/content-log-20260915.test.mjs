@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const read = p => JSON.parse(readFileSync(root + p, 'utf8').replace(/^\uFEFF/, '')
@@ -49,15 +49,6 @@ test('normal block sounds and monstrosity reload resolve', () => {
   const pack = 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b/';
   const reload = read(pack + 'sounds/sound_definitions.json').sound_definitions['mob.monstrosity.reload'];
   for (const sound of reload.sounds) assert.ok(existsSync(root + pack + (typeof sound === 'string' ? sound : sound.name) + '.ogg'));
-});
-
-test('color grading excludes unsupported midtonesMax and keeps highlights in range', () => {
-  const pack = 'resource_packs/rp_10_917aab9c-5273-1000-ba5e-087a4328aa6b/color_grading/';
-  for (const file of readdirSync(root + pack).filter(f => f.endsWith('.json'))) {
-    const grading = read(pack + file)['minecraft:color_grading_settings'].color_grading;
-    assert.ok(!Object.hasOwn(grading.midtones, 'midtonesMax'), file);
-    assert.ok(grading.highlights.highlightsMin >= 1 && grading.highlights.highlightsMin <= 20, file);
-  }
 });
 
 test('all Mycology item icons and appraiser model assets exist', () => {
