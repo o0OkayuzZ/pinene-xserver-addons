@@ -54,7 +54,7 @@ import {
     inspectSourcePartsStorage,
     updateSourcePartsScenery,
 } from "./sourcePartsReconstructionV2.js";
-import { getSourcePartsSceneryStatus } from "./sourcePartsScenery.js";
+import { getSourcePartsSceneryStatus, inspectSourcePartsSceneryStorage } from "./sourcePartsScenery.js";
 import {
     getSourcePartsDemoEntranceTarget,
     setSourcePartsDemoExitTransferHandler,
@@ -1831,6 +1831,8 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
     const player = event.sourceEntity;
     if (!player) return;
     const records = inspectSourcePartsStorage();
+    const sceneryRecord = inspectSourcePartsSceneryStorage();
+    if (sceneryRecord) records.push(sceneryRecord);
     if (!records.length) {
         player.sendMessage("[ic-storage] saved reconstruction state: none");
         return;
