@@ -67,6 +67,10 @@ async function placePreviewPart(part, structureId, dimension, location, index) {
 
 export async function previewSourceParts(player) {
     if (!player) return;
+    if (player.dimension?.id !== "infinite_castle:dungeon") {
+        player.sendMessage("[infinite_castle] 素材建築プレビューは無限城ディメンション内でのみ実行できます");
+        return { ok: false, reason: "dimension" };
+    }
     if (previewInProgress) {
         player.sendMessage("[infinite_castle] 素材建築プレビューは既に実行中です");
         return;
