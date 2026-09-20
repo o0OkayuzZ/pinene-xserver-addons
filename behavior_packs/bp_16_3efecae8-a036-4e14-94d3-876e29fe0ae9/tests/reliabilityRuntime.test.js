@@ -70,7 +70,7 @@ test('planned reconstruction busy state does not show recovery UI or request rec
 });
 test('ready=false shows action bar at 3 seconds and requests only owner recovery at 20 seconds',async()=>{
     const h=await setup();mock.setPlayers([h.player]);h.api.phase1Enter(h.player);
-    let requests=0,busy=false;h.api.setPhase1Handlers({recover:()=>requests++,recoveryBusy:()=>busy});
+    let requests=0,busy=false;h.api.setPhase1Handlers({recover:()=>requests++,recoveryPending:()=>true,recoveryBusy:()=>busy});
     mock.world.setDynamicProperty(CORE,JSON.stringify({status:'RECOVERY_REQUIRED'}));
     h.tick(12);assert.equal(h.player.notices.includes('§e無限城を復旧中です…'),false);
     h.tick();assert.ok(h.player.notices.includes('§e無限城を復旧中です…'));
