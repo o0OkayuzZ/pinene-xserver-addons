@@ -1,5 +1,6 @@
 import { world, EntityEquippableComponent, EquipmentSlot, ItemStack, system } from "@minecraft/server";
 import { addItem, config_default, getEquip, setScore, hitEvent, dead_event, config, playerKey, visualTombsConfig } from './functions.js';
+import { shouldCreateTomb, clearDeathMarkers } from './deathPolicy.js';
 const w = world.getDimension("overworld");
 const entityHitSignal = world.afterEvents.entityHitEntity ?? world.afterEvents.entityHit;
 
@@ -51,10 +52,9 @@ world.afterEvents.playerSpawn.subscribe(spawn => {
 
     if (cords && dim) {
       playerKey(p, cords, dim);
-      p.removeTag("dead");
-      p.removeTag(`cords:${cords}`);
-      p.removeTag(`dim:${dim}`);
     }
+    // An incomplete legacy record must not disable every subsequent death.
+    clearDeathMarkers(p);
   }
 
   if (spawn.initialSpawn && !p.hasTag("key_config")) {
@@ -90,21 +90,19 @@ world.afterEvents.playerSpawn.subscribe(spawn => {
 
 world.afterEvents.entityDie.subscribe(dead => {
   const p = dead.deadEntity;
-  // Castle deaths use its temporary carry-in policy, never tomb/key creation.
-  if (p.dimension.id === "infinite_castle:dungeon") return;
-  if (!p.hasTag('dead')) {
-    if(!world.getDynamicProperty("empty_inv")){
-      if(!p.hasTag("empty") || p.hasTag("getHead") || p.hasTag("getChest") || p.hasTag("getLegs") || p.hasTag("getFFeet") || p.hasTag("getOff")){
-        dead_event(p)
-      }
-      if(p.hasTag("empty") && !p.hasTag("getHead") && !p.hasTag("getChest") && !p.hasTag("getLegs") && !p.hasTag("getFFeet") && !p.hasTag("getOff")){
-        p.sendMessage({translate: "action.graves.empty"})
-      }
+  if (p.typeId !== "minecraft:player") return;
+  try {
+    const decision = shouldCreateTomb(p, world.getDynamicProperty("empty_inv"), EquipmentSlot);
+    if (decision !== "create") {
+      console.warn(`[graves] death skipped: ${decision}`);
+      if (decision === "empty") p.sendMessage({translate: "action.graves.empty"});
+      return;
     }
-    if(world.getDynamicProperty("empty_inv")){
-     dead_event(p)
-   }
- }
+    dead_event(p);
+    console.warn(`[graves] tomb created in ${p.dimension.id}`);
+  } catch (error) {
+    console.error(`[graves] death processing failed: ${error?.stack ?? error}`);
+  }
 }, { entityTypes: ['minecraft:player'] });
 function stripLoreFormatting(value) {
   return String(value ?? "")
