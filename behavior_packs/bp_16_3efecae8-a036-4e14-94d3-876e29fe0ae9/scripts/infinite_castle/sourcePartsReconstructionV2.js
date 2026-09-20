@@ -91,6 +91,7 @@ const TICKING_AREA_LOAD_TIMEOUT_TICKS = 400;
 const DYNAMIC_TIER_ORDER = Object.freeze(["lower", "middle", "upper"]);
 let reconstructionInProgress = false;
 let hardLockedPlacements = [];
+const foreignPlanWarnings = new Set();
 const isHardLockedPoint = point => hardLockedPlacements.some(p => containsPlacement(p, point));
 
 function planDescriptor(plan) {
@@ -164,6 +165,98 @@ function safeSendMessage(player, message) {
     } catch {
         // The requesting player can leave or change state during the long phased build.
     }
+}
+
+function castleMutationAllowed(dimension, operation, player = undefined) {
+    const dimensionId = dimension?.id ?? "unknown";
+    if (dimensionId === SCENERY_DIMENSION_ID) return true;
+    const message = `[ic-dimension-guard] blocked ${operation} dimension=${dimensionId}`;
+    console.warn(message);
+    safeSendMessage(player, `[infinite_castle] 安全停止: 無限城外への書き込みを拒否しました dim=${dimensionId}`);
+    return false;
+}
+
+function warnForeignStoredPlan(key, plan) {
+    const dimensionId = plan?.dimensionId ?? "unknown";
+    const signature = `${key}:${dimensionId}`;
+    if (foreignPlanWarnings.has(signature)) return;
+    foreignPlanWarnings.add(signature);
+    console.warn(`[ic-dimension-guard] ignored stored plan key=${key} dimension=${dimensionId}`);
+}
+
+function diagnosticPlanBounds(plan) {
+    const points = [];
+    for (const placement of plan?.placements ?? []) {
+        if (!validPoint(placement?.origin) || !validPoint(placement?.size)) continue;
+        points.push(placement.origin, {
+            x: placement.origin.x + placement.size.x - 1,
+            y: placement.origin.y + placement.size.y - 1,
+            z: placement.origin.z + placement.size.z - 1,
+        });
+    }
+    for (const connection of plan?.connections ?? []) {
+        if (validPoint(connection?.from)) points.push(connection.from);
+        if (validPoint(connection?.to)) points.push(connection.to);
+    }
+    if (!points.length) return null;
+    return {
+        from: {
+            x: Math.min(...points.map((p) => p.x)),
+            y: Math.min(...points.map((p) => p.y)),
+            z: Math.min(...points.map((p) => p.z)),
+        },
+        to: {
+            x: Math.max(...points.map((p) => p.x)),
+            y: Math.max(...points.map((p) => p.y)),
+            z: Math.max(...points.map((p) => p.z)),
+        },
+    };
+}
+
+export function inspectSourcePartsStorage() {
+    const records = [];
+    for (const key of [STATE_KEY, ...LEGACY_STATE_KEYS]) {
+        const raw = world.getDynamicProperty(key);
+        if (typeof raw !== "string") continue;
+        let status = null;
+        try { status = JSON.parse(raw)?.status ?? null; } catch { /* reported below */ }
+        const plans = parseSourcePartsPlans(raw);
+        if (!plans.length) {
+            records.push({ key, kind: "state", status, dimensionId: "unparsed", foreign: false, bounds: null });
+            continue;
+        }
+        for (const plan of plans) {
+            records.push({
+                key,
+                kind: "state",
+                status,
+                dimensionId: plan.dimensionId,
+                foreign: plan.dimensionId !== SCENERY_DIMENSION_ID,
+                bounds: diagnosticPlanBounds(plan),
+            });
+        }
+    }
+    for (const [key, kind] of [[DETAILED_PLAN_KEY, "descriptor"], [ROLLBACK_KEY, "rollback"]]) {
+        const raw = world.getDynamicProperty(key);
+        if (typeof raw !== "string") continue;
+        try {
+            const value = JSON.parse(raw);
+            const dimensionId = value?.d ?? value?.dimensionId ?? "unknown";
+            records.push({
+                key,
+                kind,
+                status: null,
+                dimensionId,
+                foreign: dimensionId !== "unknown" && dimensionId !== SCENERY_DIMENSION_ID,
+                seed: Number.isFinite(value?.s) ? value.s >>> 0 : null,
+                anchor: Array.isArray(value?.a) ? value.a.slice(0, 3) : null,
+                bounds: null,
+            });
+        } catch {
+            records.push({ key, kind, status: null, dimensionId: "unparsed", foreign: false, bounds: null });
+        }
+    }
+    return records;
 }
 
 async function waitTicks(ticks) {
@@ -319,6 +412,9 @@ async function waitForTickingAreaLoaded(manager, name, options) {
 }
 
 async function withLoadedBounds(dimension, bounds, name, callback) {
+    if (!castleMutationAllowed(dimension, `loaded-bounds:${name}`)) {
+        throw new Error(`foreign dimension mutation blocked: ${dimension?.id ?? "unknown"}`);
+    }
     const manager = world.tickingAreaManager;
     let expanded = bounds;
     let stage = "preflight";
@@ -355,6 +451,10 @@ function loadStoredPlans() {
     const signatures = new Set();
     for (const key of [STATE_KEY, ...LEGACY_STATE_KEYS]) {
         for (const plan of parseSourcePartsPlans(world.getDynamicProperty(key))) {
+            if (plan.dimensionId !== SCENERY_DIMENSION_ID) {
+                warnForeignStoredPlan(key, plan);
+                continue;
+            }
             const signature = JSON.stringify(plan);
             if (signatures.has(signature)) continue;
             signatures.add(signature);
@@ -480,12 +580,17 @@ function resolveStructureId(variantId, packIds) {
 }
 
 async function clearPlan(plan) {
+    if (plan?.dimensionId !== SCENERY_DIMENSION_ID) {
+        warnForeignStoredPlan("clearPlan", plan);
+        return 0;
+    }
     let dimension;
     try {
-        dimension = world.getDimension(plan.dimensionId);
+        dimension = world.getDimension(SCENERY_DIMENSION_ID);
     } catch {
         return 0;
     }
+    if (!castleMutationAllowed(dimension, "clearPlan")) return 0;
     const bounds = [
         ...plan.placements.map(placementBounds),
         ...plan.connections.map(connectionBounds),
@@ -1210,9 +1315,13 @@ async function recoverInterruptedDynamicState(
     const recoveredPlans = remaining.length;
     for (let recoveryIndex = 0; remaining.length > 0; recoveryIndex += 1) {
         const current = remaining[0];
-        const recoveryDimension = current.dimensionId === requestedDimension.id
-            ? requestedDimension
-            : world.getDimension(current.dimensionId);
+        if (current.dimensionId !== SCENERY_DIMENSION_ID) {
+            warnForeignStoredPlan("recovery", current);
+            remaining = remaining.slice(1);
+            saveReconstructionState("RECOVERING", [oldPlan, ...remaining]);
+            continue;
+        }
+        const recoveryDimension = requestedDimension;
         const sceneryPreparation = await prepareSourcePartsSceneryForDynamicCore(
             current,
             recoveryDimension,
@@ -2079,6 +2188,9 @@ export async function rebuildSourcePartsV2(player, rawOptions = "", target = und
         if (!dimension || !validPoint(startLocation)) {
             throw new Error("rebuild target dimension/location is invalid");
         }
+        if (!castleMutationAllowed(dimension, "rebuildSourcePartsV2", player)) {
+            return { ok: false, reason: "dimension" };
+        }
         const playStartCue = createRebuildStartCue(dimension);
         let previous = null;
         if (target?.visualTest) {
@@ -2280,6 +2392,7 @@ async function recoverSourcePartsOwned(dimension) {
 }
 
 export async function recoverSourceParts(dimension) {
+    if (!castleMutationAllowed(dimension, "recoverSourceParts")) return { ok: false, reason: "dimension" };
     if (isSourcePartsReconstructionInProgress()) return { ok: false, reason: "busy" };
     reconstructionInProgress = true;
     try {
@@ -2362,6 +2475,9 @@ export async function reconstructSourcePartsAroundPlayers(
     seed = Date.now() >>> 0
 ) {
     if (!dimension) return { ok: false, reason: "missing_dimension" };
+    if (!castleMutationAllowed(dimension, "reconstructSourcePartsAroundPlayers")) {
+        return { ok: false, reason: "dimension" };
+    }
     if (reconstructionInProgress || isSourcePartsSceneryInProgress()) {
         return { ok: false, reason: "busy" };
     }
@@ -2705,6 +2821,9 @@ export async function updateSourcePartsScenery(dimension, options = {}) {
 
 export async function clearSourcePartsV2(player, rawOptions = "") {
     if (!player) return;
+    if (!castleMutationAllowed(player.dimension, "clearSourcePartsV2", player)) {
+        return { ok: false, reason: "dimension" };
+    }
     if (String(rawOptions ?? "").trim().toLowerCase() !== "confirm") {
         safeSendMessage(
             player,
@@ -2787,6 +2906,9 @@ function parseSceneryCommandOptions(rawOptions) {
 
 export async function rebuildSourcePartsSceneryForPlayer(player, rawOptions = "") {
     if (!player) return { ok: false, reason: "missing_player" };
+    if (!castleMutationAllowed(player.dimension, "rebuildSourcePartsSceneryForPlayer", player)) {
+        return { ok: false, reason: "dimension" };
+    }
     if (reconstructionInProgress || isSourcePartsSceneryInProgress()) {
         safeSendMessage(player, "[infinite_castle] 別の再構築処理が進行中です");
         return { ok: false, reason: "busy" };
@@ -2816,6 +2938,9 @@ export async function rebuildSourcePartsSceneryForPlayer(player, rawOptions = ""
 
 export async function clearSourcePartsSceneryForPlayer(player, rawOptions = "") {
     if (!player) return { ok: false, reason: "missing_player" };
+    if (!castleMutationAllowed(player.dimension, "clearSourcePartsSceneryForPlayer", player)) {
+        return { ok: false, reason: "dimension" };
+    }
     if (String(rawOptions ?? "").trim().toLowerCase() !== "confirm") {
         safeSendMessage(
             player,
