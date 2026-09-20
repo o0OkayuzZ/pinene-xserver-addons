@@ -28,8 +28,26 @@ const ROSE_QUARTZ_POOL = [
 	"minecraft:redstone"
 ];
 
-const NORMAL_CLUSTER_CHANCE = [0.02, 0.05, 0.08, 0.12];
-const ROSE_QUARTZ_CHANCE = [0.25, 0.5, 0.75, 1.0];
+const CLUSTER_DROP_PROFILES = {
+	coal: { chances: [1.0, 1.0, 1.0, 1.0], counts: [[1, 2], [1, 3], [2, 4], [3, 6]] },
+	copper: { chances: [1.0, 1.0, 1.0, 1.0], counts: [[2, 4], [3, 6], [4, 8], [6, 12]] },
+	iron: { chances: [0.8, 0.9, 1.0, 1.0], counts: [[1, 2], [1, 3], [2, 4], [3, 5]] },
+	redstone: { chances: [1.0, 1.0, 1.0, 1.0], counts: [[2, 4], [3, 6], [4, 8], [6, 10]] },
+	lapis_lazuli: { chances: [1.0, 1.0, 1.0, 1.0], counts: [[2, 4], [3, 6], [4, 8], [6, 10]] },
+	gold: { chances: [0.7, 0.8, 0.9, 1.0], counts: [[1, 2], [1, 3], [2, 4], [2, 5]] },
+	emerald: { chances: [0.4, 0.55, 0.7, 0.85], counts: [[1, 1], [1, 1], [1, 2], [1, 3]] },
+	diamond: { chances: [0.2, 0.3, 0.45, 0.6], counts: [[1, 1], [1, 1], [1, 2], [1, 2]] },
+	echo: { chances: [0.15, 0.25, 0.35, 0.5], counts: [[1, 1], [1, 1], [1, 1], [1, 2]] },
+	netherite: { chances: [0.05, 0.08, 0.12, 0.18], counts: [[1, 1], [1, 1], [1, 1], [1, 2]] },
+	quartz: { chances: [1.0, 1.0, 1.0, 1.0], counts: [[3, 6], [4, 8], [6, 12], [8, 16]] }
+};
+
+const ROSE_QUARTZ_DROP_PROFILES = [
+	{ chance: 0.5, count: [1, 1] },
+	{ chance: 0.7, count: [1, 2] },
+	{ chance: 0.85, count: [1, 2] },
+	{ chance: 1.0, count: [2, 3] }
+];
 
 
 function parseOreNameFromTypeId(typeId) {
@@ -303,34 +321,25 @@ function handleClusterBreakDrop(event) {
 	const ore = parseOreNameFromTypeId(brokenId);
 	const fortune = getFortuneLevel(player);
 
-	if (ore === "quartz") {
-		const ranges = [
-			[2, 4],
-			[4, 8],
-			[6, 12],
-			[8, 16]
-		];
-		const [minCount, maxCount] = ranges[fortune] ?? ranges[3];
-		spawnAtCenter(block, "minecraft:quartz", randomInt(minCount, maxCount));
-		return;
-	}
-
 	if (ore === "rose_quartz") {
-		const chance = ROSE_QUARTZ_CHANCE[fortune] ?? 1.0;
-		if (Math.random() < chance) {
-			spawnAtCenter(block, choose(ROSE_QUARTZ_POOL), 1);
+		const profile = ROSE_QUARTZ_DROP_PROFILES[fortune] ?? ROSE_QUARTZ_DROP_PROFILES[3];
+		if (Math.random() < profile.chance) {
+			const [minCount, maxCount] = profile.count;
+			spawnAtCenter(block, choose(ROSE_QUARTZ_POOL), randomInt(minCount, maxCount));
 		}
 		return;
 	}
 
 	const itemId = ORE_ITEM_MAP[ore];
-	if (!itemId) return;
-	const chance = NORMAL_CLUSTER_CHANCE[fortune] ?? 0.12;
+	const profile = CLUSTER_DROP_PROFILES[ore];
+	if (!itemId || !profile) return;
+
+	const chance = profile.chances[fortune] ?? profile.chances[3];
+	const [minCount, maxCount] = profile.counts[fortune] ?? profile.counts[3];
 	if (Math.random() < chance) {
-		spawnAtCenter(block, itemId, 1);
+		spawnAtCenter(block, itemId, randomInt(minCount, maxCount));
 	}
 }
-
 function handleBuddingBreakDrop(event) {
 	const block = event.block;
 	const brokenId = event.brokenBlockPermutation?.type?.id ?? block.typeId;
