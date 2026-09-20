@@ -1,3 +1,4 @@
+import "./gf/index.js";
 import "./mycology/index.js";
 import { world, ItemStack, system, BlockPermutation, EntityDamageCause } from "@minecraft/server";
 import { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";

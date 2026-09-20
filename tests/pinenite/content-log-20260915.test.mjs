@@ -54,7 +54,9 @@ test('normal block sounds and monstrosity reload resolve', () => {
 test('all Mycology item icons and appraiser model assets exist', () => {
   const pack = 'resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/';
   const icons = Object.entries(read(pack + 'textures/item_texture.json').texture_data).filter(([k]) => k.startsWith('pinene_myco_'));
-  assert.equal(icons.length, 36);
+  const nether = read('tools/mycology/data/nether_fungi_master_v1.0.json').entries;
+  assert.equal(icons.filter(([key]) => !key.startsWith('pinene_myco_nf_')).length, 36);
+  assert.equal(icons.filter(([key]) => key.startsWith('pinene_myco_nf_')).length, nether.length);
   for (const [, icon] of icons) assert.ok(existsSync(root + pack + icon.textures + '.png'), icon.textures);
   const desc = read(pack + 'entity/mushroom_appraiser.entity.json')['minecraft:client_entity'].description;
   const geos = read(pack + 'models/entity/mushroom_appraiser.geo.json')['minecraft:geometry'];
