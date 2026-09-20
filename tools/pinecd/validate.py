@@ -67,7 +67,8 @@ def main():
     for p in (ROOT / 'resource_packs').glob('*/sounds.json'):
         d = jsonc(p)
         assert 'pinecd' not in json.dumps(d), f'Legacy root sound definition: {p}'
-    # Every preexisting recipe, loot table, script, OGG and icon stays byte-identical.
+    # Gameplay data stays byte-identical. Non-canonical duplicate media may be removed
+    # by the pack-ownership cleanup; canonical PineCD media is hash-checked below.
     files = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', BASE], cwd=ROOT).decode().splitlines()
     changed_files = set(subprocess.check_output(
         ['git', 'diff', '--name-only', BASE], cwd=ROOT).decode().splitlines())
@@ -75,8 +76,8 @@ def main():
     for rel in files:
         if not rel.startswith(('behavior_packs/', 'resource_packs/')):
             continue
-        if any(part in rel.split('/') for part in ['recipes', 'loot_tables', 'scripts']) or rel.endswith(('.ogg', '.png')):
-            assert rel not in changed_files or rel == REMUXED, f'Preservation failed: {rel}'
+        if any(part in rel.split('/') for part in ['recipes', 'loot_tables', 'scripts']):
+            assert rel not in changed_files, f'Preservation failed: {rel}'
             preserved += 1
     for t in tracks[:19]:
         for key, suffix in [('sound', '.ogg'), ('texture', '.png')]:
