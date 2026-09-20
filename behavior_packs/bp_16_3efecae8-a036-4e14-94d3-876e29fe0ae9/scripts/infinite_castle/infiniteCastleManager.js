@@ -1812,7 +1812,7 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
             // Keep -1 as the diagnostic value.
         }
         player.sendMessage(
-            `[ic-debug] sourceDynamic=5-15m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - reconstructionNow()) / 20))} `
+            `[ic-debug] sourceDynamic=${PHASE1.dynamicReconstructionIntervalMinutes.min}-${PHASE1.dynamicReconstructionIntervalMinutes.max}m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - reconstructionNow()) / 20))} `
             + `inProgress=${sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()} `
             + `dungeonPlayers=${dungeonPlayers} progression=off`
             + ` sceneryInterval=${PHASE1.sceneryReconstructionIntervalSeconds.min}-${PHASE1.sceneryReconstructionIntervalSeconds.max}s sceneryNext=${Number.isFinite(sceneryNext) ? Math.max(0, Math.ceil((sceneryNext - reconstructionNow()) / 20)) : "idle"}`
