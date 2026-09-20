@@ -1,0 +1,27 @@
+name: Test Infinite Castle exporter
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s tools/infinite_castle_mirror -p 'test_*.py' -v
+      - name: Validate actual committed source layout and reproducibility
+        shell: bash
+        run: |
+          set -euo pipefail
+          target="$RUNNER_TEMP/castle-export"
+          mkdir -p "$target"
+          python3 tools/infinite_castle_mirror/sync.py sync --source . --target "$target"
+          python3 tools/infinite_castle_mirror/sync.py verify --source . --target "$target"
+          cp "$target/SOURCE_COMMIT.json" "$RUNNER_TEMP/first-source.json"
+          python3 tools/infinite_castle_mirror/sync.py sync --source . --target "$target"
+          cmp "$target/SOURCE_COMMIT.json" "$RUNNER_TEMP/first-source.json"

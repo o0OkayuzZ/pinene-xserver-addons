@@ -1,0 +1,95 @@
+name: Sync Infinite Castle mirror
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: infinite-castle-mirror-main
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'o0OkayuzZ/pinene-xserver-addons' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out latest source main (including provenance history)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          path: source
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Test exporter
+        run: python3 -m unittest discover -s source/tools/infinite_castle_mirror -p 'test_*.py' -v
+      - name: Check out mirror main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: o0OkayuzZ/pinene-infinite-castle
+          ref: main
+          path: mirror
+          persist-credentials: false
+      - name: Export and verify only managed contents
+        id: diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 source/tools/infinite_castle_mirror/sync.py sync --source source --target mirror
+          git -C mirror -c core.autocrlf=false add -A
+          if git -C mirror diff --cached --quiet; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo 'Mirror content is already current; provenance retained.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+            git -C mirror diff --cached --stat >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Require scoped cross-repository credentials
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          APP_CLIENT_ID: ${{ vars.INFINITE_CASTLE_MIRROR_APP_CLIENT_ID }}
+          APP_PRIVATE_KEY: ${{ secrets.INFINITE_CASTLE_MIRROR_APP_PRIVATE_KEY }}
+          MIRROR_TOKEN: ${{ secrets.INFINITE_CASTLE_MIRROR_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -n "$APP_CLIENT_ID" && -n "$APP_PRIVATE_KEY" ]] || [[ -n "$MIRROR_TOKEN" ]]; then
+            exit 0
+          fi
+          echo '::error::Configure INFINITE_CASTLE_MIRROR_APP_CLIENT_ID + INFINITE_CASTLE_MIRROR_APP_PRIVATE_KEY, or fine-grained INFINITE_CASTLE_MIRROR_TOKEN. See docs/operations/infinite-castle-mirror.md.'
+          exit 1
+      - name: Create short-lived GitHub App token
+        id: app
+        if: steps.diff.outputs.changed == 'true' && vars.INFINITE_CASTLE_MIRROR_APP_CLIENT_ID != ''
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+        with:
+          client-id: ${{ vars.INFINITE_CASTLE_MIRROR_APP_CLIENT_ID }}
+          private-key: ${{ secrets.INFINITE_CASTLE_MIRROR_APP_PRIVATE_KEY }}
+          owner: o0OkayuzZ
+          repositories: pinene-infinite-castle
+          permission-contents: write
+          permission-workflows: write
+      - name: Publish one verified fast-forward commit
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token || secrets.INFINITE_CASTLE_MIRROR_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C source fetch origin main
+          test "$(git -C source rev-parse HEAD)" = "$(git -C source rev-parse origin/main)" || {
+            echo '::error::Source main advanced. Rerun against latest main; no mirror update published.'
+            exit 1
+          }
+          python3 source/tools/infinite_castle_mirror/sync.py verify --source source --target mirror
+          git -C mirror config user.name 'Infinite Castle mirror bot'
+          git -C mirror config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          source_sha=$(git -C source rev-parse HEAD)
+          git -C mirror commit -m "chore(mirror): auto-sync from pinene-xserver-addons@$source_sha"
+          # The credential is supplied via environment/helper, never a remote URL or file.
+          gh auth setup-git
+          git -C mirror push origin HEAD:main
+          echo "Published source $source_sha to mirror/main." >> "$GITHUB_STEP_SUMMARY"

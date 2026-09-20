@@ -1,0 +1,43 @@
+name: Verify mirror provenance
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 3 * * *'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: mirror
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: o0OkayuzZ/pinene-xserver-addons
+          ref: main
+          path: source
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify recorded commit belongs to source main and reproduce export
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha=$(python3 - <<'PY'
+          import json, re
+          from pathlib import Path
+          meta = json.loads(Path('mirror/SOURCE_COMMIT.json').read_bytes())
+          assert meta['source_repository'] == 'o0OkayuzZ/pinene-xserver-addons'
+          assert meta['source_branch'] == 'main'
+          assert re.fullmatch('[0-9a-f]{40}', meta['source_commit'])
+          print(meta['source_commit'])
+          PY
+          )
+          git -C source merge-base --is-ancestor "$sha" origin/main
+          git -C source checkout --detach "$sha"
+          python3 source/tools/infinite_castle_mirror/sync.py verify --source source --target mirror

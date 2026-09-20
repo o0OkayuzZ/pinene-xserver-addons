@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "source_repository": "o0OkayuzZ/pinene-xserver-addons",
+  "source_branch": "main",
+  "mirror_repository": "o0OkayuzZ/pinene-infinite-castle",
+  "packs": [
+    {"uuid": "3efecae8-a036-4e14-94d3-876e29fe0ae9", "target": "behavior_packs/infinite_castle"},
+    {"uuid": "c6529ee0-0a34-4f28-b5ff-66d335fee9bc", "target": "resource_packs/infinite_castle"}
+  ],
+  "files": {
+    "tools/infinite_castle_mirror/templates/README.md": "README.md",
+    "tools/infinite_castle_mirror/templates/AGENTS.md": "AGENTS.md",
+    "tools/infinite_castle_mirror/templates/verify-mirror.yml": ".github/workflows/verify-mirror.yml",
+    "docs/dimensions/infinite-castle.md": ".mirror/docs/infinite-castle.md",
+    "docs/operations/infinite-castle-mirror.md": ".mirror/docs/operations.md"
+  }
+}
