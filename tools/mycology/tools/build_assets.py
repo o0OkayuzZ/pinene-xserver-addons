@@ -4,9 +4,10 @@ Builds actual Bedrock geometry and texture; previews render that same mesh.
 """
 from pathlib import Path
 import json, math, random, sys
-from build_items import sync_icons
+from build_items import sync_icons, sync_nether_icons
 # Validate canonical artwork before generating any assets.
 sync_icons()
+sync_nether_icons()
 from build_field_guide import sync_guide_texture
 sync_guide_texture()
 if "--items-only" in sys.argv:

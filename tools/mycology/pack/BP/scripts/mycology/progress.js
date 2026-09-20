@@ -1,5 +1,5 @@
 import { bitAddress, validWord, hasBit, progressUpdates } from './core.js';
-import { MUSHROOMS } from './registry.js';
+import { ALL_FUNGI } from './registry.js';
 const key=(group,word)=>`pinene:myco_seen_${group}_${word}`;
 export function readWord(player,group,word) {
  let value=player.getDynamicProperty(key(group,word));
@@ -23,7 +23,7 @@ export function registerDiscoveries(player,definitions) {
  return discovered;
 }
 export function counts(player) {
- const result={red:0,brown:0,total:0};
- for (const d of MUSHROOMS) if(seen(player,d)){result[d.group]++;result.total++;}
+ const result={red:0,brown:0,crimson:0,warped:0,total:0};
+ for (const d of ALL_FUNGI) if(seen(player,d)){result[d.group]++;result.total++;}
  return result;
 }

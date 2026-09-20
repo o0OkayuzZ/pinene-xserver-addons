@@ -28,6 +28,11 @@ test('milk and stew consume once, have no regeneration V, do not clear other buf
   for(let i=0;i<calls.length;i++)assert.equal(calls[i][1],data['a:'+id].effects[i].seconds*20);
  }
 });
+test('golden food guide has the requested glint',()=>{
+ const guide=JSON.parse(read('behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_food_guide.json'))['minecraft:item'];
+ assert.equal(guide.description.identifier,'pinene:golden_food_guide');
+ assert.equal(guide.components['minecraft:glint'],true);
+});
 test('all 19 golden guide detail screens render names, chemistry, design rationale and real effect values',async()=>{
  const guide=read(staged+'scripts/golden_foods/guide.js').replace(/^import .*;$/gm,'').replace('export async function','async function');
  const listed=Object.entries(data).filter(([id])=>id!=="a:astew").map(([,food])=>food);

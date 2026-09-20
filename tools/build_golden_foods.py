@@ -92,7 +92,7 @@ def build(args):
     # Registered guide is separate from eating; no food callback ever opens UI.
     write(BP / "items/golden_food_guide.json", {"format_version":"1.21.90","minecraft:item":{"description":{"identifier":"pinene:golden_food_guide","menu_category":{"category":"items"}},"components":{
         "minecraft:display_name":{"value":"金食料図鑑"},"minecraft:icon":"pinene_golden_foods_guide","minecraft:max_stack_size":1,
-        "pinene:golden_food_guide":{}}}})
+        "minecraft:glint":True,"pinene:golden_food_guide":{}}}})
     atlas["texture_data"]["pinene_golden_foods_guide"]={"textures":"textures/pinene_golden_foods/guide"}
     write(RP / "textures/item_texture.json", atlas)
     write(BP / "recipes/golden_food_guide.json", {"format_version":"1.20.10","minecraft:recipe_shapeless":{"description":{"identifier":"pinene:golden_food_guide"},"tags":["crafting_table"],"ingredients":[{"item":"minecraft:book"},{"item":"minecraft:gold_nugget"}],"result":{"item":"pinene:golden_food_guide","count":1},"unlock":[{"item":"minecraft:book"}]}})

@@ -7,7 +7,11 @@ export function weight(rarity) {
 export function makeTable(definitions) {
   if (!definitions.length) throw new RangeError('empty appraisal table');
   let total = 0;
-  const entries = definitions.map(d => ({ definition:d, upper:(total += weight(d.rarity)) }));
+  const entries = definitions.map(d => {
+    const drawWeight=d.drawWeight??weight(d.rarity);
+    if (!Number.isSafeInteger(drawWeight)||drawWeight<1) throw new RangeError('drawWeight must be a positive integer');
+    return {definition:d,upper:(total+=drawWeight)};
+  });
   return { entries, total };
 }
 export function draw(table, rng = Math.random) {

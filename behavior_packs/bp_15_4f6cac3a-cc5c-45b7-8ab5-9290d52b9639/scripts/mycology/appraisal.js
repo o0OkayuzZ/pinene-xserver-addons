@@ -1,13 +1,14 @@
 import { ItemStack } from '@minecraft/server';
 import { makeTable,rollBatch,selectFirstStack,planInventory } from './core.js';
-import { MUSHROOMS,BY_ID } from './registry.js';
+import { ALL_FUNGI,BY_ID } from './registry.js';
 import { inventory,readJSON,writeJSON,logError } from './util.js';
 import { registerDiscoveries } from './progress.js';
 import { CONFIG } from './config.js';
-const tables={red:makeTable(MUSHROOMS.filter(x=>x.group==='red')),brown:makeTable(MUSHROOMS.filter(x=>x.group==='brown'))};
+const tables=Object.fromEntries(['red','brown','crimson','warped'].map(group=>[group,makeTable(ALL_FUNGI.filter(x=>x.group===group))]));
+const INPUTS={red:'minecraft:red_mushroom',brown:'minecraft:brown_mushroom',crimson:'minecraft:crimson_fungus',warped:'minecraft:warped_fungus'};
 const locks=new Set();
 export function owned(player,group) {
- const c=inventory(player),id=`minecraft:${group}_mushroom`;
+ const c=inventory(player),id=INPUTS[group];
  const slots=Array.from({length:c.size},(_,i)=>c.getItem(i));
  return {total:slots.reduce((n,x)=>n+(x?.typeId===id?x.amount:0),0),first:selectFirstStack(slots,id)};
 }
@@ -36,7 +37,7 @@ export function appraise(player,group,validateNpc) {
  try {
   validateNpc();recoverDelivery(player);validateNpc();
   const c=inventory(player),before=Array.from({length:c.size},(_,i)=>c.getItem(i));
-  const input=`minecraft:${group}_mushroom`,source=selectFirstStack(before,input);
+  const input=INPUTS[group],source=selectFirstStack(before,input);
   if(!source)throw new Error('鑑定するキノコを持っていません。');
   const results=rollBatch(tables[group],source.amount),outputs=results.map(x=>({typeId:BY_ID.get(x.id).itemId,amount:x.amount}));
   const prototypes=new Map(outputs.map(x=>[x.typeId,new ItemStack(x.typeId,1)]));

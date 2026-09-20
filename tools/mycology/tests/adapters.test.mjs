@@ -2,7 +2,9 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import { world,system,FakeEntity,ItemStack,Container,Dimension,reset } from './mock-minecraft.mjs';
 import { appraise,recoverDelivery,receipt } from '../pack/BP/scripts/mycology/appraisal.js';
 import { readWord,seen } from '../pack/BP/scripts/mycology/progress.js';
-import { MUSHROOMS } from '../pack/BP/scripts/mycology/registry.js';
+import { MUSHROOMS,NETHER_FUNGI } from '../pack/BP/scripts/mycology/registry.js';
+import { makeTable } from '../pack/BP/scripts/mycology/core.js';
+import { counts } from '../pack/BP/scripts/mycology/progress.js';
 import { consume,installEffects } from '../pack/BP/scripts/mycology/effects.js';
 import { installNpc,initializeNpc,canUse } from '../pack/BP/scripts/mycology/npc.js';
 import { CONFIG } from '../pack/BP/scripts/mycology/config.js';
@@ -10,6 +12,23 @@ installNpc();installEffects();
 const spawnMinute=[...system.intervals.values()].find(x=>x.ticks===1200).f;
 function player(){const p=new FakeEntity('p');world.entities.set(p.id,p);return p;}
 function withRandom(fn,rng){const old=Math.random;Math.random=rng;try{return fn();}finally{Math.random=old;}}
+
+test('all NF species can be appraised in their family and persist independent discoveries',()=>{
+ reset();const p=player();
+ for(const group of ['crimson','warped']){
+  const table=makeTable(NETHER_FUNGI.filter(d=>d.group===group));let lower=0;
+  for(const {definition:d,upper} of table.entries){
+   p.c.setItem(0,new ItemStack(`minecraft:${group}_fungus`,1));
+   const batch=withRandom(()=>appraise(p,group,()=>{}),()=>(lower+0.5)/table.total);
+   assert.equal(p.c.getItem(0).typeId,d.itemId);
+   assert.deepEqual(batch.fresh,[d.id]);assert(seen(p,d));assert.equal(receipt(p),null);
+   lower=upper;
+  }
+ }
+ assert.deepEqual(counts(p),{red:0,brown:0,crimson:50,warped:50,total:100});
+ for(const d of NETHER_FUNGI)assert(seen(p,d));
+ assert.equal(counts(new FakeEntity('other')).total,0);
+});
 test('adapter: one 37-stack becomes 37 results, next 64 untouched',()=>{reset();const p=player();p.c.setItem(0,new ItemStack('minecraft:red_mushroom',37));p.c.setItem(1,new ItemStack('minecraft:red_mushroom',64));const b=withRandom(()=>appraise(p,'red',()=>{}),()=>0);assert.equal(b.count,37);assert.equal(p.c.getItem(1).amount,64);assert.equal(p.c.getItem(0).typeId,MUSHROOMS[0].itemId);assert.equal(p.c.getItem(0).amount,37);assert.deepEqual(b.fresh,['R01']);assert.equal(receipt(p),null);});
 test('adapter: invalid NPC before commit cannot consume input',()=>{reset();const p=player();p.c.setItem(0,new ItemStack('minecraft:red_mushroom',64));assert.throws(()=>appraise(p,'red',()=>{throw new Error('dead NPC');}));assert.equal(p.c.getItem(0).amount,64);assert.equal(receipt(p),null);});
 test('adapter: synchronous slot-write exception rolls back cloned inventory',()=>{reset();const p=player();p.c.setItem(0,new ItemStack('minecraft:red_mushroom',64));p.c.setItem(1,new ItemStack('minecraft:stone',17));p.c.failOnceAt=1;assert.throws(()=>appraise(p,'red',()=>{}));assert.equal(p.c.getItem(0).typeId,'minecraft:red_mushroom');assert.equal(p.c.getItem(1).amount,17);assert.equal(receipt(p),null);});

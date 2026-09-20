@@ -1,10 +1,28 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import { weight,makeTable,draw,rollBatch,bitAddress,hasBit,withBit,selectFirstStack,planInventory,progressUpdates } from '../pack/BP/scripts/mycology/core.js';
-import { MUSHROOMS } from '../pack/BP/scripts/mycology/registry.js';
+import { MUSHROOMS,NETHER_FUNGI,ALL_FUNGI } from '../pack/BP/scripts/mycology/registry.js';
 const red=MUSHROOMS.filter(x=>x.group==='red'),brown=MUSHROOMS.filter(x=>x.group==='brown');
 test('35 immutable species, 15 red / 20 brown',()=>{assert.equal(red.length,15);assert.equal(brown.length,20);assert.equal(new Set(MUSHROOMS.map(x=>x.itemId)).size,35);for(const d of MUSHROOMS)assert.equal(d.indexInGroup,Number(d.id.slice(1))-1);});
+test('100 nether specimens, exact families and extensible identifiers',()=>{
+ assert.equal(NETHER_FUNGI.length,100);assert.equal(ALL_FUNGI.length,135);
+ assert.equal(NETHER_FUNGI.filter(x=>x.group==='crimson').length,50);
+ assert.equal(NETHER_FUNGI.filter(x=>x.group==='warped').length,50);
+ for(const d of NETHER_FUNGI){
+  const n=Number(d.id.slice(3)),slug=`nf_${String(n).padStart(3,'0')}`;
+  assert.equal(d.itemId,`pinene:${slug}`);assert.equal(d.textureKey,`pinene_myco_${slug}`);
+  assert.equal(d.texturePath,`textures/items/mycology/nf/${slug}`);
+  assert.equal(d.drawWeight,d.draw_weight);assert.equal(d.useMode,'specimen');
+ }
+});
 test('weights 512..1, reject rarity zero and 11',()=>{assert.deepEqual(Array.from({length:10},(_,i)=>weight(i+1)),[512,256,128,64,32,16,8,4,2,1]);for(const n of [0,11,1.5,NaN])assert.throws(()=>weight(n));});
 test('exact current sums: 2899 and 3183',()=>{assert.equal(makeTable(red).total,2899);assert.equal(makeTable(brown).total,3183);});
+test('explicit NF weights override exponential rarity',()=>{
+ for(const group of ['crimson','warped']){
+  const defs=NETHER_FUNGI.filter(x=>x.group===group),table=makeTable(defs);
+  assert.equal(table.total,defs.reduce((sum,d)=>sum+d.draw_weight,0));
+ }
+ assert.equal(makeTable([{rarity:10,drawWeight:19}]).total,19);
+});
 for(const [group,defs] of [['red',red],['brown',brown]])test(`${group}: exhaustively enumerate every integer ticket`,()=>{
  const t=makeTable(defs),seen=new Map();for(let i=0;i<t.total;i++){const d=draw(t,()=> (i+0.5)/t.total);seen.set(d.id,(seen.get(d.id)??0)+1);}
  for(const d of defs)assert.equal(seen.get(d.id),weight(d.rarity));

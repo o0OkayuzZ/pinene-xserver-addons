@@ -16,7 +16,9 @@ const GROUPS={
 export function speciesVoice(d){
   const theme=Object.keys(GROUPS).find(k=>GROUPS[k].includes(d.id))??'bright';
   const voice=THEMES[theme];
-  const seed=(d.group==='brown'?15:0)+Number(d.id.slice(1))-1;
+  const ordinal=Number(d.id.match(/\d+$/)?.[0]??1)-1;
+  const offsets={red:0,brown:15,crimson:35,warped:85};
+  const seed=(offsets[d.group]??0)+ordinal;
   return {...voice,theme,motif:[0,voice.scale[seed%7],voice.scale[Math.floor(seed/7)%7],12],
     pitch:semitone=>Math.min(2,0.44*2**(semitone/12))};
 }

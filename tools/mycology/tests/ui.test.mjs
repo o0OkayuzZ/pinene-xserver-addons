@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { world,FakeEntity,ItemStack,reset } from './mock-minecraft.mjs';
 import { forms,responses } from './mock-forms.mjs';
 import { openAppraiser,encyclopedia } from '../pack/BP/scripts/mycology/ui.js';
-import { MUSHROOMS } from '../pack/BP/scripts/mycology/registry.js';
+import { MUSHROOMS,ALL_FUNGI,NETHER_FUNGI } from '../pack/BP/scripts/mycology/registry.js';
 import { registerDiscoveries } from '../pack/BP/scripts/mycology/progress.js';
 import { receipt } from '../pack/BP/scripts/mycology/appraisal.js';
 import { CONFIG } from '../pack/BP/scripts/mycology/config.js';
@@ -21,6 +21,18 @@ function resetFormatting(value){
   if(value.includes('§'))assert.equal(value.slice(value.lastIndexOf('§'),value.lastIndexOf('§')+2),'§r',value);
  }else if(value?.rawtext)for(const part of value.rawtext)resetFormatting(part.text);
 }
+test('NF encyclopedia pages display every approved name and matching icon',async()=>{
+ for(const [selection,group] of [[2,'crimson'],[3,'warped']]){
+  const {p}=setup();registerDiscoveries(p,NETHER_FUNGI);
+  responses.push({selection},{selection:10},{selection:11},{selection:11},{selection:11},{canceled:true},{canceled:true});
+  await encyclopedia(p);
+  const defs=NETHER_FUNGI.filter(d=>d.group===group);
+  for(let page=0;page<5;page++)for(let i=0;i<10;i++){
+   const button=forms[page+1].form.buttons[i],d=defs[page*10+i];
+   assert(button.label.includes(d.nameJa));assert.equal(button.icon,d.texturePath);
+  }
+ }
+});
 for(const amount of [1,37,64])test(`result UI: ${amount} items, NEW, committed receipt, no next stack`,async()=>{
  const {p,npc}=setup();p.c.setItem(0,new ItemStack('minecraft:red_mushroom',amount));
  const rng=Math.random;Math.random=()=>0;
@@ -35,7 +47,7 @@ for(const amount of [1,37,64])test(`result UI: ${amount} items, NEW, committed r
  const result=forms[1].form;
  assert(result.heading.includes(`${amount}連`));
  assert(result.content.includes('§e§lNEW!§r'));
- assert(result.content.includes('図鑑：0 → §a1§r / 35'));
+ assert(result.content.includes(`図鑑：0 → §a1§r / ${ALL_FUNGI.length}`));
  assert.equal(result.content.includes('MAX STACK / 64連'),amount===64);
  assert.equal(result.buttons[0].label,'鑑定メニューへ戻る');
  assert.equal(p.messages.length,0);

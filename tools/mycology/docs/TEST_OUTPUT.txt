@@ -1,233 +1,251 @@
-$ node --test tests/core.test.mjs
+$ C:\Users\はーに~1\AppData\Local\Temp\pine-nf-node-v22.16.0\node.EXE --test tests/core.test.mjs
 TAP version 13
 # Subtest: 35 immutable species, 15 red / 20 brown
 ok 1 - 35 immutable species, 15 red / 20 brown
   ---
-  duration_ms: 1.1271
+  duration_ms: 1.1458
+  type: 'test'
+  ...
+# Subtest: 100 nether specimens, exact families and extensible identifiers
+ok 2 - 100 nether specimens, exact families and extensible identifiers
+  ---
+  duration_ms: 0.9939
   type: 'test'
   ...
 # Subtest: weights 512..1, reject rarity zero and 11
-ok 2 - weights 512..1, reject rarity zero and 11
+ok 3 - weights 512..1, reject rarity zero and 11
   ---
-  duration_ms: 1.0301
+  duration_ms: 1.0314
   type: 'test'
   ...
 # Subtest: exact current sums: 2899 and 3183
-ok 3 - exact current sums: 2899 and 3183
+ok 4 - exact current sums: 2899 and 3183
   ---
-  duration_ms: 0.2113
+  duration_ms: 0.2238
+  type: 'test'
+  ...
+# Subtest: explicit NF weights override exponential rarity
+ok 5 - explicit NF weights override exponential rarity
+  ---
+  duration_ms: 0.2962
   type: 'test'
   ...
 # Subtest: red: exhaustively enumerate every integer ticket
-ok 4 - red: exhaustively enumerate every integer ticket
+ok 6 - red: exhaustively enumerate every integer ticket
   ---
-  duration_ms: 2.2002
+  duration_ms: 2.1879
   type: 'test'
   ...
 # Subtest: brown: exhaustively enumerate every integer ticket
-ok 5 - brown: exhaustively enumerate every integer ticket
+ok 7 - brown: exhaustively enumerate every integer ticket
   ---
-  duration_ms: 1.7887
+  duration_ms: 1.4711
   type: 'test'
   ...
 # Subtest: single draw boundaries and invalid RNG
-ok 6 - single draw boundaries and invalid RNG
+ok 8 - single draw boundaries and invalid RNG
   ---
-  duration_ms: 0.282
+  duration_ms: 0.2162
   type: 'test'
   ...
 # Subtest: all batch sizes conserve counts and aggregate duplicates
-ok 7 - all batch sizes conserve counts and aggregate duplicates
+ok 9 - all batch sizes conserve counts and aggregate duplicates
   ---
-  duration_ms: 1.6821
+  duration_ms: 1.8534
   type: 'test'
   ...
 # Subtest: first existing partial stack, not fullest or combined stacks
-ok 8 - first existing partial stack, not fullest or combined stacks
+ok 10 - first existing partial stack, not fullest or combined stacks
   ---
-  duration_ms: 0.1962
+  duration_ms: 0.5135
   type: 'test'
   ...
 # Subtest: inventory plan consumes one exact stack and leaves the next
-ok 9 - inventory plan consumes one exact stack and leaves the next
+ok 11 - inventory plan consumes one exact stack and leaves the next
   ---
-  duration_ms: 0.5264
+  duration_ms: 0.3673
   type: 'test'
   ...
 # Subtest: full inventory preserves unrelated items and emits grouped overflow
-ok 10 - full inventory preserves unrelated items and emits grouped overflow
+ok 12 - full inventory preserves unrelated items and emits grouped overflow
   ---
-  duration_ms: 0.4859
+  duration_ms: 0.1539
   type: 'test'
   ...
 # Subtest: matching plain stacks merge, named stacks are not overwritten
-ok 11 - matching plain stacks merge, named stacks are not overwritten
+ok 13 - matching plain stacks merge, named stacks are not overwritten
   ---
-  duration_ms: 0.2442
+  duration_ms: 0.1654
   type: 'test'
   ...
 # Subtest: changed source / nonconserved output fails before mutation
-ok 12 - changed source / nonconserved output fails before mutation
+ok 14 - changed source / nonconserved output fails before mutation
   ---
-  duration_ms: 0.183
+  duration_ms: 0.1724
   type: 'test'
   ...
 # Subtest: segmented progress addresses 0,29,30,31,59,60,90 independently
-ok 13 - segmented progress addresses 0,29,30,31,59,60,90 independently
+ok 15 - segmented progress addresses 0,29,30,31,59,60,90 independently
   ---
-  duration_ms: 0.3844
+  duration_ms: 0.3693
   type: 'test'
   ...
 # Subtest: one progress write per touched word and no duplicate NEW
-ok 14 - one progress write per touched word and no duplicate NEW
+ok 16 - one progress write per touched word and no duplicate NEW
   ---
-  duration_ms: 0.2142
+  duration_ms: 0.2098
   type: 'test'
   ...
 # Subtest: food/effect boundaries: specimens cannot eat; puffball is crush
-ok 15 - food/effect boundaries: specimens cannot eat; puffball is crush
+ok 17 - food/effect boundaries: specimens cannot eat; puffball is crush
   ---
-  duration_ms: 0.2709
+  duration_ms: 0.2785
   type: 'test'
   ...
-1..15
-# tests 15
+1..17
+# tests 17
 # suites 0
-# pass 15
+# pass 17
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 116.0726
+# duration_ms 109.2801
 
-$ node --experimental-loader ./tests/mock-loader.mjs --test tests/adapters.test.mjs
+$ C:\Users\はーに~1\AppData\Local\Temp\pine-nf-node-v22.16.0\node.EXE --experimental-loader ./tests/mock-loader.mjs --test tests/adapters.test.mjs
 TAP version 13
-# (node:22384) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# (node:10556) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
 # --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
-# (Use `node --trace-warnings ...` to show where the warning was created)
-# Subtest: adapter: one 37-stack becomes 37 results, next 64 untouched
-ok 1 - adapter: one 37-stack becomes 37 results, next 64 untouched
+# (Use `node.EXE --trace-warnings ...` to show where the warning was created)
+# Subtest: all NF species can be appraised in their family and persist independent discoveries
+ok 1 - all NF species can be appraised in their family and persist independent discoveries
   ---
-  duration_ms: 3.0279
+  duration_ms: 8.8082
+  type: 'test'
+  ...
+# Subtest: adapter: one 37-stack becomes 37 results, next 64 untouched
+ok 2 - adapter: one 37-stack becomes 37 results, next 64 untouched
+  ---
+  duration_ms: 0.2968
   type: 'test'
   ...
 # Subtest: adapter: invalid NPC before commit cannot consume input
-ok 2 - adapter: invalid NPC before commit cannot consume input
+ok 3 - adapter: invalid NPC before commit cannot consume input
   ---
-  duration_ms: 0.3684
+  duration_ms: 0.2877
   type: 'test'
   ...
 # Subtest: adapter: synchronous slot-write exception rolls back cloned inventory
-ok 3 - adapter: synchronous slot-write exception rolls back cloned inventory
+ok 4 - adapter: synchronous slot-write exception rolls back cloned inventory
   ---
-  duration_ms: 13.4925
+  duration_ms: 11.7797
   type: 'test'
   ...
 # Subtest: adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once
-ok 4 - adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once
+ok 5 - adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once
   ---
-  duration_ms: 0.643
+  duration_ms: 0.426
   type: 'test'
   ...
 # Subtest: adapter: crash-ambiguous inflight receipt is quarantined
-ok 5 - adapter: crash-ambiguous inflight receipt is quarantined
+ok 6 - adapter: crash-ambiguous inflight receipt is quarantined
   ---
-  duration_ms: 0.1732
+  duration_ms: 0.1796
   type: 'test'
   ...
 # Subtest: adapter: legacy masks migrate without deleting old data
-ok 6 - adapter: legacy masks migrate without deleting old data
+ok 7 - adapter: legacy masks migrate without deleting old data
   ---
-  duration_ms: 0.1905
+  duration_ms: 0.1375
   type: 'test'
   ...
 # Subtest: adapter: bad saved progress is rejected, not zeroed
-ok 7 - adapter: bad saved progress is rejected, not zeroed
+ok 8 - adapter: bad saved progress is rejected, not zeroed
   ---
-  duration_ms: 0.2034
+  duration_ms: 0.2355
   type: 'test'
   ...
 # Subtest: adapter: poison is persistent before delay; repeated use cannot defer it
-ok 8 - adapter: poison is persistent before delay; repeated use cannot defer it
+ok 9 - adapter: poison is persistent before delay; repeated use cannot defer it
   ---
-  duration_ms: 0.5062
+  duration_ms: 0.698
   type: 'test'
   ...
 # Subtest: adapter: R06 fixed health cost then strength; lethal cost gives no buff
-ok 9 - adapter: R06 fixed health cost then strength; lethal cost gives no buff
+ok 10 - adapter: R06 fixed health cost then strength; lethal cost gives no buff
   ---
-  duration_ms: 0.5356
+  duration_ms: 0.5909
   type: 'test'
   ...
 # Subtest: adapter: normal/admin NPC is usable but drops no loot on death
-ok 10 - adapter: normal/admin NPC is usable but drops no loot on death
+ok 11 - adapter: normal/admin NPC is usable but drops no loot on death
   ---
-  duration_ms: 0.5542
+  duration_ms: 0.2546
   type: 'test'
   ...
 # Subtest: adapter: active natural death gives exactly 64+64 once
-ok 11 - adapter: active natural death gives exactly 64+64 once
+ok 12 - adapter: active natural death gives exactly 64+64 once
   ---
-  duration_ms: 0.2395
+  duration_ms: 0.2166
   type: 'test'
   ...
 # Subtest: adapter: stale loaded natural token is removed without loot
-ok 12 - adapter: stale loaded natural token is removed without loot
+ok 13 - adapter: stale loaded natural token is removed without loot
   ---
-  duration_ms: 0.1795
+  duration_ms: 0.1788
   type: 'test'
   ...
 # Subtest: adapter: unloaded unexpired natural lease is preserved on restart
-ok 13 - adapter: unloaded unexpired natural lease is preserved on restart
+ok 14 - adapter: unloaded unexpired natural lease is preserved on restart
   ---
-  duration_ms: 0.2886
+  duration_ms: 0.2827
   type: 'test'
   ...
 # Subtest: adapter: grace only permits an existing session, then hard expires
-ok 14 - adapter: grace only permits an existing session, then hard expires
+ok 15 - adapter: grace only permits an existing session, then hard expires
   ---
-  duration_ms: 0.1623
+  duration_ms: 0.164
   type: 'test'
   ...
 # Subtest: adapter: natural spawn works without experimental isSolid; rejects unsafe floors
-ok 15 - adapter: natural spawn works without experimental isSolid; rejects unsafe floors
+ok 16 - adapter: natural spawn works without experimental isSolid; rejects unsafe floors
   ---
-  duration_ms: 1.0322
+  duration_ms: 0.9842
   type: 'test'
   ...
-1..15
-# tests 15
+1..16
+# tests 16
 # suites 0
-# pass 15
+# pass 16
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 190.936
+# duration_ms 182.6199
 
-$ node --experimental-loader ./tests/mock-loader.mjs --test tests/field-guide.test.mjs
+$ C:\Users\はーに~1\AppData\Local\Temp\pine-nf-node-v22.16.0\node.EXE --experimental-loader ./tests/mock-loader.mjs --test tests/field-guide.test.mjs
 TAP version 13
-# (node:20424) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# (node:17028) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
 # --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
-# (Use `node --trace-warnings ...` to show where the warning was created)
+# (Use `node.EXE --trace-warnings ...` to show where the warning was created)
 # [Pinene Mycology] field guide: Error: expected closed form
-#     at file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/tests/field-guide.test.mjs:28:36
-#     at ActionFormData.show (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/tests/mock-forms.mjs:8:115)
-#     at encyclopedia (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/pack/BP/scripts/mycology/ui.js:36:27)
-#     at openFieldGuide (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/pack/BP/scripts/mycology/field_guide.js:11:12)
-#     at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons-mycology-v130/tools/mycology/tests/field-guide.test.mjs:29:8)
+#     at file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/tests/field-guide.test.mjs:28:36
+#     at ActionFormData.show (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/tests/mock-forms.mjs:8:115)
+#     at encyclopedia (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/pack/BP/scripts/mycology/ui.js:97:29)
+#     at openFieldGuide (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/pack/BP/scripts/mycology/field_guide.js:11:12)
+#     at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/tests/field-guide.test.mjs:29:8)
 #     at async Test.run (node:internal/test_runner/test:1054:7)
 #     at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
 # Subtest: portable guide displays only its reader discoveries; no NPC or item progress required
 ok 1 - portable guide displays only its reader discoveries; no NPC or item progress required
   ---
-  duration_ms: 3.1201
+  duration_ms: 2.6156
   type: 'test'
   ...
 # Subtest: portable guide rejects duplicate opens and NPC lock; releases its lock on close/error
 ok 2 - portable guide rejects duplicate opens and NPC lock; releases its lock on close/error
   ---
-  duration_ms: 1.0483
+  duration_ms: 1.3436
   type: 'test'
   ...
 1..2
@@ -238,4 +256,201 @@ ok 2 - portable guide rejects duplicate opens and NPC lock; releases its lock on
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 184.6198
+# duration_ms 159.8194
+
+$ C:\Users\はーに~1\AppData\Local\Temp\pine-nf-node-v22.16.0\node.EXE --experimental-loader ./tests/mock-loader.mjs --test tests/ui.test.mjs
+TAP version 13
+# (node:31808) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+# (Use `node.EXE --trace-warnings ...` to show where the warning was created)
+# Subtest: NF encyclopedia pages display every approved name and matching icon
+ok 1 - NF encyclopedia pages display every approved name and matching icon
+  ---
+  duration_ms: 3.9802
+  type: 'test'
+  ...
+# Subtest: result UI: 1 items, NEW, committed receipt, no next stack
+ok 2 - result UI: 1 items, NEW, committed receipt, no next stack
+  ---
+  duration_ms: 2.8229
+  type: 'test'
+  ...
+# Subtest: result UI: 37 items, NEW, committed receipt, no next stack
+ok 3 - result UI: 37 items, NEW, committed receipt, no next stack
+  ---
+  duration_ms: 1.0381
+  type: 'test'
+  ...
+# Subtest: result UI: 64 items, NEW, committed receipt, no next stack
+ok 4 - result UI: 64 items, NEW, committed receipt, no next stack
+  ---
+  duration_ms: 0.9382
+  type: 'test'
+  ...
+# Subtest: next batch button displays first stack 12, not total
+ok 5 - next batch button displays first stack 12, not total
+  ---
+  duration_ms: 0.9037
+  type: 'test'
+  ...
+# Subtest: next batch button displays first stack 64, not total
+ok 6 - next batch button displays first stack 64, not total
+  ---
+  duration_ms: 0.7271
+  type: 'test'
+  ...
+# Subtest: unknown encyclopedia entries hide name and rarity, including after selection
+ok 7 - unknown encyclopedia entries hide name and rarity, including after selection
+  ---
+  duration_ms: 1.0587
+  type: 'test'
+  ...
+# Subtest: all ten rarity colors match in known list and detail; formatting resets
+ok 8 - all ten rarity colors match in known list and detail; formatting resets
+  ---
+  duration_ms: 4.2904
+  type: 'test'
+  ...
+# Subtest: mixed batch is sorted by rarity, with highest banner and distinct NEW count
+ok 9 - mixed batch is sorted by rarity, with highest banner and distinct NEW count
+  ---
+  duration_ms: 12.382
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 189.0316
+
+$ C:\Users\はーに~1\AppData\Local\Temp\pine-nf-node-v22.16.0\node.EXE --experimental-loader ./tests/mock-loader.mjs --test tests/reveal.test.mjs
+TAP version 13
+# (node:29416) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+# (Use `node.EXE --trace-warnings ...` to show where the warning was created)
+# [Pinene Mycology] reveal sound: Error: expected missing sound
+#     at p.playSound (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/tests/reveal.test.mjs:88:65)
+#     at revealAppraisal (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/pack/BP/scripts/mycology/reveal.js:124:20)
+#     at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/tests/reveal.test.mjs:89:27)
+#     at async Test.run (node:internal/test_runner/test:1054:7)
+#     at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+# [Pinene Mycology] reveal presentation: Error: expected screen failure
+#     at p.onScreenDisplay.setTitle (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/tests/reveal.test.mjs:95:68)
+#     at revealAppraisal (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/pack/BP/scripts/mycology/reveal.js:120:15)
+#     at batchLoop (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/pack/BP/scripts/mycology/ui.js:204:30)
+#     at openAppraiser (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-xserver-addons/tools/mycology/pack/BP/scripts/mycology/ui.js:295:27)
+# Subtest: cinematic is bounded, deterministic, uses actual species, and has high-rarity musical ending
+ok 1 - cinematic is bounded, deterministic, uses actual species, and has high-rarity musical ending
+  ---
+  duration_ms: 3.0585
+  type: 'test'
+  ...
+# Subtest: personal preferences cycle full/quick/off and sound independently, persisted per player
+ok 2 - personal preferences cycle full/quick/off and sound independently, persisted per player
+  ---
+  duration_ms: 0.5331
+  type: 'test'
+  ...
+# Subtest: full reveal plays personal sound and finishes cleanly
+ok 3 - full reveal plays personal sound and finishes cleanly
+  ---
+  duration_ms: 2.9991
+  type: 'test'
+  ...
+# Subtest: cancel on sneak with no trailing cues
+ok 4 - cancel on sneak with no trailing cues
+  ---
+  duration_ms: 0.4133
+  type: 'test'
+  ...
+# Subtest: cancel on leave with no trailing cues
+ok 5 - cancel on leave with no trailing cues
+  ---
+  duration_ms: 0.4063
+  type: 'test'
+  ...
+# Subtest: cancel on death with no trailing cues
+ok 6 - cancel on death with no trailing cues
+  ---
+  duration_ms: 0.2227
+  type: 'test'
+  ...
+# Subtest: cancel on dimension with no trailing cues
+ok 7 - cancel on dimension with no trailing cues
+  ---
+  duration_ms: 0.2681
+  type: 'test'
+  ...
+# Subtest: cancel on new session with no trailing cues
+ok 8 - cancel on new session with no trailing cues
+  ---
+  duration_ms: 0.6919
+  type: 'test'
+  ...
+# Subtest: mute retains animation, OFF is instant; missing sound does not block result
+ok 9 - mute retains animation, OFF is instant; missing sound does not block result
+  ---
+  duration_ms: 5.4034
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through full
+ok 10 - real appraisal remains committed through full
+  ---
+  duration_ms: 19.5365
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through skip
+ok 11 - real appraisal remains committed through skip
+  ---
+  duration_ms: 1.1197
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through display failure
+ok 12 - real appraisal remains committed through display failure
+  ---
+  duration_ms: 1.4897
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through disconnect
+ok 13 - real appraisal remains committed through disconnect
+  ---
+  duration_ms: 1.031
+  type: 'test'
+  ...
+# Subtest: real appraisal remains committed through new session
+ok 14 - real appraisal remains committed through new session
+  ---
+  duration_ms: 0.7444
+  type: 'test'
+  ...
+# Subtest: next-stack amount is refreshed after animation, not captured before it
+ok 15 - next-stack amount is refreshed after animation, not captured before it
+  ---
+  duration_ms: 1.4742
+  type: 'test'
+  ...
+# Subtest: menu preference buttons do not appraise and survive reopening
+ok 16 - menu preference buttons do not appraise and survive reopening
+  ---
+  duration_ms: 0.618
+  type: 'test'
+  ...
+# Subtest: all species have themed musical identities and every 64-stack stays within 15–25 seconds
+ok 17 - all species have themed musical identities and every 64-stack stays within 15–25 seconds
+  ---
+  duration_ms: 14.4772
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 210.1159

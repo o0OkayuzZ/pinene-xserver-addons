@@ -1,5 +1,5 @@
 import { ActionFormData } from '@minecraft/server-ui';
-import { MUSHROOMS,BY_ID } from './registry.js';
+import { ALL_FUNGI,BY_ID } from './registry.js';
 import { counts,seen } from './progress.js';
 import { appraise,owned,recoverDelivery } from './appraisal.js';
 import { requireUsable,canUse } from './npc.js';
@@ -32,6 +32,19 @@ function effectsText(d){
 }
 
 async function detail(player,d){
+  if(d.id.startsWith('NF-')){
+    const fields=[
+      ['一般名',d.common_name],['分類',d.classification],
+      ['概要',d.real_world_summary],['歴史',d.history_note],
+      ['医薬史',d.drug_history],['構造・化合物',d.structure_compound]
+    ].filter(([,value])=>value);
+    await new ActionFormData()
+      .title(`${rarityColor(d.rarity)}${d.nameJa}§r`)
+      .body(`${d.scientificName}\n${stars(d.rarity)}\n\n`+fields.map(([name,value])=>`【${name}】\n${value}`).join('\n\n'))
+      .button('戻る',d.texturePath)
+      .show(player);
+    return;
+  }
   const body={rawtext:[
     {text:`${coloredSpecies(d)}\n${d.scientificName}\n${stars(d.rarity)}\n${rarityColor(d.rarity)}${rarityTier(d.rarity)}§r\n\n`},
     {text:d.useMode==='specimen'
@@ -65,35 +78,35 @@ export async function encyclopedia(player){
       .body({
         rawtext:[
           {text:
-            `発見 §f${c.total}§7/${MUSHROOMS.length}§r\n`+
-            `${progressBar(c.total,MUSHROOMS.length)}\n\n`
+            `発見 §f${c.total}§7/${ALL_FUNGI.length}§r\n`+
+            `${progressBar(c.total,ALL_FUNGI.length)}\n\n`
           },
           tr('myco.warning')
         ]
       })
-      .button(
-        `§c赤色キノコ§r ${c.red}/${MUSHROOMS.filter(x=>x.group==='red').length}`,
-        'textures/items/mycology/r11'
-      )
-      .button(
-        `§6茶色キノコ§r ${c.brown}/${MUSHROOMS.filter(x=>x.group==='brown').length}`,
-        'textures/items/mycology/b01'
-      )
-      .button('戻る');
+    const categories=[
+      ['red','§c赤色キノコ§r','textures/items/mycology/r11'],
+      ['brown','§6茶色キノコ§r','textures/items/mycology/b01'],
+      ['crimson','§4深紅ネザー菌§r','textures/items/mycology/nf/nf_001'],
+      ['warped','§3歪んだネザー菌§r','textures/items/mycology/nf/nf_005']
+    ];
+    for(const [group,title,icon] of categories)
+      form.button(`${title} ${c[group]}/${ALL_FUNGI.filter(x=>x.group===group).length}`,icon);
+    form.button('戻る');
 
     const result=await form.show(player);
-    if(result.canceled||result.selection===2)return;
+    if(result.canceled||result.selection===categories.length)return;
 
-    const group=result.selection===0?'red':'brown';
+    const group=categories[result.selection][0];
     let page=0;
-    const defs=MUSHROOMS.filter(x=>x.group===group);
+    const defs=ALL_FUNGI.filter(x=>x.group===group);
     const pages=Math.ceil(defs.length/10);
 
     while(true){
       const entries=defs.slice(page*10,page*10+10);
       const actions=[];
       const list=new ActionFormData()
-        .title(`${group==='red'?'§c赤色§r':'§6茶色§r'}キノコ ${page+1}/${pages}`);
+        .title(`${categories.find(x=>x[0]===group)[1]} ${page+1}/${pages}`);
 
       for(const d of entries){
         const known=seen(player,d);
@@ -169,8 +182,8 @@ async function batchLoop(player,npcId,group){
 
     summary.push(`最高レア：${rarityColor(top.rarity)}★${top.rarity} ${rarityTier(top.rarity)}§r`);
     summary.push(`新規発見：${b.fresh.length?`§e§l${b.fresh.length}種§r`:'0種'}`);
-    summary.push(`図鑑：${beforeTotal} → §a${c.total}§r / ${MUSHROOMS.length}`);
-    summary.push(progressBar(c.total,MUSHROOMS.length));
+    summary.push(`図鑑：${beforeTotal} → §a${c.total}§r / ${ALL_FUNGI.length}`);
+    summary.push(progressBar(c.total,ALL_FUNGI.length));
     summary.push('');
     summary.push('§8──────── 鑑定内訳 ────────§r');
 
@@ -225,17 +238,11 @@ async function batchLoop(player,npcId,group){
 function appraisalButton(group,info){
   const amount=info.first?.amount??0;
   const total=info.total;
-  const isRed=group==='red';
-
-  if(amount===64){
-    return isRed
-      ? `§c§l🔥 赤キノコ MAX STACK 🔥§r\n64連鑑定 / 所持 ${total}`
-      : `§6§l🔥 茶キノコ MAX STACK 🔥§r\n64連鑑定 / 所持 ${total}`;
-  }
-
-  return isRed
-    ? `§c赤色キノコを${amount}連鑑定§r\n今回 ${amount} / 合計 ${total}`
-    : `§6茶色キノコを${amount}連鑑定§r\n今回 ${amount} / 合計 ${total}`;
+  const labels={red:'§c赤色キノコ',brown:'§6茶色キノコ',crimson:'§4深紅ネザー菌',warped:'§3歪んだネザー菌'};
+  const label=labels[group];
+  return amount===64
+    ? `${label} §lMAX STACK§r\n64連鑑定 / 所持 ${total}`
+    : `${label}を${amount}連鑑定§r\n今回 ${amount} / 合計 ${total}`;
 }
 
 export async function openAppraiser(player,npc){
@@ -249,40 +256,38 @@ export async function openAppraiser(player,npc){
     while(true){
       requireUsable(player,entityById(npc.id),true);
 
-      const red=owned(player,'red');
-      const brown=owned(player,'brown');
+      const groups=[
+        ['red','textures/items/mycology/r11'],
+        ['brown','textures/items/mycology/b01'],
+        ['crimson','textures/items/mycology/nf/nf_001'],
+        ['warped','textures/items/mycology/nf/nf_005']
+      ];
+      const holdings=Object.fromEntries(groups.map(([group])=>[group,owned(player,group)]));
       const c=counts(player);
 
       const prefs=revealPreferences(player);
-      const result=await new ActionFormData()
+      const form=new ActionFormData()
         .title('§2§lキノコ鑑定士§r')
         .body(
-          `図鑑 §a${c.total}§r/${MUSHROOMS.length}\n`+
-          `${progressBar(c.total,MUSHROOMS.length)}\n\n`+
+          `図鑑 §a${c.total}§r/${ALL_FUNGI.length}\n`+
+          `${progressBar(c.total,ALL_FUNGI.length)}\n\n`+
           '最初の該当スタックを全量鑑定します。\n'+
           '別スロットのキノコは合算しません。\n'+
           '鑑定料：§aなし§r'
         )
-        .button(
-          appraisalButton('red',red),
-          'textures/items/mycology/r11'
-        )
-        .button(
-          appraisalButton('brown',brown),
-          'textures/items/mycology/b01'
-        )
-        .button('§aキノコ図鑑§r','textures/ui/mycology/unknown')
+      for(const [group,icon] of groups)form.button(appraisalButton(group,holdings[group]),icon);
+      form.button('§aキノコ図鑑§r','textures/ui/mycology/unknown')
         .button('閉じる')
         .button(`演出：${{full:'じっくり',quick:'短縮',off:'OFF'}[prefs.mode]}\n押して切替 / しゃがみでスキップ`)
-        .button(`サウンド：${prefs.sound?'ON':'OFF'}\n鑑定した自分だけに再生`)
-        .show(player);
+        .button(`サウンド：${prefs.sound?'ON':'OFF'}\n鑑定した自分だけに再生`);
+      const result=await form.show(player);
 
-      if(result.canceled||result.selection===3)return;
+      if(result.canceled||result.selection===5)return;
 
-      if(result.selection===4){cycleRevealMode(player);continue;}
-      if(result.selection===5){toggleRevealSound(player);continue;}
+      if(result.selection===6){cycleRevealMode(player);continue;}
+      if(result.selection===7){toggleRevealSound(player);continue;}
 
-      if(result.selection===2){
+      if(result.selection===4){
         await encyclopedia(player);
         continue;
       }
@@ -290,7 +295,7 @@ export async function openAppraiser(player,npc){
       const outcome=await batchLoop(
         player,
         npc.id,
-        result.selection===0?'red':'brown'
+        groups[result.selection][0]
       );
       if(outcome==='aborted')return;
     }

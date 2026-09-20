@@ -124,10 +124,10 @@ test('next-stack amount is refreshed after animation, not captured before it',as
  assert.equal(forms[1].form.buttons[0].label,'もう12連鑑定');
 });
 test('menu preference buttons do not appraise and survive reopening',async()=>{
- const {p,npc}=setup();sessions.clear();responses.push({selection:4},{selection:5},{canceled:true});
+ const {p,npc}=setup();sessions.clear();responses.push({selection:6},{selection:7},{canceled:true});
  await openAppraiser(p,npc);
  assert.deepEqual(revealPreferences(p),{mode:'quick',sound:false});
- assert(forms[2].form.buttons[4].label.includes('短縮'));assert(forms[2].form.buttons[5].label.includes('OFF'));
+ assert(forms[2].form.buttons[6].label.includes('短縮'));assert(forms[2].form.buttons[7].label.includes('OFF'));
  assert.equal(counts(p).total,0);assert.equal(system.timers.size,0);
 });
 
