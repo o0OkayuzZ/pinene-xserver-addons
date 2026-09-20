@@ -1517,7 +1517,7 @@
     "summary": "赤色・茶色のキノコを、種類ごとのキノコへ。",
     "description": "鑑定士の画面で色を選び、最初の該当スタックをまとめて鑑定する処理です。別スロットの同じキノコは合算しません。鑑定後は結果と新規発見を確認する構成です。",
     "usage": "実際の画面操作と本番での利用状況は未確認です。",
-    "obtaining": "Mycologyに含まれる機能です。鑑定士に会える場所は確認中です。",
+    "obtaining": "赤色・茶色のキノコ、深紅・歪んだキノコを用意し、鑑定士から対応カテゴリを選びます。",
     "details": [
       "鑑定料なしと表示する構成です。",
       "色ごとに今回の鑑定数と合計所持数を表示します。最初の該当スタックの全量を消費します。",
@@ -1544,9 +1544,9 @@
     "usage": "実際の画面操作と本番での利用状況は未確認です。",
     "obtaining": "Mycologyに含まれる機能です。鑑定士に会える場所は確認中です。",
     "details": [
-      "赤色15種類・茶色20種類、合計35種類の発見数と進捗バーを表示します。",
-      "ゲーム内の一覧は10種類ずつ。未発見の名前と画像を伏せ、発見済みの種類だけ詳細を開けます。",
-      "Webのキノコ一覧はゲーム内の個人の発見状況とは連動していません。"
+      "赤色15種・茶色20種・深紅50種・歪んだ50種の合計135種。",
+      "一覧は10種ずつ。未発見の名前と画像は伏せられます。",
+      "Webの一覧はゲーム内の個人の発見状況とは連動していません。"
     ],
     "image": null,
     "recipe": null,
@@ -2301,7 +2301,8 @@
     "obtaining": "作業台用のレシピ定義があります。詳しい入手手順は確認中です。",
     "details": [
       "図鑑を開く処理は食事処理とは別に登録されています。",
-      "アイテム自体に食料コンポーネントはありません。"
+      "アイテム自体に食料コンポーネントはありません。",
+      "アイテムにはグリント（光沢）が付きます。"
     ],
     "image": {
       "src": "/images/items/golden-food-guide.png",
@@ -37755,6 +37756,3106 @@
         "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/castleTemporaryDeathPolicy.js",
         "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/entranceTransition.js",
         "behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a/scripts/main.js"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-001",
+    "name": "ボツリヌス菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-001・深紅系統の菌茸標本。",
+    "description": "Clostridium botulinumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-001",
+      "元ネタ：ボツリヌス菌（Clostridium botulinum）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-001.png",
+      "alt": "ボツリヌス菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_001.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_001.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-002",
+    "name": "破傷風菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-002・深紅系統の菌茸標本。",
+    "description": "Clostridium tetaniを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-002",
+      "元ネタ：破傷風菌（Clostridium tetani）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-002.png",
+      "alt": "破傷風菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_002.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_002.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-003",
+    "name": "梅毒トレポネーマ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-003・深紅系統の菌茸標本。",
+    "description": "Treponema pallidum subsp. pallidumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-003",
+      "元ネタ：梅毒トレポネーマ／梅毒菌（Treponema pallidum subsp. pallidum）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-003.png",
+      "alt": "梅毒トレポネーマ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_003.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_003.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-004",
+    "name": "HIV茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-004・深紅系統の菌茸標本。",
+    "description": "Human immunodeficiency virus 1を元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-004",
+      "元ネタ：HIV-1（Human immunodeficiency virus 1）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-004.png",
+      "alt": "HIV茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_004.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_004.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-005",
+    "name": "ペニシリウム茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-005・歪んだ系統の菌茸標本。",
+    "description": "Penicillium rubensを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★2です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-005",
+      "元ネタ：青カビ（Penicillium rubens）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-005.png",
+      "alt": "ペニシリウム茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_005.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_005.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-006",
+    "name": "結核菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-006・歪んだ系統の菌茸標本。",
+    "description": "Mycobacterium tuberculosisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-006",
+      "元ネタ：結核菌（Mycobacterium tuberculosis）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-006.png",
+      "alt": "結核菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_006.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_006.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-007",
+    "name": "ハロバクテリウム茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-007・歪んだ系統の菌茸標本。",
+    "description": "Halobacterium salinarumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-007",
+      "元ネタ：高度好塩性古細菌（Halobacterium salinarum）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-007.png",
+      "alt": "ハロバクテリウム茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_007.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_007.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-008",
+    "name": "ミミウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-008・歪んだ系統の菌茸標本。",
+    "description": "Acanthamoeba polyphaga mimivirusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-008",
+      "元ネタ：ミミウイルス（Acanthamoeba polyphaga mimivirus）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-008.png",
+      "alt": "ミミウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_008.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_008.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-009",
+    "name": "ペスト菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-009・深紅系統の菌茸標本。",
+    "description": "Yersinia pestisを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-009",
+      "元ネタ：ペスト菌（Yersinia pestis）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-009.png",
+      "alt": "ペスト菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_009.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_009.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-010",
+    "name": "狂犬病ウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-010・深紅系統の菌茸標本。",
+    "description": "Rabies virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-010",
+      "元ネタ：狂犬病ウイルス（Rabies virus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-010.png",
+      "alt": "狂犬病ウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_010.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_010.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-011",
+    "name": "天然痘ウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-011・深紅系統の菌茸標本。",
+    "description": "Variola virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-011",
+      "元ネタ：天然痘ウイルス（Variola virus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-011.png",
+      "alt": "天然痘ウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_011.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_011.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-012",
+    "name": "志賀赤痢菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-012・深紅系統の菌茸標本。",
+    "description": "Shigella dysenteriae type 1を元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-012",
+      "元ネタ：志賀赤痢菌（Shigella dysenteriae type 1）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-012.png",
+      "alt": "志賀赤痢菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_012.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_012.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-013",
+    "name": "HSV-2茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-013・歪んだ系統の菌茸標本。",
+    "description": "Herpes simplex virus type 2を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★4です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-013",
+      "元ネタ：単純ヘルペスウイルス2型／HSV-2（Herpes simplex virus type 2）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-013.png",
+      "alt": "HSV-2茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_013.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_013.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-014",
+    "name": "HPV16茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-014・歪んだ系統の菌茸標本。",
+    "description": "Human papillomavirus type 16を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-014",
+      "元ネタ：ヒトパピローマウイルス16型（Human papillomavirus type 16）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-014.png",
+      "alt": "HPV16茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_014.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_014.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-015",
+    "name": "トリコモナス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-015・歪んだ系統の菌茸標本。",
+    "description": "Trichomonas vaginalisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★3です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-015",
+      "元ネタ：膣トリコモナス（Trichomonas vaginalis）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-015.png",
+      "alt": "トリコモナス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_015.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_015.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-016",
+    "name": "CJDプリオン茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-016・歪んだ系統の菌茸標本。",
+    "description": "Disease-associated prion protein (PrPSc)を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-016",
+      "元ネタ：CJD関連プリオン（Disease-associated prion protein (PrPSc)）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-016.png",
+      "alt": "CJDプリオン茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_016.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_016.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-017",
+    "name": "エボラウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-017・深紅系統の菌茸標本。",
+    "description": "Ebola virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-017",
+      "元ネタ：エボラウイルス（Ebola virus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-017.png",
+      "alt": "エボラウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_017.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_017.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-018",
+    "name": "マールブルグウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-018・深紅系統の菌茸標本。",
+    "description": "Marburg virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-018",
+      "元ネタ：マールブルグウイルス（Marburg virus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-018.png",
+      "alt": "マールブルグウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_018.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_018.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-019",
+    "name": "ニパウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-019・深紅系統の菌茸標本。",
+    "description": "Nipah virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-019",
+      "元ネタ：ニパウイルス（Nipah virus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-019.png",
+      "alt": "ニパウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_019.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_019.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-020",
+    "name": "炭疽菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-020・深紅系統の菌茸標本。",
+    "description": "Bacillus anthracisを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-020",
+      "元ネタ：炭疽菌（Bacillus anthracis）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-020.png",
+      "alt": "炭疽菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_020.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_020.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-021",
+    "name": "フォーラーネグレリア茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-021・深紅系統の菌茸標本。",
+    "description": "Naegleria fowleriを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-021",
+      "元ネタ：脳食いアメーバ（Naegleria fowleri）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-021.png",
+      "alt": "フォーラーネグレリア茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_021.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_021.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-022",
+    "name": "デング2型ウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-022・深紅系統の菌茸標本。",
+    "description": "Dengue virus serotype 2を元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-022",
+      "元ネタ：デングウイルス2型／DENV-2（Dengue virus serotype 2）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-022.png",
+      "alt": "デング2型ウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_022.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_022.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-023",
+    "name": "淋菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-023・深紅系統の菌茸標本。",
+    "description": "Neisseria gonorrhoeaeを元ネタとするNF菌茸です。正式分類は深紅、レア度は★5です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-023",
+      "元ネタ：淋菌（Neisseria gonorrhoeae）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-023.png",
+      "alt": "淋菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_023.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_023.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-024",
+    "name": "クラミジア茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-024・深紅系統の菌茸標本。",
+    "description": "Chlamydia trachomatisを元ネタとするNF菌茸です。正式分類は深紅、レア度は★4です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-024",
+      "元ネタ：クラミジア（Chlamydia trachomatis）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-024.png",
+      "alt": "クラミジア茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_024.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_024.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-025",
+    "name": "アカントアメーバ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-025・歪んだ系統の菌茸標本。",
+    "description": "Acanthamoeba castellaniiを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-025",
+      "元ネタ：アカントアメーバ（Acanthamoeba castellanii）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-025.png",
+      "alt": "アカントアメーバ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_025.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_025.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-026",
+    "name": "トキソプラズマ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-026・歪んだ系統の菌茸標本。",
+    "description": "Toxoplasma gondiiを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★5です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-026",
+      "元ネタ：トキソプラズマ（Toxoplasma gondii）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-026.png",
+      "alt": "トキソプラズマ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_026.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_026.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-027",
+    "name": "T4ファージ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-027・歪んだ系統の菌茸標本。",
+    "description": "Escherichia phage T4を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-027",
+      "元ネタ：T4ファージ（Escherichia phage T4）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-027.png",
+      "alt": "T4ファージ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_027.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_027.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-028",
+    "name": "PSTVd茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-028・歪んだ系統の菌茸標本。",
+    "description": "Potato spindle tuber viroid (PSTVd)を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-028",
+      "元ネタ：ジャガイモやせいもウイロイド（Potato spindle tuber viroid (PSTVd)）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-028.png",
+      "alt": "PSTVd茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_028.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_028.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-029",
+    "name": "デイノコッカス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-029・歪んだ系統の菌茸標本。",
+    "description": "Deinococcus radiodurans R1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-029",
+      "元ネタ：放射線耐性菌（Deinococcus radiodurans R1）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-029.png",
+      "alt": "デイノコッカス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_029.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_029.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-030",
+    "name": "ピロコッカス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-030・歪んだ系統の菌茸標本。",
+    "description": "Pyrococcus furiosusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-030",
+      "元ネタ：超好熱古細菌（Pyrococcus furiosus）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-030.png",
+      "alt": "ピロコッカス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_030.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_030.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-031",
+    "name": "バラムチア茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-031・歪んだ系統の菌茸標本。",
+    "description": "Balamuthia mandrillarisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-031",
+      "元ネタ：バラムチア（Balamuthia mandrillaris）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-031.png",
+      "alt": "バラムチア茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_031.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_031.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-032",
+    "name": "ジアルジア茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-032・歪んだ系統の菌茸標本。",
+    "description": "Giardia duodenalisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★4です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-032",
+      "元ネタ：ジアルジア／ランブル鞭毛虫（Giardia duodenalis）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-032.png",
+      "alt": "ジアルジア茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_032.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_032.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-033",
+    "name": "コレラ菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-033・深紅系統の菌茸標本。",
+    "description": "Vibrio cholerae O1を元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-033",
+      "元ネタ：コレラ菌（Vibrio cholerae O1）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-033.png",
+      "alt": "コレラ菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_033.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_033.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-034",
+    "name": "サルモネラ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-034・深紅系統の菌茸標本。",
+    "description": "Salmonella enterica serovar Typhimuriumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★5です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-034",
+      "元ネタ：サルモネラ菌（Salmonella enterica serovar Typhimurium）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-034.png",
+      "alt": "サルモネラ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_034.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_034.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-035",
+    "name": "ロタウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-035・歪んだ系統の菌茸標本。",
+    "description": "Rotavirus Aを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★5です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-035",
+      "元ネタ：A群ロタウイルス（Rotavirus A）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-035.png",
+      "alt": "ロタウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_035.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_035.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-036",
+    "name": "B型肝炎ウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-036・歪んだ系統の菌茸標本。",
+    "description": "Hepatitis B virusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-036",
+      "元ネタ：HBV（Hepatitis B virus）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-036.png",
+      "alt": "B型肝炎ウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_036.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_036.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-037",
+    "name": "HTLV-1茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-037・歪んだ系統の菌茸標本。",
+    "description": "Human T-cell leukemia virus type 1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-037",
+      "元ネタ：ヒトT細胞白血病ウイルス1型（Human T-cell leukemia virus type 1）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-037.png",
+      "alt": "HTLV-1茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_037.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_037.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-038",
+    "name": "マイコプラズマ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-038・深紅系統の菌茸標本。",
+    "description": "Mycoplasma genitaliumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★4です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-038",
+      "元ネタ：マイコプラズマ・ジェニタリウム（Mycoplasma genitalium）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-038.png",
+      "alt": "マイコプラズマ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_038.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_038.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-039",
+    "name": "ウレアプラズマ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-039・深紅系統の菌茸標本。",
+    "description": "Ureaplasma urealyticumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★3です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-039",
+      "元ネタ：ウレアプラズマ（Ureaplasma urealyticum）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-039.png",
+      "alt": "ウレアプラズマ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_039.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_039.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-040",
+    "name": "カンジダ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-040・深紅系統の菌茸標本。",
+    "description": "Candida albicansを元ネタとするNF菌茸です。正式分類は深紅、レア度は★4です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-040",
+      "元ネタ：カンジダ／カンジダ・アルビカンス（Candida albicans）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-040.png",
+      "alt": "カンジダ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_040.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_040.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-041",
+    "name": "O157 Sakai茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-041・深紅系統の菌茸標本。",
+    "description": "Escherichia coli O157:H7 strain Sakaiを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-041",
+      "元ネタ：腸管出血性大腸菌 O157:H7（Escherichia coli O157:H7 strain Sakai）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-041.png",
+      "alt": "O157 Sakai茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_041.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_041.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-042",
+    "name": "黄色ブドウ球菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-042・深紅系統の菌茸標本。",
+    "description": "Staphylococcus aureusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-042",
+      "元ネタ：黄色ブドウ球菌（Staphylococcus aureus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-042.png",
+      "alt": "黄色ブドウ球菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_042.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_042.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-043",
+    "name": "アシドフィルス菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-043・歪んだ系統の菌茸標本。",
+    "description": "Lactobacillus acidophilusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-043",
+      "元ネタ：乳酸菌／アシドフィルス菌（Lactobacillus acidophilus）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-043.png",
+      "alt": "アシドフィルス菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_043.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_043.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-044",
+    "name": "ビフィズス菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-044・歪んだ系統の菌茸標本。",
+    "description": "Bifidobacterium longumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-044",
+      "元ネタ：ビフィズス菌（Bifidobacterium longum）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-044.png",
+      "alt": "ビフィズス菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_044.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_044.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-045",
+    "name": "納豆菌BEST195茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-045・歪んだ系統の菌茸標本。",
+    "description": "Bacillus subtilis subsp. natto BEST195を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-045",
+      "元ネタ：納豆菌（Bacillus subtilis subsp. natto BEST195）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-045.png",
+      "alt": "納豆菌BEST195茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_045.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_045.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-046",
+    "name": "ミクロキスティス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-046・歪んだ系統の菌茸標本。",
+    "description": "Microcystis aeruginosa PCC 7806を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-046",
+      "元ネタ：アオコ／ミクロキスティス（Microcystis aeruginosa PCC 7806）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-046.png",
+      "alt": "ミクロキスティス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_046.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_046.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-047",
+    "name": "スミシイ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-047・歪んだ系統の菌茸標本。",
+    "description": "Methanobrevibacter smithiiを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-047",
+      "元ネタ：腸内メタン生成古細菌（Methanobrevibacter smithii）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-047.png",
+      "alt": "スミシイ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_047.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_047.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-048",
+    "name": "コダカラエンシス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-048・歪んだ系統の菌茸標本。",
+    "description": "Thermococcus kodakarensis KOD1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-048",
+      "元ネタ：超好熱古細菌（Thermococcus kodakarensis KOD1）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-048.png",
+      "alt": "コダカラエンシス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_048.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_048.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-049",
+    "name": "スルフォロブス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-049・歪んだ系統の菌茸標本。",
+    "description": "Sulfolobus acidocaldariusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-049",
+      "元ネタ：好熱好酸性古細菌（Sulfolobus acidocaldarius）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-049.png",
+      "alt": "スルフォロブス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_049.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_049.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-050",
+    "name": "フェオダクティラム茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-050・歪んだ系統の菌茸標本。",
+    "description": "Phaeodactylum tricornutumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-050",
+      "元ネタ：モデル珪藻（Phaeodactylum tricornutum）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-050.png",
+      "alt": "フェオダクティラム茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_050.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_050.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-051",
+    "name": "アレキサンドリウム茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-051・歪んだ系統の菌茸標本。",
+    "description": "Alexandrium catenellaを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-051",
+      "元ネタ：有毒渦鞭毛藻（Alexandrium catenella）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-051.png",
+      "alt": "アレキサンドリウム茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_051.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_051.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-052",
+    "name": "ユーグレナ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-052・歪んだ系統の菌茸標本。",
+    "description": "Euglena gracilisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-052",
+      "元ネタ：ミドリムシ／ヒメミドリムシ（Euglena gracilis）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-052.png",
+      "alt": "ユーグレナ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_052.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_052.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-053",
+    "name": "モジホコリ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-053・歪んだ系統の菌茸標本。",
+    "description": "Physarum polycephalumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-053",
+      "元ネタ：モジホコリ／真正粘菌（Physarum polycephalum）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-053.png",
+      "alt": "モジホコリ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_053.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_053.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-054",
+    "name": "パンドラウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-054・歪んだ系統の菌茸標本。",
+    "description": "Pandoravirus salinusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-054",
+      "元ネタ：パンドラウイルス（Pandoravirus salinus）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-054.png",
+      "alt": "パンドラウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_054.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_054.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-055",
+    "name": "A群溶血性連鎖球菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-055・深紅系統の菌茸標本。",
+    "description": "Streptococcus pyogenesを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-055",
+      "元ネタ：A群溶血性連鎖球菌／A群溶連菌（Streptococcus pyogenes）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-055.png",
+      "alt": "A群溶血性連鎖球菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_055.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_055.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-056",
+    "name": "TSST-1黄色ブドウ球菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-056・深紅系統の菌茸標本。",
+    "description": "Staphylococcus aureus MN8を元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-056",
+      "元ネタ：TSST-1産生黄色ブドウ球菌（Staphylococcus aureus MN8）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-056.png",
+      "alt": "TSST-1黄色ブドウ球菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_056.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_056.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-057",
+    "name": "ウェルシュ菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-057・深紅系統の菌茸標本。",
+    "description": "Clostridium perfringensを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-057",
+      "元ネタ：ウェルシュ菌（Clostridium perfringens）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-057.png",
+      "alt": "ウェルシュ菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_057.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_057.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-058",
+    "name": "ビブリオ・バルニフィカス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-058・深紅系統の菌茸標本。",
+    "description": "Vibrio vulnificusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-058",
+      "元ネタ：ビブリオ・バルニフィカス（Vibrio vulnificus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-058.png",
+      "alt": "ビブリオ・バルニフィカス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_058.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_058.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-059",
+    "name": "髄膜炎菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-059・深紅系統の菌茸標本。",
+    "description": "Neisseria meningitidisを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-059",
+      "元ネタ：髄膜炎菌（Neisseria meningitidis）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-059.png",
+      "alt": "髄膜炎菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_059.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_059.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-060",
+    "name": "ディフィシル菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-060・深紅系統の菌茸標本。",
+    "description": "Clostridioides difficileを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-060",
+      "元ネタ：C. difficile／ディフィシル菌（Clostridioides difficile）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-060.png",
+      "alt": "ディフィシル菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_060.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_060.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-061",
+    "name": "レジオネラ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-061・深紅系統の菌茸標本。",
+    "description": "Legionella pneumophilaを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-061",
+      "元ネタ：レジオネラ菌（Legionella pneumophila）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-061.png",
+      "alt": "レジオネラ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_061.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_061.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-062",
+    "name": "肺炎桿菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-062・深紅系統の菌茸標本。",
+    "description": "Klebsiella pneumoniaeを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-062",
+      "元ネタ：肺炎桿菌／クレブシエラ（Klebsiella pneumoniae）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-062.png",
+      "alt": "肺炎桿菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_062.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_062.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-063",
+    "name": "緑膿菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-063・深紅系統の菌茸標本。",
+    "description": "Pseudomonas aeruginosaを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-063",
+      "元ネタ：緑膿菌（Pseudomonas aeruginosa）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-063.png",
+      "alt": "緑膿菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_063.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_063.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-064",
+    "name": "クリプトコッカス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-064・深紅系統の菌茸標本。",
+    "description": "Cryptococcus neoformansを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-064",
+      "元ネタ：クリプトコッカス（Cryptococcus neoformans）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-064.png",
+      "alt": "クリプトコッカス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_064.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_064.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-065",
+    "name": "アスペルギルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-065・深紅系統の菌茸標本。",
+    "description": "Aspergillus fumigatusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-065",
+      "元ネタ：コウジカビ類／アスペルギルス（Aspergillus fumigatus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-065.png",
+      "alt": "アスペルギルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_065.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_065.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-066",
+    "name": "リゾプス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-066・深紅系統の菌茸標本。",
+    "description": "Rhizopus arrhizusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-066",
+      "元ネタ：クモノスカビ（Rhizopus arrhizus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-066.png",
+      "alt": "リゾプス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_066.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_066.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-067",
+    "name": "λファージ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-067・歪んだ系統の菌茸標本。",
+    "description": "Escherichia phage lambdaを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-067",
+      "元ネタ：ラムダファージ（Escherichia phage lambda）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-067.png",
+      "alt": "λファージ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_067.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_067.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-068",
+    "name": "スプートニク茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-068・歪んだ系統の菌茸標本。",
+    "description": "Sputnik virophageを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-068",
+      "元ネタ：スプートニク・ウイロファージ（Sputnik virophage）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-068.png",
+      "alt": "スプートニク茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_068.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_068.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-069",
+    "name": "HDV茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-069・歪んだ系統の菌茸標本。",
+    "description": "Hepatitis D virusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-069",
+      "元ネタ：D型肝炎ウイルス／デルタウイルス（Hepatitis D virus）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-069.png",
+      "alt": "HDV茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_069.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_069.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-070",
+    "name": "pBR322茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-070・歪んだ系統の菌茸標本。",
+    "description": "pBR322を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-070",
+      "元ネタ：pBR322プラスミド（pBR322）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-070.png",
+      "alt": "pBR322茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_070.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_070.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-071",
+    "name": "LINE-1茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-071・歪んだ系統の菌茸標本。",
+    "description": "Long Interspersed Nuclear Element-1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-071",
+      "元ネタ：LINE-1／L1（Long Interspersed Nuclear Element-1）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-071.png",
+      "alt": "LINE-1茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_071.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_071.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-072",
+    "name": "ボルバキア茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-072・歪んだ系統の菌茸標本。",
+    "description": "Wolbachia pipientisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-072",
+      "元ネタ：ボルバキア（Wolbachia pipientis）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-072.png",
+      "alt": "ボルバキア茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_072.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_072.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-073",
+    "name": "磁性細菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-073・歪んだ系統の菌茸標本。",
+    "description": "Magnetospirillum gryphiswaldense MSR-1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-073",
+      "元ネタ：磁性細菌（Magnetospirillum gryphiswaldense MSR-1）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-073.png",
+      "alt": "磁性細菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_073.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_073.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-074",
+    "name": "ジオバクター茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-074・歪んだ系統の菌茸標本。",
+    "description": "Geobacter sulfurreducensを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-074",
+      "元ネタ：ジオバクター／電気細菌（Geobacter sulfurreducens）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-074.png",
+      "alt": "ジオバクター茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_074.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_074.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-075",
+    "name": "ノウルセイ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-075・歪んだ系統の菌茸標本。",
+    "description": "Streptomyces nourseiを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-075",
+      "元ネタ：ナイスタチン産生放線菌（Streptomyces noursei）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-075.png",
+      "alt": "ノウルセイ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_075.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_075.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-076",
+    "name": "鉄酸化菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-076・歪んだ系統の菌茸標本。",
+    "description": "Acidithiobacillus ferrooxidansを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-076",
+      "元ネタ：鉄酸化細菌（Acidithiobacillus ferrooxidans）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-076.png",
+      "alt": "鉄酸化菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_076.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_076.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-077",
+    "name": "アベルミティリス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-077・歪んだ系統の菌茸標本。",
+    "description": "Streptomyces avermitilis MA-4680を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-077",
+      "元ネタ：アベルメクチン産生放線菌（Streptomyces avermitilis MA-4680）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-077.png",
+      "alt": "アベルミティリス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_077.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_077.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-078",
+    "name": "グリセウス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-078・歪んだ系統の菌茸標本。",
+    "description": "Streptomyces griseusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-078",
+      "元ネタ：ストレプトマイシン産生放線菌（Streptomyces griseus）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-078.png",
+      "alt": "グリセウス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_078.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_078.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-079",
+    "name": "クラブリゲルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-079・歪んだ系統の菌茸標本。",
+    "description": "Streptomyces clavuligerusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-079",
+      "元ネタ：クラブラン酸産生放線菌（Streptomyces clavuligerus）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-079.png",
+      "alt": "クラブリゲルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_079.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_079.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-080",
+    "name": "がん茸〈HeLa〉",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-080・深紅系統の菌茸標本。",
+    "description": "HeLa cell lineを元ネタとするNF菌茸です。正式分類は深紅、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-080",
+      "元ネタ：HeLa細胞（HeLa cell line）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-080.png",
+      "alt": "がん茸〈HeLa〉の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_080.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_080.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-081",
+    "name": "ハイグロスコピクス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-081・歪んだ系統の菌茸標本。",
+    "description": "Streptomyces hygroscopicus NRRL 5491を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-081",
+      "元ネタ：ラパマイシン産生放線菌（Streptomyces hygroscopicus NRRL 5491）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-081.png",
+      "alt": "ハイグロスコピクス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_081.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_081.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-082",
+    "name": "オンコセルカ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-082・深紅系統の菌茸標本。",
+    "description": "Onchocerca volvulusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-082",
+      "元ネタ：回旋糸状虫／オンコセルカ（Onchocerca volvulus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-082.png",
+      "alt": "オンコセルカ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_082.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_082.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-083",
+    "name": "ツクバエンシス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-083・歪んだ系統の菌茸標本。",
+    "description": "Streptomyces tsukubaensis No.9993を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-083",
+      "元ネタ：タクロリムス産生放線菌（Streptomyces tsukubaensis No.9993）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-083.png",
+      "alt": "ツクバエンシス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_083.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_083.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-084",
+    "name": "トリポクラディウム茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-084・歪んだ系統の菌茸標本。",
+    "description": "Tolypocladium inflatumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-084",
+      "元ネタ：シクロスポリン産生真菌（Tolypocladium inflatum）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-084.png",
+      "alt": "トリポクラディウム茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_084.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_084.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-085",
+    "name": "ペウセティウス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-085・歪んだ系統の菌茸標本。",
+    "description": "Streptomyces peucetiusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-085",
+      "元ネタ：アントラサイクリン産生放線菌（Streptomyces peucetius）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-085.png",
+      "alt": "ペウセティウス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_085.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_085.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-086",
+    "name": "熱帯熱マラリア原虫茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-086・深紅系統の菌茸標本。",
+    "description": "Plasmodium falciparumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-086",
+      "元ネタ：熱帯熱マラリア原虫（Plasmodium falciparum）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-086.png",
+      "alt": "熱帯熱マラリア原虫茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_086.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_086.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-087",
+    "name": "睡眠病トリパノソーマ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-087・深紅系統の菌茸標本。",
+    "description": "Trypanosoma brucei gambienseを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-087",
+      "元ネタ：ガンビアトリパノソーマ（Trypanosoma brucei gambiense）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-087.png",
+      "alt": "睡眠病トリパノソーマ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_087.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_087.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-088",
+    "name": "ドノバン・リーシュマニア茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-088・深紅系統の菌茸標本。",
+    "description": "Leishmania donovaniを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-088",
+      "元ネタ：内臓リーシュマニア（Leishmania donovani）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-088.png",
+      "alt": "ドノバン・リーシュマニア茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_088.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_088.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-089",
+    "name": "赤痢アメーバ茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-089・深紅系統の菌茸標本。",
+    "description": "Entamoeba histolyticaを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-089",
+      "元ネタ：赤痢アメーバ（Entamoeba histolytica）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-089.png",
+      "alt": "赤痢アメーバ茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_089.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_089.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-090",
+    "name": "クリプトスポリジウム茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-090・歪んだ系統の菌茸標本。",
+    "description": "Cryptosporidium parvumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★5です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-090",
+      "元ネタ：クリプトスポリジウム（Cryptosporidium parvum）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-090.png",
+      "alt": "クリプトスポリジウム茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_090.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_090.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-091",
+    "name": "ラッサウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-091・深紅系統の菌茸標本。",
+    "description": "Lassa virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-091",
+      "元ネタ：ラッサウイルス（Lassa virus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-091.png",
+      "alt": "ラッサウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_091.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_091.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-092",
+    "name": "CCHFウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-092・深紅系統の菌茸標本。",
+    "description": "Crimean-Congo hemorrhagic fever virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-092",
+      "元ネタ：クリミア・コンゴ出血熱ウイルス（Crimean-Congo hemorrhagic fever virus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-092.png",
+      "alt": "CCHFウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_092.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_092.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-093",
+    "name": "ハンターンウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-093・深紅系統の菌茸標本。",
+    "description": "Hantaan virus strain 76-118を元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-093",
+      "元ネタ：ハンターンウイルス（Hantaan virus strain 76-118）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-093.png",
+      "alt": "ハンターンウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_093.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_093.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-094",
+    "name": "MERSコロナウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-094・深紅系統の菌茸標本。",
+    "description": "Middle East respiratory syndrome coronavirusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-094",
+      "元ネタ：MERSコロナウイルス（Middle East respiratory syndrome coronavirus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-094.png",
+      "alt": "MERSコロナウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_094.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_094.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-095",
+    "name": "C型肝炎ウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-095・深紅系統の菌茸標本。",
+    "description": "Hepatitis C virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-095",
+      "元ネタ：HCV（Hepatitis C virus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-095.png",
+      "alt": "C型肝炎ウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_095.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_095.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-096",
+    "name": "サイトメガロウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-096・歪んだ系統の菌茸標本。",
+    "description": "Human cytomegalovirusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★5です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-096",
+      "元ネタ：ヒトサイトメガロウイルス／CMV（Human cytomegalovirus）",
+      "系統：歪んだ",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-096.png",
+      "alt": "サイトメガロウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_096.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_096.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-097",
+    "name": "デュクレイ菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-097・深紅系統の菌茸標本。",
+    "description": "Haemophilus ducreyiを元ネタとするNF菌茸です。正式分類は深紅、レア度は★5です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-097",
+      "元ネタ：軟性下疳菌（Haemophilus ducreyi）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-097.png",
+      "alt": "デュクレイ菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_097.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_097.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-098",
+    "name": "麻疹ウイルス茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-098・深紅系統の菌茸標本。",
+    "description": "Measles virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-098",
+      "元ネタ：麻疹ウイルス（Measles virus）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-098.png",
+      "alt": "麻疹ウイルス茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_098.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_098.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-099",
+    "name": "らい菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-099・深紅系統の菌茸標本。",
+    "description": "Mycobacterium lepraeを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-099",
+      "元ネタ：らい菌／ハンセン病菌（Mycobacterium leprae）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-099.png",
+      "alt": "らい菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_099.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_099.png"
+      ]
+    }
+  },
+  {
+    "id": "mycology-nf-100",
+    "name": "ジフテリア菌茸",
+    "kind": "item",
+    "contentId": "mycology",
+    "summary": "NF-100・深紅系統の菌茸標本。",
+    "description": "Corynebacterium diphtheriaeを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
+    "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
+    "details": [
+      "図鑑番号：NF-100",
+      "元ネタ：ジフテリア菌（Corynebacterium diphtheriae）",
+      "系統：深紅",
+      "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
+    ],
+    "image": {
+      "src": "/images/items/mycology-nf-100.png",
+      "alt": "ジフテリア菌茸の正式アイテム画像",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+      "paths": [
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_100.json",
+        "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_100.png"
       ]
     }
   }
