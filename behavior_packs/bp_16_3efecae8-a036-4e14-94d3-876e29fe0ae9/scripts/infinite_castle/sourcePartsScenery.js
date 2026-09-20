@@ -187,6 +187,37 @@ function loadState() {
     }
 }
 
+function sceneryDiagnosticBounds(plan) {
+    const bounds = (plan?.placements ?? []).map(placementBounds);
+    if (!bounds.length) return null;
+    return {
+        from: {
+            x: Math.min(...bounds.map((b) => b.from.x)),
+            y: Math.min(...bounds.map((b) => b.from.y)),
+            z: Math.min(...bounds.map((b) => b.from.z)),
+        },
+        to: {
+            x: Math.max(...bounds.map((b) => b.to.x)),
+            y: Math.max(...bounds.map((b) => b.to.y)),
+            z: Math.max(...bounds.map((b) => b.to.z)),
+        },
+    };
+}
+
+export function inspectSourcePartsSceneryStorage() {
+    const state = loadState();
+    if (!state.present && state.known) return null;
+    const dimensionId = state.plan?.dimensionId ?? (state.known ? "none" : "unparsed");
+    return {
+        key: SCENERY_STATE_KEY,
+        kind: "scenery",
+        status: state.status,
+        dimensionId,
+        foreign: state.plan ? dimensionId !== CASTLE_DIMENSION_ID : false,
+        bounds: sceneryDiagnosticBounds(state.plan),
+    };
+}
+
 function fnv1a32(value) {
     let hash = 0x811c9dc5;
     for (let index = 0; index < value.length; index += 1) {
