@@ -1,0 +1,24 @@
+{
+  "sourceCommit": "e84adb6ebb92eac345ef85f53d0297023a35bc95",
+  "target": "server",
+  "changedPackFiles": 216,
+  "verifiedPackFiles": 216,
+  "saveFilesUnchanged": 523,
+  "backup": "/opt/minecraft/server/_pinene_deploy_backups/nf-20260920",
+  "success": true,
+  "clientGameplayTest": "not_run",
+  "service": "active",
+  "startupConfirmed": true,
+  "errors": [
+    "[2026-09-20 16:14:56:838 ERROR] ================ TRANSPORT TYPE ERROR  ===================",
+    "[2026-09-20 16:14:56:838 ERROR] Your current connection type is not set to NetherNet. In this release, NetherNet is the only supported transport type.",
+    "[2026-09-20 16:14:56:838 ERROR] Players will not be able to connect to your game without NetherNet.",
+    "[2026-09-20 16:14:56:838 ERROR] ",
+    "[2026-09-20 16:14:56:838 ERROR] To switch, set 'transport=nethernet' in server.properties.",
+    "[2026-09-20 16:14:56:838 ERROR] ",
+    "[2026-09-20 16:14:56:838 ERROR] For more information, please reference the included bedrock_server_how_to.html file.",
+    "[2026-09-20 16:14:56:838 ERROR] ======================================================="
+  ],
+  "contentLogFiles": 1,
+  "finishedUtc": "2026-09-20T07:15:09.408254+00:00"
+}
