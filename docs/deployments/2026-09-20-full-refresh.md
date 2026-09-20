@@ -22,4 +22,4 @@ Mycology61件、金食料45件、Pinenite69件、無限城113件、墓8件、GF4
 
 バックアップ: Xserver `_pinene_deploy_backups/full-release-20260920`、ローカル `C:/work/nf-release/full-backup-dev` / `full-backup-fresh`。
 
-詳細: [evidence/full-refresh-20260920](evidence/full-refresh-20260920)。Web更新は既存図鑑を維持し、配布バージョンと9月20日の更新情報を追記する。
+詳細: [evidence/full-refresh-20260920](evidence/full-refresh-20260920)。Webは既存図鑑を維持し、配布バージョンと9月20日の更新情報を追記した。1,108ページのビルド、公開情報の4テスト、出力検査に合格。Pages `1614a7a874cda22744a15024d40576470cb21b66` のbuilt状態と、公開updates/packsページのHTTP 200・新しい更新文・各配布版を確認した。ソース`9258c11c`の無限城ミラー同期・exporterテストも成功。
