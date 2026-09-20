@@ -30,7 +30,7 @@
 
 同梱 `bedrock_server_how_to.html` と[公式26.50更新情報](https://feedback.minecraft.net/hc/en-us/articles/48826825649933-Minecraft-Bedrock-Edition-26-50-Changelog-Wilderness-Bound)を確認し、設定をバックアップして `transport=nethernet` を追加。既存のUDP19132へ固定するため `server-udp-ports=19132` も追加。最終再起動でサービスactive、Server started、起動エラー0件を確認。
 
-外部からのTCP19132接続テストは不成功。ホスト内UFWは非アクティブ、INPUTはACCEPT。Xserver側パケットフィルターのTCP19132許可についてユーザーに確認中。実クライアントの接続・影の見え方・NFの操作は未検証。
+初回の外部TCP19132接続テストは不成功。ユーザー提供の管理画面でUDP19132のみ許可されていることを確認し、ユーザーがTCP19132の許可を追加した。その後、外部TCP接続と `GET /v1/join` のHTTP 200応答を確認（Bedrock 1.26.51、Bedrock level）。サービスactive、起動ログのエラー0件。通信開始部分の疎通は復旧。実クライアントでの入場・影の見え方・NFの操作は未検証。
 
 ## バックアップと証跡
 
