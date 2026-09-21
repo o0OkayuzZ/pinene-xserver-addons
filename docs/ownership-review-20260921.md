@@ -31,3 +31,14 @@ The current tree differs from the old 74-file / 588 KB estimate. RP02 contains 6
 RP06 is therefore the canonical rendering owner. RP15 retains its metadata role; moving it wholesale would not make it self-contained. RP02's 65 duplicate resources were removed without changing identifiers, geometry, UVs, paths or stacking order. RP15's sole animation was also removed after JSON comparison confirmed it has exactly the same animation identifier and content as RP06 (only whitespace differs). RP02 and RP15 now explicitly depend on RP06, and BP05 plus the BP15/BP09/RP07 dependency chain are versioned together.
 
 The audit contract lists each removed rendering path, requires its canonical copy, rejects reintroduced copies at the old locations, and checks all RP15 atlas texture paths in RP06. Dungeons rendering remains in its existing resource pack. A complete move into RP15 remains a possible separate architectural change; it would require handling Dungeons references to shared assets and validating the resulting stack in the engine.
+
+## Remaining shared images
+
+- RP01 owns the `onso` atlas key and identical image; the RP02 copy (342,963 bytes) and duplicate atlas entry were removed. `myname:onso`, its recipes and localized names stay intact.
+- RP14 owns `pancake_kiji`; the RP02 copy (60,232 bytes) and duplicate atlas entry were removed. RP02 explicitly depends on RP01 and RP14.
+- RP07 already contained all 20 zombie armor icons under `textures/items`, but its atlas still pointed at RP02's `textures/merged_equipment` copies. The atlas now points at the byte-identical RP07 images; all 20 RP02 copies (32,895 bytes) were removed. Every atlas key and item identifier remains unchanged. CI verifies the new paths and rejects references to removed paths.
+- Total image payload removed in this step: 436,090 bytes across 22 files.
+- The 254,805-byte fossil duplicate is intentionally retained. RP02's `mystery_fossil` terrain key, RP05's `figure_fossil_placed` client entity and the generated `pinenite_outline` client entity all consume `textures/blocks/mystery_fossil`. RP06's same pixels have bottom/side roles. A later alias migration must update the figure generator and generated texture references together while preserving the block's terrain key and UVs. Removing the PNG alone would break these consumers.
+- The visually shared `zombie_stem_cell` / `enderite_ingot` image has different item roles; it is not included in the zombie armor cleanup.
+
+The remaining cross-pack duplicate budget is tightened to 350,000 bytes, with the fossil exception accounting for most of the retained payload.

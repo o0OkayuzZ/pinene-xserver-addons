@@ -5,6 +5,7 @@ This repository keeps large features in one canonical BP/RP pair where possible.
 Established owners after the 2026-09-21 cleanup:
 
 - **PineCD:** BP04 `[音楽] ピネCDアイテム BP` + RP01 `[音楽] ピネCD音源 RP`.
+- **Shared item textures:** RP01 owns `onso`; RP14 owns `pancake_kiji`. RP02 declares dependencies on both and retains the distinct `myname:onso` behavior/localization references. RP07 owns the zombie armor icons and its atlas now resolves them within RP07. `tools/shared_texture_ownership.json` records the exact atlas/path contract.
 - **More Geodes:** BP07 `[鉱石] モアジオード BP` + RP04 `[鉱石] モアジオード RP`.
 - **Gapple Cows:** BP02 `[モブ] ギャップルカウズ BP` + RP08 `[モブ] ギャップルカウズ RP`.
 - **Blue Apples:** BP03 `[保守] 青リンゴ状態リセット BP` + RP16 `[保守] 青リンゴ状態リセット RP` own both the current `resetapple:*` definitions and compatibility definitions for the legacy `myname:*` blue-apple IDs.

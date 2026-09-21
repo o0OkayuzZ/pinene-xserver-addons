@@ -150,6 +150,27 @@ def main() -> None:
     packs = pack_dirs()
     all_files = [(pack, p) for pack in packs for p in files_for(pack)]
 
+    shared_textures = load_json(ROOT / "tools/shared_texture_ownership.json")
+    moved_texture_paths = set()
+    for entry in shared_textures:
+        old = RP_ROOT / entry["oldPack"] / entry["oldPath"]
+        canonical = RP_ROOT / entry["owner"] / entry["path"]
+        if old.exists():
+            errors.append(f"Shared texture copied back into integrated RP: {rel(old)}")
+        if not canonical.is_file():
+            errors.append(f"Missing canonical shared texture: {rel(canonical)}")
+        atlas = load_json(RP_ROOT / entry["atlasPack"] / "textures/item_texture.json")["texture_data"]
+        if atlas.get(entry["atlasKey"], {}).get("textures") != entry["texture"]:
+            errors.append(f"Shared texture atlas points outside its owner: {entry['atlasKey']}")
+        if entry["oldPath"] != entry["path"]:
+            moved_texture_paths.add(entry["oldPath"].rsplit(".", 1)[0])
+    for _, path in all_files:
+        if path.suffix == ".json":
+            text = path.read_text(encoding="utf-8-sig", errors="replace")
+            for old in moved_texture_paths:
+                if f'"{old}"' in text:
+                    errors.append(f"Reference to removed shared texture: {rel(path)}: {old}")
+
     deathnerite = load_json(ROOT / "tools/deathnerite_ownership.json")
     render_owner = RP_ROOT / deathnerite["resourceOwner"]
     metadata_owner = RP_ROOT / deathnerite["metadataOwner"]
@@ -330,9 +351,9 @@ def main() -> None:
 
     # A few small shared compatibility assets are currently intentional. Large regressions
     # should fail loudly so another 100+ MiB copy cannot accumulate unnoticed.
-    if duplicate_bytes > 5_000_000:
+    if duplicate_bytes > 350_000:
         errors.append(
-            f"cross-pack exact duplicate payload exceeds 5 MB budget: {duplicate_bytes} bytes"
+            f"cross-pack exact duplicate payload exceeds 350 KB budget: {duplicate_bytes} bytes"
         )
 
     if errors:
