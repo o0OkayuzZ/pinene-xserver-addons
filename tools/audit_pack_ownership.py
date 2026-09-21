@@ -64,6 +64,56 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
+def load_jsonc(path: Path):
+    text = path.read_text(encoding="utf-8-sig")
+    out: list[str] = []
+    i = 0
+    in_string = False
+    escaped = False
+
+    while i < len(text):
+        ch = text[i]
+
+        if in_string:
+            out.append(ch)
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_string = False
+            i += 1
+            continue
+
+        if ch == '"':
+            in_string = True
+            out.append(ch)
+            i += 1
+            continue
+
+        if ch == "/" and i + 1 < len(text) and text[i + 1] == "/":
+            i += 2
+            while i < len(text) and text[i] not in "\r\n":
+                i += 1
+            continue
+
+        if ch == "/" and i + 1 < len(text) and text[i + 1] == "*":
+            i += 2
+            while i + 1 < len(text) and not (text[i] == "*" and text[i + 1] == "/"):
+                if text[i] in "\r\n":
+                    out.append(text[i])
+                i += 1
+            i = min(i + 2, len(text))
+            continue
+
+        out.append(ch)
+        i += 1
+
+    cleaned = "".join(out)
+    cleaned = re.sub(r",\s*([}\]])", r"\1", cleaned)
+    return json.loads(cleaned)
+
+
 def main() -> None:
     errors: list[str] = []
     packs = pack_dirs()
@@ -87,7 +137,7 @@ def main() -> None:
                 errors.append(f"PineCD atlas keys outside canonical RP: {rel(path)}: {bad[:5]}")
 
         if path.name == "sound_definitions.json" and pack != PINECD_RP:
-            defs = load_json(path).get("sound_definitions", {})
+            defs = load_jsonc(path).get("sound_definitions", {})
             bad = sorted(k for k in defs if k.startswith(("pinecd.", "pinecd:")))
             if bad:
                 errors.append(f"PineCD sound events outside canonical RP: {rel(path)}: {bad[:5]}")
