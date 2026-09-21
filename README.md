@@ -2,7 +2,7 @@
 
 Snapshot: 2026-09-07, from `/opt/minecraft/server`.
 
-The current deployment contains 16 custom behavior packs and 17 integrated custom resource packs. Existing integrated packs retain their UUIDs and directories. Root and world pack reference files preserve their relative load order. Vanilla server packs, independently managed packs, and the world database are outside this addon snapshot.
+The current deployment contains 15 custom behavior packs and 16 integrated custom resource packs. Existing integrated packs retain their UUIDs and directories. Root and world pack reference files preserve their relative load order. Vanilla server packs, independently managed packs, and the world database are outside this addon snapshot.
 
 ## Packs
 
@@ -18,7 +18,6 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2 | [大型] Minecraft Dungeons BP | 2.0.9 |
 | behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1 | [装備] ゾンビ装備 BP | 1.2.4 |
 | behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737 | [移動] Simple Waystone BP | 8.2.6 |
-| behavior_packs/bp_12_87a4083d-6ba7-4667-957b-dfee8b23e1b9 | [音楽連携] 追加レコード連携 BP | 1.1.9 |
 | behavior_packs/bp_13_7e0c44d2-1b23-4073-b749-c81514e2ed94 | [建築] INAKA家具 BP | 1.1.5 |
 | behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c | [保管] 経験値ストレージ BP | 1.0.5 |
 | behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639 | ピネン統合ビヘイビアーパック | 1.0.72 |
@@ -34,7 +33,6 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | resource_packs/rp_08_4f927a7a-fc68-4051-8686-43ab94ed1c5b | [モブ] ギャップルカウズ RP | 1.0.39 |
 | resource_packs/rp_09_3554695d-d627-4971-8420-dc4ece2f8613 | [素材元] System Crossbow RP | 1.1.13 |
 | resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4 | [移動] Simple Waystone RP | 8.2.8 |
-| resource_packs/rp_13_fdcac724-cba1-46b2-9510-a433d666ed70 | [音楽連携] 追加レコード音源 RP | 1.1.13 |
 | resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3 | [素材元] Deathnerite RP | 1.0.105 |
 | resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78 | [保守] 青リンゴ状態リセット RP | 1.0.4 |
 | resource_packs/rp_17_9a12d1e1-d6c3-43b6-8551-cdc1bb582f82 | [建築] INAKA家具 RP | 1.1.6 |
@@ -49,4 +47,5 @@ The rendering pack `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273
 Mycology system v1.3 / textures v1.4, the portable personal field guide, golden foods (including eggs and chorus), and pancake updates are integrated. See the [2026-09-10 release record](docs/deployments/2026-09-10-foods-mycology.md) for validation and deployment status. Authoring data and rebuild tests for Mycology are in `tools/mycology/`; existing item IDs and texture keys are preserved.
 
 PineCD native records: see [requirements, validation and adding songs](docs/pinecd/NATIVE_RECORDS.md).
+
 
