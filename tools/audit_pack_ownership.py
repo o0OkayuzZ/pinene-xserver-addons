@@ -37,7 +37,8 @@ JUNK_RE = re.compile(
     r"(?:\.bak(?:_|\.|$)|/(?:_?backup)(?:/|_|$)|/old(?:/|_|$)|desktop\.ini$|thumbs\.db$)",
     re.IGNORECASE,
 )
-EDITOR_SOURCE_RE = re.compile(r"\\.(?:pdn|psd|xcf|blend|kra|zip|7z|rar|m4a|mp4|mov|wav|tmp|log)$", re.IGNORECASE)\nTEXT_SUFFIXES = {".json", ".lang"}
+EDITOR_SOURCE_RE = re.compile(r"\\.(?:pdn|psd|xcf|blend|kra|zip|7z|rar|m4a|mp4|mov|wav|tmp|log)$", re.IGNORECASE)
+TEXT_SUFFIXES = {".json", ".lang"}
 
 
 def pack_dirs() -> list[Path]:
