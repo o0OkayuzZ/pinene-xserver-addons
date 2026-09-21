@@ -77,7 +77,6 @@ export function consume(source,itemStack) {
    for(const x of list){t-=x.weight;if(t<0){apply(source,x.effects);break;}}
   }else if(d.special?.kind==='delayed')schedulePoison(source,d);
   else if(d.special?.kind==='sense')sense(source,d.special);
-  itemStack.getComponent('minecraft:cooldown')?.startCooldown(source);
  } catch(error){logError(`consume ${d.id}`,error);}
 }
 const crushLock=new Map();
