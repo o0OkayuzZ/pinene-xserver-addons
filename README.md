@@ -2,7 +2,7 @@
 
 Snapshot: 2026-09-07, from `/opt/minecraft/server`.
 
-The current deployment contains 16 custom behavior packs and 18 integrated custom resource packs. Existing integrated packs retain their UUIDs and directories. Root and world pack reference files preserve their relative load order. Vanilla server packs, independently managed packs, and the world database are outside this addon snapshot.
+The current deployment contains 16 custom behavior packs and 17 integrated custom resource packs. Existing integrated packs retain their UUIDs and directories. Root and world pack reference files preserve their relative load order. Vanilla server packs, independently managed packs, and the world database are outside this addon snapshot.
 
 ## Packs
 
@@ -24,15 +24,14 @@ The current deployment contains 16 custom behavior packs and 18 integrated custo
 | behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639 | ピネン統合ビヘイビアーパック | 1.0.72 |
 | behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9 | 無限城ビヘイビアーパック | 0.2.11 |
 | behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3 | Pinene PvP Island BP | 0.2.16 |
-| resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784 | [音楽] ピネCD音源 RP | 1.0.31 |
+| resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784 | [音楽] ピネCD音源 RP | 1.0.32 |
 | resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a | ピーネン統合リソースパック | 1.0.61 |
 | resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974 | [墓] 死亡回収・墓 RP | 1.0.9 |
 | resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd | [鉱石] モアジオード RP | 1.0.13 |
-| resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef | [統合素材] 化石・フィギュア RP | 1.0.41 |
+| resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef | [統合素材] 化石・フィギュア RP | 1.0.42 |
 | resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b | [大型統合] Minecraft Dungeons RP | 2.0.9 |
-| resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10 | [装備互換] ゾンビ装備＋クロスボウ RP | 1.2.4 |
+| resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10 | [装備互換] ゾンビ装備＋クロスボウ RP | 1.2.6 |
 | resource_packs/rp_08_4f927a7a-fc68-4051-8686-43ab94ed1c5b | [モブ] ギャップルカウズ RP | 1.0.39 |
-| resource_packs/rp_09_3554695d-d627-4971-8420-dc4ece2f8613 | [素材元] System Crossbow RP | 1.1.13 |
 | resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4 | [移動] Simple Waystone RP | 8.2.8 |
 | resource_packs/rp_13_fdcac724-cba1-46b2-9510-a433d666ed70 | [音楽連携] 追加レコード音源 RP | 1.1.13 |
 | resource_packs/rp_14_8f8c7cdb-60c5-4b4b-bc1c-334eb8f24b9a | [食料] ピネの弁当 RP | 1.0.5 |

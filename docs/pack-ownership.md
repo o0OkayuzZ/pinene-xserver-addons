@@ -7,6 +7,7 @@ Established owners after the 2026-09-21 cleanup:
 - **PineCD:** BP04 `[音楽] ピネCDアイテム BP` + RP01 `[音楽] ピネCD音源 RP`.
 - **More Geodes:** BP07 `[鉱石] モアジオード BP` + RP04 `[鉱石] モアジオード RP`.
 - **Gapple Cows:** BP02 `[モブ] ギャップルカウズ BP` + RP08 `[モブ] ギャップルカウズ RP`.
+- **System Crossbow:** active resource ownership is consolidated into RP07 `[装備互換] ゾンビ装備＋クロスボウ RP`. The former RP09 source pack had no unique active paths and is no longer registered; historical evidence remains in Git/docs.
 - **PvP Island:** BP17 + RP20 are the current dedicated packs. Remaining mixed legacy definitions in the integrated packs require dependency-aware cleanup rather than blind deletion.
 - **Deathnerite:** BP05 is the canonical behavior implementation. Resource ownership is still mixed with compatibility assets and must be separated carefully.
 
