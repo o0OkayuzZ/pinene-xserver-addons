@@ -2,8 +2,8 @@ import { world, system, EquipmentSlot, EntityDamageCause } from "@minecraft/serv
 
 const CHARGED = "pinene_pvp:charged";
 const DIVINE_SIGHT = "pinene_pvp:divine_sight";
-const WEDGE = "pinene_pvp:tenrai_wedge";
-const SIGHT_ARROW = "pinene_pvp:shingan_arrow";
+const WEDGE_IDS = new Set(["pinene_pvp:tenrai_wedge", "pinen:tenrai_wedge"]);
+const SIGHT_ARROW_IDS = new Set(["pinene_pvp:shingan_arrow", "pinen:shingan_arrow"]);
 const PINE_DIMENSION = "pinene_pvp:pvp_island";
 const DIMENSIONS = [PINE_DIMENSION, "overworld", "nether", "the_end"];
 const expiry = new Map();
@@ -28,17 +28,21 @@ world.afterEvents.entityHurt.subscribe((event) => {
   try {
     const equip = attacker.getComponent("minecraft:equippable");
     const held = equip?.getEquipment(EquipmentSlot.Mainhand);
-    if (held?.typeId !== WEDGE) return;
+    if (!WEDGE_IDS.has(held?.typeId)) return;
     addTimedTag(target, CHARGED, 200);
-    held.amount -= 1;
-    equip?.setEquipment(EquipmentSlot.Mainhand, held.amount > 0 ? held : undefined);
+    if (held.amount > 1) {
+      held.amount -= 1;
+      equip?.setEquipment(EquipmentSlot.Mainhand, held);
+    } else {
+      equip?.setEquipment(EquipmentSlot.Mainhand, undefined);
+    }
     attacker.playSound("ambient.weather.thunder");
   } catch {}
 });
 
 world.afterEvents.entityHurt.subscribe((event) => {
   const target = event.hurtEntity;
-  if (!target) return;
+  if (!target || target.dimension.id !== PINE_DIMENSION) return;
   try {
     if (target.hasTag(CHARGED) && event.damageSource?.cause === EntityDamageCause.lightning) {
       target.applyDamage(Math.max(1, Math.pow(event.damage, 3) - event.damage));
@@ -53,7 +57,7 @@ world.afterEvents.entityHurt.subscribe((event) => {
 
 world.afterEvents.projectileHitEntity.subscribe((event) => {
   const projectile = event.projectile;
-  if (!projectile || projectile.typeId !== SIGHT_ARROW) return;
+  if (!projectile || !SIGHT_ARROW_IDS.has(projectile.typeId)) return;
   try {
     const owner = projectile.getComponent("minecraft:projectile")?.owner;
     if (owner && owner.dimension.id === PINE_DIMENSION) {
@@ -71,11 +75,11 @@ system.runInterval(() => {
     const held = player.getComponent("minecraft:equippable")?.getEquipment("Mainhand");
     if (player.dimension.id === PINE_DIMENSION && player.hasTag(DIVINE_SIGHT)) {
       player.onScreenDisplay.setActionBar("§d§l神眼 発動中§r §7| 次の一撃の威力 = ダメージ^1.5");
-    } else if (held?.typeId === WEDGE) {
+    } else if (WEDGE_IDS.has(held?.typeId)) {
       player.onScreenDisplay.setActionBar(player.dimension.id === PINE_DIMENSION
         ? "§e天雷の楔 §7| 攻撃対象を帯電状態にする | 雷ダメージ = 元のダメージ^3"
         : "§7天雷の楔 §8| ピネディメンション内で能力発動 | 雷ダメージ = 元のダメージ^3");
-    } else if (held?.typeId === SIGHT_ARROW) {
+    } else if (SIGHT_ARROW_IDS.has(held?.typeId)) {
       player.onScreenDisplay.setActionBar(player.dimension.id === PINE_DIMENSION
         ? "§b神眼の矢 §7| 命中後、次の一撃の威力 = ダメージ^1.5"
         : "§7神眼の矢 §8| ピネディメンション内で能力発動 | 次の一撃 = ダメージ^1.5");

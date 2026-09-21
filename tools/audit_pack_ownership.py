@@ -14,6 +14,9 @@ RP_ROOT = ROOT / "resource_packs"
 PINECD_BP = BP_ROOT / "bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9"
 PINECD_RP = RP_ROOT / "rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784"
 INTEGRATED_BP = BP_ROOT / "bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639"
+INTEGRATED_RP = RP_ROOT / "rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a"
+PVP_BP = BP_ROOT / "bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3"
+PVP_RP = RP_ROOT / "rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055"
 
 FORBIDDEN_IN_INTEGRATED_BP = {
     "loot_tables/tcow.json",
@@ -23,6 +26,14 @@ FORBIDDEN_IN_INTEGRATED_BP = {
     "loot_tables/blocks/rose_quartz_cluster.json",
     "loot_tables/blocks/rose_quartz_crystal_block.json",
     "loot_tables/blocks/rose_quartz_large_bud.json",
+    "entities/shingan_arrow.json",
+    "items/shingan_arrow.item.json",
+    "items/tenrai_wedge.item.json",
+    "loot_tables/blocks/dragon_relic.json",
+    "scripts/elemental_status.js",
+    "scripts/pvp_island/config.js",
+    "scripts/pvp_island/dragon_relic_display.js",
+    "scripts/pvp_island/dragon_relic_gateway.js",
     "loot_tables/blocks/deathnerite_block.json",
     "recipes/deathnerite_recipe/deathnerite_ingot.json",
     "recipes/deathnerite_recipe/equipment/deathnerite_axe.json",
@@ -32,6 +43,15 @@ FORBIDDEN_IN_INTEGRATED_BP = {
     "recipes/deathnerite_recipe/equipment/deathnerite_leggings.json",
     "recipes/deathnerite_recipe/equipment/deathnerite_pickaxe.json",
     "recipes/deathnerite_recipe/equipment/deathnerite_sword.json",
+}
+
+FORBIDDEN_IN_INTEGRATED_RP = {
+    "animations/dragon_relic_held.animation.json",
+    "attachables/tenrai_wedge.attachable.json",
+    "entity/dragon_relic_display.entity.json",
+    "entity/shingan_arrow.entity.json",
+    "models/entity/pinene_pvp/dragon_relic.geo.json",
+    "textures/items/dragon_relic.png",
 }
 
 JUNK_RE = re.compile(
@@ -158,9 +178,63 @@ def main() -> None:
                 errors.append(f"PineCD item outside canonical BP: {rel(path)}: {ident}")
 
     # Known features that were split into dedicated packs must not silently grow back in BP15.
+    # Saved items and projectiles require actual legacy definitions, not just runtime aliases.
+    for pack, folder, kind, identifiers in (
+        (PVP_BP, "items", "minecraft:item", {"pinen:tenrai_wedge", "pinen:shingan_arrow", "pinene_pvp:tenrai_wedge", "pinene_pvp:shingan_arrow"}),
+        (PVP_BP, "entities", "minecraft:entity", {"pinen:shingan_arrow", "pinene_pvp:shingan_arrow"}),
+        (PVP_RP, "entity", "minecraft:client_entity", {"pinen:shingan_arrow", "pinene_pvp:shingan_arrow"}),
+        (PVP_RP, "attachables", "minecraft:attachable", {"pinen:tenrai_wedge", "pinene_pvp:tenrai_wedge"}),
+    ):
+        counts = defaultdict(int)
+        for path in (pack / folder).rglob("*.json"):
+            ident = load_json(path).get(kind, {}).get("description", {}).get("identifier")
+            if ident in identifiers:
+                counts[ident] += 1
+        for ident in sorted(identifiers):
+            if counts[ident] != 1:
+                errors.append(f"PvP compatibility definition must have one owner in {rel(pack)}/{folder}: {ident} (found {counts[ident]})")
+
     for item in sorted(FORBIDDEN_IN_INTEGRATED_BP):
         if (INTEGRATED_BP / item).exists():
             errors.append(f"dedicated-pack file copied back into integrated BP: {item}")
+
+    for item in sorted(FORBIDDEN_IN_INTEGRATED_RP):
+        if (INTEGRATED_RP / item).exists():
+            errors.append(f"dedicated-pack file copied back into integrated RP: {item}")
+
+    integrated_item_atlas = INTEGRATED_RP / "textures/item_texture.json"
+    if integrated_item_atlas.exists():
+        atlas = load_json(integrated_item_atlas).get("texture_data", {})
+        bad = sorted(set(atlas) & {"pinene_pvp_dragon_relic", "tenrai_wedge", "shingan_arrow"})
+        if bad:
+            errors.append(f"PvP atlas keys copied back into integrated RP: {bad}")
+
+    integrated_terrain_atlas = INTEGRATED_RP / "textures/terrain_texture.json"
+    if integrated_terrain_atlas.exists():
+        atlas = load_json(integrated_terrain_atlas).get("texture_data", {})
+        bad = sorted(set(atlas) & {"pinene_pvp_dragon_relic_anchor", "pinene_pvp_dragon_relic_item"})
+        if bad:
+            errors.append(f"PvP terrain keys copied back into integrated RP: {bad}")
+
+    integrated_blocks = INTEGRATED_RP / "blocks.json"
+    if integrated_blocks.exists():
+        blocks = load_json(integrated_blocks)
+        if "pinene_pvp:dragon_relic_block" in blocks:
+            errors.append("PvP block entry copied back into integrated RP: pinene_pvp:dragon_relic_block")
+
+    for lang_name in ("en_US.lang", "ja_JP.lang"):
+        lang_path = INTEGRATED_RP / "texts" / lang_name
+        if not lang_path.exists():
+            continue
+        lines = lang_path.read_text(encoding="utf-8-sig", errors="replace").splitlines()
+        forbidden_prefixes = (
+            "item.pinene_pvp:dragon_relic.name=",
+            "tile.pinene_pvp:dragon_relic_block.name=",
+            "item.pinen:tenrai_wedge.name=",
+            "item.pinen:shingan_arrow.name=",
+        )
+        if any(line.startswith(forbidden_prefixes) for line in lines):
+            errors.append(f"PvP localization copied back into integrated RP: {rel(lang_path)}")
 
     # Report byte-identical cross-pack payloads. Pack icons are intentionally duplicated
     # between the BP/RP halves of some addons and are excluded from the regression budget.

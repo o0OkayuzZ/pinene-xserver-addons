@@ -1,6 +1,6 @@
 import "./gf/index.js";
 import "./mycology/index.js";
-import { world, ItemStack, system, BlockPermutation, EntityDamageCause } from "@minecraft/server";
+import { world, ItemStack, system, BlockPermutation } from "@minecraft/server";
 import { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";
 import "./meitetsu_chest.js";
 
@@ -8,130 +8,6 @@ function safeSubscribe(eventSignal, handler) {
     if (!eventSignal || typeof eventSignal.subscribe !== "function") return;
     eventSignal.subscribe(handler);
 }
-
-// ============================================================
-// ピネディメンション固有ステータス
-// ============================================================
-// 独自の状態異常はタグで保持する。武器側からは applyPineCharged / applyPineDivineSight を呼ぶ。
-const PINE_CHARGED_TAG = "pinene:charged";
-const PINE_DIVINE_SIGHT_TAG = "pinene:divine_sight";
-const PINE_TENRAI_WEDGE_ITEM_ID = "pinen:tenrai_wedge";
-const PINE_SHINGAN_ARROW_ENTITY_ID = "pinen:shingan_arrow";
-const PINE_LIGHTNING_GUARD_TAG = "pinene:lightning_guard";
-const pineStatusExpiry = new Map();
-
-function pineStatusKey(entity, tag) {
-    return `${entity?.id ?? entity?.name ?? "unknown"}:${tag}`;
-}
-
-function addPineTimedTag(entity, tag, durationTicks) {
-    if (!entity) return false;
-    try {
-        entity.addTag(tag);
-        pineStatusExpiry.set(pineStatusKey(entity, tag), system.currentTick + Math.max(1, durationTicks));
-        return true;
-    } catch {
-        return false;
-    }
-}
-
-function removePineTimedTag(entity, tag) {
-    try {
-        entity.removeTag(tag);
-    } catch {
-    }
-    pineStatusExpiry.delete(pineStatusKey(entity, tag));
-}
-
-function applyPineCharged(entity, durationTicks = 200) {
-    return addPineTimedTag(entity, PINE_CHARGED_TAG, durationTicks);
-}
-
-function applyPineDivineSight(entity, durationTicks = 200) {
-    return addPineTimedTag(entity, PINE_DIVINE_SIGHT_TAG, durationTicks);
-}
-
-function pineHasTag(entity, tag) {
-    try {
-        return entity?.hasTag?.(tag) === true;
-    } catch {
-        return false;
-    }
-}
-
-function pineLightningStrike(entity) {
-    try {
-        entity.dimension.spawnEntity("minecraft:lightning_bolt", entity.location);
-    } catch {
-    }
-}
-
-// 状態の期限切れ処理と、帯電中の雷引き寄せ。
-system.runInterval(() => {
-    for (const [key, expiry] of pineStatusExpiry) {
-        if (system.currentTick < expiry) continue;
-        const separator = key.lastIndexOf(":");
-        const tag = key.slice(separator + 1);
-        for (const dimensionId of ["minecraft:overworld", "minecraft:nether", "minecraft:the_end"]) {
-            try {
-                for (const entity of world.getDimension(dimensionId).getEntities()) {
-                    if (`${entity.id ?? entity.name ?? "unknown"}:${tag}` !== key) continue;
-                    removePineTimedTag(entity, tag);
-                    break;
-                }
-            } catch {
-            }
-        }
-        pineStatusExpiry.delete(key);
-    }
-
-    if (system.currentTick % 40 !== 0) return;
-    for (const dimensionId of ["minecraft:overworld", "minecraft:nether", "minecraft:the_end"]) {
-        try {
-            for (const entity of world.getDimension(dimensionId).getEntities({ tags: [PINE_CHARGED_TAG] })) {
-                if (Math.random() < 0.2) pineLightningStrike(entity);
-            }
-        } catch {
-        }
-    }
-}, 1);
-
-// 雷撃と神眼の追加ダメージ処理。afterEvents のため、元の攻撃に追加ダメージを重ねる。
-safeSubscribe(world?.afterEvents?.entityHurt, (event) => {
-    const hurtEntity = event?.hurtEntity;
-    if (!hurtEntity) return;
-
-    if (pineHasTag(hurtEntity, PINE_CHARGED_TAG) && event.damageSource?.cause === EntityDamageCause.lightning) {
-        try {
-            hurtEntity.addTag(PINE_LIGHTNING_GUARD_TAG);
-            hurtEntity.applyDamage(Math.max(1, event.damage), { cause: EntityDamageCause.magic });
-        } catch {
-        } finally {
-            try { hurtEntity.removeTag(PINE_LIGHTNING_GUARD_TAG); } catch { }
-        }
-    }
-
-    const attacker = event.damageSource?.damagingEntity;
-    if (!attacker || attacker.typeId !== "minecraft:player") return;
-    if (!pineHasTag(attacker, PINE_DIVINE_SIGHT_TAG)) return;
-
-    try {
-        // 元のダメージを D としたとき、合計を D^1.5 にする。
-        // 追加分だけを与えることで、元の攻撃と合わせて累乗値になる。
-        const poweredDamage = Math.pow(Math.max(0, event.damage), 1.5);
-        const bonusDamage = Math.max(0, poweredDamage - event.damage);
-        if (bonusDamage <= 0) {
-            removePineTimedTag(attacker, PINE_DIVINE_SIGHT_TAG);
-            return;
-        }
-        hurtEntity.applyDamage(bonusDamage, {
-            cause: EntityDamageCause.magic,
-            damagingEntity: attacker
-        });
-        removePineTimedTag(attacker, PINE_DIVINE_SIGHT_TAG);
-    } catch {
-    }
-});
 
 // ============================================================
 // ピネ Waystone
@@ -1128,35 +1004,10 @@ safeSubscribe(world?.afterEvents?.itemUse, (event) => {
 // 通常攻撃(ぶったたく)でも回収できるようにする。
 safeSubscribe(world?.afterEvents?.entityHitEntity, (event) => {
     const attacker = event.damagingEntity;
-    if (!attacker) return;
-
-    // 天雷の楔は命中時に帯電を付与し、武器を1個消費する。
-    if (attacker.typeId === "minecraft:player") {
-        try {
-            tryPickupFigureEntity(event.hitEntity);
-        } catch {
-        }
-        try {
-            const held = attacker.getComponent("minecraft:inventory")?.container?.getItem(attacker.selectedSlotIndex);
-            if (held?.typeId === PINE_TENRAI_WEDGE_ITEM_ID) {
-                applyPineCharged(event.hitEntity, 200);
-                consumeHeldItem(attacker, PINE_TENRAI_WEDGE_ITEM_ID);
-                attacker.playSound("ambient.weather.thunder");
-            }
-        } catch {
-        }
-        return;
-    }
-
-    // 神眼の矢は、矢の所有者へ「次の一撃をD^1.5」にする神眼を付与する。
-    if (attacker.typeId === PINE_SHINGAN_ARROW_ENTITY_ID) {
-        try {
-            const owner = attacker.getComponent("minecraft:projectile")?.owner;
-            if (owner?.typeId === "minecraft:player") {
-                applyPineDivineSight(owner, 200);
-            }
-        } catch {
-        }
+    if (!attacker || attacker.typeId !== "minecraft:player") return;
+    try {
+        tryPickupFigureEntity(event.hitEntity);
+    } catch {
     }
 });
 
