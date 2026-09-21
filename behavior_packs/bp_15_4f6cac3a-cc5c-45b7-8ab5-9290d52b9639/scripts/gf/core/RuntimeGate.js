@@ -1,7 +1,7 @@
-import { IDS } from "../../pvp_island/config.js";
+const PVP_DIMENSION = "pinene_pvp:pvp_island";
 
 export function isActive(entity) {
-  try { return entity?.dimension?.id === IDS.dimension; } catch { return false; }
+  try { return entity?.dimension?.id === PVP_DIMENSION; } catch { return false; }
 }
 
 export function requireActive(entity) {
