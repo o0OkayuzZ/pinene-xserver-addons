@@ -22,6 +22,7 @@ FORBIDDEN_IN_INTEGRATED_BP = {
     "loot_tables/blocks/quartz_crystal_block.json",
     "loot_tables/blocks/rose_quartz_cluster.json",
     "loot_tables/blocks/rose_quartz_crystal_block.json",
+    "loot_tables/blocks/rose_quartz_large_bud.json",
     "loot_tables/blocks/deathnerite_block.json",
     "recipes/deathnerite_recipe/deathnerite_ingot.json",
     "recipes/deathnerite_recipe/equipment/deathnerite_axe.json",
