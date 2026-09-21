@@ -49,7 +49,7 @@ for e in E:
  for field,suf in [('nameJa','name'),('scienceJa','science'),('gameExplanationJa','game'),('jokeJa','joke')]:lang[f'{stem}.{suf}']=e[field]
  lang[f'item.{e["itemId"]}.name']=e['nameJa']
  c={'minecraft:display_name':{'value':f'{stem}.name'},'minecraft:icon':{'textures':{'default':e['textureKey']}},'minecraft:max_stack_size':64}
- if e['useMode']!='specimen': c['minecraft:cooldown']={'category':'pinene_mushroom','duration':4}
+ if e['useMode']=='crush': c['minecraft:cooldown']={'category':'pinene_mushroom','duration':e['cooldownSeconds']}
  if e['useMode']=='eat':
   f=e['food'];c.update({'minecraft:food':{'nutrition':f['nutrition'],'saturation_modifier':f['saturationModifier'],'can_always_eat':True},'minecraft:use_modifiers':{'use_duration':1.6,'movement_modifier':0.35},'minecraft:use_animation':'eat','pinene:myco_consume':{}})
  elif e['useMode']=='crush':c.update({'minecraft:use_modifiers':{'use_duration':0.1,'movement_modifier':1.0},'pinene:myco_crush':{}})
