@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Audit duplicate payloads and pack ownership
         run: python tools/audit_pack_ownership.py
+      - name: Test pack metadata regression checks
+        run: python -m unittest discover -s tools/tests -p 'test_*.py' -v
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

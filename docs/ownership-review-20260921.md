@@ -42,3 +42,11 @@ The audit contract lists each removed rendering path, requires its canonical cop
 - The visually shared `zombie_stem_cell` / `enderite_ingot` image has different item roles; it is not included in the zombie armor cleanup.
 
 The remaining cross-pack duplicate budget is tightened to 350,000 bytes, with the fossil exception accounting for most of the retained payload.
+
+## Metadata and validation
+
+The review found pre-existing stale BP02→RP05 and BP04→RP01 dependency versions, plus stale registrations for the grave, More Geodes, Dungeons and Infinite Castle packs. BP02/BP04 dependencies now match their current resource manifests; BP02/BP04 were versioned accordingly. Root and bundled-world registrations, README and the website registry now match every current manifest. No world pack ordering was changed. Infinite Castle source/mirror main and the UUID-based export contract were checked before updating its stale registration values; its implementation and mirror were not edited.
+
+CI now checks UUID uniqueness, header/module versions, UUID dependency versions, complete and unique root/bundled-world registrations, README rows and website entries. Four regression tests cover matching metadata, stale nested-world registrations, missing registrations, and stale dependency/module versions. The existing Infinite Castle exporter workflow remains in place.
+
+The final local ownership audit reports 272,603 cross-pack duplicate bytes. This metric counts extra pack owners per identical blob, not every repeated filename within a pack. Runtime changes are covered by nine mocked PvP tests; engine acceptance, visuals and saved-world loading still require an in-game check.

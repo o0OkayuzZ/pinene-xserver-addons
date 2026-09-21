@@ -145,9 +145,60 @@ def load_jsonc(path: Path):
     return json.loads(cleaned)
 
 
+def metadata_errors(root: Path, packs: list[Path]) -> list[str]:
+    errors = []
+    manifests = {}
+    for pack in packs:
+        data = load_json(pack / "manifest.json")
+        header = data["header"]
+        uid = header["uuid"]
+        if uid in manifests:
+            errors.append(f"Duplicate manifest UUID: {uid}")
+        manifests[uid] = (pack, data)
+        if any(module["version"] != header["version"] for module in data["modules"]):
+            errors.append(f"Module version differs from header: {pack.name}")
+    for pack, data in manifests.values():
+        for dependency in data.get("dependencies", []):
+            uid = dependency.get("uuid")
+            if uid is None:
+                continue
+            if uid not in manifests or dependency["version"] != manifests[uid][1]["header"]["version"]:
+                errors.append(f"Unresolved pack dependency/version: {pack.name}: {uid}")
+    for folder in (root, root / "worlds" / "Bedrock level"):
+        for kind in ("behavior", "resource"):
+            path = folder / f"world_{kind}_packs.json"
+            entries = load_json(path)
+            expected = {uid for uid, (pack, _) in manifests.items() if pack.parent.name == f"{kind}_packs"}
+            ids = [entry["pack_id"] for entry in entries]
+            if set(ids) != expected or len(ids) != len(set(ids)):
+                errors.append(f"Pack registrations differ from active manifests: {path.relative_to(root)}")
+            for entry in entries:
+                uid = entry["pack_id"]
+                if uid in manifests and entry["version"] != manifests[uid][1]["header"]["version"]:
+                    errors.append(f"Stale registration version: {path.relative_to(root)}: {uid}")
+    registry = root / "website/src/data/pack-registry.json"
+    if registry.exists():
+        for entry in load_json(registry)["packs"]:
+            uid = entry["uuid"]
+            if uid in manifests:
+                version = ".".join(map(str, manifests[uid][1]["header"]["version"]))
+                if entry.get("version") != version:
+                    errors.append(f"Stale website version: {uid}")
+    readme = root / "README.md"
+    if readme.exists():
+        for line in readme.read_text(encoding="utf-8-sig").splitlines():
+            for pack, data in manifests.values():
+                prefix = f"| {pack.relative_to(root).as_posix()} |"
+                version = ".".join(map(str, data["header"]["version"]))
+                if line.startswith(prefix) and not line.endswith(f"| {version} |"):
+                    errors.append(f"Stale README version: {pack.name}")
+    return errors
+
+
 def main() -> None:
     errors: list[str] = []
     packs = pack_dirs()
+    errors.extend(metadata_errors(ROOT, packs))
     all_files = [(pack, p) for pack in packs for p in files_for(pack)]
 
     shared_textures = load_json(ROOT / "tools/shared_texture_ownership.json")
