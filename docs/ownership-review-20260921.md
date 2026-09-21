@@ -23,3 +23,11 @@ The two namespaces are not interchangeable aliases:
 The effect names, numeric durations and amplifiers match, but the JSON and Script API mechanisms cannot be assumed to have identical duration semantics. This cleanup intentionally preserves both behaviors. No historical evidence establishes that every old item should be converted to the current behavior: both were present in the initial server backup, and the later shared-resource commit only changed metadata. Balancing or migration requires a separate decision and engine validation.
 
 PR #10 moved three legacy items and two recipes unchanged, relocated the unique diamond texture, and removed the two identical PNG copies (3,125 bytes). RP16 is the sole atlas owner. This review additionally supplies missing legacy English/Japanese item names and guards all six definitions and the legacy names in CI. BP03 is 1.0.8 and RP16 is 1.0.6 after this review.
+
+## Deathnerite / Parcanite
+
+The current tree differs from the old 74-file / 588 KB estimate. RP02 contains 65 named Deathnerite/Parcanite resources, all byte-identical at the same paths in RP06 (77,258 working-tree bytes before removal). RP06 contains 72 named resources. RP15 contains metadata and one animation, but no PNG files: all 35 of its atlas texture paths resolve in RP06.
+
+RP06 is therefore the canonical rendering owner. RP15 retains its metadata role; moving it wholesale would not make it self-contained. RP02's 65 duplicate resources were removed without changing identifiers, geometry, UVs, paths or stacking order. RP15's sole animation was also removed after JSON comparison confirmed it has exactly the same animation identifier and content as RP06 (only whitespace differs). RP02 and RP15 now explicitly depend on RP06, and BP05 plus the BP15/BP09/RP07 dependency chain are versioned together.
+
+The audit contract lists each removed rendering path, requires its canonical copy, rejects reintroduced copies at the old locations, and checks all RP15 atlas texture paths in RP06. Dungeons rendering remains in its existing resource pack. A complete move into RP15 remains a possible separate architectural change; it would require handling Dungeons references to shared assets and validating the resulting stack in the engine.

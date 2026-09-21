@@ -150,6 +150,37 @@ def main() -> None:
     packs = pack_dirs()
     all_files = [(pack, p) for pack in packs for p in files_for(pack)]
 
+    deathnerite = load_json(ROOT / "tools/deathnerite_ownership.json")
+    render_owner = RP_ROOT / deathnerite["resourceOwner"]
+    metadata_owner = RP_ROOT / deathnerite["metadataOwner"]
+    for source, key in ((INTEGRATED_RP, "removedIntegratedPaths"), (metadata_owner, "removedMetadataPaths")):
+        for name in deathnerite[key]:
+            if (source / name).exists():
+                errors.append(f"Deathnerite resource copied outside its render owner: {rel(source / name)}")
+            if not (render_owner / name).is_file():
+                errors.append(f"Missing canonical Deathnerite resource: {rel(render_owner / name)}")
+
+    owner_header = load_json(render_owner / "manifest.json")["header"]
+    for source in (INTEGRATED_RP, metadata_owner):
+        dependencies = load_json(source / "manifest.json").get("dependencies", [])
+        if not any(d.get("uuid") == owner_header["uuid"] and d.get("version") == owner_header["version"] for d in dependencies):
+            errors.append(f"Missing Deathnerite rendering dependency: {rel(source)}")
+
+    def texture_paths(value):
+        if isinstance(value, str) and value.startswith("textures/"):
+            yield value
+        elif isinstance(value, dict):
+            for child in value.values():
+                yield from texture_paths(child)
+        elif isinstance(value, list):
+            for child in value:
+                yield from texture_paths(child)
+
+    for atlas_name in ("item_texture.json", "terrain_texture.json"):
+        for name in texture_paths(load_json(metadata_owner / "textures" / atlas_name).get("texture_data", {})):
+            if not any((render_owner / (name + suffix)).is_file() for suffix in (".png", ".tga", ".jpg")):
+                errors.append(f"Deathnerite atlas texture missing from render owner: {name}")
+
     # Do not ship editor/OS backups inside active packs.
     for _, path in all_files:
         if JUNK_RE.search("/" + rel(path)):
