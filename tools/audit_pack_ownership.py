@@ -145,10 +145,113 @@ def load_jsonc(path: Path):
     return json.loads(cleaned)
 
 
+def metadata_errors(root: Path, packs: list[Path]) -> list[str]:
+    errors = []
+    manifests = {}
+    for pack in packs:
+        data = load_json(pack / "manifest.json")
+        header = data["header"]
+        uid = header["uuid"]
+        if uid in manifests:
+            errors.append(f"Duplicate manifest UUID: {uid}")
+        manifests[uid] = (pack, data)
+        if any(module["version"] != header["version"] for module in data["modules"]):
+            errors.append(f"Module version differs from header: {pack.name}")
+    for pack, data in manifests.values():
+        for dependency in data.get("dependencies", []):
+            uid = dependency.get("uuid")
+            if uid is None:
+                continue
+            if uid not in manifests or dependency["version"] != manifests[uid][1]["header"]["version"]:
+                errors.append(f"Unresolved pack dependency/version: {pack.name}: {uid}")
+    for folder in (root, root / "worlds" / "Bedrock level"):
+        for kind in ("behavior", "resource"):
+            path = folder / f"world_{kind}_packs.json"
+            entries = load_json(path)
+            expected = {uid for uid, (pack, _) in manifests.items() if pack.parent.name == f"{kind}_packs"}
+            ids = [entry["pack_id"] for entry in entries]
+            if set(ids) != expected or len(ids) != len(set(ids)):
+                errors.append(f"Pack registrations differ from active manifests: {path.relative_to(root)}")
+            for entry in entries:
+                uid = entry["pack_id"]
+                if uid in manifests and entry["version"] != manifests[uid][1]["header"]["version"]:
+                    errors.append(f"Stale registration version: {path.relative_to(root)}: {uid}")
+    registry = root / "website/src/data/pack-registry.json"
+    if registry.exists():
+        for entry in load_json(registry)["packs"]:
+            uid = entry["uuid"]
+            if uid in manifests:
+                version = ".".join(map(str, manifests[uid][1]["header"]["version"]))
+                if entry.get("version") != version:
+                    errors.append(f"Stale website version: {uid}")
+    readme = root / "README.md"
+    if readme.exists():
+        for line in readme.read_text(encoding="utf-8-sig").splitlines():
+            for pack, data in manifests.values():
+                prefix = f"| {pack.relative_to(root).as_posix()} |"
+                version = ".".join(map(str, data["header"]["version"]))
+                if line.startswith(prefix) and not line.endswith(f"| {version} |"):
+                    errors.append(f"Stale README version: {pack.name}")
+    return errors
+
+
 def main() -> None:
     errors: list[str] = []
     packs = pack_dirs()
+    errors.extend(metadata_errors(ROOT, packs))
     all_files = [(pack, p) for pack in packs for p in files_for(pack)]
+
+    shared_textures = load_json(ROOT / "tools/shared_texture_ownership.json")
+    moved_texture_paths = set()
+    for entry in shared_textures:
+        old = RP_ROOT / entry["oldPack"] / entry["oldPath"]
+        canonical = RP_ROOT / entry["owner"] / entry["path"]
+        if old.exists():
+            errors.append(f"Shared texture copied back into integrated RP: {rel(old)}")
+        if not canonical.is_file():
+            errors.append(f"Missing canonical shared texture: {rel(canonical)}")
+        atlas = load_json(RP_ROOT / entry["atlasPack"] / "textures/item_texture.json")["texture_data"]
+        if atlas.get(entry["atlasKey"], {}).get("textures") != entry["texture"]:
+            errors.append(f"Shared texture atlas points outside its owner: {entry['atlasKey']}")
+        if entry["oldPath"] != entry["path"]:
+            moved_texture_paths.add(entry["oldPath"].rsplit(".", 1)[0])
+    for _, path in all_files:
+        if path.suffix == ".json":
+            text = path.read_text(encoding="utf-8-sig", errors="replace")
+            for old in moved_texture_paths:
+                if f'"{old}"' in text:
+                    errors.append(f"Reference to removed shared texture: {rel(path)}: {old}")
+
+    deathnerite = load_json(ROOT / "tools/deathnerite_ownership.json")
+    render_owner = RP_ROOT / deathnerite["resourceOwner"]
+    metadata_owner = RP_ROOT / deathnerite["metadataOwner"]
+    for source, key in ((INTEGRATED_RP, "removedIntegratedPaths"), (metadata_owner, "removedMetadataPaths")):
+        for name in deathnerite[key]:
+            if (source / name).exists():
+                errors.append(f"Deathnerite resource copied outside its render owner: {rel(source / name)}")
+            if not (render_owner / name).is_file():
+                errors.append(f"Missing canonical Deathnerite resource: {rel(render_owner / name)}")
+
+    owner_header = load_json(render_owner / "manifest.json")["header"]
+    for source in (INTEGRATED_RP, metadata_owner):
+        dependencies = load_json(source / "manifest.json").get("dependencies", [])
+        if not any(d.get("uuid") == owner_header["uuid"] and d.get("version") == owner_header["version"] for d in dependencies):
+            errors.append(f"Missing Deathnerite rendering dependency: {rel(source)}")
+
+    def texture_paths(value):
+        if isinstance(value, str) and value.startswith("textures/"):
+            yield value
+        elif isinstance(value, dict):
+            for child in value.values():
+                yield from texture_paths(child)
+        elif isinstance(value, list):
+            for child in value:
+                yield from texture_paths(child)
+
+    for atlas_name in ("item_texture.json", "terrain_texture.json"):
+        for name in texture_paths(load_json(metadata_owner / "textures" / atlas_name).get("texture_data", {})):
+            if not any((render_owner / (name + suffix)).is_file() for suffix in (".png", ".tga", ".jpg")):
+                errors.append(f"Deathnerite atlas texture missing from render owner: {name}")
 
     # Do not ship editor/OS backups inside active packs.
     for _, path in all_files:
@@ -299,9 +402,9 @@ def main() -> None:
 
     # A few small shared compatibility assets are currently intentional. Large regressions
     # should fail loudly so another 100+ MiB copy cannot accumulate unnoticed.
-    if duplicate_bytes > 5_000_000:
+    if duplicate_bytes > 350_000:
         errors.append(
-            f"cross-pack exact duplicate payload exceeds 5 MB budget: {duplicate_bytes} bytes"
+            f"cross-pack exact duplicate payload exceeds 350 KB budget: {duplicate_bytes} bytes"
         )
 
     if errors:
