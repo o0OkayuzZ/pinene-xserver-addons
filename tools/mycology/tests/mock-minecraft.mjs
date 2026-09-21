@@ -1,5 +1,5 @@
 export class Signal{handlers=[];subscribe(h){this.handlers.push(h);return h;}emit(e){for(const h of this.handlers)h(e);}}
-export class Properties{props=new Map();getDynamicProperty(k){return this.props.get(k);}setDynamicProperty(k,v){if(v===undefined)this.props.delete(k);else this.props.set(k,v);}}
+export class Properties{props=new Map();getDynamicPropertyIds(){return [...this.props.keys()];}getDynamicProperty(k){return this.props.get(k);}setDynamicProperty(k,v){if(v===undefined)this.props.delete(k);else this.props.set(k,v);}}
 export class ItemStack{
  constructor(typeId,amount=1){this.typeId=typeId;this.amount=amount;this.maxAmount=64;this.nameTag='';}
  clone(){const s=new ItemStack(this.typeId,this.amount);s.nameTag=this.nameTag;return s;}
@@ -25,12 +25,13 @@ export class FakeEntity extends Properties{
  constructor(id,typeId='minecraft:player',dim){super();this.id=id;this.typeId=typeId;this.dimension=dim??new Dimension();this.isValid=true;this.location={x:0,y:64,z:0};this.c=new Container();this.selectedSlotIndex=0;this.effects=new Map();this.health=20;this.messages=[];}
  getComponent(id){if(id==='minecraft:inventory')return {container:this.c};if(id==='minecraft:health')return {currentValue:this.health,setCurrentValue:n=>{this.health=n;}};}
  getGameMode(){return 'Survival';}getEffect(id){return this.effects.get(id);}addEffect(id,duration,opts){this.effects.set(id,{duration,...opts});}
+ removeEffect(id){this.effects.delete(id);}getEffects(){return [...this.effects].map(([typeId,e])=>({typeId,...e}));}
  kill(){this.health=0;world.afterEvents.entityDie.emit({deadEntity:this});}
  remove(){this.isValid=false;world.entities.delete(this.id);}
  sendMessage(m){this.messages.push(m);}hasTag(){return false;}
 }
 class World extends Properties{
- entities=new Map();afterEvents=Object.fromEntries(['entityLoad','entityDie','playerLeave','playerSpawn','worldLoad','itemCompleteUse','playerInteractWithEntity'].map(k=>[k,new Signal()]));
+ entities=new Map();afterEvents=Object.fromEntries(['entityLoad','entityDie','playerLeave','playerSpawn','worldLoad','itemCompleteUse','playerInteractWithEntity','entityHurt','effectAdd','itemUse'].map(k=>[k,new Signal()]));
  getAllPlayers(){return [...this.entities.values()].filter(x=>x.typeId==='minecraft:player');}getEntity(id){return this.entities.get(id);}getDimension(){return [...this.entities.values()][0]?.dimension??new Dimension();}
 }
 export const world=new World();let next=1;
