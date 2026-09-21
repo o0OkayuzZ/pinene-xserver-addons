@@ -6,6 +6,8 @@ import { installFieldGuide } from './field_guide.js';
 import { reviewReceipt } from './appraisal.js';
 import { CONFIG } from './config.js';
 import { logError,tell } from './util.js';
+import { nfRuntime } from './nf_runtime.js';
+nfRuntime.install();
 installFieldGuide();
 installEffects();
 installNpc();

@@ -46,6 +46,12 @@ test('adapter: poison is persistent before delay; repeated use cannot defer it',
  world.afterEvents.itemCompleteUse.emit({source:p,itemStack:new ItemStack('minecraft:milk_bucket')});assert.equal(p.getDynamicProperty(CONFIG.poisonQueueKey),undefined);
 });
 test('adapter: R06 fixed health cost then strength; lethal cost gives no buff',()=>{reset();const p=player(),d=MUSHROOMS.find(x=>x.id==='R06');consume(p,new ItemStack(d.itemId));assert.equal(p.health,18);assert.equal(p.effects.get('minecraft:strength').amplifier,0);p.effects.clear();p.health=2;consume(p,new ItemStack(d.itemId));assert.equal(p.health,0);assert.equal(p.effects.size,0);});
+test('eating has no cooldown call or shared lock; each consecutive dose applies',()=>{
+ reset();const p=player(),d=MUSHROOMS.find(x=>x.id==='R06'),stack=new ItemStack(d.itemId);
+ stack.getComponent=()=>{throw new Error('Eating must not start a cooldown');};
+ consume(p,stack);consume(p,stack);assert.equal(p.health,16);
+ assert.equal(p.effects.get('minecraft:strength').amplifier,0);
+});
 test('adapter: normal/admin NPC is usable but drops no loot on death',()=>{reset();const p=player(),n=new FakeEntity('n',CONFIG.npcType,p.dimension);n.location={x:3,y:64,z:0};world.entities.set(n.id,n);assert(canUse(p,n));world.afterEvents.entityDie.emit({deadEntity:n});assert.equal(p.dimension.drops.length,0);});
 test('adapter: active natural death gives exactly 64+64 once',()=>{
  reset();const p=player(),n=new FakeEntity('n',CONFIG.npcType,p.dimension);world.entities.set(n.id,n);n.setDynamicProperty(CONFIG.naturalTokenKey,'natural');world.setDynamicProperty(CONFIG.leaseKey,JSON.stringify({version:1,entityId:'n',token:'natural',expiresAt:Date.now()+100000}));
