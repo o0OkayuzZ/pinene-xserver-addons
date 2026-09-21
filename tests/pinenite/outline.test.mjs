@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const read = p => JSON.parse(readFileSync(root + p, 'utf8').replace(/^\uFEFF/, ''));
 const pack = 'resource_packs/pinenite_outline/';
+const ownershipBaseline = '294914f3'; // RP07 now owns the approved Crossbow payload.
 const coverage = read('docs/pinenite/outline_coverage.json');
 const geometries = read(pack + 'models/entity/pinenite_outline.geo.json')['minecraft:geometry'];
 const controllers = read(pack + 'render_controllers/pinenite_outline.json').render_controllers;
@@ -32,7 +33,8 @@ test('every global entity material catalog declares PBR compatibility', () => {
 });
 test('PineCD declares PBR compatibility and its behavior pack requires that version', () => {
     const manifest = read('resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784/manifest.json');
-    assert.deepEqual(manifest.header.version, [1, 0, 31]);
+    assert.ok(manifest.header.version.length === 3 && manifest.header.version.every(Number.isInteger));
+    assert.ok(manifest.modules.every(module => JSON.stringify(module.version) === JSON.stringify(manifest.header.version)));
     assert.deepEqual(manifest.capabilities, ['pbr']);
     const bp = read('behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9/manifest.json');
     const dependency = bp.dependencies.find(entry => entry.uuid === manifest.header.uuid);
@@ -85,11 +87,11 @@ test('wearer armor outline includes every original cube with identical bones and
         assert.deepEqual(actual, expected);
     }
 });
-test('Zombie Gear content remains unchanged apart from dependency version metadata', () => {
-    const changed = execFileSync('git', ['diff', '--name-only', 'cd53e576'], { cwd: root, encoding: 'utf8' }).trim().split('\n');
+test('Zombie Gear and Crossbow content remains unchanged after ownership consolidation', () => {
+    const changed = execFileSync('git', ['diff', '--name-only', ownershipBaseline], { cwd: root, encoding: 'utf8' }).trim().split('\n');
     for (const path of changed.filter(p => /bp_09_|rp_07_|zombiegear/i.test(p))) {
         assert.ok(path.endsWith('/manifest.json'), path);
-        const before = JSON.parse(execFileSync('git', ['show', `cd53e576:${path}`], { cwd: root, encoding: 'utf8' }));
+        const before = JSON.parse(execFileSync('git', ['show', `${ownershipBaseline}:${path}`], { cwd: root, encoding: 'utf8' }));
         const after = read(path);
         const omitVersions = manifest => {
             delete manifest.header.version;

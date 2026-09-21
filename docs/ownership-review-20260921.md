@@ -22,7 +22,7 @@ The two namespaces are not interchangeable aliases:
 
 The effect names, numeric durations and amplifiers match, but the JSON and Script API mechanisms cannot be assumed to have identical duration semantics. This cleanup intentionally preserves both behaviors. No historical evidence establishes that every old item should be converted to the current behavior: both were present in the initial server backup, and the later shared-resource commit only changed metadata. Balancing or migration requires a separate decision and engine validation.
 
-PR #10 moved three legacy items and two recipes unchanged, relocated the unique diamond texture, and removed the two identical PNG copies (3,125 bytes). RP16 is the sole atlas owner. This review additionally supplies missing legacy English/Japanese item names and guards all six definitions and the legacy names in CI. BP03 is 1.0.8 and RP16 is 1.0.6 after this review.
+PR #10 moved three legacy items and two recipes unchanged, relocated the unique diamond texture, and removed the two identical PNG copies (3,125 bytes). RP16 is the sole atlas owner. This review additionally supplies missing legacy English/Japanese item names and guards all six definitions and the legacy names in CI. BP03 is 1.0.9 and RP16 is 1.0.7 after integrating NF release main `c348d0d9` through PR #9.
 
 ## Deathnerite / Parcanite
 
@@ -53,32 +53,34 @@ The final local ownership audit reports 272,603 cross-pack duplicate bytes. This
 
 ## Final integration snapshot
 
-During review, main advanced to `fb020049` (Mycology NF framework). This main was merged through PR #9 and #10 before the follow-up; the Mycology implementation and authoring files match current main unchanged.
+The stack was refreshed after NF version release `c348d0d9` and publication commit `97562c99` reached main. The latter was discovered during verification and is also preserved, including NF release records, website updates and registry provenance.
+
+Integration order: main `97562c99` -> PR #9 `947f9be9` -> PR #10 `3f58a02f` -> PR #11. Each PR contains its latest parent. All implementation files in each PR are unchanged from its previously reviewed head; only metadata/version synchronization and this report changed beyond the main updates. NF/Mycology runtime and authoring files match latest main exactly.
+
+Versions are calculated per stage from the latest parent and previous PR head. Packs with payload or dependency-schema changes and all reverse dependents receive a patch above both prior values. Unaffected packs retain current main/parent versions. UUIDs, module identities, Script API dependencies and pack order are preserved.
+
+| Pack | NF main | PR #9 | PR #10 | PR #11 |
+| --- | --- | --- | --- | --- |
+| BP_03 | 1.0.6 | 1.0.6 | 1.0.9 | 1.0.9 |
+| BP_05 | 2.12.26 | 2.12.26 | 2.12.26 | 2.12.28 |
+| BP_09 | 1.2.7 | 1.2.8 | 1.2.9 | 1.2.10 |
+| BP_15 | 1.0.75 | 1.0.76 | 1.0.77 | 1.0.78 |
+| BP_17 | 0.2.24 | 0.2.26 | 0.2.26 | 0.2.26 |
+| RP_02 | 1.0.62 | 1.0.63 | 1.0.64 | 1.0.66 |
+| RP_07 | 1.2.8 | 1.2.9 | 1.2.10 | 1.2.11 |
+| RP_15 | 1.0.105 | 1.0.105 | 1.0.105 | 1.0.107 |
+| RP_16 | 1.0.4 | 1.0.4 | 1.0.7 | 1.0.7 |
+| RP_20 | 0.2.23 | 0.2.25 | 0.2.25 | 0.2.25 |
+
+Metadata checks pass for all 34 active packs: header/module versions, UUID dependency versions, root and bundled-world registrations, README rows and website entries. All registrations preserve their original order. PvP ownership definitions and runtime payloads are unchanged by this refresh.
 
 Committed BP/RP payload totals (Git blob bytes, excluding documentation/tools):
 
 | Snapshot | Bytes |
 | --- | ---: |
-| origin/main | 323,583,282 |
-| origin/cleanup/pvp-ownership-20260921 | 312,750,242 |
-| origin/cleanup/blue-apple-ownership-20260921 | 312,730,376 |
-| HEAD | 312,217,849 |
+| main 97562c99 | 323,580,547 |
+| PR #9 | 312,747,507 |
+| PR #10 | 312,727,643 |
+| PR #11 | 312,215,157 |
 
-Net reduction versus current main: 11,365,433 bytes. Additional reduction after reviewed PR #10: 512,527 bytes.
-
-Final manifest changes versus current main:
-
-| Pack | Main | Reviewed |
-| --- | --- | --- |
-| BP_02 | 1.0.35 | 1.0.36 |
-| BP_03 | 1.0.6 | 1.0.8 |
-| BP_04 | 1.0.32 | 1.0.33 |
-| BP_05 | 2.12.26 | 2.12.27 |
-| BP_09 | 1.2.6 | 1.2.9 |
-| BP_15 | 1.0.74 | 1.0.77 |
-| BP_17 | 0.2.23 | 0.2.25 |
-| RP_02 | 1.0.61 | 1.0.65 |
-| RP_07 | 1.2.7 | 1.2.10 |
-| RP_15 | 1.0.105 | 1.0.106 |
-| RP_16 | 1.0.4 | 1.0.6 |
-| RP_20 | 0.2.23 | 0.2.24 |
+Net reduction versus latest main: 11,365,390 bytes. Additional reduction after PR #10: 512,486 bytes. No PR merge or Xserver deployment was performed by this review.
