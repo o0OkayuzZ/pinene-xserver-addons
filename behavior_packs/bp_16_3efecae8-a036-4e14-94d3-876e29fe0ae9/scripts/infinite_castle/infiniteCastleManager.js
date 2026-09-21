@@ -36,6 +36,7 @@ import { selectTransferParty, shareTransferTarget } from "./transferParty.js";
 import { startEntranceTransition } from "./entranceTransition.js";
 import { drawReconstructionDelayTicks } from "./reconstructionIntervals.js";
 import { phase1RunState, phase1Enter, phase1ArrivalGrace, phase1Exit, preparePhase1Landing, beginPhase1Run, failPhase1Build, setPhase1Handlers, updateRoomEncounters } from "./phase1Runtime.js";
+import { PHASE1 } from "./phase1Config.js";
 import { previewSourceParts } from "./sourcePartsPreview.js";
 import {
     clearSourcePartsV2,
@@ -50,9 +51,10 @@ import {
     rebuildSourcePartsAt,
     rebuildSourcePartsV2,
     rebuildAllSourcePartsForVisualTest,
+    inspectSourcePartsStorage,
     updateSourcePartsScenery,
 } from "./sourcePartsReconstructionV2.js";
-import { getSourcePartsSceneryStatus } from "./sourcePartsScenery.js";
+import { getSourcePartsSceneryStatus, inspectSourcePartsSceneryStorage } from "./sourcePartsScenery.js";
 import {
     getSourcePartsDemoEntranceTarget,
     setSourcePartsDemoExitTransferHandler,
@@ -669,7 +671,7 @@ function checkSourceDynamicReconstruction() {
 
     const now = reconstructionNow();
     let next = getSourceDynamicNextTick();
-    if (next !== null && next > now + 5 * 60 * 20) {
+    if (next !== null && next > now + PHASE1.dynamicReconstructionIntervalMinutes.max * 60 * 20) {
         next = now + drawReconstructionDelayTicks("core");
         setSourceDynamicNextTick(next);
     }
@@ -677,7 +679,7 @@ function checkSourceDynamicReconstruction() {
         setSourceDynamicNextTick(now + drawReconstructionDelayTicks("core"));
         broadcastToDungeon(
             dimension,
-            "[infinite_castle] 在室パーツ保護型の再構築タイマーを開始しました（3〜5分・平均4分）"
+            `[infinite_castle] 在室パーツ保護型の再構築タイマーを開始しました（${PHASE1.dynamicReconstructionIntervalMinutes.min}〜${PHASE1.dynamicReconstructionIntervalMinutes.max}分）`
         );
         return;
     }
@@ -1574,7 +1576,7 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
     );
     const sourceNext = getSourceDynamicNextTick();
     event.sourceEntity?.sendMessage(
-        `[ic-debug] sourceDynamic=5-15m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - reconstructionNow()) / 20))} inProgress=${sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()} progression=off`
+        `[ic-debug] sourceDynamic=${PHASE1.dynamicReconstructionIntervalMinutes.min}-${PHASE1.dynamicReconstructionIntervalMinutes.max}m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - reconstructionNow()) / 20))} inProgress=${sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()} progression=off`
     );
     const scenery = getSourcePartsSceneryStatus();
     event.sourceEntity?.sendMessage(
@@ -1610,7 +1612,12 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
 
 system.afterEvents.scriptEventReceive.subscribe((event) => {
     if (event.id !== "infinite_castle:preview_source_parts") return;
-    void previewSourceParts(event.sourceEntity);
+    const player = event.sourceEntity;
+    if (!player || player.dimension.id !== INFINITE_CASTLE_DIMENSION_ID) {
+        player?.sendMessage("[infinite_castle] 素材建築プレビューは無限城ディメンション内でのみ実行できます");
+        return;
+    }
+    void previewSourceParts(player);
 });
 
 async function runVisualFullRebuild(player, recording = false) {
@@ -1656,7 +1663,12 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
 
 system.afterEvents.scriptEventReceive.subscribe((event) => {
     if (event.id !== "infinite_castle:rebuild_source_parts") return;
-    void rebuildSourcePartsV2(event.sourceEntity, event.message);
+    const player = event.sourceEntity;
+    if (!player || player.dimension.id !== INFINITE_CASTLE_DIMENSION_ID) {
+        player?.sendMessage("[infinite_castle] 素材建築の再構築は無限城ディメンション内でのみ実行できます");
+        return;
+    }
+    void rebuildSourcePartsV2(player, event.message);
 });
 
 system.afterEvents.scriptEventReceive.subscribe((event) => {
@@ -1699,7 +1711,12 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
 
 system.afterEvents.scriptEventReceive.subscribe((event) => {
     if (event.id !== "infinite_castle:clear_source_parts") return;
-    void clearSourcePartsV2(event.sourceEntity, event.message);
+    const player = event.sourceEntity;
+    if (!player || player.dimension.id !== INFINITE_CASTLE_DIMENSION_ID) {
+        player?.sendMessage("[infinite_castle] 素材建築の消去は無限城ディメンション内でのみ実行できます");
+        return;
+    }
+    void clearSourcePartsV2(player, event.message);
 });
 
 system.afterEvents.scriptEventReceive.subscribe((event) => {
@@ -1795,10 +1812,10 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
             // Keep -1 as the diagnostic value.
         }
         player.sendMessage(
-            `[ic-debug] sourceDynamic=5-15m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - reconstructionNow()) / 20))} `
+            `[ic-debug] sourceDynamic=${PHASE1.dynamicReconstructionIntervalMinutes.min}-${PHASE1.dynamicReconstructionIntervalMinutes.max}m nextInSeconds=${sourceNext === null ? "idle" : Math.max(0, Math.ceil((sourceNext - reconstructionNow()) / 20))} `
             + `inProgress=${sourceDynamicReconstructionInProgress || isSourcePartsReconstructionInProgress()} `
             + `dungeonPlayers=${dungeonPlayers} progression=off`
-            + ` sceneryInterval=15-120s sceneryNext=${Number.isFinite(sceneryNext) ? Math.max(0, Math.ceil((sceneryNext - reconstructionNow()) / 20)) : "idle"}`
+            + ` sceneryInterval=${PHASE1.sceneryReconstructionIntervalSeconds.min}-${PHASE1.sceneryReconstructionIntervalSeconds.max}s sceneryNext=${Number.isFinite(sceneryNext) ? Math.max(0, Math.ceil((sceneryNext - reconstructionNow()) / 20)) : "idle"}`
             + ` sceneryInProgress=${sceneryClockInProgress}`
         );
         return;
@@ -1807,6 +1824,27 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
     player.sendMessage(
         `[ic-debug] castleSeed=${world.getDynamicProperty(SEED_KEY) ?? "none"} currentTick=${system.currentTick} elapsedTicks=${reconstructionNow()} daylightTime=${world.getAbsoluteTime()} next=${next} due=${isReconstructionDue()} inProgress=${reconstructionInProgress} hasGraph=${!!currentGraph} exitChecks=${exitCheckTickCount} dungeonPlayers=${lastExitPlayerCount} lastExitError=${lastExitCheckError}`
     );
+});
+
+system.afterEvents.scriptEventReceive.subscribe((event) => {
+    if (event.id !== "infinite_castle:debug_storage") return;
+    const player = event.sourceEntity;
+    if (!player) return;
+    const records = inspectSourcePartsStorage();
+    const sceneryRecord = inspectSourcePartsSceneryStorage();
+    if (sceneryRecord) records.push(sceneryRecord);
+    if (!records.length) {
+        player.sendMessage("[ic-storage] saved reconstruction state: none");
+        return;
+    }
+    for (const record of records) {
+        const bounds = record.bounds
+            ? `${record.bounds.from.x},${record.bounds.from.y},${record.bounds.from.z}->${record.bounds.to.x},${record.bounds.to.y},${record.bounds.to.z}`
+            : "none";
+        player.sendMessage(
+            `[ic-storage] key=${record.key} kind=${record.kind} status=${record.status ?? "none"} dim=${record.dimensionId} foreign=${record.foreign ? "YES" : "no"} bounds=${bounds} seed=${record.seed ?? "none"}`
+        );
+    }
 });
 
 // 現在のcastleSeedと全RoomInstanceのroomSeed/revisionを6件ずつ表示する。

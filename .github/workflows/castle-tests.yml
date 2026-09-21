@@ -1,0 +1,24 @@
+name: Infinite Castle tests
+
+on:
+  pull_request:
+    paths:
+      - "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/**"
+      - ".github/workflows/castle-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  castle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run Infinite Castle test suite
+        run: npm run test:castle

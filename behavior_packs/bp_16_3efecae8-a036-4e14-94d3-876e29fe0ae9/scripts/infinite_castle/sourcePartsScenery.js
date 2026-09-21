@@ -16,6 +16,7 @@ import {
 import { clipBoundsToHeight, splitBoundsForFill } from "./sourcePartsVolumes.js";
 
 const SCENERY_STATE_KEY = "infinite_castle:source_parts_scenery_v1";
+const CASTLE_DIMENSION_ID = "infinite_castle:dungeon";
 const STATE_SCHEMA_VERSION = 1;
 const DYNAMIC_PROPERTY_STRING_LIMIT = 32767;
 const LOAD_MARGIN = 2;
@@ -39,6 +40,15 @@ function safeSendMessage(player, message) {
     } catch {
         // A long scenery build may outlive its requesting player.
     }
+}
+
+function assertCastleDimension(dimension, operation) {
+    const dimensionId = dimension?.id ?? "unknown";
+    if (dimensionId === CASTLE_DIMENSION_ID) return;
+    console.warn(`[ic-dimension-guard] blocked scenery ${operation} dimension=${dimensionId}`);
+    const error = new Error(`foreign scenery dimension blocked: ${dimensionId}`);
+    error.code = "FOREIGN_DIMENSION_MUTATION_BLOCKED";
+    throw error;
 }
 
 function integerVector(value) {
@@ -175,6 +185,37 @@ function loadState() {
     } catch {
         return { known: false, present: true, status: "invalid", plan: null };
     }
+}
+
+function sceneryDiagnosticBounds(plan) {
+    const bounds = (plan?.placements ?? []).map(placementBounds);
+    if (!bounds.length) return null;
+    return {
+        from: {
+            x: Math.min(...bounds.map((b) => b.from.x)),
+            y: Math.min(...bounds.map((b) => b.from.y)),
+            z: Math.min(...bounds.map((b) => b.from.z)),
+        },
+        to: {
+            x: Math.max(...bounds.map((b) => b.to.x)),
+            y: Math.max(...bounds.map((b) => b.to.y)),
+            z: Math.max(...bounds.map((b) => b.to.z)),
+        },
+    };
+}
+
+export function inspectSourcePartsSceneryStorage() {
+    const state = loadState();
+    if (!state.present && state.known) return null;
+    const dimensionId = state.plan?.dimensionId ?? (state.known ? "none" : "unparsed");
+    return {
+        key: SCENERY_STATE_KEY,
+        kind: "scenery",
+        status: state.status,
+        dimensionId,
+        foreign: state.plan ? dimensionId !== CASTLE_DIMENSION_ID : false,
+        bounds: sceneryDiagnosticBounds(state.plan),
+    };
 }
 
 function fnv1a32(value) {
@@ -321,8 +362,14 @@ function playersInsidePlacements(dimension, placements) {
 }
 
 function dimensionForPlan(plan, fallback) {
-    if (fallback?.id === plan?.dimensionId) return fallback;
-    return world.getDimension(plan.dimensionId);
+    if (plan?.dimensionId !== CASTLE_DIMENSION_ID) {
+        assertCastleDimension({ id: plan?.dimensionId ?? "unknown" }, "stored-plan");
+    }
+    if (fallback) {
+        assertCastleDimension(fallback, "fallback");
+        return fallback;
+    }
+    return world.getDimension(CASTLE_DIMENSION_ID);
 }
 
 function expandedLoadBounds(bounds) {
@@ -363,6 +410,7 @@ async function waitForArea(manager, name, options) {
 }
 
 async function withLoadedBounds(dimension, bounds, name, callback) {
+    assertCastleDimension(dimension, `loaded-bounds:${name}`);
     assertVisualTestSafety(dimension);
     const manager = world.tickingAreaManager;
     if (!manager) throw new Error("world.tickingAreaManager is unavailable");
@@ -663,6 +711,7 @@ export function getSourcePartsSceneryStatus() {
 }
 
 export async function prepareSourcePartsSceneryForCore(corePlan, dimension, player) {
+    if (dimension?.id !== CASTLE_DIMENSION_ID) return { ok: false, reason: "dimension" };
     const state = loadState();
     if (!state.known) {
         throw new Error("stored scenery state is invalid; clear scenery before rebuilding the core");
@@ -737,6 +786,7 @@ export async function prepareSourcePartsSceneryForDynamicCore(
     options = {}
 ) {
     if (!corePlan || !dimension) return { ok: false, reason: "invalid_target" };
+    if (dimension.id !== CASTLE_DIMENSION_ID) return { ok: false, reason: "dimension" };
     if (sceneryInProgress) return { ok: false, reason: "busy" };
     const state = loadState();
     if (!state.known) return { ok: false, reason: "invalid_state" };
@@ -1076,7 +1126,7 @@ function ambientClusterIndex(placement) {
 }
 
 export async function rebuildSourcePartsSceneryCluster(corePlan, dimension, player, options = {}) {
-    if (dimension?.id !== "infinite_castle:dungeon") return {ok:false, reason:"dimension"};
+    if (dimension?.id !== CASTLE_DIMENSION_ID) return {ok:false, reason:"dimension"};
     if (sceneryInProgress) return {ok:false, reason:"busy"};
     const state = loadState();
     if (!state.known) return {ok:false, reason:"invalid_state"};
@@ -1193,7 +1243,10 @@ export async function clearSourcePartsScenery(player, dimensionOverride = undefi
     let dimension;
     try {
         dimension = dimensionForPlan(state.plan, dimensionOverride);
-    } catch {
+    } catch (error) {
+        if (error?.code === "FOREIGN_DIMENSION_MUTATION_BLOCKED") {
+            return { ok: false, reason: "dimension", error: String(error) };
+        }
         return { ok: false, reason: "missing_dimension" };
     }
     sceneryInProgress = true;

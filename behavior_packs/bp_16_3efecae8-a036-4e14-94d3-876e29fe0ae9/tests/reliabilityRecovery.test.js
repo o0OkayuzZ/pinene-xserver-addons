@@ -10,6 +10,7 @@ import { createSourcePartsPlan as authoredPlan } from '../scripts/infinite_castl
 import { serializeRoomMaterials, restoreRoomMaterials } from '../scripts/infinite_castle/sourceRoomMaterials.js';
 
 const CORE='infinite_castle:source_parts_test_state_v2';
+const LEGACY='infinite_castle:source_parts_test_state';
 const PLAN='infinite_castle:source_parts_detailed_plan_v1';
 const ROLLBACK='infinite_castle:reconstruction_rollback_v1';
 const RUNTIME='runtime';
@@ -25,7 +26,7 @@ function plan(seed) {
 }
 const descriptor=p=>JSON.stringify({v:2,d:p.dimensionId,s:p.seed,t:p.style,o:p.topologyId,a:[0,80,0]});
 function harness({unchanged=false,fault=null,players=1,properties=new Map(),physical=new Map()}={}) {
-    const events=[],logs=[]; let tick=0,buildCount=0,failures=0;
+    const events=[],logs=[],dimensionRequests=[]; let tick=0,buildCount=0,failures=0;
     const old=plan(1), candidate=plan(2);
     const protectedIds=Array.from({length:Math.max(1,players)},(_,i)=>`p${i}`);
     for(const p of candidate.placements) if(protectedIds.includes(p.placementId)) p.origin={...old.placements.find(o=>o.placementId===p.placementId).origin};
@@ -52,7 +53,7 @@ function harness({unchanged=false,fault=null,players=1,properties=new Map(),phys
         if (v===undefined) properties.delete(k); else properties.set(k,v);
         if(k===CORE) events.push(JSON.parse(v).status);
         if(k===PLAN) fail('descriptor');
-    },getDimension:()=>dimension,getAbsoluteTime:()=>tick,
+    },getDimension:id=>{dimensionRequests.push(id);if(id&&id!==dimension.id)throw Error('foreign dimension requested: '+id);return dimension;},getAbsoluteTime:()=>tick,
         tickingAreaManager:{chunkCount:1,maxChunkCount:64,hasCapacity:()=>true,
             hasTickingArea:k=>areas.has(k),removeTickingArea:k=>areas.delete(k),getTickingArea:k=>areas.get(k),
             async createTickingArea(k){fail('ticking');areas.set(k,{isFullyLoaded:true});}},
@@ -91,12 +92,23 @@ function harness({unchanged=false,fault=null,players=1,properties=new Map(),phys
         sealOldFrontierBeforeClear=async()=>({placed:0,retained:0,blocked:0});
         createDynamicRebuildSchedule=()=>({mutableNewPlacementIds:['p1','p2','p3','p4'].filter(id=>!protectedIds.includes(id)),
             steps:[1,2,3,4].filter(i=>!protectedIds.includes('p'+i)).flatMap(i=>[{phase:'clear',placementId:'p'+i},{phase:'build',placementId:'p'+i}])});
-        globalThis.api={reconstructSourcePartsAroundPlayers,recoverSourceParts,sourcePartsRecoveryRequired,
+        globalThis.api={reconstructSourcePartsAroundPlayers,recoverSourceParts,sourcePartsRecoveryRequired,inspectSourcePartsStorage,
             withLoadedBounds,waitForTickingAreaLoaded,saveReconstructionState};`,context);
-    return {api:context.api,world,dimension,properties,physical,events,logs,status,areas,
+    return {api:context.api,world,dimension,properties,physical,events,logs,status,areas,dimensionRequests,
         build:()=>context.api.reconstructSourcePartsAroundPlayers(dimension,2),
         recover:()=>context.api.recoverSourceParts(dimension)};
 }
+
+test('foreign legacy plan is diagnosed but never opened or cleared',async()=>{
+    const h=harness(),foreign=plan(99);foreign.dimensionId='minecraft:overworld';
+    h.properties.set(LEGACY,stateCodec.serializeSourcePartsState('COMPLETE',[foreign]));
+    const diagnostics=h.api.inspectSourcePartsStorage();
+    assert.ok(diagnostics.some(r=>r.key===LEGACY&&r.dimensionId==='minecraft:overworld'&&r.foreign===true));
+    const result=await h.build();assert.equal(result.ok,true,JSON.stringify({result,logs:h.logs}));
+    assert.equal(h.dimensionRequests.includes('minecraft:overworld'),false);
+    assert.ok(h.logs.some(line=>line.includes('[ic-dimension-guard] ignored stored plan')&&line.includes('minecraft:overworld')));
+    assert.equal(h.properties.has(LEGACY),true,'foreign metadata is preserved for diagnosis until explicitly quarantined');
+});
 
 test('normal partial rebuild commits COMPLETE and both runtimes',async()=>{
     const h=harness();const result=await h.build();assert.equal(result.ok,true,JSON.stringify(result));
