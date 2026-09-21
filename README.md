@@ -2,7 +2,7 @@
 
 Snapshot: 2026-09-07, from `/opt/minecraft/server`.
 
-The current deployment contains 16 custom behavior packs and 18 integrated custom resource packs. Existing integrated packs retain their UUIDs and directories. Root and world pack reference files preserve their relative load order. Vanilla server packs, independently managed packs, and the world database are outside this addon snapshot.
+The current deployment contains 16 custom behavior packs and 17 integrated custom resource packs. Existing integrated packs retain their UUIDs and directories. Root and world pack reference files preserve their relative load order. Vanilla server packs, independently managed packs, and the world database are outside this addon snapshot.
 
 ## Packs
 
@@ -35,7 +35,6 @@ The current deployment contains 16 custom behavior packs and 18 integrated custo
 | resource_packs/rp_09_3554695d-d627-4971-8420-dc4ece2f8613 | [素材元] System Crossbow RP | 1.1.13 |
 | resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4 | [移動] Simple Waystone RP | 8.2.8 |
 | resource_packs/rp_13_fdcac724-cba1-46b2-9510-a433d666ed70 | [音楽連携] 追加レコード音源 RP | 1.1.13 |
-| resource_packs/rp_14_8f8c7cdb-60c5-4b4b-bc1c-334eb8f24b9a | [食料] ピネの弁当 RP | 1.0.5 |
 | resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3 | [素材元] Deathnerite RP | 1.0.105 |
 | resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78 | [保守] 青リンゴ状態リセット RP | 1.0.4 |
 | resource_packs/rp_17_9a12d1e1-d6c3-43b6-8551-cdc1bb582f82 | [建築] INAKA家具 RP | 1.1.6 |
@@ -50,3 +49,4 @@ The rendering pack `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273
 Mycology system v1.3 / textures v1.4, the portable personal field guide, golden foods (including eggs and chorus), and pancake updates are integrated. See the [2026-09-10 release record](docs/deployments/2026-09-10-foods-mycology.md) for validation and deployment status. Authoring data and rebuild tests for Mycology are in `tools/mycology/`; existing item IDs and texture keys are preserved.
 
 PineCD native records: see [requirements, validation and adding songs](docs/pinecd/NATIVE_RECORDS.md).
+
