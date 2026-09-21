@@ -728,7 +728,10 @@ export function updateRoomEncounters() {
         // can stay in the physical castle without starting another survival run.
         const pendingRecovery = recoveryPending(), busy = recoveryBusy();
         const health = readyWatchdog(readyHealth, { ready, now: tick(), players: players.length, busy,
-            expected: state.runState === "ACTIVE" || pendingRecovery || busy });
+            // Planned core/scenery reconstruction intentionally makes the encounter
+            // runtime unready. Only start the recovery watchdog after planned work
+            // finishes, or while a real recovery journal is pending.
+            expected: pendingRecovery || (state.runState === "ACTIVE" && !busy) });
         if (health.notice) for (const p of players) p.onScreenDisplay.setActionBar("§e無限城を復旧中です…");
         if (health.request && (state.runState === "ACTIVE" || pendingRecovery)) recoveryHandler?.();
         if (state.runState === "ENDED_PENDING_REBUILD") {
