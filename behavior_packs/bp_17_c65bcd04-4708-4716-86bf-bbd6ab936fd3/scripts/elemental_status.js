@@ -30,15 +30,19 @@ world.afterEvents.entityHurt.subscribe((event) => {
     const held = equip?.getEquipment(EquipmentSlot.Mainhand);
     if (!WEDGE_IDS.has(held?.typeId)) return;
     addTimedTag(target, CHARGED, 200);
-    held.amount -= 1;
-    equip?.setEquipment(EquipmentSlot.Mainhand, held.amount > 0 ? held : undefined);
+    if (held.amount > 1) {
+      held.amount -= 1;
+      equip?.setEquipment(EquipmentSlot.Mainhand, held);
+    } else {
+      equip?.setEquipment(EquipmentSlot.Mainhand, undefined);
+    }
     attacker.playSound("ambient.weather.thunder");
   } catch {}
 });
 
 world.afterEvents.entityHurt.subscribe((event) => {
   const target = event.hurtEntity;
-  if (!target) return;
+  if (!target || target.dimension.id !== PINE_DIMENSION) return;
   try {
     if (target.hasTag(CHARGED) && event.damageSource?.cause === EntityDamageCause.lightning) {
       target.applyDamage(Math.max(1, Math.pow(event.damage, 3) - event.damage));

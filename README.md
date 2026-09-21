@@ -23,7 +23,7 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c | [保管] 経験値ストレージ BP | 1.0.5 |
 | behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639 | ピネン統合ビヘイビアーパック | 1.0.75 |
 | behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9 | 無限城ビヘイビアーパック | 0.2.11 |
-| behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3 | Pinene PvP Island BP | 0.2.24 |
+| behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3 | Pinene PvP Island BP | 0.2.25 |
 | resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784 | [音楽] ピネCD音源 RP | 1.0.32 |
 | resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a | ピーネン統合リソースパック | 1.0.63 |
 | resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974 | [墓] 死亡回収・墓 RP | 1.0.9 |
