@@ -1,0 +1,92 @@
+name: PineCD texture cap 512
+
+on:
+  push:
+    branches:
+      - chore/pinecd-texture-cap-512-20260922
+
+permissions:
+  contents: write
+
+jobs:
+  resize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Resize oversized PineCD textures
+        run: |
+          python -m pip install --disable-pip-version-check pillow
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+
+          root = Path("resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784/textures/items")
+          files = sorted(root.glob("pinecd_cd_*.png"))
+          rows = []
+          total_before = total_after = 0
+
+          for path in files:
+              before_bytes = path.stat().st_size
+              with Image.open(path) as src:
+                  src.load()
+                  before_size = src.size
+                  if max(src.size) > 512:
+                      img = src.copy()
+                      img.thumbnail((512, 512), Image.Resampling.LANCZOS)
+                      img.save(path, format="PNG", optimize=True, compress_level=9)
+                      action = "resized"
+                  else:
+                      action = "kept"
+              after_bytes = path.stat().st_size
+              with Image.open(path) as check:
+                  after_size = check.size
+                  assert max(after_size) <= 512, (path, after_size)
+              rows.append((path.name, before_size, after_size, before_bytes, after_bytes, action))
+              total_before += before_bytes
+              total_after += after_bytes
+
+          report = Path("docs/pinecd/TEXTURE_LIGHTWEIGHTING_2026-09-22.md")
+          report.parent.mkdir(parents=True, exist_ok=True)
+          changed = [r for r in rows if r[-1] == "resized"]
+          mib = lambda n: n / (1024 * 1024)
+          lines = [
+              "# PineCD texture lightweighting — 2026-09-22",
+              "",
+              "- Policy: keep existing textures at or below 512 px unchanged; downscale only textures exceeding 512 px.",
+              "- Filter: Pillow LANCZOS; PNG output with lossless compression optimization.",
+              f"- Unique PineCD texture files checked: {len(rows)}.",
+              f"- Textures resized: {len(changed)}.",
+              f"- PNG total: {mib(total_before):.2f} MiB -> {mib(total_after):.2f} MiB ({(1-total_after/total_before)*100:.1f}% smaller).",
+              "",
+              "| file | before | after | bytes before | bytes after | action |",
+              "|---|---:|---:|---:|---:|---|",
+          ]
+          for name, before_size, after_size, before_bytes, after_bytes, action in rows:
+              lines.append(
+                  f"| {name} | {before_size[0]}x{before_size[1]} | {after_size[0]}x{after_size[1]} | "
+                  f"{before_bytes:,} | {after_bytes:,} | {action} |"
+              )
+          report.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          print("\n".join(lines))
+          PY
+      - name: PineCD static checks
+        run: |
+          python -X utf8 tools/pinecd/build.py --check
+          python -X utf8 tools/pinecd/test_build.py
+      - name: Commit resized assets
+        run: |
+          rm -f .github/workflows/pinecd_texture_cap_512.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -m "chore(pinecd): cap oversized disc textures at 512px"
+          git push origin HEAD:chore/pinecd-texture-cap-512-20260922
