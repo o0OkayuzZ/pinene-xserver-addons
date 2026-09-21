@@ -7,6 +7,8 @@ const root = fileURLToPath(new URL('../../', import.meta.url));
 const bp = 'behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93';
 const rp = 'resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b';
 const base = '196d0921f74dabf52f5692d5cb5251c1a733c13d';
+// Accepted ownership cleanup moved duplicate PvP entities out of the mixed RP.
+const ownershipBaseline = '294914f3';
 const parts = ['helmet', 'chestplate', 'leggings', 'boots'];
 const read = p => JSON.parse(readFileSync(root + p, 'utf8').replace(/^\uFEFF/, ''));
 const git = (...args) => execFileSync('git', args, { cwd: root });
@@ -51,13 +53,13 @@ test('glow is additive core/crystal subset with original UVs, pivots and texture
         assert.equal(attach.geometry.glow, glow.description.identifier);
     }
 });
-test('original packs are preserved except the outline RP and invisible repair vault fix', () => {
+test('entity definitions remain unchanged after the accepted ownership cleanup', () => {
     const particle = read(`${rp}/particles/pinenite_frame.particle.json`).particle_effect;
     assert.equal(particle.description.identifier, 'true_dn:pinenite_frame');
     assert.equal(particle.components['minecraft:particle_lifetime_expression'].max_lifetime, .12);
     assert.ok(read(`${rp}/animations/pinenite_sync.animation.json`).animations['animation.true_dn.pinenite_sync']);
     const approved = p => p.startsWith('resource_packs/pinenite_outline/') || p === 'resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055/entity/repair_vault.entity.json';
-    const changes = git('diff', '--name-only', 'cd53e576').toString().trim().split('\n').filter(p => !approved(p));
+    const changes = git('diff', '--name-only', ownershipBaseline).toString().trim().split('\n').filter(p => !approved(p));
     assert.equal(changes.some(p => /^(behavior_packs\/[^/]+\/entities|resource_packs\/[^/]+\/entity)\//.test(p) || /zombie/i.test(p)), false);
     const added = git('ls-files', '--others', '--exclude-standard').toString().split('\n');
     assert.equal(added.some(p => !approved(p) && /\/(?:entities|entity)\/.*\.entity\.json$/.test(p)), false);
