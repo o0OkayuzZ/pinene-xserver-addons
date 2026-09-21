@@ -30,7 +30,7 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd | [鉱石] モアジオード RP | 1.0.13 |
 | resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef | [統合素材] 化石・フィギュア RP | 1.0.41 |
 | resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b | [大型統合] Minecraft Dungeons RP | 2.0.9 |
-| resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10 | [装備互換] ゾンビ装備＋クロスボウ RP | 1.2.4 |
+| resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10 | [装備互換] ゾンビ装備＋クロスボウ RP | 1.2.6 |
 | resource_packs/rp_08_4f927a7a-fc68-4051-8686-43ab94ed1c5b | [モブ] ギャップルカウズ RP | 1.0.39 |
 | resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4 | [移動] Simple Waystone RP | 8.2.8 |
 | resource_packs/rp_13_fdcac724-cba1-46b2-9510-a433d666ed70 | [音楽連携] 追加レコード音源 RP | 1.1.13 |
