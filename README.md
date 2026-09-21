@@ -10,7 +10,7 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | --- | --- | --- |
 | behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12 | [戦利品] Better Structure Loot BP | 1.0.21 |
 | behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880 | [モブ] ギャップルカウズ BP | 1.0.35 |
-| behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc | [保守] 青リンゴ状態リセット BP | 1.0.7 |
+| behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc | [保守] 青リンゴ状態リセット BP | 1.0.8 |
 | behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9 | [音楽] ピネCDアイテム BP | 1.0.32 |
 | behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93 | [装備] Deathnerite BP | 2.12.26 |
 | behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a | [墓] 死亡回収・墓 BP | 1.0.12 |
@@ -36,7 +36,7 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | resource_packs/rp_13_fdcac724-cba1-46b2-9510-a433d666ed70 | [音楽連携] 追加レコード音源 RP | 1.1.13 |
 | resource_packs/rp_14_8f8c7cdb-60c5-4b4b-bc1c-334eb8f24b9a | [食料] ピネの弁当 RP | 1.0.5 |
 | resource_packs/rp_15_6fefc83a-06f8-4d96-95d5-cd31718851d3 | [素材元] Deathnerite RP | 1.0.105 |
-| resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78 | [保守] 青リンゴ状態リセット RP | 1.0.5 |
+| resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78 | [保守] 青リンゴ状態リセット RP | 1.0.6 |
 | resource_packs/rp_17_9a12d1e1-d6c3-43b6-8551-cdc1bb582f82 | [建築] INAKA家具 RP | 1.1.6 |
 | resource_packs/rp_18_8cdb9fd9-ee9c-4144-ad3a-175445d20b19 | [保管] 経験値ストレージ RP | 1.0.4 |
 | resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc | 無限城リソースパック | 0.1.7 |

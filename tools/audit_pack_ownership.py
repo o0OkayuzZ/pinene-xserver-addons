@@ -207,6 +207,7 @@ def main() -> None:
     # Known features that were split into dedicated packs must not silently grow back in BP15.
     # Saved items and projectiles require actual legacy definitions, not just runtime aliases.
     for pack, folder, kind, identifiers in (
+        (BLUE_APPLE_BP, "items", "minecraft:item", {f"{namespace}:{name}" for namespace in ("myname", "resetapple") for name in ("blue_apple", "blue_diamond_apple", "enchanted_blue_diamond_apple")}),
         (PVP_BP, "items", "minecraft:item", {"pinen:tenrai_wedge", "pinen:shingan_arrow", "pinene_pvp:tenrai_wedge", "pinene_pvp:shingan_arrow"}),
         (PVP_BP, "entities", "minecraft:entity", {"pinen:shingan_arrow", "pinene_pvp:shingan_arrow"}),
         (PVP_RP, "entity", "minecraft:client_entity", {"pinen:shingan_arrow", "pinene_pvp:shingan_arrow"}),
@@ -219,7 +220,13 @@ def main() -> None:
                 counts[ident] += 1
         for ident in sorted(identifiers):
             if counts[ident] != 1:
-                errors.append(f"PvP compatibility definition must have one owner in {rel(pack)}/{folder}: {ident} (found {counts[ident]})")
+                errors.append(f"Compatibility definition must have one owner in {rel(pack)}/{folder}: {ident} (found {counts[ident]})")
+
+    for lang_name in ("en_US.lang", "ja_JP.lang"):
+        lang = (BLUE_APPLE_RP / "texts" / lang_name).read_text(encoding="utf-8-sig")
+        for name in ("blue_apple", "blue_diamond_apple", "enchanted_blue_diamond_apple"):
+            if f"item.myname:{name}.name=" not in lang:
+                errors.append(f"Missing legacy Blue Apple localization: {lang_name}: {name}")
 
     for item in sorted(FORBIDDEN_IN_INTEGRATED_BP):
         if (INTEGRATED_BP / item).exists():
