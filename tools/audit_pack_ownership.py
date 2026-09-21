@@ -15,6 +15,8 @@ PINECD_BP = BP_ROOT / "bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9"
 PINECD_RP = RP_ROOT / "rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784"
 INTEGRATED_BP = BP_ROOT / "bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639"
 INTEGRATED_RP = RP_ROOT / "rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a"
+PVP_BP = BP_ROOT / "bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3"
+PVP_RP = RP_ROOT / "rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055"
 
 FORBIDDEN_IN_INTEGRATED_BP = {
     "loot_tables/tcow.json",
@@ -176,6 +178,22 @@ def main() -> None:
                 errors.append(f"PineCD item outside canonical BP: {rel(path)}: {ident}")
 
     # Known features that were split into dedicated packs must not silently grow back in BP15.
+    # Saved items and projectiles require actual legacy definitions, not just runtime aliases.
+    for pack, folder, kind, identifiers in (
+        (PVP_BP, "items", "minecraft:item", {"pinen:tenrai_wedge", "pinen:shingan_arrow", "pinene_pvp:tenrai_wedge", "pinene_pvp:shingan_arrow"}),
+        (PVP_BP, "entities", "minecraft:entity", {"pinen:shingan_arrow", "pinene_pvp:shingan_arrow"}),
+        (PVP_RP, "entity", "minecraft:client_entity", {"pinen:shingan_arrow", "pinene_pvp:shingan_arrow"}),
+        (PVP_RP, "attachables", "minecraft:attachable", {"pinen:tenrai_wedge", "pinene_pvp:tenrai_wedge"}),
+    ):
+        counts = defaultdict(int)
+        for path in (pack / folder).rglob("*.json"):
+            ident = load_json(path).get(kind, {}).get("description", {}).get("identifier")
+            if ident in identifiers:
+                counts[ident] += 1
+        for ident in sorted(identifiers):
+            if counts[ident] != 1:
+                errors.append(f"PvP compatibility definition must have one owner in {rel(pack)}/{folder}: {ident} (found {counts[ident]})")
+
     for item in sorted(FORBIDDEN_IN_INTEGRATED_BP):
         if (INTEGRATED_BP / item).exists():
             errors.append(f"dedicated-pack file copied back into integrated BP: {item}")
