@@ -1,5 +1,7 @@
 # NF共通基盤・摂食クールタイム解除（反映準備）
 
+これは準備時点の記録。反映後の結果は [2026-09-21-nf-common-release.md](2026-09-21-nf-common-release.md) を参照。
+
 状態: ソース作成・検証済み。開発ワールド、Xserver、公開Webへは未反映。
 
 基準コミット: `294914f3`。ユーザー提供の共通仕様原本は `tools/mycology/docs/NF_COMMON_SPEC_V1.md`、実装範囲・保留事項は `tools/mycology/docs/NF_COMMON_IMPLEMENTATION.md`。
