@@ -50,3 +50,35 @@ The review found pre-existing stale BP02→RP05 and BP04→RP01 dependency versi
 CI now checks UUID uniqueness, header/module versions, UUID dependency versions, complete and unique root/bundled-world registrations, README rows and website entries. Four regression tests cover matching metadata, stale nested-world registrations, missing registrations, and stale dependency/module versions. The existing Infinite Castle exporter workflow remains in place.
 
 The final local ownership audit reports 272,603 cross-pack duplicate bytes. This metric counts extra pack owners per identical blob, not every repeated filename within a pack. Runtime changes are covered by nine mocked PvP tests; engine acceptance, visuals and saved-world loading still require an in-game check.
+
+## Final integration snapshot
+
+During review, main advanced to `fb020049` (Mycology NF framework). This main was merged through PR #9 and #10 before the follow-up; the Mycology implementation and authoring files match current main unchanged.
+
+Committed BP/RP payload totals (Git blob bytes, excluding documentation/tools):
+
+| Snapshot | Bytes |
+| --- | ---: |
+| origin/main | 323,583,282 |
+| origin/cleanup/pvp-ownership-20260921 | 312,750,242 |
+| origin/cleanup/blue-apple-ownership-20260921 | 312,730,376 |
+| HEAD | 312,217,849 |
+
+Net reduction versus current main: 11,365,433 bytes. Additional reduction after reviewed PR #10: 512,527 bytes.
+
+Final manifest changes versus current main:
+
+| Pack | Main | Reviewed |
+| --- | --- | --- |
+| BP_02 | 1.0.35 | 1.0.36 |
+| BP_03 | 1.0.6 | 1.0.8 |
+| BP_04 | 1.0.32 | 1.0.33 |
+| BP_05 | 2.12.26 | 2.12.27 |
+| BP_09 | 1.2.6 | 1.2.9 |
+| BP_15 | 1.0.74 | 1.0.77 |
+| BP_17 | 0.2.23 | 0.2.25 |
+| RP_02 | 1.0.61 | 1.0.65 |
+| RP_07 | 1.2.7 | 1.2.10 |
+| RP_15 | 1.0.105 | 1.0.106 |
+| RP_16 | 1.0.4 | 1.0.6 |
+| RP_20 | 0.2.23 | 0.2.24 |
