@@ -13,6 +13,8 @@ RP_ROOT = ROOT / "resource_packs"
 
 PINECD_BP = BP_ROOT / "bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9"
 PINECD_RP = RP_ROOT / "rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784"
+BLUE_APPLE_BP = BP_ROOT / "bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc"
+BLUE_APPLE_RP = RP_ROOT / "rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78"
 INTEGRATED_BP = BP_ROOT / "bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639"
 INTEGRATED_RP = RP_ROOT / "rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a"
 PVP_BP = BP_ROOT / "bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3"
@@ -34,6 +36,11 @@ FORBIDDEN_IN_INTEGRATED_BP = {
     "scripts/pvp_island/config.js",
     "scripts/pvp_island/dragon_relic_display.js",
     "scripts/pvp_island/dragon_relic_gateway.js",
+    "items/blue_apple.item.json",
+    "items/blue_diamond_apple.item.json",
+    "items/enchanted_blue_diamond_apple.item.json",
+    "recipes/blue_diamond_apple.recipe.json",
+    "recipes/enchanted_blue_diamond_apple.recipe.json",
     "loot_tables/blocks/deathnerite_block.json",
     "recipes/deathnerite_recipe/deathnerite_ingot.json",
     "recipes/deathnerite_recipe/equipment/deathnerite_axe.json",
@@ -52,10 +59,13 @@ FORBIDDEN_IN_INTEGRATED_RP = {
     "entity/shingan_arrow.entity.json",
     "models/entity/pinene_pvp/dragon_relic.geo.json",
     "textures/items/dragon_relic.png",
+    "textures/items/blue_apple.png",
+    "textures/items/blue_diamond_apple.png",
+    "textures/items/enchanted_blue_diamond_apple.png",
 }
 
 JUNK_RE = re.compile(
-    r"(?:\.bak(?:_|\.|$)|/(?:_?backup)(?:/|_|$)|/old(?:/|_|$)|desktop\.ini$|thumbs\.db$)",
+    r"(?:\.bak(?:_|\.|$)|_bak(?:_|\.|$)|/(?:_?backup)(?:/|_|$)|/old(?:/|_|$)|desktop\.ini$|thumbs\.db$)",
     re.IGNORECASE,
 )
 EDITOR_SOURCE_RE = re.compile(r"\\.(?:pdn|psd|xcf|blend|kra|zip|7z|rar|m4a|mp4|mov|wav|tmp|log)$", re.IGNORECASE)
@@ -157,6 +167,12 @@ def main() -> None:
             if bad:
                 errors.append(f"PineCD atlas keys outside canonical RP: {rel(path)}: {bad[:5]}")
 
+        if path.name == "item_texture.json" and pack != BLUE_APPLE_RP:
+            data = load_json(path).get("texture_data", {})
+            bad = sorted(set(data) & {"blue_apple", "blue_diamond_apple", "enchanted_blue_diamond_apple"})
+            if bad:
+                errors.append(f"Blue Apple atlas keys outside canonical RP: {rel(path)}: {bad}")
+
         if path.name == "sound_definitions.json" and pack != PINECD_RP:
             defs = load_jsonc(path).get("sound_definitions", {})
             bad = sorted(k for k in defs if k.startswith(("pinecd.", "pinecd:")))
@@ -177,9 +193,21 @@ def main() -> None:
             if isinstance(ident, str) and ident.startswith("pinecd:"):
                 errors.append(f"PineCD item outside canonical BP: {rel(path)}: {ident}")
 
+            blue_apple_ids = {
+                "resetapple:blue_apple",
+                "resetapple:blue_diamond_apple",
+                "resetapple:enchanted_blue_diamond_apple",
+                "myname:blue_apple",
+                "myname:blue_diamond_apple",
+                "myname:enchanted_blue_diamond_apple",
+            }
+            if pack != BLUE_APPLE_BP and ident in blue_apple_ids:
+                errors.append(f"Blue Apple item outside canonical BP: {rel(path)}: {ident}")
+
     # Known features that were split into dedicated packs must not silently grow back in BP15.
     # Saved items and projectiles require actual legacy definitions, not just runtime aliases.
     for pack, folder, kind, identifiers in (
+        (BLUE_APPLE_BP, "items", "minecraft:item", {f"{namespace}:{name}" for namespace in ("myname", "resetapple") for name in ("blue_apple", "blue_diamond_apple", "enchanted_blue_diamond_apple")}),
         (PVP_BP, "items", "minecraft:item", {"pinen:tenrai_wedge", "pinen:shingan_arrow", "pinene_pvp:tenrai_wedge", "pinene_pvp:shingan_arrow"}),
         (PVP_BP, "entities", "minecraft:entity", {"pinen:shingan_arrow", "pinene_pvp:shingan_arrow"}),
         (PVP_RP, "entity", "minecraft:client_entity", {"pinen:shingan_arrow", "pinene_pvp:shingan_arrow"}),
@@ -192,7 +220,13 @@ def main() -> None:
                 counts[ident] += 1
         for ident in sorted(identifiers):
             if counts[ident] != 1:
-                errors.append(f"PvP compatibility definition must have one owner in {rel(pack)}/{folder}: {ident} (found {counts[ident]})")
+                errors.append(f"Compatibility definition must have one owner in {rel(pack)}/{folder}: {ident} (found {counts[ident]})")
+
+    for lang_name in ("en_US.lang", "ja_JP.lang"):
+        lang = (BLUE_APPLE_RP / "texts" / lang_name).read_text(encoding="utf-8-sig")
+        for name in ("blue_apple", "blue_diamond_apple", "enchanted_blue_diamond_apple"):
+            if f"item.myname:{name}.name=" not in lang:
+                errors.append(f"Missing legacy Blue Apple localization: {lang_name}: {name}")
 
     for item in sorted(FORBIDDEN_IN_INTEGRATED_BP):
         if (INTEGRATED_BP / item).exists():
