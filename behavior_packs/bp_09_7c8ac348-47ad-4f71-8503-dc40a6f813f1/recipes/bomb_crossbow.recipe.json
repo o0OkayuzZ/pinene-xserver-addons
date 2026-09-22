@@ -1,0 +1,39 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene:bomb_crossbow"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "ITI",
+      "SCS",
+      " I "
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "T": {
+        "item": "minecraft:tnt"
+      },
+      "S": {
+        "item": "minecraft:string"
+      },
+      "C": {
+        "item": "minecraft:crossbow"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:tnt"
+      }
+    ],
+    "result": {
+      "item": "pinene:bomb_crossbow",
+      "count": 1
+    }
+  }
+}
