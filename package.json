@@ -2,9 +2,9 @@
   "name": "pinene-xserver-addons-validation",
   "private": true,
   "scripts": {
-    "test": "npm --prefix tools/mycology test && node --test tests/golden_foods/*.test.mjs && node --test tests/grave-policy.test.mjs tests/gf-release.test.mjs && node --test tests/bomb-crossbow.test.mjs && npm run test:pinenite && npm run test:castle",
+    "test": "npm --prefix tools/mycology test && node --test tests/golden_foods/*.test.mjs && node --test tests/grave-policy.test.mjs tests/gf-release.test.mjs && node --test tests/bomb-crossbow.test.mjs tests/sniper-crossbow.test.mjs && npm run test:pinenite && npm run test:castle",
     "test:pinenite": "node --test tests/pinenite/*.test.mjs",
     "validate": "python -X utf8 tools/validate.py",
     "test:castle": "node --experimental-loader ./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs --test behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/*.test.*"
   }
-}\n
+}
