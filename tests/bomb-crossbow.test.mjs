@@ -86,6 +86,9 @@ test("restored Pure Crossbow Soul texture exists as a real PNG", () => {
   assert.equal(fs.existsSync(texture), true);
   const bytes = fs.readFileSync(texture);
   assert.equal(bytes.subarray(0, 8).toString("hex"), "89504e470d0a1a0a");
+  assert.equal(bytes.readUInt32BE(16), 32);
+  assert.equal(bytes.readUInt32BE(20), 32);
+  assert.equal(bytes[25], 6); // PNG RGBA
   assert.ok(bytes.length > 1000);
 });
 
