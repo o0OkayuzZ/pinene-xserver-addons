@@ -9,12 +9,13 @@
     },
     "components": {
       "minecraft:display_name": {
-        "value": "§6爆弾クロスボウ§r\n§7専用の爆弾ボルトを発射する重クロスボウ"
+        "value": "§6爆弾クロスボウ§r\\n§7爆発半径: 4 / 地形破壊あり / 発火なし"
       },
       "minecraft:icon": "bomb_crossbow",
       "minecraft:tags": {
         "tags": [
           "pinene:bomb_crossbow",
+          "pinene:bomb_crossbow_depth_0",
           "pinene:heavy_ranged"
         ]
       },
