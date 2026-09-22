@@ -1,0 +1,70 @@
+{
+  "namespace": "hud",
+
+  "hud_actionbar_text": {
+    "$pinene_actionbar": "$actionbar_text",
+    "visible": "(not ($pinene_actionbar = '__PINENE_SNIPER_SCOPE__'))"
+  },
+
+  "pinene_sniper_scope_panel": {
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "layer": 100,
+    "$pinene_actionbar": "$actionbar_text",
+    "visible": "($pinene_actionbar = '__PINENE_SNIPER_SCOPE__')",
+    "controls": [
+      {
+        "scope_left_shade": {
+          "type": "image",
+          "texture": "textures/ui/Black",
+          "size": ["50%-50%y", "100%"],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "layer": 100
+        }
+      },
+      {
+        "scope_right_shade": {
+          "type": "image",
+          "texture": "textures/ui/Black",
+          "size": ["50%-50%y", "100%"],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "layer": 100
+        }
+      },
+      {
+        "scope_center": {
+          "type": "image",
+          "texture": "textures/ui/sniper_scope",
+          "size": ["100%y", "100%"],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "layer": 101
+        }
+      }
+    ]
+  },
+
+  "pinene_sniper_scope_factory": {
+    "type": "panel",
+    "factory": {
+      "name": "hud_actionbar_text_factory",
+      "control_ids": {
+        "hud_actionbar_text": "pinene_sniper_scope_panel@hud.pinene_sniper_scope_panel"
+      }
+    }
+  },
+
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": {
+          "pinene_sniper_scope_factory@hud.pinene_sniper_scope_factory": {}
+        }
+      }
+    ]
+  }
+}
