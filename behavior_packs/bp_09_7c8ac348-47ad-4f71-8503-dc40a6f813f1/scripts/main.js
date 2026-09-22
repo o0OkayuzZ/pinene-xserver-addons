@@ -1,4 +1,5 @@
 import "./bomb_crossbow.js";
+import "./sniper_crossbow.js";
 import { world, system, EquipmentSlot, ItemStack } from "@minecraft/server";
 import { installManagedEffects } from "./effects.js";
 import { installDiet } from "./diet.js";
