@@ -66,19 +66,18 @@ test("awakened RP visuals reuse the three legacy System Crossbow depth assets", 
 });
 
 
-test("Pure Crossbow Soul awakens one depth at a smithing table and preserves state", () => {
-  const source = fs.readFileSync(path.join(BP, "scripts/bomb_crossbow.js"), "utf8");
+test("Pure Crossbow Soul awakening is handled by the shared crossbow forge and preserves state", () => {
+  const source = fs.readFileSync(path.join(BP, "scripts/sniper_crossbow.js"), "utf8");
   assert.ok(source.includes('const SOUL_ID = "pinematerials:zyunzentarucrossbownotamashii"'));
-  assert.ok(source.includes('"pinene:bomb_crossbow": "pinene:bomb_crossbow_awakened_1"'));
-  assert.ok(source.includes('"pinene:bomb_crossbow_awakened_1": "pinene:bomb_crossbow_awakened_2"'));
-  assert.ok(source.includes('"pinene:bomb_crossbow_awakened_2": "pinene:bomb_crossbow_awakened_3"'));
+  assert.ok(source.includes('key: "awaken"'));
+  assert.ok(source.includes("depth: state.depth + 1"));
   assert.ok(source.includes('event.block?.typeId !== "minecraft:smithing_table"'));
   assert.ok(source.includes("player.isSneaking"));
   assert.ok(source.includes("copyCrossbowState"));
   assert.ok(source.includes("dstEnchantable.addEnchantments(enchantments)"));
   assert.ok(source.includes("dstDurability.damage"));
   assert.ok(source.includes("target.setDynamicProperty"));
-  assert.ok(source.includes("consumeSoul(player, soulSlot)"));
+  assert.ok(source.includes("consumeRequirements"));
 });
 
 test("restored Pure Crossbow Soul texture exists as a real PNG", () => {
@@ -95,8 +94,8 @@ test("restored Pure Crossbow Soul texture exists as a real PNG", () => {
 test("Bomb Crossbow pack versions and dependency stay synchronized", () => {
   const bp = json(path.join(BP, "manifest.json"));
   const rp = json(path.join(RP, "manifest.json"));
-  assert.deepEqual(bp.header.version, [1, 2, 13]);
-  assert.deepEqual(rp.header.version, [1, 2, 14]);
+  assert.deepEqual(bp.header.version, [1, 2, 14]);
+  assert.deepEqual(rp.header.version, [1, 2, 15]);
   const dep = rp.dependencies.find((x) => x.uuid === bp.header.uuid);
   assert.deepEqual(dep.version, bp.header.version);
 });
