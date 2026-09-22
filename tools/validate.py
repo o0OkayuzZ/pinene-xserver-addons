@@ -71,6 +71,12 @@ allowed.update({
     'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/textures/item_texture.json',
     'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/bomb_crossbow.json',
     'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/entity/bomb_bolt.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/bomb_crossbow_awakened_1.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/bomb_crossbow_awakened_2.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/bomb_crossbow_awakened_3.item.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/bomb_crossbow_awakened_1.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/bomb_crossbow_awakened_2.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/bomb_crossbow_awakened_3.json',
 })
 allowed.update(provenance['runtimeAdded'])
 allowed.update(release)
