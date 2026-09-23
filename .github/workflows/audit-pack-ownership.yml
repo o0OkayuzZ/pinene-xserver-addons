@@ -23,3 +23,5 @@ jobs:
           node-version: '22'
       - name: Test legacy and current PvP abilities
         run: node --test tools/tests/pvp_compatibility.test.mjs
+      - name: Test Bomb and Sniper Crossbows
+        run: node --test tests/bomb-crossbow.test.mjs tests/sniper-crossbow.test.mjs

@@ -60,6 +60,46 @@ for p in [ROOT/'world_behavior_packs.json',ROOT/'world_resource_packs.json',*ROO
 allowed={f'{p.relative_to(ROOT).as_posix()}' for p in [BP/'manifest.json',BP/'scripts/main.js',RP/'manifest.json',RP/'textures/item_texture.json',RP/'texts/en_US.lang',RP/'texts/ja_JP.lang',RP/'texts/languages.json']}
 allowed.add('resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/manifest.json')
 allowed.add('behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/manifest.json')
+allowed.update({
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts/main.js',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts/bomb_crossbow.js',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/bomb_crossbow.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/bomb_bolt.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/entities/bomb_bolt.entity.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/recipes/bomb_crossbow.recipe.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/recipes/bomb_bolt.recipe.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/textures/item_texture.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/bomb_crossbow.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/entity/bomb_bolt.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/textures/items/zyunzentarucrossbownotamashii.png',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/bomb_crossbow_awakened_1.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/bomb_crossbow_awakened_2.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/bomb_crossbow_awakened_3.item.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/bomb_crossbow_awakened_1.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/bomb_crossbow_awakened_2.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/bomb_crossbow_awakened_3.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts/sniper_crossbow.js',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/entities/sniper_bolt.entity.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/sniper_crossbow.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/sniper_crossbow_awakened_1.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/sniper_crossbow_awakened_2.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/sniper_crossbow_awakened_3.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/sniper_tnt_crossbow.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/sniper_tnt_crossbow_awakened_1.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/sniper_tnt_crossbow_awakened_2.item.json',
+    'behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/items/sniper_tnt_crossbow_awakened_3.item.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/entity/sniper_bolt.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/ui/hud_screen.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/textures/ui/sniper_scope.png',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/sniper_crossbow.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/sniper_crossbow_awakened_1.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/sniper_crossbow_awakened_2.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/sniper_crossbow_awakened_3.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/sniper_tnt_crossbow.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/sniper_tnt_crossbow_awakened_1.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/sniper_tnt_crossbow_awakened_2.json',
+    'resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10/attachables/crossbow/sniper_tnt_crossbow_awakened_3.json',
+})
 allowed.update(provenance['runtimeAdded'])
 allowed.update(release)
 for rel in git('diff','--name-only',base).decode('utf-8').splitlines():
