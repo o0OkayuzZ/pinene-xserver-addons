@@ -1,0 +1,22 @@
+name: BSL v3 release checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  bsl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: BSL contract and negative regression tests
+        run: python -m unittest discover -s tests -p 'test_bsl*.py' -v
+      - name: Reproducible generator output
+        run: python tools/build_bsl_release_v3.py
+      - name: Recursive capacity and rare probabilities
+        run: python tools/validate_bsl_release_v3.py
+      - name: Ice-box complete draw simulation
+        run: python tools/validate_bsl_icebox_jackpot.py --trials 10000

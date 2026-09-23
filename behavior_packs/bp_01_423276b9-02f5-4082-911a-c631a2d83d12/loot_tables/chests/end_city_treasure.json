@@ -2,8 +2,8 @@
   "pools": [
     {
       "rolls": {
-        "min": 15,
-        "max": 20
+        "min": 10,
+        "max": 15
       },
       "entries": [
         {
@@ -564,13 +564,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "minecraft:spire_armor_trim_smithing_template"
-        }
-      ],
-      "conditions": [
+          "name": "minecraft:spire_armor_trim_smithing_template",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.12
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/end_city_treasure.json",
+          "weight": 22
         }
       ]
     },
@@ -588,13 +588,13 @@
                 "max": 3
               }
             }
-          ]
-        }
-      ],
-      "conditions": [
+          ],
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.2
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/end_city_treasure.json",
+          "weight": 4
         }
       ]
     },
@@ -603,13 +603,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 8
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.32
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/end_city_treasure.json",
+          "weight": 17
         }
       ]
     },
@@ -618,13 +618,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 7
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.28
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/end_city_treasure.json",
+          "weight": 18
         }
       ]
     },
@@ -633,13 +633,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.1
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/end_city_treasure.json",
+          "weight": 9
         }
       ]
     },
@@ -648,13 +648,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.15
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/end_city_treasure.json",
+          "weight": 17
         }
       ]
     },
@@ -663,13 +663,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.015
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/end_city_treasure.json",
+          "weight": 197
         }
       ]
     },
@@ -678,13 +678,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.006
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/end_city_treasure.json",
+          "weight": 497
         }
       ]
     }

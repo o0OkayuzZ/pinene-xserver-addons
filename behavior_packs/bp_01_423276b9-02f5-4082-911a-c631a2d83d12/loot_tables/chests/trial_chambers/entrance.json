@@ -2,8 +2,8 @@
   "pools": [
     {
       "rolls": {
-        "min": 14,
-        "max": 19
+        "min": 11,
+        "max": 16
       },
       "entries": [
         {
@@ -502,13 +502,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.3
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/trial_chambers/entrance.json",
+          "weight": 7
         }
       ]
     },
@@ -517,13 +517,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 6
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.24
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/trial_chambers/entrance.json",
+          "weight": 19
         }
       ]
     },
@@ -532,13 +532,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 7
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.07
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/trial_chambers/entrance.json",
+          "weight": 93
         }
       ]
     },
@@ -547,13 +547,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.1
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/trial_chambers/entrance.json",
+          "weight": 9
         }
       ]
     },
@@ -562,13 +562,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.005
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/trial_chambers/entrance.json",
+          "weight": 199
         }
       ]
     },
@@ -577,13 +577,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.004
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/trial_chambers/entrance.json",
+          "weight": 249
         }
       ]
     }
