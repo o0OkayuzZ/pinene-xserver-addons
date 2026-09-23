@@ -265,8 +265,11 @@ def main() -> int:
 
         # waystone:waystone was removed later; keeping its old provenance key is harmless.
         rebuilt, audit = build_table(source, profile, independent_names)
-        if load_json(path) not in (source, rebuilt):
-            raise ValueError(f"unrecognized edits in {relative_name}; reconcile before rebuilding")
+        current = load_json(path)
+        # v3 may carry reviewed structure-identity additions in the weighted pool.
+        # Do not overwrite those by running the historical rebuilder.
+        if current not in (source, rebuilt):
+            raise ValueError(f"v3 reviewed edits in {relative_name}; builder is audit-only until identity additions are encoded")
         changed[path] = rebuilt
         audits["tables"][relative_name] = {"status": "rebuilt", **audit}
 
