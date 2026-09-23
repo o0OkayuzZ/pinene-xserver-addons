@@ -2,8 +2,8 @@
   "pools": [
     {
       "rolls": {
-        "min": 8,
-        "max": 12
+        "min": 12,
+        "max": 16
       },
       "entries": [
         {
@@ -132,8 +132,8 @@
     },
     {
       "rolls": {
-        "min": 6,
-        "max": 8
+        "min": 9,
+        "max": 12
       },
       "entries": [
         {
@@ -244,8 +244,8 @@
     },
     {
       "rolls": {
-        "min": 2,
-        "max": 4
+        "min": 5,
+        "max": 8
       },
       "entries": [
         {
@@ -256,8 +256,8 @@
     },
     {
       "rolls": {
-        "min": 1,
-        "max": 3
+        "min": 6,
+        "max": 10
       },
       "entries": [
         {
@@ -268,8 +268,8 @@
     },
     {
       "rolls": {
-        "min": 1,
-        "max": 2
+        "min": 3,
+        "max": 5
       },
       "entries": [
         {
@@ -280,7 +280,7 @@
       "conditions": [
         {
           "condition": "random_chance",
-          "chance": 0.5
+          "chance": 0.8
         }
       ]
     },
@@ -304,7 +304,7 @@
       "conditions": [
         {
           "condition": "random_chance",
-          "chance": 0.35
+          "chance": 0.6
         }
       ]
     },
