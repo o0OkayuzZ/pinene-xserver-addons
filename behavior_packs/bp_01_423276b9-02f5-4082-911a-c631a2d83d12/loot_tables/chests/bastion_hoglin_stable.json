@@ -499,6 +499,16 @@
           "type": "item",
           "name": "true_dn:darkness_upgrade_smithing_template",
           "weight": 117
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_shovel",
+          "weight": 650,
+          "functions": [
+            {
+              "function": "enchant_randomly"
+            }
+          ]
         }
       ]
     },
