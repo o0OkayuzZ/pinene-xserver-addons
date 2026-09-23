@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene:bomb_bolt"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " A ",
+      "ATA",
+      " A "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:arrow"
+      },
+      "T": {
+        "item": "minecraft:tnt"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:tnt"
+      }
+    ],
+    "result": {
+      "item": "pinene:bomb_bolt",
+      "count": 4
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "format_version": "1.21.130",
+  "minecraft:item": {
+    "description": {
+      "identifier": "pinene:sniper_tnt_crossbow_awakened_1",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "§c覚醒スナイパーTNTクロスボウ【深度I】§r\\n§7直撃 13 / 爆発半径 5\\n§7狙撃モード: スニーク / 地形破壊あり / 発火なし"
+      },
+      "minecraft:icon": "sniper_tnt_crossbow_awakened_1",
+      "minecraft:tags": {
+        "tags": [
+          "pinene:sniper_crossbow",
+          "pinene:sniper_depth_1",
+          "pinene:tnt_crossbow",
+          "pinene:heavy_ranged"
+        ]
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:string"
+            ],
+            "repair_amount": "q.max_durability*0.25"
+          },
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "q.max_durability*0.20"
+          },
+          {
+            "items": [
+              "pinene:sniper_tnt_crossbow_awakened_1"
+            ],
+            "repair_amount": "c.other->q.remaining_durability*0.8"
+          }
+        ]
+      },
+      "minecraft:enchantable": {
+        "value": 4,
+        "slot": "crossbow"
+      },
+      "minecraft:durability": {
+        "max_durability": 520
+      },
+      "minecraft:use_animation": {
+        "value": "camera"
+      },
+      "minecraft:use_modifiers": {
+        "movement_modifier": 0.25,
+        "use_duration": 2.2
+      },
+      "minecraft:shooter": {
+        "max_draw_duration": 2.2,
+        "charge_on_draw": true,
+        "scale_power_by_draw_duration": true,
+        "ammunition": [
+          {
+            "item": "pinene:bomb_bolt",
+            "use_offhand": true,
+            "search_inventory": true,
+            "use_in_creative": true
+          }
+        ]
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:glint": false
+    }
+  }
+}
