@@ -526,6 +526,36 @@
               "function": "enchant_randomly"
             }
           ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_spear",
+          "weight": 900,
+          "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 20,
+                "max": 39
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_shovel",
+          "weight": 900,
+          "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 20,
+                "max": 39
+              }
+            }
+          ]
         }
       ]
     },
