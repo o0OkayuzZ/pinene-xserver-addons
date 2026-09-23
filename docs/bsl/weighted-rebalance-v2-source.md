@@ -304,3 +304,11 @@ Game test:
 - native normal structure chest filling may merge/split stacks; inspect actual physical occupancy
 - verify potion `set_potion` output for normal/splash/lingering forms
 - verify all custom items render/use correctly
+
+## Vanilla parity audit (2026-09-23)
+
+Compared current normal BSL tables against Mojang bedrock-samples before v3 merge. Ancient City had confirmed progression-loss defects (Swift Sneak and enchanted diamond hoe) and those are restored in this branch.
+
+The broader comparison also finds many vanilla filler/equipment entries absent from the customized BSL tables (for example shipwreck supplies, ruined portals, strongholds and woodland mansions). These are not automatically re-added: BSL intentionally replaces substantial vanilla filler with its own richer resource/equipment pools. Treat a difference as a defect only when it removes structure identity, exclusive/progression loot, or an important gameplay role. Do not blindly union Mojang tables into BSL.
+
+v3 rule: preserve/restore structure-defining vanilla rewards; allow low-value filler substitutions; keep BSL independent addon rewards and profile progression intact.
