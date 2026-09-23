@@ -172,10 +172,7 @@
       ]
     },
     {
-      "rolls": {
-        "min": 4,
-        "max": 6
-      },
+      "rolls": 4,
       "entries": [
         {
           "type": "item",
@@ -226,10 +223,7 @@
       ]
     },
     {
-      "rolls": {
-        "min": 8,
-        "max": 11
-      },
+      "rolls": 4,
       "entries": [
         {
           "type": "item",
@@ -367,28 +361,27 @@
         {
           "type": "item",
           "name": "minecraft:copper_nautilus_armor",
-          "weight": 100
+          "weight": 4
         },
         {
           "type": "item",
           "name": "minecraft:iron_nautilus_armor",
-          "weight": 75
+          "weight": 3
         },
         {
           "type": "item",
           "name": "minecraft:golden_nautilus_armor",
-          "weight": 50
+          "weight": 2
         },
         {
           "type": "item",
           "name": "minecraft:diamond_nautilus_armor",
-          "weight": 25
-        }
-      ],
-      "conditions": [
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.4
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/buriedtreasure.json",
+          "weight": 15
         }
       ]
     },
@@ -402,13 +395,13 @@
             {
               "function": "enchant_randomly"
             }
-          ]
-        }
-      ],
-      "conditions": [
+          ],
+          "weight": 9
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.18
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/buriedtreasure.json",
+          "weight": 41
         }
       ]
     },
@@ -426,13 +419,13 @@
                 "max": 2
               }
             }
-          ]
-        }
-      ],
-      "conditions": [
+          ],
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.3
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/buriedtreasure.json",
+          "weight": 7
         }
       ]
     },
@@ -441,13 +434,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.35
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/buriedtreasure.json",
+          "weight": 1
         }
       ]
     },
@@ -456,13 +449,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 9
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.32
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/buriedtreasure.json",
+          "weight": 11
         }
       ]
     },
@@ -471,13 +464,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 2
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.3
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/buriedtreasure.json",
+          "weight": 3
         }
       ]
     },
@@ -486,13 +479,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 2
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.3
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/buriedtreasure.json",
+          "weight": 3
         }
       ]
     },
@@ -501,13 +494,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.04
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/buriedtreasure.json",
+          "weight": 24
         }
       ]
     },
@@ -516,13 +509,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.012
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/buriedtreasure.json",
+          "weight": 247
         }
       ]
     }

@@ -2,38 +2,64 @@
   "status": "PASS",
   "baseline": "c60934c0",
   "updatedTables": 33,
-  "specialUnchanged": [
+  "specialJackpots": [
     "ancient_city_ice_box.json",
     "bastion_treasure.json",
     "buriedtreasure.json"
   ],
+  "iceboxContract": {
+    "status": "PASS",
+    "generatedStacks": [
+      27,
+      27
+    ],
+    "enchantedFoodQuantity": [
+      48,
+      96
+    ],
+    "goldenFoodQuantity": [
+      12,
+      24
+    ],
+    "enchantedGoldenAppleQuantity": [
+      2,
+      4
+    ],
+    "rareReplacementProbabilities": {
+      "loot_tables/bsl/collectibles/all.json": 0.3,
+      "ws:warpstone": 0.04,
+      "resetapple:blue_apple": 0.012
+    },
+    "engineVerified": false,
+    "nativeOccupiedSlots": "Not asserted; requires Bedrock verification"
+  },
   "castleAndCommonTablesUnchanged": 57,
-  "activeLootTables": 475,
+  "activeLootTables": 467,
   "existingJSONC": 6,
-  "nestedReferences": 424,
+  "nestedReferences": 421,
   "simulations": {
     "Mid": {
       "table": "abandoned_mineshaft.json",
       "chests": 10000,
-      "meanBaseDraws": 15.9964,
+      "meanBaseDraws": 15.9802,
       "physicalSlots": "not simulated; native merging/splitting requires game verification"
     },
     "End": {
       "table": "ancient_city.json",
       "chests": 10000,
-      "meanBaseDraws": 17.4794,
+      "meanBaseDraws": 17.4733,
       "physicalSlots": "not simulated; native merging/splitting requires game verification"
     },
     "High": {
       "table": "igloo_chest.json",
       "chests": 10000,
-      "meanBaseDraws": 16.4876,
+      "meanBaseDraws": 16.4885,
       "physicalSlots": "not simulated; native merging/splitting requires game verification"
     },
     "Early": {
       "table": "shipwrecksupply.json",
       "chests": 10000,
-      "meanBaseDraws": 14.9866,
+      "meanBaseDraws": 14.9856,
       "physicalSlots": "not simulated; native merging/splitting requires game verification"
     }
   },

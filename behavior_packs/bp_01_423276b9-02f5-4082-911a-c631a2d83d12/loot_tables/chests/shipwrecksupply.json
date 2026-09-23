@@ -2,8 +2,8 @@
   "pools": [
     {
       "rolls": {
-        "min": 13,
-        "max": 17
+        "min": 8,
+        "max": 12
       },
       "entries": [
         {
@@ -486,13 +486,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "minecraft:coast_armor_trim_smithing_template"
-        }
-      ],
-      "conditions": [
+          "name": "minecraft:coast_armor_trim_smithing_template",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.12
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/shipwrecksupply.json",
+          "weight": 22
         }
       ]
     },
@@ -501,13 +501,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 7
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.35
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/shipwrecksupply.json",
+          "weight": 13
         }
       ]
     },
@@ -516,13 +516,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 13
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.26
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/shipwrecksupply.json",
+          "weight": 37
         }
       ]
     },
@@ -531,13 +531,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.06
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/shipwrecksupply.json",
+          "weight": 47
         }
       ]
     },
@@ -546,13 +546,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.1
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/shipwrecksupply.json",
+          "weight": 9
         }
       ]
     },
@@ -561,13 +561,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.003
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/shipwrecksupply.json",
+          "weight": 997
         }
       ]
     },
@@ -576,13 +576,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.0015
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/shipwrecksupply.json",
+          "weight": 1997
         }
       ]
     }

@@ -2,8 +2,8 @@
   "pools": [
     {
       "rolls": {
-        "min": 14,
-        "max": 19
+        "min": 9,
+        "max": 14
       },
       "entries": [
         {
@@ -504,6 +504,28 @@
               "function": "enchant_randomly"
             }
           ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_hoe",
+          "weight": 700,
+          "functions": [
+            {
+              "function": "enchant_randomly",
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 1200,
+          "functions": [
+            {
+              "function": "enchant_randomly",
+              "treasure": true
+            }
+          ]
         }
       ]
     },
@@ -512,13 +534,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "minecraft:totem_of_undying"
-        }
-      ],
-      "conditions": [
+          "name": "minecraft:totem_of_undying",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.2
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/woodland_mansion.json",
+          "weight": 4
         }
       ]
     },
@@ -527,13 +549,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "minecraft:vex_armor_trim_smithing_template"
-        }
-      ],
-      "conditions": [
+          "name": "minecraft:vex_armor_trim_smithing_template",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.2
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/woodland_mansion.json",
+          "weight": 4
         }
       ]
     },
@@ -542,13 +564,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.3
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/woodland_mansion.json",
+          "weight": 7
         }
       ]
     },
@@ -557,13 +579,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.25
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/woodland_mansion.json",
+          "weight": 3
         }
       ]
     },
@@ -572,13 +594,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 2
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.08
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/woodland_mansion.json",
+          "weight": 23
         }
       ]
     },
@@ -587,13 +609,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.15
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/woodland_mansion.json",
+          "weight": 17
         }
       ]
     },
@@ -602,13 +624,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.01
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/woodland_mansion.json",
+          "weight": 99
         }
       ]
     },
@@ -617,13 +639,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.004
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/woodland_mansion.json",
+          "weight": 249
         }
       ]
     }

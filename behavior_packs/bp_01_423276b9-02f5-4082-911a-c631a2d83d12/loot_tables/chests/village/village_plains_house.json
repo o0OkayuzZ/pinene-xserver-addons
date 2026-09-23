@@ -2,8 +2,8 @@
   "pools": [
     {
       "rolls": {
-        "min": 13,
-        "max": 17
+        "min": 9,
+        "max": 13
       },
       "entries": [
         {
@@ -452,13 +452,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 7
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.28
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/village/village_plains_house.json",
+          "weight": 18
         }
       ]
     },
@@ -467,13 +467,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 11
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.22
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/village/village_plains_house.json",
+          "weight": 39
         }
       ]
     },
@@ -482,13 +482,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 11
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.055
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/village/village_plains_house.json",
+          "weight": 189
         }
       ]
     },
@@ -497,13 +497,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.1
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/village/village_plains_house.json",
+          "weight": 9
         }
       ]
     },
@@ -512,13 +512,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.001
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/village/village_plains_house.json",
+          "weight": 999
         }
       ]
     },
@@ -527,13 +527,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.0015
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/village/village_plains_house.json",
+          "weight": 1997
         }
       ]
     }

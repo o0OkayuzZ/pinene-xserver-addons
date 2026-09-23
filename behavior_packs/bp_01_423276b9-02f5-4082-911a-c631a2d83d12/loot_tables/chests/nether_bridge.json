@@ -2,8 +2,8 @@
   "pools": [
     {
       "rolls": {
-        "min": 14,
-        "max": 19
+        "min": 10,
+        "max": 15
       },
       "entries": [
         {
@@ -530,13 +530,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "minecraft:rib_armor_trim_smithing_template"
-        }
-      ],
-      "conditions": [
+          "name": "minecraft:rib_armor_trim_smithing_template",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.1
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/nether_bridge.json",
+          "weight": 9
         }
       ]
     },
@@ -545,13 +545,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 6
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.24
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/nether_bridge.json",
+          "weight": 19
         }
       ]
     },
@@ -560,13 +560,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 11
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.22
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/nether_bridge.json",
+          "weight": 39
         }
       ]
     },
@@ -575,13 +575,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 2
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.08
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/nether_bridge.json",
+          "weight": 23
         }
       ]
     },
@@ -590,13 +590,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.12
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/nether_bridge.json",
+          "weight": 22
         }
       ]
     },
@@ -605,13 +605,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.01
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/nether_bridge.json",
+          "weight": 99
         }
       ]
     },
@@ -620,13 +620,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.004
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/nether_bridge.json",
+          "weight": 249
         }
       ]
     }

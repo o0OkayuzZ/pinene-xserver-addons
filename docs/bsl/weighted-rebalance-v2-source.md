@@ -1,5 +1,10 @@
 # BSL Weighted Rebalance v2 — Implementation Spec
 
+> Historical v2 specification and evolving v3 notes. The approved ice-box allocation
+> is now defined in [icebox-jackpot-v3.md](icebox-jackpot-v3.md), which supersedes older
+> ice-box numbers below. See its remaining PR-wide blockers before merging.
+
+
 Status: design locked enough to implement; no direct GitHub push performed because the connected GitHub integration cannot create refs/branches (403).
 
 ## 1. Core design
@@ -24,7 +29,7 @@ Loot rarity and chest fullness are separate axes.
 | End | 15–20 |
 | Special | bespoke; unchanged |
 
-These are draw counts, not guaranteed physical occupied-slot counts. Native Minecraft chest filling can split/merge stacks, so physical slot occupancy must be verified in-game.
+v3 reward-density adjustment: all normal profiles are intentionally one step richer while preserving their progression order and independent rare-reward probabilities.\n\nThese are draw counts, not guaranteed physical occupied-slot counts. Native Minecraft chest filling can split/merge stacks, so physical slot occupancy must be verified in-game.
 
 ### Generic normal-BSL conversion
 
@@ -304,3 +309,19 @@ Game test:
 - native normal structure chest filling may merge/split stacks; inspect actual physical occupancy
 - verify potion `set_potion` output for normal/splash/lingering forms
 - verify all custom items render/use correctly
+
+## Vanilla parity audit (2026-09-23)
+
+Compared current normal BSL tables against Mojang bedrock-samples before v3 merge. Ancient City had confirmed progression-loss defects (Swift Sneak and enchanted diamond hoe) and those are restored in this branch.
+
+The broader comparison also finds many vanilla filler/equipment entries absent from the customized BSL tables (for example shipwreck supplies, ruined portals, strongholds and woodland mansions). These are not automatically re-added: BSL intentionally replaces substantial vanilla filler with its own richer resource/equipment pools. Treat a difference as a defect only when it removes structure identity, exclusive/progression loot, or an important gameplay role. Do not blindly union Mojang tables into BSL.
+
+v3 rule: preserve/restore structure-defining vanilla rewards; allow low-value filler substitutions; keep BSL independent addon rewards and profile progression intact.
+
+## v3 Special jackpot policy
+
+Special chests are intentionally allowed to approach a full 27-slot chest. They are jackpot destinations, not normal profile chests. Stack merging means draw count does not guarantee 27 occupied slots, so game verification is still required.
+
+- Ancient City ice box: food jackpot. Primary food 12–16 draws, secondary food 9–12, Golden Food 5–8, Enchanted Golden Food 6–10, pancakes 3–5 at 80%, enchanted golden apples at 60%. Enchanted Golden Food is deliberately abundant here.
+- Bastion Treasure: 14–18 premium-material draws + 12–16 equipment draws, plus its guaranteed/progression pools; addon food/collectible chances raised moderately.
+- Buried Treasure: 8–11 maritime draws + 14–18 equipment/useful draws, plus guaranteed resource/progression pools; addon food/collectible chances raised moderately.
