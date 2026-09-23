@@ -504,6 +504,28 @@
               "function": "enchant_randomly"
             }
           ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_hoe",
+          "weight": 700,
+          "functions": [
+            {
+              "function": "enchant_randomly",
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 1200,
+          "functions": [
+            {
+              "function": "enchant_randomly",
+              "treasure": true
+            }
+          ]
         }
       ]
     },
