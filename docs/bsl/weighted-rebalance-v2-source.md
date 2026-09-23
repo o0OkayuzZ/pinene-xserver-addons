@@ -1,5 +1,10 @@
 # BSL Weighted Rebalance v2 — Implementation Spec
 
+> Historical v2 specification and evolving v3 notes. The approved ice-box allocation
+> is now defined in [icebox-jackpot-v3.md](icebox-jackpot-v3.md), which supersedes older
+> ice-box numbers below. See its remaining PR-wide blockers before merging.
+
+
 Status: design locked enough to implement; no direct GitHub push performed because the connected GitHub integration cannot create refs/branches (403).
 
 ## 1. Core design

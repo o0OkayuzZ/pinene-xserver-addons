@@ -1,0 +1,471 @@
+{
+  "status": "PASS",
+  "generatedStacks": [
+    27,
+    27
+  ],
+  "enchantedFoodQuantity": [
+    48,
+    96
+  ],
+  "goldenFoodQuantity": [
+    12,
+    24
+  ],
+  "enchantedGoldenAppleQuantity": [
+    2,
+    4
+  ],
+  "rareReplacementProbabilities": {
+    "loot_tables/bsl/collectibles/all.json": 0.3,
+    "ws:warpstone": 0.04,
+    "resetapple:blue_apple": 0.012
+  },
+  "engineVerified": false,
+  "nativeOccupiedSlots": "Not asserted; requires Bedrock verification",
+  "trials": 10000,
+  "seed": 20260923,
+  "enchantedFood": {
+    "mean": 72.0083,
+    "observedMin": 57,
+    "observedMax": 88,
+    "theoreticalMin": 48,
+    "theoreticalMax": 96,
+    "theoreticalMean": 72,
+    "meanUniqueEdibleTypes": 6.4025
+  },
+  "goldenFoodMean": 17.9987,
+  "rareFrequencies": {
+    "loot_tables/bsl/collectibles/all.json": {
+      "expected": 0.3,
+      "observed": 0.2994,
+      "hits": 2994
+    },
+    "ws:warpstone": {
+      "expected": 0.04,
+      "observed": 0.0393,
+      "hits": 393
+    },
+    "resetapple:blue_apple": {
+      "expected": 0.012,
+      "observed": 0.0119,
+      "hits": 119
+    }
+  },
+  "capacityFailures": 0,
+  "examplesAreSimulated": true,
+  "examples": [
+    [
+      {
+        "item": "pinene:enchanted_baked_golden_potato",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_carrot",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_beetroot",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "minecraft:gold_block",
+        "count": 5,
+        "group": "warpstone_or_resource"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 4,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "a:egbread",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_baked_golden_potato",
+        "count": 4,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "minecraft:packed_ice",
+        "count": 14,
+        "group": "packed_ice"
+      },
+      {
+        "item": "pinene:enchanted_golden_carrot",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:golden_pumpkin_pie",
+        "count": 7,
+        "group": "golden_food"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_poisonous_potato",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "minecraft:experience_bottle",
+        "count": 26,
+        "group": "blue_apple_or_resource"
+      },
+      {
+        "item": "pinene:enchanted_golden_pumpkin_pie",
+        "count": 4,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:golden_pumpkin_pie",
+        "count": 5,
+        "group": "golden_food"
+      },
+      {
+        "item": "pinecd:cd_05",
+        "count": 1,
+        "group": "collectible_or_resource"
+      },
+      {
+        "item": "pinene:enchanted_golden_poisonous_potato",
+        "count": 4,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_poisonous_potato",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_baked_golden_potato",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinebento:honey_pancake",
+        "count": 4,
+        "group": "pancakes"
+      },
+      {
+        "item": "minecraft:snowball",
+        "count": 11,
+        "group": "snowballs"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "myname:pancake",
+        "count": 4,
+        "group": "pancakes"
+      },
+      {
+        "item": "pinene:enchanted_golden_beetroot",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:golden_poisonous_potato",
+        "count": 6,
+        "group": "golden_food"
+      },
+      {
+        "item": "minecraft:enchanted_golden_apple",
+        "count": 3,
+        "group": "enchanted_apple"
+      }
+    ],
+    [
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "a:egbread",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "myname:pancake",
+        "count": 3,
+        "group": "pancakes"
+      },
+      {
+        "item": "minecraft:packed_ice",
+        "count": 16,
+        "group": "packed_ice"
+      },
+      {
+        "item": "pinene:enchanted_golden_poisonous_potato",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_carrot",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_carrot",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "minecraft:diamond",
+        "count": 13,
+        "group": "blue_apple_or_resource"
+      },
+      {
+        "item": "pinene:enchanted_golden_beetroot",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:golden_pumpkin_pie",
+        "count": 4,
+        "group": "golden_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_poisonous_potato",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "a:egbread",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "minecraft:gold_block",
+        "count": 2,
+        "group": "warpstone_or_resource"
+      },
+      {
+        "item": "a:egbread",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_poisonous_potato",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinecd:cd_05",
+        "count": 1,
+        "group": "collectible_or_resource"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_baked_golden_potato",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinebento:berry_honey_pancake",
+        "count": 4,
+        "group": "pancakes"
+      },
+      {
+        "item": "minecraft:snowball",
+        "count": 14,
+        "group": "snowballs"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_baked_golden_potato",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:baked_golden_potato",
+        "count": 4,
+        "group": "golden_food"
+      },
+      {
+        "item": "a:egbread",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "minecraft:enchanted_golden_apple",
+        "count": 4,
+        "group": "enchanted_apple"
+      },
+      {
+        "item": "pinene:golden_poisonous_potato",
+        "count": 6,
+        "group": "golden_food"
+      }
+    ],
+    [
+      {
+        "item": "pinene:golden_pumpkin_pie",
+        "count": 4,
+        "group": "golden_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_carrot",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_baked_golden_potato",
+        "count": 4,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_pumpkin_pie",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_poisonous_potato",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_carrot",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "minecraft:gold_block",
+        "count": 6,
+        "group": "warpstone_or_resource"
+      },
+      {
+        "item": "minecraft:diamond",
+        "count": 10,
+        "group": "collectible_or_resource"
+      },
+      {
+        "item": "pinebento:honey_pancake",
+        "count": 3,
+        "group": "pancakes"
+      },
+      {
+        "item": "pinene:golden_beetroot",
+        "count": 4,
+        "group": "golden_food"
+      },
+      {
+        "item": "pinene:enchanted_baked_golden_potato",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_carrot",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "a:egbread",
+        "count": 5,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "minecraft:enchanted_golden_apple",
+        "count": 2,
+        "group": "enchanted_apple"
+      },
+      {
+        "item": "pinene:enchanted_baked_golden_potato",
+        "count": 3,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_carrot",
+        "count": 4,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "myname:pancake",
+        "count": 4,
+        "group": "pancakes"
+      },
+      {
+        "item": "minecraft:snowball",
+        "count": 9,
+        "group": "snowballs"
+      },
+      {
+        "item": "minecraft:gold_block",
+        "count": 3,
+        "group": "blue_apple_or_resource"
+      },
+      {
+        "item": "minecraft:packed_ice",
+        "count": 12,
+        "group": "packed_ice"
+      },
+      {
+        "item": "pinene:enchanted_glistering_melon_slice",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_beetroot",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_pumpkin_pie",
+        "count": 4,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:enchanted_golden_poisonous_potato",
+        "count": 6,
+        "group": "enchanted_food"
+      },
+      {
+        "item": "pinene:golden_beetroot",
+        "count": 6,
+        "group": "golden_food"
+      }
+    ]
+  ],
+  "tableSHA256": "0128f3674252c22c8ef1f01d6e67f0968046dd0d224d8aec8ccd76654e6f1315"
+}

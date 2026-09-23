@@ -90,14 +90,8 @@ def visit(p,stack=()):
  seen.add(p)
 for p in graph:visit(p)
 # v3 bespoke Special jackpot invariants.
-ice=load(CHESTS/'ancient_city_ice_box.json')
-assert ice['pools'][0]['rolls']=={'min':12,'max':16}
-assert ice['pools'][1]['rolls']=={'min':9,'max':12}
-assert ice['pools'][2]['rolls']=={'min':6,'max':9}
-assert ice['pools'][3]['rolls']=={'min':10,'max':14}
-assert ice['pools'][4]['rolls']=={'min':3,'max':5} and ice['pools'][4]['conditions'][0]['chance']==0.8
-assert ice['pools'][5]['conditions'][0]['chance']==0.75
-assert {'minecraft:packed_ice','minecraft:snowball'} <= {e.get('name') for e in ice['pools'][0]['entries']}
+from validate_bsl_icebox_jackpot import validate as validate_icebox
+icebox_report=validate_icebox()
 bastion=load(CHESTS/'bastion_treasure.json')
 assert bastion['pools'][10]['rolls']=={'min':14,'max':18}
 assert bastion['pools'][11]['rolls']=={'min':12,'max':16}
@@ -120,7 +114,7 @@ for profile,(name,d) in representatives.items():
   prob=e['weight']/total;assert abs(count/n-prob)<6*math.sqrt(prob*(1-prob)/n)+1/n
  assert set(draws)==set(range(lo,hi+1))
  simulations[profile]={'table':name,'chests':10000,'meanBaseDraws':n/10000,'physicalSlots':'not simulated; native merging/splitting requires game verification'}
-report={'status':'PASS','baseline':BASELINE,'updatedTables':len(results),'specialJackpots':sorted(SPECIAL),'castleAndCommonTablesUnchanged':unchanged,'activeLootTables':len(tables),'existingJSONC':jsonc,'nestedReferences':references,'simulations':simulations,'tables':results}
+report={'status':'PASS','baseline':BASELINE,'updatedTables':len(results),'specialJackpots':sorted(SPECIAL),'iceboxContract':icebox_report,'castleAndCommonTablesUnchanged':unchanged,'activeLootTables':len(tables),'existingJSONC':jsonc,'nestedReferences':references,'simulations':simulations,'tables':results}
 (ROOT/'docs/bsl/weighted-rebalance-v2-validation.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
 assert len(results)==33 and len(simulations)==4
 print(f'PASS: 33 normal profiles validated, 3 Special jackpots validated, {unchanged} Castle/common unchanged, {len(tables)} active loot tables, {references} references, 40000 simulated chests.')
