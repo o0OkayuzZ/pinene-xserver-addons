@@ -14,10 +14,10 @@ def walk(x):
   for v in x:yield from walk(v)
 profiles=load(ROOT/'docs/bsl/provenance.json')['profiles'];rng=random.Random(20260913)
 manifest=load(BP/'manifest.json')
-assert manifest['header']['version']==[1,0,19]
-assert all(m['version']==[1,0,19] for m in manifest['modules'])
+bsl_version=manifest['header']['version']
+assert all(m['version']==bsl_version for m in manifest['modules'])
 for p in [ROOT/'world_behavior_packs.json',ROOT/'worlds/Bedrock level/world_behavior_packs.json']:
- assert next(r['version'] for r in load(p) if r['pack_id']==manifest['header']['uuid'])==[1,0,19]
+ assert next(r['version'] for r in load(p) if r['pack_id']==manifest['header']['uuid'])==bsl_version
 audit=load(ROOT/'docs/bsl/weighted-rebalance-v2.json');results={};representatives={}
 for name,info in profiles.items():
  p=CHESTS/name;before=original(p);after=load(p);profile=info['profile']
