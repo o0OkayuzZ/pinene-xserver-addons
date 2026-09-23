@@ -22,10 +22,12 @@ audit=load(ROOT/'docs/bsl/weighted-rebalance-v2.json');results={};representative
 for name,info in profiles.items():
  p=CHESTS/name;before=original(p);after=load(p);profile=info['profile']
  if profile=='Special':
-  assert p.name in SPECIAL and before==after,(name,'special changed')
-  assert p.read_bytes().replace(b'\r\n',b'\n')==subprocess.check_output(['git','show',BASELINE+':'+p.relative_to(ROOT).as_posix()],cwd=ROOT).replace(b'\r\n',b'\n')
+  assert p.name in SPECIAL,name
+  # v3 deliberately turns the three bespoke Special tables into jackpot chests.
+  # Their exact contents are validated below instead of requiring baseline equality.
   continue
  assert after['pools'][0]['rolls']==PROFILE_ROLLS[profile],name
+ # v3 may append structure-identity entries after the original weighted entries.
  independent=set(info['independentChances']);preserved=[];ordinary=[]
  for pool in before['pools']:
   entries=[e for e in pool['entries'] if e['type']!='empty']
@@ -37,9 +39,9 @@ for name,info in profiles.items():
   denom=sum(e.get('weight',1) for e in pool['entries'])
   ordinary.extend((e,count*e.get('weight',1)/denom) for e in entries)
  assert after['pools'][1:]==preserved,(name,'independent pool changed')
- new=after['pools'][0]['entries'];assert len(new)==len(ordinary)
+ new=after['pools'][0]['entries'];assert len(new)>=len(ordinary)
  mass=sum(v for _,v in ordinary)
- for e,(old,contribution) in zip(new,ordinary):
+ for e,(old,contribution) in zip(new[:len(ordinary)],ordinary):
   expected=json.loads(json.dumps(old));expected['weight']=max(1,round(contribution/mass*100000))
   for f in expected.get('functions',[]):
    if f.get('function')=='set_count':
@@ -87,6 +89,23 @@ def visit(p,stack=()):
  for q in graph[p]:visit(q,(*stack,p))
  seen.add(p)
 for p in graph:visit(p)
+# v3 bespoke Special jackpot invariants.
+ice=load(CHESTS/'ancient_city_ice_box.json')
+assert ice['pools'][0]['rolls']=={'min':12,'max':16}
+assert ice['pools'][1]['rolls']=={'min':9,'max':12}
+assert ice['pools'][2]['rolls']=={'min':6,'max':9}
+assert ice['pools'][3]['rolls']=={'min':10,'max':14}
+assert ice['pools'][4]['rolls']=={'min':3,'max':5} and ice['pools'][4]['conditions'][0]['chance']==0.8
+assert ice['pools'][5]['conditions'][0]['chance']==0.75
+assert {'minecraft:packed_ice','minecraft:snowball'} <= {e.get('name') for e in ice['pools'][0]['entries']}
+bastion=load(CHESTS/'bastion_treasure.json')
+assert bastion['pools'][10]['rolls']=={'min':14,'max':18}
+assert bastion['pools'][11]['rolls']=={'min':12,'max':16}
+assert bastion['pools'][0]['entries'][0]['name']=='minecraft:netherite_upgrade_smithing_template'
+buried=load(CHESTS/'buriedtreasure.json')
+assert buried['pools'][10]['rolls']=={'min':8,'max':11}
+assert buried['pools'][11]['rolls']=={'min':14,'max':18}
+assert buried['pools'][0]['entries'][0]['name']=='minecraft:heart_of_the_sea'
 simulations={}
 for profile,(name,d) in representatives.items():
  pool=d['pools'][0];entries=pool['entries'];lo,hi=pool['rolls']['min'],pool['rolls']['max']
@@ -101,7 +120,7 @@ for profile,(name,d) in representatives.items():
   prob=e['weight']/total;assert abs(count/n-prob)<6*math.sqrt(prob*(1-prob)/n)+1/n
  assert set(draws)==set(range(lo,hi+1))
  simulations[profile]={'table':name,'chests':10000,'meanBaseDraws':n/10000,'physicalSlots':'not simulated; native merging/splitting requires game verification'}
-report={'status':'PASS','baseline':BASELINE,'updatedTables':len(results),'specialUnchanged':sorted(SPECIAL),'castleAndCommonTablesUnchanged':unchanged,'activeLootTables':len(tables),'existingJSONC':jsonc,'nestedReferences':references,'simulations':simulations,'tables':results}
+report={'status':'PASS','baseline':BASELINE,'updatedTables':len(results),'specialJackpots':sorted(SPECIAL),'castleAndCommonTablesUnchanged':unchanged,'activeLootTables':len(tables),'existingJSONC':jsonc,'nestedReferences':references,'simulations':simulations,'tables':results}
 (ROOT/'docs/bsl/weighted-rebalance-v2-validation.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
 assert len(results)==33 and len(simulations)==4
-print(f'PASS: 33 rebuilt, 3 Special unchanged, {unchanged} Castle/common unchanged, {len(tables)} active loot tables, {references} references, 40000 simulated chests.')
+print(f'PASS: 33 normal profiles validated, 3 Special jackpots validated, {unchanged} Castle/common unchanged, {len(tables)} active loot tables, {references} references, 40000 simulated chests.')
