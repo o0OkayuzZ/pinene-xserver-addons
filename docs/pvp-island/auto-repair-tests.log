@@ -1,0 +1,67 @@
+(node:18896) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-auto-repair/behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/repair_store.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\はーにゃ。\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_behavior_packs\ピーネン実験導入3\_workspace\pinene-auto-repair\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ defaults are 32/48/15 seconds/10 minutes/24 global attempts (7.5129ms)
+✔ record leaves visible damage; no restoration before ten full absent minutes (4.718ms)
+✔ nearby players indefinitely preserve dirty terrain (3.688ms)
+✔ return before timeout resets the entire grace period (0.8136ms)
+✔ global tick budget spans multiple regions and pauses immediately on return (11.0696ms)
+✔ failed/unloaded attempts are also bounded and retried on the next poll (2.8351ms)
+✔ occupied positions are deferred; repair never overwrites placement ownership (1.4114ms)
+✔ collision overlap includes feet/head and horizontal body width (0.2696ms)
+✔ negative coordinates and edge radius use region bounds, independent of height (0.2487ms)
+✔ restart preserves exact permutation and restarts absence conservatively (2.7231ms)
+✔ a change serializes only its shard and region metadata, not unrelated regions (1.2204ms)
+✔ oversized/corrupt shards fail closed and do not mutate committed memory (1.2827ms)
+✔ empty dirty state does no work (0.1972ms)
+✔ owned destruction is private mail, not natural terrain restoration (1.0168ms)
+✔ duplicate removal events have a single durable return transaction (0.3106ms)
+✔ full/partially full inventory retains leftovers and cannot duplicate delivered items (0.6322ms)
+✔ interrupted delivery is persisted and quarantined across restart (1.4152ms)
+✔ pending world removal is recoverable after restart with ownership intact (0.2504ms)
+✔ player placement on dirty terrain returns to mail, then original natural terrain repairs (0.4666ms)
+✔ persistence failure never removes committed dirty entry (0.7878ms)
+✔ region size changes require explicit migration of saved state (0.2656ms)
+✔ admin reconciliation requires exact owner and explicit delivery decision (0.65ms)
+✔ pinen wedge consumption and dimension gate: pinene_pvp:pvp_island (4.7699ms)
+✔ pinen arrow ability and dimension gate: pinene_pvp:pvp_island (4.194ms)
+✔ pinen wedge consumption and dimension gate: minecraft:overworld (1.258ms)
+✔ pinen arrow ability and dimension gate: minecraft:overworld (1.1766ms)
+✔ pinene_pvp wedge consumption and dimension gate: pinene_pvp:pvp_island (1.8171ms)
+✔ pinene_pvp arrow ability and dimension gate: pinene_pvp:pvp_island (1.2325ms)
+✔ pinene_pvp wedge consumption and dimension gate: minecraft:overworld (0.9426ms)
+✔ pinene_pvp arrow ability and dimension gate: minecraft:overworld (0.982ms)
+✔ charged entity receives bonus lightning damage only inside the island (1.1743ms)
+(node:29416) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/AppData/Roaming/Minecraft%20Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/%E3%83%94%E3%83%BC%E3%83%8D%E3%83%B3%E5%AE%9F%E9%A8%93%E5%B0%8E%E5%85%A53/_workspace/pinene-auto-repair/behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/repair_store.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\はーにゃ。\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_behavior_packs\ピーネン実験導入3\_workspace\pinene-auto-repair\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ native break is cancelled, becomes air on shared worker and stays air near players (15.6276ms)
+✔ full runtime absence deadline restores original block states and waterlogging (2.3396ms)
+✔ explosion suppresses block drop pipeline and queues only eligible blocks (1.3237ms)
+✔ BP16/overworld dimension events are untouched (1.255ms)
+✔ idle service has only the 15-second interval and no player/block scan (4.695ms)
+✔ player placement returns to placing owner, not breaker, and never becomes dirty terrain (4.0674ms)
+✔ registered gateway cancels break/open and privately delivers mail (2.0559ms)
+✔ gateway refuses to overwrite terrain (1.7606ms)
+✔ queued stale event cannot destroy a different replacement block (1.2458ms)
+✔ protected terrain and pre-cancelled events are respected (2.6549ms)
+✔ main imports service once and no forbidden per-block timer exists (16.9764ms)
+✔ repair_vault residue is not a usable rendered gateway: geometry has no cubes (0.9148ms)
+✔ before-interact clones items without calling restricted item serialization APIs (1.6675ms)
+✔ owned container contents are journaled before clearing and returned without public drops (1.5355ms)
+✔ natural block entities are left intact because permutation alone cannot preserve contents (1.5579ms)
+✔ both door halves are owned and breaking either returns exactly one item (1.7041ms)
+✔ two-block placement credits survive synchronous neighbor removal (2.0087ms)
+✔ restoration never overwrites a non-air replacement even without ownership (1.2168ms)
+✔ many break events use one wake-up and at most 24 removals in a tick (5.7038ms)
+✔ opaque item data is rejected before a container can be cleared (24.0692ms)
+ℹ tests 51
+ℹ suites 0
+ℹ pass 51
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 483.7701

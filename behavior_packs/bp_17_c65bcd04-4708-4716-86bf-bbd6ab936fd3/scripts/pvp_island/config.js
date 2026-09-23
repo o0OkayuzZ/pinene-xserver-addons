@@ -97,3 +97,16 @@ export const ISLAND_TEMPLATE = Object.freeze({
   revision: 1,
   maxTileHeight: 64,
 });
+
+export const AUTO_REPAIR = Object.freeze({
+  regionSize: 32, // Multiple of four; existing saves require migration if changed.
+  nearbyRadius: 48, // Horizontal distance from the region bounds, at any height.
+  pollTicks: 20 * 15,
+  absenceMs: 10 * 60 * 1000,
+  blocksPerTick: 24, // Global attempt budget, including unloaded/blocked positions.
+  removalBlocksPerTick: 24,
+  maxQueuedRemovals: 4096,
+  // Opt-in installation via /scriptevent pinene_pvp:repair_gateway.
+  // No existing terrain is overwritten to create the gateway.
+  gateway: { x: 2, y: 65, z: 0 },
+});
