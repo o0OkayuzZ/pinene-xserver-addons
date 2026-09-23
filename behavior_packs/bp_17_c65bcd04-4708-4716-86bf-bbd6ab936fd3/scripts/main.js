@@ -11,3 +11,4 @@ import "./pvp_island/marker_service.js";
 import "./pvp_island/editor.js";
 import "./pvp_island/admin.js";
 import "./pvp_island/natural_island_import.js";
+import "./pvp_island/repair_service.js";

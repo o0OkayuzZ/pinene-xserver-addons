@@ -1,0 +1,53 @@
+{
+  "base_commit": "0e9b532b927e8a596f7c2afcc09fc28692a6e040",
+  "branch": "feat/pinene-auto-repair-lost-found",
+  "javascript_tests": {
+    "passed": 51,
+    "failed": 0,
+    "node": "24.21.0"
+  },
+  "metadata_tests": {
+    "passed": 4,
+    "failed": 0
+  },
+  "pack_ownership_audit": "PASSED",
+  "syntax_checks": [
+    "auto_repair.js",
+    "placement_ownership.js",
+    "lost_found.js",
+    "repair_store.js",
+    "repair_items.js",
+    "repair_service.js"
+  ],
+  "diff_check": "PASSED",
+  "BP16_and_RP_files_changed": false,
+  "engine_smoke": "DEFERRED by user; current world not operated",
+  "gateway": "vanilla chest; existing repair_vault geometry has zero cubes",
+  "deployment": "NOT PERFORMED",
+  "changed_files": [
+    ".github/workflows/audit-pack-ownership.yml",
+    "README.md",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/manifest.json",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/main.js",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/config.js",
+    "website/src/data/pack-registry.json",
+    "world_behavior_packs.json",
+    "worlds/Bedrock level/world_behavior_packs.json",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/auto_repair.js",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/lost_found.js",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/placement_ownership.js",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/repair_items.js",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/repair_service.js",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3/scripts/pvp_island/repair_store.js",
+    "docs/pvp-island/auto-repair-lost-found.md",
+    "docs/pvp-island/auto-repair-tests.log",
+    "tools/tests/pvp_auto_repair.test.mjs",
+    "tools/tests/pvp_repair_runtime.test.mjs",
+    "docs/pvp-island/auto-repair-validation.json"
+  ],
+  "current_main_metadata": "PASSED",
+  "main_case_asset_tests": 1,
+  "conflicts_resolved": [
+    "ownership workflow: preserve both Crossbow and repair test steps"
+  ]
+}

@@ -25,3 +25,5 @@ jobs:
         run: node --test tools/tests/pvp_compatibility.test.mjs
       - name: Test Bomb and Sniper Crossbows
         run: node --test tests/bomb-crossbow.test.mjs tests/sniper-crossbow.test.mjs
+      - name: Test region repair, persistence and private Lost & Found
+        run: node --test tools/tests/pvp_auto_repair.test.mjs tools/tests/pvp_repair_runtime.test.mjs
