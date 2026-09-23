@@ -24,7 +24,7 @@ Loot rarity and chest fullness are separate axes.
 | End | 15–20 |
 | Special | bespoke; unchanged |
 
-These are draw counts, not guaranteed physical occupied-slot counts. Native Minecraft chest filling can split/merge stacks, so physical slot occupancy must be verified in-game.
+v3 reward-density adjustment: all normal profiles are intentionally one step richer while preserving their progression order and independent rare-reward probabilities.\n\nThese are draw counts, not guaranteed physical occupied-slot counts. Native Minecraft chest filling can split/merge stacks, so physical slot occupancy must be verified in-game.
 
 ### Generic normal-BSL conversion
 
