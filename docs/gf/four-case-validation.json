@@ -1,0 +1,55 @@
+{
+  "base_main": "0f7d5acf6b1169e22eb71160a52b1d3febda674b",
+  "branch": "feat/gf-card-cases-v0.2",
+  "versions": {
+    "BP15": "1.0.80",
+    "RP02": "1.0.68",
+    "BP09": "1.2.15",
+    "RP07": "1.2.16"
+  },
+  "gf": {
+    "baseline_passed": 139,
+    "passed": 156,
+    "failed": 0,
+    "skipped": 0
+  },
+  "metadata_regression": {
+    "passed": 4,
+    "failed": 0
+  },
+  "official_case_assets": {
+    "passed": 1,
+    "failed": 0
+  },
+  "syntax_modules": 36,
+  "ownership_audit": "PASSED",
+  "current_main_metadata": "PASSED",
+  "diff_check": "PASSED",
+  "preserved_local_logic_files": 24,
+  "protected_runtime_scope": "PASSED: only GF runtime/assets and four manifests changed",
+  "official_textures_and_atlas": "byte-identical to main",
+  "npm_test": {
+    "total": 424,
+    "passed": 419,
+    "failed": 5,
+    "baseline_reproduced": true,
+    "failures": [
+      "entity-preservation baseline",
+      "relocated blue-apple recipes",
+      "figure tag helper expectation",
+      "Crossbow-preservation baseline",
+      "removed duplicate RP02 parcanite icon"
+    ]
+  },
+  "castle_separate": {
+    "passed": 115,
+    "failed": 0
+  },
+  "validate": {
+    "status": "FAILED on historical release hash",
+    "clean_lf_main_and_candidate_same_failure": "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/golden_food_guide.json"
+  },
+  "rebase_conflicts": 8,
+  "deployment": "NOT PERFORMED",
+  "engine_smoke": "NOT RUN"
+}

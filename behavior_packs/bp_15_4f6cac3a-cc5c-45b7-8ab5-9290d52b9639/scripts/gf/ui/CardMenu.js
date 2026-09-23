@@ -1,14 +1,16 @@
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
-import { isActive } from "../core/RuntimeGate.js";
+import { FormSessions } from "./FormSessions.js";
+import { CaseActions } from "./CaseActions.js";
 
-export function createCardMenu(decks, combat) {
-  const open = new Set();
+export function createCardMenu(decks, combat, actions, sessions = new FormSessions()) {
+  actions ??= new CaseActions(decks, combat, sessions);
   const describe = (config, id) => {
     const copy = config.randomDeck.find(c => c.copyId === id);
     return copy ? decks.registry.get(copy.cardId).name : "—";
   };
   async function edit(player) {
     const config = decks.configuration(player);
+    const snapshot = actions.snapshot(player);
     const all = decks.registry.all();
     const ids = all.map(c => c.id);
     const encode = copies => copies.map(c => ids.indexOf(c.cardId) + 1).join(",");
@@ -18,6 +20,7 @@ export function createCardMenu(decks, combat) {
       .textField("自動防御（上から順・最大9枚）", "4,5,6", { defaultValue: config ? encode(config.autoDefense) : "" });
     const response = await form.show(player);
     if (response.canceled) return;
+    actions.assertSnapshot(player, snapshot, false);
     const revision = (config?.configurationRevision ?? 0) + 1;
     const parse = (value, group) => {
       if (!String(value).trim()) return [];
@@ -30,18 +33,20 @@ export function createCardMenu(decks, combat) {
       });
     };
     decks.saveConfiguration(player, { randomDeck: parse(response.formValues[0], "randomDeck"), fixedAttack: parse(response.formValues[1], "fixedAttack"), autoDefense: parse(response.formValues[2], "autoDefense"), settings: config?.settings ?? { defensePriority: "manual_first" } }, config?.configurationRevision ?? 0);
+    sessions.invalidate(player);
     player.sendMessage("§aGF構成を保存しました。");
   }
   return async function show(player) {
-    if (open.has(player.id)) return;
-    open.add(player.id);
+    const lock = sessions.begin(player);
+    if (!lock) return;
     try {
       const { config, battle, active } = decks.load(player);
-      const form = new ActionFormData().title("GF Card Core v0.1");
+      const snapshot = actions.snapshot(player);
+      const form = new ActionFormData().title("GF v0.2 開発用メニュー");
       if (!config || !active) {
         form.body(active ? "デッキを登録してください。" : "ピネディメンション外：戦闘状態を保存して停止中。").button("デッキ構築");
         const response = await form.show(player);
-        if (!response.canceled) await edit(player);
+        if (!response.canceled) { actions.assertSnapshot(player, snapshot, false); await edit(player); }
         return;
       }
       form.body(`手札 ${battle.hand.length} / 山札 ${battle.drawPile.length} / 捨て札 ${battle.discardPile.length}\n攻撃：視線の先の対象へ。防御：次の対応攻撃に備える。`);
@@ -50,15 +55,12 @@ export function createCardMenu(decks, combat) {
       form.button("デッキ構築");
       const response = await form.show(player);
       if (response.canceled) return;
+      actions.assertSnapshot(player, snapshot);
       if (response.selection === 5 + config.fixedAttack.length) { await edit(player); return; }
-      if (!isActive(player)) throw new Error("ピネディメンション外です。");
-      const current = decks.load(player);
-      if (JSON.stringify(current.battle) !== JSON.stringify(battle)) throw new Error("手札が変化しました。メニューを開き直してください。");
-      const target = player.getEntitiesFromViewDirection({ maxDistance: 24 }).find(hit => hit.entity.id !== player.id)?.entity;
-      const result = response.selection < 5 ? combat.useHand(player, response.selection, target) : combat.useFixed(player, response.selection - 5, target);
-      player.sendMessage(result.armed ? "§b手動防御を構えました。対応するGF攻撃に1回反応します。" : `§aGF攻撃: ${result.damage} damage`);
+      const result = response.selection < 5 ? actions.useHand(player, response.selection, snapshot) : actions.useFixed(player, response.selection - 5, snapshot);
+      player.sendMessage(result.pending ? "§e超電磁砲 チャージ中" : result.armed ? "§b手動防御を構えました。対応するGF攻撃に1回反応します。" : "§aGF攻撃を実行しました。");
     } catch (error) {
       try { player.sendMessage(`§cGF: ${error.message}`); } catch {}
-    } finally { open.delete(player.id); }
+    } finally { sessions.end(player, lock); }
   };
 }
