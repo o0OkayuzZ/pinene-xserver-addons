@@ -1,0 +1,33 @@
+19:42:51[Scripting][verbose]-Plugin Discovered [APPRAISER Lifecycle TEST 20260923 BP] PackId [23e1e147-896a-40da-90b7-36dbfe0db717_1.2.0] ModuleId [684f6d49-952c-483e-9662-e6d5213d6b44]
+
+19:42:51[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server] from [2.7.0] to [2.10.0] requested by [APPRAISER Lifecycle TEST 20260923 BP - 1.2.0].
+
+19:42:51[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server] from [2.0.0] to [2.10.0] requested by [@minecraft/server-ui-bindings - 2.2.0].
+
+19:42:51[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server] from [2.0.0] to [2.10.0] requested by [@minecraft/server-ui-bindings - 2.0.0].
+
+19:42:51[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-bindings] from [2.7.0] to [2.10.0] requested by [@minecraft/server - 2.7.0].
+
+19:42:51[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-bindings] from [2.0.0] to [2.10.0] requested by [@minecraft/server - 2.0.0].
+
+19:42:51[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-ui-bindings] from [2.0.0] to [2.2.0] requested by [@minecraft/server-ui - 2.0.0].
+
+19:42:51[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-ui] from [2.0.0] to [2.2.0] requested by [APPRAISER Lifecycle TEST 20260923 BP - 1.2.0].
+
+19:42:58[Scripting][warning]-[APPRAISER ENGINE] JOIN {"phase":"restart-done"}
+
+19:43:13[Scripting][warning]-[APPRAISER ENGINE] SPAWN_AREA {}
+
+19:43:18[Scripting][warning]-[APPRAISER ENGINE] SPAWN_DIAGNOSTIC {"position":{"x":0.5,"y":-63,"z":0.5},"mode":"Creative","top":{"type":"minecraft:grass_block","location":{"x":0,"y":-64,"z":0},"waterlogged":false},"biome":"minecraft:plains"}
+
+19:43:18[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"native spawn permits A + B and permanent A with unchanged balance config","pass":true}
+
+19:43:52[Scripting][warning]-[APPRAISER ENGINE] UNLOADED {"expired":false,"future":true,"permanent":true}
+
+19:43:57[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"real chunk unload/load preserves permanent and future, removes expired without loot","pass":false,"error":"Error: source chunk never unloaded","stack":"    at check (appraiser-engine.js:11)\n    at <anonymous> (appraiser-engine.js:137)\n    at record (appraiser-engine.js:29)\n    at unload (appraiser-engine.js:138)\n"}
+
+19:43:57[Scripting][warning]-[APPRAISER ENGINE] READY_FINAL_DEATH null
+
+19:45:43[Scripting][warning]-[APPRAISER ENGINE] NATIVE_INTERACTION {"name":"Appraiser Keeper"}
+
+19:45:43[Scripting][warning]-[APPRAISER ENGINE] INTERACTION_STATE {"state":"{\"version\":2,\"naturalOrigin\":true,\"spawnedAt\":1790159556758,\"expiresAt\":null,\"island\":false,\"permanent\":true,\"retired\":false,\"deathClaimed\":false}","ui":true}

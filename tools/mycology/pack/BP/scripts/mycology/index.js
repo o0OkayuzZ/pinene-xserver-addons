@@ -1,6 +1,6 @@
 import { world,system } from '@minecraft/server';
 import { installEffects,resumeQueue } from './effects.js';
-import { installNpc,initializeNpc } from './npc.js';
+import { installNpc,initializeNpc,isNameTagInteraction } from './npc.js';
 import { openAppraiser } from './ui.js';
 import { installFieldGuide } from './field_guide.js';
 import { reviewReceipt } from './appraisal.js';
@@ -12,7 +12,7 @@ installFieldGuide();
 installEffects();
 installNpc();
 world.afterEvents.playerInteractWithEntity.subscribe(e=>{
- if(e.target.typeId!==CONFIG.npcType)return;
+ if(e.target.typeId!==CONFIG.npcType||isNameTagInteraction(e))return;
  system.run(()=>{void openAppraiser(e.player,e.target);});
 });
 world.afterEvents.worldLoad.subscribe(()=>{

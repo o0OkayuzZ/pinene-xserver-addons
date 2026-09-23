@@ -27,11 +27,11 @@ export class FakeEntity extends Properties{
  getGameMode(){return 'Survival';}getEffect(id){return this.effects.get(id);}addEffect(id,duration,opts){this.effects.set(id,{duration,...opts});}
  removeEffect(id){this.effects.delete(id);}getEffects(){return [...this.effects].map(([typeId,e])=>({typeId,...e}));}
  kill(){this.health=0;world.afterEvents.entityDie.emit({deadEntity:this});}
- remove(){this.isValid=false;world.entities.delete(this.id);}
+ remove(){this.isValid=false;world.entities.delete(this.id);world.afterEvents.entityRemove.emit({removedEntityId:this.id});}
  sendMessage(m){this.messages.push(m);}hasTag(){return false;}
 }
 class World extends Properties{
- entities=new Map();afterEvents=Object.fromEntries(['entityLoad','entityDie','playerLeave','playerSpawn','worldLoad','itemCompleteUse','playerInteractWithEntity','entityHurt','effectAdd','itemUse'].map(k=>[k,new Signal()]));
+ entities=new Map();afterEvents=Object.fromEntries(['entityLoad','entityDie','entityRemove','playerLeave','playerSpawn','worldLoad','itemCompleteUse','playerInteractWithEntity','entityHurt','effectAdd','itemUse'].map(k=>[k,new Signal()]));
  getAllPlayers(){return [...this.entities.values()].filter(x=>x.typeId==='minecraft:player');}getEntity(id){return this.entities.get(id);}getDimension(){return [...this.entities.values()][0]?.dimension??new Dimension();}
 }
 export const world=new World();let next=1;

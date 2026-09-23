@@ -64,11 +64,22 @@
           {
             "on_interact": {
               "event": "pinene:interacted",
-              "target": "self"
+              "target": "self",
+              "filters": {
+                "test": "has_equipment",
+                "subject": "other",
+                "domain": "hand",
+                "operator": "not",
+                "value": "name_tag"
+              }
             },
             "interact_text": "action.interact.trade"
           }
         ]
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": true,
+        "always_show": true
       }
     },
     "events": {

@@ -1,0 +1,37 @@
+19:49:37[Scripting][verbose]-Plugin Discovered [APPRAISER Lifecycle TEST 20260923 BP] PackId [23e1e147-896a-40da-90b7-36dbfe0db717_1.2.0] ModuleId [684f6d49-952c-483e-9662-e6d5213d6b44]
+
+19:49:38[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server] from [2.7.0] to [2.10.0] requested by [APPRAISER Lifecycle TEST 20260923 BP - 1.2.0].
+
+19:49:38[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server] from [2.0.0] to [2.10.0] requested by [@minecraft/server-ui-bindings - 2.2.0].
+
+19:49:38[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server] from [2.0.0] to [2.10.0] requested by [@minecraft/server-ui-bindings - 2.0.0].
+
+19:49:38[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-bindings] from [2.7.0] to [2.10.0] requested by [@minecraft/server - 2.7.0].
+
+19:49:38[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-bindings] from [2.0.0] to [2.10.0] requested by [@minecraft/server - 2.0.0].
+
+19:49:38[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-ui-bindings] from [2.0.0] to [2.2.0] requested by [@minecraft/server-ui - 2.0.0].
+
+19:49:38[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-ui] from [2.0.0] to [2.2.0] requested by [APPRAISER Lifecycle TEST 20260923 BP - 1.2.0].
+
+19:49:43[Scripting][warning]-[APPRAISER ENGINE] ENTITY_LOAD {"id":"-107374182378"}
+
+19:49:43[Scripting][warning]-[APPRAISER ENGINE] ENTITY_LOAD {"id":"-115964116987"}
+
+19:49:43[Scripting][warning]-[APPRAISER ENGINE] ENTITY_LOAD {"id":"-111669149694"}
+
+19:49:43[Scripting][warning]-[APPRAISER ENGINE] ENTITY_LOAD {"id":"-107374182376"}
+
+19:49:45[Scripting][warning]-[APPRAISER ENGINE] JOIN {"phase":"restart-done"}
+
+19:50:16[Scripting][warning]-[APPRAISER ENGINE] AWAY {"position":{"x":5000.5,"y":-60,"z":5000.5},"deadline":1790160735800,"expired":"-120259084287","future":"-120259084286","keeper":"-107374182378"}
+
+19:51:46[Scripting][warning]-[APPRAISER ENGINE] UNLOADED {}
+
+19:52:15[Scripting][warning]-[APPRAISER ENGINE] ENTITY_REMOVE {"id":"-120259084287"}
+
+19:52:26[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"real chunk unload/load preserves permanent and future, removes expired without loot","pass":false,"error":"Error: source entities never unloaded before expiry","stack":"    at check (appraiser-engine.js:18)\n    at <anonymous> (appraiser-engine.js:156)\n    at record (appraiser-engine.js:36)\n    at unload (appraiser-engine.js:157)\n"}
+
+19:52:26[Scripting][warning]-[APPRAISER ENGINE] READY_FINAL_DEATH null
+
+19:52:50[Scripting][warning]-[APPRAISER ENGINE] STATUS {"phase":"restart-done","results":"[{\"name\":\"native spawn permits A + B and permanent A with unchanged balance config\",\"pass\":false,\"error\":\"Error: expected two natural spawns, got 0\",\"stack\":\"    at check (appraiser-engine.js:11)\\n    at <anonymous> (appraiser-engine.js:41)\\n    at record (appraiser-engine.js:29)\\n    at run (appraiser-engine.js:46)\\n\"},{\"name\":\"temporary natural death: four exact stacks\",\"pass\":true},{\"name\":\"permanent natural death: four exact stacks\",\"pass\":true},{\"name\":\"administrative named summon death: zero special loot\",\"pass\":true},{\"name\":\"independent real timers retire only expired A and never pay loot\",\"pass\":true},{\"name\":\"UI grace respects existing session and hard five-minute cap\",\"pass\":true},{\"name\":\"legacy lease migrates and dies with four stacks\",\"pass\":true},{\"name\":\"orphan legacy token is preserved once, including name permanence\",\"pass\":true},{\"name\":\"native survival name tag consumed, name applied, v2 permanent and no appraisal session\",\"pass\":true},{\"name\":\"actual world reopen preserves permanent name/origin and future deadline, expires old temporary\",\"pass\":true},{\"name\":\"real chunk unload/load preserves permanent and future, removes expired without loot\",\"pass\":false,\"error\":\"Error: expired load remains\",\"stack\":\"    at check (appraiser-engine.js:11)\\n    at <anonymous> (appraiser-engine.js:126)\\n    at record (appraiser-engine.js:29)\\n    at unload (appraiser-engine.js:130)\\n\"},{\"name\":\"native spawn permits A + B and permanent A with unchanged balance config\",\"pass\":false,\"error\":\"Error: expected two natural spawns, got 0\",\"stack\":\"    at check (appraiser-engine.js:11)\\n    at <anonymous> (appraiser-engine.js:41)\\n\"},{\"name\":\"native spawn permits A + B and permanent A with unchanged balance config\",\"pass\":true},{\"name\":\"real chunk unload/load preserves permanent and future, removes expired without loot\",\"pass\":false,\"error\":\"Error: source chunk never unloaded\",\"stack\":\"    at check (appraiser-engine.js:11)\\n    at <anonymous> (appraiser-engine.js:137)\\n    at record (appraiser-engine.js:29)\\n    at unload (appraiser-engine.js:138)\\n\"},{\"name\":\"real chunk unload/load preserves permanent and future, removes expired without loot\",\"pass\":false,\"error\":\"Error: source entities never unloaded before expiry\",\"stack\":\"    at check (appraiser-engine.js:18)\\n    at <anonymous> (appraiser-engine.js:156)\\n    at record (appraiser-engine.js:36)\\n    at unload (appraiser-engine.js:157)\\n\"}]"}

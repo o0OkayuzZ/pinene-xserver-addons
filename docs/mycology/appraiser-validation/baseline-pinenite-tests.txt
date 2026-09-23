@@ -1,0 +1,470 @@
+warning: exhaustive rename detection was skipped due to too many files.
+warning: you may want to set your diff.renameLimit variable to at least 1916 and retry the command.
+✔ all armor values and complete Parcanite components inherited, IDs preserved (48.1399ms)
+✔ original four geometries and eight PNGs preserved against investigated main (1023.8048ms)
+✔ glow is additive core/crystal subset with original UVs, pivots and textures (57.479ms)
+✖ entity definitions remain unchanged after the accepted ownership cleanup (308.5006ms)
+✔ BP requires stable 2.6.0 and 26.40; original API consumers and shared renderer untouched (242.6506ms)
+✔ each Molang expression has complete scopes and preserves original statements (1137.4167ms)
+✔ invisible repair vault has resolving render and geometry references (9.9112ms)
+✔ normal block sounds and monstrosity reload resolve (14.6998ms)
+✔ all Mycology item icons and appraiser model assets exist (66.2322ms)
+✔ dragon relic uses its modern block material without a legacy texture override (12.1837ms)
+✔ Dungeons crossbow controller resolves every model, material and texture alias (47.8271ms)
+✖ both blue diamond recipes have unlock conditions without changing their output (2.498ms)
+✔ all native Pine CDs participate in the music-disc recipe tag (81.6785ms)
+✔ effect events for unloaded players never read dynamic properties (4.6061ms)
+✖ figure pickup calls the active tag helper, not the removed raid prototype (48.8925ms)
+✔ outline declares PBR compatibility and Deathnerite requires its current version (6.9263ms)
+✔ every global entity material catalog declares PBR compatibility (19.9708ms)
+✔ PineCD declares PBR compatibility and its behavior pack requires that version (4.4477ms)
+✔ all compatibility entities retain the full original client definition (968.0486ms)
+✔ outline geometry aliases and render passes resolve, including small variants and player (89.8583ms)
+✔ wearer armor outline includes every original cube with identical bones and UVs (11.9266ms)
+✖ Zombie Gear and Crossbow content remains unchanged after ownership consolidation (221.4914ms)
+✔ outline material retains depth testing and texture alpha, with no global material override (11.4935ms)
+✔ client schema supports conditional render passes and contains no obsolete controller list (45.7674ms)
+✔ legacy-only bone fields are never emitted in modern geometry (3.1037ms)
+✔ sync animation omits the invalid empty bones object in both active packs (2.3739ms)
+✔ player initializes the spear flag used by the loaded root animation controller (0.6623ms)
+✖ parcanite sword uses native hand animation with its authored icon and damage (23.0254ms)
+✔ player outline supplies both legacy and current first person swing factors (12.9021ms)
+✔ release preflight handles a new RP (validates without writes) (354.968ms)
+✔ release preflight handles a new RP (rejects mismatched registration) (219.569ms)
+✔ base health and armor spec (2.97ms)
+✔ analysis thresholds apply on hits 2, 4, 6, cap at 1.30 (0.6042ms)
+✔ only direct player-owned source causes qualify; DOT and synthetic excluded (0.4169ms)
+✔ adaptation 0/10/20/30 percent; cooldown throttles learning only (1.1377ms)
+✔ learning cooldown is independent for attackers (0.4835ms)
+✔ memory remains through 30s; steps at 40/50/60s; repeated decay is idempotent (0.4341ms)
+✔ combat refreshes decay; one remaining hit also disappears at 60s (0.2318ms)
+✔ symbiosis requires full equipment and both stage III, no duplicate multiplier (0.2453ms)
+✔ unlimited independent entity IDs (including same type), 15 second expiry; proximity never refreshes (4.4295ms)
+✔ decay pauses while linked, damage refresh does not require learning cooldown (1.8708ms)
+✔ raw 20 gives normal regen 5 even when adaptation reduces to 14 (0.669ms)
+✔ linked raw 20 gives 7; reflects raw 30, zero incoming and no new regen (0.9658ms)
+✔ deterministic uniform trials hit precisely 10 percent boundary (1.8062ms)
+✔ six second linear regen finishes; total pending is unbounded (47.6173ms)
+✔ low HP linked speed doubles ALL existing reservations; changes back above half (1.13ms)
+✔ overheal consumed immediately, never returned after later damage (1.2201ms)
+✔ missing parts cannot use their abilities (0.1946ms)
+✔ synthetic guard covers reentry, delayed override, exceptions, then permits genuine hit (0.9084ms)
+✔ frame samples actual bounding box edges for arbitrary dimensions (1.198ms)
+✔ leap requires grounded sneak, seven second cooldown and no airborne reuse (0.2478ms)
+✔ runtime stores pre-adaptation value, mock armor does not contaminate reservations (43.9587ms)
+✔ two fully linked players: no reflection recursion (synchronous) (3.7005ms)
+✔ two fully linked players: no reflection recursion (delayed) (2.2612ms)
+✔ reflection on an unarmored attacker sends original 30, not adapted 21 (4.2525ms)
+✔ cancelled, zero and unconfirmed hits cannot learn or regenerate (3.6055ms)
+✔ interleaved before/after from different attackers preserves both targets and regen reservations (2.4201ms)
+✔ projectile direct owner counts; summon, DOT and synthetic cannot advance analysis (1.8669ms)
+✔ attributed boss explosion learns adaptation but cannot count as direct analysis; DOT cannot refresh (2.7308ms)
+✔ lethal hit never queues regeneration or revives (4.1406ms)
+✔ max HP effect level follows 4/8/12/20 and is removed on unequip (3.023ms)
+✔ removing chest or helmet clears relevant memory and symbiosis; leggings clear regen (4.3357ms)
+✔ death, leave, invalid target and dimension change clean independent state (2.6567ms)
+✔ jump input uses impulse (engine collision), cannot repeat in air (5.9789ms)
+✔ wearer pulse has a 30 tick period, no target stacking, and a 10 tick fade (3.9528ms)
+✔ enemy outline follows the model channel without sampling the collision box (2.5801ms)
+✔ two owners emit one merged enemy outline; removing one owner preserves the other (2.0621ms)
+✔ outline resets outside render range and on dimension change without erasing remote memory (1.9178ms)
+✔ stage I model outline really switches off between flashes (2.3532ms)
+ℹ tests 69
+ℹ suites 0
+ℹ pass 64
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1832.3615
+
+✖ failing tests:
+
+test at tests\pinenite\assets.test.mjs:56:1
+✖ entity definitions remain unchanged after the accepted ownership cleanup (308.5006ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-baseline/tests/pinenite/assets.test.mjs:63:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\pinenite\content-log-regressions.test.mjs:22:1
+✖ both blue diamond recipes have unlock conditions without changing their output (2.498ms)
+  Error: ENOENT: no such file or directory, open 'C:\Users\はーにゃ。\pinene-appraiser-baseline\behavior_packs\bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639\recipes\blue_diamond_apple.recipe.json'
+      at readFileSync (node:fs:483:20)
+      at text (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-baseline/tests/pinenite/content-log-regressions.test.mjs:6:19)
+      at read (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-baseline/tests/pinenite/content-log-regressions.test.mjs:7:30)
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-baseline/tests/pinenite/content-log-regressions.test.mjs:24:24)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'C:\\Users\\はーにゃ。\\pinene-appraiser-baseline\\behavior_packs\\bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639\\recipes\\blue_diamond_apple.recipe.json'
+  }
+
+test at tests\pinenite\content-log-regressions.test.mjs:55:1
+✖ figure pickup calls the active tag helper, not the removed raid prototype (48.8925ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /function pineHasTag\s*\(/. Input:
+
+  'import "./gf/index.js";\r\n' +
+    'import "./mycology/index.js";\r\n' +
+    'import { world, ItemStack, system, BlockPermutation } from "@minecraft/server";\r\n' +
+    'import { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";\r\n' +
+    'import "./meitetsu_chest.js";\r\n' +
+    '\r\n' +
+    'function safeSubscribe(eventSignal, handler) {\r\n' +
+    '    if (!eventSignal || typeof eventSignal.subscribe !== "function") return;\r\n' +
+    '    eventSignal.subscribe(handler);\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    '// ============================================================\r\n' +
+    '// ピネ Waystone\r\n' +
+    '// アイテムを使うと、共有地点の登録・移動・削除メニューを開く。\r\n' +
+    '// Simple Waystone の識別子やスクリプトには依存しない独自実装。\r\n' +
+    '// ============================================================\r\n' +
+    '\r\n' +
+    'const PINE_WAYSTONE_COMPONENT_ID = "pinene:waystone_menu";\r\n' +
+    'const PINE_WAYSTONE_DATA_KEY = "pinene:waystones_v1";\r\n' +
+    'const PINE_WAYSTONE_LIMIT = 64;\r\n' +
+    'const PINE_WAYSTONE_NAME_LIMIT = 30;\r\n' +
+    'const pineWaystoneMenuLocks = new Set();\r\n' +
+    '\r\n' +
+    'function readPineWaystones() {\r\n' +
+    '    try {\r\n' +
+    '        const raw = world.getDynamicProperty(PINE_WAYSTONE_DATA_KEY);\r\n' +
+    '        if (typeof raw !== "string" || raw.length === 0) return [];\r\n' +
+    '        const parsed = JSON.parse(raw);\r\n' +
+    '        if (!Array.isArray(parsed)) return [];\r\n' +
+    '        return parsed.filter((entry) =>\r\n' +
+    '            entry &&\r\n' +
+    '            typeof entry.name === "string" &&\r\n' +
+    '            typeof entry.dimensionId === "string" &&\r\n' +
+    '            Number.isFinite(entry.x) &&\r\n' +
+    '            Number.isFinite(entry.y) &&\r\n' +
+    '            Number.isFinite(entry.z)\r\n' +
+    '        );\r\n' +
+    '    } catch {\r\n' +
+    '        return [];\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'function writePineWaystones(entries) {\r\n' +
+    '    world.setDynamicProperty(PINE_WAYSTONE_DATA_KEY, JSON.stringify(entries));\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'function pineWaystoneDimensionLabel(dimensionId) {\r\n' +
+    '    if (dimensionId === "minecraft:overworld") return "オーバーワールド";\r\n' +
+    '    if (dimensionId === "minecraft:nether") return "ネザー";\r\n' +
+    '    if (dimensionId === "minecraft:the_end") return "ジ・エンド";\r\n' +
+    '    return dimensionId.replace("minecraft:", "");\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'function pineWaystoneLocationText(entry) {\r\n' +
+    '    return `${pineWaystoneDimensionLabel(entry.dimensionId)}  ${entry.x}, ${entry.y}, ${entry.z}`;\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'function sanitizePineWaystoneName(value) {\r\n' +
+    '    return String(value ?? "")\r\n' +
+    '        .replace(/[\\r\\n\\t]/g, " ")\r\n' +
+    '        .replace(/\\s+/g, " ")\r\n' +
+    '        .trim()\r\n' +
+    '        .slice(0, PINE_WAYSTONE_NAME_LIMIT);\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'async function registerPineWaystone(player) {\r\n' +
+    '    const current = readPineWaystones();\r\n' +
+    '    if (current.length >= PINE_WAYSTONE_LIMIT) {\r\n' +
+    '        player.sendMessage(`§c登録上限（${PINE_WAYSTONE_LIMIT}地点）に達しています。`);\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    const location = player.location;\r\n' +
+    '    const dimensionId = player.dimension.id;\r\n' +
+    '    const form = new ModalFormData()\r\n' +
+    '        .title("ウェイストーンを登録")\r\n' +
+    '        .textField(\r\n' +
+    '            `現在地: ${pineWaystoneDimensionLabel(dimensionId)}  ${Math.floor(location.x)}, ${Math.floor(location.y)}, ${Math.floor(location.z)}`,\r\n' +
+    '            "地点名を入力",\r\n' +
+    '            { defaultValue: "", tooltip: "1～30文字で入力してください" }\r\n' +
+    '        );\r\n' +
+    '    const result = await form.show(player);\r\n' +
+    '    if (result.canceled) return;\r\n' +
+    '\r\n' +
+    '    const name = sanitizePineWaystoneName(result.formValues?.[0]);\r\n' +
+    '    if (!name) {\r\n' +
+    '        player.sendMessage("§c地点名を入力してください。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    // フォーム表示中に別プレイヤーが登録しても、古い一覧で上書きしないよう再読込する。\r\n' +
+    '    const entries = readPineWaystones();\r\n' +
+    '    if (entries.length >= PINE_WAYSTONE_LIMIT) {\r\n' +
+    '        player.sendMessage(`§c登録上限（${PINE_WAYSTONE_LIMIT}地点）に達しています。`);\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '    if (entries.some((entry) => entry.name.toLocaleLowerCase() === name.toLocaleLowerCase())) {\r\n' +
+    '        player.sendMessage("§c同じ名前の地点がすでに登録されています。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    entries.push({\r\n' +
+    '        name,\r\n' +
+    '        dimensionId,\r\n' +
+    '        x: Math.floor(location.x),\r\n' +
+    '        y: Math.floor(location.y),\r\n' +
+    '        z: Math.floor(location.z),\r\n' +
+    '        createdBy: player.name,\r\n' +
+    '        createdAt: Date.now()\r\n' +
+    '    });\r\n' +
+    '    try {\r\n' +
+    '        writePineWaystones(entries);\r\n' +
+    '        player.sendMessage(`§a「${name}」を登録しました。`);\r\n' +
+    '        player.playSound("random.orb");\r\n' +
+    '    } catch {\r\n' +
+    '        player.sendMessage("§c地点を保存できませんでした。");\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'async function teleportWithPineWaystone(player) {\r\n' +
+    '    const entries = readPineWaystones();\r\n' +
+    '    if (entries.length === 0) {\r\n' +
+    '        player.sendMessage("§7登録されている地点はありません。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    const form = new ActionFormData().title("登録地点へ移動").body("移動先を選んでください。");\r\n' +
+    '    for (const entry of entries) {\r\n' +
+    '        form.button(`${entry.name}\\n§8${pineWaystoneLocationText(entry)}`);\r\n' +
+    '    }\r\n' +
+    '    const result = await form.show(player);\r\n' +
+    '    if (result.canceled || result.selection === undefined) return;\r\n' +
+    '    const entry = entries[result.selection];\r\n' +
+    '    if (!entry) return;\r\n' +
+    '\r\n' +
+    '    try {\r\n' +
+    '        const dimension = world.getDimension(entry.dimensionId);\r\n' +
+    '        player.teleport(\r\n' +
+    '            { x: entry.x + 0.5, y: entry.y, z: entry.z + 0.5 },\r\n' +
+    '            { dimension, checkForBlocks: true }\r\n' +
+    '        );\r\n' +
+    '        player.sendMessage(`§b「${entry.name}」へ移動しました。`);\r\n' +
+    '        player.playSound("mob.endermen.portal");\r\n' +
+    '    } catch {\r\n' +
+    '        player.sendMessage("§c移動先が塞がれているか、現在利用できません。");\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'async function deletePineWaystone(player) {\r\n' +
+    '    const entries = readPineWaystones();\r\n' +
+    '    if (entries.length === 0) {\r\n' +
+    '        player.sendMessage("§7削除できる地点はありません。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    const list = new ActionFormData().title("登録地点を削除").body("削除する地点を選んでください。");\r\n' +
+    '    for (const entry of entries) {\r\n' +
+    '        list.button(`${entry.name}\\n§8${pineWaystoneLocationText(entry)}`);\r\n' +
+    '    }\r\n' +
+    '    const selected = await list.show(player);\r\n' +
+    '    if (selected.canceled || selected.selection === undefined) return;\r\n' +
+    '    const entry = entries[selected.selection];\r\n' +
+    '    if (!entry) return;\r\n' +
+    '\r\n' +
+    '    const confirm = await new MessageFormData()\r\n' +
+    '        .title("削除の確認")\r\n' +
+    '        .body(`「${entry.name}」を登録地点から削除しますか？`)\r\n' +
+    '        .button1("削除する")\r\n' +
+    '        .button2("戻る")\r\n' +
+    '        .show(player);\r\n' +
+    '    if (confirm.canceled || confirm.selection !== 0) return;\r\n' +
+    '\r\n' +
+    '    // 確認画面中に共有一覧が変わっても、別の地点を誤削除しないよう再読込する。\r\n' +
+    '    const latest = readPineWaystones();\r\n' +
+    '    const index = latest.findIndex((candidate) =>\r\n' +
+    '        candidate.name === entry.name &&\r\n' +
+    '        candidate.dimensionId === entry.dimensionId &&\r\n' +
+    '        candidate.x === entry.x &&\r\n' +
+    '        candidate.y === entry.y &&\r\n' +
+    '        candidate.z === entry.z\r\n' +
+    '    );\r\n' +
+    '    if (index < 0) {\r\n' +
+    '        player.sendMessage("§7その地点はすでに削除されています。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '    latest.splice(index, 1);\r\n' +
+    '    try {\r\n' +
+    '        writePineWaystones(latest);\r\n' +
+    '        player.sendMessage(`§e「${entry.name}」を削除しました。`);\r\n' +
+    '    } catch {\r\n' +
+    '        player.sendMessage("§c地点を削除できませんでした。");\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'async function openPineWaystoneMenu(player) {\r\n' +
+    '    const lockKey = player.id ?? player.name;\r\n' +
+    '    if (pineWaystoneMenuLocks.has(lockKey)) return;\r\n' +
+    '    pineWaystoneMenuLocks.add(lockKey);\r\n' +
+    '    try {\r\n' +
+    '        const entries = readPineWaystones();\r\n' +
+    '        const result = await new ActionFormData()\r\n' +
+    '            .title("ウェイストーン")\r\n' +
+    '            .body(`共有登録地点: ${entries.length} / ${PINE_WAYSTONE_LIMIT}`)\r\n' +
+    '            .button("現在地を登録")\r\n' +
+    '            .button("登録地点へ移動")\r\n' +
+    '            .button("登録地点を削除")\r\n' +
+    '            .show(player);\r\n' +
+    '        if (result.canceled) return;\r\n' +
+    '        if (result.selection === 0) await registerPineWaystone(player);\r\n' +
+    '        if (result.selection === 1) await teleportWithPineWaystone(player);\r\n' +
+    '        if (result.selection === 2) await deletePineWaystone(player);\r\n' +
+    '    } catch {\r\n' +
+    '        player.sendMessage("§cウェイストーンの画面を開けませんでした。");\r\n' +
+    '    } finally {\r\n' +
+    '        pineWaystoneMenuLocks.delete(lockKey);\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'system.beforeEvents.startup.subscribe(({ itemComponentRegistry }) => {\r\n' +
+    '    itemComponentRegistry.registerCustomComponent(PINE_WAYSTONE_COMPONENT_ID, {\r\n' +
+    '        onUse: ({ source }) => {\r\n' +
+    '            if (!source) return;\r\n' +
+    '            system.run(() => openPineWaystoneMenu(source));\r\n' +
+    '        }\r\n' +
+    '    });\r\n' +
+    '});\r\n' +
+    '\r\n' +
+    '// ============================================================\r\n' +
+    '// フュギュア設置・回収システム\r\n' +
+    '// フュギュアアイテムをブロックに向かって使う → エンティティとして設置\r\n' +
+    '// 設置済みフュギュアを攻撃する → アイテムとして回収\r\n' +
+    '// ============================================================\r\n' +
+    '\r\n' +
+    '// 全フィギュアのロジック定義を1か所に集約。\r\n' +
+    '// item/entity の別名を受けて、旧版ワールド内の在庫や設置済み個体も回収できるようにする。\r\n' +
+    'const FIGURE_DEFINITIONS = [\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:figure_fossil",\r\n' +
+    '        entityId: "myname:figure_fossil_placed",\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:figure_spiral",\r\n' +
+    '        entityId: "myname:figure_spiral_placed",\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:figure_oyu",\r\n' +
+    '        entityId: "myname:figure_oyu_placed",\r\n' +
+    '        itemAliases: ["myname:oyu"],\r\n' +
+    '        entityAliases: ["myname:oyu_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:utyuuneko",\r\n' +
+    '        entityId: "myname:utyuuneko_placed",\r\n' +
+    '        itemAliases: ["myname:figure_utyuuneko"],\r\n' +
+    '        entityAliases: ["myname:figure_utyuuneko_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:jack",\r\n' +
+    '        entityId: "myname:jack_placed",\r\n' +
+    '        itemAliases: ["myname:figure_jack"],\r\n' +
+    '        entityAliases: ["myname:figure_jack_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:mimikkyu",\r\n' +
+    '        entityId: "myname:mimikkyu_placed",\r\n' +
+    '        itemAliases: ["myname:figure_mimikkyu"],\r\n' +
+    '        entityAliases: ["myname:figure_mimikkyu_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:soubraze",\r\n' +
+    '        entityId: "myname:soubraze_placed",\r\n' +
+    '        itemAliases: ["myname:figure_soubraze"],\r\n' +
+    '        entityAliases: ["myname:figure_soubraze_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:goamagara",\r\n' +
+    '        entityId: "myname:goamagara_placed",\r\n' +
+    '        itemAliases: ["myname:figure_goamagara"],\r\n' +
+    '        entityAliases: ["myname:figure_goamagara_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:shini",\r\n' +
+    '        entityId: "myname:shini_placed",\r\n' +
+    '        itemAliases: ["myname:figure_shini", "myname:shinitagatteiru"],\r\n' +
+    '        entityAliases: ["myname:figure_shini_placed", "myname:shinitagatteiru_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:hitomoshi",\r\n' +
+    '        entityId: "myname:hitomoshi_placed",\r\n' +
+    '        itemAliases: ["myname:figure_hitomoshi"],\r\n' +
+    '        entityAliases: ["myname:figure_hitomoshi_placed"],\r\n' +
+    '  '... 29368 more characters
+
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-baseline/tests/pinenite/content-log-regressions.test.mjs:58:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'import "./gf/index.js";\r\nimport "./mycology/index.js";\r\nimport { world, ItemStack, system, BlockPermutation } from "@minecraft/server";\r\nimport { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";\r\nimport "./meitetsu_chest.js";\r\n\r\nfunction safeSubscribe(eventSignal, handler) {\r\n    if (!eventSignal || typeof eventSignal.subscribe !== "function") return;\r\n    eventSignal.subscribe(handler);\r\n}\r\n\r\n// ============================================================\r\n// ピネ Waystone\r\n// アイテムを使うと、共有地点の登録・移動・削除メニューを開く。\r\n// Simple Waystone の識別子やスクリプトには依存しない独自実装。\r\n// ============================================================\r\n\r\nconst PINE_WAYSTONE_COMPONENT_ID = "pinene:waystone_menu";\r\nconst PINE_WAYSTONE_DATA_KEY = "pinene:waystones_v1";\r\nconst PINE_WAYSTONE_LIMIT = 64;\r\nconst PINE_WAYSTONE_NAME_LIMIT = 30;\r\nconst pineWaystoneMenuLocks = new Set();\r\n\r\nfunction readPineWaystones() {\r\n    try {\r\n        const raw = world.getDynamicProperty(PINE_WAYSTONE_DATA_KEY);\r\n        if (typeof raw !== "string" || raw.length === 0) return [];\r\n        const parsed = JSON.parse(raw);\r\n        if (!Array.isArray(parsed)) return [];\r\n        return parsed.filter((entry) =>\r\n            entry &&\r\n            typeof entry.name === "string" &&\r\n            typeof entry.dimensionId === "string" &&\r\n            Number.isFinite(entry.x) &&\r\n            Number.isFinite(entry.y) &&\r\n            Number.isFinite(entry.z)\r\n        );\r\n    } catch {\r\n        return [];\r\n    }\r\n}\r\n\r\nfunction writePineWaystones(entries) {\r\n    world.setDynamicProperty(PINE_WAYSTONE_DATA_KEY, JSON.stringify(entries));\r\n}\r\n\r\nfunction pineWaystoneDimensionLabel(dimensionId) {\r\n    if (dimensionId === "minecraft:overworld") return "オーバーワールド";\r\n    if (dimensionId === "minecraft:nether") return "ネザー";\r\n    if (dimensionId === "minecraft:the_end") return "ジ・エンド";\r\n    return dimensionId.replace("minecraft:", "");\r\n}\r\n\r\nfunction pineWaystoneLocationText(entry) {\r\n    return `${pineWaystoneDimensionLabel(entry.dimensionId)}  ${entry.x}, ${entry.y}, ${entry.z}`;\r\n}\r\n\r\nfunction sanitizePineWaystoneName(value) {\r\n    return String(value ?? "")\r\n        .replace(/[\\r\\n\\t]/g, " ")\r\n        .replace(/\\s+/g, " ")\r\n        .trim()\r\n        .slice(0, PINE_WAYSTONE_NAME_LIMIT);\r\n}\r\n\r\nasync function registerPineWaystone(player) {\r\n    const current = readPineWaystones();\r\n    if (current.length >= PINE_WAYSTONE_LIMIT) {\r\n        player.sendMessage(`§c登録上限（${PINE_WAYSTONE_LIMIT}地点）に達しています。`);\r\n        return;\r\n    }\r\n\r\n    const location = player.location;\r\n    const dimensionId = player.dimension.id;\r\n    const form = new ModalFormData()\r\n        .title("ウェイストーンを登録")\r\n        .textField(\r\n            `現在地: ${pineWaystoneDimensionLabel(dimensionId)}  ${Math.floor(location.x)}, ${Math.floor(location.y)}, ${Math.floor(location.z)}`,\r\n            "地点名を入力",\r\n            { defaultValue: "", tooltip: "1～30文字で入力してください" }\r\n        );\r\n    const result = await form.show(player);\r\n    if (result.canceled) return;\r\n\r\n    const name = sanitizePineWaystoneName(result.formValues?.[0]);\r\n    if (!name) {\r\n        player.sendMessage("§c地点名を入力してください。");\r\n        return;\r\n    }\r\n\r\n    // フォーム表示中に別プレイヤーが登録しても、古い一覧で上書きしないよう再読込する。\r\n    const entries = readPineWaystones();\r\n    if (entries.length >= PINE_WAYSTONE_LIMIT) {\r\n        player.sendMessage(`§c登録上限（${PINE_WAYSTONE_LIMIT}地点）に達しています。`);\r\n        return;\r\n    }\r\n    if (entries.some((entry) => entry.name.toLocaleLowerCase() === name.toLocaleLowerCase())) {\r\n        player.sendMessage("§c同じ名前の地点がすでに登録されています。");\r\n        return;\r\n    }\r\n\r\n    entries.push({\r\n        name,\r\n        dimensionId,\r\n        x: Math.floor(location.x),\r\n        y: Math.floor(location.y),\r\n        z: Math.floor(location.z),\r\n        createdBy: player.name,\r\n        createdAt: Date.now()\r\n    });\r\n    try {\r\n        writePineWaystones(entries);\r\n        player.sendMessage(`§a「${name}」を登録しました。`);\r\n        player.playSound("random.orb");\r\n    } catch {\r\n        player.sendMessage("§c地点を保存できませんでした。");\r\n    }\r\n}\r\n\r\nasync function teleportWithPineWaystone(player) {\r\n    const entries = readPineWaystones();\r\n    if (entries.length === 0) {\r\n        player.sendMessage("§7登録されている地点はありません。");\r\n        return;\r\n    }\r\n\r\n    const form = new ActionFormData().title("登録地点へ移動").body("移動先を選んでください。");\r\n    for (const entry of entries) {\r\n        form.button(`${entry.name}\\n§8${pineWaystoneLocationText(entry)}`);\r\n    }\r\n    const result = await form.show(player);\r\n    if (result.canceled || result.selection === undefined) return;\r\n    const entry = entries[result.selection];\r\n    if (!entry) return;\r\n\r\n    try {\r\n        const dimension = world.getDimension(entry.dimensionId);\r\n        player.teleport(\r\n            { x: entry.x + 0.5, y: entry.y, z: entry.z + 0.5 },\r\n            { dimension, checkForBlocks: true }\r\n        );\r\n        player.sendMessage(`§b「${entry.name}」へ移動しました。`);\r\n        player.playSound("mob.endermen.portal");\r\n    } catch {\r\n        player.sendMessage("§c移動先が塞がれているか、現在利用できません。");\r\n    }\r\n}\r\n\r\nasync function deletePineWaystone(player) {\r\n    const entries = readPineWaystones();\r\n    if (entries.length === 0) {\r\n        player.sendMessage("§7削除できる地点はありません。");\r\n        return;\r\n    }\r\n\r\n    const list = new ActionFormData().title("登録地点を削除").body("削除する地点を選んでください。");\r\n    for (const entry of entries) {\r\n        list.button(`${entry.name}\\n§8${pineWaystoneLocationText(entry)}`);\r\n    }\r\n    const selected = await list.show(player);\r\n    if (selected.canceled || selected.selection === undefined) return;\r\n    const entry = entries[selected.selection];\r\n    if (!entry) return;\r\n\r\n    const confirm = await new MessageFormData()\r\n        .title("削除の確認")\r\n        .body(`「${entry.name}」を登録地点から削除しますか？`)\r\n        .button1("削除する")\r\n        .button2("戻る")\r\n        .show(player);\r\n    if (confirm.canceled || confirm.selection !== 0) return;\r\n\r\n    // 確認画面中に共有一覧が変わっても、別の地点を誤削除しないよう再読込する。\r\n    const latest = readPineWaystones();\r\n    const index = latest.findIndex((candidate) =>\r\n        candidate.name === entry.name &&\r\n        candidate.dimensionId === entry.dimensionId &&\r\n        candidate.x === entry.x &&\r\n        candidate.y === entry.y &&\r\n        candidate.z === entry.z\r\n    );\r\n    if (index < 0) {\r\n        player.sendMessage("§7その地点はすでに削除されています。");\r\n        return;\r\n    }\r\n    latest.splice(index, 1);\r\n    try {\r\n        writePineWaystones(latest);\r\n        player.sendMessage(`§e「${entry.name}」を削除しました。`);\r\n    } catch {\r\n        player.sendMessage("§c地点を削除できませんでした。");\r\n    }\r\n}\r\n\r\nasync function openPineWaystoneMenu(player) {\r\n    const lockKey = player.id ?? player.name;\r\n    if (pineWaystoneMenuLocks.has(lockKey)) return;\r\n    pineWaystoneMenuLocks.add(lockKey);\r\n    try {\r\n        const entries = readPineWaystones();\r\n        const result = await new ActionFormData()\r\n            .title("ウェイストーン")\r\n            .body(`共有登録地点: ${entries.length} / ${PINE_WAYSTONE_LIMIT}`)\r\n            .button("現在地を登録")\r\n            .button("登録地点へ移動")\r\n            .button("登録地点を削除")\r\n            .show(player);\r\n        if (result.canceled) return;\r\n        if (result.selection === 0) await registerPineWaystone(player);\r\n        if (result.selection === 1) await teleportWithPineWaystone(player);\r\n        if (result.selection === 2) await deletePineWaystone(player);\r\n    } catch {\r\n        player.sendMessage("§cウェイストーンの画面を開けませんでした。");\r\n    } finally {\r\n        pineWaystoneMenuLocks.delete(lockKey);\r\n    }\r\n}\r\n\r\nsystem.beforeEvents.startup.subscribe(({ itemComponentRegistry }) => {\r\n    itemComponentRegistry.registerCustomComponent(PINE_WAYSTONE_COMPONENT_ID, {\r\n        onUse: ({ source }) => {\r\n            if (!source) return;\r\n            system.run(() => openPineWaystoneMenu(source));\r\n        }\r\n    });\r\n});\r\n\r\n// ============================================================\r\n// フュギュア設置・回収システム\r\n// フュギュアアイテムをブロックに向かって使う → エンティティとして設置\r\n// 設置済みフュギュアを攻撃する → アイテムとして回収\r\n// ============================================================\r\n\r\n// 全フィギュアのロジック定義を1か所に集約。\r\n// item/entity の別名を受けて、旧版ワールド内の在庫や設置済み個体も回収できるようにする。\r\nconst FIGURE_DEFINITIONS = [\r\n    {\r\n        itemId: "myname:figure_fossil",\r\n        entityId: "myname:figure_fossil_placed",\r\n    },\r\n    {\r\n        itemId: "myname:figure_spiral",\r\n        entityId: "myname:figure_spiral_placed",\r\n    },\r\n    {\r\n        itemId: "myname:figure_oyu",\r\n        entityId: "myname:figure_oyu_placed",\r\n        itemAliases: ["myname:oyu"],\r\n        entityAliases: ["myname:oyu_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:utyuuneko",\r\n        entityId: "myname:utyuuneko_placed",\r\n        itemAliases: ["myname:figure_utyuuneko"],\r\n        entityAliases: ["myname:figure_utyuuneko_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:jack",\r\n        entityId: "myname:jack_placed",\r\n        itemAliases: ["myname:figure_jack"],\r\n        entityAliases: ["myname:figure_jack_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:mimikkyu",\r\n        entityId: "myname:mimikkyu_placed",\r\n        itemAliases: ["myname:figure_mimikkyu"],\r\n        entityAliases: ["myname:figure_mimikkyu_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:soubraze",\r\n        entityId: "myname:soubraze_placed",\r\n        itemAliases: ["myname:figure_soubraze"],\r\n        entityAliases: ["myname:figure_soubraze_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:goamagara",\r\n        entityId: "myname:goamagara_placed",\r\n        itemAliases: ["myname:figure_goamagara"],\r\n        entityAliases: ["myname:figure_goamagara_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:shini",\r\n        entityId: "myname:shini_placed",\r\n        itemAliases: ["myname:figure_shini", "myname:shinitagatteiru"],\r\n        entityAliases: ["myname:figure_shini_placed", "myname:shinitagatteiru_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:hitomoshi",\r\n        entityId: "myname:hitomoshi_placed",\r\n        itemAliases: ["myname:figure_hitomoshi"],\r\n        entityAliases: ["myname:figure_hitomoshi_placed"],\r\n  '... 29368 more characters,
+    expected: /function pineHasTag\s*\(/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests\pinenite\outline.test.mjs:90:1
+✖ Zombie Gear and Crossbow content remains unchanged after ownership consolidation (221.4914ms)
+  AssertionError [ERR_ASSERTION]: behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/entities/bomb_bolt.entity.json
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-baseline/tests/pinenite/outline.test.mjs:93:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\pinenite\parcanite_swing.test.mjs:8:1
+✖ parcanite sword uses native hand animation with its authored icon and damage (23.0254ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(existsSync(new URL(`resource_packs/${pack}/textures/items/parcanite_sword.png`, root)))
+
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-baseline/tests/pinenite/parcanite_swing.test.mjs:15:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

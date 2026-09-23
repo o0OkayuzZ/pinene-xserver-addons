@@ -1,0 +1,219 @@
+{
+  "base": "2eba8eea07d4e23cc82ae39182542925eaac7f8b",
+  "sourceAppraiserBase": "0f7d5acf6b1169e22eb71160a52b1d3febda674b",
+  "bslPendingHead": "e26a76228034edf5d322149be1115b938492aaa0",
+  "sourceWorktreesUnchanged": true,
+  "worldsChanged": false,
+  "serverDeployed": false,
+  "websitePublished": false,
+  "fullRepositoryPass": false,
+  "candidateNpm": {
+    "pass": 448,
+    "fail": 5
+  },
+  "baselineNpm": {
+    "pass": 419,
+    "fail": 5
+  },
+  "preservedPaths": [
+    "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9",
+    "behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3",
+    "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/gf",
+    "resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784/textures",
+    "resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784/sounds",
+    "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts"
+  ],
+  "checks": [
+    {
+      "name": "baseline-npm",
+      "returncode": 1,
+      "summary": [
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0",
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0",
+        "ℹ tests 2",
+        "ℹ pass 2",
+        "ℹ fail 0",
+        "ℹ tests 9",
+        "ℹ pass 9",
+        "ℹ fail 0",
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0",
+        "ℹ tests 15",
+        "ℹ pass 15",
+        "ℹ fail 0",
+        "ℹ tests 3",
+        "ℹ pass 3",
+        "ℹ fail 0",
+        "ℹ tests 45",
+        "ℹ pass 45",
+        "ℹ fail 0",
+        "ℹ tests 8",
+        "ℹ pass 8",
+        "ℹ fail 0",
+        "ℹ tests 15",
+        "ℹ pass 15",
+        "ℹ fail 0",
+        "ℹ tests 156",
+        "ℹ pass 156",
+        "ℹ fail 0",
+        "ℹ tests 51",
+        "ℹ pass 51",
+        "ℹ fail 0",
+        "✖ entity definitions remain unchanged after the accepted ownership cleanup (136.3519ms)",
+        "✖ both blue diamond recipes have unlock conditions without changing their output (0.6049ms)",
+        "✖ figure pickup calls the active tag helper, not the removed raid prototype (4.9149ms)",
+        "✖ Zombie Gear and Crossbow content remains unchanged after ownership consolidation (173.0364ms)",
+        "✖ parcanite sword uses native hand animation with its authored icon and damage (11.416ms)",
+        "ℹ tests 69",
+        "ℹ pass 64",
+        "ℹ fail 5",
+        "✖ failing tests:",
+        "✖ entity definitions remain unchanged after the accepted ownership cleanup (136.3519ms)",
+        "  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+        "✖ both blue diamond recipes have unlock conditions without changing their output (0.6049ms)",
+        "✖ figure pickup calls the active tag helper, not the removed raid prototype (4.9149ms)",
+        "  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /function pineHasTag\\s*\\(/. Input:",
+        "✖ Zombie Gear and Crossbow content remains unchanged after ownership consolidation (173.0364ms)",
+        "  AssertionError [ERR_ASSERTION]: behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/entities/bomb_bolt.entity.json",
+        "✖ parcanite sword uses native hand animation with its authored icon and damage (11.416ms)",
+        "  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:"
+      ]
+    },
+    {
+      "name": "castle",
+      "returncode": 0,
+      "summary": [
+        "ℹ tests 115",
+        "ℹ pass 115",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "name": "metadata",
+      "returncode": 0,
+      "summary": [
+        "Ran 5 tests in 0.197s",
+        "OK"
+      ]
+    },
+    {
+      "name": "ownership",
+      "returncode": 0,
+      "summary": [
+        "PACK OWNERSHIP AUDIT PASSED"
+      ]
+    },
+    {
+      "name": "pinecd-cap-tests",
+      "returncode": 0,
+      "summary": [
+        "Ran 4 tests in 0.100s",
+        "OK"
+      ]
+    },
+    {
+      "name": "pinecd-cap",
+      "returncode": 0,
+      "summary": [
+        "{\"textures\": 18, \"oversized_textures\": 0}"
+      ]
+    },
+    {
+      "name": "pinecd-build",
+      "returncode": 0,
+      "summary": []
+    },
+    {
+      "name": "mycology-validate",
+      "returncode": 0,
+      "summary": []
+    },
+    {
+      "name": "baseline-validate",
+      "returncode": 1,
+      "summary": [
+        "AssertionError: behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egbread.json"
+      ]
+    },
+    {
+      "name": "candidate-validate",
+      "returncode": 1,
+      "summary": [
+        "AssertionError: behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egbread.json"
+      ]
+    },
+    {
+      "name": "candidate-npm",
+      "returncode": 1,
+      "summary": [
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0",
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0",
+        "ℹ tests 2",
+        "ℹ pass 2",
+        "ℹ fail 0",
+        "ℹ tests 9",
+        "ℹ pass 9",
+        "ℹ fail 0",
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0",
+        "ℹ tests 15",
+        "ℹ pass 15",
+        "ℹ fail 0",
+        "ℹ tests 3",
+        "ℹ pass 3",
+        "ℹ fail 0",
+        "ℹ tests 29",
+        "ℹ pass 29",
+        "ℹ fail 0",
+        "ℹ tests 45",
+        "ℹ pass 45",
+        "ℹ fail 0",
+        "ℹ tests 8",
+        "ℹ pass 8",
+        "ℹ fail 0",
+        "ℹ tests 15",
+        "ℹ pass 15",
+        "ℹ fail 0",
+        "ℹ tests 156",
+        "ℹ pass 156",
+        "ℹ fail 0",
+        "ℹ tests 51",
+        "ℹ pass 51",
+        "ℹ fail 0",
+        "✖ entity definitions remain unchanged after the accepted ownership cleanup (198.7328ms)",
+        "✖ both blue diamond recipes have unlock conditions without changing their output (0.5424ms)",
+        "✖ figure pickup calls the active tag helper, not the removed raid prototype (33.9124ms)",
+        "✖ Zombie Gear and Crossbow content remains unchanged after ownership consolidation (255.3767ms)",
+        "✖ parcanite sword uses native hand animation with its authored icon and damage (9.5018ms)",
+        "ℹ tests 69",
+        "ℹ pass 64",
+        "ℹ fail 5",
+        "✖ failing tests:",
+        "✖ entity definitions remain unchanged after the accepted ownership cleanup (198.7328ms)",
+        "  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:",
+        "✖ both blue diamond recipes have unlock conditions without changing their output (0.5424ms)",
+        "✖ figure pickup calls the active tag helper, not the removed raid prototype (33.9124ms)",
+        "  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /function pineHasTag\\s*\\(/. Input:",
+        "✖ Zombie Gear and Crossbow content remains unchanged after ownership consolidation (255.3767ms)",
+        "  AssertionError [ERR_ASSERTION]: behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/entities/bomb_bolt.entity.json",
+        "✖ parcanite sword uses native hand animation with its authored icon and damage (9.5018ms)",
+        "  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:"
+      ]
+    },
+    {
+      "name": "diff",
+      "returncode": 0,
+      "summary": []
+    }
+  ]
+}
