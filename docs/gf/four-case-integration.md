@@ -26,7 +26,7 @@ Damage Number continues to use actual entityHurt.damage, temporary labels, BLOCK
 | BP09 | 1.2.14 | 1.2.15 |
 | RP07 | 1.2.15 | 1.2.16 |
 
-Module versions, BP15→RP02, BP09→BP15 and BP09↔RP07 dependencies, both root/world registrations, README and website registry are synchronized. BP09/RP07 gameplay/assets are unchanged. The Crossbow tests' exact version expectations are updated for this dependency-only bump. BP16, BP17 Auto Repair and PineCD are unchanged.
+Module versions, BP15→RP02, BP09→BP15 and RP07→BP09 dependencies, both root/world registrations, README and website registry are synchronized. BP09/RP07 gameplay/assets are unchanged. The Crossbow tests' exact version expectations are updated for this dependency-only bump. BP16, BP17 Auto Repair and PineCD are unchanged.
 
 Rebase/stash replay conflicts resolved in eight files: root README, BP09/BP15 manifests, GF README, package.json, website registry and both behavior registration files. Metadata was rebuilt from current main, and npm test retains Crossbow coverage while adding GF and Auto Repair suites.
 
