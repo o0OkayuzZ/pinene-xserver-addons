@@ -312,3 +312,11 @@ Compared current normal BSL tables against Mojang bedrock-samples before v3 merg
 The broader comparison also finds many vanilla filler/equipment entries absent from the customized BSL tables (for example shipwreck supplies, ruined portals, strongholds and woodland mansions). These are not automatically re-added: BSL intentionally replaces substantial vanilla filler with its own richer resource/equipment pools. Treat a difference as a defect only when it removes structure identity, exclusive/progression loot, or an important gameplay role. Do not blindly union Mojang tables into BSL.
 
 v3 rule: preserve/restore structure-defining vanilla rewards; allow low-value filler substitutions; keep BSL independent addon rewards and profile progression intact.
+
+## v3 Special jackpot policy
+
+Special chests are intentionally allowed to approach a full 27-slot chest. They are jackpot destinations, not normal profile chests. Stack merging means draw count does not guarantee 27 occupied slots, so game verification is still required.
+
+- Ancient City ice box: food jackpot. Primary food 12–16 draws, secondary food 9–12, Golden Food 5–8, Enchanted Golden Food 6–10, pancakes 3–5 at 80%, enchanted golden apples at 60%. Enchanted Golden Food is deliberately abundant here.
+- Bastion Treasure: 14–18 premium-material draws + 12–16 equipment draws, plus its guaranteed/progression pools; addon food/collectible chances raised moderately.
+- Buried Treasure: 8–11 maritime draws + 14–18 equipment/useful draws, plus guaranteed resource/progression pools; addon food/collectible chances raised moderately.
