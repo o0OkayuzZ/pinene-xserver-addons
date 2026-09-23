@@ -11,6 +11,7 @@ export function validateConfiguration(config, registry, fixedSlots = 1) {
       ids.add(copy.copyId);
       const card = registry.get(copy.cardId);
       if (category && card.category !== category) throw new Error(`${key}: カード種別が違います。`);
+      if (key === "autoDefense" && card.activation === "manual") throw new Error("Manual defense cannot be automatic");
       const count = (counts.get(card.name) ?? 0) + 1;
       if (count > 3) throw new Error(`${card.name}: 同名は最大3枚です。`);
       counts.set(card.name, count);

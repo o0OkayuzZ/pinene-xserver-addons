@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:entity": {
+    "description": { "identifier": "pinene:gf_damage_number", "is_spawnable": false, "is_summonable": true },
+    "component_groups": { "gf:remove": { "minecraft:instant_despawn": {} } },
+    "components": {
+      "minecraft:type_family": { "family": ["gf_damage_number"] },
+      "minecraft:transient": {},
+      "minecraft:collision_box": { "width": 0, "height": 0 },
+      "minecraft:physics": { "has_collision": false, "has_gravity": false },
+      "minecraft:pushable": { "is_pushable": false, "is_pushable_by_piston": false },
+      "minecraft:damage_sensor": { "triggers": [{ "cause": "all", "deals_damage": "no" }] },
+      "minecraft:nameable": { "always_show": true, "allow_name_tag_renaming": false },
+      "minecraft:timer": { "looping": false, "time": 1.25, "time_down_event": { "event": "gf:expire", "target": "self" } }
+    },
+    "events": { "gf:expire": { "add": { "component_groups": ["gf:remove"] } } }
+  }
+}

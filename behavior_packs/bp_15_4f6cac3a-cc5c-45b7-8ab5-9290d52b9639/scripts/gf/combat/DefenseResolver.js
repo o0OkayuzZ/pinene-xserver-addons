@@ -1,3 +1,4 @@
+import { defenseEffect } from "../effects/DefenseEffects.js";
 import { requireActive } from "../core/RuntimeGate.js";
 import { ATTRIBUTES } from "../core/CardRegistry.js";
 
@@ -11,16 +12,20 @@ export function resolveDefense(player, attack, manual, automatic, priority = "ma
   if (!Number.isFinite(attack.damage) || attack.damage < 0 || !Array.isArray(attack.attributes) || !attack.attributes.length || attack.attributes.some(a => !ATTRIBUTES.includes(a))) throw new Error("Invalid incoming attack");
   let damage = attack.damage;
   const applied = [];
+  const reflections = [];
+  const result = () => ({ damage, applied, ...(reflections.length ? { reflections } : {}) });
   const groups = priority === "automatic_first" ? [automatic, manual] : [manual, automatic];
   for (const group of groups) {
     for (const entry of group) {
-      if (damage <= 0) return { damage: 0, applied };
+      if (damage <= 0) return result();
       if (!matchesDefense(entry.card, attack)) continue;
       requireActive(player);
       entry.consume?.();
-      damage = entry.card.effect.type === "nullify" ? 0 : damage * entry.card.effect.multiplier;
+      const effect = defenseEffect(entry.card, attack, damage);
+      damage = effect.damage;
+      if (effect.reflection) reflections.push(effect.reflection);
       applied.push(entry.copyId);
     }
   }
-  return { damage, applied };
+  return result();
 }

@@ -5,7 +5,8 @@ import { Persistence, KEYS } from "../core/Persistence.js";
 import { beginUse, finishUse } from "./HandManager.js";
 
 export class DeckManager {
-  constructor(registry, persistence = new Persistence(), random = Math.random) {
+  constructor(registry, persistence = new Persistence(), random = Math.random, collection = null) {
+    this.collection = collection;
     this.registry = registry;
     this.persistence = persistence;
     this.random = random;
@@ -16,18 +17,21 @@ export class DeckManager {
     if (config !== null) validateConfiguration(config, this.registry, this.persistence.fixedSlots(player));
     return config;
   }
-  saveConfiguration(player, input, expectedRevision) {
+  saveConfiguration(player, input, expectedRevision, expectedCollectionRevision) {
+    this.activations?.assertAvailable(player);
     if (this.busy.has(player.id)) throw new Error("カード処理中です。");
     const old = this.configuration(player);
     if (expectedRevision !== undefined && expectedRevision !== (old?.configurationRevision ?? 0)) throw new Error("構成が更新されました。開き直してください。");
     const config = { version: 1, configurationRevision: (old?.configurationRevision ?? 0) + 1, randomDeck: clone(input.randomDeck), fixedAttack: clone(input.fixedAttack), autoDefense: clone(input.autoDefense), settings: clone(input.settings) };
     validateConfiguration(config, this.registry, this.persistence.fixedSlots(player));
+    this.collection?.validateOwnership(player, config, expectedCollectionRevision);
     if (old && JSON.stringify({ ...old, configurationRevision: 0 }) === JSON.stringify({ ...config, configurationRevision: 0 })) return old;
     this.persistence.write(player, KEYS.configuration, config);
     // Do not initialize/shuffle outside the gate. Revision invalidates old battle lazily.
     return config;
   }
   load(player) {
+    this.activations?.recover(player);
     const config = this.configuration(player);
     if (!config) return { config: null, battle: null, active: isActive(player) };
     let battle = this.persistence.readBattle(player);
@@ -49,6 +53,7 @@ export class DeckManager {
     this.persistence.write(player, KEYS.battle, battle);
   }
   use(player, slot, effect) {
+    this.activations?.beforeUse(player, slot);
     requireActive(player);
     const { config, battle } = this.load(player);
     if (!battle) throw new Error("デッキを登録してください。");
