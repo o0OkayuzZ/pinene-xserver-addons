@@ -3,14 +3,13 @@ import {
   system,
   ItemStack,
   HudElement,
-  HudVisibility,
-  EntityDamageCause
+  HudVisibility
 } from "@minecraft/server";
 import { ActionFormData } from "@minecraft/server-ui";
 
 const SOUL_ID = "pinematerials:zyunzentarucrossbownotamashii";
 const SCOPE_MARKER = "__PINENE_SNIPER_SCOPE__";
-const SCOPE_FOV = 20;
+const SCOPE_FOV = 30;
 const SNIPER_SPEED = 8.0;
 const SNIPER_PROJECTILE_ID = "pinene:sniper_bolt_projectile";
 const BOMB_PROJECTILE_ID = "pinene:bomb_bolt_projectile";
@@ -74,6 +73,7 @@ const COST = Object.freeze({
 });
 
 const scopedPlayers = new Map();
+const projectileDirectDamage = new Map();
 
 function stateOf(typeId) {
   return STATE[typeId];
@@ -425,6 +425,7 @@ function tagBombSniperProjectile(projectile, owner, weaponState) {
   const damage = SNIPER_TNT_DIRECT[weaponState.depth];
   projectile.setDynamicProperty("pinene:sniper_tnt", true);
   projectile.setDynamicProperty("pinene:sniper_direct_damage", damage);
+  projectileDirectDamage.set(projectile.id, damage);
   projectile.setDynamicProperty("pinene:bomb_depth", weaponState.depth);
 
   const component = projectile.getComponent("minecraft:projectile");
@@ -449,6 +450,7 @@ function replaceVanillaArrowWithSniper(arrow, owner, weaponState) {
     projectile.owner = owner;
     sniper.setDynamicProperty("pinene:sniper_depth", weaponState.depth);
     sniper.setDynamicProperty("pinene:sniper_direct_damage", directDamage);
+    projectileDirectDamage.set(sniper.id, directDamage);
     projectile.shoot(velocity);
   } catch (error) {
     try { if (sniper?.isValid) sniper.remove(); } catch {}
@@ -488,43 +490,43 @@ function canDamagePlayerTarget(target, owner) {
   return world.gameRules.pvp !== false;
 }
 
-world.afterEvents.projectileHitEntity.subscribe(event => {
-  const projectile = event.projectile;
-  const hit = event.getEntityHit()?.entity;
-  if (!projectile?.isValid || !hit?.isValid) return;
+world.beforeEvents.entityHurt.subscribe(event => {
+  const projectile = event.damageSource.damagingProjectile;
+  if (!projectile?.isValid) return;
+  if (projectile.typeId !== SNIPER_PROJECTILE_ID && projectile.typeId !== BOMB_PROJECTILE_ID) return;
 
-  const component = projectile.getComponent("minecraft:projectile");
-  const owner = component?.owner;
-  if (!canDamagePlayerTarget(hit, owner)) return;
+  const desired = projectileDirectDamage.get(projectile.id) ??
+    Number(projectile.getDynamicProperty("pinene:sniper_direct_damage"));
+  if (!Number.isFinite(desired) || desired < 0) return;
 
-  if (projectile.typeId === SNIPER_PROJECTILE_ID) {
-    const damage = Number(projectile.getDynamicProperty("pinene:sniper_direct_damage") ?? 14);
-    try {
-      hit.applyDamage(damage, {
-        cause: EntityDamageCause.projectile,
-        damagingEntity: owner?.isValid ? owner : undefined,
-        damagingProjectile: projectile
-      });
-    } catch {}
-    system.run(() => {
-      try { if (projectile.isValid) projectile.remove(); } catch {}
-    });
+  const owner = projectile.getComponent("minecraft:projectile")?.owner;
+  if (!canDamagePlayerTarget(event.hurtEntity, owner)) {
+    event.cancel = true;
     return;
   }
+  event.damage = desired;
+});
 
-  if (projectile.typeId === BOMB_PROJECTILE_ID &&
-      projectile.getDynamicProperty("pinene:sniper_tnt") === true) {
-    const desired = Number(projectile.getDynamicProperty("pinene:sniper_direct_damage") ?? 10);
-    const extra = Math.max(0, desired - 6);
-    if (extra <= 0) return;
-    try {
-      hit.applyDamage(extra, {
-        cause: EntityDamageCause.projectile,
-        damagingEntity: owner?.isValid ? owner : undefined,
-        damagingProjectile: projectile
-      });
-    } catch {}
-  }
+world.afterEvents.projectileHitEntity.subscribe(event => {
+  const projectile = event.projectile;
+  if (!projectile?.isValid) return;
+  if (projectile.typeId !== SNIPER_PROJECTILE_ID && projectile.typeId !== BOMB_PROJECTILE_ID) return;
+
+  const projectileId = projectile.id;
+  system.run(() => {
+    projectileDirectDamage.delete(projectileId);
+    if (projectile.typeId === SNIPER_PROJECTILE_ID) {
+      try { if (projectile.isValid) projectile.remove(); } catch {}
+    }
+  });
+});
+
+world.afterEvents.projectileHitBlock.subscribe(event => {
+  const projectile = event.projectile;
+  if (!projectile?.isValid) return;
+  if (projectile.typeId !== SNIPER_PROJECTILE_ID && projectile.typeId !== BOMB_PROJECTILE_ID) return;
+  const projectileId = projectile.id;
+  system.run(() => projectileDirectDamage.delete(projectileId));
 });
 
 console.info("[SniperCrossbow] v0.1 scope / forge / precision projectile runtime loaded");
