@@ -40858,5 +40858,130 @@
         "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_100.png"
       ]
     }
+  },
+  {
+    "id": "pinene-sniper-crossbow",
+    "name": "スナイパークロスボウ",
+    "kind": "item",
+    "contentId": "sniper-crossbows",
+    "summary": "照準付きスコープと高速弾を使える精密クロスボウ。",
+    "description": "照準付きスコープと高速弾を使える精密クロスボウ。",
+    "usage": "右クリック長押しで装填し、装填後に右クリックで発射。手に持ってしゃがむとスコープを覗きます。",
+    "obtaining": "クロスボウを持ち、鍛冶台でしゃがみながら使用。「スナイパー化」を選びます。素材：望遠鏡×1、鉄インゴット×1。",
+    "details": [
+      "装填時間：1.25秒。",
+      "弾薬：矢。",
+      "直撃ダメージ：深度0=14 / 深度1=18 / 深度2=22 / 深度3=26。",
+      "覚醒：鍛冶台で純然たるクロスボウの魂×1。各段階で1個必要。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "ff1f0106d77ad380d803be934b378d351760ca40",
+      "paths": [
+        "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts/sniper_crossbow.js"
+      ]
+    }
+  },
+  {
+    "id": "pinene-sniper-tnt-crossbow",
+    "name": "TNTスナイパークロスボウ",
+    "kind": "item",
+    "contentId": "sniper-crossbows",
+    "summary": "スコープ射撃と爆発弾を組み合わせたクロスボウ。",
+    "description": "スコープ射撃と爆発弾を組み合わせたクロスボウ。",
+    "usage": "右クリック長押しで装填し、装填後に右クリックで発射。しゃがむとスコープ。",
+    "obtaining": "スナイパーまたはTNTクロスボウを鍛冶台で改造。TNT化の素材：TNT×1、鉄インゴット×3、糸×2。",
+    "details": [
+      "装填時間：1.25秒。",
+      "弾薬：爆弾ボルト。",
+      "直撃ダメージ：深度0=10 / 深度1=13 / 深度2=16 / 深度3=19。",
+      "爆発は地形を破壊します。着火はしません。",
+      "覚醒：各段階で純然たるクロスボウの魂×1。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "ff1f0106d77ad380d803be934b378d351760ca40",
+      "paths": [
+        "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts/sniper_crossbow.js"
+      ]
+    }
+  },
+  {
+    "id": "pinene-sniper-bomb-bolt",
+    "name": "爆弾ボルト",
+    "kind": "item",
+    "contentId": "sniper-crossbows",
+    "summary": "TNT系クロスボウで使用する爆発弾。",
+    "description": "TNT系クロスボウで使用する爆発弾。",
+    "usage": "TNTクロスボウ／TNTスナイパークロスボウの弾薬としてインベントリに入れて使用します。",
+    "obtaining": "作業台でクラフトできます。",
+    "details": [
+      "クラフト：矢×4 + TNT×1 → 爆弾ボルト×4。",
+      "配置：上・左・右・下に矢、中央にTNT。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "ff1f0106d77ad380d803be934b378d351760ca40",
+      "paths": [
+        "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts/sniper_crossbow.js"
+      ]
+    }
+  },
+  {
+    "id": "pinene-sniper-bomb-bolt-recipe",
+    "name": "爆弾ボルトのレシピ",
+    "kind": "recipe",
+    "contentId": "sniper-crossbows",
+    "summary": "矢4本とTNT1個から爆弾ボルト4本を作ります。",
+    "description": "矢4本とTNT1個から爆弾ボルト4本を作ります。",
+    "usage": "作業台で下の配置どおりに材料を並べます。",
+    "obtaining": "本番導入済みのレシピです。",
+    "details": [],
+    "image": null,
+    "recipe": {
+      "shaped": true,
+      "grid": [
+        [
+          "",
+          "矢",
+          ""
+        ],
+        [
+          "矢",
+          "TNT",
+          "矢"
+        ],
+        [
+          "",
+          "矢",
+          ""
+        ]
+      ],
+      "ingredients": [
+        {
+          "name": "矢",
+          "count": 4
+        },
+        {
+          "name": "TNT",
+          "count": 1
+        }
+      ],
+      "resultId": "pinene-sniper-bomb-bolt",
+      "count": 4
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "ff1f0106d77ad380d803be934b378d351760ca40",
+      "paths": [
+        "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/recipes/bomb_bolt.recipe.json"
+      ]
+    }
   }
 ]

@@ -1,6 +1,6 @@
 {
   "schema_version": "0.2.0",
-  "source_commit": "e2577119d778901ad116d1cbd231b76058584db9",
+  "source_commit": "ff1f0106d77ad380d803be934b378d351760ca40",
   "contents": [
     {
       "id": "pvp-island",
@@ -168,6 +168,86 @@
           "docs/infinite_castle/distant-koto-20260912.md",
           "docs/infinite_castle/reconstruction-clock-20260912.md",
           "docs/infinite_castle/distant-koto-20260912.md"
+        ]
+      }
+    },
+    {
+      "id": "sniper-crossbows",
+      "name": "スナイパークロスボウ",
+      "summary": "バニラ感覚で装填・発射。しゃがむと照準付きスコープを使える精密クロスボウ。",
+      "description": "通常のクロスボウを鍛冶台でスナイパー化できる武器系列です。右クリック長押しで装填し、装填後に右クリックで発射。スナイパー系を持ってしゃがむと照準付きスコープに切り替わります。通常・TNTそれぞれ深度3まで覚醒できます。",
+      "category": [
+        "combat",
+        "craft"
+      ],
+      "visibility": "public",
+      "implementation": "implemented",
+      "deployment": "deployed-recorded",
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "ff1f0106d77ad380d803be934b378d351760ca40"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "ff1f0106d77ad380d803be934b378d351760ca40"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "ff1f0106d77ad380d803be934b378d351760ca40"
+        },
+        {
+          "kind": "gameplay",
+          "result": "confirmed",
+          "commit": "ff1f0106d77ad380d803be934b378d351760ca40"
+        },
+        {
+          "kind": "appearance",
+          "result": "confirmed",
+          "commit": "ff1f0106d77ad380d803be934b378d351760ca40"
+        }
+      ],
+      "image": {
+        "src": "/images/sniper-crossbows.svg",
+        "alt": "スナイパークロスボウと照準をイメージした案内画像。",
+        "kind": "concept"
+      },
+      "highlights": [
+        "右クリック長押しで装填 → 装填後に右クリックで発射。バニラクロスボウに近い操作です。",
+        "スナイパー系を手に持ってしゃがむと照準付きスコープ。しゃがみ解除・持ち替えで通常視点へ戻ります。",
+        "通常スナイパーの直撃ダメージは深度0/1/2/3で14/18/22/26。",
+        "TNTスナイパーは爆弾ボルトを使用。直撃10/13/16/19に加えて爆発し、地形破壊あり・着火なしです。",
+        "改造は鍛冶台でクロスボウを持ってしゃがみながら使用。スナイパー化・TNT化・覚醒の順番は自由です。"
+      ],
+      "guide": "最短ルート：クロスボウを用意 → 鍛冶台の前でクロスボウを手に持ってしゃがみながら鍛冶台を使用 → 「スナイパー化」を選択。必要素材は望遠鏡1個＋鉄インゴット1個です。通常スナイパーは矢、TNTスナイパーは爆弾ボルトを弾薬に使います。爆弾ボルトは作業台で矢4本＋TNT1個から4本作れます。覚醒には各段階ごとに「純然たるクロスボウの魂」1個を使います。",
+      "children": [],
+      "related": [],
+      "packBindings": [
+        {
+          "uuid": "7c8ac348-47ad-4f71-8503-dc40a6f813f1",
+          "roles": [
+            "behavior",
+            "item-definition",
+            "runtime-script",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10",
+          "roles": [
+            "texture",
+            "model"
+          ]
+        }
+      ],
+      "evidence": {
+        "commit": "ff1f0106d77ad380d803be934b378d351760ca40",
+        "paths": [
+          "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/scripts/sniper_crossbow.js",
+          "docs/testing/sniper-crossbow-20260924.md"
         ]
       }
     },
