@@ -2,8 +2,8 @@
   "pools": [
     {
       "rolls": {
-        "min": 14,
-        "max": 18
+        "min": 9,
+        "max": 13
       },
       "entries": [
         {
@@ -498,13 +498,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "true_dn:deathnerite_ingot"
-        }
-      ],
-      "conditions": [
+          "name": "true_dn:deathnerite_ingot",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.01
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/ruined_portal.json",
+          "weight": 99
         }
       ]
     },
@@ -513,13 +513,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 6
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.24
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/ruined_portal.json",
+          "weight": 19
         }
       ]
     },
@@ -528,13 +528,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 6
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.24
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/ruined_portal.json",
+          "weight": 19
         }
       ]
     },
@@ -543,13 +543,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 2
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.08
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/ruined_portal.json",
+          "weight": 23
         }
       ]
     },
@@ -558,13 +558,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 4
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.16
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/ruined_portal.json",
+          "weight": 21
         }
       ]
     },
@@ -573,13 +573,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.01
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/ruined_portal.json",
+          "weight": 99
         }
       ]
     },
@@ -588,13 +588,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.003
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/ruined_portal.json",
+          "weight": 997
         }
       ]
     }

@@ -940,6 +940,25 @@ function startSpecialRaidByBottle(player) {
 }
 
 */
+// These helpers must remain outside the retired raid prototype comment.
+function pineHasTag(entity, tag) {
+    try {
+        return !!entity?.hasTag?.(tag);
+    } catch {
+        return false;
+    }
+}
+
+function safeGetEntityLocation(entity) {
+    try {
+        const location = entity?.location;
+        if (!location || ![location.x, location.y, location.z].every(Number.isFinite)) return undefined;
+        return { x: location.x, y: location.y, z: location.z };
+    } catch {
+        return undefined;
+    }
+}
+
 function placeFigure(player, itemId, location) {
     if (!(itemId in FIGURE_PLACE_MAP)) return;
     if (!player || player.typeId !== "minecraft:player") return;
@@ -1034,7 +1053,6 @@ safeSubscribe(world?.afterEvents?.playerInteractWithEntity, (event) => {
 safeSubscribe(world?.afterEvents?.entityDie, (event) => {
     const entity = event.deadEntity;
     if (!entity) return;
-    if (pineHasTag(entity, PICKUP_MARKER_TAG)) return;
 
     let typeId;
     try {
@@ -1045,6 +1063,7 @@ safeSubscribe(world?.afterEvents?.entityDie, (event) => {
 
     const itemId = FIGURE_PICKUP_MAP[typeId];
     if (!itemId) return;
+    if (pineHasTag(entity, PICKUP_MARKER_TAG)) return;
 
     const loc = safeGetEntityLocation(entity);
     if (!loc) return;

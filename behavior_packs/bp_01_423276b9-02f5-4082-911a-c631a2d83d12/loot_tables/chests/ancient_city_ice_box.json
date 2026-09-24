@@ -1,62 +1,120 @@
 {
   "pools": [
     {
-      "rolls": {
-        "min": 7,
-        "max": 11
-      },
+      "rolls": 16,
       "entries": [
         {
           "type": "item",
-          "name": "minecraft:golden_carrot",
-          "weight": 16,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 6,
-                "max": 18
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:cooked_beef",
-          "weight": 12,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 6,
-                "max": 16
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:cooked_porkchop",
-          "weight": 12,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 6,
-                "max": 16
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:pumpkin_pie",
-          "weight": 10,
+          "name": "a:egbread",
+          "weight": 1,
           "functions": [
             {
               "function": "set_count",
               "count": {
                 "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "pinene:enchanted_golden_carrot",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "pinene:enchanted_baked_golden_potato",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "pinene:enchanted_golden_beetroot",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "pinene:enchanted_glistering_melon_slice",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "pinene:enchanted_golden_pumpkin_pie",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "pinene:enchanted_golden_poisonous_potato",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "item",
+          "name": "a:gbread",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
                 "max": 8
               }
             }
@@ -64,195 +122,73 @@
         },
         {
           "type": "item",
-          "name": "minecraft:baked_potato",
-          "weight": 10,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 6,
-                "max": 18
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:cake",
-          "weight": 5
-        },
-        {
-          "type": "item",
-          "name": "minecraft:honey_bottle",
-          "weight": 8,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 2,
-                "max": 6
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:milk_bucket",
-          "weight": 6
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 5,
-        "max": 7
-      },
-      "entries": [
-        {
-          "type": "item",
-          "name": "minecraft:cooked_salmon",
-          "weight": 10,
+          "name": "pinene:golden_potato",
+          "weight": 1,
           "functions": [
             {
               "function": "set_count",
               "count": {
                 "min": 4,
-                "max": 12
+                "max": 8
               }
             }
           ]
         },
         {
           "type": "item",
-          "name": "minecraft:cooked_cod",
-          "weight": 10,
+          "name": "pinene:baked_golden_potato",
+          "weight": 1,
           "functions": [
             {
               "function": "set_count",
               "count": {
                 "min": 4,
-                "max": 12
+                "max": 8
               }
             }
           ]
         },
         {
           "type": "item",
-          "name": "minecraft:rabbit_stew",
-          "weight": 7
-        },
-        {
-          "type": "item",
-          "name": "minecraft:mushroom_stew",
-          "weight": 7
-        },
-        {
-          "type": "item",
-          "name": "minecraft:suspicious_stew",
-          "weight": 7
-        },
-        {
-          "type": "item",
-          "name": "minecraft:cookie",
-          "weight": 9,
+          "name": "pinene:golden_beetroot",
+          "weight": 1,
           "functions": [
             {
               "function": "set_count",
               "count": {
                 "min": 4,
-                "max": 16
+                "max": 8
               }
             }
           ]
         },
         {
           "type": "item",
-          "name": "minecraft:golden_carrot",
-          "weight": 12,
+          "name": "pinene:golden_pumpkin_pie",
+          "weight": 1,
           "functions": [
             {
               "function": "set_count",
               "count": {
                 "min": 4,
-                "max": 12
+                "max": 8
               }
             }
           ]
         },
         {
           "type": "item",
-          "name": "minecraft:golden_apple",
-          "weight": 6,
+          "name": "pinene:golden_poisonous_potato",
+          "weight": 1,
           "functions": [
             {
               "function": "set_count",
               "count": {
-                "min": 1,
-                "max": 3
+                "min": 4,
+                "max": 8
               }
             }
           ]
-        },
-        {
-          "type": "item",
-          "name": "minecraft:cake",
-          "weight": 5
-        },
-        {
-          "type": "item",
-          "name": "minecraft:honey_bottle",
-          "weight": 8,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 2,
-                "max": 6
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 2,
-        "max": 4
-      },
-      "entries": [
-        {
-          "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 1,
-        "max": 3
-      },
-      "entries": [
-        {
-          "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 1,
-        "max": 2
-      },
-      "entries": [
-        {
-          "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.5
         }
       ]
     },
@@ -262,21 +198,63 @@
         {
           "type": "item",
           "name": "minecraft:enchanted_golden_apple",
+          "weight": 1,
           "functions": [
             {
               "function": "set_count",
               "count": {
-                "min": 1,
-                "max": 2
+                "min": 2,
+                "max": 4
               }
             }
           ]
         }
-      ],
-      "conditions": [
+      ]
+    },
+    {
+      "rolls": 2,
+      "entries": [
         {
-          "condition": "random_chance",
-          "chance": 0.35
+          "type": "item",
+          "name": "myname:pancake",
+          "weight": 60,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "pinebento:honey_pancake",
+          "weight": 27,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "pinebento:berry_honey_pancake",
+          "weight": 13,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
         }
       ]
     },
@@ -285,56 +263,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.3
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.04
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.012
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 4,
-        "max": 5
-      },
-      "entries": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 108
+        },
         {
           "type": "item",
           "name": "minecraft:diamond",
-          "weight": 10,
+          "weight": 70,
           "functions": [
             {
               "function": "set_count",
@@ -348,7 +283,7 @@
         {
           "type": "item",
           "name": "minecraft:emerald",
-          "weight": 10,
+          "weight": 70,
           "functions": [
             {
               "function": "set_count",
@@ -362,7 +297,7 @@
         {
           "type": "item",
           "name": "minecraft:gold_block",
-          "weight": 8,
+          "weight": 56,
           "functions": [
             {
               "function": "set_count",
@@ -376,13 +311,183 @@
         {
           "type": "item",
           "name": "minecraft:experience_bottle",
-          "weight": 8,
+          "weight": 56,
           "functions": [
             {
               "function": "set_count",
               "count": {
                 "min": 12,
                 "max": 32
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "ws:warpstone",
+          "weight": 36
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "weight": 240,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "weight": 240,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_block",
+          "weight": 192,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:experience_bottle",
+          "weight": 192,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 12,
+                "max": 32
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "resetapple:blue_apple",
+          "weight": 108
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "weight": 2470,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "weight": 2470,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_block",
+          "weight": 1976,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:experience_bottle",
+          "weight": 1976,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 12,
+                "max": 32
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:packed_ice",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 16
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:snowball",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 8,
+                "max": 16
               }
             }
           ]

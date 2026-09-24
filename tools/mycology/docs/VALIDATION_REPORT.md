@@ -27,9 +27,9 @@
 
 ## 容量（圧縮前・ファイル内容の合計）
 
-- BP：294,965 bytes
-- RP：421,521 bytes
-- 実行用合計：716,486 bytes
+- BP：289,805 bytes
+- RP：417,847 bytes
+- 実行用合計：707,652 bytes
 - RP内のPNG全体：265,539 bytes
 
 ZIP／mcaddonの圧縮後容量は `data/package_sizes.json` を参照。資料やプレビューのサイズをサーバー導入量に足さない。

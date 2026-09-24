@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "generatedStacks": [
+    27,
+    27
+  ],
+  "enchantedFoodQuantity": [
+    48,
+    96
+  ],
+  "goldenFoodQuantity": [
+    12,
+    24
+  ],
+  "enchantedGoldenAppleQuantity": [
+    2,
+    4
+  ],
+  "rareReplacementProbabilities": {
+    "loot_tables/bsl/collectibles/all.json": 0.3,
+    "ws:warpstone": 0.04,
+    "resetapple:blue_apple": 0.012
+  },
+  "engineVerified": false,
+  "nativeOccupiedSlots": "Not asserted; requires Bedrock verification",
+  "trials": 10000,
+  "seed": 20260923,
+  "enchantedFood": {
+    "mean": 72.0083,
+    "observedMin": 57,
+    "observedMax": 88,
+    "theoreticalMin": 48,
+    "theoreticalMax": 96,
+    "theoreticalMean": 72,
+    "meanUniqueEdibleTypes": 6.4025
+  },
+  "goldenFoodMean": 17.9987,
+  "rareFrequencies": {
+    "loot_tables/bsl/collectibles/all.json": {
+      "expected": 0.3,
+      "observed": 0.2994,
+      "hits": 2994
+    },
+    "ws:warpstone": {
+      "expected": 0.04,
+      "observed": 0.0393,
+      "hits": 393
+    },
+    "resetapple:blue_apple": {
+      "expected": 0.012,
+      "observed": 0.0119,
+      "hits": 119
+    }
+  },
+  "capacityFailures": 0,
+  "examplesAreSimulated": true,
+  "tableSHA256": "0128f3674252c22c8ef1f01d6e67f0968046dd0d224d8aec8ccd76654e6f1315"
+}

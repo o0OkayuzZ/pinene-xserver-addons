@@ -21,3 +21,5 @@ jobs:
         run: python tools/pinecd/validate_textures.py
       - name: PineCD generated data parity
         run: python tools/pinecd/build.py --check
+      - name: Figure death and pickup runtime regression
+        run: npm run test:figures

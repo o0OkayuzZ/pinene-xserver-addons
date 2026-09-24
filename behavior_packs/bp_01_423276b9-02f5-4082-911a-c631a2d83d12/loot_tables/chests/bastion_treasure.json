@@ -15,16 +15,17 @@
         {
           "type": "item",
           "name": "true_dn:deathnerite_ingot",
-          "weight": 18
+          "weight": 9
         },
         {
           "type": "item",
           "name": "true_dn:darkness_upgrade_smithing_template",
-          "weight": 10
+          "weight": 5
         },
         {
-          "type": "empty",
-          "weight": 72
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/bastion_treasure.json",
+          "weight": 36
         }
       ]
     },
@@ -173,10 +174,7 @@
       ]
     },
     {
-      "rolls": {
-        "min": 7,
-        "max": 10
-      },
+      "rolls": 4,
       "entries": [
         {
           "type": "item",
@@ -312,10 +310,7 @@
       ]
     },
     {
-      "rolls": {
-        "min": 6,
-        "max": 9
-      },
+      "rolls": 6,
       "entries": [
         {
           "type": "item",
@@ -395,6 +390,23 @@
           "type": "item",
           "name": "minecraft:lodestone",
           "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_spear",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_damage",
+              "damage": {
+                "min": 0.8,
+                "max": 1
+              }
+            },
+            {
+              "function": "enchant_randomly"
+            }
+          ]
         }
       ]
     },
@@ -403,13 +415,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "minecraft:snout_armor_trim_smithing_template"
-        }
-      ],
-      "conditions": [
+          "name": "minecraft:snout_armor_trim_smithing_template",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.2
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/bastion_treasure.json",
+          "weight": 4
         }
       ]
     },
@@ -418,13 +430,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.32
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/bastion_treasure.json",
+          "weight": 1
         }
       ]
     },
@@ -433,13 +445,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 9
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.3
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/bastion_treasure.json",
+          "weight": 11
         }
       ]
     },
@@ -448,13 +460,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 2
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.25
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/bastion_treasure.json",
+          "weight": 3
         }
       ]
     },
@@ -463,13 +475,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 2
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.3
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/bastion_treasure.json",
+          "weight": 3
         }
       ]
     },
@@ -478,13 +490,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 1
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.04
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/bastion_treasure.json",
+          "weight": 24
         }
       ]
     },
@@ -493,13 +505,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.012
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/special/bastion_treasure.json",
+          "weight": 247
         }
       ]
     }

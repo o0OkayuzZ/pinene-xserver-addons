@@ -2,8 +2,8 @@
   "pools": [
     {
       "rolls": {
-        "min": 14,
-        "max": 18
+        "min": 10,
+        "max": 14
       },
       "entries": [
         {
@@ -462,13 +462,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/pancakes.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/pancakes.json",
+          "weight": 7
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.28
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/simple_dungeon.json",
+          "weight": 18
         }
       ]
     },
@@ -477,13 +477,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/golden_foods.json",
+          "weight": 11
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.22
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/simple_dungeon.json",
+          "weight": 39
         }
       ]
     },
@@ -492,13 +492,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/food/enchanted_golden_foods.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/food/enchanted_golden_foods.json",
+          "weight": 13
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.065
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/simple_dungeon.json",
+          "weight": 187
         }
       ]
     },
@@ -507,13 +507,13 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/bsl/collectibles/all.json"
-        }
-      ],
-      "conditions": [
+          "name": "loot_tables/bsl/collectibles/all.json",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.12
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/simple_dungeon.json",
+          "weight": 22
         }
       ]
     },
@@ -522,13 +522,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "ws:warpstone"
-        }
-      ],
-      "conditions": [
+          "name": "ws:warpstone",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.0075
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/simple_dungeon.json",
+          "weight": 397
         }
       ]
     },
@@ -537,13 +537,13 @@
       "entries": [
         {
           "type": "item",
-          "name": "resetapple:blue_apple"
-        }
-      ],
-      "conditions": [
+          "name": "resetapple:blue_apple",
+          "weight": 3
+        },
         {
-          "condition": "random_chance",
-          "chance": 0.003
+          "type": "loot_table",
+          "name": "loot_tables/bsl_v3/normal/simple_dungeon.json",
+          "weight": 997
         }
       ]
     }
