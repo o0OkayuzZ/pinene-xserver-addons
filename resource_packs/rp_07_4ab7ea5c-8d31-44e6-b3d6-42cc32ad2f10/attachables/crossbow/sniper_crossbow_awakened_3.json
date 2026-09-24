@@ -8,19 +8,30 @@
         "enchanted": "entity_alphatest_glint"
       },
       "textures": {
-        "default": "textures/items/crossbow_standby",
+        "default": "textures/pinene_sniper/vanilla/crossbow_standby",
+        "crossbow_pulling_0": "textures/pinene_sniper/vanilla/crossbow_pulling_0",
+        "crossbow_pulling_1": "textures/pinene_sniper/vanilla/crossbow_pulling_1",
+        "crossbow_pulling_2": "textures/pinene_sniper/vanilla/crossbow_pulling_2",
+        "crossbow_arrow": "textures/pinene_sniper/vanilla/crossbow_arrow",
+        "crossbow_rocket": "textures/pinene_sniper/vanilla/crossbow_arrow",
         "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
-        "default": "geometry.crossbow_standby"
+        "default": "geometry.pinene_sniper_crossbow_standby",
+        "crossbow_pulling_0": "geometry.pinene_sniper_crossbow_pulling_0",
+        "crossbow_pulling_1": "geometry.pinene_sniper_crossbow_pulling_1",
+        "crossbow_pulling_2": "geometry.pinene_sniper_crossbow_pulling_2",
+        "crossbow_arrow": "geometry.pinene_sniper_crossbow_arrow",
+        "crossbow_rocket": "geometry.pinene_sniper_crossbow_rocket"
       },
       "animations": {
-        "wield": "animation.crossbow.wield",
-        "wield_first_person_pull": "animation.crossbow.wield_first_person_pull"
+        "wield": "animation.pinene_sniper_crossbow.wield",
+        "wield_first_person_pull": "animation.pinene_sniper_crossbow.wield_first_person_pull"
       },
       "scripts": {
         "pre_animation": [
-          "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);"
+          "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - query.main_hand_item_use_duration) / math.max(query.main_hand_item_max_duration, 1.0), 0.0, 1.0);",
+          "variable.pinene_frame = query.item_is_charged ? 4 : (query.is_using_item ? (1 + math.min(2, math.floor(variable.charge_amount * 3))) : 0);"
         ],
         "animate": [
           "wield",
@@ -30,7 +41,7 @@
         ]
       },
       "render_controllers": [
-        "controller.render.custom_crossbow"
+        "controller.render.pinene_sniper_crossbow"
       ]
     }
   }
