@@ -9,6 +9,7 @@ import { ActionFormData } from "@minecraft/server-ui";
 
 const SOUL_ID = "pinematerials:zyunzentarucrossbownotamashii";
 const SCOPE_MARKER = "__PINENE_SNIPER_SCOPE__";
+const SCOPE_CLEAR_MARKER = "__PINENE_SNIPER_SCOPE_CLEAR__";
 const SCOPE_FOV = 30;
 const SNIPER_SPEED = 8.0;
 const SNIPER_PROJECTILE_ID = "pinene:sniper_bolt_projectile";
@@ -349,22 +350,24 @@ function enterScope(player) {
   scopedPlayers.set(player.id, { crosshairWasHidden });
 }
 
-function exitScope(player) {
+function exitScope(player, force = false) {
   const state = scopedPlayers.get(player.id);
-  if (!state) return;
+  if (!state && !force) return;
 
   try {
     player.camera.setFov();
   } catch {}
 
-  if (!state.crosshairWasHidden) {
+  if (force || !state?.crosshairWasHidden) {
     try {
       player.onScreenDisplay.setHudVisibility(HudVisibility.Reset, [HudElement.Crosshair]);
     } catch {}
   }
 
+  // Empty action-bar text does not always invalidate JSON-UI factories.
+  // A hidden non-empty sentinel guarantees the scope overlay is rebuilt as OFF.
   try {
-    player.onScreenDisplay.setActionBar("");
+    player.onScreenDisplay.setActionBar(SCOPE_CLEAR_MARKER);
   } catch {}
 
   scopedPlayers.delete(player.id);
@@ -399,7 +402,7 @@ system.runInterval(() => {
 
 world.afterEvents.playerSpawn.subscribe(event => {
   if (!event.player?.isValid) return;
-  system.run(() => exitScope(event.player));
+  system.run(() => exitScope(event.player, true));
 });
 
 function normalizedVelocity(entity, fallbackDirection) {
@@ -529,4 +532,8 @@ world.afterEvents.projectileHitBlock.subscribe(event => {
   system.run(() => projectileDirectDamage.delete(projectileId));
 });
 
-console.info("[SniperCrossbow] v0.1 scope / forge / precision projectile runtime loaded");
+system.run(() => {
+  for (const player of world.getAllPlayers()) exitScope(player, true);
+});
+
+console.info("[SniperCrossbow] v0.2 vanilla-style scope / reliable exit / precision projectile runtime loaded");

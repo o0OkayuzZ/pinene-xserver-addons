@@ -3,7 +3,7 @@
 
   "hud_actionbar_text": {
     "$pinene_actionbar": "$actionbar_text",
-    "visible": "(not ($pinene_actionbar = '__PINENE_SNIPER_SCOPE__'))"
+    "visible": "((not ($pinene_actionbar = '__PINENE_SNIPER_SCOPE__')) and (not ($pinene_actionbar = '__PINENE_SNIPER_SCOPE_CLEAR__')))"
   },
 
   "pinene_sniper_scope_panel": {
