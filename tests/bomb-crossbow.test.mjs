@@ -88,8 +88,8 @@ test("restored Pure Crossbow Soul texture exists as a real PNG", () => {
   assert.equal(fs.existsSync(staleDuplicate), false, "legacy RP must not shadow Pure Crossbow Soul");
   const bytes = fs.readFileSync(texture);
   assert.equal(bytes.subarray(0, 8).toString("hex"), "89504e470d0a1a0a");
-  assert.equal(bytes.readUInt32BE(16), 32);
-  assert.equal(bytes.readUInt32BE(20), 32);
+  assert.equal(bytes.readUInt32BE(16), 256);
+  assert.equal(bytes.readUInt32BE(20), 256);
   assert.equal(bytes[25], 6); // PNG RGBA
   assert.ok(bytes.length > 1000);
 });
@@ -98,7 +98,7 @@ test("Bomb Crossbow pack versions and dependency stay synchronized", () => {
   const bp = json(path.join(BP, "manifest.json"));
   const rp = json(path.join(RP, "manifest.json"));
   assert.deepEqual(bp.header.version, [1, 2, 16]);
-  assert.deepEqual(rp.header.version, [1, 2, 17]);
+  assert.deepEqual(rp.header.version, [1, 2, 18]);
   const dep = rp.dependencies.find((x) => x.uuid === bp.header.uuid);
   assert.deepEqual(dep.version, bp.header.version);
 });

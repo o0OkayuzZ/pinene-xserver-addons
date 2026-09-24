@@ -141,7 +141,7 @@ test("sniper pack versions, RP dependency and server-ui dependency stay synchron
   const bp = json(path.join(BP, "manifest.json"));
   const rp = json(path.join(RP, "manifest.json"));
   assert.deepEqual(bp.header.version, [1, 2, 16]);
-  assert.deepEqual(rp.header.version, [1, 2, 17]);
+  assert.deepEqual(rp.header.version, [1, 2, 18]);
   assert.deepEqual(rp.dependencies.find(x => x.uuid === bp.header.uuid)?.version, bp.header.version);
   assert.equal(bp.dependencies.find(x => x.module_name === "@minecraft/server-ui")?.version, "2.0.0");
 });
