@@ -94,8 +94,8 @@ test("restored Pure Crossbow Soul texture exists as a real PNG", () => {
 test("Bomb Crossbow pack versions and dependency stay synchronized", () => {
   const bp = json(path.join(BP, "manifest.json"));
   const rp = json(path.join(RP, "manifest.json"));
-  assert.deepEqual(bp.header.version, [1, 2, 15]);
-  assert.deepEqual(rp.header.version, [1, 2, 16]);
+  assert.deepEqual(bp.header.version, [1, 2, 16]);
+  assert.deepEqual(rp.header.version, [1, 2, 17]);
   const dep = rp.dependencies.find((x) => x.uuid === bp.header.uuid);
   assert.deepEqual(dep.version, bp.header.version);
 });

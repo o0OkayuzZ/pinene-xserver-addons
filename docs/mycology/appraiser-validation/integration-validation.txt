@@ -1,0 +1,12 @@
+python : Traceback (most recent call last):
+At line:2 char:68
++ ... +$env:PATH; python -X utf8 tools/validate.py *> appraiser-integration ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+  File "C:\Users\はーにゃ。\pinene-appraiser-work\tools\validate.py", line 17, in <module>
+    assert (not p.exists()) if digest is None else p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==digest,r
+el
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egbread.json

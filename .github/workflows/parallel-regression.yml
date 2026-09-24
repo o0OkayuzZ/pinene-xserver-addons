@@ -1,0 +1,25 @@
+name: Parallel work regression
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  appraiser-and-textures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Mycology and appraiser regression
+        run: npm --prefix tools/mycology test
+      - name: PineCD texture cap regression
+        run: python tools/pinecd/test_validate.py
+      - name: Active PineCD texture dimensions
+        run: python tools/pinecd/validate_textures.py
+      - name: PineCD generated data parity
+        run: python tools/pinecd/build.py --check
+      - name: Figure death and pickup runtime regression
+        run: npm run test:figures

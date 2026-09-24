@@ -3,6 +3,7 @@ export const CONFIG = Object.freeze({
   npcType:'pinene:mushroom_appraiser',
   naturalTokenKey:'pinene:myco_natural_token',
   leaseKey:'pinene:myco_appraiser_lease_v1',
+  npcStateKey:'pinene:myco_appraiser_state_v2',
   spawnClockKey:'pinene:myco_spawn_minutes_v1',
   spawnIntervalMinutes:15,
   normalChance:0.04,

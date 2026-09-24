@@ -53,13 +53,13 @@ test('eating has no cooldown call or shared lock; each consecutive dose applies'
  assert.equal(p.effects.get('minecraft:strength').amplifier,0);
 });
 test('adapter: normal/admin NPC is usable but drops no loot on death',()=>{reset();const p=player(),n=new FakeEntity('n',CONFIG.npcType,p.dimension);n.location={x:3,y:64,z:0};world.entities.set(n.id,n);assert(canUse(p,n));world.afterEvents.entityDie.emit({deadEntity:n});assert.equal(p.dimension.drops.length,0);});
-test('adapter: active natural death gives exactly 64+64 once',()=>{
+test('adapter: active natural death gives exactly four 64-stacks once',()=>{
  reset();const p=player(),n=new FakeEntity('n',CONFIG.npcType,p.dimension);world.entities.set(n.id,n);n.setDynamicProperty(CONFIG.naturalTokenKey,'natural');world.setDynamicProperty(CONFIG.leaseKey,JSON.stringify({version:1,entityId:'n',token:'natural',expiresAt:Date.now()+100000}));
- world.afterEvents.entityDie.emit({deadEntity:n});world.afterEvents.entityDie.emit({deadEntity:n});assert.deepEqual(p.dimension.drops.map(x=>[x.item.typeId,x.item.amount]),[['minecraft:red_mushroom',64],['minecraft:brown_mushroom',64]]);
+ world.afterEvents.entityDie.emit({deadEntity:n});world.afterEvents.entityDie.emit({deadEntity:n});assert.deepEqual(p.dimension.drops.map(x=>[x.item.typeId,x.item.amount]),[['minecraft:red_mushroom',64],['minecraft:brown_mushroom',64],['minecraft:crimson_fungus',64],['minecraft:warped_fungus',64]]);
 });
-test('adapter: stale loaded natural token is removed without loot',()=>{reset();const p=player(),n=new FakeEntity('old',CONFIG.npcType,p.dimension);n.setDynamicProperty(CONFIG.naturalTokenKey,'old');world.entities.set(n.id,n);world.afterEvents.entityLoad.emit({entity:n});assert.equal(n.isValid,false);assert.equal(p.dimension.drops.length,0);});
+test('adapter: expired migrated natural token is removed without loot',()=>{reset();const p=player(),n=new FakeEntity('old',CONFIG.npcType,p.dimension);n.setDynamicProperty(CONFIG.naturalTokenKey,'old');world.setDynamicProperty(CONFIG.leaseKey,JSON.stringify({entityId:n.id,token:'old',expiresAt:Date.now()-CONFIG.maxGraceMs-1}));world.entities.set(n.id,n);world.afterEvents.entityLoad.emit({entity:n});assert.equal(n.isValid,false);assert.equal(p.dimension.drops.length,0);});
 test('adapter: unloaded unexpired natural lease is preserved on restart',()=>{reset();player();const l={version:1,entityId:'unloaded',token:'x',expiresAt:Date.now()+100000};world.setDynamicProperty(CONFIG.leaseKey,JSON.stringify(l));initializeNpc();assert.deepEqual(JSON.parse(world.getDynamicProperty(CONFIG.leaseKey)),l);});
-test('adapter: grace only permits an existing session, then hard expires',()=>{reset();const p=player(),n=new FakeEntity('n',CONFIG.npcType,p.dimension);world.entities.set(n.id,n);n.setDynamicProperty(CONFIG.naturalTokenKey,'x');world.setDynamicProperty(CONFIG.leaseKey,JSON.stringify({entityId:'n',token:'x',expiresAt:Date.now()-1000}));assert.equal(canUse(p,n,false),false);assert.equal(canUse(p,n,true),true);world.setDynamicProperty(CONFIG.leaseKey,JSON.stringify({entityId:'n',token:'x',expiresAt:Date.now()-CONFIG.maxGraceMs-1000}));assert.equal(canUse(p,n,true),false);});
+test('adapter: grace only permits an existing session, then hard expires',()=>{reset();const p=player(),n=new FakeEntity('n',CONFIG.npcType,p.dimension);world.entities.set(n.id,n);n.setDynamicProperty(CONFIG.naturalTokenKey,'x');world.setDynamicProperty(CONFIG.leaseKey,JSON.stringify({entityId:'n',token:'x',expiresAt:Date.now()-1000}));assert.equal(canUse(p,n,false),false);assert.equal(canUse(p,n,true),true);const state=JSON.parse(n.getDynamicProperty(CONFIG.npcStateKey));n.setDynamicProperty(CONFIG.npcStateKey,JSON.stringify({...state,expiresAt:Date.now()-CONFIG.maxGraceMs-1000}));assert.equal(canUse(p,n,true),false);});
 
 test('adapter: natural spawn works without experimental isSolid; rejects unsafe floors',()=>{
  for(const surface of ['minecraft:grass_block','minecraft:mycelium','minecraft:oak_slab','minecraft:water','custom:unknown','waterlogged']){
@@ -67,8 +67,8 @@ test('adapter: natural spawn works without experimental isSolid; rejects unsafe 
   dim.getTopmostBlock=({x,z})=>({location:{x,y:63,z},typeId:surface==='waterlogged'?'minecraft:grass_block':surface,isWaterlogged:surface==='waterlogged'});
   world.setDynamicProperty(CONFIG.spawnClockKey,CONFIG.spawnIntervalMinutes-1);
   withRandom(()=>spawnMinute(),()=>0);
-  const lease=world.getDynamicProperty(CONFIG.leaseKey);
-  assert.equal(!!lease,['minecraft:grass_block','minecraft:mycelium'].includes(surface),surface);
-  if(lease){const npc=world.getEntity(JSON.parse(lease).entityId);assert(npc);assert(npc.location.x>=24);}
+  const npc=[...world.entities.values()].find(e=>e.typeId===CONFIG.npcType);
+  assert.equal(!!npc,['minecraft:grass_block','minecraft:mycelium'].includes(surface),surface);
+  if(npc){assert(JSON.parse(npc.getDynamicProperty(CONFIG.npcStateKey)).naturalOrigin);assert(npc.location.x>=24);}
  }
 });

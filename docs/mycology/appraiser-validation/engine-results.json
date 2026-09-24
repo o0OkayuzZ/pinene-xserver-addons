@@ -1,0 +1,176 @@
+{
+  "client": "Windows Bedrock 26.51",
+  "date": "2026-09-23",
+  "latestPass": 11,
+  "latestFail": 1,
+  "latest": [
+    {
+      "name": "native spawn permits A + B and permanent A with unchanged balance config",
+      "pass": true,
+      "log": "engine-third-run.txt"
+    },
+    {
+      "name": "temporary natural death: four exact stacks",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "permanent natural death: four exact stacks",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "administrative named summon death: zero special loot",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "independent real timers retire only expired A and never pay loot",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "UI grace respects existing session and hard five-minute cap",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "legacy lease migrates and dies with four stacks",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "orphan legacy token is preserved once, including name permanence",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "native survival name tag consumed, name applied, v2 permanent and no appraisal session",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "actual world reopen preserves permanent name/origin and future deadline, expires old temporary",
+      "pass": true,
+      "log": "engine-second-run.txt"
+    },
+    {
+      "name": "real chunk unload/load preserves permanent and future, removes expired without loot",
+      "pass": false,
+      "error": "Error: source entities never unloaded before expiry",
+      "stack": "    at check (appraiser-engine.js:18)\n    at <anonymous> (appraiser-engine.js:157)\n    at record (appraiser-engine.js:36)\n    at unload (appraiser-engine.js:158)\n",
+      "log": "engine-final-run.txt"
+    },
+    {
+      "name": "native-named permanent after actual restart and travel still drops four stacks",
+      "pass": true,
+      "log": "engine-final-run.txt"
+    }
+  ],
+  "history": [
+    {
+      "name": "native spawn permits A + B and permanent A with unchanged balance config",
+      "pass": false,
+      "error": "Error: expected two natural spawns, got 0",
+      "stack": "    at check (appraiser-engine.js:11)\n    at <anonymous> (appraiser-engine.js:41)\n    at record (appraiser-engine.js:29)\n    at run (appraiser-engine.js:46)\n",
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "temporary natural death: four exact stacks",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "permanent natural death: four exact stacks",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "administrative named summon death: zero special loot",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "independent real timers retire only expired A and never pay loot",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "UI grace respects existing session and hard five-minute cap",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "legacy lease migrates and dies with four stacks",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "orphan legacy token is preserved once, including name permanence",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "native survival name tag consumed, name applied, v2 permanent and no appraisal session",
+      "pass": true,
+      "log": "engine-first-run.txt"
+    },
+    {
+      "name": "actual world reopen preserves permanent name/origin and future deadline, expires old temporary",
+      "pass": true,
+      "log": "engine-second-run.txt"
+    },
+    {
+      "name": "real chunk unload/load preserves permanent and future, removes expired without loot",
+      "pass": false,
+      "error": "Error: expired load remains",
+      "stack": "    at check (appraiser-engine.js:11)\n    at <anonymous> (appraiser-engine.js:126)\n    at record (appraiser-engine.js:29)\n    at unload (appraiser-engine.js:130)\n",
+      "log": "engine-second-run.txt"
+    },
+    {
+      "name": "native spawn permits A + B and permanent A with unchanged balance config",
+      "pass": false,
+      "error": "Error: expected two natural spawns, got 0",
+      "stack": "    at check (appraiser-engine.js:11)\n    at <anonymous> (appraiser-engine.js:41)\n",
+      "log": "engine-second-run.txt"
+    },
+    {
+      "name": "native spawn permits A + B and permanent A with unchanged balance config",
+      "pass": true,
+      "log": "engine-third-run.txt"
+    },
+    {
+      "name": "real chunk unload/load preserves permanent and future, removes expired without loot",
+      "pass": false,
+      "error": "Error: source chunk never unloaded",
+      "stack": "    at check (appraiser-engine.js:11)\n    at <anonymous> (appraiser-engine.js:137)\n    at record (appraiser-engine.js:29)\n    at unload (appraiser-engine.js:138)\n",
+      "log": "engine-third-run.txt"
+    },
+    {
+      "name": "real chunk unload/load preserves permanent and future, removes expired without loot",
+      "pass": false,
+      "error": "Error: source entities never unloaded before expiry",
+      "stack": "    at check (appraiser-engine.js:18)\n    at <anonymous> (appraiser-engine.js:156)\n    at record (appraiser-engine.js:36)\n    at unload (appraiser-engine.js:157)\n",
+      "log": "engine-fourth-run.txt"
+    },
+    {
+      "name": "real chunk unload/load preserves permanent and future, removes expired without loot",
+      "pass": false,
+      "error": "Error: source entities never unloaded before expiry",
+      "stack": "    at check (appraiser-engine.js:18)\n    at <anonymous> (appraiser-engine.js:157)\n    at record (appraiser-engine.js:36)\n    at unload (appraiser-engine.js:158)\n",
+      "log": "engine-final-run.txt"
+    },
+    {
+      "name": "native-named permanent after actual restart and travel still drops four stacks",
+      "pass": true,
+      "log": "engine-final-run.txt"
+    }
+  ],
+  "harnessErrors": [
+    {
+      "log": "engine-final-run.txt",
+      "line": "19:55:27[Scripting][warning]-[APPRAISER ENGINE] HARNESS_ERROR \"Error: remote safety platform unavailable\""
+    }
+  ],
+  "unloadConclusion": "Not verified: no proof of source entity unloading before deadline. Not a demonstrated product failure."
+}

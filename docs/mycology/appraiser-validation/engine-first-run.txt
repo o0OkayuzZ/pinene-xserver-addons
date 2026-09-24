@@ -1,0 +1,47 @@
+19:32:17[Scripting][verbose]-Plugin Discovered [APPRAISER Lifecycle TEST 20260923 BP] PackId [23e1e147-896a-40da-90b7-36dbfe0db717_1.2.0] ModuleId [684f6d49-952c-483e-9662-e6d5213d6b44]
+
+19:32:17[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server] from [2.7.0] to [2.10.0] requested by [APPRAISER Lifecycle TEST 20260923 BP - 1.2.0].
+
+19:32:17[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server] from [2.0.0] to [2.10.0] requested by [@minecraft/server-ui-bindings - 2.2.0].
+
+19:32:17[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server] from [2.0.0] to [2.10.0] requested by [@minecraft/server-ui-bindings - 2.0.0].
+
+19:32:17[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-bindings] from [2.7.0] to [2.10.0] requested by [@minecraft/server - 2.7.0].
+
+19:32:17[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-bindings] from [2.0.0] to [2.10.0] requested by [@minecraft/server - 2.0.0].
+
+19:32:17[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-ui-bindings] from [2.0.0] to [2.2.0] requested by [@minecraft/server-ui - 2.0.0].
+
+19:32:17[Scripting][verbose]-Plugin [APPRAISER Lifecycle TEST 20260923 BP] - promoted [@minecraft/server-ui] from [2.0.0] to [2.2.0] requested by [APPRAISER Lifecycle TEST 20260923 BP - 1.2.0].
+
+19:32:29[Scripting][warning]-[APPRAISER ENGINE] JOIN {}
+
+19:32:34[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"native spawn permits A + B and permanent A with unchanged balance config","pass":false,"error":"Error: expected two natural spawns, got 0","stack":"    at check (appraiser-engine.js:11)\n    at <anonymous> (appraiser-engine.js:41)\n    at record (appraiser-engine.js:29)\n    at run (appraiser-engine.js:46)\n"}
+
+19:32:34[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"temporary natural death: four exact stacks","pass":true}
+
+19:32:35[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"permanent natural death: four exact stacks","pass":true}
+
+19:32:35[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"administrative named summon death: zero special loot","pass":true}
+
+19:32:36[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"independent real timers retire only expired A and never pay loot","pass":true}
+
+19:32:36[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"UI grace respects existing session and hard five-minute cap","pass":true}
+
+19:32:36[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"legacy lease migrates and dies with four stacks","pass":true}
+
+19:32:36[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"orphan legacy token is preserved once, including name permanence","pass":true}
+
+19:32:37[Scripting][warning]-[APPRAISER ENGINE] READY_NATIVE_NAME {"npc":"-107374182378"}
+
+19:33:20[Scripting][warning]-[APPRAISER ENGINE] NATIVE_INTERACTION {"before":"minecraft:name_tag","name":"Appraiser Keeper"}
+
+19:33:20[Scripting][warning]-[APPRAISER ENGINE] INTERACTION_STATE {"state":"{\"version\":2,\"naturalOrigin\":true,\"spawnedAt\":1790159556758,\"expiresAt\":null,\"island\":false,\"permanent\":true,\"retired\":false,\"deathClaimed\":false}","ui":false}
+
+19:33:37[Scripting][warning]-[APPRAISER ENGINE] RESULT {"name":"native survival name tag consumed, name applied, v2 permanent and no appraisal session","pass":true}
+
+19:33:51[Scripting][warning]-[APPRAISER ENGINE] NATIVE_INTERACTION {"name":"Appraiser Keeper"}
+
+19:33:51[Scripting][warning]-[APPRAISER ENGINE] INTERACTION_STATE {"state":"{\"version\":2,\"naturalOrigin\":true,\"spawnedAt\":1790159556758,\"expiresAt\":null,\"island\":false,\"permanent\":true,\"retired\":false,\"deathClaimed\":false}","ui":true}
+
+19:34:43[Scripting][warning]-[APPRAISER ENGINE] READY_RESTART {"permanent":"-107374182378","expired":"-107374182377","future":"-107374182376"}

@@ -1,0 +1,216 @@
+
+> test:castle
+> node --experimental-loader ./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs --test behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/*.test.*
+
+(node:26208) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ captain commands, formation spacing, and sweep use scheduled telegraphs (4.0907ms)
+✔ arch curse summons are bounded and threshold field is once only (1.6434ms)
+✔ wraith fire, escape and safe-center burst (2.769ms)
+✔ iron general rage increases speed once; crimson transform delays shockwave (0.8463ms)
+✔ overseer uses only its two persisted abilities (0.8961ms)
+✔ debuffer projectiles, two distinct plague effects, clones and coordinate hazards (4.2523ms)
+✔ gold key flight unlocks once and cleanup cancels pending work (2.2198ms)
+✔ crimson key becomes gold before arrival; retired rooms never unlock (1.2341ms)
+✔ cone rejects rear and vertical targets (0.2938ms)
+(node:30012) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[ic-load-profile] waiting for chunks: ic_phase1_arrival_4
+[infinite_castle] ticking area load timed out: ic_phase1_arrival_4_lease_4 attempt=1/3 area=present fullyLoaded=false chunks=undefined/undefined bounds={"from":{"x":1000,"y":80,"z":1000},"to":{"x":1030,"y":110,"z":1030}}; retrying only this chunk lease
+[ic-load-profile] waiting for chunks: ic_phase1_arrival_4
+[infinite_castle] ticking area load timed out: ic_phase1_arrival_4_lease_5 attempt=2/3 area=present fullyLoaded=false chunks=undefined/undefined bounds={"from":{"x":1000,"y":80,"z":1000},"to":{"x":1030,"y":110,"z":1030}}; retrying only this chunk lease
+[ic-load-profile] waiting for chunks: ic_phase1_arrival_4
+✔ stable Block objects without preview isSolid allow authored floors and airborne projectiles (1.7914ms)
+✔ unloaded arrival waits before block validation and holds chunks through teleport (0.919ms)
+✔ blocked landing and validator exceptions release their temporary area (0.8678ms)
+✔ native creation promise cannot hang forever; capacity failure creates no area (32.264ms)
+(node:10600) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ occupied rooms, crosses and stairs lock only themselves; every stair approach fits (1204.9106ms)
+✔ socket rejection continues asynchronous search without expanding hard locks (627.6475ms)
+(node:28688) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ slot commands use relative BSL paths (1.4187ms)
+✔ each slot is drawn once; empty outcomes stay empty and native item metadata stays in place (7.4883ms)
+✔ all possible guaranteed positions cover all 27 slots without collisions (5.4679ms)
+✔ a missing guaranteed reward stays retryable instead of accepting a falsely successful command (1.389ms)
+✔ old broken receipts repair once while version 2 and 3 claimed rewards never refill (0.2895ms)
+✔ a partial failure resumes at the unfilled slot without redrawing earlier slots (0.5479ms)
+✔ a write followed by an exception is not repeated (0.282ms)
+✔ reloaded pending empty outcomes are not rerolled and incomplete draws finish (0.2899ms)
+✔ old interrupted inserts without a receipt retain foreign inventory and stop (0.4822ms)
+(node:5836) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ V4 uses exact distinct slot counts and keeps identical native items in separate slots (2.4092ms)
+✔ V4 draws stay in range over 10000 chests per tier, with every physical slot reachable (360.828ms)
+✔ stocked V2/V3/V4 receipts never refill, even if all loot was taken (0.2757ms)
+✔ V3 partial draws finish against V3 tables without adding V4 rewards (1.7316ms)
+✔ failed native write retries the same selected slot; successful write then throw never duplicates (1.0633ms)
+✔ restart retries an empty pending slot and advances occupied pending without duplication (0.9525ms)
+✔ empty successful command is rejected; protected chests and invalid receipts are not overwritten (1.5388ms)
+(node:25640) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+PHASE1_RUNTIME_OK: waves, arrival/exit grace, rewards, restart, run rebuild, cap45, anchor revision
+✔ behavior_packs\bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9\tests\phase1Runtime.test.js (2674.1126ms)
+(node:4764) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ absolute special probability boundaries (1.5314ms)
+✔ initial 15 rooms guarantee all encounters and a distant exit across seeds (3767.3695ms)
+✔ Hard Locks preserve role, retired elite is replaced, entrance is not regenerated (31.7069ms)
+✔ multiplayer snapshots stop at 4; exact base wave rosters and key only in wave 2 (0.7744ms)
+✔ wave thresholds include pending and scaling, exclude summons; timeout retains wave 1 (0.4736ms)
+✔ instance and receipt persist only for retained instances; restart recovers without reroll (0.6316ms)
+✔ all participants must normally exit; disconnect/death/restart leave participation active (0.2959ms)
+✔ socket contracts reject open/sealed, floor, width, landing and direction changes (58.738ms)
+✔ three gardens and two vaults have distinct interiors confined away from sockets (2.3079ms)
+(node:33480) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ transfer reserves arrival grace immediately before teleport and finishes once (3.1378ms)
+✔ death during exit animation cancels teleport and never records a normal exit (0.5573ms)
+(node:30556) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[ic-koto] start=scenery listeners=2
+[ic-koto] start=core listeners=2
+[ic-koto] start=scenery listeners=1
+✔ scenery uses each listener's position at mutation time; core remains close and clear (2.9564ms)
+✔ disconnecting listener does not suppress others, and disabled or wrong-dimension cues stay silent (0.4563ms)
+(node:32616) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ elapsed clock advances with frozen daylight and ignores time changes (3.1443ms)
+✔ clock resumes after reload with a reset server tick and saved deadline (0.8521ms)
+✔ multiple reads in one tick do not advance the clock or write repeatedly (0.4381ms)
+[ic-koto] start=scenery listeners=1
+[ic-koto] start=scenery listeners=1
+[ic-koto] start=scenery listeners=1
+[ic-koto] start=core listeners=1
+[ic-koto] start=scenery listeners=1
+[ic-koto] start=scenery listeners=1
+[ic-koto] start=scenery listeners=1
+[ic-koto] start=core listeners=1
+[ic-koto] start=scenery listeners=1
+✔ real manager updates scenery with koto at sampled intervals under fixed daylight under Always Day (65.5431ms)
+✔ player safety deferral still retries after 20 seconds without a false start sound (9.0779ms)
+[ic-koto] start=scenery listeners=1
+✔ checking a pending deadline does not redraw it; completion schedules the next draw once (33.0467ms)
+✔ no players means no background or core reconstruction (24.2487ms)
+✔ manager recovers before inactive run, absent players or missing entrance checks (3.8481ms)
+(node:14668) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"kind":"core","samples":100000,"mean":749.8930705000015,"sigma":49.298299029510595,"bins":[3509,23784,45516,23741,3450],"middleSigma":68402,"endpoints":0}
+{"kind":"scenery","samples":100000,"mean":239.9571940000031,"sigma":19.719265784868202,"bins":[3505,23765,45514,23762,3454],"middleSigma":68450,"endpoints":1}
+✔ 100,000 seeded draws per timer stay bounded, symmetric and bell shaped (102.217ms)
+✔ out-of-range Gaussian values are rejected and sampled again, without boundary clipping (1.2577ms)
+✔ broken RNG has a bounded fallback rather than blocking a server tick (1.059ms)
+(node:28716) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ recording accepts creative and spectator observers without changing game mode (1.5212ms)
+✔ recording stops when a survival/adventure player joins or an observer changes mode (0.4204ms)
+✔ recording permission cannot leak into ordinary spectator-only full rebuilds (0.2466ms)
+✔ rebuild_record command routes the creative player to the full core and scenery builder (8.3703ms)
+✔ recording command requires a creative player in the castle and serializes with other jobs (6.0737ms)
+✔ existing rebuild_all command keeps spectator-only mode (2.0785ms)
+(node:31032) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Trial pot excludes Heavy Core while preserving keys, bottle and Wind Burst book (23.9455ms)
+✔ audit accounts for every BSL table and every direct progression-item source (1793.4531ms)
+(node:6160) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ foreign legacy plan is diagnosed but never opened or cleared (33.8553ms)
+✔ normal partial rebuild commits COMPLETE and both runtimes (18.6368ms)
+✔ percent25 failure automatically restores old plan (11.9044ms)
+✔ percent50 failure automatically restores old plan (5.8199ms)
+✔ place failure automatically restores old plan (6.0157ms)
+✔ ticking failure automatically restores old plan (9.3219ms)
+✔ descriptor failure automatically restores old plan (111.7925ms)
+✔ activateSource failure automatically restores old plan (6.3313ms)
+✔ activateEncounters failure automatically restores old plan (8.4123ms)
+✔ PREPARING restart without entrance runtime prioritizes old descriptor (16.7862ms)
+✔ REBUILDING restart without entrance runtime prioritizes old descriptor (30.7348ms)
+✔ VERIFYING restart without entrance runtime prioritizes old descriptor (7.6098ms)
+✔ COMMITTING restart without entrance runtime prioritizes old descriptor (32.588ms)
+✔ RECOVERING restart without entrance runtime prioritizes old descriptor (15.788ms)
+✔ failure during recovery remains recoverable on next invocation (20.6951ms)
+✔ 2 players retain occupied structure through failure and recovery (14.5875ms)
+✔ 3 players retain occupied structure through failure and recovery (14.3051ms)
+✔ 4 players retain occupied structure through failure and recovery (12.452ms)
+✔ loaded flag cannot turn native chunk currently loaded and ticking failure into success (2.9151ms)
+✔ persisted state descriptors recover without detailed descriptor or entrance runtime (3.8744ms)
+✔ two authored plans with room roles fit the persistent reconstruction property budget (211.7368ms)
+✔ unchanged live layout clears its unused rollback journal without rebuilding (2.9318ms)
+(node:6904) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[ic-phase1] spawn vanguard: Error: injected spawn failure
+[ic-combat-quarantine] {"roomInstanceId":"ic-mudwvh0v:9","origin":{"x":91081,"y":179,"z":1148},"wave":1}
+✔ real runtime preserves killed slots through dormant and process reload (586.652ms)
+✔ decorated exit repairs 1 missing tiles only and pauses during reconstruction (113.5957ms)
+✔ decorated exit repairs 25 missing tiles only and pauses during reconstruction (81.6286ms)
+✔ real placement events cancel adjacent chest/hopper and diagonal placements but allow distant blocks (82.2095ms)
+✔ planned reconstruction busy state does not show recovery UI or request recovery (82.841ms)
+✔ ready=false shows action bar at 3 seconds and requests only owner recovery at 20 seconds (66.2ms)
+✔ offline A plus exited B ends after 60 seconds; returning A is sent through the next-run handler (78.6492ms)
+✔ return inside grace resumes the same run and resets absence timer (69.8884ms)
+✔ forced spawn failures get one queue repair then room quarantine without endless retry (169.9877ms)
+✔ ready watchdog resets its elapsed timer after readiness returns (0.5762ms)
+✔ creative observer in an ended run never gets a false recovery notice, including after reload (69.2077ms)
+✔ an ended run with an actual recovery journal still notifies and requests its owner (55.8426ms)
+✔ idle watchdog clears stale timers before the next active run (0.156ms)
+✔ full visual rebuild releases old encounter locks after snapshot and can restore on failure (65.2071ms)
+(node:32588) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ new rewards increase slots modestly and never exceed chest capacity (3.4273ms)
+✔ V4 interrupted receipts retain their lower slot count and resume without extra rolls (0.2605ms)
+✔ empty pending V4 slot is retried across reload (0.2824ms)
+✔ claimed old and new rewards never refill (0.3354ms)
+✔ V5 failure resumes without duplicating delivered slots; invalid receipts are retained (1.5138ms)
+✔ partially issued V3 reward keeps its legacy path (0.6527ms)
+(node:4308) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+HEALING_GARDEN_OK: timing, bounds, multiplayer, max health, death, mutation, reload, migration, ordinary combat
+✔ behavior_packs\bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9\tests\sourceHealingGarden.test.js (1399.2883ms)
+(node:23424) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+ROOM_MATERIALS_OK plans=128 rare=64 protected=4
+✔ behavior_packs\bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9\tests\sourceRoomMaterials.test.js (9911.8375ms)
+(node:11648) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+TREASURE_VAULT_OK: loot, book, multiplayer, no enemies/healing, no refill, repair, crash recovery, migration; gardens=70 vaults=41
+✔ behavior_packs\bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9\tests\sourceTreasureVault.test.js (7796.1307ms)
+(node:10588) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ probe covers interior chunks, vertical sections and negative coordinates (2.7506ms)
+✔ readable bounds can complete despite a stuck native promise and retain lease (0.7534ms)
+✔ unreadable bounds never complete; bounded retries clean every attempt (1.0258ms)
+✔ a fresh request can recover without rebuilding completed work (0.4066ms)
+✔ native errors and insufficient capacity fail cleanly (0.459ms)
+(node:27016) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./")); register("./behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/tests/minecraft-server-encounter-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ first upper-tier combat encounter spawns despite failing optional lighting writes (133.5305ms)
+ℹ tests 115
+ℹ suites 0
+ℹ pass 115
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11243.4636

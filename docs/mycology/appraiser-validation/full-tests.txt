@@ -1,0 +1,822 @@
+
+> test
+> npm --prefix tools/mycology test && node --test tests/golden_foods/*.test.mjs && node --test tests/grave-policy.test.mjs tests/gf-release.test.mjs && node --test tests/bomb-crossbow.test.mjs tests/sniper-crossbow.test.mjs && npm run test:pinenite && npm run test:castle
+
+
+> pinene-mycology-codex@1.3.0-handoff test
+> node --test tests/core.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/adapters.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/field-guide.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/ui.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/reveal.test.mjs && node --test tests/nf-state.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/nf-runtime.test.mjs && node --experimental-loader ./tests/mock-loader.mjs --test tests/npc.test.mjs
+
+✔ 35 immutable species, 15 red / 20 brown (3.7958ms)
+✔ 100 nether specimens, exact families and extensible identifiers (1.1621ms)
+✔ weights 512..1, reject rarity zero and 11 (3.809ms)
+✔ exact current sums: 2899 and 3183 (0.3573ms)
+✔ explicit NF weights override exponential rarity (1.0301ms)
+✔ red: exhaustively enumerate every integer ticket (4.8071ms)
+✔ brown: exhaustively enumerate every integer ticket (0.9213ms)
+✔ single draw boundaries and invalid RNG (0.57ms)
+✔ all batch sizes conserve counts and aggregate duplicates (7.6029ms)
+✔ first existing partial stack, not fullest or combined stacks (0.649ms)
+✔ inventory plan consumes one exact stack and leaves the next (0.5202ms)
+✔ full inventory preserves unrelated items and emits grouped overflow (0.3585ms)
+✔ matching plain stacks merge, named stacks are not overwritten (0.3697ms)
+✔ changed source / nonconserved output fails before mutation (0.2981ms)
+✔ segmented progress addresses 0,29,30,31,59,60,90 independently (0.5519ms)
+✔ one progress write per touched word and no duplicate NEW (0.4021ms)
+✔ food/effect boundaries: specimens cannot eat; puffball is crush (0.4512ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 220.3252
+(node:31712) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./")); register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ all NF species can be appraised in their family and persist independent discoveries (18.3489ms)
+✔ adapter: one 37-stack becomes 37 results, next 64 untouched (0.7868ms)
+✔ adapter: invalid NPC before commit cannot consume input (0.4387ms)
+✔ adapter: synchronous slot-write exception rolls back cloned inventory (17.5299ms)
+✔ adapter: failed overflow spawn retains receipt, no re-roll; retry delivers once (0.5139ms)
+✔ adapter: crash-ambiguous inflight receipt is quarantined (0.2282ms)
+✔ adapter: legacy masks migrate without deleting old data (0.2021ms)
+✔ adapter: bad saved progress is rejected, not zeroed (0.3335ms)
+✔ adapter: poison is persistent before delay; repeated use cannot defer it (0.5246ms)
+✔ adapter: R06 fixed health cost then strength; lethal cost gives no buff (0.4102ms)
+✔ eating has no cooldown call or shared lock; each consecutive dose applies (0.166ms)
+✔ adapter: normal/admin NPC is usable but drops no loot on death (0.3ms)
+✔ adapter: active natural death gives exactly four 64-stacks once (0.3783ms)
+✔ adapter: expired migrated natural token is removed without loot (0.5316ms)
+✔ adapter: unloaded unexpired natural lease is preserved on restart (0.3255ms)
+✔ adapter: grace only permits an existing session, then hard expires (0.2386ms)
+✔ adapter: natural spawn works without experimental isSolid; rejects unsafe floors (1.2838ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 335.0225
+(node:23152) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./")); register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[Pinene Mycology] field guide: Error: expected closed form
+    at file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/tests/field-guide.test.mjs:28:36
+    at ActionFormData.show (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/tests/mock-forms.mjs:8:115)
+    at encyclopedia (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/pack/BP/scripts/mycology/ui.js:97:29)
+    at openFieldGuide (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/pack/BP/scripts/mycology/field_guide.js:11:12)
+    at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/tests/field-guide.test.mjs:29:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Test.run (node:internal/test_runner/test:1409:7)
+    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+✔ portable guide displays only its reader discoveries; no NPC or item progress required (4.4139ms)
+✔ portable guide rejects duplicate opens and NPC lock; releases its lock on close/error (1.5288ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 200.7046
+(node:10696) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./")); register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ NF encyclopedia pages display every approved name and matching icon (3.9806ms)
+✔ result UI: 1 items, NEW, committed receipt, no next stack (5.4305ms)
+✔ result UI: 37 items, NEW, committed receipt, no next stack (1.313ms)
+✔ result UI: 64 items, NEW, committed receipt, no next stack (1.5087ms)
+✔ next batch button displays first stack 12, not total (1.2438ms)
+✔ next batch button displays first stack 64, not total (0.9157ms)
+✔ unknown encyclopedia entries hide name and rarity, including after selection (0.6324ms)
+✔ all ten rarity colors match in known list and detail; formatting resets (4.8337ms)
+✔ mixed batch is sorted by rarity, with highest banner and distinct NEW count (16.0063ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 251.9288
+(node:28436) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./")); register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+[Pinene Mycology] reveal sound: Error: expected missing sound
+    at p.playSound (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/tests/reveal.test.mjs:88:65)
+    at revealAppraisal (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/pack/BP/scripts/mycology/reveal.js:124:20)
+    at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/tests/reveal.test.mjs:89:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Test.run (node:internal/test_runner/test:1409:7)
+    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+[Pinene Mycology] reveal presentation: Error: expected screen failure
+    at p.onScreenDisplay.setTitle (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/tests/reveal.test.mjs:95:68)
+    at revealAppraisal (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/pack/BP/scripts/mycology/reveal.js:120:15)
+    at batchLoop (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/pack/BP/scripts/mycology/ui.js:204:30)
+    at openAppraiser (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tools/mycology/pack/BP/scripts/mycology/ui.js:295:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+✔ cinematic is bounded, deterministic, uses actual species, and has high-rarity musical ending (3.2516ms)
+✔ personal preferences cycle full/quick/off and sound independently, persisted per player (0.7374ms)
+✔ full reveal plays personal sound and finishes cleanly (4.0741ms)
+✔ cancel on sneak with no trailing cues (0.6001ms)
+✔ cancel on leave with no trailing cues (0.3581ms)
+✔ cancel on death with no trailing cues (0.2454ms)
+✔ cancel on dimension with no trailing cues (0.8125ms)
+✔ cancel on new session with no trailing cues (0.2691ms)
+✔ mute retains animation, OFF is instant; missing sound does not block result (6.0294ms)
+✔ real appraisal remains committed through full (19.3569ms)
+✔ real appraisal remains committed through skip (1.1956ms)
+✔ real appraisal remains committed through display failure (1.4675ms)
+✔ real appraisal remains committed through disconnect (0.7963ms)
+✔ real appraisal remains committed through new session (0.9115ms)
+✔ next-stack amount is refreshed after animation, not captured before it (1.5941ms)
+✔ menu preference buttons do not appraise and survive reopening (2.1371ms)
+✔ all species have themed musical identities and every 64-stack stays within 15–25 seconds (8.7291ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 283.9642
+✔ official identities stay inactive until performance is approved; 101 has no ceiling (2.5887ms)
+✔ exactly the approved 21 species may gain script fatality within 021–100 (2.8391ms)
+✔ fatal lottery runs once at severe crossing; re-eating cannot reset it (0.5518ms)
+✔ milk with ten seconds remaining cancels death and cleans every state (1.1571ms)
+✔ failed draw never rerolls; reinfection may draw again (0.5034ms)
+✔ warnings are identical for winning and losing fatal draws (0.8982ms)
+✔ save/restore advances only online time and preserves fatal deadline (0.6212ms)
+✔ death reset leaves no latent state, ability data or fatal appointment (0.3222ms)
+✔ stacks and gauges clamp to definition maximum and 0–100 (0.4558ms)
+✔ suppressed symptoms return for current phase while infection keeps advancing (0.6293ms)
+✔ recovery phase and duration expire naturally, without perpetual worsening (0.2116ms)
+✔ interaction registry removes harmful and beneficial bacteria alike (0.4528ms)
+✔ coexistence, immune suppression and amnesia are exposed to approved triggers (0.4965ms)
+✔ HDV cannot draw fatality without HBV even when its severe predicate is true (0.3186ms)
+✔ malformed persisted state is rejected before replacing good state (0.3496ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.7903
+(node:32068) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./")); register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ single 20-tick scheduler for active states; no empty player/property records (30.9607ms)
+✔ reconnect restores online duration; damage dispatch only affects active states (0.5399ms)
+✔ milk and respawn events clear persisted state without affecting other player (0.548ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 229.3916
+(node:3348) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/mock-loader.mjs", pathToFileURL("./")); register("./tests/mock-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ spawn cadence remains 15 active minutes, countdown persists without an offline burst (2.44ms)
+✔ normal chance boundary, lifetime and safe 24–48 block radius (0.5945ms)
+✔ island chance boundary, lifetime and safe 24–48 block radius (0.3019ms)
+✔ each lottery spawns at most one, existing temporary and permanent NPCs never block it (0.7878ms)
+✔ independent timers retire A without removing B; distance alone never retires either (0.7293ms)
+✔ active UI allows only existing sessions and never more than five minutes grace (0.4461ms)
+✔ ending UI during grace retires only that NPC at the next bounded check (0.3637ms)
+✔ temporary natural actual death drops four exact stacks once (1ms)
+✔ permanent natural actual death drops four exact stacks once (0.2657ms)
+✔ actual death during a delayed expiry callback still earns four stacks (0.2978ms)
+✔ summon, egg and test individuals, including named ones, have no lifetime or special drops (0.2827ms)
+✔ naming disables expiry, preserves origin and token, and remains permanent through renames (0.2411ms)
+✔ name tag without an actual name does not grant permanence or open a form (0.1796ms)
+✔ consumed last name tag bypasses UI; bare hand and ordinary item still open appraisal (12.3098ms)
+✔ JSON permits native naming and excludes name tags from the trade interaction (0.7079ms)
+✔ restart rebuilds each remaining deadline from persisted entity data (0.3746ms)
+✔ permanent restart retains origin and four-stack death reward with stale v1 lease (0.3898ms)
+✔ restart between native naming and JS callback still recognizes the saved name (0.3681ms)
+✔ temporary unload removes wakeup; load after deadline reconciles safely (0.2ms)
+✔ permanent unload removes wakeup; load after deadline reconciles safely (0.1816ms)
+✔ unloaded entity at wakeup is not treated as dead; future load restores remaining timer (0.2687ms)
+✔ legacy matching lease migrates once, preserving deadline, island and original world data (0.3576ms)
+✔ unloaded legacy lease survives new spawns and later migrates independently (0.3358ms)
+✔ legacy orphan is preserved for one bounded recovery stay, not deleted as stale (0.1873ms)
+✔ named orphan never undergoes stale removal and retains natural death reward (0.1852ms)
+✔ corrupt legacy lease does not delete an orphan or block other loaded NPCs (0.499ms)
+✔ repeated load notifications keep one timer per NPC; runtime never scans dimensions (0.3565ms)
+✔ an invalid saved v2 state is preserved and does not block other startup deadlines (0.5152ms)
+✔ all four edited runtime files exactly match the tested authoring BP (2.3083ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 257.1854
+✔ carrot cleans blindness/darkness and prevents only the declared effects for 480s (2.0592ms)
+✔ potato prevents poison, halves incoming hunger/nausea, survives serialization (0.2764ms)
+✔ poison conversion obeys cooldown and does not invent immunity to hunger (0.2507ms)
+✔ non-counter food adds no feature (0.1642ms)
+✔ four identifiers, eight ingots/blocks, no edible component, matching enchanted texture and glint (5.9637ms)
+✔ projectile definitions have zero damage, zero knockback, no hatching and bounded lifetime (1.455ms)
+✔ homing selects smallest angle, excludes owner, out-of-range and occluded targets (0.5096ms)
+✔ homing preserves speed, turns at most 6 degrees and handles zero/opposite vectors (1.8299ms)
+✔ absolute and relative coordinate parsing rejects commands, NaN and infinities (0.6587ms)
+✔ blink ranges are 24/64/96 and coordinate ranges are 256/256/1024 (0.2354ms)
+✔ clear ground reaches limit; walls and one-block ceilings block blinks (10.6453ms)
+✔ safe destinations refuse lava, magma, void, unloaded chunks and unknown floors (0.4515ms)
+✔ long coordinate paths cannot skip one-block walls, including diagonal corner clipping (2.1839ms)
+✔ coordinate destination uses nearby safe space but never bypasses walls or distance limits (7.7762ms)
+✔ egg consumes exactly once and buffs players only, never mobs or double-hit overlap (6.1335ms)
+✔ enchanted egg exact buffs, no resistance/fire resistance, no amplifier stacking (1.5822ms)
+✔ projectile disappears on blocks and after lifetime; missing homing target retains forward velocity (2.7366ms)
+✔ ordinary chorus use blinks and consumes only on success without UI; failed teleport never consumes (11.2331ms)
+✔ only enchanted sneaking opens UI; cancel and changed held item are nonconsuming (11.4404ms)
+✔ End void anchor saves pre-warp safe point for 60 seconds, rescues once before death, clears on dimension change (23.9192ms)
+✔ expired anchors do not rescue (8.8422ms)
+✔ aimed entity and block shorten enhanced blink to the near side of the target (7.5376ms)
+✔ coordinate UI accepts relative values; invalid input and dimension change never consume (3.1203ms)
+✔ homing discards dead target and relocks a visible player; swept-wall hits never grant buffs (1.5311ms)
+✔ guide includes four new non-edible/utility entries and never restores ordinary apple stew (4.3044ms)
+✔ legacy consumables have Japanese names, one effect owner, native container return and matching guide nutrition (4.056ms)
+✔ milk and stew consume once, have no regeneration V, do not clear other buffs or touch inventory (0.4945ms)
+✔ golden food guide has the requested glint (0.9652ms)
+✔ all 19 golden guide detail screens render names, chemistry, design rationale and real effect values (27.434ms)
+✔ seconds converted once and level II remains amplifier 1 (2.7911ms)
+✔ weaker food cannot weaken or extend a stronger external effect (0.5581ms)
+✔ same level refresh uses max remaining/new, never sum (0.2171ms)
+✔ new stronger food does not inherit lower-tier long duration (0.1937ms)
+✔ infinite same-level effect is not shortened (0.2318ms)
+✔ invalid settings cannot emit invalid addEffect calls (0.2278ms)
+✔ different foods coexist without amplifier sum or global cooldown (0.6451ms)
+✔ unknown items and nonfood wheat never apply buffs (0.2278ms)
+✔ one completed meal applies each basic effect once without inventory writes (0.2337ms)
+✔ declared debuff counters are enabled while unrelated capabilities remain gated (1.3072ms)
+✔ UI uses data seconds; night vision eight minutes is level I (1.6045ms)
+✔ gated cleanse prototype only removes allowlisted effects (0.2385ms)
+✔ gated one-shot shortening keeps amplifier and shortens once (0.217ms)
+✔ invalidating native Effect handle is not read after removal (0.2226ms)
+✔ failed gated shortening restores the captured duration (0.2475ms)
+✔ registration has one onConsume callback; only guide onUse opens UI (2.4158ms)
+ℹ tests 45
+ℹ suites 0
+ℹ pass 45
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 278.5505
+(node:17660) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/gf/core/CardRegistry.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\はーにゃ。\pinene-appraiser-work\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ normal world keeps configuration without starting combat or writing a battle (2.2142ms)
+✔ repeated use and reshuffles preserve all sixteen card copies (5.6127ms)
+✔ failed synchronous effect releases the lock and preserves card ownership (1.1353ms)
+✔ corrupt ownership data is not silently overwritten (0.2982ms)
+✔ current inventory overrides stale empty tag (3.2344ms)
+✔ boots alone produce a tomb (0.341ms)
+✔ fallback recognizes the actual boots tag (0.5666ms)
+✔ empty inventory policy remains configurable (0.214ms)
+✔ castle policy preserved even when empty graves enabled (0.1838ms)
+✔ duplicate death stays blocked (0.1651ms)
+✔ respawn clears incomplete death record, preserving unrelated tags (1.032ms)
+✔ respawn clears all old coordinate records (0.2232ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.4224
+✔ all Bomb Crossbow depths use dedicated bomb bolts (6.3105ms)
+✔ Bomb bolt keeps direct-hit and crafting contract (1.8579ms)
+✔ awakening depth scales real terrain explosion and never creates fire (1.5448ms)
+✔ awakened RP visuals reuse the three legacy System Crossbow depth assets (2.5717ms)
+✔ Pure Crossbow Soul awakening is handled by the shared crossbow forge and preserves state (0.9686ms)
+✔ restored Pure Crossbow Soul texture exists as a real PNG (0.7545ms)
+✔ Bomb Crossbow pack versions and dependency stay synchronized (1.4973ms)
+✔ all eight sniper variants exist with the agreed charge, durability, ammo and depth (6.1839ms)
+✔ sniper projectile is fast, low-gravity and zero-spread (1.2714ms)
+✔ scope mode is sneak-held, camera FOV 20 and uses a conditional spyglass-style HUD (2.061ms)
+✔ crossbow forge supports sniper, TNT and awakening in either order while preserving item state (0.5961ms)
+✔ sniper normal arrows are replaced by precision projectiles; sniper TNT keeps bomb bolts (0.4115ms)
+✔ sniper TNT variants share the Bomb Crossbow 4/5/6/7 real explosion contract (0.4195ms)
+✔ RP atlas, attachables and projectile client entity cover all sniper variants (6.4426ms)
+✔ sniper pack versions, RP dependency and server-ui dependency stay synchronized (1.4081ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 160.225
+
+> test:pinenite
+> node --test tests/pinenite/*.test.mjs
+
+warning: in the working copy of 'behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/entities/mushroom_appraiser.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/data/validation.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/docs/ACCEPTANCE_TESTS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/docs/TEST_OUTPUT.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/docs/VALIDATION_REPORT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/pack/BP/entities/mushroom_appraiser.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/pack/BP/scripts/mycology/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/entities/mushroom_appraiser.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/data/validation.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/docs/ACCEPTANCE_TESTS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/docs/TEST_OUTPUT.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/docs/VALIDATION_REPORT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/pack/BP/entities/mushroom_appraiser.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/pack/BP/scripts/mycology/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: exhaustive rename detection was skipped due to too many files.
+warning: you may want to set your diff.renameLimit variable to at least 1916 and retry the command.
+✔ all armor values and complete Parcanite components inherited, IDs preserved (10.0955ms)
+✔ original four geometries and eight PNGs preserved against investigated main (941.547ms)
+✔ glow is additive core/crystal subset with original UVs, pivots and textures (11.1391ms)
+✖ entity definitions remain unchanged after the accepted ownership cleanup (161.3686ms)
+✔ BP requires stable 2.6.0 and 26.40; original API consumers and shared renderer untouched (190.5471ms)
+✔ each Molang expression has complete scopes and preserves original statements (244.2991ms)
+✔ invisible repair vault has resolving render and geometry references (2.097ms)
+✔ normal block sounds and monstrosity reload resolve (3.087ms)
+✔ all Mycology item icons and appraiser model assets exist (31.151ms)
+✔ dragon relic uses its modern block material without a legacy texture override (1.313ms)
+✔ Dungeons crossbow controller resolves every model, material and texture alias (9.7167ms)
+✖ both blue diamond recipes have unlock conditions without changing their output (1.7416ms)
+✔ all native Pine CDs participate in the music-disc recipe tag (11.2441ms)
+✔ effect events for unloaded players never read dynamic properties (2.4362ms)
+✖ figure pickup calls the active tag helper, not the removed raid prototype (5.052ms)
+warning: in the working copy of 'behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/entities/mushroom_appraiser.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/data/validation.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/docs/ACCEPTANCE_TESTS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/docs/TEST_OUTPUT.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/docs/VALIDATION_REPORT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/pack/BP/entities/mushroom_appraiser.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/pack/BP/scripts/mycology/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mycology/package.json', LF will be replaced by CRLF the next time Git touches it
+✔ outline declares PBR compatibility and Deathnerite requires its current version (6.2101ms)
+✔ every global entity material catalog declares PBR compatibility (1.7067ms)
+✔ PineCD declares PBR compatibility and its behavior pack requires that version (2.3096ms)
+✔ all compatibility entities retain the full original client definition (169.959ms)
+✔ outline geometry aliases and render passes resolve, including small variants and player (57.5449ms)
+✔ wearer armor outline includes every original cube with identical bones and UVs (15.9856ms)
+✖ Zombie Gear and Crossbow content remains unchanged after ownership consolidation (259.7541ms)
+✔ outline material retains depth testing and texture alpha, with no global material override (3.4097ms)
+✔ client schema supports conditional render passes and contains no obsolete controller list (39.3748ms)
+✔ legacy-only bone fields are never emitted in modern geometry (3.2197ms)
+✔ sync animation omits the invalid empty bones object in both active packs (1.0606ms)
+✔ player initializes the spear flag used by the loaded root animation controller (0.6185ms)
+✖ parcanite sword uses native hand animation with its authored icon and damage (16.9852ms)
+✔ player outline supplies both legacy and current first person swing factors (1.8949ms)
+✔ release preflight handles a new RP (validates without writes) (249.2832ms)
+✔ release preflight handles a new RP (rejects mismatched registration) (210.8898ms)
+✔ base health and armor spec (2.877ms)
+✔ analysis thresholds apply on hits 2, 4, 6, cap at 1.30 (0.5111ms)
+✔ only direct player-owned source causes qualify; DOT and synthetic excluded (0.2838ms)
+✔ adaptation 0/10/20/30 percent; cooldown throttles learning only (0.4451ms)
+✔ learning cooldown is independent for attackers (0.3392ms)
+✔ memory remains through 30s; steps at 40/50/60s; repeated decay is idempotent (0.3304ms)
+✔ combat refreshes decay; one remaining hit also disappears at 60s (0.2021ms)
+✔ symbiosis requires full equipment and both stage III, no duplicate multiplier (0.2648ms)
+✔ unlimited independent entity IDs (including same type), 15 second expiry; proximity never refreshes (3.818ms)
+✔ decay pauses while linked, damage refresh does not require learning cooldown (0.4807ms)
+✔ raw 20 gives normal regen 5 even when adaptation reduces to 14 (0.7523ms)
+✔ linked raw 20 gives 7; reflects raw 30, zero incoming and no new regen (0.2876ms)
+✔ deterministic uniform trials hit precisely 10 percent boundary (1.7116ms)
+✔ six second linear regen finishes; total pending is unbounded (13.8443ms)
+✔ low HP linked speed doubles ALL existing reservations; changes back above half (0.4257ms)
+✔ overheal consumed immediately, never returned after later damage (0.2864ms)
+✔ missing parts cannot use their abilities (0.177ms)
+✔ synthetic guard covers reentry, delayed override, exceptions, then permits genuine hit (0.4542ms)
+✔ frame samples actual bounding box edges for arbitrary dimensions (1.5731ms)
+✔ leap requires grounded sneak, seven second cooldown and no airborne reuse (0.2446ms)
+✔ runtime stores pre-adaptation value, mock armor does not contaminate reservations (9.2103ms)
+✔ two fully linked players: no reflection recursion (synchronous) (2.9341ms)
+✔ two fully linked players: no reflection recursion (delayed) (2.3544ms)
+✔ reflection on an unarmored attacker sends original 30, not adapted 21 (3.8793ms)
+✔ cancelled, zero and unconfirmed hits cannot learn or regenerate (8.6072ms)
+✔ interleaved before/after from different attackers preserves both targets and regen reservations (3.834ms)
+✔ projectile direct owner counts; summon, DOT and synthetic cannot advance analysis (2.3074ms)
+✔ attributed boss explosion learns adaptation but cannot count as direct analysis; DOT cannot refresh (3.7383ms)
+✔ lethal hit never queues regeneration or revives (4.6424ms)
+✔ max HP effect level follows 4/8/12/20 and is removed on unequip (2.5015ms)
+✔ removing chest or helmet clears relevant memory and symbiosis; leggings clear regen (1.9833ms)
+✔ death, leave, invalid target and dimension change clean independent state (2.0588ms)
+✔ jump input uses impulse (engine collision), cannot repeat in air (8.4182ms)
+✔ wearer pulse has a 30 tick period, no target stacking, and a 10 tick fade (4.0846ms)
+✔ enemy outline follows the model channel without sampling the collision box (5.1325ms)
+✔ two owners emit one merged enemy outline; removing one owner preserves the other (8.6698ms)
+✔ outline resets outside render range and on dimension change without erasing remote memory (6.2368ms)
+✔ stage I model outline really switches off between flashes (3.1655ms)
+ℹ tests 69
+ℹ suites 0
+ℹ pass 64
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1458.0158
+
+✖ failing tests:
+
+test at tests\pinenite\assets.test.mjs:56:1
+✖ entity definitions remain unchanged after the accepted ownership cleanup (161.3686ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tests/pinenite/assets.test.mjs:63:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\pinenite\content-log-regressions.test.mjs:22:1
+✖ both blue diamond recipes have unlock conditions without changing their output (1.7416ms)
+  Error: ENOENT: no such file or directory, open 'C:\Users\はーにゃ。\pinene-appraiser-work\behavior_packs\bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639\recipes\blue_diamond_apple.recipe.json'
+      at readFileSync (node:fs:483:20)
+      at text (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tests/pinenite/content-log-regressions.test.mjs:6:19)
+      at read (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tests/pinenite/content-log-regressions.test.mjs:7:30)
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tests/pinenite/content-log-regressions.test.mjs:24:24)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'C:\\Users\\はーにゃ。\\pinene-appraiser-work\\behavior_packs\\bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639\\recipes\\blue_diamond_apple.recipe.json'
+  }
+
+test at tests\pinenite\content-log-regressions.test.mjs:55:1
+✖ figure pickup calls the active tag helper, not the removed raid prototype (5.052ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /function pineHasTag\s*\(/. Input:
+
+  'import "./gf/index.js";\r\n' +
+    'import "./mycology/index.js";\r\n' +
+    'import { world, ItemStack, system, BlockPermutation } from "@minecraft/server";\r\n' +
+    'import { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";\r\n' +
+    'import "./meitetsu_chest.js";\r\n' +
+    '\r\n' +
+    'function safeSubscribe(eventSignal, handler) {\r\n' +
+    '    if (!eventSignal || typeof eventSignal.subscribe !== "function") return;\r\n' +
+    '    eventSignal.subscribe(handler);\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    '// ============================================================\r\n' +
+    '// ピネ Waystone\r\n' +
+    '// アイテムを使うと、共有地点の登録・移動・削除メニューを開く。\r\n' +
+    '// Simple Waystone の識別子やスクリプトには依存しない独自実装。\r\n' +
+    '// ============================================================\r\n' +
+    '\r\n' +
+    'const PINE_WAYSTONE_COMPONENT_ID = "pinene:waystone_menu";\r\n' +
+    'const PINE_WAYSTONE_DATA_KEY = "pinene:waystones_v1";\r\n' +
+    'const PINE_WAYSTONE_LIMIT = 64;\r\n' +
+    'const PINE_WAYSTONE_NAME_LIMIT = 30;\r\n' +
+    'const pineWaystoneMenuLocks = new Set();\r\n' +
+    '\r\n' +
+    'function readPineWaystones() {\r\n' +
+    '    try {\r\n' +
+    '        const raw = world.getDynamicProperty(PINE_WAYSTONE_DATA_KEY);\r\n' +
+    '        if (typeof raw !== "string" || raw.length === 0) return [];\r\n' +
+    '        const parsed = JSON.parse(raw);\r\n' +
+    '        if (!Array.isArray(parsed)) return [];\r\n' +
+    '        return parsed.filter((entry) =>\r\n' +
+    '            entry &&\r\n' +
+    '            typeof entry.name === "string" &&\r\n' +
+    '            typeof entry.dimensionId === "string" &&\r\n' +
+    '            Number.isFinite(entry.x) &&\r\n' +
+    '            Number.isFinite(entry.y) &&\r\n' +
+    '            Number.isFinite(entry.z)\r\n' +
+    '        );\r\n' +
+    '    } catch {\r\n' +
+    '        return [];\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'function writePineWaystones(entries) {\r\n' +
+    '    world.setDynamicProperty(PINE_WAYSTONE_DATA_KEY, JSON.stringify(entries));\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'function pineWaystoneDimensionLabel(dimensionId) {\r\n' +
+    '    if (dimensionId === "minecraft:overworld") return "オーバーワールド";\r\n' +
+    '    if (dimensionId === "minecraft:nether") return "ネザー";\r\n' +
+    '    if (dimensionId === "minecraft:the_end") return "ジ・エンド";\r\n' +
+    '    return dimensionId.replace("minecraft:", "");\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'function pineWaystoneLocationText(entry) {\r\n' +
+    '    return `${pineWaystoneDimensionLabel(entry.dimensionId)}  ${entry.x}, ${entry.y}, ${entry.z}`;\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'function sanitizePineWaystoneName(value) {\r\n' +
+    '    return String(value ?? "")\r\n' +
+    '        .replace(/[\\r\\n\\t]/g, " ")\r\n' +
+    '        .replace(/\\s+/g, " ")\r\n' +
+    '        .trim()\r\n' +
+    '        .slice(0, PINE_WAYSTONE_NAME_LIMIT);\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'async function registerPineWaystone(player) {\r\n' +
+    '    const current = readPineWaystones();\r\n' +
+    '    if (current.length >= PINE_WAYSTONE_LIMIT) {\r\n' +
+    '        player.sendMessage(`§c登録上限（${PINE_WAYSTONE_LIMIT}地点）に達しています。`);\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    const location = player.location;\r\n' +
+    '    const dimensionId = player.dimension.id;\r\n' +
+    '    const form = new ModalFormData()\r\n' +
+    '        .title("ウェイストーンを登録")\r\n' +
+    '        .textField(\r\n' +
+    '            `現在地: ${pineWaystoneDimensionLabel(dimensionId)}  ${Math.floor(location.x)}, ${Math.floor(location.y)}, ${Math.floor(location.z)}`,\r\n' +
+    '            "地点名を入力",\r\n' +
+    '            { defaultValue: "", tooltip: "1～30文字で入力してください" }\r\n' +
+    '        );\r\n' +
+    '    const result = await form.show(player);\r\n' +
+    '    if (result.canceled) return;\r\n' +
+    '\r\n' +
+    '    const name = sanitizePineWaystoneName(result.formValues?.[0]);\r\n' +
+    '    if (!name) {\r\n' +
+    '        player.sendMessage("§c地点名を入力してください。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    // フォーム表示中に別プレイヤーが登録しても、古い一覧で上書きしないよう再読込する。\r\n' +
+    '    const entries = readPineWaystones();\r\n' +
+    '    if (entries.length >= PINE_WAYSTONE_LIMIT) {\r\n' +
+    '        player.sendMessage(`§c登録上限（${PINE_WAYSTONE_LIMIT}地点）に達しています。`);\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '    if (entries.some((entry) => entry.name.toLocaleLowerCase() === name.toLocaleLowerCase())) {\r\n' +
+    '        player.sendMessage("§c同じ名前の地点がすでに登録されています。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    entries.push({\r\n' +
+    '        name,\r\n' +
+    '        dimensionId,\r\n' +
+    '        x: Math.floor(location.x),\r\n' +
+    '        y: Math.floor(location.y),\r\n' +
+    '        z: Math.floor(location.z),\r\n' +
+    '        createdBy: player.name,\r\n' +
+    '        createdAt: Date.now()\r\n' +
+    '    });\r\n' +
+    '    try {\r\n' +
+    '        writePineWaystones(entries);\r\n' +
+    '        player.sendMessage(`§a「${name}」を登録しました。`);\r\n' +
+    '        player.playSound("random.orb");\r\n' +
+    '    } catch {\r\n' +
+    '        player.sendMessage("§c地点を保存できませんでした。");\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'async function teleportWithPineWaystone(player) {\r\n' +
+    '    const entries = readPineWaystones();\r\n' +
+    '    if (entries.length === 0) {\r\n' +
+    '        player.sendMessage("§7登録されている地点はありません。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    const form = new ActionFormData().title("登録地点へ移動").body("移動先を選んでください。");\r\n' +
+    '    for (const entry of entries) {\r\n' +
+    '        form.button(`${entry.name}\\n§8${pineWaystoneLocationText(entry)}`);\r\n' +
+    '    }\r\n' +
+    '    const result = await form.show(player);\r\n' +
+    '    if (result.canceled || result.selection === undefined) return;\r\n' +
+    '    const entry = entries[result.selection];\r\n' +
+    '    if (!entry) return;\r\n' +
+    '\r\n' +
+    '    try {\r\n' +
+    '        const dimension = world.getDimension(entry.dimensionId);\r\n' +
+    '        player.teleport(\r\n' +
+    '            { x: entry.x + 0.5, y: entry.y, z: entry.z + 0.5 },\r\n' +
+    '            { dimension, checkForBlocks: true }\r\n' +
+    '        );\r\n' +
+    '        player.sendMessage(`§b「${entry.name}」へ移動しました。`);\r\n' +
+    '        player.playSound("mob.endermen.portal");\r\n' +
+    '    } catch {\r\n' +
+    '        player.sendMessage("§c移動先が塞がれているか、現在利用できません。");\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'async function deletePineWaystone(player) {\r\n' +
+    '    const entries = readPineWaystones();\r\n' +
+    '    if (entries.length === 0) {\r\n' +
+    '        player.sendMessage("§7削除できる地点はありません。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    const list = new ActionFormData().title("登録地点を削除").body("削除する地点を選んでください。");\r\n' +
+    '    for (const entry of entries) {\r\n' +
+    '        list.button(`${entry.name}\\n§8${pineWaystoneLocationText(entry)}`);\r\n' +
+    '    }\r\n' +
+    '    const selected = await list.show(player);\r\n' +
+    '    if (selected.canceled || selected.selection === undefined) return;\r\n' +
+    '    const entry = entries[selected.selection];\r\n' +
+    '    if (!entry) return;\r\n' +
+    '\r\n' +
+    '    const confirm = await new MessageFormData()\r\n' +
+    '        .title("削除の確認")\r\n' +
+    '        .body(`「${entry.name}」を登録地点から削除しますか？`)\r\n' +
+    '        .button1("削除する")\r\n' +
+    '        .button2("戻る")\r\n' +
+    '        .show(player);\r\n' +
+    '    if (confirm.canceled || confirm.selection !== 0) return;\r\n' +
+    '\r\n' +
+    '    // 確認画面中に共有一覧が変わっても、別の地点を誤削除しないよう再読込する。\r\n' +
+    '    const latest = readPineWaystones();\r\n' +
+    '    const index = latest.findIndex((candidate) =>\r\n' +
+    '        candidate.name === entry.name &&\r\n' +
+    '        candidate.dimensionId === entry.dimensionId &&\r\n' +
+    '        candidate.x === entry.x &&\r\n' +
+    '        candidate.y === entry.y &&\r\n' +
+    '        candidate.z === entry.z\r\n' +
+    '    );\r\n' +
+    '    if (index < 0) {\r\n' +
+    '        player.sendMessage("§7その地点はすでに削除されています。");\r\n' +
+    '        return;\r\n' +
+    '    }\r\n' +
+    '    latest.splice(index, 1);\r\n' +
+    '    try {\r\n' +
+    '        writePineWaystones(latest);\r\n' +
+    '        player.sendMessage(`§e「${entry.name}」を削除しました。`);\r\n' +
+    '    } catch {\r\n' +
+    '        player.sendMessage("§c地点を削除できませんでした。");\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'async function openPineWaystoneMenu(player) {\r\n' +
+    '    const lockKey = player.id ?? player.name;\r\n' +
+    '    if (pineWaystoneMenuLocks.has(lockKey)) return;\r\n' +
+    '    pineWaystoneMenuLocks.add(lockKey);\r\n' +
+    '    try {\r\n' +
+    '        const entries = readPineWaystones();\r\n' +
+    '        const result = await new ActionFormData()\r\n' +
+    '            .title("ウェイストーン")\r\n' +
+    '            .body(`共有登録地点: ${entries.length} / ${PINE_WAYSTONE_LIMIT}`)\r\n' +
+    '            .button("現在地を登録")\r\n' +
+    '            .button("登録地点へ移動")\r\n' +
+    '            .button("登録地点を削除")\r\n' +
+    '            .show(player);\r\n' +
+    '        if (result.canceled) return;\r\n' +
+    '        if (result.selection === 0) await registerPineWaystone(player);\r\n' +
+    '        if (result.selection === 1) await teleportWithPineWaystone(player);\r\n' +
+    '        if (result.selection === 2) await deletePineWaystone(player);\r\n' +
+    '    } catch {\r\n' +
+    '        player.sendMessage("§cウェイストーンの画面を開けませんでした。");\r\n' +
+    '    } finally {\r\n' +
+    '        pineWaystoneMenuLocks.delete(lockKey);\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    'system.beforeEvents.startup.subscribe(({ itemComponentRegistry }) => {\r\n' +
+    '    itemComponentRegistry.registerCustomComponent(PINE_WAYSTONE_COMPONENT_ID, {\r\n' +
+    '        onUse: ({ source }) => {\r\n' +
+    '            if (!source) return;\r\n' +
+    '            system.run(() => openPineWaystoneMenu(source));\r\n' +
+    '        }\r\n' +
+    '    });\r\n' +
+    '});\r\n' +
+    '\r\n' +
+    '// ============================================================\r\n' +
+    '// フュギュア設置・回収システム\r\n' +
+    '// フュギュアアイテムをブロックに向かって使う → エンティティとして設置\r\n' +
+    '// 設置済みフュギュアを攻撃する → アイテムとして回収\r\n' +
+    '// ============================================================\r\n' +
+    '\r\n' +
+    '// 全フィギュアのロジック定義を1か所に集約。\r\n' +
+    '// item/entity の別名を受けて、旧版ワールド内の在庫や設置済み個体も回収できるようにする。\r\n' +
+    'const FIGURE_DEFINITIONS = [\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:figure_fossil",\r\n' +
+    '        entityId: "myname:figure_fossil_placed",\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:figure_spiral",\r\n' +
+    '        entityId: "myname:figure_spiral_placed",\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:figure_oyu",\r\n' +
+    '        entityId: "myname:figure_oyu_placed",\r\n' +
+    '        itemAliases: ["myname:oyu"],\r\n' +
+    '        entityAliases: ["myname:oyu_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:utyuuneko",\r\n' +
+    '        entityId: "myname:utyuuneko_placed",\r\n' +
+    '        itemAliases: ["myname:figure_utyuuneko"],\r\n' +
+    '        entityAliases: ["myname:figure_utyuuneko_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:jack",\r\n' +
+    '        entityId: "myname:jack_placed",\r\n' +
+    '        itemAliases: ["myname:figure_jack"],\r\n' +
+    '        entityAliases: ["myname:figure_jack_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:mimikkyu",\r\n' +
+    '        entityId: "myname:mimikkyu_placed",\r\n' +
+    '        itemAliases: ["myname:figure_mimikkyu"],\r\n' +
+    '        entityAliases: ["myname:figure_mimikkyu_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:soubraze",\r\n' +
+    '        entityId: "myname:soubraze_placed",\r\n' +
+    '        itemAliases: ["myname:figure_soubraze"],\r\n' +
+    '        entityAliases: ["myname:figure_soubraze_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:goamagara",\r\n' +
+    '        entityId: "myname:goamagara_placed",\r\n' +
+    '        itemAliases: ["myname:figure_goamagara"],\r\n' +
+    '        entityAliases: ["myname:figure_goamagara_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:shini",\r\n' +
+    '        entityId: "myname:shini_placed",\r\n' +
+    '        itemAliases: ["myname:figure_shini", "myname:shinitagatteiru"],\r\n' +
+    '        entityAliases: ["myname:figure_shini_placed", "myname:shinitagatteiru_placed"],\r\n' +
+    '    },\r\n' +
+    '    {\r\n' +
+    '        itemId: "myname:hitomoshi",\r\n' +
+    '        entityId: "myname:hitomoshi_placed",\r\n' +
+    '        itemAliases: ["myname:figure_hitomoshi"],\r\n' +
+    '        entityAliases: ["myname:figure_hitomoshi_placed"],\r\n' +
+    '  '... 29368 more characters
+
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tests/pinenite/content-log-regressions.test.mjs:58:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'import "./gf/index.js";\r\nimport "./mycology/index.js";\r\nimport { world, ItemStack, system, BlockPermutation } from "@minecraft/server";\r\nimport { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";\r\nimport "./meitetsu_chest.js";\r\n\r\nfunction safeSubscribe(eventSignal, handler) {\r\n    if (!eventSignal || typeof eventSignal.subscribe !== "function") return;\r\n    eventSignal.subscribe(handler);\r\n}\r\n\r\n// ============================================================\r\n// ピネ Waystone\r\n// アイテムを使うと、共有地点の登録・移動・削除メニューを開く。\r\n// Simple Waystone の識別子やスクリプトには依存しない独自実装。\r\n// ============================================================\r\n\r\nconst PINE_WAYSTONE_COMPONENT_ID = "pinene:waystone_menu";\r\nconst PINE_WAYSTONE_DATA_KEY = "pinene:waystones_v1";\r\nconst PINE_WAYSTONE_LIMIT = 64;\r\nconst PINE_WAYSTONE_NAME_LIMIT = 30;\r\nconst pineWaystoneMenuLocks = new Set();\r\n\r\nfunction readPineWaystones() {\r\n    try {\r\n        const raw = world.getDynamicProperty(PINE_WAYSTONE_DATA_KEY);\r\n        if (typeof raw !== "string" || raw.length === 0) return [];\r\n        const parsed = JSON.parse(raw);\r\n        if (!Array.isArray(parsed)) return [];\r\n        return parsed.filter((entry) =>\r\n            entry &&\r\n            typeof entry.name === "string" &&\r\n            typeof entry.dimensionId === "string" &&\r\n            Number.isFinite(entry.x) &&\r\n            Number.isFinite(entry.y) &&\r\n            Number.isFinite(entry.z)\r\n        );\r\n    } catch {\r\n        return [];\r\n    }\r\n}\r\n\r\nfunction writePineWaystones(entries) {\r\n    world.setDynamicProperty(PINE_WAYSTONE_DATA_KEY, JSON.stringify(entries));\r\n}\r\n\r\nfunction pineWaystoneDimensionLabel(dimensionId) {\r\n    if (dimensionId === "minecraft:overworld") return "オーバーワールド";\r\n    if (dimensionId === "minecraft:nether") return "ネザー";\r\n    if (dimensionId === "minecraft:the_end") return "ジ・エンド";\r\n    return dimensionId.replace("minecraft:", "");\r\n}\r\n\r\nfunction pineWaystoneLocationText(entry) {\r\n    return `${pineWaystoneDimensionLabel(entry.dimensionId)}  ${entry.x}, ${entry.y}, ${entry.z}`;\r\n}\r\n\r\nfunction sanitizePineWaystoneName(value) {\r\n    return String(value ?? "")\r\n        .replace(/[\\r\\n\\t]/g, " ")\r\n        .replace(/\\s+/g, " ")\r\n        .trim()\r\n        .slice(0, PINE_WAYSTONE_NAME_LIMIT);\r\n}\r\n\r\nasync function registerPineWaystone(player) {\r\n    const current = readPineWaystones();\r\n    if (current.length >= PINE_WAYSTONE_LIMIT) {\r\n        player.sendMessage(`§c登録上限（${PINE_WAYSTONE_LIMIT}地点）に達しています。`);\r\n        return;\r\n    }\r\n\r\n    const location = player.location;\r\n    const dimensionId = player.dimension.id;\r\n    const form = new ModalFormData()\r\n        .title("ウェイストーンを登録")\r\n        .textField(\r\n            `現在地: ${pineWaystoneDimensionLabel(dimensionId)}  ${Math.floor(location.x)}, ${Math.floor(location.y)}, ${Math.floor(location.z)}`,\r\n            "地点名を入力",\r\n            { defaultValue: "", tooltip: "1～30文字で入力してください" }\r\n        );\r\n    const result = await form.show(player);\r\n    if (result.canceled) return;\r\n\r\n    const name = sanitizePineWaystoneName(result.formValues?.[0]);\r\n    if (!name) {\r\n        player.sendMessage("§c地点名を入力してください。");\r\n        return;\r\n    }\r\n\r\n    // フォーム表示中に別プレイヤーが登録しても、古い一覧で上書きしないよう再読込する。\r\n    const entries = readPineWaystones();\r\n    if (entries.length >= PINE_WAYSTONE_LIMIT) {\r\n        player.sendMessage(`§c登録上限（${PINE_WAYSTONE_LIMIT}地点）に達しています。`);\r\n        return;\r\n    }\r\n    if (entries.some((entry) => entry.name.toLocaleLowerCase() === name.toLocaleLowerCase())) {\r\n        player.sendMessage("§c同じ名前の地点がすでに登録されています。");\r\n        return;\r\n    }\r\n\r\n    entries.push({\r\n        name,\r\n        dimensionId,\r\n        x: Math.floor(location.x),\r\n        y: Math.floor(location.y),\r\n        z: Math.floor(location.z),\r\n        createdBy: player.name,\r\n        createdAt: Date.now()\r\n    });\r\n    try {\r\n        writePineWaystones(entries);\r\n        player.sendMessage(`§a「${name}」を登録しました。`);\r\n        player.playSound("random.orb");\r\n    } catch {\r\n        player.sendMessage("§c地点を保存できませんでした。");\r\n    }\r\n}\r\n\r\nasync function teleportWithPineWaystone(player) {\r\n    const entries = readPineWaystones();\r\n    if (entries.length === 0) {\r\n        player.sendMessage("§7登録されている地点はありません。");\r\n        return;\r\n    }\r\n\r\n    const form = new ActionFormData().title("登録地点へ移動").body("移動先を選んでください。");\r\n    for (const entry of entries) {\r\n        form.button(`${entry.name}\\n§8${pineWaystoneLocationText(entry)}`);\r\n    }\r\n    const result = await form.show(player);\r\n    if (result.canceled || result.selection === undefined) return;\r\n    const entry = entries[result.selection];\r\n    if (!entry) return;\r\n\r\n    try {\r\n        const dimension = world.getDimension(entry.dimensionId);\r\n        player.teleport(\r\n            { x: entry.x + 0.5, y: entry.y, z: entry.z + 0.5 },\r\n            { dimension, checkForBlocks: true }\r\n        );\r\n        player.sendMessage(`§b「${entry.name}」へ移動しました。`);\r\n        player.playSound("mob.endermen.portal");\r\n    } catch {\r\n        player.sendMessage("§c移動先が塞がれているか、現在利用できません。");\r\n    }\r\n}\r\n\r\nasync function deletePineWaystone(player) {\r\n    const entries = readPineWaystones();\r\n    if (entries.length === 0) {\r\n        player.sendMessage("§7削除できる地点はありません。");\r\n        return;\r\n    }\r\n\r\n    const list = new ActionFormData().title("登録地点を削除").body("削除する地点を選んでください。");\r\n    for (const entry of entries) {\r\n        list.button(`${entry.name}\\n§8${pineWaystoneLocationText(entry)}`);\r\n    }\r\n    const selected = await list.show(player);\r\n    if (selected.canceled || selected.selection === undefined) return;\r\n    const entry = entries[selected.selection];\r\n    if (!entry) return;\r\n\r\n    const confirm = await new MessageFormData()\r\n        .title("削除の確認")\r\n        .body(`「${entry.name}」を登録地点から削除しますか？`)\r\n        .button1("削除する")\r\n        .button2("戻る")\r\n        .show(player);\r\n    if (confirm.canceled || confirm.selection !== 0) return;\r\n\r\n    // 確認画面中に共有一覧が変わっても、別の地点を誤削除しないよう再読込する。\r\n    const latest = readPineWaystones();\r\n    const index = latest.findIndex((candidate) =>\r\n        candidate.name === entry.name &&\r\n        candidate.dimensionId === entry.dimensionId &&\r\n        candidate.x === entry.x &&\r\n        candidate.y === entry.y &&\r\n        candidate.z === entry.z\r\n    );\r\n    if (index < 0) {\r\n        player.sendMessage("§7その地点はすでに削除されています。");\r\n        return;\r\n    }\r\n    latest.splice(index, 1);\r\n    try {\r\n        writePineWaystones(latest);\r\n        player.sendMessage(`§e「${entry.name}」を削除しました。`);\r\n    } catch {\r\n        player.sendMessage("§c地点を削除できませんでした。");\r\n    }\r\n}\r\n\r\nasync function openPineWaystoneMenu(player) {\r\n    const lockKey = player.id ?? player.name;\r\n    if (pineWaystoneMenuLocks.has(lockKey)) return;\r\n    pineWaystoneMenuLocks.add(lockKey);\r\n    try {\r\n        const entries = readPineWaystones();\r\n        const result = await new ActionFormData()\r\n            .title("ウェイストーン")\r\n            .body(`共有登録地点: ${entries.length} / ${PINE_WAYSTONE_LIMIT}`)\r\n            .button("現在地を登録")\r\n            .button("登録地点へ移動")\r\n            .button("登録地点を削除")\r\n            .show(player);\r\n        if (result.canceled) return;\r\n        if (result.selection === 0) await registerPineWaystone(player);\r\n        if (result.selection === 1) await teleportWithPineWaystone(player);\r\n        if (result.selection === 2) await deletePineWaystone(player);\r\n    } catch {\r\n        player.sendMessage("§cウェイストーンの画面を開けませんでした。");\r\n    } finally {\r\n        pineWaystoneMenuLocks.delete(lockKey);\r\n    }\r\n}\r\n\r\nsystem.beforeEvents.startup.subscribe(({ itemComponentRegistry }) => {\r\n    itemComponentRegistry.registerCustomComponent(PINE_WAYSTONE_COMPONENT_ID, {\r\n        onUse: ({ source }) => {\r\n            if (!source) return;\r\n            system.run(() => openPineWaystoneMenu(source));\r\n        }\r\n    });\r\n});\r\n\r\n// ============================================================\r\n// フュギュア設置・回収システム\r\n// フュギュアアイテムをブロックに向かって使う → エンティティとして設置\r\n// 設置済みフュギュアを攻撃する → アイテムとして回収\r\n// ============================================================\r\n\r\n// 全フィギュアのロジック定義を1か所に集約。\r\n// item/entity の別名を受けて、旧版ワールド内の在庫や設置済み個体も回収できるようにする。\r\nconst FIGURE_DEFINITIONS = [\r\n    {\r\n        itemId: "myname:figure_fossil",\r\n        entityId: "myname:figure_fossil_placed",\r\n    },\r\n    {\r\n        itemId: "myname:figure_spiral",\r\n        entityId: "myname:figure_spiral_placed",\r\n    },\r\n    {\r\n        itemId: "myname:figure_oyu",\r\n        entityId: "myname:figure_oyu_placed",\r\n        itemAliases: ["myname:oyu"],\r\n        entityAliases: ["myname:oyu_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:utyuuneko",\r\n        entityId: "myname:utyuuneko_placed",\r\n        itemAliases: ["myname:figure_utyuuneko"],\r\n        entityAliases: ["myname:figure_utyuuneko_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:jack",\r\n        entityId: "myname:jack_placed",\r\n        itemAliases: ["myname:figure_jack"],\r\n        entityAliases: ["myname:figure_jack_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:mimikkyu",\r\n        entityId: "myname:mimikkyu_placed",\r\n        itemAliases: ["myname:figure_mimikkyu"],\r\n        entityAliases: ["myname:figure_mimikkyu_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:soubraze",\r\n        entityId: "myname:soubraze_placed",\r\n        itemAliases: ["myname:figure_soubraze"],\r\n        entityAliases: ["myname:figure_soubraze_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:goamagara",\r\n        entityId: "myname:goamagara_placed",\r\n        itemAliases: ["myname:figure_goamagara"],\r\n        entityAliases: ["myname:figure_goamagara_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:shini",\r\n        entityId: "myname:shini_placed",\r\n        itemAliases: ["myname:figure_shini", "myname:shinitagatteiru"],\r\n        entityAliases: ["myname:figure_shini_placed", "myname:shinitagatteiru_placed"],\r\n    },\r\n    {\r\n        itemId: "myname:hitomoshi",\r\n        entityId: "myname:hitomoshi_placed",\r\n        itemAliases: ["myname:figure_hitomoshi"],\r\n        entityAliases: ["myname:figure_hitomoshi_placed"],\r\n  '... 29368 more characters,
+    expected: /function pineHasTag\s*\(/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests\pinenite\outline.test.mjs:90:1
+✖ Zombie Gear and Crossbow content remains unchanged after ownership consolidation (259.7541ms)
+  AssertionError [ERR_ASSERTION]: behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/entities/bomb_bolt.entity.json
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tests/pinenite/outline.test.mjs:93:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\pinenite\parcanite_swing.test.mjs:8:1
+✖ parcanite sword uses native hand animation with its authored icon and damage (16.9852ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(existsSync(new URL(`resource_packs/${pack}/textures/items/parcanite_sword.png`, root)))
+
+      at TestContext.<anonymous> (file:///C:/Users/%E3%81%AF%E3%83%BC%E3%81%AB%E3%82%83%E3%80%82/pinene-appraiser-work/tests/pinenite/parcanite_swing.test.mjs:15:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

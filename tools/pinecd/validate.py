@@ -7,6 +7,7 @@ import re
 import subprocess
 from pathlib import Path
 from build import ROOT, BP, RP, load, outputs
+from validate_textures import validate_textures
 
 BASE = '56b2ab24'
 REMUXED = (RP / 'sounds/records/pinecd_track_09.ogg').relative_to(ROOT).as_posix()
@@ -36,6 +37,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--probe-audio', action='store_true')
     args = parser.parse_args()
+    validate_textures()
     for p, d in outputs().items():
         assert load(p) == d, f'Generated data drift: {p}'
     tracks = load(Path(__file__).with_name('tracks.json'))['tracks']

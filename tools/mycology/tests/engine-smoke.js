@@ -6,6 +6,8 @@ import {counts,seen} from './mycology/progress.js';
 import {CONFIG} from './mycology/config.js';
 import {MUSHROOMS} from './mycology/registry.js';
 import {consume} from './mycology/effects.js';
+import {reconcileNpcInteraction} from './mycology/npc.js';
+const rewardIds=['red_mushroom','brown_mushroom','crimson_fungus','warped_fungus'].map(x=>'minecraft:'+x);
 const pause=ticks=>new Promise(resolve=>system.runTimeout(resolve,ticks));
 function check(value,message){if(!value)throw new Error(message);}
 let running=false;
@@ -50,16 +52,27 @@ async function run(p){
  });
  await test('real entityDie: admin NPC drops 0',async()=>{
   cleanDrops();const n=dim.spawnEntity(CONFIG.npcType,{x:p.location.x+5,y:p.location.y,z:p.location.z});n.kill();await pause(3);
-  check(dropItems().filter(e=>e.getComponent('minecraft:item').itemStack.typeId.endsWith('_mushroom')).length===0,'admin loot');
+  check(dropItems().filter(e=>rewardIds.includes(e.getComponent('minecraft:item').itemStack.typeId)).length===0,'admin loot');
  });
- await test('real entityDie: valid lease fixture drops 64+64',async()=>{
+ await test('real entityDie: legacy lease fixture drops four exact stacks',async()=>{
   cleanDrops();const n=dim.spawnEntity(CONFIG.npcType,{x:p.location.x+5,y:p.location.y,z:p.location.z});const token='engine-test-'+Date.now();
   n.setDynamicProperty(CONFIG.naturalTokenKey,token);
   world.setDynamicProperty(CONFIG.leaseKey,JSON.stringify({version:1,entityId:n.id,token,expiresAt:Date.now()+60000,dimensionId:dim.id}));
   n.kill();await pause(3);
   const sums={};for(const e of dropItems()){const s=e.getComponent('minecraft:item').itemStack;sums[s.typeId]=(sums[s.typeId]??0)+s.amount;}
-  check(sums['minecraft:red_mushroom']===64&&sums['minecraft:brown_mushroom']===64,JSON.stringify(sums));
-  check(!world.getDynamicProperty(CONFIG.leaseKey),'dead lease persisted');
+  check(rewardIds.every(id=>sums[id]===64)&&dropItems().length===4,JSON.stringify(sums));
+  check(JSON.parse(world.getDynamicProperty(CONFIG.leaseKey)).token===token,'legacy migration source changed');
+ });
+ for(const named of [false,true])await test('real entityDie: v2 '+(named?'permanent':'temporary')+' four stacks',async()=>{
+  cleanDrops();const n=dim.spawnEntity(CONFIG.npcType,{x:p.location.x+5,y:p.location.y,z:p.location.z});
+  n.setDynamicProperty(CONFIG.naturalTokenKey,'engine-v2-'+Date.now());
+  n.setDynamicProperty(CONFIG.npcStateKey,JSON.stringify({version:2,naturalOrigin:true,spawnedAt:Date.now(),expiresAt:Date.now()+60000,island:false,permanent:false,deathClaimed:false,retired:false}));
+  if(named)n.nameTag='Engine permanent fixture';
+  reconcileNpcInteraction(n);
+  check(JSON.parse(n.getDynamicProperty(CONFIG.npcStateKey)).permanent===named,'permanence mismatch');
+  n.kill();await pause(3);
+  const stacks=dropItems().map(e=>e.getComponent('minecraft:item').itemStack);
+  check(stacks.length===4&&rewardIds.every(id=>stacks.filter(s=>s.typeId===id&&s.amount===64).length===1),'v2 reward mismatch');
  });
  await test('R06 direct handler: fixed 2HP cost on real health component',()=>{
   const hp=p.getComponent('minecraft:health');hp.setCurrentValue(20);consume(p,new ItemStack('pinene:r_mushroom_r06'));check(hp.currentValue===18,'HP cost');
@@ -78,10 +91,11 @@ system.afterEvents.scriptEventReceive.subscribe(e=>{
   }catch(error){console.warn('[MYCO ENGINE] SPAWN DIAG ERROR '+error.stack);}
  }
  if(e.id==='myco_test:natural'&&e.sourceEntity?.typeId==='minecraft:player'){
-  const raw=world.getDynamicProperty(CONFIG.leaseKey),lease=raw?JSON.parse(raw):null;
-  console.warn('[MYCO ENGINE] NATURAL LEASE '+JSON.stringify(lease));
-  if(lease){
-   const npc=world.getEntity(lease.entityId);
+  const player=e.sourceEntity;
+  const npc=player.dimension.getEntities({type:CONFIG.npcType,location:player.location,maxDistance:64})
+   .find(n=>n.getDynamicProperty(CONFIG.npcStateKey)||n.getDynamicProperty(CONFIG.naturalTokenKey));
+  console.warn('[MYCO ENGINE] NEARBY NATURAL '+JSON.stringify(npc?{id:npc.id,state:npc.getDynamicProperty(CONFIG.npcStateKey)}:null));
+  if(npc){
    if(npc){const dim=npc.dimension,pos=npc.location;npc.kill();system.runTimeout(()=>{
     const items=dim.getEntities({type:'minecraft:item',location:pos,maxDistance:4}).map(e=>{const s=e.getComponent('minecraft:item').itemStack;return {type:s.typeId,amount:s.amount};});
     console.warn('[MYCO ENGINE] NATURAL DEATH '+JSON.stringify(items));
