@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BP = path.join(ROOT, "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1");
 const RP = path.join(ROOT, "resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10");
+const LEGACY_RP = path.join(ROOT, "resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef");
 const json = (p) => JSON.parse(fs.readFileSync(p, "utf8").replace(/^\uFEFF/, ""));
 
 test("all Bomb Crossbow depths use dedicated bomb bolts", () => {
@@ -82,7 +83,9 @@ test("Pure Crossbow Soul awakening is handled by the shared crossbow forge and p
 
 test("restored Pure Crossbow Soul texture exists as a real PNG", () => {
   const texture = path.join(RP, "textures/items/zyunzentarucrossbownotamashii.png");
+  const staleDuplicate = path.join(LEGACY_RP, "textures/items/zyunzentarucrossbownotamashii.png");
   assert.equal(fs.existsSync(texture), true);
+  assert.equal(fs.existsSync(staleDuplicate), false, "legacy RP must not shadow Pure Crossbow Soul");
   const bytes = fs.readFileSync(texture);
   assert.equal(bytes.subarray(0, 8).toString("hex"), "89504e470d0a1a0a");
   assert.equal(bytes.readUInt32BE(16), 32);
