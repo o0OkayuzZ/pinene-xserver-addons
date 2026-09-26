@@ -5,6 +5,7 @@ on:
     paths:
       - 'services/takuya-worker/**'
       - 'website/src/components/TakuyaChat.astro'
+      - 'website/admin/**'
       - 'website/src/data/**'
       - 'website/src/layouts/BaseLayout.astro'
       - 'website/src/pages/privacy.astro'
@@ -17,6 +18,7 @@ on:
     paths:
       - 'services/takuya-worker/**'
       - 'website/src/components/TakuyaChat.astro'
+      - 'website/admin/**'
       - 'website/src/data/**'
       - 'website/src/layouts/BaseLayout.astro'
       - 'website/src/pages/privacy.astro'
@@ -53,5 +55,6 @@ jobs:
           cache: npm
           cache-dependency-path: website/package-lock.json
       - run: npm ci --ignore-scripts
+      - run: npm --prefix admin test
       - run: npm run check
       - run: npm run build
