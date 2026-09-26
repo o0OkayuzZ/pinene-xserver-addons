@@ -18,6 +18,14 @@
 
 `pine_search`（検索使用・文章は送らない）、`pine_filter`、`pine_expand`、`pine_recipe_view`、`pine_item_view`、`pine_guide_open`、`pine_content_open`、`pine_join_open`を計測します。対象イベントのページURL・コンテンツグループは標準のGA4軸で確認できます。さらに細かいパラメータ分析にはGA4でカスタム定義を登録してください。
 
+## 拓也の質問ログ
+
+管理画面の「拓也の質問」では、Cloudflare D1に保存した質問文を本人だけ確認できます。保存対象は質問文・時刻・回答に使った公開資料・処理結果・匿名化した会話IDです。IPアドレス、氏名、端末情報、元のセッションID、拓也の回答本文は保存しません。
+
+質問ログは最大30日です。新しい質問を保存するとき、または管理画面からログを読むときに30日を超えた行を削除します。ログ閲覧用の公開APIは作りません。127.0.0.1のNode管理サーバーが、このPCに保存済みのCloudflare Wranglerログインを使ってD1へ直接読み取りクエリを実行します。
+
+そのため、質問ログを読むための追加Secretや管理URLはありません。公開Web・ブラウザJavaScript・GitHub PagesからD1の質問ログを取得する経路は用意しません。
+
 ## GitHub
 
 集計保存先は本人のprivateリポジトリ`o0OkayuzZ/pine-server-stats`、reportsブランチのREADMEです。保存のたびにprivateと所有者をAPIで検査します。APIキーやサービスアカウントは送らず、集計した表だけを送ります。定期実行は未設定で、管理画面の「GitHubへ保存」で更新します。GitHubの標準Trafficはコードのリポジトリ閲覧で、公開Webの閲覧とは別表示です。

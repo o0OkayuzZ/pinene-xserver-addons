@@ -10,6 +10,8 @@ export const storage=process.env.PINE_ADMIN_DATA??join(process.env.LOCALAPPDATA?
 const port=Number(process.env.PINE_ADMIN_PORT??18473);
 const accessKey=randomBytes(32).toString('hex');
 const origin=`http://127.0.0.1:${port}`;
+const workerRoot=join(root,'../../services/takuya-worker');
+const wranglerBin=join(workerRoot,'node_modules','wrangler','bin','wrangler.js');
 const websiteConfig=JSON.parse(await readFile(join(root,'../src/data/analytics-config.json'),'utf8'));
 let settings={provider:websiteConfig.cloudflareBeacon?'cloudflare':'ga4',measurementId:websiteConfig.measurementId??'',beaconToken:websiteConfig.cloudflareBeacon??''},lastReport=null,busy=false;
 async function atomic(path,text){const temp=path+'.'+randomBytes(6).toString('hex')+'.tmp';await writeFile(temp,text,{mode:0o600});await rename(temp,path);}
@@ -19,6 +21,26 @@ export async function protect(text,decode=false){
   const child=execFile('powershell.exe',['-NoProfile','-NonInteractive','-Command',script],{windowsHide:true,timeout:15000,maxBuffer:1024*1024},(error,stdout)=>error?reject(new Error('Windowsの暗号化保存に失敗しました。')):resolve(stdout.trim()));
   child.stdin.end(text);
  });
+}
+async function wranglerD1(sql){
+ return new Promise((resolve,reject)=>{
+  execFile(process.execPath,[wranglerBin,'d1','execute','pine-takuya-logs','--remote','--json','--command',sql],{cwd:workerRoot,windowsHide:true,timeout:30000,maxBuffer:4*1024*1024},(error,stdout)=>error?reject(new Error('Cloudflare D1へ接続できません。Wranglerのログイン状態を確認してください。')):resolve(stdout));
+ });
+}
+async function takuyaQuestions(url){
+ const limit=Math.min(200,Math.max(1,Number(url.searchParams.get('limit')??100)||100));
+ const before=Math.max(0,Number(url.searchParams.get('before')??0)||0);
+ const cutoff=Date.now()-30*86400000;
+ const where=before>0?`WHERE id < ${Math.floor(before)}`:'';
+ const sql=`DELETE FROM takuya_questions WHERE created_at < ${cutoff}; SELECT id, created_at, message, session_hash, sources_json, status, model FROM takuya_questions ${where} ORDER BY id DESC LIMIT ${limit};`;
+ let payload;
+ try{payload=JSON.parse(await wranglerD1(sql));}catch(error){throw new Error(error.message??'拓也ログを取得できません。');}
+ const result=Array.isArray(payload)?payload.at(-1):payload;
+ const questions=(result?.results??[]).map(row=>({
+  id:row.id,created_at:row.created_at,message:row.message,session_hash:row.session_hash,status:row.status,model:row.model,
+  sources:(()=>{try{return JSON.parse(row.sources_json??'[]');}catch{return [];}})(),
+ }));
+ return {status:'ok',questions,retentionDays:30,hasMore:questions.length===limit,nextBefore:questions.length?questions.at(-1).id:null};
 }
 export function allowedRequest(req,key=accessKey,expected=origin){
  if(req.headers.host!==new URL(expected).host)return false;
@@ -69,6 +91,7 @@ export function createServer(){return http.createServer(async(req,res)=>{
   if(url.pathname.startsWith('/api/')){
    if(!allowedRequest(req)){send(res,403,{error:'デスクトップのアイコンから開き直してください。'});return;}
    if(req.method==='GET'&&url.pathname==='/api/state'){send(res,200,{settings:publicSettings(),report:lastReport});return;}
+   if(req.method==='GET'&&url.pathname==='/api/takuya/questions'){send(res,200,await takuyaQuestions(url));return;}
    if(req.method==='POST'&&url.pathname==='/api/settings'){
     const input=await body(req);const next=validateSettings(input,settings);
     await atomic(join(storage,'settings.dat'),await protect(JSON.stringify(next)));settings=next;lastReport=null;

@@ -26,7 +26,7 @@ const privacyUrl = withBase('/privacy/');
         <label for="takuya-input">質問</label>
         <textarea id="takuya-input" rows="2" maxlength={config.maxMessageLength} placeholder="例：爆弾クロスボウってどう作る？" disabled={!config.enabled}></textarea>
         <div class="takuya-form-row">
-          <small>AIの回答は公開中のピネWeb情報を優先します。<a href={privacyUrl}>取り扱い</a></small>
+          <small>質問文は運営改善のため30日間保存します。IPは保存しません。<a href={privacyUrl}>取り扱い</a></small>
           <button type="submit" disabled={!config.enabled}>送信</button>
         </div>
       </form>

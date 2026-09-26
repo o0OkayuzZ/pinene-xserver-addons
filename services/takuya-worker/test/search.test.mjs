@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { isAllowedOrigin, searchKnowledge } from '../src/index.js';
+import { hashSession, isAllowedOrigin, searchKnowledge } from '../src/index.js';
 
 const entries = [
   {
@@ -67,4 +67,13 @@ test('origin allowlist accepts production and local development only', () => {
   assert.equal(isAllowedOrigin('http://127.0.0.1:4321', 'https://o0okayuzz.github.io'), true);
   assert.equal(isAllowedOrigin('https://example.com', 'https://o0okayuzz.github.io'), false);
   assert.equal(isAllowedOrigin('', 'https://o0okayuzz.github.io'), false);
+});
+
+
+test('session log hash is stable and does not expose the source id', async () => {
+  const first = await hashSession('session-example-123');
+  const second = await hashSession('session-example-123');
+  assert.equal(first, second);
+  assert.equal(first.length, 24);
+  assert.notEqual(first, 'session-example-123');
 });
