@@ -9,12 +9,15 @@
     ],
     "pattern": [
       "PPP",
-      "PPP",
+      "PBP",
       "PPP"
     ],
     "key": {
       "P": {
         "item": "minecraft:oak_planks"
+      },
+      "B": {
+        "item": "minecraft:birch_planks"
       }
     },
     "result": {
@@ -24,6 +27,9 @@
     "unlock": [
       {
         "item": "minecraft:oak_planks"
+      },
+      {
+        "item": "minecraft:birch_planks"
       }
     ]
   }
