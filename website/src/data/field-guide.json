@@ -40983,5 +40983,2639 @@
         "behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1/recipes/bomb_bolt.recipe.json"
       ]
     }
+  },
+  {
+    "id": "pine-food-milk-bottle",
+    "name": "ミルク瓶",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "素材のPine Cookingアイテム。",
+    "description": "料理に使いやすい小分けのミルク。まろやかな料理の基本素材。",
+    "usage": "まな板料理の材料として使います。",
+    "obtaining": "まな板で素材を選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：素材。",
+      "食料ではなく料理素材として定義されています。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-milk-bottle.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/milk_bottle.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/milk_bottle.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/milk_bottle.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-milk-bottle",
+    "name": "ミルク瓶のまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "素材のミルク瓶を、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：素材。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-milk-bottle.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "ミルク入りバケツ",
+          "count": 1
+        },
+        {
+          "name": "ガラス瓶",
+          "count": 8
+        }
+      ],
+      "resultId": "pine-food-milk-bottle",
+      "count": 8
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/milk_bottle.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-butter",
+    "name": "バター",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "素材のPine Cookingアイテム。",
+    "description": "ミルクから作る濃厚なバター。パンや焼き料理のコクを引き出す。",
+    "usage": "まな板料理の材料として使います。",
+    "obtaining": "まな板で素材を選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：素材。",
+      "食料ではなく料理素材として定義されています。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-butter.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/butter.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/butter.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/butter.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-butter",
+    "name": "バターのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "素材のバターを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：素材。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-butter.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "ミルク入りバケツ",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-butter",
+      "count": 16
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/butter.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-chocolate",
+    "name": "チョコ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "素材のPine Cookingアイテム。",
+    "description": "カカオと砂糖で作る甘い素材。パンやデザートの仕上げに。",
+    "usage": "まな板料理の材料として使います。",
+    "obtaining": "まな板で素材を選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：素材。",
+      "食料ではなく料理素材として定義されています。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chocolate.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/chocolate.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chocolate.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/chocolate.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-chocolate",
+    "name": "チョコのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "素材のチョコを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：素材。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chocolate.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "カカオ豆",
+          "count": 1
+        },
+        {
+          "name": "砂糖",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-chocolate",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chocolate.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-honey-bread",
+    "name": "はちみつパン",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIのPine Cookingアイテム。",
+    "description": "はちみつのやさしい甘さをまとわせた、手軽で食べやすいパン。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank II。",
+      "満腹度の設定：7。",
+      "飽和度係数の設定：0.7。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-honey-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/honey_bread.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/honey_bread.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/honey_bread.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-honey-bread",
+    "name": "はちみつパンのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIのはちみつパンを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank II。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-honey-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "ハチミツ入りの瓶",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-honey-bread",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/honey_bread.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-chocolate-bread",
+    "name": "チョコパン",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIのPine Cookingアイテム。",
+    "description": "チョコの甘みをたっぷり楽しめる、素朴なデザートパン。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank II。",
+      "満腹度の設定：7。",
+      "飽和度係数の設定：0.8。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chocolate-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/chocolate_bread.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chocolate_bread.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/chocolate_bread.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-chocolate-bread",
+    "name": "チョコパンのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIのチョコパンを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank II。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chocolate-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "チョコ",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-chocolate-bread",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chocolate_bread.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-sweet-berry-bread",
+    "name": "ベリージャムパン",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIのPine Cookingアイテム。",
+    "description": "甘酸っぱいスイートベリーを使った、軽やかなジャムパン。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank II。",
+      "満腹度の設定：7。",
+      "飽和度係数の設定：0.7。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-sweet-berry-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/sweet_berry_bread.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/sweet_berry_bread.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/sweet_berry_bread.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-sweet-berry-bread",
+    "name": "ベリージャムパンのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIのベリージャムパンを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank II。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-sweet-berry-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "sweet_berries",
+          "count": 2
+        },
+        {
+          "name": "砂糖",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-sweet-berry-bread",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/sweet_berry_bread.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-carrot-salad",
+    "name": "キャロットサラダ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIのPine Cookingアイテム。",
+    "description": "ニンジンの甘みとビートルートの彩りを楽しむ、さっぱりしたサラダ。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank II。",
+      "満腹度の設定：7。",
+      "飽和度係数の設定：0.8。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-carrot-salad.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/carrot_salad.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/carrot_salad.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/carrot_salad.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-carrot-salad",
+    "name": "キャロットサラダのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIのキャロットサラダを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank II。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-carrot-salad.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "ニンジン",
+          "count": 2
+        },
+        {
+          "name": "ビートルート",
+          "count": 1
+        },
+        {
+          "name": "ボウル",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-carrot-salad",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/carrot_salad.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-glow-berry-bread",
+    "name": "グロウベリージャムパン",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのPine Cookingアイテム。",
+    "description": "グロウベリーの独特な甘酸っぱさを閉じ込めた、不思議なパン。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank III。",
+      "満腹度の設定：8。",
+      "飽和度係数の設定：0.8。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-glow-berry-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/glow_berry_bread.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/glow_berry_bread.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/glow_berry_bread.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-glow-berry-bread",
+    "name": "グロウベリージャムパンのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのグロウベリージャムパンを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank III。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-glow-berry-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "glow_berries",
+          "count": 2
+        },
+        {
+          "name": "砂糖",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-glow-berry-bread",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/glow_berry_bread.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-apple-bread",
+    "name": "アップルパン",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのPine Cookingアイテム。",
+    "description": "リンゴの爽やかな甘みとバターの香りが広がるフルーツパン。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank III。",
+      "満腹度の設定：8。",
+      "飽和度係数の設定：0.9。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-apple-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/apple_bread.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/apple_bread.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/apple_bread.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-apple-bread",
+    "name": "アップルパンのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのアップルパンを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank III。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-apple-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "リンゴ",
+          "count": 1
+        },
+        {
+          "name": "バター",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-apple-bread",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/apple_bread.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-pumpkin-bread",
+    "name": "かぼちゃパン",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのPine Cookingアイテム。",
+    "description": "カボチャの自然な甘みとバターのコクを合わせた、やさしいパン。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank III。",
+      "満腹度の設定：8。",
+      "飽和度係数の設定：0.9。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-pumpkin-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/pumpkin_bread.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/pumpkin_bread.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/pumpkin_bread.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-pumpkin-bread",
+    "name": "かぼちゃパンのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのかぼちゃパンを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank III。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-pumpkin-bread.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "カボチャ",
+          "count": 1
+        },
+        {
+          "name": "バター",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-pumpkin-bread",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/pumpkin_bread.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-kelp-salad",
+    "name": "海藻サラダ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのPine Cookingアイテム。",
+    "description": "乾燥昆布とニンジンを合わせた、海の風味を感じるサラダ。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank III。",
+      "満腹度の設定：8。",
+      "飽和度係数の設定：0.9。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-kelp-salad.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/kelp_salad.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/kelp_salad.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/kelp_salad.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-kelp-salad",
+    "name": "海藻サラダのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIの海藻サラダを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank III。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-kelp-salad.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "乾燥昆布",
+          "count": 2
+        },
+        {
+          "name": "ニンジン",
+          "count": 1
+        },
+        {
+          "name": "ボウル",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-kelp-salad",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/kelp_salad.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-egg-toast",
+    "name": "エッグトースト",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのPine Cookingアイテム。",
+    "description": "パンと卵をバターでまとめた、シンプルで満足感のあるトースト。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank III。",
+      "満腹度の設定：9。",
+      "飽和度係数の設定：1.0。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-egg-toast.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/egg_toast.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/egg_toast.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/egg_toast.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-egg-toast",
+    "name": "エッグトーストのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのエッグトーストを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank III。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-egg-toast.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "卵",
+          "count": 1
+        },
+        {
+          "name": "バター",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-egg-toast",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/egg_toast.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-potato-sandwich",
+    "name": "ポテトサンド",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのPine Cookingアイテム。",
+    "description": "ほくほくのベイクドポテトを挟んだ、腹持ちのよいサンド。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IIIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank III。",
+      "満腹度の設定：8。",
+      "飽和度係数の設定：0.9。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-potato-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/potato_sandwich.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/potato_sandwich.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/potato_sandwich.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-potato-sandwich",
+    "name": "ポテトサンドのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IIIのポテトサンドを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank III。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-potato-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "ベイクドポテト",
+          "count": 2
+        },
+        {
+          "name": "バター",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-potato-sandwich",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/potato_sandwich.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-steak-sandwich",
+    "name": "ステーキサンド",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのPine Cookingアイテム。",
+    "description": "焼いた牛肉をパンで挟んだ、しっかり食べ応えのあるサンド。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IVを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank IV。",
+      "満腹度の設定：10。",
+      "飽和度係数の設定：1.0。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-steak-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/steak_sandwich.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/steak_sandwich.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/steak_sandwich.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-steak-sandwich",
+    "name": "ステーキサンドのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのステーキサンドを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank IV。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-steak-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "ステーキ",
+          "count": 1
+        },
+        {
+          "name": "バター",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-steak-sandwich",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/steak_sandwich.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-pork-sandwich",
+    "name": "ポークサンド",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのPine Cookingアイテム。",
+    "description": "香ばしい豚肉とバターを合わせた、コクのあるサンド。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IVを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank IV。",
+      "満腹度の設定：10。",
+      "飽和度係数の設定：1.0。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-pork-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/pork_sandwich.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/pork_sandwich.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/pork_sandwich.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-pork-sandwich",
+    "name": "ポークサンドのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのポークサンドを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank IV。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-pork-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "焼き豚",
+          "count": 1
+        },
+        {
+          "name": "バター",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-pork-sandwich",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/pork_sandwich.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-chicken-sandwich",
+    "name": "チキンサンド",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのPine Cookingアイテム。",
+    "description": "焼き鳥のやわらかな旨味をパンで包んだ、食べやすいサンド。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IVを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank IV。",
+      "満腹度の設定：9。",
+      "飽和度係数の設定：1.0。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chicken-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/chicken_sandwich.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chicken_sandwich.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/chicken_sandwich.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-chicken-sandwich",
+    "name": "チキンサンドのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのチキンサンドを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank IV。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chicken-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "焼き鳥",
+          "count": 1
+        },
+        {
+          "name": "バター",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-chicken-sandwich",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chicken_sandwich.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-mushroom-sandwich",
+    "name": "キノコサンド",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのPine Cookingアイテム。",
+    "description": "赤と茶のキノコをバターでまとめた、香り豊かなサンド。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IVを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank IV。",
+      "満腹度の設定：9。",
+      "飽和度係数の設定：1.1。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-mushroom-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/mushroom_sandwich.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/mushroom_sandwich.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/mushroom_sandwich.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-mushroom-sandwich",
+    "name": "キノコサンドのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのキノコサンドを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank IV。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-mushroom-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パン",
+          "count": 1
+        },
+        {
+          "name": "赤キノコ",
+          "count": 1
+        },
+        {
+          "name": "茶キノコ",
+          "count": 1
+        },
+        {
+          "name": "バター",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-mushroom-sandwich",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/mushroom_sandwich.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-pumpkin-soup",
+    "name": "パンプキンスープ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのPine Cookingアイテム。",
+    "description": "カボチャの甘みとミルクが広がる、ほっとする味わいのスープ。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IVを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank IV。",
+      "満腹度の設定：10。",
+      "飽和度係数の設定：1.3。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-pumpkin-soup.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/pumpkin_soup.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/pumpkin_soup.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/pumpkin_soup.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-pumpkin-soup",
+    "name": "パンプキンスープのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのパンプキンスープを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank IV。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-pumpkin-soup.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "カボチャ",
+          "count": 1
+        },
+        {
+          "name": "ミルク瓶",
+          "count": 1
+        },
+        {
+          "name": "バター",
+          "count": 1
+        },
+        {
+          "name": "ボウル",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-pumpkin-soup",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/pumpkin_soup.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-honey-chicken",
+    "name": "ハニーチキン",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのPine Cookingアイテム。",
+    "description": "はちみつの甘みが絡んだ香ばしいチキン。シンプルながら満足感のある一品。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IVを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank IV。",
+      "満腹度の設定：10。",
+      "飽和度係数の設定：1.2。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-honey-chicken.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/honey_chicken.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/honey_chicken.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/honey_chicken.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-honey-chicken",
+    "name": "ハニーチキンのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのハニーチキンを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank IV。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-honey-chicken.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "焼き鳥",
+          "count": 1
+        },
+        {
+          "name": "ハチミツ入りの瓶",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-honey-chicken",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/honey_chicken.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-fruit-bowl",
+    "name": "フルーツボウル",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのPine Cookingアイテム。",
+    "description": "リンゴと2種のベリーを盛り合わせた、彩り豊かなフルーツボウル。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank IVを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank IV。",
+      "満腹度の設定：11。",
+      "飽和度係数の設定：1.2。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-fruit-bowl.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/fruit_bowl.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/fruit_bowl.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/fruit_bowl.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-fruit-bowl",
+    "name": "フルーツボウルのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank IVのフルーツボウルを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank IV。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-fruit-bowl.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "リンゴ",
+          "count": 1
+        },
+        {
+          "name": "sweet_berries",
+          "count": 2
+        },
+        {
+          "name": "glow_berries",
+          "count": 2
+        },
+        {
+          "name": "ボウル",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-fruit-bowl",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/fruit_bowl.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-honey-pork-sandwich",
+    "name": "ハニーポークサンド",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VのPine Cookingアイテム。",
+    "description": "ポークサンドにはちみつの照りを重ねた、濃厚で贅沢なサンド。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank Vを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank V。",
+      "満腹度の設定：12。",
+      "飽和度係数の設定：1.3。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-honey-pork-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/honey_pork_sandwich.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/honey_pork_sandwich.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/honey_pork_sandwich.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-honey-pork-sandwich",
+    "name": "ハニーポークサンドのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank Vのハニーポークサンドを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank V。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-honey-pork-sandwich.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "ポークサンド",
+          "count": 2
+        },
+        {
+          "name": "ハチミツ入りの瓶",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-honey-pork-sandwich",
+      "count": 2
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/honey_pork_sandwich.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-mushroom-cream-soup",
+    "name": "キノコクリームスープ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VのPine Cookingアイテム。",
+    "description": "2種類のキノコの旨味とミルクのコクが溶け合う、濃厚でやさしいスープ。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank Vを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank V。",
+      "満腹度の設定：11。",
+      "飽和度係数の設定：1.4。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-mushroom-cream-soup.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/mushroom_cream_soup.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/mushroom_cream_soup.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/mushroom_cream_soup.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-mushroom-cream-soup",
+    "name": "キノコクリームスープのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank Vのキノコクリームスープを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank V。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-mushroom-cream-soup.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "赤キノコ",
+          "count": 1
+        },
+        {
+          "name": "茶キノコ",
+          "count": 1
+        },
+        {
+          "name": "ミルク瓶",
+          "count": 1
+        },
+        {
+          "name": "バター",
+          "count": 1
+        },
+        {
+          "name": "ボウル",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-mushroom-cream-soup",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/mushroom_cream_soup.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-beef-stew",
+    "name": "ビーフシチュー",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VのPine Cookingアイテム。",
+    "description": "じっくり煮込んだ牛肉と野菜の旨味が詰まった、贅沢なシチュー。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank Vを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank V。",
+      "満腹度の設定：13。",
+      "飽和度係数の設定：1.5。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-beef-stew.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/beef_stew.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/beef_stew.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/beef_stew.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-beef-stew",
+    "name": "ビーフシチューのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank Vのビーフシチューを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank V。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-beef-stew.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "ステーキ",
+          "count": 1
+        },
+        {
+          "name": "ベイクドポテト",
+          "count": 1
+        },
+        {
+          "name": "ニンジン",
+          "count": 1
+        },
+        {
+          "name": "ボウル",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-beef-stew",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/beef_stew.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-chicken-stew",
+    "name": "チキンシチュー",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VのPine Cookingアイテム。",
+    "description": "やわらかな鶏肉と野菜のやさしい味わい。体の芯から温まる定番シチュー。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank Vを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank V。",
+      "満腹度の設定：12。",
+      "飽和度係数の設定：1.4。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chicken-stew.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/chicken_stew.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chicken_stew.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/chicken_stew.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-chicken-stew",
+    "name": "チキンシチューのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank Vのチキンシチューを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank V。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chicken-stew.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "焼き鳥",
+          "count": 1
+        },
+        {
+          "name": "ベイクドポテト",
+          "count": 1
+        },
+        {
+          "name": "ニンジン",
+          "count": 1
+        },
+        {
+          "name": "ボウル",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-chicken-stew",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chicken_stew.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-seafood-soup",
+    "name": "海鮮スープ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VのPine Cookingアイテム。",
+    "description": "海の幸の旨味を昆布で引き出した、滋味深いスープ。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank Vを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank V。",
+      "満腹度の設定：13。",
+      "飽和度係数の設定：1.5。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-seafood-soup.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/seafood_soup.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/seafood_soup.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/seafood_soup.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-seafood-soup",
+    "name": "海鮮スープのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank Vの海鮮スープを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank V。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-seafood-soup.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "焼き鮭",
+          "count": 1
+        },
+        {
+          "name": "焼き鱈",
+          "count": 1
+        },
+        {
+          "name": "乾燥昆布",
+          "count": 1
+        },
+        {
+          "name": "ボウル",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-seafood-soup",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/seafood_soup.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-chocolate-pancake",
+    "name": "チョコパンケーキ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VのPine Cookingアイテム。",
+    "description": "パンケーキにチョコの濃厚な甘さを重ねた、王道のデザート。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank Vを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank V。",
+      "満腹度の設定：13。",
+      "飽和度係数の設定：1.5。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chocolate-pancake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/chocolate_pancake.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chocolate_pancake.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/chocolate_pancake.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-chocolate-pancake",
+    "name": "チョコパンケーキのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank Vのチョコパンケーキを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank V。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-chocolate-pancake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パンケーキ",
+          "count": 1
+        },
+        {
+          "name": "チョコ",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-chocolate-pancake",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/chocolate_pancake.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-apple-pancake",
+    "name": "アップルパンケーキ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VのPine Cookingアイテム。",
+    "description": "リンゴと砂糖の甘酸っぱさを添えた、香りのよいパンケーキ。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank Vを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank V。",
+      "満腹度の設定：13。",
+      "飽和度係数の設定：1.5。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-apple-pancake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/apple_pancake.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/apple_pancake.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/apple_pancake.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-apple-pancake",
+    "name": "アップルパンケーキのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank Vのアップルパンケーキを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank V。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-apple-pancake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パンケーキ",
+          "count": 1
+        },
+        {
+          "name": "リンゴ",
+          "count": 1
+        },
+        {
+          "name": "砂糖",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-apple-pancake",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/apple_pancake.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-pumpkin-pancake",
+    "name": "パンプキンパンケーキ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VのPine Cookingアイテム。",
+    "description": "カボチャのやさしい甘みを生かした、ほっこり濃厚なパンケーキ。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank Vを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank V。",
+      "満腹度の設定：13。",
+      "飽和度係数の設定：1.5。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-pumpkin-pancake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/pumpkin_pancake.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/pumpkin_pancake.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/pumpkin_pancake.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-pumpkin-pancake",
+    "name": "パンプキンパンケーキのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank Vのパンプキンパンケーキを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank V。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-pumpkin-pancake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パンケーキ",
+          "count": 1
+        },
+        {
+          "name": "カボチャ",
+          "count": 1
+        },
+        {
+          "name": "砂糖",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-pumpkin-pancake",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/pumpkin_pancake.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-glow-berry-pancake",
+    "name": "グロウベリーパンケーキ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VIのPine Cookingアイテム。",
+    "description": "グロウベリーを贅沢に使った、鮮やかで特別感のあるパンケーキ。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank VIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank VI。",
+      "満腹度の設定：14。",
+      "飽和度係数の設定：1.6。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-glow-berry-pancake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/glow_berry_pancake.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/glow_berry_pancake.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/glow_berry_pancake.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-glow-berry-pancake",
+    "name": "グロウベリーパンケーキのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank VIのグロウベリーパンケーキを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank VI。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-glow-berry-pancake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "パンケーキ",
+          "count": 1
+        },
+        {
+          "name": "glow_berries",
+          "count": 2
+        }
+      ],
+      "resultId": "pine-food-glow-berry-pancake",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/glow_berry_pancake.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-food-carrot-cake",
+    "name": "キャロットケーキ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "Rank VIのPine Cookingアイテム。",
+    "description": "ニンジン、ミルク、バターをたっぷり使った、満足感の高いケーキ。",
+    "usage": "食料は手に持って食べます。素材は上位料理の材料として使います。",
+    "obtaining": "まな板でRank VIを選び、必要材料を揃えてクラフトします。",
+    "details": [
+      "分類：Rank VI。",
+      "満腹度の設定：14。",
+      "飽和度係数の設定：1.7。",
+      "料理説明はまな板UI上に表示され、アイテムLoreには追加されません。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-carrot-cake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/carrot_cake.json",
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/carrot_cake.json",
+        "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/carrot_cake.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "craft-pine-food-carrot-cake",
+    "name": "キャロットケーキのまな板レシピ",
+    "kind": "recipe",
+    "contentId": "pine-cooking",
+    "summary": "Rank VIのキャロットケーキを、まな板で作るレシピ。",
+    "description": "通常の作業台では表示・作成されない、Pine Cookingのまな板専用レシピです。",
+    "usage": "対応Rankの調理ナイフをまな板に置き、専用UIから料理を選んでクラフトします。",
+    "obtaining": "材料はプレイヤーのインベントリから消費されます。",
+    "details": [
+      "必要Rank：Rank VI。",
+      "レシピタグは pinene_cutting_board のみです。",
+      "ハチミツ瓶やミルクバケツは対応する空容器を返却する処理があります。"
+    ],
+    "image": {
+      "src": "/images/items/pine-food-carrot-cake.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": {
+      "shaped": false,
+      "grid": [],
+      "ingredients": [
+        {
+          "name": "ニンジン",
+          "count": 2
+        },
+        {
+          "name": "小麦",
+          "count": 2
+        },
+        {
+          "name": "卵",
+          "count": 1
+        },
+        {
+          "name": "砂糖",
+          "count": 2
+        },
+        {
+          "name": "バター",
+          "count": 1
+        },
+        {
+          "name": "ミルク瓶",
+          "count": 1
+        }
+      ],
+      "resultId": "pine-food-carrot-cake",
+      "count": 1
+    },
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/carrot_cake.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js"
+      ]
+    }
+  },
+  {
+    "id": "cooking-knife-copper",
+    "name": "銅のナイフ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "まな板でRank IIまで調理できるナイフ。",
+    "description": "銅のナイフはPine Cooking専用の調理ナイフです。まな板に置くと料理UIを開けます。",
+    "usage": "手に持ってまな板を操作すると設置されます。設置後にまな板を通常操作すると料理UIを開きます。",
+    "obtaining": "各素材の調理ナイフ用レシピから作成します。",
+    "details": [
+      "作成可能上限：Rank II。",
+      "耐久値：96。",
+      "スニーク＋操作でまな板から回収できます。"
+    ],
+    "image": {
+      "src": "/images/items/cooking-knife-copper.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/items/copper_knife.json",
+        "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/textures/items/copper_knife.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js"
+      ]
+    }
+  },
+  {
+    "id": "cooking-knife-iron",
+    "name": "鉄のナイフ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "まな板でRank IIIまで調理できるナイフ。",
+    "description": "鉄のナイフはPine Cooking専用の調理ナイフです。まな板に置くと料理UIを開けます。",
+    "usage": "手に持ってまな板を操作すると設置されます。設置後にまな板を通常操作すると料理UIを開きます。",
+    "obtaining": "各素材の調理ナイフ用レシピから作成します。",
+    "details": [
+      "作成可能上限：Rank III。",
+      "耐久値：128。",
+      "スニーク＋操作でまな板から回収できます。"
+    ],
+    "image": {
+      "src": "/images/items/cooking-knife-iron.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/items/iron_knife.json",
+        "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/textures/items/iron_knife.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js"
+      ]
+    }
+  },
+  {
+    "id": "cooking-knife-gold",
+    "name": "金のナイフ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "まな板でRank IVまで調理できるナイフ。",
+    "description": "金のナイフはPine Cooking専用の調理ナイフです。まな板に置くと料理UIを開けます。",
+    "usage": "手に持ってまな板を操作すると設置されます。設置後にまな板を通常操作すると料理UIを開きます。",
+    "obtaining": "各素材の調理ナイフ用レシピから作成します。",
+    "details": [
+      "作成可能上限：Rank IV。",
+      "耐久値：64。",
+      "スニーク＋操作でまな板から回収できます。"
+    ],
+    "image": {
+      "src": "/images/items/cooking-knife-gold.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/items/gold_knife.json",
+        "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/textures/items/gold_knife.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js"
+      ]
+    }
+  },
+  {
+    "id": "cooking-knife-diamond",
+    "name": "ダイヤモンドのナイフ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "まな板でRank VIまで調理できるナイフ。",
+    "description": "ダイヤモンドのナイフはPine Cooking専用の調理ナイフです。まな板に置くと料理UIを開けます。",
+    "usage": "手に持ってまな板を操作すると設置されます。設置後にまな板を通常操作すると料理UIを開きます。",
+    "obtaining": "各素材の調理ナイフ用レシピから作成します。",
+    "details": [
+      "作成可能上限：Rank VI。",
+      "耐久値：512。",
+      "スニーク＋操作でまな板から回収できます。"
+    ],
+    "image": {
+      "src": "/images/items/cooking-knife-diamond.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/items/diamond_knife.json",
+        "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/textures/items/diamond_knife.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js"
+      ]
+    }
+  },
+  {
+    "id": "cooking-knife-netherite",
+    "name": "ネザライトのナイフ",
+    "kind": "item",
+    "contentId": "pine-cooking",
+    "summary": "まな板でRank VIIまで調理できるナイフ。",
+    "description": "ネザライトのナイフはPine Cooking専用の調理ナイフです。まな板に置くと料理UIを開けます。",
+    "usage": "手に持ってまな板を操作すると設置されます。設置後にまな板を通常操作すると料理UIを開きます。",
+    "obtaining": "各素材の調理ナイフ用レシピから作成します。",
+    "details": [
+      "作成可能上限：Rank VII。",
+      "耐久値：640。",
+      "スニーク＋操作でまな板から回収できます。"
+    ],
+    "image": {
+      "src": "/images/items/cooking-knife-netherite.png",
+      "alt": "ゲーム内で使用するアイテムテクスチャ",
+      "kind": "pack-texture"
+    },
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/items/netherite_knife.json",
+        "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/textures/items/netherite_knife.png",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js"
+      ]
+    }
+  },
+  {
+    "id": "pine-cooking-cutting-boards",
+    "name": "まな板（13種類）",
+    "kind": "feature",
+    "contentId": "pine-cooking",
+    "summary": "13種類の木材系バリエーションを持つ料理専用ブロック。",
+    "description": "調理ナイフを置いてPine Cookingの専用UIを開くためのまな板です。機能は共通で、木材ごとに見た目が変わります。",
+    "usage": "設置したまな板へ調理ナイフを置き、通常操作で料理UIを開きます。",
+    "obtaining": "各木材に対応するまな板レシピから作成します。",
+    "details": [
+      "種類：オーク / トウヒ / シラカバ / ジャングル / アカシア / ダークオーク / マングローブ / サクラ / 竹 / 深紅 / 歪んだ / ペールオーク / ポプラ",
+      "ナイフを置いた状態は専用3Dモデルで表示されます。",
+      "料理30種は通常作業台ではなく、このまな板UIから作成します。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/blocks/oak_cutting_board.json",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/models/blocks/cutting_board.geo.json",
+        "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/ui/server_form.json"
+      ]
+    }
+  },
+  {
+    "id": "pine-cooking-rank-system",
+    "name": "料理Rankとナイフ制限",
+    "kind": "feature",
+    "contentId": "pine-cooking",
+    "summary": "料理をRankで分類し、ナイフ素材ごとに作成可能な上限を設定。",
+    "description": "料理UIは素材とRank I〜VIIに分かれています。現在の料理はRank II〜VIを中心に配置され、使用中のナイフで作れないRankはロック表示されます。",
+    "usage": "左側のRankタブを選び、中央の料理アイコンから作りたい料理を選択します。",
+    "obtaining": "ナイフ素材を上位へ更新すると、より高いRankの料理を作れるようになります。",
+    "details": [
+      "銅：Rank IIまで / 鉄：Rank IIIまで / 金：Rank IVまで。",
+      "ダイヤモンド：Rank VIまで / ネザライト：Rank VIIまで。",
+      "Rank IとVIIは将来拡張用の空き区分です。"
+    ],
+    "image": null,
+    "recipe": null,
+    "visibility": "public",
+    "evidence": {
+      "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+      "paths": [
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/main.js",
+        "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js",
+        "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/ui/server_form.json"
+      ]
+    }
   }
 ]

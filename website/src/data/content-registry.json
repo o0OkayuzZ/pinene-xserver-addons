@@ -1448,6 +1448,91 @@
       "packBindings": [],
       "related": [],
       "verification": []
+    },
+    {
+      "id": "pine-cooking",
+      "name": "Pine Cooking",
+      "visibility": "public",
+      "implementation": "implemented",
+      "deployment": "repo-only",
+      "category": [
+        "craft",
+        "systems"
+      ],
+      "packBindings": [
+        {
+          "uuid": "7e540260-69ce-4a82-951d-bc793e151cd5",
+          "roles": [
+            "item-definition",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "211f47f7-5f1d-4b02-a162-e7546cf3fdc4",
+          "roles": [
+            "behavior",
+            "item-definition",
+            "runtime-script",
+            "recipe"
+          ]
+        },
+        {
+          "uuid": "c81a6798-b6b1-4716-a514-c49967ad0ee2",
+          "roles": [
+            "texture"
+          ]
+        },
+        {
+          "uuid": "392fe57f-87d4-4146-a8ba-5c548001ab45",
+          "roles": [
+            "texture",
+            "model",
+            "shared-asset"
+          ]
+        }
+      ],
+      "related": [
+        "pancakes",
+        "golden-foods"
+      ],
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809"
+        },
+        {
+          "kind": "gameplay",
+          "result": "unknown"
+        },
+        {
+          "kind": "appearance",
+          "result": "confirmed"
+        }
+      ],
+      "summary": "まな板と調理ナイフで、Rank別の料理を作る専用クラフトシステム。",
+      "description": "Pine Foodの30種類の料理・素材と、13種類のまな板、5種類の調理ナイフをまとめた料理システムです。料理は通常の作業台では作れず、まな板専用UIから選んでクラフトします。",
+      "image": {
+        "src": "/images/pine-cooking.png",
+        "alt": "Pine Cookingのはちみつパン実テクスチャ",
+        "kind": "placeholder"
+      },
+      "highlights": [
+        "素材 / Rank I〜VIIで料理を分類",
+        "料理はまな板専用UIからのみクラフト",
+        "銅・鉄・金・ダイヤ・ネザライトで作成可能Rankが変化"
+      ],
+      "guide": "まな板に調理ナイフを置いて操作し、Rankを選択します。料理アイコンを選ぶと材料・完成品・説明が表示され、材料が揃っていればクラフトできます。",
+      "children": [],
+      "evidence": {
+        "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+        "paths": [
+          "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/manifest.json",
+          "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/manifest.json",
+          "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/manifest.json",
+          "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/manifest.json"
+        ]
+      }
     }
   ]
 }
