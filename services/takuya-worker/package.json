@@ -1,12 +1,13 @@
 {
   "name": "pine-takuya-worker",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "db:migrate": "wrangler d1 migrations apply pine-takuya-logs --remote"
   },
   "devDependencies": {
     "wrangler": "4.141.0"
