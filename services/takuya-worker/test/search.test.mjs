@@ -28,6 +28,14 @@ const entries = [
     url: '/database/entries/craft-pancake-batter/',
   },
   {
+    id: 'guide:burning-arrow-recipe',
+    type: 'recipe',
+    title: '炎上の矢のレシピ',
+    aliases: ['burning-arrow-recipe'],
+    text: '別の矢のレシピです。',
+    url: '/database/entries/burning-arrow-recipe/',
+  },
+  {
     id: 'update:pancake',
     type: 'update',
     title: 'パンケーキを更新',
@@ -45,6 +53,7 @@ test('identifier inside a natural-language question resolves NF entry first', ()
 test('crafting intent boosts the recipe above the item', () => {
   const result = searchKnowledge('パンケーキ生地ってどう作る？', entries);
   assert.equal(result[0]?.id, 'guide:craft-pancake-batter');
+  assert.equal(result.some((entry) => entry.id === 'guide:burning-arrow-recipe'), false);
 });
 
 test('update intent can surface update entries', () => {
