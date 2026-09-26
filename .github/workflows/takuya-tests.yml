@@ -1,0 +1,57 @@
+name: Takuya AI
+
+on:
+  pull_request:
+    paths:
+      - 'services/takuya-worker/**'
+      - 'website/src/components/TakuyaChat.astro'
+      - 'website/src/data/**'
+      - 'website/src/layouts/BaseLayout.astro'
+      - 'website/src/pages/privacy.astro'
+      - 'website/scripts/build-takuya-knowledge.mjs'
+      - 'website/package.json'
+      - 'website/package-lock.json'
+      - '.github/workflows/takuya-tests.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'services/takuya-worker/**'
+      - 'website/src/components/TakuyaChat.astro'
+      - 'website/src/data/**'
+      - 'website/src/layouts/BaseLayout.astro'
+      - 'website/src/pages/privacy.astro'
+      - 'website/scripts/build-takuya-knowledge.mjs'
+      - 'website/package.json'
+      - 'website/package-lock.json'
+      - '.github/workflows/takuya-tests.yml'
+
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: services/takuya-worker
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --ignore-scripts
+      - run: npm test
+      - run: npx wrangler deploy --dry-run
+
+  website:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm run build

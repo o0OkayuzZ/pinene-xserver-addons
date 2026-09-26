@@ -7,10 +7,11 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "build:knowledge": "node scripts/build-takuya-knowledge.mjs",
+    "dev": "npm run build:knowledge && astro dev",
     "validate": "node scripts/validate-data.mjs",
     "check": "astro check",
-    "build": "npm run validate && astro build",
+    "build": "npm run validate && npm run build:knowledge && astro build",
     "preview": "astro preview",
     "test": "playwright test",
     "test:publication": "node --test scripts/publication.test.mjs"

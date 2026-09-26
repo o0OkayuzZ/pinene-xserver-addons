@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pine-takuya",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-26",
+  "vars": {
+    "MODEL": "gpt-6-luna",
+    "KNOWLEDGE_URL": "https://o0okayuzz.github.io/pine-server/ai/knowledge.json",
+    "ALLOWED_ORIGIN": "https://o0okayuzz.github.io"
+  },
+  "ratelimits": [
+    {
+      "name": "TAKUYA_RATE_LIMITER",
+      "namespace_id": "26092701",
+      "simple": {
+        "limit": 12,
+        "period": 60
+      }
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
