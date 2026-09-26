@@ -84,7 +84,7 @@
       "id": "infinite-castle",
       "name": "無限城",
       "summary": "廊下、階段、広間。その先のつながりをたどる探索ダンジョン。",
-      "description": "廊下や階段、広間をたどり、戦闘部屋や特別な部屋を探す独立した探索ダンジョンです。衛兵・呪術・怨霊・重装・混成・Eliteの6種類の戦闘は2段階で進み、鍵持ちの撃破が宝箱の封印解除につながります。癒やしの庭で休み、帰還陣を探しながら、変化する城を探索する構成です。ここでは最新版のコードで確認できた仕組みを紹介します。",
+      "description": "廊下や階段、広間をたどり、戦闘部屋や特別な部屋を探す独立した探索ダンジョンです。衛兵・呪術・怨霊・重装・混成・Eliteの6種類の戦闘は2段階で進み、鍵持ちの撃破が宝箱の封印解除につながります。癒やしの庭で休み、帰還陣を探しながら、変化する城を探索する構成です。ここでは最新版のコードで確認できた仕組みを紹介します。 2026年9月27日版では、背景城郭と夕焼けfogの欠落に備えた一度きりの自動復旧処理を追加しています。復旧は既存のscenery再構築を利用し、プレイヤー安全判定で完了できない場合は時間をおいて再試行します。",
       "category": [
         "exploration",
         "world"
@@ -96,17 +96,17 @@
         {
           "kind": "code",
           "result": "confirmed",
-          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+          "commit": "44fd3b86b8201a43e323b3639f89c9f7c2664953"
         },
         {
           "kind": "registration",
           "result": "confirmed",
-          "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80"
+          "commit": "44fd3b86b8201a43e323b3639f89c9f7c2664953"
         },
         {
           "kind": "server-start",
           "result": "confirmed",
-          "commit": "6dfe5134608cad49ef58e49b3f3667b00de9f7be"
+          "commit": "44fd3b86b8201a43e323b3639f89c9f7c2664953"
         },
         {
           "kind": "gameplay",
@@ -126,7 +126,7 @@
         "6種類の戦闘部屋。それぞれの第2波に異なる鍵持ちが登場する設定です。",
         "鍵の飛翔と宝箱の封印解除。報酬は枠ごとに抽選し、空欄も含まれます。",
         "癒やしの庭・宝物庫・帰還陣など、戦闘以外の探索要素も掲載。",
-        "再構成はプレイヤーや戦闘中の部屋を保護しながら進行。背景と城本体で琴の聞こえ方を分けています。"
+        "背景城郭や夕焼けfogが失われた場合、入場を契機に一度だけ安全に再構築する復旧処理を追加しました。"
       ],
       "guide": "入口の場所と参加条件は案内を準備中です。城内では部屋ごとの戦闘と鍵持ちに注目し、出口を見つけたら帰還陣の中心でしゃがむ流れが実装されています。各説明はコードを照合したもので、全戦闘・報酬・帰還・最新の音を実機で受け入れ確認したものではありません。PvP Islandとは別コンテンツです。",
       "children": [],
@@ -150,7 +150,7 @@
         }
       ],
       "evidence": {
-        "commit": "a744ac8a2a32e3837abe8d3150802ec818f68a80",
+        "commit": "44fd3b86b8201a43e323b3639f89c9f7c2664953",
         "paths": [
           "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/manifest.json",
           "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/main.js",
@@ -167,7 +167,8 @@
           "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/sourceHealingGarden.js",
           "docs/infinite_castle/distant-koto-20260912.md",
           "docs/infinite_castle/reconstruction-clock-20260912.md",
-          "docs/infinite_castle/distant-koto-20260912.md"
+          "docs/infinite_castle/distant-koto-20260912.md",
+          "behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9/scripts/infinite_castle/castleBackgroundRestore.js"
         ]
       }
     },
@@ -1430,13 +1431,68 @@
     {
       "id": "vibrant-visuals",
       "name": "Vibrant Visuals / Deferred",
-      "visibility": "draft",
-      "implementation": "unknown",
-      "deployment": "unknown",
-      "category": [],
-      "packBindings": [],
+      "visibility": "public",
+      "implementation": "implemented",
+      "deployment": "deployed-recorded",
+      "category": [
+        "systems",
+        "world"
+      ],
+      "packBindings": [
+        {
+          "uuid": "917aab9c-5273-1000-ba5e-087a4328aa6b",
+          "roles": [
+            "texture",
+            "shared-asset",
+            "compatibility"
+          ]
+        }
+      ],
       "related": [],
-      "verification": []
+      "verification": [
+        {
+          "kind": "code",
+          "result": "confirmed",
+          "commit": "cb63cd82cfeab14cc64d072b2f6efa87e0a9c0cb"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "cb63cd82cfeab14cc64d072b2f6efa87e0a9c0cb"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "cb63cd82cfeab14cc64d072b2f6efa87e0a9c0cb"
+        },
+        {
+          "kind": "appearance",
+          "result": "unknown"
+        }
+      ],
+      "summary": "空・霧・照明・PBR・反射をまとめて扱う描画レイヤー。ツールと装備の鏡面表現も素材別に調整。",
+      "description": "Vibrant Visuals / Deferred向けの描画専用リソースパックです。現在のXserverではDefault Featuredを使用し、空・霧・照明・PBR・影・反射をまとめて管理しています。1.3.36では手持ちツール25種、装備アイコン20種、着用装備10レイヤーを素材別MERへ分離し、鏡面感を残しながら白飛びしにくい反射へ調整しました。",
+      "image": {
+        "src": "/images/vibrant-visuals.png",
+        "alt": "Vibrant Visuals / Deferred リソースパックのアイコン",
+        "kind": "placeholder"
+      },
+      "highlights": [
+        "Default Featuredを本番利用。空・霧・照明・PBR・影・反射を一括管理します。",
+        "手持ちツール25種は刃・ツールヘッドだけを鏡面寄りにし、木の柄はマットに維持。",
+        "銅・鉄・金・ダイヤ・ネザライトの装備アイコン20種と着用装備10レイヤーを素材別MERへ分離。",
+        "emissiveは0のまま、旧roughness 34の極端な鏡面から素材別の反射へ調整し、白飛びを抑えています。"
+      ],
+      "guide": "プレイヤー側の操作は不要です。サーバー参加時に最新リソースパックを読み込み、Default Featuredの描画で反映されます。反射は明るい屋外・暗所・空を向いた角度で見え方が変わります。",
+      "children": [],
+      "evidence": {
+        "commit": "cb63cd82cfeab14cc64d072b2f6efa87e0a9c0cb",
+        "paths": [
+          "external:vibrant-visuals/manifest.json",
+          "external:vibrant-visuals/subpacks/Default Featured/textures/items/",
+          "external:vibrant-visuals/subpacks/Default Featured/textures/models/armor/"
+        ]
+      }
     },
     {
       "id": "rare-material-trader",
@@ -1454,7 +1510,7 @@
       "name": "Pine Cooking",
       "visibility": "public",
       "implementation": "implemented",
-      "deployment": "repo-only",
+      "deployment": "deployed-recorded",
       "category": [
         "craft",
         "systems"
@@ -1499,7 +1555,17 @@
         {
           "kind": "code",
           "result": "confirmed",
-          "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809"
+          "commit": "46623012c8b7187b1a4ca25bb951dd9a0d48a764"
+        },
+        {
+          "kind": "registration",
+          "result": "confirmed",
+          "commit": "46623012c8b7187b1a4ca25bb951dd9a0d48a764"
+        },
+        {
+          "kind": "server-start",
+          "result": "confirmed",
+          "commit": "46623012c8b7187b1a4ca25bb951dd9a0d48a764"
         },
         {
           "kind": "gameplay",
@@ -1510,22 +1576,23 @@
           "result": "confirmed"
         }
       ],
-      "summary": "まな板と調理ナイフで、Rank別の料理を作る専用クラフトシステム。",
-      "description": "Pine Foodの30種類の料理・素材と、13種類のまな板、5種類の調理ナイフをまとめた料理システムです。料理は通常の作業台では作れず、まな板専用UIから選んでクラフトします。",
+      "summary": "まな板と調理ナイフでRank別の料理を作る、本番導入済みの専用クラフトシステム。",
+      "description": "Pine Foodの30種類の料理・素材、13種類のまな板、5種類の調理ナイフをまとめた料理システムです。料理は通常の作業台では作れず、まな板専用UIから選んでクラフトします。まな板自体は作業台で作成でき、ポプラまな板は1.26系で追加されたバニラのポプラ板材を使用します。",
       "image": {
         "src": "/images/pine-cooking.png",
         "alt": "Pine Cookingのはちみつパン実テクスチャ",
         "kind": "placeholder"
       },
       "highlights": [
-        "素材 / Rank I〜VIIで料理を分類",
-        "料理はまな板専用UIからのみクラフト",
-        "銅・鉄・金・ダイヤ・ネザライトで作成可能Rankが変化"
+        "素材 / Rank I〜VIIで料理を分類。ナイフ素材によって作成可能Rankが変わります。",
+        "料理はまな板専用UIからのみクラフト。材料・完成品・料理説明を同じ画面で確認できます。",
+        "まな板は13種類。ポプラを含む各木材の見た目を使い分けられます。",
+        "Cooking Tools BP 0.1.2 / RP 0.1.1 をXserverへ配備済みです。"
       ],
-      "guide": "まな板に調理ナイフを置いて操作し、Rankを選択します。料理アイコンを選ぶと材料・完成品・説明が表示され、材料が揃っていればクラフトできます。",
+      "guide": "作業台でまな板を作って設置し、調理ナイフを持って操作するとナイフを置けます。その状態でまな板を操作して料理UIを開き、Rankと料理を選んでクラフトします。ポプラまな板はポプラ板材9枚を3×3に並べて作成します。",
       "children": [],
       "evidence": {
-        "commit": "28cdffa4e569b313afe9491d0d3cd6a7fc416809",
+        "commit": "46623012c8b7187b1a4ca25bb951dd9a0d48a764",
         "paths": [
           "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/manifest.json",
           "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/manifest.json",
