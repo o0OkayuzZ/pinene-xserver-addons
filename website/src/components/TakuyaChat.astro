@@ -1,0 +1,166 @@
+---
+import config from '../data/takuya-config.json';
+import { withBase } from '../lib/data';
+const visible = config.enabled || import.meta.env.DEV;
+const basePath = withBase('/');
+const privacyUrl = withBase('/privacy/');
+---
+{visible && (
+  <aside class="takuya-shell" data-takuya data-api-url={config.apiUrl} data-base={basePath} data-history-turns={config.historyTurns}>
+    <button class="takuya-launcher" type="button" aria-expanded="false" aria-controls="takuya-panel">
+      <span class="takuya-avatar" aria-hidden="true">拓</span>
+      <span>拓也に聞く</span>
+    </button>
+    <section class="takuya-panel" id="takuya-panel" aria-label="ピネ鯖案内AI 拓也" hidden>
+      <header class="takuya-header">
+        <div><strong>拓也</strong><small>ピネ鯖案内AI</small></div>
+        <button class="takuya-close" type="button" aria-label="拓也を閉じる">×</button>
+      </header>
+      <div class="takuya-messages" role="log" aria-live="polite" aria-relevant="additions">
+        <div class="takuya-message assistant">
+          <strong>拓也</strong>
+          <p>{config.enabled ? 'ピネ鯖のアイテム、レシピ、無限城、菌茸、更新情報などを聞いてね。' : 'いま接続準備中。UIと知識検索の確認用表示です。'}</p>
+        </div>
+      </div>
+      <form class="takuya-form">
+        <label for="takuya-input">質問</label>
+        <textarea id="takuya-input" rows="2" maxlength={config.maxMessageLength} placeholder="例：爆弾クロスボウってどう作る？" disabled={!config.enabled}></textarea>
+        <div class="takuya-form-row">
+          <small>AIの回答は公開中のピネWeb情報を優先します。<a href={privacyUrl}>取り扱い</a></small>
+          <button type="submit" disabled={!config.enabled}>送信</button>
+        </div>
+      </form>
+    </section>
+  </aside>
+)}
+<script>
+const root = document.querySelector<HTMLElement>('[data-takuya]');
+if (root) {
+  const launcher = root.querySelector<HTMLButtonElement>('.takuya-launcher');
+  const panel = root.querySelector<HTMLElement>('.takuya-panel');
+  const close = root.querySelector<HTMLButtonElement>('.takuya-close');
+  const form = root.querySelector<HTMLFormElement>('.takuya-form');
+  const input = root.querySelector<HTMLTextAreaElement>('#takuya-input');
+  const messages = root.querySelector<HTMLElement>('.takuya-messages');
+  const apiUrl = root.dataset.apiUrl?.replace(/\/$/, '') || '';
+  const base = root.dataset.base?.replace(/\/$/, '') || '';
+  const historyTurns = Number(root.dataset.historyTurns || '6');
+  const history: Array<{ role: 'user' | 'assistant'; content: string }> = [];
+
+  const openPanel = () => {
+    if (!panel || !launcher) return;
+    panel.hidden = false;
+    launcher.setAttribute('aria-expanded', 'true');
+    input?.focus();
+  };
+  const closePanel = () => {
+    if (!panel || !launcher) return;
+    panel.hidden = true;
+    launcher.setAttribute('aria-expanded', 'false');
+    launcher.focus();
+  };
+  launcher?.addEventListener('click', () => panel?.hidden ? openPanel() : closePanel());
+  close?.addEventListener('click', closePanel);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && panel && !panel.hidden) closePanel();
+  });
+
+  const sessionKey = 'pine-takuya-session';
+  let sessionId = sessionStorage.getItem(sessionKey);
+  if (!sessionId) {
+    sessionId = crypto.randomUUID();
+    sessionStorage.setItem(sessionKey, sessionId);
+  }
+
+  function addMessage(role: 'user' | 'assistant', text: string, sources: Array<{ title?: string; url?: string }> = []) {
+    if (!messages) return;
+    const wrap = document.createElement('div');
+    wrap.className = \`takuya-message \${role}\`;
+    const who = document.createElement('strong');
+    who.textContent = role === 'assistant' ? '拓也' : 'あなた';
+    const p = document.createElement('p');
+    p.textContent = text;
+    wrap.append(who, p);
+    if (sources.length) {
+      const links = document.createElement('div');
+      links.className = 'takuya-sources';
+      for (const source of sources) {
+        if (!source?.url) continue;
+        const a = document.createElement('a');
+        a.textContent = source.title || '関連ページ';
+        a.href = source.url.startsWith('/') ? \`\${base}\${source.url}\` : source.url;
+        links.append(a);
+      }
+      wrap.append(links);
+    }
+    messages.append(wrap);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function errorText(code: string) {
+    if (code === 'rate_limited') return '質問が少し集中してるみたい。少ししてからもう一度聞いてね。';
+    if (code === 'knowledge_unavailable') return 'いまピネWebの資料を読み込めないみたい。';
+    if (code === 'not_configured') return '拓也のAPI設定がまだ完了していません。';
+    return 'うまく答えられなかった。もう一度試してみてね。';
+  }
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const message = input?.value.trim() || '';
+    if (!message || !apiUrl || !input || !form) return;
+    addMessage('user', message);
+    history.push({ role: 'user', content: message });
+    input.value = '';
+    input.disabled = true;
+    const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    if (submit) submit.disabled = true;
+
+    try {
+      const response = await fetch(\`\${apiUrl}/chat\`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message,
+          sessionId,
+          history: history.slice(-(historyTurns * 2 + 1), -1),
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'request_failed');
+      addMessage('assistant', data.answer, Array.isArray(data.sources) ? data.sources : []);
+      history.push({ role: 'assistant', content: data.answer });
+      if (history.length > historyTurns * 2) history.splice(0, history.length - historyTurns * 2);
+    } catch (error) {
+      addMessage('assistant', errorText(error instanceof Error ? error.message : 'request_failed'));
+    } finally {
+      input.disabled = false;
+      if (submit) submit.disabled = false;
+      input.focus();
+    }
+  });
+
+  input?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      form?.requestSubmit();
+    }
+  });
+}
+</script>
+<style>
+.takuya-shell{position:fixed;right:24px;bottom:24px;z-index:60;font-size:.9rem}
+.takuya-launcher{border:2px solid #94dc62;border-bottom:5px solid var(--deep);background:var(--green);color:#132309;box-shadow:0 4px 16px #0004;display:flex;align-items:center;gap:10px;padding:10px 16px;font-weight:900;min-height:52px}
+.takuya-launcher:hover{background:#8bd752}.takuya-avatar{width:30px;height:30px;display:grid;place-items:center;background:#18380e;color:white;font-weight:950}
+.takuya-panel{position:absolute;right:0;bottom:64px;width:min(390px,calc(100vw - 32px));height:min(620px,calc(100vh - 120px));background:#f8f7f2;border:1px solid var(--border);box-shadow:0 18px 50px #0005;display:grid;grid-template-rows:auto 1fr auto}
+.takuya-header{background:#1b1e1b;color:white;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;border-top:4px solid var(--green)}
+.takuya-header strong{display:block;font-size:1.05rem}.takuya-header small{display:block;color:#cfd6ca;font-size:.68rem}.takuya-close{border:0;background:transparent;color:white;font-size:1.55rem;line-height:1;min-width:42px;min-height:42px}
+.takuya-messages{overflow:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+.takuya-message{max-width:88%;background:white;border:1px solid #dad8cf;padding:11px 13px;box-shadow:0 2px 0 #e6e3da}
+.takuya-message.user{align-self:flex-end;background:#e7f4dc;border-color:#b8d7a1}.takuya-message strong{display:block;font-size:.68rem;color:var(--deep);margin-bottom:4px}.takuya-message p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6}
+.takuya-sources{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.takuya-sources a{font-size:.7rem;border:1px solid #aab6a2;background:#f3f7ef;padding:5px 8px;text-decoration:underline;text-underline-offset:3px}
+.takuya-form{border-top:1px solid var(--border);background:white;padding:12px}.takuya-form>label{position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden}
+.takuya-form textarea{width:100%;resize:none;border:1px solid #989d91;padding:10px;background:white;color:var(--text);font:inherit}
+.takuya-form-row{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-top:8px}.takuya-form-row small{color:var(--muted);font-size:.62rem;line-height:1.45}.takuya-form-row small a{text-decoration:underline}
+.takuya-form-row button{border:1px solid #4f812d;background:var(--green);font-weight:850;padding:8px 14px;min-width:68px}.takuya-form-row button:disabled,.takuya-form textarea:disabled{opacity:.55;cursor:not-allowed}
+@media(max-width:540px){.takuya-shell{right:14px;bottom:14px}.takuya-panel{position:fixed;inset:auto 0 0 0;width:100%;height:min(74vh,650px);border-left:0;border-right:0;border-bottom:0}.takuya-launcher{min-height:50px}.takuya-form-row{align-items:center}}
+</style>
