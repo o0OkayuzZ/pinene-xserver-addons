@@ -2,6 +2,8 @@ const $=id=>document.getElementById(id);
 let key=location.hash.slice(1)||sessionStorage.getItem('pine-admin-session');
 if(location.hash){sessionStorage.setItem('pine-admin-session',key);history.replaceState(null,'',location.pathname);}
 let report=null,group='pages',limit=50;
+let takuyaQuestions=[],takuyaBefore=null,takuyaHasMore=false;
+const takuyaStatusNames={answered:'回答済み',knowledge_error:'資料取得失敗',model_error:'AI応答失敗',empty_response:'空の応答',received:'受信済み'};
 const names={page_view:'ページ表示',pine_search:'図鑑検索を使用',pine_filter:'図鑑の絞り込み',pine_expand:'一覧・説明を展開',pine_recipe_view:'レシピの閲覧',pine_item_view:'アイテムの閲覧',pine_guide_open:'図鑑の詳細を開く',pine_join_open:'参加案内を開く',pine_content_open:'コンテンツを開く',scroll:'スクロール',click:'外部リンクを開く',file_download:'ダウンロードリンクをクリック',video_start:'動画の再生開始',video_progress:'動画の再生進捗',video_complete:'動画の再生完了',user_engagement:'ページへの関与',session_start:'訪問開始',first_visit:'初回訪問'};
 function notice(text,type=''){const node=$('notice');node.textContent=text;node.className='notice '+type;}
 async function api(path,body){const res=await fetch('/api/'+path,{method:body?'POST':'GET',headers:{Authorization:'Bearer '+key,...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{})});const data=await res.json();if(!res.ok)throw new Error(data.error??'取得に失敗しました。');return data;}
@@ -40,10 +42,48 @@ $('filter').addEventListener('input',()=>{limit=50;renderRows();});$('more').add
 function download(text,name,type){const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 $('csv').addEventListener('click',()=>{const rows=filteredRows();if(!rows.length){notice('保存できる内訳がありません。');return;}const cell=value=>'"'+String(value).replace(/^[=+@-]/,"'$&").replaceAll('"','""')+'"';download('\ufeff項目,件数\r\n'+rows.map(r=>[cell(r.label),r.views].join(',')).join('\r\n'),'pine-'+group+'.csv','text/csv;charset=utf-8');});
 $('export').addEventListener('click',()=>{if(!report){notice('先に最新データを取得してください。');return;}download(JSON.stringify(report,null,2),'pine-report.json','application/json');});
+function filteredTakuya(){const query=$('takuya-filter').value.toLowerCase();return takuyaQuestions.filter(row=>{const sources=(row.sources??[]).map(source=>source.title??source.id??'').join(' ');return (row.message+' '+sources+' '+(takuyaStatusNames[row.status]??row.status??'')).toLowerCase().includes(query);});}
+function renderTakuya(){
+ const node=$('takuya-rows');node.replaceChildren();const rows=filteredTakuya();
+ if(!rows.length){const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=5;td.className='empty';td.textContent=takuyaQuestions.length?'絞り込みに一致する質問はありません。':'この期間の質問はまだありません。';tr.append(td);node.append(tr);}
+ for(const row of rows){
+  const tr=document.createElement('tr');
+  const time=document.createElement('td');time.textContent=new Date(Number(row.created_at)).toLocaleString('ja-JP');tr.append(time);
+  const question=document.createElement('td');question.className='question-text';question.textContent=row.message;tr.append(question);
+  const status=document.createElement('td');status.textContent=takuyaStatusNames[row.status]??row.status??'—';tr.append(status);
+  const session=document.createElement('td');session.textContent=String(row.session_hash??'').slice(0,8)||'—';session.title='匿名の会話ID';tr.append(session);
+  const sources=document.createElement('td');sources.className='question-sources';
+  const list=row.sources??[];
+  if(!list.length)sources.textContent='—';
+  else for(const [index,source]of list.entries()){if(index)sources.append(document.createTextNode(' / '));if(source.url){const a=document.createElement('a');a.href='https://o0okayuzz.github.io/pine-server'+source.url;a.target='_blank';a.rel='noreferrer';a.textContent=source.title??source.id??'関連ページ';sources.append(a);}else sources.append(document.createTextNode(source.title??source.id??'関連項目'));}
+  tr.append(sources);node.append(tr);
+ }
+ $('takuya-count').textContent=`${rows.length} / ${takuyaQuestions.length}件表示`;$('takuya-more').hidden=!takuyaHasMore;
+}
+async function loadTakuya(append=false){
+ const suffix=append&&takuyaBefore?`&before=${encodeURIComponent(takuyaBefore)}`:'';
+ const data=await api('takuya/questions?limit=100'+suffix);
+ if(data.status==='unconfigured'){
+  takuyaQuestions=[];takuyaBefore=null;takuyaHasMore=false;renderTakuya();$('takuya-status').textContent='拓也ログの読み取り設定が未完了です。';return;
+ }
+ if(data.status!=='ok')throw new Error('拓也の質問ログを取得できません。');
+ takuyaQuestions=append?[...takuyaQuestions,...(data.questions??[])]:data.questions??[];
+ takuyaBefore=data.nextBefore??null;takuyaHasMore=!!data.hasMore;renderTakuya();
+ $('takuya-status').textContent=`直近${data.retentionDays??30}日 / ${takuyaQuestions.length}件読み込み / 最終更新 ${new Date().toLocaleTimeString('ja-JP')}`;
+}
+$('takuya-refresh').addEventListener('click',event=>action(event.currentTarget,()=>loadTakuya(false)));
+$('takuya-filter').addEventListener('input',renderTakuya);
+$('takuya-more').addEventListener('click',event=>action(event.currentTarget,()=>loadTakuya(true)));
+$('takuya-csv').addEventListener('click',()=>{
+ const rows=filteredTakuya();if(!rows.length){notice('保存できる質問がありません。');return;}
+ const cell=value=>'"'+String(value??'').replace(/^[=+@-]/,"'$('save-github').addEventListener").replaceAll('"','""')+'"';
+ const text='\ufeff日時,質問,状態,会話,参照先\r\n'+rows.map(row=>[new Date(Number(row.created_at)).toLocaleString('ja-JP'),row.message,takuyaStatusNames[row.status]??row.status,String(row.session_hash??'').slice(0,8),(row.sources??[]).map(source=>source.title??source.id??'').join(' / ')].map(cell).join(',')).join('\r\n');
+ download(text,'takuya-questions.csv','text/csv;charset=utf-8');
+});
 $('save-github').addEventListener('click',event=>action(event.currentTarget,async()=>{await api('github',{});notice('本人用のGitHub非公開レポートへ保存しました。','ok');}));
 function providerFields(){const ga4=$('provider').value==='ga4';$('ga4-fields').hidden=!ga4;$('cloudflare-fields').hidden=ga4;}
 $('provider').addEventListener('change',providerFields);
 function showSettings(settings){for(const [name,value]of Object.entries(settings)){const field=$('settings-form').elements.namedItem(name);if(field&&typeof value==='string')field.value=value;}$('settings-state').textContent=`読み取りキー：GA4 ${settings.hasServiceAccount?'保存済み':'未設定'} / Cloudflare ${settings.hasApiToken?'保存済み':'未設定'}。公開用測定IDを保存しても、Webの計測コードが自動公開されるわけではありません。`;providerFields();}
 $('settings-form').addEventListener('submit',event=>{event.preventDefault();const button=event.submitter;action(button,async()=>{const data=Object.fromEntries(new FormData(event.target));const result=await api('settings',data);event.target.elements.apiToken.value='';event.target.elements.serviceAccount.value='';showSettings(result.settings);notice('接続設定を暗号化して保存しました。「最新の状態に更新」で接続を確認できます。','ok');});});
-if(key)api('state').then(data=>{showSettings(data.settings);report=data.report;render();notice('管理画面を開きました。初回は下の接続設定を行ってください。');return action($('refresh'),refresh);}).catch(error=>notice(error.message,'error'));
+if(key)api('state').then(data=>{showSettings(data.settings);report=data.report;render();notice('管理画面を開きました。初回は下の接続設定を行ってください。');void action($('refresh'),refresh);void loadTakuya(false).catch(error=>{$('takuya-status').textContent=error.message;});}).catch(error=>notice(error.message,'error'));
 else{notice('デスクトップの「PINE SERVER 管理画面」から開いてください。','error');document.querySelectorAll('button').forEach(button=>button.disabled=true);}
