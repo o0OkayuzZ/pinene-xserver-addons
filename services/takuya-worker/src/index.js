@@ -15,6 +15,8 @@ function bigrams(value) {
 export function searchKnowledge(query, entries) {
   const q = normalize(query);
   const qgrams = new Set(bigrams(query));
+  const identifiers = (String(query).match(/[a-z]{1,24}[-_:]?\d{1,5}/gi) || []).map(normalize);
+  const wantsRecipe = /(作り方|レシピ|クラフト|材料|どう作)/.test(query);
   return entries.map((entry) => {
     const title = normalize(entry.title);
     const aliases = (entry.aliases || []).map(normalize);
@@ -24,6 +26,8 @@ export function searchKnowledge(query, entries) {
     if (title.includes(q) || aliases.some((a) => a.includes(q))) score += 90;
     if (q.includes(title) && title.length > 1) score += 55;
     if (body.includes(q) && q.length > 1) score += 50;
+    if (identifiers.some((id) => title.includes(id) || aliases.some((a) => a.includes(id)) || body.includes(id))) score += 120;
+    if (wantsRecipe && entry.type === 'recipe') score += 45;
     const grams = new Set(bigrams([entry.title, ...(entry.aliases || []), entry.text].join(' ')));
     let overlap = 0;
     for (const gram of qgrams) if (grams.has(gram)) overlap += 1;
