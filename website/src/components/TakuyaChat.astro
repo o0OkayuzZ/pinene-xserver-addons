@@ -145,6 +145,24 @@ if (root) {
       form?.requestSubmit();
     }
   });
+
+  const analyticsChoice = document.querySelector<HTMLElement>('#analytics-choice');
+  const syncAnalyticsOffset = () => {
+    if (!analyticsChoice || analyticsChoice.hidden || !matchMedia('(max-width: 540px)').matches) {
+      root.style.removeProperty('--takuya-launcher-bottom');
+      root.style.removeProperty('--takuya-panel-bottom');
+      return;
+    }
+    const rect = analyticsChoice.getBoundingClientRect();
+    const panelBottom = Math.max(0, Math.ceil(window.innerHeight - rect.top + 10));
+    root.style.setProperty('--takuya-launcher-bottom', `${panelBottom + 14}px`);
+    root.style.setProperty('--takuya-panel-bottom', `${panelBottom}px`);
+  };
+  if (analyticsChoice) {
+    new MutationObserver(syncAnalyticsOffset).observe(analyticsChoice, { attributes: true, attributeFilter: ['hidden'] });
+    addEventListener('resize', syncAnalyticsOffset);
+    requestAnimationFrame(syncAnalyticsOffset);
+  }
 }
 </script>
 <style>
@@ -162,5 +180,5 @@ if (root) {
 .takuya-form textarea{width:100%;resize:none;border:1px solid #989d91;padding:10px;background:white;color:var(--text);font:inherit}
 .takuya-form-row{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-top:8px}.takuya-form-row small{color:var(--muted);font-size:.62rem;line-height:1.45}.takuya-form-row small a{text-decoration:underline}
 .takuya-form-row button{border:1px solid #4f812d;background:var(--green);font-weight:850;padding:8px 14px;min-width:68px}.takuya-form-row button:disabled,.takuya-form textarea:disabled{opacity:.55;cursor:not-allowed}
-@media(max-width:540px){.takuya-shell{right:14px;bottom:14px}.takuya-panel{position:fixed;inset:auto 0 0 0;width:100%;height:min(74vh,650px);border-left:0;border-right:0;border-bottom:0}.takuya-launcher{min-height:50px}.takuya-form-row{align-items:center}}
+@media(max-width:540px){.takuya-shell{right:14px;bottom:var(--takuya-launcher-bottom,14px)}.takuya-panel{position:fixed;left:0;right:0;bottom:var(--takuya-panel-bottom,0px);width:100%;height:min(74vh,650px,calc(100vh - var(--takuya-panel-bottom,0px) - 16px));border-left:0;border-right:0;border-bottom:0}.takuya-launcher{min-height:50px}.takuya-form-row{align-items:center}}
 </style>
