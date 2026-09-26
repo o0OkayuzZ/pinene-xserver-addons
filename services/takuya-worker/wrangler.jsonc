@@ -20,5 +20,12 @@
   ],
   "observability": {
     "enabled": true
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "TAKUYA_LOG_DB",
+      "database_name": "pine-takuya-logs",
+      "database_id": "d00791a3-97f8-4539-bbd4-1643ece0b226"
+    }
+  ]
 }
