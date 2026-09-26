@@ -14,14 +14,31 @@ const fieldGuide = await readJson('src/data/field-guide.json');
 
 const published = projectPublicData(contentRegistry.contents, packRegistry.packs, updates);
 const contentIds = new Set(published.contents.map((item) => item.id));
+const contentById = new Map(published.contents.map((item) => [item.id, item]));
 const guideEntries = publishEntries(fieldGuide, contentIds);
 
 const compact = (parts) => parts.flat(Infinity).filter(Boolean).map(String).join('\n').trim();
 const contentStatus = (item) => ({
-  implementation: item.implementation ?? 'unknown',
-  deployment: item.deployment ?? 'unknown',
-  verification: (item.verification ?? []).map((v) => `${v.kind}:${v.result}`),
+  implementation: item?.implementation ?? 'unknown',
+  deployment: item?.deployment ?? 'unknown',
+  verification: (item?.verification ?? []).map((v) => `${v.kind}:${v.result}`),
 });
+
+const recipeText = (recipe) => {
+  if (!recipe) return [];
+  const ingredients = (recipe.ingredients ?? [])
+    .map((item) => `${item.name} × ${item.count}`)
+    .join('、');
+  const grid = recipe.shaped
+    ? (recipe.grid ?? []).map((row) => row.map((cell) => cell || '空').join(' | ')).join('\n')
+    : '';
+  return [
+    ingredients && `材料: ${ingredients}`,
+    `完成数: ${recipe.count ?? 1}`,
+    recipe.shaped ? `定形レシピの配置:\n${grid}` : '不定形レシピ（配置自由）',
+    recipe.resultId && `完成品ID: ${recipe.resultId}`,
+  ];
+};
 
 const entries = [
   ...published.contents.map((item) => ({
@@ -40,8 +57,8 @@ const entries = [
     title: item.name,
     aliases: [item.id],
     contentId: item.contentId,
-    status: { implementation: 'published' },
-    text: compact([item.summary, item.description, item.usage, item.obtaining, item.details]),
+    status: { publication: 'published', ...contentStatus(contentById.get(item.contentId)) },
+    text: compact([item.summary, item.description, item.usage, item.obtaining, item.details, recipeText(item.recipe)]),
     url: `/database/entries/${item.id}/`,
   })),
   ...published.packs.map((item) => ({
