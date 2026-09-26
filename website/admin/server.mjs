@@ -10,8 +10,8 @@ export const storage=process.env.PINE_ADMIN_DATA??join(process.env.LOCALAPPDATA?
 const port=Number(process.env.PINE_ADMIN_PORT??18473);
 const accessKey=randomBytes(32).toString('hex');
 const origin=`http://127.0.0.1:${port}`;
-const takuyaWorker='https://pine-takuya.pinene-server.workers.dev';
-const takuyaTokenFile=join(storage,'takuya-admin-token.dat');
+const workerRoot=join(root,'../../services/takuya-worker');
+const wranglerBin=join(workerRoot,'node_modules','wrangler','bin','wrangler.js');
 const websiteConfig=JSON.parse(await readFile(join(root,'../src/data/analytics-config.json'),'utf8'));
 let settings={provider:websiteConfig.cloudflareBeacon?'cloudflare':'ga4',measurementId:websiteConfig.measurementId??'',beaconToken:websiteConfig.cloudflareBeacon??''},lastReport=null,busy=false;
 async function atomic(path,text){const temp=path+'.'+randomBytes(6).toString('hex')+'.tmp';await writeFile(temp,text,{mode:0o600});await rename(temp,path);}
@@ -22,25 +22,25 @@ export async function protect(text,decode=false){
   child.stdin.end(text);
  });
 }
-async function takuyaAdminToken(){
- try{return await protect(await readFile(takuyaTokenFile,'utf8'),true);}
- catch(error){
-  if(error.code==='ENOENT')return '';
-  throw new Error('拓也ログの読み取りキーを開けません。同じWindowsアカウントで起動してください。');
- }
+async function wranglerD1(sql){
+ return new Promise((resolve,reject)=>{
+  execFile(process.execPath,[wranglerBin,'d1','execute','pine-takuya-logs','--remote','--json','--command',sql],{cwd:workerRoot,windowsHide:true,timeout:30000,maxBuffer:4*1024*1024},(error,stdout)=>error?reject(new Error('Cloudflare D1へ接続できません。Wranglerのログイン状態を確認してください。')):resolve(stdout));
+ });
 }
 async function takuyaQuestions(url){
- const token=await takuyaAdminToken();
- if(!token)return {status:'unconfigured',questions:[],retentionDays:30,hasMore:false,nextBefore:null};
- const target=new URL('/admin/questions',takuyaWorker);
- for(const key of ['limit','before']){
-  const value=url.searchParams.get(key);
-  if(value)target.searchParams.set(key,value);
- }
- const response=await fetch(target,{headers:{Authorization:'Bearer '+token},cache:'no-store',signal:AbortSignal.timeout(15000)});
- let data;try{data=await response.json();}catch{throw new Error('拓也ログの応答を読み取れません。');}
- if(!response.ok)throw new Error(response.status===401?'拓也ログの読み取りキーが一致しません。':'拓也ログを取得できません。');
- return data;
+ const limit=Math.min(200,Math.max(1,Number(url.searchParams.get('limit')??100)||100));
+ const before=Math.max(0,Number(url.searchParams.get('before')??0)||0);
+ const cutoff=Date.now()-30*86400000;
+ const where=before>0?`WHERE id < ${Math.floor(before)}`:'';
+ const sql=`DELETE FROM takuya_questions WHERE created_at < ${cutoff}; SELECT id, created_at, message, session_hash, sources_json, status, model FROM takuya_questions ${where} ORDER BY id DESC LIMIT ${limit};`;
+ let payload;
+ try{payload=JSON.parse(await wranglerD1(sql));}catch(error){throw new Error(error.message??'拓也ログを取得できません。');}
+ const result=Array.isArray(payload)?payload.at(-1):payload;
+ const questions=(result?.results??[]).map(row=>({
+  id:row.id,created_at:row.created_at,message:row.message,session_hash:row.session_hash,status:row.status,model:row.model,
+  sources:(()=>{try{return JSON.parse(row.sources_json??'[]');}catch{return [];}})(),
+ }));
+ return {status:'ok',questions,retentionDays:30,hasMore:questions.length===limit,nextBefore:questions.length?questions.at(-1).id:null};
 }
 export function allowedRequest(req,key=accessKey,expected=origin){
  if(req.headers.host!==new URL(expected).host)return false;
