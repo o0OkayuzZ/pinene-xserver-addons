@@ -17,7 +17,7 @@ export function searchKnowledge(query, entries) {
   const qgrams = new Set(bigrams(query));
   const identifiers = (String(query).match(/[a-z]{1,24}[-_:]?\d{1,5}/gi) || []).map(normalize);
   const wantsRecipe = /(作り方|レシピ|クラフト|材料|どう作)/.test(query);
-  return entries.map((entry) => {
+  const scored = entries.map((entry) => {
     const title = normalize(entry.title);
     const aliases = (entry.aliases || []).map(normalize);
     const body = normalize(entry.text);
@@ -34,7 +34,11 @@ export function searchKnowledge(query, entries) {
     score += Math.min(45, overlap * 3);
     if (entry.type === 'update' && /(最新|更新|アップデート|変更)/.test(query)) score += 35;
     return { entry, score };
-  }).filter((x) => x.score >= 9).sort((a, b) => b.score - a.score).slice(0, MAX_CONTEXT).map((x) => x.entry);
+  }).filter((x) => x.score >= 9).sort((a, b) => b.score - a.score);
+
+  if (!scored.length) return [];
+  const cutoff = Math.max(9, scored[0].score * 0.35);
+  return scored.filter((x) => x.score >= cutoff).slice(0, MAX_CONTEXT).map((x) => x.entry);
 }
 
 export function isAllowedOrigin(origin, allowedOrigin) {
@@ -120,7 +124,7 @@ export default {
 提供された「ピネ鯖の公開資料」を最優先し、一般的なMinecraft仕様とピネ鯖独自仕様を混同しないでください。
 資料にない事実を推測で断定しないでください。確認できない場合は「現在のピネWebの情報では確認できない」と短く伝えてください。
 implementation/deployment/verification等の状態があれば、実装済み・計画中・未確認を区別してください。
-回答は日本語で、まず結論を短く、その後必要な補足だけを書いてください。資料番号や内部JSONは本文に出さないでください。人格は親しみやすいが、過剰なキャラ口調にはしません。`;
+回答は日本語で、まず結論を短く、その後必要な補足だけを書いてください。Markdown記法（#、*、表、コードブロック等）は使わず、プレーンテキストだけで回答してください。配置を示す場合は各行を「空 / 矢 / 空」のように普通の文字で書いてください。資料番号や内部JSONは本文に出さないでください。人格は親しみやすいが、過剰なキャラ口調にはしません。`;
 
     const input = [
       ...history,
@@ -162,7 +166,7 @@ implementation/deployment/verification等の状態があれば、実装済み・
 
     return json({
       answer,
-      sources: matches.slice(0, 4).map((entry) => ({ title: entry.title, url: entry.url, type: entry.type })),
+      sources: matches.slice(0, 3).map((entry) => ({ title: entry.title, url: entry.url, type: entry.type })),
       knowledgeVersion: knowledge.sourceCommits || null,
       model: env.MODEL || 'gpt-6-luna',
     }, 200, headers);
