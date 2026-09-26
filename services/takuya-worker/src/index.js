@@ -2,6 +2,8 @@ const OPENAI_URL = 'https://api.openai.com/v1/responses';
 const MAX_MESSAGE_LENGTH = 1000;
 const MAX_HISTORY = 12;
 const MAX_CONTEXT = 6;
+const RETENTION_DAYS = 30;
+const RETENTION_MS = RETENTION_DAYS * 86400000;
 
 const normalize = (value = '') =>
   String(value).normalize('NFKC').toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, '');
@@ -71,6 +73,82 @@ function outputText(response) {
   return chunks.join('\n').trim();
 }
 
+export function adminAuthorized(request, env) {
+  const token = String(env.TAKUYA_ADMIN_TOKEN || '');
+  if (!token) return false;
+  const actual = request.headers.get('Authorization') || '';
+  const expected = `Bearer ${token}`;
+  if (actual.length !== expected.length) return false;
+  let diff = 0;
+  for (let i = 0; i < actual.length; i++) diff |= actual.charCodeAt(i) ^ expected.charCodeAt(i);
+  return diff === 0;
+}
+
+export async function hashSession(sessionId) {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(sessionId)));
+  return Array.from(new Uint8Array(digest).slice(0, 12), (byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function recordQuestion(env, { message, sessionId, matches = [], status }) {
+  if (!env.TAKUYA_LOG_DB) return;
+  const createdAt = Date.now();
+  const cutoff = createdAt - RETENTION_MS;
+  const sessionHash = await hashSession(sessionId);
+  const sources = matches.slice(0, 3).map((entry) => ({
+    id: String(entry.id || '').slice(0, 160),
+    title: String(entry.title || '').slice(0, 160),
+    url: String(entry.url || '').slice(0, 500),
+  }));
+  await env.TAKUYA_LOG_DB.batch([
+    env.TAKUYA_LOG_DB.prepare('DELETE FROM takuya_questions WHERE created_at < ?').bind(cutoff),
+    env.TAKUYA_LOG_DB.prepare(
+      'INSERT INTO takuya_questions (created_at, message, session_hash, sources_json, status, model) VALUES (?, ?, ?, ?, ?, ?)'
+    ).bind(
+      createdAt,
+      String(message).slice(0, MAX_MESSAGE_LENGTH),
+      sessionHash,
+      JSON.stringify(sources),
+      String(status || 'received'),
+      String(env.MODEL || 'gpt-6-luna')
+    ),
+  ]);
+}
+
+function queueQuestionLog(ctx, env, payload) {
+  const task = recordQuestion(env, payload).catch((error) => {
+    console.error('Takuya question log error', error?.message || String(error));
+  });
+  if (ctx?.waitUntil) ctx.waitUntil(task);
+}
+
+async function listQuestions(env, url) {
+  if (!env.TAKUYA_LOG_DB) return { status: 'unconfigured', questions: [], retentionDays: RETENTION_DAYS, hasMore: false };
+  const limit = Math.min(200, Math.max(1, Number(url.searchParams.get('limit') || 100)));
+  const before = Number(url.searchParams.get('before') || 0);
+  const cutoff = Date.now() - RETENTION_MS;
+  await env.TAKUYA_LOG_DB.prepare('DELETE FROM takuya_questions WHERE created_at < ?').bind(cutoff).run();
+  const query = before > 0
+    ? env.TAKUYA_LOG_DB.prepare('SELECT id, created_at, message, session_hash, sources_json, status, model FROM takuya_questions WHERE id < ? ORDER BY id DESC LIMIT ?').bind(before, limit)
+    : env.TAKUYA_LOG_DB.prepare('SELECT id, created_at, message, session_hash, sources_json, status, model FROM takuya_questions ORDER BY id DESC LIMIT ?').bind(limit);
+  const result = await query.all();
+  const questions = (result.results || []).map((row) => ({
+    id: row.id,
+    created_at: row.created_at,
+    message: row.message,
+    session_hash: row.session_hash,
+    sources: (() => { try { return JSON.parse(row.sources_json || '[]'); } catch { return []; } })(),
+    status: row.status,
+    model: row.model,
+  }));
+  return {
+    status: 'ok',
+    questions,
+    retentionDays: RETENTION_DAYS,
+    hasMore: questions.length === limit,
+    nextBefore: questions.length ? questions[questions.length - 1].id : null,
+  };
+}
+
 function contextText(entries) {
   return entries.map((entry, index) => {
     const status = entry.status ? JSON.stringify(entry.status) : '{}';
@@ -79,13 +157,27 @@ function contextText(entries) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const origin = request.headers.get('Origin') || '';
     const allowedOrigin = env.ALLOWED_ORIGIN || 'https://o0okayuzz.github.io';
     const headers = cors(origin, allowedOrigin);
     const url = new URL(request.url);
 
     if (url.pathname === '/health') return json({ ok: true, name: '拓也', model: env.MODEL || 'gpt-6-luna' }, 200, headers);
+    if (url.pathname === '/admin/questions') {
+      const adminHeaders = {
+        'Cache-Control': 'no-store',
+        'Content-Type': 'application/json; charset=utf-8',
+      };
+      if (request.method !== 'GET') return json({ error: 'method_not_allowed' }, 405, adminHeaders);
+      if (!adminAuthorized(request, env)) return json({ error: 'unauthorized' }, 401, adminHeaders);
+      try {
+        return json(await listQuestions(env, url), 200, adminHeaders);
+      } catch (error) {
+        console.error('Takuya admin log read error', error?.message || String(error));
+        return json({ error: 'log_unavailable' }, 503, adminHeaders);
+      }
+    }
     if (url.pathname !== '/chat') return json({ error: 'not_found' }, 404, headers);
     if (!isAllowedOrigin(origin, allowedOrigin)) return json({ error: 'origin_forbidden' }, 403, headers);
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
@@ -112,6 +204,7 @@ export default {
       if (!response.ok) throw new Error(`knowledge ${response.status}`);
       knowledge = await response.json();
     } catch {
+      queueQuestionLog(ctx, env, { message, sessionId, status: 'knowledge_error' });
       return json({ error: 'knowledge_unavailable' }, 503, headers);
     }
 
@@ -152,18 +245,24 @@ implementation/deployment/verification等の状態があれば、実装済み・
         }),
       });
     } catch {
+      queueQuestionLog(ctx, env, { message, sessionId, matches, status: 'model_error' });
       return json({ error: 'model_unavailable' }, 502, headers);
     }
 
     if (!apiResponse.ok) {
       console.error('OpenAI error', apiResponse.status, await apiResponse.text());
+      queueQuestionLog(ctx, env, { message, sessionId, matches, status: 'model_error' });
       return json({ error: 'model_error' }, 502, headers);
     }
 
     const result = await apiResponse.json();
     const answer = outputText(result);
-    if (!answer) return json({ error: 'empty_response' }, 502, headers);
+    if (!answer) {
+      queueQuestionLog(ctx, env, { message, sessionId, matches, status: 'empty_response' });
+      return json({ error: 'empty_response' }, 502, headers);
+    }
 
+    queueQuestionLog(ctx, env, { message, sessionId, matches, status: 'answered' });
     return json({
       answer,
       sources: matches.slice(0, 3).map((entry) => ({ title: entry.title, url: entry.url, type: entry.type })),
