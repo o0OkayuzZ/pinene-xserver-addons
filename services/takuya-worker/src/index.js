@@ -12,7 +12,7 @@ function bigrams(value) {
   return Array.from({ length: text.length - 1 }, (_, i) => text.slice(i, i + 2));
 }
 
-function searchKnowledge(query, entries) {
+export function searchKnowledge(query, entries) {
   const q = normalize(query);
   const qgrams = new Set(bigrams(query));
   return entries.map((entry) => {
@@ -33,15 +33,19 @@ function searchKnowledge(query, entries) {
   }).filter((x) => x.score >= 9).sort((a, b) => b.score - a.score).slice(0, MAX_CONTEXT).map((x) => x.entry);
 }
 
+export function isAllowedOrigin(origin, allowedOrigin) {
+  return origin === allowedOrigin || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin || '');
+}
+
 function cors(origin, allowedOrigin) {
-  const allowed = origin === allowedOrigin || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin || '');
-  return {
-    'Access-Control-Allow-Origin': allowed ? origin : allowedOrigin,
+  const headers = {
     'Access-Control-Allow-Headers': 'content-type',
     'Access-Control-Allow-Methods': 'POST,OPTIONS',
     'Vary': 'Origin',
     'Content-Type': 'application/json; charset=utf-8',
   };
+  if (isAllowedOrigin(origin, allowedOrigin)) headers['Access-Control-Allow-Origin'] = origin;
+  return headers;
 }
 
 function json(data, status, headers) {
@@ -69,12 +73,15 @@ function contextText(entries) {
 export default {
   async fetch(request, env) {
     const origin = request.headers.get('Origin') || '';
-    const headers = cors(origin, env.ALLOWED_ORIGIN || 'https://o0okayuzz.github.io');
-    if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
-
+    const allowedOrigin = env.ALLOWED_ORIGIN || 'https://o0okayuzz.github.io';
+    const headers = cors(origin, allowedOrigin);
     const url = new URL(request.url);
+
     if (url.pathname === '/health') return json({ ok: true, name: '拓也', model: env.MODEL || 'gpt-6-luna' }, 200, headers);
-    if (url.pathname !== '/chat' || request.method !== 'POST') return json({ error: 'not_found' }, 404, headers);
+    if (url.pathname !== '/chat') return json({ error: 'not_found' }, 404, headers);
+    if (!isAllowedOrigin(origin, allowedOrigin)) return json({ error: 'origin_forbidden' }, 403, headers);
+    if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
+    if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405, headers);
     if (!env.OPENAI_API_KEY) return json({ error: 'not_configured' }, 503, headers);
 
     let body;
@@ -85,7 +92,9 @@ export default {
     if (!sessionId) return json({ error: 'invalid_session' }, 400, headers);
 
     if (env.TAKUYA_RATE_LIMITER) {
-      const { success } = await env.TAKUYA_RATE_LIMITER.limit({ key: sessionId });
+      const clientIp = request.headers.get('CF-Connecting-IP');
+      const rateKey = clientIp ? `ip:${clientIp}` : `session:${sessionId}`;
+      const { success } = await env.TAKUYA_RATE_LIMITER.limit({ key: rateKey });
       if (!success) return json({ error: 'rate_limited' }, 429, headers);
     }
 
