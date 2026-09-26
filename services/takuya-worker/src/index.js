@@ -27,11 +27,11 @@ export function searchKnowledge(query, entries) {
     if (q.includes(title) && title.length > 1) score += 55;
     if (body.includes(q) && q.length > 1) score += 50;
     if (identifiers.some((id) => title.includes(id) || aliases.some((a) => a.includes(id)) || body.includes(id))) score += 120;
-    if (wantsRecipe && entry.type === 'recipe' && score >= 15) score += 90;
     const grams = new Set(bigrams([entry.title, ...(entry.aliases || []), entry.text].join(' ')));
     let overlap = 0;
     for (const gram of qgrams) if (grams.has(gram)) overlap += 1;
     score += Math.min(45, overlap * 3);
+    if (wantsRecipe && entry.type === 'recipe' && overlap >= 3) score += 90;
     if (entry.type === 'update' && /(最新|更新|アップデート|変更)/.test(query)) score += 35;
     return { entry, score };
   }).filter((x) => x.score >= 9).sort((a, b) => b.score - a.score);
