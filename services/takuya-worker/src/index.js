@@ -73,17 +73,6 @@ function outputText(response) {
   return chunks.join('\n').trim();
 }
 
-export function adminAuthorized(request, env) {
-  const token = String(env.TAKUYA_ADMIN_TOKEN || '');
-  if (!token) return false;
-  const actual = request.headers.get('Authorization') || '';
-  const expected = `Bearer ${token}`;
-  if (actual.length !== expected.length) return false;
-  let diff = 0;
-  for (let i = 0; i < actual.length; i++) diff |= actual.charCodeAt(i) ^ expected.charCodeAt(i);
-  return diff === 0;
-}
-
 export async function hashSession(sessionId) {
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(sessionId)));
   return Array.from(new Uint8Array(digest).slice(0, 12), (byte) => byte.toString(16).padStart(2, '0')).join('');
@@ -121,34 +110,6 @@ function queueQuestionLog(ctx, env, payload) {
   if (ctx?.waitUntil) ctx.waitUntil(task);
 }
 
-async function listQuestions(env, url) {
-  if (!env.TAKUYA_LOG_DB) return { status: 'unconfigured', questions: [], retentionDays: RETENTION_DAYS, hasMore: false };
-  const limit = Math.min(200, Math.max(1, Number(url.searchParams.get('limit') || 100)));
-  const before = Number(url.searchParams.get('before') || 0);
-  const cutoff = Date.now() - RETENTION_MS;
-  await env.TAKUYA_LOG_DB.prepare('DELETE FROM takuya_questions WHERE created_at < ?').bind(cutoff).run();
-  const query = before > 0
-    ? env.TAKUYA_LOG_DB.prepare('SELECT id, created_at, message, session_hash, sources_json, status, model FROM takuya_questions WHERE id < ? ORDER BY id DESC LIMIT ?').bind(before, limit)
-    : env.TAKUYA_LOG_DB.prepare('SELECT id, created_at, message, session_hash, sources_json, status, model FROM takuya_questions ORDER BY id DESC LIMIT ?').bind(limit);
-  const result = await query.all();
-  const questions = (result.results || []).map((row) => ({
-    id: row.id,
-    created_at: row.created_at,
-    message: row.message,
-    session_hash: row.session_hash,
-    sources: (() => { try { return JSON.parse(row.sources_json || '[]'); } catch { return []; } })(),
-    status: row.status,
-    model: row.model,
-  }));
-  return {
-    status: 'ok',
-    questions,
-    retentionDays: RETENTION_DAYS,
-    hasMore: questions.length === limit,
-    nextBefore: questions.length ? questions[questions.length - 1].id : null,
-  };
-}
-
 function contextText(entries) {
   return entries.map((entry, index) => {
     const status = entry.status ? JSON.stringify(entry.status) : '{}';
@@ -164,20 +125,6 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === '/health') return json({ ok: true, name: '拓也', model: env.MODEL || 'gpt-6-luna' }, 200, headers);
-    if (url.pathname === '/admin/questions') {
-      const adminHeaders = {
-        'Cache-Control': 'no-store',
-        'Content-Type': 'application/json; charset=utf-8',
-      };
-      if (request.method !== 'GET') return json({ error: 'method_not_allowed' }, 405, adminHeaders);
-      if (!adminAuthorized(request, env)) return json({ error: 'unauthorized' }, 401, adminHeaders);
-      try {
-        return json(await listQuestions(env, url), 200, adminHeaders);
-      } catch (error) {
-        console.error('Takuya admin log read error', error?.message || String(error));
-        return json({ error: 'log_unavailable' }, 503, adminHeaders);
-      }
-    }
     if (url.pathname !== '/chat') return json({ error: 'not_found' }, 404, headers);
     if (!isAllowedOrigin(origin, allowedOrigin)) return json({ error: 'origin_forbidden' }, 403, headers);
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
