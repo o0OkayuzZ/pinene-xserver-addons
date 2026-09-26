@@ -10,6 +10,8 @@ export const storage=process.env.PINE_ADMIN_DATA??join(process.env.LOCALAPPDATA?
 const port=Number(process.env.PINE_ADMIN_PORT??18473);
 const accessKey=randomBytes(32).toString('hex');
 const origin=`http://127.0.0.1:${port}`;
+const takuyaWorker='https://pine-takuya.pinene-server.workers.dev';
+const takuyaTokenFile=join(storage,'takuya-admin-token.dat');
 const websiteConfig=JSON.parse(await readFile(join(root,'../src/data/analytics-config.json'),'utf8'));
 let settings={provider:websiteConfig.cloudflareBeacon?'cloudflare':'ga4',measurementId:websiteConfig.measurementId??'',beaconToken:websiteConfig.cloudflareBeacon??''},lastReport=null,busy=false;
 async function atomic(path,text){const temp=path+'.'+randomBytes(6).toString('hex')+'.tmp';await writeFile(temp,text,{mode:0o600});await rename(temp,path);}
@@ -19,6 +21,26 @@ export async function protect(text,decode=false){
   const child=execFile('powershell.exe',['-NoProfile','-NonInteractive','-Command',script],{windowsHide:true,timeout:15000,maxBuffer:1024*1024},(error,stdout)=>error?reject(new Error('Windowsの暗号化保存に失敗しました。')):resolve(stdout.trim()));
   child.stdin.end(text);
  });
+}
+async function takuyaAdminToken(){
+ try{return await protect(await readFile(takuyaTokenFile,'utf8'),true);}
+ catch(error){
+  if(error.code==='ENOENT')return '';
+  throw new Error('拓也ログの読み取りキーを開けません。同じWindowsアカウントで起動してください。');
+ }
+}
+async function takuyaQuestions(url){
+ const token=await takuyaAdminToken();
+ if(!token)return {status:'unconfigured',questions:[],retentionDays:30,hasMore:false,nextBefore:null};
+ const target=new URL('/admin/questions',takuyaWorker);
+ for(const key of ['limit','before']){
+  const value=url.searchParams.get(key);
+  if(value)target.searchParams.set(key,value);
+ }
+ const response=await fetch(target,{headers:{Authorization:'Bearer '+token},cache:'no-store',signal:AbortSignal.timeout(15000)});
+ let data;try{data=await response.json();}catch{throw new Error('拓也ログの応答を読み取れません。');}
+ if(!response.ok)throw new Error(response.status===401?'拓也ログの読み取りキーが一致しません。':'拓也ログを取得できません。');
+ return data;
 }
 export function allowedRequest(req,key=accessKey,expected=origin){
  if(req.headers.host!==new URL(expected).host)return false;
@@ -69,6 +91,7 @@ export function createServer(){return http.createServer(async(req,res)=>{
   if(url.pathname.startsWith('/api/')){
    if(!allowedRequest(req)){send(res,403,{error:'デスクトップのアイコンから開き直してください。'});return;}
    if(req.method==='GET'&&url.pathname==='/api/state'){send(res,200,{settings:publicSettings(),report:lastReport});return;}
+   if(req.method==='GET'&&url.pathname==='/api/takuya/questions'){send(res,200,await takuyaQuestions(url));return;}
    if(req.method==='POST'&&url.pathname==='/api/settings'){
     const input=await body(req);const next=validateSettings(input,settings);
     await atomic(join(storage,'settings.dat'),await protect(JSON.stringify(next)));settings=next;lastReport=null;
