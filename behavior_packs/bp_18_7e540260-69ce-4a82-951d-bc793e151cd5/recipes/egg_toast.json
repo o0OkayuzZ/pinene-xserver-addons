@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pine:egg_toast"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:bread"
+      },
+      {
+        "item": "minecraft:egg"
+      },
+      {
+        "item": "pine:butter"
+      }
+    ],
+    "result": {
+      "item": "pine:egg_toast",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:bread"
+      }
+    ]
+  }
+}

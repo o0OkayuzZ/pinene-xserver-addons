@@ -1,0 +1,49 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pine:carrot_cake"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:carrot"
+      },
+      {
+        "item": "minecraft:carrot"
+      },
+      {
+        "item": "minecraft:wheat"
+      },
+      {
+        "item": "minecraft:wheat"
+      },
+      {
+        "item": "minecraft:egg"
+      },
+      {
+        "item": "minecraft:sugar"
+      },
+      {
+        "item": "minecraft:sugar"
+      },
+      {
+        "item": "pine:butter"
+      },
+      {
+        "item": "pine:milk_bottle"
+      }
+    ],
+    "result": {
+      "item": "pine:carrot_cake",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:carrot"
+      }
+    ]
+  }
+}

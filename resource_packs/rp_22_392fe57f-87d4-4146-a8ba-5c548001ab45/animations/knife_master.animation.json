@@ -1,0 +1,59 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.pinene_cooking.knife.fp": {
+      "loop": true,
+      "bones": {
+        "rightItem": {
+          "rotation": [
+            126.5,
+            54.5,
+            281.1
+          ],
+          "position": [
+            3.0,
+            -18.0,
+            34.0
+          ],
+          "scale": 1.15
+        }
+      }
+    },
+    "animation.pinene_cooking.knife.tp": {
+      "loop": true,
+      "bones": {
+        "rightItem": {
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "position": [
+            0.5,
+            -1,
+            3
+          ],
+          "scale": 0.78
+        }
+      }
+    },
+    "animation.pinene_cooking.knife.placed": {
+      "loop": true,
+      "bones": {
+        "rightItem": {
+          "rotation": [
+            0,
+            0,
+            90
+          ],
+          "position": [
+            0,
+            -9,
+            0
+          ],
+          "scale": 0.42
+        }
+      }
+    }
+  }
+}

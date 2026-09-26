@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pine:pumpkin_pancake"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "ingredients": [
+      {
+        "item": "myname:pancake"
+      },
+      {
+        "item": "minecraft:pumpkin"
+      },
+      {
+        "item": "minecraft:sugar"
+      }
+    ],
+    "result": {
+      "item": "pine:pumpkin_pancake",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "myname:pancake"
+      }
+    ]
+  }
+}

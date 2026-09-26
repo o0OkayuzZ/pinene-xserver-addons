@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pine:apple_bread"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:bread"
+      },
+      {
+        "item": "minecraft:apple"
+      },
+      {
+        "item": "pine:butter"
+      }
+    ],
+    "result": {
+      "item": "pine:apple_bread",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:bread"
+      }
+    ]
+  }
+}

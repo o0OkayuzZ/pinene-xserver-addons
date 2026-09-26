@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_cooking:netherite_knife_2"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "SSS",
+      " MM",
+      " MM"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "M": {
+        "item": "minecraft:netherite_ingot"
+      }
+    },
+    "result": {
+      "item": "pinene_cooking:netherite_knife",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:netherite_ingot"
+      }
+    ]
+  }
+}

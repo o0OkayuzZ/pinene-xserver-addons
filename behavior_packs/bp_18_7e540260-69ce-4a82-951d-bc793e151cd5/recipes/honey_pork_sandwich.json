@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pine:honey_pork_sandwich"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "ingredients": [
+      {
+        "item": "pine:pork_sandwich"
+      },
+      {
+        "item": "pine:pork_sandwich"
+      },
+      {
+        "item": "minecraft:honey_bottle"
+      }
+    ],
+    "result": {
+      "item": "pine:honey_pork_sandwich",
+      "count": 2
+    },
+    "unlock": [
+      {
+        "item": "pine:pork_sandwich"
+      }
+    ]
+  }
+}

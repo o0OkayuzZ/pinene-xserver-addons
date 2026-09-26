@@ -1,0 +1,30 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "pine:pumpkin_soup",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.miscFood"
+      }
+    },
+    "components": {
+      "minecraft:icon": "pumpkin_soup",
+      "minecraft:display_name": {
+        "value": "item.pine:pumpkin_soup.name"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:food": {
+        "nutrition": 10,
+        "saturation_modifier": 1.3,
+        "can_always_eat": false,
+        "using_converts_to": "minecraft:bowl"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6,
+        "movement_modifier": 0.35
+      },
+      "minecraft:use_animation": "eat"
+    }
+  }
+}

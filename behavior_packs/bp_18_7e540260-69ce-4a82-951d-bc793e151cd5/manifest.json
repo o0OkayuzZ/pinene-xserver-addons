@@ -1,0 +1,47 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Pine Food BP",
+    "description": "Pine Food standalone behavior pack",
+    "uuid": "7e540260-69ce-4a82-951d-bc793e151cd5",
+    "version": [
+      0,
+      1,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "24cfd85b-7b9a-4705-b09c-145ac28f7591",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "c81a6798-b6b1-4716-a514-c49967ad0ee2",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "uuid": "2b9dbf4f-7f7a-4e97-9687-4864e4f6f501",
+      "version": [
+        1,
+        0,
+        81
+      ]
+    }
+  ]
+}

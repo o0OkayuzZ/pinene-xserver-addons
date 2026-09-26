@@ -1,0 +1,37 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pine:mushroom_cream_soup"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:red_mushroom"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "pine:milk_bottle"
+      },
+      {
+        "item": "pine:butter"
+      },
+      {
+        "item": "minecraft:bowl"
+      }
+    ],
+    "result": {
+      "item": "pine:mushroom_cream_soup",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:red_mushroom"
+      }
+    ]
+  }
+}

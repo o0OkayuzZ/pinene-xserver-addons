@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pine:glow_berry_pancake"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "ingredients": [
+      {
+        "item": "myname:pancake"
+      },
+      {
+        "item": "minecraft:glow_berries"
+      },
+      {
+        "item": "minecraft:glow_berries"
+      }
+    ],
+    "result": {
+      "item": "pine:glow_berry_pancake",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "myname:pancake"
+      }
+    ]
+  }
+}

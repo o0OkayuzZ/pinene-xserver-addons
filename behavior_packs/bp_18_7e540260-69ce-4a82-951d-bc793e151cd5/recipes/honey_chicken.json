@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pine:honey_chicken"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:cooked_chicken"
+      },
+      {
+        "item": "minecraft:honey_bottle"
+      }
+    ],
+    "result": {
+      "item": "pine:honey_chicken",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:cooked_chicken"
+      }
+    ]
+  }
+}

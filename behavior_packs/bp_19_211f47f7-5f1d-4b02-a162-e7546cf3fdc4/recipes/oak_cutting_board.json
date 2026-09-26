@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_cooking:oak_cutting_board"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "PPP",
+      "PPP",
+      "PPP"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:oak_planks"
+      }
+    },
+    "result": {
+      "item": "pinene_cooking:oak_cutting_board",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:oak_planks"
+      }
+    ]
+  }
+}

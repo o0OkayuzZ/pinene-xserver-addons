@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_cooking:diamond_knife_4"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " MM",
+      " MM",
+      "SSS"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "M": {
+        "item": "minecraft:diamond"
+      }
+    },
+    "result": {
+      "item": "pinene_cooking:diamond_knife",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:diamond"
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Pinene Cooking Tools BP",
+    "description": "Cutting boards + copper-and-up cooking knives for Pine Food",
+    "uuid": "211f47f7-5f1d-4b02-a162-e7546cf3fdc4",
+    "version": [
+      0,
+      1,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      90
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "f8caed03-5696-4b61-9273-f83a8471d739",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "b86c67e2-0d84-4643-8d78-28cfdeb2718d",
+      "entry": "scripts/main.js",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "392fe57f-87d4-4146-a8ba-5c548001ab45",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.7.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.0.0"
+    },
+    {
+      "uuid": "7e540260-69ce-4a82-951d-bc793e151cd5",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:block": {
+    "description": {
+      "identifier": "pinene_cooking:bamboo_cutting_board",
+      "menu_category": {
+        "category": "construction"
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      },
+      "states": {
+        "pinene_cooking:knife": [
+          "empty",
+          "copper",
+          "iron",
+          "gold",
+          "diamond",
+          "netherite"
+        ]
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -6,
+              0,
+              -8
+            ],
+            "size": [
+              12,
+              2,
+              16
+            ]
+          },
+          "minecraft:selection_box": {
+            "origin": [
+              -6,
+              0,
+              -8
+            ],
+            "size": [
+              12,
+              2,
+              16
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -6,
+              0,
+              -8
+            ],
+            "size": [
+              12,
+              2,
+              16
+            ]
+          },
+          "minecraft:selection_box": {
+            "origin": [
+              -6,
+              0,
+              -8
+            ],
+            "size": [
+              12,
+              2,
+              16
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('pinene_cooking:knife') == 'copper'",
+        "components": {
+          "minecraft:geometry": "geometry.pinene_cooking.cutting_board_copper_knife",
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bamboo_planks",
+              "render_method": "opaque"
+            },
+            "knife": {
+              "texture": "pinene_cooking_copper_knife",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('pinene_cooking:knife') == 'iron'",
+        "components": {
+          "minecraft:geometry": "geometry.pinene_cooking.cutting_board_iron_knife",
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bamboo_planks",
+              "render_method": "opaque"
+            },
+            "knife": {
+              "texture": "pinene_cooking_iron_knife",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('pinene_cooking:knife') == 'gold'",
+        "components": {
+          "minecraft:geometry": "geometry.pinene_cooking.cutting_board_gold_knife",
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bamboo_planks",
+              "render_method": "opaque"
+            },
+            "knife": {
+              "texture": "pinene_cooking_gold_knife",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('pinene_cooking:knife') == 'diamond'",
+        "components": {
+          "minecraft:geometry": "geometry.pinene_cooking.cutting_board_diamond_knife",
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bamboo_planks",
+              "render_method": "opaque"
+            },
+            "knife": {
+              "texture": "pinene_cooking_diamond_knife",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('pinene_cooking:knife') == 'netherite'",
+        "components": {
+          "minecraft:geometry": "geometry.pinene_cooking.cutting_board_netherite_knife",
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bamboo_planks",
+              "render_method": "opaque"
+            },
+            "knife": {
+              "texture": "pinene_cooking_netherite_knife",
+              "render_method": "opaque"
+            }
+          }
+        }
+      }
+    ],
+    "components": {
+      "minecraft:display_name": "竹のまな板",
+      "minecraft:geometry": "geometry.pinene_cooking.cutting_board",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "bamboo_planks",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:item_visual": {
+        "geometry": "geometry.pinene_cooking.cutting_board",
+        "material_instances": {
+          "*": {
+            "texture": "bamboo_planks",
+            "render_method": "opaque"
+          }
+        }
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          -8,
+          0,
+          -6
+        ],
+        "size": [
+          16,
+          2,
+          12
+        ]
+      },
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0,
+          -6
+        ],
+        "size": [
+          16,
+          2,
+          12
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.5
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 2.0
+      }
+    }
+  }
+}

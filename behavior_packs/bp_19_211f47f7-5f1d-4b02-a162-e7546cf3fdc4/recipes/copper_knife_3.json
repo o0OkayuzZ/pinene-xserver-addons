@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_cooking:copper_knife_3"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "MM ",
+      "MM ",
+      "SSS"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "M": {
+        "item": "minecraft:copper_ingot"
+      }
+    },
+    "result": {
+      "item": "pinene_cooking:copper_knife",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:copper_ingot"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pine:pumpkin_soup"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:pumpkin"
+      },
+      {
+        "item": "pine:milk_bottle"
+      },
+      {
+        "item": "pine:butter"
+      },
+      {
+        "item": "minecraft:bowl"
+      }
+    ],
+    "result": {
+      "item": "pine:pumpkin_soup",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:pumpkin"
+      }
+    ]
+  }
+}

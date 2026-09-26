@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "pinene_cooking:placed_iron_knife",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/items/iron_knife"
+      },
+      "geometry": {
+        "default": "geometry.pinene_cooking.knife_storage"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}
