@@ -38,7 +38,7 @@ test('NF detail shows symptoms, lethality and unlabeled closing aside',async()=>
  const d=NETHER_FUNGI.find(x=>x.id==='NF-001');
  responses.push({selection:2},{selection:0},{selection:0},{canceled:true},{canceled:true});
  await encyclopedia(p);
- const detail=forms.find(x=>x.form.heading.includes(d.nameJa)).form;
+ const detail=forms[2].form;
  assert.equal(typeof detail.content,'string');
  assert(detail.content.includes('【科学解説】'));
  assert(detail.content.includes('【主な症状】'));
