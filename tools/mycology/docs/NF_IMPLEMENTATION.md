@@ -14,6 +14,7 @@
 ## 変更・維持したファイル
 
 - `data/nether_fungi_master_v1.0.json`：正式100種。変更せず使用。
+- `data/nether_fungi_encyclopedia_ja.json`：2026-09-27追加の図鑑本文オーバーレイ。`symptoms_ja`・`fatality_ja`・`aside_ja`をID単位で保持し、正式マスターの同一性検証とは分離する。`aside_ja`は独立した「ブラックジョーク」欄を作らず、NF図鑑本文の末尾へ自然に表示する。
 - `reference/nether_fungi/`、`data/nether_fungi_assets.json`：採用PNGとSHA-256。
 - `tools/build_items.py`、`tools/build_pack.py`：registry・100アイテム・atlas・名称・配布function生成。画像数の固定上限を撤廃。
 - `pack/BP/scripts/mycology/{registry,core,appraisal,progress,ui,reveal_sounds}.js`：既存Mycologyへ深紅・歪んだカテゴリを統合。
@@ -27,6 +28,8 @@ IDは `pinene:nf_001`〜`pinene:nf_100`、texture keyは `pinene_myco_nf_001`〜
 深紅の入力は `minecraft:crimson_fungus`、歪んだ入力は `minecraft:warped_fungus`。分類・抽選ウェイトは正式マスターを使用し、各カテゴリ内で正規化する。各50種。既存35種と合わせて図鑑135種。
 
 将来は承認済みの新規エントリを番号順にマスター末尾へ追加し、同番号の正式PNGをreferenceへ追加する。生成処理はマスターから件数を取得する。100を上限にしない。既存エントリの順序・系統は変更しないこと（発見フラグの位置を保持するため）。進捗は30bit分割で拡張でき、図鑑の件数・ページ数・抽選対象もregistryに追従する。今回の100種・50/50というリリース検査は将来の承認範囲に合わせて更新する。NF-096〜100の特別な終端処理はない。
+
+図鑑本文の医学・科学説明は正式ID/名称/レアリティ/ゲーム性能とは別レイヤーとして扱う。`build_pack.py` は `nether_fungi_encyclopedia_ja.json` が正式マスターの全IDを過不足なく覆い、症状・致死性・補足が空欄でないことを検査してからregistryへ合成する。現実の致死性とゲーム内の致死判定・特殊効果を混同しない。
 
 ## 検証と残作業
 
