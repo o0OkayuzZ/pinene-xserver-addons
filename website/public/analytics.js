@@ -40,3 +40,33 @@
  document.getElementById('guide-search')?.addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>emit('pine_search',{content_type:'guide'}),1000);});
  document.addEventListener('toggle',event=>{if(event.target.tagName==='DETAILS'&&event.target.open)emit('pine_expand',{content_type:'details'});},true);
 })();
+
+// Takuya client-side repeat guard. This is a display safety net in addition to Worker cleanup.
+(()=>{
+ const originalFetch=window.fetch.bind(window);
+ const clean=value=>{
+  let text=String(value??'').replace(/\r\n?/g,'\n').trim();if(!text)return '';
+  const lines=[];for(const raw of text.split('\n')){const line=raw.trimEnd();if(line.trim()&&lines.at(-1)?.trim()===line.trim())continue;lines.push(line);}
+  text=lines.join('\n').replace(/\n{3,}/g,'\n\n').trim();
+  const paragraphs=[];for(const part of text.split(/\n{2,}/)){if(part.trim()&&paragraphs.at(-1)?.trim()===part.trim())continue;paragraphs.push(part);}text=paragraphs.join('\n\n');
+  let before;const sentence=/(^|[。！？!?\n])([^。！？!?\n]{4,}[。！？!?])(?:[ \t]*\2)+/gmu;
+  do{before=text;text=text.replace(sentence,'$1$2');}while(text!==before);
+  before=null;
+  while(text!==before){
+   before=text;const max=Math.min(160,Math.floor(text.length/2));
+   for(let len=max;len>=6;len--){const unit=text.slice(-len),core=unit.trim();if(core.length<6||!/[\p{L}\p{N}]/u.test(core))continue;let count=1,cursor=text.length-len;while(cursor-len>=0&&text.slice(cursor-len,cursor)===unit){count++;cursor-=len;}if(count>=2){text=text.slice(0,text.length-len*(count-1)).trimEnd();break;}}
+  }
+  return text.trim();
+ };
+ window.fetch=async(...args)=>{
+  const response=await originalFetch(...args);
+  try{
+   const target=typeof args[0]==='string'?args[0]:args[0]?.url??'';
+   if(!target.includes('pine-takuya.pinene-server.workers.dev/chat')||!response.ok)return response;
+   const data=await response.clone().json();if(typeof data.answer!=='string')return response;
+   const answer=clean(data.answer);if(answer===data.answer)return response;
+   const headers=new Headers(response.headers);headers.delete('content-length');
+   return new Response(JSON.stringify({...data,answer}),{status:response.status,statusText:response.statusText,headers});
+  }catch{return response;}
+ };
+})();
