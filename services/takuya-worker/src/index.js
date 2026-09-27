@@ -73,6 +73,61 @@ function outputText(response) {
   return chunks.join('\n').trim();
 }
 
+function collapseRepeatedTail(text) {
+  const maxUnit = Math.min(160, Math.floor(text.length / 2));
+  for (let unitLength = maxUnit; unitLength >= 6; unitLength--) {
+    const unit = text.slice(-unitLength);
+    const core = unit.trim();
+    if (core.length < 6 || !/[\p{L}\p{N}]/u.test(core)) continue;
+    let repeats = 1;
+    let cursor = text.length - unitLength;
+    while (cursor - unitLength >= 0 && text.slice(cursor - unitLength, cursor) === unit) {
+      repeats++;
+      cursor -= unitLength;
+    }
+    if (repeats >= 2) {
+      return text.slice(0, text.length - unitLength * (repeats - 1)).trimEnd();
+    }
+  }
+  return text;
+}
+
+export function cleanAnswer(value) {
+  let text = String(value ?? '').replace(/\r\n?/g, '\n').trim();
+  if (!text) return '';
+
+  const lines = [];
+  for (const rawLine of text.split('\n')) {
+    const line = rawLine.trimEnd();
+    const previous = lines.at(-1);
+    if (line.trim() && previous?.trim() === line.trim()) continue;
+    lines.push(line);
+  }
+  text = lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+
+  const paragraphs = [];
+  for (const paragraph of text.split(/\n{2,}/)) {
+    if (paragraph.trim() && paragraphs.at(-1)?.trim() === paragraph.trim()) continue;
+    paragraphs.push(paragraph);
+  }
+  text = paragraphs.join('\n\n');
+
+  let previous;
+  const repeatedSentence = /(^|[。！？!?\n])([^。！？!?\n]{4,}[。！？!?])(?:[ \t]*\2)+/gmu;
+  do {
+    previous = text;
+    text = text.replace(repeatedSentence, '$1$2');
+  } while (text !== previous);
+
+  previous = null;
+  while (text !== previous) {
+    previous = text;
+    text = collapseRepeatedTail(text);
+  }
+
+  return text.trim();
+}
+
 export async function hashSession(sessionId) {
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(sessionId)));
   return Array.from(new Uint8Array(digest).slice(0, 12), (byte) => byte.toString(16).padStart(2, '0')).join('');
@@ -164,7 +219,7 @@ export default {
 提供された「ピネ鯖の公開資料」を最優先し、一般的なMinecraft仕様とピネ鯖独自仕様を混同しないでください。
 資料にない事実を推測で断定しないでください。確認できない場合は「現在のピネWebの情報では確認できない」と短く伝えてください。
 implementation/deployment/verification等の状態があれば、実装済み・計画中・未確認を区別してください。
-回答は日本語で、まず結論を短く、その後必要な補足だけを書いてください。Markdown記法（#、*、表、コードブロック等）は使わず、プレーンテキストだけで回答してください。配置を示す場合は各行を「空 / 矢 / 空」のように普通の文字で書いてください。資料番号や内部JSONは本文に出さないでください。人格は親しみやすいが、過剰なキャラ口調にはしません。`;
+回答は日本語で、まず結論を短く、その後必要な補足だけを書いてください。同じ文・段落・語句を繰り返さず、回答末尾で同じ文言を反復しないでください。Markdown記法（#、*、表、コードブロック等）は使わず、プレーンテキストだけで回答してください。配置を示す場合は各行を「空 / 矢 / 空」のように普通の文字で書いてください。資料番号や内部JSONは本文に出さないでください。人格は親しみやすいが、過剰なキャラ口調にはしません。`;
 
     const input = [
       ...history,
@@ -203,7 +258,7 @@ implementation/deployment/verification等の状態があれば、実装済み・
     }
 
     const result = await apiResponse.json();
-    const answer = outputText(result);
+    const answer = cleanAnswer(outputText(result));
     if (!answer) {
       queueQuestionLog(ctx, env, { message, sessionId, matches, status: 'empty_response' });
       return json({ error: 'empty_response' }, 502, headers);
