@@ -33,6 +33,28 @@ test('NF encyclopedia pages display every approved name and matching icon',async
   }
  }
 });
+test('NF detail shows symptoms, lethality and unlabeled closing aside',async()=>{
+ const {p}=setup();registerDiscoveries(p,NETHER_FUNGI);
+ const d=NETHER_FUNGI.find(x=>x.id==='NF-001');
+ responses.push({selection:2},{selection:0},{selection:0},{canceled:true},{canceled:true});
+ await encyclopedia(p);
+ const detail=forms[2].form;
+ assert.equal(typeof detail.content,'string');
+ assert(detail.content.includes('【科学解説】'));
+ assert(detail.content.includes('【主な症状】'));
+ assert(detail.content.includes(d.symptoms_ja));
+ assert(detail.content.includes('【致死性】'));
+ assert(detail.content.includes(d.fatality_ja));
+ assert(detail.content.includes(d.aside_ja));
+ assert(!detail.content.includes('ブラックジョーク'));
+});
+test('all 100 NF registry entries carry complete encyclopedia overlay',()=>{
+ assert.equal(NETHER_FUNGI.length,100);
+ for(const d of NETHER_FUNGI){
+  for(const key of ['symptoms_ja','fatality_ja','aside_ja'])
+   assert.equal(typeof d[key]==='string'&&d[key].trim().length>0,true,`${d.id} ${key}`);
+ }
+});
 for(const amount of [1,37,64])test(`result UI: ${amount} items, NEW, committed receipt, no next stack`,async()=>{
  const {p,npc}=setup();p.c.setItem(0,new ItemStack('minecraft:red_mushroom',amount));
  const rng=Math.random;Math.random=()=>0;

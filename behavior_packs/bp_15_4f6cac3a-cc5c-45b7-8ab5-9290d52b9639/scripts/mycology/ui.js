@@ -35,12 +35,14 @@ async function detail(player,d){
   if(d.id.startsWith('NF-')){
     const fields=[
       ['一般名',d.common_name],['分類',d.classification],
-      ['概要',d.real_world_summary],['歴史',d.history_note],
+      ['科学解説',d.real_world_summary],['主な症状',d.symptoms_ja],
+      ['致死性',d.fatality_ja],['歴史',d.history_note],
       ['医薬史',d.drug_history],['構造・化合物',d.structure_compound]
     ].filter(([,value])=>value);
+    const aside=d.aside_ja?`\n\n${d.aside_ja}`:'';
     await new ActionFormData()
       .title(`${rarityColor(d.rarity)}${d.nameJa}§r`)
-      .body(`${d.scientificName}\n${stars(d.rarity)}\n\n`+fields.map(([name,value])=>`【${name}】\n${value}`).join('\n\n'))
+      .body(`${d.scientificName}\n${stars(d.rarity)}\n\n`+fields.map(([name,value])=>`【${name}】\n${value}`).join('\n\n')+aside)
       .button('戻る',d.texturePath)
       .show(player);
     return;

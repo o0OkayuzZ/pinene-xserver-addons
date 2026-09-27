@@ -8,6 +8,9 @@ sync_nether_icons()
 ROOT=Path(__file__).resolve().parents[1];BP=ROOT/'pack/BP';RP=ROOT/'pack/RP'
 D=json.loads((ROOT/'data/mushrooms.json').read_text(encoding='utf8')); E=D['mushrooms'];S=json.loads((ROOT/'data/sources.json').read_text(encoding='utf8'))
 NF_MASTER=json.loads((ROOT/'data/nether_fungi_master_v1.0.json').read_text(encoding='utf8'))
+NF_ENCYCLOPEDIA=json.loads((ROOT/'data/nether_fungi_encyclopedia_ja.json').read_text(encoding='utf8'))['entries']
+assert set(NF_ENCYCLOPEDIA) == {e['id'] for e in NF_MASTER['entries']}, 'NF encyclopedia overlay must cover the master exactly'
+assert all(all(str(NF_ENCYCLOPEDIA[e['id']].get(k,'')).strip() for k in ['symptoms_ja','fatality_ja','aside_ja']) for e in NF_MASTER['entries']), 'NF encyclopedia overlay fields must be non-empty'
 assert len({e['id'] for e in NF_MASTER['entries']}) == len(NF_MASTER['entries']), 'Duplicate NF IDs'
 assert all(e['id'] == f"NF-{e['number']:03d}" for e in NF_MASTER['entries'])
 assert [e['number'] for e in NF_MASTER['entries']] == sorted({e['number'] for e in NF_MASTER['entries']}), 'Append new NF numbers in ascending order to preserve discovery bits'
@@ -16,6 +19,7 @@ N=[]
 for source in NF_MASTER['entries']:
  number=source['number'];family=source['family'];slug=nf_slug(number)
  entry=dict(source)
+ entry.update(NF_ENCYCLOPEDIA[source['id']])
  entry.update({
   'indexInGroup':family_indexes[family],
   'group':family,
