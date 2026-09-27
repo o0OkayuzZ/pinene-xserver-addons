@@ -6,22 +6,36 @@ def read(p):return json.loads(p.read_text(encoding='utf8'))
 def save(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=REPO,text=True).strip()
 nf=read(REPO/'tools/mycology/data/nether_fungi_master_v1.0.json')['entries']
+nf_notes=read(REPO/'tools/mycology/data/nether_fungi_encyclopedia_ja.json')['entries']
+assert set(nf_notes)=={e['id'] for e in nf}, 'NF encyclopedia overlay must cover the master exactly'
 bp='behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639'
 rp='resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a'
 path=WEB/'src/data/field-guide.json'; rows=read(path)
 rows=[r for r in rows if not r['id'].startswith('mycology-nf-')]
 for e in nf:
- slug=f"nf_{e['number']:03d}"; ident=f"mycology-nf-{e['number']:03d}"
+ slug=f"nf_{e['number']:03d}"; ident=f"mycology-nf-{e['number']:03d}"; note=nf_notes[e['id']]
  image=f'/images/items/{ident}.png'
  shutil.copyfile(REPO/f'{rp}/textures/items/mycology/nf/{slug}.png',WEB/'public'/image.lstrip('/'))
+ details=[
+  f"図鑑番号：{e['id']}",
+  f"元ネタ：{e['common_name']}（{e['scientific_name']}）",
+  f"分類：{e['classification']}",
+  f"科学解説：{e['real_world_summary']}",
+  f"主な症状：{note['symptoms_ja']}",
+  f"致死性：{note['fatality_ja']}",
+  f"歴史：{e['history_note']}",
+ ]
+ if e.get('drug_history'):details.append(f"医薬史：{e['drug_history']}")
+ if e.get('structure_compound'):details.append(f"構造・化合物：{e['structure_compound']}")
+ details += [note['aside_ja'],f"系統：{e['family_ja']}",'ゲーム内で鑑定すると自分の図鑑へ登録されます。']
  rows.append(dict(id=ident,name=e['display_name'],kind='item',contentId='mycology',
   summary=f"{e['id']}・{e['family_ja']}系統の菌茸標本。",
-  description=f"{e['scientific_name']}を元ネタとするNF菌茸です。正式分類は{e['family_ja']}、レア度は★{e['stars']}です。",
+  description=e['real_world_summary'],
   usage='図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。',
   obtaining=f"{e['family_ja']}のキノコを鑑定すると抽選で入手できます。",
-  details=[f"図鑑番号：{e['id']}",f"元ネタ：{e['common_name']}（{e['scientific_name']}）",f"系統：{e['family_ja']}", 'ゲーム内で鑑定すると自分の図鑑へ登録されます。'],
+  details=details,
   image=dict(src=image,alt=e['display_name']+'の正式アイテム画像',kind='pack-texture'),recipe=None,visibility='public',
-  evidence=dict(commit=commit,paths=[f'{bp}/items/mycology/nf/{slug}.json',f'{bp}/scripts/mycology/registry.js',f'{rp}/textures/items/mycology/nf/{slug}.png'])))
+  evidence=dict(commit=commit,paths=[f'{bp}/items/mycology/nf/{slug}.json',f'{bp}/scripts/mycology/registry.js',f'{rp}/textures/items/mycology/nf/{slug}.png', 'tools/mycology/data/nether_fungi_encyclopedia_ja.json'])))
 for e in rows:
  if e['id']=='golden-food-guide' and 'アイテムにはグリント（光沢）が付きます。' not in e['details']:
   e['details'].append('アイテムにはグリント（光沢）が付きます。')

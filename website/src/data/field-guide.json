@@ -37765,12 +37765,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-001・深紅系統の菌茸標本。",
-    "description": "Clostridium botulinumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "description": "芽胞を形成し、一部の系統が非常に強力なボツリヌス神経毒素を産生する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-001",
       "元ネタ：ボツリヌス菌（Clostridium botulinum）",
+      "分類：細菌・偏性嫌気性・芽胞形成菌",
+      "科学解説：芽胞を形成し、一部の系統が非常に強力なボツリヌス神経毒素を産生する。",
+      "主な症状：複視、眼瞼下垂、口腔乾燥、嚥下・発語障害などから始まり、下行性の弛緩性麻痺が進行する。重症では呼吸筋まで麻痺する。",
+      "致死性：現代でも致死率はおおむね5〜10%。抗毒素の早期投与と呼吸管理が重要。",
+      "歴史：19世紀にJustinus Kernerがボツリヌス中毒を体系的に記載し、1895年のベルギー集団中毒をÉmile van Ermengemが調査して原因菌を分離した。",
+      "医薬史：精製ボツリヌストキシンは筋緊張異常などの医療にも利用される。",
+      "ごく微量で筋肉を麻痺させる毒素だが、美容医療にも使われる。致死毒も希釈すれば課金コンテンツになる。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -37786,7 +37793,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_001.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_001.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_001.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -37796,12 +37804,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-002・深紅系統の菌茸標本。",
-    "description": "Clostridium tetaniを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "description": "菌体端に球状芽胞を形成し、神経毒テタノスパスミンを産生する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-002",
       "元ネタ：破傷風菌（Clostridium tetani）",
+      "分類：細菌・偏性嫌気性・芽胞形成菌",
+      "科学解説：菌体端に球状芽胞を形成し、神経毒テタノスパスミンを産生する。",
+      "主な症状：開口障害、嚥下困難、項部硬直、激しい全身性筋痙攣など。重症では呼吸障害や自律神経障害を起こす。",
+      "致死性：現代の集中治療下でも死亡する例があり、おおむね約10%前後とされる。ワクチンで高い予防効果が得られる。",
+      "歴史：北里柴三郎はベルリンでRobert Kochに師事し、1889年に破傷風菌の純粋培養に成功。1890年にはEmil von Behringと抗毒素・血清療法の基礎を築いた。",
+      "医薬史：破傷風トキソイドによる予防接種が中心。",
+      "ワクチンでほぼ避けられる病気ほど、罹ったときの筋肉は容赦がない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -37817,7 +37832,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_002.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_002.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_002.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -37827,12 +37843,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-003・深紅系統の菌茸標本。",
-    "description": "Treponema pallidum subsp. pallidumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "description": "非常に細長い螺旋形の細菌で、未治療では長期に全身へ影響しうる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-003",
       "元ネタ：梅毒トレポネーマ／梅毒菌（Treponema pallidum subsp. pallidum）",
+      "分類：細菌・スピロヘータ",
+      "科学解説：非常に細長い螺旋形の細菌で、未治療では長期に全身へ影響しうる。",
+      "主な症状：初期には感染部位に痛みの少ない潰瘍が形成され、その後は発疹、発熱、リンパ節腫脹などを起こす。晩期には神経系や心血管系へ障害が及ぶ場合がある。",
+      "致死性：感染全体に一定の致死率はない。現在はペニシリンで治療可能だが、未治療の晩期梅毒では不可逆的臓器障害や死亡につながりうる。",
+      "歴史：1905年にFritz SchaudinnとErich Hoffmannらが病原体を同定。秦佐八郎はPaul Ehrlichと研究し、1910年にサルバルサンを実用化した。",
+      "医薬史：現在もペニシリンが治療の中心。",
+      "構造・化合物：Penicillin G",
+      "100年以上薬が変わっても、放置する側の結末はあまりアップデートされない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -37848,7 +37872,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_003.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_003.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_003.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -37858,12 +37883,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-004・深紅系統の菌茸標本。",
-    "description": "Human immunodeficiency virus 1を元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "description": "RNAを逆転写してDNA化し、宿主ゲノムへ組み込む。主にCD4陽性T細胞などを標的とする。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-004",
       "元ネタ：HIV-1（Human immunodeficiency virus 1）",
+      "分類：レトロウイルス",
+      "科学解説：RNAを逆転写してDNA化し、宿主ゲノムへ組み込む。主にCD4陽性T細胞などを標的とする。",
+      "主な症状：感染初期には発熱、咽頭痛、発疹などがみられることがある。その後長い無症候期を経て、無治療では免疫不全から日和見感染症や悪性腫瘍を発症しやすくなる。",
+      "致死性：単一の致死率では表せない。無治療ではAIDSへ進行し致命的になりうるが、現在は抗レトロウイルス療法で長期管理できる。",
+      "歴史：1983年、Pasteur InstituteでFrançoise Barré-Sinoussi、Luc Montagnierらが新しいレトロウイルスを分離した。",
+      "医薬史：AZTから始まり、現在は複数薬を組み合わせる抗レトロウイルス療法が中心。",
+      "構造・化合物：Zidovudine (AZT)",
+      "かつて『死の病』と恐れられた相手を、現代医学は毎日薬を飲ませることで長期戦へ持ち込んだ。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -37879,7 +37912,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_004.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_004.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_004.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -37889,12 +37923,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-005・歪んだ系統の菌茸標本。",
-    "description": "Penicillium rubensを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★2です。",
+    "description": "筆状に枝分かれする分生子形成構造を持つカビ。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-005",
       "元ネタ：青カビ（Penicillium rubens）",
+      "分類：真菌・子嚢菌類",
+      "科学解説：筆状に枝分かれする分生子形成構造を持つカビ。",
+      "主な症状：典型的なヒト感染症は起こさない。免疫状態など特殊な条件下では、まれに感染例が報告される。",
+      "致死性：一般的なヒト感染症としての致死率は設定されない。",
+      "歴史：1928年、St Mary's HospitalでAlexander Flemingが抗菌現象を観察。Howard Florey、Ernst Chainらが治療薬化を進めた。",
+      "医薬史：ペニシリンは抗菌薬時代を象徴する天然物。",
+      "構造・化合物：Penicillin G",
+      "培養皿の汚染を捨てなかった結果、人類は抗菌薬時代を手に入れた。研究室の掃除にも例外はある。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -37910,7 +37952,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_005.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_005.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_005.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -37920,12 +37963,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-006・歪んだ系統の菌茸標本。",
-    "description": "Mycobacterium tuberculosisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★8です。",
+    "description": "ミコール酸に富む細胞表層を持ち、慢性感染や潜伏感染を成立させる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-006",
       "元ネタ：結核菌（Mycobacterium tuberculosis）",
+      "分類：細菌・抗酸菌",
+      "科学解説：ミコール酸に富む細胞表層を持ち、慢性感染や潜伏感染を成立させる。",
+      "主な症状：活動性肺結核では長引く咳、喀痰、血痰、発熱、寝汗、倦怠感、体重減少などがみられる。",
+      "致死性：治療の有無で大きく変化する。抗結核薬以前の自然経過では感染性の高い肺結核の死亡率は非常に高かったが、現在は多剤併用療法で多くが治癒可能。",
+      "歴史：Robert KochがImperial Health Officeで研究し、1882年に結核菌を病原体として発表。後に北里柴三郎がKochの研究室で学んだ。",
+      "医薬史：ストレプトマイシンの登場後、現在は多剤併用治療が基本。",
+      "構造・化合物：Isoniazid",
+      "結核菌の得意技は派手な攻撃ではない。何年でも待てることだ。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -37941,7 +37992,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_006.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_006.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_006.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -37951,12 +38003,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-007・歪んだ系統の菌茸標本。",
-    "description": "Halobacterium salinarumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "極端な高塩環境へ適応し、バクテリオロドプシンで光エネルギーを利用できる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-007",
       "元ネタ：高度好塩性古細菌（Halobacterium salinarum）",
+      "分類：古細菌",
+      "科学解説：極端な高塩環境へ適応し、バクテリオロドプシンで光エネルギーを利用できる。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒトに対する致死率は該当なし。通常のヒト病原体ではない。",
+      "歴史：Walther Stoeckenius、Dieter Oesterheltらが紫膜とバクテリオロドプシンを研究し、光駆動プロトンポンプの理解を進めた。",
+      "医薬史：薬ではなく膜タンパク質研究・光生物学上重要。",
+      "構造・化合物：all-trans-Retinal",
+      "塩分濃度で他の生物を追い払った末に、自分だけ快適に暮らしている。ある意味かなり完成された生存戦略である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -37972,7 +38032,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_007.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_007.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_007.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -37982,12 +38043,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-008・歪んだ系統の菌茸標本。",
-    "description": "Acanthamoeba polyphaga mimivirusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "粒子・ゲノムとも非常に大きく、発見当初は細菌と誤認された。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-008",
       "元ネタ：ミミウイルス（Acanthamoeba polyphaga mimivirus）",
+      "分類：巨大DNAウイルス",
+      "科学解説：粒子・ゲノムとも非常に大きく、発見当初は細菌と誤認された。",
+      "主な症状：ヒトの肺炎などとの関連が研究されたことはあるが、ヒト病原体としての位置づけは確立していない。",
+      "致死性：確立したヒト致死率はない。",
+      "歴史：1992年にBradfordの冷却塔試料から分離され、2003年にBernard La Scola、Didier Raoultらが巨大ウイルスと示した。",
+      "医薬史：巨大ウイルス研究と生命／非生命境界の議論を促した。",
+      "細菌に間違えられるほど大きくなれば、ウイルスにも存在感は出る。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38003,7 +38071,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_008.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_008.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_008.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38013,12 +38082,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-009・深紅系統の菌茸標本。",
-    "description": "Yersinia pestisを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "description": "ペストの原因菌で、主にげっ歯類とノミの感染環に関係する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-009",
       "元ネタ：ペスト菌（Yersinia pestis）",
+      "分類：細菌",
+      "科学解説：ペストの原因菌で、主にげっ歯類とノミの感染環に関係する。",
+      "主な症状：突然の高熱、悪寒、頭痛、強い倦怠感など。腺ペストでは強く腫れて痛むリンパ節が特徴で、肺ペストでは咳、胸痛、呼吸困難、血痰などが急速に進行する。",
+      "致死性：未治療の腺ペストでは約30〜60%が死亡するとされ、肺ペストは適切な治療がなければほぼ100%致死的。",
+      "歴史：1894年香港流行で北里柴三郎とAlexandre Yersinが独立に研究。後にPaul-Louis Simondがノミ媒介を示した。",
+      "医薬史：現代では抗菌薬で治療可能。",
+      "構造・化合物：Streptomycin",
+      "現代では抗菌薬で治療可能。中世の人口統計からすれば、だいぶナーフされた。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38034,7 +38111,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_009.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_009.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_009.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38044,12 +38122,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-010・深紅系統の菌茸標本。",
-    "description": "Rabies virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "description": "末梢神経から中枢神経系へ侵入する人獣共通感染症ウイルス。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-010",
       "元ネタ：狂犬病ウイルス（Rabies virus）",
+      "分類：RNAウイルス・リッサウイルス類",
+      "科学解説：末梢神経から中枢神経系へ侵入する人獣共通感染症ウイルス。",
+      "主な症状：発熱や咬傷部の異常感覚から始まり、興奮、幻覚、嚥下障害、恐水症、恐風症などが出現する。麻痺型では筋力低下から全身麻痺へ進行する。",
+      "致死性：臨床症状が現れた後はほぼ100%致死的。一方、発症前に適切な曝露後予防を受ければ発症を防げる。",
+      "歴史：Louis Pasteur、Émile Rouxらが研究し、1885年にJoseph Meisterへ曝露後ワクチン接種が行われた。",
+      "医薬史：曝露後予防ではワクチンと免疫グロブリンが重要。",
+      "ここまで来ると治療というより、死亡診断書の前書きを読んでいるに近い。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38065,7 +38150,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_010.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_010.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_010.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38075,12 +38161,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-011・深紅系統の菌茸標本。",
-    "description": "Variola virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "description": "天然痘の原因ウイルス。世界規模の予防接種により1980年に根絶が宣言された。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-011",
       "元ネタ：天然痘ウイルス（Variola virus）",
+      "分類：ポックスウイルス",
+      "科学解説：天然痘の原因ウイルス。世界規模の予防接種により1980年に根絶が宣言された。",
+      "主な症状：高熱、強い倦怠感、頭痛、身体痛などに続いて発疹が出現し、丘疹、水疱、膿疱へと変化する。治癒後も深い瘢痕が残ることがある。",
+      "致死性：代表的なvariola majorでは致死率は約30%とされ、病型によってはさらに高かった。",
+      "歴史：Edward Jennerが1796年に牛痘を用いた予防接種の基礎を築き、後にWHOの根絶計画へつながった。",
+      "医薬史：天然痘治療薬としてtecovirimatが開発された。",
+      "構造・化合物：Tecovirimat",
+      "人類が感染症相手に珍しくサービス終了まで追い込んだ例である。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38096,7 +38190,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_011.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_011.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_011.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38106,12 +38201,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-012・深紅系統の菌茸標本。",
-    "description": "Shigella dysenteriae type 1を元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "description": "細菌性赤痢の原因菌の一つで、1型は強力な志賀毒素を産生する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-012",
       "元ネタ：志賀赤痢菌（Shigella dysenteriae type 1）",
+      "分類：細菌",
+      "科学解説：細菌性赤痢の原因菌の一つで、1型は強力な志賀毒素を産生する。",
+      "主な症状：発熱、腹痛、強い便意、下痢、粘血便など。重症では溶血性尿毒症症候群を発症し、溶血性貧血、血小板減少、急性腎障害を生じることがある。",
+      "致死性：地域・年齢・治療環境で大きく変わり、単一の致死率は設定しにくい。特にHUSなどの重篤な合併症では死亡することがある。",
+      "歴史：志賀潔が1897年、伝染病研究所で赤痢菌を発見。Shigella属名にその名が残る。",
+      "医薬史：主役の志賀毒素はタンパク質で、支持療法や感染対策が重要。",
+      "自分の名前が細菌分類に永久保存されるのは名誉だが、できればもう少し穏やかな菌がよかったかもしれない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38127,7 +38229,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_012.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_012.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_012.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38137,12 +38240,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-013・歪んだ系統の菌茸標本。",
-    "description": "Herpes simplex virus type 2を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★4です。",
+    "description": "主に性器ヘルペスに関係し、神経節へ潜伏して再活性化することがある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-013",
       "元ネタ：単純ヘルペスウイルス2型／HSV-2（Herpes simplex virus type 2）",
+      "分類：ヘルペスウイルス",
+      "科学解説：主に性器ヘルペスに関係し、神経節へ潜伏して再活性化することがある。",
+      "主な症状：無症状感染も多い。症状がある場合は性器周辺の疼痛、水疱、潰瘍などを生じ、再発を繰り返すことがある。",
+      "致死性：健康な成人の性器ヘルペスに標準的な致死率は設定されない。ただし新生児感染や重度免疫不全者の播種性感染では生命を脅かす。",
+      "歴史：Gertrude Elionらの研究は選択的抗ウイルス薬acyclovirの開発を大きく進めた。",
+      "医薬史：アシクロビルなどの核酸類似体が治療に使われる。",
+      "構造・化合物：Acyclovir",
+      "薬で増殖は抑えられる。ただし神経節から退去してもらう契約には、まだ成功していない。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38158,7 +38269,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_013.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_013.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_013.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38168,12 +38280,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-014・歪んだ系統の菌茸標本。",
-    "description": "Human papillomavirus type 16を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★6です。",
+    "description": "持続感染が子宮頸がんなどの発生に関与する高リスクHPVの代表。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-014",
       "元ネタ：ヒトパピローマウイルス16型（Human papillomavirus type 16）",
+      "分類：DNAウイルス",
+      "科学解説：持続感染が子宮頸がんなどの発生に関与する高リスクHPVの代表。",
+      "主な症状：感染そのものは大部分が無症状で、多くは自然に検出されなくなる。一部で感染が長期間持続すると前癌病変から癌へ進展する場合がある。",
+      "致死性：HPV16感染そのものに単一の致死率はない。死亡リスクは、長期間を経て発生する関連癌を介して現れる。",
+      "歴史：Harald zur HausenがGerman Cancer Research CenterでHPV16/18と子宮頸がんの関連を示し、ワクチン開発へつながった。",
+      "医薬史：予防ではHPVワクチンが重要。",
+      "症状を出さず何年も待ってから問題を起こす。結核菌とは別方向に、気の長い相手である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38189,7 +38308,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_014.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_014.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_014.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38199,12 +38319,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-015・歪んだ系統の菌茸標本。",
-    "description": "Trichomonas vaginalisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★3です。",
+    "description": "複数の鞭毛を持ち、泌尿生殖器に感染する寄生原虫。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-015",
       "元ネタ：膣トリコモナス（Trichomonas vaginalis）",
+      "分類：寄生性原生生物",
+      "科学解説：複数の鞭毛を持ち、泌尿生殖器に感染する寄生原虫。",
+      "主な症状：感染者の多くは無症状。症状がある場合は外陰部の刺激感や掻痒、排尿時痛、性器分泌物などを生じる。",
+      "致死性：通常は致死性感染症ではなく、標準的な致死率は設定されない。",
+      "歴史：Alfred François Donnéが1836年に患者分泌物を顕微鏡で観察して発見した。",
+      "医薬史：メトロニダゾールなどが治療に使われる。",
+      "構造・化合物：Metronidazole",
+      "顕微鏡を覗いた研究者が見つけたのは、本人の知らないところで世界中を旅する小さな鞭毛虫だった。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38220,7 +38348,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_015.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_015.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_015.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38230,12 +38359,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-016・歪んだ系統の菌茸標本。",
-    "description": "Disease-associated prion protein (PrPSc)を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★10です。",
+    "description": "異常構造タンパク質が正常PrPの折り畳み異常を誘導し、致死性神経変性疾患に関係する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-016",
       "元ネタ：CJD関連プリオン（Disease-associated prion protein (PrPSc)）",
+      "分類：感染性タンパク質",
+      "科学解説：異常構造タンパク質が正常PrPの折り畳み異常を誘導し、致死性神経変性疾患に関係する。",
+      "主な症状：急速に進行する認知機能低下、運動失調、視覚異常、ミオクローヌスなど。数か月という短期間で高度な神経障害へ進行する。",
+      "致死性：現在のところ致死率は100%。根治療法はなく、多くが症状発現から1年以内に死亡する。",
+      "歴史：Stanley Prusinerが1982年にprion概念を提唱し、1997年にノーベル賞を受賞した。",
+      "医薬史：有効な根治薬は確立していない。",
+      "DNAもRNAも持たない。設計図なしで脳だけ壊して帰る、かなり効率のいい迷惑である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38251,7 +38387,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_016.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_016.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_016.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38261,12 +38398,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-017・深紅系統の菌茸標本。",
-    "description": "Ebola virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "description": "重篤な全身性疾患を起こすRNAウイルス。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-017",
       "元ネタ：エボラウイルス（Ebola virus）",
+      "分類：フィロウイルス",
+      "科学解説：重篤な全身性疾患を起こすRNAウイルス。",
+      "主な症状：突然の発熱、強い倦怠感、筋肉痛などから始まり、嘔吐、下痢、腹痛へ進行する。重症ではショック、多臓器障害、出血を伴うことがある。",
+      "致死性：平均的な致死率は約50%。過去の流行では約25〜90%と大きく変動している。",
+      "歴史：1976年ヤンブク流行でJean-Jacques Muyembe-Tamfumら現地研究者と国際チームが検体採取・分離・同定を進めた。",
+      "医薬史：現在はワクチンやモノクローナル抗体治療がある。",
+      "『半分』という数字が、コイントスほど気軽に聞こえない代表例である。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38282,7 +38426,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_017.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_017.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_017.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38292,12 +38437,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-018・深紅系統の菌茸標本。",
-    "description": "Marburg virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "description": "エボラに近縁で、重篤な出血熱を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-018",
       "元ネタ：マールブルグウイルス（Marburg virus）",
+      "分類：フィロウイルス",
+      "科学解説：エボラに近縁で、重篤な出血熱を起こす。",
+      "主な症状：高熱、激しい頭痛、倦怠感、筋肉痛などに始まり、嘔吐や下痢が続く。重症では出血、ショック、多臓器不全へ進行する。",
+      "致死性：過去のアウトブレイクでは約24〜88%が死亡している。医療環境や流行ごとの差が大きい。",
+      "歴史：1967年、Marburg・Frankfurt・Belgradeの研究施設で輸入アフリカミドリザルに関連した集団発生から発見された。",
+      "医薬史：特異的治療は限定的で支持療法が中心。",
+      "研究用のサルを輸入した結果、新しいウイルスまで研究対象として付いてきた。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38313,7 +38465,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_018.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_018.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_018.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38323,12 +38476,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-019・深紅系統の菌茸標本。",
-    "description": "Nipah virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "description": "オオコウモリ類を自然宿主とする人獣共通感染症ウイルスで、脳炎などを起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-019",
       "元ネタ：ニパウイルス（Nipah virus）",
+      "分類：パラミクソウイルス",
+      "科学解説：オオコウモリ類を自然宿主とする人獣共通感染症ウイルスで、脳炎などを起こす。",
+      "主な症状：発熱、頭痛、倦怠感、嘔吐などから始まり、呼吸器症状や急性脳炎へ進行する。重症では意識障害、痙攣を起こし短期間で昏睡へ至ることがある。",
+      "致死性：アウトブレイクによって異なるが、致死率は約40〜75%と非常に高い。",
+      "歴史：1998-99年のマレーシア脳炎流行でChua Kaw Bing、Lam Sai Kitらが新規ウイルスを分離した。",
+      "医薬史：確立した特異的治療はなく支持療法が中心。",
+      "自然宿主のコウモリは普通に飛び去る。重症化するのはだいたい、途中から参加した側である。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38344,7 +38504,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_019.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_019.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_019.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38354,12 +38515,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-020・深紅系統の菌茸標本。",
-    "description": "Bacillus anthracisを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "description": "丈夫な芽胞を作り、皮膚・肺・消化管などの炭疽を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-020",
       "元ネタ：炭疽菌（Bacillus anthracis）",
+      "分類：細菌・芽胞形成菌",
+      "科学解説：丈夫な芽胞を作り、皮膚・肺・消化管などの炭疽を起こす。",
+      "主な症状：皮膚型では無痛性の黒色壊死性潰瘍が特徴。吸入型では発熱、胸痛、呼吸困難などから急激に悪化し、ショックへ進むことがある。",
+      "致死性：未治療の皮膚炭疽では最大約20%が死亡するが治療により大きく改善する。吸入炭疽は特に重症。",
+      "歴史：Robert Kochが1876年に炭疽菌と疾病の因果を実験的に示し、1881年にはLouis Pasteurらが炭疽ワクチン公開実験を行った。",
+      "医薬史：シプロフロキサシンやドキシサイクリンなどが治療・曝露後予防に使われる。",
+      "構造・化合物：Ciprofloxacin",
+      "芽胞は長期間環境中に残存する。本人はとうに死んでいても、菌だけは律儀に待ち合わせ場所にいる。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38375,7 +38544,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_020.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_020.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_020.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38385,12 +38555,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-021・深紅系統の菌茸標本。",
-    "description": "Naegleria fowleriを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "description": "温かい淡水などに生息し、鼻腔から侵入すると原発性アメーバ性髄膜脳炎を起こすことがある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-021",
       "元ネタ：脳食いアメーバ（Naegleria fowleri）",
+      "分類：自由生活性アメーバ",
+      "科学解説：温かい淡水などに生息し、鼻腔から侵入すると原発性アメーバ性髄膜脳炎を起こすことがある。",
+      "主な症状：激しい頭痛、発熱、吐き気、嘔吐から始まり、項部硬直、錯乱、幻覚、痙攣、昏睡へ急速に進行する。",
+      "致死性：原発性アメーバ性髄膜脳炎はほぼ常に致死的で、発症後は数日単位で急速に進行することが多い。",
+      "歴史：Malcolm FowlerとRodney Carterが1965年に致死性髄膜脳炎症例を報告した。",
+      "医薬史：生存例ではアムホテリシンBを中心とした多剤併用が行われる。",
+      "構造・化合物：Amphotericin B",
+      "『脳食いアメーバ』は大げさな俗称に見えるが、今回は残念ながら広報担当があまり盛っていない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38406,7 +38584,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_021.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_021.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_021.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38416,12 +38595,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-022・深紅系統の菌茸標本。",
-    "description": "Dengue virus serotype 2を元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "蚊媒介RNAウイルスで、重症デングでは出血・血漿漏出・ショックを起こしうる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-022",
       "元ネタ：デングウイルス2型／DENV-2（Dengue virus serotype 2）",
+      "分類：フラビウイルス",
+      "科学解説：蚊媒介RNAウイルスで、重症デングでは出血・血漿漏出・ショックを起こしうる。",
+      "主な症状：高熱、頭痛、眼窩後部痛、筋肉痛、関節痛、吐き気、発疹など。重症デングでは血管透過性が上昇し、出血、血漿漏出、ショックを起こす。",
+      "致死性：適切な早期診断と医療があれば致死率は1%未満まで下げられる。重症度は既往感染や医療環境でも変わる。",
+      "歴史：1940年代、日本で木村廉・堀田進らがデングウイルス分離を進め、Albert Sabinらの研究で血清型の概念が整理された。",
+      "医薬史：支持療法と予防が中心で、対象条件に応じてワクチンも使われる。",
+      "蚊一匹の注射器は無料で、予約も本人確認もいらない。医療サービスとしては最低だが、普及率だけは高い。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38437,7 +38623,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_022.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_022.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_022.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38447,12 +38634,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-023・深紅系統の菌茸標本。",
-    "description": "Neisseria gonorrhoeaeを元ネタとするNF菌茸です。正式分類は深紅、レア度は★5です。",
+    "description": "主にヒト粘膜へ感染し、尿道炎・子宮頸管炎などを起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-023",
       "元ネタ：淋菌（Neisseria gonorrhoeae）",
+      "分類：細菌・グラム陰性双球菌",
+      "科学解説：主にヒト粘膜へ感染し、尿道炎・子宮頸管炎などを起こす。",
+      "主な症状：排尿時痛、尿道・性器からの分泌物、骨盤痛など。無症状感染も多く、女性では骨盤内炎症性疾患から不妊や異所性妊娠につながる場合がある。",
+      "致死性：通常の局所感染に標準的な致死率は設定されない。まれな播種性感染では重篤になりうる。",
+      "歴史：Albert Neisserが1879年に淋病患者の膿中で特徴的な双球菌を観察した。",
+      "医薬史：耐性化が大きな問題で、セフトリアキソンが重要な治療薬。",
+      "構造・化合物：Ceftriaxone",
+      "抗菌薬が出るたびに攻略法を覚えるので、性感染症界のアップデート対応だけは異様に早い。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38468,7 +38663,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_023.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_023.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_023.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38478,12 +38674,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-024・深紅系統の菌茸標本。",
-    "description": "Chlamydia trachomatisを元ネタとするNF菌茸です。正式分類は深紅、レア度は★4です。",
+    "description": "宿主細胞内で独特の生活環を送り、性感染症やトラコーマに関係する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-024",
       "元ネタ：クラミジア（Chlamydia trachomatis）",
+      "分類：偏性細胞内寄生細菌",
+      "科学解説：宿主細胞内で独特の生活環を送り、性感染症やトラコーマに関係する。",
+      "主な症状：無症状感染が多い。症状がある場合は排尿時痛、分泌物、下腹部痛など。女性では骨盤内炎症性疾患から卵管障害、不妊、異所性妊娠へつながることがある。",
+      "致死性：標準的な致死率は設定されない。主な問題は死亡よりも、気付かないまま進む生殖器の障害。",
+      "歴史：Halberstädterとvon Prowazekが1907年にトラコーマ患者の細胞内封入体を観察した。",
+      "医薬史：ドキシサイクリンなどが治療に使われる。",
+      "構造・化合物：Doxycycline",
+      "症状がないのは優しいからではない。気付かれない方が仕事がしやすいだけである。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38499,7 +38703,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_024.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_024.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_024.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38509,12 +38714,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-025・歪んだ系統の菌茸標本。",
-    "description": "Acanthamoeba castellaniiを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★6です。",
+    "description": "環境中に広く存在し、角膜炎やまれに脳炎を起こす。二重壁シストを形成する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-025",
       "元ネタ：アカントアメーバ（Acanthamoeba castellanii）",
+      "分類：自由生活性アメーバ",
+      "科学解説：環境中に広く存在し、角膜炎やまれに脳炎を起こす。二重壁シストを形成する。",
+      "主な症状：角膜炎では激しい眼痛、充血、羞明、視力低下を起こす。免疫機能が低下した人などでは脳へ侵入し、肉芽腫性アメーバ性脳炎を起こす場合がある。",
+      "致死性：角膜炎自体は通常致死的ではないが、脳炎はほぼ常に致死的。",
+      "歴史：Aldo Castellaniが1930年に酵母培養中の混入アメーバとして発見。後にVolkonskyがAcanthamoeba属を設けた。",
+      "医薬史：角膜炎ではクロルヘキシジンやPHMBなどが使われる。",
+      "構造・化合物：Chlorhexidine",
+      "コンタクトレンズ利用者にとって『目にアメーバが住む』は十分ホラーだが、こいつには脳炎という追加DLCまである。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38530,7 +38743,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_025.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_025.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_025.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38540,12 +38754,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-026・歪んだ系統の菌茸標本。",
-    "description": "Toxoplasma gondiiを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★5です。",
+    "description": "広い宿主域を持つ細胞内寄生原虫で、ネコ科が終宿主。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-026",
       "元ネタ：トキソプラズマ（Toxoplasma gondii）",
+      "分類：アピコンプレックス門・寄生原虫",
+      "科学解説：広い宿主域を持つ細胞内寄生原虫で、ネコ科が終宿主。",
+      "主な症状：健康な人の多くは無症状。症状があってもリンパ節腫脹や筋肉痛など軽いことが多い。重度免疫不全では脳炎を起こし、頭痛、錯乱、痙攣、運動失調などを呈する。",
+      "致死性：感染全体に一定の致死率はない。健康な成人では死亡はまれだが、免疫不全者や重症先天性感染では致命的になりうる。",
+      "歴史：1908年、Charles NicolleとLouis Manceaux、Alfonso Splendoreが独立に原虫を発見した。",
+      "医薬史：ピリメタミン＋スルファジアジンなどが治療に使われる。",
+      "構造・化合物：Pyrimethamine",
+      "ネコを終宿主に選び、人間を中間宿主にする。地球上で最も成功したマーケティング戦略の一つに『かわいい』を採用した寄生虫である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38561,7 +38783,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_026.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_026.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_026.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38571,12 +38794,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-027・歪んだ系統の菌茸標本。",
-    "description": "Escherichia phage T4を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "大腸菌へ感染し、多面体頭部・収縮尾・尾繊維を持つ。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-027",
       "元ネタ：T4ファージ（Escherichia phage T4）",
+      "分類：バクテリオファージ",
+      "科学解説：大腸菌へ感染し、多面体頭部・収縮尾・尾繊維を持つ。",
+      "主な症状：ヒト感染症状はない。標的はヒト細胞ではなく大腸菌。",
+      "致死性：ヒトに対する致死率は該当なし。",
+      "歴史：Frederick Twort、Félix d'Hérelleのファージ発見史を経て、Delbrück・Luria・HersheyらのPhage Groupが分子遺伝学を発展させた。",
+      "医薬史：ファージ療法研究の歴史ともつながる。",
+      "見た目はどう考えても宇宙人の殺人ロボットだが、幸い殺される側はだいたい大腸菌である。大腸菌にはご愁傷さまとしか言えない。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38592,7 +38822,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_027.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_027.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_027.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38602,12 +38833,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-028・歪んだ系統の菌茸標本。",
-    "description": "Potato spindle tuber viroid (PSTVd)を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "タンパク質殻を持たない小さな環状一本鎖RNA感染因子。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-028",
       "元ネタ：ジャガイモやせいもウイロイド（Potato spindle tuber viroid (PSTVd)）",
+      "分類：ウイロイド",
+      "科学解説：タンパク質殻を持たない小さな環状一本鎖RNA感染因子。",
+      "主な症状：ヒト感染症状はない。植物では株の矮化、葉の変形、果実・塊茎の小型化、収量低下などを引き起こす。",
+      "致死性：ヒト・動物に対する致死率は該当なし。植物病原体であり、感染植物を食べてもヒト健康への影響はないとされる。",
+      "歴史：Theodor DienerがUSDA Beltsvilleで研究し、1971年にviroidという新カテゴリーを提唱した。",
+      "医薬史：植物病原体で、ヒト医薬品との直接的薬史リンクはない。",
+      "遺伝物質は極限まで削ったのに植物を病気にできる。機能を減らしても迷惑さだけは削らなかったミニマリストである。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38623,7 +38861,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_028.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_028.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_028.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38633,12 +38872,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-029・歪んだ系統の菌茸標本。",
-    "description": "Deinococcus radiodurans R1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "放射線・乾燥・酸化ストレスへの極端な耐性と強力なDNA修復系を持つ。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-029",
       "元ネタ：放射線耐性菌（Deinococcus radiodurans R1）",
+      "分類：細菌",
+      "科学解説：放射線・乾燥・酸化ストレスへの極端な耐性と強力なDNA修復系を持つ。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒト感染症としての致死率は該当なし。代表的株は低リスクの研究株として扱われる。",
+      "歴史：Arthur W. Andersonらが1950年代、放射線殺菌後も腐敗した缶詰肉から分離した。",
+      "医薬史：DNA修復・宇宙生物学・バイオレメディエーション研究で重要。",
+      "『滅菌しました』という人類側の勝利宣言を、腐った缶詰の中から訂正しに来た細菌である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38654,7 +38900,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_029.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_029.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_029.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38664,12 +38911,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-030・歪んだ系統の菌茸標本。",
-    "description": "Pyrococcus furiosusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "約100℃近い高温でも増殖できる超好熱性古細菌。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-030",
       "元ネタ：超好熱古細菌（Pyrococcus furiosus）",
+      "分類：古細菌",
+      "科学解説：約100℃近い高温でも増殖できる超好熱性古細菌。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒト感染症としての致死率は該当なし。",
+      "歴史：Karl Stetter、Gerhard FialaらがVulcano島の地熱海底堆積物から分離し、1986年に記載した。",
+      "医薬史：Pfu DNA polymeraseは高精度PCRなどに利用される。",
+      "100℃近くを『住みやすい』と判断するので、人間とは不動産の条件が根本から合わない。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38685,7 +38939,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_030.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_030.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_030.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38695,12 +38950,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-031・歪んだ系統の菌茸標本。",
-    "description": "Balamuthia mandrillarisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★10です。",
+    "description": "肉芽腫性アメーバ性脳炎を起こすことがあり、極めて致死的。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-031",
       "元ネタ：バラムチア（Balamuthia mandrillaris）",
+      "分類：自由生活性アメーバ",
+      "科学解説：肉芽腫性アメーバ性脳炎を起こすことがあり、極めて致死的。",
+      "主な症状：頭痛、発熱、吐き気などから始まり、精神状態の変化、痙攣、歩行障害、麻痺、言語・視覚障害などへ進行する。症状出現まで数週間〜数か月かかる場合がある。",
+      "致死性：肉芽腫性アメーバ性脳炎は極めて致死性が高く、患者の約9割が死亡するとされる。",
+      "歴史：1980年代後半にSan Diegoの動物園で死亡したマンドリル脳から分離。Govinda Visvesvaraらが1993年に新属新種として記載した。",
+      "医薬史：生存例ではミルテホシンを含む多剤併用が行われる。",
+      "構造・化合物：Miltefosine",
+      "死亡直前あるいは死後に診断される例もある。病名を知る頃には、本人より病理医の方が詳しくなっていることがある。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38716,7 +38979,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_031.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_031.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_031.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38726,12 +38990,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-032・歪んだ系統の菌茸標本。",
-    "description": "Giardia duodenalisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★4です。",
+    "description": "小腸に寄生し、2核と腹側吸着盤を持つ。下痢や吸収不良を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-032",
       "元ネタ：ジアルジア／ランブル鞭毛虫（Giardia duodenalis）",
+      "分類：鞭毛性寄生原虫",
+      "科学解説：小腸に寄生し、2核と腹側吸着盤を持つ。下痢や吸収不良を起こす。",
+      "主な症状：下痢、腹痛、ガス、吐き気、脱水、悪臭の強い脂肪便など。慢性化すると吸収不良や体重減少につながることがある。",
+      "致死性：通常は致死的ではなく、標準的な致死率は設定されない。",
+      "歴史：Antonie van Leeuwenhoekが1681年、自身の便で類似原虫を観察。Vilém Lamblが19世紀に詳細記載した。",
+      "医薬史：チニダゾールやメトロニダゾールなどが治療に使われる。",
+      "構造・化合物：Tinidazole",
+      "科学史には勇気ある実験が多いが、自分の便を顕微鏡で見るのは『そこまでして見たかったのか』部門のかなり上位である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38747,7 +39019,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_032.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_032.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_032.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38757,12 +39030,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-033・深紅系統の菌茸標本。",
-    "description": "Vibrio cholerae O1を元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "コンマ状の細菌で、毒素産生株は大量の水様性下痢を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-033",
       "元ネタ：コレラ菌（Vibrio cholerae O1）",
+      "分類：細菌・ビブリオ属",
+      "科学解説：コンマ状の細菌で、毒素産生株は大量の水様性下痢を起こす。",
+      "主な症状：大量の水様性下痢、嘔吐、筋痙攣。重症では短時間で極度の脱水となり、血圧低下、腎障害、循環不全へ進行する。",
+      "致死性：治療の有無で極端に変わる。迅速な補液で死亡率は1%未満まで下げられるが、未治療の重症例では非常に高くなる。",
+      "歴史：Filippo Paciniが1854年に菌を記載、John Snowは同年Broad Street流行で水系感染を疫学的に示し、Robert Kochが1880年代に細菌学的確立を進めた。",
+      "医薬史：治療史最大の革命は経口補水療法（ORS）。",
+      "構造・化合物：D-Glucose",
+      "人体から水を抜いて殺す細菌に、人類が『じゃあ水を戻す』で勝ち始めたのはかなり身も蓋もない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38778,7 +39059,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_033.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_033.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_033.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38788,12 +39070,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-034・深紅系統の菌茸標本。",
-    "description": "Salmonella enterica serovar Typhimuriumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★5です。",
+    "description": "腸管感染を起こす代表的細菌群で、多数の血清型がある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-034",
       "元ネタ：サルモネラ菌（Salmonella enterica serovar Typhimurium）",
+      "分類：細菌",
+      "科学解説：腸管感染を起こす代表的細菌群で、多数の血清型がある。",
+      "主な症状：下痢、発熱、腹痛、吐き気、嘔吐など。高齢者、乳幼児、免疫不全者などでは血流へ侵入し、重症感染を起こす場合がある。",
+      "致死性：多くは自然軽快するため、Typhimuriumに一律の致死率は設定しない。侵襲性感染では死亡しうる。",
+      "歴史：Theobald Smithが米国Bureau of Animal Industryで豚由来菌を分離したが、属名は上司Daniel Salmonに由来する。",
+      "医薬史：軽症では支持療法中心で、重症例では抗菌薬が検討される。",
+      "菌を実際に分離した人ではなく上司の名前が属名に残った。微生物学にも会社員の悲哀は存在する。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38809,7 +39098,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_034.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_034.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_034.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38819,12 +39109,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-035・歪んだ系統の菌茸標本。",
-    "description": "Rotavirus Aを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★5です。",
+    "description": "乳幼児急性胃腸炎の主要原因の一つで、粒子が車輪状に見える。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-035",
       "元ネタ：A群ロタウイルス（Rotavirus A）",
+      "分類：二本鎖RNAウイルス",
+      "科学解説：乳幼児急性胃腸炎の主要原因の一つで、粒子が車輪状に見える。",
+      "主な症状：激しい水様性下痢、嘔吐、発熱、腹痛。最大の危険は脱水で、乳幼児では短時間で状態が悪化することがある。",
+      "致死性：適切な補液が受けられる環境では死亡はまれだが、重度の脱水を治療できなければ致命的となりうる。",
+      "歴史：Ruth Bishopらが1973年、Royal Children's Hospitalで小児腸生検から新規ウイルスを発見した。",
+      "医薬史：経口ロタウイルスワクチンが重症化予防に重要。",
+      "名前はかわいい『車輪』だが、実際に回しているのは主に乳幼児の洗濯機である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38840,7 +39137,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_035.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_035.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_035.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38850,12 +39148,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-036・歪んだ系統の菌茸標本。",
-    "description": "Hepatitis B virusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★7です。",
+    "description": "肝細胞へ感染し、慢性感染は肝硬変・肝がんリスクにつながる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-036",
       "元ネタ：HBV（Hepatitis B virus）",
+      "分類：DNAウイルス・ヘパドナウイルス",
+      "科学解説：肝細胞へ感染し、慢性感染は肝硬変・肝がんリスクにつながる。",
+      "主な症状：急性期には倦怠感、食欲不振、吐き気、腹痛、濃色尿、黄疸など。慢性感染は長期間無症状のことも多い。",
+      "致死性：感染時点の単純な致死率では表せない。主な死亡は慢性肝炎から生じる肝硬変・肝癌による。",
+      "歴史：Baruch BlumbergとHarvey AlterらがAustralia antigenを発見し、後にHBsAgと判明。ワクチン・血液スクリーニングへつながった。",
+      "医薬史：核酸アナログなどが慢性HBV治療に使われる。",
+      "構造・化合物：Entecavir",
+      "何十年も無症状で過ごした後に肝硬変や癌として請求書を出すことがある。支払い期限が長いだけで、踏み倒せるとは言っていない。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38871,7 +39177,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_036.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_036.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_036.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38881,12 +39188,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-037・歪んだ系統の菌茸標本。",
-    "description": "Human T-cell leukemia virus type 1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★6です。",
+    "description": "T細胞へ感染し、一部で成人T細胞白血病・リンパ腫や神経疾患に関係する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-037",
       "元ネタ：ヒトT細胞白血病ウイルス1型（Human T-cell leukemia virus type 1）",
+      "分類：レトロウイルス",
+      "科学解説：T細胞へ感染し、一部で成人T細胞白血病・リンパ腫や神経疾患に関係する。",
+      "主な症状：感染者の多くは無症状。ATLではリンパ節腫脹、肝脾腫、高カルシウム血症、皮膚・肺病変など。HAM/TSPでは下肢の進行性痙性麻痺や排尿・排便障害がみられる。",
+      "致死性：感染者全体に単一の致死率はない。生涯でATLを発症するリスクは約5%、HAM/TSPは約2%とされる。",
+      "歴史：高月清らが1977年にATLを報告、Robert Galloらがヒトレトロウイルスを分離し、日沼頼夫・三好勇夫らがATLとの関連を明確化した。",
+      "医薬史：ATLでは病型により化学療法・移植・抗体薬など。",
+      "構造・化合物：Zidovudine (AZT)",
+      "感染者の大多数には何もしない。少数にだけ白血病を抽選するので、確率表だけ見ればソシャゲに見える。景品が最悪なだけである。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38902,7 +39217,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_037.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_037.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_037.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38912,12 +39228,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-038・深紅系統の菌茸標本。",
-    "description": "Mycoplasma genitaliumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★4です。",
+    "description": "非常に小さく細胞壁を欠き、性感染症に関係する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-038",
       "元ネタ：マイコプラズマ・ジェニタリウム（Mycoplasma genitalium）",
+      "分類：細胞壁を持たない細菌・Mollicutes",
+      "科学解説：非常に小さく細胞壁を欠き、性感染症に関係する。",
+      "主な症状：男性では尿道炎、女性では子宮頸管炎や骨盤内炎症性疾患など。無症状感染も多い。",
+      "致死性：通常の感染に標準的な致死率は設定されない。",
+      "歴史：1980年のSt Mary's Hospital患者試料からJoseph TullyらがG-37/M-30株を分離し、1981年に報告した。",
+      "医薬史：βラクタムは効かず、耐性状況に応じてモキシフロキサシンなどが使われる。",
+      "構造・化合物：Moxifloxacin",
+      "防具を貫通するのではない。最初から細胞壁を着ていないので、その部位を狙う攻撃が全部空振りする。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38933,7 +39257,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_038.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_038.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_038.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38943,12 +39268,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-039・深紅系統の菌茸標本。",
-    "description": "Ureaplasma urealyticumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★3です。",
+    "description": "尿素を分解してエネルギーを得る小型細菌で、保菌と病原性の判断が難しいこともある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-039",
       "元ネタ：ウレアプラズマ（Ureaplasma urealyticum）",
+      "分類：細胞壁を持たない細菌・Mollicutes",
+      "科学解説：尿素を分解してエネルギーを得る小型細菌で、保菌と病原性の判断が難しいこともある。",
+      "主な症状：健康な人の尿路・生殖器から無症状で検出されることも多い。一部では尿道炎などとの関連がみられる。",
+      "致死性：一般成人における標準的な致死率は設定されない。",
+      "歴史：M. C. Shepardが1954年にT-strain mycoplasmaとして分離し、1974年にUreaplasma属が正式提唱された。",
+      "医薬史：細胞壁標的薬は効かず、必要に応じてドキシサイクリンなどを用いる。",
+      "構造・化合物：Doxycycline",
+      "検査で見つかっても犯人とは限らない。現場にいたというだけで逮捕すると、腸内細菌まで全員前科持ちになる。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38964,7 +39297,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_039.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_039.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_039.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -38974,12 +39308,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-040・深紅系統の菌茸標本。",
-    "description": "Candida albicansを元ネタとするNF菌茸です。正式分類は深紅、レア度は★4です。",
+    "description": "常在真菌だが条件により粘膜感染や侵襲性カンジダ症を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-040",
       "元ネタ：カンジダ／カンジダ・アルビカンス（Candida albicans）",
+      "分類：酵母様真菌",
+      "科学解説：常在真菌だが条件により粘膜感染や侵襲性カンジダ症を起こす。",
+      "主な症状：口腔カンジダ症では白い苔状病変や疼痛、膣カンジダ症では掻痒や疼痛など。血流へ侵入する侵襲性カンジダ症では発熱・悪寒から多臓器播種を起こすことがある。",
+      "致死性：表在性カンジダ症は通常致死的ではない。一方、侵襲性カンジダ症は重篤で、患者背景によって高い死亡率を示す。",
+      "歴史：Charles Philippe Robinが1853年にOidium albicansとして記載し、Christine Berkhoutが1923年にCandida属へ整理した。",
+      "医薬史：ナイスタチンやアゾール系、エキノキャンディン系などを使用。",
+      "構造・化合物：Nystatin",
+      "普段は人体に住まわせてもらっている側なのに、免疫が弱ると血液まで侵略する。居候が家主の体調不良を見て登記を書き換え始めるタイプである。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -38995,7 +39337,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_040.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_040.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_040.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39005,12 +39348,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-041・深紅系統の菌茸標本。",
-    "description": "Escherichia coli O157:H7 strain Sakaiを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "志賀毒素などを持ち、出血性大腸炎やHUSを起こすことがある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-041",
       "元ネタ：腸管出血性大腸菌 O157:H7（Escherichia coli O157:H7 strain Sakai）",
+      "分類：細菌・EHEC/STEC",
+      "科学解説：志賀毒素などを持ち、出血性大腸炎やHUSを起こすことがある。",
+      "主な症状：激しい腹痛、水様性下痢から血便へ進むことがある。特に小児などでは溶血性尿毒症症候群（HUS）を発症し、溶血性貧血、血小板減少、急性腎障害を引き起こす。",
+      "致死性：O157感染の約5〜10%がHUSへ進行し、HUSでは約3〜5%が死亡するとされる。",
+      "歴史：1996年堺市集団感染由来のSakai株が世界的研究株となり、林哲也ら日本チームが全ゲノムを解読した。",
+      "医薬史：STECでは抗菌薬使用に注意が必要で、支持療法が中心。",
+      "大規模食中毒を起こした結果、履歴書ではなく全ゲノムを世界公開された。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39026,7 +39376,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_041.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_041.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_041.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39036,12 +39387,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-042・深紅系統の菌茸標本。",
-    "description": "Staphylococcus aureusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "description": "皮膚・鼻腔などに存在しうるが、膿瘍・肺炎・菌血症など多彩な感染症を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-042",
       "元ネタ：黄色ブドウ球菌（Staphylococcus aureus）",
+      "分類：細菌・グラム陽性球菌",
+      "科学解説：皮膚・鼻腔などに存在しうるが、膿瘍・肺炎・菌血症など多彩な感染症を起こす。",
+      "主な症状：局所感染では発赤、腫脹、疼痛、膿瘍形成など。血流感染では発熱、悪寒から敗血症や多臓器不全へ進むことがある。",
+      "致死性：菌全体の単一CFRはないが、血流感染は重篤。患者背景や耐性株の有無で死亡率は大きく変わる。",
+      "歴史：Alexander Ogstonが1880年に膿瘍中の房状球菌を研究しStaphylococcusと命名。Anton RosenbachがS. aureusを区別した。",
+      "医薬史：ペニシリン→メチシリン→MRSAという耐性史を象徴する。",
+      "構造・化合物：Methicillin",
+      "人類が新しい抗菌薬を作るたび、向こうもパッチノートを読んでいる節がある。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39057,7 +39416,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_042.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_042.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_042.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39067,12 +39427,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-043・歪んだ系統の菌茸標本。",
-    "description": "Lactobacillus acidophilusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "糖を発酵して乳酸を作り、消化管などに存在する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-043",
       "元ネタ：乳酸菌／アシドフィルス菌（Lactobacillus acidophilus）",
+      "分類：乳酸菌・グラム陽性桿菌",
+      "科学解説：糖を発酵して乳酸を作り、消化管などに存在する。",
+      "主な症状：通常は病気を起こさない。重い基礎疾患や免疫低下など特殊な条件では、極めてまれに菌血症や心内膜炎の原因になることがある。",
+      "致死性：一般的な致死率は設定なし。通常の健康人にとって典型的な病原菌ではない。",
+      "歴史：Ernst Moroが1900年に乳児便からBacillus acidophilusとして記載。Mechnikovの発酵乳研究はプロバイオティクス思想へ影響した。",
+      "医薬史：発酵・腸内細菌研究で重要。",
+      "構造・化合物：L-Lactic acid",
+      "この図鑑では珍しく、『食べるとだいたい何も起きない』が売りの菌である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39088,7 +39456,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_043.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_043.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_043.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39098,12 +39467,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-044・歪んだ系統の菌茸標本。",
-    "description": "Bifidobacterium longumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "腸内細菌叢の代表的構成員で、ビフィドシャントにより酢酸・乳酸を産生する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-044",
       "元ネタ：ビフィズス菌（Bifidobacterium longum）",
+      "分類：細菌・放線菌系統",
+      "科学解説：腸内細菌叢の代表的構成員で、ビフィドシャントにより酢酸・乳酸を産生する。",
+      "主な症状：通常は感染症を起こさない。極低出生体重児や重症患者などでは、ごくまれに菌血症が報告される。",
+      "致死性：一般的な致死率は設定なし。",
+      "歴史：Henri Tissierが1899年、Pasteur Instituteで母乳栄養児便からBifidobacterium属につながる菌を分離した。",
+      "医薬史：母乳オリゴ糖利用や乳児腸内共生研究で重要。",
+      "構造・化合物：Acetic acid",
+      "腸内で真面目に働いていたら、後世ではヨーグルトの広告塔に就職させられた。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39119,7 +39496,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_044.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_044.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_044.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39129,12 +39507,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-045・歪んだ系統の菌茸標本。",
-    "description": "Bacillus subtilis subsp. natto BEST195を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "納豆発酵を担い、糸引きの主成分ポリ-γ-グルタミン酸を作る。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-045",
       "元ネタ：納豆菌（Bacillus subtilis subsp. natto BEST195）",
+      "分類：細菌・芽胞形成菌",
+      "科学解説：納豆発酵を担い、糸引きの主成分ポリ-γ-グルタミン酸を作る。",
+      "主な症状：通常の食品摂取で感染症状を起こすものではない。重度免疫不全など特殊な条件では、Bacillus属菌によるまれな侵襲性感染が報告されることはある。",
+      "致死性：通常の食品利用では致死率は該当なし。",
+      "歴史：古い発酵食品の近代化で純粋培養種菌が普及。BEST195は実用・研究株として全ゲノム解析された。",
+      "医薬史：食品発酵・高分子生産・ゲノム研究で重要。",
+      "100℃近い炊きたて大豆に入れられたうえ、最終的には人間に食べられる。発酵菌の労働環境もなかなかブラックである。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39150,7 +39535,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_045.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_045.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_045.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39160,12 +39546,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-046・歪んだ系統の菌茸標本。",
-    "description": "Microcystis aeruginosa PCC 7806を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★6です。",
+    "description": "アオコを形成し、一部株は肝毒性ミクロシスチンを産生する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-046",
       "元ネタ：アオコ／ミクロキスティス（Microcystis aeruginosa PCC 7806）",
+      "分類：シアノバクテリア",
+      "科学解説：アオコを形成し、一部株は肝毒性ミクロシスチンを産生する。",
+      "主な症状：危険の中心は感染ではなく毒素中毒。ミクロシスチンを摂取すると吐き気、嘔吐、下痢、頭痛などから、重症では急性肝炎や黄疸、肝障害へ進む。",
+      "致死性：曝露量や経路で大きく異なるため一定の致死率は設定できない。大量曝露は生命を脅かしうる。",
+      "歴史：PCC7806は1972年オランダBraakman Reservoirから分離。Botesらが毒素構造研究を進め、mcy遺伝子クラスター解析で生合成が解明された。",
+      "医薬史：危険性の中心は感染ではなく水系毒素。",
+      "構造・化合物：Microcystin-LR",
+      "湖を緑色にしたうえ肝臓まで壊すので、景観破壊と人体破壊を一社で請け負っている。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39181,7 +39575,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_046.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_046.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_046.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39191,12 +39586,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-047・歪んだ系統の菌茸標本。",
-    "description": "Methanobrevibacter smithiiを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "ヒト腸内で他微生物の発酵産物を利用しメタンを作る。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-047",
       "元ネタ：腸内メタン生成古細菌（Methanobrevibacter smithii）",
+      "分類：古細菌・メタン生成菌",
+      "科学解説：ヒト腸内で他微生物の発酵産物を利用しメタンを作る。",
+      "主な症状：確立した感染症状は基本的にない。",
+      "致死性：ヒト感染症としての致死率は該当なし。",
+      "歴史：Terry Miller、Martin Wolinらが1982年に成人便から代表的メタン生成古細菌を分離・報告した。",
+      "医薬史：腸内古細菌と微生物間代謝研究で重要。",
+      "人間が食べたものを細菌が食べ、その残り物を古細菌が食べる。腸内はだいたい下請け構造でできている。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39212,7 +39614,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_047.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_047.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_047.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39222,12 +39625,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-048・歪んだ系統の菌茸標本。",
-    "description": "Thermococcus kodakarensis KOD1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "高温・嫌気条件で増殖する超好熱性古細菌。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-048",
       "元ネタ：超好熱古細菌（Thermococcus kodakarensis KOD1）",
+      "分類：古細菌・超好熱菌",
+      "科学解説：高温・嫌気条件で増殖する超好熱性古細菌。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒトに対する致死率は該当なし。",
+      "歴史：1993年、日本チームが鹿児島県小宝島の硫気孔からKOD1を分離。地名が種名に残る。",
+      "医薬史：KOD DNA polymeraseは高精度PCR・遺伝子工学で利用される。",
+      "人間なら救急車を呼ぶ温度で、こいつはようやく快適になってくる。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39243,7 +39653,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_048.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_048.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_048.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39253,12 +39664,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-049・歪んだ系統の菌茸標本。",
-    "description": "Sulfolobus acidocaldariusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "高温かつ強酸性環境で増殖し、硫黄化合物を利用する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-049",
       "元ネタ：好熱好酸性古細菌（Sulfolobus acidocaldarius）",
+      "分類：古細菌",
+      "科学解説：高温かつ強酸性環境で増殖し、硫黄化合物を利用する。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒトに対する致死率は該当なし。",
+      "歴史：Thomas Brock、Karl Brockらが1970年代初頭にYellowstoneの酸性高温環境から研究・記載した。",
+      "医薬史：後のCarl WoeseらのrRNA研究により、こうした生物が細菌とは別の古細菌系統と理解された。",
+      "熱湯と酸を『住環境』と呼ぶので、事故物件という概念が通用しない。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39274,7 +39692,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_049.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_049.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_049.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39284,12 +39703,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-050・歪んだ系統の菌茸標本。",
-    "description": "Phaeodactylum tricornutumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "複数形態を示すモデル珪藻で、光合成・脂質代謝・進化研究に使われる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-050",
       "元ネタ：モデル珪藻（Phaeodactylum tricornutum）",
+      "分類：珪藻・真核微細藻類",
+      "科学解説：複数形態を示すモデル珪藻で、光合成・脂質代謝・進化研究に使われる。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：感染症としての致死率は該当なし。",
+      "歴史：Knut Bohlinが1897年に記載し、培養しやすさから長年のモデル生物となった。",
+      "医薬史：EPA・フコキサンチン・バイオ燃料研究にも利用される。",
+      "構造・化合物：Fucoxanthin",
+      "病気を起こさないと、この図鑑では逆に研究材料として酷使される。平和にも代償はある。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39305,7 +39732,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_050.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_050.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_050.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39315,12 +39743,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-051・歪んだ系統の菌茸標本。",
-    "description": "Alexandrium catenellaを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★7です。",
+    "description": "有害藻類ブルームを形成し、サキシトキシン類を産生する個体群がある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-051",
       "元ネタ：有毒渦鞭毛藻（Alexandrium catenella）",
+      "分類：渦鞭毛藻",
+      "科学解説：有害藻類ブルームを形成し、サキシトキシン類を産生する個体群がある。",
+      "主な症状：毒素を蓄積した貝類などを食べると麻痺性貝毒を起こす。口唇や舌のしびれ、運動失調、嚥下困難、筋力低下などから、重症では弛緩性麻痺と呼吸不全へ進む。",
+      "致死性：摂取毒素量と治療環境で大きく変わるため一定のCFRは設定しない。重症中毒は致命的になりうる。",
+      "歴史：1920年代Californiaの麻痺性貝毒研究でSommer、Meyerらが貝毒と渦鞭毛藻増殖を関連付け、Schantzらがサキシトキシンを研究した。",
+      "医薬史：危険性は食物連鎖を介した神経毒中毒。",
+      "構造・化合物：Saxitoxin",
+      "貝は毒を作っていない。ただ黙って貯金して、最後に人間へ全額払い戻す。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39336,7 +39772,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_051.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_051.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_051.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39346,12 +39783,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-052・歪んだ系統の菌茸標本。",
-    "description": "Euglena gracilisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "鞭毛運動・光合成・有機物利用を組み合わせる混合栄養生物。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-052",
       "元ネタ：ミドリムシ／ヒメミドリムシ（Euglena gracilis）",
+      "分類：ユーグレナ類・単細胞真核生物",
+      "科学解説：鞭毛運動・光合成・有機物利用を組み合わせる混合栄養生物。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒト感染症としての致死率は該当なし。",
+      "歴史：Christian Gottfried EhrenbergがEuglena属を設け、Georg Klebsが1883年にE. gracilisを記載した。",
+      "医薬史：パラミロン・カロテノイド・脂質・バイオ燃料研究で利用される。",
+      "植物なのか動物なのか昔の研究者を散々悩ませたが、本人は分類学者の都合など気にせず今日も泳いで光合成している。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39367,7 +39811,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_052.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_052.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_052.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39377,12 +39822,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-053・歪んだ系統の菌茸標本。",
-    "description": "Physarum polycephalumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "巨大な多核細胞として管状ネットワークを形成しながら移動する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-053",
       "元ネタ：モジホコリ／真正粘菌（Physarum polycephalum）",
+      "分類：粘菌・アメーボゾア",
+      "科学解説：巨大な多核細胞として管状ネットワークを形成しながら移動する。",
+      "主な症状：ヒト感染症状はない。",
+      "致死性：ヒトに対する致死率は該当なし。",
+      "歴史：中垣俊之、山田裕康、Ágota Tóthらが2000年、迷路内で最短経路を残すネットワーク最適化を示した。",
+      "医薬史：生物計算・輸送網最適化研究で有名。",
+      "脳がないのに迷路を解く。脳がある側には少々耳の痛い実験結果である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39398,7 +39850,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_053.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_053.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_053.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39408,12 +39861,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-054・歪んだ系統の菌茸標本。",
-    "description": "Pandoravirus salinusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "約1µm級の巨大粒子と大きなゲノムを持つアメーバウイルス。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-054",
       "元ネタ：パンドラウイルス（Pandoravirus salinus）",
+      "分類：巨大DNAウイルス",
+      "科学解説：約1µm級の巨大粒子と大きなゲノムを持つアメーバウイルス。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：確立したヒト致死率はない。",
+      "歴史：2013年、Nadège Philippe、Jean-Michel Claverie、Chantal Abergelらが新しい巨大ウイルス群として報告した。",
+      "医薬史：巨大ウイルスと生命境界の研究をさらに拡張した。",
+      "『ウイルスは小さい』という教科書の安心感を、1µm級の図体で物理的に踏み潰しに来た。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39429,7 +39889,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_054.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_054.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_054.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39439,12 +39900,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-055・深紅系統の菌茸標本。",
-    "description": "Streptococcus pyogenesを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "description": "咽頭炎から壊死性筋膜炎・STSSまで幅広い病態を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-055",
       "元ネタ：A群溶血性連鎖球菌／A群溶連菌（Streptococcus pyogenes）",
+      "分類：グラム陽性球菌",
+      "科学解説：咽頭炎から壊死性筋膜炎・STSSまで幅広い病態を起こす。",
+      "主な症状：重症侵襲性感染では激しい局所痛、腫脹、発熱などから組織壊死が急速に進行する。STSSでは血圧低下、ショック、多臓器不全を起こす。",
+      "致死性：壊死性筋膜炎の死亡率は約15〜20%。STSSでは積極的治療を行っても30%を超えることがある。",
+      "歴史：Rebecca LancefieldがRockefeller Instituteで糖抗原による連鎖球菌分類を確立し、Group Aを整理した。",
+      "医薬史：重症侵襲性感染ではペニシリン＋クリンダマイシンなどが重要。",
+      "構造・化合物：Clindamycin",
+      "俗にいう『人食いバクテリア』。今回は食欲の比喩ではなく、感染した組織の方が実際になくなる。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39460,7 +39929,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_055.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_055.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_055.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39470,12 +39940,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-056・深紅系統の菌茸標本。",
-    "description": "Staphylococcus aureus MN8を元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "description": "スーパー抗原TSST-1を産生し、全身性の強い炎症とショックを起こしうる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-056",
       "元ネタ：TSST-1産生黄色ブドウ球菌（Staphylococcus aureus MN8）",
+      "分類：細菌・毒素産生特殊株",
+      "科学解説：スーパー抗原TSST-1を産生し、全身性の強い炎症とショックを起こしうる。",
+      "主な症状：突然の高熱、嘔吐、下痢、筋肉痛、びまん性発疹などから急激な血圧低下を起こし、腎、肝、肺などの多臓器障害へ進行する。",
+      "致死性：MN8株そのものに固定CFRはない。黄色ブドウ球菌性TSSでは数%程度の死亡がみられ、病型や患者背景で変動する。",
+      "歴史：James Toddらが1978年にToxic Shock Syndromeを病名として提唱し、1980年代に毒素研究が進んだ。",
+      "医薬史：重症TSSでは感染源除去・支持療法・抗菌薬。クリンダマイシンは毒素産生抑制目的にも使われる。",
+      "構造・化合物：Clindamycin",
+      "スーパー抗原は免疫を突破するのではなく、非常ベルを全部同時に鳴らして建物そのものを使えなくする。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39491,7 +39969,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_056.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_056.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_056.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39501,12 +39980,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-057・深紅系統の菌茸標本。",
-    "description": "Clostridium perfringensを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "description": "食中毒を起こすほか、深部創傷ではガス壊疽を起こすことがある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-057",
       "元ネタ：ウェルシュ菌（Clostridium perfringens）",
+      "分類：嫌気性・芽胞形成細菌",
+      "科学解説：食中毒を起こすほか、深部創傷ではガス壊疽を起こすことがある。",
+      "主な症状：食中毒型では腹痛と下痢が中心。ガス壊疽では激烈な疼痛、腫脹、皮膚変色、ガス産生、筋肉壊死、溶血、ショックが急速に進む。",
+      "致死性：食中毒型は通常軽症。一方、ガス壊疽では適切な治療を行っても死亡率20〜30%、未治療ではほぼ100%とされる。",
+      "歴史：William H. WelchとGeorge Nuttallが1892年にガス産生菌を詳しく記載し、日本語名ウェルシュ菌にWelchの名が残る。",
+      "医薬史：食中毒型は支持療法中心だが、ガス壊疽は外科的緊急処置が必要。",
+      "細菌を殺すだけでは間に合わず、感染した肉ごと捨てる必要がある。医学的にはデブリードマン、患者目線ではだいぶ返品不可である。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39522,7 +40008,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_057.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_057.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_057.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39532,12 +40019,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-058・深紅系統の菌茸標本。",
-    "description": "Vibrio vulnificusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "description": "暖かい沿岸水域に生息し、生食や海水接触創から劇症感染を起こすことがある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-058",
       "元ネタ：ビブリオ・バルニフィカス（Vibrio vulnificus）",
+      "分類：グラム陰性・好塩性ビブリオ",
+      "科学解説：暖かい沿岸水域に生息し、生食や海水接触創から劇症感染を起こすことがある。",
+      "主な症状：消化器症状のほか、創傷感染では急激な腫脹、水疱、皮膚・軟部組織の壊死を起こす。重症では菌血症、敗血症性ショックへ進行する。",
+      "致死性：感染者のおよそ5人に1人が死亡するとされ、重症例では発症から1〜2日で死亡することもある。",
+      "歴史：D. G. HollisらCDC研究者が1976年に未知の好塩性Vibrioを報告し、1979年にV. vulnificusと命名された。",
+      "医薬史：重症創傷感染では早期抗菌薬＋外科処置。",
+      "構造・化合物：Doxycycline",
+      "海で傷口を洗うという爽やかな行為を、壊死性軟部組織感染に変換できる。夏の思い出としてはかなり重い。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39553,7 +40048,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_058.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_058.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_058.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39563,12 +40059,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-059・深紅系統の菌茸標本。",
-    "description": "Neisseria meningitidisを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "description": "鼻咽頭に定着しうるが、血液や髄膜へ侵入すると髄膜炎・敗血症を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-059",
       "元ネタ：髄膜炎菌（Neisseria meningitidis）",
+      "分類：グラム陰性双球菌",
+      "科学解説：鼻咽頭に定着しうるが、血液や髄膜へ侵入すると髄膜炎・敗血症を起こす。",
+      "主な症状：高熱、激しい頭痛、項部硬直、意識障害など。菌血症では紫斑、低血圧、DIC、ショック、多臓器不全が急速に進行する。",
+      "致死性：適切な抗菌薬治療を行っても10〜15%が死亡する。重症の髄膜炎菌血症では最大約40%に達することがある。",
+      "歴史：Anton Weichselbaumが1887年に髄膜炎患者CSFから菌を分離。Simon Flexnerらは20世紀初頭に抗血清療法を研究した。",
+      "医薬史：現代はセフトリアキソンなどとワクチンが重要。",
+      "構造・化合物：Ceftriaxone",
+      "数時間で敗血症まで走るので、病院へ行くか悩んでいる時間を病原体側は待ってくれない。予約制ではない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39584,7 +40088,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_059.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_059.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_059.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39594,12 +40099,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-060・深紅系統の菌茸標本。",
-    "description": "Clostridioides difficileを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "抗菌薬で腸内細菌叢が崩れた後に増殖し、毒素性下痢・偽膜性大腸炎を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-060",
       "元ネタ：C. difficile／ディフィシル菌（Clostridioides difficile）",
+      "分類：嫌気性・芽胞形成細菌",
+      "科学解説：抗菌薬で腸内細菌叢が崩れた後に増殖し、毒素性下痢・偽膜性大腸炎を起こす。",
+      "主な症状：頻回の水様性下痢、腹痛、発熱、食欲低下など。重症では偽膜性大腸炎、麻痺性イレウス、中毒性巨大結腸、敗血症へ進む。",
+      "致死性：患者背景で大きく異なる。特に高齢・医療関連患者では死亡リスクが高い。",
+      "歴史：HallとO'Tooleが1935年に新生児腸内菌としてBacillus difficilisを発見。1970年代にJohn Bartlettらが抗菌薬関連大腸炎との因果を明らかにした。",
+      "医薬史：バンコマイシンやフィダキソマイシンが治療に使われる。",
+      "構造・化合物：Fidaxomicin",
+      "抗菌薬で他の細菌を片付けたら、空いた物件を全部こいつが借りた。腸内再開発の失敗例である。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39615,7 +40128,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_060.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_060.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_060.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39625,12 +40139,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-061・深紅系統の菌茸標本。",
-    "description": "Legionella pneumophilaを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "給水設備などで増殖し、エアロゾル吸入で重症肺炎を起こすことがある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-061",
       "元ネタ：レジオネラ菌（Legionella pneumophila）",
+      "分類：グラム陰性細菌",
+      "科学解説：給水設備などで増殖し、エアロゾル吸入で重症肺炎を起こすことがある。",
+      "主な症状：レジオネラ肺炎では発熱、咳、息切れ、筋肉痛、頭痛、胸痛などを起こし、消化器症状や意識状態の変化を伴うこともある。",
+      "致死性：レジオネラ肺炎の致死率は約10%。医療施設に関連した感染では患者背景も重く、平均約25%まで上昇する。",
+      "歴史：1976年PhiladelphiaのAmerican Legion集団肺炎をCDCが調査し、Joseph McDadeが保存検体から新菌を分離した。",
+      "医薬史：マクロライド系やフルオロキノロン系が重要。",
+      "構造・化合物：Azithromycin",
+      "ホテルの水道設備に泊まったつもりが、肺炎まで宿泊プランに含まれていた。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39646,7 +40168,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_061.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_061.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_061.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39656,12 +40179,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-062・深紅系統の菌茸標本。",
-    "description": "Klebsiella pneumoniaeを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "厚い莢膜を持ち、肺炎・尿路感染・菌血症などを起こす。多剤耐性株も重要。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-062",
       "元ネタ：肺炎桿菌／クレブシエラ（Klebsiella pneumoniae）",
+      "分類：グラム陰性桿菌",
+      "科学解説：厚い莢膜を持ち、肺炎・尿路感染・菌血症などを起こす。多剤耐性株も重要。",
+      "主な症状：感染部位によって異なり、肺炎では発熱、咳、呼吸困難など。菌血症では全身性炎症から敗血症性ショックへ進むことがある。",
+      "致死性：菌全体に適用できる単一の致死率はない。重症菌血症や多剤耐性株では死亡リスクが高い。",
+      "歴史：Carl Friedländerが1882年に肺炎組織から莢膜性菌を記載。属名KlebsiellaはEdwin Klebsに由来する。",
+      "医薬史：カルバペネム耐性が重要課題。",
+      "構造・化合物：Meropenem",
+      "厚い莢膜で免疫から身を守り、さらに抗菌薬耐性まで獲得する。防御力に全部振った結果、病院側が攻撃を通せなくなっている。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39677,7 +40208,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_062.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_062.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_062.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39687,12 +40219,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-063・深紅系統の菌茸標本。",
-    "description": "Pseudomonas aeruginosaを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "description": "日和見感染菌で、青緑色色素ピオシアニンやバイオフィルム形成が特徴。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-063",
       "元ネタ：緑膿菌（Pseudomonas aeruginosa）",
+      "分類：グラム陰性桿菌",
+      "科学解説：日和見感染菌で、青緑色色素ピオシアニンやバイオフィルム形成が特徴。",
+      "主な症状：肺炎、尿路感染、創傷感染、菌血症など。特に人工呼吸器使用者、熱傷患者、免疫機能が低下した人では重症化しやすい。",
+      "致死性：病型や薬剤耐性で大きく異なり、一定の致死率は設定しない。多剤耐性株は治療選択肢を大きく狭める。",
+      "歴史：19世紀に青緑色の膿が注目され、Carle Gessardが1882年に純粋培養した。",
+      "医薬史：多様な耐性機構を持ち、治療薬選択が難しい。",
+      "構造・化合物：Pyocyanin",
+      "色素、バイオフィルム、薬剤耐性まで完備。病原菌のくせに妙に機能全部入りである。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39708,7 +40248,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_063.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_063.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_063.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39718,12 +40259,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-064・深紅系統の菌茸標本。",
-    "description": "Cryptococcus neoformansを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "厚い多糖莢膜を持ち、免疫低下者で髄膜炎などを起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-064",
       "元ネタ：クリプトコッカス（Cryptococcus neoformans）",
+      "分類：担子菌系酵母",
+      "科学解説：厚い多糖莢膜を持ち、免疫低下者で髄膜炎などを起こす。",
+      "主な症状：肺感染では咳、発熱など。髄膜炎になると頭痛、発熱、項部硬直、意識変容などを起こし、放置すれば重篤化する。",
+      "致死性：特にHIV/AIDS患者のクリプトコッカス髄膜炎で致死性が高く、世界的に大きな死亡負担を持つ。",
+      "歴史：Otto BusseとAbraham Buschkeが1894年にヒト病変から分離。同年Francesco Sanfeliceが桃果汁から類似菌を分離した。",
+      "医薬史：重症例ではアムホテリシンB＋フルシトシンなど。",
+      "構造・化合物：Amphotericin B",
+      "桃から見つかった酵母が、条件次第では人間の脳まで来る。食品売り場から神経内科まで守備範囲が広すぎる。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39739,7 +40288,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_064.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_064.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_064.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39749,12 +40299,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-065・深紅系統の菌茸標本。",
-    "description": "Aspergillus fumigatusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "description": "環境中のカビで、免疫低下者では侵襲性アスペルギルス症を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-065",
       "元ネタ：コウジカビ類／アスペルギルス（Aspergillus fumigatus）",
+      "分類：子嚢菌系カビ",
+      "科学解説：環境中のカビで、免疫低下者では侵襲性アスペルギルス症を起こす。",
+      "主な症状：侵襲性アスペルギルス症では発熱、咳、胸痛、血痰、呼吸困難など。血流を介して脳など他臓器へ播種する場合もある。",
+      "致死性：侵襲性アスペルギルス症は重篤で、患者背景によって高い死亡率を示す。特に移植患者などの免疫不全者で危険。",
+      "歴史：Pier Antonio Micheliが1729年にAspergillus属を命名。Rudolf Virchowがヒト病変で認識し、FreseniusがA. fumigatusを記載した。",
+      "医薬史：ボリコナゾールなどが重要。",
+      "構造・化合物：Voriconazole",
+      "見た目は聖水の道具、やることは免疫不全者の肺へ侵入。名前から期待される御利益は特にない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39770,7 +40328,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_065.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_065.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_065.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39780,12 +40339,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-066・深紅系統の菌茸標本。",
-    "description": "Rhizopus arrhizusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "description": "血管侵襲性のムーコル症を起こすことがあり、組織壊死へ進む。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-066",
       "元ネタ：クモノスカビ（Rhizopus arrhizus）",
+      "分類：ムーコル目真菌",
+      "科学解説：血管侵襲性のムーコル症を起こすことがあり、組織壊死へ進む。",
+      "主な症状：鼻・副鼻腔型では顔面痛、腫脹、視覚異常などから眼窩や脳へ進展することがある。侵された血管が閉塞すると、組織への血流が途絶えて壊死する。",
+      "致死性：ムーコル症全体の死亡率は約50%。感染部位や患者背景によってはさらに高く、抗真菌薬に加えて外科的切除が必要になることも多い。",
+      "歴史：Arnold Paltaufが1885年に全身性侵襲性真菌症をMycosis mucorinaとして報告。後にmucormycosisという名称が定着した。",
+      "医薬史：外科的デブリードマン＋リポソーマル・アムホテリシンBなど。",
+      "構造・化合物：Amphotericin B",
+      "血管を侵して組織を殺し、最後は医師がその組織を切り取る。菌と外科医が別々の理由で同じ部位を消しに来る。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39801,7 +40368,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_066.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_066.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_066.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39811,12 +40379,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-067・歪んだ系統の菌茸標本。",
-    "description": "Escherichia phage lambdaを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "大腸菌へ感染し、溶菌か溶原化を選択してプロファージとして染色体に組み込まれる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-067",
       "元ネタ：ラムダファージ（Escherichia phage lambda）",
+      "分類：バクテリオファージ",
+      "科学解説：大腸菌へ感染し、溶菌か溶原化を選択してプロファージとして染色体に組み込まれる。",
+      "主な症状：ヒト感染症状はない。標的は大腸菌。",
+      "致死性：ヒトに対する致死率は該当なし。",
+      "歴史：Esther LederbergがE. coli K-12研究中にλファージを発見。遺伝子スイッチ・組換え・潜伏のモデルになった。",
+      "医薬史：分子遺伝学史の重要モデル。",
+      "宿主を殺すか、DNAに住み着いて後で殺すかを選べる。大腸菌側からすると『今すぐ』と『後払い』の二択である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39832,7 +40407,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_067.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_067.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_067.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39842,12 +40418,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-068・歪んだ系統の菌茸標本。",
-    "description": "Sputnik virophageを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "巨大ウイルスのvirus factoryを利用して増殖する『ウイルスに寄生するウイルス』。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-068",
       "元ネタ：スプートニク・ウイロファージ（Sputnik virophage）",
+      "分類：ウイロファージ",
+      "科学解説：巨大ウイルスのvirus factoryを利用して増殖する『ウイルスに寄生するウイルス』。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒトに対する致死率は該当なし。",
+      "歴史：Bernard La Scola、Christelle Desnues、Didier Raoultらが2008年にmamavirus研究中に発見した。",
+      "医薬史：virophage概念を生み、ウイルス間寄生を示した。",
+      "寄生生物の工場へ寄生する。下請けから設備を奪う二次請けのような存在である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39863,7 +40446,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_068.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_068.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_068.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39873,12 +40457,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-069・歪んだ系統の菌茸標本。",
-    "description": "Hepatitis D virusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★8です。",
+    "description": "HBV表面抗原を借りないと感染性粒子を完成できない。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-069",
       "元ネタ：D型肝炎ウイルス／デルタウイルス（Hepatitis D virus）",
+      "分類：サテライト型RNAウイルス",
+      "科学解説：HBV表面抗原を借りないと感染性粒子を完成できない。",
+      "主な症状：発熱、倦怠感、食欲不振、吐き気、腹痛、黄疸など。HBVとの重感染・共感染では肝炎が重症化しやすい。",
+      "致死性：単一の急性致死率では評価しにくい。慢性HDVは肝硬変、肝不全、肝細胞癌への進行を加速する。",
+      "歴史：Mario Rizzettoが1977年にδ抗原を発見し、John Gerin、Robert Purcellらとの研究でHBV依存の別感染因子と判明した。",
+      "医薬史：HBVワクチンによってHDV感染も予防できる。",
+      "自力では完成すらできないのに、便乗先より病態を悪化させる。寄生先への恩返しという概念はない。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39894,7 +40485,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_069.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_069.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_069.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39904,12 +40496,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-070・歪んだ系統の菌茸標本。",
-    "description": "pBR322を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "大腸菌内で複製できる人工環状DNAで、抗菌薬耐性遺伝子などを持つ。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-070",
       "元ネタ：pBR322プラスミド（pBR322）",
+      "分類：人工DNAプラスミド／クローニングベクター",
+      "科学解説：大腸菌内で複製できる人工環状DNAで、抗菌薬耐性遺伝子などを持つ。",
+      "主な症状：感染症状は該当なし。生物ではなく人工環状DNAである。",
+      "致死性：致死率は該当なし。単独で病原体として増殖する存在ではない。",
+      "歴史：Francisco Bolívar、Raymond Rodriguez、Herbert Boyer、Stanley Falkowらが1977年に多目的クローニングベクターとして発表した。",
+      "医薬史：分子クローニング・組換えDNA技術史の象徴。",
+      "病原体でも生物でもないのに、ついにキノコ図鑑へ収録された。分類学はもう諦めている。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39925,7 +40524,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_070.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_070.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_070.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39935,12 +40535,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-071・歪んだ系統の菌茸標本。",
-    "description": "Long Interspersed Nuclear Element-1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "ゲノム内をコピー＆ペーストで移動できる自己増殖性DNA配列。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-071",
       "元ネタ：LINE-1／L1（Long Interspersed Nuclear Element-1）",
+      "分類：非LTR型レトロトランスポゾン",
+      "科学解説：ゲノム内をコピー＆ペーストで移動できる自己増殖性DNA配列。",
+      "主な症状：感染症ではない。ただし新規挿入によって遺伝子機能を破壊した場合、まれに遺伝性疾患の原因となる。また一部の癌ではLINE-1活性の上昇がみられる。",
+      "致死性：感染症としての致死率は該当なし。",
+      "歴史：Barbara McClintockの転移因子概念を背景に、1980年代以降ヒトLINE-1の可動性が詳しく解明された。",
+      "医薬史：ゲノム進化・疾患・がんゲノム研究で重要。",
+      "ゲノムは生命の設計図と呼ばれるが、ページのかなりの割合を昔のコピペが埋めている。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39956,7 +40563,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_071.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_071.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_071.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39966,12 +40574,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-072・歪んだ系統の菌茸標本。",
-    "description": "Wolbachia pipientisを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "昆虫の生殖へ干渉し、細胞質不和合・雌化・雄殺しなどを引き起こす系統がある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-072",
       "元ネタ：ボルバキア（Wolbachia pipientis）",
+      "分類：偏性細胞内共生細菌",
+      "科学解説：昆虫の生殖へ干渉し、細胞質不和合・雌化・雄殺しなどを引き起こす系統がある。",
+      "主な症状：通常のヒト感染症はない。一方、フィラリア線虫の内部に存在するWolbachiaは、線虫感染時の炎症反応へ関与する。",
+      "致死性：Wolbachia単独のヒト感染症としての致死率は該当なし。",
+      "歴史：Marshall HertigとSimeon Burt Wolbachが1924年に蚊の生殖組織などで発見した。",
+      "医薬史：現在はWolbachia導入蚊をデング対策へ利用する公衆衛生技術が実用化されている。",
+      "宿主の生殖を勝手に書き換える細菌を、人間は今度は蚊の個体数管理へ投入した。操作する側が一段上に増えただけである。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -39987,7 +40602,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_072.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_072.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_072.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -39997,12 +40613,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-073・歪んだ系統の菌茸標本。",
-    "description": "Magnetospirillum gryphiswaldense MSR-1を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "細胞内マグネトソームに磁鉄鉱結晶を鎖状形成し、地磁気へ応答する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-073",
       "元ネタ：磁性細菌（Magnetospirillum gryphiswaldense MSR-1）",
+      "分類：細菌・磁性細菌",
+      "科学解説：細胞内マグネトソームに磁鉄鉱結晶を鎖状形成し、地磁気へ応答する。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒト感染症としての致死率は該当なし。",
+      "歴史：Salvatore Belliniが1963年に磁気走性を観察し、Richard Blakemoreが1970年代に再発見。MSR-1はGreifswald近郊の泥から分離された。",
+      "医薬史：生体鉱物化・ナノ材料研究で重要。",
+      "脳もGoogle Mapsもないのに方角は分かる。方向音痴の人間より装備がいい。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40018,7 +40641,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_073.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_073.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_073.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40028,12 +40652,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-074・歪んだ系統の菌茸標本。",
-    "description": "Geobacter sulfurreducensを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "Fe(III)や電極へ細胞外電子を渡して呼吸できる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-074",
       "元ネタ：ジオバクター／電気細菌（Geobacter sulfurreducens）",
+      "分類：嫌気性金属還元細菌",
+      "科学解説：Fe(III)や電極へ細胞外電子を渡して呼吸できる。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒトに対する致死率は該当なし。",
+      "歴史：Derek Lovleyらが1980年代に金属還元微生物を研究し、G. sulfurreducensは汚染堆積物から分離された。",
+      "医薬史：微生物燃料電池・バイオレメディエーション研究で重要。",
+      "石に電子を渡して呼吸するので、電極さえあれば飯を食う。電気代を払う側ではなく作る側である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40049,7 +40680,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_074.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_074.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_074.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40059,12 +40691,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-075・歪んだ系統の菌茸標本。",
-    "description": "Streptomyces nourseiを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "土壌性Streptomycesで、抗真菌薬ナイスタチンを産生する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-075",
       "元ネタ：ナイスタチン産生放線菌（Streptomyces noursei）",
+      "分類：放線菌",
+      "科学解説：土壌性Streptomycesで、抗真菌薬ナイスタチンを産生する。",
+      "主な症状：一般的なヒト病原体ではなく、通常のヒト感染症状はない。",
+      "致死性：通常のヒト感染症としての致死率は該当なし。",
+      "歴史：Elizabeth Lee HazenとRachel Fuller BrownがNew York State研究所で抗真菌物質探索を行い、友人Nourse夫妻の庭土由来株からnystatinを発見した。",
+      "医薬史：ナイスタチンはCandidaなどに作用するポリエン系抗真菌薬。",
+      "構造・化合物：Nystatin",
+      "庭の土を調べたら抗真菌薬が出てきた。ホームセンターでは売っていないタイプの埋蔵資源である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40080,7 +40720,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_075.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_075.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_075.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40090,12 +40731,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-076・歪んだ系統の菌茸標本。",
-    "description": "Acidithiobacillus ferrooxidansを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "強酸性環境でFe2+をFe3+へ酸化し、硫黄化合物も利用する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-076",
       "元ネタ：鉄酸化細菌（Acidithiobacillus ferrooxidans）",
+      "分類：好酸性化学独立栄養細菌",
+      "科学解説：強酸性環境でFe2+をFe3+へ酸化し、硫黄化合物も利用する。",
+      "主な症状：確立したヒト感染症状はない。",
+      "致死性：ヒトに対する致死率は該当なし。",
+      "歴史：Arthur Colmer、Kenneth Temple、Melvin Hinkleらが1950年、酸性炭鉱排水から鉄酸化細菌を分離し環境影響を示した。",
+      "医薬史：現在はバイオリーチング・バイオマイニングにも利用される。",
+      "強酸の中で鉄を食って暮らす。人間なら労災だが、本人には通常勤務である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40111,7 +40759,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_076.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_076.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_076.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40121,12 +40770,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-077・歪んだ系統の菌茸標本。",
-    "description": "Streptomyces avermitilis MA-4680を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "アベルメクチンを産生する土壌Streptomyces。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-077",
       "元ネタ：アベルメクチン産生放線菌（Streptomyces avermitilis MA-4680）",
+      "分類：放線菌",
+      "科学解説：アベルメクチンを産生する土壌Streptomyces。",
+      "主な症状：通常のヒト感染症状はない。",
+      "致死性：一般的なヒト感染症としての致死率は該当なし。",
+      "歴史：大村智が静岡県川奈の土壌由来株を選抜し、William C. Campbellらが抗寄生虫活性を見いだした。2015年ノーベル賞へつながった。",
+      "医薬史：アベルメクチンからイベルメクチンが開発され、寄生虫症対策を変えた。",
+      "構造・化合物：Ivermectin",
+      "土を掘ったらノーベル賞と寄生虫薬が出てきた。ガチャ排出率としてはかなり壊れている。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40142,7 +40799,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_077.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_077.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_077.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40152,12 +40810,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-078・歪んだ系統の菌茸標本。",
-    "description": "Streptomyces griseusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "ストレプトマイシンを産生する土壌放線菌。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-078",
       "元ネタ：ストレプトマイシン産生放線菌（Streptomyces griseus）",
+      "分類：放線菌",
+      "科学解説：ストレプトマイシンを産生する土壌放線菌。",
+      "主な症状：一般的なヒト病原体ではなく、通常のヒト感染症状はない。",
+      "致死性：一般的な感染症としての致死率は該当なし。",
+      "歴史：Albert Schatz、Elizabeth Bugie、Selman Waksmanらが1940年代にstreptomycinを発見し、結核治療史を変えた。",
+      "医薬史：ストレプトマイシンは初期の有効な抗結核薬。",
+      "構造・化合物：Streptomycin",
+      "結核菌を殺す薬を、同じ土の中の別の菌が作っていた。微生物界はご近所トラブルから医薬品が生まれる。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40173,7 +40839,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_078.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_078.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_078.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40183,12 +40850,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-079・歪んだ系統の菌茸標本。",
-    "description": "Streptomyces clavuligerusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "βラクタマーゼ阻害薬クラブラン酸を産生する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-079",
       "元ネタ：クラブラン酸産生放線菌（Streptomyces clavuligerus）",
+      "分類：放線菌",
+      "科学解説：βラクタマーゼ阻害薬クラブラン酸を産生する。",
+      "主な症状：通常のヒト感染症状はない。",
+      "致死性：一般的なヒト感染症としての致死率は該当なし。",
+      "歴史：Beecham PharmaceuticalsでChristopher Reading、Michael Coleらが1970年代にクラブラン酸を発見した。",
+      "医薬史：クラブラン酸はβラクタマーゼを阻害してペニシリン系抗菌薬を守る。",
+      "構造・化合物：Clavulanic acid",
+      "自分では大して殴らないが、敵の盾だけ壊して味方に殴らせる。抗菌薬界のデバッファーである。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40204,7 +40879,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_079.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_079.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_079.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40214,12 +40890,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-080・深紅系統の菌茸標本。",
-    "description": "HeLa cell lineを元ネタとするNF菌茸です。正式分類は深紅、レア度は★1です。",
+    "description": "長期増殖可能なヒト腫瘍細胞株で、通常生活で他人に『がんを感染』させるものではない。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-080",
       "元ネタ：HeLa細胞（HeLa cell line）",
+      "分類：ヒト子宮頸部悪性腫瘍由来不死化細胞株",
+      "科学解説：長期増殖可能なヒト腫瘍細胞株で、通常生活で他人に『がんを感染』させるものではない。",
+      "主な症状：感染症状は該当なし。HeLaは微生物ではなくヒト子宮頸癌由来の不死化細胞株で、日常生活で他人へ『がんを感染』させるものではない。",
+      "致死性：HeLa細胞株そのものに致死率という概念は適用しない。元となった子宮頸癌の予後とは区別する。",
+      "歴史：1951年、Henrietta Lacksの腫瘍細胞がGeorge Geyの研究室で長期培養されHeLa細胞株となった。研究倫理・同意・試料利用の象徴的事例でもある。",
+      "医薬史：がん研究・ウイルス研究など膨大な研究に利用される。",
+      "患者の身体を離れたあとも研究室で増え続け、別の細胞株まで乗っ取った。癌細胞としては退職後の活動量がおかしい。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40235,7 +40918,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_080.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_080.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_080.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40245,12 +40929,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-081・歪んだ系統の菌茸標本。",
-    "description": "Streptomyces hygroscopicus NRRL 5491を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "ラパマイシンを産生する土壌Streptomyces。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-081",
       "元ネタ：ラパマイシン産生放線菌（Streptomyces hygroscopicus NRRL 5491）",
+      "分類：放線菌",
+      "科学解説：ラパマイシンを産生する土壌Streptomyces。",
+      "主な症状：一般的なヒト感染症状はない。",
+      "致死性：通常のヒト感染症としての致死率は該当なし。",
+      "歴史：1960年代Rapa Nui土壌試料から菌が分離され、Claude Vézina、Suren Sehgalらがrapamycinを発見した。",
+      "医薬史：シロリムスとして免疫抑制に使われ、mTOR研究へ発展した。",
+      "構造・化合物：Rapamycin (Sirolimus)",
+      "絶海の孤島から土を持ち帰ったら、免疫系を黙らせる薬と細胞老化研究の巨大分野が生えてきた。土産としては強すぎる。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40266,7 +40958,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_081.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_081.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_081.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40276,12 +40969,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-082・深紅系統の菌茸標本。",
-    "description": "Onchocerca volvulusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "description": "ブユ媒介の寄生線虫で、皮膚・眼病変と河川盲目症を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-082",
       "元ネタ：回旋糸状虫／オンコセルカ（Onchocerca volvulus）",
+      "分類：線形動物・フィラリア線虫",
+      "科学解説：ブユ媒介の寄生線虫で、皮膚・眼病変と河川盲目症を起こす。",
+      "主な症状：激しい慢性的な掻痒、皮膚炎、色素変化など。眼へ障害が蓄積すると視力低下から永久的失明に至るため、河川盲目症と呼ばれる。",
+      "致死性：急性の感染致死率を示す疾患ではなく、一定したCFRは設定されない。主な疾病負荷は長期の皮膚障害と視覚障害。",
+      "歴史：Rodolfo Robles Valverdeが20世紀初頭に中米で病態と寄生虫の関係を明らかにした。",
+      "医薬史：イベルメクチン集団投与が疾病制御の中心。",
+      "構造・化合物：Ivermectin",
+      "命を直接取りに来ない代わりに、何年もかけて皮膚と視力を持っていく。分割払いだから良心的、とはならない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40297,7 +40998,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_082.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_082.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_082.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40307,12 +41009,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-083・歪んだ系統の菌茸標本。",
-    "description": "Streptomyces tsukubaensis No.9993を元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "タクロリムス（FK506）を産生するStreptomyces。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-083",
       "元ネタ：タクロリムス産生放線菌（Streptomyces tsukubaensis No.9993）",
+      "分類：放線菌",
+      "科学解説：タクロリムス（FK506）を産生するStreptomyces。",
+      "主な症状：一般的なヒト感染症状はない。",
+      "致死性：通常のヒト感染症としての致死率は該当なし。",
+      "歴史：1984年、筑波地域の土壌由来株No.9993から強い免疫抑制物質FK506が見つかった。",
+      "医薬史：タクロリムスは臓器移植や外用免疫調節薬として重要。",
+      "構造・化合物：Tacrolimus (FK506)",
+      "筑波の土を掘ったら、臓器を他人のものだと認識する免疫系を説得する薬が出てきた。土壌の方が交渉上手である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40328,7 +41038,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_083.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_083.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_083.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40338,12 +41049,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-084・歪んだ系統の菌茸標本。",
-    "description": "Tolypocladium inflatumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "免疫抑制薬シクロスポリンAを産生する土壌真菌。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-084",
       "元ネタ：シクロスポリン産生真菌（Tolypocladium inflatum）",
+      "分類：子嚢菌系真菌",
+      "科学解説：免疫抑制薬シクロスポリンAを産生する土壌真菌。",
+      "主な症状：この図鑑で扱う菌株を、一般的なヒト感染症の原因菌として評価するものではない。",
+      "致死性：標準的なヒト感染症としての致死率は該当なし。",
+      "歴史：Norway土壌由来真菌からSandoz研究者がcytosporinを得て、Jean-François BorelがT細胞抑制作用を見いだした。",
+      "医薬史：臓器移植医療の成功率を大きく高めた。",
+      "構造・化合物：Cyclosporin A",
+      "人類は他人の臓器を移植する方法を先に考え、その後『免疫にバレない方法』をカビから教わった。順番はだいぶ力技である。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40359,7 +41078,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_084.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_084.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_084.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40369,12 +41089,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-085・歪んだ系統の菌茸標本。",
-    "description": "Streptomyces peucetiusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★1です。",
+    "description": "ダウノルビシンやドキソルビシンにつながる抗腫瘍天然物を産生する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-085",
       "元ネタ：アントラサイクリン産生放線菌（Streptomyces peucetius）",
+      "分類：放線菌",
+      "科学解説：ダウノルビシンやドキソルビシンにつながる抗腫瘍天然物を産生する。",
+      "主な症状：一般的なヒト感染症状はない。",
+      "致死性：通常のヒト感染症としての致死率は該当なし。",
+      "歴史：イタリア南部Castel del Monte周辺の土壌由来Streptomycesからdaunomycinが発見され、変異株からadriamycin（doxorubicin）が得られた。",
+      "医薬史：ドキソルビシンは現在も重要な抗がん剤。",
+      "構造・化合物：Doxorubicin",
+      "抗癌薬として非常に有用だが、心毒性も重要な副作用となる。癌細胞を殺す薬なので当然こちらにも多少当たる。医学ではこれを『治療域』と丁寧に呼ぶ。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40390,7 +41118,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_085.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_085.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_085.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40400,12 +41129,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-086・深紅系統の菌茸標本。",
-    "description": "Plasmodium falciparumを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "description": "赤血球へ感染し、脳マラリアなど重症化しやすいヒトマラリア原虫。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-086",
       "元ネタ：熱帯熱マラリア原虫（Plasmodium falciparum）",
+      "分類：アピコンプレックス門・寄生原虫",
+      "科学解説：赤血球へ感染し、脳マラリアなど重症化しやすいヒトマラリア原虫。",
+      "主な症状：発熱、悪寒、頭痛、強い倦怠感など。重症化すると意識障害、反復する痙攣、重度貧血、呼吸障害、黄疸、腎障害、異常出血などを起こす。",
+      "致死性：ヒトマラリア原虫の中で最も致死性が高い。未治療の熱帯熱マラリアは重症化し、24時間以内に死亡へ進む場合もある。",
+      "歴史：Alphonse Laveranが1880年に原虫を発見し、Ronald Rossが蚊媒介を実証。Tu Youyouらのartemisinin発見が治療を変えた。",
+      "医薬史：アルテミシニン併用療法が重要。",
+      "構造・化合物：Artemisinin",
+      "蚊に刺された程度で赤血球を占拠され、脳まで巻き込まれる。入口に対して被害規模がまったく釣り合っていない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40421,7 +41158,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_086.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_086.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_086.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40431,12 +41169,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-087・深紅系統の菌茸標本。",
-    "description": "Trypanosoma brucei gambienseを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "description": "ツェツェバエ媒介で中枢神経へ侵入し、睡眠・覚醒異常などを起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-087",
       "元ネタ：ガンビアトリパノソーマ（Trypanosoma brucei gambiense）",
+      "分類：鞭毛性寄生原虫",
+      "科学解説：ツェツェバエ媒介で中枢神経へ侵入し、睡眠・覚醒異常などを起こす。",
+      "主な症状：発熱、頭痛、リンパ節腫脹などから始まり、中枢神経系へ入ると行動変化、錯乱、運動・感覚障害、睡眠覚醒リズムの崩壊が起こる。最終的には昏睡へ進む。",
+      "致死性：治療しなければほぼ必ず致死的。",
+      "歴史：Robert Forde、Joseph Dutton、Aldo Castellani、David Bruceらの研究で原虫とツェツェバエ媒介が明らかになった。",
+      "医薬史：NECTやフェキシニダゾールなどが用いられる。",
+      "構造・化合物：Eflornithine",
+      "名前だけ聞けば『よく眠れる病気』だが、最終的には永久に起床時刻が来なくなる。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40452,7 +41198,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_087.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_087.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_087.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40462,12 +41209,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-088・深紅系統の菌茸標本。",
-    "description": "Leishmania donovaniを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "description": "サシチョウバエ媒介で脾臓・肝臓・骨髄などへ感染し、未治療では致死的になりうる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-088",
       "元ネタ：内臓リーシュマニア（Leishmania donovani）",
+      "分類：鞭毛性寄生原虫",
+      "科学解説：サシチョウバエ媒介で脾臓・肝臓・骨髄などへ感染し、未治療では致死的になりうる。",
+      "主な症状：長引く不規則な発熱、著しい体重減少、脾臓・肝臓の腫大、貧血など。",
+      "致死性：未治療の内臓リーシュマニア症では95%以上が死亡する。",
+      "歴史：William LeishmanとCharles Donovanが独立に原虫を発見し、Ronald RossがLeishmania donovaniと命名した。",
+      "医薬史：リポソーマル・アムホテリシンB、ミルテホシンなど。",
+      "構造・化合物：Miltefosine",
+      "致死率95%以上なので、『自然に治るか様子を見る』という選択肢はほぼ自然淘汰側の提案である。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40483,7 +41238,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_088.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_088.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_088.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40493,12 +41249,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-089・深紅系統の菌茸標本。",
-    "description": "Entamoeba histolyticaを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "大腸粘膜を破壊し赤痢を起こし、肝膿瘍へ進展することがある。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-089",
       "元ネタ：赤痢アメーバ（Entamoeba histolytica）",
+      "分類：アメーボゾア・寄生原虫",
+      "科学解説：大腸粘膜を破壊し赤痢を起こし、肝膿瘍へ進展することがある。",
+      "主な症状：腹痛、下痢、粘血便など。腸壁を越えて門脈へ入ると肝臓へ到達し、アメーバ性肝膿瘍を形成することがある。まれに肺や脳などへ広がる。",
+      "致死性：感染者の多くは無症状で、感染全体に一定のCFRは設定できない。一方、劇症性大腸炎、腸穿孔、重症肝膿瘍などは致命的となりうる。",
+      "歴史：Fedor Löschが1875年にアメーバを記載し、CouncilmanとLafleurらがアメーバ赤痢を疾患として整理、Schaudinnがhistolyticaの名を提案した。",
+      "医薬史：メトロニダゾールなど＋腸管内除去薬が用いられる。",
+      "構造・化合物：Metronidazole",
+      "学名の『組織を溶かす』はかなり物騒だが、命名者は誇張ではなく業務内容を書いただけである。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40514,7 +41278,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_089.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_089.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_089.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40524,12 +41289,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-090・歪んだ系統の菌茸標本。",
-    "description": "Cryptosporidium parvumを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★5です。",
+    "description": "腸管へ感染し、塩素に比較的強いオーシストを介して水系集団感染を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-090",
       "元ネタ：クリプトスポリジウム（Cryptosporidium parvum）",
+      "分類：アピコンプレックス門・寄生原虫",
+      "科学解説：腸管へ感染し、塩素に比較的強いオーシストを介して水系集団感染を起こす。",
+      "主な症状：頻回の水様性下痢、腹痛、吐き気、嘔吐、発熱、体重減少、脱水など。健康な人では通常2〜3週間程度で自然軽快するが、免疫機能低下時には長期化する。",
+      "致死性：一般集団に標準的CFRはない。一方、重度免疫不全者では慢性的な栄養吸収障害、消耗など生命を脅かす状態へ進むことがある。",
+      "歴史：Ernest Edward Tyzzerが1907年にCryptosporidiumを発見し、1912年にC. parvumを記載。AIDS時代に重要性が再認識された。",
+      "医薬史：免疫正常者ではニタゾキサニドが使われることがある。",
+      "構造・化合物：Nitazoxanide",
+      "塩素消毒された水を見て安心する人間の横で、『それで？』みたいな顔をして残るオーシストである。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40545,7 +41318,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_090.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_090.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_090.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40555,12 +41329,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-091・深紅系統の菌茸標本。",
-    "description": "Lassa virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "description": "西アフリカに分布し、齧歯類由来・人から人への感染も起こりうる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-091",
       "元ネタ：ラッサウイルス（Lassa virus）",
+      "分類：アレナウイルス",
+      "科学解説：西アフリカに分布し、齧歯類由来・人から人への感染も起こりうる。",
+      "主な症状：発熱、倦怠感、頭痛から始まり、咽頭痛、筋肉痛、胸痛、嘔吐、下痢などへ進行する。重症では出血、低血圧、ショック、痙攣、意識障害を起こす。",
+      "致死性：感染者全体では約1%だが、重症で入院した患者では15%以上が死亡する。",
+      "歴史：1969年Nigeria Lassa周辺流行からYale Arbovirus Research UnitのJordi Casals、Sonja Buckleyらが新規ウイルスを分離した。",
+      "医薬史：リバビリンは歴史的に使用されてきたが有効性には不確実性もある。",
+      "構造・化合物：Ribavirin",
+      "全体1%だけ見ると安心できそうだが、入院する頃にはガチャの排出率が勝手に15%以上へ上方修正される。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40576,7 +41358,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_091.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_091.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_091.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40586,12 +41369,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-092・深紅系統の菌茸標本。",
-    "description": "Crimean-Congo hemorrhagic fever virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★10です。",
+    "description": "Hyalomma属マダニ媒介で、重症出血熱を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-092",
       "元ネタ：クリミア・コンゴ出血熱ウイルス（Crimean-Congo hemorrhagic fever virus）",
+      "分類：オルソナイロウイルス",
+      "科学解説：Hyalomma属マダニ媒介で、重症出血熱を起こす。",
+      "主な症状：突然の発熱、頭痛、筋肉痛、腹痛、吐き気などから始まり、重症では皮下・粘膜からの出血、肝障害、腎障害、肺不全などを起こす。",
+      "致死性：アウトブレイクにおける致死率は約10〜40%。",
+      "歴史：1940年代Crimeaの出血熱と1956年Congo virusが、Jordi Casalsらの抗原解析で同一病原体と判明し現在の名称になった。",
+      "医薬史：支持療法中心。リバビリンは歴史的関連薬。",
+      "構造・化合物：Ribavirin",
+      "二つの地域名を合体させた病名だが、被害まで半分ずつになるサービスは付いていない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40607,7 +41398,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_092.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_092.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_092.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40617,12 +41409,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-093・深紅系統の菌茸標本。",
-    "description": "Hantaan virus strain 76-118を元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "description": "セスジネズミを主宿主とし、腎症候性出血熱を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-093",
       "元ネタ：ハンターンウイルス（Hantaan virus strain 76-118）",
+      "分類：オルソハンタウイルス",
+      "科学解説：セスジネズミを主宿主とし、腎症候性出血熱を起こす。",
+      "主な症状：突然の高熱、激しい頭痛、腰背部・腹部痛、吐き気、視覚異常など。重症では血管透過性亢進による低血圧・ショック、出血、急性腎不全へ進行する。",
+      "致死性：Hantaan virusによるHFRSは比較的重症で、約5〜15%が死亡する。",
+      "歴史：朝鮮戦争期の謎の出血熱を追い、李鎬汪率いる韓国チームが1976年に野ネズミから76-118株を発見した。",
+      "医薬史：特異的治療は限定的で支持療法が中心。",
+      "犯人を探したらネズミが持っていた。ネズミ側は事情聴取にも検尿にも特に協力していない。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40638,7 +41437,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_093.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_093.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_093.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40648,12 +41448,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-094・深紅系統の菌茸標本。",
-    "description": "Middle East respiratory syndrome coronavirusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★9です。",
+    "description": "重症肺炎を起こし、ヒトコブラクダとの関連や医療機関内感染が重要。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-094",
       "元ネタ：MERSコロナウイルス（Middle East respiratory syndrome coronavirus）",
+      "分類：ベータコロナウイルス",
+      "科学解説：重症肺炎を起こし、ヒトコブラクダとの関連や医療機関内感染が重要。",
+      "主な症状：発熱、咳、息切れなど。重症では肺炎、急性呼吸不全、腎障害、敗血症性ショックへ進行する。",
+      "致死性：WHOへ報告された検査確定例では約36%が死亡している。ただし軽症・無症状例の見逃しにより、真の感染致死率を過大評価している可能性がある。",
+      "歴史：2012年JeddahでAli Mohamed Zakiが新規コロナウイルスを検出し、Ron Fouchierらと国際解析。ProMED-mailで世界へ速報された。",
+      "医薬史：確立した特異的抗ウイルス治療はなく支持療法中心。",
+      "報告症例だけ見ると約3人に1人が死亡する。統計の母集団を間違えると数字まで感染力を持つので注意したい。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40669,7 +41476,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_094.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_094.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_094.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40679,12 +41487,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-095・深紅系統の菌茸標本。",
-    "description": "Hepatitis C virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "血液媒介で慢性感染を起こし、肝硬変・肝がんリスクにつながる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-095",
       "元ネタ：HCV（Hepatitis C virus）",
+      "分類：フラビウイルス科RNAウイルス",
+      "科学解説：血液媒介で慢性感染を起こし、肝硬変・肝がんリスクにつながる。",
+      "主な症状：急性期・慢性期とも無症状のことが多い。症状があれば倦怠感、食欲低下、吐き気、腹痛、黄疸など。慢性化すると肝硬変や肝細胞癌へ進展する。",
+      "致死性：感染時の単純なCFRでは表現できない。主な死亡は肝硬変・肝癌による。一方、現在の直接作用型抗ウイルス薬では95%以上を治癒可能。",
+      "歴史：Harvey Alterがnon-A, non-B hepatitisを追跡し、Michael Houghtonらが1989年にHCV cDNAを同定、Charles Riceらが感染性を実証した。",
+      "医薬史：DAAにより多くの患者で治癒可能。",
+      "構造・化合物：Sofosbuvir",
+      "何十年も肝臓へ利息を付けて請求してくるウイルスだったが、現在は薬で契約そのものを解除できる時代になった。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40700,7 +41516,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_095.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_095.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_095.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40710,12 +41527,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-096・歪んだ系統の菌茸標本。",
-    "description": "Human cytomegalovirusを元ネタとするNF菌茸です。正式分類は歪んだ、レア度は★5です。",
+    "description": "ありふれた潜伏ウイルスだが、胎児・新生児・免疫不全者で重大な問題を起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "歪んだのキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-096",
       "元ネタ：ヒトサイトメガロウイルス／CMV（Human cytomegalovirus）",
+      "分類：ヘルペスウイルス",
+      "科学解説：ありふれた潜伏ウイルスだが、胎児・新生児・免疫不全者で重大な問題を起こす。",
+      "主な症状：健康な成人では無症状か軽い単核球症様症状が中心。免疫不全者では網膜炎、肺炎、消化管炎など。先天性感染では小頭症、黄疸、肝脾腫、痙攣などがみられる場合がある。",
+      "致死性：一般感染に一定のCFRはない。健康な成人では死亡はまれだが、重症免疫不全者や先天性感染では重大な障害や死亡につながりうる。",
+      "歴史：Hugo Ribbertが19世紀に巨大細胞を観察し、1950年代にMargaret Smith、Wallace Rowe、Thomas Wellerらがウイルスを分離した。",
+      "医薬史：重症例ではガンシクロビル／バルガンシクロビルなど。",
+      "構造・化合物：Ganciclovir",
+      "健康な成人にはほぼ黙っているのに、免疫が落ちた瞬間に活動を再開する。古い知人としては最悪のタイプである。",
       "系統：歪んだ",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40731,7 +41556,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_096.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_096.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_096.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40741,12 +41567,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-097・深紅系統の菌茸標本。",
-    "description": "Haemophilus ducreyiを元ネタとするNF菌茸です。正式分類は深紅、レア度は★5です。",
+    "description": "性感染症軟性下疳を起こし、痛みを伴う潰瘍やリンパ節炎に関係する。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-097",
       "元ネタ：軟性下疳菌（Haemophilus ducreyi）",
+      "分類：グラム陰性細菌",
+      "科学解説：性感染症軟性下疳を起こし、痛みを伴う潰瘍やリンパ節炎に関係する。",
+      "主な症状：強い痛みを伴う性器潰瘍と、鼠径リンパ節の腫脹・化膿が特徴。進行したリンパ節病変は破れて瘻孔を形成する場合もある。",
+      "致死性：標準的な致死率は設定されず、通常は致死性感染症ではない。適切な抗菌薬で治癒可能。",
+      "歴史：Auguste Ducreyが1889年に軟性下疳病変中の特徴的短桿菌を記載した。",
+      "医薬史：アジスロマイシンやセフトリアキソンなどが治療に使われる。",
+      "構造・化合物：Azithromycin",
+      "死にはしないが場所が場所なので、症状欄を読んだ時点で十分な抑止力を発揮している。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40762,7 +41596,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_097.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_097.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_097.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40772,12 +41607,19 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-098・深紅系統の菌茸標本。",
-    "description": "Measles virusを元ネタとするNF菌茸です。正式分類は深紅、レア度は★7です。",
+    "description": "極めて感染力が強く、高熱・発疹・肺炎・脳炎などを起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-098",
       "元ネタ：麻疹ウイルス（Measles virus）",
+      "分類：パラミクソウイルス科",
+      "科学解説：極めて感染力が強く、高熱・発疹・肺炎・脳炎などを起こす。",
+      "主な症状：高熱、咳、鼻汁、結膜炎に続き、特徴的な全身性発疹が現れる。肺炎や脳炎を合併することがあり、感染後数年してSSPEを発症する場合もある。",
+      "致死性：医療・栄養状態で変動する。高所得国でも感染小児1,000人あたり約1〜3人が死亡する目安があり、世界全体ではより大きな死亡負担を持つ。",
+      "歴史：John Enders、Thomas Peeblesらが1954年Boston流行でEdmonston株を分離し、1963年に生ワクチンへつながった。",
+      "医薬史：予防の主役は麻疹ワクチン。",
+      "治ったと思わせて十年後に脳炎を追加する場合がある。アフターサービスとしては永久に解約したい。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40793,7 +41635,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_098.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_098.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_098.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40803,12 +41646,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-099・深紅系統の菌茸標本。",
-    "description": "Mycobacterium lepraeを元ネタとするNF菌茸です。正式分類は深紅、レア度は★6です。",
+    "description": "皮膚と末梢神経を侵し、未治療では感覚障害や組織障害につながる。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-099",
       "元ネタ：らい菌／ハンセン病菌（Mycobacterium leprae）",
+      "分類：抗酸菌",
+      "科学解説：皮膚と末梢神経を侵し、未治療では感覚障害や組織障害につながる。",
+      "主な症状：感覚低下を伴う皮膚病変、末梢神経の肥厚、筋力低下など。未治療では神経障害が進行し、外傷や二次感染を繰り返すことで不可逆的な身体障害へつながる。",
+      "致死性：現代では標準的な致死率を置く疾患ではなく、多剤併用療法で治癒可能。一方、治療が遅れると神経障害は永久に残りうる。",
+      "歴史：Gerhard Armauer Hansenが1873年に患者病変で桿菌を発見し、感染症としての理解を進めた。",
+      "医薬史：リファンピシン・ダプソン・クロファジミンによる多剤併用療法が基本。",
+      "構造・化合物：Rifampicin",
+      "菌の増殖速度まで遅いので、病気も診断も社会の偏見の解消も、全部やたら時間がかかった。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40824,7 +41675,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_099.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_099.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_099.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },
@@ -40834,12 +41686,20 @@
     "kind": "item",
     "contentId": "mycology",
     "summary": "NF-100・深紅系統の菌茸標本。",
-    "description": "Corynebacterium diphtheriaeを元ネタとするNF菌茸です。正式分類は深紅、レア度は★8です。",
+    "description": "毒素産生株が咽頭偽膜・心筋炎・神経障害などを起こす。",
     "usage": "図鑑に収集する標本です。摂食性能・特殊効果はまだ設定されていません。",
     "obtaining": "深紅のキノコを鑑定すると抽選で入手できます。",
     "details": [
       "図鑑番号：NF-100",
       "元ネタ：ジフテリア菌（Corynebacterium diphtheriae）",
+      "分類：グラム陽性細菌",
+      "科学解説：毒素産生株が咽頭偽膜・心筋炎・神経障害などを起こす。",
+      "主な症状：咽頭痛、嚥下困難、微熱などに続き、咽頭や扁桃へ剥がれにくい灰白色の偽膜を形成する。重症では気道閉塞、心筋炎、不整脈、末梢神経障害などを起こす。",
+      "致死性：全体の致死率は現在でも約5〜10%。5歳未満および40歳超では最大約20%まで上昇する。",
+      "歴史：Edwin Klebsが1883年に菌を観察、Friedrich Löfflerが培養。RouxとYersinが毒素を示し、北里柴三郎とEmil von Behringが1890年に抗毒素・血清療法の基礎を築いた。",
+      "医薬史：抗毒素＋抗菌薬、予防ではジフテリアトキソイド。",
+      "構造・化合物：Erythromycin",
+      "喉に膜を張り、心臓を壊し、神経まで麻痺させる。一種類の毒素に任せる業務量としては明らかに過重労働である。",
       "系統：深紅",
       "ゲーム内で鑑定すると自分の図鑑へ登録されます。"
     ],
@@ -40855,7 +41715,8 @@
       "paths": [
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/mycology/nf/nf_100.json",
         "behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/scripts/mycology/registry.js",
-        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_100.png"
+        "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/textures/items/mycology/nf/nf_100.png",
+        "tools/mycology/data/nether_fungi_encyclopedia_ja.json"
       ]
     }
   },

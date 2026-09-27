@@ -7,6 +7,10 @@ test('NF catalogue and final sprite pages display without overflow',async({page}
   const response=await page.goto(`database/entries/mycology-nf-${n}/`);
   expect(response?.status()).toBe(200);
   await expect(page.locator('body')).toContainText(`NF-${n}`);
+  await expect(page.locator('body')).toContainText('図鑑解説');
+  await expect(page.locator('body')).toContainText('主な症状：');
+  await expect(page.locator('body')).toContainText('致死性：');
+  await expect(page.locator('body')).not.toContainText('ブラックジョーク');
   await expect(page.locator('body')).toContainText('特殊効果はまだ設定されていません');
   const icon=page.locator(`img[src$="mycology-nf-${n}.png"]`).first();
   await icon.scrollIntoViewIfNeeded();
