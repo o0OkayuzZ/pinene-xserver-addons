@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { hashSession, isAllowedOrigin, searchKnowledge } from '../src/index.js';
+import { cleanAnswer, hashSession, isAllowedOrigin, searchKnowledge } from '../src/index.js';
 
 const entries = [
   {
@@ -76,4 +76,25 @@ test('session log hash is stable and does not expose the source id', async () =>
   assert.equal(first, second);
   assert.equal(first.length, 24);
   assert.notEqual(first, 'session-example-123');
+});
+
+test('cleanAnswer removes repeated consecutive sentences', () => {
+  assert.equal(
+    cleanAnswer('通常のクロスボウを使います。通常のクロスボウを使います。'),
+    '通常のクロスボウを使います。'
+  );
+});
+
+test('cleanAnswer removes repeated trailing phrases without punctuation', () => {
+  assert.equal(
+    cleanAnswer('改造は鍛冶台で行います。\nスナイパークロスボウスナイパークロスボウスナイパークロスボウ'),
+    '改造は鍛冶台で行います。\nスナイパークロスボウ'
+  );
+});
+
+test('cleanAnswer removes adjacent duplicate lines but preserves meaningful repeated recipe rows', () => {
+  assert.equal(
+    cleanAnswer('材料です。\n材料です。\n\n空 / 矢 / 空\n矢 / TNT / 矢\n空 / 矢 / 空'),
+    '材料です。\n\n空 / 矢 / 空\n矢 / TNT / 矢\n空 / 矢 / 空'
+  );
 });
