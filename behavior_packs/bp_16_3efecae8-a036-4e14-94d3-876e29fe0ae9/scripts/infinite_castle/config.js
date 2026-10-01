@@ -24,6 +24,11 @@ export const TRANSFER_CONFIG = Object.freeze({
     entranceSoundId: CASTLE_KOTO_SOUND_ID,
     exitSoundId: CASTLE_KOTO_SOUND_ID,
     exitTeleportDelayTicks: 10,
+    // Avoid a custom-dimension return race that can split client-side double chests.
+    returnPreloadChunkRadii: Object.freeze([3, 2, 1, 0]),
+    returnPreloadSettleTicks: 4,
+    returnPreloadTimeoutTicks: 40,
+    returnPostTeleportHoldTicks: 40,
     fallbackReturnDimensionId: "pinene_pvp:pvp_island",
     fallbackReturnLocation: Object.freeze({ x: 0.5, y: 65, z: 0.5 }),
 });

@@ -31,6 +31,7 @@ import {
     repairJapaneseRoomConnectors,
 } from "./japaneseRoomBuilder.js";
 import { acquireLoadedRoomChunks, releaseRoomTickingArea } from "./chunkLoading.js";
+import { acquireReturnDestinationLease } from "./returnDestinationLoading.js";
 import { inspectRoomConnectors } from "./connectionIntegrity.js";
 import { selectTransferParty, shareTransferTarget } from "./transferParty.js";
 import { startEntranceTransition } from "./entranceTransition.js";
@@ -64,7 +65,7 @@ const ENTRANCE_CHECK_INTERVAL_TICKS = 5;
 const EXIT_CHECK_INTERVAL_TICKS = 5;
 const RECONSTRUCTION_CHECK_INTERVAL_TICKS = 20;
 const ARRIVAL_COOLDOWN_TICKS = 40;
-const PACK_BUILD_ID = "0.2.6-bsl-rewards-v4-loading-fix1";
+const PACK_BUILD_ID = "0.2.15-return-sync-preload1";
 const CURRENT_RENDERER_VERSION = 9;
 const RENDERER_VERSION_KEY = "infinite_castle:renderer_version";
 const USE_SOURCE_PARTS_MAIN_CASTLE = true;
@@ -765,6 +766,75 @@ function resolveReturnDestination(player) {
     }
 }
 
+async function startPreparedExitTransfer(player, destination, afterReturn) {
+    let releaseDestinationLease = () => {};
+    let destinationLeaseHeld = false;
+    try {
+        const lease = await acquireReturnDestinationLease(
+            world.tickingAreaManager,
+            destination.dimension,
+            destination.location,
+            waitOneTick,
+            {
+                radii: TRANSFER_CONFIG.returnPreloadChunkRadii,
+                settleTicks: TRANSFER_CONFIG.returnPreloadSettleTicks,
+                timeoutTicks: TRANSFER_CONFIG.returnPreloadTimeoutTicks,
+            }
+        );
+        releaseDestinationLease = lease.release;
+        destinationLeaseHeld = true;
+        console.warn(
+            `[ic-return-sync] prepared dim=${destination.dimension.id} radius=${lease.radiusChunks} `
+            + `bounds=${JSON.stringify(lease.bounds)}`
+        );
+    } catch (error) {
+        console.warn(`[ic-return-sync] destination preload unavailable; using direct return: ${error}`);
+    }
+
+    if (player.isValid === false) {
+        releaseDestinationLease();
+        arrivingPlayerIds.delete(player.id);
+        setEntranceBlocked(player, false);
+        return;
+    }
+
+    try {
+        startEntranceTransition({
+            player,
+            dungeonDimension: destination.dimension,
+            landingLocation: destination.location,
+            canTeleport: () => player.dimension.id === INFINITE_CASTLE_DIMENSION_ID
+                && (player.getComponent("minecraft:health")?.currentValue ?? 0) > 0,
+            soundId: TRANSFER_CONFIG.entranceSoundId,
+            onFinished: ({ teleported, error }) => {
+                if (teleported) {
+                    clearReturnPoint(player);
+                    phase1Exit(player);
+                    if (destinationLeaseHeld) {
+                        system.runTimeout(
+                            releaseDestinationLease,
+                            TRANSFER_CONFIG.returnPostTeleportHoldTicks
+                        );
+                    }
+                } else {
+                    releaseDestinationLease();
+                    setEntranceBlocked(player, false);
+                    console.warn(`[infinite_castle] return transition failed: ${error}`);
+                }
+                system.runTimeout(() => {
+                    arrivingPlayerIds.delete(player.id);
+                    if (teleported) afterReturn?.();
+                }, ARRIVAL_COOLDOWN_TICKS);
+            },
+        });
+    } catch (error) {
+        releaseDestinationLease();
+        arrivingPlayerIds.delete(player.id);
+        setEntranceBlocked(player, false);
+        console.warn(`[infinite_castle] return transition setup failed: ${error}`);
+    }
+}
+
 function queueExitTransfer(player, afterReturn, single = false) {
     if (!single && !afterReturn) {
         if (arrivingPlayerIds.has(player.id)) return;
@@ -774,30 +844,9 @@ function queueExitTransfer(player, afterReturn, single = false) {
     }
     if (arrivingPlayerIds.has(player.id)) return;
     arrivingPlayerIds.add(player.id);
-    // 保存地点が入口マーカー直上でも、プレイヤーがそこから離れるまでは再入場を抑止する。
     setEntranceBlocked(player, true);
     const destination = resolveReturnDestination(player);
-
-    startEntranceTransition({
-        player,
-        dungeonDimension: destination.dimension,
-        landingLocation: destination.location,
-        canTeleport: () => player.dimension.id === INFINITE_CASTLE_DIMENSION_ID && (player.getComponent("minecraft:health")?.currentValue ?? 0) > 0,
-        soundId: TRANSFER_CONFIG.entranceSoundId,
-        onFinished: ({ teleported, error }) => {
-            if (teleported) {
-                clearReturnPoint(player);
-                phase1Exit(player);
-            } else {
-                setEntranceBlocked(player, false);
-                console.warn(`[infinite_castle] return transition failed: ${error}`);
-            }
-            system.runTimeout(() => {
-                arrivingPlayerIds.delete(player.id);
-                if (teleported) afterReturn?.();
-            }, ARRIVAL_COOLDOWN_TICKS);
-        },
-    });
+    void startPreparedExitTransfer(player, destination, afterReturn);
 }
 
 setSourcePartsDemoExitTransferHandler(null);
