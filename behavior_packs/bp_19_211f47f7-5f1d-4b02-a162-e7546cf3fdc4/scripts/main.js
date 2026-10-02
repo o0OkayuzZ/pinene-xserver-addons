@@ -211,6 +211,17 @@ function recipeById(id) {
   return COOKING_RECIPES.find((recipe) => recipe.id === id);
 }
 
+// Optional 3x3 recipe preview. Shapeless recipes keep the legacy compact order.
+// Shaped recipes can provide recipe.layout as an array of 9 ingredient-like
+// entries (or null) so the UI mirrors a vanilla crafting grid.
+function recipeIngredientSlots(recipe) {
+  if (!recipe) return [];
+  if (Array.isArray(recipe.layout) && recipe.layout.length === 9) {
+    return recipe.layout;
+  }
+  return recipe.ingredients ?? [];
+}
+
 function knifeRankLimit(knifeEntity) {
   const typeId = KNIFE_BY_PLACED[knifeEntity?.typeId];
   return KNIFE_RANK_LIMIT[typeId] ?? 0;
@@ -306,14 +317,14 @@ async function openBoard(player, block, state = {}) {
     form.button(marker + recipe.name, recipe.icon);
   }
 
-  const ingredients = selected?.ingredients ?? [];
+  const ingredientSlots = recipeIngredientSlots(selected);
   for (let i = 0; i < 9; i++) {
-    const ingredient = ingredients[i];
+    const ingredient = ingredientSlots[i];
     if (!ingredient) {
       form.button(" ");
       continue;
     }
-    form.button(String(ingredient.count), ingredient.icon);
+    form.button(String(ingredient.count ?? 1), ingredient.icon);
   }
   if (selected) form.button(String(selected.resultCount), selected.icon);
   else form.button(" ");
