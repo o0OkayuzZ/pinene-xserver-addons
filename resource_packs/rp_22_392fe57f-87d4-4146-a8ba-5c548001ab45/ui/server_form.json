@@ -22,7 +22,7 @@
     "$title_panel": "common.empty_panel",
     "size": [
       286,
-      186
+      242
     ],
     "$child_control": "server_form.pinene_cooking_content",
     "layer": 2,
@@ -656,38 +656,12 @@
         }
       },
       {
-        "description_bg": {
-          "type": "image",
-          "texture": "textures/ui/item_cell",
-          "size": [
-            270,
-            43
-          ],
-          "offset": [
-            8,
-            135
-          ],
-          "anchor_from": "top_left",
-          "anchor_to": "top_left",
-          "alpha": 0.85,
-          "layer": -1
-        }
-      },
-      {
-        "description": {
+        "inventory_label": {
           "type": "label",
-          "text": "#form_text",
-          "size": [
-            258,
-            33
-          ],
-          "max_size": [
-            258,
-            33
-          ],
+          "text": "インベントリ",
           "offset": [
-            14,
-            140
+            44,
+            137
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -696,9 +670,440 @@
             0.92,
             0.92
           ],
-          "shadow": true,
-          "font_scale_factor": 0.56,
-          "line_padding": 0
+          "shadow": false,
+          "font_scale_factor": 0.72
+        }
+      },
+      {
+        "inventory_grid": {
+          "type": "collection_panel",
+          "size": [
+            198,
+            66
+          ],
+          "offset": [
+            44,
+            149
+          ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "collection_name": "form_buttons",
+          "controls": [
+            {
+              "inventory_0@server_form.pinene_counted_slot": {
+                "collection_index": 31,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "inventory_1@server_form.pinene_counted_slot": {
+                "collection_index": 32,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  22,
+                  0
+                ]
+              }
+            },
+            {
+              "inventory_2@server_form.pinene_counted_slot": {
+                "collection_index": 33,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  44,
+                  0
+                ]
+              }
+            },
+            {
+              "inventory_3@server_form.pinene_counted_slot": {
+                "collection_index": 34,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  66,
+                  0
+                ]
+              }
+            },
+            {
+              "inventory_4@server_form.pinene_counted_slot": {
+                "collection_index": 35,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  88,
+                  0
+                ]
+              }
+            },
+            {
+              "inventory_5@server_form.pinene_counted_slot": {
+                "collection_index": 36,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  110,
+                  0
+                ]
+              }
+            },
+            {
+              "inventory_6@server_form.pinene_counted_slot": {
+                "collection_index": 37,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  132,
+                  0
+                ]
+              }
+            },
+            {
+              "inventory_7@server_form.pinene_counted_slot": {
+                "collection_index": 38,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  154,
+                  0
+                ]
+              }
+            },
+            {
+              "inventory_8@server_form.pinene_counted_slot": {
+                "collection_index": 39,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  176,
+                  0
+                ]
+              }
+            },
+            {
+              "inventory_9@server_form.pinene_counted_slot": {
+                "collection_index": 40,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  0,
+                  22
+                ]
+              }
+            },
+            {
+              "inventory_10@server_form.pinene_counted_slot": {
+                "collection_index": 41,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  22,
+                  22
+                ]
+              }
+            },
+            {
+              "inventory_11@server_form.pinene_counted_slot": {
+                "collection_index": 42,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  44,
+                  22
+                ]
+              }
+            },
+            {
+              "inventory_12@server_form.pinene_counted_slot": {
+                "collection_index": 43,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  66,
+                  22
+                ]
+              }
+            },
+            {
+              "inventory_13@server_form.pinene_counted_slot": {
+                "collection_index": 44,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  88,
+                  22
+                ]
+              }
+            },
+            {
+              "inventory_14@server_form.pinene_counted_slot": {
+                "collection_index": 45,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  110,
+                  22
+                ]
+              }
+            },
+            {
+              "inventory_15@server_form.pinene_counted_slot": {
+                "collection_index": 46,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  132,
+                  22
+                ]
+              }
+            },
+            {
+              "inventory_16@server_form.pinene_counted_slot": {
+                "collection_index": 47,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  154,
+                  22
+                ]
+              }
+            },
+            {
+              "inventory_17@server_form.pinene_counted_slot": {
+                "collection_index": 48,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  176,
+                  22
+                ]
+              }
+            },
+            {
+              "inventory_18@server_form.pinene_counted_slot": {
+                "collection_index": 49,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  0,
+                  44
+                ]
+              }
+            },
+            {
+              "inventory_19@server_form.pinene_counted_slot": {
+                "collection_index": 50,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  22,
+                  44
+                ]
+              }
+            },
+            {
+              "inventory_20@server_form.pinene_counted_slot": {
+                "collection_index": 51,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  44,
+                  44
+                ]
+              }
+            },
+            {
+              "inventory_21@server_form.pinene_counted_slot": {
+                "collection_index": 52,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  66,
+                  44
+                ]
+              }
+            },
+            {
+              "inventory_22@server_form.pinene_counted_slot": {
+                "collection_index": 53,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  88,
+                  44
+                ]
+              }
+            },
+            {
+              "inventory_23@server_form.pinene_counted_slot": {
+                "collection_index": 54,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  110,
+                  44
+                ]
+              }
+            },
+            {
+              "inventory_24@server_form.pinene_counted_slot": {
+                "collection_index": 55,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  132,
+                  44
+                ]
+              }
+            },
+            {
+              "inventory_25@server_form.pinene_counted_slot": {
+                "collection_index": 56,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  154,
+                  44
+                ]
+              }
+            },
+            {
+              "inventory_26@server_form.pinene_counted_slot": {
+                "collection_index": 57,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  176,
+                  44
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "hotbar_grid": {
+          "type": "collection_panel",
+          "size": [
+            198,
+            22
+          ],
+          "offset": [
+            44,
+            217
+          ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "collection_name": "form_buttons",
+          "controls": [
+            {
+              "hotbar_0@server_form.pinene_counted_slot": {
+                "collection_index": 58,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "hotbar_1@server_form.pinene_counted_slot": {
+                "collection_index": 59,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  22,
+                  0
+                ]
+              }
+            },
+            {
+              "hotbar_2@server_form.pinene_counted_slot": {
+                "collection_index": 60,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  44,
+                  0
+                ]
+              }
+            },
+            {
+              "hotbar_3@server_form.pinene_counted_slot": {
+                "collection_index": 61,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  66,
+                  0
+                ]
+              }
+            },
+            {
+              "hotbar_4@server_form.pinene_counted_slot": {
+                "collection_index": 62,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  88,
+                  0
+                ]
+              }
+            },
+            {
+              "hotbar_5@server_form.pinene_counted_slot": {
+                "collection_index": 63,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  110,
+                  0
+                ]
+              }
+            },
+            {
+              "hotbar_6@server_form.pinene_counted_slot": {
+                "collection_index": 64,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  132,
+                  0
+                ]
+              }
+            },
+            {
+              "hotbar_7@server_form.pinene_counted_slot": {
+                "collection_index": 65,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  154,
+                  0
+                ]
+              }
+            },
+            {
+              "hotbar_8@server_form.pinene_counted_slot": {
+                "collection_index": 66,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  176,
+                  0
+                ]
+              }
+            }
+          ]
         }
       }
     ]
