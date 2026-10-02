@@ -186,7 +186,7 @@ export const COOKING_RECIPES = [
       }
     ],
     "resultCount": 1,
-    "icon": "textures/items/honey_bottle",
+    "icon": "textures/items/cooking_oil",
     "nutrition": null,
     "saturation": null
   },
@@ -266,7 +266,7 @@ export const COOKING_RECIPES = [
       }
     ],
     "resultCount": 1,
-    "icon": "textures/items/sugar",
+    "icon": "textures/items/gelatin",
     "nutrition": null,
     "saturation": null
   },
@@ -280,7 +280,7 @@ export const COOKING_RECIPES = [
         "id": "minecraft:wheat",
         "count": 3,
         "name": "小麦",
-        "icon": "textures/items/wheat"
+        "icon": "textures/items/noodles"
       }
     ],
     "layout": [
@@ -324,11 +324,11 @@ export const COOKING_RECIPES = [
         "id": "pine:whole_cheese",
         "count": 1,
         "name": "ホールチーズ",
-        "icon": "textures/items/butter"
+        "icon": "textures/items/whole_cheese"
       }
     ],
     "resultCount": 4,
-    "icon": "textures/items/butter",
+    "icon": "textures/items/cheese",
     "nutrition": null,
     "saturation": null
   },
