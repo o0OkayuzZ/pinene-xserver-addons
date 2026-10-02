@@ -246,11 +246,6 @@ const RECIPE_ICON_BY_ID = (() => {
 })();
 
 const INVENTORY_ICON_OVERRIDES = {
-  "pine:cooking_oil": "textures/items/honey_bottle",
-  "pine:gelatin": "textures/items/sugar",
-  "pine:noodles": "textures/items/wheat",
-  "pine:whole_cheese": "textures/items/butter",
-  "pine:cheese": "textures/items/butter",
   "minecraft:glass_bottle": "textures/items/potion_bottle_empty",
   "minecraft:milk_bucket": "textures/items/bucket_milk",
   "minecraft:water_bucket": "textures/items/bucket_water",
