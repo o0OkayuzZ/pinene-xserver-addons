@@ -280,7 +280,7 @@ export const COOKING_RECIPES = [
         "id": "minecraft:wheat",
         "count": 3,
         "name": "小麦",
-        "icon": "textures/items/noodles"
+        "icon": "textures/items/wheat"
       }
     ],
     "layout": [
@@ -310,7 +310,7 @@ export const COOKING_RECIPES = [
       null
     ],
     "resultCount": 1,
-    "icon": "textures/items/wheat",
+    "icon": "textures/items/noodles",
     "nutrition": null,
     "saturation": null
   },
