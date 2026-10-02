@@ -246,6 +246,11 @@ const RECIPE_ICON_BY_ID = (() => {
 })();
 
 const INVENTORY_ICON_OVERRIDES = {
+  "pine:cooking_oil": "textures/items/honey_bottle",
+  "pine:gelatin": "textures/items/sugar",
+  "pine:noodles": "textures/items/wheat",
+  "pine:whole_cheese": "textures/items/butter",
+  "pine:cheese": "textures/items/butter",
   "minecraft:glass_bottle": "textures/items/potion_bottle_empty",
   "minecraft:milk_bucket": "textures/items/bucket_milk",
   "minecraft:water_bucket": "textures/items/bucket_water",
@@ -334,6 +339,30 @@ function recipeIngredientSlots(recipe) {
     return recipe.layout;
   }
   return recipe.ingredients ?? [];
+}
+
+function ingredientChoiceMatches(a, b) {
+  if (!a || !b) return false;
+  if (a.id && b.id) return a.id === b.id;
+  const aIds = Array.isArray(a.ids) ? [...a.ids].sort() : [];
+  const bIds = Array.isArray(b.ids) ? [...b.ids].sort() : [];
+  return aIds.length > 0 && aIds.length === bIds.length &&
+    aIds.every((value, index) => value === bIds[index]);
+}
+
+function recipeIngredientForSlot(recipe, slotIngredient) {
+  return (recipe?.ingredients ?? []).find((ingredient) =>
+    ingredientChoiceMatches(ingredient, slotIngredient)
+  ) ?? slotIngredient;
+}
+
+function ingredientCountLabel(player, recipe, slotIngredient) {
+  const container = inventory(player);
+  const ingredient = recipeIngredientForSlot(recipe, slotIngredient);
+  const required = ingredient?.count ?? slotIngredient?.count ?? 1;
+  const owned = countIngredient(container, ingredient);
+  const enough = owned >= required;
+  return (enough ? "§f" : "§c") + owned + "/" + required;
 }
 
 function knifeRankLimit(knifeEntity) {
@@ -437,7 +466,7 @@ async function openBoard(player, block, state = {}) {
       form.button(" ");
       continue;
     }
-    form.button(String(ingredient.count ?? 1), ingredient.icon);
+    form.button(ingredientCountLabel(player, selected, ingredient), ingredient.icon);
   }
   if (selected) form.button(String(selected.resultCount), selected.icon);
   else form.button(" ");
