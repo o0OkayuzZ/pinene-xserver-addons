@@ -204,6 +204,94 @@ const CONTAINER_RETURNS = {
   "minecraft:milk_bucket": "minecraft:bucket",
 };
 
+const INVENTORY_SLOT_COUNT = 36;
+const INVENTORY_BUTTON_START = 31;
+
+const RECIPE_ICON_BY_ID = (() => {
+  const map = new Map();
+  for (const recipe of COOKING_RECIPES) {
+    if (recipe?.id && recipe?.icon) map.set(recipe.id, recipe.icon);
+    for (const ingredient of recipe?.ingredients ?? []) {
+      if (ingredient?.id && ingredient?.icon && !map.has(ingredient.id)) {
+        map.set(ingredient.id, ingredient.icon);
+      }
+    }
+  }
+  return map;
+})();
+
+const INVENTORY_ICON_OVERRIDES = {
+  "minecraft:glass_bottle": "textures/items/potion_bottle_empty",
+  "minecraft:milk_bucket": "textures/items/bucket_milk",
+  "minecraft:water_bucket": "textures/items/bucket_water",
+  "minecraft:lava_bucket": "textures/items/bucket_lava",
+  "minecraft:bucket": "textures/items/bucket_empty",
+  "minecraft:wheat_seeds": "textures/items/seeds_wheat",
+  "minecraft:pumpkin_seeds": "textures/items/seeds_pumpkin",
+  "minecraft:melon_seeds": "textures/items/seeds_melon",
+  "minecraft:beetroot_seeds": "textures/items/seeds_beetroot",
+  "minecraft:cocoa_beans": "textures/items/dye_powder_brown",
+  "minecraft:cooked_beef": "textures/items/beef_cooked",
+  "minecraft:cooked_porkchop": "textures/items/porkchop_cooked",
+  "minecraft:cooked_chicken": "textures/items/chicken_cooked",
+  "minecraft:baked_potato": "textures/items/potato_baked",
+  "minecraft:wooden_sword": "textures/items/wood_sword",
+  "minecraft:wooden_pickaxe": "textures/items/wood_pickaxe",
+  "minecraft:wooden_axe": "textures/items/wood_axe",
+  "minecraft:wooden_shovel": "textures/items/wood_shovel",
+  "minecraft:wooden_hoe": "textures/items/wood_hoe",
+  "minecraft:golden_sword": "textures/items/gold_sword",
+  "minecraft:golden_pickaxe": "textures/items/gold_pickaxe",
+  "minecraft:golden_axe": "textures/items/gold_axe",
+  "minecraft:golden_shovel": "textures/items/gold_shovel",
+  "minecraft:golden_hoe": "textures/items/gold_hoe",
+  "minecraft:oak_planks": "textures/blocks/planks_oak",
+  "minecraft:spruce_planks": "textures/blocks/planks_spruce",
+  "minecraft:birch_planks": "textures/blocks/planks_birch",
+  "minecraft:jungle_planks": "textures/blocks/planks_jungle",
+  "minecraft:acacia_planks": "textures/blocks/planks_acacia",
+  "minecraft:dark_oak_planks": "textures/blocks/planks_big_oak",
+  "minecraft:mangrove_planks": "textures/blocks/mangrove_planks",
+  "minecraft:cherry_planks": "textures/blocks/cherry_planks",
+  "minecraft:cobblestone": "textures/blocks/cobblestone",
+  "minecraft:stone": "textures/blocks/stone",
+  "minecraft:dirt": "textures/blocks/dirt",
+  "minecraft:crafting_table": "textures/blocks/crafting_table_front",
+};
+
+function inventoryIcon(typeId) {
+  if (!typeId) return undefined;
+  const recipeIcon = RECIPE_ICON_BY_ID.get(typeId);
+  if (recipeIcon) return recipeIcon;
+  const override = INVENTORY_ICON_OVERRIDES[typeId];
+  if (override) return override;
+  const separator = typeId.indexOf(":");
+  const namespace = separator >= 0 ? typeId.slice(0, separator) : "minecraft";
+  const id = separator >= 0 ? typeId.slice(separator + 1) : typeId;
+  if (namespace === "pine" || namespace === "pinene_cooking") {
+    return "textures/items/" + id;
+  }
+  return "textures/items/" + id;
+}
+
+function appendInventorySnapshot(form, player) {
+  const container = inventory(player);
+  // Vanilla layout order: 3 inventory rows (slots 9-35), then hotbar (0-8).
+  const order = [];
+  for (let slot = 9; slot < INVENTORY_SLOT_COUNT; slot++) order.push(slot);
+  for (let slot = 0; slot < 9; slot++) order.push(slot);
+
+  for (const slot of order) {
+    const stack = container?.getItem(slot);
+    if (!stack) {
+      form.button(" ");
+      continue;
+    }
+    const count = stack.amount > 1 ? String(stack.amount) : "";
+    form.button(count, inventoryIcon(stack.typeId));
+  }
+}
+
 function recipesForCategory(category) {
   return COOKING_RECIPES.filter((recipe) => recipe.rank === category);
 }
@@ -299,8 +387,7 @@ async function openBoard(player, block, state = {}) {
   if (!selected || selected.rank !== category) selected = categoryRecipes[0];
 
   const form = new ActionFormData()
-    .title("pinene_cooking_ui:まな板")
-    .body(recipeDetailText(selected, knife, category));
+    .title("pinene_cooking_ui:まな板");
   for (let rank = 0; rank <= 7; rank++) {
     const locked = rank > 0 && rank > limit;
     const prefix = rank === category ? "§a" : locked ? "§8" : "§f";
@@ -333,6 +420,8 @@ async function openBoard(player, block, state = {}) {
   const craftable = !!selected && canCraftRecipe(player, knife, selected);
   form.button(craftable ? "§aクラフト" : "§8材料不足", selected?.icon);
 
+  appendInventorySnapshot(form, player);
+
   const response = await form.show(player);
   if (response.canceled || response.selection == null) return;
   const index = response.selection;
@@ -357,6 +446,11 @@ async function openBoard(player, block, state = {}) {
       player.sendMessage("§c材料が足りないか、このナイフでは作れません。");
     }
     scheduleBoardUi(player, block, { category, recipeId: selected.id });
+    return;
+  }
+
+  if (index >= INVENTORY_BUTTON_START && index < INVENTORY_BUTTON_START + INVENTORY_SLOT_COUNT) {
+    scheduleBoardUi(player, block, { category, recipeId: selected?.id });
     return;
   }
 
