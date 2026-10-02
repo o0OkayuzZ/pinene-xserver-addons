@@ -118,6 +118,31 @@ function removeItem(container, typeId, amount) {
   return remaining === 0;
 }
 
+function countIngredient(container, ingredient) {
+  if (Array.isArray(ingredient?.ids) && ingredient.ids.length > 0) {
+    return ingredient.ids.reduce((total, typeId) => total + countItem(container, typeId), 0);
+  }
+  return countItem(container, ingredient?.id);
+}
+
+function removeIngredient(container, ingredient) {
+  let remaining = ingredient?.count ?? 0;
+  if (remaining <= 0) return true;
+
+  if (Array.isArray(ingredient?.ids) && ingredient.ids.length > 0) {
+    for (const typeId of ingredient.ids) {
+      if (remaining <= 0) break;
+      const available = countItem(container, typeId);
+      const take = Math.min(available, remaining);
+      if (take > 0 && !removeItem(container, typeId, take)) return false;
+      remaining -= take;
+    }
+    return remaining === 0;
+  }
+
+  return removeItem(container, ingredient?.id, remaining);
+}
+
 function giveOrDropStack(player, stack) {
   const container = inventory(player);
   if (!container) return;
@@ -321,7 +346,7 @@ function canCraftRecipe(player, knifeEntity, recipe) {
   const container = inventory(player);
   if (!container) return false;
   return recipe.ingredients.every((ingredient) =>
-    countItem(container, ingredient.id) >= ingredient.count
+    countIngredient(container, ingredient) >= ingredient.count
   );
 }
 
@@ -337,7 +362,7 @@ function craftCookingRecipe(player, knifeEntity, recipe) {
   if (!canCraftRecipe(player, knifeEntity, recipe)) return false;
   const container = inventory(player);
   for (const ingredient of recipe.ingredients) {
-    if (!removeItem(container, ingredient.id, ingredient.count)) return false;
+    if (!removeIngredient(container, ingredient)) return false;
   }
   addContainerReturns(player, recipe);
   giveOrDropStack(player, new ItemStack(recipe.id, recipe.resultCount));
