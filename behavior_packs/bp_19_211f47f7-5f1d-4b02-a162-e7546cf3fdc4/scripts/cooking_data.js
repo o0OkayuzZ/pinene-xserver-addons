@@ -66,6 +66,273 @@ export const COOKING_RECIPES = [
     "saturation": null
   },
   {
+    "id": "pine:cooking_oil",
+    "name": "調理油",
+    "rank": 0,
+    "description": "種子を圧搾して作る料理用の油。",
+    "ingredients": [
+      {
+        "ids": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ],
+        "count": 8,
+        "name": "種",
+        "icon": "textures/items/seeds_wheat"
+      },
+      {
+        "id": "minecraft:glass_bottle",
+        "count": 1,
+        "name": "ガラス瓶",
+        "icon": "textures/items/potion_bottle_empty"
+      }
+    ],
+    "layout": [
+      {
+        "ids": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ],
+        "count": 1,
+        "name": "種",
+        "icon": "textures/items/seeds_wheat"
+      },
+      {
+        "ids": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ],
+        "count": 1,
+        "name": "種",
+        "icon": "textures/items/seeds_wheat"
+      },
+      {
+        "ids": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ],
+        "count": 1,
+        "name": "種",
+        "icon": "textures/items/seeds_wheat"
+      },
+      {
+        "ids": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ],
+        "count": 1,
+        "name": "種",
+        "icon": "textures/items/seeds_wheat"
+      },
+      {
+        "id": "minecraft:glass_bottle",
+        "count": 1,
+        "name": "ガラス瓶",
+        "icon": "textures/items/potion_bottle_empty"
+      },
+      {
+        "ids": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ],
+        "count": 1,
+        "name": "種",
+        "icon": "textures/items/seeds_wheat"
+      },
+      {
+        "ids": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ],
+        "count": 1,
+        "name": "種",
+        "icon": "textures/items/seeds_wheat"
+      },
+      {
+        "ids": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ],
+        "count": 1,
+        "name": "種",
+        "icon": "textures/items/seeds_wheat"
+      },
+      {
+        "ids": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ],
+        "count": 1,
+        "name": "種",
+        "icon": "textures/items/seeds_wheat"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/honey_bottle",
+    "nutrition": null,
+    "saturation": null
+  },
+  {
+    "id": "pine:gelatin",
+    "name": "ゼラチン",
+    "rank": 0,
+    "description": "骨から抽出して作る、ゼリー料理などに使う素材。",
+    "ingredients": [
+      {
+        "id": "minecraft:bone",
+        "count": 8,
+        "name": "骨",
+        "icon": "textures/items/bone"
+      },
+      {
+        "id": "minecraft:glass_bottle",
+        "count": 1,
+        "name": "ガラス瓶",
+        "icon": "textures/items/potion_bottle_empty"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:bone",
+        "count": 1,
+        "name": "骨",
+        "icon": "textures/items/bone"
+      },
+      {
+        "id": "minecraft:bone",
+        "count": 1,
+        "name": "骨",
+        "icon": "textures/items/bone"
+      },
+      {
+        "id": "minecraft:bone",
+        "count": 1,
+        "name": "骨",
+        "icon": "textures/items/bone"
+      },
+      {
+        "id": "minecraft:bone",
+        "count": 1,
+        "name": "骨",
+        "icon": "textures/items/bone"
+      },
+      {
+        "id": "minecraft:glass_bottle",
+        "count": 1,
+        "name": "ガラス瓶",
+        "icon": "textures/items/potion_bottle_empty"
+      },
+      {
+        "id": "minecraft:bone",
+        "count": 1,
+        "name": "骨",
+        "icon": "textures/items/bone"
+      },
+      {
+        "id": "minecraft:bone",
+        "count": 1,
+        "name": "骨",
+        "icon": "textures/items/bone"
+      },
+      {
+        "id": "minecraft:bone",
+        "count": 1,
+        "name": "骨",
+        "icon": "textures/items/bone"
+      },
+      {
+        "id": "minecraft:bone",
+        "count": 1,
+        "name": "骨",
+        "icon": "textures/items/bone"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/sugar",
+    "nutrition": null,
+    "saturation": null
+  },
+  {
+    "id": "pine:noodles",
+    "name": "麺",
+    "rank": 0,
+    "description": "小麦を細く加工した麺。さまざまな麺料理の基本素材。",
+    "ingredients": [
+      {
+        "id": "minecraft:wheat",
+        "count": 3,
+        "name": "小麦",
+        "icon": "textures/items/wheat"
+      }
+    ],
+    "layout": [
+      null,
+      {
+        "id": "minecraft:wheat",
+        "count": 1,
+        "name": "小麦",
+        "icon": "textures/items/wheat"
+      },
+      null,
+      null,
+      {
+        "id": "minecraft:wheat",
+        "count": 1,
+        "name": "小麦",
+        "icon": "textures/items/wheat"
+      },
+      null,
+      null,
+      {
+        "id": "minecraft:wheat",
+        "count": 1,
+        "name": "小麦",
+        "icon": "textures/items/wheat"
+      },
+      null
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/wheat",
+    "nutrition": null,
+    "saturation": null
+  },
+  {
+    "id": "pine:cheese",
+    "name": "チーズ",
+    "rank": 0,
+    "description": "加熱したミルクから作るホールチーズを切り分けた料理素材。",
+    "ingredients": [
+      {
+        "id": "pine:whole_cheese",
+        "count": 1,
+        "name": "ホールチーズ",
+        "icon": "textures/items/butter"
+      }
+    ],
+    "resultCount": 4,
+    "icon": "textures/items/butter",
+    "nutrition": null,
+    "saturation": null
+  },
+  {
     "id": "pine:honey_bread",
     "name": "はちみつパン",
     "rank": 2,
