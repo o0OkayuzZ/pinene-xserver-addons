@@ -197,6 +197,7 @@ const KNIFE_RANK_LIMIT = {
   "pinene_cooking:netherite_knife": 7,
 };
 const CATEGORY_LABELS = ["素材", "Rank I", "Rank II", "Rank III", "Rank IV", "Rank V", "Rank VI", "Rank VII"];
+const CATEGORY_TAB_LABELS = ["素材", "I", "II", "III", "IV", "V", "VI", "VII"];
 const RECIPE_SLOT_COUNT = 12;
 const CONTAINER_RETURNS = {
   "minecraft:honey_bottle": "minecraft:glass_bottle",
@@ -304,7 +305,7 @@ async function openBoard(player, block, state = {}) {
     const locked = rank > 0 && rank > limit;
     const prefix = rank === category ? "§a" : locked ? "§8" : "§f";
     const suffix = locked ? "  ×" : "";
-    form.button(prefix + CATEGORY_LABELS[rank] + suffix);
+    form.button(prefix + CATEGORY_TAB_LABELS[rank] + suffix);
   }
 
   for (let i = 0; i < RECIPE_SLOT_COUNT; i++) {
