@@ -21,8 +21,8 @@
   "pinene_cooking_long_form@common_dialogs.main_panel_no_buttons": {
     "$title_panel": "common.empty_panel",
     "size": [
-      300,
-      200
+      286,
+      186
     ],
     "$child_control": "server_form.pinene_cooking_content",
     "layer": 2,
@@ -86,7 +86,7 @@
       {
         "title": {
           "type": "label",
-          "text": "まな板",
+          "text": "料理",
           "font_type": "MinecraftTen",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -100,128 +100,160 @@
             0.92
           ],
           "shadow": true,
-          "font_scale_factor": 1.1
+          "font_scale_factor": 1.08
         }
       },
       {
         "subtitle": {
           "type": "label",
-          "text": "料理専用クラフト / まな板限定",
+          "text": "まな板",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
-            8,
-            20
+            42,
+            9
           ],
           "color": [
-            0.92,
-            0.92,
-            0.92
+            0.68,
+            0.68,
+            0.68
           ],
-          "shadow": true,
-          "font_scale_factor": 0.72
+          "shadow": false,
+          "font_scale_factor": 0.62
         }
       },
       {
-        "left_panel": {
+        "rank_tabs": {
           "type": "collection_panel",
           "size": [
-            48,
-            120
+            272,
+            16
           ],
           "offset": [
-            6,
-            34
+            7,
+            25
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "collection_name": "form_buttons",
           "controls": [
             {
-              "category_0@server_form.pinene_category_button": {
+              "rank_0@server_form.pinene_category_button": {
                 "collection_index": 0,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
                   0,
                   0
+                ],
+                "size": [
+                  32,
+                  14
                 ]
               }
             },
             {
-              "category_1@server_form.pinene_category_button": {
+              "rank_1@server_form.pinene_category_button": {
                 "collection_index": 1,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  0,
-                  15
+                  34,
+                  0
+                ],
+                "size": [
+                  32,
+                  14
                 ]
               }
             },
             {
-              "category_2@server_form.pinene_category_button": {
+              "rank_2@server_form.pinene_category_button": {
                 "collection_index": 2,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  0,
-                  30
+                  68,
+                  0
+                ],
+                "size": [
+                  32,
+                  14
                 ]
               }
             },
             {
-              "category_3@server_form.pinene_category_button": {
+              "rank_3@server_form.pinene_category_button": {
                 "collection_index": 3,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  0,
-                  45
+                  102,
+                  0
+                ],
+                "size": [
+                  32,
+                  14
                 ]
               }
             },
             {
-              "category_4@server_form.pinene_category_button": {
+              "rank_4@server_form.pinene_category_button": {
                 "collection_index": 4,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  0,
-                  60
+                  136,
+                  0
+                ],
+                "size": [
+                  32,
+                  14
                 ]
               }
             },
             {
-              "category_5@server_form.pinene_category_button": {
+              "rank_5@server_form.pinene_category_button": {
                 "collection_index": 5,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  0,
-                  75
+                  170,
+                  0
+                ],
+                "size": [
+                  32,
+                  14
                 ]
               }
             },
             {
-              "category_6@server_form.pinene_category_button": {
+              "rank_6@server_form.pinene_category_button": {
                 "collection_index": 6,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  0,
-                  90
+                  204,
+                  0
+                ],
+                "size": [
+                  32,
+                  14
                 ]
               }
             },
             {
-              "category_7@server_form.pinene_category_button": {
+              "rank_7@server_form.pinene_category_button": {
                 "collection_index": 7,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  0,
-                  105
+                  238,
+                  0
+                ],
+                "size": [
+                  32,
+                  14
                 ]
               }
             }
@@ -231,20 +263,20 @@
       {
         "recipes_label": {
           "type": "label",
-          "text": "料理",
+          "text": "レシピ",
           "offset": [
-            59,
-            35
+            9,
+            48
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "color": [
-            0.92,
-            0.92,
-            0.92
+            0.35,
+            0.35,
+            0.35
           ],
-          "shadow": true,
-          "font_scale_factor": 0.75
+          "shadow": false,
+          "font_scale_factor": 0.72
         }
       },
       {
@@ -255,8 +287,8 @@
             66
           ],
           "offset": [
-            58,
-            48
+            8,
+            60
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -398,22 +430,22 @@
         }
       },
       {
-        "materials_label": {
+        "crafting_label": {
           "type": "label",
-          "text": "材料",
+          "text": "クラフト",
           "offset": [
-            150,
-            35
+            108,
+            48
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "color": [
-            0.92,
-            0.92,
-            0.92
+            0.35,
+            0.35,
+            0.35
           ],
-          "shadow": true,
-          "font_scale_factor": 0.75
+          "shadow": false,
+          "font_scale_factor": 0.72
         }
       },
       {
@@ -424,8 +456,8 @@
             66
           ],
           "offset": [
-            149,
-            48
+            108,
+            60
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -540,8 +572,8 @@
           "font_type": "MinecraftTen",
           "font_size": "large",
           "offset": [
-            213,
-            68
+            177,
+            80
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -551,7 +583,7 @@
             0.45
           ],
           "shadow": false,
-          "font_scale_factor": 0.9
+          "font_scale_factor": 1
         }
       },
       {
@@ -559,18 +591,18 @@
           "type": "label",
           "text": "完成品",
           "offset": [
-            230,
-            35
+            207,
+            48
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "color": [
-            0.92,
-            0.92,
-            0.92
+            0.35,
+            0.35,
+            0.35
           ],
-          "shadow": true,
-          "font_scale_factor": 0.75
+          "shadow": false,
+          "font_scale_factor": 0.72
         }
       },
       {
@@ -582,8 +614,8 @@
             22
           ],
           "offset": [
-            237,
-            51
+            219,
+            73
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -601,12 +633,12 @@
           "type": "collection_panel",
           "collection_name": "form_buttons",
           "size": [
-            58,
+            64,
             18
           ],
           "offset": [
-            218,
-            80
+            198,
+            103
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -615,7 +647,7 @@
               "craft@server_form.pinene_category_button": {
                 "collection_index": 30,
                 "size": [
-                  58,
+                  64,
                   18
                 ]
               }
@@ -624,35 +656,16 @@
         }
       },
       {
-        "description_title": {
-          "type": "label",
-          "text": "説明",
-          "offset": [
-            59,
-            112
-          ],
-          "anchor_from": "top_left",
-          "anchor_to": "top_left",
-          "color": [
-            0.92,
-            0.92,
-            0.92
-          ],
-          "shadow": true,
-          "font_scale_factor": 0.75
-        }
-      },
-      {
         "description_bg": {
           "type": "image",
           "texture": "textures/ui/item_cell",
           "size": [
-            218,
-            68
+            270,
+            43
           ],
           "offset": [
-            57,
-            122
+            8,
+            135
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -665,16 +678,16 @@
           "type": "label",
           "text": "#form_text",
           "size": [
-            206,
-            56
+            258,
+            33
           ],
           "max_size": [
-            206,
-            56
+            258,
+            33
           ],
           "offset": [
-            63,
-            127
+            14,
+            140
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -684,7 +697,7 @@
             0.92
           ],
           "shadow": true,
-          "font_scale_factor": 0.58,
+          "font_scale_factor": 0.56,
           "line_padding": 0
         }
       }
