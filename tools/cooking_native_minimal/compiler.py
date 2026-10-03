@@ -22,7 +22,10 @@ def parse_data(text):
 
 def table(material):
     tags=[TAG_PREFIX+str(i) for i in range(LIMITS[material]+1)] if material in LIMITS else ['pinene_native_locked']
-    return {'crafting_tags':tags,'table_name':'料理'}
+    # Use the native crafting header; no HUD overlay or UI JSON override.
+    roman=('', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII')
+    title='料理  Rank '+roman[LIMITS[material]] if material in LIMITS else '料理'
+    return {'crafting_tags':tags,'table_name':title}
 
 def compile_board(src):
     data=copy.deepcopy(src);block=data['minecraft:block']
