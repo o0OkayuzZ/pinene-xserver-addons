@@ -22,6 +22,7 @@ function welcome(player){
  player.sendMessage('§aバニラ料理試験場：中央はネザライト、左は銅、右はナイフなしのまな板です。');
  player.sendMessage('§7画面はバニラのまま。手を空けて開きます。スニーク＋操作でナイフ回収。追加材料は奥の樽、左端は炉、右端は普通の作業台です。');
  player.sendMessage('§e今回は34レシピとランク制限の試験。クラフト時のナイフ耐久消費はまだ未接続です。');
+ player.sendMessage('§7消耗した銅ナイフを置いて回収した後、奥の緑ブロックで8本・消耗37の保持を検査できます。');
  player.onScreenDisplay.setTitle('料理UI試験場・ナイフ連携',{subtitle:'バニラ画面・レシピとナイフの連携',stayDuration:60,fadeInDuration:5,fadeOutDuration:15});
 }
 function log(event,extra={}){console.warn('[pinene_native_minimal] '+JSON.stringify({event,...extra}));}
@@ -40,7 +41,7 @@ function prepare(player,attempt=0){
   const dim=player.dimension,plan=[];
   for(let x=-7;x<=7;x++)for(let z=-4;z<=8;z++)plan.push({at:{x,y:-61,z},type:'minecraft:smooth_stone'});
   for(const x of [-3,0,3])plan.push({at:{x,y:-60,z:2},type:'pinene_cooking:oak_cutting_board'});
-  plan.push({at:{x:0,y:-60,z:5},type:'minecraft:barrel'},
+  plan.push({at:{x:-5,y:-60,z:5},type:'minecraft:emerald_block'},{at:{x:0,y:-60,z:5},type:'minecraft:barrel'},
    {at:{x:-5,y:-60,z:2},type:'minecraft:furnace'},{at:{x:5,y:-60,z:2},type:'minecraft:crafting_table'});
   const prepared=plan.map(a=>({...a,block:dim.getBlock(a.at),permutation:BlockPermutation.resolve(a.type)}));
   if(prepared.some(a=>!a.block))throw new Error('chunks_not_ready');

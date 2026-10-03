@@ -37,3 +37,5 @@ Mock transfer tests cover 100 place/retrieve cycles, full inventory rejection, r
 - One extra copper-knife fixture has damage 37 and a unique test name. Place/retrieve it to verify metadata retention.
 - This revision is a separate new world. Earlier successful worlds and currently loaded packs are not changed.
 - Craft-time durability consumption remains NOT implemented. Native gameplay verification of this revision is pending.
+
+Phase 1 automated verification: 24 Python compiler/regression tests and 20 JavaScript mock tests passed. Full native scripts typecheck against exact server 2.7.0 declarations. Green-block fixture audit is read-only and reports scoped knife count (8 expected) and the unique worn copper knife (37 damage). Actual native rank gating/fixture audit in this revision remains unverified until the new world is opened.

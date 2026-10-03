@@ -9,9 +9,9 @@ function environment(){
  const block={typeId:'pinene_cooking:oak_cutting_board',location:{x:0,y:0,z:0},permutation:new Perm(),setPermutation(p){if(this.fail){this.fail=false;throw Error('set_failed');}this.permutation=p;}};
  const dimension={id:'minecraft:overworld',getBlock(){return block;},getEntities(){return entities.filter(e=>e.isValid);},spawnEntity(typeId,location){const props=new Map(),storage=new Inv(1);const e={typeId,location,isValid:true,getComponent:()=>({container:storage}),getDynamicProperty:k=>props.get(k),setDynamicProperty:(k,v)=>props.set(k,v),remove(){this.isValid=false;}};entities.push(e);return e;}};block.dimension=dimension;
  const inventory=new Inv();const player={id:'p',isValid:true,location:{x:0.5,y:0,z:0.5},dimension,selectedSlotIndex:0,isSneaking:false,getComponent:()=>({container:inventory}),sendMessage:m=>messages.push(m)};
- const world={getAllPlayers:()=>[player],beforeEvents:{playerInteractWithBlock:{subscribe:f=>events.interact=f},playerBreakBlock:{subscribe:f=>events.break=f}}};
+ const world={getAllPlayers:()=>[player],beforeEvents:{playerInteractWithBlock:{subscribe:f=>{const previous=events.interact;events.interact=e=>{previous?.(e);f(e);};}},playerBreakBlock:{subscribe:f=>events.break=f}}};
  const system={run:f=>{queue.push(f);return queue.length;}};const sandbox={world,system,ItemStack:Stack,console:{warn(){}}};
- vm.runInNewContext(code+'\nglobalThis.api={moveIntoEmpty,knifeMaterial,seedPlacedKnife,knifeSnapshot,knifeUsable};',sandbox);
+ vm.runInNewContext(code+'\nglobalThis.api={moveIntoEmpty,knifeMaterial,seedPlacedKnife,knifeSnapshot,knifeUsable,summarizeTestKnives};',sandbox);
  function flush(){while(queue.length)queue.shift()();}
  function click(){const e={player,block,isFirstEvent:true,cancel:false};events.interact(e);flush();return e;}
  flush();return {world,system,api:sandbox.api,Inv,Stack,entities,inventory,player,block,messages,events,click,flush};
@@ -52,4 +52,16 @@ test('health change before placement preserves the knife',()=>{
  const e=environment();const s=knife(e);e.events.interact({player:e.player,block:e.block,isFirstEvent:true,cancel:false});
  e.player.getComponent=id=>id==='minecraft:health'?{currentValue:0}:{container:e.inventory};e.flush();
  assert.deepEqual(e.inventory.getItem(0),s);assert.equal(e.entities.length,0);
+});
+
+test('test audit reads eight knives with exactly one worn fixture',()=>{
+ const e=environment();const stacks=Array.from({length:8},()=>new e.Stack('pinene_cooking:copper_knife'));
+ stacks[0].nameTag='検証用・消耗した銅ナイフ';stacks[0].damage=37;
+ assert.equal(e.api.summarizeTestKnives(stacks).ok,true);
+ stacks[0].damage=0;assert.equal(e.api.summarizeTestKnives(stacks).ok,false);
+});
+test('test audit rejects missing and duplicate knife fixtures',()=>{
+ const e=environment();const a=new e.Stack('pinene_cooking:copper_knife');a.nameTag='検証用・消耗した銅ナイフ';a.damage=37;
+ assert.equal(e.api.summarizeTestKnives([a]).ok,false);
+ const copies=Array.from({length:8},()=>a.clone());assert.equal(e.api.summarizeTestKnives(copies).fixtureOK,false);
 });

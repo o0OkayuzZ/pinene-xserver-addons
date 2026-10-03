@@ -153,3 +153,31 @@ world.beforeEvents.playerBreakBlock.subscribe(event=>{
   if(holders(event.block).length){event.cancel=true;system.run(()=>report(event.player,'§e試験版では先にスニーク操作でナイフを回収してください。'));}
 });
 system.run(()=>log('ready',{ui:'native',serverApi:'2.7.0',knifeWear:false,multiplayer:false}));
+
+// Read-only, world-local fixture audit. Never infers or charges craft-time wear.
+export function summarizeTestKnives(stacks) {
+  const knives=stacks.filter(s=>knifeMaterial(s?.typeId));
+  const worn=knives.filter(s=>s.nameTag==='検証用・消耗した銅ナイフ');
+  const total=knives.reduce((n,s)=>n+s.amount,0);
+  const fixtureOK=worn.length===1 && worn[0].amount===1 && worn[0].typeId==='pinene_cooking:copper_knife' && worn[0].getComponent('minecraft:durability')?.damage===37;
+  return {total,fixtureOK,ok:total===8&&fixtureOK};
+}
+world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
+  const {block,player}=event,b=block.location;
+  if(block.dimension.id!=='minecraft:overworld'||block.typeId!=='minecraft:emerald_block'||b.x!==-5||b.y!==-60||b.z!==5||event.isFirstEvent===false) return;
+  if(world.getDynamicProperty('pinene_native_minimal:setup_v1')!=='done') return;
+  event.cancel=true;
+  system.run(()=>{
+    try{
+      if(!nearby(player,block)||world.getAllPlayers().length!==1) return;
+      const stacks=[],add=c=>{if(c)for(let i=0;i<c.size;i++){const s=c.getItem(i);if(s)stacks.push(s);}};
+      add(inv(player));
+      for(const e of block.dimension.getEntities({families:['pinene_cooking_placed_knife'],location:{x:0,y:-60,z:2},maxDistance:12})) add(inv(e));
+      for(const e of block.dimension.getEntities({type:'minecraft:item',location:{x:0,y:-60,z:2},maxDistance:12})) {
+        const s=e.getComponent('minecraft:item')?.itemStack;if(s)stacks.push(s);
+      }
+      const result=summarizeTestKnives(stacks);log('knife_fixture_audit',result);
+      report(player,(result.ok?'§a検査OK':'§e要確認')+`：ナイフ ${result.total}/8本・消耗37のナイフ ${result.fixtureOK?'維持OK':'不一致'}。範囲内の所持品・保管体・落下品のみ。`);
+    }catch(error){log('fixture_audit_error',{error:String(error)});}
+  });
+});
