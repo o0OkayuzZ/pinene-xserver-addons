@@ -1,6 +1,7 @@
 import { ItemStack, system, world } from "@minecraft/server";
 import { ActionFormData } from "@minecraft/server-ui";
 import { COOKING_RECIPES } from "./cooking_data.js";
+import { INVENTORY_ICONS } from "./inventory_icons.generated.js";
 
 const BOARD_PREFIX = "pinene_cooking:";
 const BOARD_SUFFIX = "_cutting_board";
@@ -223,14 +224,15 @@ const KNIFE_RANK_LIMIT = {
 };
 const CATEGORY_LABELS = ["素材", "Rank I", "Rank II", "Rank III", "Rank IV", "Rank V", "Rank VI", "Rank VII"];
 const CATEGORY_TAB_LABELS = ["素材", "I", "II", "III", "IV", "V", "VI", "VII"];
-const RECIPE_SLOT_COUNT = 12;
+const RECIPE_SLOT_COUNT = 20;
+const UI_INDEX = Object.freeze({ recipes: 8, ingredients: 28, result: 37, craft: 38, inventory: 39, prev: 75, page: 76, next: 77, close: 78 });
 const CONTAINER_RETURNS = {
   "minecraft:honey_bottle": "minecraft:glass_bottle",
   "minecraft:milk_bucket": "minecraft:bucket",
 };
 
 const INVENTORY_SLOT_COUNT = 36;
-const INVENTORY_BUTTON_START = 31;
+const INVENTORY_BUTTON_START = UI_INDEX.inventory;
 
 const RECIPE_ICON_BY_ID = (() => {
   const map = new Map();
@@ -245,76 +247,36 @@ const RECIPE_ICON_BY_ID = (() => {
   return map;
 })();
 
-const INVENTORY_ICON_OVERRIDES = {
-  "minecraft:glass_bottle": "textures/items/potion_bottle_empty",
-  "minecraft:milk_bucket": "textures/items/bucket_milk",
-  "minecraft:water_bucket": "textures/items/bucket_water",
-  "minecraft:lava_bucket": "textures/items/bucket_lava",
-  "minecraft:bucket": "textures/items/bucket_empty",
-  "minecraft:wheat_seeds": "textures/items/seeds_wheat",
-  "minecraft:pumpkin_seeds": "textures/items/seeds_pumpkin",
-  "minecraft:melon_seeds": "textures/items/seeds_melon",
-  "minecraft:beetroot_seeds": "textures/items/seeds_beetroot",
-  "minecraft:cocoa_beans": "textures/items/dye_powder_brown",
-  "minecraft:cooked_beef": "textures/items/beef_cooked",
-  "minecraft:cooked_porkchop": "textures/items/porkchop_cooked",
-  "minecraft:cooked_chicken": "textures/items/chicken_cooked",
-  "minecraft:baked_potato": "textures/items/potato_baked",
-  "minecraft:wooden_sword": "textures/items/wood_sword",
-  "minecraft:wooden_pickaxe": "textures/items/wood_pickaxe",
-  "minecraft:wooden_axe": "textures/items/wood_axe",
-  "minecraft:wooden_shovel": "textures/items/wood_shovel",
-  "minecraft:wooden_hoe": "textures/items/wood_hoe",
-  "minecraft:golden_sword": "textures/items/gold_sword",
-  "minecraft:golden_pickaxe": "textures/items/gold_pickaxe",
-  "minecraft:golden_axe": "textures/items/gold_axe",
-  "minecraft:golden_shovel": "textures/items/gold_shovel",
-  "minecraft:golden_hoe": "textures/items/gold_hoe",
-  "minecraft:oak_planks": "textures/blocks/planks_oak",
-  "minecraft:spruce_planks": "textures/blocks/planks_spruce",
-  "minecraft:birch_planks": "textures/blocks/planks_birch",
-  "minecraft:jungle_planks": "textures/blocks/planks_jungle",
-  "minecraft:acacia_planks": "textures/blocks/planks_acacia",
-  "minecraft:dark_oak_planks": "textures/blocks/planks_big_oak",
-  "minecraft:mangrove_planks": "textures/blocks/mangrove_planks",
-  "minecraft:cherry_planks": "textures/blocks/cherry_planks",
-  "minecraft:cobblestone": "textures/blocks/cobblestone",
-  "minecraft:stone": "textures/blocks/stone",
-  "minecraft:dirt": "textures/blocks/dirt",
-  "minecraft:crafting_table": "textures/blocks/crafting_table_front",
-};
-
+const missingInventoryIcons = new Set();
 function inventoryIcon(typeId) {
   if (!typeId) return undefined;
-  const recipeIcon = RECIPE_ICON_BY_ID.get(typeId);
-  if (recipeIcon) return recipeIcon;
-  const override = INVENTORY_ICON_OVERRIDES[typeId];
-  if (override) return override;
-  const separator = typeId.indexOf(":");
-  const namespace = separator >= 0 ? typeId.slice(0, separator) : "minecraft";
-  const id = separator >= 0 ? typeId.slice(separator + 1) : typeId;
-  if (namespace === "pine" || namespace === "pinene_cooking") {
-    return "textures/items/" + id;
+  const icon = INVENTORY_ICONS[typeId] ?? RECIPE_ICON_BY_ID.get(typeId);
+  if (icon) return icon;
+  if (!missingInventoryIcons.has(typeId)) {
+    missingInventoryIcons.add(typeId);
+    console.warn("[pinene_cooking] unmapped inventory icon: " + typeId);
   }
-  return "textures/items/" + id;
+  return undefined;
 }
 
 function appendInventorySnapshot(form, player) {
   const container = inventory(player);
-  // Vanilla layout order: 3 inventory rows (slots 9-35), then hotbar (0-8).
-  const order = [];
-  for (let slot = 9; slot < INVENTORY_SLOT_COUNT; slot++) order.push(slot);
-  for (let slot = 0; slot < 9; slot++) order.push(slot);
-
+  const order = Array.from({ length: 27 }, (_, i) => i + 9)
+    .concat(Array.from({ length: 9 }, (_, i) => i));
   for (const slot of order) {
-    const stack = container?.getItem(slot);
-    if (!stack) {
-      form.button(" ");
-      continue;
-    }
+    const stack = container && slot < container.size ? container.getItem(slot) : undefined;
+    if (!stack) { form.button(" "); continue; }
+    const icon = inventoryIcon(stack.typeId);
     const count = stack.amount > 1 ? String(stack.amount) : "";
-    form.button(count, inventoryIcon(stack.typeId));
+    // An unknown occupied slot must not look empty or load a missing texture.
+    form.button(icon ? "§f" + count : "§8? " + count, icon);
   }
+}
+
+function recipePage(recipes, page = 0) {
+  const count = Math.max(1, Math.ceil(recipes.length / RECIPE_SLOT_COUNT));
+  const index = Math.max(0, Math.min(count - 1, Number.isInteger(page) ? page : 0));
+  return { index, count, recipes: recipes.slice(index * RECIPE_SLOT_COUNT, (index + 1) * RECIPE_SLOT_COUNT) };
 }
 
 function recipesForCategory(category) {
@@ -397,21 +359,6 @@ function craftCookingRecipe(player, knifeEntity, recipe) {
   return true;
 }
 
-function recipeDetailText(recipe, knifeEntity, category) {
-  const typeId = KNIFE_BY_PLACED[knifeEntity?.typeId];
-  const limit = knifeRankLimit(knifeEntity);
-  if (!recipe) {
-    const limitText = ["", "I", "II", "III", "IV", "V", "VI", "VII"][limit];
-    return "§l" + CATEGORY_LABELS[category] + "§r\n\n" +
-      "このRankには現在登録されている料理がありません。" +
-      "\n§7" + KNIFE_NAMES[typeId] + "：Rank " + limitText + "まで";
-  }
-  const rankText = recipe.rank === 0 ? "素材" : "Rank " + ["", "I", "II", "III", "IV", "V", "VI", "VII"][recipe.rank];
-  const foodStats = recipe.nutrition == null ? "" :
-    "\n\n§7満腹度 §f" + recipe.nutrition + "   §7飽和度 §f" + recipe.saturation;
-  return "§l" + recipe.name + "§r  §8" + rankText + "\n\n" +
-    recipe.description + foodStats;
-}
 function scheduleBoardUi(player, block, state) {
   const dimension = block.dimension;
   const location = { ...block.location };
@@ -425,85 +372,69 @@ function scheduleBoardUi(player, block, state) {
 async function openBoard(player, block, state = {}) {
   const knife = placedKnifeAt(block);
   if (!knife) {
-    player.sendMessage("§e銅以上のナイフを手に持って、まな板に置いてください。");
+    player.sendMessage("§eナイフをまな板に置いてください。");
     return;
   }
   const limit = knifeRankLimit(knife);
-  let category = Number.isInteger(state.category) ? state.category : Math.min(2, limit);
-  if (category > 0 && category > limit) category = limit;
-  const categoryRecipes = recipesForCategory(category);
-  let selected = recipeById(state.recipeId);
-  if (!selected || selected.rank !== category) selected = categoryRecipes[0];
-
+  let category = Number.isInteger(state.category) ? Math.max(0, Math.min(7, state.category)) : Math.min(2, limit);
+  if (category > limit) category = limit;
+  const page = recipePage(recipesForCategory(category), state.page);
+  let selected = page.recipes.find((recipe) => recipe.id === state.recipeId) ?? page.recipes[0];
   const form = new ActionFormData()
-    .title("pinene_cooking_ui:まな板");
+    .title("pinene_cooking_ui:" + (page.index + 1) + " / " + page.count)
+    .body(selected?.name ?? "レシピなし");
   for (let rank = 0; rank <= 7; rank++) {
     const locked = rank > 0 && rank > limit;
-    const prefix = rank === category ? "§a" : locked ? "§8" : "§f";
-    const suffix = locked ? "  ×" : "";
-    form.button(prefix + CATEGORY_TAB_LABELS[rank] + suffix);
+    form.button((rank === category ? "§a" : locked ? "§8" : "§0") + CATEGORY_TAB_LABELS[rank]);
   }
-
   for (let i = 0; i < RECIPE_SLOT_COUNT; i++) {
-    const recipe = categoryRecipes[i];
-    if (!recipe) {
-      form.button(" ");
-      continue;
-    }
-    const marker = selected?.id === recipe.id ? "§a" : "§f";
-    form.button(marker + recipe.name, recipe.icon);
+    const recipe = page.recipes[i];
+    if (!recipe) { form.button(" "); continue; }
+    form.button((selected?.id === recipe.id ? "§a" : "§0") + recipe.name, recipe.icon);
   }
-
   const ingredientSlots = recipeIngredientSlots(selected);
   for (let i = 0; i < 9; i++) {
     const ingredient = ingredientSlots[i];
-    if (!ingredient) {
-      form.button(" ");
-      continue;
-    }
+    if (!ingredient) { form.button(" "); continue; }
     form.button(ingredientCountLabel(player, selected, ingredient), ingredient.icon);
   }
-  if (selected) form.button(String(selected.resultCount), selected.icon);
-  else form.button(" ");
-
+  form.button(selected ? "§f" + String(selected.resultCount) : " ", selected?.icon);
   const craftable = !!selected && canCraftRecipe(player, knife, selected);
-  form.button(craftable ? "§aクラフト" : "§8材料不足", selected?.icon);
-
+  form.button(craftable ? "§f§aクラフト" : "§8材料不足");
   appendInventorySnapshot(form, player);
-
-  const response = await form.show(player);
-  if (response.canceled || response.selection == null) return;
+  form.button((page.index > 0 ? "§0" : "§8") + "<");
+  form.button("§0" + (page.index + 1) + " / " + page.count);
+  form.button((page.index + 1 < page.count ? "§0" : "§8") + ">");
+  form.button("§0x");
+  let response;
+  try { response = await form.show(player); }
+  catch (error) { console.warn("[pinene_cooking] form show: " + error); return; }
+  if (response.canceled || response.selection == null || response.selection === UI_INDEX.close) return;
   const index = response.selection;
-
-  if (index <= 7) {
-    if (index > 0 && index > limit) {
-      player.sendMessage("§cこのナイフでは " + CATEGORY_LABELS[index] + " の料理は作れません。");
-      scheduleBoardUi(player, block, { category, recipeId: selected?.id });
-      return;
+  const again = (changes = {}) => scheduleBoardUi(player, block, { category, page: page.index, recipeId: selected?.id, ...changes });
+  if (index < 8) {
+    if (index > limit) {
+      player.sendMessage("§cこのRankは現在の道具では作れません。");
+      again(); return;
     }
-    scheduleBoardUi(player, block, { category: index });
-    return;
+    again({ category: index, page: 0, recipeId: undefined }); return;
   }
-
-  if (index >= 8 && index < 8 + RECIPE_SLOT_COUNT) {
-    const recipe = categoryRecipes[index - 8];
-    scheduleBoardUi(player, block, { category, recipeId: recipe?.id ?? selected?.id });
-    return;
+  if (index >= UI_INDEX.recipes && index < UI_INDEX.ingredients) {
+    again({ recipeId: page.recipes[index - UI_INDEX.recipes]?.id ?? selected?.id }); return;
   }
-  if (index === 30 && selected) {
-    if (!craftCookingRecipe(player, knife, selected)) {
-      player.sendMessage("§c材料が足りないか、このナイフでは作れません。");
-    }
-    scheduleBoardUi(player, block, { category, recipeId: selected.id });
-    return;
+  if (index === UI_INDEX.prev || index === UI_INDEX.next) {
+    again({ page: Math.max(0, Math.min(page.count - 1, page.index + (index === UI_INDEX.prev ? -1 : 1))) }); return;
   }
-
-  if (index >= INVENTORY_BUTTON_START && index < INVENTORY_BUTTON_START + INVENTORY_SLOT_COUNT) {
-    scheduleBoardUi(player, block, { category, recipeId: selected?.id });
-    return;
+  if (index === UI_INDEX.craft && selected) {
+    // Re-read the board/knife after the user responds; never craft with a stale entity.
+    try {
+      const fresh = block.dimension.getBlock(block.location);
+      if (!fresh || !isBoardId(fresh.typeId)) return;
+      const freshKnife = placedKnifeAt(fresh);
+      if (!craftCookingRecipe(player, freshKnife, selected)) player.sendMessage("§c材料が足りないか、調理条件を満たしていません。");
+    } catch (error) { console.warn("[pinene_cooking] craft validation: " + error); return; }
   }
-
-  scheduleBoardUi(player, block, { category, recipeId: selected?.id });
+  again();
 }
 
 world.beforeEvents.playerInteractWithBlock.subscribe((event) => {
