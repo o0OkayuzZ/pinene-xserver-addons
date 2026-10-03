@@ -1,5 +1,5 @@
 """Offline structural checks. Passing does not certify the Minecraft engine."""
-import hashlib, importlib.util, json, os, pathlib, tempfile, unittest, zipfile
+import hashlib, importlib.util, json, os, pathlib, re, tempfile, unittest, zipfile
 from unittest import mock
 from PIL import Image
 import build_native_lab as b
@@ -115,5 +115,11 @@ class LabTests(unittest.TestCase):
     def test_28_json_utf8(self):
         for p,content in self.files.items():
             if p.endswith('.json'): self.assertIsInstance(json.loads(content), (dict,list))
+
+    def test_29_script_event_examples_have_required_payload(self):
+        examples = re.findall(r'/scriptevent pinene_ui_lab:[a-z_]+[^\n]*', b.README + b.RUNTIME)
+        self.assertTrue(examples)
+        for example in examples:
+            self.assertRegex(example, r'^/scriptevent pinene_ui_lab:[a-z_]+ run\b')
 
 if __name__=='__main__': unittest.main(verbosity=2)

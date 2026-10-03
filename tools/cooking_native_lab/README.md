@@ -25,8 +25,8 @@ The target still includes rank tabs, recipe icons, 3x3 ingredients, output, and 
 | Check | Result |
 | --- | --- |
 | Installed Windows application | Microsoft.MinecraftUWP 1.26.5203.0 |
-| Offline tests in working container | 28 passed |
-| Same offline suite on user's Windows PC | 28 passed |
+| Offline tests in working container | 29 passed |
+| Same offline suite on user's Windows PC | 29 passed |
 | Generated diagnostic JavaScript syntax | Passed |
 | Full diagnostic runtime API check | Passed against exact installed @minecraft/server 2.7.0 declarations |
 | New development packs installed | BP/RP, 25 files; checksums verified |
@@ -63,13 +63,13 @@ The user's PC already has `Pinene_Native_Cooking_Lab_BP` and `Pinene_Native_Cook
 
 ```mcfunction
 /gamemode survival
-/scriptevent pinene_ui_lab:baseline
+/scriptevent pinene_ui_lab:baseline run
 ```
 
 空手で試験台を開き、レシピ変更、通常の連続作成、Shiftでのまとめ作成を確認する。画面を閉じてカーソルのアイテムを戻し、記録地点の4ブロック以内で検査する。
 
 ```mcfunction
-/scriptevent pinene_ui_lab:check
+/scriptevent pinene_ui_lab:check run
 ```
 
 レシピはすべて試験専用。
@@ -103,3 +103,5 @@ Disable the lab only in its disposable world when finished. The original cooking
 - Microsoft Learn: minecraft:crafting_table, stable (enables the native crafting UI, private crafting tags; released from experiment in 1.19.50): https://learn.microsoft.com/en-us/minecraft/creator/reference/content/blockreference/examples/blockcomponents/minecraftblock_crafting_table?view=minecraft-bedrock-stable
 - Microsoft Learn: BlockInventoryComponent: https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/blockinventorycomponent?view=minecraft-bedrock-stable
 - Mojang bedrock-samples ref `46ba6ea985fb5a92d79a9419198f10dda14c199d`, `resource_pack/ui/data_driven_container_screen.json` and `metadata/json_schemas/server/block/1.26.20/container.json` (inspected, not used as evidence of arbitrary custom click support).
+
+Command examples were checked against the documented /scriptevent syntax and include its required message payload (`run`).

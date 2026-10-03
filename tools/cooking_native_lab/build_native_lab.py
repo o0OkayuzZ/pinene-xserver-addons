@@ -68,7 +68,7 @@ system.afterEvents.scriptEventReceive.subscribe(event => {
         return;
       }
       const base = baselines.get(player.id);
-      if (!base) { player.sendMessage("先に /scriptevent pinene_ui_lab:baseline を実行してください。"); return; }
+      if (!base) { player.sendMessage("先に /scriptevent pinene_ui_lab:baseline run を実行してください。"); return; }
       const p = player.location, o = base.origin;
       if (player.dimension.id !== base.dimension || (p.x-o.x)**2+(p.y-o.y)**2+(p.z-o.z)**2 > 16) {
         player.sendMessage("判定保留：記録地点の4ブロック以内に戻ってください。"); return;
@@ -105,9 +105,9 @@ README = '''# Pinene Native Cooking Lab v1 / 専用料理台・基礎検証
    /give @s pinene_ui_lab:workbench
    空きのある所持品で /function pinene_ui_lab/kit を実行します。
    キットは初回だけ。追加投入後は初期個数を記録し直します。
-3. /gamemode survival としてから /scriptevent pinene_ui_lab:baseline を実行。
+3. /gamemode survival としてから /scriptevent pinene_ui_lab:baseline run を実行。
    試験台を空手で開き、左のレシピ選択と連続クラフトを確認します。
-   画面を閉じ、/scriptevent pinene_ui_lab:check を実行します。
+   画面を閉じ、/scriptevent pinene_ui_lab:check run を実行します。
 
 ## レシピ（全て試験専用）
 - 試験小麦3個を縦一列 → 試験麺1個
