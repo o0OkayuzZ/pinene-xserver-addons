@@ -1,6 +1,7 @@
 import { ItemStack, system, world } from "@minecraft/server";
 import { ActionFormData } from "@minecraft/server-ui";
 import { COOKING_RECIPES } from "./cooking_data.js";
+import { INVENTORY_ICONS } from "./inventory_icons.generated.js";
 
 const BOARD_PREFIX = "pinene_cooking:";
 const BOARD_SUFFIX = "_cutting_board";
@@ -118,6 +119,31 @@ function removeItem(container, typeId, amount) {
   return remaining === 0;
 }
 
+function countIngredient(container, ingredient) {
+  if (Array.isArray(ingredient?.ids) && ingredient.ids.length > 0) {
+    return ingredient.ids.reduce((total, typeId) => total + countItem(container, typeId), 0);
+  }
+  return countItem(container, ingredient?.id);
+}
+
+function removeIngredient(container, ingredient) {
+  let remaining = ingredient?.count ?? 0;
+  if (remaining <= 0) return true;
+
+  if (Array.isArray(ingredient?.ids) && ingredient.ids.length > 0) {
+    for (const typeId of ingredient.ids) {
+      if (remaining <= 0) break;
+      const available = countItem(container, typeId);
+      const take = Math.min(available, remaining);
+      if (take > 0 && !removeItem(container, typeId, take)) return false;
+      remaining -= take;
+    }
+    return remaining === 0;
+  }
+
+  return removeItem(container, ingredient?.id, remaining);
+}
+
 function giveOrDropStack(player, stack) {
   const container = inventory(player);
   if (!container) return;
@@ -197,11 +223,61 @@ const KNIFE_RANK_LIMIT = {
   "pinene_cooking:netherite_knife": 7,
 };
 const CATEGORY_LABELS = ["素材", "Rank I", "Rank II", "Rank III", "Rank IV", "Rank V", "Rank VI", "Rank VII"];
-const RECIPE_SLOT_COUNT = 12;
+const CATEGORY_TAB_LABELS = ["素材", "I", "II", "III", "IV", "V", "VI", "VII"];
+const RECIPE_SLOT_COUNT = 20;
+const UI_INDEX = Object.freeze({ recipes: 8, ingredients: 28, result: 37, craft: 38, inventory: 39, prev: 75, page: 76, next: 77, close: 78 });
 const CONTAINER_RETURNS = {
   "minecraft:honey_bottle": "minecraft:glass_bottle",
   "minecraft:milk_bucket": "minecraft:bucket",
 };
+
+const INVENTORY_SLOT_COUNT = 36;
+const INVENTORY_BUTTON_START = UI_INDEX.inventory;
+
+const RECIPE_ICON_BY_ID = (() => {
+  const map = new Map();
+  for (const recipe of COOKING_RECIPES) {
+    if (recipe?.id && recipe?.icon) map.set(recipe.id, recipe.icon);
+    for (const ingredient of recipe?.ingredients ?? []) {
+      if (ingredient?.id && ingredient?.icon && !map.has(ingredient.id)) {
+        map.set(ingredient.id, ingredient.icon);
+      }
+    }
+  }
+  return map;
+})();
+
+const missingInventoryIcons = new Set();
+function inventoryIcon(typeId) {
+  if (!typeId) return undefined;
+  const icon = INVENTORY_ICONS[typeId] ?? RECIPE_ICON_BY_ID.get(typeId);
+  if (icon) return icon;
+  if (!missingInventoryIcons.has(typeId)) {
+    missingInventoryIcons.add(typeId);
+    console.warn("[pinene_cooking] unmapped inventory icon: " + typeId);
+  }
+  return undefined;
+}
+
+function appendInventorySnapshot(form, player) {
+  const container = inventory(player);
+  const order = Array.from({ length: 27 }, (_, i) => i + 9)
+    .concat(Array.from({ length: 9 }, (_, i) => i));
+  for (const slot of order) {
+    const stack = container && slot < container.size ? container.getItem(slot) : undefined;
+    if (!stack) { form.button(" "); continue; }
+    const icon = inventoryIcon(stack.typeId);
+    const count = stack.amount > 1 ? String(stack.amount) : "";
+    // An unknown occupied slot must not look empty or load a missing texture.
+    form.button(icon ? "§f" + count : "§8? " + count, icon);
+  }
+}
+
+function recipePage(recipes, page = 0) {
+  const count = Math.max(1, Math.ceil(recipes.length / RECIPE_SLOT_COUNT));
+  const index = Math.max(0, Math.min(count - 1, Number.isInteger(page) ? page : 0));
+  return { index, count, recipes: recipes.slice(index * RECIPE_SLOT_COUNT, (index + 1) * RECIPE_SLOT_COUNT) };
+}
 
 function recipesForCategory(category) {
   return COOKING_RECIPES.filter((recipe) => recipe.rank === category);
@@ -209,6 +285,41 @@ function recipesForCategory(category) {
 
 function recipeById(id) {
   return COOKING_RECIPES.find((recipe) => recipe.id === id);
+}
+
+// Optional 3x3 recipe preview. Shapeless recipes keep the legacy compact order.
+// Shaped recipes can provide recipe.layout as an array of 9 ingredient-like
+// entries (or null) so the UI mirrors a vanilla crafting grid.
+function recipeIngredientSlots(recipe) {
+  if (!recipe) return [];
+  if (Array.isArray(recipe.layout) && recipe.layout.length === 9) {
+    return recipe.layout;
+  }
+  return recipe.ingredients ?? [];
+}
+
+function ingredientChoiceMatches(a, b) {
+  if (!a || !b) return false;
+  if (a.id && b.id) return a.id === b.id;
+  const aIds = Array.isArray(a.ids) ? [...a.ids].sort() : [];
+  const bIds = Array.isArray(b.ids) ? [...b.ids].sort() : [];
+  return aIds.length > 0 && aIds.length === bIds.length &&
+    aIds.every((value, index) => value === bIds[index]);
+}
+
+function recipeIngredientForSlot(recipe, slotIngredient) {
+  return (recipe?.ingredients ?? []).find((ingredient) =>
+    ingredientChoiceMatches(ingredient, slotIngredient)
+  ) ?? slotIngredient;
+}
+
+function ingredientCountLabel(player, recipe, slotIngredient) {
+  const container = inventory(player);
+  const ingredient = recipeIngredientForSlot(recipe, slotIngredient);
+  const required = ingredient?.count ?? slotIngredient?.count ?? 1;
+  const owned = countIngredient(container, ingredient);
+  const enough = owned >= required;
+  return (enough ? "§f" : "§c") + owned + "/" + required;
 }
 
 function knifeRankLimit(knifeEntity) {
@@ -221,7 +332,7 @@ function canCraftRecipe(player, knifeEntity, recipe) {
   const container = inventory(player);
   if (!container) return false;
   return recipe.ingredients.every((ingredient) =>
-    countItem(container, ingredient.id) >= ingredient.count
+    countIngredient(container, ingredient) >= ingredient.count
   );
 }
 
@@ -237,7 +348,7 @@ function craftCookingRecipe(player, knifeEntity, recipe) {
   if (!canCraftRecipe(player, knifeEntity, recipe)) return false;
   const container = inventory(player);
   for (const ingredient of recipe.ingredients) {
-    if (!removeItem(container, ingredient.id, ingredient.count)) return false;
+    if (!removeIngredient(container, ingredient)) return false;
   }
   addContainerReturns(player, recipe);
   giveOrDropStack(player, new ItemStack(recipe.id, recipe.resultCount));
@@ -248,21 +359,6 @@ function craftCookingRecipe(player, knifeEntity, recipe) {
   return true;
 }
 
-function recipeDetailText(recipe, knifeEntity, category) {
-  const typeId = KNIFE_BY_PLACED[knifeEntity?.typeId];
-  const limit = knifeRankLimit(knifeEntity);
-  if (!recipe) {
-    const limitText = ["", "I", "II", "III", "IV", "V", "VI", "VII"][limit];
-    return "§l" + CATEGORY_LABELS[category] + "§r\n\n" +
-      "このRankには現在登録されている料理がありません。" +
-      "\n§7" + KNIFE_NAMES[typeId] + "：Rank " + limitText + "まで";
-  }
-  const rankText = recipe.rank === 0 ? "素材" : "Rank " + ["", "I", "II", "III", "IV", "V", "VI", "VII"][recipe.rank];
-  const foodStats = recipe.nutrition == null ? "" :
-    "\n\n§7満腹度 §f" + recipe.nutrition + "   §7飽和度 §f" + recipe.saturation;
-  return "§l" + recipe.name + "§r  §8" + rankText + "\n\n" +
-    recipe.description + foodStats;
-}
 function scheduleBoardUi(player, block, state) {
   const dimension = block.dimension;
   const location = { ...block.location };
@@ -276,79 +372,69 @@ function scheduleBoardUi(player, block, state) {
 async function openBoard(player, block, state = {}) {
   const knife = placedKnifeAt(block);
   if (!knife) {
-    player.sendMessage("§e銅以上のナイフを手に持って、まな板に置いてください。");
+    player.sendMessage("§eナイフをまな板に置いてください。");
     return;
   }
   const limit = knifeRankLimit(knife);
-  let category = Number.isInteger(state.category) ? state.category : Math.min(2, limit);
-  if (category > 0 && category > limit) category = limit;
-  const categoryRecipes = recipesForCategory(category);
-  let selected = recipeById(state.recipeId);
-  if (!selected || selected.rank !== category) selected = categoryRecipes[0];
-
+  let category = Number.isInteger(state.category) ? Math.max(0, Math.min(7, state.category)) : Math.min(2, limit);
+  if (category > limit) category = limit;
+  const page = recipePage(recipesForCategory(category), state.page);
+  let selected = page.recipes.find((recipe) => recipe.id === state.recipeId) ?? page.recipes[0];
   const form = new ActionFormData()
-    .title("pinene_cooking_ui:まな板")
-    .body(recipeDetailText(selected, knife, category));
+    .title("pinene_cooking_ui:" + (page.index + 1) + " / " + page.count)
+    .body(selected?.name ?? "レシピなし");
   for (let rank = 0; rank <= 7; rank++) {
     const locked = rank > 0 && rank > limit;
-    const prefix = rank === category ? "§a" : locked ? "§8" : "§f";
-    const suffix = locked ? "  ×" : "";
-    form.button(prefix + CATEGORY_LABELS[rank] + suffix);
+    form.button((rank === category ? "§a" : locked ? "§8" : "§0") + CATEGORY_TAB_LABELS[rank]);
   }
-
   for (let i = 0; i < RECIPE_SLOT_COUNT; i++) {
-    const recipe = categoryRecipes[i];
-    if (!recipe) {
-      form.button(" ");
-      continue;
-    }
-    const marker = selected?.id === recipe.id ? "§a" : "§f";
-    form.button(marker + recipe.name, recipe.icon);
+    const recipe = page.recipes[i];
+    if (!recipe) { form.button(" "); continue; }
+    form.button((selected?.id === recipe.id ? "§a" : "§0") + recipe.name, recipe.icon);
   }
-
-  const ingredients = selected?.ingredients ?? [];
+  const ingredientSlots = recipeIngredientSlots(selected);
   for (let i = 0; i < 9; i++) {
-    const ingredient = ingredients[i];
-    if (!ingredient) {
-      form.button(" ");
-      continue;
-    }
-    form.button(String(ingredient.count), ingredient.icon);
+    const ingredient = ingredientSlots[i];
+    if (!ingredient) { form.button(" "); continue; }
+    form.button(ingredientCountLabel(player, selected, ingredient), ingredient.icon);
   }
-  if (selected) form.button(String(selected.resultCount), selected.icon);
-  else form.button(" ");
-
+  form.button(selected ? "§f" + String(selected.resultCount) : " ", selected?.icon);
   const craftable = !!selected && canCraftRecipe(player, knife, selected);
-  form.button(craftable ? "§aクラフト" : "§8材料不足", selected?.icon);
-
-  const response = await form.show(player);
-  if (response.canceled || response.selection == null) return;
+  form.button(craftable ? "§f§aクラフト" : "§8材料不足");
+  appendInventorySnapshot(form, player);
+  form.button((page.index > 0 ? "§0" : "§8") + "<");
+  form.button("§0" + (page.index + 1) + " / " + page.count);
+  form.button((page.index + 1 < page.count ? "§0" : "§8") + ">");
+  form.button("§0x");
+  let response;
+  try { response = await form.show(player); }
+  catch (error) { console.warn("[pinene_cooking] form show: " + error); return; }
+  if (response.canceled || response.selection == null || response.selection === UI_INDEX.close) return;
   const index = response.selection;
-
-  if (index <= 7) {
-    if (index > 0 && index > limit) {
-      player.sendMessage("§cこのナイフでは " + CATEGORY_LABELS[index] + " の料理は作れません。");
-      scheduleBoardUi(player, block, { category, recipeId: selected?.id });
-      return;
+  const again = (changes = {}) => scheduleBoardUi(player, block, { category, page: page.index, recipeId: selected?.id, ...changes });
+  if (index < 8) {
+    if (index > limit) {
+      player.sendMessage("§cこのRankは現在の道具では作れません。");
+      again(); return;
     }
-    scheduleBoardUi(player, block, { category: index });
-    return;
+    again({ category: index, page: 0, recipeId: undefined }); return;
   }
-
-  if (index >= 8 && index < 8 + RECIPE_SLOT_COUNT) {
-    const recipe = categoryRecipes[index - 8];
-    scheduleBoardUi(player, block, { category, recipeId: recipe?.id ?? selected?.id });
-    return;
+  if (index >= UI_INDEX.recipes && index < UI_INDEX.ingredients) {
+    again({ recipeId: page.recipes[index - UI_INDEX.recipes]?.id ?? selected?.id }); return;
   }
-  if (index === 30 && selected) {
-    if (!craftCookingRecipe(player, knife, selected)) {
-      player.sendMessage("§c材料が足りないか、このナイフでは作れません。");
-    }
-    scheduleBoardUi(player, block, { category, recipeId: selected.id });
-    return;
+  if (index === UI_INDEX.prev || index === UI_INDEX.next) {
+    again({ page: Math.max(0, Math.min(page.count - 1, page.index + (index === UI_INDEX.prev ? -1 : 1))) }); return;
   }
-
-  scheduleBoardUi(player, block, { category, recipeId: selected?.id });
+  if (index === UI_INDEX.craft && selected) {
+    // Re-read the board/knife after the user responds; never craft with a stale entity.
+    try {
+      const fresh = block.dimension.getBlock(block.location);
+      if (!fresh || !isBoardId(fresh.typeId)) return;
+      const freshKnife = placedKnifeAt(fresh);
+      if (!craftCookingRecipe(player, freshKnife, selected)) player.sendMessage("§c材料が足りないか、調理条件を満たしていません。");
+    } catch (error) { console.warn("[pinene_cooking] craft validation: " + error); return; }
+  }
+  again();
 }
 
 world.beforeEvents.playerInteractWithBlock.subscribe((event) => {

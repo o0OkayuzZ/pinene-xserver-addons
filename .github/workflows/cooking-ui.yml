@@ -1,0 +1,20 @@
+name: Cooking UI regression
+on:
+  pull_request:
+    paths:
+      - 'behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/**'
+      - 'resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45/ui/**'
+      - 'tests/cooking-ui-v2.test.mjs'
+      - 'tools/cooking_ui/**'
+      - '.github/workflows/cooking-ui.yml'
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --test tests/cooking-ui-v2.test.mjs

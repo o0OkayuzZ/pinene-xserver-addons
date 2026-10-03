@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pine:noodles"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "pattern": [
+      "W",
+      "W",
+      "W"
+    ],
+    "key": {
+      "W": {
+        "item": "minecraft:wheat"
+      }
+    },
+    "result": {
+      "item": "pine:noodles",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:wheat"
+      }
+    ]
+  }
+}
