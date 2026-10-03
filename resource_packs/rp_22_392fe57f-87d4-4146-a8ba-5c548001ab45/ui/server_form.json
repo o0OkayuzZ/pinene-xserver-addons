@@ -21,8 +21,8 @@
   "pinene_cooking_long_form@common_dialogs.main_panel_no_buttons": {
     "$title_panel": "common.empty_panel",
     "size": [
-      286,
-      242
+      360,
+      264
     ],
     "$child_control": "server_form.pinene_cooking_content",
     "layer": 2,
@@ -79,27 +79,32 @@
             "100%",
             "100%"
           ],
-          "texture": "textures/ui/background_panel",
-          "layer": -5
+          "texture": "textures/ui/White",
+          "color": [
+            0.76,
+            0.76,
+            0.76
+          ],
+          "layer": -10
         }
       },
       {
         "title": {
           "type": "label",
-          "text": "料理",
+          "text": "料理台",
           "font_type": "MinecraftTen",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
-            8,
+            9,
             6
           ],
           "color": [
-            0.92,
-            0.92,
-            0.92
+            0.16,
+            0.16,
+            0.16
           ],
-          "shadow": true,
+          "shadow": false,
           "font_scale_factor": 1.08
         }
       },
@@ -110,13 +115,13 @@
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
-            42,
+            49,
             9
           ],
           "color": [
-            0.68,
-            0.68,
-            0.68
+            0.38,
+            0.38,
+            0.38
           ],
           "shadow": false,
           "font_scale_factor": 0.62
@@ -126,11 +131,11 @@
         "rank_tabs": {
           "type": "collection_panel",
           "size": [
-            272,
+            344,
             16
           ],
           "offset": [
-            7,
+            8,
             25
           ],
           "anchor_from": "top_left",
@@ -147,7 +152,7 @@
                   0
                 ],
                 "size": [
-                  32,
+                  41,
                   14
                 ]
               }
@@ -158,11 +163,11 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  34,
+                  43,
                   0
                 ],
                 "size": [
-                  32,
+                  41,
                   14
                 ]
               }
@@ -173,11 +178,11 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  68,
+                  86,
                   0
                 ],
                 "size": [
-                  32,
+                  41,
                   14
                 ]
               }
@@ -188,11 +193,11 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  102,
+                  129,
                   0
                 ],
                 "size": [
-                  32,
+                  41,
                   14
                 ]
               }
@@ -203,11 +208,11 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  136,
+                  172,
                   0
                 ],
                 "size": [
-                  32,
+                  41,
                   14
                 ]
               }
@@ -218,11 +223,11 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  170,
+                  215,
                   0
                 ],
                 "size": [
-                  32,
+                  41,
                   14
                 ]
               }
@@ -233,11 +238,11 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  204,
+                  258,
                   0
                 ],
                 "size": [
-                  32,
+                  41,
                   14
                 ]
               }
@@ -248,11 +253,11 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  238,
+                  301,
                   0
                 ],
                 "size": [
-                  32,
+                  41,
                   14
                 ]
               }
@@ -261,12 +266,56 @@
         }
       },
       {
+        "recipe_panel_border": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [
+            114,
+            210
+          ],
+          "offset": [
+            7,
+            45
+          ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": [
+            0.3,
+            0.3,
+            0.3
+          ],
+          "layer": -6
+        }
+      },
+      {
+        "recipe_panel": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [
+            110,
+            206
+          ],
+          "offset": [
+            9,
+            47
+          ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": [
+            0.16,
+            0.16,
+            0.16
+          ],
+          "layer": -5
+        }
+      },
+      {
         "recipes_label": {
           "type": "label",
           "text": "レシピ",
           "offset": [
-            9,
-            48
+            15,
+            53
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -283,12 +332,12 @@
         "recipe_grid": {
           "type": "collection_panel",
           "size": [
-            88,
-            66
+            94,
+            70
           ],
           "offset": [
-            8,
-            60
+            15,
+            66
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -302,6 +351,10 @@
                 "offset": [
                   0,
                   0
+                ],
+                "size": [
+                  22,
+                  22
                 ]
               }
             },
@@ -311,8 +364,12 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  22,
+                  24,
                   0
+                ],
+                "size": [
+                  22,
+                  22
                 ]
               }
             },
@@ -322,8 +379,12 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  44,
+                  48,
                   0
+                ],
+                "size": [
+                  22,
+                  22
                 ]
               }
             },
@@ -333,8 +394,12 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  66,
+                  72,
                   0
+                ],
+                "size": [
+                  22,
+                  22
                 ]
               }
             },
@@ -345,6 +410,10 @@
                 "anchor_to": "top_left",
                 "offset": [
                   0,
+                  24
+                ],
+                "size": [
+                  22,
                   22
                 ]
               }
@@ -355,6 +424,10 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
+                  24,
+                  24
+                ],
+                "size": [
                   22,
                   22
                 ]
@@ -366,7 +439,11 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  44,
+                  48,
+                  24
+                ],
+                "size": [
+                  22,
                   22
                 ]
               }
@@ -377,7 +454,11 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  66,
+                  72,
+                  24
+                ],
+                "size": [
+                  22,
                   22
                 ]
               }
@@ -389,7 +470,11 @@
                 "anchor_to": "top_left",
                 "offset": [
                   0,
-                  44
+                  48
+                ],
+                "size": [
+                  22,
+                  22
                 ]
               }
             },
@@ -399,8 +484,12 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
+                  24,
+                  48
+                ],
+                "size": [
                   22,
-                  44
+                  22
                 ]
               }
             },
@@ -410,8 +499,12 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  44,
-                  44
+                  48,
+                  48
+                ],
+                "size": [
+                  22,
+                  22
                 ]
               }
             },
@@ -421,8 +514,12 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  66,
-                  44
+                  72,
+                  48
+                ],
+                "size": [
+                  22,
+                  22
                 ]
               }
             }
@@ -430,19 +527,63 @@
         }
       },
       {
-        "crafting_label": {
-          "type": "label",
-          "text": "クラフト",
+        "craft_panel_border": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [
+            228,
+            106
+          ],
           "offset": [
-            108,
-            48
+            125,
+            45
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "color": [
-            0.92,
-            0.92,
-            0.92
+            0.38,
+            0.38,
+            0.38
+          ],
+          "layer": -6
+        }
+      },
+      {
+        "craft_panel": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [
+            224,
+            102
+          ],
+          "offset": [
+            127,
+            47
+          ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": [
+            0.72,
+            0.72,
+            0.72
+          ],
+          "layer": -5
+        }
+      },
+      {
+        "crafting_label": {
+          "type": "label",
+          "text": "クラフト",
+          "offset": [
+            136,
+            53
+          ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": [
+            0.18,
+            0.18,
+            0.18
           ],
           "shadow": false,
           "font_scale_factor": 0.72
@@ -452,19 +593,19 @@
         "ingredient_grid": {
           "type": "collection_panel",
           "size": [
-            66,
-            66
+            82,
+            82
           ],
           "offset": [
-            108,
-            60
+            136,
+            64
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "collection_name": "form_buttons",
           "controls": [
             {
-              "ingredient_0@server_form.pinene_counted_slot": {
+              "ingredient_0@server_form.pinene_craft_slot": {
                 "collection_index": 20,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
@@ -475,90 +616,90 @@
               }
             },
             {
-              "ingredient_1@server_form.pinene_counted_slot": {
+              "ingredient_1@server_form.pinene_craft_slot": {
                 "collection_index": 21,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  22,
+                  28,
                   0
                 ]
               }
             },
             {
-              "ingredient_2@server_form.pinene_counted_slot": {
+              "ingredient_2@server_form.pinene_craft_slot": {
                 "collection_index": 22,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  44,
+                  56,
                   0
                 ]
               }
             },
             {
-              "ingredient_3@server_form.pinene_counted_slot": {
+              "ingredient_3@server_form.pinene_craft_slot": {
                 "collection_index": 23,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
                   0,
-                  22
+                  28
                 ]
               }
             },
             {
-              "ingredient_4@server_form.pinene_counted_slot": {
+              "ingredient_4@server_form.pinene_craft_slot": {
                 "collection_index": 24,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  22,
-                  22
+                  28,
+                  28
                 ]
               }
             },
             {
-              "ingredient_5@server_form.pinene_counted_slot": {
+              "ingredient_5@server_form.pinene_craft_slot": {
                 "collection_index": 25,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  44,
-                  22
+                  56,
+                  28
                 ]
               }
             },
             {
-              "ingredient_6@server_form.pinene_counted_slot": {
+              "ingredient_6@server_form.pinene_craft_slot": {
                 "collection_index": 26,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
                   0,
-                  44
+                  56
                 ]
               }
             },
             {
-              "ingredient_7@server_form.pinene_counted_slot": {
+              "ingredient_7@server_form.pinene_craft_slot": {
                 "collection_index": 27,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  22,
-                  44
+                  28,
+                  56
                 ]
               }
             },
             {
-              "ingredient_8@server_form.pinene_counted_slot": {
+              "ingredient_8@server_form.pinene_craft_slot": {
                 "collection_index": 28,
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  44,
-                  44
+                  56,
+                  56
                 ]
               }
             }
@@ -572,18 +713,18 @@
           "font_type": "MinecraftTen",
           "font_size": "large",
           "offset": [
-            177,
-            80
+            226,
+            87
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "color": [
-            0.45,
-            0.45,
-            0.45
+            0.38,
+            0.38,
+            0.38
           ],
           "shadow": false,
-          "font_scale_factor": 1
+          "font_scale_factor": 1.15
         }
       },
       {
@@ -591,15 +732,15 @@
           "type": "label",
           "text": "完成品",
           "offset": [
-            207,
-            48
+            265,
+            53
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "color": [
-            0.92,
-            0.92,
-            0.92
+            0.18,
+            0.18,
+            0.18
           ],
           "shadow": false,
           "font_scale_factor": 0.72
@@ -610,19 +751,23 @@
           "type": "collection_panel",
           "collection_name": "form_buttons",
           "size": [
-            22,
-            22
+            30,
+            30
           ],
           "offset": [
-            219,
-            73
+            278,
+            70
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "controls": [
             {
-              "result@server_form.pinene_counted_slot": {
-                "collection_index": 29
+              "result@server_form.pinene_craft_slot": {
+                "collection_index": 29,
+                "size": [
+                  30,
+                  30
+                ]
               }
             }
           ]
@@ -633,12 +778,12 @@
           "type": "collection_panel",
           "collection_name": "form_buttons",
           "size": [
-            64,
-            18
+            88,
+            20
           ],
           "offset": [
-            198,
-            103
+            254,
+            114
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -647,8 +792,8 @@
               "craft@server_form.pinene_category_button": {
                 "collection_index": 30,
                 "size": [
-                  64,
-                  18
+                  88,
+                  20
                 ]
               }
             }
@@ -656,19 +801,63 @@
         }
       },
       {
-        "inventory_label": {
-          "type": "label",
-          "text": "インベントリ",
+        "inventory_panel_border": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [
+            228,
+            104
+          ],
           "offset": [
-            44,
-            137
+            125,
+            155
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "color": [
-            0.92,
-            0.92,
-            0.92
+            0.38,
+            0.38,
+            0.38
+          ],
+          "layer": -6
+        }
+      },
+      {
+        "inventory_panel": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [
+            224,
+            100
+          ],
+          "offset": [
+            127,
+            157
+          ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": [
+            0.72,
+            0.72,
+            0.72
+          ],
+          "layer": -5
+        }
+      },
+      {
+        "inventory_label": {
+          "type": "label",
+          "text": "インベントリ",
+          "offset": [
+            136,
+            161
+          ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": [
+            0.18,
+            0.18,
+            0.18
           ],
           "shadow": false,
           "font_scale_factor": 0.72
@@ -682,8 +871,8 @@
             66
           ],
           "offset": [
-            44,
-            149
+            139,
+            174
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -997,8 +1186,8 @@
             22
           ],
           "offset": [
-            44,
-            217
+            139,
+            239
           ],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
@@ -1169,8 +1358,8 @@
         "slot_inner": {
           "type": "image",
           "size": [
-            18,
-            18
+            20,
+            20
           ],
           "anchor_from": "center",
           "anchor_to": "center",
@@ -1182,8 +1371,8 @@
         "icon": {
           "type": "image",
           "size": [
-            16,
-            16
+            18,
+            18
           ],
           "anchor_from": "center",
           "anchor_to": "center",
@@ -1293,8 +1482,8 @@
     "$button_text_grid_collection_name": "form_buttons",
     "$button_content": "server_form.pinene_recipe_face",
     "size": [
-      20,
-      20
+      22,
+      22
     ],
     "bindings": [
       {
@@ -1423,6 +1612,98 @@
     "size": [
       56,
       16
+    ],
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "form_buttons"
+      }
+    ]
+  },
+  "pinene_craft_face": {
+    "type": "panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "controls": [
+      {
+        "slot_inner": {
+          "type": "image",
+          "size": [
+            24,
+            24
+          ],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/item_cell",
+          "layer": 2
+        }
+      },
+      {
+        "icon": {
+          "type": "image",
+          "size": [
+            22,
+            22
+          ],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "layer": 5,
+          "bindings": [
+            {
+              "binding_name": "#form_button_texture",
+              "binding_name_override": "#texture",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_name": "#form_button_texture_file_system",
+              "binding_name_override": "#texture_file_system",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not ((#texture = '') or (#texture = 'loading')))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "count": {
+          "type": "label",
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [
+            -2,
+            -1
+          ],
+          "layer": 7,
+          "shadow": true,
+          "text": "#form_button_text",
+          "bindings": [
+            {
+              "binding_name": "#form_button_text",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            }
+          ],
+          "font_scale_factor": 0.65
+        }
+      }
+    ]
+  },
+  "pinene_craft_slot@common_buttons.light_content_button": {
+    "$pressed_button_name": "button.form_button_click",
+    "$button_text": "#null",
+    "$button_text_binding_type": "collection",
+    "$button_text_grid_collection_name": "form_buttons",
+    "$button_content": "server_form.pinene_craft_face",
+    "size": [
+      26,
+      26
     ],
     "bindings": [
       {
