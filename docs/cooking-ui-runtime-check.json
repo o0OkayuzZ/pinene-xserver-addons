@@ -1,0 +1,38 @@
+{
+  "captured_at_local": "2026-10-03T09:59:14",
+  "game_executable_version": "1.26.5203.0",
+  "world": "development world",
+  "source": "Actual Minecraft game window capture, not a generated concept image",
+  "recipe": "pine:cooking_oil",
+  "verified": [
+    "wide light-gray panel",
+    "27 inventory slots and 9 hotbar slots fully inside panel",
+    "all occupied slots in this screenshot have icons, no magenta or question-mark fallback",
+    "approved material icons visible",
+    "3x3 seed ring with bottle center",
+    "insufficient-material state visible",
+    "recipe selection changes oil -> cheese",
+    "craft button changes from insufficient-material gray to eligible green",
+    "whole-cheese ingredient and output count 4 shown",
+    "one real cheese craft: whole_cheese 64 -> 63; cheese output 4 added into previously empty main-inventory slot",
+    "inventory snapshot refresh after crafting without reopening manually"
+  ],
+  "not_verified": [
+    "inventory drag/drop (intentionally unsupported)",
+    "all GUI scales and aspect ratios",
+    "multipage rendering with more than 20 recipes in one rank",
+    "native item/attachable translucency"
+  ],
+  "temporary_probe_removed": true,
+  "player_items_modified_by_probe": false,
+  "completed_at_local": "2026-10-03T10:01:14",
+  "craft_test": {
+    "recipe": "pine:cheese",
+    "attempts": 1,
+    "whole_cheese_before": 64,
+    "whole_cheese_after": 63,
+    "cheese_created": 4,
+    "rollback_performed": false,
+    "note": "Normal recipe executed once, including normal knife wear. No give/replaceitem/setblock commands used."
+  }
+}

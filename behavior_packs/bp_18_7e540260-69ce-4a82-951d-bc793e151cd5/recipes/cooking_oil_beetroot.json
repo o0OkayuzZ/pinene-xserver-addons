@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pine:cooking_oil_beetroot"
+    },
+    "tags": [
+      "pinene_cutting_board"
+    ],
+    "pattern": [
+      "SSS",
+      "SBS",
+      "SSS"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:beetroot_seeds"
+      },
+      "B": {
+        "item": "minecraft:glass_bottle"
+      }
+    },
+    "result": {
+      "item": "pine:cooking_oil",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:beetroot_seeds"
+      },
+      {
+        "item": "minecraft:glass_bottle"
+      }
+    ]
+  }
+}
