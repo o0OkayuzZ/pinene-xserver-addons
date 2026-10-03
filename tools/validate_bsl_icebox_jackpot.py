@@ -33,6 +33,80 @@ def require(ok: bool, message: str) -> None:
         raise ValueError(message)
 
 
+def load_bedrock_json(path: Path) -> dict:
+    """Parse Bedrock source JSON, which may legally contain comments/trailing commas."""
+    source = path.read_text(encoding="utf-8-sig")
+    out = []
+    i = 0
+    in_string = False
+    escaped = False
+    while i < len(source):
+        ch = source[i]
+        if in_string:
+            out.append(ch)
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_string = False
+            i += 1
+            continue
+        if ch == '"':
+            in_string = True
+            out.append(ch)
+            i += 1
+            continue
+        if ch == "/" and i + 1 < len(source) and source[i + 1] == "/":
+            i += 2
+            while i < len(source) and source[i] not in "\r\n":
+                i += 1
+            continue
+        if ch == "/" and i + 1 < len(source) and source[i + 1] == "*":
+            i += 2
+            while i + 1 < len(source) and not (source[i] == "*" and source[i + 1] == "/"):
+                i += 1
+            if i + 1 >= len(source):
+                raise ValueError(f"Unterminated block comment: {path}")
+            i += 2
+            continue
+        out.append(ch)
+        i += 1
+
+    source = "".join(out)
+    out = []
+    i = 0
+    in_string = False
+    escaped = False
+    while i < len(source):
+        ch = source[i]
+        if in_string:
+            out.append(ch)
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_string = False
+            i += 1
+            continue
+        if ch == '"':
+            in_string = True
+            out.append(ch)
+            i += 1
+            continue
+        if ch == ",":
+            j = i + 1
+            while j < len(source) and source[j].isspace():
+                j += 1
+            if j < len(source) and source[j] in "}]":
+                i += 1
+                continue
+        out.append(ch)
+        i += 1
+    return json.loads("".join(out))
+
+
 def definitions(root: Path = ROOT) -> dict:
     active = {row["pack_id"] for row in load(root / "world_behavior_packs.json")}
     result = {}
@@ -43,7 +117,9 @@ def definitions(root: Path = ROOT) -> dict:
     for folder, key in [("items", "minecraft:item"), ("blocks", "minecraft:block")]:
         for pack in packs:
             for path in (pack / folder).rglob("*.json"):
-                data = load(path).get(key, {})
+                # Bedrock add-on source accepts JSONC; keep BSL loot contracts strict,
+                # but parse item/block definitions with Bedrock-compatible syntax.
+                data = load_bedrock_json(path).get(key, {})
                 name = data.get("description", {}).get("identifier")
                 if not name or (folder == "blocks" and name in result):
                     continue
