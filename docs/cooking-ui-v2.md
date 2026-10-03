@@ -26,7 +26,17 @@ The tests cover panel bounds, all 79 form indices, paging, 27+9 inventory order,
 `python tools/cooking_ui/generate_icon_map.py --game-resource-packs <game-data/resource_packs> --mojang-root <com.mojang>`
 
 ## Runtime check
-Reload the resource pack by saving and re-entering the development world. Check the actual cooking form with several inventory items and test a successful and insufficient-material recipe. Keep the PR in draft until this visual check passes.
+Reload the resource pack by saving and re-entering the development world. Check the actual cooking form with several inventory items and test a successful and insufficient-material recipe. Keep the PR in draft until the user accepts the resulting layout; native drag/drop and all GUI scales are outside this check.
 
 ## Concurrent-branch reconciliation
 Remote commits 1dbe030 and 494c5b4 were inspected before integration. Their light-gray/wider layout, right-side inventory and refusal to guess unknown texture paths are retained by the rebuilt panel and verified-icon resolver. The new implementation also removes the inherited inset, fixes the missing arrow glyph, adds 20-slot paging and preserves unknown occupied slots as a visible question mark. No cooking balance or unrelated file changes were present in those two commits.
+## Actual runtime verification
+Minecraft for Windows 1.26.5203.0, development world, 2026-10-03. These screenshots were captured from the running game, not image generation.
+
+![Oil recipe and actual inventory](assets/cooking-ui-v2-runtime-oil.png)
+
+![Cheese craft completed](assets/cooking-ui-v2-runtime-cheese-after.png)
+
+The wide light-gray layout, all 27+9 slots fitting inside, absence of magenta/fallback icons for the displayed items, oil recipe arrangement, recipe selection, gray/green crafting state, and inventory refresh were visually checked. A single normal cheese craft consumed one whole cheese (64 to 63) and added four cheese items into an empty slot. The temporary one-shot read-only screen-opening probe was removed from the local script; its handler already unsubscribed after initial spawn.
+
+The dedicated Cooking UI regression workflow passed all 12 automated tests at commit 0015fa4. These tests are separate from the in-game screenshots. Higher GUI scales, narrow aspect ratios, native item translucency, and multi-page runtime rendering with more than 20 recipes per rank remain untested. Inventory is still a read-only snapshot and blocks use 2D face previews; this is not a native container screen.
