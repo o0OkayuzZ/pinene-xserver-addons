@@ -1,0 +1,75 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:pumpkin_side"
+        },
+        "fallback": "dungeons:pumpkin_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/pumpkin_forest/pum_sidestraight_0",
+                    "processors": "dungeons:pumpkin_forest"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/pumpkin_forest/pum_sidestraight_1",
+                    "processors": "dungeons:pumpkin_forest"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/pumpkin_forest/pum_sidestraight_2",
+                    "processors": "dungeons:pumpkin_forest"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/pumpkin_forest/pum_sidesplit_0",
+                    "processors": "dungeons:pumpkin_forest"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/pumpkin_forest/pum_sidesplit_1",
+                    "processors": "dungeons:pumpkin_forest"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/pumpkin_forest/pum_sidesplit_2",
+                    "processors": "dungeons:pumpkin_forest"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/pumpkin_forest/pum_boss",
+                    "processors": "dungeons:pumpkin_forest"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/pumpkin_forest/pum_side_end",
+                    "processors": "dungeons:pumpkin_forest"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

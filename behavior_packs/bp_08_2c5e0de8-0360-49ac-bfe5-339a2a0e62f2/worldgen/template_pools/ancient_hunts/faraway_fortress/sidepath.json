@@ -1,0 +1,83 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:fortress_side"
+        },
+        "fallback": "dungeons:fortress_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_sidestraight_0",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 22
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_sidestraight_1",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 18
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_sidestraight_2",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 18
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_sidesplit_0",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 12
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_sidesplit_1",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 12
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_sidesplit_2",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 12
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_boss",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_side_end",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_bonus_door",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

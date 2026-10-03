@@ -56,7 +56,11 @@ world.afterEvents.entityHurt.subscribe((e) => {
                         map.setColorRGB("variable.color", { red: 1, green: 1, blue: 0 })
                         map.setFloat("variable.particle_initial_speed", particleSpeed)
                         map.setFloat("variable.max_lifetime", lifetime)
-                        map.setVector3("variable.direction", { x: dx, y: dy, z: dz })
+                        try {
+                            map.setVector3("variable.direction", { x: dx, y: dy, z: dz })
+                        } catch {
+                            return;
+                        }
 
                         var xOffset = Math.random() * 0.2 - 0.1
                         var yOffset = Math.random() * 0.2 - 0.1

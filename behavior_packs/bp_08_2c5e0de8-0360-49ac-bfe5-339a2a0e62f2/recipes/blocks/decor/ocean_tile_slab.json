@@ -1,0 +1,28 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:ocean_tiles_slab"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "SSS"
+        ],
+        "unlock": [
+            {
+                "item": "dungeons:ocean_tiles"
+            }
+        ],
+        "key": {
+            "S": {
+                "item": "dungeons:ocean_tiles"
+            }
+        },
+        "result": {
+            "item": "dungeons:ocean_tiles_slab",
+            "count": 6
+        }
+    }
+}

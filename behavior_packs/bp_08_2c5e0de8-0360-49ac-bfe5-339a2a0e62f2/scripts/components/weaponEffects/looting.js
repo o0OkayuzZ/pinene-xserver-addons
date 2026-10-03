@@ -39,9 +39,10 @@ world.afterEvents.entityDie.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
+    if (!heldItem.hasTag(effectId) && !heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) return;
     //effect code
     const loc = hurt.location
+    if (hurt.typeId == "dungeons:piggy_bank") return;
     const dim = hurt.dimension
     const lootManager = world.getLootTableManager()
     const loot = lootManager.generateLootFromEntity(hurt, heldItem)

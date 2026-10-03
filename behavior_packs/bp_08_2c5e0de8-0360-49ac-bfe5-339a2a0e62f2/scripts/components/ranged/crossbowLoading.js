@@ -24,6 +24,7 @@ function playDrawSound(player, ticks) {
 
 
 
+
 world.afterEvents.itemStartUse.subscribe((e) => {
     var item = e.itemStack;
     const player = e.source;
@@ -97,6 +98,10 @@ world.afterEvents.itemStopUse.subscribe((e) => {
 })
 
 export function crossbowFired(player, item, arrow) {
+    player.addTag("dungeons:cancel_crossbow_load")
+    system.runTimeout(() => {
+        player.removeTag("dungeons:cancel_crossbow_load")
+    },1)
     var bonusShots = 1
     arrow.addTag("dungeons:crossbow_checked")
     const customSoundComponent = item.getComponent("dungeons:shooter_sound")
@@ -126,7 +131,7 @@ export function crossbowFired(player, item, arrow) {
     }
     if (item.hasTag("dungeons:multishot") || item.getDynamicProperty("dungeons:gild") == "dungeons:multishot") bonusShots += 2
     if (item.hasTag("dungeons:super_multishot") || item.getDynamicProperty("dungeons:gild") == "dungeons:super_multishot") bonusShots += 4
-    if (bonusShots > 1) multiShot(bonusShots, arrow.typeId, player, item)
+    if (bonusShots > 1) multiShot(bonusShots, arrow.typeId, player, item, arrow.getVelocity())
     if (item.hasTag("dungeons:burst_crossbow")) {
         var allTags = arrow.getTags()
         const id = arrow.typeId
@@ -200,25 +205,37 @@ function extraShot(tags, projectileId, player, itemId, sound) {
     }
     projectile.addTag("dungeons:arrow")
     projectile.addTag("dungeons:multishot_arrow")
+    projectile.addTag("dungeons:cannot_be_picked_up")
     projectile.addTag("dungeons:crossbow_checked")
     projectile.addTag("dungeons:ignore_arrow_tags")
     if (tags) for (const tag of tags) projectile.addTag(tag)
     playShootSound(player, sound)
 }
 
-function multiShot(projectileCount, projectileId, player, item) {
+export function multiShot(projectileCount, projectileId, player, item, sourceVelocity) {
     if (projectileCount == 0) return;
-    const itemId = item.typeId
+    if(item) var itemId = item.typeId
     const dim = player.dimension;
     const viewDir = player.getViewDirection()
     let amount = projectileCount
-    var mult = 4.5
-    if (projectileId == "dungeons:torment_arrow") mult = 0.8
+
+    // fallback table, only used if we weren't given a real velocity
+    var fallbackMult = 4.5
+    if (projectileId == "dungeons:torment_arrow") fallbackMult = 0.8
+
+    let speed = 0;
+    if (sourceVelocity) {
+        speed = Math.hypot(sourceVelocity.x, sourceVelocity.y, sourceVelocity.z);
+    }
+    const useSpeed = speed > 0.01 ? speed : fallbackMult;
+
     for (let i = 0; i < amount; i++) {
-        const equippable = player.getComponent("equippable")
-        const held = equippable.getEquipment("Mainhand")
-        if (!held) return;
-        if (held.typeId !== itemId) return;
+        if(item) { 
+            const equippable = player.getComponent("equippable")
+            const held = equippable.getEquipment("Mainhand")
+            if (!held) return;
+            if (held.typeId !== itemId) return;
+        }
         const angle = -((amount - 1) / 2 * 10) + 10 * i;
         const radians = angle * (Math.PI / 180)
         if (angle == 0) continue;
@@ -235,11 +252,12 @@ function multiShot(projectileCount, projectileId, player, item) {
         }
         if (comp) {
             comp.owner = player
-            comp.shoot(multiply(direction, { x: mult, y: mult, z: mult }))
+            comp.shoot(multiply(direction, { x: useSpeed, y: useSpeed*0.8, z: useSpeed }))
         } else {
-            projectile.applyImpulse(multiply(direction, { x: mult, y: mult, z: mult }))
+            projectile.applyImpulse(multiply(direction, { x: useSpeed, y: useSpeed, z: useSpeed }))
         }
         projectile.addTag("dungeons:multishot_arrow")
+        projectile.addTag("dungeons:cannot_be_picked_up")
         projectile.addTag("dungeons:crossbow_checked")
     }
 }

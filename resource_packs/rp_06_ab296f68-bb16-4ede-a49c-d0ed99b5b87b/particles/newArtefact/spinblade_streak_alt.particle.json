@@ -1,0 +1,66 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "dungeons:spinblade_streak_alt",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"curves": {
+			"variable.dec": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [
+					0.2,
+					0
+				]
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.size = 0.03;variable.lifetime = 2.2;"
+			},
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 260,
+				"max_particles": 1000
+			},
+			"minecraft:emitter_lifetime_expression": {
+				"activation_expression": 1
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": [
+					"v.emitter_age",
+					0,
+					0
+				]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "v.lifetime"
+			},
+			"minecraft:particle_initial_speed": 0,
+			"minecraft:particle_motion_dynamic": {},
+			"minecraft:particle_appearance_billboard": {
+				"size": [
+					"v.dec",
+					"v.dec*0.4"
+				],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 16,
+					"texture_height": 16,
+					"uv": [
+						4,
+						2
+					],
+					"uv_size": [
+						4,
+						4
+					]
+				}
+			}
+		}
+	}
+}

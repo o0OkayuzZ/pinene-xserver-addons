@@ -1,0 +1,53 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.key_golem.move": {
+            "initial_state": "static",
+            "states": {
+                "walking": {
+                    "animations": [
+                        "move"
+                    ],
+                    "transitions": [
+                        {
+                            "static": "q.modified_move_speed <= 0.1"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "static": {
+                    "transitions": [
+                        {
+                            "walking": "q.is_moving && q.modified_move_speed > 0.1"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        },
+        "controller.animation.key_golem.sleep": {
+            "initial_state": "asleep",
+            "states": {
+                "asleep": {
+                    "transitions": [
+                        {
+                            "default": "query.variant == 0"
+                        }
+                    ],
+                    "animations": [
+                        "asleep"
+                    ],
+                    "blend_transition": 0
+                },
+                "default": {
+                    "transitions": [
+                        {
+                            "asleep": "query.variant == 1"
+                        }
+                    ],
+                    "blend_transition": 0
+                }
+            }
+        }
+    }
+}

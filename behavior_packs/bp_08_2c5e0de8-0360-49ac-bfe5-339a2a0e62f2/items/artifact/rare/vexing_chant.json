@@ -1,28 +1,30 @@
 {
-	"format_version": "1.21.130",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:rare_vexing_chant",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:hover_text_color": "green",
-			"minecraft:icon": "vexing_chant",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:can_destroy_in_creative": false,
-			"dungeons:artefact_cooldown": {},
-			"dungeons:vexing_chant": {},
-			"minecraft:cooldown": {
-				"category": "vexing_chant_rare",
-				"duration": 60
-			},
-			"minecraft:interact_button": "item.use.artefact",
-			"minecraft:use_modifiers": {
-				"use_duration": 0
-			}
-		}
-	}
+  "format_version": "1.21.130",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:rare_vexing_chant",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:hover_text_color": "green",
+      "minecraft:icon": "vexing_chant",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:can_destroy_in_creative": false,
+      "dungeons:artefact_cooldown": {},
+      "dungeons:vexing_chant": {
+        "type":"rare"
+      },
+      "minecraft:cooldown": {
+        "category": "vexing_chant_rare",
+        "duration": 60
+      },
+      "minecraft:interact_button": "item.use.artefact",
+      "minecraft:use_modifiers": {
+        "use_duration": 0.0
+      }
+    }
+  }
 }

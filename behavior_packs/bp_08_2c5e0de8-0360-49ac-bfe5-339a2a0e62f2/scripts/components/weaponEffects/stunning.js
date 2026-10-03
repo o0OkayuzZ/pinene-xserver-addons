@@ -6,6 +6,8 @@ import {
 
 const effectId = "dungeons:stunning"
 
+import { stunnedEffect } from "misc/stunnedEffect.js"
+
 world.beforeEvents.entityHurt.subscribe((e) => {
     const hurt = e.hurtEntity;
     if (!hurt) return;
@@ -20,29 +22,28 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
-    //effect code
-    if (e.damage <= 0) return;
-    system.run(() => {
-        var stunDuration = world.scoreboard.getObjective('dungeons:stun_t');
-        if (!stunDuration) {
-            stunDuration = world.scoreboard.addObjective('dungeons:stun_t');
-        }
-        if (stunDuration.hasParticipant(attacker.scoreboardIdentity)) return;
-        const stunChance = Math.floor(Math.random() * 4);
-        if (stunChance == 1) {
-            system.run(() => {
-                stunDuration.setScore(attacker, 100);
-                const dim = hurt.dimension
-                const hurtLoc = hurt.location;
-                dim.spawnParticle("dungeons:stun_1s", hurtLoc)
-                dim.playSound("ambient.weather.lightning.impact", hurtLoc, { volume: 0.33, pitch: 2.5 })
-                hurt.addEffect("slowness", 20, { amplifier: 9, showParticles: false })
-                hurt.addEffect("weakness", 20, { amplifier: 9, showParticles: false })
-                hurt.applyImpulse({ x: 0, y: -1, z: 0 })
-            })
-        }
-    })
+    var count = 0
+    if (heldItem.hasTag(effectId)) count += 1
+    if (heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) count += 1
+    if (count == 0) return;
+    for (let i = 0; i < count; i++) {
+        //effect code
+        if (e.damage <= 0) return;
+        system.run(() => {
+            var stunDuration = world.scoreboard.getObjective('dungeons:stun_t');
+            if (!stunDuration) {
+                stunDuration = world.scoreboard.addObjective('dungeons:stun_t');
+            }
+            if (stunDuration.hasParticipant(attacker.scoreboardIdentity)) return;
+            const stunChance = Math.floor(Math.random() * 4);
+            if (stunChance == 1) {
+                system.run(() => {
+                    stunDuration.setScore(attacker, 100);
+                    stunnedEffect(hurt, 80)
+                })
+            }
+        })
+    }
 });
 
 // TIMER

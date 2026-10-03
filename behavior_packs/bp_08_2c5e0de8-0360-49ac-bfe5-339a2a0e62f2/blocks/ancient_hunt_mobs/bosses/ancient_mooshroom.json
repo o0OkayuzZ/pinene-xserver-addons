@@ -1,0 +1,25 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:ancient_mooshroom_spawn",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/empty.json",
+            "dungeons:ancient_boss": {
+                "boss": "dungeons:ancient_mooshroom",
+                "minion": "dungeons:ancient_mooshroom_minion",
+                "minion_count": 16
+            },
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destructible_by_mining": false,
+            "minecraft:display_name": "entity.dungeons:ancient_mooshroom.name",
+            "minecraft:tags": [
+                "dungeons:ancient_mob"
+            ]
+        }
+    }
+}

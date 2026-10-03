@@ -2,21 +2,15 @@
 	"format_version": "1.8.0",
 	"render_controllers": {
 		"controller.render.ice_chunk": {
-			"geometry": "geometry.default",
-			"materials": [
-				{
-					"*": "material.default"
-				}
-			],
-			"textures": [
-				"texture.default"
-			],
+			"geometry": "Geometry.default",
+			"materials": [ { "*": "Material.default" } ],
+			"textures": [ "Texture.default" ],
 			"overlay_color": {
-				"r": "q.life_time<=1.6?1-(q.life_time/1.6):0",
-				"g": "q.life_time<=1.6?1-(q.life_time/1.6):0",
-				"b": "q.life_time<=1.6?1-(q.life_time/1.6):0",
-				"a": "q.life_time<=1.6?1-(q.life_time/1.6):0"
-			}
+          "r": "q.life_time <= 1.6 ? 1.0 - (q.life_time/1.6) : 0",
+          "g": "q.life_time <= 1.6 ? 1.0 - (q.life_time/1.6) : 0",
+          "b": "q.life_time <= 1.6 ? 1.0 - (q.life_time/1.6) : 0",
+          "a": "q.life_time <= 1.6 ? 1.0 - (q.life_time/1.6) : 0"
+      }
 		}
 	}
 }

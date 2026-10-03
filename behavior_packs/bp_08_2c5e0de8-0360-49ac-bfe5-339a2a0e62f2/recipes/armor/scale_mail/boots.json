@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "scale_mail_boots"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "c c",
+      "B B"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:copper_ingot"
+      }
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:leather"
+      },
+     "c": {
+        "item": "minecraft:copper_nugget"
+      }
+    },
+    "result": {
+      "item": "dungeons:scale_mail_boots",
+      "count": 1
+    }
+  }
+}

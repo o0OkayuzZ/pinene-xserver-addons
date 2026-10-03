@@ -45,8 +45,10 @@ world.beforeEvents.entityHurt.subscribe((e) => {
 
 // TIMER
 system.runInterval(() => {
-    for (const dimensionType of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimensionType.typeId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (const entity of dim.getEntities({ families: ["enchanted"], tags: ["dungeons:enchanted_mob_" + id] })) {
             var timeLeft = world.scoreboard.getObjective('dungeons:echo_t');
             if (!timeLeft) return;

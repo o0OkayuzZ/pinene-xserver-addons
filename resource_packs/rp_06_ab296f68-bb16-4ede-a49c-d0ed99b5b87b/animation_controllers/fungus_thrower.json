@@ -1,26 +1,24 @@
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.fungus_thrower.attack": {
-			"initial_state": "default",
-			"states": {
-				"shooting": {
-					"animations": [
-						"shoot"
-					],
-					"transitions": [
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.fungus_thrower.attack" : {
+			"initial_state" : "default",
+			"states" : {
+
+				"shooting" : {
+					"animations" : [ "shoot" ],
+					"transitions" : [
 						{
-							"default": "query.all_animations_finished"
+							"default" : "query.all_animations_finished"
 						}
 					]
 				},
-				"default": {
-					"animations": [
-						"look_at_target_controller"
-					],
-					"transitions": [
+
+				"default" : {
+					"animations" : [ "look_at_target_controller" ],
+					"transitions" : [
 						{
-							"shooting": "query.is_charged"
+							"shooting" : "query.is_charged"
 						}
 					]
 				}

@@ -6,14 +6,14 @@
 			"bones": {
 				"leftArm": {
 					"rotation": [
-						"((query.is_riding?0:((math.cos(217.8*query.life_time)*28.65)+(math.sin(variable.attack_time*180)*68.76-(math.sin((1-(1-variable.attack_time)*(1-variable.attack_time))*180))*22.92)))/2)*!q.is_saddled",
+						"((query.is_riding ? 0.0 : ((math.cos(query.life_time * 20.0 * 10.89) * 28.65) + (math.sin(variable.attack_time * 180.0) * 68.76 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92))) /2 )* !q.is_saddled",
 						0,
 						0
 					]
 				},
 				"rightArm": {
 					"rotation": [
-						"(-108+math.cos(76.8*query.life_time)*2.87)+(math.sin(variable.attack_time*180)*126.05-(math.sin((1-(1-variable.attack_time)*(1-variable.attack_time))*180))*22.92)",
+						"(-108 + math.cos(query.life_time * 20.0 * 3.84) * 2.87) + (math.sin(variable.attack_time * 180.0) * 126.05 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92)",
 						0,
 						0
 					]
@@ -24,15 +24,11 @@
 			"loop": true,
 			"bones": {
 				"leftArm": {
-					"rotation": [
-						0,
-						0,
-						0
-					]
+					"rotation": [0, 0, 0]
 				},
 				"rightArm": {
 					"rotation": [
-						"(-108+math.cos(76.8*query.life_time)*2.87)+(math.sin(variable.attack_time*180)*126.05-(math.sin((1-(1-variable.attack_time)*(1-variable.attack_time))*180))*22.92)",
+						"(-108 + math.cos(query.life_time * 20.0 * 3.84) * 2.87) + (math.sin(variable.attack_time * 180.0) * 126.05 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92)",
 						0,
 						0
 					]
@@ -44,17 +40,13 @@
 			"bones": {
 				"leftArm": {
 					"rotation": [
-						"(math.cos(76.8*query.life_time)*2.87)*!q.is_saddled",
-						"-9*!q.is_saddled",
-						"(-1*(math.cos(103.2*query.life_time)*2.87+2.87))*!q.is_saddled"
+						"(math.cos(query.life_time * 20.0 * 3.84) * 2.87) * !q.is_saddled",
+						"-9* !q.is_saddled",
+						"(-1 * (math.cos(query.life_time * 20.0 * 5.16) * 2.87 + 2.87))*!q.is_saddled"
 					]
 				},
 				"rightArm": {
-					"rotation": [
-						"math.cos(38.4*query.life_time)*2.87",
-						9,
-						"math.cos(51.6*query.life_time)*2.87+2.87"
-					]
+					"rotation": ["math.cos(query.life_time * 10.0 * 3.84) * 2.87", 9, "math.cos(query.life_time * 10.0 * 5.16) * 2.87 + 2.87"]
 				}
 			}
 		},
@@ -62,18 +54,10 @@
 			"loop": true,
 			"bones": {
 				"leg0": {
-					"rotation": [
-						"-72-this",
-						"18-this",
-						"-this"
-					]
+					"rotation": ["-72.0 - this", "18.0 - this", "-this"]
 				},
 				"leg1": {
-					"rotation": [
-						"-72-this",
-						"-18-this",
-						"-this"
-					]
+					"rotation": ["-72.0 - this", "-18.0 - this", "-this"]
 				}
 			}
 		},
@@ -82,18 +66,10 @@
 			"animation_length": 0.25,
 			"bones": {
 				"leftArm": {
-					"rotation": [
-						"!q.is_saddled*-2.5",
-						0,
-						0
-					]
+					"rotation": ["!q.is_saddled * -2.5", 0, 0]
 				},
 				"rightArm": {
-					"rotation": [
-						-52.5,
-						0,
-						0
-					]
+					"rotation": [-52.5, 0, 0]
 				}
 			}
 		},
@@ -101,18 +77,10 @@
 			"loop": true,
 			"bones": {
 				"leg0": {
-					"rotation": [
-						"variable.tcos0*-0.9",
-						-0.1,
-						-0.1
-					]
+					"rotation": ["variable.tcos0 * -0.9", -0.1, -0.1]
 				},
 				"leg1": {
-					"rotation": [
-						"variable.tcos0*0.9",
-						-0.1,
-						-0.1
-					]
+					"rotation": ["variable.tcos0 * 0.9", -0.1, -0.1]
 				}
 			}
 		},
@@ -130,16 +98,8 @@
 				},
 				"leftArm": {
 					"rotation": {
-						"0.0": [
-							0,
-							0,
-							0
-						],
-						"0.7": [
-							67.5,
-							0,
-							0
-						]
+						"0.0": [0, 0, 0],
+						"0.7": [67.5, 0, 0]
 					}
 				}
 			}

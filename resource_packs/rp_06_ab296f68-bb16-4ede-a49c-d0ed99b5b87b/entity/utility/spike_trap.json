@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:spike_trap_entity",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/blocks/decor/spike"
+      },
+      "geometry": {
+        "default": "geometry.spike_trap"
+      },
+      "animations": {
+        "fly": "animation.spike_trap.spawn"
+      },
+      "scripts": {
+        "animate": [
+          "fly"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

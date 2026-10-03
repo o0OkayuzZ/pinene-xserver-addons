@@ -8,118 +8,50 @@
 				"texture_height": 16,
 				"visible_bounds_width": 2,
 				"visible_bounds_height": 2.5,
-				"visible_bounds_offset": [
-					0,
-					0.75,
-					0
-				]
+				"visible_bounds_offset": [0, 0.75, 0]
 			},
 			"bones": [
 				{
 					"name": "root_item",
-					"pivot": [
-						-0.8,
-						6,
-						0
-					],
-					"rotation": [
-						90,
-						0,
-						0
-					],
+					"pivot": [-0.8, 6, 0],
+					"rotation": [90, 0, 0],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)"
 				},
 				{
 					"name": "pivot0",
 					"parent": "root_item",
-					"pivot": [
-						-0.8,
-						6.05,
-						0
-					],
+					"pivot": [-0.8, 6.05, 0],
 					"cubes": [
 						{
-							"origin": [
-								-2.6,
-								0.05,
-								-2.05
-							],
-							"size": [
-								3.6,
-								12,
-								4.1
-							],
+							"origin": [-2.6, 0.05, -2.05],
+							"size": [3.6, 12, 4.1],
 							"inflate": 0.21,
-							"pivot": [
-								-0.8,
-								6.05,
-								0
-							],
-							"rotation": [
-								-90,
-								0,
-								0
-							],
+							"pivot": [-0.8, 6.05, 0],
+							"rotation": [-90, 0, 0],
 							"uv": {
 								"north": {
-									"uv": [
-										4,
-										4
-									],
-									"uv_size": [
-										3,
-										12
-									]
+									"uv": [4, 4],
+									"uv_size": [3, 12]
 								},
 								"east": {
-									"uv": [
-										0,
-										4
-									],
-									"uv_size": [
-										4,
-										12
-									]
+									"uv": [0, 4],
+									"uv_size": [4, 12]
 								},
 								"south": {
-									"uv": [
-										11,
-										4
-									],
-									"uv_size": [
-										3,
-										12
-									]
+									"uv": [11, 4],
+									"uv_size": [3, 12]
 								},
 								"west": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										4,
-										12
-									]
+									"uv": [7, 4],
+									"uv_size": [4, 12]
 								},
 								"up": {
-									"uv": [
-										4,
-										0
-									],
-									"uv_size": [
-										3,
-										4
-									]
+									"uv": [4, 0],
+									"uv_size": [3, 4]
 								},
 								"down": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										3,
-										-4
-									]
+									"uv": [7, 4],
+									"uv_size": [3, -4]
 								}
 							}
 						}
@@ -127,109 +59,45 @@
 				},
 				{
 					"name": "root_item3",
-					"pivot": [
-						-0.8,
-						6,
-						0
-					],
-					"rotation": [
-						90,
-						0,
-						0
-					],
+					"pivot": [-0.8, 6, 0],
+					"rotation": [90, 0, 0],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)"
 				},
 				{
 					"name": "pivot2",
 					"parent": "root_item3",
-					"pivot": [
-						-0.8,
-						6.05,
-						0
-					],
+					"pivot": [-0.8, 6.05, 0],
 					"cubes": [
 						{
-							"origin": [
-								-2.6,
-								0.05,
-								-2.05
-							],
-							"size": [
-								3.6,
-								12,
-								4.1
-							],
+							"origin": [-2.6, 0.05, -2.05],
+							"size": [3.6, 12, 4.1],
 							"inflate": 0.21,
-							"pivot": [
-								-0.8,
-								6.05,
-								0
-							],
-							"rotation": [
-								-90,
-								0,
-								0
-							],
+							"pivot": [-0.8, 6.05, 0],
+							"rotation": [-90, 0, 0],
 							"uv": {
 								"north": {
-									"uv": [
-										14,
-										4
-									],
-									"uv_size": [
-										-3,
-										12
-									]
+									"uv": [14, 4],
+									"uv_size": [-3, 12]
 								},
 								"east": {
-									"uv": [
-										0,
-										4
-									],
-									"uv_size": [
-										4,
-										12
-									]
+									"uv": [0, 4],
+									"uv_size": [4, 12]
 								},
 								"south": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										-3,
-										12
-									]
+									"uv": [7, 4],
+									"uv_size": [-3, 12]
 								},
 								"west": {
-									"uv": [
-										11,
-										4
-									],
-									"uv_size": [
-										-4,
-										12
-									]
+									"uv": [11, 4],
+									"uv_size": [-4, 12]
 								},
 								"up": {
-									"uv": [
-										4,
-										0
-									],
-									"uv_size": [
-										3,
-										4
-									]
+									"uv": [4, 0],
+									"uv_size": [3, 4]
 								},
 								"down": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										3,
-										-4
-									]
+									"uv": [7, 4],
+									"uv_size": [3, -4]
 								}
 							}
 						}
@@ -237,109 +105,45 @@
 				},
 				{
 					"name": "root_item2",
-					"pivot": [
-						-0.8,
-						6,
-						0
-					],
-					"rotation": [
-						90,
-						0,
-						0
-					],
+					"pivot": [-0.8, 6, 0],
+					"rotation": [90, 0, 0],
 					"binding": "'leftitem'"
 				},
 				{
 					"name": "pivot1",
 					"parent": "root_item2",
-					"pivot": [
-						-0.8,
-						6.05,
-						0
-					],
+					"pivot": [-0.8, 6.05, 0],
 					"cubes": [
 						{
-							"origin": [
-								-2.6,
-								0.05,
-								-2.05
-							],
-							"size": [
-								3.6,
-								12,
-								4.1
-							],
+							"origin": [-2.6, 0.05, -2.05],
+							"size": [3.6, 12, 4.1],
 							"inflate": 0.21,
-							"pivot": [
-								-0.8,
-								6.05,
-								0
-							],
-							"rotation": [
-								-90,
-								0,
-								180
-							],
+							"pivot": [-0.8, 6.05, 0],
+							"rotation": [-90, 0, 180],
 							"uv": {
 								"north": {
-									"uv": [
-										14,
-										4
-									],
-									"uv_size": [
-										-3,
-										12
-									]
+									"uv": [14, 4],
+									"uv_size": [-3, 12]
 								},
 								"east": {
-									"uv": [
-										0,
-										4
-									],
-									"uv_size": [
-										4,
-										12
-									]
+									"uv": [0, 4],
+									"uv_size": [4, 12]
 								},
 								"south": {
-									"uv": [
-										8,
-										4
-									],
-									"uv_size": [
-										-3,
-										12
-									]
+									"uv": [8, 4],
+									"uv_size": [-3, 12]
 								},
 								"west": {
-									"uv": [
-										11,
-										4
-									],
-									"uv_size": [
-										-4,
-										12
-									]
+									"uv": [11, 4],
+									"uv_size": [-4, 12]
 								},
 								"up": {
-									"uv": [
-										4,
-										0
-									],
-									"uv_size": [
-										3,
-										4
-									]
+									"uv": [4, 0],
+									"uv_size": [3, 4]
 								},
 								"down": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										3,
-										-4
-									]
+									"uv": [7, 4],
+									"uv_size": [3, -4]
 								}
 							}
 						}
@@ -354,339 +158,89 @@
 				"texture_height": 16,
 				"visible_bounds_width": 2,
 				"visible_bounds_height": 2.5,
-				"visible_bounds_offset": [
-					0,
-					0.75,
-					0
-				]
+				"visible_bounds_offset": [0, 0.75, 0]
 			},
 			"bones": [
 				{
 					"name": "glow_root_item",
-					"pivot": [
-						-0.8,
-						6,
-						0
-					],
-					"rotation": [
-						90,
-						0,
-						0
-					],
+					"pivot": [-0.8, 6, 0],
+					"rotation": [90, 0, 0],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)"
 				},
 				{
 					"name": "glow_pivot0",
 					"parent": "glow_root_item",
-					"pivot": [
-						-0.8,
-						6.05,
-						0
-					],
+					"pivot": [-0.8, 6.05, 0],
 					"cubes": [
 						{
-							"origin": [
-								-2.6,
-								0.05,
-								-2.05
-							],
-							"size": [
-								3.6,
-								12,
-								4.1
-							],
+							"origin": [-2.6, 0.05, -2.05],
+							"size": [3.6, 12, 4.1],
 							"inflate": 0.21,
-							"pivot": [
-								-0.8,
-								6.05,
-								0
-							],
-							"rotation": [
-								-90,
-								0,
-								0
-							],
+							"pivot": [-0.8, 6.05, 0],
+							"rotation": [-90, 0, 0],
 							"uv": {
-								"north": {
-									"uv": [
-										4,
-										4
-									],
-									"uv_size": [
-										3,
-										12
-									]
-								},
-								"east": {
-									"uv": [
-										0,
-										4
-									],
-									"uv_size": [
-										4,
-										12
-									]
-								},
-								"south": {
-									"uv": [
-										11,
-										4
-									],
-									"uv_size": [
-										3,
-										12
-									]
-								},
-								"west": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										4,
-										12
-									]
-								},
-								"up": {
-									"uv": [
-										4,
-										0
-									],
-									"uv_size": [
-										3,
-										4
-									]
-								},
-								"down": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										3,
-										-4
-									]
-								}
+								"north": {"uv": [4, 4], "uv_size": [3, 12]},
+								"east": {"uv": [0, 4], "uv_size": [4, 12]},
+								"south": {"uv": [11, 4], "uv_size": [3, 12]},
+								"west": {"uv": [7, 4], "uv_size": [4, 12]},
+								"up": {"uv": [4, 0], "uv_size": [3, 4]},
+								"down": {"uv": [7, 4], "uv_size": [3, -4]}
 							}
 						}
 					]
 				},
 				{
 					"name": "glow_root_item3",
-					"pivot": [
-						-0.8,
-						6,
-						0
-					],
-					"rotation": [
-						90,
-						0,
-						0
-					],
+					"pivot": [-0.8, 6, 0],
+					"rotation": [90, 0, 0],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)"
 				},
 				{
 					"name": "glow_pivot2",
 					"parent": "glow_root_item3",
-					"pivot": [
-						-0.8,
-						6.05,
-						0
-					],
+					"pivot": [-0.8, 6.05, 0],
 					"cubes": [
 						{
-							"origin": [
-								-2.6,
-								0.05,
-								-2.05
-							],
-							"size": [
-								3.6,
-								12,
-								4.1
-							],
+							"origin": [-2.6, 0.05, -2.05],
+							"size": [3.6, 12, 4.1],
 							"inflate": 0.21,
-							"pivot": [
-								-0.8,
-								6.05,
-								0
-							],
-							"rotation": [
-								-90,
-								0,
-								0
-							],
+							"pivot": [-0.8, 6.05, 0],
+							"rotation": [-90, 0, 0],
 							"uv": {
-								"north": {
-									"uv": [
-										14,
-										4
-									],
-									"uv_size": [
-										-3,
-										12
-									]
-								},
-								"east": {
-									"uv": [
-										0,
-										4
-									],
-									"uv_size": [
-										4,
-										12
-									]
-								},
-								"south": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										-3,
-										12
-									]
-								},
-								"west": {
-									"uv": [
-										11,
-										4
-									],
-									"uv_size": [
-										-4,
-										12
-									]
-								},
-								"up": {
-									"uv": [
-										4,
-										0
-									],
-									"uv_size": [
-										3,
-										4
-									]
-								},
-								"down": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										3,
-										-4
-									]
-								}
+								"north": {"uv": [14, 4], "uv_size": [-3, 12]},
+								"east": {"uv": [0, 4], "uv_size": [4, 12]},
+								"south": {"uv": [7, 4], "uv_size": [-3, 12]},
+								"west": {"uv": [11, 4], "uv_size": [-4, 12]},
+								"up": {"uv": [4, 0], "uv_size": [3, 4]},
+								"down": {"uv": [7, 4], "uv_size": [3, -4]}
 							}
 						}
 					]
 				},
 				{
 					"name": "glow_root_item2",
-					"pivot": [
-						-0.8,
-						6,
-						0
-					],
-					"rotation": [
-						90,
-						0,
-						0
-					],
+					"pivot": [-0.8, 6, 0],
+					"rotation": [90, 0, 0],
 					"binding": "'leftitem'"
 				},
 				{
 					"name": "glow_pivot1",
 					"parent": "glow_root_item2",
-					"pivot": [
-						-0.8,
-						6.05,
-						0
-					],
+					"pivot": [-0.8, 6.05, 0],
 					"cubes": [
 						{
-							"origin": [
-								-2.6,
-								0.05,
-								-2.05
-							],
-							"size": [
-								3.6,
-								12,
-								4.1
-							],
+							"origin": [-2.6, 0.05, -2.05],
+							"size": [3.6, 12, 4.1],
 							"inflate": 0.21,
-							"pivot": [
-								-0.8,
-								6.05,
-								0
-							],
-							"rotation": [
-								-90,
-								0,
-								-180
-							],
+							"pivot": [-0.8, 6.05, 0],
+							"rotation": [-90, 0, -180],
 							"uv": {
-								"north": {
-									"uv": [
-										14,
-										4
-									],
-									"uv_size": [
-										-3,
-										12
-									]
-								},
-								"east": {
-									"uv": [
-										0,
-										4
-									],
-									"uv_size": [
-										4,
-										12
-									]
-								},
-								"south": {
-									"uv": [
-										8,
-										4
-									],
-									"uv_size": [
-										-3,
-										12
-									]
-								},
-								"west": {
-									"uv": [
-										11,
-										4
-									],
-									"uv_size": [
-										-4,
-										12
-									]
-								},
-								"up": {
-									"uv": [
-										4,
-										0
-									],
-									"uv_size": [
-										3,
-										4
-									]
-								},
-								"down": {
-									"uv": [
-										7,
-										4
-									],
-									"uv_size": [
-										3,
-										-4
-									]
-								}
+								"north": {"uv": [14, 4], "uv_size": [-3, 12]},
+								"east": {"uv": [0, 4], "uv_size": [4, 12]},
+								"south": {"uv": [8, 4], "uv_size": [-3, 12]},
+								"west": {"uv": [11, 4], "uv_size": [-4, 12]},
+								"up": {"uv": [4, 0], "uv_size": [3, 4]},
+								"down": {"uv": [7, 4], "uv_size": [3, -4]}
 							}
 						}
 					]

@@ -1,0 +1,25 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:the_unending_spawn",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/empty.json",
+            "dungeons:ancient_boss": {
+                "boss": "dungeons:the_unending",
+                "minion": "dungeons:the_unending_minion",
+                "minion_count": 8
+            },
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destructible_by_mining": false,
+            "minecraft:display_name": "entity.dungeons:the_unending.name",
+            "minecraft:tags": [
+                "dungeons:ancient_mob"
+            ]
+        }
+    }
+}

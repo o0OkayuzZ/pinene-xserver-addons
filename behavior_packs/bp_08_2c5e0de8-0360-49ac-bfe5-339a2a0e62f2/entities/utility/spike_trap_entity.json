@@ -1,0 +1,107 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:entity":{
+        "description": {
+            "identifier": "dungeons:spike_trap_entity",
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "component_groups": {
+            "hitbox": {
+                "minecraft:area_attack": {
+                    "damage_per_tick": 8,
+                    "damage_range": 0.2,
+                    "cause": "stalagmite",
+                    "entity_filter": {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "not",
+                        "value": "dungeons:ancient_hunt"
+                    },
+                    "damage_cooldown": 1.5,  
+                    "use_self_as_damage_source": false,
+                    "death_message_override": "death.attack.spikeTrap.hit"
+            
+                },
+                "minecraft:behavior.timer_flag_1": {
+                    "on_end": {
+                        "event": "dungeons:spike_lowered",
+                        "target": "self"
+                    },
+                    "duration_range":[0.3,0.3],
+                    "cooldown_range":[0,0],
+                    "priority": 0
+                }
+            },
+            "despawn":{
+                "minecraft:instant_despawn": {}
+            } 
+        },
+        "components": {
+            "minecraft:transient": {},
+            "minecraft:body_rotation_blocked": {},
+            "minecraft:dimension_bound": {},
+            "minecraft:rotation_axis_aligned": {},
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:custom_hit_test": {
+                "hitboxes": [
+                    {
+                        "width": 0,
+                        "height": 0,
+                        "pivot": [
+                            0,
+                            -100,
+                            0
+                        ]
+                    }
+                ]
+            },
+            "minecraft:timer": {
+                "time": 0.76,
+                "looping": true,
+                "time_down_event": {
+                    "event": "dungeons:despawn",
+                    "target": "self"
+                }
+            },
+            "minecraft:collision_box": {
+                "height": 1.5,
+                "width": 0.8
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1,
+                "max": 1
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "hitbox"
+                    ]
+                }
+            },
+            "dungeons:spike_lowered":{
+                "remove": {
+                    "component_groups": [
+                        "hitbox"
+                    ]
+                }
+            },
+            "dungeons:despawn":{
+                "add": {
+                    "component_groups": [
+                        "despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

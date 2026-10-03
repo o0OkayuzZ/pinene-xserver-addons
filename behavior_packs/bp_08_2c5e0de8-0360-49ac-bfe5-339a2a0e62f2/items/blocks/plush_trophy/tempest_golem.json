@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dungeons:tempest_golem_plushie",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:block_placer": {
+                "block": "dungeons:tempest_golem_plushie",
+                "replace_block_item": true
+            },
+            "minecraft:display_name": {
+                "value": "tile.dungeons:tempest_golem_plushie.name"
+            },
+            "minecraft:rarity":"epic"
+        }
+    }
+}

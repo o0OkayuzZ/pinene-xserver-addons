@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.sawblade_use": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"leftArm": {
+					"rotation": [
+						"(v.is_first_person ? 0.0 : -variable.tcos0) + (v.is_first_person ? 0.0 : -28.5)",
+						"v.is_first_person ? 0.0 : 26.5",
+						"v.is_first_person ? 0.0 : 17.5"
+					]
+				},
+				"rightItem": {
+					"rotation": ["-v.is_first_person ? 0.0 : 7.5", "-v.is_first_person ? 0.0 : 15", "v.is_first_person ? -0.0 : 25"],
+					"position": ["-v.is_first_person ? 0.0 : 2.5", "v.is_first_person ? 0.0 : -2 + math.cos(q.anim_time*720*2)*0.5", "v.is_first_person ? 0.0 : -1"]
+				},
+				"rightArm": {
+					"rotation": [
+						"(v.is_first_person ? 0.0 : -35.5) + (v.is_first_person ? 0.0 : variable.tcos0/2)",
+						"v.is_first_person ? 0.0 : -25.2",
+						"v.is_first_person ? 0.0 : -9"
+					]
+				}
+			}
+		}
+	}
+}

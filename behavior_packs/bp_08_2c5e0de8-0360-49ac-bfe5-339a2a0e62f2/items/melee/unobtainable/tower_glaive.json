@@ -1,0 +1,83 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dungeons:tower_glaive",
+            "menu_category": {
+                "category": "none"
+            }
+        },
+        "components": {
+            "minecraft:icon": "tower_glaive",
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_spear"
+                ]
+            },
+            "minecraft:rarity": "epic",
+            "minecraft:max_stack_size": 1,
+            "minecraft:enchantable": {
+                "slot": "melee_spear",
+                "value": 14
+            },
+            "minecraft:hand_equipped": {
+                "value": true
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 72000,
+                "emit_vibrations": false,
+                "start_sound": "item.spear.use",
+                "movement_modifier": 1.0
+            },
+            "minecraft:cooldown": {
+                "category": "spear",
+                // Should match "swing_duration"'s "value".
+                "duration": 0.6,
+                "type": "attack"
+            },
+            "minecraft:swing_duration": {
+                // Should match "cooldown"'s "duration".
+                "value": 0.6
+            },
+            "minecraft:damage": {
+                "value": 6
+            },
+            "minecraft:piercing_weapon": {
+                "reach": {
+                    "min": 1.0,
+                    "max": 4.5
+                },
+                "creative_reach": {
+                    "min": 1.0,
+                    "max": 7.5
+                },
+                "hitbox_margin": 0.25
+            },
+            "minecraft:kinetic_weapon": {
+                "delay": 12,
+                "reach": {
+                    "min": 1.0,
+                    "max": 4.5
+                },
+                "creative_reach": {
+                    "min": 1.0,
+                    "max": 7.5
+                },
+                "hitbox_margin": 0.25,
+                "damage_multiplier": 1,
+                "damage_conditions": {
+                    "max_duration": 222,
+                    "min_relative_speed": 3.1
+                },
+                "knockback_conditions": {
+                    "max_duration": 222,
+                    "min_speed": 3.1
+                },
+                "dismount_conditions": {
+                    "max_duration": 222,
+                    "min_speed": 11.0
+                }
+            }
+        }
+    }
+}

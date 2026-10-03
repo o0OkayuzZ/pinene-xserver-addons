@@ -1,0 +1,43 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:deserttomb_sidekey"
+        },
+        "fallback": "dungeons:deserttomb_key_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_keystraight_0",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_keysplit_0",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_keysplit_1",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_key_end",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

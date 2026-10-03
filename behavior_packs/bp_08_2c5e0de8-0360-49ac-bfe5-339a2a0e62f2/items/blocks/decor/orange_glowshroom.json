@@ -1,0 +1,22 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dungeons:orange_glowshroom",
+            "menu_category": {
+                "category": "nature",
+                "group": "minecraft:itemGroup.name.mushroom"
+            }
+        },
+        "components": {
+            "minecraft:block_placer": {
+                "block": "dungeons:orange_glowshroom",
+                "replace_block_item": true
+            },
+            "minecraft:display_name": {
+                "value": "tile.dungeons:orange_glowshroom.name"
+            },
+            "minecraft:icon": "orange_glowshroom"
+        }
+    }
+}

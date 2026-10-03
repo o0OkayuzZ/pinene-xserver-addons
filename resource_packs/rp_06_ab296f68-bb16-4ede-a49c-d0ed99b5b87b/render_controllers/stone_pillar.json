@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.stone_pillar": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "query.property('dungeons:explosive') ? Texture.explosive : Texture.default"
+      ],
+      "overlay_color": {
+        "r": "variable.is_flashing ? 1.0 : this",
+        "g": "variable.is_flashing ? 0 : this",
+        "b": "variable.is_flashing ? 0.0 : this",
+        "a": "variable.is_flashing ? 0.35 : this"
+      }
+    }
+  }
+}

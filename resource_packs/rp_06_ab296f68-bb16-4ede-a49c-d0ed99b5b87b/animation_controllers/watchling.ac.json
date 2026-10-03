@@ -1,49 +1,42 @@
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.watchling.attack": {
-			"initial_state": "default",
-			"states": {
-				"attacking": {
-					"animations": [
-						"attack"
-					],
-					"transitions": [
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.watchling.attack" : {
+			"initial_state" : "default",
+			"states" : {
+				"attacking" : {
+					"animations" : [ "attack" ],
+					"transitions" : [
 						{
-							"default": "variable.attack_time<0"
+							"default" : "variable.attack_time < 0.0"
 						}
 					]
 				},
-				"default": {
-					"transitions": [
+				"default" : {
+					"transitions" : [
 						{
-							"attacking": "variable.attack_time>=0"
+							"attacking" : "variable.attack_time >= 0.0"
 						}
 					]
 				}
 			}
 		},
-		"controller.animation.watchling.teleport": {
-			"initial_state": "default",
-			"states": {
-				"teleport": {
-					"animations": [
-						"temp_teleport"
-					],
-					"transitions": [
+		"controller.animation.watchling.teleport" : {
+			"initial_state" : "default",
+			"states" : {
+				"teleport" : {
+					"animations" : [ "temp_teleport" ],
+					"transitions" : [
 						{
-							"default": "!query.is_saddled&&query.all_animations_finished"
+							"default" : "!query.is_saddled && query.all_animations_finished"
 						}
 					]
 				},
-				"default": {
-					"animations": [
-						"particles",
-						"look_at_target"
-					],
-					"transitions": [
+				"default" : {
+					"animations" : [ "particles", "look_at_target"],
+					"transitions" : [
 						{
-							"teleport": "query.is_saddled"
+							"teleport" : "query.is_saddled"
 						}
 					]
 				}

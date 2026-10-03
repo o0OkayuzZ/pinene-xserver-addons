@@ -1,29 +1,29 @@
 {
-	"format_version": "1.21.130",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:boots_of_swiftness",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:icon": "boots_swiftness",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:can_destroy_in_creative": false,
-			"dungeons:artefact_cooldown": {},
-			"dungeons:boots_of_switfness": {
-				"type": "common"
-			},
-			"minecraft:cooldown": {
-				"category": "boots_swiftness_common",
-				"duration": 5
-			},
-			"minecraft:interact_button": "item.use.artefact",
-			"minecraft:use_modifiers": {
-				"use_duration": 0
-			}
-		}
-	}
+  "format_version": "1.21.130",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:boots_of_swiftness",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": "boots_swiftness",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:can_destroy_in_creative": false,
+      "dungeons:artefact_cooldown": {},
+      "dungeons:boots_of_switfness": {
+        "type": "common"
+      },
+      "minecraft:cooldown": {
+        "category": "boots_swiftness_common",
+        "duration": 5
+      },
+      "minecraft:interact_button": "item.use.artefact",
+      "minecraft:use_modifiers": {
+        "use_duration": 0.0
+      }
+    }
+  }
 }

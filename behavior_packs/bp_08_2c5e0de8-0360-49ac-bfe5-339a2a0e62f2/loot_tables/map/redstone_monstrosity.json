@@ -1,0 +1,24 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:map",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "exploration_map",
+                            "destination": "dungeons:fiery_forge"
+                        },
+                        {
+                            "function": "set_name",
+                            "name": "item.dungeons:redstone_monstrosity_explorer_map"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

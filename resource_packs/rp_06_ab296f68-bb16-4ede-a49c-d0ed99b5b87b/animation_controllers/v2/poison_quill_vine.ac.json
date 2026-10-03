@@ -1,0 +1,97 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.poison_quill_vine.pose": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        "hide"
+                    ],
+                    "transitions": [
+                        {
+                            "emerging": "!q.property('dungeons:buried')"
+                        }
+                    ]
+                },
+                "emerging": {
+                    "animations": [
+                        "emerge"
+                    ],
+                    "transitions": [
+                        {
+                            "idle": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "idle": {
+                    "animations": [
+                        "idle"
+                    ],
+                    "transitions": [
+                        {
+                            "bury": "query.property('dungeons:buried')"
+                        }
+                    ]
+                },
+                "bury": {
+                    "animations": [
+                        "bury"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.poison_quill_vine.open_head": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        "flower_close"
+                    ],
+                    "transitions": [
+                        {
+                            "opening": "query.has_target && !q.property('dungeons:buried')"
+                        }
+                    ]
+                },
+                "opening": {
+                    "animations": [
+                        "flower_opening"
+                    ],
+                    "transitions": [
+                        {
+                            "open": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "open": {
+                    "animations": [
+                        "flower_open"
+                    ],
+                    "transitions": [
+                        {
+                            "closing": "!query.has_target || q.property('dungeons:buried')"
+                        }
+                    ]
+                },
+                "closing": {
+                    "animations": [
+                        {
+                            "flower_closing": "!query.property('dungeons:buried')"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

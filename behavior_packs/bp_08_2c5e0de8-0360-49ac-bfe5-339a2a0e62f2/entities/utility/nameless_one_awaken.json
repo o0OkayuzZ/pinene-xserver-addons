@@ -52,13 +52,13 @@
 				"knockback_filters": {
 					"test": "is_family",
 					"subject": "other",
-					"operator": "!=",
+                                 "operator": "!=",
 					"value": "monster"
 				},
 				"damage_filters": {
 					"test": "is_family",
 					"subject": "other",
-					"operator": "!=",
+                                 "operator": "!=",
 					"value": "monster"
 				},
 				"knockback_height_cap": 10,
@@ -85,11 +85,11 @@
 		},
 		"events": {
 			"dungeons:despawn": {
-				"queue_command": {
-					"command": [
-						"particle dungeons:nameless_awaken ~~1.7~"
-					]
-				},
+        "queue_command":{
+              "command":[
+                "particle dungeons:nameless_awaken ~~1.7~"
+          ]
+        },
 				"add": {
 					"component_groups": [
 						"dungeons:despawn"

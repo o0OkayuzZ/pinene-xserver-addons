@@ -1,45 +1,38 @@
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.leapleaf.root": {
-			"initial_state": "default",
-			"states": {
-				"charge": {
-					"animations": [
-						"charge",
-						"look_at_target"
-					],
-					"transitions": [
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.leapleaf.root" : {
+			"initial_state" : "default",
+			"states" : {
+				"charge" : {
+					"animations" : [ "charge", "look_at_target"],
+					"transitions" : [
 						{
-							"default": "q.all_animations_finished&&!q.timer_flag_1"
+							"default" : "q.all_animations_finished && !q.timer_flag_1"
 						}
 					],
-					"blend_transition": 0
+                             "blend_transition" : 0.0
 				},
-				"stunned": {
-					"animations": [
-						"stunned"
-					],
-					"transitions": [
+				"stunned" : {
+					"animations" : [ "stunned"],
+					"transitions" : [
 						{
-							"default": "q.all_animations_finished&&!q.is_stunned"
+							"default" : "q.all_animations_finished && !q.is_stunned"
 						}
 					],
-					"blend_transition": 0
+                             "blend_transition" : 0.0
 				},
-				"default": {
-					"animations": [
-						"look_at_target"
-					],
-					"transitions": [
+				"default" : {
+					"animations" : [ "look_at_target"],
+					"transitions" : [
 						{
-							"charge": "q.timer_flag_1"
+							"charge" : "q.timer_flag_1"
 						},
 						{
-							"stunned": "q.is_stunned"
+							"stunned" : "q.is_stunned"
 						}
 					],
-					"blend_transition": 0.1
+                             "blend_transition" : 0.1
 				}
 			}
 		}

@@ -13,11 +13,7 @@
 				"type": "linear",
 				"input": "v.particle_age",
 				"horizontal_range": "v.particle_lifetime",
-				"nodes": [
-					0.74,
-					0.89,
-					0
-				]
+				"nodes": [0.74, 0.89, 0]
 			}
 		},
 		"components": {
@@ -28,11 +24,7 @@
 				"active_time": 0.5
 			},
 			"minecraft:emitter_shape_disc": {
-				"offset": [
-					0,
-					4.5,
-					0
-				],
+				"offset": [0, 4.5, 0],
 				"radius": 0.3,
 				"surface_only": true,
 				"direction": "outwards"
@@ -42,39 +34,22 @@
 			},
 			"minecraft:particle_initial_speed": 1,
 			"minecraft:particle_appearance_billboard": {
-				"size": [
-					3,
-					4.5
-				],
+				"size": [3, 4.5],
 				"facing_camera_mode": "rotate_y",
 				"uv": {
 					"texture_width": 1,
 					"texture_height": 8,
 					"flipbook": {
-						"base_UV": [
-							0,
-							0
-						],
-						"size_UV": [
-							1,
-							1
-						],
-						"step_UV": [
-							0,
-							1
-						],
+						"base_UV": [0, 0],
+						"size_UV": [1, 1],
+						"step_UV": [0, 1],
 						"max_frame": 8,
 						"stretch_to_lifetime": true
 					}
 				}
 			},
 			"minecraft:particle_appearance_tinting": {
-				"color": [
-					0.94118,
-					0,
-					1,
-					1
-				]
+				"color": [0.94118, 0, 1, 1]
 			}
 		}
 	}

@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "reinforced_mail_helmet"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "IAI",
+            " I "
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:chainmail_helmet"
+            }
+        ],
+        "key": {
+            "A": {
+                "item": "minecraft:chainmail_helmet"
+            },
+            "I": {
+                "item": "minecraft:iron_ingot"
+            }
+        },
+        "result": {
+            "item": "dungeons:reinforced_mail_helmet",
+            "count": 1
+        }
+    }
+}

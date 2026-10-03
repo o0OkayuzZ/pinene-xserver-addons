@@ -1,36 +1,37 @@
 {
-	"format_version": "1.20.10",
-	"minecraft:recipe_shaped": {
-		"description": {
-			"identifier": "wind_bow"
-		},
-		"tags": [
-			"crafting_table"
-		],
-		"pattern": [
-			" /-",
-			"/ S",
-			" /-"
-		],
-		"key": {
-			"-": {
-				"item": "minecraft:feather"
-			},
-			"/": {
-				"item": "minecraft:stick"
-			},
-			"S": {
-				"item": "minecraft:string"
-			}
-		},
-		"unlock": [
-			{
-				"item": "minecraft:feather"
-			}
-		],
-		"result": {
-			"item": "dungeons:wind_bow",
-			"count": 1
-		}
-	}
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "wind_bow"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "assume_symmetry": true,
+    "pattern": [
+      " /-",
+      "/ S",
+      " /-"
+    ],
+    "key": {
+      "-": {
+        "item": "minecraft:feather"
+      },
+      "/": {
+        "item": "minecraft:stick"
+      },
+      "S": {
+        "item": "minecraft:string"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:feather"
+      }
+    ],
+    "result": {
+      "item": "dungeons:wind_bow",
+      "count": 1
+    }
+  }
 }

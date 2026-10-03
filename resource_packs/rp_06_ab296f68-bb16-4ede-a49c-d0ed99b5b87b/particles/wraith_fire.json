@@ -17,21 +17,11 @@
 				"active_time": 5
 			},
 			"minecraft:emitter_shape_disc": {
-				"offset": [
-					0,
-					0.5,
-					0
-				],
+				"offset": [0, 0.5, 0],
 				"radius": 1.2,
-				"direction": [
-					"math.random_integer(-1,1)",
-					0,
-					"math.random_integer(-1,1)"
-				]
+				"direction": ["math.random_integer(-1,1)", 0, "math.random_integer(-1,1)"]
 			},
-			"minecraft:particle_expire_if_in_blocks": [
-				"minecraft:water"
-			],
+			"minecraft:particle_expire_if_in_blocks": ["minecraft:water"],
 			"minecraft:particle_lifetime_expression": {
 				"max_lifetime": 1
 			},
@@ -41,31 +31,17 @@
 			"minecraft:particle_initial_speed": 0.2,
 			"minecraft:particle_motion_dynamic": {},
 			"minecraft:particle_appearance_billboard": {
-				"size": [
-					"0.05+(v.particle_age/6)",
-					"0.05+(v.particle_age/6)"
-				],
+				"size": ["0.05 + (v.particle_age / 6)", "0.05 + (v.particle_age / 6)"],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {
 					"texture_width": 8,
 					"texture_height": 8,
-					"uv": [
-						0,
-						0
-					],
-					"uv_size": [
-						8,
-						8
-					]
+					"uv": [0, 0],
+					"uv_size": [8, 8]
 				}
 			},
 			"minecraft:particle_appearance_tinting": {
-				"color": [
-					1,
-					1,
-					1,
-					1
-				]
+				"color": [1, 1, 1, 1]
 			}
 		}
 	}

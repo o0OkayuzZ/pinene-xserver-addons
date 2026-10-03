@@ -1,6 +1,7 @@
 import {
   world,
-  system
+  system,
+  ItemStack
 } from "@minecraft/server";
 
 system.beforeEvents.startup.subscribe((event) => {
@@ -8,29 +9,47 @@ system.beforeEvents.startup.subscribe((event) => {
     onUse(e) {
       const player = e.source;
       const item = e.itemStack;
-      const dim = player.dimension;
-      const loc = player.location
-
-      if (item.hasTag('dungeons:tome_of_duplication')) {
-        if (!player.hasTag('tod:used_totem_of_shielding')) return;
-      }
-
-      dim.playSound('mob.evocation_illager.cast_spell', loc);
-      var spawnLoc = dim.getTopmostBlock({ x: loc.x, z: loc.z }, loc.y)
-      if (spawnLoc == undefined) {
-        spawnLoc = loc
-      } else {
-        spawnLoc = spawnLoc.above()
-      }
-      if (spawnLoc == undefined) spawnLoc = loc
-      if (spawnLoc.y + 8 < loc.y) spawnLoc = { x: loc.x, y: loc.y - 4, z: loc.z }
-      const totem = player.dimension.spawnEntity('dungeons:totem_of_shielding', { x: loc.x, y: spawnLoc.y, z: loc.z });
-      let tameable = totem.getComponent('minecraft:tameable')
-      tameable.tame(player);
+      useArtefact(player, item, false)
     }
   });
 
 });
+
+system.afterEvents.scriptEventReceive.subscribe((e) => {
+  const id = e.id;
+  if (id !== "dungeons:force_artefact") return;
+  const player = e.sourceEntity;
+  if (!player) return;
+  const itemId = e.message;
+  if (!itemId) return;
+  const item = new ItemStack(itemId, 1)
+  if (!item.getComponent("dungeons:totem_of_shielding")) return;
+  useArtefact(player, item, true)
+})
+
+function useArtefact(player, item, finalShout) {
+
+  const dim = player.dimension;
+  const loc = player.location
+
+  if (item.hasTag('dungeons:tome_of_duplication')) {
+    if (!player.hasTag('tod:used_totem_of_shielding')) return;
+  }
+
+  dim.playSound('mob.evocation_illager.cast_spell', loc);
+  var spawnLoc = dim.getTopmostBlock({ x: loc.x, z: loc.z }, loc.y)
+  if (spawnLoc == undefined) {
+    spawnLoc = loc
+  } else {
+    spawnLoc = spawnLoc.above()
+  }
+  if (spawnLoc == undefined) spawnLoc = loc
+  if (spawnLoc.y + 8 < loc.y) spawnLoc = { x: loc.x, y: loc.y - 4, z: loc.z }
+  const totem = player.dimension.spawnEntity('dungeons:totem_of_shielding', { x: loc.x, y: spawnLoc.y, z: loc.z });
+  let tameable = totem.getComponent('minecraft:tameable')
+  tameable.tame(player);
+
+}
 
 world.afterEvents.dataDrivenEntityTrigger.subscribe((event) => {
   const mob = event.entity;

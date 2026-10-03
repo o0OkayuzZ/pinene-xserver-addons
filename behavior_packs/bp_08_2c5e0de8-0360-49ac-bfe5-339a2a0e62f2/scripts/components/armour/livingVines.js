@@ -20,13 +20,13 @@ world.afterEvents.entityHurt.subscribe((event) => {
         }
         for (const player of livingVines) {
             let hp = player.getComponent('minecraft:health');
-            if (hp.currentValue < hp.defaultValue) {
+            if (hp.currentValue < hp.effectiveMax) {
                 var healing = (damage / 2.5) / players.length;
                 if (healing > 1.5) healing = 1.5
-                if (hp.currentValue + healing > hp.defaultValue) {
-                    hp.setCurrentValue(hp.defaultValue)
+                if (hp.currentValue + healing > hp.effectiveMax) {
+                    hp.setCurrentValue(hp.effectiveMax)
                 } else {
-                    hp.setCurrentValue(hp.currentValue + healing)
+                    hp.setCurrentValue(hp.effectiveMax + healing)
                 }
             }
         }

@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "hunters_boots"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "I I",
+      "B B"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:gold_nugget"
+      }
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:leather"
+      },
+     "I": {
+        "item": "minecraft:gold_nugget"
+      }
+    },
+    "result": {
+      "item": "dungeons:hunters_boots",
+      "count": 1
+    }
+  }
+}

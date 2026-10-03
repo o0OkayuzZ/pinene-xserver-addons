@@ -1,0 +1,39 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:bonus_room_bricks_lower",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": false
+            }
+        },
+        "components": {
+            "minecraft:display_name": "tile.polished_blackstone_bricks.name",
+            "minecraft:connection_rule": {
+                "accepts_connections_from": "none"
+            },
+            "minecraft:geometry": {
+                "identifier": "minecraft:geometry.full_block"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "bonus_room_bricks_lower",
+                    "render_method": "opaque"
+                }
+            },
+            "minecraft:movable": {
+                "movement_type": "immovable"
+            },
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": false,
+                "redstone_conductor": false
+            },
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destructible_by_mining": false,
+            "minecraft:light_dampening": 15,
+            "minecraft:selection_box": true,
+            "minecraft:collision_box": true
+        }
+    }
+}

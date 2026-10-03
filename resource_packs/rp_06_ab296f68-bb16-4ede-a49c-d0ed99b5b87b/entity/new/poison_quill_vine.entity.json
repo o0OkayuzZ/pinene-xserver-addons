@@ -1,0 +1,52 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dungeons:poison_quill_vine",
+            "min_engine_version": "1.10.0",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "textures": {
+                "default": "textures/entity/poison_quill_vine/poison_quill_vine"
+            },
+            "geometry": {
+                "default": "geometry.poison_quill_vine"
+            },
+            "scripts": {
+                "animate": [
+                    "pose_controller",
+                    "head_controller",
+                    {
+                        "dead": "!query.is_alive"
+                    }
+                ]
+            },
+            "animations": {
+                "dead": "animation.poison_quill_vine.death",
+                "face_target": "animation.poison_quill_vine.face_target",
+                "emerge": "animation.poison_quill_vine.emerge",
+                "idle": "animation.poison_quill_vine.idle",
+                "bury": "animation.poison_quill_vine.bury",
+                "hide": "animation.poison_quill_vine.hide",
+                "flower_open": "animation.poison_quill_vine.opened_flower",
+                "flower_opening": "animation.poison_quill_vine.open_flower",
+                "flower_close": "animation.poison_quill_vine.closed_flower",
+                "flower_closing": "animation.poison_quill_vine.close_flower",
+                "head_controller": "controller.animation.poison_quill_vine.open_head",
+                "pose_controller": "controller.animation.poison_quill_vine.pose"
+            },
+            "sound_effects": {
+                "open_flower": "mob.poison_quill_vine.open",
+                "close_flower": "mob.poison_quill_vine.close",
+                "emerge": "mob.poison_quill_vine.emerge"
+            },
+            "spawn_egg": {
+                "texture": "egg_poison_quill_vine"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

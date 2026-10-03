@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "champions_helmet"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "f f",
+      "CIC",
+      "I I"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:lapis_lazuli"
+      }
+    ],
+    "key": {
+      "C": {
+        "item": "minecraft:lapis_lazuli"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "f": {
+        "item": "minecraft:feather"
+      }
+    },
+    "result": {
+      "item": "dungeons:champions_helmet",
+      "count": 1
+    }
+  }
+}

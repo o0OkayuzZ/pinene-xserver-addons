@@ -1,0 +1,90 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:woodlandprison_side"
+        },
+        "fallback": "dungeons:woodlandprison_fallback",
+        "elements": [            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_sidestraight_0",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 12
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_sidestraight_1",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 12
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_sidestraight_2",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 12
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_sidesplit_0",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 12
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_sidesplit_1",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_sidesplit_2",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_sidesplit_3",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_boss",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_side_end",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_bonus_door",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,83 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:jungle_main"
+        },
+        "fallback": "dungeons:jungle_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_mainstraight_0",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_mainstraight_1",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_mainsplit_0",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_mainsplit_1",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_maincomp_0",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_maincomp_1",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_maincomp_2",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_maincomp_3",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_end",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

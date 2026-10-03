@@ -1,0 +1,67 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:mistypeak_main"
+        },
+        "fallback": "dungeons:mistypeak_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_mainstraight_0",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight":8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_mainsplit_0",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight":6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_mainsplit_1",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight":6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_mainsplit_2",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight":6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_mainsplit_3",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight":6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_mainsplit_4",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight":6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_end",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

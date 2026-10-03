@@ -20,7 +20,7 @@
 				"max_lifetime": 0.15
 			},
 			"minecraft:particle_initial_spin": {
-				"rotation": "math.random(0,3)*90",
+				"rotation": "math.random(0,3) * 90",
 				"rotation_rate": 20
 			},
 			"minecraft:particle_initial_speed": 7,

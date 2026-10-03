@@ -7,12 +7,19 @@ import {
 const id = "burning"
 
 system.runInterval(() => {
-    for (const dimensionType of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimensionType.typeId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (const entity of dim.getEntities({ families: ["enchanted"], tags: ["dungeons:enchanted_mob_" + id] })) {
             if (dim.isChunkLoaded(entity.location)) {
                 const loc = entity.location
-                const playersNearby = dim.getPlayers({ location: loc, maxDistance: 3.5, excludeGameModes: ["Spectator", "Creative"] })
+                
+    var large = false
+    if (entity.hasTag("dungeons:enchanted_mob_huge")) large = true
+    var range = 3.5
+    if (large) range = 5
+                const playersNearby = dim.getPlayers({ location: loc, maxDistance: range, excludeGameModes: ["Spectator", "Creative"] })
                 var effects = false
                 for (const player of playersNearby) {
                     var damage = player.applyDamage(2, { cause: "fire" })

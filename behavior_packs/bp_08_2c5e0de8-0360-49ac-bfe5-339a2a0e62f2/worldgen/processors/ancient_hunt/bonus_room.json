@@ -1,0 +1,236 @@
+{
+  "format_version": "1.21.20",
+  "minecraft:processor_list": {
+    "description": {
+      "identifier": "dungeons:bonus_room"
+    },
+    "processors": [
+			{
+				"processor_type": "minecraft:rule",
+				"rules": [
+					{
+						"input_predicate": {
+							"block": "lantern",
+							"predicate_type": "minecraft:random_block_match",
+							"probability": 1
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"output_state": {
+							"name": "air"
+						}
+					}
+        ]
+      },
+      {
+        "processor_type": "minecraft:capped",
+        "delegate": {
+          "processor_type": "minecraft:rule",
+          "rules": [
+            {
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "minecraft:pink_concrete",
+                "probability": 0.125
+              },
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "output_state": {
+                "name": "dungeons:bonus_door",
+                "states": {
+                    "dungeons:filled": false,
+                    "dungeons:rune": "a"
+                }
+              }
+            }
+          ]
+        },
+        "limit": 2
+      },
+      {
+        "processor_type": "minecraft:capped",
+        "delegate": {
+          "processor_type": "minecraft:rule",
+          "rules": [
+            {
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "minecraft:pink_concrete",
+                "probability": 0.1429
+              },
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "output_state": {
+                "name": "dungeons:bonus_door",
+                "states": {
+                    "dungeons:filled": false,
+                    "dungeons:rune": "c"
+                }
+              }
+            }
+          ]
+        },
+        "limit": 2
+      },
+      {
+        "processor_type": "minecraft:capped",
+        "delegate": {
+          "processor_type": "minecraft:rule",
+          "rules": [
+            {
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "minecraft:pink_concrete",
+                "probability": 0.1667
+              },
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "output_state": {
+                "name": "dungeons:bonus_door",
+                "states": {
+                    "dungeons:filled": false,
+                    "dungeons:rune": "i"
+                }
+              }
+            }
+          ]
+        },
+        "limit": 2
+      },
+      {
+        "processor_type": "minecraft:capped",
+        "delegate": {
+          "processor_type": "minecraft:rule",
+          "rules": [
+            {
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "minecraft:pink_concrete",
+                "probability": 0.2
+              },
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "output_state": {
+                "name": "dungeons:bonus_door",
+                "states": {
+                    "dungeons:filled": false,
+                    "dungeons:rune": "o"
+                }
+              }
+            }
+          ]
+        },
+        "limit": 2
+      },
+      {
+        "processor_type": "minecraft:capped",
+        "delegate": {
+          "processor_type": "minecraft:rule",
+          "rules": [
+            {
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "minecraft:pink_concrete",
+                "probability": 0.25
+              },
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "output_state": {
+                "name": "dungeons:bonus_door",
+                "states": {
+                    "dungeons:filled": false,
+                    "dungeons:rune": "p"
+                }
+              }
+            }
+          ]
+        },
+        "limit": 2
+      },
+      {
+        "processor_type": "minecraft:capped",
+        "delegate": {
+          "processor_type": "minecraft:rule",
+          "rules": [
+            {
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "minecraft:pink_concrete",
+                "probability": 0.3333
+              },
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "output_state": {
+                "name": "dungeons:bonus_door",
+                "states": {
+                    "dungeons:filled": false,
+                    "dungeons:rune": "r"
+                }
+              }
+            }
+          ]
+        },
+        "limit": 2
+      },
+      {
+        "processor_type": "minecraft:capped",
+        "delegate": {
+          "processor_type": "minecraft:rule",
+          "rules": [
+            {
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "minecraft:pink_concrete",
+                "probability": 0.5
+              },
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "output_state": {
+                "name": "dungeons:bonus_door",
+                "states": {
+                    "dungeons:filled": false,
+                    "dungeons:rune": "s"
+                }
+              }
+            }
+          ]
+        },
+        "limit": 2
+      },
+      {
+        "processor_type": "minecraft:capped",
+        "delegate": {
+          "processor_type": "minecraft:rule",
+          "rules": [
+            {
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "minecraft:pink_concrete",
+                "probability": 1
+              },
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "output_state": {
+                "name": "dungeons:bonus_door",
+                "states": {
+                    "dungeons:filled": false,
+                    "dungeons:rune": "t"
+                }
+              }
+            }
+          ]
+        },
+        "limit": 3
+      }
+    ]
+  }
+}

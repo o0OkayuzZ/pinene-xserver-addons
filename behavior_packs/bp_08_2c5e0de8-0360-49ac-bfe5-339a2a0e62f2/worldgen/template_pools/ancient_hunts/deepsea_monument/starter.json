@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:monument_starter"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/deepsea_monument/mon_start",
+                    "processors": "dungeons:deepsea_monument"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

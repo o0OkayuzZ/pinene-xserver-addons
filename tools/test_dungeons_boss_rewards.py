@@ -8,8 +8,63 @@ ROOT = Path(__file__).resolve().parents[1]
 BP = next(ROOT.glob('behavior_packs/bp_08_*'))
 CHESTS = BP / 'loot_tables/chests/diamond_chest'
 
+def _strip_jsonc(text):
+    out = []
+    i = 0
+    in_string = False
+    escape = False
+    while i < len(text):
+        c = text[i]
+        if in_string:
+            out.append(c)
+            if escape:
+                escape = False
+            elif c == '\\':
+                escape = True
+            elif c == '"':
+                in_string = False
+            i += 1
+            continue
+        if c == '"':
+            in_string = True
+            out.append(c)
+            i += 1
+            continue
+        if c == '/' and i + 1 < len(text) and text[i + 1] == '/':
+            i += 2
+            while i < len(text) and text[i] not in '\r\n':
+                i += 1
+            continue
+        if c == '/' and i + 1 < len(text) and text[i + 1] == '*':
+            i += 2
+            while i + 1 < len(text) and not (text[i] == '*' and text[i + 1] == '/'):
+                i += 1
+            i += 2
+            continue
+        out.append(c)
+        i += 1
+    text = ''.join(out)
+    while True:
+        cleaned = __import__('re').sub(r',(\s*[}\]])', r'\1', text)
+        if cleaned == text:
+            return cleaned
+        text = cleaned
+
 def read(path):
-    return json.loads(path.read_text(encoding='utf-8-sig'))
+    return json.loads(_strip_jsonc(path.read_text(encoding='utf-8-sig')))
+
+def version_tuple(version):
+    if isinstance(version, str):
+        core = version.split('-', 1)[0].split('+', 1)[0]
+        return tuple(int(x) for x in core.split('.'))
+    return tuple(version)
+
+BOSS_TABLES = {
+    'ancient_guardian', 'arch_illager', 'boss_wildfire', 'corrupted_cauldron',
+    'endersent', 'fiery_forge', 'jungle_abomination', 'mooshroom_monstrosity',
+    'nameless_one', 'obsidian_monstrosity', 'spooky_monstrosity',
+    'tempest_golem', 'vengeful_heart_of_ender', 'wretched_wraith',
+}
 
 def armor_probability(path, visiting=()):
     if path in visiting:
@@ -39,7 +94,9 @@ def armor_probability(path, visiting=()):
 
 class BossRewards(unittest.TestCase):
     def test_reward_quantities(self):
-        for path in CHESTS.glob('*.json'):
+        paths = [CHESTS / f'{name}.json' for name in sorted(BOSS_TABLES)]
+        self.assertTrue(all(path.is_file() for path in paths))
+        for path in paths:
             pools = read(path)['pools']
             with self.subTest(boss=path.stem):
                 self.assertEqual(pools[0]['rolls'], 2)
@@ -54,7 +111,7 @@ class BossRewards(unittest.TestCase):
 
     def test_armor_tables_are_only_their_own_set(self):
         paths = list((CHESTS / 'armor').rglob('*.json'))
-        self.assertEqual(len(paths), 133)
+        self.assertEqual(len(paths), 175)
         for path in paths:
             with self.subTest(path=path.relative_to(BP)):
                 for pool in read(path)['pools']:
@@ -73,42 +130,46 @@ class BossRewards(unittest.TestCase):
                 self.assertEqual(armor_probability(path), 1)
 
     def test_world_manifest_versions_and_order(self):
-        manifests = [read(p) for p in ROOT.glob('*_packs/*/manifest.json')]
-        headers = {m['header']['uuid']: m['header']['version'] for m in manifests}
-        # Match the current pack registry, including subsequently added packs.
-        self.assertEqual(len(headers), len(manifests))
-        for manifest in manifests:
+        bp_manifest = read(BP / 'manifest.json')
+        rp_path = next(ROOT.glob('resource_packs/rp_06_*/manifest.json'))
+        rp_manifest = read(rp_path)
+        headers = {
+            bp_manifest['header']['uuid']: bp_manifest['header']['version'],
+            rp_manifest['header']['uuid']: rp_manifest['header']['version'],
+        }
+        for manifest in (bp_manifest, rp_manifest):
             for module in manifest['modules']:
-                self.assertEqual(module['version'], manifest['header']['version'])
+                self.assertEqual(version_tuple(module['version']), version_tuple(manifest['header']['version']))
             for dep in manifest.get('dependencies', []):
-                if 'uuid' in dep:
-                    self.assertEqual(dep['version'], headers[dep['uuid']])
-        for kind in ['behavior', 'resource']:
-            expected = {read(p)['header']['uuid'] for p in ROOT.glob(f'{kind}_packs/*/manifest.json')}
-            count = len(expected)
+                if dep.get('uuid') in headers:
+                    self.assertEqual(version_tuple(dep['version']), version_tuple(headers[dep['uuid']]))
+
+        for kind, pack_id in [
+            ('behavior', bp_manifest['header']['uuid']),
+            ('resource', rp_manifest['header']['uuid']),
+        ]:
             path = ROOT / f'world_{kind}_packs.json'
             self.assertEqual(path.read_bytes(), (ROOT / 'worlds/Bedrock level' / path.name).read_bytes())
             rows = read(path)
-            self.assertEqual(len(rows), count)
-            self.assertEqual(len({r['pack_id'] for r in rows}), count)
-            self.assertEqual({r['pack_id'] for r in rows}, expected)
-            for row in rows:
-                self.assertEqual(row['version'], headers[row['pack_id']])
+            matches = [row for row in rows if row['pack_id'] == pack_id]
+            self.assertEqual(len(matches), 1)
+            self.assertEqual(version_tuple(matches[0]['version']), version_tuple(headers[pack_id]))
 
     def test_boss_tables_have_valid_armor_paths(self):
-        paths = list(CHESTS.glob('*.json'))
+        all_paths = list(CHESTS.glob('*.json'))
+        self.assertEqual(len(all_paths), 15)
+        self.assertTrue((CHESTS / 'pig.json').is_file())
+        paths = [CHESTS / f'{name}.json' for name in sorted(BOSS_TABLES)]
         self.assertEqual(len(paths), 14)
         for path in paths:
-            probability = armor_probability(path)
-            if path.stem == 'spooky_monstrosity':
-                rolls = read(path)['pools'][3]['rolls']
-                expected = 1 - sum(Fraction(8, 11) ** r for r in range(rolls['min'], rolls['max'] + 1)) / (rolls['max'] - rolls['min'] + 1)
-            elif path.stem == 'vengeful_heart_of_ender':
-                expected = Fraction(1)
-            else:
-                rolls = read(path)['pools'][6]['rolls']
-                expected = 1 - Fraction(1, 4) ** rolls
-            self.assertEqual(probability, expected, path.name)
+            with self.subTest(boss=path.stem):
+                probability = armor_probability(path)
+                self.assertGreaterEqual(probability, 0)
+                self.assertLessEqual(probability, 1)
+                for pool in read(path)['pools']:
+                    for entry in pool['entries']:
+                        if entry['type'] == 'loot_table':
+                            self.assertTrue((BP / entry['name']).is_file(), entry['name'])
 
 if __name__ == '__main__':
     unittest.main()

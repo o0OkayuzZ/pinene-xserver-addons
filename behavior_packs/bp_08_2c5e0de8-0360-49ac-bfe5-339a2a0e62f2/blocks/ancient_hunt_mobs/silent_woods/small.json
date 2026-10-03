@@ -1,0 +1,47 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:mob_silent_woods_small",
+            "menu_category": {
+                "category": "none"
+            }
+        },
+        "components": {
+            "dungeons:ancient_hunt_mob": {
+                "type": "silent_woods",
+                "group": "small"
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 999
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 999
+            },
+            "minecraft:display_name": "silent_woods small",
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "can_contain_liquid": true
+                    }
+                ]
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "flattened_structure_void",
+                    "tint_method": "default_foliage"
+                }
+            },
+            "minecraft:tags": [
+                "dungeons:structure_mob_block"
+            ],
+            "minecraft:tick": {
+                "interval_range": [
+                    1,
+                    1
+                ]
+            }
+        }
+    }
+}

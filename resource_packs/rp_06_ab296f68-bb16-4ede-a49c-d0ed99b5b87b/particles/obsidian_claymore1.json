@@ -17,11 +17,7 @@
 				"active_time": 0.16
 			},
 			"minecraft:emitter_shape_sphere": {
-				"offset": [
-					0,
-					1,
-					0
-				],
+				"offset": [0, 1, 0],
 				"radius": 0.1,
 				"surface_only": true,
 				"direction": "outwards"
@@ -35,30 +31,17 @@
 			},
 			"minecraft:particle_initial_speed": 6,
 			"minecraft:particle_motion_dynamic": {
-				"linear_acceleration": [
-					0,
-					-5,
-					0
-				],
+				"linear_acceleration": [0, -5, 0],
 				"linear_drag_coefficient": 1
 			},
 			"minecraft:particle_appearance_billboard": {
-				"size": [
-					"0.2+v.particle_random_1*0.5",
-					"0.2+v.particle_random_1*0.5"
-				],
+				"size": ["0.2 + v.particle_random_1*0.5", "0.2 + v.particle_random_1*0.5"],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {
 					"texture_width": 16,
 					"texture_height": 16,
-					"uv": [
-						0,
-						0
-					],
-					"uv_size": [
-						1,
-						1
-					]
+					"uv": [0, 0],
+					"uv_size": [1, 1]
 				}
 			},
 			"minecraft:particle_motion_collision": {

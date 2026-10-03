@@ -1,101 +1,119 @@
 {
-	"format_version": "1.21.130",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:rare_tome_of_duplication",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:hover_text_color": "green",
-			"minecraft:tags": {
-				"tags": [
-					"dungeons:tome_of_duplication"
-				]
-			},
-			"minecraft:icon": "tome_of_duplication",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:can_destroy_in_creative": false,
-			"dungeons:artefact_cooldown": {},
-			"dungeons:tome_of_duplication": {},
-			"dungeons:blast_fungus": {},
-			"dungeons:buzzy_nest": {},
-			"dungeons:corrupted_seeds": {},
-			"dungeons:enchanted_grass": {},
-			"dungeons:enchanters_tome": {},
-			"dungeons:golem_kit": {},
-			"dungeons:light_feather": {},
-			"dungeons:satchel_of_elements": {},
-			"dungeons:satchel_of_elixirs": {},
-			"dungeons:scatter_mines": {},
-			"dungeons:soul_lantern": {},
-			"dungeons:totem_of_casting": {},
-			"dungeons:totem_of_regeneration": {},
-			"dungeons:totem_of_shielding": {},
-			"dungeons:updraft_tome": {},
-			"dungeons:ice_wand": {},
-			"dungeons:vexing_chant": {},
-			"dungeons:spinblade": {},
-			"dungeons:corrupted_pumpkin": {},
-			"dungeons:love_medallion": {},
-			"dungeons:totem_of_soul_protection": {},
-			"dungeons:tasty_bone": {},
-			"dungeons:wonderful_wheat": {},
-			"dungeons:corrupted_beacon": {
-				"type": "rare"
-			},
-			"dungeons:death_cap_mushroom": {
-				"type": "rare"
-			},
-			"dungeons:eye_of_the_guardian": {
-				"type": "rare"
-			},
-			"dungeons:ghost_cloak": {
-				"type": "rare"
-			},
-			"dungeons:gong_of_weakening": {
-				"type": "rare"
-			},
-			"dungeons:harvester": {
-				"type": "rare"
-			},
-			"dungeons:iron_hide_amulet": {
-				"type": "rare"
-			},
-			"dungeons:lightning_rod": {
-				"type": "rare"
-			},
-			"dungeons:powershaker": {
-				"type": "rare"
-			},
-			"dungeons:satchel_of_snacks": {
-				"type": "rare"
-			},
-			"dungeons:shock_powder": {
-				"type": "rare"
-			},
-			"dungeons:soul_healer": {
-				"type": "rare"
-			},
-			"dungeons:boots_of_swiftness": {
-				"type": "rare"
-			},
-			"dungeons:shadow_shifter": {
-				"type": "rare"
-			},
-			"dungeons:wind_horn": {
-				"type": "rare"
-			},
-			"minecraft:cooldown": {
-				"category": "tome_duplication_rare",
-				"duration": 20
-			},
-			"minecraft:interact_button": "item.use.artefact",
-			"minecraft:use_modifiers": {
-				"use_duration": 0
-			}
-		}
-	}
+  "format_version": "1.21.130",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:rare_tome_of_duplication",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:hover_text_color": "green",
+      "minecraft:tags": {
+        "tags": [
+          "dungeons:tome_of_duplication"
+        ]
+      },
+      "minecraft:icon": "tome_of_duplication",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:can_destroy_in_creative": false,
+      "dungeons:artefact_cooldown": {},
+      "dungeons:tome_of_duplication": {},
+      "dungeons:blast_fungus": {},
+      "dungeons:buzzy_nest": {},
+      "dungeons:corrupted_seeds": {},
+      "dungeons:enchanted_grass": {},
+      "dungeons:enchanters_tome": {},
+      "dungeons:golem_kit": {},
+      "dungeons:light_feather": {},
+      "dungeons:satchel_of_elements": {},
+      "dungeons:satchel_of_elixirs": {},
+      "dungeons:scatter_mines": {},
+      "dungeons:soul_lantern": {},
+      "dungeons:totem_of_casting": {},
+      "dungeons:totem_of_regeneration": {},
+      "dungeons:totem_of_shielding": {},
+      "dungeons:updraft_tome": {},
+      "dungeons:ice_wand": {},
+      "dungeons:vexing_chant": {},
+      "dungeons:spinblade": {},
+      "dungeons:corrupted_pumpkin": {},
+      "dungeons:love_medallion": {},
+      "dungeons:totem_of_soul_protection": {},
+      "dungeons:tasty_bone": {},
+      "dungeons:wonderful_wheat": {},
+      "dungeons:corrupted_beacon": {
+        "type": "rare"
+      },
+      "dungeons:death_cap_mushroom": {
+        "type": "rare"
+      },
+      "dungeons:eye_of_the_guardian": {
+        "type": "rare"
+      },
+      "dungeons:ghost_cloak": {
+        "type": "rare"
+      },
+      "dungeons:gong_of_weakening": {
+        "type": "rare"
+      },
+      "dungeons:harvester": {
+        "type": "rare"
+      },
+      "dungeons:iron_hide_amulet": {
+        "type": "rare"
+      },
+      "dungeons:lightning_rod": {
+        "type": "rare"
+      },
+      "dungeons:powershaker": {
+        "type": "rare"
+      },
+      "dungeons:satchel_of_snacks": {
+        "type": "rare"
+      },
+      "dungeons:shock_powder": {
+        "type": "rare"
+      },
+      "dungeons:soul_healer": {
+        "type": "rare"
+      },
+      "dungeons:boots_of_swiftness": {
+        "type": "rare"
+      },
+      "dungeons:shadow_shifter": {
+        "type": "rare"
+      },
+      "dungeons:wind_horn": {
+        "type": "rare"
+      },
+      "dungeons:firework_quiver": {
+        "type": "rare"
+      },
+      "dungeons:flaming_quiver": {
+        "type": "rare"
+      },
+      "dungeons:harpoon_quiver": {
+        "type": "rare"
+      },
+      "dungeons:thundering_quiver": {
+        "type": "rare"
+      },
+      "dungeons:torment_quiver": {
+        "type": "rare"
+      },
+      "dungeons:void_quiver": {
+        "type": "rare"
+      },
+      "minecraft:cooldown": {
+        "category": "tome_duplication_rare",
+        "duration": 20
+      },
+      "minecraft:interact_button": "item.use.artefact",
+      "minecraft:use_modifiers": {
+        "use_duration": 0.0
+      }
+    }
+  }
 }

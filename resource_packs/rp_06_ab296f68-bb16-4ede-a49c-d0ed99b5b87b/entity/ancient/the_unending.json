@@ -1,0 +1,36 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dungeons:the_unending",
+            "materials": {
+                "default": "entity_emissive_alpha",
+                "enchanted": "dungeons_entity_enchant"
+            },
+            "textures": {
+                "default": "textures/entity/enchanted_mob/monster_spawner",
+                "enchanted": "textures/misc/ancient_entity_glint"
+            },
+            "geometry": {
+                "default": "geometry.monster_spawner"
+            },
+            "render_controllers": [
+                "controller.render.default",
+                "controller.render.dungeons_entity_ancient"
+            ],
+            "animations": {
+                "particles": "animation.monster_spawner.particles"
+            },
+            "particle_effects": {
+                "particle": "dungeons:monster_spawner"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "particles": "query.has_target + 1"
+                    }
+                ]
+            }
+        }
+    }
+}

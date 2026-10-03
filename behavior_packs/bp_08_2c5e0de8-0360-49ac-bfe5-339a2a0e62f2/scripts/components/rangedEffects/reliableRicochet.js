@@ -9,7 +9,7 @@ import { isValidTarget } from "main.js"
 
 const effectId = "dungeons:reliable_ricochet_bow_effect"
 
-function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
+function findRicochet(hit, owner, array, spook, projectileId, projectileTags, gloop) {
     if (Math.random() > 0.75) {
         //return; commenting this out is literally all i got to change man
     }
@@ -27,7 +27,7 @@ function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
         if (possibleTargets.includes(possibleTarget)) continue;
         possibleTargets.push(possibleTarget)
     }
-    target = possibleTargets[Math.ceil(Math.random() * possibleTargets.length)]
+    target = possibleTargets[Math.floor(Math.random() * possibleTargets.length)]
     if (!target) return;
     const hloc = target.getHeadLocation()
     if (projectileId == "dungeons:torment_arrow") projectileId = "minecraft:arrow"
@@ -36,6 +36,7 @@ function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
     proj.owner = owner
     newArrow.addTag("dungeons:multishot_arrow")
     newArrow.addTag("dungeons:ricochet_arrow")
+    newArrow.addTag("dungeons:cannot_be_picked_up")
     newArrow.addTag("dungeons:ignore_arrow_tags")
     newArrow.addTag("dungeons:crossbow_checked")
     for (const tag of projectileTags) if (tag !== effectId) newArrow.addTag(tag);
@@ -48,7 +49,14 @@ function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
     const distanceBetween = Math.hypot(hitLoc.x - targetLoc.x, hitLoc.y - targetLoc.y, hitLoc.z - targetLoc.z)
     for (let i = 1; i < distanceBetween; i++) {
         system.runTimeout(() => {
-            if (projectileTags.includes("dungeons:bubble_bow_charged") == true) hit.dimension.spawnParticle("dungeons:bubble_bow_trail", { x: hitLoc.x + (xDif * (i / distanceBetween)), y: 1 + hitLoc.y + (yDif * (i / distanceBetween)), z: hitLoc.z + (zDif * (i / distanceBetween)) })
+            if (projectileTags.includes("dungeons:bubble_bow_charged") == true) {
+                if(!gloop) hit.dimension.spawnParticle("dungeons:bubble_bow_trail", { x: hitLoc.x + (xDif * (i / distanceBetween)), y: 1 + hitLoc.y + (yDif * (i / distanceBetween)), z: hitLoc.z + (zDif * (i / distanceBetween)) })
+                if(gloop) {
+                    hit.dimension.spawnParticle("dungeons:spine_chill_spear", { x: hitLoc.x + (xDif * (i / distanceBetween)), y: 1 + hitLoc.y + (yDif * (i / distanceBetween)), z: hitLoc.z + (zDif * (i / distanceBetween)) })
+                    hit.dimension.spawnParticle("dungeons:spine_chill_echo", { x: hitLoc.x + (xDif * (i / distanceBetween)), y: 1 + hitLoc.y + (yDif * (i / distanceBetween)), z: hitLoc.z + (zDif * (i / distanceBetween)) })
+                
+                }
+            }
             hit.dimension.spawnParticle("dungeons:ricochet_shot", { x: hitLoc.x + (xDif * (i / distanceBetween)), y: 1 + hitLoc.y + (yDif * (i / distanceBetween)), z: hitLoc.z + (zDif * (i / distanceBetween)) })
         }, i / 2)
     }
@@ -56,10 +64,12 @@ function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
     system.runTimeout(() => {
         target.dimension.spawnParticle('dungeons:ricochet_shot', target.location);
         target.dimension.playSound('weapon.enchant.ricochet', target.location);
-        var newArray = array
+        var newArray = []
+        for(const slot of array) newArray.push(slot)
         newArray.push(target)
-        if (newArray.length > 15) return;
-        findRicochet(target, owner, newArray, spook, projectileId, projectileTags)
+        if (newArray.length > 5) return;
+        findRicochet(target, owner, newArray, spook, projectileId, projectileTags, gloop)
+        if(newArrow.isValid) newArrow.remove()
     }, 1 + distanceBetween / 2);
 }
 
@@ -83,11 +93,13 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     //effect code
     if (e.damage <= 0) return;
     var spook = false
+    var gloop = false
     if (projectile.hasTag("dungeons:haunted_bow_fired_by")) spook = true
+    if (projectile.hasTag("dungeons:gloopy_bow_fired_by")) gloop = true
     const id = projectile.typeId
     const projectileTags = projectile.getTags()
     system.run(() => {
-        findRicochet(hurt, attacker, [hurt], spook, id, projectileTags)
+        findRicochet(hurt, attacker, [hurt], spook, id, projectileTags, gloop)
     })
 
 });

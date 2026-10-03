@@ -17,19 +17,17 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!baseDmg) return;
     if (baseDmg <= 0) return;
     e.damage = e.damage * 0.8
-    if (hurt.getDynamicProperty("dungeons:damage_reduction_prevented") >= baseDmg) {
-        e.cancel = true;
-        return;
-    }
-    hurt.setDynamicProperty("dungeons:damage_reduction_prevented", baseDmg)
-    system.runTimeout(() => {
-        hurt.setDynamicProperty("dungeons:damage_reduction_prevented", null)
-    }, 9)
 });
+
 system.runInterval(() => {
     for (const player of world.getPlayers({ excludeGameModes: ["Spectator"] })) {
         if (isWearingSet(player, "dungeons:plate_armour")) {
-            if (player.isSprinting) player.addEffect("slowness", 4, { amplifier: 1, showParticles: false });
+            if (player.isSprinting) {
+                player.addEffect("slowness", 100, { amplifier: 1, showParticles: false });
+                system.runTimeout(() => {
+                    if (!player.isSprinting) player.removeEffect("slowness")
+                }, 1)
+            }
         }
     }
 });

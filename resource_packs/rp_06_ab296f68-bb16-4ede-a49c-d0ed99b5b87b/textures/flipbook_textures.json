@@ -12,6 +12,12 @@
         "blend_frames": true
     },
     {
+        "flipbook_texture": "textures/blocks/void_breath",
+        "atlas_tile": "void_breath",
+        "ticks_per_frame": 2,
+        "blend_frames": false
+    },
+    {
         "flipbook_texture": "textures/blocks/eternal_flame",
         "atlas_tile": "eternal_flame",
         "ticks_per_frame": 2,
@@ -28,5 +34,27 @@
         "atlas_tile": "forge_core_top_active",
         "ticks_per_frame": 10,
         "blend_frames": true
+    },
+    {
+        "flipbook_texture": "textures/blocks/ancient_hunt/ancient_portal",
+        "atlas_tile": "ancient_portal"
+    },
+    {
+        "flipbook_texture": "textures/blocks/ancient_hunt/ancient_barrier",
+        "atlas_tile": "ancient_barrier"
+    },
+    {
+        "flipbook_texture": "textures/blocks/ancient_hunt/active_gilded_obsidian",
+        "atlas_tile": "active_gilded_obsidian",
+        "ticks_per_frame": 10
+    },
+    {
+        "flipbook_texture": "textures/blocks/decor/blue_magma",
+        "atlas_tile": "blue_magma",
+        "ticks_per_frame": 10
+    },
+    {
+        "flipbook_texture": "textures/blocks/ancient_hunt/bonus_room_floor",
+        "atlas_tile": "bonus_room_floor"
     }
 ]

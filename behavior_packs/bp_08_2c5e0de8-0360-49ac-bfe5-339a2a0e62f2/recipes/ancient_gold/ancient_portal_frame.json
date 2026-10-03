@@ -1,0 +1,33 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:ancient_portal_frame"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "GGG",
+            "GBG",
+            "GGG"
+        ],
+        "unlock": [
+            {
+                "item": "dungeons:ancient_gold_ingot"
+            }
+        ],
+        "key": {
+            "B": {
+                "item": "obsidian"
+            },
+            "G": {
+                "item": "dungeons:ancient_gold_ingot"
+            }
+        },
+        "result": {
+            "item": "dungeons:ancient_portal_frame",
+            "count": 1
+        }
+    }
+}

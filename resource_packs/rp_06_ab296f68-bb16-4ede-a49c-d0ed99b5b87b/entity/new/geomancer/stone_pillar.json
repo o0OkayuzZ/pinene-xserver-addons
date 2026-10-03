@@ -1,0 +1,31 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dungeons:stone_pillar",
+            "min_engine_version": "1.10.0",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "textures": {
+                "default": "textures/entity/geomancer/stone_pillar",
+                "explosive": "textures/entity/geomancer/explosive_pillar"
+            },
+            "geometry": {
+                "default": "geometry.stone_pillar"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.is_primed = query.fuse_time >= 0 * query.property('dungeons:explosive');",
+                    "variable.fuse_time = query.fuse_time - query.frame_alpha + 1;",
+                    "variable.swelling_scale = variable.is_primed ? (1 + math.pow(math.clamp(1 - (variable.fuse_time / 10), 0, 1), 4) * 0.3) : 1;",
+                    "variable.is_flashing = variable.is_primed && math.mod(math.floor(query.fuse_time / 5), 2) == 0;"
+                ],
+                "scale": "query.property('dungeons:start')"
+            },
+            "render_controllers": [
+                "controller.render.stone_pillar"
+            ]
+        }
+    }
+}

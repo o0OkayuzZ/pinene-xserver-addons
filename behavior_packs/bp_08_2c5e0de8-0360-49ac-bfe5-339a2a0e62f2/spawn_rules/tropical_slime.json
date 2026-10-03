@@ -1,0 +1,72 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "dungeons:tropical_slime",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_underwater": {},
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 0,
+          "adjust_for_weather": true
+        },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 45
+        },
+        "minecraft:density_limit": {
+          "surface": 4
+        },
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "ocean"
+        }
+      },
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 5,
+          "adjust_for_weather": true
+        },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 45
+        },
+        "minecraft:density_limit": {
+          "surface": 2
+        },
+        "minecraft:biome_filter": {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "beach"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "cold"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "frozen"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

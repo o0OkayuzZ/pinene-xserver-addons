@@ -1,0 +1,77 @@
+{
+    "format_version": "1.26.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:sticky_sludge",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:connection_rule": {
+                "accepts_connections_from": "none"
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.sticky_sludge"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "sticky_sludge"
+                }
+            },
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": true
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 6
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.5,
+                "item_specific_speeds": [
+                    {
+                        "item": {
+                            "tags": "query.any_tag('minecraft:is_shovel')"
+                        },
+                        "destroy_speed": 0.1
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    2,
+                    16
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    2,
+                    16
+                ]
+            },
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "liquid_type": "water",
+                        "can_contain_liquid": true
+                    }
+                ]
+            },
+            "minecraft:map_color": "#98FF58",
+            "tag:shovel_mine": {},
+            "tag:minecraft:is_shovel_item_destructible": {}
+        }
+    }
+}

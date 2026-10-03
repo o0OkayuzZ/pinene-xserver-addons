@@ -1,0 +1,117 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "dungeons:stone_pillar",
+            "runtime_identifier": "minecraft:vindicator",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "properties": {
+                "dungeons:start": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "dungeons:explosive": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                }
+            }
+        },
+        "component_groups": {
+            "dungeons:explosive": {
+                "minecraft:explode": {
+                    "fuse_lit": true,
+                    "fuse_length": 7,
+                    "breaks_blocks": false,
+                    "power": 1
+                }
+            },
+            "dungeons:regular": {
+                "minecraft:timer": {
+                    "time": [
+                        5,
+                        7
+                    ],
+                    "time_down_event": {
+                        "target": "self",
+                        "event": "dungeons:sink_into_ground"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:transient": {},
+            "minecraft:rotation_axis_aligned": {},
+            "minecraft:body_rotation_blocked": {},
+            "minecraft:collision_box": {
+                "width": 0.88,
+                "height": 3.13
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:is_collidable": {},
+            "minecraft:physics": {
+                "has_collision": false,
+                "has_gravity": false
+            },
+            "minecraft:knockback_resistance": {
+                "max": 1.0,
+                "value": 1.0
+            }
+        },
+        "events": {
+            "dungeons:sink_into_ground": {
+                "remove": {
+                    "component_groups": [
+                        "dungeons:explosive",
+                        "dungeons:regular"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "dungeons:regular"
+                    ]
+                }
+            },
+            "dungeons:spawn_as_regular": {
+                "add": {
+                    "component_groups": [
+                        "dungeons:regular"
+                    ]
+                }
+            },
+            "dungeons:spawn_as_explosive": {
+                "add": {
+                    "component_groups": [
+                        "dungeons:explosive"
+                    ]
+                },
+                "set_property": {
+                    "dungeons:explosive": true
+                }
+            },
+            "dungeons:spawn_from_geomancer": {
+                "randomize": [
+                    {
+                        "trigger": "dungeons:spawn_as_regular",
+                        "weight": 9
+                    },
+                    {
+                        "trigger": "dungeons:spawn_as_explosive",
+                        "weight": 1
+                    }
+                ]
+            }
+        }
+    }
+}

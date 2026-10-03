@@ -13,7 +13,7 @@ system.beforeEvents.startup.subscribe((event) => {
             const dim = hit.dimension;
             const targetLoc = hit.location;
             dim.playSound("weapon.alylicleaver.swing", targetLoc, { volume: 1.2, pitch: 1 })
-            if (attacker.name == "Axolot4342") return;
+            if (attacker.name == "Alylicara") return;
             system.runTimeout(() => {
                 attacker.runCommand("camerashake add @s 1 2")
                 attacker.runCommand("camerashake add @s 1 4")

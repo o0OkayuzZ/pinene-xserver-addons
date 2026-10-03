@@ -109,10 +109,10 @@ world.afterEvents.entityHurt.subscribe((e) => {
     var damageBoost = item.getDynamicProperty("dungeons:sponge_damage")
     if (!damageBoost) damageBoost = 0
     damageBoost += 1
-    if (damageBoost + damage <= 100) {
+    if (damageBoost + damage <= 50) {
         item.setDynamicProperty("dungeons:sponge_damage", damageBoost + damage)
-    } else if (damageBoost + damage > 100) {
-        item.setDynamicProperty("dungeons:sponge_damage", 100)
+    } else if (damageBoost + damage > 50) {
+        item.setDynamicProperty("dungeons:sponge_damage", 50)
     }
     const lore = item.getLore()
     var stringIndex = undefined

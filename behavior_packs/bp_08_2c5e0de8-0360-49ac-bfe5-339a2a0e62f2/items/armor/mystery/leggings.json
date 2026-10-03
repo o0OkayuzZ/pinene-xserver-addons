@@ -1,0 +1,51 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:mystery_leggings",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_armor",
+          "dungeons:mystery_armour"
+        ]
+      },
+      "minecraft:icon": "mystery_leggings",
+      "minecraft:rarity": "uncommon",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:enchantable": {
+        "value": 33,
+        "slot": "armor_legs"
+      },
+      "minecraft:wearable": {
+        "protection": 6,
+        "slot": "slot.armor.legs"
+      },
+      "dungeons:toughness": {
+        "toughness": 4
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "q.max_durability * 0.25"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 494,
+        "damage_chance": {
+          "max": 100,
+          "min": 0
+        }
+      }
+    }
+  }
+}

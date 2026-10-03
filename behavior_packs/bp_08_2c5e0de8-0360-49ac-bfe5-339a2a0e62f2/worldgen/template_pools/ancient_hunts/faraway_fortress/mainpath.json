@@ -1,0 +1,123 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:fortress_main"
+        },
+        "fallback": "dungeons:fortress_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_mainstraight_0",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_mainstraight_1",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_mainstraight_2",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_mainsplit_0",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_mainsplit_1",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_mainsplit_2",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_mainsplit_3",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_mainsplit_4",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_maincomp_0",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_maincomp_1",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_maincomp_2",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_maincomp_3",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_maincomp_4",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_end",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

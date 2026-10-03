@@ -1,0 +1,83 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:coral_side"
+        },
+        "fallback": "dungeons:coral_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/coral_cave/cor_sidestraight_0",
+                    "processors": "dungeons:coral_cave"
+                },
+                "weight": 9
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/coral_cave/cor_sidestraight_1",
+                    "processors": "dungeons:coral_cave"
+                },
+                "weight": 9
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/coral_cave/cor_sidestraight_2",
+                    "processors": "dungeons:coral_cave"
+                },
+                "weight": 9
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/coral_cave/cor_sidesplit_0",
+                    "processors": "dungeons:coral_cave"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/coral_cave/cor_sidesplit_1",
+                    "processors": "dungeons:coral_cave"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/coral_cave/cor_sidesplit_2",
+                    "processors": "dungeons:coral_cave"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/coral_cave/cor_sidesplit_1",
+                    "processors": "dungeons:coral_cave"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/coral_cave/cor_boss",
+                    "processors": "dungeons:coral_cave"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/coral_cave/cor_bonus_door",
+                    "processors": "dungeons:coral_cave"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

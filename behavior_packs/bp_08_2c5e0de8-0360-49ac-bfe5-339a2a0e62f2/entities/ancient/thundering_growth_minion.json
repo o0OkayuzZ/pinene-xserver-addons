@@ -1,0 +1,275 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "dungeons:thundering_growth_minion",
+            "runtime_identifier": "vindicator", //using a hostile mob RTI prevents them appearing in peaceful - afaik the Vindicator RTi doesn't do anything, so it is safe to use without affecting mob behaviour
+            "spawn_category": "monster",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "dungeons:standard_despawn": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "snowgolem"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "irongolem"
+                                    }
+                                ]
+                            },
+                            "max_dist": 20
+                        }
+                    ],
+                    "must_see": true
+                },
+                "minecraft:persistent": {}
+            }
+        },
+        "components": {
+            "minecraft:scale": {
+                "value": 1.1
+            },
+            "minecraft:knockback_resistance": {
+                "value": 0.2
+            },
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:type_family": {
+                "family": [
+                    "ancient_minion",
+                    "enchanted",
+                    "whisperer",
+                    "monster",
+                    "mob"
+                ]
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": 0
+            },
+            "minecraft:nameable": {},
+            "minecraft:health": {
+                "value": 48,
+                "max": 48
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 0.7,
+                "height": 2.3
+            },
+            "minecraft:movement": {
+                "value": 0.25
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true,
+                "can_pass_doors": true,
+                "can_open_doors": true,
+                "avoid_water": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.summon_entity": {
+                "priority": 1,
+                "summon_choices": [
+                    {
+                        "min_activation_range": 0,
+                        "max_activation_range": 3,
+                        "cooldown_time": 5,
+                        "weight": 6,
+                        "cast_duration": 2.46,
+                        "particle_color": "#FF664D59",
+                        "start_sound_event": "cast.spell",
+                        "sequence": [
+                            {
+                                "shape": "circle",
+                                "target": "self",
+                                "base_delay": 1,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 5,
+                                "entity_type": "dungeons:whisperer_vine2",
+                                "size": 1.5
+                            },
+                            {
+                                "shape": "circle",
+                                "target": "self",
+                                "base_delay": 0.15,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 10,
+                                "entity_type": "dungeons:whisperer_vine2",
+                                "size": 3
+                            }
+                        ]
+                    },
+                    {
+                        "min_activation_range": 3,
+                        "weight": 3,
+                        "cooldown_time": 10,
+                        "cast_duration": 2.46,
+                        "particle_color": "#FF664D59",
+                        "start_sound_event": "cast.spell",
+                        "sequence": [
+                            {
+                                "shape": "circle",
+                                "target": "target",
+                                "base_delay": 0.5,
+                                "delay_per_summon": 0.1111,
+                                "num_entities_spawned": 16,
+                                "summon_cap": 16,
+                                "summon_cap_radius": 64,
+                                "entity_type": "dungeons:whisperer_vine",
+                                "size": 2.5,
+                                "entity_lifespan": -1
+                            }
+                        ]
+                    }
+                ]
+            },
+            "minecraft:behavior.avoid_mob_type": {
+                "priority": 2,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "is_target",
+                                    "subject": "other"
+                                }
+                            ]
+                        },
+                        "max_dist": 2,
+                        "walk_speed_multiplier": 1.17,
+                        "sprint_speed_multiplier": 1.2
+                    }
+                ]
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 8,
+                "speed_multiplier": 1.0
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "player"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "snowgolem"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "irongolem"
+                                }
+                            ]
+                        },
+                        "max_dist": 20
+                    }
+                ],
+                "must_see": true
+            },
+            "minecraft:behavior.look_at_target": {
+                "priority": 9
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "entity_types": [
+                    {
+                        "filters": [
+                            {
+                                "all_of": [
+                                    {
+                                        "operator": "not",
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "ancient_minion"
+                                    },
+                                    {
+                                        "operator": "not",
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "ancient"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "priority": 1
+            },
+            "minecraft:persistent": {},
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "dungeons:instant_despawn": {
+                "add": {
+                    "component_groups": [
+                        "dungeons:instant_despawn"
+                    ]
+                },
+                "queue_command": {
+                    "command": [
+                        "particle dungeons:vanguard_despawn"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "dungeons:standard_despawn"
+                    ]
+                }
+            },
+            "dungeons:abomination_minion": {
+                "add": {
+                    "component_groups": [
+                        "dungeons:abomination_despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

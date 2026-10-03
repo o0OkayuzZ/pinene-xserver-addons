@@ -1,25 +1,19 @@
 {
-	"format_version": "1.8.0",
-	"render_controllers": {
-		"controller.render.wind_totem": {
-			"geometry": "geometry.default",
-			"materials": [
-				{
-					"*": "material.default"
-				}
-			],
-			"arrays": {
-				"textures": {
-					"array.skins": [
-						"texture.default",
-						"texture.on"
-					]
-				}
-			},
-			"textures": [
-				"array.skins[query.variant]"
-			],
-			"is_hurt_color": {}
-		}
-	}
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.wind_totem": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+        "arrays": {
+            "textures": {
+              "array.skins": [
+                "texture.default",
+                "texture.on"
+              ]
+          }
+      },
+      "textures": [ "Array.skins[query.variant]" ],
+      "is_hurt_color": {}
+    }
+  }
 }

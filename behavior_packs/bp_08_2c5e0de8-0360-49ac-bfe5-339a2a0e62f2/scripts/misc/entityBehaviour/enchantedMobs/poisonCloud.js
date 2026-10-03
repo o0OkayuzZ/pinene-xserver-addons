@@ -26,16 +26,19 @@ world.afterEvents.entityHurt.subscribe((e) => {
         cd.setScore(damageSource, 80)
         if (damageSource.matches({ families: ["boss"] })) cd.setScore(damageSource, 160)
         dim.playSound('weapon.enchant.poison', hurtLoc)
-        var duration = 12
-        if (world.getDifficulty() == "Easy") duration = 8
+        var duration = 5
+        if (world.getDifficulty() == "Normal") duration = 7
+        if (world.getDifficulty() == "Hard") duration = 9
         createPoisonCloud(duration, dim, hurtLoc, damageSource)
     }
 });
 
 //cooldown
 system.runInterval(() => {
-    for (const dimensionType of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimensionType.typeId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (const entity of dim.getEntities({ families: ["enchanted"], tags: ["dungeons:enchanted_mob_" + id] })) {
             var timeLeft = world.scoreboard.getObjective('dungeons:poison_cloud_t');
             if (!timeLeft) return;
@@ -66,7 +69,9 @@ function createPoisonCloud(timeLeft, dim, loc, owner) {
         families: ["player"]
     });
     for (const target of damageRange) {
-        var damage = 3
+        var damage = 2
+        if(world.getDifficulty() == "Hard") damage += 3
+        if(world.getDifficulty() == "Easy") damage -= 0.5
         const damageDone = target.applyDamage(damage, { cause: "magic" })
         if (damageDone) {
             target.applyKnockback({ x: 0, z: 0 }, -0.1)

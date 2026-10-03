@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "dungeons:key_golem_item",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/key_golem/key_golem"
+            },
+            "geometry": {
+                "default": "geometry.key_golem_back"
+            },
+            "animations": {
+                "first_person_hold": "animation.key_golem.first_person_hold",
+                "idle_back": "animation.key_golem.idle_back"
+            },
+            "scripts": {
+                "animate": [
+                    "idle_back",
+                    {
+                        "first_person_hold": "c.is_first_person"
+                    }
+                ]
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

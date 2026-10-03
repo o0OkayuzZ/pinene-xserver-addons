@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.110",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:rare_flaming_quiver",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:hover_text_color": "green",
+      "minecraft:icon": "flaming_quiver",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:can_destroy_in_creative": false,
+      "dungeons:artefact_cooldown": {},
+      "dungeons:flaming_quiver": {
+        "type": "rare"
+      },
+      "minecraft:cooldown": {
+        "category": "flaming_quiver_rare",
+        "duration": 25
+      },
+      "minecraft:tags": {
+        "tags": [
+          "dungeons:quiver_artefact"
+        ]
+      },
+      "minecraft:interact_button": "item.use.artefact",
+      "minecraft:use_modifiers": {
+        "use_duration": 0.0
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@ import {
 
 import { arrowTypes, playShootSound } from "components/ranged.js"
 import { getDirection, makeVector, isValidTarget, specialDamage } from "main.js"
+import { addVoidedEffect } from "misc/voidedEffect.js"
 
 function bowExplosion(projectile, attacker, loc, dim) {
     const damageRange = dim.getEntities({
@@ -149,7 +150,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     const hurtLoc = hurt.location
     const projLoc = projectile.location
     if (projectile.typeId == "dungeons:torment_arrow") {
-        if (e.damage < 10) e.damage * 3
+        e.damage = Math.max(12, e.damage*3)
         const dir = getDirection(projLoc, hurtLoc)
         system.run(() => {
             hurt.applyKnockback(makeVector(dir, 1.5), 0.08)
@@ -165,9 +166,15 @@ world.beforeEvents.entityHurt.subscribe((e) => {
             })
         }
     } else if (projectile.typeId == "dungeons:firework_arrow") {
-        if (e.damage < 12) e.damage * 1.7
+        e.damage = Math.max(12, e.damage*1.7)
         bowExplosion(projectile, attacker, projLoc, dim)
         system.run(() => {
+            if (projectile.isValid) projectile.remove()
+        })
+    } else if (projectile.typeId == "dungeons:void_arrow") {
+        system.run(() => {
+            addVoidedEffect(hurt, 100)
+            hurt.addEffect("slowness", 100, {showParticles:false})
             if (projectile.isValid) projectile.remove()
         })
     }
@@ -225,6 +232,7 @@ world.afterEvents.entitySpawn.subscribe((e) => {
                 if (!entity.hasTag("dungeons:multishot_arrow")) owner.applyImpulse({ x: vd.x * -0.66, y: vd.y * -0.66, z: vd.z * -0.66 })
             }
         }
-        playShootSound(owner, entity.typeId.replace("dungeons:", "projectile."))
+        if(entity.hasTag("dungeons:multishot_arrow")) return;
+        playShootSound(owner, entity.typeId.replace("dungeons:", "projectile."), entity.location)
     }
 })

@@ -1,0 +1,37 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.spelunker_helmet",
+				"texture_width": 90,
+				"texture_height": 90,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 2, 0]
+			},
+			"bones": [
+				{
+					"name": "waist",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 25, -4], "size": [8, 8, 8], "inflate": 0.51, "uv": [0, 44]},
+						{"origin": [-1, 30, -5.5], "size": [2, 6, 1], "inflate": -0.05, "uv": [1, 67]},
+						{"origin": [-0.5, 35.9, -5], "size": [1, 2, 0], "uv": [4, 65]},
+						{"origin": [-5.5, 28.2, -5.5], "size": [11, 2, 11], "uv": [0, 68]}
+					]
+				}
+			]
+		}
+	]
+}

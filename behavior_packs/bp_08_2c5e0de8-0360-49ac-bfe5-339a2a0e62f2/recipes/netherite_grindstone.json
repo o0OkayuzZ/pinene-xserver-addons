@@ -1,0 +1,31 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "dungeons:netherite_grindstone"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "minecraft:netherite_upgrade_smithing_template"
+            },
+            {
+                "item": "minecraft:grindstone"
+            },
+            {
+                "item": "minecraft:netherite_ingot"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:netherite_ingot"
+            }
+        ],
+        "result": {
+            "item": "dungeons:netherite_grindstone",
+            "count": 1
+        }
+    }
+}

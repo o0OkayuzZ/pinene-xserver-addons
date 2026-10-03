@@ -1,0 +1,99 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:slimysewer_side"
+        },
+        "fallback": "dungeons:slimysewer_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_side_end",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_sidestraight_0",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 11
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_sidestraight_1",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_sidesplit_0",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_sidesplit_1",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_sidesplit_2",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_sidesplit_3",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_sidesplit_4",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_boss",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_sideladder",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/slimy_sewer/sewer_bonus_door",
+                    "processors": "dungeons:slimy_sewer"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

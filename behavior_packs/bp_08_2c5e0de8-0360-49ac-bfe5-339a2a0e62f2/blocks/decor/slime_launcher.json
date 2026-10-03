@@ -1,0 +1,211 @@
+{
+    "format_version": "1.26.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:slime_launcher",
+            "states": {
+                "dungeons:active": [
+                    false,
+                    true
+                ]
+            },
+            "traits": {
+                "minecraft:multi_block": {
+                    "enabled_states": [
+                        "minecraft:multi_block_part"
+                    ],
+                    "direction": "up",
+                    "parts": 2
+                }
+            },
+            "menu_category": {
+                "category": "none"
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('minecraft:multi_block_part') == 1 && q.block_state('dungeons:active')",
+                "components": {
+                    "minecraft:collision_box": false,
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            12,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:multi_block_part') == 0 && q.block_state('dungeons:active')",
+                "components": {
+                    "minecraft:connection_rule": {
+                        "accepts_connections_from": "none"
+                    },
+                    "dungeons:launcher": {
+                        "goopy":true
+                    },
+                    "minecraft:tick": {
+                        "interval_range": [
+                            10,
+                            10
+                        ],
+                        "looping": false
+                    },
+                    "minecraft:collision_box": true,
+                    "minecraft:selection_box": true
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:multi_block_part') == 1 && !q.block_state('dungeons:active')",
+                "components": {
+                    "minecraft:collision_box": false,
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            0,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:multi_block_part') == 0 && !q.block_state('dungeons:active')",
+                "components": {
+                    "dungeons:launcher": {
+                        "goopy":true
+                    },
+                    "minecraft:tick": {
+                        "interval_range": [
+                            200,
+                            200
+                        ],
+                        "looping": false
+                    },
+                    "minecraft:collision_box": true,
+                    "minecraft:selection_box": true
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:multi_block_part') == 0",
+                "components": {
+                    "minecraft:destructible_by_mining": {
+                        "seconds_to_destroy": 1
+                    },
+                    "minecraft:geometry": {
+                        "identifier": "geometry.launcher_lower",
+                        "bone_visibility": {
+                            "retract": "!q.block_state('dungeons:active')",
+                            "extend": "q.block_state('dungeons:active')"
+                        }
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "goopylauncher_side",
+                            "render_method": "opaque"
+                        },
+                        "top": {
+                            "texture": "goopylauncher_inner",
+                            "render_method": "opaque"
+                        },
+                        "bottom": {
+                            "texture": "goopylauncher_bottom",
+                            "render_method": "opaque"
+                        },
+                        "top_head": {
+                            "texture": "goopylauncher_top",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:multi_block_part') == 1",
+                "components": {
+                    "minecraft:destruction_particles": {
+                        "texture": "empty"
+                    },
+                    "minecraft:destructible_by_mining": false,
+                    "minecraft:connection_rule": {
+                        "accepts_connections_from": "none"
+                    },
+                    "minecraft:geometry": {
+                        "identifier": "geometry.launcher_upper",
+                        "bone_visibility": {
+                            "extend": "q.block_state('dungeons:active')"
+                        }
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "goopylauncher_side",
+                            "render_method": "opaque"
+                        },
+                        "up": {
+                            "texture": "goopylauncher_top",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            }
+        ],
+        "components": {
+            "minecraft:light_dampening": 0,
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "liquid_type": "water",
+                        "can_contain_liquid": true
+                    }
+                ]
+            },
+            "minecraft:movable": {
+                "movement_type": "immovable"
+            },
+            "minecraft:light_emission": 5,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1
+            },
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destruction_particles": {
+                "texture": "goopylauncher_top"
+            },
+            "minecraft:collision_box": true,
+            "minecraft:selection_box": true,
+            "minecraft:geometry": {
+                "identifier": "geometry.launcher_lower",
+                "bone_visibility": {
+                    "retract": "true",
+                    "extend": "false"
+                }
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "goopylauncher_side",
+                    "render_method": "opaque"
+                },
+                "top_head": {
+                    "texture": "goopylauncher_top",
+                    "render_method": "opaque"
+                },
+                "top": {
+                    "texture": "goopylauncher_inner",
+                    "render_method": "opaque"
+                },
+                "bottom": {
+                    "texture": "goopylauncher_bottom",
+                    "render_method": "opaque"
+                }
+            }
+        }
+    }
+}

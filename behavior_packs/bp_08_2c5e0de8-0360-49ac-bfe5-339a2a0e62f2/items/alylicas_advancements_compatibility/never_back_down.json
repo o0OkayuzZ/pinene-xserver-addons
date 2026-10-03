@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dungeons:alyadvancement_never_back_down",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": true
+            }
+        },
+        "components": {
+            "minecraft:icon": "stick",
+            "minecraft:tags": {
+                "tags": [
+                    "alyadvancements:type_goal",
+                    "alyadvancements:value_0"
+                ]
+            }
+        }
+    }
+}

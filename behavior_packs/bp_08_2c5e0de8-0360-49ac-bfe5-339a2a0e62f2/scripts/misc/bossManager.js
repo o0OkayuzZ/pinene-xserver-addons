@@ -1,6 +1,7 @@
 import {
     world,
-    system
+    system,
+    EntityDamageCause
 } from "@minecraft/server";
 
 world.beforeEvents.playerInteractWithBlock.subscribe((e) => {
@@ -47,6 +48,21 @@ world.afterEvents.entityDie.subscribe((e) => {
 
 //ignore protection
 
+const ignoresArmour = [
+    EntityDamageCause.override,
+    EntityDamageCause.selfDestruct,
+    EntityDamageCause.sonicBoom,
+    EntityDamageCause.fall,
+    EntityDamageCause.fireTick,
+    EntityDamageCause.suffocation,
+    EntityDamageCause.drowning,
+    EntityDamageCause.starve,
+    EntityDamageCause.flyIntoWall,
+    EntityDamageCause.magic,
+    EntityDamageCause.void,
+    EntityDamageCause.freezing
+]
+
 function getProtLevel(item) {
     if (!item) return 0
     const enchantable = item.getComponent("enchantable")
@@ -75,7 +91,10 @@ world.beforeEvents.entityHurt.subscribe((e) => {
         var reduction = 12
         if (world.getDifficulty() == "Easy") reduction = 20
         if (world.getDifficulty() == "Normal") reduction = 16
-        e.damage = e.damage * (1 + (protection / reduction))
-        if (e.damage > baseDamage * 2) e.damage = baseDamage * 2
+        var mult = 1
+        if(ignoresArmour.includes(e.damageSource.cause)) mult = 0.3
+        e.damage = e.damage * Math.min(1, 1 + (protection / reduction))
+        e.damage = Math.max(baseDamage, e.damage*mult)
+        e.damage = Math.min(baseDamage*2, e.damage)
     }
 })

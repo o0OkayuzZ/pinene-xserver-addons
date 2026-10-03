@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:lava_lock",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": false
+            }
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/empty.json",
+            "dungeons:lava_lock": {},
+            "minecraft:collision_box": true,
+            "minecraft:selection_box": true,
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:map_color": "#100B1F",
+            "minecraft:destructible_by_mining": false,
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": true
+            }
+        }
+    }
+}

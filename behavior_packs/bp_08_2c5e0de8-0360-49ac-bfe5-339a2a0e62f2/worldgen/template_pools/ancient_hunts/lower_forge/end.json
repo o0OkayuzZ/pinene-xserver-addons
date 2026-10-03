@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:lowerforge_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_end",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_end",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_end_tiny",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_end_tinier",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

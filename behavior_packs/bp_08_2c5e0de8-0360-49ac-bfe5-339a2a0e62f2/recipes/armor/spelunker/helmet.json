@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "spelunker_helmet"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " C ",
+      "EsE",
+      "E E"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "key": {
+      "E": {
+        "item": "minecraft:iron_ingot"
+      },
+      "C": {
+        "item": "candle"
+      },
+      "s": {
+        "item": "coal"
+      }
+    },
+    "result": {
+      "item": "dungeons:spelunker_helmet",
+      "count": 1
+    }
+  }
+}

@@ -7,7 +7,7 @@ import {
 import { addVoidedEffect } from "misc/voidedEffect.js"
 import { arrowTypes } from "components/ranged.js"
 
-const effectId = "dungeons:ranged_void_strike_bow_effect"
+const effectId = "dungeons:void_strike_ranged_bow_effect"
 
 world.beforeEvents.entityHurt.subscribe((e) => {
     const hurt = e.hurtEntity;

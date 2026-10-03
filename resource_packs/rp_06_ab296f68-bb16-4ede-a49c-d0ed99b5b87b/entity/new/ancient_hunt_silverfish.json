@@ -1,0 +1,33 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dungeons:ancient_hunt_silverfish",
+            "materials": {
+                "default": "silverfish",
+                "body_layer": "silverfish_layers"
+            },
+            "textures": {
+                "default": "textures/entity/silverfish",
+                "enchanted": "textures/misc/enchanted_entity_glint"
+            },
+            "geometry": {
+                "default": "geometry.silverfish"
+            },
+            "animations": {
+                "move": "animation.silverfish.move"
+            },
+            "animation_controllers": [
+                {
+                    "move": "controller.animation.silverfish.move"
+                }
+            ],
+            "render_controllers": [
+                "controller.render.silverfish"
+            ],
+            "spawn_egg": {
+                "texture": "egg_enchanted_silverfish"
+            }
+        }
+    }
+}

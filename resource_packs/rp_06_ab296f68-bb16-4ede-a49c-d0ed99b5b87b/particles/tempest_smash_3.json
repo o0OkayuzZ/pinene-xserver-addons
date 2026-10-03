@@ -13,13 +13,7 @@
 				"type": "catmull_rom",
 				"input": "v.particle_age",
 				"horizontal_range": "v.particle_lifetime",
-				"nodes": [
-					0,
-					0.86,
-					1,
-					0.76,
-					0
-				]
+				"nodes": [0, 0.86, 1, 0.76, 0]
 			}
 		},
 		"components": {
@@ -42,22 +36,13 @@
 				"linear_drag_coefficient": 1
 			},
 			"minecraft:particle_appearance_billboard": {
-				"size": [
-					"1*v.size",
-					"1*v.size"
-				],
+				"size": ["1*v.size", "1*v.size"],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {
 					"texture_width": 16,
 					"texture_height": 16,
-					"uv": [
-						0,
-						0
-					],
-					"uv_size": [
-						16,
-						16
-					]
+					"uv": [0, 0],
+					"uv_size": [16, 16]
 				}
 			},
 			"minecraft:particle_motion_collision": {

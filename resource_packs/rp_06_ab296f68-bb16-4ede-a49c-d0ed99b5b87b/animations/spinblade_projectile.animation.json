@@ -14,7 +14,7 @@
 				"blade": {
 					"rotation": [
 						0,
-						"q.life_time*720",
+						"q.life_time *720",
 						0
 					]
 				}
@@ -23,6 +23,48 @@
 		"animation.spinblade_projectile.particles": {
 			"loop": true,
 			"animation_length": 0.5,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "spinblade",
+						"locator": "particles1"
+					},
+					{
+						"effect": "spinblade",
+						"locator": "particles2"
+					}
+				]
+			}
+		},
+		"animation.spinblade_projectile.particles_streak": {
+			"loop": true,
+			"animation_length": 0.01,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "spinblade",
+						"locator": "particles1"
+					},
+					{
+						"effect": "spinblade",
+						"locator": "particles2"
+					}
+				],
+				"0.01": [
+					{
+						"effect": "spinblade",
+						"locator": "particles1"
+					},
+					{
+						"effect": "spinblade",
+						"locator": "particles2"
+					}
+				]
+			}
+		},
+		"animation.spinblade_projectile.particles_streak2": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.01,
 			"particle_effects": {
 				"0.0": [
 					{

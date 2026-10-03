@@ -1,0 +1,94 @@
+{
+  "format_version": "1.21.110",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dungeons:gilded_obsidian",
+      "menu_category": {
+        "category": "nature"
+      },
+      "states": {
+        "dungeons:unbreakable": [
+          false,
+          true
+        ]
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('dungeons:unbreakable')",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "active_gilded_obsidian",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:destructible_by_explosion": false,
+          "minecraft:destructible_by_mining": false
+        }
+      },
+      {
+        "condition": "!query.block_state('dungeons:unbreakable')",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "gilded_obsidian",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:destructible_by_explosion": {
+            "explosion_resistance": 1200
+          },
+          "minecraft:destructible_by_mining": {
+            "seconds_to_destroy": 166,
+            "item_specific_speeds": [
+              {
+                "item": {
+                  "tags": "query.any_tag('minecraft:is_pickaxe')"
+                },
+                "destroy_speed": 50
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "components": {
+      "minecraft:geometry": {
+        "identifier": "minecraft:geometry.full_block"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "gilded_obsidian",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:movable": {
+        "movement_type": "immovable"
+      },
+      "minecraft:redstone_conductivity": {
+        "allows_wire_to_step_down": true,
+        "redstone_conductor": true
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 1200
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 166,
+        "item_specific_speeds": [
+          {
+            "item": {
+              "tags": "query.any_tag('minecraft:is_pickaxe')"
+            },
+            "destroy_speed": 50
+          }
+        ]
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:map_color": "#12091D",
+      "tag:pickaxe_mine": {},
+      "tag:minecraft:is_pickaxe_item_destructible": {},
+      "tag:minecraft:diamond_tier_destructible": {}
+    }
+  }
+}

@@ -13,13 +13,7 @@
 				"type": "catmull_rom",
 				"input": "v.particle_age",
 				"horizontal_range": "v.particle_lifetime",
-				"nodes": [
-					0,
-					0.86,
-					1,
-					0.76,
-					0
-				]
+				"nodes": [0, 0.86, 1, 0.76, 0]
 			}
 		},
 		"components": {
@@ -31,11 +25,7 @@
 				"active_time": 0.16
 			},
 			"minecraft:emitter_shape_disc": {
-				"offset": [
-					0,
-					1,
-					0
-				],
+				"offset": [0, 1, 0],
 				"radius": 0.15,
 				"surface_only": true,
 				"direction": "outwards"
@@ -49,30 +39,17 @@
 			},
 			"minecraft:particle_initial_speed": 8,
 			"minecraft:particle_motion_dynamic": {
-				"linear_acceleration": [
-					0,
-					-5,
-					0
-				],
+				"linear_acceleration": [0, -5, 0],
 				"linear_drag_coefficient": 1
 			},
 			"minecraft:particle_appearance_billboard": {
-				"size": [
-					"(0.2+v.particle_random_1*1.5)*v.size",
-					"(0.2+v.particle_random_1*1.5)*v.size"
-				],
+				"size": ["(0.2 + v.particle_random_1*1.5)*v.size", "(0.2 + v.particle_random_1*1.5)*v.size"],
 				"facing_camera_mode": "lookat_direction",
 				"uv": {
 					"texture_width": 16,
 					"texture_height": 16,
-					"uv": [
-						0,
-						0
-					],
-					"uv_size": [
-						16,
-						16
-					]
+					"uv": [0, 0],
+					"uv_size": [16, 16]
 				}
 			},
 			"minecraft:particle_motion_collision": {

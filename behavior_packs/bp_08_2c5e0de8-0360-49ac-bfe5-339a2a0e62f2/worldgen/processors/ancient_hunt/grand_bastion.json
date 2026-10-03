@@ -1,0 +1,80 @@
+{
+	"format_version": "1.21.20",
+	"minecraft:processor_list": {
+		"description": {
+			"identifier": "dungeons:grand_bastion"
+		},
+		"processors": [
+			{
+				"processor_type": "minecraft:rule",
+				"rules": [
+					{
+						"input_predicate": {
+							"block": "red_concrete",
+							"predicate_type": "minecraft:random_block_match",
+							"probability": 1
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"output_state": {
+							"name": "dungeons:mob_grandbastion_large"
+						}
+					},
+					{
+						"input_predicate": {
+							"block": "lime_concrete",
+							"predicate_type": "minecraft:random_block_match",
+							"probability": 1
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"output_state": {
+							"name": "dungeons:mob_grandbastion_small"
+						}
+					},
+					{
+						"input_predicate": {
+							"block": "polished_blackstone_bricks",
+							"predicate_type": "minecraft:random_block_match",
+							"probability": 0.2
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"output_state": {
+							"name": "minecraft:cracked_polished_blackstone_bricks"
+						}
+					},
+					{
+						"input_predicate": {
+							"block": "polished_blackstone_bricks",
+							"predicate_type": "minecraft:random_block_match",
+							"probability": 0.05
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"output_state": {
+							"name": "minecraft:polished_blackstone"
+						}
+					},
+					{
+						"input_predicate": {
+							"block": "blackstone",
+							"predicate_type": "minecraft:random_block_match",
+							"probability": 0.025
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"output_state": {
+							"name": "minecraft:gilded_blackstone"
+						}
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:soggy_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_side_end",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_fallback",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

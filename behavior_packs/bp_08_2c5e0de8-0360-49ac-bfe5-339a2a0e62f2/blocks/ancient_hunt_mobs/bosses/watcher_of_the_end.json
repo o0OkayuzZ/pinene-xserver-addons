@@ -1,0 +1,26 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:watcher_of_the_end_spawn",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/empty.json",
+            "dungeons:ancient_boss": {
+                "boss": "dungeons:watcher_of_the_end",
+                "minion": "dungeons:watcher_of_the_end_minion",
+                "minion_count": 6,
+                "max_distance": 2.2
+            },
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destructible_by_mining": false,
+            "minecraft:display_name": "entity.dungeons:watcher_of_the_end.name",
+            "minecraft:tags": [
+                "dungeons:ancient_mob"
+            ]
+        }
+    }
+}

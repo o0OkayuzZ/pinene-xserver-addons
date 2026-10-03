@@ -6,27 +6,80 @@
 			"bones": {
 				"root": {
 					"rotation": {
-						"0.0": [
-							0,
-							0,
-							0
-						],
-						"0.4583": [
-							360,
-							0,
-							0
-						]
+						"0.0": [0, 0, 0],
+						"0.4583": ["v.is_first_person ? 0.0 : 360", 0, 0]
 					},
-					"position": [
-						0,
-						0,
-						0
-					]
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.235": [0, "v.is_first_person ? 5.0 : 16", 0],
+						"0.4583": [0, 0, 0]
+					}
 				}
 			}
 		},
-		"animation.player.new": {
-			"loop": true
+		"animation.player.roll_slowed": {
+			"animation_length": 0.6,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.6": ["v.is_first_person ? 0.0 : 360", 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.2": [0, "v.is_first_person ? 5.0 : 24", 0],
+						"0.6": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.player.roll_slowedback": {
+			"animation_length": 0.6,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.6": ["v.is_first_person ? 0.0 : -360", 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.2": [0, "v.is_first_person ? 5.0 : 24", 0],
+						"0.6": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.player.roll_slowedleft": {
+			"animation_length": 0.6,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.6": [0, 0, "-v.is_first_person ? -0.0 : 360"]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.2": [0, "v.is_first_person ? 5.0 : 24", 0],
+						"0.6": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.player.roll_slowedright": {
+			"animation_length": 0.6,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.6": [0, 0, "-v.is_first_person ? -0.0 : -360"]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.2": [0, "v.is_first_person ? 5.0 : 24", 0],
+						"0.6": [0, 0, 0]
+					}
+				}
+			}
 		}
 	}
 }

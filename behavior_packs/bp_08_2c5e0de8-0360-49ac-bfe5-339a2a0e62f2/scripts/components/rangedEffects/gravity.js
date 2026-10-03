@@ -7,14 +7,14 @@ import {
 import { arrowTypes } from "components/ranged.js"
 import { isValidTarget, gravityTo } from "main.js"
 
-const effectId = "dungeons:ranged_gravity_bow_effect"
+const effectId = "dungeons:gravity_ranged_bow_effect"
 
 function gravityPulse(targetLoc, dim, owner) {
     const gravityTargets = dim.getEntities({
         location: targetLoc,
         maxDistance: 6,
         minDistance: 0.5,
-        excludeFamilies: ['ignore', 'gravity_immune']
+        excludeFamilies: ['ignore', 'gravity_immune', 'ancient', 'poison_quill_vine']
     });
     system.run(() => {
         if (dim.isChunkLoaded(targetLoc)) {

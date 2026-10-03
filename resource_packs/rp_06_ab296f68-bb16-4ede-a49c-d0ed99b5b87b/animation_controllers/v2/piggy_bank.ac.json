@@ -1,0 +1,22 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.piggy_bank.death": {
+            "initial_state": "default",
+            "states": {
+                "death": {
+                    "animations": [
+                        "death"
+                    ]
+                },
+                "default": {
+                    "transitions": [
+                        {
+                            "death": "!query.is_alive"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

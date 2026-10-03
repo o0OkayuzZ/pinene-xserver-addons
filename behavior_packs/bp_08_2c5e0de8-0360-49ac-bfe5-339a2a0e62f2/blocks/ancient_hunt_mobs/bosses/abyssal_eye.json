@@ -1,0 +1,26 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:abyssal_eye_spawn",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/empty.json",
+            "dungeons:ancient_boss": {
+                "boss": "dungeons:abyssal_eye",
+                "minion": "dungeons:abyssal_eye_minion",
+                "minion_count": 2,
+                "max_distance": 2
+            },
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destructible_by_mining": false,
+            "minecraft:display_name": "entity.dungeons:abyssal_eye.name",
+            "minecraft:tags": [
+                "dungeons:ancient_mob"
+            ]
+        }
+    }
+}

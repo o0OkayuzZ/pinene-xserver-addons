@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.130",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:jungle_abomination_explorer_map",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:rarity": "uncommon",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:icon": "explorer_map_jungle_abomination",
+      "dungeons:explorer_map": {
+        "type": "jungle_abomination"
+      },
+      "minecraft:interact_button": "item.use.book_of_heroes",
+      "minecraft:use_modifiers": {
+        "use_duration": 0.0
+      }
+    }
+  }
+}

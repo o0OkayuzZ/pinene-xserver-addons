@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:mistypeak_starter"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_start_0",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_start_1",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

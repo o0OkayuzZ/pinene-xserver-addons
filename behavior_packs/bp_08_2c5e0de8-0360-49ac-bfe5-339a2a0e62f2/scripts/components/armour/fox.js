@@ -20,12 +20,4 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (rand > 0.15) return;
     e.damage = 0 * e.damage
     e.cancel = true;
-    if (hurt.getDynamicProperty("dungeons:damage_reduction_prevented") >= baseDmg) {
-        e.cancel = true;
-        return;
-    }
-    hurt.setDynamicProperty("dungeons:damage_reduction_prevented", baseDmg)
-    system.runTimeout(() => {
-        hurt.setDynamicProperty("dungeons:damage_reduction_prevented", null)
-    }, 9)
 });

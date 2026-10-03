@@ -1,0 +1,46 @@
+	{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dungeons:key_golem",
+            "min_engine_version": "1.10.0",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "textures": {
+                "default": "textures/entity/key_golem/key_golem",
+                "asleep": "textures/entity/key_golem/key_golem_asleep"
+            },
+            "geometry": {
+                "default": "geometry.key_golem"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "look_at_target": "!query.variant"
+                    },
+                    {
+                        "move_controller": "!query.variant"
+                    },
+                    "sleep_controller"
+                ],
+                "pre_animation": [
+                    "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 28.65;"
+                ]
+            },
+            "animations": {
+                "look_at_target": "animation.common.look_at_target",
+                "sleep_controller": "controller.animation.key_golem.sleep",
+                "move_controller": "controller.animation.key_golem.move",
+                "move": "animation.key_golem.walk",
+                "asleep": "animation.key_golem.asleep"
+            },
+            "render_controllers": [
+                "controller.render.key_golem"
+            ],
+            "spawn_egg": {
+                "texture": "egg_key_golem"
+            }
+        }
+    }
+}

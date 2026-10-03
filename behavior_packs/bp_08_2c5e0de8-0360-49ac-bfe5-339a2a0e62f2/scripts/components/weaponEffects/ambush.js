@@ -20,16 +20,21 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
-    //effect code
-    if (e.damage <= 0) return;
-    if (attacker.getEffect("invisibility")) {
-        e.damage = e.damage * 1.3
-        system.run(() => {
-            const dim = hurt.dimension
-            const hurtLoc = hurt.location;
-            dim.spawnParticle("dungeons:ambush", { x: hurtLoc.x, y: hurtLoc.y + 0.2, z: hurtLoc.z })
-            dim.playSound("random.anvil_land", hurtLoc, { volume: 0.2, pitch: 1.5 })
-        })
+    var count = 0
+    if (heldItem.hasTag(effectId)) count += 1
+    if (heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) count += 1
+    if (count == 0) return;
+    for (let i = 0; i < count; i++) {
+        //effect code
+        if (e.damage <= 0) return;
+        if (attacker.getEffect("invisibility")) {
+            e.damage = e.damage * 1.3
+            system.run(() => {
+                const dim = hurt.dimension
+                const hurtLoc = hurt.location;
+                dim.spawnParticle("dungeons:ambush", { x: hurtLoc.x, y: hurtLoc.y + 0.2, z: hurtLoc.z })
+                dim.playSound("random.anvil_land", hurtLoc, { volume: 0.2, pitch: 1.5 })
+            })
+        }
     }
 });

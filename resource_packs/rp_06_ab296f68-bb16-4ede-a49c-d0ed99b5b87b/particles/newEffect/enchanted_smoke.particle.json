@@ -23,9 +23,9 @@
 				],
 				"radius": 0.5,
 				"direction": [
-					"v.particle_random_2-0.5",
+					"v.particle_random_2 - 0.5",
 					1,
-					"v.particle_random_3-0.5"
+					"v.particle_random_3 - 0.5"
 				]
 			},
 			"minecraft:particle_lifetime_expression": {
@@ -42,8 +42,8 @@
 			},
 			"minecraft:particle_appearance_billboard": {
 				"size": [
-					"0.25+v.particle_random_1/3",
-					"0.25+v.particle_random_1/3"
+					"0.25 + v.particle_random_1/3",
+					"0.25 + v.particle_random_1/3"
 				],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {

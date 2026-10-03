@@ -91,6 +91,7 @@
 			}
 		},
 		"animation.void_touched_blades.first_person_swing": {
+			"anim_time_update": "q.anim_time + (q.delta_time * (q.base_swing_duration / q.modified_swing_duration))",
 			"animation_length": 0.9167,
 			"bones": {
 				"root_item": {

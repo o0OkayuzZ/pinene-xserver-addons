@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "champions_boots"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "C C",
+      "I I"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:lapis_lazuli"
+      }
+    ],
+    "key": {
+      "C": {
+        "item": "minecraft:lapis_lazuli"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "dungeons:champions_boots",
+      "count": 1
+    }
+  }
+}

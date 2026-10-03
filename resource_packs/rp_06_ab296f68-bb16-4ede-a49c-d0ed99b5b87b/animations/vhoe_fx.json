@@ -18,6 +18,24 @@
 					"locator": "hornright"
 				}
 			}
+		},
+		"animation.vengeful_heart_of_ender.particles_spooky": {
+			"loop": true,
+			"animation_length": 0.9,
+			"particle_effects": {
+				"0.0": {
+					"effect": "neckFlame_s",
+					"locator": "headsmoke"
+				},
+				"0.01": {
+					"effect": "hornFlame_s",
+					"locator": "hornleft"
+				},
+				"0.02": {
+					"effect": "hornFlame_s",
+					"locator": "hornright"
+				}
+			}
 		}
 	}
 }

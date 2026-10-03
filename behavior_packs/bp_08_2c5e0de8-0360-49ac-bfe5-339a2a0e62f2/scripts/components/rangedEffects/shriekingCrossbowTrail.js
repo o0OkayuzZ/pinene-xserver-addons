@@ -5,12 +5,14 @@ import {
 
 const effectId = "dungeons:shrieking_crossbow_fired_by"
 
-const dimensionIds = ["overworld", "nether", "the_end"];
 system.runInterval(() => {
-    for (let dimId of dimensionIds) {
-        for (let entity of world.getDimension(dimId).getEntities({ tags: [effectId] })) {
-            if (!entity.isOnGround && entity.dimension.isChunkLoaded(entity.location)) {
-                entity.dimension.spawnParticle('dungeons:haunted_arrow', entity.location);
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
+        for (let entity of dim.getEntities({ tags: [effectId] })) {
+            if (!entity.isOnGround && dim.isChunkLoaded(entity.location)) {
+                dim.spawnParticle('dungeons:haunted_arrow', entity.location);
             }
         }
     }

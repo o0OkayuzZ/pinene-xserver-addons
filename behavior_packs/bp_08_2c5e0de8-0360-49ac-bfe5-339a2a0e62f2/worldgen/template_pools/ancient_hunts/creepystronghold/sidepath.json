@@ -1,0 +1,83 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:stronghold_side"
+        },
+        "fallback": "dungeons:stronghold_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_sidestraight_0",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_sidestraight_1",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_sidesplit_0",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_sidesplit_1",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_sidesplit_2",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_sidesplit_3",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_side_end_1",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_boss",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_bonus_door",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

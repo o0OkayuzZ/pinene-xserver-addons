@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "harpoon_quiver"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "ADA",
+      "DBD",
+      "ADA"
+    ],
+    "unlock": [
+      {
+        "item": "dungeons:diamond_dust"
+      }
+    ],
+    "key": {
+      "D": {
+        "item": "dungeons:diamond_dust"
+      },
+      "B": {
+        "item": "minecraft:bundle"
+      },
+      "A": {
+        "item": "dungeons:harpoon_arrow"
+      }
+    },
+    "result": {
+      "item": "dungeons:harpoon_quiver",
+      "count": 1
+    }
+  }
+}

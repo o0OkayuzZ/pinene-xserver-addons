@@ -1,0 +1,107 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:cursedhalls_main"
+        },
+        "fallback": "dungeons:cursedhalls_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_mainstraight_0",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_mainstraight_1",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_mainstraight_2",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_mainsplit_0",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_mainsplit_1",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_mainsplit_2",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_mainsplit_3",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_maincomp_0",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_maincomp_1",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_maincomp_2",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 2
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_maincomp_3",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_end",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

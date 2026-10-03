@@ -62,7 +62,7 @@
 			}
 		},
 		"animation.iron_mace.first_person_swing": {
-			"anim_time_update": "q.anim_time+(q.delta_time*(q.base_swing_duration/q.modified_swing_duration))",
+			"anim_time_update": "q.anim_time + (q.delta_time * (q.base_swing_duration / q.modified_swing_duration))",
 			"animation_length": 0.5,
 			"bones": {
 				"handle": {
@@ -194,7 +194,7 @@
 				},
 				"handle": {
 					"rotation": [
-						"-15-(q.is_sneaking?15:0)",
+						"-15 - (q.is_sneaking ? 15 : 0)",
 						0,
 						0
 					],
@@ -230,7 +230,7 @@
 		},
 		"animation.flail.first_person_swing": {
 			"animation_length": 0.7917,
-			"anim_time_update": "q.anim_time+(q.delta_time*(q.base_swing_duration/q.modified_swing_duration))",
+			"anim_time_update": "q.anim_time + (q.delta_time * (q.base_swing_duration / q.modified_swing_duration))",
 			"bones": {
 				"handle": {
 					"rotation": {
@@ -425,7 +425,7 @@
 		},
 		"animation.flail.third_person_swing": {
 			"animation_length": 0.7917,
-			"anim_time_update": "q.anim_time+(q.delta_time*(q.base_swing_duration/q.modified_swing_duration))",
+			"anim_time_update": "q.anim_time + (q.delta_time * (q.base_swing_duration / q.modified_swing_duration))",
 			"bones": {
 				"chain_sec_0": {
 					"rotation": {
@@ -544,14 +544,14 @@
 				},
 				"chain_sec_0": {
 					"rotation": [
-						"0+math.clamp(v.handle_rotation.r.x*1.33,-120,50)",
+						"-0 + math.clamp(v.handle_rotation.r.x*1.33,-120,50)",
 						0,
 						0
 					]
 				},
 				"chain_sec_2": {
 					"rotation": [
-						"-0+math.clamp(v.handle_rotation.r.x,-90,50)-40",
+						"-0 + math.clamp(v.handle_rotation.r.x,-90, 50) -40",
 						0,
 						0
 					]

@@ -10,7 +10,9 @@ const effectId = "dungeons:growing_bow_effect"
 const dimIds = ["overworld", "nether", "the_end"]
 
 system.runInterval(() => {
-    for (let dimId of dimIds) {
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimId of dims) {
         for (let entity of world.getDimension(dimId).getEntities({
             tags: [effectId]
         })) {

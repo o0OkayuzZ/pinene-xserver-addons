@@ -1,0 +1,48 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dungeons:geomancer",
+            "min_engine_version": "1.8.0",
+            "materials": {
+                "default": "evoker"
+            },
+            "textures": {
+                "default": "textures/entity/geomancer/geomancer"
+            },
+            "geometry": {
+                "default": "geometry.geomancer"
+            },
+            "scripts": {
+                "scale": "0.9375",
+                "animate": [
+                    "controller_general",
+                    "controller_move"
+                ],
+                "pre_animation": [
+                    "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+                    "variable.riding_y_offset_with_respect_to_player = 1.25;",
+                    "variable.riding_y_offset_on_vehicle_where_other_entites_can_stand = query.is_riding_any_entity_of_type('minecraft:minecart', 'minecraft:boat', 'minecraft:chest_boat') ? -3.0 : 0.0;",
+                    "variable.riding_y_offset = variable.riding_y_offset_with_respect_to_player + variable.riding_y_offset_on_vehicle_where_other_entites_can_stand;"
+                ]
+            },
+            "animations": {
+                "casting": "animation.geomancer.summon",
+                "look_at_target": "animation.common.look_at_target",
+                "move": "animation.geomancer.move",
+                "celebrating": "animation.humanoid.celebrating",
+                "controller_general": "controller.animation.geomancer.general",
+                "controller_move": "controller.animation.villager.move",
+                "riding.legs": "animation.humanoid.riding.legs",
+                "controller_riding": "controller.animation.humanoid.riding_legs_only",
+                "riding.body": "animation.humanoid.riding.body"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "spawn_egg": {
+                "texture": "egg_geomancer"
+            }
+        }
+    }
+}

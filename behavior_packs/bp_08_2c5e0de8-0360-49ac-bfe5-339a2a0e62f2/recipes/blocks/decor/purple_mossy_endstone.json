@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:purple_mossy_end_stone"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "M",
+            "E"
+        ],
+        "unlock": [
+            {
+                "item": "dungeons:purple_ender_grass"
+            }
+        ],
+        "key": {
+            "M": {
+                "item": "dungeons:purple_ender_grass"
+            },
+            "E":{
+                "item": "end_stone"
+            }
+        },
+        "result": {
+            "item": "dungeons:purple_mossy_end_stone",
+            "count": 1
+        }
+    }
+}

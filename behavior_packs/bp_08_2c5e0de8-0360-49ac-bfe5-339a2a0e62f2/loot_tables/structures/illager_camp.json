@@ -247,28 +247,13 @@
       "entries": [
         {
           "type": "empty",
-          "weight": 23
+          "weight": 19
         },
         {
           "type": "item",
-          "name": "minecraft:map",
-          "weight": 1,
-          "functions": [
-            {
-              "function": "exploration_map",
-              "destination": "dungeons:obsidian_pinnacle"
-            },
-            {
-              "function": "set_lore",
-              "lore": [
-                "§9§oObsidian Pinnacle"
-              ]
-            },
-            {
-              "function": "set_name",
-              "name": "§rPinnacle Explorer Map"
-            }
-          ]
+          "name": "dungeons:obsidian_monstrosity_explorer_map",
+          "weight": 1
+        
         }
       ]
     }

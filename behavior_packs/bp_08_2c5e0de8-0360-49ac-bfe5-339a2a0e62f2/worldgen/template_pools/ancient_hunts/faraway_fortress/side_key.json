@@ -1,0 +1,59 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:fortress_side_key"
+        },
+        "fallback": "dungeons:fortress_side_key_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_key_straight0",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_key_straight1",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_key_straight2",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_key_split0",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_key_split1",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/faraway_fortress/fort_key_end",
+                    "processors": "dungeons:nether_fortress"
+                },
+                "weight": 4
+            }
+        ]
+    }
+}

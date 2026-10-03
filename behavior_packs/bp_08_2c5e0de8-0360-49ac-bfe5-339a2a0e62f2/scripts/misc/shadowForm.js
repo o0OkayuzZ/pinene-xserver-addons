@@ -81,6 +81,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
 system.runInterval(() => {
     for (const player of world.getPlayers()) {
         const dim = player.dimension;
+        if (player.hasTag("dungeons:shadow_form-faded_out")) player.removeTag("dungeons:shadow_form_faded_out")
         var timeLeft = world.scoreboard.getObjective('dungeons:shadowform_t');
         if (!timeLeft) return;
         if (!player.scoreboardIdentity) continue;
@@ -99,6 +100,7 @@ system.runInterval(() => {
             player.playAnimation('animation.shadow', { nextState: 'shadowForm' });
         }
         if (duration <= 0) {
+            player.addTag("dungeons:shadow_form_faded_out")
             timeLeft.removeParticipant(player)
             player.removeTag('dungeons:in_shadow_form');
         }

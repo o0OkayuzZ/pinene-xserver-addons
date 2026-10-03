@@ -1,0 +1,197 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.key_golem_back",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						0,
+						14,
+						0
+					]
+				},
+				{
+					"name": "key_golem",
+					"parent": "body",
+					"pivot": [
+						0,
+						0,
+						7
+					],
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				},
+				{
+					"name": "key_head",
+					"parent": "key_golem",
+					"pivot": [
+						0,
+						9,
+						7
+					],
+					"rotation": [
+						10,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								5,
+								3
+							],
+							"size": [
+								8,
+								8,
+								8
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-1,
+								13,
+								6
+							],
+							"size": [
+								2,
+								8,
+								2
+							],
+							"uv": [
+								0,
+								16
+							]
+						},
+						{
+							"origin": [
+								-4,
+								16,
+								6
+							],
+							"size": [
+								3,
+								2,
+								2
+							],
+							"uv": [
+								8,
+								16
+							]
+						},
+						{
+							"origin": [
+								-4,
+								19,
+								6
+							],
+							"size": [
+								3,
+								2,
+								2
+							],
+							"uv": [
+								8,
+								20
+							]
+						}
+					],
+					"locators": {
+						"particles": [
+							0,
+							8,
+							7
+						]
+					}
+				},
+				{
+					"name": "key_right_leg",
+					"parent": "key_golem",
+					"pivot": [
+						-2.5,
+						6,
+						7.5
+					],
+					"rotation": [
+						-12.5,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3.5,
+								0,
+								5
+							],
+							"size": [
+								3,
+								6,
+								3
+							],
+							"inflate": -0.01,
+							"uv": [
+								18,
+								19
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "key_left_leg",
+					"parent": "key_golem",
+					"pivot": [
+						2.5,
+						6,
+						7.5
+					],
+					"rotation": [
+						-17.5,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								0.5,
+								0,
+								5
+							],
+							"size": [
+								3,
+								6,
+								3
+							],
+							"inflate": -0.01,
+							"uv": [
+								18,
+								19
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

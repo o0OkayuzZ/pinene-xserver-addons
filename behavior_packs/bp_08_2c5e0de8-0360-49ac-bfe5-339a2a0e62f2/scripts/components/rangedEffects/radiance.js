@@ -6,7 +6,7 @@ import {
 
 import { arrowTypes } from "components/ranged.js"
 
-const effectId = "dungeons:ranged_radiance_bow_effect"
+const effectId = "dungeons:radiance_ranged_bow_effect"
 
 world.beforeEvents.entityHurt.subscribe((e) => {
     const hurt = e.hurtEntity;
@@ -50,7 +50,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
                     const maxHeal = 5
                     const minHeal = 1
 
-                    const maxHP = hp.defaultValue
+                    const maxHP = hp.effectiveMax
                     const currentHP = hp.currentValue;
                     if (amountHealed > maxHeal) amountHealed = maxHeal
                     if (amountHealed < minHeal) amountHealed = minHeal

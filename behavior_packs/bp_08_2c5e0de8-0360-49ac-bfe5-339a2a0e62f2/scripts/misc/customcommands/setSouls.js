@@ -1,5 +1,5 @@
 import { world, system } from "@minecraft/server";
-
+import {getSoulBarText} from "misc/soulManager.js"
 
 system.beforeEvents.startup.subscribe(event => {
     const registry = event.customCommandRegistry;
@@ -24,7 +24,7 @@ system.beforeEvents.startup.subscribe(event => {
                 }
                 for (let player of victim) {
                     world.scoreboard.getObjective("soulGauge").setScore(player, soulcount)
-                    player.onScreenDisplay.setActionBar(`§b${soulcount}§s ソウル `)
+                    player.onScreenDisplay.setActionBar(getSoulBarText(player, false))
 
                 }
                 if (world.gameRules.sendCommandFeedback == true) {

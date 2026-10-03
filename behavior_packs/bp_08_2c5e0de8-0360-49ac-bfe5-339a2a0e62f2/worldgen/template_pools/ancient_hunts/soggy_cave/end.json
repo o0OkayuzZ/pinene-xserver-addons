@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:soggy_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_end",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_end",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_end_tiny",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_end_tinier",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

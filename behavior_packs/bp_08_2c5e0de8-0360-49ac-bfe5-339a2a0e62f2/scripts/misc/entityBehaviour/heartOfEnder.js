@@ -100,7 +100,7 @@ function createVoidPath(dim, loc) {
                 if (dmg) {
                     const hp = player.getComponent("health")
                     const current = hp.currentValue
-                    var setTo = current - (hp.defaultValue / 50)
+                    var setTo = current - (hp.effectiveMax / 50)
                     if (setTo <= 0.5) setTo = 0.5
                     hp.setCurrentValue(setTo)
                     player.runCommand("camerashake add @s 0.15 0.5 rotational")
@@ -332,8 +332,10 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
 })
 
 system.runInterval(() => {
-    for (const dimId of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimId.typeId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (const entity of dim.getEntities({ type: "dungeons:heart_of_ender_head", tags: ["dungeons:laser_on"] })) {
             const rayCast = []
             const rot = entity.getRotation()
@@ -441,8 +443,10 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
 })
 
 system.runInterval(() => {
-    for (const dimId of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimId.typeId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (const entity of dim.getEntities({ type: "dungeons:heart_of_ender_laser" })) {
             const rayCast = []
             const rot = entity.getViewDirection()

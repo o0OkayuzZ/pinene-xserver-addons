@@ -1,61 +1,56 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "header": {
     "name": "[大型] Minecraft Dungeons BP",
     "description": "Dungeons由来のモブ・装備・構造物・ワールド生成を担当。",
     "uuid": "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
-    "version": [
-      2,
-      0,
-      11
-    ],
-    "min_engine_version": [
-      1,
-      26,
-      10
-    ]
+    "version": "2.1.3",
+    "min_engine_version": "1.26.10"
   },
   "modules": [
     {
       "type": "data",
       "uuid": "f6998f6e-1841-4da3-8425-034233ae930f",
-      "version": [
-        2,
-        0,
-        11
-      ]
+      "version": "2.1.3"
     },
     {
       "uuid": "d7f02fa9-f236-487e-9d23-a80053ccd5f3",
-      "version": [
-        2,
-        0,
-        11
-      ],
+      "version": "2.1.3",
       "type": "script",
       "language": "javascript",
       "entry": "scripts/main.js"
     }
   ],
+  "settings": [
+    {
+      "type": "label",
+      "text": "§l§6Ancient Hunts§r\nControls if Ancient Hunts (Custom Dimensions) can be visited. \n§aDisabling this may improve performance\n§cRecommended: ON"
+    },
+    {
+      "type": "toggle",
+      "text": "Ancient Hunts",
+      "name": "dungeons:ancient_hunts",
+      "default": true
+    }
+  ],
   "dependencies": [
     {
       "uuid": "ab296f68-bb16-4ede-a49c-d0ed99b5b87b",
-      "version": [
-        2,
-        0,
-        11
-      ]
+      "version": "2.1.3"
     },
     {
       "module_name": "@minecraft/server",
-      "version": "2.6.0"
+      "version": "2.9.0"
     },
     {
       "module_name": "@minecraft/server-ui",
-      "version": "2.0.0"
+      "version": "2.1.0"
     }
   ],
   "metadata": {
-    "product_type": "addon"
+    "product_type": "addon",
+    "authors": [
+      "Alylica"
+    ]
   }
 }
