@@ -3,8 +3,8 @@ from __future__ import annotations
 import argparse,copy,hashlib,io,json,os,pathlib,shutil,struct,subprocess,sys,time,uuid,zipfile
 from compiler import parse_data,compile_recipe,compile_board,LIMITS,native_counts
 HERE=pathlib.Path(__file__).resolve().parent
-WORLD_NAME='料理UI試験場（ナイフ連携）'
-VERSION=[0,4,0]
+WORLD_NAME='料理UI試験場（確率耐久）'
+VERSION=[0,5,0]
 UIDS={'food_bp':'7e540260-69ce-4a82-951d-bc793e151cd5','food_rp':'c81a6798-b6b1-4716-a514-c49967ad0ee2',
       'tool_bp':'211f47f7-5f1d-4b02-a162-e7546cf3fdc4','tool_rp':'392fe57f-87d4-4146-a8ba-5c548001ab45'}
 PANCAKE_ITEM='behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/pancake.item.json'
@@ -64,7 +64,7 @@ def make_world(repo,template,out):
         group='behavior_packs' if key.endswith('_bp') else 'resource_packs';dest[key]=root/group/key
         shutil.copytree(source,dest[key])
         m=load(dest[key]/'manifest.json');m['header'].update(uuid=ids[key],version=VERSION,
-          name='Pinene Native Minimal '+key,description='World-local native prototype; knife craft wear pending.')
+          name='Pinene Probabilistic Wear '+key,description='World-local native UI test; probabilistic wear by used cooking session.')
         for mod in m['modules']:mod.update(uuid=str(uuid.uuid4()),version=VERSION)
         m.pop('dependencies',None)
         if key=='food_bp':m['dependencies']=[{'uuid':ids['food_rp'],'version':VERSION}]
@@ -76,7 +76,24 @@ def make_world(repo,template,out):
             if p.exists():shutil.rmtree(p)
     # Delete JSON UI overrides only in the NEW world-local resource copy.
     if (dest['tool_rp']/'ui').exists():shutil.rmtree(dest['tool_rp']/'ui')
-    for filename in ['native_boards.js','bootstrap.js']:put(dest['tool_bp']/'scripts'/filename,(HERE/filename).read_bytes())
+    for filename in ['native_boards.js','bootstrap.js','wear_curve.js']:
+        put(dest['tool_bp']/'scripts'/filename,(HERE/filename).read_bytes())
+    runtime={}
+    observed=set()
+    for r in data:
+        parts=[]
+        observed.add(r['id'])
+        for part in r['ingredients']:
+            part_ids=list(part.get('ids',[part.get('id')]))
+            if any(not isinstance(i,str) for i in part_ids):raise ValueError('Invalid runtime ingredient ID')
+            parts.append({'ids':part_ids,'count':part['count']});observed.update(part_ids)
+        runtime[r['id']]={'resultCount':r['resultCount'],'rank':r['rank'],'ingredients':parts}
+    runtime_js=('export const COOKING_RUNTIME = Object.freeze('+json.dumps(runtime,ensure_ascii=False,separators=(',',':'))+');\n'
+      +'export const OBSERVED_ITEM_IDS = Object.freeze('+json.dumps(sorted(observed),ensure_ascii=False,separators=(',',':'))+');\n')
+    runtime_bytes=runtime_js.encode('utf-8')
+    if (HERE/'cooking_runtime.js').read_bytes()!=runtime_bytes:
+        raise ValueError('cooking_runtime.js is stale; regenerate from current cooking_data.js')
+    put(dest['tool_bp']/'scripts/cooking_runtime.js',runtime_bytes)
     put(dest['tool_bp']/'scripts/main.js',b"import './native_boards.js';\nimport './bootstrap.js';\n")
     boards=[]
     for p in (dest['tool_bp']/'blocks').glob('*_cutting_board.json'):
@@ -114,7 +131,7 @@ def make_world(repo,template,out):
       'basic_materials':sum(r['rank']==0 for r in data),'culinary_recipes':sum(r['rank']>0 for r in data),
       'native_recipe_files':len(entries)+1,'board_types':len(boards),'knife_limits':LIMITS,'world_pack_ids':ids,
       'source_hashes':snapshot,'pancake_source':PANCAKE_ITEM,'pancake_texture_source':PANCAKE_RP+'/textures/items/pancake.png',
-      'ui_overrides':False,'experimental_toggles':False,'knife_wear_implemented':False,'mixed_seeds_implemented':False,
+      'ui_overrides':False,'experimental_toggles':False,'knife_wear_implemented':'probabilistic_session_v1','mixed_seeds_implemented':False,
       'multiplayer_supported':False,'native_rendering_verified':False,'native_rank_filtering_verified':False}
     if any(sha(pathlib.Path(p).read_bytes())!=h for p,h in snapshot.items()):raise RuntimeError('Source changed concurrently; do not publish')
     validate(root,data)

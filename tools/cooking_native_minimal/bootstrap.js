@@ -21,9 +21,9 @@ const pending=new Set();
 function welcome(player){
  player.sendMessage('§aバニラ料理試験場：中央はネザライト、左は銅、右はナイフなしのまな板です。');
  player.sendMessage('§7画面はバニラのまま。手を空けて開きます。スニーク＋操作でナイフ回収。追加材料は奥の樽、左端は炉、右端は普通の作業台です。');
- player.sendMessage('§e今回は34レシピとランク制限の試験。クラフト時のナイフ耐久消費はまだ未接続です。');
- player.sendMessage('§7消耗した銅ナイフを置いて回収した後、奥の緑ブロックで8本・消耗37の保持を検査できます。');
- player.onScreenDisplay.setTitle('料理UI試験場・ナイフ連携',{subtitle:'バニラ画面・レシピとナイフの連携',stayDuration:60,fadeInDuration:5,fadeOutDuration:15});
+ player.sendMessage('§e今回は34レシピ＋確率耐久の試験。1回以上料理した画面を1使用として数えます。');
+ player.sendMessage('§7ホットバー7番の検証用銅ナイフは使用47から開始。料理後に緑ブロックで使用回数を確認できます。');
+ player.onScreenDisplay.setTitle('料理UI試験場・確率耐久',{subtitle:'バニラ画面・1調理セッション=1使用',stayDuration:60,fadeInDuration:5,fadeOutDuration:15});
 }
 function log(event,extra={}){console.warn('[pinene_native_minimal] '+JSON.stringify({event,...extra}));}
 function prepare(player,attempt=0){
@@ -48,8 +48,8 @@ function prepare(player,attempt=0){
   const knives=Object.keys(LIMITS).map(m=>new ItemStack(`pinene_cooking:${m}_knife`,1));
   // Dedicated fixture: retrieval must preserve this pre-existing wear and name.
   const worn=new ItemStack('pinene_cooking:copper_knife',1);
-  worn.getComponent('minecraft:durability').damage=37;
-  worn.nameTag='検証用・消耗した銅ナイフ';worn.setLore(['設置・回収で37の消耗が変わらないか確認']);
+  worn.getComponent('minecraft:durability').damage=47;
+  worn.nameTag='検証用・使用47の銅ナイフ';worn.setLore(['料理を1回以上作る画面を1使用として数える']);
   const items=MATERIALS.map(([id,n])=>new ItemStack(String(id),Number(n)));
   const supplies=SUPPLIES.map(([id,n])=>new ItemStack(String(id),Number(n)));
   // Refuse duplicate setup after a crash. Never clear pre-existing inventories.

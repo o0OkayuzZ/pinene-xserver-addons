@@ -1,13 +1,21 @@
-/** Native crafting prototype. No form calls and no inventory-delta craft inference.
+/** Native crafting prototype. No custom forms and no script-owned ingredient transfer.
  * Installed only in the separate single-player integration world.
- * Recipe matching and ingredient transfers belong exclusively to Minecraft.
- * Craft-time knife wear is NOT implemented in this stable-API phase.
+ * Minecraft still owns recipe matching, consumption, container returns and output.
+ * Stable API lacks a craft event, so wear uses conservative binary session evidence:
+ * a registered result must increase while that recipe's ingredients also decrease.
+ * Quantity is deliberately NOT inferred; one used native screen = one wear session.
  */
 import { world, system, ItemStack } from '@minecraft/server';
+import { COOKING_RUNTIME, OBSERVED_ITEM_IDS } from './cooking_runtime.js';
+import { sessionBreakChance, shouldBreakSession, initialUsesFromDamage, visualDamage } from './wear_curve.js';
 export const LIMITS = Object.freeze({ copper: 2, iron: 3, gold: 4, diamond: 6, netherite: 7 });
 const ORIGIN_KEY = 'pinene_native:origin_v1';
 const STATE = 'pinene_cooking:knife';
 const pending = new Set();
+const sessions = new Map();
+const USES_KEY = 'pinene_cooking:uses_v1';
+const BREAK_DUE_KEY = 'pinene_cooking:break_due_v1';
+const SESSION_TTL = 20 * 60 * 10;
 export function knifeMaterial(typeId) {
   return Object.keys(LIMITS).find(m => typeId === `pinene_cooking:${m}_knife`);
 }
@@ -84,6 +92,80 @@ function nearby(player,block) {
   return (a.x-b.x)**2+(a.y-b.y)**2+(a.z-b.z)**2<=36;
 }
 function report(player,text) { try{player.sendMessage(text);}catch{} }
+function knifeUses(stack,material) {
+  const stored=stack?.getDynamicProperty(USES_KEY);
+  if(Number.isSafeInteger(stored)&&stored>=0) return stored;
+  const damage=stack?.getComponent('minecraft:durability')?.damage;
+  return initialUsesFromDamage(material,Number.isSafeInteger(damage)&&damage>=0?damage:0);
+}
+function breakDue(stack) { return stack?.getDynamicProperty(BREAK_DUE_KEY)===true; }
+const OBSERVED_ITEMS = new Set(OBSERVED_ITEM_IDS);
+function trackedCounts(player) {
+  const counts=Object.create(null),add=stack=>{
+    if(!stack||!OBSERVED_ITEMS.has(stack.typeId)) return;
+    counts[stack.typeId]=(counts[stack.typeId]??0)+stack.amount;
+  };
+  const inventory=inv(player);
+  if(inventory) for(let i=0;i<inventory.size;i++) add(inventory.getItem(i));
+  try { add(player.getComponent('minecraft:cursor_inventory')?.item); } catch {}
+  return counts;
+}
+function detectedUsedRecipe(before,after) {
+  for(const [resultId,recipe] of Object.entries(COOKING_RUNTIME)) {
+    if((after[resultId]??0)-(before[resultId]??0)<recipe.resultCount) continue;
+    let valid=true;
+    for(const part of recipe.ingredients) {
+      let consumed=0;
+      for(const id of part.ids) consumed+=(before[id]??0)-(after[id]??0);
+      if(consumed<part.count){valid=false;break;}
+    }
+    if(valid) return resultId;
+  }
+  return undefined;
+}
+function markUsedSession(player,block,h,roll=Math.random()) {
+  if(!h.valid||breakDue(h.stack)) return undefined;
+  const stack=h.storage.getItem(0), material=knifeMaterial(stack?.typeId);
+  if(!material||!knifeUsable(stack)) return undefined;
+  const usesBefore=knifeUses(stack,material), chance=sessionBreakChance(material,usesBefore);
+  const uses=usesBefore+1, due=shouldBreakSession(material,usesBefore,roll);
+  stack.setDynamicProperty(USES_KEY,uses);
+  if(due) stack.setDynamicProperty(BREAK_DUE_KEY,true);
+  const durability=stack.getComponent('minecraft:durability');
+  if(durability) durability.damage=visualDamage(material,uses);
+  h.storage.setItem(0,stack);
+  log('knife_session_used',{player:player.id,block:key(block),material,uses,chance,due});
+  return {material,uses,chance,due};
+}
+function startCookingSession(player,block) {
+  const location={...block.location},dimension=block.dimension,type=block.typeId;
+  system.run(()=>{
+    try {
+      const fresh=dimension.getBlock(location),h=fresh&&holderInfo(fresh);
+      if(!fresh||fresh.typeId!==type||!h?.valid||!knifeUsable(h.stack)||breakDue(h.stack)||!nearby(player,fresh)) return;
+      sessions.set(player.id,{dimension,location,type,material:h.material,knife:knifeSnapshot(h.stack),
+        before:trackedCounts(player),started:system.currentTick});
+    } catch(error) { log('session_start_failed',{error:String(error)}); }
+  });
+}
+function resolvePendingBreak(player,block) {
+  const h=holderInfo(block);
+  if(!h.valid||!breakDue(h.stack)) return false;
+  const previous=block.permutation;
+  block.setPermutation(previous.withState(STATE,'empty'));
+  try {
+    h.storage.setItem(0,undefined);
+    if(h.storage.getItem(0)) throw new Error('knife_break_clear_failed');
+  } catch(error) {
+    try{block.setPermutation(previous);}catch{}
+    throw error;
+  }
+  sessions.delete(player.id);
+  try{h.entity.remove();}catch(error){log('empty_holder_remove_failed',{error:String(error)});}
+  report(player,'§cナイフが寿命で壊れました。');
+  log('knife_broken',{player:player.id,block:key(block),material:h.material});
+  return true;
+}
 function queued(player,block,action) {
   const token=key(block);
   if(pending.has(token)) return;
@@ -164,6 +246,9 @@ world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
   try{
     const held=inv(player)?.getItem(player.selectedSlotIndex), h=holderInfo(block);
     if(h.found.length>1){event.cancel=true;throw new Error('multiple_knife_holders');}
+    if(h.valid&&breakDue(h.stack)){
+      event.cancel=true;queued(player,block,b=>resolvePendingBreak(player,b));return;
+    }
     if(player.isSneaking && h.valid){event.cancel=true;queued(player,block,b=>retrieve(player,b));return;}
     if(knifeMaterial(held?.typeId)){
       event.cancel=true;
@@ -175,6 +260,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
       event.cancel=true;system.run(()=>report(player,'§e銅以上のナイフをまな板に置いてください。'));return;
     }
     scheduleRankActionbar(player,block);
+    startCookingSession(player,block);
     // Do not cancel: Minecraft opens and retains its normal crafting screen.
   }catch(error){event.cancel=true;log('interaction_rejected',{error:String(error)});}
 });
@@ -184,15 +270,40 @@ world.beforeEvents.playerBreakBlock.subscribe(event=>{
   // Occupied-board destruction/drop behavior remains a separate test gate.
   if(holders(event.block).length){event.cancel=true;system.run(()=>report(event.player,'§e試験版では先にスニーク操作でナイフを回収してください。'));}
 });
-system.run(()=>log('ready',{ui:'native',serverApi:'2.7.0',knifeWear:false,multiplayer:false}));
+system.runInterval(()=>{
+  for(const [playerId,session] of sessions) {
+    try {
+      const player=world.getAllPlayers().find(p=>p.id===playerId);
+      if(!player?.isValid||player.dimension.id!==session.dimension.id||system.currentTick-session.started>SESSION_TTL){
+        sessions.delete(playerId);continue;
+      }
+      const block=session.dimension.getBlock(session.location);
+      if(!block||block.typeId!==session.type||!nearby(player,block)){sessions.delete(playerId);continue;}
+      const h=holderInfo(block);
+      if(!h.valid||h.material!==session.material||breakDue(h.stack)||knifeSnapshot(h.stack)!==session.knife){
+        sessions.delete(playerId);continue;
+      }
+      const output=detectedUsedRecipe(session.before,trackedCounts(player));
+      if(!output) continue;
+      const wear=markUsedSession(player,block,h);
+      sessions.delete(playerId);
+      if(wear) log('cooking_session_detected',{player:player.id,block:key(block),output,...wear});
+    } catch(error) { sessions.delete(playerId);log('session_monitor_failed',{error:String(error)}); }
+  }
+},1);
+world.afterEvents.playerLeave.subscribe(({playerId})=>sessions.delete(playerId));
+system.run(()=>log('ready',{ui:'native',serverApi:'2.7.0',knifeWear:'probabilistic_session_v1',multiplayer:false}));
 
 // Read-only, world-local fixture audit. Never infers or charges craft-time wear.
 export function summarizeTestKnives(stacks) {
   const knives=stacks.filter(s=>knifeMaterial(s?.typeId));
-  const worn=knives.filter(s=>s.nameTag==='検証用・消耗した銅ナイフ');
-  const total=knives.reduce((n,s)=>n+s.amount,0);
-  const fixtureOK=worn.length===1 && worn[0].amount===1 && worn[0].typeId==='pinene_cooking:copper_knife' && worn[0].getComponent('minecraft:durability')?.damage===37;
-  return {total,fixtureOK,ok:total===8&&fixtureOK};
+  const worn=knives.filter(s=>s.nameTag==='検証用・使用47の銅ナイフ');
+  const total=knives.reduce((n,s)=>n+s.amount,0), fixture=worn[0];
+  const material=knifeMaterial(fixture?.typeId);
+  const damage=fixture?.getComponent('minecraft:durability')?.damage;
+  const uses=material?knifeUses(fixture,material):undefined;
+  const fixtureOK=worn.length===1&&fixture?.amount===1&&material==='copper';
+  return {total,fixtureOK,damage,uses,breakDue:breakDue(fixture),ok:total===8&&fixtureOK};
 }
 world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
   const {block,player}=event,b=block.location;
@@ -209,7 +320,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
         const s=e.getComponent('minecraft:item')?.itemStack;if(s)stacks.push(s);
       }
       const result=summarizeTestKnives(stacks);log('knife_fixture_audit',result);
-      report(player,(result.ok?'§a検査OK':'§e要確認')+`：ナイフ ${result.total}/8本・消耗37のナイフ ${result.fixtureOK?'維持OK':'不一致'}。範囲内の所持品・保管体・落下品のみ。`);
+      report(player,(result.ok?'§a検査OK':'§e要確認')+'：ナイフ '+result.total+'/8本・検証用 uses='+(result.uses??'?')+' / damage='+(result.damage??'?')+' / breakDue='+(result.breakDue?'YES':'no')+'。');
     }catch(error){log('fixture_audit_error',{error:String(error)});}
   });
 });

@@ -65,8 +65,12 @@ class CompilerTests(unittest.TestCase):
             for m in LIMITS:
                 perm=next(a for a in d['minecraft:block']['permutations'] if a['condition']==f"q.block_state('pinene_cooking:knife') == '{m}'")
                 self.assertEqual(perm['components']['minecraft:crafting_table'],table(m))
-    def test_19_no_forms_or_delta_wear(self):
-        s=(pathlib.Path(__file__).parent/'native_boards.js').read_text(encoding='utf-8');self.assertNotIn('.show(',s);self.assertNotIn('playerInventoryItemChange',s)
-    def test_20_no_script_recipe_consumption(self):
-        s=(pathlib.Path(__file__).parent/'native_boards.js').read_text(encoding='utf-8');self.assertNotIn('COOKING_RECIPES',s);self.assertNotIn('damage =',s)
+    def test_19_no_forms_or_exact_craft_quantity_billing(self):
+        s=(pathlib.Path(__file__).parent/'native_boards.js').read_text(encoding='utf-8')
+        self.assertNotIn('.show(',s);self.assertNotIn('playerInventoryItemChange',s)
+        self.assertIn('detectedUsedRecipe',s);self.assertIn('sessions.delete(playerId)',s)
+    def test_20_script_does_not_take_over_native_recipe_transactions(self):
+        s=(pathlib.Path(__file__).parent/'native_boards.js').read_text(encoding='utf-8')
+        self.assertNotIn('COOKING_RECIPES',s);self.assertNotIn('craftCookingRecipe',s)
+        self.assertNotIn('consumeIngredients',s);self.assertNotIn('returnContainers',s)
 if __name__=='__main__':unittest.main(verbosity=2)
