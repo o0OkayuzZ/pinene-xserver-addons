@@ -3,8 +3,8 @@ from __future__ import annotations
 import argparse,copy,hashlib,io,json,os,pathlib,shutil,struct,subprocess,sys,time,uuid,zipfile
 from compiler import parse_data,compile_recipe,compile_board,LIMITS,native_counts
 HERE=pathlib.Path(__file__).resolve().parent
-WORLD_NAME='料理システム試験場（バニラ版）'
-VERSION=[0,3,0]
+WORLD_NAME='料理UI試験場（ナイフ連携）'
+VERSION=[0,4,0]
 UIDS={'food_bp':'7e540260-69ce-4a82-951d-bc793e151cd5','food_rp':'c81a6798-b6b1-4716-a514-c49967ad0ee2',
       'tool_bp':'211f47f7-5f1d-4b02-a162-e7546cf3fdc4','tool_rp':'392fe57f-87d4-4146-a8ba-5c548001ab45'}
 PANCAKE_ITEM='behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639/items/pancake.item.json'

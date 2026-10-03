@@ -1,6 +1,6 @@
 import {world,system,ItemStack,BlockPermutation,GameMode} from '@minecraft/server';
 import {seedPlacedKnife,LIMITS} from './native_boards.js';
-const KEY='pinene_native_minimal:setup_v1';
+const KEY='pinene_native_minimal:setup_v1'; // one-shot new-world setup
 const ORIGIN={x:0.5,y:-60,z:-0.5};
 const MATERIALS=[
  ['minecraft:bread',32],['pine:chocolate',16],['pine:butter',32],['minecraft:apple',16],
@@ -22,7 +22,7 @@ function welcome(player){
  player.sendMessage('§aバニラ料理試験場：中央はネザライト、左は銅、右はナイフなしのまな板です。');
  player.sendMessage('§7画面はバニラのまま。手を空けて開きます。スニーク＋操作でナイフ回収。追加材料は奥の樽、左端は炉、右端は普通の作業台です。');
  player.sendMessage('§e今回は34レシピとランク制限の試験。クラフト時のナイフ耐久消費はまだ未接続です。');
- player.onScreenDisplay.setTitle('料理システム試験場',{subtitle:'バニラ画面・レシピとナイフの連携',stayDuration:60,fadeInDuration:5,fadeOutDuration:15});
+ player.onScreenDisplay.setTitle('料理UI試験場・ナイフ連携',{subtitle:'バニラ画面・レシピとナイフの連携',stayDuration:60,fadeInDuration:5,fadeOutDuration:15});
 }
 function log(event,extra={}){console.warn('[pinene_native_minimal] '+JSON.stringify({event,...extra}));}
 function prepare(player,attempt=0){
@@ -45,6 +45,10 @@ function prepare(player,attempt=0){
   const prepared=plan.map(a=>({...a,block:dim.getBlock(a.at),permutation:BlockPermutation.resolve(a.type)}));
   if(prepared.some(a=>!a.block))throw new Error('chunks_not_ready');
   const knives=Object.keys(LIMITS).map(m=>new ItemStack(`pinene_cooking:${m}_knife`,1));
+  // Dedicated fixture: retrieval must preserve this pre-existing wear and name.
+  const worn=new ItemStack('pinene_cooking:copper_knife',1);
+  worn.getComponent('minecraft:durability').damage=37;
+  worn.nameTag='検証用・消耗した銅ナイフ';worn.setLore(['設置・回収で37の消耗が変わらないか確認']);
   const items=MATERIALS.map(([id,n])=>new ItemStack(String(id),Number(n)));
   const supplies=SUPPLIES.map(([id,n])=>new ItemStack(String(id),Number(n)));
   // Refuse duplicate setup after a crash. Never clear pre-existing inventories.
@@ -56,6 +60,7 @@ function prepare(player,attempt=0){
   if(!barrel || barrel.size<supplies.length)throw new Error('supply_barrel_unavailable');
   for(let i=0;i<barrel.size;i++)if(barrel.getItem(i))throw new Error('supply_barrel_not_empty');
   knives.forEach((s,i)=>inventory.setItem(i+1,s));
+  inventory.setItem(6,worn);
   items.forEach((s,i)=>inventory.setItem(i+9,s));
   supplies.forEach((s,i)=>barrel.setItem(i,s));
   player.selectedSlotIndex=0;player.setGameMode(GameMode.Survival);

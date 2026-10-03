@@ -3,7 +3,7 @@ const code=fs.readFileSync(new URL('./native_boards.js',import.meta.url),'utf8')
 function environment(){
  const events={},queue=[],entities=[],messages=[];
  const copy=x=>x?.clone();
- class Stack{constructor(typeId,amount=1){this.typeId=typeId;this.amount=amount;this.nameTag='';this.damage=0;this.lore=[];}clone(){const s=new Stack(this.typeId,this.amount);Object.assign(s,JSON.parse(JSON.stringify(this)));return s;}getComponent(id){return id==='minecraft:durability'?{damage:this.damage}:undefined;}}
+ class Stack{constructor(typeId,amount=1){this.typeId=typeId;this.amount=amount;this.nameTag='';this.damage=0;this.lore=[];}clone(){const s=new Stack(this.typeId,this.amount);Object.assign(s,JSON.parse(JSON.stringify(this)));return s;}getLore(){return [...this.lore];}getComponent(id){return id==='minecraft:durability'?{damage:this.damage,maxDurability:96}:undefined;}}
  class Inv{constructor(n=36){this.size=n;this.slots=Array(n);}getItem(i){return copy(this.slots[i]);}setItem(i,s){this.slots[i]=copy(s);}moveItem(from,to,target){assert(!target.slots[to]);target.slots[to]=this.slots[from];this.slots[from]=undefined;}}
  class Perm{constructor(state='empty'){this.state=state;}getState(){return this.state;}getAllStates(){return {"pinene_cooking:knife":this.state};}withState(k,s){return new Perm(s);}}
  const block={typeId:'pinene_cooking:oak_cutting_board',location:{x:0,y:0,z:0},permutation:new Perm(),setPermutation(p){if(this.fail){this.fail=false;throw Error('set_failed');}this.permutation=p;}};
@@ -11,7 +11,7 @@ function environment(){
  const inventory=new Inv();const player={id:'p',isValid:true,location:{x:0.5,y:0,z:0.5},dimension,selectedSlotIndex:0,isSneaking:false,getComponent:()=>({container:inventory}),sendMessage:m=>messages.push(m)};
  const world={getAllPlayers:()=>[player],beforeEvents:{playerInteractWithBlock:{subscribe:f=>events.interact=f},playerBreakBlock:{subscribe:f=>events.break=f}}};
  const system={run:f=>{queue.push(f);return queue.length;}};const sandbox={world,system,ItemStack:Stack,console:{warn(){}}};
- vm.runInNewContext(code+'\nglobalThis.api={moveIntoEmpty,knifeMaterial,seedPlacedKnife};',sandbox);
+ vm.runInNewContext(code+'\nglobalThis.api={moveIntoEmpty,knifeMaterial,seedPlacedKnife,knifeSnapshot,knifeUsable};',sandbox);
  function flush(){while(queue.length)queue.shift()();}
  function click(){const e={player,block,isFirstEvent:true,cancel:false};events.interact(e);flush();return e;}
  flush();return {world,system,api:sandbox.api,Inv,Stack,entities,inventory,player,block,messages,events,click,flush};
@@ -30,3 +30,26 @@ test('occupied board mining preserves the stored knife',()=>{const e=environment
 test('move refuses occupied destination',()=>{const e=environment();knife(e);const other=new e.Inv(1);other.setItem(0,new e.Stack('minecraft:stone'));assert.throws(()=>e.api.moveIntoEmpty(e.inventory,0,other,0));assert.equal(e.inventory.getItem(0).damage,37);});
 test('repeated 100 placements/retrievals neither duplicate nor reset metadata in mock',()=>{const e=environment();const s=knife(e);for(let i=0;i<100;i++){e.player.isSneaking=false;e.click();e.player.isSneaking=true;e.click();assert.deepEqual(e.inventory.getItem(0),s);}assert.equal(e.entities.filter(a=>a.isValid).length,0);});
 test('queued placement refuses a swapped source item',()=>{const e=environment();knife(e);e.events.interact({player:e.player,block:e.block,isFirstEvent:true,cancel:false});e.inventory.setItem(0,new e.Stack('minecraft:diamond'));e.flush();assert.equal(e.inventory.getItem(0).typeId,'minecraft:diamond');assert.equal(e.entities.length,0);});
+
+test('same-type worn knife swapped before queue is not consumed',()=>{
+ const e=environment();knife(e);e.events.interact({player:e.player,block:e.block,isFirstEvent:true,cancel:false});
+ const replacement=knife(e);replacement.damage=2;e.inventory.setItem(0,replacement);e.flush();
+ assert.equal(e.inventory.getItem(0).damage,2);assert.equal(e.entities.length,0);
+});
+test('same-type renamed knife swapped before queue is not consumed',()=>{
+ const e=environment();knife(e);e.events.interact({player:e.player,block:e.block,isFirstEvent:true,cancel:false});
+ const replacement=knife(e);replacement.nameTag='different';e.inventory.setItem(0,replacement);e.flush();
+ assert.equal(e.inventory.getItem(0).nameTag,'different');assert.equal(e.entities.length,0);
+});
+test('exhausted knife cannot enable a recipe table',()=>{
+ const e=environment();const s=knife(e);s.damage=96;e.inventory.setItem(0,s);e.click();
+ assert.equal(e.entities.length,0);assert.equal(e.block.permutation.state,'empty');
+});
+test('negative knife damage fails closed',()=>{
+ const e=environment();const s=knife(e);s.damage=-1;e.inventory.setItem(0,s);e.click();assert.equal(e.entities.length,0);
+});
+test('health change before placement preserves the knife',()=>{
+ const e=environment();const s=knife(e);e.events.interact({player:e.player,block:e.block,isFirstEvent:true,cancel:false});
+ e.player.getComponent=id=>id==='minecraft:health'?{currentValue:0}:{container:e.inventory};e.flush();
+ assert.deepEqual(e.inventory.getItem(0),s);assert.equal(e.entities.length,0);
+});

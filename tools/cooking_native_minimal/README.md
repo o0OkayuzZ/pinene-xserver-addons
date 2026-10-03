@@ -20,7 +20,7 @@ The previously successful native lab and CustomForm/ActionForm prototypes are pr
 - This is not a production replacement. Base pancake creation, unrelated pack features and custom UI code are deliberately not imported.
 
 ## Ready world
-World list name: **料理システム試験場（バニラ版）**. World-local packs are already enabled; first entry supplies ingredients and five knives automatically.
+World list name: **料理UI試験場（ナイフ連携）**. World-local packs are already enabled; first entry supplies ingredients and five knives automatically.
 中央：ネザライト付きまな板。左：銅付き。右：ナイフなし。奥の樽：追加材料。左端：炉。右端：普通の作業台。
 手を空けてまな板を開く。銅では低ランク料理のみ、中央では全登録料理が作れるか比較する。スニーク＋操作でナイフを回収し、手持ちの別ナイフを置いて再確認する。
 途中でレシピを変更したり連続作成しても画面が閉じないことを確認する。今回は耐久が減らないのが未実装の状態であり、合格条件に含めない。
@@ -28,3 +28,12 @@ World list name: **料理システム試験場（バニラ版）**. World-local 
 ## Verification
 Windows: all 20 Python compiler tests and 13 JavaScript mock tests passed (no skips). The scripts compiled against the exact installed stable @minecraft/server 2.7.0 declarations.
 Mock transfer tests cover 100 place/retrieve cycles, full inventory rejection, rollback and metadata retention. These are not Minecraft engine tests.
+
+## Phase 1 review revision
+- Keep native UI and stable server 2.7.0; no beta toggles, polling-based wear or form reopening.
+- The five container-returning recipes use compact shaped definitions and native multiple results. Mixed output types in shapeless lists are rejected by the observed game log. Ingredient/output counts are unchanged; manual placement is now shaped for these five recipes.
+- A queued placement verifies the original knife name/lore/damage/enchants/dynamic properties, not only its type. A same-type replacement is not consumed.
+- Exhausted/invalid-damage knives cannot enable native crafting. Retrieving a stored knife still preserves its ItemStack.
+- One extra copper-knife fixture has damage 37 and a unique test name. Place/retrieve it to verify metadata retention.
+- This revision is a separate new world. Earlier successful worlds and currently loaded packs are not changed.
+- Craft-time durability consumption remains NOT implemented. Native gameplay verification of this revision is pending.

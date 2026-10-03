@@ -14,6 +14,23 @@ export function knifeMaterial(typeId) {
 export function isBoard(typeId) {
   return typeof typeId === 'string' && typeId.startsWith('pinene_cooking:') && typeId.endsWith('_cutting_board');
 }
+/** Snapshot is only a race guard. Transfers still move the original ItemStack. */
+/** @param {import("@minecraft/server").ItemStack | undefined} stack */
+export function knifeSnapshot(stack) {
+  if(!stack) return '';
+  const d=stack.getComponent('minecraft:durability');
+  const ench=stack.getComponent('minecraft:enchantable')?.getEnchantments()??[];
+  const props=(stack.getDynamicPropertyIds?.()??[]).sort().map(k=>[k,stack.getDynamicProperty(k)]);
+  return JSON.stringify([stack.typeId,stack.amount,stack.nameTag??'',stack.getLore?.()??[],
+    d?.damage??0,d?.maxDurability??0,stack.lockMode,stack.keepOnDeath,
+    (stack.getTags?.()??[]).sort(),ench.map(e=>[e.type.id,e.level]).sort(),props]);
+}
+/** @param {import("@minecraft/server").ItemStack | undefined} stack */
+export function knifeUsable(stack) {
+  if(!knifeMaterial(stack?.typeId)||stack.amount!==1) return false;
+  const d=stack.getComponent('minecraft:durability');
+  return !!d && Number.isInteger(d.damage) && d.damage>=0 && d.damage<d.maxDurability;
+}
 function inv(entity) { return entity.getComponent('minecraft:inventory')?.container; }
 function key(block) { return `${block.dimension.id}:${block.location.x},${block.location.y},${block.location.z}`; }
 function center(block) { return { x:block.location.x+0.5, y:block.location.y+0.145, z:block.location.z+0.5 }; }
@@ -32,6 +49,8 @@ function holderInfo(block) {
 }
 function nearby(player,block) {
   if(!player.isValid || player.dimension.id!==block.dimension.id) return false;
+  const health=player.getComponent('minecraft:health');
+  if(health && health.currentValue<=0) return false;
   const a=player.location,b=center(block);
   return (a.x-b.x)**2+(a.y-b.y)**2+(a.z-b.z)**2<=36;
 }
@@ -56,9 +75,10 @@ export function moveIntoEmpty(source,fromSlot,target,toSlot) {
   if(target.getItem(toSlot)) throw new Error('destination_occupied');
   source.moveItem(fromSlot,toSlot,target);
 }
-function place(player,block,slot,expectedType) {
+function place(player,block,slot,expectedType,expectedSnapshot) {
   const source=inv(player), stack=source?.getItem(slot), material=knifeMaterial(stack?.typeId);
   if(!source || !material || stack.typeId!==expectedType || stack.amount!==1 || holders(block).length) return;
+  if(!knifeUsable(stack)||knifeSnapshot(stack)!==expectedSnapshot) return;
   if(block.permutation.getAllStates()[STATE]!=='empty') throw new Error('board_state_without_holder');
   const next=block.permutation.withState(STATE,material);
   const entity=block.dimension.spawnEntity(`pinene_cooking:placed_${material}_knife`,center(block));
@@ -116,11 +136,11 @@ world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
     if(player.isSneaking && h.valid){event.cancel=true;queued(player,block,b=>retrieve(player,b));return;}
     if(knifeMaterial(held?.typeId)){
       event.cancel=true;
-      if(!h.found.length){const slot=player.selectedSlotIndex;queued(player,block,b=>place(player,b,slot,held.typeId));}
+      if(!h.found.length){const slot=player.selectedSlotIndex;const snapshot=knifeSnapshot(held);queued(player,block,b=>place(player,b,slot,held.typeId,snapshot));}
       else system.run(()=>report(player,'§eナイフは設置済みです。手を空けて開くか、スニークして回収してください。'));
       return;
     }
-    if(!h.valid || block.permutation.getAllStates()[STATE]!==h.material){
+    if(!h.valid || !knifeUsable(h.stack) || block.permutation.getAllStates()[STATE]!==h.material){
       event.cancel=true;system.run(()=>report(player,'§e銅以上のナイフをまな板に置いてください。'));return;
     }
     // Do not cancel: Minecraft opens and retains its normal crafting screen.

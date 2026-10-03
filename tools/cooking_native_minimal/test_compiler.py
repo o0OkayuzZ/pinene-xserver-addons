@@ -53,7 +53,7 @@ class CompilerTests(unittest.TestCase):
         for r in data:
             for name,d in compile_recipe(r):
                 count+=1;b=d[next(k for k in d if k.startswith('minecraft:recipe_'))]
-                self.assertEqual(b['result'],{'item':r['id'],'count':r['resultCount']})
+                self.assertEqual(b['result'][0] if isinstance(b['result'],list) else b['result'],{'item':r['id'],'count':r['resultCount']})
                 if r['id']!='pine:cooking_oil':self.assertEqual(native_counts(d),signature(r['ingredients']))
         self.assertEqual(count,37)
     @unittest.skipUnless(DATA.exists(),'source data not mounted here')

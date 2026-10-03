@@ -4,6 +4,7 @@ import copy,json,re
 from collections import Counter
 LIMITS={'copper':2,'iron':3,'gold':4,'diamond':6,'netherite':7}
 TAG_PREFIX='pinene_native_rank_'
+CONTAINER_RETURNS={'minecraft:milk_bucket':'minecraft:bucket','minecraft:honey_bottle':'minecraft:glass_bottle'}
 SEEDS=['minecraft:wheat_seeds','minecraft:pumpkin_seeds','minecraft:melon_seeds','minecraft:beetroot_seeds']
 def parse_data(text):
     match=re.fullmatch(r'\s*export const COOKING_RECIPES\s*=\s*(\[[\s\S]*\]);\s*export const CATEGORY_ORDER\s*=\s*\[[0-9,\s]*\];\s*',text)
@@ -79,7 +80,23 @@ def compile_recipe(r):
             ingredients=[{'item':item(p)} for p in r['ingredients'] for _ in range(p['count'])]
             if len(ingredients)>9:raise ValueError('Too many native ingredient slots')
             body['ingredients']=ingredients;kind='shapeless'
-        body['result']={'item':r['id'],'count':r['resultCount']}
+        primary={'item':r['id'],'count':r['resultCount']}
+        returned=Counter()
+        for part in r['ingredients']:
+            if part.get('id') in CONTAINER_RETURNS:
+                returned[CONTAINER_RETURNS[part['id']]]+=part['count']
+        if returned and kind=='shapeless':
+            # Bedrock rejects mixed output types in shapeless result lists.
+            # A compact shaped recipe retains counts and native container return.
+            cells=body.pop('ingredients');width=min(3,len(cells));chars={};key={};letters=[]
+            for cell in cells:
+                name=cell['item']
+                if name not in chars:
+                    char=chr(65+len(chars));chars[name]=char;key[char]={'item':name}
+                letters.append(chars[name])
+            body['pattern']=[''.join(letters[i:i+width]).ljust(width) for i in range(0,len(letters),width)]
+            body['key']=key;kind='shaped'
+        body['result']=([primary]+[{'item':item,'count':count} for item,count in sorted(returned.items())]) if returned else primary
         body['unlock']=[{'item':item(r['ingredients'][0])}]
         out.append((base+suffix+'.json',{'format_version':'1.20.10','minecraft:recipe_'+kind:body}))
     return out
