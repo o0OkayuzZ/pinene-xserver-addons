@@ -145,6 +145,11 @@ def load_jsonc(path: Path):
     return json.loads(cleaned)
 
 
+def version_parts(value):
+    """Compare manifest v3 string versions with v2/world array versions."""
+    return tuple(value.split('.')) if isinstance(value, str) else tuple(map(str, value))
+
+
 def metadata_errors(root: Path, packs: list[Path]) -> list[str]:
     errors = []
     manifests = {}
@@ -155,14 +160,14 @@ def metadata_errors(root: Path, packs: list[Path]) -> list[str]:
         if uid in manifests:
             errors.append(f"Duplicate manifest UUID: {uid}")
         manifests[uid] = (pack, data)
-        if any(module["version"] != header["version"] for module in data["modules"]):
+        if any(version_parts(module["version"]) != version_parts(header["version"]) for module in data["modules"]):
             errors.append(f"Module version differs from header: {pack.name}")
     for pack, data in manifests.values():
         for dependency in data.get("dependencies", []):
             uid = dependency.get("uuid")
             if uid is None:
                 continue
-            if uid not in manifests or dependency["version"] != manifests[uid][1]["header"]["version"]:
+            if uid not in manifests or version_parts(dependency["version"]) != version_parts(manifests[uid][1]["header"]["version"]):
                 errors.append(f"Unresolved pack dependency/version: {pack.name}: {uid}")
     for folder in (root, root / "worlds" / "Bedrock level"):
         for kind in ("behavior", "resource"):
@@ -174,14 +179,14 @@ def metadata_errors(root: Path, packs: list[Path]) -> list[str]:
                 errors.append(f"Pack registrations differ from active manifests: {path.relative_to(root)}")
             for entry in entries:
                 uid = entry["pack_id"]
-                if uid in manifests and entry["version"] != manifests[uid][1]["header"]["version"]:
+                if uid in manifests and version_parts(entry["version"]) != version_parts(manifests[uid][1]["header"]["version"]):
                     errors.append(f"Stale registration version: {path.relative_to(root)}: {uid}")
     registry = root / "website/src/data/pack-registry.json"
     if registry.exists():
         for entry in load_json(registry)["packs"]:
             uid = entry["uuid"]
             if uid in manifests:
-                version = ".".join(map(str, manifests[uid][1]["header"]["version"]))
+                version = ".".join(version_parts(manifests[uid][1]["header"]["version"]))
                 if entry.get("version") != version:
                     errors.append(f"Stale website version: {uid}")
     readme = root / "README.md"
@@ -189,7 +194,7 @@ def metadata_errors(root: Path, packs: list[Path]) -> list[str]:
         for line in readme.read_text(encoding="utf-8-sig").splitlines():
             for pack, data in manifests.values():
                 prefix = f"| {pack.relative_to(root).as_posix()} |"
-                version = ".".join(map(str, data["header"]["version"]))
+                version = ".".join(version_parts(data["header"]["version"]))
                 if line.startswith(prefix) and not line.endswith(f"| {version} |"):
                     errors.append(f"Stale README version: {pack.name}")
     return errors

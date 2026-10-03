@@ -31,6 +31,21 @@ class MetadataTests(unittest.TestCase):
     def test_matching_metadata_passes(self):
         self.assertEqual(self.errors(), [])
 
+    def test_v3_string_versions_match_array_registrations_and_dependencies(self):
+        path = self.packs[0] / "manifest.json"
+        data = json.loads(path.read_text())
+        data["format_version"] = 3
+        data["header"]["version"] = "1.0.1"
+        data["modules"][0]["version"] = "1.0.1"
+        data["dependencies"] = [{"uuid": "rp", "version": "1.0.1"}]
+        self.write(path, data)
+        self.write(self.root / "website/src/data/pack-registry.json", {"packs": [{"uuid": "bp", "version": "1.0.1"}]})
+        (self.root / "README.md").write_text("| behavior_packs/bp | BP | 1.0.1 |\n", encoding="utf-8")
+        self.assertEqual(self.errors(), [])
+        data["dependencies"][0]["version"] = "1.0.0"
+        self.write(path, data)
+        self.assertTrue(any("dependency/version" in error for error in self.errors()))
+
     def test_stale_nested_world_registration_fails(self):
         self.write(self.root / "worlds/Bedrock level/world_behavior_packs.json", [{"pack_id": "bp", "version": [1, 0, 0]}])
         self.assertTrue(any("Stale registration" in error for error in self.errors()))
