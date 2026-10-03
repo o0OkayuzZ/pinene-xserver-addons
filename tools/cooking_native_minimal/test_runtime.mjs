@@ -1,20 +1,21 @@
 import test from 'node:test';import assert from 'node:assert/strict';import vm from 'node:vm';import fs from 'node:fs';
 const code=fs.readFileSync(new URL('./native_boards.js',import.meta.url),'utf8').replace(/^import .*?;$/gm,'').replace(/export /g,'');
 function environment(){
- const events={},queue=[],entities=[],messages=[];
+ const events={},queue=[],entities=[],messages=[],actionbars=[];
+ let restricted=false;
  const copy=x=>x?.clone();
  class Stack{constructor(typeId,amount=1){this.typeId=typeId;this.amount=amount;this.nameTag='';this.damage=0;this.lore=[];}clone(){const s=new Stack(this.typeId,this.amount);Object.assign(s,JSON.parse(JSON.stringify(this)));return s;}getLore(){return [...this.lore];}getComponent(id){return id==='minecraft:durability'?{damage:this.damage,maxDurability:96}:undefined;}}
  class Inv{constructor(n=36){this.size=n;this.slots=Array(n);}getItem(i){return copy(this.slots[i]);}setItem(i,s){this.slots[i]=copy(s);}moveItem(from,to,target){assert(!target.slots[to]);target.slots[to]=this.slots[from];this.slots[from]=undefined;}}
  class Perm{constructor(state='empty'){this.state=state;}getState(){return this.state;}getAllStates(){return {"pinene_cooking:knife":this.state};}withState(k,s){return new Perm(s);}}
  const block={typeId:'pinene_cooking:oak_cutting_board',location:{x:0,y:0,z:0},permutation:new Perm(),setPermutation(p){if(this.fail){this.fail=false;throw Error('set_failed');}this.permutation=p;}};
  const dimension={id:'minecraft:overworld',getBlock(){return block;},getEntities(){return entities.filter(e=>e.isValid);},spawnEntity(typeId,location){const props=new Map(),storage=new Inv(1);const e={typeId,location,isValid:true,getComponent:()=>({container:storage}),getDynamicProperty:k=>props.get(k),setDynamicProperty:(k,v)=>props.set(k,v),remove(){this.isValid=false;}};entities.push(e);return e;}};block.dimension=dimension;
- const inventory=new Inv();const player={id:'p',isValid:true,location:{x:0.5,y:0,z:0.5},dimension,selectedSlotIndex:0,isSneaking:false,getComponent:()=>({container:inventory}),sendMessage:m=>messages.push(m)};
- const world={getAllPlayers:()=>[player],beforeEvents:{playerInteractWithBlock:{subscribe:f=>{const previous=events.interact;events.interact=e=>{previous?.(e);f(e);};}},playerBreakBlock:{subscribe:f=>events.break=f}}};
+ const inventory=new Inv();const player={id:'p',isValid:true,location:{x:0.5,y:0,z:0.5},dimension,selectedSlotIndex:0,isSneaking:false,getComponent:()=>({container:inventory}),sendMessage:m=>messages.push(m),onScreenDisplay:{setActionBar:text=>{assert.equal(restricted,false);actionbars.push(text);}}};
+ const world={getAllPlayers:()=>[player],beforeEvents:{playerInteractWithBlock:{subscribe:f=>{const previous=events.interact;events.interact=e=>{const old=restricted;restricted=true;try{previous?.(e);f(e);}finally{restricted=old;}};}},playerBreakBlock:{subscribe:f=>events.break=f}}};
  const system={run:f=>{queue.push(f);return queue.length;}};const sandbox={world,system,ItemStack:Stack,console:{warn(){}}};
- vm.runInNewContext(code+'\nglobalThis.api={moveIntoEmpty,knifeMaterial,seedPlacedKnife,knifeSnapshot,knifeUsable,summarizeTestKnives};',sandbox);
+ vm.runInNewContext(code+'\nglobalThis.api={moveIntoEmpty,knifeMaterial,seedPlacedKnife,knifeSnapshot,knifeUsable,summarizeTestKnives,rankActionbarText};',sandbox);
  function flush(){while(queue.length)queue.shift()();}
  function click(){const e={player,block,isFirstEvent:true,cancel:false};events.interact(e);flush();return e;}
- flush();return {world,system,api:sandbox.api,Inv,Stack,entities,inventory,player,block,messages,events,click,flush};
+ flush();return {world,system,api:sandbox.api,Inv,Stack,entities,inventory,player,block,messages,actionbars,events,click,flush};
 }
 function knife(e){const s=new e.Stack('pinene_cooking:copper_knife');s.damage=37;s.nameTag='kept name';s.lore=['kept lore'];e.inventory.setItem(0,s);return s;}
 test('empty board refuses native open',()=>{const e=environment();assert.equal(e.click().cancel,true);});
@@ -64,4 +65,62 @@ test('test audit rejects missing and duplicate knife fixtures',()=>{
  const e=environment();const a=new e.Stack('pinene_cooking:copper_knife');a.nameTag='検証用・消耗した銅ナイフ';a.damage=37;
  assert.equal(e.api.summarizeTestKnives([a]).ok,false);
  const copies=Array.from({length:8},()=>a.clone());assert.equal(e.api.summarizeTestKnives(copies).fixtureOK,false);
+});
+
+
+test('rank notice uses existing limits and standard ASCII roman numerals',()=>{
+ const e=environment();for(const [m,n] of Object.entries({copper:'II',iron:'III',gold:'IV',diamond:'VI',netherite:'VII'}))
+ assert.equal(e.api.rankActionbarText(m),'§7現在ランク：§f'+n+'§r');
+ for(const m of [undefined,'missing','toString','__proto__'])assert.equal(e.api.rankActionbarText(m),undefined);
+});
+test('placing knife emits one notice without changing its name or damage',()=>{
+ const e=environment(),s=knife(e);e.click();assert.deepEqual(e.actionbars,['§7現在ランク：§fII§r']);
+ assert.deepEqual(e.entities[0].getComponent().container.getItem(0),s);
+});
+test('native open is not canceled or delayed by deferred HUD notice',()=>{
+ const e=environment();knife(e);e.click();e.actionbars.length=0;
+ const event={player:e.player,block:e.block,isFirstEvent:true,cancel:false};e.events.interact(event);
+ assert.equal(event.cancel,false);assert.equal(e.actionbars.length,0);e.flush();
+ assert.deepEqual(e.actionbars,['§7現在ランク：§fII§r']);
+});
+test('retrieval reports unset rank once',()=>{
+ const e=environment();knife(e);e.click();e.actionbars.length=0;e.player.isSneaking=true;e.click();
+ assert.deepEqual(e.actionbars,['§7現在ランク：§f未設定§r']);e.flush();assert.equal(e.actionbars.length,1);
+});
+test('empty and unrelated boards do not invent a rank notice',()=>{
+ const e=environment();e.click();e.block.typeId='minecraft:crafting_table';e.click();assert.equal(e.actionbars.length,0);
+});
+test('failed placement does not announce success',()=>{
+ const e=environment();knife(e);e.block.fail=true;e.click();assert.equal(e.actionbars.length,0);
+});
+test('repeat held-input events do not refresh the notice',()=>{
+ const e=environment();knife(e);e.click();e.actionbars.length=0;
+ for(let i=0;i<50;i++)e.events.interact({player:e.player,block:e.block,isFirstEvent:false,cancel:false});
+ e.flush();assert.equal(e.actionbars.length,0);
+});
+test('notice failure never rolls back a completed place or retrieve',()=>{
+ const e=environment(),s=knife(e);e.player.onScreenDisplay.setActionBar=()=>{throw Error('hud unavailable');};
+ e.click();assert.equal(e.block.permutation.state,'copper');assert.equal(e.inventory.getItem(0),undefined);
+ assert.equal(e.click().cancel,false);e.player.isSneaking=true;e.click();assert.deepEqual(e.inventory.getItem(0),s);
+});
+test('disconnect before deferred notice suppresses stale display',()=>{
+ const e=environment();knife(e);e.click();e.actionbars.length=0;
+ e.events.interact({player:e.player,block:e.block,isFirstEvent:true,cancel:false});e.player.isValid=false;e.flush();
+ assert.equal(e.actionbars.length,0);
+});
+test('leaving the board before deferred notice suppresses stale display',()=>{
+ const e=environment();knife(e);e.click();e.actionbars.length=0;
+ e.events.interact({player:e.player,block:e.block,isFirstEvent:true,cancel:false});e.player.location={x:99,y:0,z:0};e.flush();
+ assert.equal(e.actionbars.length,0);
+});
+test('removing the knife before deferred notice suppresses stale rank',()=>{
+ const e=environment();knife(e);e.click();e.actionbars.length=0;
+ e.events.interact({player:e.player,block:e.block,isFirstEvent:true,cancel:false});
+ e.entities[0].getComponent().container.setItem(0,undefined);e.block.permutation.state='empty';e.flush();
+ assert.equal(e.actionbars.length,0);
+});
+test('actionbar feature adds no timer, UI reopening, title popup or metadata writes',()=>{
+ assert.equal(code.includes('runInterval('),false);assert.equal(code.includes('runTimeout('),false);
+ assert.equal(code.includes('.show('),false);assert.equal(code.includes('.setTitle('),false);
+ assert.equal(/\.nameTag\s*=(?!=)/.test(code),false);
 });

@@ -35,6 +35,35 @@ function inv(entity) { return entity.getComponent('minecraft:inventory')?.contai
 function key(block) { return `${block.dimension.id}:${block.location.x},${block.location.y},${block.location.z}`; }
 function center(block) { return { x:block.location.x+0.5, y:block.location.y+0.145, z:block.location.z+0.5 }; }
 function log(event, data={}) { console.warn('[pinene_native_minimal] '+JSON.stringify({event,...data})); }
+// Brief native HUD notice only; never replace or delay the crafting screen.
+const RANK_NUMERALS = Object.freeze(['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII']);
+export function rankActionbarText(material) {
+  if(material==='empty') return '§7現在ランク：§f未設定§r';
+  const rank=LIMITS[material];
+  if(!Number.isInteger(rank)||rank<1||rank>=RANK_NUMERALS.length) return undefined;
+  return '§7現在ランク：§f'+RANK_NUMERALS[rank]+'§r';
+}
+/** @param {import('@minecraft/server').Player} player */
+function showRankActionbar(player,material) {
+  const text=rankActionbarText(material);
+  if(!text) return;
+  try { if(player.isValid) player.onScreenDisplay.setActionBar(text); }
+  catch(error) { log('rank_notice_failed',{error:String(error)}); }
+}
+function scheduleRankActionbar(player,block) {
+  const location={...block.location},dimension=block.dimension,type=block.typeId;
+  // setActionBar is not permitted in a before-event callback.
+  system.run(()=>{
+    try {
+      const fresh=dimension.getBlock(location);
+      if(!fresh||fresh.typeId!==type||!nearby(player,fresh)||world.getAllPlayers().length!==1) return;
+      const h=holderInfo(fresh);
+      if(h.valid&&knifeUsable(h.stack)&&fresh.permutation.getAllStates()[STATE]===h.material)
+        showRankActionbar(player,h.material);
+    } catch(error) { log('rank_notice_failed',{error:String(error)}); }
+  });
+}
+
 function holders(block) {
   return block.dimension.getEntities({location:center(block),maxDistance:0.4})
     .filter(e=>e.isValid && e.getDynamicProperty(ORIGIN_KEY)===key(block));
@@ -100,6 +129,7 @@ function place(player,block,slot,expectedType,expectedSnapshot) {
   }
   log('knife_placed',{material,damage:stack.getComponent('minecraft:durability')?.damage??0});
   report(player,'§aナイフを置きました。手を空けてまな板を開いてください。');
+  showRankActionbar(player,material);
 }
 function retrieve(player,block) {
   const h=holderInfo(block), target=inv(player);
@@ -114,6 +144,7 @@ function retrieve(player,block) {
   if(h.storage.getItem(0)) throw new Error('knife_transfer_incomplete');
   try{h.entity.remove();}catch(error){log('empty_holder_remove_failed',{error:String(error)});}
   report(player,'§aナイフを回収しました。');
+  showRankActionbar(player,'empty');
 }
 export function seedPlacedKnife(block,material) {
   if(!LIMITS[material] || holders(block).length) throw new Error('initial_board_not_empty');
@@ -143,6 +174,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
     if(!h.valid || !knifeUsable(h.stack) || block.permutation.getAllStates()[STATE]!==h.material){
       event.cancel=true;system.run(()=>report(player,'§e銅以上のナイフをまな板に置いてください。'));return;
     }
+    scheduleRankActionbar(player,block);
     // Do not cancel: Minecraft opens and retains its normal crafting screen.
   }catch(error){event.cancel=true;log('interaction_rejected',{error:String(error)});}
 });
