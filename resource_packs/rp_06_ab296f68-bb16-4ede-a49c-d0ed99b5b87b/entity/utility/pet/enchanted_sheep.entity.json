@@ -41,12 +41,12 @@
       "render_controllers": [
         "controller.render.enchanted_sheep",
         {
-          "controller.render.dungeons_entity_enchanted": "q.is_saddled==1"
+          "controller.render.dungeons_entity_enchanted": "q.is_saddled == 1"
         }
       ],
       "spawn_egg": {
-        "base_color": "#E8E8E8",
-        "overlay_color": "#7B3CFF"
+        "texture": "spawn_egg",
+        "texture_index": 3
       }
     }
   }

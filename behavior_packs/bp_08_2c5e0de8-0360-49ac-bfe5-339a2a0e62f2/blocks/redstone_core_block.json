@@ -1,142 +1,143 @@
 {
-	"format_version": "1.26.0",
-	"minecraft:block": {
-		"description": {
-			"identifier": "dungeons:redstone_core_block",
-			"menu_category": {
-				"category": "items"
-			},
-			"states": {
-				"dungeons:core_state": [
-					"ready",
-					"off",
-					"active"
-				],
-				"dungeons:charge": {
-					"values": {
-						"max": 10,
-						"min": 0
-					}
-				}
-			}
-		},
-		"permutations": [
-			{
-				"condition": "query.block_state('dungeons:core_state') == 'ready'",
-				"components": {
-					"minecraft:material_instances": {
-						"up": {
-							"texture": "forge_core_top_ready",
-							"render_method": "opaque"
-						},
-						"down": {
-							"texture": "forge_core_bottom",
-							"render_method": "opaque"
-						},
-						"*": {
-							"texture": "forge_core_side_ready",
-							"render_method": "opaque"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_state('dungeons:core_state') == 'off'",
-				"components": {
-					"minecraft:tick": {
-						"looping": true,
-						"interval_range": [
-							10,
-							10
-						]
-					},
-					"minecraft:material_instances": {
-						"up": {
-							"texture": "forge_core_top_off",
-							"render_method": "opaque"
-						},
-						"down": {
-							"texture": "forge_core_bottom",
-							"render_method": "opaque"
-						},
-						"*": {
-							"texture": "forge_core_side_off",
-							"render_method": "opaque"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_state('dungeons:core_state') == 'active'",
-				"components": {
-					"minecraft:tick": {
-						"looping": true,
-						"interval_range": [
-							6,
-							6
-						]
-					},
-					"minecraft:material_instances": {
-						"up": {
-							"texture": "forge_core_top_active",
-							"render_method": "opaque"
-						},
-						"down": {
-							"texture": "forge_core_bottom",
-							"render_method": "opaque"
-						},
-						"*": {
-							"texture": "forge_core_side_active",
-							"render_method": "opaque"
-						}
-					}
-				}
-			}
-		],
-		"components": {
-			"minecraft:redstone_consumer": {
-				"min_power": 0,
-				"propogates_power": true
-			},
-			"minecraft:tick": {
-				"looping": true,
-				"interval_range": [
-					20,
-					20
-				]
-			},
-			"minecraft:destruction_particles": {
-				"texture": "forge_core_side_off"
-			},
-			"minecraft:redstone_conductivity": {
-				"redstone_conductor": true
-			},
-			"dungeons:redstone_core": {},
-			"minecraft:destructible_by_explosion": {
-				"explosion_resistance": 999999
-			},
-			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 25
-			},
-			"minecraft:geometry": "minecraft:geometry.full_block",
-			"minecraft:light_dampening": 0,
-			"minecraft:map_color": "#3A363F",
-			"tag:pickaxe_mine": {},
-			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"minecraft:material_instances": {
-				"up": {
-					"texture": "forge_core_top_ready",
-					"render_method": "opaque"
-				},
-				"down": {
-					"texture": "forge_core_bottom",
-					"render_method": "opaque"
-				},
-				"*": {
-					"texture": "forge_core_side_ready",
-					"render_method": "opaque"
-				}
-			}
-		}
-	}
+  "format_version": "1.26.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dungeons:redstone_core_block",
+      "menu_category": {
+        "category": "items"
+      },
+      "states": {
+        "dungeons:core_state": [
+          "ready",
+          "off",
+          "active"
+        ],
+        "dungeons:charge": {
+          "values": {
+            "max": 10,
+            "min": 0
+          }
+        }
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('dungeons:core_state') == 'ready'",
+        "components": {
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "forge_core_top_ready",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "forge_core_bottom",
+              "render_method": "opaque"
+            },
+            "*": {
+              "texture": "forge_core_side_ready",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:core_state') == 'off'",
+        "components": {
+          "minecraft:tick": {
+            "looping": true,
+            "interval_range": [
+              10,
+              10
+            ]
+          },
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "forge_core_top_off",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "forge_core_bottom",
+              "render_method": "opaque"
+            },
+            "*": {
+              "texture": "forge_core_side_off",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:core_state') == 'active'",
+        "components": {
+          "minecraft:tick": {
+            "looping": true,
+            "interval_range": [
+              6,
+              6
+            ]
+          },
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "forge_core_top_active",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "forge_core_bottom",
+              "render_method": "opaque"
+            },
+            "*": {
+              "texture": "forge_core_side_active",
+              "render_method": "opaque"
+            }
+          }
+        }
+      }
+    ],
+    "components": {
+      "minecraft:redstone_consumer": {
+        "min_power": 0,
+        "propogates_power": true
+      },
+      "minecraft:tick": {
+        "looping": true,
+        "interval_range": [
+          20,
+          20
+        ]
+      },
+      "minecraft:destruction_particles": {
+        "texture": "forge_core_side_off"
+      },
+      
+      "minecraft:redstone_conductivity": {
+        "redstone_conductor": true
+      },
+      "dungeons:redstone_core": {},
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 999999
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 25
+      },
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:light_dampening": 0,
+      "minecraft:map_color": "#3A363F",
+      "tag:pickaxe_mine": {},
+      "tag:minecraft:is_pickaxe_item_destructible": {},
+      "minecraft:material_instances": {
+        "up": {
+          "texture": "forge_core_top_ready",
+          "render_method": "opaque"
+        },
+        "down": {
+          "texture": "forge_core_bottom",
+          "render_method": "opaque"
+        },
+        "*": {
+          "texture": "forge_core_side_ready",
+          "render_method": "opaque"
+        }
+      }
+    }
+  }
 }

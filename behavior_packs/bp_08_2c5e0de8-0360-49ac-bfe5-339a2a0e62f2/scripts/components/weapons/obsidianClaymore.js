@@ -18,6 +18,7 @@ system.beforeEvents.startup.subscribe((event) => {
             var damage = 8
             if (unique == true) damage = 12
             var damageRaise = 0
+            var targetDummyDamageRaise = 0
             const dim = attacker.dimension;
             const targetLoc = hit.location
             const damageRange = dim.getEntities({
@@ -30,22 +31,28 @@ system.beforeEvents.startup.subscribe((event) => {
                     if (isValidTarget(target) == false) continue;
                     if (target === hit) continue;
                     if (target === attacker) continue;
-                    damageRaise += 2.5
+                    if(target.typeId == "dungeons:target_dummy") {
+                        targetDummyDamageRaise += 2.5
+                    } else {
+                        damageRaise += 2.5
+                    }
                 }
             }
             for (const target of damageRange) {
                 if (isValidTarget(target) == false) continue;
                 if (target === hit) continue;
                 if (target === attacker) continue;
+                var damageRaiseInstance = damageRaise
+                if(target.typeId == "dungeons:target_dummy") damageRaiseInstance = targetDummyDamageRaise
                 target.addTag("dungeons:area_hit")
                 system.runTimeout(() => {
                     if (target.isValid) target.removeTag("dungeons:area_hit")
                 }, 1)
-                const damageDone = specialDamage(attacker, target, damage + (damageRaise * 1.5), EntityDamageCause.entityAttack, ["weapon", "apply_weakness"])
+                const damageDone = specialDamage(attacker, target, damage + (damageRaiseInstance * 1.5), EntityDamageCause.entityAttack, ["weapon", "apply_weakness"])
                 if (!damageDone) continue;
                 if (e.itemStack.hasTag("dungeons:gravity") == false && e.itemStack.hasTag("dungeons:gravity_spooky") == false) {
-                    if (damageRaise < 10) target.applyKnockback(makeVector(getDirection(targetLoc, target.location), 1 + (damageRaise / 15)), 0.3 + (damageRaise / 25))
-                    if (damageRaise >= 10) target.applyKnockback(makeVector(getDirection(targetLoc, target.location), 1 + (10 / 15)), 0.3 + (10 / 25))
+                    if (damageRaiseInstance < 10) target.applyKnockback(makeVector(getDirection(targetLoc, target.location), 1 + (damageRaiseInstance / 15)), 0.3 + (damageRaiseInstance / 25))
+                    if (damageRaiseInstance >= 10) target.applyKnockback(makeVector(getDirection(targetLoc, target.location), 1 + (10 / 15)), 0.3 + (10 / 25))
                 }
             }
             if (unique == true) {

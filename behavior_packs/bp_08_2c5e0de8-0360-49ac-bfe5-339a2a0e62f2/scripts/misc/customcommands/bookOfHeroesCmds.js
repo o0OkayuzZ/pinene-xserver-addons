@@ -16,7 +16,7 @@ system.beforeEvents.startup.subscribe(event => {
     registry.registerEnum("dungeons:entry", entriesArray)
     const bookofheroes = {
         name: "dungeons:bookofheroes",
-        description: "英雄の書の項目を解放・解除します。",
+        description: "Grant or Revoke entries in the Book of Heroes.",
         cheatsRequired: true,
         permissionLevel: 1,
         mandatoryParameters: [PlayerSelector, GrantRevoke, Entries]
@@ -43,11 +43,11 @@ system.beforeEvents.startup.subscribe(event => {
                         }
                         if (world.gameRules.sendCommandFeedback == true) {
                             if (count == 0) {
-                                owner.sendMessage(`${player.name} の指定項目は解放できませんでした。`)
+                                owner.sendMessage(`Could not grant any specified entries to ${player.name}`)
                             } else if (count == 1) {
-                                owner.sendMessage(`${player.name} の項目を ${count} 件解放しました。`)
+                                owner.sendMessage(`Granted ${count} entry to ${player.name}`)
                             } else {
-                                owner.sendMessage(`${player.name} の項目を ${count} 件解放しました。`)
+                                owner.sendMessage(`Granted ${count} entries to ${player.name}`)
                             }
                         }
                     } else if (granttype == "revoke") {
@@ -67,11 +67,11 @@ system.beforeEvents.startup.subscribe(event => {
                         }
                         if (world.gameRules.sendCommandFeedback == true) {
                             if (count == 0) {
-                                owner.sendMessage(`${player.name} の指定項目は解除できませんでした。`)
+                                owner.sendMessage(`Could not revoke any specified entries to ${player.name}`)
                             } else if (count == 1) {
-                                owner.sendMessage(`${player.name} の項目を ${count} 件解除しました。`)
+                                owner.sendMessage(`Revoked ${count} entry from ${player.name}`)
                             } else {
-                                owner.sendMessage(`${player.name} の項目を ${count} 件解除しました。`)
+                                owner.sendMessage(`Revoked ${count} entries from ${player.name}`)
                             }
                         }
                     }

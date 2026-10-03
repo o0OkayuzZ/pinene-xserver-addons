@@ -1,0 +1,91 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:lowerforge_main"
+        },
+        "fallback": "dungeons:lowerforge_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_mainstraight_0",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 9
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_mainstraight_1",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 9
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_mainstraight_2",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_mainsplit_0",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_mainsplit_1",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_mainsplit_2",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_maincomp_0",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_maincomp_1",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_maincomp_2",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 2
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_end",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

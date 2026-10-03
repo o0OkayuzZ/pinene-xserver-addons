@@ -13,9 +13,10 @@ world.beforeEvents.entityHurt.subscribe((e) => {
         const hurt = e.hurtEntity;
         if (!hurt) return;
         if (!hurt.isValid) return;
-        const baseDamage = e.damage;
         const hp = hurt.getComponent("health")
-        const mult = 2 - (((hp.currentValue + baseDamage) / hp.defaultValue))
-        e.damage = e.damage * mult
+        const preHitHealth = hp.currentValue + e.damage
+        const missingPct = 1 - (preHitHealth / hp.effectiveMax)
+        const finalMult = Math.min(2,Math.max(1 + missingPct, 1))
+        e.damage = e.damage * finalMult
     }
 });

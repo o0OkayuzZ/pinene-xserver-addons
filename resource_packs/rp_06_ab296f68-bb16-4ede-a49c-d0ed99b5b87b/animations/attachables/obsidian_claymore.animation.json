@@ -41,7 +41,7 @@
 			}
 		},
 		"animation.obsidian_claymore.first_person_swing": {
-			"anim_time_update": "q.anim_time+(q.delta_time*(q.base_swing_duration/q.modified_swing_duration))",
+			"anim_time_update": "q.anim_time + (q.delta_time * (q.base_swing_duration / q.modified_swing_duration))",
 			"animation_length": 2,
 			"bones": {
 				"pivot": {
@@ -110,5 +110,66 @@
 				}
 			}
 		}
+		/*
+		"animation.obsidian_claymore.first_person_swing": {
+			"animation_length": 2,
+			"bones": {
+				"pivot": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [
+								2.29251,
+								70.14041,
+								-26.96212
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.9583": {
+							"post": [
+								0,
+								55,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.125": [
+							-14,
+							0,
+							-11
+						],
+						"0.7083": [
+							-12,
+							0,
+							-8
+						],
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}*/
 	}
 }

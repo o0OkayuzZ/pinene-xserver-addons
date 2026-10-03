@@ -21,7 +21,7 @@
 					],
 					"transitions": [
 						{
-							"idle": "query.all_animations_finished||v.melee_attack==1"
+							"idle": "query.all_animations_finished || v.melee_attack == 1"
 						}
 					],
 					"blend_transition": 0
@@ -48,7 +48,51 @@
 					],
 					"transitions": [
 						{
-							"idle": "query.all_animations_finished||v.melee_attack==1"
+							"idle": "query.all_animations_finished || v.melee_attack == 1"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.weapon.melee_attack_two": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{
+							"special_one": "v.melee_attack==1 && math.random(0,1) > 0.5"
+						},
+						{
+							"special_two": "v.melee_attack==1 && math.random(0,1) <= 0.5"
+						}
+					],
+					"blend_transition": 0
+				},
+				"special_one": {
+					"animations": [
+						"melee_attack"
+					],
+					"on_entry": [
+						"v.melee_attack=0;"
+					],
+					"transitions": [
+						{
+							"idle": "query.all_animations_finished || v.melee_attack == 1"
+						}
+					],
+					"blend_transition": 0
+				},
+				"special_two": {
+					"animations": [
+						"melee_attack_alt"
+					],
+					"on_entry": [
+						"v.melee_attack=0;"
+					],
+					"transitions": [
+						{
+							"idle": "query.all_animations_finished || v.melee_attack == 1"
 						}
 					],
 					"blend_transition": 0

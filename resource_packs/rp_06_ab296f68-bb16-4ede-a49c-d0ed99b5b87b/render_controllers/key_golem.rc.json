@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.key_golem": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"arrays": {
+				"textures": {
+					"array.skins": [
+						"texture.default",
+						"texture.asleep"
+					]
+				}
+			},
+			"textures": [
+				"Array.skins[q.variant]"
+			],
+			"is_hurt_color": {
+				"a": 0
+			}
+		}
+	}
+}

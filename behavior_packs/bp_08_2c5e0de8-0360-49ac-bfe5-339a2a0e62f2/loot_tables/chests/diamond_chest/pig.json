@@ -1,0 +1,269 @@
+{
+    "pools": [
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "weight": 9,
+                    "type": "empty"
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:redstone_monstrosity_explorer_map",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:nameless_one_explorer_map",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:corrupted_cauldron_explorer_map",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:tempest_golem_explorer_map",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:ancient_guardian_explorer_map",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:arch_illager_explorer_map",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 15
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:drop_mystery_armour",
+                    "weight": 3
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:iron_hide_amulet",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:soul_healer",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:harvester",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:spinblade",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:tasty_bone",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:wonderful_wheat",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:ghost_cloak",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:shock_powder",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:satchel_of_elixirs",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "dungeons:diamond_dust",
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:ancient_gold_ingot",
+                    "weight": 2
+                },
+                {
+                    "type": "empty",
+                    "weight": 3
+                }
+            ]
+        },
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:bread",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 6,
+                                "max": 11
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:arrow",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 15,
+                                "max": 25
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_ingot",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 8,
+                                "max": 15
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "dungeons:ancient_gold_ingot",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 5
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:gold_ingot",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 8
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:emerald",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 5,
+                                "max": 15
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_a",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_c",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_i",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_o",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_p",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_r",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_s",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_t",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_u",
+                    "weight": 1
+                },
+                {
+                    "type": "empty",
+                    "weight": 10
+                }
+            ]
+        }
+    ]
+}

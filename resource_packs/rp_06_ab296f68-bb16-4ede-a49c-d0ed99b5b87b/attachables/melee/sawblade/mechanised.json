@@ -27,7 +27,12 @@
 				"first_person_hold": "animation.sawblade.first_person_hold",
 				"third_person_hold": "animation.sawblade.third_person_hold",
 				"melee_attack": "animation.sawblade.first_person_swing",
-				"melee_controller": "controller.animation.weapon.melee_attack"
+				"melee_controller": "controller.animation.weapon.melee_attack",
+				"use_start":"animation.sawblade.first_person_start_use",
+				"use_loop":"animation.sawblade.first_person_loop_use",
+				"use_end":"animation.sawblade.first_person_end_use",
+				"use_controller": "controller.animation.sawblade.use",
+				"cooldown":"animation.sawblade.first_person_cooldown"
 			},
 			"scripts": {
 				"initialize": [
@@ -37,6 +42,12 @@
 					"q.get_name == (t.player_name ?? '') ? {v.melee_attack = t.melee_attack;};"
 				],
 				"animate": [
+					{
+						"cooldown": "c.is_first_person"
+					},
+					{
+						"use_controller": "c.is_first_person"
+					},
 					{
 						"melee_controller": "c.is_first_person"
 					},

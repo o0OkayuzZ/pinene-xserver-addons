@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:ancient_portal"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_portal/ancient_portal_structure",
+                    "processors": "dungeons:ancient_portal"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

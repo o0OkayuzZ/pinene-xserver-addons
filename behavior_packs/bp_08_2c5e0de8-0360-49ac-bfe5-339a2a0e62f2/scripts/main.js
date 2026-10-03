@@ -1,8 +1,7 @@
 import {
     world
 } from "@minecraft/server";
-
-import { isWearingSet } from "./components/armour.js"
+import { isWearingSet, isWearingMysteryArmour } from "./components/armour.js"
 
 //vector bullshit the original
 export function getDirection(from, to) {
@@ -24,6 +23,7 @@ export function makeVector(vector, strength) {
 }
 //gravity
 export function gravityTo(target, pullLoc) {
+    if(target.typeId == "minecraft:player" && target.getGameMode() == "Spectator") return;
     const xDif = pullLoc.x - target.location.x;
     const zDif = pullLoc.z - target.location.z;
     var xDif2 = 0;
@@ -51,14 +51,29 @@ export function specialDamage(attacker, target, damage, cause, properties, proje
         if (property == "apply_weakness") damage = applyWeakness(damage, attacker)
         if (property == "apply_melee_enchants") damage = applyMeleeEnchants(damage, attacker, target)
         if (property == "artefact") {
+            if (isWearingSet(attacker, "dungeons:cave_crawler_armour")) damage = damage * 1.5
             if (isWearingSet(attacker, "dungeons:piglin_armour")) damage = damage * 1.5
             if (isWearingSet(attacker, "dungeons:guard_armour")) damage = damage * 1.2
             if (isWearingSet(attacker, "dungeons:soulrobe_armour")) damage = damage * 1.3
+            if (isWearingSet(attacker, "dungeons:splendid_robes")) damage = damage * 1.3
+            if (isWearingMysteryArmour(attacker, "artefact_damage")) damage = damage * 1.25
+        }
+        if (property == "fire") {
+            if (isWearingSet(attacker, "dungeons:fire_focus")) damage = damage * 1.5
+        }
+        if (property == "lightning") {
+            if (isWearingSet(attacker, "dungeons:lightning_focus")) damage = damage * 1.5
+        }
+        if (property == "poison") {
+            if (isWearingSet(attacker, "dungeons:poison_focus")) damage = damage * 1.75
+        }
+        if (property == "soul") {
+            if (isWearingSet(attacker, "dungeons:soul_focus")) damage = damage * 1.3
         }
     }
     if (damage == undefined) return false;
     if (projectile == undefined) return target.applyDamage(damage, { cause: cause, damagingEntity: attacker })
-    if (projectile == undefined) return target.applyDamage(damage, { cause: cause, damagingEntity: attacker, damagingProjectile: projectile })
+    if (projectile !== undefined) return target.applyDamage(damage, { cause: cause, damagingEntity: attacker, damagingProjectile: projectile })
 }
 
 function applyWeakness(damageValue, attacker) {
@@ -109,6 +124,7 @@ function applyMeleeEnchants(damageValue, attacker, target) {
 export function isValidTarget(target) {
     if (target.isValid == false) return false;
     if (target.typeId == "minecraft:player" && target.getGameMode() == "Creative") return false
+    if (target.typeId == "minecraft:player" && target.getGameMode() == "Spectator") return false
     if ((target.matches({ families: ["monster"] }) || target.matches({ families: ["target_dummy"] }) || target.matches({ families: ["mob"] }) || target.matches({ families: ["animal"] }) || (target.matches({ families: ["player"] }) && world.gameRules.pvp == true))) {
         return true;
     }
@@ -122,8 +138,10 @@ export function isValidTarget(target) {
 
 
 import "./worldInitialise.js";
+import "./advancements.js";
 
 
+import "./components/weapons/brokenSawblade.js";
 import "./components/artefacts.js";
 import "./components/weapons.js";
 import "./components/armour.js";
@@ -131,7 +149,8 @@ import "./components/blocks.js";
 import "./components/ranged.js";
 import "./components/other.js";
 
-import "./gildedTest.js";
+import "./dimensionRegistry/huntsEnabled.js";
+import "./dimensionRegistry/main.js";
 
 
 import "./misc/debug.js";
@@ -148,9 +167,19 @@ import "./misc/totemBehaviour.js";
 import "./misc/itemGlow.js";
 import "./misc/bookOfHeroesCollection.js";
 import "./misc/sparklerLoot.js";
+import "./misc/gilds.js";
+import "./misc/dropMysteryArmour.js";
+import "./misc/stunnedEffect.js";
+import "./misc/diamondChest.js";
 
 import "./misc/entityBehaviour.js";
 
 import "./misc/customcommands/setSouls.js";
 import "./misc/customcommands/showCooldownTimers.js";
 import "./misc/customcommands/bookOfHeroesCmds.js";
+import "./misc/customcommands/gildItem.js";
+import "./misc/customcommands/showAmbientEffects.js";
+import "./misc/customcommands/fixEquipment.js";
+import "./misc/customcommands/mysteryArmour.js";
+import "./misc/customcommands/bookOfAncients.js";
+import "./misc/customcommands/soulDisplay.js";

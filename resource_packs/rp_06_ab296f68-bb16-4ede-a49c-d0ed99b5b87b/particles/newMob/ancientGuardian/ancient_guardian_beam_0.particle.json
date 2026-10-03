@@ -31,27 +31,15 @@
 			"minecraft:particle_initial_speed": 1,
 			"minecraft:particle_motion_dynamic": {},
 			"minecraft:particle_appearance_billboard": {
-				"size": [
-					0.2,
-					0.2
-				],
+				"size": [0.2, 0.2],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {
 					"texture_width": 16,
 					"texture_height": 16,
 					"flipbook": {
-						"base_UV": [
-							0,
-							9
-						],
-						"size_UV": [
-							1,
-							1
-						],
-						"step_UV": [
-							1,
-							0
-						],
+						"base_UV": [0, 9],
+						"size_UV": [1, 1],
+						"step_UV": [1, 0],
 						"max_frame": 8,
 						"stretch_to_lifetime": true
 					}

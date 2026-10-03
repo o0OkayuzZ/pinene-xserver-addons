@@ -1,0 +1,99 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:huntcitadel_side"
+        },
+        "fallback": "dungeons:huntcitadel_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_sidestraight_0",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_sidestraight_1",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_sidestraight_2",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_sidestraight_3",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_sidesplit_0",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_sidesplit_1",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_sidesplit_2",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_sidesplit_3",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 2
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_boss",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_side_end",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_bonus_door",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

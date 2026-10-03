@@ -1,0 +1,36 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:spike_trap"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " S ",
+            " S ",
+            "DRD"
+        ],
+        "unlock": [
+            {
+                "item": "pointed_dripstone"
+            }
+        ],
+        "key": {
+            "D":{
+                "item": "dungeons:desert_bricks"
+            },
+            "S":{
+                "item": "pointed_dripstone"
+            },
+            "R":{
+                "item": "redstone"
+            }
+        },
+        "result": {
+            "item": "dungeons:spike_trap",
+            "count": 1
+        }
+    }
+}

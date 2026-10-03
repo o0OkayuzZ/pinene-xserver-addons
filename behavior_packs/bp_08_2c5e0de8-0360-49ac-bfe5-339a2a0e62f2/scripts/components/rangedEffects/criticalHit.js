@@ -6,7 +6,7 @@ import {
 
 import { arrowTypes } from "components/ranged.js"
 
-const effectId = "dungeons:ranged_critical_hit_bow_effect"
+const effectId = "dungeons:critical_hit_ranged_bow_effect"
 
 world.beforeEvents.entityHurt.subscribe((e) => {
     const hurt = e.hurtEntity;

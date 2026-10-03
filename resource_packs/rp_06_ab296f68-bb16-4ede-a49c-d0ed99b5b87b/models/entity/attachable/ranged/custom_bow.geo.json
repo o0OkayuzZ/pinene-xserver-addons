@@ -8,39 +8,19 @@
 				"texture_height": 18,
 				"visible_bounds_width": 1,
 				"visible_bounds_height": 1,
-				"visible_bounds_offset": [
-					0,
-					0,
-					0
-				]
+				"visible_bounds_offset": [0, 0, 0]
 			},
 			"bones": [
 				{
 					"name": "rightItem",
-					"pivot": [
-						0,
-						0,
-						0
-					],
+					"pivot": [-0.5, 0, 0],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)",
 					"texture_meshes": [
 						{
 							"texture": "bow_standby",
-							"position": [
-								2,
-								1,
-								-2
-							],
-							"rotation": [
-								0,
-								-135,
-								90
-							],
-							"local_pivot": [
-								6,
-								0,
-								6
-							]
+							"position": [1.5, 1, -2],
+							"rotation": [0, -135, 90],
+							"local_pivot": [6, 0, 6]
 						}
 					]
 				}
@@ -55,25 +35,14 @@
 			"bones": [
 				{
 					"name": "rightItem",
+					"pivot": [-0.5, 0, 0],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)",
 					"texture_meshes": [
 						{
-							"local_pivot": [
-								6,
-								0,
-								6
-							],
-							"position": [
-								2,
-								1,
-								-1
-							],
-							"rotation": [
-								0,
-								-135,
-								90
-							],
-							"texture": "bow_pulling_0"
+							"texture": "bow_pulling_0",
+							"position": [1.5, 0, -2],
+							"rotation": [0, -135, 90],
+							"local_pivot": [6, 0, 6]
 						}
 					]
 				}
@@ -88,25 +57,14 @@
 			"bones": [
 				{
 					"name": "rightItem",
+					"pivot": [-0.5, 0, 0],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)",
 					"texture_meshes": [
 						{
-							"local_pivot": [
-								6,
-								0,
-								6
-							],
-							"position": [
-								2.01,
-								1,
-								-1
-							],
-							"rotation": [
-								0,
-								-135,
-								90
-							],
-							"texture": "bow_pulling_1"
+							"texture": "bow_pulling_1",
+							"position": [1.5, 0, -2],
+							"rotation": [0, -135, 90],
+							"local_pivot": [6, 0, 6]
 						}
 					]
 				}
@@ -121,25 +79,14 @@
 			"bones": [
 				{
 					"name": "rightItem",
+					"pivot": [-0.5, 0, 0],
 					"binding": "q.item_slot_to_bone_name(c.item_slot)",
 					"texture_meshes": [
 						{
-							"local_pivot": [
-								6,
-								0,
-								6
-							],
-							"position": [
-								2.01,
-								1,
-								-1
-							],
-							"rotation": [
-								0,
-								-135,
-								90
-							],
-							"texture": "bow_pulling_2"
+							"texture": "bow_pulling_2",
+							"position": [1.5, 0, -2],
+							"rotation": [0, -135, 90],
+							"local_pivot": [6, 0, 6]
 						}
 					]
 				}

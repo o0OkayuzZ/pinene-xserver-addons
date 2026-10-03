@@ -14,47 +14,64 @@ system.beforeEvents.startup.subscribe((event) => {
     onUse(e, { params }) {
       const player = e.source;
       const item = e.itemStack;
-      const type = params.type
-
-
-      if (item.hasTag('dungeons:tome_of_duplication')) {
-        if (!player.hasTag('tod:used_powershaker')) return;
-      }
-
-
-      var timeLeft = world.scoreboard.getObjective('dungeons:powershaker_t');
-      if (!timeLeft) {
-        timeLeft = world.scoreboard.addObjective('dungeons:powershaker_t');
-      }
-      var usesLeft = world.scoreboard.getObjective('dungeons:powershaker_u');
-      if (!usesLeft) {
-        usesLeft = world.scoreboard.addObjective('dungeons:powershaker_u');
-      }
-
-      if (timeLeft.getScore(player) > 0) {
-        player.playSound("mob.evocation_illager.cast_spell", { pitch: 0.6, volume: 0.5 })
-        player.sendMessage([{ text: "§7§o" }, { translate: "dungeons.warn.already_using" }])
-        const cd = item.getComponent("cooldown")
-        player.startItemCooldown(cd.cooldownCategory, 10);
-        return;
-      }
-
-      player.dimension.spawnParticle('dungeons:party_flair', player.location)
-      player.dimension.playSound('random.fuse', player.location, {
-        volume: 0.7,
-        pitch: 2.5
-      });
-
-      usesLeft.setScore(player, 5);
-      if (type == "common") {
-        timeLeft.setScore(player, 300);
-      } else {
-        timeLeft.setScore(player, 400);
-
-      }
+      useArtefact(player, item, false)
     }
   });
 });
+
+system.afterEvents.scriptEventReceive.subscribe((e) => {
+  const id = e.id;
+  if (id !== "dungeons:force_artefact") return;
+  const player = e.sourceEntity;
+  if (!player) return;
+  const itemId = e.message;
+  if (!itemId) return;
+  const item = new ItemStack(itemId, 1)
+  if (!item.getComponent("dungeons:powershaker")) return;
+  useArtefact(player, item, true)
+})
+
+function useArtefact(player, item, finalShout) {
+  const params = item.getComponent("dungeons:powershaker").customComponentParameters.params
+  const type = params.type
+
+
+  if (item.hasTag('dungeons:tome_of_duplication')) {
+    if (!player.hasTag('tod:used_powershaker')) return;
+  }
+
+
+  var timeLeft = world.scoreboard.getObjective('dungeons:powershaker_t');
+  if (!timeLeft) {
+    timeLeft = world.scoreboard.addObjective('dungeons:powershaker_t');
+  }
+  var usesLeft = world.scoreboard.getObjective('dungeons:powershaker_u');
+  if (!usesLeft) {
+    usesLeft = world.scoreboard.addObjective('dungeons:powershaker_u');
+  }
+
+  if (timeLeft.getScore(player) > 0) {
+    player.playSound("mob.evocation_illager.cast_spell", { pitch: 0.6, volume: 0.5 })
+    if (!finalShout) player.sendMessage([{ text: "§7§o" }, { translate: "dungeons.warn.already_using" }])
+    const cd = item.getComponent("cooldown")
+    player.startItemCooldown(cd.cooldownCategory, 10);
+    return;
+  }
+
+  player.dimension.spawnParticle('dungeons:party_flair', player.location)
+  player.dimension.playSound('random.fuse', player.location, {
+    volume: 0.7,
+    pitch: 2.5
+  });
+
+  usesLeft.setScore(player, 5);
+  if (type == "common") {
+    timeLeft.setScore(player, 300);
+  } else {
+    timeLeft.setScore(player, 400);
+
+  }
+}
 
 
 // TIMER

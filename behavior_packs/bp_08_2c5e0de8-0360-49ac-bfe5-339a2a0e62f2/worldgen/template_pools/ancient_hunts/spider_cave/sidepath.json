@@ -1,0 +1,91 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:spidercave_side"
+        },
+        "fallback": "dungeons:spidercave_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_side_end",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_sidestraight_0",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_sidestraight_1",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_sidestraight_2",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_sidesplit_0",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_sidesplit_1",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_sidesplit_2",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_sidesplit_3",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_boss",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/spider_cave/scave_bonus_door",
+                    "processors": "dungeons:spider_cave"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

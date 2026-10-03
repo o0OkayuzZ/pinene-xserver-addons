@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:jigsaw": {
+        "description": {
+            "identifier": "dungeons:spider_cave_ancient_hunt"
+        },
+        "biome_filters": [
+            {
+                "all_of": [
+                    {
+                        "test": "has_biome_tag",
+                        "value": "ancient_hunt_neverspawnhahahahahahahahhahahfuckmehahaimmakingthislongsothatnobodywwillseeitgenerate"
+                    }
+                ]
+            }
+        ],
+        "heightmap_projection": "world_surface",
+        "max_depth": 20,
+        "max_distance_from_center": {
+            "horizontal": 128,
+            "vertical": 128
+        },
+        "start_height": {
+            "type": "constant",
+            "value": {
+                "absolute": 1
+            }
+        },
+        "start_pool": "dungeons:spidercave_starter",
+        "step": "surface_structures",
+        "terrain_adaptation": "encapsulate"
+    }
+}

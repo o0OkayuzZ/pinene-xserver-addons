@@ -1,0 +1,155 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:eye_of_the_guardian_light",
+            "menu_category": {
+                "category": "none"
+            },
+            "states": {
+                "dungeons:light": [
+                    9,
+                    8,
+                    7,
+                    6,
+                    5,
+                    4,
+                    3,
+                    2,
+                    1
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('dungeons:light') == 15",
+                "components": {
+                    "minecraft:light_emission": 15
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 14",
+                "components": {
+                    "minecraft:light_emission": 14
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 13",
+                "components": {
+                    "minecraft:light_emission": 13
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 12",
+                "components": {
+                    "minecraft:light_emission": 12
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 11",
+                "components": {
+                    "minecraft:light_emission": 11
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 10",
+                "components": {
+                    "minecraft:light_emission": 10
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 9",
+                "components": {
+                    "minecraft:light_emission": 9
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 8",
+                "components": {
+                    "minecraft:light_emission": 8
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 7",
+                "components": {
+                    "minecraft:light_emission": 7
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 6",
+                "components": {
+                    "minecraft:light_emission": 6
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 5",
+                "components": {
+                    "minecraft:light_emission": 5
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 4",
+                "components": {
+                    "minecraft:light_emission": 4
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 3",
+                "components": {
+                    "minecraft:light_emission": 3
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 2",
+                "components": {
+                    "minecraft:light_emission": 2
+                }
+            },
+            {
+                "condition": "q.block_state('dungeons:light') == 1",
+                "components": {
+                    "minecraft:light_emission": 1
+                }
+            }
+        ],
+        "components": {
+            "minecraft:geometry": {
+                "identifier": "minecraft:geometry.full_block"
+            },
+            "minecraft:precipitation_interactions": {
+                "precipitation_behavior": "none"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "empty",
+                    "render_method": "alpha_test"
+                }
+            },
+            "tag:fading_light_block": {},
+            "dungeons:light_block": {},
+            "minecraft:replaceable": {},
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": false,
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 999999
+            },
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "liquid_type": "water",
+                        "can_contain_liquid": true,
+                        "on_liquid_touches": "no_reaction"
+                    }
+                ]
+            },
+            "minecraft:tick": {
+                "interval_range": [
+                    1,
+                    1
+                ],
+                "looping": true
+            }
+        }
+    }
+}

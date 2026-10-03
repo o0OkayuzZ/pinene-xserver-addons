@@ -1,44 +1,49 @@
 {
-	"format_version": "1.21.10",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:emerald_chestplate",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:tags": {
-				"tags": [
-					"minecraft:is_armor",
-					"dungeons:armor_lore",
-					"dungeons:emerald_armour"
-				]
-			},
-			"minecraft:icon": "emerald_chestplate",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:enchantable": {
-				"value": 30,
-				"slot": "armor_torso"
-			},
-			"minecraft:wearable": {
-				"protection": 7,
-				"slot": "slot.armor.chest"
-			},
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:emerald"
-						],
-						"repair_amount": "q.max_durability*0.25"
-					}
-				]
-			},
-			"minecraft:durability": {
-				"max_durability": 325
-			}
-		}
-	}
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:emerald_chestplate",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_armor",
+          "dungeons:armor_lore",
+          "dungeons:emerald_armour",
+          "dungeons:prospector"
+        ]
+      },
+      "minecraft:icon": "emerald_chestplate",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:enchantable": {
+        "value": 30,
+        "slot": "armor_torso"
+      },
+      "minecraft:wearable": {
+        "protection": 7,
+        "slot": "slot.armor.chest"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:emerald"
+            ],
+            "repair_amount": "q.max_durability * 0.25"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 325,
+        "damage_chance": {
+          "max": 100,
+          "min": 0
+        }
+      }
+    }
+  }
 }

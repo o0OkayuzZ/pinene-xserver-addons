@@ -1,0 +1,23 @@
+/*{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "dungeons:diamond_dust",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/tower_avatar/blue"
+            },
+            "geometry": {
+                "default": "geometry.tower_avatar"
+            },
+            "scripts": {
+                "scale": "c.is_first_person ? 0 : 1"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}*/

@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:woodlandprison_starter"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_start",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

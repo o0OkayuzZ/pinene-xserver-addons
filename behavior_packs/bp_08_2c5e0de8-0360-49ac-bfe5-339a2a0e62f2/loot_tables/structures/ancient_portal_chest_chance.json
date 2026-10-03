@@ -1,0 +1,102 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_c",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_o",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_p",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dungeons:enchanted_rune_s",
+                    "weight": 1
+                },
+                {
+                    "type": "empty",
+                    "weight": 11
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 2,
+                "max": 4
+            },
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "gold_nugget",
+                    "weight": 15,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "nether_wart",
+                    "weight": 6,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:golden_spear",
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:bone",
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_ingot",
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "gold_ingot",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

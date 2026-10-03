@@ -34,7 +34,7 @@
 					],
 					"transitions": [
 						{
-							"static": "q.modified_move_speed<=0.1"
+							"static": "q.modified_move_speed <= 0.1"
 						}
 					],
 					"blend_transition": 0.5
@@ -42,7 +42,7 @@
 				"static": {
 					"transitions": [
 						{
-							"walking": "q.is_moving&&q.modified_move_speed>0.1"
+							"walking": "q.is_moving && q.modified_move_speed > 0.1"
 						}
 					],
 					"blend_transition": 0.5
@@ -79,7 +79,7 @@
 				"default": {
 					"transitions": [
 						{
-							"charging": "q.has_target&&q.is_saddled"
+							"charging": "q.has_target && q.is_saddled"
 						}
 					],
 					"blend_transition": 0.2
@@ -90,7 +90,7 @@
 					],
 					"transitions": [
 						{
-							"default": "!q.has_target||!q.is_saddled"
+							"default": "!q.has_target || !q.is_saddled"
 						}
 					],
 					"blend_transition": 0.2
@@ -103,7 +103,7 @@
 				"default": {
 					"transitions": [
 						{
-							"start_shooting": "q.variant==1"
+							"start_shooting": "q.variant == 1"
 						}
 					],
 					"blend_transition": 0.4
@@ -115,10 +115,10 @@
 					],
 					"transitions": [
 						{
-							"default": "q.variant==0"
+							"default": "q.variant == 0"
 						},
 						{
-							"hold_shooting": "q.variant==1&&q.all_animations_finished"
+							"hold_shooting": "q.variant == 1 && q.all_animations_finished"
 						}
 					],
 					"blend_transition": 0.4
@@ -130,7 +130,7 @@
 					],
 					"transitions": [
 						{
-							"stop_shooting": "q.variant==0"
+							"stop_shooting": "q.variant == 0"
 						}
 					],
 					"blend_transition": 0.6
@@ -142,10 +142,10 @@
 					],
 					"transitions": [
 						{
-							"hold_shooting": "q.variant==1"
+							"hold_shooting": "q.variant == 1"
 						},
 						{
-							"default": "q.variant==0&&q.all_animations_finished"
+							"default": "q.variant == 0 && q.all_animations_finished"
 						}
 					],
 					"blend_transition": 0.5

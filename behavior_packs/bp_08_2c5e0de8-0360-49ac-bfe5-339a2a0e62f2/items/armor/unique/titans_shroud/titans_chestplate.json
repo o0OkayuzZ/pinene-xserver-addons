@@ -1,47 +1,54 @@
 {
-	"format_version": "1.21.100",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:titans_shroud_chestplate",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:tags": {
-				"tags": [
-					"minecraft:is_armor",
-					"dungeons:armor_lore",
-					"dungeons:dark_armour",
-					"dungeons:titans_shroud",
-					"dungeons:unique_item"
-				]
-			},
-			"minecraft:icon": "titans_shroud_chestplate",
-			"minecraft:rarity": "rare",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:enchantable": {
-				"value": 10,
-				"slot": "armor_torso"
-			},
-			"minecraft:wearable": {
-				"protection": 16,
-				"slot": "slot.armor.chest"
-			},
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:iron_ingot"
-						],
-						"repair_amount": "q.max_durability*0.25"
-					}
-				]
-			},
-			"minecraft:durability": {
-				"max_durability": 800
-			}
-		}
-	}
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:titans_shroud_chestplate",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_armor",
+          "dungeons:armor_lore",
+          "dungeons:dark_armour",
+          "dungeons:titans_shroud",
+          "dungeons:unique_item"
+        ]
+      },
+      "minecraft:icon": "titans_shroud_chestplate",
+      "minecraft:rarity": "rare",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:enchantable": {
+        "value": 10,
+        "slot": "armor_torso"
+      },
+      "minecraft:wearable": {
+        "protection": 9,
+        "slot": "slot.armor.chest"
+      },
+      "dungeons:toughness": {
+        "toughness": 5
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "q.max_durability * 0.25"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 800,
+        "damage_chance": {
+          "max": 100,
+          "min": 0
+        }
+      }
+    }
+  }
 }

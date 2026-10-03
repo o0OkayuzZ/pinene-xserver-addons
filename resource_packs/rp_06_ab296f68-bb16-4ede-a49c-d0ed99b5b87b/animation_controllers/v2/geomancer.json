@@ -1,0 +1,51 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.geomancer.general": {
+            "initial_state": "default",
+            "states": {
+                "casting": {
+                    "animations": [
+                        "look_at_target",
+                        "casting",
+                        "controller_riding"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_casting"
+                        }
+                    ]
+                },
+                "celebrating": {
+                    "animations": [
+                        "celebrating",
+                        "controller_riding"
+                    ],
+                    "blend_transition": 0.2,
+                    "blend_via_shortest_path": true,
+                    "transitions": [
+                        {
+                            "default": "!query.is_celebrating"
+                        }
+                    ]
+                },
+                "default": {
+                    "animations": [
+                        "look_at_target",
+                        "controller_riding"
+                    ],
+                    "blend_transition": 0.2,
+                    "blend_via_shortest_path": true,
+                    "transitions": [
+                        {
+                            "casting": "query.is_casting"
+                        },
+                        {
+                            "celebrating": "query.is_celebrating"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,24 +1,18 @@
 {
-	"format_version": "1.8.0",
-	"render_controllers": {
-		"controller.render.tower_wraith": {
-			"geometry": "geometry.default",
-			"materials": [
-				{
-					"*": "material.default"
-				}
-			],
-			"arrays": {
-				"textures": {
-					"array.skins": [
-						"texture.default",
-						"texture.pink"
-					]
-				}
-			},
-			"textures": [
-				"array.skins[query.is_saddled]"
-			]
-		}
-	}
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tower_wraith": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+        "arrays": {
+            "textures": {
+              "array.skins": [
+                "texture.default",
+                "texture.pink"
+              ]
+          }
+      },
+      "textures": [ "Array.skins[query.is_saddled]" ]
+    }
+  }
 }

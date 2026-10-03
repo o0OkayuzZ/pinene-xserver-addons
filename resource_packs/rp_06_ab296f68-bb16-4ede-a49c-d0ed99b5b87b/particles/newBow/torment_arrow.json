@@ -10,7 +10,7 @@
 		},
 		"components": {
 			"minecraft:emitter_initialization": {
-				"creation_expression": "variable.size=0.03;variable.lifetime=1.65;"
+				"creation_expression": "variable.size = 0.03;variable.lifetime = 1.65;"
 			},
 			"minecraft:emitter_rate_steady": {
 				"spawn_rate": 30,
@@ -27,7 +27,7 @@
 			"minecraft:particle_motion_dynamic": {
 				"linear_acceleration": [
 					"(variable.particle_random_3-0.5)",
-					"-1+(v.particle_age*1.25)",
+					"-1 + (v.particle_age*1.25)",
 					"(variable.particle_random_4-0.5)"
 				],
 				"linear_drag_coefficient": 0.2

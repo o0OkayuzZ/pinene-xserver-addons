@@ -1,0 +1,41 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dungeons:piglin_merchant",
+            "min_engine_version": "1.8.0",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "textures": {
+                "default": "textures/entity/piglin/piglin_merchant"
+            },
+            "geometry": {
+                "default": "geometry.piglin_merchant"
+            },
+            "animations": {
+                "idle": "animation.piglin_merchant.idle",
+                "tilt_head": "animation.piglin_merchant.tilt_head",
+                "move": "animation.piglin_merchant.walk",
+                "move_controller": "controller.animation.piglin_merchant.move",
+                "look_at_target": "animation.common.look_at_target"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "tilt_head": "query.is_admiring"
+                    },
+                    "idle",
+                    "move_controller",
+                    "look_at_target"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "spawn_egg": {
+                "texture": "egg_piglin_merchant"
+            }
+        }
+    }
+}

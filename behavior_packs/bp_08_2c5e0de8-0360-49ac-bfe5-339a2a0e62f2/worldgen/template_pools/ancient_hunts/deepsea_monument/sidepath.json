@@ -1,0 +1,67 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:monument_side"
+        },
+        "fallback": "dungeons:monument_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/deepsea_monument/mon_sidestraight_0",
+                    "processors": "dungeons:deepsea_monument"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/deepsea_monument/mon_sidesplit_0",
+                    "processors": "dungeons:deepsea_monument"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/deepsea_monument/mon_sidesplit_1",
+                    "processors": "dungeons:deepsea_monument"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/deepsea_monument/mon_sidesplit_2",
+                    "processors": "dungeons:deepsea_monument"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/deepsea_monument/mon_sidesplit_3",
+                    "processors": "dungeons:deepsea_monument"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/deepsea_monument/mon_boss",
+                    "processors": "dungeons:deepsea_monument"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/deepsea_monument/mon_side_end",
+                    "processors": "dungeons:deepsea_monument"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

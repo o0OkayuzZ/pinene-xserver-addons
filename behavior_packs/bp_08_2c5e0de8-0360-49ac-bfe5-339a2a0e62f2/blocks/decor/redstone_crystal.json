@@ -1,0 +1,66 @@
+{
+    "format_version": "1.26.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:redstone_crystal",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:collision_box":{
+                "origin": [
+                    -4,
+                    0,
+                    -4
+                ],
+                "size": [
+                    8,
+                    16,
+                    8
+                ]
+            },
+            "minecraft:selection_box":{
+                "origin": [
+                    -4,
+                    0,
+                    -4
+                ],
+                "size": [
+                    8,
+                    16,
+                    8
+                ]
+            },
+            "minecraft:material_instances": {
+                "*":{
+                    "texture": "redstone_block",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:destructible_by_mining":{
+                "seconds_to_destroy": 1
+            },
+            "minecraft:destructible_by_explosion":{
+                "explosion_resistance": 0
+            },
+            "minecraft:connection_rule": {
+                "accepts_connections_from": "none"
+            },
+            "minecraft:geometry":"geometry.redstone_crystal",
+            "minecraft:redstone_producer": {
+                "power": 7,
+                "connected_faces": [
+                    "north",
+                    "south",
+                    "west",
+                    "east"
+                ]
+            },
+            "minecraft:precipitation_interactions": {
+                "precipitation_behavior": "obstruct_rain"
+            },
+            "minecraft:light_dampening": 0
+        }
+    }
+}

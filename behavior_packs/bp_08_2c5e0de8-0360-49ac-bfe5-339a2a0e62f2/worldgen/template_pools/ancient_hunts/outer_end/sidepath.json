@@ -1,0 +1,64 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:endw_side"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_sidestraight_0",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_sidestraight_1",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_sidestraight_2",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_sidestraight_3",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_sidestraight_4",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_boss",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:empty_pool_element"
+                },
+                "weight": 2
+            }
+        ]
+    }
+}

@@ -92,12 +92,9 @@ const iceologers = [
 ]
 
 const iceologersUnobtainable = [
-    "double_damage",
-    "fire_aspect",
     "freezing",
     "poison_cloud",
-    "radiance",
-    "weakening"
+    "radiance"
 ]
 
 const petUnobtainable = [
@@ -110,6 +107,26 @@ const petUnobtainable = [
     "heal_allies",
     "poison_cloud",
     "quick"
+]
+
+const ancientUnobtainableRandomly = [
+    "electrified",
+    "gravity_pulse",
+    "heal_allies",
+    "poison_cloud",
+    "double_damage",
+    "regeneration",
+    "thorns",
+    "protection"
+]
+
+const parched = [
+    "minecraft:parched",
+    "dungeons:enchanted_parched"
+]
+
+const parchedUnobtainable = [
+    "weakening"
 ]
 
 const easyDifficultyEnchants = [
@@ -154,7 +171,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     const damageSource = e.damageSource.damagingEntity;
     if (!damageSource) return;
     if (e.damageSource.cause == "override") return;
-    if (damageSource.matches({ families: ["enchanted"] })) {
+    if (damageSource.matches({ families: ["enchanted"], excludeFamilies: ["ancient"] })) {
         const cause = e.damageSource.cause
         if (cause == "lightning") return;
         e.damage = e.damage * 1.5
@@ -164,9 +181,11 @@ world.beforeEvents.entityHurt.subscribe((e) => {
 
 //particles
 system.runInterval(() => {
-    for (const dimensionType of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimensionType.typeId)
-        for (const entity of dim.getEntities({ families: ["enchanted"] })) {
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
+        for (const entity of dim.getEntities({ families: ["enchanted"], excludeFamilies: ["ancient", "ancient_minion"] })) {
             if (dim.isChunkLoaded(entity.location)) {
                 if (entity.getEffect("invisibility")) continue;
                 var enchantCount = 1
@@ -194,6 +213,7 @@ world.afterEvents.entitySpawn.subscribe((e) => {
     if (!entity.matches({ families: ["enchanted"] })) return;
     if (entity.hasTag("dungeons:enchanted")) return;
     entity.addTag("dungeons:enchanted")
+    if (entity.matches({ families: ["ancient_minion"] })) return;
     var enchantsAvaliable = []
     if (isEndersent(entity)) {
         addEndersentEnchants(entity)
@@ -205,6 +225,8 @@ world.afterEvents.entitySpawn.subscribe((e) => {
             if (wraithUnobtainable.includes(enchant) && wraiths.includes(entity.typeId)) continue;
             if (aquaticUnobtainable.includes(enchant) && aquatic.includes(entity.typeId)) continue;
             if (iceologersUnobtainable.includes(enchant) && iceologers.includes(entity.typeId)) continue;
+            if (parchedUnobtainable.includes(enchant) && parched.includes(entity.typeId)) continue;
+            if (ancientUnobtainableRandomly.includes(enchant) && entity.matches({ families: ["ancient"] })) continue;
             enchantsAvaliable.push(enchant)
         }
     } else {
@@ -213,6 +235,7 @@ world.afterEvents.entitySpawn.subscribe((e) => {
             if (wraithUnobtainable.includes(enchant) && wraiths.includes(entity.typeId)) continue;
             if (aquaticUnobtainable.includes(enchant) && aquatic.includes(entity.typeId)) continue;
             if (iceologersUnobtainable.includes(enchant) && iceologers.includes(entity.typeId)) continue;
+            if (ancientUnobtainableRandomly.includes(enchant) && entity.matches({ families: ["ancient"] })) continue;
             enchantsAvaliable.push(enchant)
         }
     }
@@ -230,13 +253,23 @@ world.afterEvents.entitySpawn.subscribe((e) => {
             if (random < 0) random = 0
             var selected = enchantsAvaliable[random]
             if (entity.hasTag("dungeons:enchanted_mob_" + selected) == false) {
-                entity.addTag("dungeons:enchanted_mob_" + selected)
-                currentEnchants += 1
+                if (entity.matches({ families: ["ancient"] })) {
+                    if (Math.random() < 0.2) {
+                        entity.addTag("dungeons:enchanted_mob_" + selected)
+                        currentEnchants += 1
+                    } else {
+                        limited = true;
+                    }
+                } else {
+                    entity.addTag("dungeons:enchanted_mob_" + selected)
+                    currentEnchants += 1
+                }
             }
         } else {
             limited = true;
         }
     }
+    if (entity.getDynamicProperty("dungeons:enchant_count")) currentEnchants += entity.getDynamicProperty("dungeons:enchant_count")
     entity.setDynamicProperty("dungeons:enchant_count", currentEnchants)
 })
 
@@ -259,9 +292,21 @@ system.runInterval(() => {
         for (const tag of entity.getTags()) if (tag.includes("dungeons:enchanted_mob_")) text += "|" + tag.replace("dungeons:enchanted_mob_", "")
 
         var raw = [{ text: "§e§n§c§h§d" }, { translate: entity.localizationKey }, { text: "\n" }]
+        if (entity.matches({ families: ["ancient"] })) raw = [{ text: "§e§n§c§h§d" }, { text: "§g" }, { translate: entity.localizationKey }, { text: "\n" }]
+        var count = 0
         for (const thing of text.split("|")) {
             if (thing.length == 0) continue;
-            raw.push({ text: " §u" }, { translate: "enchanted_mob.desc." + thing }, { text: " " })
+            count += 1
+            if (count == 4) raw.push({ text: "\n" })
+            if (count == 7) raw.push({ text: "\n" })
+            if (entity.matches({ families: ["ancient"] })) {
+                raw.push({ text: " §6" }, { translate: "enchanted_mob.desc." + thing }, { text: " " })
+            } else if (entity.matches({ families: ["ancient_rider"] })) {
+                raw.push({ text: " §6" }, { translate: "enchanted_mob.desc." + thing }, { text: " " })
+            } else {
+                raw.push({ text: " §u" }, { translate: "enchanted_mob.desc." + thing }, { text: " " })
+
+            }
         }
         var display = { rawtext: raw }
         player.onScreenDisplay.setActionBar(display)
@@ -335,3 +380,14 @@ import "./enchantedMobs/committed.js";
 import "./enchantedMobs/echo.js";
 import "./enchantedMobs/shockwave.js";
 import "./enchantedMobs/rampaging.js";
+
+import "./enchantedMobs/resurrectionAura.js";
+import "./enchantedMobs/leeching.js";
+import "./enchantedMobs/swirling.js";
+import "./enchantedMobs/growing.js";
+import "./enchantedMobs/cowardice.js";
+import "./enchantedMobs/multishot.js";
+import "./enchantedMobs/mobSummon.js";
+import "./enchantedMobs/fuseShot.js";
+import "./enchantedMobs/accelerate.js";
+import "./enchantedMobs/tempoTheft.js";

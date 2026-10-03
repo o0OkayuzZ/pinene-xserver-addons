@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:deserttomb_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_end",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_end",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_end_tiny",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_end_tinier",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,139 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:ancientcrypt_main"
+        },
+        "fallback": "dungeons:ancientcrypt_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_mainstraight_0",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 15
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_mainstraight_1",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 15
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_mainsplit_0",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_mainsplit_1",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_mainsplit_2",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_mainsplit_3",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_mainsplit_4",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_mainsplit_5",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_maincomp_0",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_maincomp_1",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_maincomp_2",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_maincomp_3",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_maincomp_4",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_maincomp_5",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_maincomp_6",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_end",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

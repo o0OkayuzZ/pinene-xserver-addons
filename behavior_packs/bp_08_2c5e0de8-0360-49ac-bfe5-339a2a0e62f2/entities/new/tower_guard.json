@@ -1,0 +1,382 @@
+	{
+  "format_version": "1.21.130",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dungeons:tower_guard",
+      "runtime_identifier": "minecraft:vindicator",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "dungeons:charging":{
+          "client_sync": true,
+          "default": false,
+          "type": "bool"
+        }
+      }
+    },
+    "component_groups": {
+      "dungeons:has_home": {
+        "minecraft:home": {
+          "restriction_radius": 16,
+          "restriction_type": "random_movement"
+        }
+      },
+      "dungeons:has_shield": {
+                    //deflect
+            "minecraft:reflect_projectiles": {
+                "reflected_projectiles": [
+                    "xp_bottle",
+                    "thrown_trident",
+                    "shulker_bullet",
+                    "dragon_fireball",
+                    "arrow",
+                    "snowball",
+                    "egg",
+                    "fireball",
+                    "splash_potion",
+                    "ender_pearl",
+                    "wither_skull",
+                    "wither_skull_dangerous",
+                    "small_fireball",
+                    "lingering_potion",
+                    "llama_spit",
+                    "fireworks_rocket",
+                    "fishing_hook"
+                ],
+                "azimuth_angle": "180.0 + Math.random(-3.0, 3.0)",
+                "reflection_scale": "1.0"
+            },
+        "minecraft:is_saddled": {},
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "mob"
+                    }
+                  ]
+                },
+                "event": "dungeons:harm_shield"
+              },
+              "deals_damage": "no"
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    }
+                  ]
+                },
+                "event": "dungeons:harm_shield"
+              },
+              "deals_damage": "no"
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "artefact"
+                    }
+                  ]
+                },
+                "event": "dungeons:harm_shield"
+              },
+              "deals_damage": "no"
+            }
+          ]
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1.0
+        }
+      },
+      "dungeons:no_shield": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "looping": true,
+          "time_down_event": {
+            "event": "dungeons:speed_check",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.use_kinetic_weapon": {
+          "approach_distance": 14,
+          "reposition_distance": {
+            "min": 6,
+            "max": 7
+          },
+          "cooldown_distance": {
+            "min": 9,
+            "max": 11
+          },
+          "cooldown_time": 5,
+          "cooldown_speed_multiplier": 0.4,
+          "weapon_reach_multiplier": 0.35,
+          "weapon_min_speed_multiplier": 0.2,
+          "hijack_mount_navigation": true,
+          "speed_multiplier": 1.3,
+          "track_target": true,
+          "priority": 3
+        },
+        "minecraft:damage_sensor": {},
+        "minecraft:knockback_resistance": {
+          "value": 0.5
+        }
+      },
+      "minecraft:vindicator_aggro": {
+        "minecraft:angry": {
+          "duration": -1,
+          "broadcast_anger": false,
+          "calm_event": {
+            "event": "minecraft:stop_aggro",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:default_targeting": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "within_radius": 16.0,
+          "must_see_forget_duration": 40.0,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "snowgolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "wandering_trader"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "key_golem_target"
+                  }
+                ]
+              },
+              "max_dist": 24
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "villager"
+                  },
+                  {
+                    "test": "has_component",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "minecraft:is_baby"
+                  }
+                ]
+              },
+              "max_dist": 24
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:variable_max_auto_step": {
+        "base_value": 1.0625,
+        "controlled_value": 0.5625,
+        "jump_prevented_value": 0.5625
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 15 : 0"
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:nameable": {},
+      // vindicator Components
+      "minecraft:type_family": {
+        "family": [
+          "tower",
+          "monster",
+          "illager",
+          "mob"
+        ]
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:health": {
+        "value": 40,
+        "max": 40
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 4
+      },
+      "minecraft:movement": {
+        "value": 0.265
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:follow_range": {
+        "value": 64
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/tower_guard_gear.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": -1
+          }
+        ]
+      },
+      // vindicator Behaviors
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.melee_box_attack": {
+        "priority": 4
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 9,
+        "speed_multiplier": 0.7
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 10,
+        "look_distance": 8,
+        "probability": 0.02
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:on_target_acquired": {
+        "event": "minecraft:become_aggro",
+        "target": "self"
+      },
+      "minecraft:on_target_escape": {
+        "event": "minecraft:stop_aggro",
+        "target": "self"
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "dungeons:speed_check":{},
+      "dungeons:spawn_structure": {
+        "add": {
+          "component_groups": [
+            "minecraft:default_targeting",
+            "dungeons:has_shield",
+            "dungeons:has_home"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:default_targeting",
+            "dungeons:has_shield"
+          ]
+        }
+      },
+      "dungeons:harm_shield": {
+        "randomize": [
+          {
+            "weight": 4,
+            "trigger": "dungeons:no_break_shield"
+          },
+          {
+            "weight": 5,
+            "trigger": "dungeons:break_shield"
+          }
+        ]
+      },
+      "dungeons:no_break_shield": {
+        "queue_command": {
+          "command": [
+            "playsound item.shield.block @a ~~~ 1.0 0.7"
+          ]
+        }
+      },
+      "dungeons:break_shield": {
+        "add": {
+          "component_groups": [
+            "dungeons:no_shield"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "dungeons:has_shield"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "playsound item.shield.block @a ~~~ 1.0 1.0",
+            "playsound random.break @a ~~~ 0.5 0.5"
+          ]
+        }
+      },
+      "minecraft:become_aggro": {
+        "add": {
+          "component_groups": [
+            "minecraft:vindicator_aggro"
+          ]
+        }
+      },
+      "minecraft:stop_aggro": {
+        "remove": {
+          "component_groups": [
+            "minecraft:vindicator_aggro"
+          ]
+        }
+      }
+    }
+  }
+}

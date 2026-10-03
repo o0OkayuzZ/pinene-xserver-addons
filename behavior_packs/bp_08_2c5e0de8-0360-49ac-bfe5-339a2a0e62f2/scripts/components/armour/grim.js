@@ -20,7 +20,7 @@ world.afterEvents.entityHurt.subscribe((e) => {
     let hp = attacker.getComponent("health")
     if (!hp) return;
 
-    const maxHP = hp.defaultValue
+    const maxHP = hp.effectiveMax
     const currentHP = hp.currentValue;
 
     if (healAmt + currentHP > maxHP) {

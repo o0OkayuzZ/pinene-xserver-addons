@@ -11,7 +11,7 @@
 					],
 					"transitions": [
 						{
-							"shields_opening": "q.variant==1"
+							"shields_opening": "q.variant == 1"
 						}
 					],
 					"blend_transition": 0.2
@@ -33,7 +33,7 @@
 					],
 					"transitions": [
 						{
-							"shields_closing": "q.variant==0"
+							"shields_closing": "q.variant == 0"
 						}
 					],
 					"blend_transition": 0.2
@@ -80,10 +80,10 @@
 				"attack_picker": {
 					"transitions": [
 						{
-							"attack_left": "(q.target_y_rotation<=0&&query.property('dungeons:left_arm')==true)||(query.property('dungeons:right_arm')==false)"
+							"attack_left": "(q.target_y_rotation <= 0 && query.property('dungeons:left_arm') == true) || (query.property('dungeons:right_arm') == false)"
 						},
 						{
-							"attack_right": "(q.target_y_rotation>0&&query.property('dungeons:right_arm')==true)||(query.property('dungeons:left_arm')==false)"
+							"attack_right": "(q.target_y_rotation > 0 && query.property('dungeons:right_arm') == true) || (query.property('dungeons:left_arm') == false)"
 						}
 					],
 					"blend_transition": 0.3
@@ -91,7 +91,7 @@
 				"default": {
 					"transitions": [
 						{
-							"attack_picker": "query.is_delayed_attacking==1"
+							"attack_picker": "query.is_delayed_attacking == 1.0"
 						}
 					],
 					"blend_transition": 0.3
@@ -104,13 +104,13 @@
 				"default": {
 					"transitions": [
 						{
-							"left_off": "query.property('dungeons:left_arm')==false&&query.property('dungeons:right_arm')==true"
+							"left_off": "query.property('dungeons:left_arm') == false && query.property('dungeons:right_arm') == true"
 						},
 						{
-							"right_off": "query.property('dungeons:right_arm')==false&&query.property('dungeons:left_arm')==true"
+							"right_off": "query.property('dungeons:right_arm') == false && query.property('dungeons:left_arm') == true"
 						},
 						{
-							"both_off": "query.property('dungeons:left_arm')==false&&query.property('dungeons:right_arm')==false"
+							"both_off": "query.property('dungeons:left_arm') == false && query.property('dungeons:right_arm') == false"
 						}
 					],
 					"blend_transition": 0.5
@@ -121,13 +121,13 @@
 					],
 					"transitions": [
 						{
-							"default": "query.property('dungeons:left_arm')==true&&query.property('dungeons:right_arm')==true"
+							"default": "query.property('dungeons:left_arm') == true && query.property('dungeons:right_arm') == true"
 						},
 						{
-							"right_off": "query.property('dungeons:right_arm')==false&&query.property('dungeons:left_arm')==true"
+							"right_off": "query.property('dungeons:right_arm') == false && query.property('dungeons:left_arm') == true"
 						},
 						{
-							"both_off": "query.property('dungeons:left_arm')==false&&query.property('dungeons:right_arm')==false"
+							"both_off": "query.property('dungeons:left_arm') == false && query.property('dungeons:right_arm') == false"
 						}
 					],
 					"blend_transition": 0.5
@@ -138,13 +138,13 @@
 					],
 					"transitions": [
 						{
-							"default": "query.property('dungeons:left_arm')==true&&query.property('dungeons:right_arm')==true"
+							"default": "query.property('dungeons:left_arm') == true && query.property('dungeons:right_arm') == true"
 						},
 						{
-							"left_off": "query.property('dungeons:left_arm')==false&&query.property('dungeons:right_arm')==true"
+							"left_off": "query.property('dungeons:left_arm') == false && query.property('dungeons:right_arm') == true"
 						},
 						{
-							"both_off": "query.property('dungeons:left_arm')==false&&query.property('dungeons:right_arm')==false"
+							"both_off": "query.property('dungeons:left_arm') == false && query.property('dungeons:right_arm') == false"
 						}
 					],
 					"blend_transition": 0.5
@@ -156,13 +156,13 @@
 					],
 					"transitions": [
 						{
-							"default": "query.property('dungeons:left_arm')==true&&query.property('dungeons:right_arm')==true"
+							"default": "query.property('dungeons:left_arm') == true && query.property('dungeons:right_arm') == true"
 						},
 						{
-							"right_off": "query.property('dungeons:right_arm')==false&&query.property('dungeons:left_arm')==true"
+							"right_off": "query.property('dungeons:right_arm') == false && query.property('dungeons:left_arm') == true"
 						},
 						{
-							"left_off": "query.property('dungeons:left_arm')==false&&query.property('dungeons:right_arm')==true"
+							"left_off": "query.property('dungeons:left_arm') == false && query.property('dungeons:right_arm') == true"
 						}
 					],
 					"blend_transition": 0.5
@@ -178,7 +178,7 @@
 					],
 					"transitions": [
 						{
-							"default": "!q.is_roaring&&query.all_animations_finished"
+							"default": "!q.is_roaring && query.all_animations_finished"
 						}
 					],
 					"blend_transition": 0.1
@@ -208,7 +208,7 @@
 					],
 					"transitions": [
 						{
-							"attacking": "query.variant==1"
+							"attacking": "query.variant == 1"
 						}
 					],
 					"blend_transition": 0

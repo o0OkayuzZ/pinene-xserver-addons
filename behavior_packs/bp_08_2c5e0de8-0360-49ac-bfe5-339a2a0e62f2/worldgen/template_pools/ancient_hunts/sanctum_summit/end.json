@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:sanctum_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_end",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_end",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_end_tiny",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_end_tinier",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

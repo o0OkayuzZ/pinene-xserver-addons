@@ -1,0 +1,411 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dungeons:bonus_door",
+      "menu_category": {
+        "category": "none"
+      },
+      "states": {
+        "dungeons:rune": ["u", "c", "o", "s", "r", "i", "p", "t", "a"],
+        "dungeons:filled": [false, true]
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('dungeons:rune') == 'u' && q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_u_open",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'u' && !q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 4,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_u_empty",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 't' && q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_t_open",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 't' && !q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 4,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_t_empty",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 's' && q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_s_open",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 's' && !q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 4,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_s_empty",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'r' && q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_r_open",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'r' && !q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 4,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_r_empty",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'p' && q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_p_open",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'p' && !q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 4,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_p_empty",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'o' && q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_o_open",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'o' && !q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 4,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_o_empty",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'i' && q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_i_open",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'i' && !q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 4,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_i_empty",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'c' && q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_c_open",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'c' && !q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 4,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_c_empty",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'a' && q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 7,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_a_open",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('dungeons:rune') == 'a' && !q.block_state('dungeons:filled')",
+        "components": {
+          "minecraft:light_emission": 4,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bonus_door_a_empty",
+              "render_method": "opaque"
+            },
+            "up": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            },
+            "down": {
+              "texture": "bonus_door_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      }
+    ],
+    "components": {
+      "minecraft:tick": {
+        "interval_range": [25,25],
+        "looping": true
+      },
+      "dungeons:bonus_door": {},
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:destructible_by_mining": false,
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:light_dampening": 15,
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "bonus_door_a_empty",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "bonus_door_top",
+          "render_method": "opaque"
+        },
+        "down": {
+          "texture": "bonus_door_top",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:movable": {
+        "movement_type": "immovable"
+      },
+      "minecraft:redstone_conductivity": {
+        "allows_wire_to_step_down": true,
+        "redstone_conductor": false
+      }
+    }
+  }
+}

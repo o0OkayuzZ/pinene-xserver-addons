@@ -4,7 +4,33 @@ import {
     MolangVariableMap
 } from "@minecraft/server";
 
+const immune = [
+    "minecraft:enderman",
+    "minecraft:endermite",
+    "dungeons:snareling",
+    "dungeons:enchanted_snareling",
+    "dungeons:enchanted_enderman",
+    "dungeons:enchanted_endermite",
+    "dungeons:watchling",
+    "dungeons:enchanted_watchling",
+    "dungeons:blastling",
+    "dungeons:enchanted_blastling",
+    "dungeons:spiked_eye",
+    "dungeons:savage_eye",
+    "dungeons:binding_eye",
+    "dungeons:blight_eye",
+    "dungeons:reaping_eye",
+    "dungeons:ravenous_eye",
+    "dungeons:watcher_of_the_end",
+    "dungeons:watcher_of_the_end_minion",
+    "dungeons:the_swarm",
+    "dungeons:the_swarm_minion",
+    "dungeons:heart_of_ender",
+    "dungeons:vengeful_heart_of_ender"
+]
+
 export function addVoidedEffect(entity, duration) {
+    if(immune.includes(entity.typeId)) return
     if (duration <= 0) return false;
     var timeLeft = world.scoreboard.getObjective('dungeons:voided_t');
     if (!timeLeft) {
@@ -55,8 +81,10 @@ world.beforeEvents.entityHurt.subscribe((e) => {
 const dimIds = ["overworld", "nether", "the_end"]
 
 system.runInterval(() => {
-    for (const dimId of dimIds) {
-        const dim = world.getDimension(dimId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (const entity of dim.getEntities({ tags: ["dungeons:voided_effect"] })) {
             var timeLeft = world.scoreboard.getObjective('dungeons:voided_t');
             if (!timeLeft) return;

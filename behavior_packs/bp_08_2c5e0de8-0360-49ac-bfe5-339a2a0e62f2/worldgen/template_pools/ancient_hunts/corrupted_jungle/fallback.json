@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:jungle_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_side_end",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_side_fallback",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

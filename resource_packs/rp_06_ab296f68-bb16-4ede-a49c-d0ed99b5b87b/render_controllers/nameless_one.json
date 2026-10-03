@@ -1,16 +1,16 @@
 {
-	"format_version": "1.8.0",
-	"render_controllers": {
-		"controller.render.nameless_one": {
-			"geometry": "geometry.default",
-			"materials": [
-				{
-					"*": "material.default"
-				}
-			],
-			"textures": [
-				"texture.default"
-			]
-		}
-	}
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.nameless_one": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "texture.default"
+      ]
+    }
+  }
 }

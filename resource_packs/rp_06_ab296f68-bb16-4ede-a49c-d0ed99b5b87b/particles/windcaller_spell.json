@@ -13,11 +13,7 @@
 				"type": "linear",
 				"input": "v.particle_age",
 				"horizontal_range": "v.particle_lifetime",
-				"nodes": [
-					1.3,
-					1,
-					0
-				]
+				"nodes": [1.3, 1, 0]
 			}
 		},
 		"components": {
@@ -39,10 +35,7 @@
 			"minecraft:particle_initial_speed": 1,
 			"minecraft:particle_motion_dynamic": {},
 			"minecraft:particle_appearance_billboard": {
-				"size": [
-					"0.35*v.size",
-					"0.35*v.size"
-				],
+				"size": ["0.35*v.size", "0.35*v.size"],
 				"facing_camera_mode": "rotate_xyz"
 			},
 			"minecraft:particle_appearance_tinting": {

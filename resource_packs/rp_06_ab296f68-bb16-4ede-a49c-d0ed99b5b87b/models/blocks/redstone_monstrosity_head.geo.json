@@ -1,0 +1,44 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.redstone_monstrosity_head",
+				"texture_width": 512,
+				"texture_height": 512,
+				"visible_bounds_width": 11,
+				"visible_bounds_height": 10,
+				"visible_bounds_offset": [0, 4, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [4, 0, 0]
+				},
+				{
+					"name": "head",
+					"parent": "root",
+					"pivot": [0, 68.9, -13.5],
+					"cubes": [
+						{"origin": [-14.5, 4, -10.5], "size": [29, 31, 21], "uv": [103, 120]},
+						{"origin": [-33, 19, -6.5], "size": [19, 13, 13], "uv": [168, 191]},
+						{"origin": [14, 19, -6.5], "size": [19, 13, 13], "uv": [168, 191], "mirror": true},
+						{"origin": [-33, 32, -6.5], "size": [9, 15, 13], "inflate": 0.01, "uv": [177, 225]},
+						{"origin": [24, 32, -6.5], "size": [9, 15, 13], "inflate": 0.01, "uv": [177, 225], "mirror": true}
+					],
+					"locators": {
+						"particles": [0, 13, -6.5]
+					}
+				},
+				{
+					"name": "lower_jaw",
+					"parent": "head",
+					"pivot": [0, 60, -13.5],
+					"cubes": [
+						{"origin": [-14, 0, -10.5], "size": [28, 10, 21], "inflate": -0.01, "uv": [208, 139]}
+					]
+				}
+			]
+		}
+	]
+}

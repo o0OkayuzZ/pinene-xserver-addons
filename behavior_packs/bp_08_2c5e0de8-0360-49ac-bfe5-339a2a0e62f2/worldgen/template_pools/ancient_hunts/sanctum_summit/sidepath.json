@@ -1,0 +1,99 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:sanctum_side"
+        },
+        "fallback": "dungeons:sanctum_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_sidestraight_0",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_sidestraight_1",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_sidestraight_2",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_sidestraight_3",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_sidestraight_4",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_sidesplit_0",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_sidesplit_1",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_sidesplit_2",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_sidesplit_3",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_side_end",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/sanctum_summit/sum_boss",
+                    "processors": "dungeons:sanctum_summit"
+                },
+                "weight": 4
+            }
+        ]
+    }
+}

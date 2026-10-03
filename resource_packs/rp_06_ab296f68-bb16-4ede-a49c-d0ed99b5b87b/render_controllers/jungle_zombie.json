@@ -2,20 +2,12 @@
 	"format_version": "1.8.0",
 	"render_controllers": {
 		"controller.render.jungle_zombie": {
-			"geometry": "geometry.default",
-			"materials": [
-				{
-					"*": "material.default"
-				}
-			],
-			"textures": [
-				"texture.default"
-			],
-			"part_visibility": [
-				{
-					"mushrooms": "!query.is_sheared"
-				}
-			]
+			"geometry": "Geometry.default",
+			"materials": [ { "*": "Material.default" } ],
+			"textures": [ "Texture.default" ],
+                    "part_visibility": [
+                      { "mushrooms": "!query.is_sheared" }
+                    ]
 		}
 	}
 }

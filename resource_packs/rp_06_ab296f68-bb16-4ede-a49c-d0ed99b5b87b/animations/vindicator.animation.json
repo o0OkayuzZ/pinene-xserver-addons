@@ -6,14 +6,14 @@
 			"bones": {
 				"leftarm": {
 					"rotation": [
-						"query.is_riding?0:((math.cos(217.8*query.life_time)*28.65)+(math.sin(variable.attack_time*180)*68.76-(math.sin((1-(1-variable.attack_time)*(1-variable.attack_time))*180))*22.92))",
+						"query.is_riding ? 0.0 : ((math.cos(query.life_time * 20.0 * 10.89) * 28.65) + (math.sin(variable.attack_time * 180.0) * 68.76 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92))",
 						0,
 						0
 					]
 				},
 				"rightarm": {
 					"rotation": [
-						"(-108+math.cos(76.8*query.life_time)*2.87)+(math.sin(variable.attack_time*180)*126.05-(math.sin((1-(1-variable.attack_time)*(1-variable.attack_time))*180))*22.92)",
+						"(-108 + math.cos(query.life_time * 20.0 * 3.84) * 2.87) + (math.sin(variable.attack_time * 180.0) * 126.05 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92)",
 						0,
 						0
 					]
@@ -25,14 +25,14 @@
 			"bones": {
 				"leftarm": {
 					"rotation": [
-						"(-108+math.cos(76.8*query.life_time)*2.87)+(math.sin(variable.attack_time*180)*126.05-(math.sin((1-(1-variable.attack_time)*(1-variable.attack_time))*180))*22.92)",
+						"(-108 + math.cos(query.life_time * 20.0 * 3.84) * 2.87) + (math.sin(variable.attack_time * 180.0) * 126.05 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92)",
 						0,
 						0
 					]
 				},
 				"rightarm": {
 					"rotation": [
-						"(-108+math.cos(76.8*query.life_time)*2.87)+(math.sin(variable.attack_time*180)*126.05-(math.sin((1-(1-variable.attack_time)*(1-variable.attack_time))*180))*22.92)",
+						"(-108 + math.cos(query.life_time * 20.0 * 3.84) * 2.87) + (math.sin(variable.attack_time * 180.0) * 126.05 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92)",
 						0,
 						0
 					]
@@ -43,30 +43,14 @@
 			"loop": true,
 			"bones": {
 				"arms": {
-					"position": [
-						0,
-						"-3-this",
-						"-1-this"
-					],
-					"rotation": [
-						"-42.97-this",
-						0,
-						0
-					]
+					"position": [0, "-3.0 - this", "-1.0 - this"],
+					"rotation": ["-42.97 - this", 0, 0]
 				},
 				"leftarm": {
-					"rotation": [
-						"math.cos(76.8*query.life_time)*2.87",
-						-9,
-						"-1*(math.cos(103.2*query.life_time)*2.87+2.87)"
-					]
+					"rotation": ["math.cos(query.life_time * 20.0 * 3.84) * 2.87", -9, "-1 * (math.cos(query.life_time * 20.0 * 5.16) * 2.87 + 2.87)"]
 				},
 				"rightarm": {
-					"rotation": [
-						"math.cos(76.8*query.life_time)*2.87",
-						9,
-						"math.cos(103.2*query.life_time)*2.87+2.87"
-					]
+					"rotation": ["math.cos(query.life_time * 20.0 * 3.84) * 2.87", 9, "math.cos(query.life_time * 20.0 * 5.16) * 2.87 + 2.87"]
 				},
 				"rightItem": {
 					"scale": "query.is_angry ? 1.0 : 0.0"
@@ -80,11 +64,7 @@
 			"loop": true,
 			"bones": {
 				"leftarm": {
-					"rotation": [
-						-36,
-						0,
-						0
-					]
+					"rotation": [-36, 0, 0]
 				}
 			}
 		},
@@ -92,37 +72,17 @@
 			"loop": true,
 			"bones": {
 				"leg0": {
-					"rotation": [
-						"-72-this",
-						"18-this",
-						"-this"
-					]
+					"rotation": ["-72.0 - this", "18.0 - this", "-this"]
 				},
 				"leg1": {
-					"rotation": [
-						"-72-this",
-						"-18-this",
-						"-this"
-					]
+					"rotation": ["-72.0 - this", "-18.0 - this", "-this"]
 				},
 				"leftArm": {
-					"rotation": [
-						-12.5,
-						0,
-						0
-					]
+					"rotation": [-12.5, 0, 0]
 				},
 				"shield": {
-					"rotation": [
-						5,
-						0,
-						0
-					],
-					"position": [
-						0,
-						1,
-						0
-					]
+					"rotation": [5, 0, 0],
+					"position": [0, 1, 0]
 				}
 			}
 		},
@@ -130,18 +90,10 @@
 			"loop": true,
 			"bones": {
 				"leg0": {
-					"rotation": [
-						"(math.cos(query.modified_distance_moved*38.17)*80.21)*query.modified_move_speed*.5",
-						0,
-						0
-					]
+					"rotation": ["(math.cos(query.modified_distance_moved * 38.17) * 80.21) * query.modified_move_speed * 0.5", 0, 0]
 				},
 				"leg1": {
-					"rotation": [
-						"(math.cos(query.modified_distance_moved*38.17+180)*80.21)*query.modified_move_speed*.5",
-						0,
-						0
-					]
+					"rotation": ["(math.cos(query.modified_distance_moved * 38.17 + 180) * 80.21) * query.modified_move_speed * 0.5", 0, 0]
 				}
 			}
 		}

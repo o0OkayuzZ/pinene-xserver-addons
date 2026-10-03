@@ -15,25 +15,13 @@
 			"loop": true,
 			"bones": {
 				"front": {
-					"rotation": [
-						0,
-						0,
-						"q.life_time*180"
-					]
+					"rotation": [0, 0, "q.life_time*180"]
 				},
 				"back": {
-					"rotation": [
-						0,
-						0,
-						"q.life_time*-90"
-					]
+					"rotation": [0, 0, "q.life_time*-90"]
 				},
 				"root": {
-					"rotation": [
-						"-query.camera_rotation(0)",
-						"query.camera_rotation(1)-180",
-						0
-					],
+					"rotation": ["-query.camera_rotation(0)", "query.camera_rotation(1)-180", 0],
 					"scale": "math.sin(q.life_time*400)*0.2+1"
 				}
 			}

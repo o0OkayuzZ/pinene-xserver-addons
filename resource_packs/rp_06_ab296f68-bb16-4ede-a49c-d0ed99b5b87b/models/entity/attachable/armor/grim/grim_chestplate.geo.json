@@ -8,113 +8,30 @@
 				"texture_height": 64,
 				"visible_bounds_width": 3,
 				"visible_bounds_height": 3.5,
-				"visible_bounds_offset": [
-					0,
-					1.25,
-					0
-				]
+				"visible_bounds_offset": [0, 1.25, 0]
 			},
 			"bones": [
 				{
 					"name": "body",
-					"pivot": [
-						0,
-						24,
-						0
-					],
+					"pivot": [0, 24, 0],
 					"cubes": [
-						{
-							"origin": [
-								-4,
-								12,
-								-3
-							],
-							"size": [
-								8,
-								12,
-								6
-							],
-							"inflate": 0.34,
-							"uv": [
-								1,
-								18
-							]
-						}
+						{"origin": [-4, 12, -3], "size": [8, 12, 6], "inflate": 0.34, "uv": [1, 18]}
 					]
 				},
 				{
 					"name": "rightArm",
-					"pivot": [
-						-5,
-						22,
-						0
-					],
+					"pivot": [-5, 22, 0],
 					"cubes": [
-						{
-							"origin": [
-								-9.33,
-								17,
-								-3
-							],
-							"size": [
-								5,
-								7,
-								6
-							],
-							"inflate": 0.33,
-							"uv": [
-								39,
-								0
-							],
-							"mirror": true
-						}
+						{"origin": [-9.33, 17, -3], "size": [5, 7, 6], "inflate": 0.33, "uv": [39, 0], "mirror": true}
 					]
 				},
 				{
 					"name": "leftArm",
-					"pivot": [
-						5,
-						22,
-						0
-					],
+					"pivot": [5, 22, 0],
 					"mirror": true,
 					"cubes": [
-						{
-							"origin": [
-								4.33,
-								17,
-								-3
-							],
-							"size": [
-								5,
-								7,
-								6
-							],
-							"inflate": 0.33,
-							"uv": [
-								39,
-								0
-							],
-							"mirror": false
-						},
-						{
-							"origin": [
-								4.33,
-								12,
-								-3
-							],
-							"size": [
-								5,
-								3,
-								6
-							],
-							"inflate": 0.33,
-							"uv": [
-								27,
-								40
-							],
-							"mirror": false
-						}
+						{"origin": [4.33, 17, -3], "size": [5, 7, 6], "inflate": 0.33, "uv": [39, 0], "mirror": false},
+						{"origin": [4.33, 12, -3], "size": [5, 3, 6], "inflate": 0.33, "uv": [27, 40], "mirror": false}
 					]
 				}
 			]

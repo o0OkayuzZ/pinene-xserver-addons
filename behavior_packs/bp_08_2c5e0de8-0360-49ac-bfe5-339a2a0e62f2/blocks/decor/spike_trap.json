@@ -1,0 +1,73 @@
+{
+    "format_version": "1.26.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:spike_trap",
+            "menu_category": {
+                "category": "construction"
+            },
+            "states": {
+                "dungeons:active":[
+                    false,
+                    true
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('dungeons:active')",
+                "components": {
+                    "minecraft:tick": {
+                        "interval_range": [
+                            15,
+                            15
+                        ],
+                        "looping": false
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('dungeons:active')",
+                "components": {
+                    "minecraft:tick": {
+                        "interval_range": [
+                            1,
+                            1
+                        ],
+                        "looping": true
+                    }
+                }
+            }
+        ],
+        "components": {
+            "dungeons:spike_trap":{},
+            "minecraft:tick": {
+                "interval_range": [3,3],
+                "looping": true
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 6
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 5, //25(Block base speed) * 2/3
+                "item_specific_speeds": [
+                    {
+                        "item": {
+                            "tags": "query.any_tag('minecraft:is_pickaxe')"
+                        },
+                        "destroy_speed": 1.5 //(10/5)*1.5 (blocks hardness)
+                    }
+                ]
+            },
+            "tag:pickaxe_mine": {},
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "minecraft:redstone_consumer": {
+                "min_power": 0,
+                "propagates_power": true
+            },
+            "minecraft:redstone_conductivity": {
+                "redstone_conductor": true
+            }
+        }
+    }
+}

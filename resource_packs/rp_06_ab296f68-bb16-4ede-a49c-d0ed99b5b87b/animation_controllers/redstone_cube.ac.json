@@ -1,29 +1,25 @@
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.redstone_cube.move": {
-			"initial_state": "default",
-			"states": {
-				"moving": {
-					"animations": [
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.redstone_cube.move" : {
+			"initial_state" : "default",
+			"states" : {
+				"moving" : {
+					"animations" : [ { "move": "q.modified_move_speed" } ],
+					"transitions" : [
 						{
-							"move": "q.modified_move_speed"
+							"default" : "q.modified_move_speed <= 0.1 && q.all_animations_finished"
 						}
 					],
-					"transitions": [
-						{
-							"default": "q.modified_move_speed<=0.1&&q.all_animations_finished"
-						}
-					],
-					"blend_transition": 0.3
+                             "blend_transition" : 0.3
 				},
-				"default": {
-					"transitions": [
+				"default" : {
+					"transitions" : [
 						{
-							"moving": "q.modified_move_speed>0.1"
+							"moving" : "q.modified_move_speed > 0.1"
 						}
 					],
-					"blend_transition": 0.3
+                             "blend_transition" : 0.3
 				}
 			}
 		}

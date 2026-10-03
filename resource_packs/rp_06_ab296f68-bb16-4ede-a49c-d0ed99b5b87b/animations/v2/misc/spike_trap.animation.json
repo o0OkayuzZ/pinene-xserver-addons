@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spike_trap.spawn": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"root": {
+					"position": {
+						"0.0": [0, -26, 0],
+						"0.125": [0, 0, 0],
+						"0.25": [0, 0, 0],
+						"0.75": [0, -26, 0]
+					},
+					"scale": {
+						"0.0": [1, 0, 1],
+						"0.0833": [1, 1, 1]
+					}
+				}
+			}
+		}
+	}
+}

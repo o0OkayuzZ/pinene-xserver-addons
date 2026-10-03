@@ -1,0 +1,40 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "bow",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "leather_helmet",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "item",
+          "name": "dungeons:scale_mail_chestplate",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

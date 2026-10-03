@@ -1,19 +1,19 @@
 {
-	"format_version": "1.21.110",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:wretched_key",
-			"menu_category": {
-				"category": "items"
-			}
-		},
-		"components": {
-			"minecraft:rarity": "uncommon",
-			"minecraft:icon": "wretched_key",
-			"minecraft:should_despawn": {
-				"value": false
-			},
-			"minecraft:fire_resistant": {}
-		}
-	}
+  "format_version": "1.21.110",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:wretched_key",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:rarity":"uncommon",
+      "minecraft:icon": "wretched_key",
+      "minecraft:should_despawn": {
+        "value": false
+      },
+      "minecraft:fire_resistant": {}
+    }
+  }
 }

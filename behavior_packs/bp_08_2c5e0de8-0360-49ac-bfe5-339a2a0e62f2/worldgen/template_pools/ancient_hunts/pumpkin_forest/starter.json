@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:pumpkin_starter"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/pumpkin_forest/pum_start",
+                    "processors": "dungeons:pumpkin_forest"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

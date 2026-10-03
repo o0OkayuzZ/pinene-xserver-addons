@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:ancientcrypt_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_end",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_end",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_end_tiny",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_end_tinier",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

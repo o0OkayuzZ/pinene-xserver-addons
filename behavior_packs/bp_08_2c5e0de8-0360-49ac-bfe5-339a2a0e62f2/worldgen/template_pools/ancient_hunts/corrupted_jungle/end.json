@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:jungle_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_end",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_end",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_end_tiny",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/corrupted_jungle/jun_end_tinier",
+                    "processors": "dungeons:corrupted_jungle"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

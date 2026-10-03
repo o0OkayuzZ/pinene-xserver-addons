@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:obsidian_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/obsidian_fortress/obby_side_end",
+                    "processors": "dungeons:obsidian_fortress"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

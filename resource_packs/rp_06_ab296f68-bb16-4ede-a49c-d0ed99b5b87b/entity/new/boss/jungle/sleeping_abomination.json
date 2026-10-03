@@ -1,37 +1,38 @@
 {
-	"format_version": "1.10.0",
-	"minecraft:client_entity": {
-		"description": {
-			"identifier": "dungeons:jungle_abomination_resting",
-			"materials": {
-				"default": "entity_emissive_alpha"
-			},
-			"textures": {
-				"default": "textures/entity/jungle_abomination/jungle_abomination"
-			},
-			"geometry": {
-				"default": "geometry.jungle_abomination"
-			},
-			"render_controllers": [
-				"controller.render.default"
-			],
-			"animations": {
-				"resting": "animation.jungle_abomination_v2.sleep",
-				"activate": "animation.jungle_abomination_v2.activate",
-				"wake_controller": "controller.animation.jungle_abomination_v2.activate"
-			},
-			"scripts": {
-				"animate": [
-					"wake_controller"
-				]
-			},
-			"sound_effects": {
-				"awaken": "mob.jungle_abomination.awaken",
-				"activate": "mob.jungle_abomination.activate"
-			},
-			"spawn_egg": {
-				"texture": "egg_jungle_abomination"
-			}
-		}
-	}
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:jungle_abomination_resting",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/jungle_abomination/jungle_abomination",
+        "costume": "textures/entity/jungle_abomination/jungle_abomination_spooky"
+      },
+      "geometry": {
+        "default": "geometry.jungle_abomination"
+      },
+      "render_controllers": [
+        "controller.render.dungeons_costume"
+      ],
+      "animations": {
+        "resting": "animation.jungle_abomination_v2.sleep",
+        "activate": "animation.jungle_abomination_v2.activate",
+        "wake_controller": "controller.animation.jungle_abomination_v2.activate"
+      },
+      "scripts": {
+        "animate": [
+          "wake_controller"
+        ]
+      },
+      "sound_effects": {
+        "awaken": "mob.jungle_abomination.awaken",
+        "activate": "mob.jungle_abomination.activate"
+      },
+      "spawn_egg": {
+        "texture": "egg_jungle_abomination"
+      }
+    }
+  }
 }

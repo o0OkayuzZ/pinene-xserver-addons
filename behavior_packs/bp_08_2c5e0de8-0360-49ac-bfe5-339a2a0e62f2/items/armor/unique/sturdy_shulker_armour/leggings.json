@@ -1,47 +1,54 @@
 {
-	"format_version": "1.21.100",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:sturdy_shulker_leggings",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:tags": {
-				"tags": [
-					"minecraft:is_armor",
-					"dungeons:armor_lore",
-					"dungeons:shulker_armour",
-					"dungeons:sturdy_shulker_armour",
-					"dungeons:unique_item"
-				]
-			},
-			"minecraft:icon": "sturdy_shulker_leggings",
-			"minecraft:rarity": "rare",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:enchantable": {
-				"value": 4,
-				"slot": "armor_legs"
-			},
-			"minecraft:wearable": {
-				"protection": 12,
-				"slot": "slot.armor.legs"
-			},
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:shulker_shell"
-						],
-						"repair_amount": "q.max_durability*0.25"
-					}
-				]
-			},
-			"minecraft:durability": {
-				"max_durability": 591
-			}
-		}
-	}
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:sturdy_shulker_leggings",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_armor",
+          "dungeons:armor_lore",
+          "dungeons:shulker_armour",
+          "dungeons:sturdy_shulker_armour",
+          "dungeons:unique_item"
+        ]
+      },
+      "minecraft:icon": "sturdy_shulker_leggings",
+      "minecraft:rarity": "rare",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:enchantable": {
+        "value": 4,
+        "slot": "armor_legs"
+      },
+      "minecraft:wearable": {
+        "protection": 7,
+        "slot": "slot.armor.legs"
+      },
+      "dungeons:toughness": {
+        "toughness": 6
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:shulker_shell"
+            ],
+            "repair_amount": "q.max_durability * 0.25"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 591,
+        "damage_chance": {
+          "max": 100,
+          "min": 0
+        }
+      }
+    }
+  }
 }

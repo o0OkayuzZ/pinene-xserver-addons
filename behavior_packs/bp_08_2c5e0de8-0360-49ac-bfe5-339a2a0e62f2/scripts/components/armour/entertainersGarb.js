@@ -21,7 +21,7 @@ const effectArray = [
     "Village Hero"
 ];
 
-import { isWearingSet } from "components/armour.js"
+import { isWearingSet, isWearingMysteryArmour } from "components/armour.js"
 
 function removeNumerals(type) {
     const split = type.split(" ")
@@ -41,6 +41,18 @@ world.beforeEvents.effectAdd.subscribe((e) => {
     if (!entity.isValid) return;
     if (entity.typeId !== "minecraft:player") return;
     if (!isWearingSet(entity, "dungeons:entertainers_garb")) return;
+    const type = e.effectType;
+    const testType = removeNumerals(type)
+    if (effectArray.includes(testType)) e.duration = e.duration * 1.4
+});
+
+
+world.beforeEvents.effectAdd.subscribe((e) => {
+    const entity = e.entity;
+    if (!entity) return;
+    if (!entity.isValid) return;
+    if (entity.typeId !== "minecraft:player") return;
+    if (!isWearingMysteryArmour(entity, "status_duration")) return;
     const type = e.effectType;
     const testType = removeNumerals(type)
     if (effectArray.includes(testType)) e.duration = e.duration * 1.4

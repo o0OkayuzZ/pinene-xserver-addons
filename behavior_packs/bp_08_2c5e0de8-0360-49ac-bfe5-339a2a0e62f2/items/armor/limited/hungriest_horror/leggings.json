@@ -1,0 +1,55 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:hungriest_horror_leggings",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:rarity": "epic",
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_armor",
+          "dungeons:armor_lore",
+          "dungeons:mercenary_armour",
+          "dungeons:renegade_armour",
+          "dungeons:hungriest_horror_armour",
+          "dungeons:seasonal_item"
+        ]
+      },
+      "minecraft:icon": "hungriest_horror_leggings",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:enchantable": {
+        "value": 6,
+        "slot": "armor_legs"
+      },
+      "minecraft:wearable": {
+        "protection": 8,
+        "slot": "slot.armor.legs"
+      },
+      "dungeons:toughness": {
+        "toughness": 6
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "q.max_durability * 0.25"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 665,
+        "damage_chance": {
+          "max": 100,
+          "min": 0
+        }
+      }
+    }
+  }
+}

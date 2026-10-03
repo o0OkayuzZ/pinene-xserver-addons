@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:frost_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_end",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_end",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_end_tiny",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_end_tinier",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

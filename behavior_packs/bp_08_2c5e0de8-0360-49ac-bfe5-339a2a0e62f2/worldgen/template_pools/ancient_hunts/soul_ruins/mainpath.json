@@ -1,0 +1,91 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:ruins_main"
+        },
+        "fallback": "dungeons:ruins_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_mainstraight_0",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_mainstraight_1",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_mainstraight_2",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_mainsplit_0",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_mainsplit_1",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_mainsplit_2",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_mainsplit_3",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_maincomp_0",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_maincomp_1",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soul_ruins/rui_end",
+                    "processors": "dungeons:soul_ruins"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

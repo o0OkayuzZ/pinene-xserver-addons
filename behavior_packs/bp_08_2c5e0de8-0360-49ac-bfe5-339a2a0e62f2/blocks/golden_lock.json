@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:golden_lock",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": false
+            }
+        },
+        "components": {
+            "dungeons:key_golem_lock": {
+                "item": "dungeons:key_golem_item"
+            },
+            "minecraft:collision_box": true,
+            "minecraft:selection_box": true,
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 999999
+            },
+            "minecraft:map_color": "#969696",
+            "minecraft:destructible_by_mining": false,
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": true
+            }
+        }
+    }
+}

@@ -18,12 +18,4 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (baseDmg <= 0) return;
     if (e.damageSource.cause == "selfDestruct") return;
     e.damage = e.damage * 0.8
-    if (hurt.getDynamicProperty("dungeons:damage_reduction_prevented") >= baseDmg) {
-        e.cancel = true;
-        return;
-    }
-    hurt.setDynamicProperty("dungeons:damage_reduction_prevented", baseDmg)
-    system.runTimeout(() => {
-        hurt.setDynamicProperty("dungeons:damage_reduction_prevented", null)
-    }, 9)
 });

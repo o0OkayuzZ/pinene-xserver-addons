@@ -1,5 +1,5 @@
 import { world, system } from "@minecraft/server";
-
+import {getSoulBarText} from "misc/soulManager.js"
 
 system.beforeEvents.startup.subscribe(event => {
     const registry = event.customCommandRegistry;
@@ -7,7 +7,7 @@ system.beforeEvents.startup.subscribe(event => {
     const Souls = { name: "souls", type: "Integer" };
     const setsouls = {
         name: "dungeons:setsouls",
-        description: "プレイヤーのソウル数を設定します。",
+        description: "Set the soul count of a player.",
         cheatsRequired: true,
         permissionLevel: 1,
         mandatoryParameters: [PlayerSelector, Souls]
@@ -18,17 +18,17 @@ system.beforeEvents.startup.subscribe(event => {
                 const sourceEntity = source.sourceEntity;
                 if (soulcount < 0) {
                     if (world.gameRules.sendCommandFeedback == true) {
-                        sourceEntity.sendMessage(`§cソウル数を負の値にはできません。`)
+                        sourceEntity.sendMessage(`§cCannot have negative souls.`)
                     }
                     return;
                 }
                 for (let player of victim) {
                     world.scoreboard.getObjective("soulGauge").setScore(player, soulcount)
-                    player.onScreenDisplay.setActionBar(`§b${soulcount}§s ソウル `)
+                    player.onScreenDisplay.setActionBar(getSoulBarText(player, false))
 
                 }
                 if (world.gameRules.sendCommandFeedback == true) {
-                    sourceEntity.sendMessage(`ソウル数を設定しました。`)
+                    sourceEntity.sendMessage(`Souls granted.`)
                 }
             })
         }

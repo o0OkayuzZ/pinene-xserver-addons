@@ -1,0 +1,38 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bp_purple_storm"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "key": {
+      "B": {
+        "item": "dungeons:blue_print"
+      },
+      "W": {
+        "item": "dungeons:purple_storm"
+      }
+    },
+    "unlock": [
+      {
+        "item": "dungeons:purple_storm"
+      }
+    ],
+    "pattern": [
+      "B",
+      "W"
+    ],
+    "result": [
+      {
+        "item": "dungeons:purple_storm",
+        "count": 1
+      },
+      {
+        "item": "dungeons:purple_storm",
+        "count": 1
+      }
+    ]
+  }
+}

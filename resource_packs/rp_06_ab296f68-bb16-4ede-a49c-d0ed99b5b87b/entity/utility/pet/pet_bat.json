@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:pet_bat",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "dungeons_entity_enchant"
+      },
+      "textures": {
+        "default": "textures/entity/bat_v2",
+        "glow": "textures/entity/enchanted_mob/bat_v2",
+        "enchanted": "textures/misc/enchanted_entity_glint"
+      },
+      "geometry": {
+        "default": "geometry.bat_v2"
+      },
+      "scripts": {
+        "animate": [
+            "move"
+        ],
+        "scale": "1.0"
+      },
+      "animations": {
+        "move": "controller.animation.bat.move",
+        "resting": "animation.bat.resting",
+        "flying": "animation.bat.flying"
+      },
+      "render_controllers": [
+        "controller.render.pet_mob_dungeons",
+        {
+          "controller.render.dungeons_entity_enchanted": "q.is_saddled == 1"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_bat"
+      }
+    }
+  }
+}

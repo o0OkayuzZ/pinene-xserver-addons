@@ -169,6 +169,21 @@
               ],
               "gives": [
                 {
+                  "item": "minecraft:poplar_log",
+                  "quantity": 8
+                }
+              ],
+              "max_uses": 4
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
                   "item": "minecraft:acacia_log",
                   "quantity": 8
                 }
@@ -358,18 +373,6 @@
                 {
                   "item": "dungeons:enchanted_explorer_map",
                   "quantity": 1,
-                  "functions": [
-                    {
-                      "function": "set_lore",
-                      "lore": [
-                        "§9§oEnchanted Lair"
-                      ]
-                    },
-                    {
-                      "function": "set_name",
-                      "name": "§rEnchanted Explorer Map"
-                    }
-                  ],
                   "filters": {
                     "test": "in_overworld",
                     "subject": "self",
@@ -393,23 +396,8 @@
               ],
               "gives": [
                 {
-                  "item": "minecraft:map",
-                  "functions": [
-                    {
-                      "function": "exploration_map",
-                      "destination": "dungeons:obsidian_pinnacle"
-                    },
-                    {
-                      "function": "set_lore",
-                      "lore": [
-                        "§9§oObsidian Pinnacle"
-                      ]
-                    },
-                    {
-                      "function": "set_name",
-                      "name": "§rPinnacle Explorer Map"
-                    }
-                  ],
+                  "item": "dungeons:obsidian_monstrosity_explorer_map",
+                  "quantity": 1,
                   "filters": {
                     "test": "in_overworld",
                     "subject": "self",
@@ -433,23 +421,8 @@
               ],
               "gives": [
                 {
-                  "item": "minecraft:map",
-                  "functions": [
-                    {
-                      "function": "exploration_map",
-                      "destination": "dungeons:illager_camp"
-                    },
-                    {
-                      "function": "set_lore",
-                      "lore": [
-                        "§9§oIllager Camp"
-                      ]
-                    },
-                    {
-                      "function": "set_name",
-                      "name": "§rCampsite Explorer Map"
-                    }
-                  ],
+                  "item": "dungeons:redstone_monstrosity_explorer_map",
+                  "quantity": 1,
                   "filters": {
                     "test": "in_overworld",
                     "subject": "self",
@@ -969,6 +942,21 @@
               ],
               "gives": [
                 {
+                  "item": "minecraft:poplar_sapling",
+                  "quantity": 1
+                }
+              ],
+              "max_uses": 8
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
                   "item": "minecraft:dark_oak_sapling",
                   "quantity": 1
                 }
@@ -1469,6 +1457,21 @@
                 }
               ],
               "max_uses": 2
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:shelf_mushroom",
+                  "quantity": 3
+                }
+              ],
+              "max_uses": 12
             },
             {
               "wants": [

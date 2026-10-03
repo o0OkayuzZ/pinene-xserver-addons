@@ -1,0 +1,80 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:processor_list": {
+        "description": {
+            "identifier": "dungeons:obsidian_fortress"
+        },
+        "processors": [
+            {
+                "processor_type": "minecraft:rule",
+                "rules": [
+                    {
+                        "input_predicate": {
+                            "block": "red_concrete",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 1
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "dungeons:mob_obsidianfortress_large"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "lime_concrete",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 1
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "dungeons:mob_obsidianfortress_small"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "pink_concrete",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 1
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "dungeons:load_launcher"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "stonebrick",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.2
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "minecraft:cracked_stone_bricks"
+                        }
+                    },
+                    {
+                        "input_predicate": {
+                            "block": "mossy_stone_bricks",
+                            "predicate_type": "minecraft:random_block_match",
+                            "probability": 0.25
+                        },
+                        "location_predicate": {
+                            "predicate_type": "minecraft:always_true"
+                        },
+                        "output_state": {
+                            "name": "minecraft:stonebrick"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

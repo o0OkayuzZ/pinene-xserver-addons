@@ -7,15 +7,21 @@ import {
 const id = "regeneration"
 
 system.runInterval(() => {
-    for (const dimensionType of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimensionType.typeId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (const entity of dim.getEntities({ families: ["enchanted"], tags: ["dungeons:enchanted_mob_" + id] })) {
             if (dim.isChunkLoaded(entity.location)) {
                 const onfire = entity.getComponent("onfire")
                 if (onfire) return;
                 const hp = entity.getComponent("health")
-                if (hp.currentValue + 1 <= hp.defaultValue) {
-                    hp.setCurrentValue(hp.currentValue + 1)
+                var amt = 0.5
+                if(world.getDifficulty() == "Normal") amt = 1
+                if(world.getDifficulty() == "Hard") amt = 1.33
+
+                if (hp.currentValue + amt <= hp.defaultValue) {
+                    hp.setCurrentValue(hp.currentValue + amt)
                 } else {
                     hp.setCurrentValue(hp.defaultValue)
                 }

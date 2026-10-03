@@ -16,16 +16,8 @@
 				"active_time": 1
 			},
 			"minecraft:emitter_shape_box": {
-				"offset": [
-					0,
-					0.8,
-					0
-				],
-				"half_dimensions": [
-					0.4,
-					0.5,
-					0.4
-				],
+				"offset": [0, 0.8, 0],
+				"half_dimensions": [0.4, 0.5, 0.4],
 				"direction": "outwards"
 			},
 			"minecraft:particle_lifetime_expression": {
@@ -33,18 +25,11 @@
 			},
 			"minecraft:particle_initial_speed": "math.random(0.3,1)",
 			"minecraft:particle_motion_dynamic": {
-				"linear_acceleration": [
-					0,
-					1,
-					0
-				],
+				"linear_acceleration": [0, 1, 0],
 				"linear_drag_coefficient": 0.7
 			},
 			"minecraft:particle_appearance_billboard": {
-				"size": [
-					0.15,
-					0.15
-				],
+				"size": [0.15, 0.15],
 				"facing_camera_mode": "rotate_xyz"
 			}
 		}

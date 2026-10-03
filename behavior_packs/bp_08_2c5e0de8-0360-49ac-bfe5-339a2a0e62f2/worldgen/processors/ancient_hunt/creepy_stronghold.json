@@ -1,0 +1,70 @@
+{
+	"format_version": "1.21.20",
+	"minecraft:processor_list": {
+		"description": {
+			"identifier": "dungeons:creepy_stronghold"
+		},
+		"processors": [
+			{
+				"processor_type": "minecraft:rule",
+				"rules": [
+					{
+						"input_predicate": {
+							"block": "red_concrete",
+							"predicate_type": "minecraft:random_block_match",
+							"probability": 1
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"output_state": {
+							"name": "dungeons:mob_creepystronghold_large"
+						}
+					},
+					{
+						"input_predicate": {
+							"block": "lime_concrete",
+							"predicate_type": "minecraft:random_block_match",
+							"probability": 1
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"output_state": {
+							"name": "dungeons:mob_creepystronghold_small"
+						}
+					},
+					{
+						"input_predicate": {
+							"block": "stonebrick",
+							"predicate_type": "minecraft:random_block_match",
+							"probability": 0.2
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"output_state": {
+							"name": "minecraft:mossy_stone_bricks"
+						}
+					},
+					{
+						"input_predicate": {
+							"predicate_type": "minecraft:block_match",
+							"block": "decorated_pot"
+						},
+						"location_predicate": {
+							"predicate_type": "minecraft:always_true"
+						},
+						"block_entity_modifier": {
+							"type": "minecraft:append_loot",
+							"loot_table": "loot_tables/structures/ancient_hunt_pot.json"
+						},
+						"output_state": {
+							"name": "decorated_pot"
+						}
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,20 @@
+{
+    "format_version": "1.26.50",
+    "minecraft:dimension": {
+        "description": {
+            "identifier": "dungeons:ancientdim_obsidian_fortress"
+        },
+        "components": {
+            "minecraft:generation": {
+                "generator_type": "void"
+            },
+            "minecraft:dimension_height": {
+                "min_y": 32,
+                "height_range": 128
+            },
+            "minecraft:default_biome": {
+                "biome": "minecraft:roofed_forest"
+            }
+        }
+    }
+}

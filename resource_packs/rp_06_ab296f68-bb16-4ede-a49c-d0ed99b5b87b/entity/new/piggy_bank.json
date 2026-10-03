@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:piggy_bank",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "pig_v3"
+      },
+      "textures": {
+        "default": "textures/entity/pig/piggy_bank"
+      },
+      "geometry": {
+        "default": "geometry.piggy_bank"
+      },
+      "animations": {
+        "shake": "animation.piggy_bank.shake_legs",
+        "dead": "animation.piggy_bank.dead",
+        "walk": "animation.quadruped.walk",
+        "look_at_target": "animation.common.look_at_target"
+      },
+      "sound_effects": {
+        "open": "diamond_chest.open"
+      },
+      "scripts": {
+        "animate": [
+          "shake",
+          {
+            "walk": "query.modified_move_speed"
+          },
+          {
+            "dead": "!query.is_alive"
+          },
+          "look_at_target"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "texture": "egg_piggy_bank"
+      }
+    }
+  }
+}

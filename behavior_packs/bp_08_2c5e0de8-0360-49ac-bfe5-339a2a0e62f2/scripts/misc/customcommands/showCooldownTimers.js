@@ -6,7 +6,7 @@ system.beforeEvents.startup.subscribe(event => {
     const Bool = { name: "boolean", type: "Boolean" };
     const showcooldowntimers = {
         name: "dungeons:showcooldowntimers",
-        description: "アーティファクトの待ち時間をHUDに表示します。",
+        description: "Shows artefact cooldown times on the HUD.",
         cheatsRequired: false,
         permissionLevel: 0,
         mandatoryParameters: [Bool]
@@ -18,16 +18,16 @@ system.beforeEvents.startup.subscribe(event => {
                 if (!sourceEntity) return;
                 if (bool == sourceEntity.getDynamicProperty("dungeons:cooldown_timer")) {
                     if (world.gameRules.sendCommandFeedback == true) {
-                        sourceEntity.sendMessage(`すでに設定されています。`)
+                        sourceEntity.sendMessage(`Already applied.`)
                     }
                     return;
                 }
                 sourceEntity.setDynamicProperty("dungeons:cooldown_timer", bool)
                 if (bool == true && world.gameRules.sendCommandFeedback == true) {
-                    sourceEntity.sendMessage(`待ち時間の表示を有効にしました。`)
+                    sourceEntity.sendMessage(`Timers Enabled.`)
                 }
                 if (bool == false && world.gameRules.sendCommandFeedback == true) {
-                    sourceEntity.sendMessage(`待ち時間の表示を無効にしました。`)
+                    sourceEntity.sendMessage(`Timers Disabled.`)
                 }
             })
         }

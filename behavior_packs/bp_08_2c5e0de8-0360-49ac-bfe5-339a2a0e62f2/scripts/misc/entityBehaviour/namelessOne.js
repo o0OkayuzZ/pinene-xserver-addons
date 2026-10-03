@@ -89,7 +89,10 @@ world.afterEvents.projectileHitEntity.subscribe((e) => {
         }
         if (hit.matches({ families: ["undead"] })) return;
         if (hit.matches({ families: ["monster"] })) return;
-        hit.applyDamage(9, { damagingEntity: owner, cause: EntityDamageCause.magic })
+        var damage = 9
+        if(world.getDifficulty() == "Normal") damage = 6
+        if(world.getDifficulty() == "Easy") damage = 4
+        hit.applyDamage(damage, { damagingEntity: owner, cause: EntityDamageCause.magic })
         entity.remove()
     }
 })
@@ -196,7 +199,12 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
         const nearbyPlayer = entity.dimension.getPlayers({ location: entity.location, closest: 1, maxDistance: 64 })
         var loc = entity.location;
         if (nearbyPlayer.length >= 1) loc = nearbyPlayer[0].location
-        teleport(entity, loc)
+        if(loc.y > entity.location.y + 10) {
+            teleport(entity)
+        } else {
+            teleport(entity, loc)
+
+        }
         system.runTimeout(() => {
             if (entity.isValid == false) return;
             entity.addTag("dungeons:nameless_one_teleported")

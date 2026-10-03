@@ -12,6 +12,7 @@ world.afterEvents.entityHurt.subscribe((e) => {
     if (!hurt.isValid) return;
     if (hurt.typeId !== "minecraft:player") return;
     if (!isWearingSet(hurt, "dungeons:ender_armour")) return;
+    if (hurt.dimension.id.includes("mushroom_dimension")) return;
     if (Math.random() > 0.1) return;
     var dim = hurt.dimension
     var loc = hurt.location;

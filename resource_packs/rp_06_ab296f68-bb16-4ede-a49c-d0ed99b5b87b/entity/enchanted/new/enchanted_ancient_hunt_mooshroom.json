@@ -1,0 +1,41 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dungeons:enchanted_ancient_hunt_mooshroom",
+            "min_engine_version": "1.8.0",
+            "materials": {
+                "default": "entity_emissive_alpha",
+                "enchanted": "dungeons_entity_enchant"
+            },
+            "textures": {
+                "default": "textures/entity/enchanted_mob/mooshroom",
+                "enchanted": "textures/misc/enchanted_entity_glint"
+            },
+            "geometry": {
+                "default": "geometry.angry_mooshroom"
+            },
+            "animations": {
+                "setup": "animation.mooshroom.setup",
+                "walk": "animation.quadruped.walk",
+                "look_at_target": "animation.common.look_at_target",
+                "baby_transform": "animation.mooshroom.baby_transform"
+            },
+            "animation_controllers": [
+                {
+                    "setup": "controller.animation.mooshroom.setup"
+                },
+                {
+                    "move": "controller.animation.mooshroom.move"
+                },
+                {
+                    "baby": "controller.animation.mooshroom.baby"
+                }
+            ],
+            "render_controllers": [
+                "controller.render.default",
+                "controller.render.dungeons_entity_enchanted"
+            ]
+        }
+    }
+}

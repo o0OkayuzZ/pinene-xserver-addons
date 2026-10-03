@@ -1,0 +1,99 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:deserttomb_main"
+        },
+        "fallback": "dungeons:deserttomb_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_mainstraight_0",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_mainstraight_1",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_mainstraight_2",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_mainsplit_0",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_mainsplit_1",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_mainsplit_2",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_mainsplit_3",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_maincomp_0",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_maincomp_1",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_maincomp_2",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_end",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

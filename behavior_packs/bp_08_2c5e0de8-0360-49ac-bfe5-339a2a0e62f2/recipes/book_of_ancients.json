@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "book_of_ancients"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " G ",
+      "GBG",
+      " G "
+    ],
+    "unlock": [
+      {
+        "item": "dungeons:ancient_gold_ingot"
+      }
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:book"
+      },
+      "G": {
+        "item": "dungeons:ancient_gold_ingot"
+      }
+    },
+    "result": {
+      "item": "dungeons:book_of_ancients",
+      "count": 1
+    }
+  }
+}

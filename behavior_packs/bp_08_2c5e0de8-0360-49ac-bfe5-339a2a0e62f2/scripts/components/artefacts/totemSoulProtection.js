@@ -1,6 +1,7 @@
 import {
   world,
-  system
+  system,
+  ItemStack
 } from "@minecraft/server";
 
 system.beforeEvents.startup.subscribe((event) => {
@@ -8,43 +9,60 @@ system.beforeEvents.startup.subscribe((event) => {
     onUse(e) {
       const player = e.source;
       const item = e.itemStack;
-
-      if (item.hasTag('dungeons:tome_of_duplication')) {
-        if (!player.hasTag('tod:used_totem_of_soul_protection')) return;
-      }
-
-
-      let soulScore = world.scoreboard.getObjective("soulGauge")
-      let soulGauge = soulScore.getScore(player)
-
-      if (soulGauge < 5) {
-        player.playSound("mob.evocation_illager.cast_spell", { pitch: 0.6, volume: 0.5 })
-        player.sendMessage([{ text: "§7§o" }, { translate: "dungeons.warn.collect_more_souls" }])
-        const cd = item.getComponent("cooldown")
-        player.startItemCooldown(cd.cooldownCategory, 5);
-        return;
-      } else {
-        soulScore.addScore(player, -5)
-      }
-      const dim = player.dimension
-      const loc = player.location
-
-      dim.playSound("artefact.totem_of_soul_protection.use", loc)
-      var spawnLoc = dim.getTopmostBlock({ x: loc.x, z: loc.z }, loc.y)
-      if (spawnLoc == undefined) {
-        spawnLoc = loc
-      } else {
-        spawnLoc = spawnLoc.above()
-      }
-      if (spawnLoc == undefined) spawnLoc = loc
-      if (spawnLoc.y + 8 < loc.y) spawnLoc = { x: loc.x, y: loc.y - 4, z: loc.z }
-      const totem = player.dimension.spawnEntity('dungeons:totem_of_soul_protection', { x: loc.x, y: spawnLoc.y, z: loc.z });
-      let tameable = totem.getComponent('minecraft:tameable')
-      tameable.tame(player);
+      useArtefact(player, item, false)
     }
   });
 
 });
+
+system.afterEvents.scriptEventReceive.subscribe((e) => {
+  const id = e.id;
+  if (id !== "dungeons:force_artefact") return;
+  const player = e.sourceEntity;
+  if (!player) return;
+  const itemId = e.message;
+  if (!itemId) return;
+  const item = new ItemStack(itemId, 1)
+  if (!item.getComponent("dungeons:totem_of_soul_protection")) return;
+  useArtefact(player, item, true)
+})
+
+function useArtefact(player, item, finalShout) {
+  if (item.hasTag('dungeons:tome_of_duplication')) {
+    if (!player.hasTag('tod:used_totem_of_soul_protection')) return;
+  }
+
+
+  let soulScore = world.scoreboard.getObjective("soulGauge")
+  let soulGauge = soulScore.getScore(player)
+
+  if (soulGauge < 5 && !finalShout) {
+    player.playSound("mob.evocation_illager.cast_spell", { pitch: 0.6, volume: 0.5 })
+    player.sendMessage([{ text: "§7§o" }, { translate: "dungeons.warn.collect_more_souls" }])
+    const cd = item.getComponent("cooldown")
+    player.startItemCooldown(cd.cooldownCategory, 5);
+    return;
+  } else {
+    soulScore.addScore(player, -5)
+    if (soulGauge - 5 < 0) soulScore.setScore(player, 0)
+  }
+  const dim = player.dimension
+  const loc = player.location
+
+  dim.playSound("artefact.totem_of_soul_protection.use", loc)
+  var spawnLoc = dim.getTopmostBlock({ x: loc.x, z: loc.z }, loc.y)
+  if (spawnLoc == undefined) {
+    spawnLoc = loc
+  } else {
+    spawnLoc = spawnLoc.above()
+  }
+  if (spawnLoc == undefined) spawnLoc = loc
+  if (spawnLoc.y + 8 < loc.y) spawnLoc = { x: loc.x, y: loc.y - 4, z: loc.z }
+  const totem = player.dimension.spawnEntity('dungeons:totem_of_soul_protection', { x: loc.x, y: spawnLoc.y, z: loc.z });
+  let tameable = totem.getComponent('minecraft:tameable')
+  tameable.tame(player);
+
+}
 
 world.beforeEvents.entityHurt.subscribe((e) => {
   const hurt = e.hurtEntity;
@@ -59,7 +77,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
   if (!baseDmg) return;
   if (baseDmg <= 0) return;
 
-  const totemInRange = hurt.dimension.getEntities({ maxDistance: 3.66, location: hurt.location, type: "dungeons:totem_of_soul_protection" }).length > 0
+  const totemInRange = hurt.dimension.getEntities({ maxDistance: 4.5, location: hurt.location, type: "dungeons:totem_of_soul_protection" }).length > 0
   if (!totemInRange) return;
 
   let soulScore = world.scoreboard.getObjective("soulGauge")
@@ -92,13 +110,13 @@ world.beforeEvents.entityHurt.subscribe((e) => {
       system.runTimeout(() => {
         if (soulScore.getScore(hurt) > 0) {
           soulScore.addScore(hurt, -1)
-          hurt.onScreenDisplay.setActionBar(`§s${soulScore.getScore(hurt)}§s ソウル `)
+          hurt.onScreenDisplay.setActionBar(`§s${soulScore.getScore(hurt)}§s Souls `)
         }
       }, i)
     }
 
     system.runTimeout(() => {
-      hurt.onScreenDisplay.setActionBar(`§b${soulScore.getScore(hurt)}§s ソウル `)
+      hurt.onScreenDisplay.setActionBar(`§b${soulScore.getScore(hurt)}§s Souls `)
     }, 11)
   })
 })

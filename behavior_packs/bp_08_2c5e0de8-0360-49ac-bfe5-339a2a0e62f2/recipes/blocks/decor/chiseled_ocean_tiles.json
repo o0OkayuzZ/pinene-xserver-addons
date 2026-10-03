@@ -1,0 +1,29 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:chiseled_ocean_tile"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "S",
+            "S"
+        ],
+        "unlock": [
+            {
+                "item": "dungeons:ocean_bricks"
+            }
+        ],
+        "key": {
+            "S": {
+                "item": "dungeons:ocean_tiles_slab"
+            }
+        },
+        "result": {
+            "item": "dungeons:chiseled_ocean_tile",
+            "count": 1
+        }
+    }
+}

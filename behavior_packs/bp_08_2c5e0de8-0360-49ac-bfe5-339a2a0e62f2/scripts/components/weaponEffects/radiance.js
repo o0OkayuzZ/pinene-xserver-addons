@@ -20,7 +20,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
+    if (!heldItem.hasTag(effectId) && !heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) return;
     //effect code
     if (e.damage <= 0) return;
     const critical = Math.floor(Math.random() * 4);
@@ -47,7 +47,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
                     const maxHeal = 5
                     const minHeal = 1
 
-                    const maxHP = hp.defaultValue
+                    const maxHP = hp.effectiveMax
                     const currentHP = hp.currentValue;
                     if (amountHealed > maxHeal) amountHealed = maxHeal
                     if (amountHealed < minHeal) amountHealed = minHeal

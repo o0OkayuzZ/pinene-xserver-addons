@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "battle_leggings"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "SSS",
+            "W W"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:black_dye"
+            }
+        ],
+        "key": {
+            "S": {
+                "item": "minecraft:gold_ingot"
+            },
+            "W": {
+                "item": "minecraft:black_dye"
+            }
+        },
+        "result": {
+            "item": "dungeons:battle_leggings",
+            "count": 1
+        }
+    }
+}

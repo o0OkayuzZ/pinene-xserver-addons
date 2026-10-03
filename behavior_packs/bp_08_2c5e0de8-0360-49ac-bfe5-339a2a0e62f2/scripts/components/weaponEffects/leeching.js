@@ -24,42 +24,46 @@ world.afterEvents.entityDie.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
-    //effect code
-    let hp = attacker.getComponent('minecraft:health')
+    var count = 0
+    if (heldItem.hasTag(effectId)) count += 1
+    if (heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) count += 1
+    if (count == 0) return;
+    for (let i = 0; i < count; i++) {
+        //effect code
+        let hp = attacker.getComponent('minecraft:health')
 
-    if (!hp) {
-        console.warn('Entity does not have health component');
-        return;
-    }
-    let hurtHp = hurt.getComponent('minecraft:health')
-
-    if (!hurtHp) {
-        console.warn('Entity does not have health component');
-        return;
-    }
-    system.runTimeout(() => {
-        const maxHeal = 5
-        const minHeal = 0.5
-
-        const hurtMaxHP = hurtHp.defaultValue
-        const maxHP = hp.defaultValue
-        const currentHP = hp.currentValue;
-
-        var amountHealed = hurtMaxHP * 0.05
-        if (amountHealed > maxHeal) amountHealed = maxHeal
-        if (amountHealed < minHeal) amountHealed = minHeal
-        if ((amountHealed + currentHP) > maxHP) {
-            hp.setCurrentValue(maxHP)
-        } else {
-            hp.setCurrentValue(currentHP + amountHealed)
+        if (!hp) {
+            console.warn('Entity does not have health component');
+            return;
         }
-        const dim = hurt.dimension;
-        const loc = hurt.location;
-        const map = new MolangVariableMap()
-        map.setFloat("variable.particle_count", amountHealed)
-        dim.spawnParticle('dungeons:leeching_particle', { x: loc.x, y: loc.y + 0.2, z: loc.z }, map)
+        let hurtHp = hurt.getComponent('minecraft:health')
 
-    }, 18) // waits 0.9 seconds for death to finish
+        if (!hurtHp) {
+            console.warn('Entity does not have health component');
+            return;
+        }
+        system.runTimeout(() => {
+            const maxHeal = 5
+            const minHeal = 0.5
 
+            const hurtMaxHP = hurtHp.defaultValue
+            const maxHP = hp.effectiveMax
+            const currentHP = hp.currentValue;
+
+            var amountHealed = hurtMaxHP * 0.05
+            if (amountHealed > maxHeal) amountHealed = maxHeal
+            if (amountHealed < minHeal) amountHealed = minHeal
+            if ((amountHealed + currentHP) > maxHP) {
+                hp.setCurrentValue(maxHP)
+            } else {
+                hp.setCurrentValue(currentHP + amountHealed)
+            }
+            const dim = hurt.dimension;
+            const loc = hurt.location;
+            const map = new MolangVariableMap()
+            map.setFloat("variable.particle_count", amountHealed)
+            dim.spawnParticle('dungeons:leeching_particle', { x: loc.x, y: loc.y + 0.2, z: loc.z }, map)
+
+        }, 18) // waits 0.9 seconds for death to finish
+    }
 });

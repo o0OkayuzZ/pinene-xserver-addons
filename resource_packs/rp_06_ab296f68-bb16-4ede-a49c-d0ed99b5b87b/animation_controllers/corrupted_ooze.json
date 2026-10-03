@@ -1,35 +1,33 @@
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.corrupted_ooze.land": {
-			"initial_state": "default",
-			"states": {
-				"squish": {
-					"animations": [
-						"land"
-					],
-					"transitions": [
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.corrupted_ooze.land" : {
+			"initial_state" : "default",
+			"states" : {
+				"squish" : {
+					"animations" : [ "land"],
+					"transitions" : [
 						{
-							"default": "q.is_on_ground&&q.all_animations_finished"
+							"default" : "q.is_on_ground && q.all_animations_finished"
 						}
 					],
-					"blend_transition": 0
+                             "blend_transition" : 0.0
 				},
-				"air": {
-					"transitions": [
+				"air" : {
+					"transitions" : [
 						{
-							"squish": "q.is_on_ground"
+							"squish" : "q.is_on_ground"
 						}
 					],
-					"blend_transition": 0
+                             "blend_transition" : 0.0
 				},
-				"default": {
-					"transitions": [
+				"default" : {
+					"transitions" : [
 						{
-							"air": "!q.is_on_ground"
+							"air" : "!q.is_on_ground"
 						}
 					],
-					"blend_transition": 0
+                             "blend_transition" : 0.0
 				}
 			}
 		}

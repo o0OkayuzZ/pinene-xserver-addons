@@ -81,7 +81,10 @@ world.afterEvents.projectileHitEntity.subscribe((e) => {
             return;
         }
         if (hit.matches({ families: ["illager"] })) return;
-        hit.applyDamage(8.5, { damagingEntity: owner, cause: EntityDamageCause.magic })
+        var damage = 8.5
+        if(world.getDifficulty() == "Normal") damage = 6
+        if(world.getDifficulty() == "Easy") damage = 4
+        hit.applyDamage(damage, { damagingEntity: owner, cause: EntityDamageCause.magic })
         hit.dimension.playSound("mob.arch_illager.magic_hit", hit.location)
         entity.remove()
     }
@@ -255,11 +258,13 @@ function spawned(id, loc, dim) {
 }
 
 system.runInterval(() => {
-    for (const dimId of DimensionTypes.getAll()) {
-        for (const mob of world.getDimension(dimId.typeId).getEntities({ tags: ["dungeons:arch_illager_minion"] })) {
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
+        for (const mob of dim.getEntities({ tags: ["dungeons:arch_illager_minion"] })) {
 
             var loc = mob.location;
-            const dim = mob.dimension;
             const necromancerNearby = dim.getEntities({ location: loc, maxDistance: 64, type: "dungeons:arch_illager" })
             if (necromancerNearby.length == 0) {
                 dim.spawnParticle("dungeons:guardian_spawn", loc)

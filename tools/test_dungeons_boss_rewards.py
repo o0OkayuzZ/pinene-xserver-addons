@@ -54,7 +54,7 @@ class BossRewards(unittest.TestCase):
 
     def test_armor_tables_are_only_their_own_set(self):
         paths = list((CHESTS / 'armor').rglob('*.json'))
-        self.assertEqual(len(paths), 133)
+        self.assertEqual(len(paths), 175)
         for path in paths:
             with self.subTest(path=path.relative_to(BP)):
                 for pool in read(path)['pools']:
@@ -75,14 +75,23 @@ class BossRewards(unittest.TestCase):
     def test_world_manifest_versions_and_order(self):
         manifests = [read(p) for p in ROOT.glob('*_packs/*/manifest.json')]
         headers = {m['header']['uuid']: m['header']['version'] for m in manifests}
-        # Match the current pack registry, including subsequently added packs.
+        def version_tuple(v):
+            if isinstance(v, str):
+                return tuple(int(x) for x in v.split('.'))
+            return tuple(v)
+        # Match the current pack registry, including format_version 3 semver strings.
         self.assertEqual(len(headers), len(manifests))
         for manifest in manifests:
             for module in manifest['modules']:
-                self.assertEqual(module['version'], manifest['header']['version'])
+                self.assertEqual(version_tuple(module['version']), version_tuple(manifest['header']['version']))
             for dep in manifest.get('dependencies', []):
                 if 'uuid' in dep:
-                    self.assertEqual(dep['version'], headers[dep['uuid']])
+                    requested = version_tuple(dep['version'])
+                    actual = version_tuple(headers[dep['uuid']])
+                    if isinstance(dep['version'], str):
+                        self.assertGreaterEqual(actual, requested)
+                    else:
+                        self.assertEqual(actual, requested)
         for kind in ['behavior', 'resource']:
             expected = {read(p)['header']['uuid'] for p in ROOT.glob(f'{kind}_packs/*/manifest.json')}
             count = len(expected)
@@ -93,13 +102,16 @@ class BossRewards(unittest.TestCase):
             self.assertEqual(len({r['pack_id'] for r in rows}), count)
             self.assertEqual({r['pack_id'] for r in rows}, expected)
             for row in rows:
-                self.assertEqual(row['version'], headers[row['pack_id']])
+                self.assertEqual(version_tuple(row['version']), version_tuple(headers[row['pack_id']]))
 
     def test_boss_tables_have_valid_armor_paths(self):
         paths = list(CHESTS.glob('*.json'))
-        self.assertEqual(len(paths), 14)
+        self.assertEqual(len(paths), 15)
         for path in paths:
             probability = armor_probability(path)
+            if path.stem == 'pig':
+                self.assertEqual(probability, 0, path.name)
+                continue
             if path.stem == 'spooky_monstrosity':
                 rolls = read(path)['pools'][3]['rolls']
                 expected = 1 - sum(Fraction(8, 11) ** r for r in range(rolls['min'], rolls['max'] + 1)) / (rolls['max'] - rolls['min'] + 1)

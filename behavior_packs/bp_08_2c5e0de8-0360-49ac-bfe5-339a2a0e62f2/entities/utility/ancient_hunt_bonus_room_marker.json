@@ -1,0 +1,66 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "dungeons:ancient_hunt_bonus_room_marker",
+            "is_summonable": true,
+            "is_spawnable": false,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "dungeons:despawn": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "cannot_be_killed",
+                    "ignore"
+                ]
+            },
+            "minecraft:health": {
+                "max": 20,
+                "value": 20
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:custom_hit_test": {
+                "hitboxes": [
+                    {
+                        "pivot": [
+                            0,
+                            1000,
+                            0
+                        ],
+                        "width": 0,
+                        "height": 0
+                    }
+                ]
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:collision_box": {
+                "width": 0.001,
+                "height": 0.001
+            },
+            "minecraft:physics": {
+                "has_gravity": false,
+                "has_collision": false
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:persistent": {}
+        },
+        "events": {}
+    }
+}

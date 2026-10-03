@@ -5,34 +5,9 @@
 			"loop": true,
 			"bones": {
 				"root_item": {
-					"rotation": [
-						132.32892,
-						62.62473,
-						-78.02117
-					],
-					"position": [
-						-9,
-						18,
-						-4
-					],
+					"rotation": [132.32892, 62.62473, -78.02117],
+					"position": [-9, 18, -4],
 					"scale": 0.95
-				}
-			}
-		},
-		"animation.double_axe.third_person_hold": {
-			"loop": true,
-			"bones": {
-				"root_item": {
-					"rotation": [
-						135,
-						0,
-						0
-					],
-					"position": [
-						0.2,
-						20,
-						-1.5
-					]
 				}
 			}
 		},
@@ -40,16 +15,21 @@
 			"loop": true,
 			"bones": {
 				"root_item": {
-					"rotation": [
-						135,
-						0,
-						0
-					],
-					"position": [
-						0.2,
-						20,
-						-1.5
-					]
+					"rotation": [135, 0, 0],
+					"position": [0.2, 20, -1.5]
+				},
+				"pivot": {
+					"position": [1, 10, 1],
+					"scale": 1.1
+				}
+			}
+		},
+		"animation.double_axe.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [135, 0, 0],
+					"position": [0.2, 20, -1.5]
 				}
 			}
 		}

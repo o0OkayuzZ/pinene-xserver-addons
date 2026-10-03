@@ -1,0 +1,38 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bp_hunters_promise"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "key": {
+      "B": {
+        "item": "dungeons:blue_print"
+      },
+      "W": {
+        "item": "dungeons:hunters_promise"
+      }
+    },
+    "unlock": [
+      {
+        "item": "dungeons:hunters_promise"
+      }
+    ],
+    "pattern": [
+      "B",
+      "W"
+    ],
+    "result": [
+      {
+        "item": "dungeons:hunters_promise",
+        "count": 1
+      },
+      {
+        "item": "dungeons:hunters_promise",
+        "count": 1
+      }
+    ]
+  }
+}

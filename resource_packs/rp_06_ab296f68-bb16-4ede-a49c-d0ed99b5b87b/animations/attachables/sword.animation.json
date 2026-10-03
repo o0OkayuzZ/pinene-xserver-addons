@@ -8,16 +8,8 @@
 			"loop": true,
 			"bones": {
 				"root_item": {
-					"rotation": [
-						66,
-						60,
-						-60
-					],
-					"position": [
-						3,
-						23,
-						4
-					]
+					"rotation": [66, 60, -60],
+					"position": [3, 23, 4]
 				}
 			}
 		},
@@ -25,16 +17,8 @@
 			"loop": true,
 			"bones": {
 				"root_item": {
-					"rotation": [
-						66,
-						60,
-						-60
-					],
-					"position": [
-						3,
-						23,
-						3
-					],
+					"rotation": [66, 60, -60],
+					"position": [3, 23, 3],
 					"scale": 1.125
 				}
 			}
@@ -43,16 +27,8 @@
 			"loop": true,
 			"bones": {
 				"root_item": {
-					"rotation": [
-						90,
-						0,
-						0
-					],
-					"position": [
-						0.5,
-						22.5,
-						-0.5
-					]
+					"rotation": [90, 0, 0],
+					"position": [0.5, 22.5, -0.5]
 				}
 			}
 		},
@@ -60,68 +36,33 @@
 			"loop": true,
 			"bones": {
 				"root_item": {
-					"rotation": [
-						90,
-						0,
-						0
-					],
-					"position": [
-						0.5,
-						22.5,
-						-1.5
-					],
+					"rotation": [90, 0, 0],
+					"position": [0.5, 22.5, -1.5],
 					"scale": 1.125
 				}
 			}
 		},
 		"animation.sword.first_person_swing": {
+			"anim_time_update": "q.anim_time + (q.delta_time * (q.base_swing_duration / q.modified_swing_duration))",
 			"animation_length": 0.5,
 			"bones": {
 				"root_item": {
 					"rotation": {
 						"0.0": {
-							"post": [
-								-84.9895,
-								4.6727,
-								-88.3371
-							],
+							"post": [-84.9895, 4.6727, -88.3371],
 							"lerp_mode": "catmullrom"
 						},
 						"0.125": {
-							"post": [
-								41.8998,
-								2.0982,
-								-60.5778
-							],
+							"post": [41.8998, 2.0982, -60.5778],
 							"lerp_mode": "catmullrom"
 						},
-						"0.2917": [
-							-74.422,
-							11.755,
-							-132.4641
-						],
-						"0.4167": [
-							0,
-							0,
-							0
-						]
+						"0.2917": [-74.422, 11.755, -132.4641],
+						"0.4167": [0, 0, 0]
 					},
 					"position": {
-						"0.0": [
-							-2,
-							-2,
-							-1
-						],
-						"0.125": [
-							10,
-							-2,
-							-11
-						],
-						"0.4167": [
-							0,
-							0,
-							0
-						]
+						"0.0": [-2, -2, -1],
+						"0.125": [10, -2, -11],
+						"0.4167": [0, 0, 0]
 					}
 				}
 			}

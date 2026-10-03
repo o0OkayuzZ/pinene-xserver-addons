@@ -1,0 +1,91 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:castle_main"
+        },
+        "fallback": "dungeons:castle_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_mainstraight_0",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_mainstraight_1",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_mainsplit_0",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_mainsplit_1",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_mainsplit_2",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_mainsplit_3",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_maincomp_0",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_maincomp_1",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_maincomp_2",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_end",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

@@ -3,7 +3,7 @@ import {
     system
 } from "@minecraft/server";
 
-import { isWearingSet } from "components/armour.js"
+import { isWearingSet, isWearingMysteryArmour } from "components/armour.js"
 import { isValidTarget } from "main.js"
 
 world.afterEvents.entityHurt.subscribe((e) => {
@@ -13,7 +13,7 @@ world.afterEvents.entityHurt.subscribe((e) => {
     if (hurt.typeId !== "minecraft:player") return;
     const attacker = e.damageSource.damagingEntity;
     if (!attacker) return;
-    if (!isWearingSet(hurt, "dungeons:squid_armour")) return;
+    if (!isWearingSet(hurt, "dungeons:squid_armour") && !isWearingMysteryArmour(hurt, "ink_mobs")) return;
     var cd = world.scoreboard.getObjective('dungeons:squid_armour_t');
     if (!cd) {
         cd = world.scoreboard.addObjective('dungeons:squid_armour_t');
@@ -28,7 +28,7 @@ world.afterEvents.entityHurt.subscribe((e) => {
     if (isWearingSet(hurt, 'dungeons:glow_squid_armour')) {
         dim.spawnParticle('dungeons:glow_squid_ink', loc);
         dim.playSound('mob.glow_squid.ink_squirt', loc, { volume: 0.6 });
-    } else if (isWearingSet(hurt, 'dungeons:squid_armour')) {
+    } else if (isWearingSet(hurt, 'dungeons:squid_armour') || isWearingMysteryArmour(hurt, "ink_mobs")) {
         dim.spawnParticle('dungeons:squid_ink', loc);
         dim.playSound('mob._squid.ink_squirt', loc, { volume: 0.6 });
     } else {

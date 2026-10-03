@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "climbing_chestplate"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "S S",
+      "BBB",
+      "IBI"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:leather"
+      },
+     "I": {
+        "item": "minecraft:iron_ingot"
+      },
+     "S": {
+        "item": "minecraft:string"
+      }
+    },
+    "result": {
+      "item": "dungeons:climbing_chestplate",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:bastion_main"
+        },
+        "fallback": "dungeons:bastion_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_mainstraight_0",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_mainsplit_0",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_mainsplit_0",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_mainsplit_1",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_mainsplit_2",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_mainsplit_3",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_mainsplit_4",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_maincomp_0",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_maincomp_1",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_maincomp_2",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_maincomp_3",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight":3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/grand_bastion/bas_end",
+                    "processors": "dungeons:grand_bastion"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

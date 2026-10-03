@@ -237,13 +237,15 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
 
 
 
+
+import {spookyMonth} from "./spookiness.js"
 //halloween checker
 system.afterEvents.scriptEventReceive.subscribe((event) => {
     const id = event.id;
     const entity = event.sourceEntity;
     if (id == "dungeons:check_spooky") {
-        const month = new Date().getMonth();
-        if (month == 9) {
+        if(spookyMonth()) {
+            entity.dimension.spawnParticle("dungeons:spooky_monstrosity_transform", entity.location)
             entity.triggerEvent("dungeons:start_waking_spooky")
         } else {
             entity.triggerEvent("dungeons:start_waking")

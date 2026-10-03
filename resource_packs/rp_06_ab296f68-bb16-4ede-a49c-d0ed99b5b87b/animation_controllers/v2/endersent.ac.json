@@ -18,7 +18,7 @@
 				"default": {
 					"transitions": [
 						{
-							"attacking": "query.is_delayed_attacking==1"
+							"attacking": "query.is_delayed_attacking == 1.0"
 						}
 					],
 					"blend_transition": 0.3

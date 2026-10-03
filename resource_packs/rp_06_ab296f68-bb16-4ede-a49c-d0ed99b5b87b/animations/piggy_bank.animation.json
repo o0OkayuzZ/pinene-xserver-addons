@@ -1,0 +1,118 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.piggy_bank.shake_legs": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [
+						"-math.sin(query.anim_time * 2160) * 0.5",
+						0,
+						0
+					]
+				},
+				"leg0": {
+					"rotation": [
+						0,
+						0,
+						"math.sin(query.anim_time * 2160) * -2"
+					]
+				},
+				"leg1": {
+					"rotation": [
+						0,
+						0,
+						"math.sin(query.anim_time * 2160) * 2"
+					]
+				},
+				"leg3": {
+					"rotation": [
+						0,
+						0,
+						"math.sin(query.anim_time * 2160) * 2"
+					]
+				},
+				"leg2": {
+					"rotation": [
+						0,
+						0,
+						"math.sin(query.anim_time * 2160) * -2"
+					]
+				},
+				"chest": {
+					"rotation": [
+						0,
+						"-math.sin(query.anim_time * 2160) * 0.5",
+						0
+					]
+				}
+			}
+		},
+		"animation.piggy_bank.dead": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"sound_effects": {
+				"0.1": {
+					"effect": "open"
+				}
+			},
+			"bones": {
+				"chest": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							0,
+							0,
+							-15
+						],
+						"0.1667": [
+							-7.5,
+							0,
+							-22.5
+						],
+						"0.2917": [
+							0,
+							0,
+							-37.5
+						],
+						"0.5": [
+							0,
+							0,
+							-90
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							-11,
+							-10,
+							0
+						]
+					}
+				},
+				"top": {
+					"rotation": {
+						"0.0833": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-145,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,91 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.piglin_merchant.idle": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [-10, 0, 0]
+				},
+				"rightarm": {
+					"rotation": [-9.9907, 0.434, "2.4621 + math.cos(q.life_time*100)*1"],
+					"position": [0, -1, 0]
+				},
+				"leftarm": {
+					"rotation": [-9.9907, -0.434, "-2.4621 - math.cos(q.life_time*100)*1"],
+					"position": [0, -1, 0]
+				},
+				"body": {
+					"rotation": ["10 + math.sin(q.life_time*50)*1", 0, 0]
+				}
+			}
+		},
+		"animation.piglin_merchant.tilt_head": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [0, -2.5, -15]
+				},
+				"wart0": {
+					"rotation": [0, 0, 15]
+				},
+				"wart1": {
+					"rotation": [0, 0, 15]
+				},
+				"leftarm": {
+					"rotation": [-30, 0, 0],
+					"position": [0, -1, 0]
+				}
+			}
+		},
+		"animation.piglin_merchant.walk": {
+			"loop": true,
+			"anim_time_update": "query.anim_time + query.delta_time * (5*q.modified_move_speed)",
+			"bones": {
+				"rightarm": {
+					"rotation": ["-math.cos(query.anim_time*400)*15.5", 0, 0],
+					"position": [0, "math.max(-math.cos(-90+query.anim_time*400)*1, 0)", 0]
+				},
+				"leftarm": {
+					"rotation": ["math.cos(query.anim_time*400)*15.5", 0, 0],
+					"position": [0, "math.max(math.cos(-90+query.anim_time*400)*1, 0)", 0]
+				},
+				"body": {
+					"rotation": [0, 0, "-math.cos(query.anim_time*400)*2"],
+					"position": [0, 0, 0]
+				},
+				"rightleg": {
+					"rotation": ["math.cos(query.anim_time*400)*15.5", 0, 0],
+					"position": [0, "math.max(math.cos(-90+query.anim_time*400)*1, 0)", 0]
+				},
+				"leftleg": {
+					"rotation": ["-math.cos(query.anim_time*400)*15.5", 0, 0],
+					"position": [0, "math.max(-math.cos(-90+query.anim_time*400)*1, 0)", 0]
+				}
+			}
+		},
+		"animation.piglin_merchant.shake_head": {
+			"animation_length": 1,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, "math.sin(query.anim_time * 720) * 20"],
+						"1.0": [0, 0, 0]
+					}
+				},
+				"wart1": {
+					"rotation": {
+						"0.0": [0, 0, "math.sin(query.anim_time * 720) * -15"],
+						"1.0": [0, 0, 0]
+					}
+				},
+				"wart0": {
+					"rotation": {
+						"0.0": [0, 0, "math.sin(query.anim_time * 720) * -15"],
+						"1.0": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

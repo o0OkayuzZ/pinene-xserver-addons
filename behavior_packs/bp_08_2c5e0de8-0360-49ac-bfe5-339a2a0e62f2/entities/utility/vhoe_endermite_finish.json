@@ -67,11 +67,6 @@
 		},
 		"events": {
 			"minecraft:entity_spawned": {
-				"queue_command": {
-					"command": [
-						"event entity @e[type=dungeons:vengeful_heart_of_ender,c=1,r=32] dungeons:projectile_attack_start"
-					]
-				}
 			},
 			"dungeons:despawn": {
 				"add": {

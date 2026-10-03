@@ -1,6 +1,12 @@
 {
     "format_version": "1.21.120",
     "minecraft:local_light_settings": {
+        "dungeons:end_sky": {
+            "light_color": [
+                187, 0, 255
+            ],
+            "light_type": "static_light"
+        },
         "dungeons:void_fluid": {
             "light_color": [
                 155,
@@ -31,6 +37,114 @@
                 32,
                 223
             ],
+            "light_type": "static_light"
+        },
+        "dungeons:ancient_portal": {
+            "light_color": [
+                45,
+                10,
+                62
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:ancient_portal_frame": {
+            "light_color": [
+                45,
+                10,
+                62
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:bonus_door": {
+            "light_color": [
+                45,
+                10,
+                62
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:orange_glowshroom": {
+            "light_color": [
+                255,
+                153,
+                60
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:green_glowshroom": {
+            "light_color": [
+                145,
+                255,
+                168
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:cyan_glowshroom": {
+            "light_color": [
+                0,
+                255,
+                234
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:blue_magma": {
+            "light_color": [
+                0,
+                255,
+                234
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:spider_egg": {
+            "light_color": [
+                255,
+                153,
+                60
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:woodland_mansion_window": {
+            "light_color": [
+                0,
+                46,
+                255
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:woodland_mansion_window_bright": {
+            "light_color": [
+                216,
+                255,
+                255
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:eye_of_the_guardian_light": {
+            "light_color": [
+                0,
+                255,
+                132
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:corrupted_beacon_light": {
+            "light_color": [
+                204,
+                0,
+                255
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:corrupted_pumpkin_light": {
+            "light_color": [
+                255,
+                140,
+                0
+            ],
+            "light_type": "static_light"
+        },
+        "dungeons:slime_launcher": {
+            "light_color": [186, 241, 94],
             "light_type": "static_light"
         }
     }

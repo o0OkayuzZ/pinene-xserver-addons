@@ -16,7 +16,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe((event) => {
     if (player.hasTag('dungeons:guardian_warn')) return;
     if (player.isInWater) return;
     if (item.typeId === 'dungeons:ancient_guardian_resting_spawn_egg') {
-        player.sendMessage("§7このボスは水中向けです。陸上に出現させると正常に動作しない場合があります。")
+        player.sendMessage("§7This boss is best suited for underwater locations, if spawned on land it may not work properly!")
 
         system.run(() => {
             player.addTag('dungeons:guardian_warn');
@@ -148,11 +148,13 @@ function spawned(id, loc, dim) {
 }
 
 system.runInterval(() => {
-    for (const dimId of DimensionTypes.getAll()) {
-        for (const mob of world.getDimension(dimId.typeId).getEntities({ tags: ["dungeons:ancient_guardian_minion"] })) {
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
+        for (const mob of dim.getEntities({ tags: ["dungeons:ancient_guardian_minion"] })) {
 
             var loc = mob.location;
-            const dim = mob.dimension;
             const necromancerNearby = dim.getEntities({ location: loc, maxDistance: 64, type: "dungeons:ancient_guardian" })
             if (necromancerNearby.length == 0) {
                 dim.spawnParticle("dungeons:guardian_spawn", loc)

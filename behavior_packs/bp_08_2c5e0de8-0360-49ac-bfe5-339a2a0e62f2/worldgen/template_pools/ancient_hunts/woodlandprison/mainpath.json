@@ -1,0 +1,107 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:woodlandprison_main"
+        },
+        "fallback": "dungeons:woodlandprison_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_mainstraight_0",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_mainstraight_1",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_mainstraight_2",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_mainsplit_0",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_mainsplit_1",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_mainsplit_2",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_mainsplit_3",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_maincomp_0",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_maincomp_1",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_maincomp_2",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_maincomp_3",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_end",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

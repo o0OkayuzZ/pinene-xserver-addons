@@ -28,23 +28,27 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
+    if (!heldItem.hasTag(effectId) && !heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) return;
     //effect code
     if (e.damage <= 0) return;
-    system.run(() => {
-        var shockwaveCD = world.scoreboard.getObjective('dungeons:shockwave_t');
-        if (!shockwaveCD) {
+    var shockwaveCD = world.scoreboard.getObjective('dungeons:shockwave_t');
+    if (!shockwaveCD) {
+        system.run(() => {
             shockwaveCD = world.scoreboard.addObjective('dungeons:shockwave_t');
-        }
-        if (shockwaveCD.hasParticipant(attacker.scoreboardIdentity)) {
-            return;
-        }
+        })
+        return
+    }
+    if (shockwaveCD.hasParticipant(attacker.scoreboardIdentity)) {
+        return;
+    }
+    e.damage = e.damage * 1.1
+    system.run(() => {
         system.run(() => {
             const vd = attacker.getViewDirection()
             shockwaveCD.setScore(attacker, 100);
             const dim = attacker.dimension
             const targets = []
-            for (let i = 2; i < 5; i++) {
+            for (let i = 2; i < 7; i++) {
                 var loc = attacker.location;
                 loc = { x: loc.x + (vd.x * 6), y: loc.y + (vd.y * 6), z: loc.z + (vd.z * 6) }
                 const damageRange = dim.getEntities({
@@ -72,8 +76,8 @@ world.beforeEvents.entityHurt.subscribe((e) => {
                 const distance = getDistance(target, attacker)
                 system.runTimeout(() => {
                     if (target.isValid == true) {
-                        var shockDamage = e.damage * 0.7
-                        shockDamage = (shockDamage * ((10 - distance) / 5)) + (e.damage / 2)
+                        var shockDamage = e.damage 
+                        shockDamage = Math.min((shockDamage * ((10 - distance) / 5)) + (e.damage / 4),e.damage*0.95)
 
                         const damageDone = specialDamage(attacker, target, shockDamage, EntityDamageCause.entityAttack, ["weapon"])
                         if (damageDone) {

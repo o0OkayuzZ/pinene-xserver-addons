@@ -3,6 +3,7 @@ import {
     system,
     EntityDamageCause
 } from "@minecraft/server";
+import { isWearingSet } from "components/armour.js"
 
 const effectId = "dungeons:poison"
 
@@ -20,11 +21,13 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
+    if (!heldItem.hasTag(effectId) && !heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) return;
     //effect code
     if (e.damage <= 0) return;
     system.run(() => {
         if (hurt.getEffect("fatal_poison")) return;
-        hurt.addEffect("fatal_poison", 100)
+        var amplifier = 0
+        if (isWearingSet(attacker, "dungeons:poison_focus")) amplifier += 1
+        hurt.addEffect("fatal_poison", 100, { amplifier: amplifier })
     })
 });

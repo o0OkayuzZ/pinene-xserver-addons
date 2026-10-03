@@ -1,40 +1,49 @@
 import {
     world,
     system,
-    DimensionTypes
+    DimensionTypes,
+    InputPermissionCategory
 } from "@minecraft/server";
 
 // Snareling Web
-world.afterEvents.entityHurt.subscribe((e) => {
+world.beforeEvents.entityHurt.subscribe((e) => {
     const hurt = e.hurtEntity;
     if (!hurt || !hurt.isValid) return;
-    if (hurt.typeId == "dungeons:snareling") return;
+    if (hurt.matches({families:["snareling"]})) return;
     if (hurt.matches({ families: ["boss"] })) return;
-    const attacker = e.damageSource.damagingEntity;
-    if (!attacker || !attacker.isValid) return;
+    var attacker = e.damageSource.damagingEntity;
     const projectile = e.damageSource.damagingProjectile;
-    if (!projectile) return;
-    if (attacker.typeId.includes("snareling") && projectile.typeId === "dungeons:snareling_ammo") {
+    if(!projectile) return;
+    if (!attacker || !attacker.isValid) attacker = projectile.getComponent("projectile").owner;
+    if(hurt.typeId == "dungeons:the_swarm_minion") {
+        e.cancel = true;
+        return;
+    }
+    if ((attacker.matches({families: ["snareling"]}) || attacker.typeId == "dungeons:snareling_ammo") && projectile.typeId === "dungeons:snareling_ammo") {
+        system.run(() => {
+            if(hurt.hasTag("dungeons:stunned_effect")) return;
+            var cd = world.scoreboard.getObjective('dungeons:snareling_trap_t');
+            if (!cd) {
+                cd = world.scoreboard.addObjective('dungeons:snareling_trap_t');
+            }
 
-        var cd = world.scoreboard.getObjective('dungeons:snareling_trap_t');
-        if (!cd) {
-            cd = world.scoreboard.addObjective('dungeons:snareling_trap_t');
-        }
-
-        if (hurt.typeId == "minecraft:player") {
-            const perms = hurt.inputPermissions;
-            if (perms.isPermissionCategoryEnabled(2) == false) return;
-        }
-        cd.setScore(hurt, 80)
-        hurt.addTag("dungeons:snareling_trapped")
-        hurt.dimension.playSound("mob.snareling.impact", hurt.location)
+            if (hurt.typeId == "minecraft:player") {
+                const perms = hurt.inputPermissions;
+                if (perms.isPermissionCategoryEnabled(InputPermissionCategory.LateralMovement) == false && perms.isPermissionCategoryEnabled(InputPermissionCategory.Jump) == false && perms.isPermissionCategoryEnabled(InputPermissionCategory.Mount) == false) return;
+            }
+            cd.setScore(hurt, 80)
+            hurt.addTag("dungeons:snareling_trapped")
+            hurt.dimension.playSound("mob.snareling.impact", hurt.location)
+        })
 
     }
 });
 //cooldown
 system.runInterval(() => {
-    for (const dimensionType of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimensionType.typeId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (const entity of dim.getEntities({ tags: ["dungeons:snareling_trapped"] })) {
             var timeLeft = world.scoreboard.getObjective('dungeons:snareling_trap_t');
             if (!timeLeft) {
@@ -51,17 +60,21 @@ system.runInterval(() => {
                 timeLeft.addScore(entity, -1);
                 if (entity.typeId == "minecraft:player") {
                     const perms = entity.inputPermissions;
-                    perms.setPermissionCategory(2, false)
+                    perms.setPermissionCategory(InputPermissionCategory.LateralMovement, false)
+                    perms.setPermissionCategory(InputPermissionCategory.Mount, false)
+                    perms.setPermissionCategory(InputPermissionCategory.Jump, false)
                 } else {
                     entity.addEffect("slowness", 5, { amplifier: 255, showParticles: false })
                 }
             }
-            if (duration <= 0 || (entity.typeId == "minecraft:player" && entity.getGameMode() == "Spectator")) {
+            if (entity.hasTag("dungeons:stunned_effect") || duration <= 0 || (entity.typeId == "minecraft:player" && entity.getGameMode() == "Spectator")) {
                 timeLeft.removeParticipant(entity)
                 entity.removeTag("dungeons:snareling_trapped")
                 if (entity.typeId == "minecraft:player") {
                     const perms = entity.inputPermissions;
-                    perms.setPermissionCategory(2, true)
+                    perms.setPermissionCategory(InputPermissionCategory.LateralMovement, true)
+                    perms.setPermissionCategory(InputPermissionCategory.Mount, true)
+                    perms.setPermissionCategory(InputPermissionCategory.Jump, true)
                 }
             }
         }
@@ -91,7 +104,7 @@ world.afterEvents.entityDie.subscribe((e) => {
 world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
     const entity = e.entity;
     const id = e.eventId;
-    if (id === 'dungeons:teleport_near_target' && entity.typeId.includes("snareling")) {
+    if (id === 'dungeons:teleport_near_target' && entity.matches({families: ["snareling"]})) {
         if (entity.hasTag("dungeons:snareling_teleport_used")) return;
         entity.addTag("dungeons:snareling_teleport_used")
         system.runTimeout(() => {

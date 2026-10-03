@@ -28,7 +28,7 @@
 		},
 		"components": {
 			"minecraft:emitter_initialization": {
-				"creation_expression": "variable.size=0.2;variable.radius=25;"
+				"creation_expression": "variable.size = 0.2;variable.radius = 25;"
 			},
 			"minecraft:emitter_local_space": {
 				"position": true,
@@ -44,7 +44,7 @@
 			"minecraft:emitter_shape_point": {
 				"offset": [
 					"variable.radius*-math.sin(variable.emitter_age*36)",
-					"v.emitter_random_1*50-20",
+					"v.emitter_random_1*50 - 20",
 					"variable.radius*math.cos(variable.emitter_age*36)"
 				]
 			},

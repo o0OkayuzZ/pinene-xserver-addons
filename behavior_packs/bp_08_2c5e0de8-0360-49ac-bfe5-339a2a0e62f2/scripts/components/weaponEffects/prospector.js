@@ -22,31 +22,36 @@ world.afterEvents.entityDie.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
-    //effect code
+    var count = 0
+    if (heldItem.hasTag(effectId)) count += 1
+    if (heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) count += 1
+    if (count == 0) return;
+    for (let i = 0; i < count; i++) {
+        //effect code
 
-    if (!hurt.matches({ families: ["player"] }) && !hurt.matches({ families: ["monster"] })) return;
+        if (!hurt.matches({ families: ["player"] }) && !hurt.matches({ families: ["monster"] })) return;
 
-    hurt.dimension.spawnParticle('dungeons:emerald', hurt.location)
-    attacker.playSound('artefact.shadow_break',
-        {
-            pitch: 1.5,
-            volume: 0.3
-        });
-    let hp = hurt.getComponent('minecraft:health')
-    var expAdded = hp.defaultValue * 0.2
-    for (let i = 0; i < Math.floor(hp.defaultValue * 0.8); i++) {
-        if (Math.random() > 0.5) expAdded += 1
-    }
-    expAdded = Math.round(expAdded)
-    const increments = Math.floor(1 + expAdded / 20)
-    var delay = 0
-    for (let i = 0; i < expAdded; i += increments) {
-        system.runTimeout(() => {
-            attacker.addExperience(increments)
-        }, delay)
-        delay += 1
-        if (i > expAdded * 0.6) delay += 1
-        if (i > expAdded * 0.9) delay += 1
+        hurt.dimension.spawnParticle('dungeons:emerald', hurt.location)
+        attacker.playSound('artefact.shadow_break',
+            {
+                pitch: 1.5,
+                volume: 0.3
+            });
+        let hp = hurt.getComponent('minecraft:health')
+        var expAdded = hp.defaultValue * 0.2
+        for (let i = 0; i < Math.floor(hp.defaultValue * 0.8); i++) {
+            if (Math.random() > 0.5) expAdded += 1
+        }
+        expAdded = Math.round(expAdded)
+        const increments = Math.floor(1 + expAdded / 20)
+        var delay = 0
+        for (let i = 0; i < expAdded; i += increments) {
+            system.runTimeout(() => {
+                attacker.addExperience(increments)
+            }, delay)
+            delay += 1
+            if (i > expAdded * 0.6) delay += 1
+            if (i > expAdded * 0.9) delay += 1
+        }
     }
 });

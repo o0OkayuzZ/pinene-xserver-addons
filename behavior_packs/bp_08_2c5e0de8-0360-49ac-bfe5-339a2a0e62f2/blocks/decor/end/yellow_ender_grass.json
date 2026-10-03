@@ -1,0 +1,87 @@
+{
+    "format_version": "1.26.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:yellow_ender_grass"
+        },
+        "components": {
+            "minecraft:connection_rule": {
+                "accepts_connections_from": "none"
+            },
+            "minecraft:collision_box": false,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0
+            },
+            "minecraft:flammable": true,
+            "minecraft:geometry": {
+                "identifier": "minecraft:geometry.cross"
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "on_liquid_touches": "popped"
+                    }
+                ]
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "face_dimming": false,
+                    "ambient_occlusion": false,
+                    "render_method": "alpha_test_single_sided",
+                    "texture": "ender_grass"
+                }
+            },
+            "minecraft:movable": {
+                "movement_type": "popped"
+            },
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "end_stone",
+                            "dungeons:purple_mossy_end_stone",
+                            "dungeons:yellow_mossy_end_stone"
+                        ]
+                    }
+                ]
+            },
+            "minecraft:random_offset": {
+                "x": {
+                    "range": {
+                        "min": -4,
+                        "max": 4
+                    }
+                },
+                "y": {
+                    "range": {
+                        "min": -4,
+                        "max": 0
+                    }
+                },
+                "z": {
+                    "range": {
+                        "min": -4,
+                        "max": 4
+                    }
+                }
+            },
+            "minecraft:replaceable": {},
+            "minecraft:selection_box": {
+                "origin": [
+                    -6,
+                    0,
+                    -6
+                ],
+                "size": [
+                    12,
+                    12,
+                    12
+                ]
+            }
+        }
+    }
+}

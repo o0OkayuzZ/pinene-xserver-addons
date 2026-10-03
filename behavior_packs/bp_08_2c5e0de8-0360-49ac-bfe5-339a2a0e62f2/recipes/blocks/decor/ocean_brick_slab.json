@@ -1,0 +1,28 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:ocean_brick_slab"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "SSS"
+        ],
+        "unlock": [
+            {
+                "item": "dungeons:ocean_bricks"
+            }
+        ],
+        "key": {
+            "S": {
+                "item": "dungeons:ocean_bricks"
+            }
+        },
+        "result": {
+            "item": "dungeons:ocean_brick_slab",
+            "count": 6
+        }
+    }
+}

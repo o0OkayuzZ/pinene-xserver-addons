@@ -15,6 +15,7 @@ function hasTotem(player) {
 }
 
 world.beforeEvents.entityHurt.subscribe((e) => {
+    return;
     const player = e.hurtEntity;
     if (!player || !player.isValid) return;
     if (e.damageSource.cause == "selfDestruct") return;

@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:stronghold_starter"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_start",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

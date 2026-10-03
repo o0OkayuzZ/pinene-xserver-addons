@@ -1,0 +1,97 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.tropical_slime_armour",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 2,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "cube",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "overlay",
+					"parent": "cube",
+					"pivot": [0, 8, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, -8],
+							"size": [16, 16, 16],
+							"uv": {
+								"north": {"uv": [16, 16], "uv_size": [16, 16]},
+								"east": {"uv": [0, 16], "uv_size": [16, 16]},
+								"south": {"uv": [48, 16], "uv_size": [16, 16]},
+								"west": {"uv": [32, 16], "uv_size": [16, 16]},
+								"up": {"uv": [16, 0], "uv_size": [16, 16]},
+								"down": {"uv": [32, 16], "uv_size": [16, -16]}
+							}
+						}
+					]
+				},
+				{
+					"name": "mouth",
+					"parent": "cube",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{
+							"origin": [0, 4, -7],
+							"size": [2, 2, 2],
+							"uv": {
+								"north": {"uv": [52, 53], "uv_size": [2, 2]},
+								"east": {"uv": [50, 53], "uv_size": [2, 2]},
+								"south": {"uv": [56, 53], "uv_size": [2, 2]},
+								"west": {"uv": [54, 53], "uv_size": [2, 2]},
+								"up": {"uv": [52, 51], "uv_size": [2, 2]},
+								"down": {"uv": [54, 53], "uv_size": [2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "eye1",
+					"parent": "cube",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{
+							"origin": [2.6, 8, -7],
+							"size": [4, 4, 4],
+							"uv": {
+								"north": {"uv": [52, 47], "uv_size": [4, 4]},
+								"east": {"uv": [48, 47], "uv_size": [4, 4]},
+								"south": {"uv": [60, 47], "uv_size": [4, 4]},
+								"west": {"uv": [56, 47], "uv_size": [4, 4]},
+								"up": {"uv": [52, 43], "uv_size": [4, 4]},
+								"down": {"uv": [56, 47], "uv_size": [4, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "eye0",
+					"parent": "cube",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{
+							"origin": [-6.6, 8, -7],
+							"size": [4, 4, 4],
+							"uv": {
+								"north": {"uv": [56, 47], "uv_size": [-4, 4]},
+								"east": {"uv": [60, 47], "uv_size": [-4, 4]},
+								"south": {"uv": [64, 47], "uv_size": [-4, 4]},
+								"west": {"uv": [52, 47], "uv_size": [-4, 4]},
+								"up": {"uv": [56, 43], "uv_size": [-4, 4]},
+								"down": {"uv": [60, 47], "uv_size": [-4, -4]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

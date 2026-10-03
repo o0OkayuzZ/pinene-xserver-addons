@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.mountaineer": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[query.property('dungeons:armour_type')]"
+      ],
+      "arrays": {
+        "textures": {
+          "array.skins": [
+            "texture.default",
+            "texture.tier_2",
+            "texture.tier_3"
+          ]
+        }
+      }
+    }
+  }
+}

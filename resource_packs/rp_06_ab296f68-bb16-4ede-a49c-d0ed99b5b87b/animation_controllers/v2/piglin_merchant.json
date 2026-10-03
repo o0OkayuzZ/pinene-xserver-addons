@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.piglin_merchant.move": {
+            "initial_state": "static",
+            "states": {
+                "walking": {
+                    "animations": [
+                        "move"
+                    ],
+                    "transitions": [
+                        {
+                            "static": "q.modified_move_speed <= 0.1"
+                        }
+                    ],
+                    "blend_transition": 0.5
+                },
+                "static": {
+                    "transitions": [
+                        {
+                            "walking": "q.is_moving && q.modified_move_speed > 0.1"
+                        }
+                    ],
+                    "blend_transition": 0.5
+                }
+            }
+        }
+    }
+}

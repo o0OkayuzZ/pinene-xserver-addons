@@ -1,0 +1,75 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:soggy_side"
+        },
+        "fallback": "dungeons:soggy_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_sidestraight_0",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_sidestraight_1",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_sidesplit_0",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_sidesplit_1",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_sidesplit_2",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_boss",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_side_end",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/soggy_cave/sog_bonus_door",
+                    "processors": "dungeons:soggy_cave"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

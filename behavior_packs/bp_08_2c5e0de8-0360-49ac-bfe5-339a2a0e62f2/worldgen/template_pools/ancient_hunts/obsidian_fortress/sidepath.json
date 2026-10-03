@@ -1,0 +1,75 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:obsidian_side"
+        },
+        "fallback": "dungeons:obsidian_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/obsidian_fortress/obby_sidestraight_0",
+                    "processors": "dungeons:obsidian_fortress"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/obsidian_fortress/obby_sidestraight_1",
+                    "processors": "dungeons:obsidian_fortress"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/obsidian_fortress/obby_sidesplit_0",
+                    "processors": "dungeons:obsidian_fortress"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/obsidian_fortress/obby_sidesplit_1",
+                    "processors": "dungeons:obsidian_fortress"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/obsidian_fortress/obby_sidesplit_2",
+                    "processors": "dungeons:obsidian_fortress"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/obsidian_fortress/obby_sidesplit_3",
+                    "processors": "dungeons:obsidian_fortress"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/obsidian_fortress/obby_side_end",
+                    "processors": "dungeons:obsidian_fortress"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/obsidian_fortress/obby_boss",
+                    "processors": "dungeons:obsidian_fortress"
+                },
+                "weight": 3
+            }
+        ]
+    }
+}

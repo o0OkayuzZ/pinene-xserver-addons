@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:ocean_bricks"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "PG",
+            "GP"
+        ],
+        "unlock": [
+            {
+                "item": "prismarine_shard"
+            }
+        ],
+        "key": {
+            "P": {
+                "item": "minecraft:prismarine_shard"
+            },
+            "G":{
+                "item": "minecraft:gold_nugget"
+            }
+        },
+        "result": {
+            "item": "dungeons:ocean_bricks",
+            "count": 4
+        }
+    }
+}

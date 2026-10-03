@@ -1,0 +1,198 @@
+{
+  "format_version": "1.26.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dungeons:haunted_caller_minion",
+      //"runtime_identifier": "minecraft:skeleton_horse",
+      "spawn_category": "creature",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "minecraft:skeleton_horse_r5_upgrade": {
+        "minecraft:rideable": {}
+      },
+      "minecraft:skeleton_horse_baby": {
+        "minecraft:is_baby": {},
+        "minecraft:behavior.follow_parent": {
+          "priority": 4,
+          "speed_multiplier": 1.0
+        },
+        "minecraft:scale": {
+          "value": 0.55
+        },
+        "minecraft:collision_box": {
+          "width": 1.96, // 0.98/0.5
+          "height": 2.24 // 1.12/0.5
+        }
+      },
+      "minecraft:skeleton_horse_adult": {
+        "minecraft:collision_box": {
+          "width": 1.4,
+          "height": 1.6
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": ["player", "skeleton", "zombie"],
+          "interact_text": "action.interact.ride.horse",
+          "seats": {
+            "position": [0.0, 1.1, -0.2]
+          }
+        }
+      },
+
+      "minecraft:skeleton_trap": {
+        "minecraft:behavior.skeleton_horse_trap": {
+          "within_radius": 10.0,
+          "duration": 900.0,
+          "priority": 2
+        }
+      },
+
+      "minecraft:lightning_immune": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "lightning"
+              }
+            },
+            "deals_damage": "no"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:ambient_sound_interval": {},
+      "minecraft:type_family": {
+        "family": [ "ancient_minion", "enchanted", "skeletonhorse", "undead", "mob" ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.2,
+        "max": 0.2
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.2
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.08
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:nameable": {},
+      "minecraft:horse.jump_strength": {
+        "value": {
+          "range_min": 0.4,
+          "range_max": 1.0
+        }
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [ "skeleton", "zombie" ],
+        "interact_text": "action.interact.ride.horse",
+        "seats": {
+          "position": [ 0.0, 1.2, -0.2 ]
+        }
+      },
+      "minecraft:behavior.mount_pathing": {
+        "priority": 2,
+        "speed_multiplier": 1.5,
+        "target_dist": 4.0,
+        "track_target": true
+      },
+      "minecraft:input_ground_controlled": {},
+      "minecraft:can_power_jump": {},
+      "minecraft:balloonable": {},
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 0.7
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable_by_entity": {
+        "presets": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "sulfur_cube"
+                },
+                {
+                  "test": "enum_property",
+                  "subject": "other",
+                  "domain": "minecraft:sulfur_cube_archetype",
+                  "operator": "not",
+                  "value": "none"
+                },
+                {
+                  "test": "is_controlling_passenger_family",
+                  "subject": "self",
+                  "value": "player"
+                }
+              ]
+            },
+            "push_mode": "none"
+          }
+        ]
+      },
+      "minecraft:pushable_by_block": {
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command":["summon lightning_bolt ~~-3~"]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:skeleton_horse_adult",
+            "minecraft:lightning_immune"
+          ]
+        }
+      }
+    }
+  }
+}

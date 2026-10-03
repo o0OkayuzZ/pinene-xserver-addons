@@ -66,16 +66,18 @@ function spawnBlaze(dim, loc) {
 }
 
 function spawned(id, loc, dim) {
-    const entity = dim.spawnEntity(id, loc)
+    const entity = dim.spawnEntity(id, loc, { spawnEvent: "dungeons:spawned_by_spawner" })
     entity.addTag("dungeons:hovering_inferno_minion")
 }
 
 system.runInterval(() => {
-    for (const dimId of DimensionTypes.getAll()) {
-        for (const mob of world.getDimension(dimId.typeId).getEntities({ tags: ["dungeons:hovering_inferno_minion"] })) {
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
+        for (const mob of dim.getEntities({ tags: ["dungeons:hovering_inferno_minion"] })) {
 
             var loc = mob.location;
-            const dim = mob.dimension;
             const necromancerNearby = dim.getEntities({ location: loc, maxDistance: 32, type: "dungeons:boss_wildfire" })
             if (necromancerNearby.length == 0) {
                 dim.spawnParticle("dungeons:wildfire_flames", loc)

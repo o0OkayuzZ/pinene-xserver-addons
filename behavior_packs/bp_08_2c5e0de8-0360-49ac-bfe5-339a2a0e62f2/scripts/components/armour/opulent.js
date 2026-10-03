@@ -3,11 +3,11 @@ import {
     system
 } from "@minecraft/server";
 
-import { isWearingSet } from "components/armour.js"
+import { isWearingSet, isWearingMysteryArmour } from "components/armour.js"
 // Opulent Armour
 system.runInterval(() => {
     for (const player of world.getPlayers({ excludeGameModes: ["Spectator"] })) {
-        if (isWearingSet(player, "dungeons:opulent_armour")) {
+        if (isWearingSet(player, "dungeons:opulent_armour") || isWearingMysteryArmour(player, "exp_shield")) {
             const xp = player.getTotalXp();
             system.runTimeout(() => {
                 if (player.getTotalXp() > xp) {

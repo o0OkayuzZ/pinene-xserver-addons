@@ -5,8 +5,10 @@ import {
 
 function playsound(player, item) {
     if (item.typeId.includes("dungeons:") == false) return;
-    const id = item.typeId.replace("_boots", "").replace("_leggings", "").replace("_chestplate", "").replace("_helmet", "").replace("dungeons:", "")
-    const pitch = Math.random() * 0.6 + 0.7
+    var id = item.typeId.replace("_boots", "").replace("_leggings", "").replace("_chestplate", "").replace("_helmet", "").replace("dungeons:", "")
+    if(id.includes("mystery_")) id = "mystery"
+    var pitch = Math.random() * 0.6 + 0.7
+    if(id.includes("sweet_tooth")) pitch = Math.max(pitch, 0.9 + Math.random()*0.2)
     player.dimension.playSound("armour.equip." + id, player.location, { volume: 0.5, pitch: pitch })
 }
 
