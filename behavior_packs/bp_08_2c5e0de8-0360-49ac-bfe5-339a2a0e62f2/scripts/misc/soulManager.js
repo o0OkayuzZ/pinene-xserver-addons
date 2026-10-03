@@ -17,8 +17,8 @@ export function getSoulBarText(player, darken, ignoreFormat, returnArray) {
   var text = {rawtext:[{text: `${trail}${colour}${souls}§s `}, {translate: "dungeons.ui.souls"},{text: " "}]}
   var arrayText = [{text: `${trail}${colour}${souls}§s `}, {translate: "dungeons.ui.souls"},{text: " "}]
   if(player.hasTag("dungeons:soul_display_classic")) {
-    text = {rawtext:[{text: `${trail}${colour}${souls}§s `}, {text: "Souls"},{text: " "}]}
-    arrayText = [{text: `${trail}${colour}${souls}§s `}, {text: "Souls"},{text: " "}]
+    text = {rawtext:[{text: `${trail}${colour}${souls}§s `}, {text: "ソウル"},{text: " "}]}
+    arrayText = [{text: `${trail}${colour}${souls}§s `}, {text: "ソウル"},{text: " "}]
   }
   if(player.hasTag("dungeons:soul_display_bar")) {
     var max = 100
