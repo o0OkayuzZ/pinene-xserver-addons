@@ -15,7 +15,7 @@
                             "first_person_shield_block": "query.blocking"
                         },
                         {
-                            "first_person_attack_controller": "variable.attack_time > 0.0 && query.get_equipped_item_name != 'filled_map' && !variable.melee_spear_equipped && !query.equipped_item_any_tag('slot.weapon.mainhand', 'alylica:disable_melee_swing')"
+                            "first_person_attack_controller": "variable.attack_time > 0.0 && query.get_equipped_item_name != 'filled_map' && !query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear') && !query.equipped_item_any_tag('slot.weapon.mainhand', 'alylica:disable_melee_swing')"
                         },
                         {
                             "first_person_empty_hand": "query.get_equipped_item_name(0, 1) != 'filled_map'"
@@ -30,7 +30,7 @@
                             "first_person_crossbow_equipped": "query.get_equipped_item_name == 'crossbow' && variable.item_use_normalized > 0.0 && variable.item_use_normalized < 1.0"
                         },
                         {
-                            "first_person_melee_spear_controller": "variable.melee_spear_equipped"
+                            "first_person_melee_spear_controller": "query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear')"
                         }
                     ],
                     "transitions": [
@@ -117,19 +117,19 @@
                             "damage_nearby_mobs": "variable.damage_nearby_mobs"
                         },
                         {
-                            "swimming": "variable.swim_amount > 0.0 && !variable.melee_spear_equipped"
+                            "swimming": "variable.swim_amount > 0.0 && !query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear')"
                         },
                         {
-                            "swimming.no_right_arm": "variable.swim_amount > 0.0 && variable.melee_spear_equipped"
+                            "swimming.no_right_arm": "variable.swim_amount > 0.0 && query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear')"
                         },
                         {
                             "swimming.legs": "variable.swim_amount > 0.0"
                         },
                         {
-                            "crawling": "query.is_crawling && !variable.melee_spear_equipped"
+                            "crawling": "query.is_crawling && !query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear')"
                         },
                         {
-                            "crawling.no_right_arm": "query.is_crawling && variable.melee_spear_equipped"
+                            "crawling.no_right_arm": "query.is_crawling && query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear')"
                         },
                         {
                             "crawling.legs": "query.is_crawling"
@@ -141,10 +141,10 @@
                             "sleeping": "query.is_sleeping && query.is_alive"
                         },
                         {
-                            "attack.positions": "variable.attack_time >= 0.0 && !variable.melee_spear_equipped"
+                            "attack.positions": "variable.attack_time >= 0.0 && !query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear')"
                         },
                         {
-                            "attack.rotations": "variable.attack_time >= 0.0 && !variable.melee_spear_equipped && !query.equipped_item_any_tag('slot.weapon.mainhand', 'alylica:disable_third_person_swing')"
+                            "attack.rotations": "variable.attack_time >= 0.0 && !query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear') && !query.equipped_item_any_tag('slot.weapon.mainhand', 'alylica:disable_third_person_swing')"
                         },
                         {
                             "shield_block_main_hand": "query.blocking && query.get_equipped_item_name('off_hand') != 'shield' && query.get_equipped_item_name == 'shield'"
@@ -171,7 +171,7 @@
                             "holding_heavy_core": "query.is_item_name_any('slot.weapon.mainhand', 'minecraft:heavy_core')"
                         },
                         {
-                            "third_person_melee_spear_controller": "variable.melee_spear_equipped"
+                            "third_person_melee_spear_controller": "query.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear')"
                         }
                     ],
                     "transitions": [

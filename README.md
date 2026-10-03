@@ -8,14 +8,14 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 
 | Directory | Name | Version |
 | --- | --- | --- |
-| behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12 | [戦利品] Better Structure Loot BP | 1.0.23 |
+| behavior_packs/bp_01_423276b9-02f5-4082-911a-c631a2d83d12 | [戦利品] Better Structure Loot BP | 1.0.24 |
 | behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880 | [モブ] ギャップルカウズ BP | 1.0.37 |
 | behavior_packs/bp_03_969b1f80-d29c-454f-ab4e-9798b508c1fc | [保守] 青リンゴ状態リセット BP | 1.0.9 |
 | behavior_packs/bp_04_b29dadb1-6c0e-42f6-a56e-f52e01dff8e9 | [音楽] ピネCDアイテム BP | 1.0.34 |
 | behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93 | [装備] Deathnerite BP | 2.12.28 |
 | behavior_packs/bp_06_8aa58918-0a45-44ac-8d7a-dc5c1be8ef8a | [墓] 死亡回収・墓 BP | 1.0.13 |
 | behavior_packs/bp_07_228eb1da-6372-4a9b-9050-a40256149144 | [鉱石] モアジオード BP | 1.0.25 |
-| behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2 | [大型] Minecraft Dungeons BP | 2.1.3 |
+| behavior_packs/bp_08_2c5e0de8-0360-49ac-bfe5-339a2a0e62f2 | [大型] Minecraft Dungeons BP | 2.1.4 |
 | behavior_packs/bp_09_7c8ac348-47ad-4f71-8503-dc40a6f813f1 | [装備] ゾンビ装備 BP | 1.2.16 |
 | behavior_packs/bp_11_e05afa0d-aa45-46bd-82d0-243c605d9737 | [移動] Simple Waystone BP | 8.2.7 |
 | behavior_packs/bp_12_87a4083d-6ba7-4667-957b-dfee8b23e1b9 | [音楽連携] 追加レコード連携 BP | 1.1.9 |
@@ -31,8 +31,8 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974 | [墓] 死亡回収・墓 RP | 1.0.10 |
 | resource_packs/rp_04_d68eee7e-653f-474a-a385-e1a76fdd28bd | [鉱石] モアジオード RP | 1.0.15 |
 | resource_packs/rp_05_608f921e-6be8-4a27-85d6-27945fa3a1ef | [統合素材] 化石・フィギュア RP | 1.0.43 |
-| resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b | [大型統合] Minecraft Dungeons RP | 2.1.3 |
-| resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10 | [装備互換] ゾンビ装備＋クロスボウ RP | 1.2.18 |
+| resource_packs/rp_06_ab296f68-bb16-4ede-a49c-d0ed99b5b87b | [大型統合] Minecraft Dungeons RP | 2.1.4 |
+| resource_packs/rp_07_4ab7ea5c-8d31-44e6-b3d6-42cc32ad2f10 | [装備互換] ゾンビ装備＋クロスボウ RP | 1.2.19 |
 | resource_packs/rp_08_4f927a7a-fc68-4051-8686-43ab94ed1c5b | [モブ] ギャップルカウズ RP | 1.0.39 |
 | resource_packs/rp_12_4d6ce949-1de7-41ec-87ab-3068434459a4 | [移動] Simple Waystone RP | 8.2.9 |
 | resource_packs/rp_13_fdcac724-cba1-46b2-9510-a433d666ed70 | [音楽連携] 追加レコード音源 RP | 1.1.13 |
