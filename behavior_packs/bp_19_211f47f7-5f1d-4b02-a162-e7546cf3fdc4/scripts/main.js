@@ -293,10 +293,13 @@ function inventoryIcon(typeId) {
   const separator = typeId.indexOf(":");
   const namespace = separator >= 0 ? typeId.slice(0, separator) : "minecraft";
   const id = separator >= 0 ? typeId.slice(separator + 1) : typeId;
+
+  // Only use predictable custom cooking paths. Guessing arbitrary item texture
+  // paths produces the magenta missing-texture squares in the inventory preview.
   if (namespace === "pine" || namespace === "pinene_cooking") {
     return "textures/items/" + id;
   }
-  return "textures/items/" + id;
+  return undefined;
 }
 
 function appendInventorySnapshot(form, player) {
