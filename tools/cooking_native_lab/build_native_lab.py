@@ -30,7 +30,7 @@ function snapshot(player, origin) {
   const add = (stack) => {
     if (!stack) return;
     const key = stack.typeId.startsWith(NS) ? stack.typeId.slice(NS.length) : "";
-    if (Object.hasOwn(counts, key)) counts[key] += stack.amount;
+    if (Object.prototype.hasOwnProperty.call(counts, key)) counts[key] += stack.amount;
     else other[stack.typeId] = (other[stack.typeId] ?? 0) + stack.amount;
   };
   for (let i = 0; i < inv.size; i++) add(inv.getItem(i));
@@ -48,7 +48,7 @@ function same(a, b) {
 }
 system.afterEvents.scriptEventReceive.subscribe(event => {
   if (!event.id.startsWith(NS)) return;
-  const player = event.sourceEntity;
+  const player = /** @type {import("@minecraft/server").Player | undefined} */ (event.sourceEntity);
   if (!player || player.typeId !== "minecraft:player") return;
   const command = event.id.slice(NS.length);
   if (!["baseline", "check", "reset"].includes(command)) return;
@@ -234,7 +234,8 @@ def install(output, mojang):
     created=[]
     try:
         for kind,dest in changes.items():
-            created.append(dest); shutil.copytree(output/kind,dest)
+            dest.mkdir(parents=True, exist_ok=False)
+            created.append(dest); shutil.copytree(output/kind,dest,dirs_exist_ok=True)
         for rel,expected in json.loads((output/'sha256.json').read_text()).items():
             kind,part=rel.split('/',1)
             if hashlib.sha256((changes[kind]/part).read_bytes()).hexdigest()!=expected: raise ValueError('Installed hash mismatch: '+rel)
