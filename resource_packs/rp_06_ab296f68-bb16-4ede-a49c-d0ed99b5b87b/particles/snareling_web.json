@@ -29,7 +29,7 @@
 				"max_lifetime": 1
 			},
 			"minecraft:particle_initial_spin": {
-				"rotation": "math.round(v.particle_random_3*3)*90"
+				"rotation": "math.round(v.particle_random_3*3) * 90"
 			},
 			"minecraft:particle_initial_speed": 0.44,
 			"minecraft:particle_motion_dynamic": {
@@ -41,8 +41,8 @@
 			},
 			"minecraft:particle_appearance_billboard": {
 				"size": [
-					"0.3+(v.particle_random_2/6)",
-					"0.3+(v.particle_random_1/6)"
+					"0.3 + (v.particle_random_2/6)",
+					"0.3 + (v.particle_random_1/6)"
 				],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {

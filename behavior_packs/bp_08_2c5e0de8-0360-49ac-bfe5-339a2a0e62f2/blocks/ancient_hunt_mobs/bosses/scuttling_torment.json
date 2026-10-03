@@ -1,0 +1,25 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:scuttling_torment_spawn",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/empty.json",
+            "dungeons:ancient_boss": {
+                "boss": "dungeons:scuttling_torment",
+                "minion": "dungeons:scuttling_torment_minion",
+                "minion_count": 12
+            },
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destructible_by_mining": false,
+            "minecraft:display_name": "entity.dungeons:scuttling_torment.name",
+            "minecraft:tags": [
+                "dungeons:ancient_mob"
+            ]
+        }
+    }
+}

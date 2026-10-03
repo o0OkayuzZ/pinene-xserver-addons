@@ -1,0 +1,28 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:sandy_ocean_brick_slab_2"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "SSS"
+        ],
+        "unlock": [
+            {
+                "item": "dungeons:sandy_ocean_bricks"
+            }
+        ],
+        "key": {
+            "S": {
+                "item": "dungeons:sandy_ocean_bricks"
+            }
+        },
+        "result": {
+            "item": "dungeons:sandy_ocean_brick_slab",
+            "count": 6
+        }
+    }
+}

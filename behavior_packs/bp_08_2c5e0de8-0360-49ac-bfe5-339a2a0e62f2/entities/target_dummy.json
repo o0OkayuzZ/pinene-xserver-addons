@@ -1,96 +1,96 @@
 {
-	"format_version": "1.16.210",
-	"minecraft:entity": {
-		"description": {
-			"identifier": "dungeons:target_dummy",
-			"is_spawnable": false,
-			"is_summonable": true,
-			"is_experimental": false
-		},
-		"component_groups": {
-			"dungeons:despawn": {
-				"minecraft:instant_despawn": {}
-			}
-		},
-		"components": {
-			"minecraft:interact": {
-				"interactions": [
-					{
-						"interact_text": "action.interact.retrieve",
-						"swing": true,
-						"on_interact": {
-							"filters": [
-								{
-									"test": "is_sneaking",
-									"subject": "other"
-								}
-							],
-							"event": "dungeons:despawn"
-						},
-						"spawn_items": {
-							"table": "loot_tables/entities/target_dummy.json"
-						}
-					}
-				]
-			},
-			"minecraft:type_family": {
-				"family": [
-					"target_dummy",
-					"inanimate",
-					"gravity_immune"
-				]
-			},
-			"minecraft:collision_box": {
-				"width": 0.6,
-				"height": 1.8
-			},
-			"minecraft:scale": {
-				"value": 1.05
-			},
-			"minecraft:health": {
-				"value": 999999,
-				"max": 999999
-			},
-			"minecraft:hurt_on_condition": {
-				"damage_conditions": [
-					{
-						"filters": {
-							"test": "in_lava",
-							"subject": "self",
-							"operator": "==",
-							"value": true
-						},
-						"cause": "lava",
-						"damage_per_tick": 400
-					}
-				]
-			},
-			"minecraft:knockback_resistance": {
-				"value": 1
-			},
-			"minecraft:loot": {
-				"table": "loot_tables/entities/target_dummy.json"
-			},
-			"minecraft:nameable": {
-				"allow_name_tag_renaming": false,
-				"always_show": true
-			},
-			"minecraft:persistent": {},
-			"minecraft:physics": {},
-			"minecraft:pushable": {
-				"is_pushable": false,
-				"is_pushable_by_piston": true
-			},
-			"minecraft:conditional_bandwidth_optimization": {}
-		},
-		"events": {
-			"dungeons:despawn": {
-				"add": {
-					"component_groups": [
-						"dungeons:despawn"
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.16.210",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dungeons:target_dummy",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "dungeons:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "interact_text": "action.interact.retrieve",
+            "swing": true,
+            "on_interact": {
+              "filters": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other"
+                }
+              ],
+              "event": "dungeons:despawn"
+            },
+            "spawn_items": {
+              "table": "loot_tables/entities/target_dummy.json"
+            }
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [
+          "target_dummy",
+          "inanimate",
+          "gravity_immune"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:scale": {
+        "value": 1.05
+      },
+      "minecraft:health": {
+        "value": 999999,
+        "max": 999999
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 400
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/target_dummy.json"
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": true
+      },
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {
+      "dungeons:despawn": {
+        "add": {
+          "component_groups": [
+            "dungeons:despawn"
+          ]
+        }
+      }
+    }
+  }
 }

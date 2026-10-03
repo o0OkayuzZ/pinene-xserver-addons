@@ -1,48 +1,55 @@
 {
-	"format_version": "1.21.100",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:cauldron_helmet",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:tags": {
-				"tags": [
-					"minecraft:is_armor",
-					"dungeons:armor_lore",
-					"dungeons:plate_armour",
-					"dungeons:full_metal_armour",
-					"dungeons:cauldron_armour",
-					"dungeons:seasonal_item"
-				]
-			},
-			"minecraft:icon": "cauldron_helmet",
-			"minecraft:rarity": "epic",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:enchantable": {
-				"value": 4,
-				"slot": "armor_head"
-			},
-			"minecraft:wearable": {
-				"protection": 10,
-				"slot": "slot.armor.head"
-			},
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:iron_ingot"
-						],
-						"repair_amount": "q.max_durability*0.25"
-					}
-				]
-			},
-			"minecraft:durability": {
-				"max_durability": 715
-			}
-		}
-	}
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:cauldron_helmet",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_armor",
+          "dungeons:armor_lore",
+          "dungeons:plate_armour",
+          "dungeons:full_metal_armour",
+          "dungeons:cauldron_armour",
+          "dungeons:seasonal_item"
+        ]
+      },
+      "minecraft:icon": "cauldron_helmet",
+      "minecraft:rarity": "epic",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:enchantable": {
+        "value": 4,
+        "slot": "armor_head"
+      },
+      "dungeons:toughness": {
+        "toughness": 6
+      },
+      "minecraft:wearable": {
+        "protection": 7,
+        "slot": "slot.armor.head"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "q.max_durability * 0.25"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 715,
+        "damage_chance": {
+          "max": 100,
+          "min": 0
+        }
+      }
+    }
+  }
 }

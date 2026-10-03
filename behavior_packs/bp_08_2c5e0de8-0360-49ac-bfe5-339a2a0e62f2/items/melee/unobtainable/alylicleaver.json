@@ -1,146 +1,146 @@
 {
-	"format_version": "1.21.130",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:alylicleaver",
-			"menu_category": {
-				"category": "none",
-				"is_hidden_in_commands": true
-			}
-		},
-		"components": {
-			"minecraft:tags": {
-				"tags": [
-					"minecraft:is_tool",
-					"minecraft:is_sword",
-					"dungeons:soul_collection",
-					"dungeons:ambush",
-					"dungeons:busy_bee",
-					"dungeons:chains",
-					"dungeons:committed",
-					"dungeons:critical_hit",
-					"dungeons:critical_hit_spooky",
-					"dungeons:echo",
-					"dungeons:enigma_resonator",
-					"dungeons:exploding",
-					"dungeons:fire_aspect",
-					"dungeons:freezing",
-					"dungeons:freezing_spooky",
-					"dungeons:gravity",
-					"dungeons:gravity_spooky",
-					"dungeons:illagers_bane",
-					"dungeons:leeching",
-					"dungeons:melee_lore",
-					"dungeons:poison",
-					"dungeons:poison_cloud",
-					"dungeons:rampaging",
-					"dungeons:rushdown",
-					"dungeons:shared_pain",
-					"dungeons:sharpened",
-					"dungeons:shockwave",
-					"dungeons:smiting",
-					"dungeons:soul_siphon",
-					"dungeons:stunning",
-					"dungeons:swirling",
-					"dungeons:thundering",
-					"dungeons:triple_hit",
-					"dungeons:void_strike",
-					"dungeons:water_damage",
-					"dungeons:weakening",
-					"dungeons:whip",
-					"dungeons:prospector",
-					"dungeons:radiance",
-					"dungeons:looting"
-				]
-			},
-			"dungeons:anchor": {
-				"unique": true
-			},
-			"dungeons:axe": {
-				"unique": true
-			},
-			"dungeons:battlestaff": {
-				"unique": true
-			},
-			"dungeons:boneclub": {
-				"unique": true
-			},
-			"dungeons:claymore": {
-				"unique": true
-			},
-			"dungeons:cutlass": {
-				"unique": true
-			},
-			"dungeons:daggers": {
-				"unique": true
-			},
-			"dungeons:gauntlets": {
-				"unique": true
-			},
-			"dungeons:glaive": {
-				"unique": true
-			},
-			"dungeons:hammer": {
-				"unique": true
-			},
-			"dungeons:obsidian_claymore": {
-				"unique": true
-			},
-			"dungeons:rapier": {
-				"unique": true
-			},
-			"dungeons:scythe": {
-				"unique": true
-			},
-			"dungeons:void_blades": {
-				"unique": true
-			},
-			"dungeons:whip": {
-				"unique": true
-			},
-			"dungeons:rush_spear": {},
-			"dungeons:iron_mace": {},
-			"dungeons:sickles": {
-				"unique": true
-			},
-			"dungeons:alylicleaver": {},
-			"dungeons:custom_swing": {
-				"has_cooldown": false,
-				"swing_sound": "weapon.alylicleaver.swing"
-			},
-			"minecraft:icon": "alylicleaver",
-			"minecraft:max_stack_size": 1,
-			"minecraft:can_destroy_in_creative": false,
-			"minecraft:durability": {
-				"max_durability": 4342
-			},
-			"minecraft:rarity": "epic",
-			"minecraft:damage": {
-				"value": 4342
-			},
-			"minecraft:digger": {
-				"destroy_speeds": [
-					{
-						"block": {
-							"tags": "q.any_tag('sword_mine', 'minecraft:is_sword_item_destructible')"
-						},
-						"speed": 15
-					},
-					{
-						"block": "minecraft:bamboo",
-						"speed": 60
-					},
-					{
-						"block": "minecraft:web",
-						"speed": 15
-					}
-				],
-				"use_efficiency": true
-			},
-			"minecraft:enchantable": {
-				"value": 9999,
-				"slot": "sword"
-			}
-		}
-	}
+    "format_version": "1.21.130",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dungeons:alylicleaver",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": true
+            }
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_tool",
+                    "minecraft:is_sword",
+                    "dungeons:soul_collection",
+                    "dungeons:ambush",
+                    "dungeons:busy_bee",
+                    "dungeons:chains",
+                    "dungeons:committed",
+                    "dungeons:critical_hit",
+                    "dungeons:critical_hit_spooky",
+                    "dungeons:echo",
+                    "dungeons:enigma_resonator",
+                    "dungeons:exploding",
+                    "dungeons:fire_aspect",
+                    "dungeons:freezing",
+                    "dungeons:freezing_spooky",
+                    "dungeons:gravity",
+                    "dungeons:gravity_spooky",
+                    "dungeons:illagers_bane",
+                    "dungeons:leeching",
+                    "dungeons:melee_lore",
+                    "dungeons:poison",
+                    "dungeons:poison_cloud",
+                    "dungeons:rampaging",
+                    "dungeons:rushdown",
+                    "dungeons:shared_pain",
+                    "dungeons:sharpened",
+                    "dungeons:shockwave",
+                    "dungeons:smiting",
+                    "dungeons:soul_siphon",
+                    "dungeons:stunning",
+                    "dungeons:swirling",
+                    "dungeons:thundering",
+                    "dungeons:triple_hit",
+                    "dungeons:void_strike",
+                    "dungeons:water_damage",
+                    "dungeons:weakening",
+                    "dungeons:whip",
+                    "dungeons:prospector",
+                    "dungeons:radiance",
+                    "dungeons:looting"
+                ]
+            },
+            "dungeons:anchor": {
+                "unique": true
+            },
+            "dungeons:axe": {
+                "unique": true
+            },
+            "dungeons:battlestaff": {
+                "unique": true
+            },
+            "dungeons:boneclub": {
+                "unique": true
+            },
+            "dungeons:claymore": {
+                "unique": true
+            },
+            "dungeons:cutlass": {
+                "unique": true
+            },
+            "dungeons:daggers": {
+                "unique": true
+            },
+            "dungeons:gauntlets": {
+                "unique": true
+            },
+            "dungeons:glaive": {
+                "unique": true
+            },
+            "dungeons:hammer": {
+                "unique": true
+            },
+            "dungeons:obsidian_claymore": {
+                "unique": true
+            },
+            "dungeons:rapier": {
+                "unique": true
+            },
+            "dungeons:scythe": {
+                "unique": true
+            },
+            "dungeons:void_blades": {
+                "unique": true
+            },
+            "dungeons:whip": {
+                "unique": true
+            },
+            "dungeons:rush_spear": {},
+            "dungeons:iron_mace": {},
+            "dungeons:sickles": {
+                "unique": true
+            },
+            "dungeons:alylicleaver": {},
+            "dungeons:custom_swing": {
+                "has_cooldown": false,
+                "swing_sound": "weapon.alylicleaver.swing"
+            },
+            "minecraft:icon": "alylicleaver",
+            "minecraft:max_stack_size": 1,
+            "minecraft:can_destroy_in_creative": false,
+            "minecraft:durability": {
+                "max_durability": 4342
+            },
+            "minecraft:rarity": "epic",
+            "minecraft:damage": {
+                "value": 4342
+            },
+            "minecraft:digger": {
+                "destroy_speeds": [
+                    {
+                        "block": {
+                            "tags": "q.any_tag('sword_mine', 'minecraft:is_sword_item_destructible')"
+                        },
+                        "speed": 15
+                    },
+                    {
+                        "block": "minecraft:bamboo",
+                        "speed": 60
+                    },
+                    {
+                        "block": "minecraft:web",
+                        "speed": 15
+                    }
+                ],
+                "use_efficiency": true
+            },
+            "minecraft:enchantable": {
+                "value": 9999,
+                "slot": "sword"
+            }
+        }
+    }
 }

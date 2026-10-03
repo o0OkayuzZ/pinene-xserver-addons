@@ -82,6 +82,16 @@ function spawnWave(block, dim, type, state) {
                         addVoidedEffect(target, 100)
                     }
                 }
+                if (type == "blackstone") {
+                    if (state == "ominous") {
+                        target.applyDamage(3, { cause: EntityDamageCause.magic })
+                        target.setOnFire(10)
+                    }
+                    if (state == "on") {
+                        target.applyDamage(1.5, { cause: EntityDamageCause.magic })
+                        target.setOnFire(5)
+                    }
+                }
             }
         }
     }, 5)
@@ -138,6 +148,15 @@ system.beforeEvents.startup.subscribe((event) => {
             }
 
             if (trialSpawnerState !== 2 && totemType !== "off") {
+                const players = dimension.getPlayers({
+                    maxDistance: 20,
+                    location: block.center(),
+                    excludeGameModes:["Spectator"]
+                })
+                for(const player of players) {
+                    player.runCommand("scriptevent dungeons:cleared_trial_totem")
+                    if(totemType == "ominous") player.runCommand("scriptevent dungeons:cleared_ominous_trial_totem")
+                }
                 block.setPermutation(perm.withState('dungeons:type', "off").withState("dungeons:subenergy", 3))
                 return;
             }

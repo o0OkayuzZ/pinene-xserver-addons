@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dungeons:monster_spawner",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "textures": {
+                "default": "textures/entity/monster_spawner/monster_spawner"
+            },
+            "geometry": {
+                "default": "geometry.monster_spawner"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "animations": {
+                "particles": "animation.monster_spawner.particles"
+            },
+            "particle_effects": {
+                "particle": "dungeons:monster_spawner"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "particles": "query.has_target + 1"
+                    }
+                ]
+            }
+        }
+    }
+}

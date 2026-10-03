@@ -1,7 +1,8 @@
 import {
   world,
   system,
-  EntityDamageCause
+  EntityDamageCause,
+  ItemStack
 } from "@minecraft/server";
 
 import { isValidTarget, specialDamage } from "main.js";
@@ -31,28 +32,44 @@ system.beforeEvents.startup.subscribe((event) => {
       const player = e.source;
       const item = e.itemStack;
 
-      if (item.hasTag('dungeons:tome_of_duplication')) {
-        if (!player.hasTag('tod:used_blast_fungus')) return;
-      }
+      useArtefact(player, item, false)
+    }
+  });
 
-      player.dimension.playSound("artefact.blastfungus.explode", player.location, { volume: 2, pitch: 0.3 })
+});
+
+system.afterEvents.scriptEventReceive.subscribe((e) => {
+  const id = e.id;
+  if (id !== "dungeons:force_artefact") return;
+  const player = e.sourceEntity;
+  if (!player) return;
+  const itemId = e.message;
+  if (!itemId) return;
+  const item = new ItemStack(itemId, 1)
+  if (!item.getComponent("dungeons:blast_fungus")) return;
+  useArtefact(player, item, true)
+})
+
+function useArtefact(player, item, finalShout) {
+  if (item.hasTag('dungeons:tome_of_duplication')) {
+    if (!player.hasTag('tod:used_blast_fungus')) return;
+  }
+
+  player.dimension.playSound("artefact.blastfungus.explode", player.location, { volume: 2, pitch: 0.3 })
+  shoot(player)
+  system.runTimeout(() => {
+    shoot(player)
+    system.runTimeout(() => {
       shoot(player)
       system.runTimeout(() => {
         shoot(player)
         system.runTimeout(() => {
           shoot(player)
-          system.runTimeout(() => {
-            shoot(player)
-            system.runTimeout(() => {
-              shoot(player)
-            }, 3)
-          }, 3)
         }, 3)
       }, 3)
-    }
-  });
-
-});
+    }, 3)
+  }, 3)
+}
 
 
 

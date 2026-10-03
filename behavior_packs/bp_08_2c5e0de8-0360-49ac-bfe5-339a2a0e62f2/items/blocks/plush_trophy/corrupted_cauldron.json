@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dungeons:corrupted_cauldron_plushie",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:block_placer": {
+                "block": "dungeons:corrupted_cauldron_plushie",
+                "replace_block_item": true
+            },
+            "minecraft:display_name": {
+                "value": "tile.dungeons:corrupted_cauldron_plushie.name"
+            },
+            "minecraft:rarity":"epic"
+        }
+    }
+}

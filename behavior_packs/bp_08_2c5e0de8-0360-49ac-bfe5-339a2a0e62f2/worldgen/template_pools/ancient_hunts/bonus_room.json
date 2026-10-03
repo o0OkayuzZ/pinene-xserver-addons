@@ -1,0 +1,83 @@
+{
+  "format_version": "1.21.20",
+  "minecraft:template_pool": {
+    "description": {
+      "identifier": "dungeons:ancient_bonus_room"
+    },
+    "elements": [
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "ancient_hunt/bonus/bonus_room",
+          "processors": "dungeons:bonus_room"
+        },
+        "weight": 1
+      },
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "ancient_hunt/bonus/bonus_room_lock",
+          "processors": "dungeons:bonus_room"
+        },
+        "weight": 1
+      },
+      //weights for the prizes,
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "ancient_hunt/bonus/prize/prize_redstone",
+          "processors": "dungeons:bonus_room"
+        },
+        "weight": 1
+      },
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "ancient_hunt/bonus/prize/prize_mooshroom",
+          "processors": "dungeons:bonus_room"
+        },
+        "weight": 1
+      },
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "ancient_hunt/bonus/prize/prize_obsidian",
+          "processors": "dungeons:bonus_room"
+        },
+        "weight": 1
+      },
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "ancient_hunt/bonus/prize/prize_cauldron",
+          "processors": "dungeons:bonus_room"
+        },
+        "weight": 1
+      },
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "ancient_hunt/bonus/prize/prize_guardian",
+          "processors": "dungeons:bonus_room"
+        },
+        "weight": 1
+      },
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "ancient_hunt/bonus/prize/prize_tempest",
+          "processors": "dungeons:bonus_room"
+        },
+        "weight": 1
+      },
+      {
+        "element": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "ancient_hunt/bonus/prize/prize_jungle",
+          "processors": "dungeons:bonus_room"
+        },
+        "weight": 1
+      }
+    ]
+  }
+}

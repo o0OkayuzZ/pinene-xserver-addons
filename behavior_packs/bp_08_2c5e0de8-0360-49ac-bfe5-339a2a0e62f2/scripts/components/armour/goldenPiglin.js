@@ -17,7 +17,7 @@ world.afterEvents.entityHealthChanged.subscribe((event) => {
         return;
     }
     const hp = player.getComponent("health")
-    if (newValue > hp.defaultValue) newValue = hp.defaultValue
+    if (newValue > hp.effectiveMax) newValue = hp.effectiveMax
     const diff = newValue - oldValue
     if (diff == 0) return;
     var ticksReduceBy = Math.floor(diff * 20)

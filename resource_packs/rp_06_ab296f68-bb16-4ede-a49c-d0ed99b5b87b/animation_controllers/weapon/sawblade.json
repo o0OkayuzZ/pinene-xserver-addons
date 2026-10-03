@@ -1,0 +1,50 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.sawblade.use": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{
+							"start": "q.is_using_item"
+						}
+					]
+				},
+				"start": {
+					"animations": [
+						"use_start"
+					],
+					"transitions": [
+						{
+							"loop": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0
+				},
+				"loop": {
+					"animations": [
+						"use_loop"
+					],
+					"transitions": [
+						{
+							"end": "!q.is_using_item"
+						}
+					],
+					"blend_transition": 0
+				},
+				"end": {
+					"animations": [
+						"use_end"
+					],
+					"transitions": [
+						{
+							"idle": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		}
+	}
+}

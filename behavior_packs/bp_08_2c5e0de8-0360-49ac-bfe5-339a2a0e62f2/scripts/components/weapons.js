@@ -1,3 +1,6 @@
+
+//broken sawblade is imported seperately for many reasons
+
 //longsword
 import "./weapons/longsword.js";
 import "./weaponEffects/sharpened.js";
@@ -25,9 +28,6 @@ import "./weaponEffects/committed.js";
 //bone club
 import "./weapons/boneClub.js";
 import "./weaponEffects/illagersBane.js";
-
-//broken sawblade
-import "./weapons/brokenSawblade.js";
 
 //claymore
 import "./weapons/claymore.js";
@@ -67,6 +67,7 @@ import "./weaponEffects/gravitySpooky.js";
 
 //obsidian claymore
 import "./weapons/obsidianClaymore.js"; // this also handles shared pain
+import "./weaponEffects/sharedPain.js"; // experiment
 
 //rapier
 import "./weapons/rapier.js";
@@ -108,6 +109,14 @@ import "./weaponEffects/golemDamage.js";
 
 
 
+
+//gilds
+import "./weaponEffects/artefactSynergy.js";
+//anima conduit is held in soul file
+import "./weaponEffects/guardingStrike.js";
+import "./weaponEffects/painCycle.js";
+import "./weaponEffects/refreshment.js";
+import "./weaponEffects/unchanting.js";
 
 
 

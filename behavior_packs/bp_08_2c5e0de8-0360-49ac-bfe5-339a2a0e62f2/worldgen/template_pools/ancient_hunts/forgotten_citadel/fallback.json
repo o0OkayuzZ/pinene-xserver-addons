@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:huntcitadel_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_side_end",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 100
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/forgotten_citadel/cit_side_fallback",
+                    "processors": "dungeons:forgotten_citadel"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

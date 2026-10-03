@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "spelunker_boots"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "E E",
+      "I I"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "key": {
+      "E": {
+        "item": "minecraft:iron_ingot"
+      },
+      "I": {
+        "item": "minecraft:coal"
+      }
+    },
+    "result": {
+      "item": "dungeons:spelunker_boots",
+      "count": 1
+    }
+  }
+}

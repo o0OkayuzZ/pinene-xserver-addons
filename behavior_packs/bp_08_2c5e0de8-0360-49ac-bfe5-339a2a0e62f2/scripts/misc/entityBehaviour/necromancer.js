@@ -40,6 +40,11 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
     if (id === 'dungeons:zombie' && entity.typeId == "dungeons:necromancer_spawnpoint") {
         var loc = entity.location;
         const dim = entity.dimension;
+        const zombiesNear = dim.getEntities({ location: loc, maxDistance: 32, tags: ["dungeons:necromancer_minion"] })
+        if (zombiesNear.length > 10) {
+            entity.remove()
+            return;
+        }
         dim.spawnParticle("dungeons:necromancer_zombie_spawn", loc)
         dim.spawnParticle("dungeons:wraith_teleport_out", { x: loc.x, y: loc.y - 0.75, z: loc.z })
         dim.playSound("mob.zombie.death", loc, { volume: 0.5, pitch: 0.5 })
@@ -57,15 +62,17 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
 
 function spawned(id, loc, dim) {
     const entity = dim.spawnEntity(id, loc)
-    entity.addTag("dungeons:necromancer_minion")
+    if (entity.isValid) entity.addTag("dungeons:necromancer_minion")
 }
 
 system.runInterval(() => {
-    for (const dimId of DimensionTypes.getAll()) {
-        for (const mob of world.getDimension(dimId.typeId).getEntities({ tags: ["dungeons:necromancer_minion"] })) {
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
+        for (const mob of dim.getEntities({ tags: ["dungeons:necromancer_minion"] })) {
 
             var loc = mob.location;
-            const dim = mob.dimension;
             const necromancerNearby = dim.getEntities({ location: loc, maxDistance: 32, families: ["necromancer"] })
             const playerNearby = dim.getEntities({ location: loc, maxDistance: 24, families: ["player"] })
             if (necromancerNearby.length == 0 && playerNearby.length == 0) {

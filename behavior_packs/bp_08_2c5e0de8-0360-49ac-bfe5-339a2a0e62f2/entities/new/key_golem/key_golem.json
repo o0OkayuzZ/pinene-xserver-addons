@@ -1,0 +1,272 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "dungeons:key_golem",
+            "is_summonable": true,
+            "is_spawnable": true,
+            "properties": {
+                "dungeons:can_sleep": {
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": false
+                }
+            }
+        },
+        "component_groups": {
+            "dungeons:cannot_be_targeted": {
+                "minecraft:cannot_be_attacked": {},
+                "minecraft:ambient_sound_interval": {
+                    "event_name": "stare",
+                    "value": 4,
+                    "range": 16
+                }
+            },
+            "dungeons:asleep": {
+                "minecraft:ambient_sound_interval": {
+                    "event_name": "sleep",
+                    "value": 1,
+                    "range": 3
+                },
+                "minecraft:type_family": {
+                    "family": [
+                        "key_golem",
+                        "mob"
+                    ]
+                },
+                "minecraft:environment_sensor": {
+                    "triggers": [
+                        {
+                            "filters": [
+                                {
+                                    "test": "has_tag",
+                                    "subject": "self",
+                                    "operator": "not",
+                                    "value": "dungeons:key_golem_pickup"
+                                },
+                                {
+                                    "test": "home_distance",
+                                    "value": 2,
+                                    "subject": "self",
+                                    "operator": ">"
+                                }
+                            ],
+                            "event": "dungeons:forced_wake_up",
+                            "target": "self"
+                        }
+                    ]
+                },
+                "minecraft:collision_box": {
+                    "height": 0.5,
+                    "width": 0.95
+                },
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:movement": {
+                    "value": 0
+                },
+                "minecraft:rotation_axis_aligned": {},
+                "minecraft:body_rotation_blocked": {}
+            },
+            "dungeons:awake": {
+                "minecraft:type_family": {
+                    "family": [
+                        "key_golem",
+                        "mob",
+                        "key_golem_target"
+                    ]
+                },
+                "minecraft:navigation.walk": {},
+                "minecraft:collision_box": {
+                    "height": 0.5,
+                    "width": 1.3
+                },
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:behavior.go_home": {
+                    "interval": 1,
+                    "calculate_new_path_radius": 4,
+                    "priority": 1,
+                    "speed_multiplier": 1.2,
+                    "on_home": [
+                        {
+                            "event": "dungeons:fall_asleep",
+                            "target": "self"
+                        }
+                    ],
+                    "on_failed": [
+                        {
+                            "event": "dungeons:could_not_reach_home",
+                            "target": "self"
+                        }
+                    ],
+                    "goal_radius": 1
+                },
+                "minecraft:movement": {
+                    "value": 0.2
+                },
+                "minecraft:behavior.float": {
+                    "priority": 0
+                },
+                "minecraft:movement.basic": {},
+                "minecraft:variable_max_auto_step": {
+                    "base_value": 1.0625,
+                    "controlled_value": 0.5625,
+                    "jump_prevented_value": 0.5625
+                }
+            }
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 10,
+                "max": 10
+            },
+            "minecraft:spell_effects": {
+                "add_effects": [
+                    {
+                        "amplifier": 5,
+                        "effect": "regeneration",
+                        "visible": false,
+                        "duration": "infinite"
+                    }
+                ]
+            },
+            "minecraft:physics": {
+                "has_collision": true,
+                "has_gravity": true
+            },
+            "minecraft:pushable": {
+                "is_pushable": false
+            },
+            "minecraft:collision_box": {
+                "height": 0.5,
+                "width": 1.3
+            },
+            "minecraft:home": {
+                "restriction_type": "none"
+            },
+            "minecraft:timer": {
+                "time": 1,
+                "looping": false,
+                "time_down_event": {
+                    "event": "dungeons:can_sleep",
+                    "target": "self"
+                }
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "yes",
+                        "on_damage": {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "is_family",
+                                        "value": "player",
+                                        "subject": "other"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "value": "monster",
+                                        "subject": "other"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "cause": "all",
+                        "deals_damage": "no_but_side_effects_apply"
+                    }
+                ]
+            },
+            "minecraft:knockback_resistance": {
+                "value": 0.3
+            }
+        },
+        "events": {
+            "dungeons:cannot_target": {
+                "trigger": "dungeons:fall_asleep",
+                "add": {
+                    "component_groups": [
+                        "dungeons:cannot_be_targeted"
+                    ]
+                }
+            },
+            "dungeons:can_target": {
+                "remove": {
+                    "component_groups": [
+                        "dungeons:cannot_be_targeted"
+                    ]
+                }
+            },
+            "dungeons:can_sleep": {
+                "set_property": {
+                    "dungeons:can_sleep": true
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "dungeons:asleep"
+                    ]
+                }
+            },
+            "dungeons:fall_asleep": {
+                "filters": {
+                    "test": "bool_property",
+                    "domain": "dungeons:can_sleep",
+                    "subject": "self",
+                    "value": true
+                },
+                "stop_movement": {
+                    "stop_horizontal_movement": true,
+                    "stop_vertical_movement": false
+                },
+                "add": {
+                    "component_groups": [
+                        "dungeons:asleep"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "dungeons:awake"
+                    ]
+                }
+            },
+            "dungeons:could_not_reach_home": {
+                "filters": {
+                    "test": "bool_property",
+                    "domain": "dungeons:can_sleep",
+                    "subject": "self",
+                    "value": true
+                },
+                "set_home_position": {},
+                "trigger": "dungeons:fall_asleep"
+            },
+            "dungeons:wake_up": {
+                "remove": {
+                    "component_groups": [
+                        "dungeons:asleep"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "dungeons:awake"
+                    ]
+                }
+            },
+            "dungeons:forced_wake_up": {
+                "queue_command": {
+                    "command": [
+                        "playsound mob.keygolem.wake @a ~~~"
+                    ]
+                },
+                "trigger": "dungeons:wake_up"
+            }
+        }
+    }
+}

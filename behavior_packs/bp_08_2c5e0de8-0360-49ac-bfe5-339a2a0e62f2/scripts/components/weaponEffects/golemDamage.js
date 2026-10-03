@@ -20,7 +20,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
+    if (!heldItem.hasTag(effectId) && !heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) return;
     //effect code
     if (e.damage <= 0) return;
     if (golems.includes(hurt.typeId)) {
@@ -45,5 +45,8 @@ const golems = [
     "dungeons:squall_golem",
     "dungeons:tempest_golem",
     "dungeons:mooshroom_monstrosity",
-    "dungeons:obsidian_monstrosity"
+    "dungeons:obsidian_monstrosity",
+    "dungeons:monster_spawner",
+    "dungeons:the_unending",
+    "dungeons:unbreakable_one"
 ]

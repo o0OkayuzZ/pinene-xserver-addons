@@ -38,6 +38,8 @@ world.afterEvents.projectileHitEntity.subscribe((e) => {
         if (hit.matches({ families: ["ignore"] })) return;
         if (hit.matches({ families: ["inanimate"] })) return;
         hit.addEffect("poison", 60, { amplifier: 2 })
+        var dmg = 1.5
+        if (owner.typeId == "dungeons:poison_quill_vine") dmg = 5
         hit.applyDamage(1.5, { damagingEntity: owner, cause: EntityDamageCause.magic })
 
 

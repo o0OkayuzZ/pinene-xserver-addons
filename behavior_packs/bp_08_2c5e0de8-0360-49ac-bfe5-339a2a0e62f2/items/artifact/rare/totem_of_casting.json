@@ -1,33 +1,33 @@
 {
-	"format_version": "1.21.130",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:rare_totem_of_casting",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:hover_text_color": "green",
-			"minecraft:tags": {
-				"tags": [
-					"dungeons:soul_artefact"
-				]
-			},
-			"minecraft:icon": "totem_of_casting",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:can_destroy_in_creative": false,
-			"dungeons:artefact_cooldown": {},
-			"dungeons:totem_of_casting": {},
-			"minecraft:cooldown": {
-				"category": "totem_casting_rare",
-				"duration": 12
-			},
-			"minecraft:interact_button": "item.use.artefact",
-			"minecraft:use_modifiers": {
-				"use_duration": 0
-			}
-		}
-	}
+  "format_version": "1.21.130",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:rare_totem_of_casting",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:hover_text_color": "green",
+      "minecraft:tags": {
+        "tags": [
+          "dungeons:soul_artefact"
+        ]
+      },
+      "minecraft:icon": "totem_of_casting",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:can_destroy_in_creative": false,
+      "dungeons:artefact_cooldown": {},
+      "dungeons:totem_of_casting": {},
+      "minecraft:cooldown": {
+        "category": "totem_casting_rare",
+        "duration": 12
+      },
+      "minecraft:interact_button": "item.use.artefact",
+      "minecraft:use_modifiers": {
+        "use_duration": 0.0
+      }
+    }
+  }
 }

@@ -12,8 +12,7 @@ world.afterEvents.entityHurt.subscribe((e) => {
     if (!attacker || !attacker.isValid) return;
     const projectile = e.damageSource.damagingProjectile;
     if (!projectile) return;
-    if (attacker.typeId.includes("blastling") && projectile.typeId === "dungeons:blastling_ammo") {
-
+    if ((attacker.typeId.includes("blastling") || attacker.typeId == "dungeons:watcher_of_the_end_minion") && projectile.typeId === "dungeons:blastling_ammo") {
         hurt.dimension.playSound("mob.blastling.impact", hurt.location)
 
     }

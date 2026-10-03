@@ -293,7 +293,7 @@ world.afterEvents.entitySpawn.subscribe((e) => {
     const entity = e.entity;
     if (!entity) return;
     if (!entity.isValid) return;
-    if (!entity.typeId == "minecraft:slime") return;
+    if (entity.typeId !== "minecraft:slime") return;
     system.runTimeout(() => {
         if (entity.isValid) entity.addTag("dungeons:slimetag")
     }, 2)

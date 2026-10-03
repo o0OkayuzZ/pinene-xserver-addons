@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:woodlandprison_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_end",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_end",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_end_tiny",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_prison/pris_end_tinier",
+                    "processors": "dungeons:woodland_prison"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "climbing_helmet"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "BBB",
+      "G G",
+      "IBI"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:leather"
+      },
+     "I": {
+        "item": "minecraft:iron_nugget"
+      },
+     "G": {
+        "item": "minecraft:glass"
+      }
+    },
+    "result": {
+      "item": "dungeons:climbing_helmet",
+      "count": 1
+    }
+  }
+}

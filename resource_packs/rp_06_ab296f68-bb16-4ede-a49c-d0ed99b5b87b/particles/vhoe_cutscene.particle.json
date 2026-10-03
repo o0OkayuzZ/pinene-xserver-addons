@@ -39,10 +39,10 @@
 			"minecraft:particle_lifetime_expression": {
 				"max_lifetime": "math.random(1.5,1.7)*3"
 			},
-			"minecraft:particle_initial_speed": "v.particle_random_1*5+3",
+			"minecraft:particle_initial_speed": "v.particle_random_1 *5 +3",
 			"minecraft:particle_motion_dynamic": {
 				"linear_acceleration": [
-					"v.particle_age>2?1:0",
+					"v.particle_age > 2 ? 1 : 0",
 					0,
 					0
 				],

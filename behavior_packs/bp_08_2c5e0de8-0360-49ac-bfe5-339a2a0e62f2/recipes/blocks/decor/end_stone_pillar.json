@@ -1,0 +1,29 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:end_stone_pillar"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "S",
+            "S"
+        ],
+        "unlock": [
+            {
+                "item": "end_stone_brick_slab"
+            }
+        ],
+        "key": {
+            "S": {
+                "item": "end_stone_brick_slab"
+            }
+        },
+        "result": {
+            "item": "dungeons:end_stone_pillar",
+            "count": 1
+        }
+    }
+}

@@ -4,7 +4,7 @@ import {
     EntityDamageCause
 } from "@minecraft/server";
 
-import { isWearingSet } from "components/armour.js"
+import { isWearingSet, isWearingMysteryArmour } from "components/armour.js"
 
 world.afterEvents.entityHurt.subscribe((e) => {
     const hurt = e.hurtEntity;
@@ -13,7 +13,7 @@ world.afterEvents.entityHurt.subscribe((e) => {
     const attacker = e.damageSource.damagingEntity;
     if (!attacker) return;
     if (hurt.typeId !== "minecraft:player") return;
-    if (!isWearingSet(hurt, "dungeons:beenest_armour")) return;
+    if (!isWearingSet(hurt, "dungeons:beenest_armour") && !isWearingMysteryArmour(hurt, "spawn_bees")) return;
     if (Math.random() > 0.25) return;
     var dim = hurt.dimension
     const hurtLoc = hurt.getHeadLocation();

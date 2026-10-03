@@ -1,0 +1,188 @@
+{
+  "format_version": "1.21.130",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dungeons:poison_anemone",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "runtime_identifier": "vindicator",
+      "properties": {
+        "dungeons:buried": {
+          "client_sync": true,
+          "type": "bool",
+          "default": true
+        }
+      }
+    },
+    "component_groups": {
+      "dungeons:buried": {
+        "minecraft:entity_sensor": {
+          "find_players_only": true,
+          "subsensors": [
+            {
+              "cooldown": -1,
+              "event": "dungeons:emerge",
+              "minimum_count": 1,
+              "range": [5, 5]
+            }
+          ]
+        },
+        "minecraft:collision_box": {
+          "width": 0,
+          "height": 0
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        }
+      },
+      "dungeons:not_buried": {
+        "minecraft:collision_box": {
+          "width": 1.35,
+          "height": 4
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "snowgolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  }
+                ]
+              },
+              "max_dist": 15
+            }
+          ],
+          "must_see": true
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 0,
+          "attack_interval_min": 1,
+          "attack_interval_max": 2,
+          "attack_radius": 16
+        },
+        "minecraft:shooter": {
+          "def": "dungeons:anemone_quill"
+        },
+        "minecraft:entity_sensor": {
+          "find_players_only": true,
+          "subsensors": [
+            {
+              "event_filters": {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "dungeons:stunned_effect",
+                "operator": "!="
+              },
+              "cooldown": 8,
+              "event": "dungeons:bury",
+              "minimum_count": 0,
+              "maximum_count": 0,
+              "range": [12, 12]
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -20,
+        "inhale_time": 0,
+        "breathes_air": true,
+        "breathes_water": true,
+        "breathes_lava": false,
+        "breathes_solids": false,
+        "generates_bubbles": false,
+        "breathe_blocks": [],
+        "non_breathe_blocks": []
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:type_family": {
+        "family": ["poison_quill_vine", "monster", "mob"]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:behavior.look_at_target": {
+        "priority": 9
+      },
+      "minecraft:physics": {
+        "has_collision": true,
+        "has_gravity": true
+      },
+      "minecraft:navigation.walk": {},
+      "minecraft:health": {
+        "value": 40,
+        "max": 40
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["dungeons:buried"]
+        }
+      },
+      "dungeons:emerge": {
+        "set_property": {
+          "dungeons:buried": false
+        },
+        "add": {
+          "component_groups": ["dungeons:not_buried"]
+        },
+        "remove": {
+          "component_groups": ["dungeons:buried"]
+        }
+      },
+      "dungeons:bury": {
+        "set_property": {
+          "dungeons:buried": true
+        },
+        "add": {
+          "component_groups": ["dungeons:buried"]
+        },
+        "remove": {
+          "component_groups": ["dungeons:not_buried"]
+        }
+      }
+    }
+  }
+}

@@ -1,236 +1,557 @@
 {
-	"resource_pack_name": "dungeons",
-	"texture_name": "atlas.terrain",
-	"padding": 8,
-	"num_mip_levels": 4,
-	"texture_data": {
-		"forge_core_bottom": {
-			"textures": "textures/blocks/forge_core/forge_core_bottom"
-		},
-		"forge_core_side_off": {
-			"textures": "textures/blocks/forge_core/forge_core_side_cooldown"
-		},
-		"forge_core_side_ready": {
-			"textures": "textures/blocks/forge_core/forge_core_side_ready"
-		},
-		"forge_core_side_active": {
-			"textures": "textures/blocks/forge_core/forge_core_side_active"
-		},
-		"forge_core_top_off": {
-			"textures": "textures/blocks/forge_core/forge_core_top_cooldown"
-		},
-		"forge_core_top_ready": {
-			"textures": "textures/blocks/forge_core/forge_core_top_ready"
-		},
-		"forge_core_top_active": {
-			"textures": "textures/blocks/forge_core/forge_core_top_active"
-		},
-		"redstone_golem_head": {
-			"textures": "textures/blocks/redstone_golem_head"
-		},
-		"wildfire_head": {
-			"textures": "textures/blocks/wildfire_head"
-		},
-		"ministrosity": {
-			"textures": "textures/blocks/ministrosity"
-		},
-		"wretched_trophy": {
-			"textures": "textures/blocks/wretched_trophy"
-		},
-		"nameless_staff": {
-			"textures": "textures/blocks/nameless_staff"
-		},
-		"corrupted_core": {
-			"textures": "textures/blocks/corrupted_core"
-		},
-		"benevolent_brew": {
-			"textures": "textures/blocks/benevolent_brew"
-		},
-		"abomination_bloom": {
-			"textures": "textures/blocks/abomination_bloom"
-		},
-		"whirlwindgig": {
-			"textures": "textures/blocks/whirlwindgig"
-		},
-		"enormous_eyeball": {
-			"textures": "textures/blocks/enormous_eyeball"
-		},
-		"blaze_cage": {
-			"textures": "textures/blocks/blaze_cage"
-		},
-		"skullager": {
-			"textures": "textures/blocks/skullager"
-		},
-		"empty": {
-			"textures": "textures/blocks/empty"
-		},
-		"redstone_painting": {
-			"textures": "textures/blocks/redstone_painting"
-		},
-		"nameless_painting": {
-			"textures": "textures/blocks/nameless_painting"
-		},
-		"mooshroom_painting": {
-			"textures": "textures/blocks/mooshroom_painting"
-		},
-		"wraith_painting": {
-			"textures": "textures/blocks/wraith_painting"
-		},
-		"cauldron_painting": {
-			"textures": "textures/blocks/cauldron_painting"
-		},
-		"abomination_painting": {
-			"textures": "textures/blocks/abomination_painting"
-		},
-		"spooky_painting": {
-			"textures": "textures/blocks/spooky_painting"
-		},
-		"tempest_painting": {
-			"textures": "textures/blocks/tempest_painting"
-		},
-		"guardian_painting": {
-			"textures": "textures/blocks/guardian_painting"
-		},
-		"wildfire_painting": {
-			"textures": "textures/blocks/wildfire_painting"
-		},
-		"vengeful_painting": {
-			"textures": "textures/blocks/vengeful_painting"
-		},
-		"void_fluid": {
-			"textures": "textures/blocks/void"
-		},
-		"endersent_painting": {
-			"textures": "textures/blocks/endersent_painting"
-		},
-		"void_frame": {
-			"textures": "textures/blocks/voidframe_unified"
-		},
-		"void_frame_top": {
-			"textures": "textures/blocks/voidframe_top"
-		},
-		"void_frame_side": {
-			"textures": "textures/blocks/voidframe_side"
-		},
-		"void_frame_eye": {
-			"textures": "textures/blocks/voidframe_eye"
-		},
-		"enchanted_pearl": {
-			"textures": "textures/blocks/enchanted_pearl"
-		},
-		"eternal_brazier": {
-			"textures": "textures/blocks/eternal_brazier"
-		},
-		"eternal_flame": {
-			"textures": "textures/blocks/eternal_flame"
-		},
-		"chiseled_desert_bricks": {
-			"textures": "textures/blocks/nameless/chiseled_desert_bricks"
-		},
-		"desert_bricks": {
-			"textures": "textures/blocks/nameless/desert_bricks"
-		},
-		"desert_brick_tile": {
-			"textures": "textures/blocks/nameless/desert_brick_tile"
-		},
-		"desert_brick_pillar": {
-			"textures": "textures/blocks/nameless/pillar"
-		},
-		"desert_brick_pillar_top": {
-			"textures": "textures/blocks/nameless/desert_brick_pillar_top"
-		},
-		"desert_brick_pillar_base": {
-			"textures": "textures/blocks/nameless/desert_brick_pillar_base"
-		},
-		"desert_brick_pillar_base_gilded": {
-			"textures": "textures/blocks/nameless/desert_brick_pillar_base_gilded"
-		},
-		"sandy_desert_bricks_0": {
-			"textures": "textures/blocks/nameless/sandy_desert_bricks_0"
-		},
-		"sandy_desert_bricks_1": {
-			"textures": "textures/blocks/nameless/sandy_desert_bricks_1"
-		},
-		"sandy_desert_bricks_2": {
-			"textures": "textures/blocks/nameless/sandy_desert_bricks_2"
-		},
-		"sandy_desert_bricks": {
-			"textures": {
-				"variations": [
-					{
-						"path": "textures/blocks/nameless/sandy_desert_bricks_0",
-						"weight": 4
-					},
-					{
-						"path": "textures/blocks/nameless/sandy_desert_bricks_1",
-						"weight": 2
-					},
-					{
-						"path": "textures/blocks/nameless/sandy_desert_bricks_2",
-						"weight": 1
-					}
-				]
-			}
-		},
-		"trial_totem_stone": {
-			"textures": "textures/blocks/trial/trial_totem_stone"
-		},
-		"trial_totem_stone_top": {
-			"textures": "textures/blocks/trial/trial_totem_stone_top"
-		},
-		"trial_totem_stone_on": {
-			"textures": "textures/blocks/trial/trial_totem_stone_on"
-		},
-		"trial_totem_stone_on_ominous": {
-			"textures": "textures/blocks/trial/trial_totem_stone_on_ominous"
-		},
-		"trial_totem_mossy_stone": {
-			"textures": "textures/blocks/trial/trial_totem_mossy_stone"
-		},
-		"trial_totem_mossy_stone_top": {
-			"textures": "textures/blocks/trial/trial_totem_mossy_stone_top"
-		},
-		"trial_totem_mossy_stone_on": {
-			"textures": "textures/blocks/trial/trial_totem_mossy_stone_on"
-		},
-		"trial_totem_mossy_stone_on_ominous": {
-			"textures": "textures/blocks/trial/trial_totem_mossy_stone_on_ominous"
-		},
-		"trial_totem_calcite": {
-			"textures": "textures/blocks/trial/trial_totem_calcite"
-		},
-		"trial_totem_calcite_top": {
-			"textures": "textures/blocks/trial/trial_totem_calcite_top"
-		},
-		"trial_totem_calcite_on": {
-			"textures": "textures/blocks/trial/trial_totem_calcite_on"
-		},
-		"trial_totem_calcite_on_ominous": {
-			"textures": "textures/blocks/trial/trial_totem_calcite_on_ominous"
-		},
-		"trial_totem_void": {
-			"textures": "textures/blocks/trial/trial_totem_void"
-		},
-		"trial_totem_void_top": {
-			"textures": "textures/blocks/trial/trial_totem_void_top"
-		},
-		"trial_totem_void_on": {
-			"textures": "textures/blocks/trial/trial_totem_void_on"
-		},
-		"trial_totem_void_on_ominous": {
-			"textures": "textures/blocks/trial/trial_totem_void_on_ominous"
-		},
-		"obsidian_painting": {
-			"textures": "textures/blocks/obsidian_painting"
-		},
-		"heart_painting": {
-			"textures": "textures/blocks/heart_of_ender_painting"
-		},
-		"obsidian_claw": {
-			"textures": "textures/blocks/obsidian_claw"
-		},
-		"silver_crown": {
-			"textures": "textures/blocks/silver_crown"
-		}
-	}
+  "resource_pack_name": "dungeons",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "forge_core_bottom": {
+      "textures": "textures/blocks/forge_core/forge_core_bottom"
+    },
+    "forge_core_side_off": {
+      "textures": "textures/blocks/forge_core/forge_core_side_cooldown"
+    },
+    "forge_core_side_ready": {
+      "textures": "textures/blocks/forge_core/forge_core_side_ready"
+    },
+    "forge_core_side_active": {
+      "textures": "textures/blocks/forge_core/forge_core_side_active"
+    },
+    "forge_core_top_off": {
+      "textures": "textures/blocks/forge_core/forge_core_top_cooldown"
+    },
+    "forge_core_top_ready": {
+      "textures": "textures/blocks/forge_core/forge_core_top_ready"
+    },
+    "forge_core_top_active": {
+      "textures": "textures/blocks/forge_core/forge_core_top_active"
+    },
+    "redstone_golem_head": {
+      "textures": "textures/blocks/redstone_golem_head"
+    },
+    "wildfire_head": {
+      "textures": "textures/blocks/wildfire_head"
+    },
+    "ministrosity": {
+      "textures": "textures/blocks/ministrosity"
+    },
+    "wretched_trophy": {
+      "textures": "textures/blocks/wretched_trophy"
+    },
+    "nameless_staff": {
+      "textures": "textures/blocks/nameless_staff"
+    },
+    "corrupted_core": {
+      "textures": "textures/blocks/corrupted_core"
+    },
+    "benevolent_brew": {
+      "textures": "textures/blocks/benevolent_brew"
+    },
+    "abomination_bloom": {
+      "textures": "textures/blocks/abomination_bloom"
+    },
+    "whirlwindgig": {
+      "textures": "textures/blocks/whirlwindgig"
+    },
+    "enormous_eyeball": {
+      "textures": "textures/blocks/enormous_eyeball"
+    },
+    "blaze_cage": {
+      "textures": "textures/blocks/blaze_cage"
+    },
+    "skullager": {
+      "textures": "textures/blocks/skullager"
+    },
+    "empty": {
+      "textures": "textures/blocks/empty"
+    },
+    "redstone_painting": {
+      "textures": "textures/blocks/redstone_painting"
+    },
+    "nameless_painting": {
+      "textures": "textures/blocks/nameless_painting"
+    },
+    "mooshroom_painting": {
+      "textures": "textures/blocks/mooshroom_painting"
+    },
+    "wraith_painting": {
+      "textures": "textures/blocks/wraith_painting"
+    },
+    "cauldron_painting": {
+      "textures": "textures/blocks/cauldron_painting"
+    },
+    "abomination_painting": {
+      "textures": "textures/blocks/abomination_painting"
+    },
+    "spooky_painting": {
+      "textures": "textures/blocks/spooky_painting"
+    },
+    "tempest_painting": {
+      "textures": "textures/blocks/tempest_painting"
+    },
+    "guardian_painting": {
+      "textures": "textures/blocks/guardian_painting"
+    },
+    "wildfire_painting": {
+      "textures": "textures/blocks/wildfire_painting"
+    },
+    "vengeful_painting": {
+      "textures": "textures/blocks/vengeful_painting"
+    },
+    "void_fluid": {
+      "textures": "textures/blocks/void"
+    },
+    "void_breath": {
+      "textures": "textures/blocks/void_breath"
+    },
+    "endersent_painting": {
+      "textures": "textures/blocks/endersent_painting"
+    },
+    "void_frame": {
+      "textures": "textures/blocks/voidframe_unified"
+    },
+    "void_frame_top": {
+      "textures": "textures/blocks/voidframe_top"
+    },
+    "void_frame_side": {
+      "textures": "textures/blocks/voidframe_side"
+    },
+    "void_frame_eye": {
+      "textures": "textures/blocks/voidframe_eye"
+    },
+    "enchanted_pearl": {
+      "textures": "textures/blocks/enchanted_pearl"
+    },
+    "eternal_brazier": {
+      "textures": "textures/blocks/eternal_brazier"
+    },
+    "eternal_flame": {
+      "textures": "textures/blocks/eternal_flame"
+    },
+    "chiseled_desert_bricks": {
+      "textures": "textures/blocks/nameless/chiseled_desert_bricks"
+    },
+    "desert_bricks": {
+      "textures": "textures/blocks/nameless/desert_bricks"
+    },
+    "desert_brick_tile": {
+      "textures": "textures/blocks/nameless/desert_brick_tile"
+    },
+    "desert_brick_pillar": {
+      "textures": "textures/blocks/nameless/pillar"
+    },
+    "desert_brick_pillar_top": {
+      "textures": "textures/blocks/nameless/desert_brick_pillar_top"
+    },
+    "desert_brick_pillar_base": {
+      "textures": "textures/blocks/nameless/desert_brick_pillar_base"
+    },
+    "desert_brick_pillar_base_gilded": {
+      "textures": "textures/blocks/nameless/desert_brick_pillar_base_gilded"
+    },
+    "sandy_desert_bricks_0": {
+      "textures": "textures/blocks/nameless/sandy_desert_bricks_0"
+    },
+    "sandy_desert_bricks_1": {
+      "textures": "textures/blocks/nameless/sandy_desert_bricks_1"
+    },
+    "sandy_desert_bricks_2": {
+      "textures": "textures/blocks/nameless/sandy_desert_bricks_2"
+    },
+    "sandy_desert_bricks": {
+      "textures": {
+        "variations": [
+          {
+            "path": "textures/blocks/nameless/sandy_desert_bricks_0",
+            "weight": 4
+          },
+          {
+            "path": "textures/blocks/nameless/sandy_desert_bricks_1",
+            "weight": 2
+          },
+          {
+            "path": "textures/blocks/nameless/sandy_desert_bricks_2",
+            "weight": 1
+          }
+        ]
+      }
+    },
+    "ocean_bricks": {
+      "textures": "textures/blocks/decor/ocean_bricks"
+    },
+    "sandy_ocean_bricks": {
+      "textures": "textures/blocks/decor/sandy_ocean_bricks"
+    },
+    "ocean_tiles": {
+      "textures": "textures/blocks/decor/ocean_tiles"
+    },
+    "chiseled_ocean_tile": {
+      "textures": "textures/blocks/decor/chiseled_ocean_tiles"
+    },
+    "chiseled_ocean_bricks_side": {
+      "textures": "textures/blocks/decor/chiseled_ocean_bricks_side"
+    },
+    "chiseled_ocean_bricks_top": {
+      "textures": "textures/blocks/decor/chiseled_ocean_bricks_top"
+    },
+    "spike_trap_block": {
+      "textures": "textures/blocks/decor/spike_trap"
+    },
+    "trial_totem_stone": {
+      "textures": "textures/blocks/trial/trial_totem_stone"
+    },
+    "trial_totem_stone_top": {
+      "textures": "textures/blocks/trial/trial_totem_stone_top"
+    },
+    "trial_totem_stone_on": {
+      "textures": "textures/blocks/trial/trial_totem_stone_on"
+    },
+    "trial_totem_stone_on_ominous": {
+      "textures": "textures/blocks/trial/trial_totem_stone_on_ominous"
+    },
+    "trial_totem_mossy_stone": {
+      "textures": "textures/blocks/trial/trial_totem_mossy_stone"
+    },
+    "trial_totem_mossy_stone_top": {
+      "textures": "textures/blocks/trial/trial_totem_mossy_stone_top"
+    },
+    "trial_totem_mossy_stone_on": {
+      "textures": "textures/blocks/trial/trial_totem_mossy_stone_on"
+    },
+    "trial_totem_mossy_stone_on_ominous": {
+      "textures": "textures/blocks/trial/trial_totem_mossy_stone_on_ominous"
+    },
+    "trial_totem_calcite": {
+      "textures": "textures/blocks/trial/trial_totem_calcite"
+    },
+    "trial_totem_calcite_top": {
+      "textures": "textures/blocks/trial/trial_totem_calcite_top"
+    },
+    "trial_totem_calcite_on": {
+      "textures": "textures/blocks/trial/trial_totem_calcite_on"
+    },
+    "trial_totem_calcite_on_ominous": {
+      "textures": "textures/blocks/trial/trial_totem_calcite_on_ominous"
+    },
+    "trial_totem_void": {
+      "textures": "textures/blocks/trial/trial_totem_void"
+    },
+    "trial_totem_void_top": {
+      "textures": "textures/blocks/trial/trial_totem_void_top"
+    },
+    "trial_totem_void_on": {
+      "textures": "textures/blocks/trial/trial_totem_void_on"
+    },
+    "trial_totem_void_on_ominous": {
+      "textures": "textures/blocks/trial/trial_totem_void_on_ominous"
+    },
+    "trial_totem_blackstone": {
+      "textures": "textures/blocks/trial/trial_totem_blackstone"
+    },
+    "trial_totem_blackstone_top": {
+      "textures": "textures/blocks/trial/trial_totem_blackstone_top"
+    },
+    "trial_totem_blackstone_on": {
+      "textures": "textures/blocks/trial/trial_totem_blackstone_on"
+    },
+    "trial_totem_blackstone_on_ominous": {
+      "textures": "textures/blocks/trial/trial_totem_blackstone_on_ominous"
+    },
+    "obsidian_painting": {
+      "textures": "textures/blocks/obsidian_painting"
+    },
+    "heart_painting": {
+      "textures": "textures/blocks/heart_of_ender_painting"
+    },
+    "obsidian_claw": {
+      "textures": "textures/blocks/obsidian_claw"
+    },
+    "silver_crown": {
+      "textures": "textures/blocks/silver_crown"
+    },
+    "golden_lock": {
+      "textures": "textures/blocks/golden_lock"
+    },
+    "diamond_lock": {
+      "textures": "textures/blocks/diamond_lock"
+    },
+    "ancient_portal_frame": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame"
+    },
+    "ancient_portal_frame_c": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame_c"
+    },
+    "ancient_portal_frame_u": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame_u"
+    },
+    "ancient_portal_frame_o": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame_o"
+    },
+    "ancient_portal_frame_s": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame_s"
+    },
+    "ancient_portal_frame_r": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame_r"
+    },
+    "ancient_portal_frame_i": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame_i"
+    },
+    "ancient_portal_frame_p": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame_p"
+    },
+    "ancient_portal_frame_t": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame_t"
+    },
+    "ancient_portal_frame_a": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal_frame_a"
+    },
+    "ancient_portal": {
+      "textures": "textures/blocks/ancient_hunt/ancient_portal"
+    },
+    "ancient_barrier": {
+      "textures": "textures/blocks/ancient_hunt/ancient_barrier"
+    },
+    "orange_glowshroom": {
+      "textures": "textures/blocks/decor/orange_glowshroom"
+    },
+    "ancient_respawn_anchor": {
+      "textures": "textures/blocks/ancient_hunt/ancient_respawn_anchor"
+    },
+    "gilded_obsidian": {
+      "textures": "textures/blocks/ancient_hunt/gilded_obsidian"
+    },
+    "active_gilded_obsidian": {
+      "textures": "textures/blocks/ancient_hunt/active_gilded_obsidian"
+    },
+    "ancient_gold_block": {
+      "textures": "textures/blocks/decor/ancient_gold_block"
+    },
+    "spider_egg_top": {
+      "textures": "textures/blocks/decor/spider_egg_top"
+    },
+    "spider_egg": {
+      "textures": "textures/blocks/decor/spider_egg_side"
+    },
+    "spider_egg_bottom": {
+      "textures": "textures/blocks/decor/spider_egg_bottom"
+    },
+    "green_glowshroom": {
+      "textures": "textures/blocks/decor/green_glowshroom"
+    },
+    "cyan_glowshroom": {
+      "textures": "textures/blocks/decor/cyan_glowshroom"
+    },
+    "sticky_sludge": {
+      "textures": "textures/blocks/decor/sludge"
+    },
+    "woodland_window": {
+      "textures": "textures/misc/black"
+    },
+    "woodland_window_bright": {
+      "textures": "textures/misc/white"
+    },
+    "challenge_lock": {
+      "textures": "textures/blocks/challenge_lock"
+    },
+    "netherite_grindstone": {
+      "textures": "textures/blocks/ancient_hunt/netherite_grindstone"
+    },
+    "nether_brick_tile": {
+      "textures": "textures/blocks/nether_brick/large_nether_brick_tile"
+    },
+    "chiseled_nether_brick_tile": {
+      "textures": "textures/blocks/nether_brick/nether_brick_tile"
+    },
+    "lava_lock": {
+      "textures": "textures/blocks/lava_lock"
+    },
+    "blue_magma": {
+      "textures": "textures/blocks/decor/blue_magma"
+    },
+    "abomination_vine": {
+      "textures": "textures/entity/jungle_abomination/abomination_vine"
+    },
+    "dark_purpur": {
+      "textures": "textures/blocks/decor/dark_purpur_block"
+    },
+    "dark_purpur_pillar": {
+      "textures": "textures/blocks/decor/dark_purpur_pillar"
+    },
+    "dark_purpur_pillar_top": {
+      "textures": "textures/blocks/decor/dark_purpur_pillar_top"
+    },
+    "dark_purpur_bricks": {
+      "textures": "textures/blocks/decor/dark_purpur_bricks"
+    },
+    "endstone_pillar": {
+      "textures": "textures/blocks/decor/end_stone_pillar"
+    },
+    "endstone_pillar_top": {
+      "textures": "textures/blocks/decor/end_stone_pillar_top"
+    },
+    "end_moss": {
+      "textures": "textures/blocks/decor/end_moss"
+    },
+    "end_moss_top": {
+      "textures": "textures/blocks/decor/end_moss_top"
+    },
+    "ender_grass": {
+      "textures": "textures/blocks/decor/ender_grass"
+    },
+    "purple_end_moss": {
+      "textures": "textures/blocks/decor/purple_end_moss"
+    },
+    "purple_end_moss_top": {
+      "textures": "textures/blocks/decor/purple_end_moss_top"
+    },
+    "purple_ender_grass": {
+      "textures": "textures/blocks/decor/purple_ender_grass"
+    },
+    "chorus_leaves": {
+      "textures": "textures/blocks/decor/chorus_leaves"
+    },
+    "yellow_chorus_leaves": {
+      "textures": "textures/blocks/decor/yellow_chorus_leaves"
+    },
+    "chorus_leaves_full": {
+      "textures": "textures/blocks/decor/chorus_leaves_full"
+    },
+    "yellow_chorus_leaves_full": {
+      "textures": "textures/blocks/decor/yellow_chorus_leaves_full"
+    },
+    "purple_ender_vine": {
+      "textures": "textures/blocks/decor/purple_twisting_vine_base"
+    },
+    "purple_ender_vine_tip": {
+      "textures": "textures/blocks/decor/purple_twisting_vine_tip"
+    },
+    "goopylauncher_side": {
+      "textures": "textures/blocks/decor/goopy_launcher_side"
+    },
+    "goopylauncher_top": {
+      "textures": "textures/blocks/decor/goopy_launcher_top"
+    },
+    "goopylauncher_inner": {
+      "textures": "textures/blocks/decor/goopy_launcher_inner"
+    },
+    "goopylauncher_bottom": {
+      "textures": "textures/blocks/decor/goopy_launcher_bottom"
+    },
+    "redstone_puzzle_piece_off": {
+      "textures": "textures/blocks/decor/redstone_puzzle_piece_off"
+    },
+    "redstone_puzzle_piece_on": {
+      "textures": "textures/blocks/decor/redstone_puzzle_piece_on"
+    },
+    "wind_tunnel_bottom_left": {
+      "textures": "textures/blocks/decor/wind_tunnel_bottom_left"
+    },
+    "wind_tunnel_bottom_right": {
+      "textures": "textures/blocks/decor/wind_tunnel_bottom_right"
+    },
+    "wind_tunnel_top_left": {
+      "textures": "textures/blocks/decor/wind_tunnel_top_left"
+    },
+    "wind_tunnel_top_right": {
+      "textures": "textures/blocks/decor/wind_tunnel_top_right"
+    },
+    "wind_tunnel_side": {
+      "textures": "textures/blocks/decor/wind_tunnel_side"
+    },
+    "wind_tunnel_side_alt": {
+      "textures": "textures/blocks/decor/wind_tunnel_side_alt"
+    },
+    "wind_tunnel_side_why": {
+      "textures": "textures/blocks/decor/wind_tunnel_side_why"
+    },
+    "bonus_room_bricks_upper": {
+      "textures": "textures/blocks/ancient_hunt/bonus_room_bricks_upper"
+    },
+    "bonus_room_bricks_lower": {
+      "textures": "textures/blocks/ancient_hunt/bonus_room_bricks_lower"
+    },
+    "bonus_room_floor": {
+      "textures": "textures/blocks/ancient_hunt/bonus_room_floor"
+    },
+    "bonus_door_a_empty": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_a_empty"
+    },
+    "bonus_door_a_open": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_a_open"
+    },
+    "bonus_door_c_empty": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_c_empty"
+    },
+    "bonus_door_c_open": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_c_open"
+    },
+    "bonus_door_i_empty": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_i_empty"
+    },
+    "bonus_door_i_open": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_i_open"
+    },
+    "bonus_door_o_empty": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_o_empty"
+    },
+    "bonus_door_o_open": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_o_open"
+    },
+    "bonus_door_p_empty": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_p_empty"
+    },
+    "bonus_door_p_open": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_p_open"
+    },
+    "bonus_door_r_empty": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_r_empty"
+    },
+    "bonus_door_r_open": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_r_open"
+    },
+    "bonus_door_s_empty": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_s_empty"
+    },
+    "bonus_door_s_open": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_s_open"
+    },
+    "bonus_door_t_empty": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_t_empty"
+    },
+    "bonus_door_t_open": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_t_open"
+    },
+    "bonus_door_u_empty": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_u_empty"
+    },
+    "bonus_door_u_open": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_u_open"
+    },
+    "bonus_door_top": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/rune_door_top"
+    },
+    "bonus_door_gate": {
+      "textures": "textures/blocks/ancient_hunt/rune_door/bonus_door_gate"
+    },
+    "plushie_redstone_monstrosity": {
+      "textures": "textures/blocks/plushies/redstone_monstrosity"
+    },
+    "plushie_mooshroom_monstrosity": {
+      "textures": "textures/blocks/plushies/mooshroom_monstrosity"
+    },
+    "plushie_obsidian_monstrosity": {
+      "textures": "textures/blocks/plushies/obsidian_monstrosity"
+    },
+    "plushie_corrupted_cauldron": {
+      "textures": "textures/blocks/plushies/corrupted_cauldron"
+    },
+    "plushie_jungle_abomination": {
+      "textures": "textures/blocks/plushies/jungle_abomination"
+    },
+    "plushie_tempest_golem": {
+      "textures": "textures/blocks/plushies/tempest_golem"
+    },
+    "plushie_ancient_guardian": {
+      "textures": "textures/blocks/plushies/ancient_guardian"
+    }
+  }
 }

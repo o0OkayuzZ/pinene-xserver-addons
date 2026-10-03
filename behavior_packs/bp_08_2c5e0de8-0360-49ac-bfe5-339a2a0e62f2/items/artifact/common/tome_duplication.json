@@ -1,101 +1,119 @@
 {
-	"format_version": "1.21.130",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:tome_of_duplication",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:tags": {
-				"tags": [
-					"dungeons:tome_of_duplication",
-					"dungeons:soul_artefact"
-				]
-			},
-			"minecraft:icon": "tome_of_duplication",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:can_destroy_in_creative": false,
-			"dungeons:artefact_cooldown": {},
-			"dungeons:tome_of_duplication": {},
-			"dungeons:blast_fungus": {},
-			"dungeons:buzzy_nest": {},
-			"dungeons:corrupted_seeds": {},
-			"dungeons:enchanted_grass": {},
-			"dungeons:enchanters_tome": {},
-			"dungeons:golem_kit": {},
-			"dungeons:light_feather": {},
-			"dungeons:satchel_of_elements": {},
-			"dungeons:satchel_of_elixirs": {},
-			"dungeons:scatter_mines": {},
-			"dungeons:soul_lantern": {},
-			"dungeons:totem_of_casting": {},
-			"dungeons:totem_of_regeneration": {},
-			"dungeons:totem_of_shielding": {},
-			"dungeons:updraft_tome": {},
-			"dungeons:ice_wand": {},
-			"dungeons:vexing_chant": {},
-			"dungeons:spinblade": {},
-			"dungeons:corrupted_pumpkin": {},
-			"dungeons:love_medallion": {},
-			"dungeons:totem_of_soul_protection": {},
-			"dungeons:tasty_bone": {},
-			"dungeons:wonderful_wheat": {},
-			"dungeons:corrupted_beacon": {
-				"type": "common"
-			},
-			"dungeons:death_cap_mushroom": {
-				"type": "common"
-			},
-			"dungeons:eye_of_the_guardian": {
-				"type": "common"
-			},
-			"dungeons:ghost_cloak": {
-				"type": "common"
-			},
-			"dungeons:gong_of_weakening": {
-				"type": "common"
-			},
-			"dungeons:harvester": {
-				"type": "common"
-			},
-			"dungeons:iron_hide_amulet": {
-				"type": "common"
-			},
-			"dungeons:lightning_rod": {
-				"type": "common"
-			},
-			"dungeons:powershaker": {
-				"type": "common"
-			},
-			"dungeons:satchel_of_snacks": {
-				"type": "common"
-			},
-			"dungeons:shock_powder": {
-				"type": "common"
-			},
-			"dungeons:soul_healer": {
-				"type": "common"
-			},
-			"dungeons:boots_of_swiftness": {
-				"type": "common"
-			},
-			"dungeons:shadow_shifter": {
-				"type": "common"
-			},
-			"dungeons:wind_horn": {
-				"type": "common"
-			},
-			"minecraft:cooldown": {
-				"category": "tome_duplication_common",
-				"duration": 20
-			},
-			"minecraft:interact_button": "item.use.artefact",
-			"minecraft:use_modifiers": {
-				"use_duration": 0
-			}
-		}
-	}
+  "format_version": "1.21.130",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:tome_of_duplication",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:tags": {
+        "tags": [
+          "dungeons:tome_of_duplication",
+          "dungeons:soul_artefact" // its worth noting, the original game version IS a soul artefact, mine isnt (since mine works very differently) - this tag is here so that the soul meter shows when its held..
+        ]
+      },
+      "minecraft:icon": "tome_of_duplication",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:can_destroy_in_creative": false,
+      "dungeons:artefact_cooldown": {},
+      "dungeons:tome_of_duplication": {},
+      "dungeons:blast_fungus": {},
+      "dungeons:buzzy_nest": {},
+      "dungeons:corrupted_seeds": {},
+      "dungeons:enchanted_grass": {},
+      "dungeons:enchanters_tome": {},
+      "dungeons:golem_kit": {},
+      "dungeons:light_feather": {},
+      "dungeons:satchel_of_elements": {},
+      "dungeons:satchel_of_elixirs": {},
+      "dungeons:scatter_mines": {},
+      "dungeons:soul_lantern": {},
+      "dungeons:totem_of_casting": {},
+      "dungeons:totem_of_regeneration": {},
+      "dungeons:totem_of_shielding": {},
+      "dungeons:updraft_tome": {},
+      "dungeons:ice_wand": {},
+      "dungeons:vexing_chant": {},
+      "dungeons:spinblade": {},
+      "dungeons:corrupted_pumpkin": {},
+      "dungeons:love_medallion": {},
+      "dungeons:totem_of_soul_protection": {},
+      "dungeons:tasty_bone": {},
+      "dungeons:wonderful_wheat":{},
+      "dungeons:corrupted_beacon": {
+        "type": "common"
+      },
+      "dungeons:death_cap_mushroom": {
+        "type": "common"
+      },
+      "dungeons:eye_of_the_guardian": {
+        "type": "common"
+      },
+      "dungeons:ghost_cloak": {
+        "type": "common"
+      },
+      "dungeons:gong_of_weakening": {
+        "type": "common"
+      },
+      "dungeons:harvester": {
+        "type": "common"
+      },
+      "dungeons:iron_hide_amulet": {
+        "type": "common"
+      },
+      "dungeons:lightning_rod": {
+        "type": "common"
+      },
+      "dungeons:powershaker": {
+        "type": "common"
+      },
+      "dungeons:satchel_of_snacks": {
+        "type": "common"
+      },
+      "dungeons:shock_powder": {
+        "type": "common"
+      },
+      "dungeons:soul_healer": {
+        "type": "common"
+      },
+      "dungeons:boots_of_swiftness": {
+        "type": "common"
+      },
+      "dungeons:shadow_shifter": {
+        "type": "common"
+      },
+      "dungeons:wind_horn": {
+        "type": "common"
+      },
+      "dungeons:firework_quiver": {
+        "type": "common"
+      },
+      "dungeons:flaming_quiver": {
+        "type": "common"
+      },
+      "dungeons:harpoon_quiver": {
+        "type": "common"
+      },
+      "dungeons:thundering_quiver": {
+        "type": "common"
+      },
+      "dungeons:torment_quiver": {
+        "type": "common"
+      },
+      "dungeons:void_quiver": {
+        "type": "common"
+      },
+      "minecraft:cooldown": {
+        "category": "tome_duplication_common",
+        "duration": 20
+      },
+      "minecraft:interact_button": "item.use.artefact",
+      "minecraft:use_modifiers": {
+        "use_duration": 0.0
+      }
+    }
+  }
 }

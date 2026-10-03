@@ -13,6 +13,8 @@ system.runInterval(() => {
       if (player.isSwimming) continue;
 
       if (player.hasTag("dungeons:in_shadow_form")) continue;
+      if (player.hasTag("dungeons:block_greatsword_animation")) continue;
+      if (player.hasTag("dungeons:rolling")) continue;
       player.playAnimation('animation.player.greatsword_hold', { blendOutTime: 0.3, nextState: 'claymoreHold' })
     }
   }

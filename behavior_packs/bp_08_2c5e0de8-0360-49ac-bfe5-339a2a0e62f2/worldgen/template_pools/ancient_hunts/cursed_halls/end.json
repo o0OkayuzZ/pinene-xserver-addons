@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:cursedhalls_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_end",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_end",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_end_tiny",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_end_tinier",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

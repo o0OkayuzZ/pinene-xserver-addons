@@ -1,29 +1,29 @@
 {
-	"format_version": "1.21.130",
-	"minecraft:item": {
-		"description": {
-			"identifier": "dungeons:rare_buzzy_nest",
-			"menu_category": {
-				"category": "equipment"
-			}
-		},
-		"components": {
-			"minecraft:hover_text_color": "green",
-			"minecraft:hand_equipped": true,
-			"minecraft:icon": "buzzy_nest",
-			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": false,
-			"minecraft:can_destroy_in_creative": false,
-			"dungeons:artefact_cooldown": {},
-			"dungeons:buzzy_nest": {},
-			"minecraft:cooldown": {
-				"category": "buzzy_nest_rare",
-				"duration": 35
-			},
-			"minecraft:interact_button": "item.use.artefact",
-			"minecraft:use_modifiers": {
-				"use_duration": 0
-			}
-		}
-	}
+  "format_version": "1.21.130",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dungeons:rare_buzzy_nest",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:hover_text_color": "green",
+      "minecraft:hand_equipped": true,
+      "minecraft:icon": "buzzy_nest",
+      "minecraft:max_stack_size": 1,
+      "minecraft:stacked_by_data": false,
+      "minecraft:can_destroy_in_creative": false,
+      "dungeons:artefact_cooldown": {},
+      "dungeons:buzzy_nest": {},
+      "minecraft:cooldown": {
+        "category": "buzzy_nest_rare",
+        "duration": 35
+      },
+      "minecraft:interact_button": "item.use.artefact",
+      "minecraft:use_modifiers": {
+        "use_duration": 0.0
+      }
+    }
+  }
 }

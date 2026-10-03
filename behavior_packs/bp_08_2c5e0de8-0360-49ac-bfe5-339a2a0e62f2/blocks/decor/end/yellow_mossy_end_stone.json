@@ -1,0 +1,56 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:yellow_mossy_end_stone",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "dungeons:end_moss": {},
+            "minecraft:geometry":{
+                "identifier": "minecraft:geometry.full_block"
+            },
+            "minecraft:light_dampening": 15,
+            "minecraft:material_instances": {
+                "up": {
+                    "texture": "end_moss_top",
+                    "render_method": "opaque",
+                    "isotropic": true
+                },
+                "*": {
+                    "texture": "end_moss",
+                    "render_method": "opaque"
+                },
+                "down": {
+                    "texture": "end_stone",
+                    "render_method": "opaque"
+                }
+            },
+            "minecraft:collision_box": true,
+            "minecraft:selection_box": true,
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 9
+            },
+            "minecraft:map_color": "#770077",
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 10, //25(Block base speed) * 2/3
+                "item_specific_speeds": [
+                    {
+                        "item": {
+                            "tags": "query.any_tag('minecraft:is_pickaxe')"
+                        },
+                        "destroy_speed": 3 //(10/5)*1.5 (blocks hardness)
+                    }
+                ]
+            },
+            "tag:pickaxe_mine": {},
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": true
+            }
+        }
+    }
+}

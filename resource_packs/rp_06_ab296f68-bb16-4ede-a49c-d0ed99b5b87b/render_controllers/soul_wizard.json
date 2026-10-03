@@ -2,10 +2,10 @@
 	"format_version": "1.8.0",
 	"render_controllers": {
 		"controller.render.soul_wizard": {
-			"geometry": "geometry.default",
+			"geometry": "Geometry.default",
 			"materials": [
 				{
-					"*": "material.default"
+					"*": "Material.default"
 				}
 			],
 			"arrays": {
@@ -17,13 +17,13 @@
 				}
 			},
 			"textures": [
-				"array.skins[query.is_saddled]"
+				"Array.skins[query.is_saddled]"
 			],
 			"overlay_color": {
 				"r": 0.9,
 				"g": 0.95,
-				"b": 1,
-				"a": "q.life_time<=1.6?1-(q.life_time/1.6):0"
+				"b": 1.0,
+				"a": "q.life_time <= 1.6 ? 1.0 - (q.life_time/1.6) : 0"
 			}
 		}
 	}

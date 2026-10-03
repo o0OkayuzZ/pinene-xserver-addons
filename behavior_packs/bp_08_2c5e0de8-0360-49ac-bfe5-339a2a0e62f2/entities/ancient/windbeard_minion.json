@@ -1,0 +1,409 @@
+	{
+  "format_version": "1.21.40",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dungeons:windbeard_minion",
+      "runtime_identifier": "minecraft:vindicator",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "dungeons:armour_type":{
+"client_sync": true,
+"type": "int",
+"default": 0,
+"range": [
+    0,
+    2
+]
+        }
+      }
+    },
+    "component_groups": {
+      "dungeons:mountaineer_regular": {
+        "minecraft:health": {
+          "value": 50,
+          "max": 50
+        },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/mountaineer_gear.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": -1
+          }
+        ]
+      }
+      },
+      "dungeons:mountaineer_golden": {
+        "minecraft:health": {
+          "value": 60,
+          "max": 60
+        },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/mountaineer_gear.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": -1
+          }
+        ]
+      }
+      },
+      "dungeons:mountaineer_diamond": {
+        "minecraft:health": {
+          "value": 70,
+          "max": 70
+        },
+         "minecraft:equipment": {
+          "table": "loot_tables/entities/mountaineer_gear_2.json",
+         "slot_drop_chance": [
+              {
+                "slot": "slot.weapon.mainhand",
+               "drop_chance": -1
+             }
+            ]
+         }
+      },
+      "dungeons:has_home": {
+        "minecraft:home": {
+          "restriction_radius": 16,
+          "restriction_type": "random_movement"
+        }
+      },
+      "minecraft:vindicator_aggro": {
+        "minecraft:angry": {
+          "duration": -1,
+          "broadcast_anger": false,
+          "calm_event": {
+            "event": "minecraft:stop_aggro",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:default_targeting": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "within_radius": 32.0,
+          "must_see_forget_duration": 40.0,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "snowgolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "wandering_trader"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "key_golem_target"
+                  }
+                ]
+              },
+              "max_dist": 32
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "villager"
+                  },
+                  {
+                    "test": "has_component",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "minecraft:is_baby"
+                  }
+                ]
+              },
+              "max_dist": 32
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+                "minecraft:home": {
+          "restriction_radius": 16,
+          "restriction_type": "random_movement"
+        },
+              "minecraft:scale": {
+        "value": 1.1
+      },
+                "minecraft:knockback_resistance": {
+          "value": 1.0
+        },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:nameable": {},
+      // vindicator Components
+      "minecraft:type_family": {
+        "family": [
+            "ancient_minion",
+          "enchanted",
+          "mountaineer",
+          "monster",
+          "illager",
+          "mob"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+            {
+                "cause": "fall",
+                "deals_damage": "yes",
+                "damage_modifier": -8
+            }
+        ]
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:health": {
+        "value": 50,
+        "max": 50
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 5
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:follow_range": {
+        "value": 64
+      },
+      // vindicator Behaviors
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.melee_box_attack": {
+        "priority": 3
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 9,
+        "speed_multiplier": 0.7
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 10,
+        "look_distance": 8,
+        "probability": 0.02
+      },
+      "minecraft:behavior.hurt_by_target": {
+                        "entity_types": [
+                    {
+                        "filters": [
+                            {
+                                "all_of": [
+                                    {
+                                        "operator": "not",
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "ancient_minion"
+                                    },
+                                    {
+                                        "operator": "not",
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "ancient"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+        "priority": 1
+      },
+      "minecraft:on_target_acquired": {
+        "event": "minecraft:become_aggro",
+        "target": "self"
+      },
+      "minecraft:on_target_escape": {
+        "event": "minecraft:stop_aggro",
+        "target": "self"
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable_by_block": {}
+    },
+    "events": {
+      "dungeons:spawn_diamond": {
+        "add": {
+          "component_groups": [
+            "minecraft:default_targeting"
+          ]
+        },
+        "trigger": "dungeons:mountaineer_gear_diamond"
+      },
+      "dungeons:spawn_golden": {
+        "add": {
+          "component_groups": [
+            "minecraft:default_targeting"
+          ]
+        },
+        "trigger": "dungeons:mountaineer_gear_golden"
+      },
+      "dungeons:spawn_regular": {
+        "add": {
+          "component_groups": [
+            "minecraft:default_targeting"
+          ]
+        },
+        "trigger": "dungeons:mountaineer_gear_regular"
+      },
+      "dungeons:mountaineer_gear_regular": {
+        "filters": [
+          {
+            "test": "int_property",
+            "domain": "dungeons:armour_type",
+            "value": 0,
+            "operator": "<="
+          }
+        ],
+        "set_property": {
+          "dungeons:armour_type": 0
+        },
+        "add": {
+          "component_groups": [
+            "dungeons:mountaineer_regular"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "dungeons:mountaineer_golden",
+            "dungeons:mountaineer_diamond"
+          ]
+        }
+      },
+      "dungeons:mountaineer_gear_golden": {
+        "filters": [
+          {
+            "test": "int_property",
+            "domain": "dungeons:armour_type",
+            "value": 1,
+            "operator": "<="
+          }
+        ],
+        "set_property": {
+          "dungeons:armour_type": 1
+        },
+        "add": {
+          "component_groups": [
+            "dungeons:mountaineer_golden"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "dungeons:mountaineer_regular",
+            "dungeons:mountaineer_diamond"
+          ]
+        }
+      },
+      "dungeons:mountaineer_gear_diamond": {
+        "filters": [
+          {
+            "test": "int_property",
+            "domain": "dungeons:armour_type",
+            "value": 2,
+            "operator": "<="
+          }
+        ],
+        "set_property": {
+          "dungeons:armour_type": 2
+        },
+        "add": {
+          "component_groups": [
+            "dungeons:mountaineer_diamond"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "dungeons:mountaineer_regular",
+            "dungeons:mountaineer_golden"
+          ]
+        }
+      },
+      "dungeons:spawn_structure": {
+        "add": {
+          "component_groups": [
+            "minecraft:default_targeting",
+            "dungeons:has_home"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+                        "sequence": [
+          {
+            "trigger": "dungeons:mountaineer_gear_regular"
+          },
+          {
+                "add": {
+                 "component_groups": [
+                   "minecraft:default_targeting"
+                 ]
+             }
+            }
+        ]
+      },
+      "minecraft:become_aggro": {
+        "add": {
+          "component_groups": [
+            "minecraft:vindicator_aggro"
+          ]
+        }
+      },
+      "minecraft:stop_aggro": {
+        "remove": {
+          "component_groups": [
+            "minecraft:vindicator_aggro"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+    "format_version": "1.26.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:ancient_portal",
+            "menu_category": {
+                "category": "none"
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ]
+                }
+            },
+            "states": {
+                "dungeons:target": [
+                    "empty",
+                    "spider_cave",
+                    "ancient_crypt",
+                    "slimy_sewer",
+                    "mushroom_dimension",
+                    "woodland_mansion",
+                    "creepy_stronghold",
+                    "faraway_fortress",
+                    "obsidian_fortress",
+                    "woodland_prison",
+                    "corrupted_jungle",
+                    "grand_bastion",
+                    "lower_forge",
+                    "ominous_castle",
+                    "desert_tomb",
+                    "misty_peak"
+                ],
+                "dungeons:target2":[
+                    "empty",
+                    "forgotten_citadel",
+                    "deepsea_monument",
+                    "soul_ruins",
+                    "frosted_fjord",
+                    "soggy_cave",
+                    "cursed_halls",
+                    "outer_end",
+                    "pumpkin_forest",
+                    "silent_woods",
+                    "coral_cave",
+                    "sanctum_summit"
+                ]
+            }
+        },
+        "components": {
+            "minecraft:connection_rule": {
+                "accepts_connections_from": "none"
+            },
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "can_contain_liquid": true,
+                        "liquid_type": "water"
+                    }
+                ]
+            },
+            "minecraft:tick": {
+                "interval_range": [5,40],
+                "looping": true
+            },
+            "dungeons:ancient_portal": {},
+            "minecraft:collision_box": false,
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destructible_by_mining": false,
+            "minecraft:geometry": {
+                "identifier": "geometry.ancient_portal",
+                "culling": "dungeons:culling.ancient_portal"
+            },
+            "minecraft:map_color": "#EA00FF",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "ancient_portal",
+                    "render_method": "blend",
+                    "ambient_occlusion":false,
+                    "face_dimming": false
+                }
+            },
+            "minecraft:loot": "loot_tables/empty.json",
+            "minecraft:light_emission": 14,
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "block_filter": [
+                            "dungeons:ancient_portal_frame",
+                            "dungeons:ancient_portal",
+                            "obsidian",
+                            "crying_obsidian",
+                            "dungeons:gilded_obsidian"
+                        ],
+                        "allowed_faces": [
+                            "all"
+                        ]
+                    }
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -2
+                ],
+                "size": [
+                    16,
+                    16,
+                    4
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            -90,
+                            0
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dungeons:purple_ender_vine",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:block_placer": {
+                "block": "dungeons:purple_ender_vine",
+                "replace_block_item": true
+            },
+            "minecraft:icon": "purple_ender_vine",
+            "minecraft:display_name": {
+                "value": "tile.dungeons:purple_ender_vine.name"
+            }
+        }
+    }
+}

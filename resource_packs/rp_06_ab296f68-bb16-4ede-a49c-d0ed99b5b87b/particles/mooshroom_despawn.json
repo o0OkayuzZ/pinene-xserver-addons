@@ -17,11 +17,7 @@
 			},
 			"minecraft:emitter_shape_sphere": {
 				"radius": 0.3,
-				"offset": [
-					0,
-					0.8,
-					0
-				],
+				"offset": [0, 0.8, 0],
 				"surface_only": true,
 				"direction": "outwards"
 			},
@@ -33,27 +29,15 @@
 				"linear_drag_coefficient": 2
 			},
 			"minecraft:particle_appearance_billboard": {
-				"size": [
-					"(1+v.particle_random_1)/2.5",
-					"(1+v.particle_random_1)/2.5"
-				],
+				"size": ["(1 + v.particle_random_1)/2.5", "(1 + v.particle_random_1)/2.5"],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {
 					"texture_width": 1,
 					"texture_height": 12,
 					"flipbook": {
-						"base_UV": [
-							0,
-							0
-						],
-						"size_UV": [
-							1,
-							1
-						],
-						"step_UV": [
-							0,
-							1
-						],
+						"base_UV": [0, 0],
+						"size_UV": [1, 1],
+						"step_UV": [0, 1],
 						"frames_per_second": 10,
 						"max_frame": 13,
 						"stretch_to_lifetime": true

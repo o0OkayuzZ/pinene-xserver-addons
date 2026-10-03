@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:ancientcrypt_fallback_key"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_keyroom_0",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_keyroom_0",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_key_fallback_wkey",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 50
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_key_fallback",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

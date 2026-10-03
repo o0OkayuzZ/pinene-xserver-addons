@@ -1,336 +1,341 @@
 {
-	"format_version": "1.21.100",
-	"minecraft:entity": {
-		"description": {
-			"identifier": "dungeons:watchling",
-			"runtime_identifier": "vindicator",
-			"is_spawnable": true,
-			"is_summonable": true,
-			"is_experimental": false
-		},
-		"component_groups": {
-			"dungeons:endersent_minion": {
-				"minecraft:health": {
-					"value": 40,
-					"max": 40
-				},
-				"minecraft:experience_reward": {
-					"on_death": 0
-				},
-				"minecraft:loot": {
-					"table": "loot_tables/empty.json"
-				},
-				"minecraft:type_family": {
-					"family": [
-						"love_medallion_target",
-						"endersent_minion",
-						"enderling",
-						"monster",
-						"watchling",
-						"mob"
-					]
-				},
-				"minecraft:entity_sensor": {
-					"subsensors": [
-						{
-							"range": [
-								32,
-								32
-							],
-							"event": "dungeons:despawn_endersent_minion",
-							"cooldown": 1,
-							"minimum_count": 0,
-							"maximum_count": 0,
-							"event_filters": [
-								{
-									"all_of": [
-										{
-											"test": "is_family",
-											"value": "endersent",
-											"subject": "other"
-										}
-									]
-								}
-							]
-						}
-					]
-				}
-			},
-			"dungeons:transform_to_enchanted": {
-				"minecraft:transformation": {
-					"into": "dungeons:enchanted_watchling<minecraft:entity_spawned>",
-					"preserve_equipment": true
-				}
-			},
-			"dungeons:watchling_normal": {
-				"minecraft:tameable": {
-					"probability": 1
-				},
-				"minecraft:behavior.follow_owner": {
-					"can_teleport": false,
-					"max_distance": 64,
-					"priority": 3,
-					"speed_multiplier": 1,
-					"start_distance": 10,
-					"stop_distance": 6
-				},
-				"minecraft:behavior.owner_hurt_by_target": {
-					"priority": 1
-				},
-				"minecraft:behavior.owner_hurt_target": {
-					"priority": 0
-				},
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"on_damage": {
-								"filters": [
-									{
-										"test": "has_tag",
-										"value": "dungeons:watchling_immune"
-									}
-								]
-							},
-							"cause": "all",
-							"deals_damage": "no"
-						},
-						{
-							"on_damage": {
-								"filters": {
-									"all_of": [
-										{
-											"test": "is_family",
-											"subject": "other",
-											"value": "mob"
-										}
-									]
-								},
-								"event": "dungeons:try_teleport"
-							}
-						},
-						{
-							"on_damage": {
-								"filters": {
-									"all_of": [
-										{
-											"test": "is_family",
-											"subject": "other",
-											"value": "player"
-										}
-									]
-								},
-								"event": "dungeons:try_teleport"
-							}
-						}
-					]
-				},
-				"minecraft:collision_box": {
-					"width": 0.7,
-					"height": 2.4
-				},
-				"minecraft:knockback_resistance": {
-					"value": 0
-				},
-				"minecraft:type_family": {
-					"family": [
-						"love_medallion_target",
-						"enchantable",
-						"enderling",
-						"monster",
-						"watchling",
-						"mob"
-					]
-				},
-				"minecraft:teleport": {
-					"random_teleports": true,
-					"max_random_teleport_time": 48,
-					"min_random_teleport_time": 32,
-					"random_teleport_cube": [
-						7,
-						4,
-						7
-					],
-					"target_distance": 4,
-					"target_teleport_chance": 0.00005,
-					"light_teleport_chance": 0.05
-				},
-				"minecraft:movement": {
-					"value": 0.285
-				},
-				"minecraft:behavior.delayed_attack": {
-					"priority": 2,
-					"track_target": true,
-					"require_complete_path": false,
-					"random_stop_interval": 0,
-					"reach_multiplier": 2.8,
-					"cooldown_time": 0.1,
-					"speed_multiplier": 1.04,
-					"attack_duration": 1.2,
-					"hit_delay_pct": 0.25
-				}
-			}
-		},
-		"components": {
-			"minecraft:is_hidden_when_invisible": {},
-			"minecraft:experience_reward": {
-				"on_death": "query.last_hit_by_player?5:0"
-			},
-			"minecraft:breathable": {
-				"total_supply": 15,
-				"suffocate_time": 0
-			},
-			"minecraft:nameable": {},
-			"minecraft:loot": {
-				"table": "loot_tables/entities/watchling.json"
-			},
-			"minecraft:health": {
-				"value": 30,
-				"max": 30
-			},
-			"minecraft:hurt_on_condition": {
-				"damage_conditions": [
-					{
-						"filters": {
-							"test": "in_lava",
-							"subject": "self",
-							"operator": "==",
-							"value": true
-						},
-						"cause": "lava",
-						"damage_per_tick": 4
-					},
-					{
-						"filters": {
-							"test": "in_contact_with_water",
-							"operator": "==",
-							"value": true
-						},
-						"cause": "drowning",
-						"damage_per_tick": 1
-					}
-				]
-			},
-			"minecraft:attack": {
-				"damage": 7
-			},
-			"minecraft:despawn": {
-				"despawn_from_distance": {}
-			},
-			"minecraft:behavior.nearest_attackable_target": {
-				"priority": 1,
-				"attack_interval": 0,
-				"reselect_targets": true,
-				"entity_types": [
-					{
-						"filters": {
-							"all_of": [
-								{
-									"any_of": [
-										{
-											"test": "is_family",
-											"subject": "other",
-											"value": "player"
-										},
-										{
-											"test": "is_family",
-											"subject": "other",
-											"value": "snowgolem"
-										},
-										{
-											"test": "is_family",
-											"subject": "other",
-											"value": "irongolem"
-										}
-									]
-								},
-								{
-									"test": "has_tag",
-									"subject": "other",
-									"operator": "!=",
-									"value": "dungeons:cutscene"
-								}
-							]
-						},
-						"max_dist": 16
-					}
-				]
-			},
-			"minecraft:navigation.walk": {
-				"can_path_over_water": false,
-				"avoid_water": true
-			},
-			"minecraft:movement.basic": {},
-			"minecraft:jump.static": {},
-			"minecraft:can_climb": {},
-			"minecraft:behavior.float": {
-				"priority": 0
-			},
-			"minecraft:behavior.random_stroll": {
-				"priority": 7,
-				"speed_multiplier": 0.8
-			},
-			"minecraft:behavior.look_at_player": {
-				"priority": 8,
-				"look_distance": 8,
-				"probability": 8
-			},
-			"minecraft:behavior.random_look_around": {
-				"priority": 8
-			},
-			"minecraft:behavior.hurt_by_target": {
-				"priority": 3
-			},
-			"minecraft:physics": {},
-			"minecraft:pushable": {
-				"is_pushable": true,
-				"is_pushable_by_piston": true
-			},
-			"minecraft:conditional_bandwidth_optimization": {
-				"default_values": {
-					"max_optimized_distance": 80,
-					"max_dropped_ticks": 10,
-					"use_motion_prediction_hints": true
-				}
-			},
-			"minecraft:variable_max_auto_step": {
-				"base_value": 1.0625,
-				"jump_prevented_value": 0.5625
-			}
-		},
-		"events": {
-			"dungeons:despawn_endersent_minion": {},
-			"dungeons:spawn_endersent_minion": {
-				"add": {
-					"component_groups": [
-						"dungeons:watchling_normal",
-						"dungeons:endersent_minion"
-					]
-				}
-			},
-			"dungeons:become_enchanted": {
-				"add": {
-					"component_groups": [
-						"dungeons:transform_to_enchanted"
-					]
-				}
-			},
-			"minecraft:entity_spawned": {
-				"randomize": [
-					{
-						"weight": 1,
-						"trigger": "dungeons:become_enchanted"
-					},
-					{
-						"weight": 9,
-						"add": {
-							"component_groups": [
-								"dungeons:watchling_normal"
-							]
-						}
-					}
-				]
-			},
-			"dungeons:try_teleport": {}
-		}
-	}
+  "format_version": "1.21.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dungeons:watchling",
+      "runtime_identifier": "vindicator", //using a hostile mob RTI prevents them appearing in peaceful - afaik the Vindicator RTi doesn't do anything, so it is safe to use without affecting mob behaviour
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "dungeons:endersent_minion": {
+        "minecraft:health": {
+          "value": 40,
+          "max": 40
+        },
+        "minecraft:experience_reward": {
+          "on_death": 0
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/empty.json"
+        },
+        "minecraft:type_family": {
+          "family": [
+            "love_medallion_target",
+            "endersent_minion",
+            "enderling",
+            "monster",
+            "watchling",
+            "mob"
+          ]
+        },
+        "minecraft:entity_sensor": {
+          "subsensors": [
+            {
+              "range": [
+                32,
+                32
+              ],
+              "event": "dungeons:despawn_endersent_minion",
+              "cooldown": 1,
+              "minimum_count": 0,
+              "maximum_count": 0,
+              "event_filters": [
+                {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "value": "endersent",
+                      "subject": "other"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "dungeons:transform_to_enchanted": {
+        "minecraft:transformation": {
+          "into": "dungeons:enchanted_watchling<minecraft:entity_spawned>",
+          "preserve_equipment": true
+        }
+      },
+      "dungeons:watchling_normal": {
+              "minecraft:tameable": {
+        "probability": 1
+      },
+      "minecraft:behavior.follow_owner": {
+        "can_teleport": false,
+        "max_distance": 64,
+        "priority": 3,
+        "speed_multiplier": 1,
+        "start_distance": 10,
+        "stop_distance": 6
+      },
+      "minecraft:behavior.owner_hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.owner_hurt_target": {
+        "priority": 0
+      },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": [
+                  {
+                    "test": "has_tag",
+                    "value": "dungeons:watchling_immune"
+                  }
+                ]
+              },
+              "cause": "all",
+              "deals_damage": "no"
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "mob"
+                    }
+                  ]
+                },
+                "event": "dungeons:try_teleport"
+              }
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    }
+                  ]
+                },
+                "event": "dungeons:try_teleport"
+              }
+            }
+          ]
+        },
+        "minecraft:collision_box": {
+          "width": 0.7,
+          "height": 2.4
+        },
+        "minecraft:knockback_resistance": {
+          "value": 0
+        },
+        "minecraft:type_family": {
+          "family": [
+            "love_medallion_target",
+            "enchantable",
+            "enderling",
+            "monster",
+            "watchling",
+            "mob"
+          ]
+        },
+        "minecraft:teleport": {
+          "random_teleports": true,
+          "max_random_teleport_time": 48,
+          "min_random_teleport_time": 32,
+          "random_teleport_cube": [
+            7,
+            4,
+            7
+          ],
+          "target_distance": 4,
+          "target_teleport_chance": 0.00005,
+          "light_teleport_chance": 0.05
+        },
+        "minecraft:movement": {
+          "value": 0.285
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 2,
+          "track_target": true,
+          "require_complete_path": false,
+          "random_stop_interval": 0,
+          "reach_multiplier": 2.8,
+          "cooldown_time": 0.1,
+          "speed_multiplier": 1.04,
+          "attack_duration": 1.2,
+          "hit_delay_pct": 0.25
+        }
+      }
+    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 : 0"
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/watchling.json"
+      },
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          },
+          {
+            "filters": {
+              "test": "in_contact_with_water",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "drowning",
+            "damage_per_tick": 1
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 7
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "attack_interval": 0,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "snowgolem"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "key_golem_target"
+                }
+                  ]
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "dungeons:cutscene"
+                }
+              ]
+            },
+            "max_dist": 16
+          }
+        ]
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": false,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 7,
+        "speed_multiplier": 0.8
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 8,
+        "probability": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 3
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      },
+      "minecraft:variable_max_auto_step": {
+        "base_value": 1.0625,
+        "jump_prevented_value": 0.5625
+      }
+    },
+    "events": {
+      "dungeons:despawn_endersent_minion": {},
+      "dungeons:spawn_endersent_minion": {
+        "add": {
+          "component_groups": [
+            "dungeons:watchling_normal",
+            "dungeons:endersent_minion"
+          ]
+        }
+      },
+      "dungeons:become_enchanted": {
+        "add": {
+          "component_groups": [
+            "dungeons:transform_to_enchanted"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 1,
+            "trigger": "dungeons:become_enchanted"
+          },
+          {
+            "weight": 9,
+            "add": {
+              "component_groups": [
+                "dungeons:watchling_normal"
+              ]
+            }
+          }
+        ]
+      },
+      "dungeons:try_teleport": {}
+    }
+  }
 }

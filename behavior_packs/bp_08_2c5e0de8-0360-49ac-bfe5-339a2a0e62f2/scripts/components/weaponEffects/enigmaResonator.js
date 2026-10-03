@@ -20,10 +20,10 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
+    if (!heldItem.hasTag(effectId) && !heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) return;
     //effect code
     if (e.damage <= 0) return;
-    const critical = Math.floor(Math.random() * 400);
+    const critical = Math.random() * 400;
     var souls = world.scoreboard.getObjective('soulGauge').getScore(attacker);
     if (souls > 100) souls = 100
     if (critical < souls) {

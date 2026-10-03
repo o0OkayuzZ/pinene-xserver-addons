@@ -6,15 +6,16 @@ import {
 
 const effectId = "dungeons:poison_trail_bow_effect"
 
-const dimensionIds = ["overworld", "nether", "the_end"];
-import { isValidTarget } from "main.js"
+import { isValidTarget, specialDamage } from "main.js"
 import { arrowTypes } from "components/ranged.js"
 
 system.runInterval(() => {
-    for (let dimId of dimensionIds) {
-        for (let entity of world.getDimension(dimId).getEntities({ tags: [effectId] })) {
-            if (!entity.isOnGround && entity.dimension.isChunkLoaded(entity.location)) {
-                const dim = entity.dimension;
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
+        for (let entity of dim.getEntities({ tags: [effectId] })) {
+            if (!entity.isOnGround && dim.isChunkLoaded(entity.location)) {
                 const loc = { x: entity.location.x, y: entity.location.y - 1, z: entity.location.z };
                 dim.spawnParticle("dungeons:poison_trail_bow", loc)
                 const proj = entity.getComponent("projectile")
@@ -33,6 +34,7 @@ system.runInterval(() => {
                             if (target == owner) continue;
                             if (isValidTarget(target) == false) continue;
                             if (target.getEffect("fatal_poison")) continue;
+                            specialDamage(owner, target, 3, EntityDamageCause.wither, ["poison"])
                             target.addEffect("fatal_poison", 100, { amplifier: 2 })
 
                         }

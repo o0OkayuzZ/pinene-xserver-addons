@@ -1,0 +1,47 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:puzzle_piece_5_on",
+            "menu_category": {
+                "category": "none"
+            }
+        },
+        "components": {
+            "dungeons:load_puzzle_piece": {
+                "active": true,
+                "section": 5
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 999
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 999
+            },
+            "minecraft:display_name": "puzzle",
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "can_contain_liquid": true
+                    }
+                ]
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "flattened_structure_void",
+                    "tint_method": "default_foliage"
+                }
+            },
+            "minecraft:tags": [
+                "dungeons:structure_load_block"
+            ],
+            "minecraft:tick": {
+                "interval_range": [
+                    1,
+                    1
+                ]
+            }
+        }
+    }
+}

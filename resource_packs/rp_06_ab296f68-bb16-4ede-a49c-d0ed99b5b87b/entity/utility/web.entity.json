@@ -1,20 +1,18 @@
 {
-	"format_version": "1.10.0",
-	"minecraft:client_entity": {
-		"description": {
-			"identifier": "dungeons:web",
-			"materials": {
-				"default": "snowball"
-			},
-			"textures": {
-				"default": "textures/entity/web"
-			},
-			"geometry": {
-				"default": "geometry.web_entity"
-			},
-			"render_controllers": [
-				"controller.render.item_sprite"
-			]
-		}
-	}
-}
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:web",
+      "materials": {
+        "default": "snowball"
+      },
+      "textures": {
+        "default": "textures/entity/web"
+      },
+      "geometry": {
+        "default": "geometry.web_entity"
+      },
+      "render_controllers": [ "controller.render.item_sprite" ]
+    }
+  }
+} 

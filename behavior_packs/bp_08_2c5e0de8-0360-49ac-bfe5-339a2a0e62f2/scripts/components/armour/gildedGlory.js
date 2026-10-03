@@ -65,6 +65,8 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     e.damage = e.damage * 0.0
     e.cancel = true;
     system.run(() => {
+        world.sendMessage("triggered")
+        hurt.runCommand("scriptevent dungeons:death_barter_triggered")
         const dim = hurt.dimension
         const loc = hurt.location
         dim.playSound("random.totem", loc)
@@ -85,7 +87,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
         deathBarterScore.setScore(hurt, 0)
         var levelsToLose = minLevels + Math.round((hurt.level - minLevels) * 0.25)
         if (hurt.level > 50) levelsToLose += Math.round(hurt.level * 0.2)
-        if (hurt.hasTag("dungeons:debug")) hurt.sendMessage(`§o§e死の物々交換 §a${levelsToLose} レベルを消費`)
+        if (hurt.hasTag("dungeons:debug")) hurt.sendMessage(`§o§e死の取引 §a${levelsToLose} レベルを消費`)
         const expToLose = Math.floor(getXpFromLevelCount(levelsToLose) / 20) * 20
         for (let i = 0; i < 20; i++) {
             system.runTimeout(() => {

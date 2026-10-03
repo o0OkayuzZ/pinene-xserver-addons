@@ -19,14 +19,18 @@ system.runInterval(() => {
                         const damage = specialDamage(player, mob, 1, EntityDamageCause.magic, ["poison"])
                         if (!damage) continue
                         mob.applyKnockback({ x: 0, z: 0 }, -0.2)
-                        mob.addEffect("poison", 40, { amplifier: 2 })
+                        var amplifier = 2
+                        if (isWearingSet(attacker, "dungeons:poison_focus")) amplifier += 1
+                        mob.addEffect("poison", 40, { amplifier: amplifier })
                         mob.addEffect("slowness", 40, { amplifier: 1, showParticles: false })
                     } else {
                         if (mob.getEffect("fatal_poison")) continue;
                         const damage = specialDamage(player, mob, 2, EntityDamageCause.magic, ["poison"])
                         if (!damage) continue
                         mob.applyKnockback({ x: 0, z: 0 }, -0.2)
-                        mob.addEffect("fatal_poison", 50, { amplifier: 2 })
+                        var amplifier = 2
+                        if (isWearingSet(player, "dungeons:poison_focus")) amplifier += 1
+                        mob.addEffect("fatal_poison", 50, { amplifier: amplifier })
                         mob.addEffect("slowness", 50, { amplifier: 2, showParticles: false })
                     }
                     mob.dimension.spawnParticle("dungeons:sprout_armour_smoke", mob.location)

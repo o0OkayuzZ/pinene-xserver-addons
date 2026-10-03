@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:endw_end"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_end",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_end",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_end_tiny",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_end_tinier",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:stronghold_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_side_end_0",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 100
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_side_end_1",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 100
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_side_end_2",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/creepy_stronghold/shold_fallback",
+                    "processors": "dungeons:creepy_stronghold"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

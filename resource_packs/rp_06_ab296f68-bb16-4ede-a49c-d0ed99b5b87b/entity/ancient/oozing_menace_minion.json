@@ -1,0 +1,44 @@
+{
+    "format_version": "1.26.0",
+    "minecraft:client_entity": {
+        "description": {
+            "min_engine_version": "1.10.0",
+            "identifier": "dungeons:oozing_menace_minion",
+            "materials": {
+                "default": "entity_emissive_alpha",
+                "outer": "slime_outer",
+                "enchanted": "dungeons_entity_enchant"
+            },
+            "textures": {
+                "default": "textures/entity/enchanted_mob/slime",
+                "enchanted": "textures/misc/guard_entity_glint"
+            },
+            "geometry": {
+                "default": "geometry.slime",
+                "armor": "geometry.slime.armor"
+            },
+            "scripts": {
+                "scale": "query.graphics_mode_is_any('deferred') ? 1 : 1.2",
+                "pre_animation": [
+                    "variable.squish_factor = (query.previous_squish_value + (query.current_squish_value - query.previous_squish_value) * query.frame_alpha);",
+                    "variable.bounce = 1 / ((variable.squish_factor / (query.variant * 0.5 + 1)) + 1);",
+                    "variable.horizontal_scale_amount = variable.bounce * query.variant;",
+                    "variable.vertical_scale_amount = (1 / variable.bounce) * query.variant;"
+                ],
+                "scaleX": "variable.horizontal_scale_amount",
+                "scaleY": "variable.vertical_scale_amount",
+                "scaleZ": "variable.horizontal_scale_amount"
+            },
+            "render_controllers": [
+                "controller.render.slime",
+                "controller.render.dungeons_entity_enchanted",
+                {
+                    "controller.render.slime_armor": "query.graphics_mode_is_any('deferred')"
+                },
+                {
+                    "controller.render.slime_armor_enchanted": "query.graphics_mode_is_any('deferred')"
+                }
+            ]
+        }
+    }
+}

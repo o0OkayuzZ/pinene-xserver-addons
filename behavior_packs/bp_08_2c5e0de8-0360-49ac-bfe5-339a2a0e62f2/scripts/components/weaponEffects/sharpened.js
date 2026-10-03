@@ -20,8 +20,13 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
-    //effect code
-    if (e.damage <= 0) return;
-    e.damage = e.damage * (1 + (2 / Math.round(1 + e.damage)))
+    var count = 0
+    if (heldItem.hasTag(effectId)) count += 1
+    if (heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) count += 1
+    if (count == 0) return;
+    for (let i = 0; i < count; i++) {
+        //effect code
+        if (e.damage <= 0) return;
+        e.damage = e.damage * 1.2
+    }
 });

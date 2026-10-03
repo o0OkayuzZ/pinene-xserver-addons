@@ -1,0 +1,38 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bp_mechanical_shortbow"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "key": {
+      "B": {
+        "item": "dungeons:blue_print"
+      },
+      "W": {
+        "item": "dungeons:mechanical_shortbow"
+      }
+    },
+    "unlock": [
+      {
+        "item": "dungeons:mechanical_shortbow"
+      }
+    ],
+    "pattern": [
+      "B",
+      "W"
+    ],
+    "result": [
+      {
+        "item": "dungeons:mechanical_shortbow",
+        "count": 1
+      },
+      {
+        "item": "dungeons:mechanical_shortbow",
+        "count": 1
+      }
+    ]
+  }
+}

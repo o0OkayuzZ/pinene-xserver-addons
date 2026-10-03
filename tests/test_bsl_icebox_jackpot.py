@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from build_bsl_icebox_jackpot import build, find_pack, load, TABLE
-from validate_bsl_icebox_jackpot import definitions, inspect_graph, validate
+from validate_bsl_icebox_jackpot import definitions, inspect_graph, load_bedrock_json, validate
 
 
 class IceBoxTests(unittest.TestCase):
@@ -99,6 +99,25 @@ class IceBoxTests(unittest.TestCase):
         with patch("build_bsl_icebox_jackpot.load", return_value=altered):
             with self.assertRaisesRegex(ValueError, "Review changed metadata"):
                 build(self.pack)
+
+    def test_bedrock_source_jsonc_is_supported_without_relaxing_contract_loads(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "item.json"
+            path.write_text("""{
+              // Bedrock source comment
+              "minecraft:item": {
+                "description": {"identifier": "test:jsonc"},
+                "components": {
+                  "minecraft:max_stack_size": 16,
+                },
+              },
+            }""", encoding="utf-8")
+            self.assertEqual(
+                load_bedrock_json(path)["minecraft:item"]["description"]["identifier"],
+                "test:jsonc",
+            )
+            with self.assertRaises(json.JSONDecodeError):
+                load(path)
 
 
 if __name__ == "__main__":

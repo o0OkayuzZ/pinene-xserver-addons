@@ -1,0 +1,138 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:purple_ender_vine",
+            "states": {
+                "dungeons:tip": [
+                    true,
+                    false
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('dungeons:tip')",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "face_dimming": false,
+                            "ambient_occlusion": false,
+                            "render_method": "alpha_test_single_sided",
+                            "texture": "purple_ender_vine_tip"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -4,
+                            0,
+                            -4
+                        ],
+                        "size": [
+                            8,
+                            15,
+                            8
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('dungeons:tip')",
+                "components": {
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -7,
+                            0,
+                            -7
+                        ],
+                        "size": [
+                            14,
+                            16,
+                            14
+                        ]
+                    }
+                }
+            }
+        ],
+        "components": {
+            "minecraft:connection_rule": {
+                "accepts_connections_from": "none"
+            },
+            "dungeons:ender_vine":{},
+            "minecraft:collision_box": false,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0
+            },
+            "minecraft:flammable": true,
+            "minecraft:geometry": {
+                "identifier": "minecraft:geometry.cross"
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "on_liquid_touches": "popped"
+                    }
+                ]
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "face_dimming": false,
+                    "ambient_occlusion": false,
+                    "render_method": "alpha_test_single_sided",
+                    "texture": "purple_ender_vine"
+                }
+            },
+            "minecraft:movable": {
+                "movement_type": "popped"
+            },
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "end_stone",
+                            "dungeons:purple_mossy_end_stone",
+                            "dungeons:yellow_mossy_end_stone",
+                            "dungeons:purple_ender_vine"
+                        ]
+                    }
+                ]
+            },
+            "minecraft:random_offset": {
+                "x": {
+                    "range": {
+                        "min": -2,
+                        "max": 2
+                    }
+                },
+                "y": {
+                    "range": {
+                        "min": -2,
+                        "max": 0
+                    }
+                },
+                "z": {
+                    "range": {
+                        "min": -2,
+                        "max": 2
+                    }
+                }
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -6,
+                    0,
+                    -6
+                ],
+                "size": [
+                    12,
+                    12,
+                    12
+                ]
+            }
+        }
+    }
+}

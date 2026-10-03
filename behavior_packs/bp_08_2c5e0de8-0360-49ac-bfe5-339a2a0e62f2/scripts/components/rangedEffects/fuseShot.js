@@ -53,6 +53,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     const cause = e.damageSource.cause;
     if (cause !== EntityDamageCause.projectile) return;
     if (!projectile.hasTag(effectId)) return;
+    if (!projectile.hasTag(effectId.replace("dungeons:", "dungeons:nongilded_")) && Math.random() > 0.5) return;
     const canHit = projectile.getDynamicProperty("dungeons:can_hit");
     if (canHit <= 0) return;
     //effect code
@@ -71,6 +72,7 @@ world.afterEvents.projectileHitBlock.subscribe((e) => {
     if (!player) return;
     if (!player.isValid) return;
     if (!projectile.hasTag(effectId)) return;
+    if (!projectile.hasTag(effectId.replace("dungeons:", "dungeons:nongilded_")) && Math.random() > 0.5) return;
     const canHit = projectile.getDynamicProperty("dungeons:can_hit");
     if (canHit <= 0) return;
     //effect code

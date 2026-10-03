@@ -1,0 +1,67 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:cursedhalls_side"
+        },
+        "fallback": "dungeons:cursedhalls_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_sidestraight_0",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_sidestraight_1",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_sidestraight_2",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_sidesplit_0",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_sidesplit_1",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_boss",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_side_end_0",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

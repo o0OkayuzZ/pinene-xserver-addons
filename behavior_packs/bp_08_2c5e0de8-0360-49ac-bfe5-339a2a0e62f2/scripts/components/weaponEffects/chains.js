@@ -22,7 +22,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
+    if (!heldItem.hasTag(effectId) && !heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) return;
     //effect code
     if (e.damage <= 0) return;
     system.run(() => {
@@ -111,6 +111,7 @@ function findNewChainTarget(chainedTargets, owner, loc, dim) {
         excludeFamilies: ['ignore']
     });
     for (const target of chainRange) {
+        if (target.typeId == "minecraft:player" && (target.getGameMode() == "Creative" || target.getGameMode() == "Spectator")) continue;
         if (chainedTargets.includes(target)) continue
         if (isValidTarget(target) == false) continue;
         if (target === owner) continue;

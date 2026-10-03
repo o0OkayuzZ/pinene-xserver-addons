@@ -1,0 +1,59 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:cursedhalls_sidekey"
+        },
+        "fallback": "dungeons:cursedhalls_key_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_keystraight_0",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_keystraight_1",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_keystraight_2",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_keysplit_0",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_keysplit_1",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/cursed_halls/hal_key_end",
+                    "processors": "dungeons:cursed_halls"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

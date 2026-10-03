@@ -9,6 +9,7 @@ world.afterEvents.entityHurt.subscribe((e) => {
     if (!damageSource) return;
     if (!damageSource.isValid) return;
     if (damageSource.matches({ families: ["enchanted"], tags: ["dungeons:enchanted_mob_" + id] })) {
+        if (Math.random() > 0.5) return;
         const dim = damageSource.dimension;
         if (!dim.isChunkLoaded(damageSource.location)) return;
         const loc = { x: damageSource.location.x, y: damageSource.location.y + 1, z: damageSource.location.z }

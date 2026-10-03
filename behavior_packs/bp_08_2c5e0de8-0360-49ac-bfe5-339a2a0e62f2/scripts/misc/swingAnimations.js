@@ -20,6 +20,14 @@ world.afterEvents.playerSwingStart.subscribe((e) => {
     if (!customSwingComponent) return;
     const params = customSwingComponent.customComponentParameters.params
     const player = e.player
+    if(heldItem.typeId.includes("sawblade")) {
+        var cd = heldItem.getComponent("cooldown")
+        if (cd !== undefined) {
+            const timeLeft = player.getItemCooldown(heldItem.getComponent("cooldown").cooldownCategory)
+            if(timeLeft > 0) return;
+        }
+
+    }
     if (params.has_cooldown == true && heldItem.typeId.includes("sawblade") == false) {
         var cd = heldItem.getComponent("cooldown")
         if (cd !== undefined) {
@@ -43,6 +51,7 @@ world.afterEvents.playerSwingStart.subscribe((e) => {
         }
     }
     //animations
+    if(player.hasTag("dungeons:ignore_animations")) return;
     if (params.animation !== undefined) {
         player.playAnimation(`animation.${params.animation}.dummy1`, { controller: `dummy`, stopExpression: `t.player_name = '${player?.name}'; t.melee_attack = 1; return true; ` })
     }

@@ -15,10 +15,7 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_parched": {
@@ -32,10 +29,7 @@
             "volume": 1.0
           }
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:enchanted_stray": {
@@ -49,10 +43,7 @@
             "volume": 1.0
           }
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:enchanted_zombie": {
@@ -66,10 +57,7 @@
             "volume": 0.45
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_creeper": {
@@ -82,10 +70,20 @@
           },
           "hurt": "mob.creeper.say"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:enchanted_icy_creeper": {
+        "events": {
+          "death": "mob.creeper.death",
+          "fuse": {
+            "pitch": 0.5,
+            "sound": "random.fuse",
+            "volume": 1
+          },
+          "hurt": "mob.creeper.say"
+        },
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:icy_creeper": {
@@ -98,10 +96,7 @@
           },
           "hurt": "mob.creeper.say"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_cave_spider": {
@@ -110,18 +105,12 @@
           "death": "mob.spider.death",
           "hurt": "mob.spider.say",
           "step": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "mob.spider.step",
             "volume": 0.35
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_spider": {
@@ -130,28 +119,19 @@
           "death": "mob.spider.death",
           "hurt": "mob.spider.say",
           "step": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "mob.spider.step",
             "volume": 0.35
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_witch": {
         "events": {
           "ambient": "mob.witch.ambient",
           "ambient.in.raid": {
-            "pitch": [
-              0.8,
-              1.2
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.witch.ambient",
             "volume": 3
           },
@@ -169,10 +149,7 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:necromancer": {
@@ -199,10 +176,7 @@
             "volume": 0.66
           }
         },
-        "pitch": [
-          0.4,
-          0.8
-        ],
+        "pitch": [0.4, 0.8],
         "volume": 1
       },
       "dungeons:enchanted_necromancer": {
@@ -229,10 +203,7 @@
             "volume": 0.66
           }
         },
-        "pitch": [
-          0.4,
-          0.8
-        ],
+        "pitch": [0.4, 0.8],
         "volume": 1
       },
       "dungeons:redstone_golem": {
@@ -250,10 +221,7 @@
             "volume": 3
           }
         },
-        "pitch": [
-          0.3,
-          0.55
-        ],
+        "pitch": [0.3, 0.55],
         "volume": 1
       },
       "dungeons:wraith": {
@@ -267,10 +235,7 @@
             "volume": 1.2
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_wraith": {
@@ -284,10 +249,7 @@
             "volume": 1.2
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:tower_wraith": {
@@ -301,35 +263,23 @@
             "volume": 1.2
           }
         },
-        "pitch": [
-          0.5,
-          1
-        ],
+        "pitch": [0.5, 1],
         "volume": 1
       },
       "dungeons:enchanted_wither_skeleton": {
         "events": {
           "ambient": {
-            "pitch": [
-              0.8,
-              1.2
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "entity.wither_skeleton.ambient",
             "volume": 1
           },
           "death": {
-            "pitch": [
-              0.8,
-              1.2
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "entity.wither_skeleton.death",
             "volume": 1
           },
           "hurt": {
-            "pitch": [
-              0.8,
-              1.2
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "entity.wither_skeleton.hurt",
             "volume": 1
           },
@@ -339,10 +289,7 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:zombified_piglin_brute": {
@@ -351,18 +298,12 @@
           "death": "mob.zombiepig.zpigdeath",
           "hurt": "mob.zombiepig.zpighurt",
           "mad": {
-            "pitch": [
-              1.22,
-              1.77
-            ],
+            "pitch": [1.22, 1.77],
             "sound": "mob.zombiepig.zpigangry",
             "volume": 2
           }
         },
-        "pitch": [
-          0.5,
-          0.9
-        ],
+        "pitch": [0.5, 0.9],
         "volume": 1
       },
       "dungeons:ice_chunk": {
@@ -371,20 +312,14 @@
           "hurt": "random.glass",
           "step": "random.glass"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 0
       },
       "dungeons:iceologer": {
         "events": {
           "ambient": "mob.evocation_illager.ambient",
           "ambient.in.raid": {
-            "pitch": [
-              0.8,
-              1
-            ],
+            "pitch": [0.8, 1],
             "sound": "mob.evocation_illager.ambient",
             "volume": 3
           },
@@ -395,28 +330,19 @@
           "prepare.summon": "mob.evocation_illager.prepare_summon",
           "prepare.wololo": "mob.evocation_illager.prepare_wololo",
           "cast.spell": {
-            "pitch": [
-              0.6,
-              0.9
-            ],
+            "pitch": [0.6, 0.9],
             "sound": "artefact.ice_wand",
             "volume": 0.5
           }
         },
-        "pitch": [
-          0.8,
-          1
-        ],
+        "pitch": [0.8, 1],
         "volume": 1
       },
       "dungeons:enchanted_iceologer": {
         "events": {
           "ambient": "mob.evocation_illager.ambient",
           "ambient.in.raid": {
-            "pitch": [
-              0.8,
-              1
-            ],
+            "pitch": [0.8, 1],
             "sound": "mob.evocation_illager.ambient",
             "volume": 3
           },
@@ -427,18 +353,12 @@
           "prepare.summon": "mob.evocation_illager.prepare_summon",
           "prepare.wololo": "mob.evocation_illager.prepare_wololo",
           "cast.spell": {
-            "pitch": [
-              0.6,
-              0.9
-            ],
+            "pitch": [0.6, 0.9],
             "sound": "artefact.ice_wand",
             "volume": 0.5
           }
         },
-        "pitch": [
-          0.8,
-          1
-        ],
+        "pitch": [0.8, 1],
         "volume": 1
       },
       "dungeons:wildfire": {
@@ -453,37 +373,25 @@
             "volume": 0
           }
         },
-        "pitch": [
-          0.75,
-          1.15
-        ],
+        "pitch": [0.75, 1.15],
         "volume": 1.15
       },
       "dungeons:dummy": {
         "events": {
           "ambient": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "mob.cow.step",
             "volume": 0
           },
           "death": "mob.armor_stand.break",
           "hurt": "mob.armor_stand.hit",
           "step": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "mob.cow.step",
             "volume": 0
           }
         },
-        "pitch": [
-          0.9,
-          1.35
-        ],
+        "pitch": [0.9, 1.35],
         "volume": 1
       },
       "dungeons:vanguard": {
@@ -500,10 +408,7 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.7,
-          1.05
-        ],
+        "pitch": [0.7, 1.05],
         "volume": 1
       },
       "dungeons:enchanted_vanguard": {
@@ -520,37 +425,25 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.7,
-          1.05
-        ],
+        "pitch": [0.7, 1.05],
         "volume": 1
       },
       "dungeons:target_dummy": {
         "events": {
           "ambient": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "mob.cow.step",
             "volume": 0
           },
           "death": "mob.armor_stand.break",
           "hurt": "mob.armor_stand.hit",
           "step": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "mob.cow.step",
             "volume": 0
           }
         },
-        "pitch": [
-          0.9,
-          1.35
-        ],
+        "pitch": [0.9, 1.35],
         "volume": 1
       },
       "dungeons:sunken_skeleton": {
@@ -567,10 +460,7 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.85,
-          1.275
-        ],
+        "pitch": [0.85, 1.275],
         "volume": 1
       },
       "dungeons:enchanted_sunken_skeleton": {
@@ -587,10 +477,7 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.85,
-          1.275
-        ],
+        "pitch": [0.85, 1.275],
         "volume": 1
       },
       "dungeons:jungle_zombie": {
@@ -604,10 +491,7 @@
             "volume": 0.45
           }
         },
-        "pitch": [
-          0.4,
-          0.6
-        ],
+        "pitch": [0.4, 0.6],
         "volume": 1
       },
       "dungeons:enchanted_jungle_zombie": {
@@ -621,10 +505,7 @@
             "volume": 0.45
           }
         },
-        "pitch": [
-          0.4,
-          0.6
-        ],
+        "pitch": [0.4, 0.6],
         "volume": 1
       },
       "dungeons:enchanted_frozen_zombie": {
@@ -638,10 +519,7 @@
             "volume": 0.45
           }
         },
-        "pitch": [
-          0.988,
-          1.25
-        ],
+        "pitch": [0.988, 1.25],
         "volume": 0.75
       },
       "dungeons:frozen_zombie": {
@@ -655,10 +533,7 @@
             "volume": 0.45
           }
         },
-        "pitch": [
-          0.988,
-          1.25
-        ],
+        "pitch": [0.988, 1.25],
         "volume": 0.75
       },
       "dungeons:enchanted_husk": {
@@ -672,10 +547,7 @@
             "volume": 0.35
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:redstone_cube": {
@@ -684,18 +556,12 @@
           "death": "break.tuff",
           "hurt": "hit.tuff",
           "step": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "step.tuff",
             "volume": 0.75
           }
         },
-        "pitch": [
-          0.9,
-          1.1
-        ],
+        "pitch": [0.9, 1.1],
         "volume": 1
       },
       "dungeons:enchanted_silverfish": {
@@ -706,13 +572,10 @@
           "step": {
             "pitch": 1.0,
             "sound": "mob.silverfish.step",
-            "volume": 0.350
+            "volume": 0.35
           }
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:redstone_monstrosity": {
@@ -731,10 +594,7 @@
             "volume": 5
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.2
       },
       "dungeons:obsidian_monstrosity": {
@@ -748,10 +608,7 @@
             "volume": 4
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.2
       },
       "dungeons:rolling_flame": {
@@ -760,18 +617,12 @@
           "death": "dig.wood",
           "hurt": "hit.wood",
           "step": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "step.wood",
             "volume": 0.75
           }
         },
-        "pitch": [
-          0.8,
-          1.1
-        ],
+        "pitch": [0.8, 1.1],
         "volume": 1
       },
       "dungeons:spooky_monstrosity": {
@@ -790,10 +641,7 @@
             "volume": 2
           }
         },
-        "pitch": [
-          0.1,
-          0.4
-        ],
+        "pitch": [0.1, 0.4],
         "volume": 1.2
       },
       "dungeons:enchanted_blaze": {
@@ -803,10 +651,7 @@
           "hurt": "mob.blaze.hit",
           "shoot": "mob.blaze.shoot"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:wildfire_blaze": {
@@ -816,57 +661,14 @@
           "hurt": "mob.blaze.hit",
           "shoot": "mob.blaze.shoot"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
-        "volume": 1
-      },
-      "dungeons:cursed_presence": {
-        "events": {
-          "ambient": "mob.skeleton.say",
-          "death": "mob.skeleton.death",
-          "hurt": {
-            "sound": "mob.skeleton.hurt",
-            "volume": 0.7
-          },
-          "step": {
-            "pitch": 0.75,
-            "sound": "mob.skeleton.step",
-            "volume": 1
-          }
-        },
-        "pitch": [
-          0.7,
-          1.05
-        ],
-        "volume": 1
-      },
-      "dungeons:cursed_presence_guard": {
-        "events": {
-          "ambient": "mob.zombie.say",
-          "death": "mob.zombie.death",
-          "hurt": "mob.zombie.hurt",
-          "step": {
-            "pitch": 1,
-            "sound": "mob.zombie.step",
-            "volume": 0.45
-          }
-        },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:royal_guard": {
         "events": {
           "ambient": "mob.vindicator.idle",
           "ambient.in.raid": {
-            "pitch": [
-              0.4,
-              0.6
-            ],
+            "pitch": [0.4, 0.6],
             "sound": "mob.vindicator.idle",
             "volume": 3
           },
@@ -874,20 +676,29 @@
           "death": "mob.vindicator.death",
           "hurt": "mob.vindicator.hurt"
         },
-        "pitch": [
-          0.4,
-          0.6
-        ],
+        "pitch": [0.4, 0.6],
+        "volume": 1
+      },
+      "dungeons:tower_guard": {
+        "events": {
+          "ambient": "mob.vindicator.idle",
+          "ambient.in.raid": {
+            "pitch": [0.4, 0.6],
+            "sound": "mob.vindicator.idle",
+            "volume": 3
+          },
+          "celebrate": "mob.vindicator.celebrate",
+          "death": "mob.vindicator.death",
+          "hurt": "mob.vindicator.hurt"
+        },
+        "pitch": [0.4, 0.6],
         "volume": 1
       },
       "dungeons:enchanted_royal_guard": {
         "events": {
           "ambient": "mob.vindicator.idle",
           "ambient.in.raid": {
-            "pitch": [
-              0.4,
-              0.6
-            ],
+            "pitch": [0.4, 0.6],
             "sound": "mob.vindicator.idle",
             "volume": 3
           },
@@ -895,10 +706,7 @@
           "death": "mob.vindicator.death",
           "hurt": "mob.vindicator.hurt"
         },
-        "pitch": [
-          0.4,
-          0.6
-        ],
+        "pitch": [0.4, 0.6],
         "volume": 1
       },
       "dungeons:enchanted_enderman": {
@@ -913,10 +721,7 @@
             "volume": 1.0
           }
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:enchanted_endermite": {
@@ -927,13 +732,10 @@
           "step": {
             "pitch": 1.0,
             "sound": "mob.endermite.step",
-            "volume": 0.150
+            "volume": 0.15
           }
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:watchling": {
@@ -943,10 +745,7 @@
           "hurt": "mob.watchling.hurt",
           "attack": "mob.watchling.attack"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_watchling": {
@@ -956,10 +755,7 @@
           "hurt": "mob.watchling.hurt",
           "attack": "mob.watchling.attack"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:blastling": {
@@ -974,13 +770,10 @@
           "step": {
             "pitch": 1.0,
             "sound": "mob.blastling.step",
-            "volume": 0.150
+            "volume": 0.15
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_blastling": {
@@ -995,13 +788,10 @@
           "step": {
             "pitch": 1.0,
             "sound": "mob.blastling.step",
-            "volume": 0.150
+            "volume": 0.15
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:snareling": {
@@ -1011,23 +801,17 @@
           "hurt": "mob.snareling.hurt",
           "attack": "mob.snareling.melee",
           "shoot": {
-            "pitch": [
-              0.88,
-              1.1
-            ],
+            "pitch": [0.88, 1.1],
             "sound": "mob.snareling.ranged",
             "volume": 1
           },
           "step": {
             "pitch": 1.0,
             "sound": "mob.snareling.step",
-            "volume": 0.150
+            "volume": 0.15
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_snareling": {
@@ -1037,23 +821,17 @@
           "hurt": "mob.snareling.hurt",
           "attack": "mob.snareling.melee",
           "shoot": {
-            "pitch": [
-              0.88,
-              1.1
-            ],
+            "pitch": [0.88, 1.1],
             "sound": "mob.snareling.ranged",
             "volume": 1
           },
           "step": {
             "pitch": 1.0,
             "sound": "mob.snareling.step",
-            "volume": 0.150
+            "volume": 0.15
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:endersent": {
@@ -1062,10 +840,7 @@
           "death": "mob.endersent.death",
           "hurt": "mob.endersent.hurt"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 0.9
       },
       "dungeons:guardian_vex": {
@@ -1075,10 +850,7 @@
           "death": "mob.vex.death",
           "hurt": "mob.vex.hurt"
         },
-        "pitch": [
-          1.4,
-          1.8
-        ],
+        "pitch": [1.4, 1.8],
         "volume": 1
       },
       "dungeons:nameless_one": {
@@ -1097,10 +869,7 @@
             "volume": 2
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.5
       },
       "dungeons:mooshroom_monstrosity": {
@@ -1119,18 +888,12 @@
             "volume": 4
           },
           "cast.spell": {
-            "pitch": [
-              0.9,
-              1.3
-            ],
+            "pitch": [0.9, 1.3],
             "sound": "mob.mooshroom_monstrosity.minion_spawn",
             "volume": 5
           }
         },
-        "pitch": [
-          0.7,
-          1.1
-        ],
+        "pitch": [0.7, 1.1],
         "volume": 1.2
       },
       "dungeons:angry_mooshroom": {
@@ -1140,46 +903,46 @@
           "eat": "mob.mooshroom.eat",
           "hurt": "mob.cow.hurt",
           "step": {
-            "pitch": [
-              0.7,
-              0.9
-            ],
+            "pitch": [0.7, 0.9],
             "sound": "mob.cow.step",
             "volume": 0.65
           }
         },
-        "pitch": [
-          0.6,
-          1
-        ],
+        "pitch": [0.6, 1],
+        "volume": 1
+      },
+      "dungeons:ancient_hunt_mooshroom": {
+        "events": {
+          "ambient": "mob.cow.say",
+          "death": "mob.cow.hurt",
+          "eat": "mob.mooshroom.eat",
+          "hurt": "mob.cow.hurt",
+          "step": {
+            "pitch": [0.7, 0.9],
+            "sound": "mob.cow.step",
+            "volume": 0.65
+          }
+        },
+        "pitch": [0.6, 1],
         "volume": 1
       },
       "dungeons:whisperer": {
         "events": {
-          "ambient": "mob.sniffer.idle",
-          "death": "mob.sniffer.death",
+          "ambient": "mob.whisperer.idle",
+          "death": "mob.whisperer.death",
           "cast.spell": {
-            "pitch": [
-              1.1,
-              1.4
-            ],
-            "sound": "mob.sniffer.idle",
+            "pitch": [1, 1.2],
+            "sound": "mob.whisperer.summon",
             "volume": 1
           },
-          "hurt": "mob.sniffer.hurt",
+          "hurt": "mob.whisperer.hurt",
           "step": {
-            "pitch": [
-              0.7,
-              0.9
-            ],
-            "sound": "mob.cow.step",
+            "pitch": [0.7, 0.9],
+            "sound": "mob.whisperer.walk",
             "volume": 0.65
           }
         },
-        "pitch": [
-          0.4,
-          0.7
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:whisperer_vine": {
@@ -1203,25 +966,16 @@
             "volume": 0.85
           },
           "attack": {
-            "pitch": [
-              0.8,
-              1
-            ],
+            "pitch": [0.8, 1],
             "sound": "mob.bee.sting"
           },
           "death": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "mob.bee.death",
             "volume": 0.6
           },
           "hurt": {
-            "pitch": [
-              0.9,
-              1.1
-            ],
+            "pitch": [0.9, 1.1],
             "sound": "mob.bee.hurt",
             "volume": 0.6
           }
@@ -1240,10 +994,7 @@
             "volume": 0.4
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:wretched_wraith": {
@@ -1258,10 +1009,7 @@
             "volume": 2
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 2
       },
       "dungeons:wind_totem_left": {
@@ -1275,10 +1023,7 @@
             "volume": 0
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 0
       },
       "dungeons:wind_totem_right": {
@@ -1292,38 +1037,26 @@
             "volume": 0
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 0
       },
       "dungeons:wavewhisperer": {
         "events": {
-          "ambient": "mob.sniffer.idle",
-          "death": "mob.sniffer.death",
+          "ambient": "mob.whisperer.idle",
+          "death": "mob.whisperer.death",
           "cast.spell": {
-            "pitch": [
-              1.1,
-              1.4
-            ],
-            "sound": "mob.sniffer.idle",
+            "pitch": [1, 1.2],
+            "sound": "mob.whisperer.summon",
             "volume": 1
           },
-          "hurt": "mob.sniffer.hurt",
+          "hurt": "mob.whisperer.hurt",
           "step": {
-            "pitch": [
-              0.7,
-              0.9
-            ],
-            "sound": "mob.cow.step",
+            "pitch": [0.7, 0.9],
+            "sound": "mob.whisperer.walk",
             "volume": 0.65
           }
         },
-        "pitch": [
-          0.6,
-          1.05
-        ],
+        "pitch": [0.6, 1],
         "volume": 1
       },
       "dungeons:wavewhisperer_kelp": {
@@ -1351,42 +1084,27 @@
             "volume": 2.2
           }
         },
-        "pitch": [
-          0.9,
-          1.1
-        ],
+        "pitch": [0.9, 1.1],
         "volume": 2
       },
       "dungeons:cauldron_slime": {
         "events": {
           "attack": {
-            "pitch": [
-              0.8,
-              1.2
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.slime.attack"
           },
           "death": "mob.slime.small",
           "hurt": "mob.slime.small",
           "squish.big": {
-            "pitch": [
-              0.64,
-              0.96
-            ],
+            "pitch": [0.64, 0.96],
             "sound": "mob.slime.big"
           },
           "squish.small": {
-            "pitch": [
-              0.64,
-              0.96
-            ],
+            "pitch": [0.64, 0.96],
             "sound": "mob.slime.small"
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:enchanted_bogged": {
@@ -1400,10 +1118,7 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1
       },
       "dungeons:buzzy_nest": {
@@ -1412,19 +1127,13 @@
           "death": "dig.stone",
           "hurt": "hit.stone"
         },
-        "pitch": [
-          0.6,
-          1.2
-        ],
+        "pitch": [0.6, 1.2],
         "volume": 1
       },
       "dungeons:leapleaf": {
         "events": {
           "ambient": {
-            "pitch": [
-              0.3,
-              0.6
-            ],
+            "pitch": [0.3, 0.6],
             "sound": "mob.leapleaf.step",
             "volume": 0.9
           },
@@ -1432,18 +1141,12 @@
           "hurt": "mob.leapleaf.hurt",
           "attack": "mob.leapleaf.attack",
           "step": {
-            "pitch": [
-              0.8,
-              1.2
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.leapleaf.step",
             "volume": 0.65
           }
         },
-        "pitch": [
-          0.8,
-          1.1
-        ],
+        "pitch": [0.8, 1.1],
         "volume": 1
       },
       "dungeons:pet_iron_golem": {
@@ -1463,10 +1166,7 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.8,
-          1
-        ],
+        "pitch": [0.8, 1],
         "volume": 1
       },
       "dungeons:jungle_abomination": {
@@ -1484,10 +1184,7 @@
             "volume": 2
           }
         },
-        "pitch": [
-          0.9,
-          1.1
-        ],
+        "pitch": [0.9, 1.1],
         "volume": 2
       },
       "dungeons:abomination_vine": {
@@ -1508,42 +1205,27 @@
         "events": {
           "ambient": {
             "sound": "mob.squall_golem.hurt",
-            "pitch": [
-              1.6,
-              2
-            ]
+            "pitch": [1.6, 2]
           },
           "death": "mob.irongolem.death",
           "hurt": {
             "sound": "mob.squall_golem.hurt",
-            "pitch": [
-              0.6,
-              1
-            ]
+            "pitch": [0.6, 1]
           },
           "step": {
             "sound": "break.heavy_core",
-            "pitch": [
-              0.4,
-              0.8
-            ],
+            "pitch": [0.4, 0.8],
             "volume": 4
           }
         },
-        "pitch": [
-          1,
-          1.6
-        ],
+        "pitch": [1, 1.6],
         "volume": 1
       },
       "dungeons:windcaller": {
         "events": {
           "ambient": "mob.vindicator.idle",
           "ambient.in.raid": {
-            "pitch": [
-              1,
-              1.2
-            ],
+            "pitch": [1, 1.2],
             "sound": "mob.vindicator.idle",
             "volume": 3
           },
@@ -1555,18 +1237,12 @@
           "death": "mob.vindicator.death",
           "hurt": "mob.vindicator.hurt",
           "prepare.wololo": {
-            "pitch": [
-              0.8,
-              1.2
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.evocation_illager.prepare_wololo",
             "volume": 1
           }
         },
-        "pitch": [
-          1.2,
-          1.6
-        ],
+        "pitch": [1.2, 1.6],
         "volume": 1
       },
       "dungeons:tempest_golem": {
@@ -1575,10 +1251,7 @@
           "death": "mob.tempest_golem.death",
           "hurt": "mob.tempest_golem.hurt"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 4.5
       },
       "dungeons:drowned_necromancer": {
@@ -1601,10 +1274,7 @@
             "volume": 0.75
           }
         },
-        "pitch": [
-          0.5,
-          0.8
-        ],
+        "pitch": [0.5, 0.8],
         "volume": 1.2
       },
       "dungeons:ancient_guardian": {
@@ -1625,10 +1295,7 @@
             "volume": 7
           }
         },
-        "pitch": [
-          0.2,
-          0.5
-        ],
+        "pitch": [0.2, 0.5],
         "volume": 3
       },
       "dungeons:baby_ghast": {
@@ -1642,10 +1309,7 @@
           },
           "warn": "mob.ghast.charge"
         },
-        "pitch": [
-          1.6,
-          2
-        ],
+        "pitch": [1.6, 2],
         "volume": 1
       },
       "dungeons:piglin_fungus_thrower": {
@@ -1659,7 +1323,7 @@
           "retreat": "mob.piglin.retreat",
           "step": {
             "sound": "mob.piglin.step",
-            "volume": 0.350
+            "volume": 0.35
           },
           "throw": {
             "pitch": 1,
@@ -1667,10 +1331,7 @@
             "volume": 1
           }
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:zombified_piglin_fungus_thrower": {
@@ -1679,18 +1340,12 @@
           "death": "mob.zombiepig.zpigdeath",
           "hurt": "mob.zombiepig.zpighurt",
           "mad": {
-            "pitch": [
-              1.440,
-              2.160
-            ],
+            "pitch": [1.44, 2.16],
             "sound": "mob.zombiepig.zpigangry",
             "volume": 2.0
           }
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:boss_wildfire": {
@@ -1705,10 +1360,7 @@
             "volume": 0
           }
         },
-        "pitch": [
-          0.5,
-          0.8
-        ],
+        "pitch": [0.5, 0.8],
         "volume": 2.6
       },
       "dungeons:spiked_eye": {
@@ -1717,10 +1369,7 @@
           "death": "mob.endersent.death",
           "hurt": "mob.endersent.hurt"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.8
       },
       "dungeons:binding_eye": {
@@ -1729,10 +1378,7 @@
           "death": "mob.endersent.death",
           "hurt": "mob.endersent.hurt"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.8
       },
       "dungeons:reaping_eye": {
@@ -1741,10 +1387,7 @@
           "death": "mob.endersent.death",
           "hurt": "mob.endersent.hurt"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.8
       },
       "dungeons:blight_eye": {
@@ -1753,10 +1396,7 @@
           "death": "mob.endersent.death",
           "hurt": "mob.endersent.hurt"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.8
       },
       "dungeons:ravenous_eye": {
@@ -1765,10 +1405,7 @@
           "death": "mob.endersent.death",
           "hurt": "mob.endersent.hurt"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.8
       },
       "dungeons:savage_eye": {
@@ -1777,20 +1414,14 @@
           "death": "mob.endersent.death",
           "hurt": "mob.endersent.hurt"
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.8
       },
       "dungeons:illusioner": {
         "events": {
           "ambient": "mob.evocation_illager.ambient",
           "ambient.in.raid": {
-            "pitch": [
-              0.80,
-              1.20
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.evocation_illager.ambient",
             "volume": 3.0
           },
@@ -1802,10 +1433,7 @@
           "prepare.summon": "mob.evocation_illager.prepare_summon",
           "prepare.wololo": "mob.evocation_illager.prepare_wololo"
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:illusioner_clone": {
@@ -1816,20 +1444,14 @@
           "prepare.summon": "mob.evocation_illager.prepare_summon",
           "prepare.wololo": "mob.evocation_illager.prepare_wololo"
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 0.5
       },
       "dungeons:vindicator_chef": {
         "events": {
           "ambient": "mob.vindicator.idle",
           "ambient.in.raid": {
-            "pitch": [
-              0.80,
-              1.20
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.vindicator.idle",
             "volume": 3.0
           },
@@ -1837,10 +1459,7 @@
           "death": "mob.vindicator.death",
           "hurt": "mob.vindicator.hurt"
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:vengeful_endermite": {
@@ -1851,13 +1470,10 @@
           "step": {
             "pitch": 1.0,
             "sound": "mob.endermite.step",
-            "volume": 0.150
+            "volume": 0.15
           }
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:vengeful_heart_of_ender": {
@@ -1871,18 +1487,12 @@
             "volume": 2
           },
           "shoot": {
-            "pitch": [
-              0.8,
-              1.2
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.vhoe.shoot",
             "volume": 1.5
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 2.5
       },
       "dungeons:vengeful_heart_of_ender_death": {
@@ -1896,18 +1506,12 @@
             "volume": 0.0
           },
           "shoot": {
-            "pitch": [
-              0.8,
-              1.2
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.vhoe.shoot",
             "volume": 0.0
           }
         },
-        "pitch": [
-          0.8,
-          1.2
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 0.0
       },
       "dungeons:vhoe_flame": {
@@ -1916,10 +1520,7 @@
           "hurt": "mob.blaze.hit",
           "shoot": "mob.blaze.shoot"
         },
-        "pitch": [
-          1.8,
-          2.4
-        ],
+        "pitch": [1.8, 2.4],
         "volume": 1
       },
       "dungeons:soul_wizard": {
@@ -1933,20 +1534,14 @@
             "volume": 0.66
           }
         },
-        "pitch": [
-          0.3,
-          0.5
-        ],
+        "pitch": [0.3, 0.5],
         "volume": 1
       },
       "dungeons:enchanter": {
         "events": {
           "ambient": "mob.enchanter.idle",
           "ambient.in.raid": {
-            "pitch": [
-              0.80,
-              1.20
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.enchanter.idle",
             "volume": 3.0
           },
@@ -1955,20 +1550,14 @@
           "hurt": "mob.enchanter.hurt",
           "prepare.attack": "mob.enchanter.prepare"
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:enchanted_pillager": {
         "events": {
           "ambient": "mob.pillager.idle",
           "ambient.in.raid": {
-            "pitch": [
-              0.80,
-              1.20
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.pillager.idle",
             "volume": 3.0
           },
@@ -1976,20 +1565,14 @@
           "death": "mob.pillager.death",
           "hurt": "mob.pillager.hurt"
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:enchanted_vindicator": {
         "events": {
           "ambient": "mob.vindicator.idle",
           "ambient.in.raid": {
-            "pitch": [
-              0.80,
-              1.20
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.vindicator.idle",
             "volume": 3.0
           },
@@ -1997,10 +1580,7 @@
           "death": "mob.vindicator.death",
           "hurt": "mob.vindicator.hurt"
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:enchanted_drowned": {
@@ -2013,10 +1593,7 @@
           "hurt.in.water": "mob.drowned.hurt_water",
           "step": "mob.drowned.step"
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
+        "pitch": [0.8, 1.2],
         "volume": 1.0
       },
       "dungeons:arch_illager": {
@@ -2032,10 +1609,7 @@
             "sound": "mob.arch_illager.idle"
           }
         },
-        "pitch": [
-          0.8,
-          1.1
-        ],
+        "pitch": [0.8, 1.1],
         "volume": 1
       },
       "dungeons:heart_of_ender": {
@@ -2052,10 +1626,7 @@
             "sound": "mob.heart_of_ender.idle"
           }
         },
-        "pitch": [
-          0.8,
-          1.1
-        ],
+        "pitch": [0.8, 1.1],
         "volume": 1
       },
       "dungeons:heart_of_ender_head": {
@@ -2074,10 +1645,7 @@
             "sound": "mob.heart_of_ender.idle"
           }
         },
-        "pitch": [
-          1.2,
-          1.6
-        ],
+        "pitch": [1.2, 1.6],
         "volume": 1
       },
       "dungeons:pet_wolf": {
@@ -2092,18 +1660,12 @@
           "step": "mob.wolf.step",
           "whine": "mob.wolf.whine"
         },
-        "pitch": [
-          0.80,
-          1.20
-        ]
+        "pitch": [0.8, 1.2]
       },
       "dungeons:pet_llama": {
         "events": {
           "add.chest": {
-            "pitch": [
-              0.80,
-              1.20
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.horse.armor",
             "volume": 1.0
           },
@@ -2111,20 +1673,14 @@
           "armor": {
             "pitch": 1.0,
             "sound": "mob.llama.swag",
-            "volume": 0.50
+            "volume": 0.5
           },
           "armor.unequip_generic": "mob.llama.carpet_unequip",
           "death": "mob.llama.death",
           "eat": {
-            "pitch": [
-              0.80,
-              1.20
-            ],
+            "pitch": [0.8, 1.2],
             "sound": "mob.llama.eat",
-            "volume": [
-              0.50,
-              1.50
-            ]
+            "volume": [0.5, 1.5]
           },
           "hurt": "mob.llama.hurt",
           "mad": "mob.llama.angry",
@@ -2132,14 +1688,1521 @@
           "step": {
             "pitch": 1.0,
             "sound": "mob.llama.step",
-            "volume": 0.150
+            "volume": 0.15
           }
         },
-        "pitch": [
-          0.80,
-          1.20
-        ],
-        "volume": 0.80
+        "pitch": [0.8, 1.2],
+        "volume": 0.8
+      },
+      "dungeons:diamond_key_golem": {
+        "events": {
+          "ambient": "mob.keygolem.idle",
+          "sleep": "mob.keygolem.idle.sleep",
+          "stare": "mob.keygolem.idle.captive",
+          "hurt": {
+            "sound": "mob.keygolem.stolen",
+            "volume": 0
+          },
+          "death": {
+            "sound": "mob.keygolem.stolen",
+            "volume": 0
+          },
+          "step": {
+            "sound": "mob.keygolem.step",
+            "pitch": 1
+          }
+        },
+        "volume": 1,
+        "pitch": [0.8, 1.2]
+      },
+      "dungeons:key_golem": {
+        "events": {
+          "ambient": "mob.keygolem.idle",
+          "sleep": "mob.keygolem.idle.sleep",
+          "stare": "mob.keygolem.idle.captive",
+          "hurt": {
+            "sound": "mob.keygolem.stolen",
+            "volume": 0
+          },
+          "death": {
+            "sound": "mob.keygolem.stolen",
+            "volume": 0
+          },
+          "step": {
+            "sound": "mob.keygolem.step",
+            "pitch": 1
+          }
+        },
+        "volume": 1,
+        "pitch": [0.8, 1.2]
+      },
+      "dungeons:piggy_bank": {
+        "__molang_version": 13,
+        "events": {
+          "ambient": "mob.pig.say",
+          "boost": "mob.pig.boost",
+          "death": "mob.pig.death",
+          "death.to.zombie": "mob.pig.death",
+          "eat": "mob.pig.eat",
+          "hurt": "mob.pig.say",
+          "step": "mob.pig.step",
+          "unsaddle": "mob.unsaddle"
+        },
+        "pitch": [1.1, 1.4],
+        "variants": {
+          "key": "query.property('minecraft:sound_variant')",
+          "map": {
+            "big": {
+              "events": {
+                "ambient": "mob.big_pig.say",
+                "boost": "mob.pig.boost",
+                "death": "mob.big_pig.death",
+                "death.to.zombie": "mob.big_pig.death",
+                "eat": "mob.big_pig.eat",
+                "hurt": "mob.big_pig.hurt",
+                "step": "mob.pig.step"
+              },
+              "pitch": 1.3,
+              "volume": 1.0
+            },
+            "default": {
+              "events": {
+                "ambient": "mob.pig.say",
+                "death": {
+                  "pitch": 0.9,
+                  "sound": "mob.pig.death",
+                  "volume": 0.5
+                },
+                "eat": "mob.pig.eat",
+                "hurt": "mob.pig.say",
+                "step": "mob.pig.step"
+              },
+              "pitch": 1.3,
+              "volume": 1.0
+            },
+            "mini": {
+              "events": {
+                "ambient": "mob.mini_pig.say",
+                "boost": "mob.pig.boost",
+                "death": "mob.mini_pig.death",
+                "death.to.zombie": "mob.mini_pig.death",
+                "eat": "mob.mini_pig.eat",
+                "hurt": "mob.mini_pig.hurt",
+                "step": "mob.pig.step"
+              },
+              "pitch": 1.3,
+              "volume": 1.0
+            }
+          }
+        },
+        "volume": 1.0
+      },
+      "dungeons:piglin_merchant": {
+        "events": {
+          "admire": "mob.piglin.admiring_item",
+          "ambient": "mob.piglin.ambient",
+          "angry": "mob.piglin.angry",
+          "celebrate": "mob.piglin.celebrate",
+          "death": "mob.piglin.death",
+          "hurt": "mob.piglin.hurt",
+          "retreat": "mob.piglin.retreat",
+          "step": {
+            "sound": "mob.piglin.step",
+            "volume": 0.35
+          }
+        },
+        "pitch": [0.5, 0.8],
+        "volume": 1.0
+      },
+      "dungeons:grim_guardian": {
+        "events": {
+          "ambient": "mob.zombie.say",
+          "death": "mob.zombie.death",
+          "hurt": "mob.zombie.hurt",
+          "step": {
+            "pitch": 1,
+            "sound": "mob.zombie.step",
+            "volume": 0.45
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:grim_guardian_minion": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "cast.spell": {
+            "pitch": 1,
+            "sound": "mob.evocation_illager.cast_spell",
+            "volume": 1
+          },
+          "step": {
+            "pitch": 1,
+            "sound": "mob.skeleton.step",
+            "volume": 1
+          },
+          "shoot": {
+            "pitch": 1.2,
+            "sound": "mob.nameless_one.attack",
+            "volume": 0.66
+          }
+        },
+        "pitch": [0.4, 0.8],
+        "volume": 1
+      },
+      "dungeons:abominable_weaver": {
+        "events": {
+          "ambient": "mob.spider.say",
+          "death": "mob.spider.death",
+          "hurt": "mob.spider.say",
+          "step": {
+            "pitch": [0.9, 1.1],
+            "sound": "mob.spider.step",
+            "volume": 0.35
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:abominable_weaver_minion": {
+        "events": {
+          "death": "mob.creeper.death",
+          "fuse": {
+            "pitch": 0.5,
+            "sound": "random.fuse",
+            "volume": 1
+          },
+          "hurt": "mob.creeper.say"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:geomancer": {
+        "events": {
+          "ambient": "mob.geomancer.idle",
+          "ambient.in.raid": {
+            "pitch": [0.7, 1.1],
+            "sound": "mob.geomancer.idle",
+            "volume": 3.0
+          },
+          "cast.spell": "mob.geomancer.cast",
+          "celebrate": {
+            "pitch": [1.2, 1.4],
+            "sound": "mob.geomancer.idle"
+          },
+          "death": "mob.geomancer.death",
+          "hurt": "mob.geomancer.hurt",
+          "prepare.attack": "mob.geomancer.prepare"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:mountaineer": {
+        "events": {
+          "ambient": "mob.mountaineer.idle",
+          "ambient.in.raid": {
+            "pitch": [0.7, 1.1],
+            "sound": "mob.mountaineer.idle",
+            "volume": 3.0
+          },
+          "celebrate": {
+            "pitch": [1.2, 1.4],
+            "sound": "mob.mountaineer.idle"
+          },
+          "death": "mob.mountaineer.death",
+          "hurt": "mob.mountaineer.hurt"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:enchanted_mountaineer": {
+        "events": {
+          "ambient": "mob.mountaineer.idle",
+          "ambient.in.raid": {
+            "pitch": [0.7, 1.1],
+            "sound": "mob.mountaineer.idle",
+            "volume": 3.0
+          },
+          "celebrate": {
+            "pitch": [1.2, 1.4],
+            "sound": "mob.mountaineer.idle"
+          },
+          "death": "mob.mountaineer.death",
+          "hurt": "mob.mountaineer.hurt"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:oozing_menace": {
+        "events": {
+          "ambient": "",
+          "attack": {
+            "pitch": [0.8, 1.2],
+            "volume": 0,
+            "sound": "step.slime"
+          },
+          "death": "mob.slime.small",
+          "hurt": "mob.slime.small",
+          "slime_landing": {
+            "pitch": [0.64, 0.96],
+            "sound": "mob.slime.big"
+          },
+          "squish.big": {
+            "pitch": [0.64, 0.96],
+            "sound": "mob.slime.big"
+          },
+          "squish.small": {
+            "pitch": [0.64, 0.96],
+            "sound": "mob.slime.small"
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:oozing_menace_minion": {
+        "events": {
+          "ambient": "",
+          "attack": {
+            "pitch": [0.8, 1.2],
+            "volume": 0,
+            "sound": "step.slime"
+          },
+          "death": "mob.slime.small",
+          "hurt": "mob.slime.small",
+          "slime_landing": {
+            "pitch": [0.64, 0.96],
+            "sound": "mob.slime.big"
+          },
+          "squish.big": {
+            "pitch": [0.64, 0.96],
+            "sound": "mob.slime.big"
+          },
+          "squish.small": {
+            "pitch": [0.64, 0.96],
+            "sound": "mob.slime.small"
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:enchanted_ancient_hunt_mooshroom": {
+        "events": {
+          "ambient": "mob.cow.say",
+          "death": "mob.cow.hurt",
+          "eat": "mob.mooshroom.eat",
+          "hurt": "mob.cow.hurt",
+          "step": {
+            "pitch": [0.7, 0.9],
+            "sound": "mob.cow.step",
+            "volume": 0.65
+          }
+        },
+        "pitch": [0.6, 1],
+        "volume": 1
+      },
+      "dungeons:ancient_mooshroom": {
+        "events": {
+          "ambient": "mob.cow.say",
+          "death": "mob.cow.hurt",
+          "eat": "mob.mooshroom.eat",
+          "hurt": "mob.cow.hurt",
+          "step": {
+            "pitch": [0.7, 0.9],
+            "sound": "mob.cow.step",
+            "volume": 0.65
+          }
+        },
+        "pitch": [0.6, 1],
+        "volume": 1
+      },
+      "dungeons:ancient_mooshroom_minion": {
+        "events": {
+          "ambient": "mob.cow.say",
+          "death": "mob.cow.hurt",
+          "eat": "mob.mooshroom.eat",
+          "hurt": "mob.cow.hurt",
+          "step": {
+            "pitch": [0.7, 0.9],
+            "sound": "mob.cow.step",
+            "volume": 0.65
+          }
+        },
+        "pitch": [0.6, 1],
+        "volume": 1
+      },
+      "dungeons:first_enchanter": {
+        "events": {
+          "ambient": "mob.enchanter.idle",
+          "ambient.in.raid": {
+            "pitch": [0.8, 1.2],
+            "sound": "mob.enchanter.idle",
+            "volume": 3.0
+          },
+          "celebrate": "mob.evocation_illager.celebrate",
+          "death": "mob.enchanter.death",
+          "hurt": "mob.enchanter.hurt",
+          "prepare.attack": "mob.enchanter.prepare"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:first_enchanter_minion": {
+        "events": {
+          "ambient": "mob.husk.ambient",
+          "death": "mob.husk.death",
+          "hurt": "mob.husk.hurt",
+          "step": {
+            "pitch": 1,
+            "sound": "mob.husk.step",
+            "volume": 0.35
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:pet_bat": {
+        "events": {
+          "ambient": "mob.bat.idle",
+          "death": "mob.bat.death",
+          "hurt": "mob.bat.hurt",
+          "takeoff": {
+            "pitch": [0.8, 1.2],
+            "sound": "mob.bat.takeoff",
+            "volume": 0.05
+          }
+        },
+        "pitch": [0.76, 1.14],
+        "volume": 0.1
+      },
+      "dungeons:ancient_hunt_silverfish": {
+        "events": {
+          "ambient": "mob.silverfish.say",
+          "death": "mob.silverfish.kill",
+          "hurt": "mob.silverfish.hit",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.silverfish.step",
+            "volume": 0.35
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:enchanted_ancient_hunt_silverfish": {
+        "events": {
+          "ambient": "mob.silverfish.say",
+          "death": "mob.silverfish.kill",
+          "hurt": "mob.silverfish.hit",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.silverfish.step",
+            "volume": 0.35
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:scuttling_torment": {
+        "events": {
+          "ambient": "mob.silverfish.say",
+          "death": "mob.silverfish.kill",
+          "hurt": "mob.silverfish.hit",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.silverfish.step",
+            "volume": 0.35
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:scuttling_torment_minion": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "step": {
+            "pitch": 1,
+            "sound": "mob.skeleton.step",
+            "volume": 1
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:monster_spawner": {
+        "events": {
+          "ambient": {
+            "volume": 0,
+            "sound": "mob.spawner.hurt"
+          },
+          "death": "mob.spawner.destroy",
+          "hurt": "mob.spawner.hurt"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:the_unending": {
+        "events": {
+          "ambient": {
+            "volume": 0,
+            "sound": "mob.spawner.hurt"
+          },
+          "death": "mob.spawner.destroy",
+          "hurt": "mob.spawner.hurt"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:the_unending_minion": {
+        "events": {
+          "ambient": {
+            "pitch": [0.8, 1.2],
+            "sound": "entity.wither_skeleton.ambient",
+            "volume": 1
+          },
+          "death": {
+            "pitch": [0.8, 1.2],
+            "sound": "entity.wither_skeleton.death",
+            "volume": 1
+          },
+          "hurt": {
+            "pitch": [0.8, 1.2],
+            "sound": "entity.wither_skeleton.hurt",
+            "volume": 1
+          },
+          "step": {
+            "pitch": 1,
+            "sound": "mob.skeleton.step",
+            "volume": 1
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:solemn_giant": {
+        "events": {
+          "ambient": "mob.pillager.idle",
+          "ambient.in.raid": {
+            "pitch": [0.8, 1.2],
+            "sound": "mob.pillager.idle",
+            "volume": 3.0
+          },
+          "celebrate": "mob.pillager.celebrate",
+          "death": "mob.pillager.death",
+          "hurt": "mob.pillager.hurt"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:solemn_giant_minion": {
+        "events": {
+          "ambient": "mob.endermen.idle",
+          "death": "mob.endermen.death",
+          "hurt": "mob.endermen.hit",
+          "mad": "mob.endermen.scream",
+          "stare": {
+            "pitch": 1.0,
+            "sound": "mob.endermen.stare",
+            "volume": 1.0
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:poison_anemone": {
+        "events": {
+          "ambient": {
+            "sound": "hit.vines",
+            "volume": 0
+          },
+          "death": {
+            "sound": "mob.poison_anemone.die"
+          },
+          "hurt": {
+            "sound": "mob.poison_anemone.hurt"
+          },
+          "shoot": {
+            "sound": "mob.poison_anemone.shoot"
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:poison_quill_vine": {
+        "events": {
+          "ambient": {
+            "sound": "hit.vines",
+            "volume": 0
+          },
+          "death": {
+            "sound": "mob.poison_quill_vine.die"
+          },
+          "hurt": {
+            "sound": "mob.poison_quill_vine.hurt"
+          },
+          "shoot": {
+            "sound": "mob.poison_quill_vine.shoot"
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:thundering_growth": {
+        "events": {
+          "ambient": {
+            "pitch": [0.3, 0.6],
+            "sound": "mob.leapleaf.step",
+            "volume": 0.9
+          },
+          "death": "mob.leapleaf.death",
+          "hurt": "mob.leapleaf.hurt",
+          "attack": "mob.leapleaf.attack",
+          "step": {
+            "pitch": [0.8, 1.2],
+            "sound": "mob.leapleaf.step",
+            "volume": 0.65
+          }
+        },
+        "pitch": [0.8, 1.1],
+        "volume": 1
+      },
+      "dungeons:thundering_growth_minion": {
+        "events": {
+          "ambient": "mob.whisperer.idle",
+          "death": "mob.whisperer.death",
+          "cast.spell": {
+            "pitch": [1, 1.2],
+            "sound": "mob.whisperer.summon",
+            "volume": 1
+          },
+          "hurt": "mob.whisperer.hurt",
+          "step": {
+            "pitch": [0.7, 0.9],
+            "sound": "mob.whisperer.walk",
+            "volume": 0.65
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:unbreakable_one": {
+        "events": {
+          "death": "mob.irongolem.death",
+          "hurt": "mob.irongolem.crack",
+          "step": {
+            "pitch": 1.2,
+            "sound": "mob.redstone_monstrosity.step",
+            "volume": 1.4
+          },
+          "cast.spell": {
+            "pitch": 0.2,
+            "sound": "mob.evocation_illager.cast_spell",
+            "volume": 3
+          }
+        },
+        "pitch": [0.3, 0.55],
+        "volume": 1
+      },
+      "dungeons:unbreakable_one_minion": {
+        "events": {
+          "ambient": "mob.vindicator.idle",
+          "ambient.in.raid": {
+            "pitch": [0.4, 0.6],
+            "sound": "mob.vindicator.idle",
+            "volume": 3
+          },
+          "celebrate": "mob.vindicator.celebrate",
+          "death": "mob.vindicator.death",
+          "hurt": "mob.vindicator.hurt"
+        },
+        "pitch": [0.4, 0.6],
+        "volume": 1
+      },
+      "dungeons:windbeard": {
+        "events": {
+          "ambient": "mob.goat.ambient",
+          "ambient.screamer": "mob.goat.ambient.screamer",
+          "death": "mob.goat.death",
+          "death.screamer": "mob.goat.death.screamer",
+          "eat": "mob.goat.eat",
+          "hurt": "mob.goat.hurt",
+          "hurt.screamer": "mob.goat.hurt.screamer",
+          "step": "mob.goat.step"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:windbeard_minion": {
+        "events": {
+          "ambient": "mob.mountaineer.idle",
+          "ambient.in.raid": {
+            "pitch": [0.7, 1.1],
+            "sound": "mob.mountaineer.idle",
+            "volume": 3.0
+          },
+          "celebrate": {
+            "pitch": [1.2, 1.4],
+            "sound": "mob.mountaineer.idle"
+          },
+          "death": "mob.mountaineer.death",
+          "hurt": "mob.mountaineer.hurt"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:seeking_flame_minion": {
+        "events": {
+          "ambient": "mob.evocation_illager.ambient",
+          "ambient.in.raid": {
+            "pitch": [0.8, 1.2],
+            "sound": "mob.evocation_illager.ambient",
+            "volume": 3.0
+          },
+          "cast.spell": "mob.evocation_illager.cast_spell",
+          "celebrate": "mob.evocation_illager.celebrate",
+          "death": "mob.evocation_illager.death",
+          "hurt": "mob.evocation_illager.hurt",
+          "prepare.attack": "mob.evocation_illager.prepare_attack",
+          "prepare.summon": "mob.evocation_illager.prepare_summon",
+          "prepare.wololo": "mob.evocation_illager.prepare_wololo"
+        },
+        "pitch": [0.8, 1.2],
+        "variants": {
+          "key": null
+        },
+        "volume": 1.0
+      },
+      "dungeons:seeking_flame": {
+        "events": {
+          "ambient": "mob.vex.ambient",
+          "charge": "mob.vex.charge",
+          "death": "mob.vex.death",
+          "hurt": "mob.vex.hurt"
+        },
+        "pitch": [0.8, 1.2],
+        "variants": {
+          "key": null
+        },
+        "volume": 1.0
+      },
+      "dungeons:unstoppable_tusk_minion": {
+        "events": {
+          "admire": "mob.piglin.admiring_item",
+          "ambient": "mob.piglin.ambient",
+          "angry": "mob.piglin.angry",
+          "attack": "mob.piglin.attack",
+          "celebrate": "mob.piglin.celebrate",
+          "death": "mob.piglin.death",
+          "hurt": "mob.piglin.hurt",
+          "retreat": "mob.piglin.retreat",
+          "step": {
+            "sound": "mob.piglin.step",
+            "volume": 0.35
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "variants": {
+          "key": null
+        },
+        "volume": 1.0
+      },
+      "dungeons:unstoppable_tusk": {
+        "events": {
+          "ambient": "mob.hoglin.ambient",
+          "angry": "mob.hoglin.angry",
+          "attack": "mob.hoglin.attack",
+          "death": "mob.hoglin.death",
+          "eat": "",
+          "hurt": "mob.hoglin.hurt",
+          "retreat": "mob.hoglin.retreat",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.hoglin.step",
+            "volume": 1.0
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "variants": {
+          "key": null
+        },
+        "volume": 1.0
+      },
+      "dungeons:cursed_presence": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "step": {
+            "pitch": 0.75,
+            "sound": "mob.skeleton.step",
+            "volume": 1
+          }
+        },
+        "pitch": [0.7, 1.05],
+        "volume": 1
+      },
+      "dungeons:cursed_presence_minion": {
+        "events": {
+          "ambient": "mob.zombie.say",
+          "death": "mob.zombie.death",
+          "hurt": "mob.zombie.hurt",
+          "step": {
+            "pitch": 1,
+            "sound": "mob.zombie.step",
+            "volume": 0.45
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:watcher_of_the_end": {
+        "events": {
+          "ambient": "mob.watchling.idle",
+          "death": "mob.watchling.death",
+          "hurt": "mob.watchling.hurt",
+          "attack": "mob.watchling.attack"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:watcher_of_the_end_minion": {
+        "events": {
+          "ambient": "mob.blastling.idle",
+          "death": "mob.blastling.death",
+          "hurt": "mob.blastling.hurt",
+          "shoot": {
+            "sound": "mob.blastling.shoot",
+            "volume": 0.7
+          },
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.blastling.step",
+            "volume": 0.15
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:barrage": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "step": {
+            "pitch": 1,
+            "sound": "mob.skeleton.step",
+            "volume": 1
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:barrage_minion": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "step": {
+            "pitch": 1,
+            "sound": "mob.skeleton.step",
+            "volume": 1
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:abyssal_eye_minion": {
+        "events": {
+          "ambient": "mob.drowned.say",
+          "ambient.in.water": "mob.drowned.say_water",
+          "death": "mob.drowned.death",
+          "death.in.water": "mob.drowned.death_water",
+          "hurt": "mob.drowned.hurt",
+          "hurt.in.water": "mob.drowned.hurt_water",
+          "step": "mob.drowned.step",
+          "cast.spell": {
+            "pitch": 1,
+            "sound": "mob.drowned_necromancer.summon",
+            "volume": 0.6
+          },
+          "shoot": {
+            "pitch": 1.25,
+            "sound": "mob.drowned_necromancer.attack",
+            "volume": 0.75
+          }
+        },
+        "pitch": [0.5, 0.8],
+        "volume": 1.2
+      },
+      "dungeons:abyssal_eye": {
+        "events": {
+          "ambient": "mob.guardian.land_idle",
+          "ambient.in.water": "mob.guardian.ambient",
+          "death": "mob.guardian.land_death",
+          "death.in.water": "mob.guardian.death",
+          "flop": "mob.guardian.flop",
+          "hurt": "mob.guardian.land_hit",
+          "hurt.in.water": "mob.guardian.hit"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:the_tiny_scourge": {
+        "events": {
+          "ambient": "mob.zombie.say",
+          "death": "mob.zombie.death",
+          "hurt": "mob.zombie.hurt",
+          "step": {
+            "pitch": 1,
+            "sound": "mob.zombie.step",
+            "volume": 0.45
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:the_tiny_scourge_minion": {
+        "events": {
+          "death": "mob.irongolem.death",
+          "hurt": "mob.irongolem.crack",
+          "step": {
+            "pitch": 1.2,
+            "sound": "mob.redstone_monstrosity.step",
+            "volume": 1.4
+          },
+          "cast.spell": {
+            "pitch": 0.2,
+            "sound": "mob.evocation_illager.cast_spell",
+            "volume": 3
+          }
+        },
+        "pitch": [0.3, 0.55],
+        "volume": 1
+      },
+
+      "dungeons:the_tower": {
+        "__molang_version": 13,
+        "events": {
+          "ambient": "mob.chicken.say",
+          "death": "mob.chicken.hurt",
+          "eat": "",
+          "hurt": "mob.chicken.hurt",
+          "plop": "mob.chicken.plop",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.chicken.step",
+            "volume": 0.25
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "variants": {
+          "key": "query.is_baby ? 'baby' : query.property('minecraft:sound_variant')",
+          "map": {
+            "baby": {
+              "events": {
+                "ambient": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.ambient",
+                  "volume": 1.0
+                },
+                "ambient.baby": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.ambient",
+                  "volume": 1.0
+                },
+                "death": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.death",
+                  "volume": 1.0
+                },
+                "hurt": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.hurt",
+                  "volume": 1.0
+                },
+                "step": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.step",
+                  "volume": 1.0
+                }
+              },
+              "pitch": 1.0,
+              "volume": 1.0
+            },
+            "default": {
+              "events": {
+                "ambient": {
+                  "sound": "mob.chicken.say",
+                  "volume": 0.8
+                },
+                "death": {
+                  "pitch": 0.9,
+                  "sound": "mob.chicken.hurt",
+                  "volume": 0.5
+                },
+                "hurt": {
+                  "sound": "mob.chicken.hurt"
+                },
+                "plop": "mob.chicken.plop",
+                "step": {
+                  "pitch": 1.0,
+                  "sound": "mob.chicken.step",
+                  "volume": 0.1
+                }
+              },
+              "pitch": 1.0,
+              "volume": 1.0
+            },
+            "picky": {
+              "events": {
+                "ambient": "mob.picky_chicken.say",
+                "death": "mob.picky_chicken.death",
+                "hurt": "mob.picky_chicken.hurt",
+                "plop": "mob.chicken.plop",
+                "step": "mob.chicken.step"
+              },
+              "pitch": 1.0,
+              "volume": 1.0
+            }
+          }
+        },
+        "volume": 1.0
+      },
+
+      "dungeons:the_tower_minion": {
+        "__molang_version": 13,
+        "events": {
+          "ambient": "mob.chicken.say",
+          "death": "mob.chicken.hurt",
+          "eat": "",
+          "hurt": "mob.chicken.hurt",
+          "plop": "mob.chicken.plop",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.chicken.step",
+            "volume": 0.25
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "variants": {
+          "key": "query.is_baby ? 'baby' : query.property('minecraft:sound_variant')",
+          "map": {
+            "baby": {
+              "events": {
+                "ambient": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.ambient",
+                  "volume": 1.0
+                },
+                "ambient.baby": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.ambient",
+                  "volume": 1.0
+                },
+                "death": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.death",
+                  "volume": 1.0
+                },
+                "hurt": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.hurt",
+                  "volume": 1.0
+                },
+                "step": {
+                  "pitch": 0.5,
+                  "sound": "mob.baby_chicken.step",
+                  "volume": 1.0
+                }
+              },
+              "pitch": 1.0,
+              "volume": 1.0
+            },
+            "default": {
+              "events": {
+                "ambient": {
+                  "sound": "mob.chicken.say",
+                  "volume": 0.8
+                },
+                "death": {
+                  "pitch": 0.9,
+                  "sound": "mob.chicken.hurt",
+                  "volume": 0.5
+                },
+                "hurt": {
+                  "sound": "mob.chicken.hurt"
+                },
+                "plop": "mob.chicken.plop",
+                "step": {
+                  "pitch": 1.0,
+                  "sound": "mob.chicken.step",
+                  "volume": 0.1
+                }
+              },
+              "pitch": 1.0,
+              "volume": 1.0
+            },
+            "picky": {
+              "events": {
+                "ambient": "mob.picky_chicken.say",
+                "death": "mob.picky_chicken.death",
+                "hurt": "mob.picky_chicken.hurt",
+                "plop": "mob.chicken.plop",
+                "step": "mob.chicken.step"
+              },
+              "pitch": 1.0,
+              "volume": 1.0
+            }
+          }
+        },
+        "volume": 1.0
+      },
+      "dungeons:the_tower_rider": {
+        "events": {
+          "ambient": "mob.zombie.say",
+          "death": "mob.zombie.death",
+          "hurt": "mob.zombie.hurt",
+          "step": {
+            "pitch": 1,
+            "sound": "mob.zombie.step",
+            "volume": 0.45
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:the_tower_minion_rider": {
+        "events": {
+          "ambient": "mob.zombie.say",
+          "death": "mob.zombie.death",
+          "hurt": "mob.zombie.hurt",
+          "step": {
+            "pitch": 1,
+            "sound": "mob.zombie.step",
+            "volume": 0.45
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:pestilent_conjurer": {
+        "events": {
+          "ambient": "mob.witch.ambient",
+          "ambient.in.raid": {
+            "pitch": [0.8, 1.2],
+            "sound": "mob.witch.ambient",
+            "volume": 3
+          },
+          "celebrate": "mob.witch.celebrate",
+          "death": "mob.witch.death",
+          "drink": {
+            "pitch": 1,
+            "sound": "mob.witch.drink",
+            "volume": 1
+          },
+          "hurt": "mob.witch.hurt",
+          "throw": {
+            "pitch": 1,
+            "sound": "mob.witch.throw",
+            "volume": 1
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:pestilent_conjurer_minion": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "cast.spell": {
+            "pitch": 1,
+            "sound": "mob.evocation_illager.cast_spell",
+            "volume": 1
+          },
+          "step": {
+            "pitch": 1,
+            "sound": "mob.skeleton.step",
+            "volume": 1
+          },
+          "shoot": {
+            "pitch": 1.2,
+            "sound": "mob.nameless_one.attack",
+            "volume": 0.66
+          }
+        },
+        "pitch": [0.4, 0.8],
+        "volume": 1
+      },
+      "dungeons:vigilant_scoundrel": {
+        "events": {
+          "ambient": "mob.vindicator.idle",
+          "ambient.in.raid": {
+            "pitch": [0.4, 0.6],
+            "sound": "mob.vindicator.idle",
+            "volume": 3
+          },
+          "celebrate": "mob.vindicator.celebrate",
+          "death": "mob.vindicator.death",
+          "hurt": "mob.vindicator.hurt"
+        },
+        "pitch": [0.4, 0.6],
+        "volume": 1
+      },
+      "dungeons:vigilant_scoundrel_minion": {
+        "events": {
+          "ambient": "mob.pillager.idle",
+          "ambient.in.raid": {
+            "pitch": [0.8, 1.2],
+            "sound": "mob.pillager.idle",
+            "volume": 3.0
+          },
+          "celebrate": "mob.pillager.celebrate",
+          "death": "mob.pillager.death",
+          "hurt": "mob.pillager.hurt"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:ancient_terror": {
+        "events": {
+          "ambient": "mob.wraith.idle",
+          "death": "mob.wraith.death",
+          "hurt": "mob.wraith.hurt",
+          "cast.spell": {
+            "pitch": 1,
+            "sound": "mob.wraith.attack",
+            "volume": 1.2
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:ancient_terror_minion": {
+        "events": {
+          "ambient": "mob.spider.say",
+          "death": "mob.spider.death",
+          "hurt": "mob.spider.say",
+          "step": {
+            "pitch": [0.9, 1.1],
+            "sound": "mob.spider.step",
+            "volume": 0.35
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:vengeful_mariner": {
+        "events": {
+          "ambient": "mob.drowned.say",
+          "ambient.in.water": "mob.drowned.say_water",
+          "death": "mob.drowned.death",
+          "death.in.water": "mob.drowned.death_water",
+          "hurt": "mob.drowned.hurt",
+          "hurt.in.water": "mob.drowned.hurt_water",
+          "step": "mob.drowned.step"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:vengeful_mariner_minion": {
+        "events": {
+          "ambient": "mob.drowned.say",
+          "ambient.in.water": "mob.drowned.say_water",
+          "death": "mob.drowned.death",
+          "death.in.water": "mob.drowned.death_water",
+          "hurt": "mob.drowned.hurt",
+          "hurt.in.water": "mob.drowned.hurt_water",
+          "step": "mob.drowned.step"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:tropical_slime": {
+        "__molang_version": 13,
+        "events": {
+          "ambient": "",
+          "attack": {
+            "pitch": [0.8, 1.2],
+            "volume": 0,
+            "sound": "mob.tropical_slime.land_small"
+          },
+          "death": "mob.tropical_slime.die_large",
+          "hurt": "mob.tropical_slime.hurt_large",
+          "slime_landing": {
+            "pitch": [0.64, 0.96],
+            "sound": "mob.tropical_slime.land_large"
+          },
+          "squish.big": {
+            "pitch": [0.64, 0.96],
+            "sound": "mob.tropical_slime.jump_large"
+          },
+          "squish.small": {
+            "pitch": [0.64, 0.96],
+            "sound": "mob.tropical_slime.jump_large"
+          }
+        },
+        "volume": 0.4,
+        "pitch": [0.8, 1.2],
+        "variants": {
+          "key": "query.variant > 2 ? 'large' : q.variant == 2 ? 'medium' : 'small'",
+          "map": {
+            "large": {
+              "events": {
+                "ambient": "",
+                "attack": {
+                  "pitch": [0.8, 1.2],
+                  "volume": 0,
+                  "sound": "mob.tropical_slime.land_small"
+                },
+                "death": "mob.tropical_slime.die_large",
+                "hurt": "mob.tropical_slime.hurt_large",
+                "slime_landing": {
+                  "volume": 0.5,
+                  "sound": "mob.tropical_slime.land_large"
+                },
+                "squish.big": {
+                  "sound": "mob.tropical_slime.jump_large"
+                },
+                "squish.small": {
+                  "sound": "mob.tropical_slime.jump_large"
+                }
+              },
+              "pitch": [0.8, 1.2],
+              "volume": 1.0
+            },
+            "medium": {
+              "events": {
+                "ambient": "",
+                "attack": {
+                  "pitch": [0.8, 1.2],
+                  "volume": 0,
+                  "sound": "mob.tropical_slime.land_small"
+                },
+                "death": "mob.tropical_slime.die_medium",
+                "hurt": "mob.tropical_slime.hurt_medium",
+                "slime_landing": {
+                  "volume": 0.5,
+                  "sound": "mob.tropical_slime.land_medium"
+                },
+                "squish.big": {
+                  "sound": "mob.tropical_slime.jump_medium"
+                },
+                "squish.small": {
+                  "sound": "mob.tropical_slime.jump_medium"
+                }
+              },
+              "pitch": [0.8, 1.2],
+              "volume": 1.0
+            },
+            "small": {
+              "events": {
+                "ambient": "",
+                "attack": {
+                  "pitch": [0.8, 1.2],
+                  "volume": 0,
+                  "sound": "mob.tropical_slime.land_small"
+                },
+                "death": "mob.tropical_slime.die_small",
+                "hurt": "mob.tropical_slime.hurt_small",
+                "slime_landing": {
+                  "volume": 0.5,
+                  "sound": "mob.tropical_slime.land_small"
+                },
+                "squish.big": {
+                  "sound": "mob.tropical_slime.jump_small"
+                },
+                "squish.small": {
+                  "sound": "mob.tropical_slime.jump_small"
+                }
+              },
+              "pitch": [0.8, 1.2],
+              "volume": 1.0
+            }
+          }
+        }
+      },
+      "dungeons:frostwarden": {
+        "events": {
+          "ambient": "mob.geomancer.idle",
+          "ambient.in.raid": {
+            "pitch": [0.7, 1.1],
+            "sound": "mob.geomancer.idle",
+            "volume": 3.0
+          },
+          "cast.spell": "mob.geomancer.cast",
+          "celebrate": {
+            "pitch": [1.2, 1.4],
+            "sound": "mob.geomancer.idle"
+          },
+          "death": "mob.geomancer.death",
+          "hurt": "mob.geomancer.hurt",
+          "prepare.attack": "mob.geomancer.prepare"
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+      "dungeons:frostwarden_minion": {
+        "events": {
+          "ambient": "mob.evocation_illager.ambient",
+          "ambient.in.raid": {
+            "pitch": [0.8, 1],
+            "sound": "mob.evocation_illager.ambient",
+            "volume": 3
+          },
+          "celebrate": "mob.evocation_illager.celebrate",
+          "death": "mob.evocation_illager.death",
+          "hurt": "mob.evocation_illager.hurt",
+          "prepare.attack": "mob.evocation_illager.prepare_attack",
+          "prepare.summon": "mob.evocation_illager.prepare_summon",
+          "prepare.wololo": "mob.evocation_illager.prepare_wololo",
+          "cast.spell": {
+            "pitch": [0.6, 0.9],
+            "sound": "artefact.ice_wand",
+            "volume": 0.5
+          }
+        },
+        "pitch": [0.8, 1],
+        "volume": 1
+      },
+      "dungeons:the_swarm_minion": {
+        "events": {
+          "ambient": "mob.endermite.say",
+          "death": "mob.endermite.kill",
+          "hurt": "mob.endermite.hit",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.endermite.step",
+            "volume": 0.15
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1.0
+      },
+
+      "dungeons:the_swarm": {
+        "events": {
+          "ambient": "mob.snareling.idle",
+          "death": "mob.snareling.death",
+          "hurt": "mob.snareling.hurt",
+          "attack": "mob.snareling.melee",
+          "shoot": {
+            "pitch": [0.88, 1.1],
+            "sound": "mob.snareling.ranged",
+            "volume": 1
+          },
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.snareling.step",
+            "volume": 0.15
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:haunted_caller": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "cast.spell": {
+            "pitch": 1,
+            "sound": "mob.evocation_illager.cast_spell",
+            "volume": 1
+          },
+          "step": {
+            "pitch": 1,
+            "sound": "mob.skeleton.step",
+            "volume": 1
+          },
+          "shoot": {
+            "pitch": 1.2,
+            "sound": "mob.nameless_one.attack",
+            "volume": 0.66
+          }
+        },
+        "pitch": [0.4, 0.8],
+        "volume": 1
+      },
+      "dungeons:haunted_caller_minion_rider": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "step": {
+            "pitch": 1,
+            "sound": "mob.skeleton.step",
+            "volume": 1
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 1
+      },
+      "dungeons:haunted_caller_minion": {
+        "events": {
+          "add.chest": {
+            "pitch": [0.8, 1.2],
+            "sound": "mob.horse.armor",
+            "volume": 1.0
+          },
+          "ambient": "mob.horse.skeleton.idle",
+          "armor": {
+            "pitch": 1.0,
+            "sound": "mob.horse.armor",
+            "volume": 0.6
+          },
+          "breathe": {
+            "pitch": 1.0,
+            "sound": "mob.horse.breathe",
+            "volume": 0.7
+          },
+          "death": "mob.horse.skeleton.death",
+          "hurt": "mob.horse.skeleton.hit",
+          "jump": {
+            "pitch": 1.0,
+            "sound": "mob.horse.jump",
+            "volume": 0.4
+          },
+          "land": {
+            "pitch": 1.0,
+            "sound": "mob.horse.land",
+            "volume": 0.4
+          },
+          "saddle": {
+            "pitch": 1.0,
+            "sound": "mob.horse.leather",
+            "volume": 0.6
+          }
+        },
+        "pitch": [0.8, 1.2],
+        "volume": 0.8
       }
     }
   }

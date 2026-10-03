@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:deserttomb_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_side_end",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/desert_tomb/des_fallback",
+                    "processors": "dungeons:desert_tomb"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

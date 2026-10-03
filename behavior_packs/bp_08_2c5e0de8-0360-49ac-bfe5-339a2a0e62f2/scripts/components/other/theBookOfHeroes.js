@@ -7,6 +7,20 @@ import {
     ActionFormData
 } from "@minecraft/server-ui";
 
+import { salvages } from "components/blocks/netheriteGrindstone.js"
+
+function runeIcon(rune) {
+    if (rune == "u") return ""
+    if (rune == "t") return ""
+    if (rune == "s") return ""
+    if (rune == "r") return ""
+    if (rune == "p") return ""
+    if (rune == "o") return ""
+    if (rune == "i") return ""
+    if (rune == "c") return ""
+    if (rune == "a") return ""
+}
+
 function getCount(player, type) {
     var looKThrough
     if (type == "melee") looKThrough = weaponData
@@ -58,6 +72,19 @@ function generateWeaponPage(weaponId) {
         }
     }
     if (weapon.effects.length > 0) page.divider()
+    var salvagedata = salvages.find(lk => lk.item === weaponId);
+    if (!salvagedata) salvagedata = salvages.find(lk => lk.bookId === weaponId);
+    if (salvagedata) {
+        if (salvagedata.runes.length > 0) {
+            var txt = ""
+            for (const rune of salvagedata.runes) txt += runeIcon(rune) + " "
+            page.label({ text: txt })
+            page.divider()
+        }
+    } else {
+        console.warn("No salvage data found for " + weaponId)
+    }
+
     page.button({ translate: "dungeons.boh.close" })
     return page
 }
@@ -83,6 +110,18 @@ function generateRangedPage(weaponId) {
         }
     }
     if (weapon.effects.length > 0) page.divider()
+    var salvagedata = salvages.find(lk => lk.item === weaponId);
+    if (!salvagedata) salvagedata = salvages.find(lk => lk.bookId === weaponId);
+    if (salvagedata) {
+        if (salvagedata.runes.length > 0) {
+            var txt = ""
+            for (const rune of salvagedata.runes) txt += runeIcon(rune) + " "
+            page.label({ text: txt })
+            page.divider()
+        }
+    } else {
+        console.warn("No salvage data found for " + weaponId)
+    }
     page.button({ translate: "dungeons.boh.close" })
     return page
 }
@@ -97,6 +136,7 @@ function generateArmourPage(weaponId) {
 
     page.divider()
     page.label(getProtection(weapon))
+    page.label(getToughness(weaponId))
     page.label(getDurabilityAverage(weaponId))
     page.divider()
     for (let i = 0; i < weapon.effects.length; i++) {
@@ -108,6 +148,18 @@ function generateArmourPage(weaponId) {
         }
     }
     if (weapon.effects.length > 0) page.divider()
+    var salvagedata = salvages.find(lk => lk.item === weaponId);
+    if (!salvagedata) salvagedata = salvages.find(lk => lk.bookId === weaponId);
+    if (salvagedata) {
+        if (salvagedata.runes.length > 0) {
+            var txt = ""
+            for (const rune of salvagedata.runes) txt += runeIcon(rune) + " "
+            page.label({ text: txt })
+            page.divider()
+        }
+    } else {
+        console.warn("No salvage data found for " + weaponId)
+    }
     page.button({ translate: "dungeons.boh.close" })
     return page
 }
@@ -149,6 +201,18 @@ function generateArtefactPage(weaponId) {
         }
     }
     if (weapon.lines > 0) page.divider()
+    var salvagedata = salvages.find(lk => lk.item === weaponId);
+    if (!salvagedata) salvagedata = salvages.find(lk => lk.bookId === weaponId);
+    if (salvagedata) {
+        if (salvagedata.runes.length > 0) {
+            var txt = ""
+            for (const rune of salvagedata.runes) txt += runeIcon(rune) + " "
+            page.label({ text: txt })
+            page.divider()
+        }
+    } else {
+        console.warn("No salvage data found for " + weaponId)
+    }
     page.button({ translate: "dungeons.boh.close" })
     return page
 }
@@ -234,6 +298,8 @@ function showTypesPage(player, type) {
     });
 }
 
+import {colourList} from "components/armour/mystery.js"
+
 function showCategory(player, category, searchThrough, type) {
     let page = new ActionFormData();
     var buttonArray = []
@@ -245,7 +311,12 @@ function showCategory(player, category, searchThrough, type) {
         if (element.type !== category) continue;
         if (player.hasTag("boh_collected:" + element.id)) {
             page.divider()
-            page.button(makeTitle(element.id), "textures/ui/form/" + type + "/" + element.id.replace("dungeons:", "").replace("_armour", ""));
+            if(element.id == "dungeons:mystery_armour") {
+                const colour = colourList[Math.floor(Math.random()*colourList.length)]
+                page.button(makeTitle(element.id), "textures/items/armor/helmet_mystery_" + colour);
+            } else {
+                page.button(makeTitle(element.id), "textures/ui/form/" + type + "/" + element.id.replace("dungeons:", "").replace("_armour", ""));
+            }
             buttonArray.push(element.id)
         }
     }
@@ -761,6 +832,17 @@ export const weaponData = [
         ]
     },
     {
+        id: "dungeons:spine_chill_spear",
+        type: "rush_spear",
+        seasonal: true,
+        damage: 4,
+        durability: 1244,
+        effects: [
+            "charge_attack",
+            "echo"
+        ]
+    },
+    {
         id: "dungeons:coral_blade",
         type: "coral_blade",
         seasonal: false,
@@ -966,7 +1048,7 @@ export const weaponData = [
         type: "broken_sawblade",
         seasonal: false,
         damage: 6,
-        durability: 912,
+        durability: 1212,
         effects: [
             "sawblade",
             "low_overheat_chance"
@@ -1188,6 +1270,16 @@ export const bowData = [
         ]
     },
     {
+        id: "dungeons:haunted_bow",
+        type: "bow",
+        seasonal: true,
+        drawTime: 1,
+        durability: 612,
+        effects: [
+            "ricochet"
+        ]
+    },
+    {
         id: "dungeons:longbow",
         type: "longbow",
         seasonal: false,
@@ -1219,6 +1311,85 @@ export const bowData = [
         ]
     },
     {
+        id: "dungeons:shortbow",
+        type: "shortbow",
+        seasonal: false,
+        drawTime: 0.5,
+        durability: 221,
+        effects: []
+    },
+    {
+        id: "dungeons:purple_storm",
+        type: "shortbow",
+        seasonal: false,
+        drawTime: 0.0,
+        durability: 541,
+        effects: [
+            "rapid_fire"
+        ]
+    },
+    {
+        id: "dungeons:mechanical_shortbow",
+        type: "shortbow",
+        seasonal: false,
+        drawTime: 0.5,
+        durability: 541,
+        effects: [
+            "accelerate"
+        ]
+    },
+    {
+        id: "dungeons:love_spell_bow",
+        type: "shortbow",
+        seasonal: false,
+        drawTime: 0.5,
+        durability: 541,
+        effects: [
+            "wild_rage"
+        ]
+    },
+    {
+        id: "dungeons:trickbow",
+        type: "trickbow",
+        seasonal: false,
+        drawTime: 1,
+        durability: 331,
+        effects: ["ricochet"]
+    },
+    {
+        id: "dungeons:the_pink_scoundrel",
+        type: "trickbow",
+        seasonal: false,
+        drawTime: 1,
+        durability: 651,
+        effects: [
+            "ricochet",
+            "wild_rage"
+        ]
+    },
+    {
+        id: "dungeons:the_green_menace",
+        type: "trickbow",
+        seasonal: false,
+        drawTime: 1,
+        durability: 651,
+        effects: [
+            "ricochet",
+            "poison_cloud_ranged"
+        ]
+    },
+    {
+        id: "dungeons:sugar_rush",
+        type: "trickbow",
+        seasonal: true,
+        drawTime: 1,
+        durability: 651,
+        effects: [
+            "ricochet",
+            "wild_rage"
+        ]
+    },
+    {
         id: "dungeons:snow_bow",
         type: "snow_bow",
         seasonal: false,
@@ -1236,7 +1407,7 @@ export const bowData = [
         durability: 591,
         effects: [
             "freezing",
-            "stunning_ranged"
+            "multishot"
         ]
     },
     {
@@ -1247,7 +1418,7 @@ export const bowData = [
         durability: 591,
         effects: [
             "freezing",
-            "stunning_ranged"
+            "multishot"
         ]
     },
     {
@@ -1277,6 +1448,49 @@ export const bowData = [
         durability: 502,
         effects: [
             "ricochet"
+        ]
+    },
+    {
+        id: "dungeons:hunting_bow",
+        type: "hunting_bow",
+        seasonal: false,
+        drawTime: 2,
+        durability: 481,
+        effects: [
+            "hunting_arrows"
+        ]
+    },
+    {
+        id: "dungeons:hunters_promise",
+        type: "hunting_bow",
+        seasonal: false,
+        drawTime: 2,
+        durability: 781,
+        effects: [
+            "hunting_arrows",
+            "committed"
+        ]
+    },
+    {
+        id: "dungeons:masters_bow",
+        type: "hunting_bow",
+        seasonal: false,
+        drawTime: 2,
+        durability: 781,
+        effects: [
+            "hunting_arrows",
+            "power"
+        ]
+    },
+    {
+        id: "dungeons:ancient_bow",
+        type: "hunting_bow",
+        seasonal: false,
+        drawTime: 2,
+        durability: 781,
+        effects: [
+            "hunting_arrows",
+            "artefact_charge"
         ]
     },
     {
@@ -1325,6 +1539,17 @@ export const bowData = [
         id: "dungeons:bubble_burster",
         type: "bubble_bow",
         seasonal: false,
+        drawTime: 1,
+        durability: 590,
+        effects: [
+            "bubble_arrows",
+            "reliable_ricochet"
+        ]
+    },
+    {
+        id: "dungeons:gloopy_bow",
+        type: "bubble_bow",
+        seasonal: true,
         drawTime: 1,
         durability: 590,
         effects: [
@@ -1386,6 +1611,17 @@ export const bowData = [
         ]
     },
     {
+        id: "dungeons:phantom_bow",
+        type: "power_bow",
+        seasonal: true,
+        drawTime: 0.8,
+        durability: 451,
+        effects: [
+            "supercharge",
+            "power"
+        ]
+    },
+    {
         id: "dungeons:void_bow",
         type: "void_bow",
         seasonal: false,
@@ -1416,6 +1652,26 @@ export const bowData = [
         ]
     },
     {
+        id: "dungeons:azure_seeker",
+        type: "crossbow",
+        seasonal: false,
+        drawTime: 1.25,
+        durability: 866,
+        effects: [
+            "quick_charge"
+        ]
+    },
+    {
+        id: "dungeons:the_slicer",
+        type: "crossbow",
+        seasonal: false,
+        drawTime: 1.25,
+        durability: 866,
+        effects: [
+            "chain_reaction"
+        ]
+    },
+    {
         id: "dungeons:burst_crossbow",
         type: "burst_crossbow",
         seasonal: false,
@@ -1430,7 +1686,7 @@ export const bowData = [
         type: "burst_crossbow",
         seasonal: false,
         drawTime: 1.25,
-        durability: 465,
+        durability: 651,
         effects: [
             "triple_shot",
             "critical_hit"
@@ -1441,7 +1697,7 @@ export const bowData = [
         type: "burst_crossbow",
         seasonal: false,
         drawTime: 1.25,
-        durability: 465,
+        durability: 651,
         effects: [
             "triple_shot",
             "enigma_resonator"
@@ -1506,6 +1762,35 @@ export const bowData = [
         effects: [
             "power",
             "ricochet"
+        ]
+    },
+    {
+        id: "dungeons:rapid_crossbow",
+        type: "rapid_crossbow",
+        seasonal: false,
+        drawTime: 0.3,
+        durability: 365,
+        effects: [
+        ]
+    },
+    {
+        id: "dungeons:auto_crossbow",
+        type: "rapid_crossbow",
+        seasonal: false,
+        drawTime: 0.3,
+        durability: 551,
+        effects: [
+            "accelerate"
+        ]
+    },
+    {
+        id: "dungeons:butterfly_crossbow",
+        type: "rapid_crossbow",
+        seasonal: false,
+        drawTime: 0.3,
+        durability: 465,
+        effects: [
+            "reliable_ricochet"
         ]
     },
     {
@@ -1693,7 +1978,7 @@ export const armourData = [
         id: "dungeons:titans_shroud_armour",
         type: "dark_armour",
         seasonal: false,
-        protection: 42,
+        protection: 28,
         effects: [
             "dark_armour_protection",
             "titans_shroud_strength"
@@ -1713,7 +1998,7 @@ export const armourData = [
         id: "dungeons:full_metal_armour",
         type: "plate_armour",
         seasonal: false,
-        protection: 48,
+        protection: 30,
         effects: [
             "plate_armour_protection",
             "full_metal_strength",
@@ -1724,7 +2009,7 @@ export const armourData = [
         id: "dungeons:cauldron_armour",
         type: "plate_armour",
         seasonal: true,
-        protection: 48,
+        protection: 30,
         effects: [
             "plate_armour_protection",
             "full_metal_strength",
@@ -1735,7 +2020,7 @@ export const armourData = [
         id: "dungeons:guard_armour",
         type: "guard_armour",
         seasonal: false,
-        protection: 15,
+        protection: 17,
         effects: [
             "guard_armour_cooldown",
             "guard_armour_artefact"
@@ -1745,11 +2030,30 @@ export const armourData = [
         id: "dungeons:ender_armour",
         type: "guard_armour",
         seasonal: false,
-        protection: 38,
+        protection: 27,
         effects: [
             "guard_armour_cooldown",
             "guard_armour_artefact",
             "ender_armour"
+        ]
+    },
+    {
+        id: "dungeons:scale_mail_armour",
+        type: "scale_mail_armour",
+        seasonal: false,
+        protection: 16,
+        effects: [
+            "scale_mail_melee"
+        ]
+    },
+    {
+        id: "dungeons:highland_armour",
+        type: "scale_mail_armour",
+        seasonal: false,
+        protection: 27,
+        effects: [
+            "scale_mail_melee",
+            "rush"
         ]
     },
     {
@@ -1766,11 +2070,47 @@ export const armourData = [
         id: "dungeons:frost_armour",
         type: "snow_armour",
         seasonal: false,
-        protection: 40,
+        protection: 27,
         effects: [
             "snow_armour_freeze_protection",
             "snow_armour_slow_reduction",
             "frost_armour"
+        ]
+    },
+    {
+        id: "dungeons:mercenary_armour",
+        type: "mercenary_armour",
+        seasonal: false,
+        protection: 19,
+        effects: [
+            "mercenary_cooldown"
+        ]
+    },
+    {
+        id: "dungeons:renegade_armour",
+        type: "mercenary_armour",
+        seasonal: false,
+        protection: 29,
+        effects: [
+            "renegade_cooldown"
+        ]
+    },
+    {
+        id: "dungeons:hungry_horror_armour",
+        type: "mercenary_armour",
+        seasonal: true,
+        protection: 29,
+        effects: [
+            "renegade_cooldown"
+        ]
+    },
+    {
+        id: "dungeons:hungriest_horror_armour",
+        type: "mercenary_armour",
+        seasonal: true,
+        protection: 29,
+        effects: [
+            "renegade_cooldown"
         ]
     },
     {
@@ -1786,10 +2126,29 @@ export const armourData = [
         id: "dungeons:heros_armour",
         type: "champions_armour",
         seasonal: false,
-        protection: 42,
+        protection: 27,
         effects: [
             "melee_protection_champions",
             "healing_bonus"
+        ]
+    },
+    {
+        id: "dungeons:reinforced_mail_armour",
+        type: "reinforced_mail_armour",
+        seasonal: false,
+        protection: 20,
+        effects: [
+            "reinforced_artefact"
+        ]
+    },
+    {
+        id: "dungeons:stalwart_armour",
+        type: "reinforced_mail_armour",
+        seasonal: false,
+        protection: 30,
+        effects: [
+            "reinforced_artefact",
+            "stalwart_barrier"
         ]
     },
     {
@@ -1806,7 +2165,7 @@ export const armourData = [
         id: "dungeons:gilded_glory_armour",
         type: "emerald_armour",
         seasonal: false,
-        protection: 44,
+        protection: 28,
         effects: [
             "prospector",
             "emerald_armour_cooldown",
@@ -1817,11 +2176,91 @@ export const armourData = [
         id: "dungeons:opulent_armour",
         type: "emerald_armour",
         seasonal: false,
-        protection: 44,
+        protection: 28,
         effects: [
             "prospector",
             "emerald_armour_cooldown",
             "exp_shield"
+        ]
+    },
+    {
+        id: "dungeons:spelunker_armour",
+        type: "spelunker_armour",
+        seasonal: false,
+        protection: 18,
+        effects: [
+            "spelunker_bat"
+        ]
+    },
+    {
+        id: "dungeons:cave_crawler_armour",
+        type: "spelunker_armour",
+        seasonal: false,
+        protection: 28,
+        effects: [
+            "spelunker_bat",
+            "cavecrawler_artefact"
+        ]
+    },
+    {
+        id: "dungeons:sweet_tooth_armour",
+        type: "spelunker_armour",
+        seasonal: true,
+        protection: 28,
+        effects: [
+            "spelunker_bat",
+            "cavecrawler_artefact"
+        ]
+    },
+    {
+        id: "dungeons:hunters_armour",
+        type: "hunters_armour",
+        seasonal: false,
+        protection: 15,
+        effects: [
+            "hunters_armour"
+        ]
+    },
+    {
+        id: "dungeons:archers_armour",
+        type: "hunters_armour",
+        seasonal: false,
+        protection: 26,
+        effects: [
+            "hunters_armour",
+            "archers_armour_sprint"
+        ]
+    },
+    {
+        id: "dungeons:climbing_armour",
+        type: "climbing_armour",
+        seasonal: false,
+        protection: 15,
+        effects: [
+            "climbing_gear_fall",
+            "climbing_gear_knock"
+        ]
+    },
+    {
+        id: "dungeons:rugged_climbing_armour",
+        type: "climbing_armour",
+        seasonal: false,
+        protection: 26,
+        effects: [
+            "climbing_gear_fall",
+            "climbing_gear_knock",
+            "rugged_climbing_gear_element"
+        ]
+    },
+    {
+        id: "dungeons:goat_armour",
+        type: "climbing_armour",
+        seasonal: false,
+        protection: 26,
+        effects: [
+            "climbing_gear_fall",
+            "climbing_gear_knock",
+            "goat_gear_roll"
         ]
     },
     {
@@ -1837,7 +2276,7 @@ export const armourData = [
         id: "dungeons:golden_piglin_armour",
         type: "piglin_armour",
         seasonal: false,
-        protection: 38,
+        protection: 27,
         effects: [
             "piglin_armour_artefact_damage",
             "healing_reduces_cooldown"
@@ -1857,7 +2296,7 @@ export const armourData = [
         id: "dungeons:sturdy_shulker_armour",
         type: "shulker_armour",
         seasonal: false,
-        protection: 48,
+        protection: 30,
         effects: [
             "shulker_armour_projectile_protection",
             "thrives_under_pressure",
@@ -1878,7 +2317,7 @@ export const armourData = [
         id: "dungeons:unstable_armour",
         type: "teleportation_armour",
         seasonal: false,
-        protection: 40,
+        protection: 27,
         effects: [
             "teleportation_effect",
             "soul_gathering_chance",
@@ -1898,7 +2337,7 @@ export const armourData = [
         id: "dungeons:spider_armour",
         type: "thief_armour",
         seasonal: false,
-        protection: 34,
+        protection: 24,
         effects: [
             "thief_armour_cooldown",
             "spider_armour_lifesteal"
@@ -1908,7 +2347,7 @@ export const armourData = [
         id: "dungeons:grim_armour",
         type: "grim_armour",
         seasonal: false,
-        protection: 16,
+        protection: 14,
         effects: [
             "soul_gathering_chance",
             "grim_armour_lifesteal"
@@ -1918,7 +2357,7 @@ export const armourData = [
         id: "dungeons:wither_armour",
         type: "grim_armour",
         seasonal: false,
-        protection: 40,
+        protection: 25,
         effects: [
             "soul_gathering_chance",
             "grim_armour_lifesteal",
@@ -1929,7 +2368,7 @@ export const armourData = [
         id: "dungeons:spooky_gourdian_armour",
         type: "grim_armour",
         seasonal: true,
-        protection: 36,
+        protection: 25,
         effects: [
             "soul_gathering_chance",
             "grim_armour_lifesteal",
@@ -1949,7 +2388,7 @@ export const armourData = [
         id: "dungeons:ghost_kindler_armour",
         type: "ghostly_armour",
         seasonal: false,
-        protection: 30,
+        protection: 23,
         effects: [
             "ghostly_armour",
             "fire_sprint"
@@ -1959,7 +2398,7 @@ export const armourData = [
         id: "dungeons:cloaked_skull_armour",
         type: "ghostly_armour",
         seasonal: true,
-        protection: 30,
+        protection: 23,
         effects: [
             "ghostly_armour",
             "fire_sprint"
@@ -1978,7 +2417,7 @@ export const armourData = [
         id: "dungeons:black_spot_armour",
         type: "root_rot_armour",
         seasonal: false,
-        protection: 38,
+        protection: 26,
         effects: [
             "healing_reduces_cooldown",
             "healing_restores_hunger"
@@ -1997,7 +2436,7 @@ export const armourData = [
         id: "dungeons:living_vines_armour",
         type: "sprout_armour",
         seasonal: false,
-        protection: 32,
+        protection: 24,
         effects: [
             "poison_sprint",
             "poison_heal"
@@ -2016,7 +2455,7 @@ export const armourData = [
         id: "dungeons:ember_armour",
         type: "evocation_armour",
         seasonal: false,
-        protection: 34,
+        protection: 24,
         effects: [
             "evocation_cooldown",
             "ember_thorns"
@@ -2026,10 +2465,31 @@ export const armourData = [
         id: "dungeons:verdant_armour",
         type: "evocation_armour",
         seasonal: false,
-        protection: 34,
+        protection: 24,
         effects: [
             "evocation_cooldown",
             "bag_of_souls"
+        ]
+    },
+    {
+        id: "dungeons:battle_armour",
+        type: "battle_armour",
+        seasonal: false,
+        protection: 15,
+        effects: [
+            "battlerobe_cooldown",
+            "battlerobe_melee_damage"
+        ]
+    },
+    {
+        id: "dungeons:splendid_armour",
+        type: "battle_armour",
+        seasonal: false,
+        protection: 26,
+        effects: [
+            "battlerobe_cooldown",
+            "battlerobe_melee_damage",
+            "splendidrobe_artefact"
         ]
     },
     {
@@ -2046,7 +2506,7 @@ export const armourData = [
         id: "dungeons:souldancer_armour",
         type: "soul_armour",
         seasonal: false,
-        protection: 34,
+        protection: 24,
         effects: [
             "soul_robe_soulgather",
             "soul_robe_artefact",
@@ -2066,7 +2526,7 @@ export const armourData = [
         id: "dungeons:troubadour_armour",
         type: "entertainers_armour",
         seasonal: false,
-        protection: 34,
+        protection: 24,
         effects: [
             "positive_effect_increase",
             "negative_effect_decrease"
@@ -2085,7 +2545,7 @@ export const armourData = [
         id: "dungeons:black_wolf_armour",
         type: "wolf_armour",
         seasonal: false,
-        protection: 32,
+        protection: 24,
         effects: [
             "wolf_armour_melee_damage",
             "black_wolf_cooldown"
@@ -2095,7 +2555,7 @@ export const armourData = [
         id: "dungeons:fox_armour",
         type: "wolf_armour",
         seasonal: false,
-        protection: 32,
+        protection: 24,
         effects: [
             "wolf_armour_melee_damage",
             "fox_armour_invulnerable"
@@ -2114,7 +2574,7 @@ export const armourData = [
         id: "dungeons:shadow_walker_armour",
         type: "ocelot_armour",
         seasonal: false,
-        protection: 38,
+        protection: 26,
         effects: [
             "ocelot_armour_sprint",
             "shadow_walker_sprint"
@@ -2133,7 +2593,7 @@ export const armourData = [
         id: "dungeons:beehive_armour",
         type: "beenest_armour",
         seasonal: false,
-        protection: 38,
+        protection: 26,
         effects: [
             "beenest_armour",
             "beehive_armour_protection"
@@ -2152,7 +2612,7 @@ export const armourData = [
         id: "dungeons:nimble_turtle_armour",
         type: "turtle_armour",
         seasonal: false,
-        protection: 40,
+        protection: 27,
         effects: [
             "healing_bonus",
             "rush"
@@ -2171,7 +2631,7 @@ export const armourData = [
         id: "dungeons:glow_squid_armour",
         type: "squid_armour",
         seasonal: false,
-        protection: 34,
+        protection: 24,
         effects: [
             "squid_armour",
             "glow_squid_armour"
@@ -2191,14 +2651,22 @@ export const armourData = [
         id: "dungeons:frost_bite_armour",
         type: "phantom_armour",
         seasonal: false,
-        protection: 42,
+        protection: 27,
         effects: [
             "phantom_armour",
             "soul_gathering_chance",
             "snowball"
         ]
+    },
+    {
+        id: "dungeons:mystery_armour",
+        type: "mystery_armour",
+        seasonal: false,
+        protection: 26,
+        effects: [
+            "mystery_armour"
+        ]
     }
-
 ]
 
 export const artefactData = [
@@ -2385,6 +2853,13 @@ export const artefactData = [
         lines: 3
     },
     {
+        id: "dungeons:reeling_rod",
+        type: "artefact",
+        seasonal: false,
+        souls: 0,
+        lines: 2
+    },
+    {
         id: "dungeons:gong_of_weakening",
         type: "artefact",
         seasonal: false,
@@ -2417,7 +2892,7 @@ export const artefactData = [
         type: "artefact",
         seasonal: false,
         souls: 0,
-        lines: 2
+        lines: 3
     },
     {
         id: "dungeons:tasty_bone",
@@ -2467,6 +2942,48 @@ export const artefactData = [
         seasonal: false,
         souls: 0,
         lines: 2
+    },
+    {
+        id: "dungeons:firework_quiver",
+        type: "artefact",
+        seasonal: false,
+        souls: 0,
+        lines: 2
+    },
+    {
+        id: "dungeons:flaming_quiver",
+        type: "artefact",
+        seasonal: false,
+        souls: 0,
+        lines: 3
+    },
+    {
+        id: "dungeons:torment_quiver",
+        type: "artefact",
+        seasonal: false,
+        souls: 4,
+        lines: 3
+    },
+    {
+        id: "dungeons:thundering_quiver",
+        type: "artefact",
+        seasonal: false,
+        souls: 0,
+        lines: 3
+    },
+    {
+        id: "dungeons:harpoon_quiver",
+        type: "artefact",
+        seasonal: false,
+        souls: 0,
+        lines: 3
+    },
+    {
+        id: "dungeons:void_quiver",
+        type: "artefact",
+        seasonal: false,
+        souls: 0,
+        lines: 3
     },
     {
         id: "dungeons:tome_of_duplication",
@@ -2529,6 +3046,21 @@ function getArmourDisplay(value) {
         } else if (value - i == 1) {
             i += 1
             returnString += ""
+        }
+    }
+    return returnString;
+}
+
+function getToughnessDisplay(value) {
+    var returnString = ""
+    if (value >= 32) return ` x${value / 2}`
+    for (let i = 0; i < value; i) {
+        if (value - i >= 2) {
+            returnString += ""
+            i += 2
+        } else if (value - i == 1) {
+            i += 1
+            returnString += ""
         }
     }
     return returnString;
@@ -2646,6 +3178,35 @@ function getDurabilityAverage(itemId) {
             { translate: "dungeons.boh.avg_durability" },
             { text: `${Math.round((bDura + lDura + cDura + hDura) / 4)}` }
         ]
+    }
+}
+function getToughness(itemId) {
+    itemId = itemId.replace("entertainers", "entertainer")
+    const boots = new ItemStack(itemId.replace("armour", "boots"), 1)
+    if (!boots) return console.warn(itemId.replace("armour", "boots") + " is not valid!")
+    const chestplate = new ItemStack(itemId.replace("armour", "chestplate"), 1)
+    if (!chestplate) return console.warn(itemId.replace("armour", "chestplate") + " is not valid!")
+    const leggings = new ItemStack(itemId.replace("armour", "leggings"), 1)
+    if (!leggings) return console.warn(itemId.replace("armour", "leggings") + " is not valid!")
+    const helmet = new ItemStack(itemId.replace("armour", "helmet"), 1)
+    if (!helmet) return console.warn(itemId.replace("armour", "helmet") + " is not valid!")
+    var tough = 0
+    try {
+        tough += boots.getComponent("dungeons:toughness").customComponentParameters.params.toughness;
+        tough += leggings.getComponent("dungeons:toughness").customComponentParameters.params.toughness;
+        tough += chestplate.getComponent("dungeons:toughness").customComponentParameters.params.toughness;
+        tough += helmet.getComponent("dungeons:toughness").customComponentParameters.params.toughness;
+        const hearts = getToughnessDisplay(tough)
+        if(!tough) return ""
+        return {
+            rawtext: [
+                { translate: "dungeons.boh.toughness" },
+                { text: "\n" },
+                { text: hearts }
+            ]
+        }
+    } catch {
+        return ""
     }
 }
 function makeEffect(effect, isLast) {

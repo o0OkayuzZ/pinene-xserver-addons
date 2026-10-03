@@ -9,8 +9,8 @@ import { isValidTarget } from "main.js"
 
 const effectId = "dungeons:ricochet_bow_effect"
 
-function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
-    if (Math.random() > 0.75) {
+function findRicochet(hit, owner, array, spook, projectileId, projectileTags, confetti) {
+    if (Math.random() > 0.65) {
         return;
     }
     const damageRange = hit.dimension.getEntities({
@@ -27,7 +27,7 @@ function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
         if (possibleTargets.includes(possibleTarget)) continue;
         possibleTargets.push(possibleTarget)
     }
-    target = possibleTargets[Math.ceil(Math.random() * possibleTargets.length)]
+    target = possibleTargets[Math.floor(Math.random() * possibleTargets.length)]
     if (!target) return;
     const hloc = target.getHeadLocation()
     if (projectileId == "dungeons:torment_arrow") projectileId = "minecraft:arrow"
@@ -36,6 +36,7 @@ function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
     proj.owner = owner
     newArrow.addTag("dungeons:multishot_arrow")
     newArrow.addTag("dungeons:ricochet_arrow")
+    newArrow.addTag("dungeons:cannot_be_picked_up")
     newArrow.addTag("dungeons:ignore_arrow_tags")
     newArrow.addTag("dungeons:crossbow_checked")
     for (const tag of projectileTags) if (tag !== effectId) newArrow.addTag(tag);
@@ -49,7 +50,8 @@ function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
     for (let i = 1; i < distanceBetween; i++) {
         system.runTimeout(() => {
             if (spook == true) hit.dimension.spawnParticle("dungeons:haunted_arrow", { x: hitLoc.x + (xDif * (i / distanceBetween)), y: 1 + hitLoc.y + (yDif * (i / distanceBetween)), z: hitLoc.z + (zDif * (i / distanceBetween)) })
-            if (spook == false) hit.dimension.spawnParticle("dungeons:ricochet_shot", { x: hitLoc.x + (xDif * (i / distanceBetween)), y: 1 + hitLoc.y + (yDif * (i / distanceBetween)), z: hitLoc.z + (zDif * (i / distanceBetween)) })
+            if (confetti == true) hit.dimension.spawnParticle("dungeons:party_flair", { x: hitLoc.x + (xDif * (i / distanceBetween)), y: 1 + hitLoc.y + (yDif * (i / distanceBetween)), z: hitLoc.z + (zDif * (i / distanceBetween)) })
+            if (confetti == false && spook == false) hit.dimension.spawnParticle("dungeons:ricochet_shot", { x: hitLoc.x + (xDif * (i / distanceBetween)), y: 1 + hitLoc.y + (yDif * (i / distanceBetween)), z: hitLoc.z + (zDif * (i / distanceBetween)) })
         }, i / 2)
     }
 
@@ -59,8 +61,8 @@ function findRicochet(hit, owner, array, spook, projectileId, projectileTags) {
         var newArray = array
         newArray.push(target)
         if (newArray.length > 8) return;
-        findRicochet(target, owner, newArray, spook, projectileId, projectileTags)
-    }, 1 + distanceBetween / 2);
+        findRicochet(target, owner, newArray, spook, projectileId, projectileTags, confetti)
+    }, 3 + distanceBetween / 2);
 }
 
 world.beforeEvents.entityHurt.subscribe((e) => {
@@ -81,13 +83,16 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     const canHit = projectile.getDynamicProperty("dungeons:can_hit");
     if (canHit <= 0) return;
     //effect code
+    if (projectile.hasTag("dungeons:ricochet_arrow")) return;
     if (e.damage <= 0) return;
     var spook = false
     if (projectile.hasTag("dungeons:haunted_bow_fired_by")) spook = true
+    var confetti = false
+    if (projectile.hasTag("dungeons:sugar_rush_fired_by")) confetti = true
     const id = projectile.typeId
     const projectileTags = projectile.getTags()
     system.run(() => {
-        findRicochet(hurt, attacker, [hurt], spook, id, projectileTags)
+        findRicochet(hurt, attacker, [hurt], spook, id, projectileTags, confetti)
     })
 
 });

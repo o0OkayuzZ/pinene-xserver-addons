@@ -12,6 +12,7 @@ world.afterEvents.playerSwingStart.subscribe((e) => {
         system.runTimeout(() => {
             var cd = heldItem.getComponent("cooldown")
             if (cd !== undefined) {
+                if(cd.cooldownCategory == "minecraft:sawblade") return;
                 const timeLeft = player.getItemCooldown(cd.cooldownCategory)
                 if (timeLeft > cd.cooldownTicks - 2) {
                     player.startItemCooldown(cd.cooldownCategory, Math.ceil(cd.cooldownTicks * 3 / 4))

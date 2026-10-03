@@ -1,0 +1,29 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "battle_helmet"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "S S",
+            "SSS"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:black_dye"
+            }
+        ],
+        "key": {
+            "S": {
+                "item": "minecraft:gold_ingot"
+            }
+        },
+        "result": {
+            "item": "dungeons:battle_helmet",
+            "count": 1
+        }
+    }
+}

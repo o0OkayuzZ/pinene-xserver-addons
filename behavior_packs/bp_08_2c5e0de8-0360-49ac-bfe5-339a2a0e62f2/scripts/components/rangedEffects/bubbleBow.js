@@ -35,6 +35,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (hurt.matches({ families: ["boss"] })) return;
 
     if (hurt.matches({ families: ["gravity_immune"] })) return;
+    const spooky = projectile.hasTag("dungeons:gloopy_bow_bow_effect")
     system.run(() => {
         var cd = world.scoreboard.getObjective('dungeons:bubbled_t');
         if (!cd) {
@@ -70,7 +71,9 @@ world.beforeEvents.entityHurt.subscribe((e) => {
             if (h < 1) h = 1
             map.setFloat("variable.particle_size", h * 0.9)
         }
-        dim.spawnParticle("dungeons:bubble_effect_new", loc, map)
+        var id = "dungeons:bubble_effect_new"
+        if(spooky) id += "_gloopier"
+        dim.spawnParticle(id, loc, map)
 
     })
 });
@@ -100,19 +103,27 @@ world.afterEvents.itemReleaseUse.subscribe((e) => {
 })
 
 system.runInterval(() => {
-    for (const dimensionType of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimensionType.typeId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (let entity of dim.getEntities({ tags: ["dungeons:bubble_bow_charged"] })) {
             if (!entity.isOnGround && entity.dimension.isChunkLoaded(entity.location)) {
-                entity.dimension.spawnParticle('dungeons:bubble_bow_trail', entity.location);
+                const spooky = entity.hasTag("dungeons:gloopy_bow_bow_effect")
+                if(!spooky) entity.dimension.spawnParticle('dungeons:bubble_bow_trail', entity.location);
+                if(spooky) entity.dimension.spawnParticle('dungeons:spine_chill_spear', entity.location);
+                if(spooky) entity.dimension.spawnParticle('dungeons:spine_chill_smoke', entity.location);
+                if(spooky) entity.dimension.spawnParticle('dungeons:spine_chill_echo', entity.location);
             }
         }
     }
 })
 //cooldown
 system.runInterval(() => {
-    for (const dimensionType of DimensionTypes.getAll()) {
-        const dim = world.getDimension(dimensionType.typeId)
+    const dims = []
+    for (const player of world.getPlayers()) if (!dims.includes(player.dimension.id)) dims.push(player.dimension.id)
+    for (const dimensionType of dims) {
+        const dim = world.getDimension(dimensionType)
         for (const entity of dim.getEntities({ tags: ["dungeons:bubbled"] })) {
             var timeLeft = world.scoreboard.getObjective('dungeons:bubbled_t');
             if (!timeLeft) return world.scoreboard.addObjective("dungeons:bubbled_t");

@@ -1,0 +1,185 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dungeons:ancient_portal_frame",
+            "states": {
+                "dungeons:rune": [
+                    "empty",
+                    "u",
+                    "c",
+                    "o",
+                    "s",
+                    "r",
+                    "i",
+                    "p",
+                    "t",
+                    "a"
+                ],
+                "dungeons:unbreakable": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('dungeons:unbreakable')",
+                "components": {
+                    "minecraft:destructible_by_mining": false
+                }
+            },
+            {
+                "condition": "!query.block_state('dungeons:unbreakable')",
+                "components": {
+                    "minecraft:destructible_by_mining": {
+                        "seconds_to_destroy": 10
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 'empty'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 'u'",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame_u",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 'c'",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame_c",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 'o'",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame_o",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 's'",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame_s",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 'r'",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame_r",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 'i'",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame_i",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 'p'",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame_p",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 't'",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame_t",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dungeons:rune') == 'a'",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ancient_portal_frame_a",
+                            "render_method": "opaque"
+                        }
+                    }
+                }
+            }
+        ],
+        "components": {
+            "dungeons:ancient_portal_frame": {},
+            "minecraft:collision_box": true,
+            "minecraft:selection_box": true,
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 10
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:light_dampening": 15,
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "ancient_portal_frame",
+                    "render_method": "opaque"
+                }
+            },
+            "minecraft:movable": {
+                "movement_type": "immovable"
+            },
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": false
+            }
+        }
+    }
+}

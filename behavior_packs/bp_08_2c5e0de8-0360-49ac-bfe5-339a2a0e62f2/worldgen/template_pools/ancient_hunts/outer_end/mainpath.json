@@ -1,0 +1,67 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:endw_main"
+        },
+        "fallback": "dungeons:endw_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_mainstraight_0",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 9
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_mainstraight_1",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 9
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_mainstraight_2",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 9
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_mainstraight_3",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_mainstraight_4",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_maincomp_0",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/outer_end/end_end",
+                    "processors": "dungeons:outer_end"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

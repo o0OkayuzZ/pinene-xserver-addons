@@ -12,7 +12,10 @@ world.afterEvents.entityHurt.subscribe((e) => {
         const hurt = e.hurtEntity;
         if (!hurt) return;
         if (!hurt.isValid) return;
-        const isFire = hurt.setOnFire(8, true)
+        var time = 4
+        if(world.getDifficulty() == "Normal") time = 6
+        if(world.getDifficulty() == "Hard") time = 8
+        const isFire = hurt.setOnFire(time, true)
         if (!isFire) return;
         damageSource.dimension.playSound('mob.ghast.fireball', hurt.location, {
             pitch: 1.05,

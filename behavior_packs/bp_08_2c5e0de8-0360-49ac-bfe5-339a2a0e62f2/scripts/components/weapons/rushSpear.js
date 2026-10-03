@@ -31,7 +31,11 @@ system.beforeEvents.startup.subscribe((event) => {
             if (!attacker.isValid || !hit.isValid) return;
             const dim = hit.dimension;
             const targetLoc = hit.location;
-            dim.playSound("weapon.rush_spear.attack", targetLoc, { volume: 1, pitch: 1 })
+            if(e.itemStack.hasTag("dungeons:seasonal_item")) {
+                dim.playSound("weapon.rush_spear.attack_spooky", targetLoc, { volume: 1, pitch: 1 })
+            } else {
+                dim.playSound("weapon.rush_spear.attack", targetLoc, { volume: 1, pitch: 1 })
+            }
             if (!attacker.hasTag("dungeons:rush_spear_charged")) return;
 
 

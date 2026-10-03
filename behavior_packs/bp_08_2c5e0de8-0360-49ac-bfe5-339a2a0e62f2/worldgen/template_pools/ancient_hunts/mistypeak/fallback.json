@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:mistypeak_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/misty_peak/peak_side_end",
+                    "processors": "dungeons:misty_peak"
+                },
+                "weight": 200
+            }
+        ]
+    }
+}

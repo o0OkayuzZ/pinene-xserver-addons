@@ -1,0 +1,449 @@
+{
+  "format_version": "1.26.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dungeons:piglin_merchant",
+      "spawn_category": "monster",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:persistent": {},
+      "minecraft:behavior.drink_potion": {
+        "priority": 1,
+        "speed_modifier": -0.25,
+        "potions": [
+          {
+            "id": 12, // Fire resistance
+            "chance": 1.0,
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    {
+                      "test": "on_fire",
+                      "subject": "self",
+                      "value": true
+                    },
+                    {
+                      "test": "on_hot_block",
+                      "subject": "self",
+                      "value": true
+                    },
+                    {
+                      "test": "taking_fire_damage",
+                      "subject": "self",
+                      "value": true
+                    }
+                  ]
+                },
+                {
+                  "none_of": [
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "value": "fire_resistance"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.35
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 2 : 0"
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:admire_item": {
+        "duration": 4,
+        "cooldown_after_being_attacked": 20
+      },
+      "minecraft:collision_box": {
+        "height": 2.3,
+        "width": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:health": {
+        "value": 40,
+        "max": 40
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.5
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava"
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_open_doors": true
+      },
+      "minecraft:annotation.open_door": {},
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:nameable": {},
+      "minecraft:inventory": {
+        "inventory_size": 8
+      },
+      "minecraft:home": {
+        "restriction_type": "random_movement",
+        "restriction_radius": 8
+      },
+      "minecraft:behavior.admire_item": {
+        "priority": 2,
+        "admire_item_sound": "admire",
+        "sound_interval": {
+          "min": 8.0,
+          "max": 8.0
+        },
+        "on_admire_item_start": {
+          "event": "admire_item_started_event",
+          "target": "self"
+        },
+        "on_admire_item_stop": {
+          "event": "admire_item_stopped_event",
+          "target": "self"
+        }
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 4,
+        "remove_target": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "zombie_pigman"
+                }
+              ]
+            },
+            "max_dist": 6
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "zoglin"
+                }
+              ]
+            },
+            "max_dist": 6
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_target",
+                  "subject": "other"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "hoglin"
+                }
+              ]
+            },
+            "sprint_speed_multiplier": 1.2,
+            "check_if_outnumbered": true
+          }
+        ],
+        "on_escape_event": {
+          "event": "become_calm_event",
+          "target": "self"
+        },
+        "avoid_mob_sound": "retreat",
+        "sound_interval": {
+          "min": 2.0,
+          "max": 5.0
+        }
+      },
+      "minecraft:behavior.pickup_items": {
+        "priority": 6,
+        "max_dist": 10,
+        "goal_radius": 2,
+        "speed_multiplier": 0.8,
+        "pickup_based_on_chance": false,
+        "can_pickup_any_item": false,
+        "cooldown_after_being_attacked": 20
+      },
+      "minecraft:behavior.avoid_block": {
+        "priority": 9,
+        "tick_interval": 5,
+        "search_range": 8,
+        "search_height": 4,
+        "sprint_speed_modifier": 1.1,
+        "target_selection_method": "nearest",
+        "target_blocks": [
+          "minecraft:soul_fire",
+          "minecraft:soul_lantern",
+          "minecraft:soul_torch",
+          "minecraft:item.soul_campfire"
+        ],
+        "avoid_block_sound": "retreat",
+        "sound_interval": {
+          "min": 2.0,
+          "max": 5.0
+        }
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 10,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 11,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 12
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable_by_block": {},
+      "minecraft:follow_range": {
+        "value": 64
+      },
+      "minecraft:shareables": {
+        "singular_pickup": true,
+        "items": [
+          {
+            "item": "minecraft:golden_sword",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_spear",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_axe",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_hoe",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_pickaxe",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_shovel",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_helmet",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_chestplate",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_leggings",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_boots",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_apple",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:appleEnchanted",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_carrot",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:gold_block",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:gold_nugget",
+            "priority": 2,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:raw_gold",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:gold_ore",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:nether_gold_ore",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:deepslate_gold_ore",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:raw_gold_block",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:gilded_blackstone",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:horsearmorgold",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_nautilus_armor",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:bell",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:clock",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:speckled_melon",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:light_weighted_pressure_plate",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:golden_dandelion",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "minecraft:gold_ingot",
+            "priority": 1,
+            "pickup_limit": 1,
+            "admire": true,
+            "stored_in_inventory": true
+          }
+        ]
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {},
+      "admire_item_started_event": {
+        "remove": {
+          "component_groups": [
+            "interactable_piglin"
+          ]
+        }
+      },
+      "admire_item_stopped_event": {
+        "add": {
+          "component_groups": [
+            "interactable_piglin"
+          ]
+        }
+      }
+    }
+  }
+}

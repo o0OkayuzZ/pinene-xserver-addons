@@ -21,7 +21,7 @@
 					],
 					"transitions": [
 						{
-							"end": "q.property('dungeons:despawning')==true"
+							"end": "q.property('dungeons:despawning') == true"
 						}
 					],
 					"blend_transition": 0
@@ -43,7 +43,7 @@
 					],
 					"transitions": [
 						{
-							"static": "q.property('dungeons:moving')==false"
+							"static": "q.property('dungeons:moving') == false"
 						}
 					],
 					"blend_transition": 0.5
@@ -54,7 +54,7 @@
 					],
 					"transitions": [
 						{
-							"walking": "q.property('dungeons:moving')==true"
+							"walking": "q.property('dungeons:moving') == true"
 						}
 					],
 					"blend_transition": 0.5
@@ -70,7 +70,7 @@
 					],
 					"transitions": [
 						{
-							"static": "q.property('dungeons:spinning_lasers')==false"
+							"static": "q.property('dungeons:spinning_lasers') == false"
 						}
 					],
 					"blend_transition": 0.5
@@ -78,7 +78,7 @@
 				"static": {
 					"transitions": [
 						{
-							"walking": "q.property('dungeons:spinning_lasers')==true"
+							"walking": "q.property('dungeons:spinning_lasers') == true"
 						}
 					],
 					"blend_transition": 0.5
@@ -91,7 +91,7 @@
 				"not": {
 					"transitions": [
 						{
-							"static": "q.property('dungeons:moving')==false&&!q.is_casting"
+							"static": "q.property('dungeons:moving') == false && !q.is_casting"
 						}
 					],
 					"blend_transition": 0.5
@@ -102,7 +102,7 @@
 					],
 					"transitions": [
 						{
-							"not": "q.property('dungeons:moving')==true||q.is_casting"
+							"not": "q.property('dungeons:moving') == true || q.is_casting"
 						}
 					],
 					"blend_transition": 0.5

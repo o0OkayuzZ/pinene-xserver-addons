@@ -1,0 +1,83 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:castle_side"
+        },
+        "fallback": "dungeons:castle_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_sidestraight_0",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_sidestraight_1",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 7
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_sidesplit_0",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_sidesplit_1",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_sidesplit_2",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_sidesplit_3",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_sideroom_0",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_boss",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ominous_castle/cas_bonus_door",
+                    "processors": "dungeons:ominous_castle"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

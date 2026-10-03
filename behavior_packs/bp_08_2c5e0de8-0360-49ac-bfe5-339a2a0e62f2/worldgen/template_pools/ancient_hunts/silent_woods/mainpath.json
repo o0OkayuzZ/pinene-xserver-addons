@@ -1,0 +1,75 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:silent_main"
+        },
+        "fallback": "dungeons:silent_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/silent_woods/sil_mainstraight_0",
+                    "processors": "dungeons:silent_woods"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/silent_woods/sil_mainstraight_1",
+                    "processors": "dungeons:silent_woods"
+                },
+                "weight": 8
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/silent_woods/sil_mainsplit_0",
+                    "processors": "dungeons:silent_woods"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/silent_woods/sil_mainsplit_1",
+                    "processors": "dungeons:silent_woods"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/silent_woods/sil_mainsplit_2",
+                    "processors": "dungeons:silent_woods"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/silent_woods/sil_mainsplit_3",
+                    "processors": "dungeons:silent_woods"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/silent_woods/sil_mainsplit_4",
+                    "processors": "dungeons:silent_woods"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/silent_woods/sil_end",
+                    "processors": "dungeons:silent_woods"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

@@ -1,552 +1,611 @@
 {
-	"format_version": "1.21.130",
-	"minecraft:entity": {
-		"description": {
-			"identifier": "dungeons:corrupted_cauldron",
-			"is_spawnable": false,
-			"is_summonable": true,
-			"is_experimental": false,
-			"animations": {
-				"casting": "controller.animation.nameless_one.casting"
-			},
-			"scripts": {
-				"animate": [
-					"casting"
-				]
-			},
-			"properties": {
-				"dungeons:is_casting": {
-					"client_sync": false,
-					"type": "bool",
-					"default": false
-				},
-				"dungeons:charging_heal": {
-					"client_sync": true,
-					"type": "bool",
-					"default": false
-				}
-			}
-		},
-		"component_groups": {
-			"dungeons:casting_cooldown": {
-				"minecraft:behavior.timer_flag_1": {
-					"cooldown_range": 0,
-					"on_end": {
-						"event": "dungeons:complete_casting_cooldown"
-					},
-					"duration_range": 9.5,
-					"priority": 0
-				}
-			},
-			"dungeons:fire_attack_cooldown": {
-				"minecraft:behavior.timer_flag_2": {
-					"cooldown_range": 0,
-					"on_end": {
-						"event": "dungeons:complete_fire_attack_cooldown"
-					},
-					"duration_range": 11,
-					"priority": 0
-				}
-			},
-			"dungeons:heal_charge_time": {
-				"minecraft:attack_cooldown": {
-					"attack_cooldown_time": 5,
-					"attack_cooldown_complete_event": {
-						"event": "dungeons:healing_success"
-					}
-				}
-			},
-			"dungeons:broadcast_anger": {
-				"minecraft:angry": {
-					"duration": 30,
-					"broadcast_anger": true,
-					"broadcast_anger_on_attack": true,
-					"broadcast_anger_on_being_attacked": true,
-					"broadcast_range": 48,
-					"broadcast_targets": [
-						"corrupted_cauldron_minion"
-					],
-					"filters": {
-						"all_of": [
-							{
-								"test": "is_family",
-								"subject": "other",
-								"operator": "!=",
-								"value": "corrupted_cauldron"
-							},
-							{
-								"test": "is_family",
-								"subject": "other",
-								"operator": "!=",
-								"value": "corrupted_ooze"
-							}
-						]
-					},
-					"calm_event": {
-						"event": "dungeons:become_calm",
-						"target": "self"
-					}
-				}
-			}
-		},
-		"components": {
-			"minecraft:behavior.summon_entity": {
-				"priority": 0,
-				"summon_choices": [
-					{
-						"cast_duration": 2.375,
-						"cooldown_time": 3,
-						"do_casting": true,
-						"filters": [
-							{
-								"all_of": [
-									{
-										"test": "bool_property",
-										"value": false,
-										"domain": "dungeons:charging_heal"
-									},
-									{
-										"test": "has_component",
-										"value": "minecraft:behavior.timer_flag_1",
-										"subject": "self",
-										"operator": "not"
-									}
-								]
-							}
-						],
-						"min_activation_range": 2,
-						"max_activation_range": 32,
-						"weight": 1,
-						"start_sound_event": "cast.spell",
-						"sequence": [
-							{
-								"base_delay": 2,
-								"delay_per_summon": 0,
-								"entity_type": "dungeons:jungle_zombie<dungeons:spawn_corrupted_cauldron_minion>",
-								"num_entities_spawned": 3,
-								"shape": "circle",
-								"size": 5,
-								"target": "self",
-								"summon_cap": 6
-							}
-						]
-					},
-					{
-						"cast_duration": 2.375,
-						"cooldown_time": 3,
-						"do_casting": true,
-						"filters": [
-							{
-								"all_of": [
-									{
-										"test": "bool_property",
-										"value": false,
-										"domain": "dungeons:charging_heal"
-									},
-									{
-										"test": "has_component",
-										"value": "minecraft:behavior.timer_flag_1",
-										"subject": "self",
-										"operator": "not"
-									}
-								]
-							}
-						],
-						"min_activation_range": 2,
-						"max_activation_range": 32,
-						"weight": 1,
-						"start_sound_event": "cast.spell",
-						"sequence": [
-							{
-								"base_delay": 2,
-								"delay_per_summon": 0,
-								"entity_type": "dungeons:cauldron_slime<dungeons:spawn_corrupted_cauldron_minion>",
-								"num_entities_spawned": 4,
-								"shape": "circle",
-								"size": 6,
-								"target": "self",
-								"summon_cap": 6
-							}
-						]
-					}
-				]
-			},
-			"minecraft:damage_sensor": {
-				"triggers": [
-					{
-						"cause": "all",
-						"deals_damage": "yes",
-						"on_damage": {
-							"filters": [
-								{
-									"all_of": [
-										{
-											"test": "bool_property",
-											"value": true,
-											"domain": "dungeons:charging_heal"
-										},
-										{
-											"test": "is_family",
-											"subject": "other",
-											"operator": "not",
-											"value": "monster"
-										},
-										{
-											"any_of": [
-												{
-													"test": "is_family",
-													"subject": "other",
-													"value": "player"
-												},
-												{
-													"test": "is_family",
-													"subject": "other",
-													"value": "artefact"
-												},
-												{
-													"test": "is_family",
-													"subject": "other",
-													"value": "irongolem"
-												},
-												{
-													"test": "is_target",
-													"value": true,
-													"subject": "other"
-												}
-											]
-										}
-									]
-								}
-							],
-							"event": "dungeons:healing_failed"
-						}
-					},
-					{
-						"cause": "magic",
-						"damage_multiplier": 0.5
-					}
-				]
-			},
-			"minecraft:timer": {
-				"looping": true,
-				"time": [
-					20,
-					30
-				],
-				"time_down_event": {
-					"event": "dungeons:begin_healing",
-					"filters": [
-						{
-							"test": "is_missing_health",
-							"value": true
-						}
-					]
-				}
-			},
-			"minecraft:entity_sensor": {
-				"subsensors": [
-					{
-						"range": [
-							5,
-							3
-						],
-						"cooldown": -1,
-						"minimum_count": 1,
-						"event_filters": [
-							{
-								"all_of": [
-									{
-										"test": "has_component",
-										"value": "minecraft:behavior.timer_flag_2",
-										"subject": "self",
-										"operator": "not"
-									},
-									{
-										"test": "bool_property",
-										"value": false,
-										"domain": "dungeons:is_casting"
-									},
-									{
-										"any_of": [
-											{
-												"all_of": [
-													{
-														"test": "is_family",
-														"subject": "other",
-														"value": "player"
-													},
-													{
-														"test": "has_ability",
-														"value": "instabuild",
-														"subject": "other",
-														"operator": "not"
-													}
-												]
-											},
-											{
-												"test": "is_target",
-												"value": true,
-												"subject": "other"
-											},
-											{
-												"all_of": [
-													{
-														"test": "was_last_hurt_by",
-														"subject": "other"
-													},
-													{
-														"test": "has_ability",
-														"value": "instabuild",
-														"subject": "other",
-														"operator": "not"
-													}
-												]
-											}
-										]
-									}
-								]
-							}
-						],
-						"event": "dungeons:corrupted_cauldron_fire_attack"
-					}
-				]
-			},
-			"minecraft:reflect_projectiles": {
-				"reflected_projectiles": [
-					"fishing_hook"
-				],
-				"azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
-				"reflection_scale": "0.25"
-			},
-			"minecraft:friction_modifier": {
-				"value": 0
-			},
-			"minecraft:is_hidden_when_invisible": {},
-			"minecraft:experience_reward": {
-				"on_death": "query.last_hit_by_player?750:375"
-			},
-			"minecraft:attack": {
-				"damage": 0
-			},
-			"minecraft:breathable": {
-				"suffocate_time": 0,
-				"total_supply": 150
-			},
-			"minecraft:collision_box": {
-				"height": 1.75,
-				"width": 1.75
-			},
-			"minecraft:health": {
-				"max": 700,
-				"value": 700
-			},
-			"minecraft:body_rotation_blocked": {},
-			"minecraft:loot": {
-				"table": "loot_tables/entities/corrupted_cauldron.json"
-			},
-			"minecraft:knockback_resistance": {
-				"value": 1
-			},
-			"minecraft:on_target_acquired": {
-				"event": "dungeons:become_angry"
-			},
-			"minecraft:behavior.look_at_target": {
-				"priority": 5,
-				"angle_of_view_vertical": 10,
-				"angle_of_view_horizontal": 360,
-				"look_distance": 28
-			},
-			"minecraft:behavior.random_look_around": {
-				"priority": 9
-			},
-			"minecraft:movement": {
-				"value": 0
-			},
-			"minecraft:mob_effect_immunity": {
-				"mob_effects": [
-					"wither",
-					"poison",
-					"fatal_poison"
-				]
-			},
-			"minecraft:movement.basic": {},
-			"minecraft:nameable": {},
-			"minecraft:navigation.walk": {
-				"can_sink": true
-			},
-			"minecraft:physics": {},
-			"minecraft:boss": {
-				"should_darken_sky": false,
-				"hud_range": 48,
-				"name": "dungeons.bossbar.corrupted_cauldron"
-			},
-			"minecraft:scale": {
-				"value": 1.333
-			},
-			"minecraft:behavior.melee_attack": {
-				"melee_fov": 360,
-				"priority": 4,
-				"speed_multiplier": 0,
-				"track_target": false,
-				"reach_multiplier": 0
-			},
-			"minecraft:behavior.hurt_by_target": {
-				"priority": 1,
-				"entity_types": [
-					{
-						"filters": {
-							"test": "is_family",
-							"subject": "other",
-							"operator": "!=",
-							"value": "boss"
-						}
-					}
-				]
-			},
-			"minecraft:behavior.nearest_attackable_target": {
-				"priority": 2,
-				"must_see": false,
-				"reselect_targets": true,
-				"within_radius": 32,
-				"entity_types": [
-					{
-						"filters": {
-							"any_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "snowgolem"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "irongolem"
-								}
-							]
-						},
-						"max_dist": 48
-					}
-				]
-			},
-			"minecraft:conditional_bandwidth_optimization": {},
-			"minecraft:follow_range": {
-				"value": 64
-			},
-			"minecraft:type_family": {
-				"family": [
-					"dungeons_musicbox",
-					"corrupted_cauldron",
-					"monster",
-					"mob",
-					"boss",
-					"gravity_immune"
-				]
-			}
-		},
-		"events": {
-			"dungeons:complete_fire_attack_cooldown": {
-				"remove": {
-					"component_groups": [
-						"dungeons:fire_attack_cooldown"
-					]
-				}
-			},
-			"dungeons:corrupted_cauldron_fire_attack": {
-				"add": {
-					"component_groups": [
-						"dungeons:fire_attack_cooldown"
-					]
-				}
-			},
-			"dungeons:begin_healing": {
-				"filters": {
-					"test": "is_missing_health",
-					"value": true
-				},
-				"queue_command": {
-					"command": [
-						"particle dungeons:cauldron_begin_healing ~~0.1~"
-					]
-				},
-				"set_property": {
-					"dungeons:charging_heal": true
-				},
-				"add": {
-					"component_groups": [
-						"dungeons:heal_charge_time"
-					]
-				}
-			},
-			"dungeons:healing_failed": {
-				"set_property": {
-					"dungeons:charging_heal": false
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:heal_charge_time"
-					]
-				}
-			},
-			"dungeons:healing_success": {
-				"set_property": {
-					"dungeons:charging_heal": false
-				},
-				"remove": {
-					"component_groups": [
-						"dungeons:heal_charge_time"
-					]
-				}
-			},
-			"minecraft:entity_spawned": {},
-			"minecraft:entity_transformed": {
-				"trigger": "minecraft:entity_spawned",
-				"queue_command": {
-					"command": [
-						"fill ~2 ~4 ~2 ~-2 ~ ~-2 air destroy"
-					]
-				}
-			},
-			"dungeons:begin_casting": {
-				"set_property": {
-					"dungeons:is_casting": true
-				}
-			},
-			"dungeons:complete_casting": {
-				"set_property": {
-					"dungeons:is_casting": false
-				},
-				"add": {
-					"component_groups": [
-						"dungeons:casting_cooldown"
-					]
-				}
-			},
-			"dungeons:complete_casting_cooldown": {
-				"remove": {
-					"component_groups": [
-						"dungeons:casting_cooldown"
-					]
-				}
-			},
-			"dungeons:become_angry": {
-				"add": {
-					"component_groups": [
-						"dungeons:broadcast_anger"
-					]
-				}
-			},
-			"dungeons:become_calm": {
-				"remove": {
-					"component_groups": [
-						"dungeons:broadcast_anger"
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.21.130",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dungeons:corrupted_cauldron",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "casting": "controller.animation.nameless_one.casting"
+      },
+      "scripts": {
+        "animate": [
+          "casting"
+        ]
+      },
+      "properties": {
+        "dungeons:is_casting": {
+          "client_sync": false,
+          "type": "bool",
+          "default": false
+        },
+        "dungeons:charging_heal": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        }
+      }
+    },
+    "component_groups": {
+      "dungeons:casting_cooldown": {
+        "minecraft:behavior.timer_flag_1": {
+          "cooldown_range": 0,
+          "on_end": {
+            "event": "dungeons:complete_casting_cooldown"
+          },
+          "duration_range": 9.5,
+          "priority": 0
+        }
+      },
+      "dungeons:fire_attack_cooldown": {
+        "minecraft:behavior.timer_flag_2": {
+          "cooldown_range": 0,
+          "on_end": {
+            "event": "dungeons:complete_fire_attack_cooldown"
+          },
+          "duration_range": 11,
+          "priority": 0
+        }
+      },
+      "dungeons:heal_charge_time": {
+        "minecraft:attack_cooldown": {
+          "attack_cooldown_time": 5,
+          "attack_cooldown_complete_event": {
+            "event": "dungeons:healing_success"
+          }
+        }
+      },
+      "dungeons:broadcast_anger": {
+        "minecraft:angry": {
+          "duration": 30,
+          "broadcast_anger": true,
+          "broadcast_anger_on_attack": true,
+          "broadcast_anger_on_being_attacked": true,
+          "broadcast_range": 48,
+          "broadcast_targets": [
+            "corrupted_cauldron_minion"
+          ],
+          "filters": {
+            "all_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "corrupted_cauldron"
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "corrupted_ooze"
+              }
+            ]
+          },
+          "calm_event": {
+            "event": "dungeons:become_calm",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:behavior.summon_entity": {
+        "priority": 0,
+        "summon_choices": [
+          {
+            "cast_duration": 2.375,
+            "cooldown_time": 3,
+            "do_casting": true,
+            "filters": [
+              {
+                "all_of": [
+                  {
+                    "test": "bool_property",
+                    "value": false,
+                    "domain": "dungeons:charging_heal"
+                  },
+                  {
+                    "test": "has_component",
+                    "value": "minecraft:behavior.timer_flag_1",
+                    "subject": "self",
+                    "operator": "not"
+                  }
+                ]
+              }
+            ],
+            "min_activation_range": 2,
+            "max_activation_range": 32,
+            "weight": 1,
+            "start_sound_event": "cast.spell",
+            "sequence": [
+              {
+                "base_delay": 2,
+                "delay_per_summon": 0,
+                "entity_type": "dungeons:jungle_zombie<dungeons:spawn_corrupted_cauldron_minion>",
+                "num_entities_spawned": 3,
+                "shape": "circle",
+                "size": 5,
+                "target": "self",
+                "summon_cap": 6
+              },
+              {
+                "base_delay": 0,
+                "delay_per_summon": 0,
+                "entity_type": "minecraft:bogged<dungeons:spawn_corrupted_cauldron_minion>",
+                "num_entities_spawned": 1,
+                "shape": "circle",
+                "size": 5,
+                "target": "self",
+                "summon_cap": 6
+              }
+            ]
+          },
+                    {
+            "cast_duration": 2.375,
+            "cooldown_time": 3,
+            "do_casting": true,
+            "filters": [
+              {
+                "all_of": [
+                  {
+                    "test": "bool_property",
+                    "value": false,
+                    "domain": "dungeons:charging_heal"
+                  },
+                  {
+                    "test": "has_component",
+                    "value": "minecraft:behavior.timer_flag_1",
+                    "subject": "self",
+                    "operator": "not"
+                  }
+                ]
+              }
+            ],
+            "min_activation_range": 2,
+            "max_activation_range": 32,
+            "weight": 1,
+            "start_sound_event": "cast.spell",
+            "sequence": [
+              {
+                "base_delay": 2,
+                "delay_per_summon": 0,
+                "entity_type": "dungeons:jungle_zombie<dungeons:spawn_corrupted_cauldron_minion>",
+                "num_entities_spawned": 1,
+                "shape": "circle",
+                "size": 5,
+                "target": "self",
+                "summon_cap": 6
+              },
+              {
+                "base_delay": 0,
+                "delay_per_summon": 0,
+                "entity_type": "minecraft:bogged<dungeons:spawn_corrupted_cauldron_minion>",
+                "num_entities_spawned": 2,
+                "shape": "circle",
+                "size": 5,
+                "target": "self",
+                "summon_cap": 6
+              }
+            ]
+          },
+          {
+            "cast_duration": 2.375,
+            "cooldown_time": 3,
+            "do_casting": true,
+            "filters": [
+              {
+                "all_of": [
+                  {
+                    "test": "bool_property",
+                    "value": false,
+                    "domain": "dungeons:charging_heal"
+                  },
+                  {
+                    "test": "has_component",
+                    "value": "minecraft:behavior.timer_flag_1",
+                    "subject": "self",
+                    "operator": "not"
+                  }
+                ]
+              }
+            ],
+            "min_activation_range": 2,
+            "max_activation_range": 32,
+            "weight": 2,
+            "start_sound_event": "cast.spell",
+            "sequence": [
+              {
+                "base_delay": 2,
+                "delay_per_summon": 0,
+                "entity_type": "dungeons:cauldron_slime<dungeons:spawn_corrupted_cauldron_minion>",
+                "num_entities_spawned": 4,
+                "shape": "circle",
+                "size": 6,
+                "target": "self",
+                "summon_cap": 6
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "yes",
+            "on_damage": {
+              "filters": [
+                {
+                  "all_of": [
+                    {
+                      "test": "bool_property",
+                      "value": true,
+                      "domain": "dungeons:charging_heal"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "not",
+                      "value": "monster"
+                    },
+                    {
+                      "any_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "player"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "artefact"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "irongolem"
+                        },
+                        {
+                          "test": "is_target",
+                          "value": true,
+                          "subject": "other"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "event": "dungeons:healing_failed"
+            }
+          },
+          {
+            "cause": "magic",
+            "damage_multiplier": 0.5
+          }
+        ]
+      },
+      "minecraft:timer": {
+        "looping": true,
+        "time": [
+          20,
+          30
+        ],
+        "time_down_event": {
+          "event": "dungeons:begin_healing",
+          "filters": [
+            {
+              "test": "is_missing_health",
+              "value": true
+            }
+          ]
+        }
+      },
+      "minecraft:entity_sensor": {
+        "subsensors": [
+          {
+            "range": [
+              5,
+              3
+            ],
+            "cooldown": -1,
+            "minimum_count": 1,
+            "event_filters": [
+              {
+                "all_of": [
+                  {
+                    "test": "has_component",
+                    "value": "minecraft:behavior.timer_flag_2",
+                    "subject": "self",
+                    "operator": "not"
+                  },
+                  {
+                    "test": "bool_property",
+                    "value": false,
+                    "domain": "dungeons:is_casting"
+                  },
+                  {
+                    "any_of": [
+                      {
+                        "all_of": [
+                          {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                          },
+                          {
+                            "test": "has_ability",
+                            "value": "instabuild",
+                            "subject": "other",
+                            "operator": "not"
+                          }
+                        ]
+                      },
+                      {
+                        "test": "is_target",
+                        "value": true,
+                        "subject": "other"
+                      },
+                      {
+                        "all_of": [
+                          {
+                            "test": "was_last_hurt_by",
+                            "subject": "other"
+                          },
+                          {
+                            "test": "has_ability",
+                            "value": "instabuild",
+                            "subject": "other",
+                            "operator": "not"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "event": "dungeons:corrupted_cauldron_fire_attack"
+          }
+        ]
+      },
+      "minecraft:reflect_projectiles": {
+        "reflected_projectiles": [
+          "fishing_hook"
+        ],
+        "azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
+        "reflection_scale": "0.25"
+      },
+      "minecraft:friction_modifier": {
+        "value": 0
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 750 : 375"
+      },
+      "minecraft:attack": {
+        "damage": 0
+      },
+      "minecraft:breathable": {
+        "suffocate_time": 0,
+        "total_supply": 150
+      },
+      "minecraft:collision_box": {
+        "height": 1.75,
+        "width": 1.75
+      },
+      "minecraft:health": {
+        "max": 700,
+        "value": 700
+      },
+      "minecraft:body_rotation_blocked": {},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/corrupted_cauldron.json"
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:on_target_acquired": {
+        "event": "dungeons:become_angry"
+      },
+      "minecraft:behavior.look_at_target": {
+        "priority": 5,
+        "angle_of_view_vertical": 10,
+        "angle_of_view_horizontal": 360,
+        "look_distance": 28
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 9
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:mob_effect_immunity": {
+        "mob_effects": [
+          "wither",
+          "poison",
+          "fatal_poison"
+        ]
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:nameable": {},
+      "minecraft:navigation.walk": {
+        "can_sink": true
+      },
+      "minecraft:physics": {},
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "hud_range": 48,
+        "name": "dungeons.bossbar.corrupted_cauldron"
+      },
+      "minecraft:scale": {
+        "value": 1.333
+      },
+      "minecraft:behavior.melee_attack": {
+        "melee_fov": 360,
+        "priority": 4,
+        "speed_multiplier": 0,
+        "track_target": false,
+        "reach_multiplier": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "operator": "!=",
+              "value": "boss"
+            }
+          }
+        ]
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": false,
+        "reselect_targets": true,
+        "within_radius": 32,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
+              ]
+            },
+            "max_dist": 48
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:follow_range": {
+        "value": 64
+      },
+      "minecraft:type_family": {
+        "family": [
+          "stun_immune",
+          "dungeons_musicbox",
+          "corrupted_cauldron",
+          "monster",
+          "mob",
+          "boss",
+          "gravity_immune"
+        ]
+      }
+    },
+    "events": {
+      "dungeons:complete_fire_attack_cooldown": {
+        "remove": {
+          "component_groups": [
+            "dungeons:fire_attack_cooldown"
+          ]
+        }
+      },
+      "dungeons:corrupted_cauldron_fire_attack": {
+        "add": {
+          "component_groups": [
+            "dungeons:fire_attack_cooldown"
+          ]
+        }
+      },
+      "dungeons:begin_healing": {
+        "filters": {
+          "test": "is_missing_health",
+          "value": true
+        },
+        "queue_command": {
+          "command": [
+            "particle dungeons:cauldron_begin_healing ~~0.1~"
+          ]
+        },
+        "set_property": {
+          "dungeons:charging_heal": true
+        },
+        "add": {
+          "component_groups": [
+            "dungeons:heal_charge_time"
+          ]
+        }
+      },
+      "dungeons:healing_failed": {
+        "set_property": {
+          "dungeons:charging_heal": false
+        },
+        "remove": {
+          "component_groups": [
+            "dungeons:heal_charge_time"
+          ]
+        }
+      },
+      "dungeons:healing_success": {
+        "set_property": {
+          "dungeons:charging_heal": false
+        },
+        "remove": {
+          "component_groups": [
+            "dungeons:heal_charge_time"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {},
+      "minecraft:entity_transformed": {
+        "trigger": "minecraft:entity_spawned",
+        "queue_command": {
+          "command": [
+            "fill ~2 ~4 ~2 ~-2 ~ ~-2 air destroy"
+          ]
+        }
+      },
+      "dungeons:begin_casting": {
+        "set_property": {
+          "dungeons:is_casting": true
+        }
+      },
+      "dungeons:complete_casting": {
+        "set_property": {
+          "dungeons:is_casting": false
+        },
+        "add": {
+          "component_groups": [
+            "dungeons:casting_cooldown"
+          ]
+        }
+      },
+      "dungeons:complete_casting_cooldown": {
+        "remove": {
+          "component_groups": [
+            "dungeons:casting_cooldown"
+          ]
+        }
+      },
+      "dungeons:become_angry": {
+        "add": {
+          "component_groups": [
+            "dungeons:broadcast_anger"
+          ]
+        }
+      },
+      "dungeons:become_calm": {
+        "remove": {
+          "component_groups": [
+            "dungeons:broadcast_anger"
+          ]
+        }
+      }
+    }
+  }
 }

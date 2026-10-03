@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:ancientcrypt_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_side_fallback",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

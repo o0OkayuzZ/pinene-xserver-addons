@@ -1,0 +1,67 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:frost_main"
+        },
+        "fallback": "dungeons:frost_end",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_mainstraight_0",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_mainstraight_1",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_mainstraight_2",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_mainsplit_0",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_mainsplit_1",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_mainsplit_2",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 6
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_end",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

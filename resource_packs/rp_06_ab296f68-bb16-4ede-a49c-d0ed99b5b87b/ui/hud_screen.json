@@ -1,189 +1,293 @@
-// got this from a sketchy spanish tutorial lol
+// got the bossbars from a sketchy spanish tutorial lol
 {
-  //advancements addon nab
-  "test_panel": {
-    "type": "panel",
-    "anchor_from": "top_right",
-    "anchor_to": "top_right",
-    "size": [
-      "100%",
-      "100%cm + 0.5px"
-    ],
-    "controls": [
-      {
-        "test@hud.test": {}
-      }
-    ]
-  },
-  "test": {
+  "namespace": "hud",
+  //---------------------------------------------------------------------------
+  // Hud Screen
+  //---------------------------------------------------------------------------
+  "hud_actionbar_text": {
     "type": "image",
-    "anchor_to": "top_right",
-    "anchor_from": "top_right",
-    "texture": "textures/ui/toast/style_dungeons",
     "size": [
-      "100%c + 30px",
-      "95%c - 10px"
+      "100%c + 12px",
+      "100%c + 5px"
     ],
-    "offset": "@hud.test_anim",
-    "layer": 998,
-    "bindings": [
+    "$atext": "$actionbar_text",
+    "offset": "$offset",
+    "texture": "$texture",
+    "alpha": "$alpha",
+    "visible": "$visible",
+    "$offset|default": [
+      0,
+      "50%-68px"
+    ],
+    "$texture|default": "textures/ui/hud_tip_text_background",
+    "$alpha|default": "@hud.anim_actionbar_text_background_alpha_out",
+    "$visible|default": true,
+    "variables": [
       {
-        "binding_name": "#text"
+        "requires": "($atext = ' ')",
+        "$visible": false
       },
       {
-        "binding_type": "view",
-        "source_property_name": "(('%.6s' * #text) = 'toast.')",
-        "target_property_name": "#visible"
+        "requires": "((not($atext - '§d§l ' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext))",
+        "$offset": [
+          150,
+          "50%-15px"
+        ],
+        "$texture": "textures/ui/mana_bar_bg_locked",
+        "$alpha": 1
       },
       {
-        "binding_type": "view",
-        "source_property_name": "(#text - 'toast.')",
-        "target_property_name": "#text_remainder"
+        "requires": "((not($atext - '§c§l ' = $atext)) and ($atext - '§d§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext))",
+        "$offset": [
+          150,
+          "50%-15px"
+        ],
+        "$texture": "textures/ui/mana_bar_bg",
+        "$alpha": 1
       },
       {
-        "binding_type": "view",
-        "source_property_name": "(('%.200s' * #text_remainder) - '$')",
-        "target_property_name": "#adv_icon"
+        "requires": "((not($atext - '§s§o§u§l§r' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§d§l ' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext))",
+        "$offset": [
+          150,
+          "50%-15px"
+        ],
+        "$texture": "textures/ui/soul_bar_bg",
+        "$alpha": 1
       },
       {
-        "binding_type": "view",
-        "source_property_name": "((#text_remainder - '$') - #adv_icon)",
-        "target_property_name": "#adv_text"
+        "requires": "((not($atext - '§q§u§i§v§r' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§d§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext))",
+        "$offset": [
+          150,
+          "50%-15px"
+        ],
+        "$texture": "textures/ui/quiver_bg",
+        "$alpha": 1
+      },
+      {
+        "requires": "((not($atext - '§c§o§o§l§r' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§d§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext))",
+        "$offset": [
+          150,
+          "50%-15px"
+        ],
+        "$texture": "textures/ui/cooldown_timer_bg",
+        "$alpha": 1
       }
     ],
     "controls": [
       {
-        "text": {
+        "actionbar_message": {
           "type": "label",
-          "layer": 999,
-          "text": "#text",
-          "anchor_to": "left_middle",
-          "anchor_from": "left_middle",
-          "offset": [
-            "32px",
-            "-1%"
-          ],
-          "localize": true,
-          "bindings": [
-            {
-              "binding_type": "view",
-              "source_control_name": "test",
-              "source_property_name": "#adv_text",
-              "target_property_name": "#text",
-              "resolve_sibling_scope": true
-            },
-            {
-              "binding_type": "view",
-              "source_property_name": "(not (#text = ''))",
-              "target_property_name": "#visible"
-            }
-          ]
-        }
-      },
-      {
-        "icon": {
-          "type": "image",
-          "layer": 1000,
-          "size": [
-            "20px",
-            "20px"
-          ],
-          "anchor_from": "left_middle",
-          "anchor_to": "left_middle",
-          "offset": [
-            "4px",
-            "0%"
-          ],
-          "keep_ratio": true,
-          "texture": "#texture",
-          "bindings": [
-            {
-              "binding_type": "view",
-              "source_control_name": "test",
-              "source_property_name": "#adv_icon",
-              "target_property_name": "#texture",
-              "resolve_sibling_scope": true
-            },
-            {
-              "binding_type": "view",
-              "binding_condition": "once",
-              "source_property_name": "(not (#texture = ''))",
-              "target_property_name": "#visible"
-            }
-          ]
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "color": "$tool_tip_text",
+          "enable_profanity_filter": true,
+          "layer": 31,
+          "text": "$actionbar_text",
+          "localize": false,
+          "alpha": "@hud.anim_actionbar_text_alpha_out"
         }
       }
     ]
   },
-  "test_anim": {
-    "anim_type": "offset",
-    "easing": "out_sine",
-    "next": "@hud.test_anim2",
-    "from": [
-      "100%c + 40px",
-      "20px"
-    ],
-    "to": [
-      "0%",
-      "20px"
-    ],
-    "duration": 1
-  },
-  "test_anim2": {
-    "anim_type": "wait",
-    "next": "@hud.test_anim3",
-    "duration": 4
-  },
-  "test_anim3": {
-    "anim_type": "offset",
-    "easing": "in_sine",
-    "from": [
-      "0%",
-      "20px"
-    ],
-    "to": [
-      "100%c + 40px",
-      "20px"
-    ],
-    "duration": 1,
-    "destroy_at_end": "chat_grid_item"
-  },
-  "test_factory": {
-    "type": "stack_panel",
-    "size": [
-      "100%",
-      "100%"
-    ],
-    "factory": {
-      "name": "chat_item_factory",
-      "control_ids": {
-        "chat_item": "test_panel@hud.test_panel"
-      }
-    }
-  },
-  "root_panel": {
-    "modifications": [
-      {
-        "array_name": "controls",
-        "operation": "insert_front",
-        "value": [
-          {
-            "test_factory@hud.test_factory": {}
-          }
-        ]
-      }
-    ]
-  },
-  //Vanilla Overrides
-  "chat_grid_item/chat_background": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_property_name": "(('§␛' + #text + '§r') - ('§␛' + 'toast.') = ('§␛' + #text + '§r'))",
-        "target_property_name": "#visible"
-      }
-    ]
-  },
+  //advancements addon nab
+	"test_panel": {
+		"type": "panel",
+		"anchor_from": "top_right",
+		"anchor_to": "top_right",
+		"size": [
+			"100%",
+			"100%cm + 0.5px"
+		],
+		"controls": [
+			{
+				"test@hud.test": {}
+			}
+		]
+	},
+	"test": {
+		"type": "image",
+		"anchor_to": "top_right",
+		"anchor_from": "top_right",
+		"texture": "#texture",
+		"size": [
+			"100%c + 30px",
+			"95%c - 10px"
+		],
+		"offset": "@hud.test_anim",
+		"layer": 998,
+		"bindings": [
+			{
+				"binding_name": "#text"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(('%.6s' * #text) = 'toast.')",
+				"target_property_name": "#visible"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(#text - 'toast.')",
+				"target_property_name": "#text_remainder"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "('%.150s' * #text_remainder)",
+				"target_property_name": "#adv_icon_field"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(#adv_icon_field - '$')",
+				"target_property_name": "#adv_icon"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(('%.200s' * #text_remainder) - #adv_icon_field)",
+				"target_property_name": "#adv_bg_field"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(#adv_bg_field - '$')",
+				"target_property_name": "#texture"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(((#text_remainder - '$') - #adv_icon) - (#adv_bg_field - '$'))",
+				"target_property_name": "#adv_text"
+			}
+		],
+		"controls": [
+			{
+				"text": {
+					"type": "label",
+					"layer": 999,
+					"text": "#text",
+					"anchor_to": "left_middle",
+					"anchor_from": "left_middle",
+					"offset": [
+						"32px",
+						"-1%"
+					],
+					"localize": true,
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "test",
+							"source_property_name": "#adv_text",
+							"target_property_name": "#text",
+							"resolve_sibling_scope": true
+						},
+						{
+							"binding_type": "view",
+							"source_property_name": "(not (#text = ''))",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"icon": {
+					"type": "image",
+					"layer": 1000,
+					"size": [
+						"20px",
+						"20px"
+					],
+					"anchor_from": "left_middle",
+					"anchor_to": "left_middle",
+					"offset": [
+						"4px",
+						"0%"
+					],
+					"keep_ratio": true,
+					"texture": "#texture",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "test",
+							"source_property_name": "#adv_icon",
+							"target_property_name": "#texture",
+							"resolve_sibling_scope": true
+						},
+						{
+							"binding_type": "view",
+							"binding_condition": "once",
+							"source_property_name": "(not (#texture = ''))",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			}
+		]
+	},
+	"test_anim": {
+		"anim_type": "offset",
+		"easing": "out_sine",
+		"next": "@hud.test_anim2",
+		"from": [
+			"100%c + 40px",
+			"20px"
+		],
+		"to": [
+			"0%",
+			"20px"
+		],
+		"duration": 1
+	},
+	"test_anim2": {
+		"anim_type": "wait",
+		"next": "@hud.test_anim3",
+		"duration": 4
+	},
+	"test_anim3": {
+		"anim_type": "offset",
+		"easing": "in_sine",
+		"from": [
+			"0%",
+			"20px"
+		],
+		"to": [
+			"100%c + 40px",
+			"20px"
+		],
+		"duration": 1,
+		"destroy_at_end": "chat_grid_item"
+	},
+	"test_factory": {
+		"type": "stack_panel",
+		"size": [
+			"100%",
+			"100%"
+		],
+		"factory": {
+			"name": "chat_item_factory",
+			"control_ids": {
+				"chat_item": "test_panel@hud.test_panel"
+			}
+		}
+	},
+	"root_panel": {
+		"modifications": [
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": [
+					{
+						"test_factory@hud.test_factory": {}
+					}
+				]
+			}
+		]
+	},
+	//Vanilla Overrides
+	"chat_grid_item/chat_background": {
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_property_name": "(('§␛' + #text + '§r') - ('§␛' + 'toast.') = ('§␛' + #text + '§r'))",
+				"target_property_name": "#visible"
+			}
+		]
+	},
   //boss bars from the sketchy tutorial
   "boss_health_panel": {
     "type": "panel",
@@ -996,7 +1100,7 @@
     ],
     "bindings": [
       {
-        "binding_name": "(#bossName = '§cRedstone Monstrosity')",
+        "binding_name": "(#bossName = '§cLethal Dragon')",
         "binding_type": "collection",
         "binding_collection_name": "boss_bars",
         "binding_name_override": "#visible"

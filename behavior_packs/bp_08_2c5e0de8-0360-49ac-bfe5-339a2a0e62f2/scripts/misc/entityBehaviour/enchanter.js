@@ -10,7 +10,7 @@ const particleSpeed = 10
 world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
     const entity = e.entity;
     const id = e.eventId;
-    if (id === 'dungeons:begin_casting' && entity.typeId == "dungeons:enchanter") {
+    if (id === 'dungeons:begin_casting' && entity.matches({ families: ["enchanter"] })) {
         system.runTimeout(() => {
             const dim = entity.dimension;
             const loc = entity.location;
@@ -109,7 +109,7 @@ function getEvent(entity) {
     if (id == "minecraft:spider" || id == "minecraft:cave_spider") {
         return "dungeons:become_enchanted_normal"
     }
-    if (id == "minecraft:pillager" || id == "minecraft:vindicator") {
+    if (id == "minecraft:pillager" || id == "minecraft:vindicator" || id == "dungeons:mountaineer") {
         if (entity.getProperty("dungeons:armour_type") !== undefined) {
             const armourType = entity.getProperty("dungeons:armour_type")
             if (armourType == 0) return "dungeons:become_enchanted_regular"
@@ -127,5 +127,28 @@ function getEvent(entity) {
         }
         return "dungeons:become_enchanted"
     }
+    if (id == "dungeons:wraith") {
+        if(entity.getProperty("dungeons:spooky")) return "dungeons:become_enchanted_spooky"
+        return "dungeons:become_enchanted"
+    }
     return "dungeons:become_enchanted"
 }
+
+world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
+    if (e.eventId !== "dungeons:finish_attack") return;
+    const entity = e.entity;
+    if (!entity || !entity.isValid) return;
+    if (!entity.matches({ families: ["enchanter"] })) return;
+    const dim = entity.dimension;
+    const loc = entity.location
+    const damageRange = dim.getEntities({
+        location: loc,
+        maxDistance: 3,
+        excludeFamilies: ['ignore']
+    });
+    for (const target of damageRange) {
+        if (target.isValid && (target.matches({ families: ["player"] }))) {
+            target.applyDamage(4, { cause: "entityAttack", damagingEntity: entity })
+        }
+    }
+})

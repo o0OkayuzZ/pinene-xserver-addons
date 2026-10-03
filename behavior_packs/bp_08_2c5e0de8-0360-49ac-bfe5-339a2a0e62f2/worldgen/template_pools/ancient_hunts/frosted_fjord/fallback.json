@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:frost_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_side_end",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 200
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/frosted_fjord/fro_fallback",
+                    "processors": "dungeons:frosted_fjord"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

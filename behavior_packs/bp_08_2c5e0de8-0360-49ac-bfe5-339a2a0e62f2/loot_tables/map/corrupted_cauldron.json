@@ -1,0 +1,24 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:map",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "exploration_map",
+                            "destination": "dungeons:corrupt_coven"
+                        },
+                        {
+                            "function": "set_name",
+                            "name": "item.dungeons:corrupted_cauldron_explorer_map"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

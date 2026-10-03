@@ -7,55 +7,23 @@
 			"bones": {
 				"leftArm": {
 					"rotation": {
-						"0.0": [
-							-2,
-							0,
-							0
-						],
-						"0.75": [
-							-10,
-							0,
-							0
-						],
-						"2.0": [
-							-2,
-							0,
-							0
-						]
+						"0.0": [-2, 0, 0],
+						"0.75": [-10, 0, 0],
+						"2.0": [-2, 0, 0]
 					}
 				},
 				"rightArm": {
 					"rotation": {
-						"0.0": [
-							-2,
-							0,
-							0
-						],
-						"0.75": [
-							-10,
-							0,
-							0
-						],
-						"2.0": [
-							-2,
-							0,
-							0
-						]
+						"0.0": [-2, 0, 0],
+						"0.75": [-10, 0, 0],
+						"2.0": [-2, 0, 0]
 					}
 				},
 				"leftWing": {
-					"rotation": [
-						"27-this",
-						"-(15+math.cos(query.life_time*916.8)*9)-this",
-						"-25-this"
-					]
+					"rotation": ["27.0 - this", "-(15.0 + math.cos(query.life_time * 916.8) * 9.0) - this", "-25.0 - this"]
 				},
 				"rightWing": {
-					"rotation": [
-						"27-this",
-						"15+math.cos(query.life_time*916.8)*9-this",
-						"25-this"
-					]
+					"rotation": ["27.0 - this", "15.0 + math.cos(query.life_time * 916.8) * 9.0 - this", "25.0 - this"]
 				},
 				"rightItem": {
 					"scale": 0.9
@@ -79,32 +47,16 @@
 			"loop": true,
 			"bones": {
 				"leftArm": {
-					"rotation": [
-						20,
-						0,
-						0
-					]
+					"rotation": [20, 0, 0]
 				},
 				"rightArm": {
-					"rotation": [
-						20,
-						0,
-						0
-					]
+					"rotation": [20, 0, 0]
 				},
 				"leftWing": {
-					"rotation": [
-						"27-this",
-						"-(15+math.cos(query.life_time*916.8)*9)-this",
-						"-25-this"
-					]
+					"rotation": ["27.0 - this", "-(15.0 + math.cos(query.life_time * 916.8) * 9.0) - this", "-25.0 - this"]
 				},
 				"rightWing": {
-					"rotation": [
-						"27-this",
-						"15+math.cos(query.life_time*916.8)*9-this",
-						"25-this"
-					]
+					"rotation": ["27.0 - this", "15.0 + math.cos(query.life_time * 916.8) * 9.0 - this", "25.0 - this"]
 				},
 				"rightItem": {
 					"scale": 0.9

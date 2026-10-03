@@ -1,0 +1,29 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dungeons:nether_brick_tile"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "SS",
+            "SS"
+        ],
+        "unlock": [
+            {
+                "item": "nether_brick"
+            }
+        ],
+        "key": {
+            "S": {
+                "item": "nether_brick"
+            }
+        },
+        "result": {
+            "item": "dungeons:nether_brick_tile",
+            "count": 4
+        }
+    }
+}

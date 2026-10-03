@@ -1,0 +1,54 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dungeons:windbeard_minion",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "dungeons_entity_enchant"
+      },
+      "textures": {
+        "default": "textures/entity/enchanted_mob/mountaineer_0",
+        "tier_2": "textures/entity/enchanted_mob/mountaineer_1",
+        "tier_3": "textures/entity/enchanted_mob/mountaineer_2",
+        "enchanted": "textures/misc/guard_entity_glint"
+      },
+      "geometry": {
+        "default": "geometry.mountaineer"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          "vindicator_base",
+          "vindicator_walk",
+          "controller_look_at_target",
+          "controller_vindicator_base",
+          "controller_riding"
+        ]
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "riding.arms": "animation.royal_guard.riding.arms",
+        "riding.legs": "animation.vindicator.riding.legs",
+        "vindicator_base": "animation.royal_guard.base",
+        "vindicator_attack": "animation.royal_guard.attack",
+        "vindicator_hand_attack": "animation.royal_guard.hand_attack",
+        "vindicator_walk": "animation.royal_guard.walk",
+        "celebrating": "animation.humanoid.celebrating",
+        "controller_look_at_target": "controller.animation.humanoid.look_at_target",
+        "controller_vindicator_base": "controller.animation.vindicator.base",
+        "controller_riding": "controller.animation.humanoid.riding"
+      },
+      "render_controllers": [
+        "controller.render.mountaineer",
+        "controller.render.dungeons_entity_enchanted"
+      ],
+      "hide_armor": true,
+      "enable_attachables": true
+    }
+  }
+}

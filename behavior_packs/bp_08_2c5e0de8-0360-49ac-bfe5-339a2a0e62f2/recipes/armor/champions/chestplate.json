@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "champions_chestplate"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "I I",
+      "CCC",
+      "III"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:lapis_lazuli"
+      }
+    ],
+    "key": {
+      "C": {
+        "item": "minecraft:lapis_lazuli"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "dungeons:champions_chestplate",
+      "count": 1
+    }
+  }
+}

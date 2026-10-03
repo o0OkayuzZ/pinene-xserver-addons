@@ -1,0 +1,123 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:woodlandmansion_side"
+        },
+        "fallback": "dungeons:woodlandmansion_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_sidestraight_0",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_sidestraight_1",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_sidesplit_0",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_sidesplit_1",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_sidesplit_2",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_side_room_0",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_side_room_1",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_side_room_2",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_side_room_3",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_side_room_4",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 3
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_side_room_5",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 2
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_side_room_6",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 2
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_bonus_door",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/woodland_mansion/wood_side_boss",
+                    "processors": "dungeons:woodland_mansion"
+                },
+                "weight": 4
+            }
+        ]
+    }
+}

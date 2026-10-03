@@ -1,0 +1,276 @@
+{
+    "format_version": "1.26.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "dungeons:monster_spawner",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "properties": {
+                "dungeons:spawn": {
+                    "client_sync": false,
+                    "default": "blaze",
+                    "type": "enum",
+                    "values": [
+                        "zombie",
+                        "blaze"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:persistent": {},
+            "minecraft:fire_immune": {},
+            "minecraft:mob_effect_immunity": {
+                "mob_effects": [
+                    "absorption",
+                    "bad_omen",
+                    "blindness",
+                    "conduit_power",
+                    "darkness",
+                    "fatal_poison",
+                    "fire_resistance",
+                    "haste",
+                    "health_boost",
+                    "hunger",
+                    "infested",
+                    "instant_damage",
+                    "instant_health",
+                    "wither",
+                    "wind_charged",
+                    "weaving",
+                    "weakness",
+                    "water_breathing",
+                    "village_hero",
+                    "trial_omen",
+                    "strength",
+                    "speed",
+                    "slowness",
+                    "slow_falling",
+                    "saturation",
+                    "resistance",
+                    "invisibility",
+                    "jump_boost",
+                    "levitation",
+                    "mining_fatigue",
+                    "nausea",
+                    "night_vision",
+                    "oozing",
+                    "poison",
+                    "raid_omen",
+                    "regeneration"
+                ]
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "must_see": true,
+                "reselect_targets": true,
+                "within_radius": 25.0,
+                "must_see_forget_duration": 17.0,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "player"
+                                }
+                            ]
+                        },
+                        "max_dist": 20
+                    }
+                ]
+            },
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:attack": {
+                "damage": 0
+            },
+            "minecraft:cannot_be_attacked": {},
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "on_damage": {
+                            "filters": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "player"
+                                }
+                            ]
+                        },
+                        "deals_damage": "yes"
+                    },
+                    {
+                        "cause": "all",
+                        "on_damage": {
+                            "filters": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "monster"
+                                }
+                            ]
+                        },
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "anvil",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "campfire",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "fall",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "fire",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "fire_tick",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "lava",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "freezing",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "thorns",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "wither",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "soul_campfire",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "magma",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:breathable": {
+                "suffocate_time": 0,
+                "total_supply": 15,
+                "breathes_water": true
+            },
+            "minecraft:is_collidable": {},
+            "minecraft:timer": {
+                "time": [
+                    5,
+                    10
+                ],
+                "looping": true,
+                "time_down_event": {
+                    "filters": [
+                        {
+                            "all_of": [
+                                {
+                                    "test": "has_target",
+                                    "value": true,
+                                    "subject": "self"
+                                }
+                            ]
+                        }
+                    ],
+                    "event": "dungeons:spawn_mob"
+                }
+            },
+            "minecraft:attack_damage": {
+                "value": 0
+            },
+            "minecraft:collision_box": {
+                "height": 1,
+                "width": 1
+            },
+            "minecraft:health": {
+                "max": 60,
+                "value": 60
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:movement": {
+                "value": 0.0
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:nameable": {},
+            "minecraft:navigation.walk": {
+                "avoid_damage_blocks": false,
+                "can_path_over_water": false,
+                "can_sink": true
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 7,
+                "speed_multiplier": 1
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 8,
+                "look_distance": 6,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 9
+            },
+            "minecraft:behavior.melee_attack": {
+                "reach_multiplier": 0,
+                "priority": 2
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "monster"
+                        }
+                    }
+                ]
+            },
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:type_family": {
+                "family": [
+                    "stun_immune",
+                    "dungeons_spawner",
+                    "monster",
+                    "mob",
+                    "gravity_immune"
+                ]
+            },
+            "minecraft:body_rotation_always_follows_head": {},
+            "minecraft:rotation_axis_aligned": {}
+        },
+        "events": {
+            "dungeons:spawn_as_zombie_spawner": {
+                "set_property": {
+                    "dungeons:spawn": "zombie"
+                }
+            },
+            "dungeons:spawn_as_blaze_spawner": {
+                "set_property": {
+                    "dungeons:spawn": "blaze"
+                }
+            },
+            "dungeons:spawn_mob": {}
+        }
+    }
+}

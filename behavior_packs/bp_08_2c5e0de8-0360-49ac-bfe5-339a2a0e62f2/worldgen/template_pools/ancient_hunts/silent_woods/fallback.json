@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:silent_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/silent_woods/sil_side_end",
+                    "processors": "dungeons:silent_woods"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

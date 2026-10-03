@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:lowerforge_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/lower_forge/lforge_fallback",
+                    "processors": "dungeons:lower_forge"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

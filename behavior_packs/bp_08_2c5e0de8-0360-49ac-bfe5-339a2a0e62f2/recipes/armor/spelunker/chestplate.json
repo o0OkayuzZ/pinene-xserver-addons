@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "spelunker_chestplate"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "E E",
+      "IEI",
+      "IEI"
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "key": {
+      "E": {
+        "item": "minecraft:iron_ingot"
+      },
+      "I": {
+        "item": "minecraft:coal"
+      }
+    },
+    "result": {
+      "item": "dungeons:spelunker_chestplate",
+      "count": 1
+    }
+  }
+}

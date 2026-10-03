@@ -1,0 +1,10 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.redstone_golem_sleeping": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant == 0 ? texture.default : q.property('dungeons:spooky') ? texture.costume : texture.on" ]
+    }
+  }
+}

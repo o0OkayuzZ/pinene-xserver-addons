@@ -8,7 +8,7 @@ import {
 world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
     const entity = e.entity;
     const id = e.eventId;
-    if (id === 'dungeons:try_teleport' && entity.typeId.includes("watchling")) {
+    if (id === 'dungeons:try_teleport' && (entity.typeId.includes("watchling") || entity.typeId == "dungeons:watcher_of_the_end")) {
         if (Math.random() > 0.25) return;
         const health = entity.getComponent("health")
         if (health.currentValue <= 0) return;
@@ -35,7 +35,12 @@ function teleport(entity, loc) {
         if (zMod < 0 && zMod > -3) zMod = -3
         if (zMod > 0 && zMod < 3) zMod = 3
         var teleportLoc = { x: loc.x + xMod, y: loc.y, z: loc.z + zMod }
-        teleportLoc.y = dim.getTopmostBlock({ x: teleportLoc.x, z: teleportLoc.z }, teleportLoc.y).y + 1
+        const topMostBlock = dim.getTopmostBlock({ x: teleportLoc.x, z: teleportLoc.z }, teleportLoc.y)
+        if(topMostBlock) {
+            teleportLoc.y = topMostBlock.y + 1
+        } else {
+            teleportLoc = loc
+        }
         if (teleportLoc.y < loc.y - 3 || teleportLoc.y > loc.y + 1) continue;
 
         const baseDist = Math.hypot(teleportLoc.x - loc.x, teleportLoc.y - loc.y, teleportLoc.z - loc.z)

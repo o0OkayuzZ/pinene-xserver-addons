@@ -2,7 +2,7 @@ import {
     world
 } from "@minecraft/server";
 
-import { isWearingSet } from "components/armour.js"
+import { isWearingSet, isWearingMysteryArmour } from "components/armour.js"
 
 // TURTLE ARMOUR
 world.afterEvents.entityHealthChanged.subscribe((event) => {
@@ -12,12 +12,12 @@ world.afterEvents.entityHealthChanged.subscribe((event) => {
     if (!player) return;
     if (!player.isValid) return;
     if (player.typeId !== "minecraft:player") return;
-    if (!isWearingSet(player, "dungeons:root_rot_armour")) return;
+    if (!isWearingSet(player, "dungeons:root_rot_armour") && !isWearingMysteryArmour(player, "healing_cooldown")) return;
     if (newValue <= oldValue) {
         return;
     }
     const hp = player.getComponent("health")
-    if (newValue > hp.defaultValue) newValue = hp.defaultValue
+    if (newValue > hp.effectiveMax) newValue = hp.effectiveMax
     const diff = newValue - oldValue
     if (diff == 0) return;
     var ticksReduceBy = Math.floor(diff * 20)

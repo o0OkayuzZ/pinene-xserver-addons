@@ -1,12 +1,14 @@
 import {
-    world
+    world,
+    system,
+    ItemStack
 } from "@minecraft/server";
 
 
 const specailNames = [
     {
-        username: "Axolot4342",
-        printName: "§dAxolot4342"
+        username: "Alylicara",
+        printName: "§dAlylicara"
     },
     {
         username: "G0ldenAury",
@@ -45,10 +47,12 @@ const specailNames = [
         printName: "§9FrostyPrince474"
     },
     {
-        username: "WardedCentaur65",
-        printName: "§qWardedCentaur65"
+        username: "BlazingFurnace1",
+        printName: "§qBlazingFurnace1"
     }
 ];
+
+
 
 export function getDamageColour(damage) {
     if (damage < 4) return "§c"
@@ -83,3 +87,45 @@ world.afterEvents.entityHurt.subscribe((e) => {
         }
     }
 });
+
+
+system.runInterval(
+    () => {
+        const players = world.getAllPlayers();
+        for (let i = 0; i < players.length; i++) {
+            const player = players[i];
+            if (!player.hasTag('dungeons:debug_showstates')) continue;
+            try {
+                var { block, face } = player.getBlockFromViewDirection();
+                if (!block) {
+                    player.onScreenDisplay.setActionBar("Not looking at a Block.");
+                    return;
+                };
+                player.onScreenDisplay.setActionBar(
+                    `§eBlock: §7${block.typeId}§r, §Face: §7${face}§r, §cx§by§az: §c${block.location.x} §e/ §b${block.location.y} §e/ §a${block.location.z}§r,\n`
+                    + `§edata: §7${JSON.stringify(block.permutation.getAllStates(), null, 4)}`
+                );
+            } catch {
+                player.onScreenDisplay.setActionBar("§cNot looking at a Block.");
+            };
+        };
+    }
+);
+
+
+const interval = 10 //delay between check
+let TPS = 20 //Use this on the rest of your codes
+
+let lastDate = Date.now()
+system.runInterval(() => {
+    const currDate = Date.now()
+    TPS = interval * 50 / (currDate - lastDate) * 20
+    lastDate = currDate
+    for (const player of world.getPlayers({ tags: ["dungeons:debug_data"] })) {
+        var val = Math.round(TPS)
+        var colour = "§a"
+        if (val < 20) colour = "§e"
+        if (val < 17) colour = "§c"
+        player.onScreenDisplay.setActionBar(colour + "TPS:" + ` ${Math.round(TPS)}`);
+    }
+}, interval)

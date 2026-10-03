@@ -1,0 +1,239 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dungeons:pet_bat",
+      //"runtime_identifier": "minecraft:bat",
+      "spawn_category": "ambient",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "dungeons:unenchanted": {
+        "minecraft:health": {
+          "value": 16,
+          "max": 16
+        },
+        "minecraft:movement": {
+          "value": 0.1
+        },
+        "minecraft:flying_speed": {
+          "value": 0.18
+        },
+        "minecraft:scale": {
+          "value": 1
+        },
+        "minecraft:knockback_resistance": {
+          "value": 0,
+          "max": 0
+        },
+        "minecraft:type_family": {
+          "family": ["pet", "bat", "mob", "artefact", "enchantable_pet"]
+        }
+      },
+      "dungeons:enchanted": {
+        "minecraft:is_saddled": {},
+        "minecraft:health": {
+          "value": 32,
+          "max": 32
+        },
+        "minecraft:movement": {
+          "value": 0.12
+        },
+        "minecraft:flying_speed": {
+          "value": 0.216
+        },
+        "minecraft:scale": {
+          "value": 1.1
+        },
+        "minecraft:knockback_resistance": {
+          "value": 0.2,
+          "max": 0.2
+        },
+        "minecraft:type_family": {
+          "family": ["pet", "bat", "mob", "artefact", "enchanted"]
+        }
+      }
+    },
+    "components": {
+      "minecraft:is_tamed": {},
+      "minecraft:behavior.follow_owner": {
+        "priority": 6,
+        "speed_multiplier": 1,
+        "start_distance": 16,
+        "stop_distance": 2
+      },
+      "minecraft:behavior.owner_hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.owner_hurt_target": {
+        "priority": 2
+      },
+      "minecraft:tick_world": {
+        "radius": 2
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:tameable": {
+        "probability": 1.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_owner",
+                    "subject": "other",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "0"
+      },
+      "minecraft:nameable": {},
+      "minecraft:type_family": {
+        "family": ["pet", "bat", "mob", "artefact", "enchantable_pet"]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.8
+      },
+      "minecraft:balloonable": {
+        "mass": 0.5
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:health": {
+        "value": 16
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self"
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:flying_speed": {
+        "value": 0.18
+      },
+      "minecraft:navigation.hover": {
+        "can_path_over_water": true,
+        "can_sink": false,
+        "can_pass_doors": false,
+        "can_path_from_air": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true,
+        "avoid_sun": false
+      },
+      "minecraft:movement.hover": {},
+      "minecraft:follow_range": {
+        "value": 1024
+      },
+      "minecraft:jump.static": {},
+      "minecraft:can_fly": {},
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:area_attack": {
+        "damage_range": 1,
+        "damage_per_tick": 3,
+        "damage_cooldown": 1.6,
+        "cause": "entity_attack",
+        "entity_filter": {
+          "any_of": [
+            {
+              "test": "is_target",
+              "subject": "other"
+            }
+          ]
+        }
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:attack": {
+        "damage": 4
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 4,
+        "speed_multiplier": 1.3,
+        "track_target": false,
+        "reach_multiplier": 0.0 // this prevents creepers from ocasionally performing melee attacks while using this goal to chase
+      },
+      "minecraft:behavior.float": {
+        "priority": 7
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.9
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "target_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.random_hover": {
+        "priority": 9,
+        "xz_dist": 8,
+        "y_dist": 8,
+        "y_offset": -1,
+        "interval": 1,
+        "hover_height": [1, 4]
+      },
+      "minecraft:timer": {
+        "looping": true,
+        "time": 1,
+        "time_down_event": {
+          "event": "dungeons:check_bat"
+        }
+      }
+    },
+    "events": {
+      "dungeons:pet_become_enchanted": {
+        "add": {
+          "component_groups": ["dungeons:enchanted"]
+        },
+        "remove": {
+          "component_groups": ["dungeons:unenchanted"]
+        }
+      },
+      "dungeons:pet_remove_enchanted": {
+        "add": {
+          "component_groups": ["dungeons:unenchanted"]
+        },
+        "remove": {
+          "component_groups": ["dungeons:enchanted"]
+        }
+      },
+      "dungeons:check_bat": {}
+    }
+  }
+}

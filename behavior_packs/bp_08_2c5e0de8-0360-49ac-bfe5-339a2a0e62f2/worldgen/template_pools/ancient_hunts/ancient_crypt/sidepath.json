@@ -1,0 +1,75 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:ancientcrypt_side"
+        },
+        "fallback": "dungeons:ancientcrypt_fallback",
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_side_end",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_sidestraight_0",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 11
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_sidesplit_0",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_sidesplit_1",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_sidesplit_2",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_sidesplit_3",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 2
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_boss",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 4
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/ancient_crypt/crypt_bonus_door",
+                    "processors": "dungeons:ancient_crypt"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

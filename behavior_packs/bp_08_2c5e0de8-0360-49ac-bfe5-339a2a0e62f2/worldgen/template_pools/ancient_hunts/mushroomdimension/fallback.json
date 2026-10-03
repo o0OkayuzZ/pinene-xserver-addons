@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "dungeons:mushroomdimension_fallback"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "ancient_hunt/mushroom_dimension/mush_side_end",
+                    "processors": "dungeons:mushroom_dimension"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

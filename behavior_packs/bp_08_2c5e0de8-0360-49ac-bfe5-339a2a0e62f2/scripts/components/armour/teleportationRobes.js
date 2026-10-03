@@ -20,6 +20,7 @@ world.afterEvents.playerButtonInput.subscribe((event) => {
         player.sendMessage(newState);
         player.sendMessage(inputInfo);
     }
+    if(player.getGameMode() == "Spectator") return;
     if (player.hasTag('dungeons:detect_double_sneak')) {
         player.removeTag('dungeons:detect_double_sneak');
         const dim = player.dimension;
@@ -59,15 +60,11 @@ world.afterEvents.playerButtonInput.subscribe((event) => {
         if (cd.hasParticipant(player.scoreboardIdentity)) {
             return;
         }
-        cd.addScore(player, 40)
         const loc = player.location;
-        dim.spawnParticle('dungeons:instant_teleport', { x: loc.x, y: loc.y + 1, z: loc.z });
-        dim.spawnParticle('dungeons:teleport_out', loc)
-        dim.playSound('armour.teleport.out', loc);
-        player.runCommand("scriptevent dungeons:teleport_roll " + `${loc.x}_${loc.y}_${loc.z}`)
+        var tpLoc = undefined
         if ((face === "Up" || face === "Down") || !raycast.block.above().isAir) {
-            if (face == "Up") player.tryTeleport({ x: block.x + faceLocation.x, y: block.y + 1, z: block.z + faceLocation.z }, { checkForBlocks: false });
-            if (face == "Down") player.tryTeleport({ x: block.x + faceLocation.x, y: block.y - 1.8, z: block.z + faceLocation.z }, { checkForBlocks: false });
+            if (face == "Up") tpLoc = { x: block.x + faceLocation.x, y: block.y + 1, z: block.z + faceLocation.z };
+            if (face == "Down") tpLoc = { x: block.x + faceLocation.x, y: block.y - 1.8, z: block.z + faceLocation.z }
             if (face !== "Up" && face !== "Down") {
                 var xMod = 0
                 if (faceLocation.z > 0) xMod = 1.2
@@ -75,12 +72,21 @@ world.afterEvents.playerButtonInput.subscribe((event) => {
                 var zMod = 0
                 if (faceLocation.x > 0) zMod = 1.2
                 if (faceLocation.x < 0) zMod = -1.2
-                player.tryTeleport({ x: block.x + xMod, y: block.y + 2 * faceLocation.y, z: block.z + zMod }, { checkForBlocks: false });
+                tpLoc = { x: block.x + xMod, y: block.y + 2 * faceLocation.y, z: block.z + zMod }
             }
 
         } else {
-            player.tryTeleport({ x: block.x + 0.5, y: block.y + 1, z: block.z + 0.5 }, { checkForBlocks: false });
+            tpLoc = { x: block.x + 0.5, y: block.y + 1, z: block.z + 0.5 }
         }
+        if (!testIfBarrier(player, tpLoc, dim)) return
+        const tp = player.tryTeleport(tpLoc, { checkForBlocks: true })
+        if (!tp) return;
+
+        cd.addScore(player, 40)
+        dim.spawnParticle('dungeons:instant_teleport', { x: loc.x, y: loc.y + 1, z: loc.z });
+        dim.spawnParticle('dungeons:teleport_out', loc)
+        dim.playSound('armour.teleport.out', loc);
+        player.runCommand("scriptevent dungeons:teleport_roll " + `${loc.x}_${loc.y}_${loc.z}`)
         connectLine(player, loc, dim)
         player.playAnimation("animation.teleport_robes")
         player.addEffect("invisibility", 8, { showParticles: false })
@@ -120,6 +126,28 @@ function connectLine(player, baseLoc, baseDim) {
         }, i)
     }
 }
+
+function testIfBarrier(player, baseLoc, dim) {
+    if (player.getViewDirection().y > 0) {
+        if (dim.getBlock(player.location).above(1).typeId == "dungeons:ancient_hunt_barrier") return false;
+        if (dim.getBlock(player.location).above(2).typeId == "dungeons:ancient_hunt_barrier") return false;
+    }
+    if (dim.id.includes("dungeons:ancientdim_corrupted_jungle") && baseLoc.y >= 72) return false;
+    if (dim.id.includes("dungeons:ancientdim_frosted_fjord") && baseLoc.y >= 72) return false;
+    if (dim.id.includes("dungeons:ancientdim_mushroom_dimension") && baseLoc.y < 62) return false;
+    const baseDist = Math.hypot(baseLoc.x - player.location.x, baseLoc.y - player.location.y, baseLoc.z - player.location.z)
+    const targetLoc = player.location
+    for (let i = 1; i < baseDist; i++) {
+        const xDif = targetLoc.x - baseLoc.x
+        const yDif = targetLoc.y - baseLoc.y
+        const zDif = targetLoc.z - baseLoc.z
+        const locNew = { x: baseLoc.x + (xDif * (i / baseDist)), y: 1 + baseLoc.y + (yDif * (i / baseDist)), z: baseLoc.z + (zDif * (i / baseDist)) }
+        const block = dim.getBlock(locNew)
+        if (block.typeId == "dungeons:ancient_hunt_barrier" || block.typeId == "minecraft:barrier") return false
+    }
+    return true
+}
+
 
 // TIMER
 system.runInterval(() => {

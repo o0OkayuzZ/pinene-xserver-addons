@@ -1,0 +1,27 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dungeons:diamond_key_golem_item",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": true
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "entity.dungeons:diamond_key_golem.name"
+            },
+            "minecraft:hand_equipped": true,
+            "minecraft:tags": {
+                "tags": [
+                    "dungeons:key_golem"
+                ]
+            },
+            "minecraft:rarity": "rare",
+            "minecraft:icon": "diamond_key_golem",
+            "minecraft:allow_off_hand": true,
+            "minecraft:max_stack_size": 1
+        }
+    }
+}

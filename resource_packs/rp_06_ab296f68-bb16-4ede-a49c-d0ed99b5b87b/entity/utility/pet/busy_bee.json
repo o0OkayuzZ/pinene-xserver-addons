@@ -34,14 +34,14 @@
         "animate": [
           "bee_root_controller",
           {
-            "bee_no_stinger": "query.mark_variant==1"
+            "bee_no_stinger": "query.mark_variant == 1"
           }
         ]
       },
       "render_controllers": [
         "controller.render.dungeons_bee",
         {
-          "controller.render.dungeons_entity_enchanted": "q.is_saddled==1"
+          "controller.render.dungeons_entity_enchanted": "q.is_saddled == 1"
         }
       ],
       "spawn_egg": {

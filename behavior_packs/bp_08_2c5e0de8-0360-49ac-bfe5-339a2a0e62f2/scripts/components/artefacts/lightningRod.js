@@ -18,7 +18,7 @@ function strikeLightning(owner, dim, location, type) {
     damage = 20
   }
 
-  const floor = dim.getTopmostBlock({ x: location.x, z: location.z }, location.y).above()
+  const floor = dim.getTopmostBlock({ x: location.x, z: location.z }, location.y+1).above()
   const loc = floor.location
   dim.spawnParticle("dungeons:lightning_rod_area", loc)
   dim.playSound("artefact.lightningwand.use", loc)
@@ -59,49 +59,67 @@ system.beforeEvents.startup.subscribe((event) => {
     onUse(e, { params }) {
       const player = e.source;
       const item = e.itemStack;
-      const type = params.type
-
-      if (item.hasTag('dungeons:tome_of_duplication')) {
-        if (!player.hasTag('tod:used_lightning_rod')) return;
-      }
-
-
-      var rayCast = player.getEntitiesFromViewDirection(({
-        ignoreBlockCollision: true,
-        includePassableBlocks: false,
-        includeLiquidBlocks: true,
-        maxDistance: 24
-      }))
-      if (rayCast == undefined || rayCast.length == 0) {
-        rayCast = player.getBlockFromViewDirection({
-          maxDistance: 24,
-          includePassableBlocks: false,
-          includeLiquidBlocks: true
-        });
-        if (!rayCast) {
-          const cd = item.getComponent("cooldown")
-          player.startItemCooldown(cd.cooldownCategory, 10);
-          return;
-        } else {
-          rayCast = rayCast.block.location;
-        }
-      } else {
-        rayCast = rayCast[0].entity.location
-      }
-
-      let soulScore = world.scoreboard.getObjective("soulGauge")
-      let soulGauge = soulScore.getScore(player)
-
-      if (soulGauge < 8) {
-        player.playSound("mob.evocation_illager.cast_spell", { pitch: 0.6, volume: 0.5 })
-        player.sendMessage([{ text: "§7§o" }, { translate: "dungeons.warn.collect_more_souls" }])
-        const cd = item.getComponent("cooldown")
-        player.startItemCooldown(cd.cooldownCategory, 0);
-        return;
-      } else {
-        soulScore.addScore(player, -8)
-      }
-      strikeLightning(player, player.dimension, rayCast, type)
+      useArtefact(player, item, false)
     }
   });
 });
+
+system.afterEvents.scriptEventReceive.subscribe((e) => {
+  const id = e.id;
+  if (id !== "dungeons:force_artefact") return;
+  const player = e.sourceEntity;
+  if (!player) return;
+  const itemId = e.message;
+  if (!itemId) return;
+  const item = new ItemStack(itemId, 1)
+  if (!item.getComponent("dungeons:lightning_rod")) return;
+  useArtefact(player, item, true)
+})
+
+function useArtefact(player, item, finalShout) {
+  const params = item.getComponent("dungeons:lightning_rod").customComponentParameters.params
+  const type = params.type
+
+  if (item.hasTag('dungeons:tome_of_duplication')) {
+    if (!player.hasTag('tod:used_lightning_rod')) return;
+  }
+
+
+  var rayCast = player.getEntitiesFromViewDirection(({
+    ignoreBlockCollision: true,
+    includePassableBlocks: false,
+    includeLiquidBlocks: true,
+    maxDistance: 24
+  }))
+  if (rayCast == undefined || rayCast.length == 0) {
+    rayCast = player.getBlockFromViewDirection({
+      maxDistance: 24,
+      includePassableBlocks: false,
+      includeLiquidBlocks: true
+    });
+    if (!rayCast) {
+      const cd = item.getComponent("cooldown")
+      player.startItemCooldown(cd.cooldownCategory, 10);
+      return;
+    } else {
+      rayCast = rayCast.block.location;
+    }
+  } else {
+    rayCast = rayCast[0].entity.location
+  }
+
+  let soulScore = world.scoreboard.getObjective("soulGauge")
+  let soulGauge = soulScore.getScore(player)
+
+  if (soulGauge < 8 && !finalShout) {
+    player.playSound("mob.evocation_illager.cast_spell", { pitch: 0.6, volume: 0.5 })
+    player.sendMessage([{ text: "§7§o" }, { translate: "dungeons.warn.collect_more_souls" }])
+    const cd = item.getComponent("cooldown")
+    player.startItemCooldown(cd.cooldownCategory, 0);
+    return;
+  } else {
+    soulScore.addScore(player, -8)
+    if (soulGauge - 8 < 0) soulScore.setScore(player, 0)
+  }
+  strikeLightning(player, player.dimension, rayCast, type)
+}

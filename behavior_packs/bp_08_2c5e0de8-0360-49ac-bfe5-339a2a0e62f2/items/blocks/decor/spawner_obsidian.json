@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dungeons:spawner_obsidian",
+            "menu_category": {
+                "category": "none"
+            }
+        },
+        "components": {
+            "minecraft:block_placer": {
+                "block": "dungeons:spawner_obsidian",
+                "replace_block_item": true
+            },
+            "minecraft:display_name": {
+                "value": "tile.obsidian.name"
+            },
+            "minecraft:rarity":"epic"
+        }
+    }
+}

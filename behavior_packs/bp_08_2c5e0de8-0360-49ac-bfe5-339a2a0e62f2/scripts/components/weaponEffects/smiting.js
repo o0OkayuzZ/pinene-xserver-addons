@@ -20,17 +20,22 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (!equippable) return;
     const heldItem = equippable.getEquipment("Mainhand")
     if (!heldItem) return;
-    if (!heldItem.hasTag(effectId) && heldItem.getDynamicProperty("dungeons:gild") !== effectId) return;
-    //effect code
-    if (e.damage <= 0) return;
-    if (hurt.matches({ families: ["undead"] })) {
-        const dim = attacker.dimension;
-        const targetLoc = hurt.location;
-        e.damage = e.damage * 1.35
-        system.run(() => {
-            dim.spawnParticle("dungeons:smiting_1", { x: targetLoc.x - 0.2, y: targetLoc.y + 1, z: targetLoc.z - 0.2 })
-            dim.spawnParticle("dungeons:smiting_1", { x: targetLoc.x - 0.2, y: targetLoc.y + 1, z: targetLoc.z + 0.2 })
-            dim.spawnParticle("dungeons:smiting_1", { x: targetLoc.x + 0.2, y: targetLoc.y + 1, z: targetLoc.z })
-        })
+    var count = 0
+    if (heldItem.hasTag(effectId)) count += 1
+    if (heldItem.getDynamicProperty(effectId.replace("dungeons:", "dungeons:gild_"))) count += 1
+    if (count == 0) return;
+    for (let i = 0; i < count; i++) {
+        //effect code
+        if (e.damage <= 0) return;
+        if (hurt.matches({ families: ["undead"] })) {
+            const dim = attacker.dimension;
+            const targetLoc = hurt.location;
+            e.damage = e.damage * 1.35
+            system.run(() => {
+                dim.spawnParticle("dungeons:smiting_1", { x: targetLoc.x - 0.2, y: targetLoc.y + 1, z: targetLoc.z - 0.2 })
+                dim.spawnParticle("dungeons:smiting_1", { x: targetLoc.x - 0.2, y: targetLoc.y + 1, z: targetLoc.z + 0.2 })
+                dim.spawnParticle("dungeons:smiting_1", { x: targetLoc.x + 0.2, y: targetLoc.y + 1, z: targetLoc.z })
+            })
+        }
     }
 });
