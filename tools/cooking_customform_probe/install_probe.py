@@ -36,7 +36,19 @@ def replace(path: pathlib.Path, data: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + '.customform-stage')
     tmp.write_bytes(data)
-    os.replace(tmp, path)
+    try:
+        os.replace(tmp, path)
+    except PermissionError:
+        # Windows may allow ordinary writes while a reader denies rename/delete.
+        # Use only existing write permission; never change ACLs or elevate.
+        if os.name != 'nt' or not path.is_file():
+            raise
+        with path.open('r+b') as handle:
+            handle.write(data)
+            handle.truncate()
+            handle.flush()
+            os.fsync(handle.fileno())
+        tmp.unlink(missing_ok=True)
 
 def install(pack: pathlib.Path, source: pathlib.Path, backup_root: pathlib.Path) -> pathlib.Path:
     pack = pack.resolve(); source = source.resolve()
