@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-04",
+  "source_commit": "588123d84db187474597103c8f21c17a9bdb1e51",
+  "main_published": true,
+  "xserver_deployed": true,
+  "server_active": true,
+  "startup_confirmed": true,
+  "food_script_loaded": true,
+  "changed_files": 208,
+  "verified_files": 271,
+  "world_save_files_preserved": 620,
+  "startup_errors": [],
+  "server_backup": "/opt/minecraft/server/_pinene_deploy_backups/meshy-food-0.2.0-20261004/before",
+  "offline_world_backup": {
+    "filename": "server-world-before.tar.gz",
+    "bytes": 1161426563,
+    "sha256": "cba2104c24614539b4dc3d655752d28ba5960851942052868e1d490b0f01ecbd",
+    "location": "Saved to the operator PC; gzip stream verified before applying"
+  },
+  "client_gameplay_after_deploy": "not tested; local client behavior and appearance accepted by user",
+  "ci": {
+    "meshy_food": "passed",
+    "pack_ownership_audit": "passed",
+    "metadata_tests": "15 passed",
+    "existing_failures": [
+      "Crossbow tests: same five failures on previous main",
+      "BSL validator: existing JSON parse failure",
+      "Infinite Castle mirror: cross-repository credentials not configured"
+    ]
+  }
+}
