@@ -1,0 +1,38 @@
+{
+  "source": "f48800ec86fa55d521c6560e1c0114eb029e19f1",
+  "files": 27,
+  "verified": 140,
+  "saveFilesUnchanged": 616,
+  "backup": "/opt/minecraft/server/_pinene_deploy_backups/cooking-ui-0.2.0-20261004/before",
+  "applied": true,
+  "service": "active",
+  "all_files_match": true,
+  "free_bytes": 445542400,
+  "started": true,
+  "food_script_loaded": true,
+  "errors": [],
+  "client_gameplay_after_deploy": "not tested",
+  "main_commit": "f48800ec86fa55d521c6560e1c0114eb029e19f1",
+  "cooking_ui_loaded": true,
+  "world_backup": {
+    "filename": "server-world-before.tar.gz",
+    "bytes": 1161416286,
+    "sha256": "d151bc3cdc33ac5ba67ae45f10898faf9939f4ed9413c81399e94af63f2990d1",
+    "location": "Operator PC; full offline backup and gzip verification before applying"
+  },
+  "ci": {
+    "cooking_ui": "passed (37186481566)",
+    "meshy_food": "passed (37186481631)",
+    "pack_ownership_audit": "passed; subsequent unrelated crossbow tests retain existing failures",
+    "metadata_tests": "15 passed",
+    "existing_other_failures": [
+      "BSL release validation",
+      "Infinite Castle mirror credentials"
+    ]
+  },
+  "manual_checks_pending": [
+    "Open cooking UI in client after reconnect",
+    "Actual knife durability bar after retrieval and break on final use",
+    "Legacy grid appearance on client"
+  ]
+}
