@@ -42,7 +42,13 @@
         "has_collision": false,
         "push_towards_closest_space": false
       },
-      "minecraft:conditional_bandwidth_optimization": {}
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:inventory": {
+        "inventory_size": 1,
+        "container_type": "inventory",
+        "can_be_siphoned_from": false,
+        "private": true
+      }
     }
   }
 }

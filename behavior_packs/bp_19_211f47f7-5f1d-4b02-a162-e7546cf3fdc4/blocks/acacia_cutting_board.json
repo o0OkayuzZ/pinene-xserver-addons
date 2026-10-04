@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.80",
+  "format_version": "1.21.120",
   "minecraft:block": {
     "description": {
       "identifier": "pinene_cooking:acacia_cutting_board",
@@ -134,6 +134,14 @@
               "texture": "pinene_cooking_copper_knife",
               "render_method": "opaque"
             }
+          },
+          "minecraft:crafting_table": {
+            "crafting_tags": [
+              "pinene_native_rank_0",
+              "pinene_native_rank_1",
+              "pinene_native_rank_2"
+            ],
+            "table_name": "料理  Rank II"
           }
         }
       },
@@ -150,6 +158,15 @@
               "texture": "pinene_cooking_iron_knife",
               "render_method": "opaque"
             }
+          },
+          "minecraft:crafting_table": {
+            "crafting_tags": [
+              "pinene_native_rank_0",
+              "pinene_native_rank_1",
+              "pinene_native_rank_2",
+              "pinene_native_rank_3"
+            ],
+            "table_name": "料理  Rank III"
           }
         }
       },
@@ -166,6 +183,16 @@
               "texture": "pinene_cooking_gold_knife",
               "render_method": "opaque"
             }
+          },
+          "minecraft:crafting_table": {
+            "crafting_tags": [
+              "pinene_native_rank_0",
+              "pinene_native_rank_1",
+              "pinene_native_rank_2",
+              "pinene_native_rank_3",
+              "pinene_native_rank_4"
+            ],
+            "table_name": "料理  Rank IV"
           }
         }
       },
@@ -182,6 +209,18 @@
               "texture": "pinene_cooking_diamond_knife",
               "render_method": "opaque"
             }
+          },
+          "minecraft:crafting_table": {
+            "crafting_tags": [
+              "pinene_native_rank_0",
+              "pinene_native_rank_1",
+              "pinene_native_rank_2",
+              "pinene_native_rank_3",
+              "pinene_native_rank_4",
+              "pinene_native_rank_5",
+              "pinene_native_rank_6"
+            ],
+            "table_name": "料理  Rank VI"
           }
         }
       },
@@ -198,6 +237,19 @@
               "texture": "pinene_cooking_netherite_knife",
               "render_method": "opaque"
             }
+          },
+          "minecraft:crafting_table": {
+            "crafting_tags": [
+              "pinene_native_rank_0",
+              "pinene_native_rank_1",
+              "pinene_native_rank_2",
+              "pinene_native_rank_3",
+              "pinene_native_rank_4",
+              "pinene_native_rank_5",
+              "pinene_native_rank_6",
+              "pinene_native_rank_7"
+            ],
+            "table_name": "料理  Rank VII"
           }
         }
       }
@@ -247,8 +299,15 @@
       "minecraft:destructible_by_mining": {
         "seconds_to_destroy": 0.5
       },
-      "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 2.0
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:crafting_table": {
+        "crafting_tags": [
+          "pinene_native_locked"
+        ],
+        "table_name": "料理"
+      },
+      "minecraft:movable": {
+        "movement_type": "immovable"
       }
     }
   }

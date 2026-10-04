@@ -1,5 +1,5 @@
 {
-  "base_commit": "9e43fe34527e18aaeedce5ba8b322f2160bc7834",
+  "base_commit": "986fe836c5c8207f3436638ae54580d7b89a96ca",
   "packs": {
     "bp": "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4",
     "rp": "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45"
@@ -7,28 +7,26 @@
   "versions": {
     "211f47f7-5f1d-4b02-a162-e7546cf3fdc4": [
       0,
-      2,
-      1
+      3,
+      0
     ],
     "392fe57f-87d4-4146-a8ba-5c548001ab45": [
       0,
-      2,
+      3,
       0
     ]
   },
   "features": [
-    "Icon-grid cooking UI is default; native dropdown is an explicit test only",
-    "34 recipes including four material recipes missing from cooking UI",
-    "Knife remaining durability displayed and spent per output",
-    "Used knife retrieval and break cleanup; reject invalid knives and full output inventory"
+    "Native Minecraft crafting screen with rank header",
+    "34 cooking results including all mixed oil seed combinations",
+    "Probabilistic knife lifetime per detected cooking session",
+    "Legacy placed knife migration and per-board multiplayer guard"
   ],
+  "server_deployed": false,
   "tests": {
-    "cooking_runtime_cases": 25,
-    "placement_regression_cases": 22,
-    "client_gameplay": "User screenshot confirmed native dropdown was incorrectly selected; icon grid switch pending visual confirmation"
-  },
-  "api_reference": "https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-ui/customform?view=minecraft-bedrock-stable",
-  "server_deployed": true,
-  "previous_deployment_record": "docs/cooking_ui/deployment-20261004.json",
-  "deployment_record": "docs/cooking_ui/deployment-grid-default-20261004.json"
+    "runtime_and_wear": 75,
+    "compiler": 20,
+    "placement_regressions": 22,
+    "client_gameplay": "pending"
+  }
 }

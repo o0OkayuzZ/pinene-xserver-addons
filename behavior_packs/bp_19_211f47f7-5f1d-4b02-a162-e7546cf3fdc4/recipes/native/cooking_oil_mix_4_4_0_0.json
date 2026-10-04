@@ -1,0 +1,49 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pinene_native:cooking_oil_mix_4_4_0_0"
+    },
+    "tags": [
+      "pinene_native_rank_0"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "minecraft:pumpkin_seeds"
+      },
+      {
+        "item": "minecraft:pumpkin_seeds"
+      },
+      {
+        "item": "minecraft:pumpkin_seeds"
+      },
+      {
+        "item": "minecraft:pumpkin_seeds"
+      },
+      {
+        "item": "minecraft:glass_bottle"
+      }
+    ],
+    "result": {
+      "item": "pine:cooking_oil",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:wheat_seeds"
+      }
+    ]
+  }
+}

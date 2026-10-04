@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:cooking_oil_pumpkin_seeds"
+    },
+    "tags": [
+      "pinene_native_rank_0"
+    ],
+    "pattern": [
+      "AAA",
+      "ABA",
+      "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:pumpkin_seeds"
+      },
+      "B": {
+        "item": "minecraft:glass_bottle"
+      }
+    },
+    "result": {
+      "item": "pine:cooking_oil",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:pumpkin_seeds"
+      }
+    ]
+  }
+}

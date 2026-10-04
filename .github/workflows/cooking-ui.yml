@@ -17,3 +17,4 @@ jobs:
           python-version: '3.12'
       - run: node tools/cooking_ui/test_runtime.cjs
       - run: python tools/cooking_ui/validate.py
+      - run: python -m unittest discover -s tools/cooking_native -p "test_*.py"

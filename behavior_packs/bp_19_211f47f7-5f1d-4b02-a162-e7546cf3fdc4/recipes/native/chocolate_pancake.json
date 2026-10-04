@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pinene_native:chocolate_pancake"
+    },
+    "tags": [
+      "pinene_native_rank_5"
+    ],
+    "ingredients": [
+      {
+        "item": "myname:pancake"
+      },
+      {
+        "item": "pine:chocolate"
+      }
+    ],
+    "result": {
+      "item": "pine:chocolate_pancake",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "myname:pancake"
+      }
+    ]
+  }
+}

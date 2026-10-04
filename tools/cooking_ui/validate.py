@@ -29,16 +29,33 @@ for row in rows:
 for p in (BP/'items').glob('*.json'): assert read(p)==json.loads(previous(p)),p
 for p in (BP/'recipes').glob('*.json'): assert read(p)==json.loads(previous(p)),p
 for p in [*BP.rglob('*.json'),*RP.rglob('*.json')]:read(p)
-ui=read(RP/'ui/server_form.json')
-assert 'pinene_cooking_ui:' in json.dumps(ui)
-# Modifications remain limited to the cooking title, preserving unrelated forms.
-assert ui['long_form']==json.loads(previous(RP/'ui/server_form.json'))['long_form']
-main=(BP/'scripts/main.js').read_text(encoding='utf-8')
-assert 'placeable_food.js' not in main
-assert 'hasRoomAfterCraft(container, recipe, ItemStack, CONTAINER_RETURNS)' in main
-for p in (BP/'scripts').glob('*.js'):
-    for rel in re.findall(r'from\s+["\'](\./[^"\']+)["\']',p.read_text(encoding='utf-8-sig')):
-        assert (p.parent/rel).is_file(),(p,rel)
+
+import sys
+sys.path.insert(0,str(ROOT/'tools/cooking_native'))
+from compiler import compile_recipe,compile_board,table
+assert read(RP/'ui/server_form.json')=={'namespace':'server_form'}
+assert (BP/'scripts/main.js').read_text(encoding='utf-8').strip()=="import './native_boards.js';"
+native=(BP/'scripts/native_boards.js').read_text(encoding='utf-8')
+assert 'ActionFormData' not in native and 'CustomForm' not in native
+assert 'bootstrap.js' not in native and 'minecraft:emerald_block' not in native
+assert 'getAllPlayers().length!==1' not in native
+assert 'migrateLegacyKnife' in native and 'otherSessionOwnsBoard' in native
+expected={name:d for row in rows for name,d in compile_recipe(row)}
+assert len(expected)==198
+assert {p.name for p in (BP/'recipes/native').glob('*.json')}==set(expected)
+for name,d in expected.items():assert read(BP/'recipes/native'/name)==d,name
+for p in (BP/'blocks').glob('*_cutting_board.json'):
+    original=json.loads(previous(p));wanted=compile_board(original);wanted['format_version']='1.21.120'
+    assert read(p)==wanted,p
+for p in (BP/'entities').glob('placed_*_knife.json'):
+    d=read(p);assert d['minecraft:entity']['components']['minecraft:inventory']['inventory_size']==1
+    d['minecraft:entity']['components'].pop('minecraft:inventory')
+    assert d==json.loads(previous(p)),p
 manifest=read(BP/'manifest.json')
-assert next(d['version'] for d in manifest['dependencies'] if d.get('module_name')=='@minecraft/server-ui')=='2.2.0'
-print(json.dumps({'result':'PASS','recipes':34,'existing_recipes_preserved':len(old),'new_material_ui_recipes':4,'default_ui':'icon grid; native dropdown is opt-in','durability':'per output; final batch breaks knife; client gameplay unverified'}))
+assert next(d['version'] for d in manifest['dependencies'] if d.get('module_name')=='@minecraft/server')=='2.7.0'
+assert not any(d.get('module_name')=='@minecraft/server-ui' for d in manifest['dependencies'])
+assert manifest['modules'][1]['uuid']=='b86c67e2-0d84-4643-8d78-28cfdeb2718d'
+# The food pack, placed food models, original icons and all item stats are untouched.
+changed=subprocess.check_output(['git','-c','safe.directory='+ROOT.as_posix(),'diff','--name-only','986fe836c5c8207f3436638ae54580d7b89a96ca'],cwd=ROOT,text=True).splitlines()
+assert not any('/bp_18_' in p or '/rp_21_' in p for p in changed)
+print(json.dumps({'result':'PASS','recipes':34,'native_recipe_variants':198,'default_ui':'native crafting table','durability':'probabilistic per used session','engine_verification':'pending'}))
