@@ -1,0 +1,63 @@
+{
+  "source": "f17311f8d4bfc87e5d24e4a8d3f85c1f718d4c1f",
+  "files": 225,
+  "verified": 341,
+  "saveFilesUnchanged": 607,
+  "backup": "/opt/minecraft/server/_pinene_deploy_backups/cooking-native-0.3.0-20261004/before",
+  "applied": true,
+  "service": "active",
+  "all_files_match": true,
+  "free_bytes": 521318400,
+  "started": true,
+  "food_script_loaded": true,
+  "errors": [],
+  "client_gameplay_after_deploy": "not tested",
+  "main_commit": "f17311f8d4bfc87e5d24e4a8d3f85c1f718d4c1f",
+  "native_cooking_loaded": true,
+  "old_form_loaded": false,
+  "ui": "Minecraft native crafting screen",
+  "pack_versions": {
+    "cooking_bp": [
+      0,
+      3,
+      0
+    ],
+    "cooking_rp": [
+      0,
+      3,
+      0
+    ]
+  },
+  "automated_tests": {
+    "runtime_wear_migration_multiplayer": 75,
+    "recipe_compiler": 20,
+    "meshy_placement": 22
+  },
+  "ci": {
+    "run": "https://github.com/o0OkayuzZ/pinene-xserver-addons/actions/runs/37194326503",
+    "conclusion": "success"
+  },
+  "other_ci": {
+    "meshy_food": "success",
+    "gf": "success",
+    "parallel_regression": "success",
+    "castle_exporter_tests": "success",
+    "unchanged_failures_also_present_on_986fe836": [
+      "BSL v3 release checks",
+      "Audit Bedrock pack ownership",
+      "Sync Infinite Castle mirror"
+    ]
+  },
+  "world_backup": {
+    "path": "C:\\Users\\はーにゃ。\\AppData\\Roaming\\Minecraft Bedrock\\Users\\Shared\\games\\com.mojang\\development_behavior_packs\\ピーネン実験導入3\\cooking_native_release_20261004\\deployment\\server-world-before.tar.gz",
+    "bytes": 1161577023,
+    "gzip_full_read_verified": true
+  },
+  "known_limits": [
+    "Gameplay UI and probabilistic session detection still need live client verification",
+    "Same-board handoff requires the previous operator to close the screen and move slightly",
+    "Stable API detector uses inventory/cursor evidence, not an exact craft or close event"
+  ],
+  "migration": "Existing placed knife markers retain their stored damage; first interaction migrates, second opens UI",
+  "local_prototype_worlds_modified": false
+}

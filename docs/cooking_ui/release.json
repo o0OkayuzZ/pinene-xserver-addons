@@ -22,11 +22,13 @@
     "Probabilistic knife lifetime per detected cooking session",
     "Legacy placed knife migration and per-board multiplayer guard"
   ],
-  "server_deployed": false,
+  "server_deployed": true,
   "tests": {
     "runtime_and_wear": 75,
     "compiler": 20,
     "placement_regressions": 22,
     "client_gameplay": "pending"
-  }
+  },
+  "deployment_record": "docs/cooking_ui/deployment-native-20261004.json",
+  "runtime_commit": "f17311f8d4bfc87e5d24e4a8d3f85c1f718d4c1f"
 }
