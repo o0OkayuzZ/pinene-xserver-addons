@@ -24,8 +24,8 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639 | ピネン統合ビヘイビアーパック | 1.0.81 |
 | behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9 | 無限城ビヘイビアーパック | 0.2.15 |
 | behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3 | Pinene PvP Island BP | 0.2.27 |
-| behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5 | Pine Food BP | 0.1.0 |
-| behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4 | Pinene Cooking Tools BP | 0.1.2 |
+| behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5 | Pine Food BP | 0.2.0 |
+| behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4 | Pinene Cooking Tools BP | 0.1.3 |
 | resource_packs/rp_01_1497b511-a764-46d4-b726-dd0f5c5d7784 | [音楽] ピネCD音源 RP | 1.0.33 |
 | resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a | ピーネン統合リソースパック | 1.0.69 |
 | resource_packs/rp_03_9fc53a12-7b83-4d48-b161-d05ee0e45974 | [墓] 死亡回収・墓 RP | 1.0.10 |
@@ -43,7 +43,7 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | resource_packs/rp_18_8cdb9fd9-ee9c-4144-ad3a-175445d20b19 | [保管] 経験値ストレージ RP | 1.0.4 |
 | resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc | 無限城リソースパック | 0.1.8 |
 | resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055 | Pinene PvP Island RP | 0.2.26 |
-| resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2 | Pine Food RP | 0.1.0 |
+| resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2 | Pine Food RP | 0.2.0 |
 | resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45 | Pinene Cooking Tools RP | 0.1.1 |
 
 The rendering pack `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) is maintained independently as `Pinene_Visuals_RP` and is no longer shipped or registered by this repository. The generated `Pinenite Model Outlines` compatibility layer is version `1.0.6` and declares `pbr` so it does not disable Vibrant Visuals.
@@ -53,3 +53,5 @@ The rendering pack `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273
 Mycology system v1.3 / textures v1.4, the portable personal field guide, golden foods (including eggs and chorus), and pancake updates are integrated. See the [2026-09-10 release record](docs/deployments/2026-09-10-foods-mycology.md) for validation and deployment status. Authoring data and rebuild tests for Mycology are in `tools/mycology/`; existing item IDs and texture keys are preserved.
 
 PineCD native records: see [requirements, validation and adding songs](docs/pinecd/NATIVE_RECORDS.md).
+
+Pine Food 3D placement: 35 Meshy dishes use their original 2D held icons and place with sneak + use on a block top. See [release notes and validation](docs/meshy_food/README.md).
