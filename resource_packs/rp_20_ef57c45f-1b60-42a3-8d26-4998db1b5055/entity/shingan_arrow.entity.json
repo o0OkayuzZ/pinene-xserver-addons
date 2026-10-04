@@ -6,9 +6,9 @@
       "materials": { "default": "arrow" },
       "textures": { "default": "textures/entity/shingan_arrow" },
       "geometry": { "default": "geometry.shingan_arrow" },
-      "animations": { "move": "animation.arrow.move" },
+      "animations": { "move": "animation.pinene_pvp.shingan_arrow.move" },
       "scripts": { "animate": ["move"] },
-      "render_controllers": ["controller.render.arrow"]
+      "render_controllers": ["controller.render.pinene_pvp.shingan_arrow"]
     }
   }
 }
