@@ -1,0 +1,31 @@
+{
+  "source": "fe555d19680ae9f5cb1d76610f1de5a4235323cf",
+  "files": 4,
+  "verified": 140,
+  "saveFilesUnchanged": 609,
+  "backup": "/opt/minecraft/server/_pinene_deploy_backups/cooking-grid-0.2.1-20261004/before",
+  "applied": true,
+  "service": "active",
+  "all_files_match": true,
+  "free_bytes": 520691712,
+  "started": true,
+  "food_script_loaded": true,
+  "errors": [],
+  "client_gameplay_after_deploy": "not tested",
+  "main_commit": "fe555d19680ae9f5cb1d76610f1de5a4235323cf",
+  "cooking_ui_loaded": true,
+  "icon_grid_default_loaded": true,
+  "world_backup": {
+    "filename": "server-world-before.tar.gz",
+    "bytes": 1161528587,
+    "sha256": "6aed81ae330b816a2d6c2f72a23675262e4b1cad68d0d4e01a2fc99e60c2485e",
+    "location": "Operator PC; full offline backup verified before applying"
+  },
+  "ci": {
+    "cooking_ui": "25 cases passed; GitHub run 37192974231 succeeded"
+  },
+  "change": "Cooking BP 0.2.1 defaults to the icon grid. Native dropdown requires explicit opt-in. Durability behavior and RP assets unchanged.",
+  "manual_checks_pending": [
+    "Reopen the cutting board and visually confirm the icon grid after reconnect"
+  ]
+}
