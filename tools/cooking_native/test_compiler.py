@@ -79,4 +79,11 @@ class CompilerTests(unittest.TestCase):
         s=(DATA.parent/'native_boards.js').read_text(encoding='utf-8')
         self.assertNotIn('COOKING_RECIPES',s);self.assertNotIn('craftCookingRecipe',s)
         self.assertNotIn('consumeIngredients',s);self.assertNotIn('returnContainers',s)
+    def test_21_rank_zero_is_always_unlocked(self):
+        r=self.basic();r['rank']=0
+        b=compile_recipe(r)[0][1]['minecraft:recipe_shapeless']
+        self.assertEqual(b['unlock'],{'context':'AlwaysUnlocked'})
+    def test_22_higher_rank_keeps_material_unlock(self):
+        r=self.basic();b=compile_recipe(r)[0][1]['minecraft:recipe_shapeless']
+        self.assertEqual(b['unlock'],[{'item':'minecraft:bread'}])
 if __name__=='__main__':unittest.main(verbosity=2)

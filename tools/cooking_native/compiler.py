@@ -100,7 +100,7 @@ def _compile_recipe(r):
             body['pattern']=[''.join(letters[i:i+width]).ljust(width) for i in range(0,len(letters),width)]
             body['key']=key;kind='shaped'
         body['result']=([primary]+[{'item':item,'count':count} for item,count in sorted(returned.items())]) if returned else primary
-        body['unlock']=[{'item':item(r['ingredients'][0])}]
+        body['unlock']=({'context':'AlwaysUnlocked'} if r['rank']==0 else [{'item':item(r['ingredients'][0])}])
         out.append((base+suffix+'.json',{'format_version':'1.20.10','minecraft:recipe_'+kind:body}))
     return out
 
@@ -118,7 +118,7 @@ def compile_recipe(r):
             'tags':[TAG_PREFIX+str(r['rank'])],
             'ingredients':[{'item':i} for i in mixture]+[{'item':'minecraft:glass_bottle'}],
             'result':{'item':r['id'],'count':r['resultCount']},
-            'unlock':[{'item':mixture[0]}]}
+            'unlock':({'context':'AlwaysUnlocked'} if r['rank']==0 else [{'item':mixture[0]}])}
         out.append(('cooking_oil_mix_'+suffix+'.json',{'format_version':'1.20.10','minecraft:recipe_shapeless':body}))
     return out
 
