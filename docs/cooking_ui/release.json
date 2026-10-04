@@ -1,0 +1,32 @@
+{
+  "base_commit": "9e43fe34527e18aaeedce5ba8b322f2160bc7834",
+  "packs": {
+    "bp": "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4",
+    "rp": "resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45"
+  },
+  "versions": {
+    "211f47f7-5f1d-4b02-a162-e7546cf3fdc4": [
+      0,
+      2,
+      0
+    ],
+    "392fe57f-87d4-4146-a8ba-5c548001ab45": [
+      0,
+      2,
+      0
+    ]
+  },
+  "features": [
+    "Native continuous cooking UI by default with legacy grid fallback",
+    "34 recipes including four material recipes missing from cooking UI",
+    "Knife remaining durability displayed and spent per output",
+    "Used knife retrieval and break cleanup; reject invalid knives and full output inventory"
+  ],
+  "tests": {
+    "cooking_runtime_cases": 23,
+    "placement_regression_cases": 22,
+    "client_gameplay": "not verified"
+  },
+  "api_reference": "https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-ui/customform?view=minecraft-bedrock-stable",
+  "server_deployed": false
+}
