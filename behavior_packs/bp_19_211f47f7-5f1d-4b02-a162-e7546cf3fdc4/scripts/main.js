@@ -373,7 +373,7 @@ function scheduleBoardUi(player, block, state) {
 }
 
 async function openBoard(player, block, state = {}) {
-  // Continuous cooking is the default; retain the grid UI as a fallback.
+  // Keep the icon grid as the default; the dropdown screen requires explicit opt-in.
   if (customCookingUi.enabled(player)) {
     const result = await customCookingUi.openAt(player, block);
     if (result.opened || !["unsupported_api", "open_error"].includes(result.reason)) return;

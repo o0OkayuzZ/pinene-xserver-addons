@@ -1,6 +1,7 @@
 import { createPersistentCookingUi } from "./custom_cooking_ui.js";
 
 export const LEGACY_COOKING_TAG = "pinene_cooking:legacy_ui";
+export const CUSTOM_COOKING_TAG = "pinene_cooking:customform_test";
 const LOG_PREFIX = "[pinene_cooking_customform] ";
 const RP_UUID = "c81a6798-b6b1-4716-a514-c49967ad0ee2";
 const MATERIAL_IMAGES = new Set(["pine:milk_bottle", "pine:butter", "pine:chocolate",
@@ -100,7 +101,7 @@ export function createCustomCookingBridge(host) {
       return { ok: craftCookingRecipe(player, ctx.knife, recipe) };
     }
   });
-  // Players can switch back to the grid UI without changing server-wide behavior.
+  // The icon grid is the normal cooking screen. The dropdown is an explicit test.
   system.afterEvents.scriptEventReceive.subscribe((event) => {
     if (event.id !== "pinene_cooking:customform") return;
     const player = event.sourceEntity;
@@ -109,19 +110,21 @@ export function createCustomCookingBridge(host) {
       if (event.message.trim() === "on") {
         if (!controller.available()) { player.sendMessage("CustomForm APIを読み込めませんでした。"); return; }
         player.removeTag(LEGACY_COOKING_TAG);
-        player.sendMessage("連続クラフトの料理画面を有効にしました。まな板を開いてください。");
+        player.addTag(CUSTOM_COOKING_TAG);
+        player.sendMessage("試験用の連続クラフト画面を有効にしました。まな板を開いてください。");
       } else if (event.message.trim() === "off") {
         controller.close(player.id, "test_disabled");
         player.addTag(LEGACY_COOKING_TAG);
+        player.removeTag(CUSTOM_COOKING_TAG);
         player.sendMessage("通常の料理画面に戻しました。");
       }
     });
   });
   world.afterEvents.playerLeave.subscribe(({ playerId }) => controller.close(playerId, "player_left"));
-  system.run(() => log({ event: "ready", customForm: controller.available(), image: typeof ui.CustomForm?.prototype.image === "function" }));
+  system.run(() => log({ event: "ready", defaultUi: "icon_grid", customForm: controller.available(), image: typeof ui.CustomForm?.prototype.image === "function" }));
   return {
     ...controller,
-    enabled: (player) => !player.hasTag(LEGACY_COOKING_TAG),
+    enabled: (player) => player.hasTag(CUSTOM_COOKING_TAG) && !player.hasTag(LEGACY_COOKING_TAG),
     openAt: (player, block) => controller.open(player, {
       dimension: block.dimension, location: { ...block.location }, typeId: block.typeId,
     }),

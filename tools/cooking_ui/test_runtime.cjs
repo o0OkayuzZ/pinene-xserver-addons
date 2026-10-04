@@ -124,8 +124,8 @@ test('board destruction drops a used knife without repairing it',()=>{
   const e=env();e.knife('iron',71);e.handlers.break({brokenBlockPermutation:{type:{id:e.block.typeId}},block:e.block,dimension:e.dimension,player:e.player});
   assert.equal(e.slots.find(s=>s?.typeId==='pinene_cooking:iron_knife').damage,71);assert.equal(e.entities[0].isValid,false);
 });
-test('continuous UI is default; two clicks in one tick craft once; one show call',async()=>{
-  const e=env(),r=e.api.COOKING_RECIPES[0];e.materials(r);e.knife('netherite');assert.equal(e.api.customCookingUi.enabled(e.player),true);
+test('opt-in continuous UI: two clicks in one tick craft once; one show call',async()=>{
+  const e=env(),r=e.api.COOKING_RECIPES[0];e.materials(r);e.knife('netherite');assert.equal(e.api.customCookingUi.enabled(e.player),false);
   const done=e.api.customCookingUi.openAt(e.player,e.block),f=e.forms[0];assert.equal(f.shows,1);
   f.buttons[0].fn();f.buttons[0].fn();e.drain();assert.equal(e.count(r.id),r.resultCount);assert.equal(f.shows,1);
   f.close();await done;assert.equal(e.api.customCookingUi.activeCount(),0);
@@ -145,9 +145,19 @@ test('out-of-range and dimension changes invalidate open UI',async()=>{
     [...e.intervals.values()].at(-1)();await done;assert.equal(e.api.customCookingUi.activeCount(),0);}
 });
 test('unsupported native UI falls back to grid and manual off remains available',async()=>{
-  const e=env();e.knife();delete e.customFormApi.CustomForm;await e.api.openBoard(e.player,e.block);assert.equal(e.forms[0].buttons.length,79);
+  const e=env();e.knife();e.player.addTag('pinene_cooking:customform_test');delete e.customFormApi.CustomForm;await e.api.openBoard(e.player,e.block);assert.equal(e.forms[0].buttons.length,79);
   e.handlers.script({id:'pinene_cooking:customform',sourceEntity:e.player,message:'off'});e.drain();assert.equal(e.api.customCookingUi.enabled(e.player),false);
 });
 test('invalid selector values cannot select an arbitrary recipe',async()=>{
   const e=env();e.knife();const done=e.api.customCookingUi.openAt(e.player,e.block),f=e.forms[0];f.fields[0].value.setData(999);assert.equal(f.fields[0].value.getData(),0);f.close();await done;
+});
+test('normal players open the 79-button icon grid even when CustomForm is available',async()=>{
+  const e=env();e.knife();await e.api.openBoard(e.player,e.block);
+  assert.equal(e.forms.length,1);assert.equal(e.forms[0].buttons.length,79);
+  assert.equal(e.api.customCookingUi.activeCount(),0);
+});
+test('dropdown requires explicit opt-in and off restores icon grid',async()=>{
+  const e=env();assert.equal(e.api.customCookingUi.enabled(e.player),false);
+  e.handlers.script({id:'pinene_cooking:customform',sourceEntity:e.player,message:'on'});e.drain();assert.equal(e.api.customCookingUi.enabled(e.player),true);
+  e.handlers.script({id:'pinene_cooking:customform',sourceEntity:e.player,message:'off'});e.drain();assert.equal(e.api.customCookingUi.enabled(e.player),false);
 });

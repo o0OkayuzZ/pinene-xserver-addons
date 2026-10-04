@@ -8,7 +8,7 @@
     "211f47f7-5f1d-4b02-a162-e7546cf3fdc4": [
       0,
       2,
-      0
+      1
     ],
     "392fe57f-87d4-4146-a8ba-5c548001ab45": [
       0,
@@ -17,17 +17,17 @@
     ]
   },
   "features": [
-    "Native continuous cooking UI by default with legacy grid fallback",
+    "Icon-grid cooking UI is default; native dropdown is an explicit test only",
     "34 recipes including four material recipes missing from cooking UI",
     "Knife remaining durability displayed and spent per output",
     "Used knife retrieval and break cleanup; reject invalid knives and full output inventory"
   ],
   "tests": {
-    "cooking_runtime_cases": 23,
+    "cooking_runtime_cases": 25,
     "placement_regression_cases": 22,
-    "client_gameplay": "not verified"
+    "client_gameplay": "User screenshot confirmed native dropdown was incorrectly selected; icon grid switch pending visual confirmation"
   },
   "api_reference": "https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-ui/customform?view=minecraft-bedrock-stable",
-  "server_deployed": true,
-  "deployment_record": "docs/cooking_ui/deployment-20261004.json"
+  "server_deployed": false,
+  "previous_deployment_record": "docs/cooking_ui/deployment-20261004.json"
 }

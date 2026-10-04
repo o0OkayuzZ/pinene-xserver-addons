@@ -41,4 +41,4 @@ for p in (BP/'scripts').glob('*.js'):
         assert (p.parent/rel).is_file(),(p,rel)
 manifest=read(BP/'manifest.json')
 assert next(d['version'] for d in manifest['dependencies'] if d.get('module_name')=='@minecraft/server-ui')=='2.2.0'
-print(json.dumps({'result':'PASS','recipes':34,'existing_recipes_preserved':len(old),'new_material_ui_recipes':4,'native_ui':'default with legacy fallback','durability':'per output; final batch breaks knife; client gameplay unverified'}))
+print(json.dumps({'result':'PASS','recipes':34,'existing_recipes_preserved':len(old),'new_material_ui_recipes':4,'default_ui':'icon grid; native dropdown is opt-in','durability':'per output; final batch breaks knife; client gameplay unverified'}))
