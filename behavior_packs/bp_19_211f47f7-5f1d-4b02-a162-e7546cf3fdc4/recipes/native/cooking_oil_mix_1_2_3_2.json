@@ -40,10 +40,8 @@
       "item": "pine:cooking_oil",
       "count": 1
     },
-    "unlock": [
-      {
-        "item": "minecraft:wheat_seeds"
-      }
-    ]
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    }
   }
 }

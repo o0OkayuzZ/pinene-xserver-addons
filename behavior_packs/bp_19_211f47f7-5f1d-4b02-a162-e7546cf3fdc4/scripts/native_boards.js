@@ -253,7 +253,7 @@ function place(player,block,slot,expectedType,expectedSnapshot) {
     throw error;
   }
   log('knife_placed',{material,damage:stack.getComponent('minecraft:durability')?.damage??0});
-  report(player,'§aナイフを置きました。手を空けてまな板を開いてください。');
+  report(player,'§aナイフを置きました。手を空けると料理、本を持つと料理図鑑を開けます。');
   showRankActionbar(player,material);
 }
 function retrieve(player,block) {
