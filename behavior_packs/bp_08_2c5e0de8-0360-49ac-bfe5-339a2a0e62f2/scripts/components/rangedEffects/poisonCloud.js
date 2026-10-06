@@ -83,23 +83,6 @@ world.afterEvents.projectileHitBlock.subscribe((e) => {
 
 });
 
-// TIMER
-system.runInterval(() => {
-    for (const player of world.getPlayers()) {
-        var timeLeft = world.scoreboard.getObjective('dungeons:poison_cloud_ranged_t');
-        if (!timeLeft) return;
-        if (!player.scoreboardIdentity) continue;
-        if (!timeLeft.hasParticipant(player.scoreboardIdentity)) continue;
-        let duration = timeLeft.getScore(player);
-
-        if (duration > 0) {
-            timeLeft.addScore(player, -1);
-        }
-        if (duration <= 0) {
-            timeLeft.removeParticipant(player)
-        }
-    }
-});
 
 // cloud
 function createPoisonCloud(timeLeft, dim, loc, owner) {

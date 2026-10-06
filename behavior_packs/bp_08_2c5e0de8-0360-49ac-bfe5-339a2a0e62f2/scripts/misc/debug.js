@@ -110,7 +110,7 @@ system.runInterval(
             };
         };
     }
-);
+, 10);
 
 
 const interval = 10 //delay between check

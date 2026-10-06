@@ -11,4 +11,4 @@ system.runInterval(() => {
             if (player.isSprinting) player.addEffect("speed", 4, { amplifier: 1, showParticles: false });
         }
     }
-});
+}, 2);

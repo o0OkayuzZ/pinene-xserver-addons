@@ -24,24 +24,6 @@ world.afterEvents.entityHurt.subscribe((e) => {
     dim.playSound('mob.glow_squid.ink_squirt', loc, { pitch: 1.5, volume: 0.6 });
 })
 
-// TIMER
-system.runInterval(() => {
-    for (const player of world.getPlayers()) {
-        var timeLeft = world.scoreboard.getObjective('dungeons:glow_squid_armour_t');
-        if (!timeLeft) return;
-        if (!player.scoreboardIdentity) continue;
-        if (!timeLeft.hasParticipant(player.scoreboardIdentity)) continue;
-        let duration = timeLeft.getScore(player);
-
-        if (duration > 0) {
-            timeLeft.addScore(player, -1);
-
-        }
-        if (duration <= 0) {
-            timeLeft.removeParticipant(player)
-        }
-    }
-});
 
 world.beforeEvents.entityHurt.subscribe((e) => {
     const hurt = e.hurtEntity;

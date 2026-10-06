@@ -66,21 +66,3 @@ system.runInterval(() => {
         player.runCommand("particle minecraft:basic_smoke_particle ^^2.5^")
     }
 })
-
-// TIMER
-system.runInterval(() => {
-    for (const player of world.getPlayers()) {
-        var timeLeft = world.scoreboard.getObjective('dungeons:sweet_tooth_t');
-        if (!timeLeft) return;
-        if (!player.scoreboardIdentity) continue;
-        if (!timeLeft.hasParticipant(player.scoreboardIdentity)) continue;
-        let duration = timeLeft.getScore(player);
-
-        if (duration > 0) {
-            timeLeft.addScore(player, -1);
-        }
-        if (duration <= 0) {
-            timeLeft.removeParticipant(player)
-        }
-    }
-});
