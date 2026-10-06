@@ -25,14 +25,6 @@ The model topology is deliberately not aggressively decimated in this pass.
 The texture-memory reduction is much larger and is safe to validate without
 introducing holes into Meshy's alpha-masked triangle planes.
 
-Rapid placement is also made lossless. Previously a second first-interaction
-arriving while the previous placement was deferred to the next server tick was
-canceled by Bedrock and then discarded by the `pending` guard. This produced the
-client-visible "placed, then vanished" symptom under lag or fast clicking. New
-first-interactions are now queued per player (up to 16) and drained one per tick;
-held-input follow-up events remain ignored, so one click still cannot duplicate a
-food entity.
-
 ## Alylica polling
 
 Baseline Alylica 2.1.3 had roughly 180 `system.runInterval` callbacks, including
