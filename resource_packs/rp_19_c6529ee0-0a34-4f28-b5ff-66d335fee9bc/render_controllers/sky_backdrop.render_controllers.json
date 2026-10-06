@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.infinite_castle_sky": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        {
+          "*": "query.distance_from_camera < 16.0"
+        }
+      ],
+      "ignore_lighting": true,
+      "light_color_multiplier": "1.0"
+    }
+  }
+}

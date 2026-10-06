@@ -17,10 +17,10 @@ test("background restore uses a fresh one-time key and keeps a manual force path
   assert.match(source, /\(!force && restoreComplete\(\)\)/);
 });
 
-test("Infinite Castle BP version is synchronized to 0.2.16", () => {
+test("Infinite Castle BP version is synchronized to the current backdrop release", () => {
   const manifest = JSON.parse(readFileSync(join(pack, "manifest.json"), "utf8"));
-  assert.deepEqual(manifest.header.version, [0, 2, 16]);
-  for (const module of manifest.modules) assert.deepEqual(module.version, [0, 2, 16]);
+  assert.deepEqual(manifest.header.version, [0, 2, 17]);
+  for (const module of manifest.modules) assert.deepEqual(module.version, [0, 2, 17]);
 
   for (const rel of [
     "world_behavior_packs.json",
@@ -29,6 +29,6 @@ test("Infinite Castle BP version is synchronized to 0.2.16", () => {
     const rows = JSON.parse(readFileSync(join(repo, rel), "utf8"));
     const row = rows.find((x) => x.pack_id === manifest.header.uuid);
     assert.ok(row, rel);
-    assert.deepEqual(row.version, [0, 2, 16], rel);
+    assert.deepEqual(row.version, [0, 2, 17], rel);
   }
 });
