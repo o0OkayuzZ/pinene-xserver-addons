@@ -22,7 +22,7 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | behavior_packs/bp_13_7e0c44d2-1b23-4073-b749-c81514e2ed94 | [建築] INAKA家具 BP | 1.1.5 |
 | behavior_packs/bp_14_a881d6c5-7cf5-4823-a26c-1766d70acd8c | [保管] 経験値ストレージ BP | 1.0.6 |
 | behavior_packs/bp_15_4f6cac3a-cc5c-45b7-8ab5-9290d52b9639 | ピネン統合ビヘイビアーパック | 1.0.81 |
-| behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9 | 無限城ビヘイビアーパック | 0.2.16 |
+| behavior_packs/bp_16_3efecae8-a036-4e14-94d3-876e29fe0ae9 | 無限城ビヘイビアーパック | 0.2.17 |
 | behavior_packs/bp_17_c65bcd04-4708-4716-86bf-bbd6ab936fd3 | Pinene PvP Island BP | 0.2.27 |
 | behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5 | Pine Food BP | 0.2.1 |
 | behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4 | Pinene Cooking Tools BP | 0.3.1 |
@@ -41,7 +41,7 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | resource_packs/rp_16_47cd51f7-0f9e-4bfa-a9ce-c8ce180abd78 | [保守] 青リンゴ状態リセット RP | 1.0.7 |
 | resource_packs/rp_17_9a12d1e1-d6c3-43b6-8551-cdc1bb582f82 | [建築] INAKA家具 RP | 1.1.6 |
 | resource_packs/rp_18_8cdb9fd9-ee9c-4144-ad3a-175445d20b19 | [保管] 経験値ストレージ RP | 1.0.5 |
-| resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc | 無限城リソースパック | 0.1.8 |
+| resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc | 無限城リソースパック | 0.1.9 |
 | resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055 | Pinene PvP Island RP | 0.2.26 |
 | resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2 | Pine Food RP | 0.2.1 |
 | resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45 | Pinene Cooking Tools RP | 0.2.0 |

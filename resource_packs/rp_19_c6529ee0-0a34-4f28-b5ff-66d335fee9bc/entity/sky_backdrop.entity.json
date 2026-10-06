@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "infinite_castle:sky_backdrop",
+      "materials": {
+        "default": "entity_nocull"
+      },
+      "textures": {
+        "default": "textures/entity/infinite_castle_fine_background_v1"
+      },
+      "geometry": {
+        "default": "geometry.infinite_castle_sky"
+      },
+      "render_controllers": [
+        "controller.render.infinite_castle_sky"
+      ]
+    }
+  }
+}
