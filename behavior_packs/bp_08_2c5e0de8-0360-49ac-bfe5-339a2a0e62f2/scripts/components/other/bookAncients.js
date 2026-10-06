@@ -352,8 +352,8 @@ function percentageColour(count, max, player) {
 
 function makeLockedPage(player, dimensionCheck) {
   const form = new ActionFormData();
-  form.title({ text: "???" });
-  form.body("You can visit this Ancient Hunt with the following runes")
+  form.title({ translate: "dungeons.boa.locked.title" });
+  form.body({ translate: "dungeons.boa.locked.body" });
   var runeString = "";
   for (const rune of dimensionCheck.runes) runeString += runeIcon(rune);
   form.label("");
@@ -361,7 +361,7 @@ function makeLockedPage(player, dimensionCheck) {
   form.label("");
   form.label("");
   form.label("");
-  form.button("Okay!")
+  form.button({ translate: "dungeons.boa.okay" });
   form.show(player).then((r) => {
     player.playSound("item.book.page_turn");
     if (r.canceled) return;
@@ -428,7 +428,7 @@ function makeDimensionPage(player, dimensionCheck, bossCleared) {
     form.label({rawtext:[{translate: "dungeons.boa.ancient_unknown.body"}]})
     form.divider()
   }
-  form.button("Close");
+  form.button({ translate: "dungeons.boh.close" });
   form.show(player).then((r) => {
     player.playSound("item.book.page_turn");
     if (r.canceled) return;
@@ -436,13 +436,6 @@ function makeDimensionPage(player, dimensionCheck, bossCleared) {
 }
 
 function runeIcon(rune) {
-  if (rune == "u") return "";
-  if (rune == "t") return "";
-  if (rune == "s") return "";
-  if (rune == "r") return "";
-  if (rune == "p") return "";
-  if (rune == "o") return "";
-  if (rune == "i") return "";
-  if (rune == "c") return "";
-  if (rune == "a") return "";
+  const icons = { u: "\uE901", t: "\uE902", s: "\uE903", r: "\uE904", p: "\uE905", o: "\uE906", i: "\uE907", c: "\uE908", a: "\uE909" };
+  return icons[rune] ?? `§e[${String(rune).toUpperCase()}]§r `;
 }
