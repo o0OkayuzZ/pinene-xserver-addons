@@ -30,7 +30,7 @@ system.runInterval(() => {
             system.runTimeout(() => {
                 const held2 = equip.getEquipment("Mainhand")
                 if (held2 == undefined) {
-                    player.onScreenDisplay.setActionBar(" ") 
+                    player.onScreenDisplay.setActionBar(" ")
                     return
                 } else if ((held2.hasTag("dungeons:crossbow") || held2.hasTag("dungeons:bow") || held2.typeId == "minecraft:crossbow" || held2.typeId == "minecraft:bow") == false) {
                     player.onScreenDisplay.setActionBar(" ");
@@ -47,7 +47,7 @@ system.runInterval(() => {
             if (remainingTime > 1) {
                 if (cd.cooldownCategory.includes("spinblade") && remainingTime > 6) {
                     player.onScreenDisplay.setActionBar(`§c§o§o§l§r§l§e--:--`)
-                } else if(held.hasTag("dungeons:quiver_artefact") && "minecraft:" + player.getDynamicProperty("dungeons:arrow_slot") == cd.cooldownCategory.replace("_rare","").replace("_quiver","")) {                    
+                } else if(held.hasTag("dungeons:quiver_artefact") && "minecraft:" + player.getDynamicProperty("dungeons:arrow_slot") == cd.cooldownCategory.replace("_rare","").replace("_quiver","")) {
                     if (held.hasTag("dungeons:soul_artefact")) {
                         var print = [{ text: `§l§e  --:--§r\n` }]
                         for(const element of getSoulBarText(player, false, true, true)) print.push(element)
@@ -122,4 +122,4 @@ system.runInterval(() => {
             }
         }
     }
-})
+}, 2)

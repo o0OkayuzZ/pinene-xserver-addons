@@ -70,5 +70,4 @@ system.runInterval(() => {
             player.onScreenDisplay.setActionBar(`${durability.maxDurability - durability.damage} / ${durability.maxDurability}`);
         }
     }
-});
-
+}, 10);

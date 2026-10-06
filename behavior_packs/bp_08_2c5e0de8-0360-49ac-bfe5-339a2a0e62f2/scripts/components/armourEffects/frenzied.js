@@ -34,4 +34,4 @@ system.runInterval(() => {
             player.addEffect("speed", 4, { amplifier: 0, showParticles: false });
         }
     }
-});
+}, 2);
