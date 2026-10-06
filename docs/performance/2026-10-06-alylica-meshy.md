@@ -44,10 +44,25 @@ Static result:
 - total runInterval calls: **~180 -> 158**
 - default one-tick runInterval calls: **~100 -> 67**
 
+## XP storage load shedding
+
+The XP storage pack had one large background sweep every tick. That sweep scans
+all XP-fluid and XP-storage entities in every dimension containing players and
+performs repeated block queries and entity updates. It now runs every **2 ticks**
+instead of every tick. If the previous sweep interval exceeds **250 ms**, the
+noncritical fluid/storage sweep is skipped once so a lag spike does not feed into
+the next tick. Direct player XP deposit handling is still evaluated before this
+load-shed check.
+
+This specifically targets server-authoritative tick stalls that can make Bedrock
+show a client-predicted block placement and then roll it back when the server does
+not accept/process that placement in time. It does not manually replay vanilla
+block placement, avoiding duplication and incorrect block-state/orientation bugs.
+
 ## Validation
 
 - Meshy release validator passes for all 35 models and 90 protected gameplay files.
-- 13 targeted Python regression tests pass.
+- 14 targeted Python regression tests pass.
 - 6 Dungeons catalog / pack metadata tests pass.
 - All 43 changed JavaScript files pass `node --check`.
 - `git diff --check` passes.

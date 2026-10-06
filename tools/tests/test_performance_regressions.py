@@ -6,6 +6,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 DUNGEONS = next(ROOT.glob("behavior_packs/bp_08_*"))
+XP_STORAGE = next(ROOT.glob("behavior_packs/bp_14_*"))
 FOOD_RP = next(ROOT.glob("resource_packs/rp_21_*"))
 
 
@@ -85,6 +86,12 @@ class PerformanceRegression(unittest.TestCase):
         ]:
             text = (folder / name).read_text(encoding="utf-8")
             self.assertNotIn("const cooldownNames", text)
+
+    def test_xp_storage_background_sweep_is_throttled_and_load_sheds(self):
+        text = (XP_STORAGE / "scripts/index.js").read_text(encoding="utf-8")
+        self.assertIn("let lastStorageSweepAt = Date.now()", text)
+        self.assertIn("if (elapsed > 250) return", text)
+        self.assertIn("}, 2)\n\nfunction transferXpToTank", text.replace("\r\n", "\n"))
 
 
 if __name__ == "__main__":
