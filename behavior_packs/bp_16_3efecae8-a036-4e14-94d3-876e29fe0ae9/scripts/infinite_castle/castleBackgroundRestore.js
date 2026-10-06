@@ -3,7 +3,7 @@ import { INFINITE_CASTLE_DIMENSION_ID } from "./dimensionSetup.js";
 import { syncInfiniteCastleAtmosphere } from "./infiniteCastleAtmosphere.js";
 import { rebuildSourcePartsSceneryForPlayer } from "./sourcePartsReconstructionV2.js";
 
-const RESTORE_KEY = "infinite_castle:background_restore_20260927_v1";
+const RESTORE_KEY = "infinite_castle:background_restore_20261007_v2";
 const RETRY_TICKS = 20 * 15;
 
 let restoreInProgress = false;
@@ -26,9 +26,9 @@ function queueRestore(player, delayTicks = 40) {
         void tryRestoreCastleBackground(player);
     }, delayTicks);
 }
-export async function tryRestoreCastleBackground(player) {
-    if (restoreComplete() || restoreInProgress || !isInsideCastle(player)) return;
-    if (system.currentTick < nextRetryTick) return;
+export async function tryRestoreCastleBackground(player, { force = false } = {}) {
+    if ((!force && restoreComplete()) || restoreInProgress || !isInsideCastle(player)) return;
+    if (!force && system.currentTick < nextRetryTick) return;
 
     restoreInProgress = true;
     try {
@@ -59,6 +59,18 @@ export async function tryRestoreCastleBackground(player) {
         restoreInProgress = false;
     }
 }
+
+system.afterEvents.scriptEventReceive.subscribe((event) => {
+    if (event.id !== "infinite_castle:restore_background") return;
+    const player = event.sourceEntity;
+    if (!isInsideCastle(player)) {
+        player?.sendMessage("[infinite_castle] 背景城郭の復旧は無限城ディメンション内で実行してください");
+        return;
+    }
+    player.sendMessage("[infinite_castle] 背景城郭を強制再構築します");
+    void tryRestoreCastleBackground(player, { force: true });
+});
+
 world.afterEvents.playerDimensionChange.subscribe((event) => {
     if (isInsideCastle(event.player)) queueRestore(event.player, 40);
 });
