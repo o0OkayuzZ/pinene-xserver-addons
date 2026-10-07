@@ -33,6 +33,12 @@ class PerformanceRegression(unittest.TestCase):
             total_pixels += width * height
         self.assertLessEqual(total_pixels, 7_100_000)
 
+    def test_meshy_food_rendering_ignores_face_lighting(self):
+        controller = read_json(FOOD_RP / "render_controllers/meshy_food.render_controllers.json")
+        render = controller["render_controllers"]["controller.render.pine_meshy_food"]
+        self.assertIs(render.get("ignore_lighting"), True)
+        self.assertEqual(render.get("light_color_multiplier"), 1.0)
+
     def test_meshy_geometry_uv_space_matches_resized_atlas(self):
         model_dir = FOOD_RP / "models/entity/meshy_food"
         for path in model_dir.glob("*.geo.json"):
