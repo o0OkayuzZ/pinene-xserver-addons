@@ -10086,6 +10086,12 @@
             "Texture.brown",
             "Texture.gray"
           ],
+          "Array.baby_base": [
+            "Texture.baby_creamy",
+            "Texture.baby_white",
+            "Texture.baby_brown",
+            "Texture.baby_gray"
+          ],
           "Array.decor": [
             "Texture.decor_none",
             "Texture.decor_white",
@@ -10107,7 +10113,7 @@
           ]
         }
       },
-      "geometry": "Geometry.pn_outline_default",
+      "geometry": "query.is_baby ? Geometry.pn_outline_baby : Geometry.pn_outline_default",
       "part_visibility": [
         {
           "chest*": "query.is_chested"
@@ -10119,7 +10125,7 @@
         }
       ],
       "textures": [
-        "Array.base[query.variant]"
+        "query.is_baby ? Array.baby_base[query.variant] : Array.base[query.variant]"
       ],
       "overlay_color": {
         "r": 0.2235294117647059,
