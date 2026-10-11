@@ -43,7 +43,7 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | resource_packs/rp_18_8cdb9fd9-ee9c-4144-ad3a-175445d20b19 | [保管] 経験値ストレージ RP | 1.0.5 |
 | resource_packs/rp_19_c6529ee0-0a34-4f28-b5ff-66d335fee9bc | 無限城リソースパック | 0.1.9 |
 | resource_packs/rp_20_ef57c45f-1b60-42a3-8d26-4998db1b5055 | Pinene PvP Island RP | 0.2.26 |
-| resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2 | Pine Food RP | 0.2.2 |
+| resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2 | Pine Food RP | 0.2.4 |
 | resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45 | Pinene Cooking Tools RP | 0.2.0 |
 
 The rendering pack `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) is maintained independently as `Pinene_Visuals_RP` and is no longer shipped or registered by this repository. The generated `Pinenite Model Outlines` compatibility layer is version `1.0.6` and declares `pbr` so it does not disable Vibrant Visuals.

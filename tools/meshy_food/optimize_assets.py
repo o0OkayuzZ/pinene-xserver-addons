@@ -13,6 +13,7 @@ from pathlib import Path
 import json
 
 from PIL import Image
+from alpha_edges import edge_preserving_resize
 
 ROOT = Path(__file__).resolve().parents[2]
 RP = next(ROOT.glob("resource_packs/rp_21_*"))
@@ -86,7 +87,7 @@ def optimize_model(name: str):
         new_w = max(1, round(source.width * scale))
         new_h = max(1, round(source.height * scale))
         if (new_w != source.width or new_h != source.height):
-            resized = source.resize((new_w, new_h), Image.Resampling.LANCZOS)
+            resized = edge_preserving_resize(source, (new_w, new_h))
             resized.save(texture_path, format="PNG", optimize=True, compress_level=9)
 
     sx = new_w / old_w
