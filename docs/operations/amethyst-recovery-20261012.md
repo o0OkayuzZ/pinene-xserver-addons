@@ -8,6 +8,8 @@ Add a handler to the successful playerBreakBlock after-event: survival/adventure
 
 This is a server-specific silk-touch recovery feature; vanilla Minecraft does not provide it. The user was asked what tool previously failed; no answer was available when this default was prepared. Ordinary amethyst and other geode budding ores retain their own behavior.
 
-The existing pending integrated BP version 1.0.82 covers this change together with the trader/llama fixes. Production remains untouched pending the previously requested main/deployment decision and player exit. Review alongside PR #41.
+The existing pending integrated BP version 1.0.82 covers this change together with the trader/llama fixes. Production was applied after confirming zero players; GitHub main awaits PR #41 merge approval.
 
 Real Bedrock v26.52 player-break verification passed in an isolated local world: silk touch -> one minecraft:budding_amethyst; plain -> none; fortune III -> none; ordinary amethyst -> one minecraft:amethyst_block; creative -> none; doTileDrops false -> none. Four policy regression tests and the eight trader/llama tests also passed. Mining haste was used only in the isolated test world to automate the click, never in the production handler.
+
+Deployment update (2026-10-12 JST): confirmed 0 players and applied all three fixes with backup /opt/minecraft/server/_pinene_deploy_backups/trader-llama-20261011T160302Z. All 145 food RP files verified unchanged. Production integrated BP 1.0.82 / RP 1.0.70 / outline RP 1.0.7. GitHub main still awaits PR #41 merge approval; no recurring unattended automation was created.
