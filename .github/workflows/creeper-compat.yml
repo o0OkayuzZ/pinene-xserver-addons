@@ -1,0 +1,28 @@
+name: Creeper rendering compatibility
+on:
+  push:
+    paths:
+      - 'resource_packs/pinenite_outline/**'
+      - 'resource_packs/rp_06_*/**'
+      - 'docs/pinenite/outline_coverage.json'
+      - 'tests/pinenite/**'
+      - '.github/workflows/creeper-compat.yml'
+  pull_request:
+    paths:
+      - 'resource_packs/pinenite_outline/**'
+      - 'resource_packs/rp_06_*/**'
+      - 'docs/pinenite/outline_coverage.json'
+      - 'tests/pinenite/**'
+      - '.github/workflows/creeper-compat.yml'
+permissions:
+  contents: read
+jobs:
+  creeper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/pinenite/creeper-compat.test.mjs
+      - run: node --test --test-name-pattern='all compatibility|geometry aliases|client schema|legacy-only|outline declares' tests/pinenite/outline.test.mjs
