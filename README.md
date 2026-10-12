@@ -46,7 +46,7 @@ The current deployment contains 16 custom behavior packs and 17 integrated custo
 | resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2 | Pine Food RP | 0.2.4 |
 | resource_packs/rp_22_392fe57f-87d4-4146-a8ba-5c548001ab45 | Pinene Cooking Tools RP | 0.3.0 |
 
-The rendering pack `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) is maintained independently as `Pinene_Visuals_RP` and is no longer shipped or registered by this repository. The generated `Pinenite Model Outlines` compatibility layer is version `1.0.6` and declares `pbr` so it does not disable Vibrant Visuals.
+The rendering pack `[描画] Vibrant Visuals・Deferred RP` (UUID `917aab9c-5273-1000-ba5e-087a4328aa6b`) is maintained independently as `Pinene_Visuals_RP` and is no longer shipped or registered by this repository. The generated `Pinenite Model Outlines` compatibility layer is version `1.0.8` and declares `pbr` so it does not disable Vibrant Visuals.
 
 `snapshot-files.json` contains the size and SHA-256 hash of each original file. Files were verified against the remote snapshot before committing.
 
