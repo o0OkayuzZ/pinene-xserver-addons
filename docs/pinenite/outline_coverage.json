@@ -8555,8 +8555,22 @@
       "source": "resource_packs/rp_02_3d6a685e-83f1-4a8a-b6a6-27d8d9a3db7a/entity/trader_llama.entity.json",
       "file": "entity/minecraft_trader_llama.entity.json",
       "sourceFormat": "1.10.0",
-      "compatibilityOriginal": {},
-      "sourceSha256": "84e257d2ee24a7384a7cb06a5109ed32f5867d8ecb8fc22af7032cbaa68edd1e",
+      "compatibilityOriginal": {
+        "scripts": {
+          "scale": "query.is_baby ? 2.0 : 1.0",
+          "animate": [
+            "move"
+          ]
+        },
+        "animations": {
+          "setup": "animation.llama.setup",
+          "walk": "animation.quadruped.walk",
+          "look_at_target": "animation.common.look_at_target",
+          "baby_transform": "animation.llama.baby_transform",
+          "move": "controller.animation.llama.move"
+        }
+      },
+      "sourceSha256": "8f4218db839a67e9bd96556e3b7485afd49461899bb8a80b72c20d60d48c692c",
       "addedControllers": 1
     },
     {

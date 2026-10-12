@@ -281,8 +281,8 @@ def build(samples):
     write(OUT / 'materials/pinenite_outline.material', {'materials': {'version': '1.0.0'}})
     write(OUT / 'manifest.json', {'format_version': 2, 'header': {
         'name': 'Pinenite Model Outlines', 'description': 'Additive model outlines for Pinenite adaptation and symbiosis.',
-        'uuid': UUID, 'version': [1, 0, 6], 'min_engine_version': [1, 26, 40]},
-        'modules': [{'type': 'resources', 'uuid': '7f8a080c-bbb5-4d36-84fd-8b5f6920761f', 'version': [1, 0, 6]}],
+        'uuid': UUID, 'version': [1, 0, 7], 'min_engine_version': [1, 26, 40]},
+        'modules': [{'type': 'resources', 'uuid': '7f8a080c-bbb5-4d36-84fd-8b5f6920761f', 'version': [1, 0, 7]}],
         'capabilities': ['pbr']})
     (OUT / 'VANILLA_LICENSE.md').write_bytes((samples / 'LICENSE.md').read_bytes())
     write(ROOT / 'docs/pinenite/outline_coverage.json', report)
