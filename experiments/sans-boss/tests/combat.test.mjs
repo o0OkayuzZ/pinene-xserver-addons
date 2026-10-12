@@ -238,3 +238,14 @@ test('boss death and no targets clean up every active hazard', async () => {
   game.sans.isValid = false;
   assert.equal([...game.entities.values()].filter(entity => /pinene_sans:(bone|blaster)/.test(entity.typeId) && entity.isValid).length, 0);
 });
+
+test('runtime raycast obstruction shields a player from the blaster', async () => {
+  const game = await runtime({ teleportSucceeds: false });
+  game.wallAt(0);
+  game.step(95);
+  game.player.location = { x: 0.5, y: 1, z: 6.5 };
+  const hp = game.player.getComponent('minecraft:health');
+  hp.currentValue = 20;
+  game.step(40);
+  assert.equal(hp.currentValue, 20);
+});

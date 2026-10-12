@@ -11,7 +11,8 @@ if (Get-Process Minecraft.Windows -ErrorAction SilentlyContinue) {
 }
 if (!(Test-Path -LiteralPath $world)) { throw 'Expected development world was not found.' }
 $levelName = (Get-Content -LiteralPath (Join-Path $world 'levelname.txt') -Raw -Encoding UTF8).Trim()
-if ($levelName -ne '開発用ワールド') { throw 'Development world identity did not match. No changes made.' }
+$expectedName = -join [char[]]@(0x958B,0x767A,0x7528,0x30EF,0x30FC,0x30EB,0x30C9)
+if ($levelName -ne $expectedName) { throw 'Development world identity did not match. No changes made.' }
 $packs = @(
     @{ Kind='behavior'; Source='BP'; Folder='Pinene_Sans_Boss_BP' },
     @{ Kind='resource'; Source='RP'; Folder='Pinene_Sans_Boss_RP' }
