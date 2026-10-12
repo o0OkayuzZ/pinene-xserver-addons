@@ -41,16 +41,29 @@ for path in (RP / 'entity').glob('*.json'):
     desc = load(path)['minecraft:client_entity']['description']
     assert desc['identifier'] in identifiers
     for geo in desc['geometry'].values(): assert geo in geometries
-    for texture in desc['textures'].values(): assert (RP / (texture + '.png')).is_file()
+    for texture in desc['textures'].values():
+        assert (RP / (texture + '.png')).is_file() or (RP / (texture + '.tga')).is_file()
     for animation in desc.get('animations', {}).values(): assert animation in animations
 for path in (RP / 'particles').glob('*.json'):
     texture = load(path)['particle_effect']['description']['basic_render_parameters']['texture']
     assert (RP / (texture + '.png')).is_file()
-assert Image.open(RP / 'textures/entity/sans_atlas.png').size == (128, 64)
+assert Image.open(RP / 'textures/entity/sans_atlas.png').size == (256, 128)
+assert Image.open(RP / 'textures/entity/sans_atlas_mer.png').size == (256, 128)
+render_atlas = Image.open(RP / 'textures/entity/sans_atlas_render.tga')
+assert render_atlas.size == (256, 128)
+assert render_atlas.getpixel((5*16+8,8))[3] == 32
+assert render_atlas.getpixel((8,8))[3] == 255
+budget = {'sans':600, 'blaster':250, 'bone':12}
+for name, maximum in budget.items():
+    g=load(RP / f'models/entity/{name}.geo.json')['minecraft:geometry'][0]
+    assert sum(len(b.get('cubes',[])) for b in g['bones']) <= maximum
+    if name == 'sans':
+        assert {b['name'] for b in g['bones']} >= {'magic_eye','pupil','hood','left_arm','right_arm'}
+assert 'pinene_sans:casting' in load(BP/'entities/sans.json')['minecraft:entity']['description']['properties']
 assert load(RP / 'manifest.json')['capabilities'] == ['pbr']
 for locale in ['en_US', 'ja_JP']:
     assert 'entity.pinene_sans:sans.name=' in (RP / f'texts/{locale}.lang').read_text(encoding='utf-8')
-archive = ROOT / 'dist/Pinene_Sans_Boss_v0.1.0.mcaddon'
+archive = ROOT / ('dist/Pinene_Sans_Boss_v' + '.'.join(map(str,bm['header']['version'])) + '.mcaddon')
 with zipfile.ZipFile(archive) as bundle:
     assert bundle.testzip() is None
     for pack in [BP, RP]:

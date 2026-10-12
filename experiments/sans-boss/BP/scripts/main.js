@@ -44,6 +44,10 @@ function cleanup(state) {
   for (const blaster of state.blasters) removeVisual(blaster.visual);
   state.bones.length = 0;
   state.blasters.length = 0;
+  if (state.casting) {
+    state.casting = false;
+    guard(() => state.entity.setProperty("pinene_sans:casting", false));
+  }
 }
 
 function register(entity) {
@@ -56,10 +60,11 @@ function register(entity) {
   const state = {
     entity, warps: Math.max(0, Math.floor(Number(warps) || 0)),
     nextWarp: tick + CONFIG.warpInterval, nextAttack: tick + 30,
-    lastWarp: -100, pendingWarp: false, attackNumber: 0,
+    lastWarp: -100, pendingWarp: false, attackNumber: 0, casting: false,
     bones: [], blasters: [], target: undefined, emptySince: undefined,
   };
   bosses.set(entity.id, state);
+  guard(() => entity.setProperty("pinene_sans:casting", false));
   syncDisplay(state);
 }
 
@@ -383,6 +388,11 @@ system.runInterval(() => {
     }
     if (tick >= state.nextAttack) nextAttack(state, state.target);
     updateHazards(state, players, damage);
+    const casting = state.bones.length > 0 || state.blasters.length > 0;
+    if (casting !== state.casting) {
+      state.casting = casting;
+      guard(() => state.entity.setProperty("pinene_sans:casting", casting));
+    }
   }
   for (const entry of damage.values()) guard(() => applyTickDamage(entry));
 }, 1);

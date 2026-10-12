@@ -8,16 +8,27 @@
         "body": {
           "position": [
             0,
-            "math.sin(query.life_time * 150) * 0.15",
+            "math.sin(query.life_time * 120) * 0.11",
+            0
+          ],
+          "rotation": [
+            "query.property('pinene_sans:tired') * -5",
+            0,
             0
           ]
         },
         "head": {
           "rotation": [
             0,
-            0,
-            "math.sin(query.life_time * 70) * 2"
+            "math.sin(query.life_time * 45) * 2",
+            "math.sin(query.life_time * 60) * 1.2"
           ]
+        },
+        "magic_eye": {
+          "scale": "query.property('pinene_sans:casting') ? 1.0 : 0.0"
+        },
+        "pupil": {
+          "scale": "query.property('pinene_sans:casting') ? 0.0 : 1.0"
         }
       }
     },
@@ -38,13 +49,20 @@
       "bones": {
         "jaw": {
           "rotation": [
-            "query.property('pinene_sans:firing') ? 32 : 8",
+            "query.property('pinene_sans:firing') ? -38 : -4",
             0,
             0
           ]
         },
-        "root": {
-          "scale": "query.property('pinene_sans:firing') ? 1.1 : 1.0"
+        "skull": {
+          "rotation": [
+            "query.property('pinene_sans:firing') ? 6 : 0",
+            0,
+            0
+          ]
+        },
+        "core": {
+          "scale": "query.property('pinene_sans:firing') ? 1.0 : 0.0"
         }
       }
     }

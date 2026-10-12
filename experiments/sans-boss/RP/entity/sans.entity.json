@@ -4,10 +4,11 @@
     "description": {
       "identifier": "pinene_sans:sans",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha"
       },
       "textures": {
-        "default": "textures/entity/sans_atlas"
+        "default": "textures/entity/sans_atlas_render"
       },
       "geometry": {
         "default": "geometry.pinene_sans.sans"
@@ -24,8 +25,8 @@
         ]
       },
       "spawn_egg": {
-        "base_color": "#268dcc",
-        "overlay_color": "#eeeade"
+        "base_color": "#2696d2",
+        "overlay_color": "#f1efe5"
       }
     }
   }

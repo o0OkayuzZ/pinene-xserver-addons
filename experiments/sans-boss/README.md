@@ -1,4 +1,4 @@
-# Sans boss — development v0.1.0
+# Sans boss — development v0.2.0
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -61,7 +61,8 @@ node --experimental-vm-modules --test tests/*.test.mjs
 python tools/validate_pack.py
 ```
 
-Models/textures are original cube assets authored by `tools/build_assets.py`; only
+Models/textures are original cube assets authored by `tools/visual_assets.py` and built by
+`tools/build_assets.py`; only
 vanilla sounds are used. The resource pack declares PBR and a matte texture set to
 coexist with Vibrant Visuals. No music or external model assets are bundled.
 
@@ -76,3 +77,15 @@ API references:
 - https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/entityhurtbeforeevent
 - https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/entityattributecomponent
 - https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/entity
+
+## Visual revision 0.2.0
+
+Rounded skull and recessed sockets; individually placed teeth; padded collar, hood,
+pocket pose, sleeve cuffs, shorts stripes and slippers. The left eye switches from a
+white pupil to an emissive cyan eye while hazards are active. A tapered Gaster Blaster
+has separate skull/jaw pivots, cheek ridges, rear horns, fangs and a firing core.
+Fatigue also tips the torso forward. Seven cubes per attack bone keep wall hazards cheap.
+
+`tools/render_preview.py` draws the exported geometry/UVs with a depth buffer and
+same jaw pivots. Install NumPy and Pillow to render it. This offline preview uses
+neutral studio lighting; Minecraft appearance still needs in-game verification.

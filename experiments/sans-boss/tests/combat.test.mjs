@@ -87,6 +87,7 @@ async function runtime({ warps = 0, teleportSucceeds = true } = {}) {
       getDynamicProperty(key) { return dynamic.get(key); },
       setDynamicProperty(key, value) { mutation(); dynamic.set(key, value); },
       setProperty(key, value) { mutation(); properties.set(key, value); },
+      getProperty(key) { return properties.get(key); },
       tryTeleport(pos) { mutation(); if (!teleportSucceeds) return false; this.location = { ...pos }; return true; },
       teleport(pos) { mutation(); this.location = { ...pos }; },
       remove() { mutation(); this.isValid = false; },
@@ -248,4 +249,14 @@ test('runtime raycast obstruction shields a player from the blaster', async () =
   hp.currentValue = 20;
   game.step(40);
   assert.equal(hp.currentValue, 20);
+});
+
+test('casting eye follows actual hazards and resets when a target leaves', async () => {
+  const game = await runtime({ teleportSucceeds: false });
+  assert.equal(game.sans.getProperty('pinene_sans:casting'), false);
+  game.step(30);
+  assert.equal(game.sans.getProperty('pinene_sans:casting'), true);
+  game.player.mode = 'Spectator';
+  game.step();
+  assert.equal(game.sans.getProperty('pinene_sans:casting'), false);
 });
