@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "pinene_sans:blaster",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/sans_atlas"
+      },
+      "geometry": {
+        "default": "geometry.pinene_sans.blaster"
+      },
+      "render_controllers": [
+        "controller.render.pinene_sans"
+      ],
+      "animations": {
+        "idle": "animation.pinene_sans.blaster"
+      },
+      "scripts": {
+        "animate": [
+          "idle"
+        ]
+      }
+    }
+  }
+}

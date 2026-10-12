@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "pinene_sans:bone",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/sans_atlas"
+      },
+      "geometry": {
+        "default": "geometry.pinene_sans.bone"
+      },
+      "render_controllers": [
+        "controller.render.pinene_sans"
+      ],
+      "animations": {
+        "idle": "animation.pinene_sans.bone"
+      },
+      "scripts": {
+        "animate": [
+          "idle"
+        ]
+      }
+    }
+  }
+}

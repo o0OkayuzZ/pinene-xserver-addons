@@ -1,0 +1,52 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.pinene_sans.idle": {
+      "loop": true,
+      "animation_length": 2,
+      "bones": {
+        "body": {
+          "position": [
+            0,
+            "math.sin(query.life_time * 150) * 0.15",
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            0,
+            0,
+            "math.sin(query.life_time * 70) * 2"
+          ]
+        }
+      }
+    },
+    "animation.pinene_sans.bone": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "scale": [
+            1,
+            "query.property('pinene_sans:height')",
+            1
+          ]
+        }
+      }
+    },
+    "animation.pinene_sans.blaster": {
+      "loop": true,
+      "bones": {
+        "jaw": {
+          "rotation": [
+            "query.property('pinene_sans:firing') ? 32 : 8",
+            0,
+            0
+          ]
+        },
+        "root": {
+          "scale": "query.property('pinene_sans:firing') ? 1.1 : 1.0"
+        }
+      }
+    }
+  }
+}

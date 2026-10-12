@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "pinene_sans:sans",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/sans_atlas"
+      },
+      "geometry": {
+        "default": "geometry.pinene_sans.sans"
+      },
+      "render_controllers": [
+        "controller.render.pinene_sans"
+      ],
+      "animations": {
+        "idle": "animation.pinene_sans.idle"
+      },
+      "scripts": {
+        "animate": [
+          "idle"
+        ]
+      },
+      "spawn_egg": {
+        "base_color": "#268dcc",
+        "overlay_color": "#eeeade"
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pinene_sans:sans",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "menu_category": {
+        "category": "nature",
+        "group": "itemGroup.name.mobEgg"
+      },
+      "properties": {
+        "pinene_sans:tired": {
+          "type": "float",
+          "range": [
+            0,
+            1
+          ],
+          "default": 0,
+          "client_sync": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "pinene_sans_boss",
+          "mob"
+        ]
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.65,
+        "height": 1.45
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:persistent": {},
+      "minecraft:nameable": {},
+      "minecraft:boss": {
+        "name": "Sans",
+        "hud_range": 40,
+        "should_darken_sky": false
+      }
+    }
+  }
+}
