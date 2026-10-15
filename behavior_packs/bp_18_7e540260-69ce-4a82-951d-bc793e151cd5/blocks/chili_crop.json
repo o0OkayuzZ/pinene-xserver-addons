@@ -1,0 +1,94 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:block": {
+    "description": {
+      "identifier": "pine:chili_crop",
+      "states": {
+        "pine:age": [0, 1, 2, 3]
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('pine:age') == 1",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "chili_crop_1",
+              "render_method": "alpha_test_single_sided",
+              "ambient_occlusion": false,
+              "face_dimming": false
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('pine:age') == 2",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "chili_crop_2",
+              "render_method": "alpha_test_single_sided",
+              "ambient_occlusion": false,
+              "face_dimming": false
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('pine:age') == 3",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "chili_crop_3",
+              "render_method": "alpha_test_single_sided",
+              "ambient_occlusion": false,
+              "face_dimming": false
+            }
+          }
+        }
+      }
+    ],
+    "components": {
+      "minecraft:display_name": "tile.pine:chili_crop.name",
+      "minecraft:geometry": {
+        "identifier": "minecraft:geometry.cross"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "chili_crop_0",
+          "render_method": "alpha_test_single_sided",
+          "ambient_occlusion": false,
+          "face_dimming": false
+        }
+      },
+      "minecraft:collision_box": false,
+      "tag:minecraft:crop": {},
+      "minecraft:selection_box": {
+        "origin": [-7, 0, -7],
+        "size": [14, 15, 14]
+      },
+      "minecraft:placement_filter": {
+        "conditions": [
+          {
+            "allowed_faces": ["up"],
+            "block_filter": ["minecraft:farmland"]
+          }
+        ]
+      },
+      "minecraft:tick": {
+        "interval_range": [1200, 2400],
+        "looping": true
+      },
+      "pine:chili_crop_logic": {},
+      "minecraft:loot": "loot_tables/blocks/chili_crop.json",
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0
+      },
+      "minecraft:destructible_by_explosion": true,
+      "minecraft:light_dampening": 0,
+      "minecraft:movable": {
+        "movement_type": "popped"
+      }
+    }
+  }
+}

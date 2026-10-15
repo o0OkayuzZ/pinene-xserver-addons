@@ -15,7 +15,7 @@ TARGETS = {
  'deathnerite':[.01,.12,.35], 'deathnerite_block':[.0005,.01,.03],
  'enchanted_apple':[.005,.05,.15], 'collectible':[.025,.08,.20],
  'warpstone':[.0075,.015,.04], 'blue_apple':[.003,.006,.012],
- 'trim':[.003,.015,.04], 'upgrade':[.001,.005,.015], 'parcanite':[.0003,.0015,.005],
+ 'trim':[.003,.015,.04], 'upgrade':[.001,.005,.015], 'parcanite':[.0003,.0015,.005], 'chili_pepper':[.02,.04,.06],
 }
 def item(name, weight=1, count=None):
  e={'type':'item','name':name if ':' in name else 'minecraft:'+name,'weight':weight}
@@ -64,6 +64,7 @@ def build():
  'warpstone':item('ws:warpstone'), 'blue_apple':item('resetapple:blue_apple'),
  'trim':ref(PREFIX+'trims'), 'upgrade':item('netherite_upgrade_smithing_template'),
  'parcanite':item('true_dn:darkness_upgrade_smithing_template'),
+ 'chili_pepper':item('pine:chili_pepper'),
  }
  for kind in ['guard','curse','wraith','heavy','mixed','elite','treasure_vault']:
   tier=1 if kind=='elite' else 2 if kind=='treasure_vault' else 0
