@@ -13,6 +13,10 @@ const ORIGIN_KEY = 'pinene_native:origin_v1';
 const STATE = 'pinene_cooking:knife';
 const pending = new Set();
 const sessions = new Map();
+// Switching to the recipe guide must not leave an invisible native UI reservation.
+export function releaseCookingSession(playerId) {
+  if (typeof playerId === 'string') sessions.delete(playerId);
+}
 const USES_KEY = 'pinene_cooking:uses_v1';
 const BREAK_DUE_KEY = 'pinene_cooking:break_due_v1';
 const SESSION_TTL = 20 * 60 * 10;
@@ -285,6 +289,10 @@ world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
   if(!isBoard(event.block.typeId)){sessions.delete(event.player.id);return;}
   const {player,block}=event;
   if(event.isFirstEvent===false){event.cancel=true;return;}
+  // The book is handled by recipe_guide.js, not the native crafting session.
+  // Clear any previous reservation even if the player does not move away.
+  const held=inv(player)?.getItem(player.selectedSlotIndex);
+  if(held?.typeId==='minecraft:book') { releaseCookingSession(player.id); return; }
   try{
     if(otherSessionOwnsBoard(player,block)){
       event.cancel=true;system.run(()=>report(player,'§eこのまな板は他のプレイヤーが使用中です。使用者が画面を閉じて少し移動すると交代できます。'));return;
@@ -294,7 +302,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(event=>{
     if(legacy.length){
       event.cancel=true;queued(player,block,b=>{if(migrateLegacyKnife(b))report(player,'§a設置済みナイフを引き継ぎました。もう一度まな板を開いてください。');});return;
     }
-    const held=inv(player)?.getItem(player.selectedSlotIndex), h=holderInfo(block);
+    const h=holderInfo(block);
     if(h.found.length>1){event.cancel=true;throw new Error('multiple_knife_holders');}
     if(h.valid&&breakDue(h.stack)){
       event.cancel=true;queued(player,block,b=>resolvePendingBreak(player,b));return;
