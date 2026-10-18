@@ -264,7 +264,7 @@ function spawnQueuedBlasters(state, player) {
     aimBeam(state, blaster, player);
     updateRay(state, blaster, false);
     state.blasters.push(blaster);
-    sound(state.entity.dimension, "beacon.activate", origin, 1.5 + (tick % 3) * 0.1);
+    sound(state.entity.dimension, "pinene_sans.blaster_charge", origin, 1 + ((tick % 3) - 1) * 0.025);
     return false;
   });
 }
@@ -351,7 +351,7 @@ function updateHazards(state, players, damage) {
     }
     if (tick === blaster.firesAt) {
       guard(() => blaster.visual.setProperty("pinene_sans:firing", true));
-      sound(dimension, "mob.ghast.fireball", blaster.origin, 0.7);
+      sound(dimension, "pinene_sans.blaster_fire", blaster.origin, 1);
     }
     guard(() => blaster.visual.setProperty("pinene_sans:recoil", blastRecoil(tick - blaster.firesAt)));
     // A solid ray model avoids particle gaps/budget starvation, including when
@@ -379,7 +379,7 @@ function applyTickDamage({ player, amount, source, quiet = false }) {
     // Non-lethal health drain supplies the requested true 20 Hz damage instead.
     health.setCurrentValue(next);
     if (!quiet && tick % 5 === 0) {
-      sound(player.dimension, "game.player.hurt", player.location, 1.25);
+      sound(player.dimension, "pinene_sans.karma_hit", player.location, 1);
       particle(player.dimension, "pinene_sans:beam", add(player.location, { x: 0, y: 1, z: 0 }));
     }
   } else {

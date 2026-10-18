@@ -69,6 +69,12 @@ assert 'pinene_sans:recoil' in load(BP/'entities/blaster.json')['minecraft:entit
 assert load(RP / 'manifest.json')['capabilities'] == ['pbr']
 for locale in ['en_US', 'ja_JP']:
     assert 'entity.pinene_sans:sans.name=' in (RP / f'texts/{locale}.lang').read_text(encoding='utf-8')
+sound_defs=load(RP/'sounds/sound_definitions.json')['sound_definitions']
+script=(BP/'scripts/main.js').read_text(encoding='utf-8')
+for identifier, definition in sound_defs.items():
+    assert identifier in script
+    for name in definition['sounds']:
+        assert (RP/(name+'.ogg')).read_bytes().startswith(b'OggS')
 archive = ROOT / ('dist/Pinene_Sans_Boss_v' + '.'.join(map(str,bm['header']['version'])) + '.mcaddon')
 with zipfile.ZipFile(archive) as bundle:
     assert bundle.testzip() is None

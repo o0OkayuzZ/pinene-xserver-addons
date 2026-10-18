@@ -1,4 +1,4 @@
-# Sans boss — development v0.6.0
+# Sans boss — development v0.6.1
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -63,7 +63,7 @@ python tools/validate_pack.py
 
 Models/textures are original cube assets authored by `tools/visual_assets.py` and built by
 `tools/build_assets.py`; only
-vanilla sounds are used. The resource pack declares PBR and a matte texture set to
+original blaster and contact sounds plus vanilla movement sounds are used. The resource pack declares PBR and a matte texture set to
 coexist with Vibrant Visuals. No music or external model assets are bundled.
 
 ## Validation boundary
@@ -182,3 +182,14 @@ bounce; its visible height is shared with collision. After the original
 65 active ticks, movement and damage stop and the bone sinks over eight
 cosmetic ticks. Ground markers and bones are removed together on cleanup.
 Low walls remain jumpable and tall walls retain the two-slot dodge gap.
+
+## Retro blaster audio 0.6.1
+
+Blasters now use authored retro electronic effects inspired by Undertale's
+charge/blast sound direction. Charge is a bright FM chirp with a crunchy
+pulse texture; firing is a low distorted buzz/noise burst that follows the
+beam collapse envelope. Sans contact damage uses a short digital hit sound.
+All three are synthesized, not samples extracted from Undertale.
+The namespaced sound events do not replace global Minecraft sounds.
+`tools/build_sounds.py` regenerates the included mono OGG assets using
+NumPy, SciPy and ffmpeg; normal pack builds reuse the checked-in OGG files.
