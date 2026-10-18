@@ -1,4 +1,4 @@
-# Sans boss — development v0.9.3
+# Sans boss — development v0.9.4
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -280,3 +280,11 @@ Replaces the thick dark mouth surround with an ivory tooth surface, one-pixel
 upper contour, softer lower contour and lighter tooth separators. Small dark
 upturned mouth corners retain the expression. Model proportions, eyes,
 casting overlays, attacks and sound are unchanged.
+
+## Visible pixel-art texture clusters 0.9.4
+
+Keeps the approved model and light grin, adding deliberate square clusters
+to skull highlights, hoodie folds, cuff ribbing, shorts and slippers. Side,
+back and top faces now have separate 32x32 pixel maps instead of flat
+colour tiles. The front face retains its 64x64 map and thin mouth contours.
+All other entity atlas regions remain unchanged.

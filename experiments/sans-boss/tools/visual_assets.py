@@ -57,6 +57,14 @@ def sans():
     def mapped(origin,size,region,tile=0):
         c=cube(origin,size,tile)
         x,y,w,h=region;c['uv']['north']={'uv':[x,y],'uv_size':[w,h]}
+        # Distinct pixel-art maps on sides and back, not flat colour tiles.
+        side_x = {0:0,1:64,2:96,10:224}.get(tile)
+        if side_x is not None:
+            for side in ['east','west']:
+                c['uv'][side]={'uv':[side_x,96],'uv_size':[32,32]}
+            back_x = 32 if tile==0 else 128 if tile==1 else side_x
+            c['uv']['south']={'uv':[back_x,96],'uv_size':[32,32]}
+            c['uv']['up']={'uv':[160 if tile==0 else 192 if tile==1 else side_x,96],'uv_size':[32,32]}
         return c
     head=[mapped([-8,12.5,-5],[16,10,10],(0,32,64,64))]
     jacket=[mapped([-7,4.5,-4.5],[14,9,9],(64,32,64,64),1)]
@@ -94,6 +102,11 @@ def paint_sans_details(atlas):
     face=Image.new('RGBA',(64,64),'#efeee5');d=ImageDraw.Draw(face)
     d.rectangle([0,0,63,3],fill='#faf8ee');d.rectangle([0,4,3,59],fill='#d5d7d2')
     d.rectangle([60,4,63,59],fill='#cbd0cc');d.rectangle([4,60,59,63],fill='#d7dbd4')
+    # Small, deliberate square clusters keep a readable pixel-art surface.
+    for x,y,w,h,col in [(6,6,4,2,'#e0e2d8'),(10,8,2,2,'#e0e2d8'),(18,5,4,2,'#faf8ee'),
+        (22,7,2,2,'#faf8ee'),(42,7,4,2,'#e0e2d8'),(46,9,2,2,'#e0e2d8'),
+        (52,12,4,2,'#e0e2d8'),(54,14,2,2,'#d2d7ce'),(5,36,2,4,'#d2d7ce'),(57,35,2,4,'#d2d7ce')]:
+        d.rectangle([x,y,x+w-1,y+h-1],fill=col)
     for x in [7,36]:
         d.polygon([(x+2,18),(x+18,18),(x+20,21),(x+20,32),(x+17,35),(x+1,34),(x,31),(x,21)],fill='#090d12')
         d.line([(x+1,17),(x+18,16)],fill='#c4c9c4',width=1)
@@ -119,19 +132,53 @@ def paint_sans_details(atlas):
         d.rectangle([x,4,x+1,22],fill='#c4d1d0');d.rectangle([x,22,x+2,25],fill='#9cacab')
     d.line([(2,43),(13,39)],fill='#0d6596',width=3);d.line([(51,39),(61,43)],fill='#0d6596',width=3)
     d.line([(3,46),(13,42)],fill='#3e9ecc',width=1);d.line([(51,42),(60,46)],fill='#3e9ecc',width=1)
+    for x,y,col in [(3,9,'#2d9bd0'),(7,11,'#2d9bd0'),(10,15,'#2d9bd0'),
+        (2,26,'#0e74ad'),(6,28,'#0e74ad'),(10,30,'#0e74ad'),(4,34,'#0e74ad'),
+        (52,11,'#2d9bd0'),(56,9,'#2d9bd0'),(60,13,'#2d9bd0'),
+        (52,29,'#0e74ad'),(56,27,'#0e74ad'),(60,25,'#0e74ad'),(58,35,'#0e74ad')]:
+        d.rectangle([x,y,x+3,y+1],fill=col)
+    for x,y in [(21,32),(23,34),(39,42),(41,40)]:d.rectangle([x,y,x+1,y+3],fill='#dce1d5')
+    for x in range(2,16,4):d.rectangle([x,58,x+1,61],fill='#2b83ad')
+    for x in range(48,62,4):d.rectangle([x,58,x+1,61],fill='#2b83ad')
     atlas.paste(shirt,(64,32))
     sleeve=Image.new('RGBA',(32,64),'#1787c4');d=ImageDraw.Draw(sleeve)
     d.rectangle([0,0,31,4],fill='#36a4d5');d.rectangle([0,5,3,63],fill='#1375ad')
     d.rectangle([1,53,30,63],fill='#125e8e')
     for y in [21,37]:d.line([(6,y),(23,y+3)],fill='#2c98ca',width=2)
     for x in range(3,30,4):d.line([(x,55),(x,62)],fill='#398bb1')
+    for x,y in [(6,9),(10,11),(14,13),(20,27),(16,29),(12,31),(6,43),(10,45)]:
+        d.rectangle([x,y,x+3,y+1],fill='#369dce' if y<25 else '#0d76ae')
     atlas.paste(sleeve,(128,32))
     shorts=Image.new('RGBA',(32,32),'#151b27');d=ImageDraw.Draw(shorts)
     d.rectangle([0,0,31,2],fill='#263145');d.rectangle([27,2,29,31],fill='#e3e6de')
-    d.rectangle([2,29,26,31],fill='#0b111c');atlas.paste(shorts,(160,32))
+    d.rectangle([2,29,26,31],fill='#0b111c')
+    for x,y in [(5,6),(9,8),(13,10),(6,21),(18,23)]:d.rectangle([x,y,x+3,y+1],fill='#253047')
+    atlas.paste(shorts,(160,32))
     shoe=Image.new('RGBA',(32,32),'#e5d4df');d=ImageDraw.Draw(shoe)
     d.rectangle([0,24,31,31],fill='#ba8cac');d.rectangle([2,3,29,6],fill='#f5e8ee')
-    d.rectangle([4,7,27,9],fill='#d2b6cb');atlas.paste(shoe,(192,32))
+    d.rectangle([4,7,27,9],fill='#d2b6cb')
+    for x,y in [(4,12),(8,14),(22,13),(18,15)]:d.rectangle([x,y,x+3,y+1],fill='#f2e4ed')
+    for x in range(2,30,4):d.rectangle([x,26,x+1,27],fill='#d5acc6')
+    atlas.paste(shoe,(192,32))
+    # 32px square maps for side, back and top surfaces. Ordered square
+    # clusters suggest lighting and fabric folds without random speckle.
+    for ox,base,shade,light in [(0,'#efeee5','#d7dcd2','#faf8ee'),
+        (32,'#efeee5','#d7dcd2','#faf8ee'),(64,'#1686c2','#0f70a6','#369dce'),
+        (96,'#151b27','#101723','#29344a'),(128,'#1686c2','#0f70a6','#369dce'),
+        (160,'#efeee5','#d7dcd2','#faf8ee'),(192,'#1686c2','#0f70a6','#369dce'),
+        (224,'#e5d4df','#c29bb8','#f5e8ee')]:
+        tile=Image.new('RGBA',(32,32),base);td=ImageDraw.Draw(tile)
+        td.rectangle([0,0,31,2],fill=light);td.rectangle([27,3,31,31],fill=shade)
+        for x,y in [(4,6),(8,8),(12,10),(20,20),(16,22),(12,24)]:
+            td.rectangle([x,y,x+3,y+1],fill=light if y<14 else shade)
+        for x,y in [(25,8),(23,12),(25,16),(23,24)]:td.rectangle([x,y,x+1,y+1],fill=shade)
+        if ox in [64,128,192]:
+            td.rectangle([0,27,31,31],fill=shade)
+            for x in range(2,28,4):td.rectangle([x,28,x+1,30],fill=light)
+        if ox==224:
+            td.rectangle([0,26,31,31],fill=shade)
+            for x in range(2,28,4):td.rectangle([x,27,x+1,28],fill=light)
+        atlas.paste(tile,(ox,96))
 
 
 def blaster():
