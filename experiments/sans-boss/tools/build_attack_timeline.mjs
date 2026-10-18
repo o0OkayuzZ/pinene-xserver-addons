@@ -28,7 +28,7 @@ for (let tick = -10; tick < 108; tick++) {
       departure:age>=fireEnd?Math.min(1,(age-fireEnd+1)/C.blasterDepartureTicks):0,
       width:firing?blastWidth(age-C.blasterWarningTicks):C.warningLineWidth,
       recoil:firing?blastRecoil(age-C.blasterWarningTicks):0,
-      hit:firing&&beamTouchesPlayer(origin,end,feet,C.beamRadius)};
+      hit:firing&&beamTouchesPlayer(origin,end,feet,Math.min(C.beamRadius,blastWidth(age-C.blasterWarningTicks)/2))};
   });
   const contacts=blasters.filter(b=>b.hit).length;
   const applied=Math.min(health,C.maxDamagePerTick,contacts*C.blasterDamagePerTick);

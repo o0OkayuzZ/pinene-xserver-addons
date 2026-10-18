@@ -345,7 +345,7 @@ function updateHazards(state, players, damage) {
       removeVisual(blaster.visual); removeVisual(blaster.ray); return false;
     }
     for (const player of players) {
-      if (beamTouchesPlayer(blaster.origin, blaster.end, player.location, CONFIG.beamRadius, player.isSneaking ? 1.5 : 1.8)) {
+      if (beamTouchesPlayer(blaster.origin, blaster.end, player.location, Math.min(CONFIG.beamRadius, blastWidth(tick - blaster.firesAt) / 2), player.isSneaking ? 1.5 : 1.8)) {
         addDamage(damage, player, CONFIG.blasterDamagePerTick, state.entity, CONFIG.karmaPerContactTick);
       }
     }

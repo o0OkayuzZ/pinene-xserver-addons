@@ -339,7 +339,10 @@ test('hovering settles at aim lock; black ray becomes a solid firing beam and cl
   assert.equal(ray.getProperty('pinene_sans:firing'), true);
   assert.equal(ray.getProperty('pinene_sans:width'), 1.05);
   assert.equal(head.getProperty('pinene_sans:recoil'), 1);
-  game.step(16);
+  game.step(12);
+  assert.equal(ray.getProperty('pinene_sans:width'), rules.blastWidth(12));
+  assert.ok(ray.getProperty('pinene_sans:width') < 0.5);
+  game.step(4);
   assert.equal(head.isValid, true);
   assert.equal(ray.isValid, false);
   assert.ok(head.getProperty('pinene_sans:departure') > 0);
@@ -377,4 +380,15 @@ test('runtime spawns a ring in sequence, fires in sequence and cancels pending h
   cancelled.step(95);cancelled.player.mode='Creative';cancelled.step(25);
   assert.equal([...cancelled.entities.values()].filter(e=>e.typeId==='pinene_sans:blaster').length,1);
   assert.equal([...cancelled.entities.values()].some(e=>e.typeId==='pinene_sans:blaster'&&e.isValid),false);
+});
+
+
+test('beam collapse smoothly narrows to zero inside the fixed firing window', () => {
+  assert.equal(rules.blastWidth(0),1.05);
+  for(let age=8;age<16;age++) assert.ok(rules.blastWidth(age+1)<rules.blastWidth(age));
+  assert.equal(rules.blastWidth(16),0);
+  assert.equal(rules.blastWidth(40),0);
+  const from={x:0,y:1,z:0},to={x:0,y:1,z:10},edge={x:.65,y:0,z:5};
+  assert.equal(rules.beamTouchesPlayer(from,to,edge,Math.min(.45,rules.blastWidth(8)/2)),true);
+  assert.equal(rules.beamTouchesPlayer(from,to,edge,Math.min(.45,rules.blastWidth(15)/2)),false);
 });

@@ -11,6 +11,7 @@ export const CONFIG = Object.freeze({
   boneDamagePerTick: 0.5,
   blasterWarningTicks: 24,
   blasterFireTicks: 16,
+  blasterCollapseTicks: 8,
   blasterDamagePerTick: 0.75,
   karmaPerContactTick: 0.25,
   karmaMax: 6,
@@ -115,7 +116,11 @@ export function blasterHover(age) {
 }
 
 export function blastWidth(age) {
-  return 0.9 + 0.15 * Math.exp(-Math.max(0, age) / 2);
+  const elapsed = Math.max(0, age);
+  const collapse = Math.max(0, Math.min(1,
+    (elapsed - (CONFIG.blasterFireTicks - CONFIG.blasterCollapseTicks)) / CONFIG.blasterCollapseTicks));
+  const envelope = 1 - collapse * collapse * (3 - 2 * collapse);
+  return (0.9 + 0.15 * Math.exp(-elapsed / 2)) * envelope;
 }
 
 export function blastRecoil(age) {

@@ -1,4 +1,4 @@
-# Sans boss — development v0.5.1
+# Sans boss — development v0.5.2
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -147,3 +147,11 @@ through a full backwards vertical turn around its center, without an exit
 roll. Its scale follows 1 - departure², keeping the first half of the turn
 large and readable before it shrinks away. Backwards/upwards retreat, jaw
 closure, beam cutoff, warning width and staggered encirclement are retained.
+
+## Beam collapse 0.5.2
+
+The last eight firing ticks narrow the beam to zero with a smoothstep
+envelope. Collision radius follows half the current visible width, capped
+at the original 0.45-block radius. The ray disappears at the same fire-end
+tick as before, followed by the head's full vertical retreat flip. Contact
+damage and KARMA amounts are unchanged.
