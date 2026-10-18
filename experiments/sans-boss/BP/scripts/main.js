@@ -2,7 +2,7 @@ import { world, system, EntityDamageCause } from "@minecraft/server";
 import {
   CONFIG, hitChance, shouldDodge, add, subtract, scale, normalize,
   distanceSquared, boneTouchesPlayer, beamTouchesPlayer, accumulatedDamage, healthAfterTick,
-  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil,
+  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil, blasterRingPlan,
 } from "./combat.js";
 
 const SANS = "pinene_sans:sans";
@@ -50,6 +50,7 @@ function cleanup(state) {
   }
   state.bones.length = 0;
   state.blasters.length = 0;
+  state.blasterQueue.length = 0;
   if (state.casting) {
     state.casting = false;
     guard(() => state.entity.setProperty("pinene_sans:casting", false));
@@ -67,7 +68,7 @@ function register(entity) {
     entity, warps: Math.max(0, Math.floor(Number(warps) || 0)),
     nextWarp: tick + CONFIG.warpInterval, nextAttack: tick + 30,
     lastWarp: -100, pendingWarp: false, attackNumber: 0, casting: false,
-    bones: [], blasters: [], target: undefined, emptySince: undefined,
+    bones: [], blasters: [], blasterQueue: [], target: undefined, emptySince: undefined,
   };
   bosses.set(entity.id, state);
   guard(() => entity.setProperty("pinene_sans:casting", false));
@@ -188,7 +189,7 @@ function boneWall(state, player, angleOffset = 0) {
     location.y = Math.floor(player.location.y);
     const display = visual(state, BONE, add(location, { x: 0, y: -height, z: 0 }), expires);
     // Collision is created only when its visual exists.
-    if (!display) continue;
+    if (!display) return false;
     guard(() => display.setProperty("pinene_sans:height", height / 1.5));
     state.bones.push({ visual: display, location, previous: location, height, forward, activeAt, expires });
   }
@@ -228,41 +229,46 @@ function updateRay(state, blaster, firing) {
 }
 
 function summonBlasters(state, player, count) {
-  for (let i = 0; i < count && state.blasters.length < CONFIG.maxBlastersPerBoss; i++) {
-    const angle = Math.atan2(state.entity.location.z - player.location.z,
-      state.entity.location.x - player.location.x) + (i - (count - 1) / 2) * 0.9;
-    const origin = {
-      x: player.location.x + Math.cos(angle) * 10,
-      y: player.location.y + 2.5,
-      z: player.location.z + Math.sin(angle) * 10,
-    };
-    if (!(guard(() => state.entity.dimension.getBlock(origin))?.isAir)) continue;
+  const available = CONFIG.maxBlastersPerBoss - state.blasters.length - state.blasterQueue.length;
+  const baseAngle = Math.atan2(state.entity.location.z - player.location.z,
+    state.entity.location.x - player.location.x);
+  for (const slot of blasterRingPlan(player.location, baseAngle, Math.min(count, available))) {
+    state.blasterQueue.push({ origin: slot.origin, at: tick + slot.delay });
+  }
+}
+
+function spawnQueuedBlasters(state, player) {
+  state.blasterQueue = state.blasterQueue.filter(slot => {
+    if (tick < slot.at) return true;
+    const origin = slot.origin;
+    if (!(guard(() => state.entity.dimension.getBlock(origin))?.isAir)) return false;
     const firesAt = tick + CONFIG.blasterWarningTicks;
     const fireEndsAt = firesAt + CONFIG.blasterFireTicks;
     const expires = fireEndsAt + CONFIG.blasterDepartureTicks;
     const display = visual(state, BLASTER, origin, expires);
-    if (!display) continue;
+    if (!display) return false;
     const ray = visual(state, RAY, origin, fireEndsAt);
-    if (!ray) { removeVisual(display); continue; }
+    if (!ray) { removeVisual(display); return false; }
     const blaster = { visual: display, ray, origin, anchor: origin, bornAt: tick,
       firesAt, fireEndsAt, expires, direction: undefined, end: undefined };
     aimBeam(state, blaster, player);
     updateRay(state, blaster, false);
     state.blasters.push(blaster);
-  }
-  sound(state.entity.dimension, "beacon.activate", player.location, 1.8);
+    sound(state.entity.dimension, "beacon.activate", origin, 1.5 + (tick % 3) * 0.1);
+    return false;
+  });
 }
 
 function nextAttack(state, player) {
   state.attackNumber++;
   const pattern = state.attackNumber % 4;
   if (pattern === 1) boneWall(state, player);
-  else if (pattern === 2) summonBlasters(state, player, 1);
+  else if (pattern === 2) summonBlasters(state, player, 4);
   else if (pattern === 3) {
     boneWall(state, player);
     boneWall(state, player, Math.PI / 2);
   } else {
-    summonBlasters(state, player, state.warps >= 15 ? 3 : 2);
+    summonBlasters(state, player, state.warps >= 15 ? 6 : 4);
     if (state.warps >= 25) boneWall(state, player);
   }
   state.nextAttack = tick + CONFIG.attackInterval;
@@ -450,8 +456,9 @@ system.runInterval(() => {
       if (!warp(state, state.target)) state.nextWarp = tick + 10;
     }
     if (tick >= state.nextAttack) nextAttack(state, state.target);
+    spawnQueuedBlasters(state, state.target);
     updateHazards(state, players, damage);
-    const casting = state.bones.length > 0 || state.blasters.length > 0;
+    const casting = state.bones.length > 0 || state.blasters.length > 0 || state.blasterQueue.length > 0;
     if (casting !== state.casting) {
       state.casting = casting;
       guard(() => state.entity.setProperty("pinene_sans:casting", casting));

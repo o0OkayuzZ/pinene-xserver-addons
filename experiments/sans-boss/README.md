@@ -1,4 +1,4 @@
-# Sans boss — development v0.4.0
+# Sans boss — development v0.5.0
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -128,3 +128,14 @@ the ray disappears immediately. The jaw closes over the first part of a
 fourteen-tick retreat; the skull tilts, rises and slides backwards while
 shrinking to zero. The retreat is cosmetic; direct damage stops with the ray.
 Charge duration, aim lock and KARMA rules are unchanged.
+
+## Encirclement revision 0.5.0
+
+The black telegraph is now 0.025 blocks wide. Four blasters (six in the later
+combined pattern after 15 warps) appear one by one at four-tick intervals on
+an eight-block ring. Opposite sides appear alternately, with alternating
+heights. Each head gets its own full 24-tick warning, final eight-tick aim
+lock and sixteen-tick firing window; firing follows the arrival rhythm.
+Queued spawns are cancelled on boss defeat or when no eligible target remains.
+The cap is six heads per boss including queued slots, and combined damage
+remains capped at 1 HP per tick.

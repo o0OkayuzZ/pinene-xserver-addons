@@ -18,14 +18,16 @@ export const CONFIG = Object.freeze({
   karmaDrainInterval: 4,
   karmaDamagePerPulse: 0.25,
   blasterAimLockTicks: 8,
-  warningLineWidth: 0.06,
+  warningLineWidth: 0.025,
+  blasterSpawnInterval: 4,
+  blasterRingRadius: 8,
   blasterArrivalTicks: 10,
   blasterDepartureTicks: 14,
   beamRadius: 0.45,
   beamLength: 28,
   maxBosses: 4,
   maxHazardsPerBoss: 24,
-  maxBlastersPerBoss: 3,
+  maxBlastersPerBoss: 6,
   maxDamagePerTick: 1,
 });
 
@@ -118,4 +120,22 @@ export function blastWidth(age) {
 
 export function blastRecoil(age) {
   return Math.exp(-Math.max(0, age) / 4);
+}
+
+// Alternate opposite sides, filling the full ring rather than one frontal fan.
+export function blasterRingPlan(center, baseAngle, count) {
+  const total = Math.max(0, Math.min(CONFIG.maxBlastersPerBoss, Math.floor(count)));
+  const slots = [];
+  for (let i = 0; i < Math.ceil(total / 2); i++) {
+    slots.push(i);
+    if (i + Math.ceil(total / 2) < total) slots.push(i + Math.ceil(total / 2));
+  }
+  return slots.map((slot, index) => {
+    const angle = baseAngle + slot * Math.PI * 2 / total;
+    return { delay: index * CONFIG.blasterSpawnInterval, origin: {
+      x: center.x + Math.cos(angle) * CONFIG.blasterRingRadius,
+      y: center.y + 2.5 + (slot % 2) * 0.65,
+      z: center.z + Math.sin(angle) * CONFIG.blasterRingRadius,
+    }};
+  });
 }

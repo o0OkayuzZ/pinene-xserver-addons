@@ -68,7 +68,12 @@ async function runtime({ warps = 0, teleportSucceeds = true } = {}) {
         typeId: location.y >= 1 ? 'minecraft:air' : 'minecraft:stone',
         location: { x: Math.floor(location.x), y: Math.floor(location.y), z: Math.floor(location.z) } };
     },
-    getBlockFromRay() { return obstruction; },
+    getBlockFromRay(origin, direction) {
+      if (!obstruction) return undefined;
+      const point = rules.add(origin, rules.scale(direction, 2));
+      const location = {x:Math.floor(point.x), y:Math.floor(point.y), z:Math.floor(point.z)};
+      return {block:{location}, faceLocation:rules.subtract(point,location)};
+    },
     spawnParticle() { mutation(); },
     playSound() { mutation(); },
     spawnEntity(type, pos) { mutation(); return makeEntity(type, pos); },
@@ -224,7 +229,7 @@ test('blaster fires only after charge and stops after its finite firing window',
   assert.equal(blaster.isValid, true);
   game.step();
   assert.equal(blaster.isValid, true);
-  assert.equal([...game.entities.values()].some(e=>e.typeId==='pinene_sans:ray' && e.isValid), false);
+  assert.equal(blaster.getProperty('pinene_sans:firing'), false);
   game.step(14);
   assert.equal(blaster.isValid, false);
 });
@@ -277,22 +282,24 @@ test('karma persists after escaping a beam, then drains every four ticks', async
   const game = await runtime({ teleportSucceeds: false });
   game.step(134);
   const hp = game.player.getComponent('minecraft:health');
-  assert.equal(hp.currentValue, 8);
+  assert.equal(hp.currentValue, 5);
   game.player.location.x += 10;
+  game.player.location.z += 10;
   game.step(9);
-  assert.equal(hp.currentValue, 8);
+  assert.equal(hp.currentValue, 5);
   game.step();
-  assert.equal(hp.currentValue, 7.75);
+  assert.equal(hp.currentValue, 4.75);
   game.step(3);
-  assert.equal(hp.currentValue, 7.75);
+  assert.equal(hp.currentValue, 4.75);
   game.step();
-  assert.equal(hp.currentValue, 7.5);
+  assert.equal(hp.currentValue, 4.5);
 });
 
 test('karma stops at one HP and clears for creative players and defeated bosses', async () => {
   const game = await runtime({ teleportSucceeds: false });
   game.step(134);
   game.player.location.x += 10;
+  game.player.location.z += 10;
   const hp = game.player.getComponent('minecraft:health');
   hp.currentValue = 1.05;
   game.step(20);
@@ -302,13 +309,13 @@ test('karma stops at one HP and clears for creative players and defeated bosses'
   creative.step(134);
   creative.player.mode = 'Creative';
   creative.step(20);
-  assert.equal(creative.player.getComponent('minecraft:health').currentValue, 8);
+  assert.equal(creative.player.getComponent('minecraft:health').currentValue, 5);
   const victory = await runtime({ teleportSucceeds: false });
   victory.step(134);
   victory.world.afterEvents.entityDie.emit({ deadEntity: victory.sans });
   victory.sans.isValid = false;
   victory.step(20);
-  assert.equal(victory.player.getComponent('minecraft:health').currentValue, 8);
+  assert.equal(victory.player.getComponent('minecraft:health').currentValue, 5);
 });
 
 test('hovering settles at aim lock; black ray becomes a solid firing beam and cleans up', async () => {
@@ -318,7 +325,7 @@ test('hovering settles at aim lock; black ray becomes a solid firing beam and cl
   const ray = [...game.entities.values()].find(e => e.typeId === 'pinene_sans:ray' && e.isValid);
   assert.ok(head && ray);
   assert.equal(ray.getProperty('pinene_sans:firing'), false);
-  assert.equal(ray.getProperty('pinene_sans:width'), 0.06);
+  assert.equal(ray.getProperty('pinene_sans:width'), 0.025);
   assert.equal(head.getProperty('pinene_sans:arrival') ?? 0, 0);
   const startY = head.location.y;
   game.step(6);
@@ -338,4 +345,36 @@ test('hovering settles at aim lock; black ray becomes a solid firing beam and cl
   assert.ok(head.getProperty('pinene_sans:departure') > 0);
   game.step(14);
   assert.equal(head.isValid, false);
+});
+
+
+test('ring slots alternate opposite sides with a four-tick cadence and six-head cap', () => {
+  const slots=rules.blasterRingPlan({x:0,y:0,z:0},0,6);
+  assert.equal(slots.length,6);
+  for(let i=0;i<slots.length;i++) {
+    assert.equal(slots[i].delay,i*4);
+    assert.ok(Math.abs(Math.hypot(slots[i].origin.x,slots[i].origin.z)-8)<1e-9);
+  }
+  for(let i=0;i<slots.length;i+=2) {
+    assert.ok(Math.abs(slots[i].origin.x+slots[i+1].origin.x)<1e-9);
+    assert.ok(Math.abs(slots[i].origin.z+slots[i+1].origin.z)<1e-9);
+  }
+  assert.equal(rules.blasterRingPlan({x:0,y:0,z:0},0,100).length,6);
+});
+
+test('runtime spawns a ring in sequence, fires in sequence and cancels pending heads', async () => {
+  const game=await runtime({teleportSucceeds:false});
+  const heads=()=>[...game.entities.values()].filter(e=>e.typeId==='pinene_sans:blaster'&&e.isValid);
+  game.step(95);assert.equal(heads().length,1);
+  game.step(3);assert.equal(heads().length,1);
+  game.step();assert.equal(heads().length,2);
+  const center=game.player.location;
+  assert.ok(Math.abs((heads()[0].location.z-center.z)+(heads()[1].location.z-center.z))<.1);
+  game.step(8);assert.equal(heads().length,4);
+  game.step(12);assert.equal(heads().filter(e=>e.getProperty('pinene_sans:firing')).length,1);
+  game.step(4);assert.equal(heads().filter(e=>e.getProperty('pinene_sans:firing')).length,2);
+  const cancelled=await runtime({teleportSucceeds:false});
+  cancelled.step(95);cancelled.player.mode='Creative';cancelled.step(25);
+  assert.equal([...cancelled.entities.values()].filter(e=>e.typeId==='pinene_sans:blaster').length,1);
+  assert.equal([...cancelled.entities.values()].some(e=>e.typeId==='pinene_sans:blaster'&&e.isValid),false);
 });
