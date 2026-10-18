@@ -223,8 +223,8 @@ def write_models(save, RP):
             'geometry':'Geometry.default','materials':[{'*':'Material.default'},
                 {'magic_eye':'Material.glow'},{'eyes':'Material.glow'},{'core':'Material.glow'}],
             'textures':['Texture.default']}}})
-    arrival = "(query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival')))"
-    departure = "query.property('pinene_sans:departure')"
+    presence = "(query.property('pinene_sans:arrival') * (1 - query.property('pinene_sans:departure')))"
+    arrival = '('+presence+' * '+presence+' * (3 - 2 * '+presence+'))'
     save(RP/'animations/sans.animation.json',{
         'format_version':'1.8.0','animations':{
             'animation.pinene_sans.idle':{'loop':True,'animation_length':2,'bones':{
@@ -238,11 +238,11 @@ def write_models(save, RP):
                 'root':{'scale':[1,"query.property('pinene_sans:height')",1]}}},
             'animation.pinene_sans.blaster':{'loop':True,'bones':{
                 'root':{'rotation':[
-                    '-22 * (1 - ('+arrival+')) + 360 * ('+departure+')',0,
+                    '-22 * (1 - ('+arrival+'))',0,
                     'math.sin(query.life_time * 80) * 1.5 - 18 * (1 - ('+arrival+'))'],
-                    'position':[0,'-8 * (1 - ('+arrival+')) + 7 * math.sin(('+departure+') * 180) + 4 * ('+departure+')',
-                        '14 * (1 - ('+arrival+')) + 18 * ('+departure+')'],
-                    'scale':'(0.03 + 0.97 * ('+arrival+') + 0.40 * math.sin(('+arrival+') * 180)) * (1 - ('+departure+') * ('+departure+'))'},
+                    'position':[0,'-8 * (1 - ('+arrival+'))',
+                        '14 * (1 - ('+arrival+'))'],
+                    'scale':'(0.03 + 0.97 * ('+arrival+') + 0.40 * math.sin(('+arrival+') * 180))'},
                 'jaw':{'rotation':["query.property('pinene_sans:firing') ? -46 : (query.property('pinene_sans:departure') > 0 ? -4 - 42 * math.max(0, 1 - query.property('pinene_sans:departure') * 3) : -4)",0,0],
                     'position':[0,'math.sin(query.life_time * 140) * 0.55',"query.property('pinene_sans:recoil') * 2.8"]},
                 'skull':{'rotation':["query.property('pinene_sans:firing') ? 10 : (query.property('pinene_sans:departure') > 0 ? 10 * math.max(0, 1 - query.property('pinene_sans:departure') * 3) : 0)",0,0],

@@ -1,4 +1,4 @@
-# Sans boss — development v0.5.3
+# Sans boss — development v0.5.4
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -163,3 +163,12 @@ hop follows 7*sin(pi*departure)+4*departure pixels, rather than rising in a
 straight line. Backward travel is shortened to eighteen pixels at full exit.
 The head shrinks continuously through the turn using the existing 1 -
 departure² envelope. Beam collapse and all combat timings are unchanged.
+
+## Reversed arrival exit 0.5.4
+
+Exit now retraces the arrival transform with presence = arrival*(1-departure).
+The same smoothstep drives tilt, twist, size and local translation in both
+directions. Departure lasts ten ticks, matching arrival: the head settles
+back into its tiny tilted silhouette behind/below the hover position and
+disappears. The pop and full vertical flip are replaced by this reversed
+arrival. Beam collapse, encirclement and damage rules are retained.
