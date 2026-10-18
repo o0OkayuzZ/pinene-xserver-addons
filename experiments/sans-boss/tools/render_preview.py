@@ -27,7 +27,7 @@ def transform(pivot, angles=(0,0,0)):
     point=np.array(pivot); matrix[:3,3]=point-matrix[:3,:3]@point
     return matrix
 
-def quads(name, casting=False, firing=False, age=0, recoil=0):
+def quads(name, casting=False, firing=False, age=0, recoil=0, arrival=1, departure=0):
     geo=load(RP/f'models/entity/{name}.geo.json')['minecraft:geometry'][0]
     matrices={}; output=[]
     for bone in geo['bones']:
@@ -35,10 +35,16 @@ def quads(name, casting=False, firing=False, age=0, recoil=0):
         if key=='magic_eye' and not casting or key=='pupil' and casting or key=='core' and not firing:
             continue
         angles=bone.get('rotation',[0,0,0])
-        if name=='blaster' and key=='jaw': angles=[-46 if firing else -4,0,0]
-        if name=='blaster' and key=='skull': angles=[10 if firing else 0,0,0]
-        if name=='blaster' and key=='root':angles=[0,0,math.sin(math.radians(age/20*80))*1.5]
+        if name=='blaster' and key=='jaw': angles=[-46 if firing else -4-42*max(0,1-departure*3) if departure>0 else -4,0,0]
+        if name=='blaster' and key=='skull': angles=[10 if firing else 10*max(0,1-departure*3) if departure>0 else 0,0,0]
+        if name=='blaster' and key=='root':
+            eased=arrival*arrival*(3-2*arrival)
+            angles=[-22*(1-eased)+28*departure,0,math.sin(math.radians(age/20*80))*1.5-18*(1-eased)+30*departure]
         local=transform(bone.get('pivot',[0,0,0]),angles)
+        if name=='blaster' and key=='root':
+            size=(.03+.97*eased+.40*math.sin(eased*math.pi))*(1-departure)**2
+            local[:3,:3]*=size
+            local[:3,3]+=np.array([0,-8*(1-eased)+12*departure,14*(1-eased)+30*departure**2])
         if name=='blaster' and key in ['jaw','skull']:
             local[:3,3]+=np.array([0,math.sin(math.radians(age/20*140))*.55,recoil*2.8])
         matrices[key]=matrices.get(bone.get('parent'),np.eye(4))@local

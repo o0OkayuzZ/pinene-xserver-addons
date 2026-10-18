@@ -238,13 +238,14 @@ function summonBlasters(state, player, count) {
     };
     if (!(guard(() => state.entity.dimension.getBlock(origin))?.isAir)) continue;
     const firesAt = tick + CONFIG.blasterWarningTicks;
-    const expires = firesAt + CONFIG.blasterFireTicks;
+    const fireEndsAt = firesAt + CONFIG.blasterFireTicks;
+    const expires = fireEndsAt + CONFIG.blasterDepartureTicks;
     const display = visual(state, BLASTER, origin, expires);
     if (!display) continue;
-    const ray = visual(state, RAY, origin, expires);
+    const ray = visual(state, RAY, origin, fireEndsAt);
     if (!ray) { removeVisual(display); continue; }
     const blaster = { visual: display, ray, origin, anchor: origin, bornAt: tick,
-      firesAt, expires, direction: undefined, end: undefined };
+      firesAt, fireEndsAt, expires, direction: undefined, end: undefined };
     aimBeam(state, blaster, player);
     updateRay(state, blaster, false);
     state.blasters.push(blaster);
@@ -300,8 +301,21 @@ function updateHazards(state, players, damage) {
     return true;
   });
   state.blasters = state.blasters.filter(blaster => {
-    if (tick >= blaster.expires || !valid(blaster.visual) || !valid(blaster.ray)) {
+    if (tick >= blaster.expires || !valid(blaster.visual) || (tick < blaster.fireEndsAt && !valid(blaster.ray))) {
       removeVisual(blaster.visual); removeVisual(blaster.ray); return false;
+    }
+    const arrival = Math.min(1, (tick - blaster.bornAt) / CONFIG.blasterArrivalTicks);
+    guard(() => blaster.visual.setProperty("pinene_sans:arrival", arrival));
+    if (tick >= blaster.fireEndsAt) {
+      // Only the skull remains during departure: no ray and no direct damage.
+      removeVisual(blaster.ray);
+      guard(() => {
+        blaster.visual.setProperty("pinene_sans:firing", false);
+        blaster.visual.setProperty("pinene_sans:recoil", 0);
+        blaster.visual.setProperty("pinene_sans:departure",
+          (tick - blaster.fireEndsAt + 1) / CONFIG.blasterDepartureTicks);
+      });
+      return true;
     }
     if (tick < blaster.firesAt) {
       // Track early, then lock aim 8 ticks before firing so a dodge is possible.

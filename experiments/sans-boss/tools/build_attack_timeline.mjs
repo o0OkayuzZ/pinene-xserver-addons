@@ -9,8 +9,12 @@ let health = 20, debt = 0, nextAt = 0;
 let origin, direction;
 const snapshots = [];
 for (let tick = -10; tick < 108; tick++) {
-  const visible = tick >= 0 && tick < C.blasterWarningTicks + C.blasterFireTicks;
-  const firing = tick >= C.blasterWarningTicks && visible;
+  const fireEnd = C.blasterWarningTicks + C.blasterFireTicks;
+  const rayVisible = tick >= 0 && tick < fireEnd;
+  const visible = tick >= 0 && tick < fireEnd + C.blasterDepartureTicks;
+  const firing = tick >= C.blasterWarningTicks && rayVisible;
+  const arrival = Math.max(0, Math.min(1,tick/C.blasterArrivalTicks));
+  const departure = tick >= fireEnd ? Math.min(1,(tick-fireEnd+1)/C.blasterDepartureTicks) : 0;
   const feet = { x: Math.max(0, Math.min(3, (tick-31)*0.6)), y: 0, z: 0 };
   if (tick <= C.blasterWarningTicks - C.blasterAimLockTicks - 1) {
     origin = add({ x:0, y:2.5, z:10 }, blasterHover(Math.max(0,tick)));
@@ -30,7 +34,7 @@ for (let tick = -10; tick < 108; tick++) {
     health -= pulse; debt -= pulse;
     nextAt = tick+C.karmaDrainInterval;
   }
-  snapshots.push({ tick,visible,firing,origin,direction,end,feet,hit,pulse,health,debt,
+  snapshots.push({ tick,visible,rayVisible,arrival,departure,firing,origin,direction,end,feet,hit,pulse,health,debt,
     width: firing ? blastWidth(tick-C.blasterWarningTicks) : C.warningLineWidth,
     recoil: firing ? blastRecoil(tick-C.blasterWarningTicks) : 0 });
 }

@@ -75,7 +75,10 @@ def render_surfaces(surfaces):
         depth[region][active]=z[active]
         emission[region][active]=rgba[active,:3].astype(np.uint8) if glow else 0
     for verts,uv,glow,colour in surfaces:
-        normal=np.cross(verts[1]-verts[0],verts[2]-verts[0]);normal/=np.linalg.norm(normal)
+        normal=np.cross(verts[1]-verts[0],verts[2]-verts[0])
+        magnitude=np.linalg.norm(normal)
+        if magnitude<1e-12:continue
+        normal/=magnitude
         if normal@CAM<=0:continue
         if uv:
             x,y=uv['uv'];w,h=uv['uv_size']
@@ -104,11 +107,11 @@ def mannequin(x,hit):
         part([side*.14-.11,0,-.14],[.22,.65,.28],[68,77,91])
     return output
 
-def head(direction,fire,age,recoil):
+def head(direction,fire,age,recoil,arrival,departure):
     # A rotation mapping the model's local -Z forward axis to the runtime ray.
     back=-direction;right=np.cross([0,1,0],back);right/=np.linalg.norm(right)
     up=np.cross(back,right);matrix=np.stack([right,up,back],axis=1)
-    return [(verts/16@matrix.T+ORIGIN,uv,glow,None) for verts,uv,glow in quads('blaster',firing=fire,age=age,recoil=recoil)]
+    return [(verts/16@matrix.T+ORIGIN,uv,glow,None) for verts,uv,glow in quads('blaster',firing=fire,age=age,recoil=recoil,arrival=arrival,departure=departure)]
 
 def background():
     array=np.empty((HEIGHT,WIDTH,3),np.uint8)
@@ -144,7 +147,8 @@ for index,snapshot in enumerate(timeline):
     aim=np.array(list(snapshot['direction'].values()))
     surfaces=mannequin(x,snapshot['hit'])
     if present:
-        surfaces+=head(aim,firing,max(0,local),snapshot['recoil'])
+        surfaces+=head(aim,firing,max(0,local),snapshot['recoil'],snapshot['arrival'],snapshot['departure'])
+    if snapshot['rayVisible']:
         surfaces+=ray(aim,LENGTH,snapshot['width'],firing)
     rgba,depth,emissive=render_surfaces(surfaces)
     canvas=BASE.copy();draw=ImageDraw.Draw(canvas)
@@ -165,8 +169,8 @@ for index,snapshot in enumerate(timeline):
     draw.text((29,58),'BLACK TELEGRAPH  >  FULL BEAM  >  LINGERING KR',font=font(14,True),fill='#b0cbdc')
     draw.text((29,83),'CURRENT ASSETS + COMBAT RULES  /  OFFLINE PREVIEW',font=font(11),fill='#829eb1')
     draw.rectangle([0,575,WIDTH,HEIGHT],fill='#111c29')
-    stage=('READY' if local<0 else 'HOVER / BLACK TELEGRAPH' if local<16 else 'AIM LOCKED' if local<24
-           else 'FULL BEAM / DIRECT + KR' if local<40 else 'LINGERING KARMA' if debt>0 else 'KARMA CLEARED')
+    stage=('READY' if local<0 else 'ARRIVAL / UNFOLD' if local<10 else 'HOVER / BLACK TELEGRAPH' if local<16 else 'AIM LOCKED' if local<24
+           else 'FULL BEAM / DIRECT + KR' if local<40 else 'RECOIL / RETREAT' if local<54 else 'LINGERING KARMA' if debt>0 else 'KARMA CLEARED')
     draw.text((400,591),stage,font=font(17,True),fill='#dc8dff' if debt>0 and not firing else '#c3edff')
     draw.text((28,592),f'HP  {hp:04.2f} / 20   KR  {debt:04.2f}',font=font(15,True),fill='#eaf1f5')
     draw.rectangle([29,622,326,636],fill='#2b394a')
@@ -180,6 +184,7 @@ for index,snapshot in enumerate(timeline):
     draw.rectangle([marker-1,621,marker+1,640],fill='#ffffff')
     draw.text((400,650),'1.2s warning  |  0.8s blast  |  KR continues after dodging',font=font(10),fill='#829eb1')
     frames.append(canvas)
+    if local in (3,7,42,46):canvas.save(OUT/f'lifecycle-{local}.png')
     if index%30==0:print('Rendered',index,'/',len(timeline),flush=True)
 assert timeline[-1]['debt']==0 and timeline[-1]['health']<timeline[50]['health']
 palette=Image.new('RGB',(WIDTH*3,HEIGHT))

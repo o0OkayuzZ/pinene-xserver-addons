@@ -1,4 +1,4 @@
-# Sans boss — development v0.3.0
+# Sans boss — development v0.4.0
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -118,3 +118,13 @@ Its trajectory and health/debt snapshots use the real pure JavaScript combat
 rules; the exported models and textures are rasterized offline. It is not an
 engine capture. Native shader output, damage/totems and multiplayer remain
 subject to in-game verification.
+
+## Arrival and departure revision 0.4.0
+
+The dark telegraph is 0.06 blocks wide (previously 0.10). Over its first ten
+ticks, the skull grows from a tiny tilted silhouette, slides forward/up and
+settles with a slight overshoot into its hover. After the sixteen-tick blast,
+the ray disappears immediately. The jaw closes over the first part of a
+fourteen-tick retreat; the skull tilts, rises and slides backwards while
+shrinking to zero. The retreat is cosmetic; direct damage stops with the ray.
+Charge duration, aim lock and KARMA rules are unchanged.

@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BP, RP = ROOT / 'BP', ROOT / 'RP'
 BP_UUID = 'd3ee4106-29e6-5c94-b502-cb49346e75b2'
 RP_UUID = '7243b118-8a4c-56de-a52b-4ae014f52d5a'
-VERSION = [0, 3, 0]
+VERSION = [0, 4, 0]
 
 def save(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -108,6 +108,8 @@ def build():
         'pinene_sans:height': {'type': 'float', 'range': [0.1, 3], 'default': 1, 'client_sync': True}}))
     save(BP / 'entities/blaster.json', prop_entity('pinene_sans:blaster', {
         'pinene_sans:firing': {'type': 'bool', 'default': False, 'client_sync': True},
+        'pinene_sans:arrival': {'type': 'float', 'range': [0, 1], 'default': 0, 'client_sync': True},
+        'pinene_sans:departure': {'type': 'float', 'range': [0, 1], 'default': 0, 'client_sync': True},
         'pinene_sans:recoil': {'type': 'float', 'range': [0, 1], 'default': 0, 'client_sync': True}}))
     save(BP / 'entities/ray.json', prop_entity('pinene_sans:ray', {
         'pinene_sans:firing': {'type': 'bool', 'default': False, 'client_sync': True},

@@ -11,6 +11,24 @@
           "default": false,
           "client_sync": true
         },
+        "pinene_sans:arrival": {
+          "type": "float",
+          "range": [
+            0,
+            1
+          ],
+          "default": 0,
+          "client_sync": true
+        },
+        "pinene_sans:departure": {
+          "type": "float",
+          "range": [
+            0,
+            1
+          ],
+          "default": 0,
+          "client_sync": true
+        },
         "pinene_sans:recoil": {
           "type": "float",
           "range": [

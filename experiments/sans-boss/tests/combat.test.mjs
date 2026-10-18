@@ -223,6 +223,9 @@ test('blaster fires only after charge and stops after its finite firing window',
   game.step(14);
   assert.equal(blaster.isValid, true);
   game.step();
+  assert.equal(blaster.isValid, true);
+  assert.equal([...game.entities.values()].some(e=>e.typeId==='pinene_sans:ray' && e.isValid), false);
+  game.step(14);
   assert.equal(blaster.isValid, false);
 });
 
@@ -315,11 +318,14 @@ test('hovering settles at aim lock; black ray becomes a solid firing beam and cl
   const ray = [...game.entities.values()].find(e => e.typeId === 'pinene_sans:ray' && e.isValid);
   assert.ok(head && ray);
   assert.equal(ray.getProperty('pinene_sans:firing'), false);
-  assert.equal(ray.getProperty('pinene_sans:width'), 0.1);
+  assert.equal(ray.getProperty('pinene_sans:width'), 0.06);
+  assert.equal(head.getProperty('pinene_sans:arrival') ?? 0, 0);
   const startY = head.location.y;
   game.step(6);
   assert.notEqual(head.location.y, startY);
+  assert.equal(head.getProperty('pinene_sans:arrival'), 0.6);
   game.step(10);
+  assert.equal(head.getProperty('pinene_sans:arrival'), 1);
   const lockLocation = { ...head.location };
   game.step(8);
   assert.deepEqual(head.location, lockLocation);
@@ -327,6 +333,9 @@ test('hovering settles at aim lock; black ray becomes a solid firing beam and cl
   assert.equal(ray.getProperty('pinene_sans:width'), 1.05);
   assert.equal(head.getProperty('pinene_sans:recoil'), 1);
   game.step(16);
-  assert.equal(head.isValid, false);
+  assert.equal(head.isValid, true);
   assert.equal(ray.isValid, false);
+  assert.ok(head.getProperty('pinene_sans:departure') > 0);
+  game.step(14);
+  assert.equal(head.isValid, false);
 });
