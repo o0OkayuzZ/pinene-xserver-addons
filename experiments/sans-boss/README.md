@@ -1,4 +1,4 @@
-# Sans boss — development v0.9.1
+# Sans boss — development v0.9.2
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -266,3 +266,10 @@ clothing maps for the zipper, collar, folds, pockets, cuffs and shorts stripe.
 The shared 256x128 atlas has dedicated regions below the existing colour
 tiles; blaster and bone textures retain their original regions. Eye overlays
 and arm pivots preserve the casting and slam animation.
+
+## Taller box-model balance 0.9.2
+
+Restores torso and lower-body length while keeping the broad rectangular
+silhouette and the 64x64 face map. The head retains its aspect ratio and
+is lifted by 6.25 model units; body and leg positions, dimensions and pivots
+are transformed consistently. Horizontal dimensions and sound are unchanged.
