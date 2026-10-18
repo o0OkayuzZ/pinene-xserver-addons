@@ -101,6 +101,11 @@ def reduced_pixels(image, face=False):
     # Nearest-neighbour only: each authored texel becomes a clean 2x2 block.
     small=image.resize((image.width//2,image.height//2),Image.Resampling.NEAREST)
     if face:
+        # Remove the dangling lower socket pixels left by 64-to-32 sampling.
+        # Keep the nose between the sockets intact.
+        d=ImageDraw.Draw(small)
+        d.rectangle([3,17,13,18],fill='#efeee5')
+        d.rectangle([18,17,28,18],fill='#efeee5')
         # Re-author the one-pixel grin at 32px so it stays continuous instead
         # of losing thin contours to sampling. Keep the approved light mouth.
         d=ImageDraw.Draw(small)

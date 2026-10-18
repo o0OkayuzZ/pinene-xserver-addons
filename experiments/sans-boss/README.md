@@ -1,4 +1,4 @@
-# Sans boss — development v0.9.6
+# Sans boss — development v0.9.7
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
