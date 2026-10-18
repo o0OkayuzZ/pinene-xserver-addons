@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "pinene_sans:ray",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha"
+      },
+      "textures": {
+        "warning": "textures/entity/ray_black",
+        "beam": "textures/entity/ray_glow"
+      },
+      "geometry": {
+        "default": "geometry.pinene_sans.ray"
+      },
+      "animations": {
+        "ray": "animation.pinene_sans.ray"
+      },
+      "scripts": {
+        "animate": [
+          "ray"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.pinene_sans.ray"
+      ]
+    }
+  }
+}

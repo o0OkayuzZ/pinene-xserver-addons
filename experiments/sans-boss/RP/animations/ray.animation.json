@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.pinene_sans.ray": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "scale": [
+            "query.property('pinene_sans:width')",
+            "query.property('pinene_sans:width')",
+            "query.property('pinene_sans:length')"
+          ]
+        }
+      }
+    }
+  }
+}

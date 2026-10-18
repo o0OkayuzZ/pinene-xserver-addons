@@ -1,4 +1,4 @@
-# Sans boss — development v0.2.0
+# Sans boss — development v0.3.0
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -89,3 +89,32 @@ Fatigue also tips the torso forward. Seven cubes per attack bone keep wall hazar
 `tools/render_preview.py` draws the exported geometry/UVs with a depth buffer and
 same jaw pivots. Install NumPy and Pillow to render it. This offline preview uses
 neutral studio lighting; Minecraft appearance still needs in-game verification.
+
+## Combat revision 0.3.0
+
+Blasters draw a dense black ray for the 24-tick telegraph, then switch the same
+one-cube ray to a thick emissive white/cyan beam for 16 ticks. Width pulses from
+1.05 blocks to 0.9; terrain clips both the visible ray and damage at the same point.
+The ray is independent of particle budgets. The head drifts around its spawn
+anchor until the eight-tick aim lock, then retains a small cosmetic hover/roll.
+Opening the jaw also applies a rapidly decaying recoil to the skull and jaw.
+
+Beam contact still deals 0.75 HP each tick and adds 0.25 HP of KARMA debt, capped
+at 6 HP and current health minus one. After 10 contact-free ticks, KARMA drains
+0.25 HP every four ticks, including after leaving the beam/encounter radius.
+It cannot kill by itself; direct hits can. Purple particles mark each pulse.
+Death, logout, creative/spectator mode, dimension changes and boss defeat/unload
+clear the debt. Reloading scripts also clears it. No shared HUD files are replaced;
+the purple health bar in the offline preview is explanatory only.
+
+Render the revised attack preview with:
+
+```sh
+node tools/build_attack_timeline.mjs
+python tools/render_attack_preview.py
+```
+
+Its trajectory and health/debt snapshots use the real pure JavaScript combat
+rules; the exported models and textures are rasterized offline. It is not an
+engine capture. Native shader output, damage/totems and multiplayer remain
+subject to in-game verification.

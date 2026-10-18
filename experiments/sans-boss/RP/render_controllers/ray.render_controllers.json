@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.pinene_sans.ray": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "query.property('pinene_sans:firing') ? Material.glow : Material.default"
+        }
+      ],
+      "textures": [
+        "query.property('pinene_sans:firing') ? Texture.beam : Texture.warning"
+      ]
+    }
+  }
+}

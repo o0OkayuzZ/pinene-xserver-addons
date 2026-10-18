@@ -6,13 +6,13 @@ Requires Python 3 and Pillow. Run from any directory.
 from pathlib import Path
 import json
 import zipfile
-from visual_assets import write_models
+from visual_assets import write_models, write_ray
 
 ROOT = Path(__file__).resolve().parents[1]
 BP, RP = ROOT / 'BP', ROOT / 'RP'
 BP_UUID = 'd3ee4106-29e6-5c94-b502-cb49346e75b2'
 RP_UUID = '7243b118-8a4c-56de-a52b-4ae014f52d5a'
-VERSION = [0, 2, 0]
+VERSION = [0, 3, 0]
 
 def save(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -107,9 +107,15 @@ def build():
     save(BP / 'entities/bone.json', prop_entity('pinene_sans:bone', {
         'pinene_sans:height': {'type': 'float', 'range': [0.1, 3], 'default': 1, 'client_sync': True}}))
     save(BP / 'entities/blaster.json', prop_entity('pinene_sans:blaster', {
-        'pinene_sans:firing': {'type': 'bool', 'default': False, 'client_sync': True}}))
+        'pinene_sans:firing': {'type': 'bool', 'default': False, 'client_sync': True},
+        'pinene_sans:recoil': {'type': 'float', 'range': [0, 1], 'default': 0, 'client_sync': True}}))
+    save(BP / 'entities/ray.json', prop_entity('pinene_sans:ray', {
+        'pinene_sans:firing': {'type': 'bool', 'default': False, 'client_sync': True},
+        'pinene_sans:length': {'type': 'float', 'range': [0, 28], 'default': 0, 'client_sync': True},
+        'pinene_sans:width': {'type': 'float', 'range': [0, 2], 'default': 0.1, 'client_sync': True}}))
 
     icon = write_models(save, RP)
+    write_ray(save, RP)
     save(RP / 'entity/sans.entity.json', client('pinene_sans:sans', 'geometry.pinene_sans.sans',
                                               'animation.pinene_sans.idle', ['#2696d2', '#f1efe5']))
     save(RP / 'entity/bone.entity.json', client('pinene_sans:bone', 'geometry.pinene_sans.bone',
@@ -125,6 +131,7 @@ def build():
         ('warning', [0.1, 0.7, 1, 0.8], 0.12, 0.3, 1),
         ('beam', [0.75, 0.95, 1, 1], 0.5, 0.15, 1),
         ('warp', [0.1, 0.75, 1, 0.8], 0.16, 0.25, 12),
+        ('karma', [0.7, 0.12, 0.95, 1], 0.10, 0.35, 3),
     ]:
         save(RP / f'particles/{identifier}.particle.json', particle('pinene_sans:' + identifier,
                                                                   color, size, life, count))

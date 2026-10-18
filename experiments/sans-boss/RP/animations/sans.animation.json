@@ -47,18 +47,35 @@
     "animation.pinene_sans.blaster": {
       "loop": true,
       "bones": {
+        "root": {
+          "rotation": [
+            0,
+            0,
+            "math.sin(query.life_time * 80) * 1.5"
+          ]
+        },
         "jaw": {
           "rotation": [
-            "query.property('pinene_sans:firing') ? -38 : -4",
+            "query.property('pinene_sans:firing') ? -46 : -4",
             0,
             0
+          ],
+          "position": [
+            0,
+            "math.sin(query.life_time * 140) * 0.55",
+            "query.property('pinene_sans:recoil') * 2.8"
           ]
         },
         "skull": {
           "rotation": [
-            "query.property('pinene_sans:firing') ? 6 : 0",
+            "query.property('pinene_sans:firing') ? 10 : 0",
             0,
             0
+          ],
+          "position": [
+            0,
+            "math.sin(query.life_time * 140) * 0.55",
+            "query.property('pinene_sans:recoil') * 2.8"
           ]
         },
         "core": {

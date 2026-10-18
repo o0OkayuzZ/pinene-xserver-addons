@@ -235,8 +235,11 @@ def write_models(save, RP):
             'animation.pinene_sans.bone':{'loop':True,'bones':{
                 'root':{'scale':[1,"query.property('pinene_sans:height')",1]}}},
             'animation.pinene_sans.blaster':{'loop':True,'bones':{
-                'jaw':{'rotation':["query.property('pinene_sans:firing') ? -38 : -4",0,0]},
-                'skull':{'rotation':["query.property('pinene_sans:firing') ? 6 : 0",0,0]},
+                'root':{'rotation':[0,0,'math.sin(query.life_time * 80) * 1.5']},
+                'jaw':{'rotation':["query.property('pinene_sans:firing') ? -46 : -4",0,0],
+                    'position':[0,'math.sin(query.life_time * 140) * 0.55',"query.property('pinene_sans:recoil') * 2.8"]},
+                'skull':{'rotation':["query.property('pinene_sans:firing') ? 10 : 0",0,0],
+                    'position':[0,'math.sin(query.life_time * 140) * 0.55',"query.property('pinene_sans:recoil') * 2.8"]},
                 'core':{'scale':"query.property('pinene_sans:firing') ? 1.0 : 0.0"}}},
         }})
 
@@ -249,3 +252,41 @@ def write_models(save, RP):
     draw.rounded_rectangle([34,55,94,70],radius=5,fill=PALETTE[14])
     for x in range(37,92,8):draw.rectangle([x,57,x+5,66],fill=PALETTE[4])
     return icon
+
+def write_ray(save, RP):
+    """One cube, zero particle budgets: black telegraph becomes emissive beam."""
+    black=Image.new('RGBA',(32,16),(2,2,5,255))
+    black.save(RP/'textures/entity/ray_black.png')
+    white=(235,252,255,32);cyan=(35,200,255,32)
+    glow=Image.new('RGBA',(32,16),cyan);draw=ImageDraw.Draw(glow)
+    draw.rectangle([1,1,6,6],fill=white)       # beam end cross-section
+    draw.rectangle([9,0,14,7],fill=white)     # top/bottom: width runs along U
+    draw.rectangle([16,1,23,6],fill=white)    # side faces: height runs along V
+    glow.save(RP/'textures/entity/ray_glow.tga')
+    # Opaque authoring copy for deterministic offline previews only.
+    preview=glow.copy();preview.putalpha(255);preview.save(RP/'textures/entity/ray_preview.png')
+    save(RP/'textures/entity/ray_glow.texture_set.json',{
+        'format_version':'1.16.100','minecraft:texture_set':{
+            'color':'ray_glow','metalness_emissive_roughness':[0,255,80]}})
+    ray=cube([-8,-8,-16],[16,16,16])
+    ray['uv']={face:{'uv':uv,'uv_size':[8,8]} for face,uv in {
+        'north':[0,0],'south':[0,0],'up':[8,0],'down':[8,0],
+        'east':[16,0],'west':[16,0]}.items()}
+    save(RP/'models/entity/ray.geo.json',{'format_version':'1.12.0','minecraft:geometry':[{
+        'description':{'identifier':'geometry.pinene_sans.ray','texture_width':32,'texture_height':16,
+            'visible_bounds_width':60,'visible_bounds_height':60,'visible_bounds_offset':[0,0,-14]},
+        'bones':[bone('root',[ray])]}]})
+    save(RP/'entity/ray.entity.json',{'format_version':'1.10.0','minecraft:client_entity':{'description':{
+        'identifier':'pinene_sans:ray','materials':{'default':'entity_alphatest','glow':'entity_emissive_alpha'},
+        'textures':{'warning':'textures/entity/ray_black','beam':'textures/entity/ray_glow'},
+        'geometry':{'default':'geometry.pinene_sans.ray'},
+        'animations':{'ray':'animation.pinene_sans.ray'},'scripts':{'animate':['ray']},
+        'render_controllers':['controller.render.pinene_sans.ray']}}})
+    save(RP/'render_controllers/ray.render_controllers.json',{'format_version':'1.8.0','render_controllers':{
+        'controller.render.pinene_sans.ray':{'geometry':'Geometry.default',
+            'materials':[{'*':"query.property('pinene_sans:firing') ? Material.glow : Material.default"}],
+            'textures':["query.property('pinene_sans:firing') ? Texture.beam : Texture.warning"]}}})
+    save(RP/'animations/ray.animation.json',{'format_version':'1.8.0','animations':{
+        'animation.pinene_sans.ray':{'loop':True,'bones':{'root':{'scale':[
+            "query.property('pinene_sans:width')","query.property('pinene_sans:width')",
+            "query.property('pinene_sans:length')"]}}}}})

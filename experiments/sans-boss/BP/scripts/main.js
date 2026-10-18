@@ -2,15 +2,18 @@ import { world, system, EntityDamageCause } from "@minecraft/server";
 import {
   CONFIG, hitChance, shouldDodge, add, subtract, scale, normalize,
   distanceSquared, boneTouchesPlayer, beamTouchesPlayer, accumulatedDamage, healthAfterTick,
+  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil,
 } from "./combat.js";
 
 const SANS = "pinene_sans:sans";
 const BONE = "pinene_sans:bone";
 const BLASTER = "pinene_sans:blaster";
+const RAY = "pinene_sans:ray";
 const WARP_COUNT = "pinene_sans:warps";
 const OWNER = "pinene_sans:owner";
 const EXPIRES = "pinene_sans:expires";
 const bosses = new Map();
+const karmaDebts = new Map();
 const attackCauses = new Set([
   "entityAttack", "projectile", "magic", "entityExplosion", "blockExplosion",
   "thorns", "sonicBoom", "maceSmash", "fireworks", "ramAttack", "none",
@@ -41,7 +44,10 @@ function removeVisual(entity) {
 
 function cleanup(state) {
   for (const hazard of state.bones) removeVisual(hazard.visual);
-  for (const blaster of state.blasters) removeVisual(blaster.visual);
+  for (const blaster of state.blasters) {
+    removeVisual(blaster.visual);
+    removeVisual(blaster.ray);
+  }
   state.bones.length = 0;
   state.blasters.length = 0;
   if (state.casting) {
@@ -204,6 +210,23 @@ function aimBeam(state, blaster, target) {
   blaster.end = add(blaster.origin, scale(blaster.direction, length));
 }
 
+function updateRay(state, blaster, firing) {
+  const dimension = state.entity.dimension;
+  const block = guard(() => dimension.getBlockFromRay(blaster.origin, blaster.direction,
+    { maxDistance: CONFIG.beamLength, includeLiquidBlocks: false, includePassableBlocks: false }));
+  const length = block ? Math.max(0, Math.sqrt(distanceSquared(blaster.origin,
+    add(block.block.location, block.faceLocation))) - 0.05) : CONFIG.beamLength;
+  blaster.end = add(blaster.origin, scale(blaster.direction, length));
+  if (!valid(blaster.ray)) return false;
+  return guard(() => {
+    blaster.ray.teleport(blaster.origin, { facingLocation: add(blaster.origin, blaster.direction) });
+    blaster.ray.setProperty("pinene_sans:length", length);
+    blaster.ray.setProperty("pinene_sans:width", firing ? blastWidth(tick - blaster.firesAt) : CONFIG.warningLineWidth);
+    blaster.ray.setProperty("pinene_sans:firing", firing);
+    return true;
+  }) === true;
+}
+
 function summonBlasters(state, player, count) {
   for (let i = 0; i < count && state.blasters.length < CONFIG.maxBlastersPerBoss; i++) {
     const angle = Math.atan2(state.entity.location.z - player.location.z,
@@ -218,8 +241,12 @@ function summonBlasters(state, player, count) {
     const expires = firesAt + CONFIG.blasterFireTicks;
     const display = visual(state, BLASTER, origin, expires);
     if (!display) continue;
-    const blaster = { visual: display, origin, firesAt, expires, direction: undefined, end: undefined };
+    const ray = visual(state, RAY, origin, expires);
+    if (!ray) { removeVisual(display); continue; }
+    const blaster = { visual: display, ray, origin, anchor: origin, bornAt: tick,
+      firesAt, expires, direction: undefined, end: undefined };
     aimBeam(state, blaster, player);
+    updateRay(state, blaster, false);
     state.blasters.push(blaster);
   }
   sound(state.entity.dimension, "beacon.activate", player.location, 1.8);
@@ -240,10 +267,11 @@ function nextAttack(state, player) {
   state.nextAttack = tick + CONFIG.attackInterval;
 }
 
-function addDamage(damage, player, amount, source) {
+function addDamage(damage, player, amount, source, karma = 0) {
   const previous = damage.get(player.id);
   damage.set(player.id, {
     player, amount: accumulatedDamage(previous?.amount ?? 0, amount), source,
+    karma: Math.max(previous?.karma ?? 0, karma),
   });
 }
 
@@ -272,53 +300,50 @@ function updateHazards(state, players, damage) {
     return true;
   });
   state.blasters = state.blasters.filter(blaster => {
-    if (tick >= blaster.expires || !valid(blaster.visual)) {
-      removeVisual(blaster.visual); return false;
+    if (tick >= blaster.expires || !valid(blaster.visual) || !valid(blaster.ray)) {
+      removeVisual(blaster.visual); removeVisual(blaster.ray); return false;
     }
     if (tick < blaster.firesAt) {
       // Track early, then lock aim 8 ticks before firing so a dodge is possible.
-      if (tick < blaster.firesAt - 8 && valid(state.target)) aimBeam(state, blaster, state.target);
-      if (tick % 4 === 0) drawBeam(dimension, blaster, "pinene_sans:warning", 2.5);
+      if (tick < blaster.firesAt - CONFIG.blasterAimLockTicks && valid(state.target)) {
+        blaster.origin = add(blaster.anchor, blasterHover(tick - blaster.bornAt));
+        aimBeam(state, blaster, state.target);
+      }
+      if (!updateRay(state, blaster, false)) {
+        removeVisual(blaster.visual); removeVisual(blaster.ray); return false;
+      }
       return true;
     }
     if (tick === blaster.firesAt) {
       guard(() => blaster.visual.setProperty("pinene_sans:firing", true));
       sound(dimension, "mob.ghast.fireball", blaster.origin, 0.7);
     }
-    // Recheck obstacles during firing; newly placed walls really stop the beam.
-    const block = guard(() => dimension.getBlockFromRay(blaster.origin, blaster.direction,
-      { maxDistance: CONFIG.beamLength, includeLiquidBlocks: false, includePassableBlocks: false }));
-    blaster.end = block
-      ? add(blaster.origin, scale(blaster.direction, Math.max(0,
-        Math.sqrt(distanceSquared(blaster.origin, add(block.block.location, block.faceLocation))) - 0.05)))
-      : add(blaster.origin, scale(blaster.direction, CONFIG.beamLength));
-    if (tick % 2 === 0) drawBeam(dimension, blaster, "pinene_sans:beam", 0.65);
+    guard(() => blaster.visual.setProperty("pinene_sans:recoil", blastRecoil(tick - blaster.firesAt)));
+    // A solid ray model avoids particle gaps/budget starvation, including when
+    // several blasters fire together. The visible and damaging ends are shared.
+    if (!updateRay(state, blaster, true)) {
+      removeVisual(blaster.visual); removeVisual(blaster.ray); return false;
+    }
     for (const player of players) {
       if (beamTouchesPlayer(blaster.origin, blaster.end, player.location, CONFIG.beamRadius, player.isSneaking ? 1.5 : 1.8)) {
-        addDamage(damage, player, CONFIG.blasterDamagePerTick, state.entity);
+        addDamage(damage, player, CONFIG.blasterDamagePerTick, state.entity, CONFIG.karmaPerContactTick);
       }
     }
     return true;
   });
 }
 
-function drawBeam(dimension, blaster, id, spacing) {
-  const length = Math.sqrt(distanceSquared(blaster.origin, blaster.end));
-  for (let d = 0; d <= length && particleBudget > 0; d += spacing) {
-    particle(dimension, id, add(blaster.origin, scale(blaster.direction, d)));
-  }
-}
-
-function applyTickDamage({ player, amount, source }) {
-  if (!eligible(player, source.dimension)) return;
+function applyTickDamage({ player, amount, source, quiet = false }) {
+  if (!eligible(player, source.dimension)) return 0;
   const health = guard(() => player.getComponent("minecraft:health"));
-  if (!health || health.currentValue <= 0) return;
+  if (!health || health.currentValue <= 0) return 0;
+  const before = health.currentValue;
   const next = healthAfterTick(health.currentValue, amount);
   if (next > 0) {
     // Native applyDamage every tick is throttled by vanilla hurt invulnerability.
     // Non-lethal health drain supplies the requested true 20 Hz damage instead.
     health.setCurrentValue(next);
-    if (tick % 5 === 0) {
+    if (!quiet && tick % 5 === 0) {
       sound(player.dimension, "game.player.hurt", player.location, 1.25);
       particle(player.dimension, "pinene_sans:beam", add(player.location, { x: 0, y: 1, z: 0 }));
     }
@@ -328,6 +353,27 @@ function applyTickDamage({ player, amount, source }) {
     if (health.currentValue > 1) health.setCurrentValue(1);
     guard(() => player.applyDamage(Math.max(2, amount), { cause: EntityDamageCause.override, damagingEntity: source }));
   }
+  return Math.max(0, before - health.currentValue);
+}
+
+function updateKarma(damage) {
+  for (const [id, debt] of karmaDebts) {
+    if (!valid(debt.source) || !bosses.has(debt.source.id) || !eligible(debt.player, debt.source.dimension)) {
+      karmaDebts.delete(id); continue;
+    }
+    const health = debt.player.getComponent("minecraft:health");
+    debt.amount = addKarmaDebt(debt.amount, 0, health.currentValue);
+    if (debt.amount <= 0) { karmaDebts.delete(id); continue; }
+    if (tick < debt.nextAt) continue;
+    const capacity = Math.max(0, CONFIG.maxDamagePerTick - (damage.get(id)?.applied ?? 0));
+    const amount = karmaPulse(debt.amount, health.currentValue, capacity);
+    if (amount <= 0) continue;
+    const applied = guard(() => applyTickDamage({ player: debt.player, amount, source: debt.source, quiet: true })) ?? 0;
+    debt.amount = Math.max(0, debt.amount - applied);
+    debt.nextAt = tick + CONFIG.karmaDrainInterval;
+    if (applied > 0) particle(debt.player.dimension, "pinene_sans:karma", add(debt.player.location, { x: 0, y: 1, z: 0 }));
+    if (debt.amount <= 0) karmaDebts.delete(id);
+  }
 }
 
 world.afterEvents.entitySpawn.subscribe(event => {
@@ -335,15 +381,17 @@ world.afterEvents.entitySpawn.subscribe(event => {
 });
 world.afterEvents.entityLoad.subscribe(event => {
   if (event.entity.typeId === SANS) register(event.entity);
-  else if (event.entity.typeId === BONE || event.entity.typeId === BLASTER) {
+  else if (event.entity.typeId === BONE || event.entity.typeId === BLASTER || event.entity.typeId === RAY) {
     // Hazards do not survive a reload/unload: their encounter clock is in memory.
     system.run(() => removeVisual(event.entity));
   }
 });
 world.afterEvents.entityDie.subscribe(event => {
+  karmaDebts.delete(event.deadEntity.id);
   const state = bosses.get(event.deadEntity.id);
   if (state) { cleanup(state); bosses.delete(event.deadEntity.id); }
 });
+world.afterEvents.playerLeave.subscribe(event => karmaDebts.delete(event.playerId));
 system.runInterval(() => {
   tick++;
   particleBudget = 120;
@@ -354,12 +402,13 @@ system.runInterval(() => {
     const dimensions = new Map(world.getAllPlayers().map(player => [player.dimension.id, player.dimension]));
     for (const dimension of dimensions.values()) {
       for (const entity of guard(() => dimension.getEntities({ type: SANS })) ?? []) register(entity);
-      for (const type of [BONE, BLASTER]) {
+      for (const type of [BONE, BLASTER, RAY]) {
         for (const entity of guard(() => dimension.getEntities({ type })) ?? []) {
           const owner = guard(() => entity.getDynamicProperty(OWNER));
           const expires = guard(() => entity.getDynamicProperty(EXPIRES));
           const state = bosses.get(owner);
-          const tracked = state && [...state.bones, ...state.blasters].some(hazard => hazard.visual?.id === entity.id);
+          const tracked = state && [...state.bones, ...state.blasters].some(hazard =>
+            hazard.visual?.id === entity.id || hazard.ray?.id === entity.id);
           if (!tracked || typeof expires !== "number" || expires <= tick) removeVisual(entity);
         }
       }
@@ -394,5 +443,15 @@ system.runInterval(() => {
       guard(() => state.entity.setProperty("pinene_sans:casting", casting));
     }
   }
-  for (const entry of damage.values()) guard(() => applyTickDamage(entry));
+  for (const entry of damage.values()) {
+    entry.applied = guard(() => applyTickDamage(entry)) ?? 0;
+    if (entry.karma > 0 && valid(entry.source) && eligible(entry.player, entry.source.dimension)) {
+      const previous = karmaDebts.get(entry.player.id);
+      const health = entry.player.getComponent("minecraft:health").currentValue;
+      const amount = addKarmaDebt(previous?.amount ?? 0, entry.karma, health);
+      if (amount > 0) karmaDebts.set(entry.player.id, { player: entry.player, source: entry.source,
+        amount, nextAt: tick + CONFIG.karmaGraceTicks });
+    }
+  }
+  updateKarma(damage);
 }, 1);

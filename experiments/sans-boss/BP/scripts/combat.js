@@ -12,6 +12,13 @@ export const CONFIG = Object.freeze({
   blasterWarningTicks: 24,
   blasterFireTicks: 16,
   blasterDamagePerTick: 0.75,
+  karmaPerContactTick: 0.25,
+  karmaMax: 6,
+  karmaGraceTicks: 10,
+  karmaDrainInterval: 4,
+  karmaDamagePerPulse: 0.25,
+  blasterAimLockTicks: 8,
+  warningLineWidth: 0.10,
   beamRadius: 0.45,
   beamLength: 28,
   maxBosses: 4,
@@ -86,4 +93,27 @@ export function accumulatedDamage(previous, amount) {
 
 export function healthAfterTick(health, damage) {
   return Math.max(0, health - Math.max(0, damage));
+}
+
+// Karma is a bounded, non-lethal remaining health debt. It does not bypass
+// the one-HP floor; another direct hit is needed to finish a player there.
+export function addKarmaDebt(previous, added, health) {
+  return Math.max(0, Math.min(CONFIG.karmaMax, health - 1, previous + Math.max(0, added)));
+}
+
+export function karmaPulse(debt, health, capacity = CONFIG.maxDamagePerTick) {
+  return Math.max(0, Math.min(debt, health - 1, capacity, CONFIG.karmaDamagePerPulse));
+}
+
+export function blasterHover(age) {
+  return { x: Math.sin(age * 0.08) * 0.10, y: Math.sin(age * 0.14) * 0.20,
+    z: (Math.cos(age * 0.08) - 1) * 0.08 };
+}
+
+export function blastWidth(age) {
+  return 0.9 + 0.15 * Math.exp(-Math.max(0, age) / 2);
+}
+
+export function blastRecoil(age) {
+  return Math.exp(-Math.max(0, age) / 4);
 }

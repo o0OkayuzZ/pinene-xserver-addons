@@ -27,7 +27,7 @@ def transform(pivot, angles=(0,0,0)):
     point=np.array(pivot); matrix[:3,3]=point-matrix[:3,:3]@point
     return matrix
 
-def quads(name, casting=False, firing=False):
+def quads(name, casting=False, firing=False, age=0, recoil=0):
     geo=load(RP/f'models/entity/{name}.geo.json')['minecraft:geometry'][0]
     matrices={}; output=[]
     for bone in geo['bones']:
@@ -35,9 +35,12 @@ def quads(name, casting=False, firing=False):
         if key=='magic_eye' and not casting or key=='pupil' and casting or key=='core' and not firing:
             continue
         angles=bone.get('rotation',[0,0,0])
-        if name=='blaster' and key=='jaw': angles=[-38 if firing else -4,0,0]
-        if name=='blaster' and key=='skull': angles=[6 if firing else 0,0,0]
+        if name=='blaster' and key=='jaw': angles=[-46 if firing else -4,0,0]
+        if name=='blaster' and key=='skull': angles=[10 if firing else 0,0,0]
+        if name=='blaster' and key=='root':angles=[0,0,math.sin(math.radians(age/20*80))*1.5]
         local=transform(bone.get('pivot',[0,0,0]),angles)
+        if name=='blaster' and key in ['jaw','skull']:
+            local[:3,3]+=np.array([0,math.sin(math.radians(age/20*140))*.55,recoil*2.8])
         matrices[key]=matrices.get(bone.get('parent'),np.eye(4))@local
         for cube in bone.get('cubes',[]):
             x,y,z=cube['origin']; sx,sy,sz=cube['size']; a,b,c=x+sx,y+sy,z+sz

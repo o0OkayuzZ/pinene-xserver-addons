@@ -260,3 +260,73 @@ test('casting eye follows actual hazards and resets when a target leaves', async
   game.step();
   assert.equal(game.sans.getProperty('pinene_sans:casting'), false);
 });
+
+test('karma is capped and cannot cross the one HP floor', () => {
+  assert.equal(rules.addKarmaDebt(5.9, 1, 20), 6);
+  assert.equal(rules.addKarmaDebt(5, 1, 2), 1);
+  assert.equal(rules.karmaPulse(5, 1), 0);
+  assert.equal(rules.karmaPulse(5, 20, 0), 0);
+  assert.equal(rules.karmaPulse(5, 20, 0.1), 0.1);
+  assert.ok(Math.abs(rules.karmaPulse(1, 1.1)-0.1)<1e-10);
+});
+
+test('karma persists after escaping a beam, then drains every four ticks', async () => {
+  const game = await runtime({ teleportSucceeds: false });
+  game.step(134);
+  const hp = game.player.getComponent('minecraft:health');
+  assert.equal(hp.currentValue, 8);
+  game.player.location.x += 10;
+  game.step(9);
+  assert.equal(hp.currentValue, 8);
+  game.step();
+  assert.equal(hp.currentValue, 7.75);
+  game.step(3);
+  assert.equal(hp.currentValue, 7.75);
+  game.step();
+  assert.equal(hp.currentValue, 7.5);
+});
+
+test('karma stops at one HP and clears for creative players and defeated bosses', async () => {
+  const game = await runtime({ teleportSucceeds: false });
+  game.step(134);
+  game.player.location.x += 10;
+  const hp = game.player.getComponent('minecraft:health');
+  hp.currentValue = 1.05;
+  game.step(20);
+  assert.equal(hp.currentValue, 1);
+  assert.equal(game.player.lastDamage, undefined);
+  const creative = await runtime({ teleportSucceeds: false });
+  creative.step(134);
+  creative.player.mode = 'Creative';
+  creative.step(20);
+  assert.equal(creative.player.getComponent('minecraft:health').currentValue, 8);
+  const victory = await runtime({ teleportSucceeds: false });
+  victory.step(134);
+  victory.world.afterEvents.entityDie.emit({ deadEntity: victory.sans });
+  victory.sans.isValid = false;
+  victory.step(20);
+  assert.equal(victory.player.getComponent('minecraft:health').currentValue, 8);
+});
+
+test('hovering settles at aim lock; black ray becomes a solid firing beam and cleans up', async () => {
+  const game = await runtime({ teleportSucceeds: false });
+  game.step(95);
+  const head = [...game.entities.values()].find(e => e.typeId === 'pinene_sans:blaster' && e.isValid);
+  const ray = [...game.entities.values()].find(e => e.typeId === 'pinene_sans:ray' && e.isValid);
+  assert.ok(head && ray);
+  assert.equal(ray.getProperty('pinene_sans:firing'), false);
+  assert.equal(ray.getProperty('pinene_sans:width'), 0.1);
+  const startY = head.location.y;
+  game.step(6);
+  assert.notEqual(head.location.y, startY);
+  game.step(10);
+  const lockLocation = { ...head.location };
+  game.step(8);
+  assert.deepEqual(head.location, lockLocation);
+  assert.equal(ray.getProperty('pinene_sans:firing'), true);
+  assert.equal(ray.getProperty('pinene_sans:width'), 1.05);
+  assert.equal(head.getProperty('pinene_sans:recoil'), 1);
+  game.step(16);
+  assert.equal(head.isValid, false);
+  assert.equal(ray.isValid, false);
+});

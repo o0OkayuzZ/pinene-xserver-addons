@@ -21,7 +21,7 @@ for identifier in ids:
 assert bm['dependencies'][0] == {'uuid': rm['header']['uuid'], 'version': rm['header']['version']}
 assert (BP / next(entry['entry'] for entry in bm['modules'] if entry['type'] == 'script')).is_file()
 identifiers = {load(path)['minecraft:entity']['description']['identifier'] for path in (BP / 'entities').glob('*.json')}
-assert identifiers == {'pinene_sans:sans', 'pinene_sans:bone', 'pinene_sans:blaster'}
+assert identifiers == {'pinene_sans:sans', 'pinene_sans:bone', 'pinene_sans:blaster', 'pinene_sans:ray'}
 geometries = {}
 for path in (RP / 'models/entity').glob('*.json'):
     geometry = load(path)['minecraft:geometry'][0]
@@ -36,7 +36,9 @@ for path in (RP / 'models/entity').glob('*.json'):
                 assert face['uv'][0] >= 0 and face['uv'][1] >= 0
                 assert face['uv'][0] + face['uv_size'][0] <= desc['texture_width']
                 assert face['uv'][1] + face['uv_size'][1] <= desc['texture_height']
-animations = load(RP / 'animations/sans.animation.json')['animations']
+animations = {}
+for animation_file in (RP/'animations').glob('*.json'):
+    animations.update(load(animation_file)['animations'])
 for path in (RP / 'entity').glob('*.json'):
     desc = load(path)['minecraft:client_entity']['description']
     assert desc['identifier'] in identifiers
@@ -60,6 +62,10 @@ for name, maximum in budget.items():
     if name == 'sans':
         assert {b['name'] for b in g['bones']} >= {'magic_eye','pupil','hood','left_arm','right_arm'}
 assert 'pinene_sans:casting' in load(BP/'entities/sans.json')['minecraft:entity']['description']['properties']
+ray=load(RP/'models/entity/ray.geo.json')['minecraft:geometry'][0]
+assert len(ray['bones'][0]['cubes']) == 1
+assert Image.open(RP/'textures/entity/ray_black.png').getpixel((0,0)) == (2,2,5,255)
+assert 'pinene_sans:recoil' in load(BP/'entities/blaster.json')['minecraft:entity']['description']['properties']
 assert load(RP / 'manifest.json')['capabilities'] == ['pbr']
 for locale in ['en_US', 'ja_JP']:
     assert 'entity.pinene_sans:sans.name=' in (RP / f'texts/{locale}.lang').read_text(encoding='utf-8')
