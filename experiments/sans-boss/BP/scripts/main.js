@@ -176,7 +176,11 @@ function visual(state, type, position, expires) {
 
 function boneStream(state, player, count = CONFIG.boneStreamCount) {
   if (state.boneStream) state.boneStream.remaining += count;
-  else state.boneStream = {nextAt:tick, remaining:count};
+  else {
+    const forward=normalize(subtract(player.location,state.entity.location));
+    state.boneStream = {nextAt:tick, remaining:count, index:0,
+      heading:Math.atan2(forward.x,forward.z)*180/Math.PI};
+  }
 }
 
 function spawnQueuedBones(state, player) {
@@ -186,7 +190,7 @@ function spawnQueuedBones(state, player) {
   if (--stream.remaining <= 0) state.boneStream = undefined;
   if (state.bones.length >= CONFIG.maxHazardsPerBoss) return;
   const center = {...player.location};
-  const plan = sampleBoneSpike(center);
+  const plan = sampleBoneSpike(center,Math.random,stream.index++,stream.heading);
   // Find the actual floor below each insertion point. Never modify blocks.
   const from = add(plan.base,{x:0,y:2,z:0});
   const floor = guard(() => state.entity.dimension.getBlockFromRay(from,{x:0,y:-1,z:0},

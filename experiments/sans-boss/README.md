@@ -1,4 +1,4 @@
-# Sans boss — development v0.7.1
+# Sans boss — development v0.7.2
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -217,3 +217,10 @@ length. The shaft is thicker, the upper joint wider, and the lower joint stays
 below ground. Independent random draws vary azimuth, length, ground radius
 and a gentler 2–28 degree lean. Runtime and preview use the same sampler.
 Four-per-second cadence and phase durations are unchanged.
+
+## Alternating bone lean 0.7.2
+
+Each stream locks a left/right axis relative to the boss-to-target direction.
+Successive bones alternate sides, with independent +/-50 degree azimuth
+jitter within each side. Lean magnitude, exposed length and insertion radius
+still vary. Appending to an existing stream preserves its phase.

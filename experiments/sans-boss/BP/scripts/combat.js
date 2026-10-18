@@ -213,8 +213,9 @@ export function spikeTouchesPlayer(start, end, feet, height = 1.8) {
   return dot(delta,delta) <= .46**2;
 }
 
-// Uncorrelated draws avoid a repeated fan or a uniform sequence of tilts.
-export function sampleBoneSpike(center, random = Math.random) {
-  return boneSpikePlan(center, random()*360, 2+26*Math.pow(random(),1.25),
-    .35+random()*1.25, 2.2+random()*.6);
+// Alternate left/right hemispheres while varying each bone inside its side.
+export function sampleBoneSpike(center, random = Math.random, index = 0, heading = 0) {
+  const azimuth = ((index % 2)*180 + heading + (random()-.5)*100 + 720) % 360;
+  return {...boneSpikePlan(center, azimuth, 2+26*Math.pow(random(),1.25),
+    .35+random()*1.25, 2.2+random()*.6), side:index%2===0?'left':'right'};
 }

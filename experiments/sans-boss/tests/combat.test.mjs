@@ -210,7 +210,7 @@ test('spikes warn, thrust on their axis and drain health on consecutive ticks', 
  const first=bones[0];
  game.player.location={...first.location,y:1};hp.currentValue=20;
  game.step();assert.equal(hp.currentValue,19.5);
- game.step();assert.equal(hp.currentValue,18.5);
+ game.step();assert.equal(hp.currentValue,19);
 });
 
 test('blaster fires only after charge and stops after its finite firing window', async () => {
@@ -436,4 +436,19 @@ test('tilted spike collision covers the exposed segment, while retreat is harmle
  assert.equal(rules.spikeTouchesPlayer(seg.start,seg.end,{x:10,y:0,z:10}),false);
  assert.equal(rules.spikeTouchesPlayer(seg.start,seg.start,{x:0,y:0,z:0}),false);
  assert.equal(rules.spikeTouchesPlayer({x:-1,y:.2,z:0},{x:1,y:.35,z:0},{x:0,y:0,z:0}),true);
+});
+
+test('spike lean alternates sides with variation for rotated stream headings',()=>{
+ for(const heading of [0,38,155,270]){
+  let seed=913;const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
+  const h=heading*Math.PI/180,left={x:-Math.cos(h),z:Math.sin(h)};
+  const azimuths=[];
+  for(let i=0;i<40;i++){
+   const p=rules.sampleBoneSpike({x:0,y:0,z:0},random,i,heading);
+   const dot=p.direction.x*left.x+p.direction.z*left.z;
+   assert.ok(i%2===0?dot>0:dot<0);
+   assert.ok(p.tilt>=2&&p.tilt<=28);azimuths.push(p.azimuth);
+  }
+  assert.ok(new Set(azimuths).size>35);
+ }
 });
