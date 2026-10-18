@@ -392,3 +392,27 @@ test('beam collapse smoothly narrows to zero inside the fixed firing window', ()
   assert.equal(rules.beamTouchesPlayer(from,to,edge,Math.min(.45,rules.blastWidth(8)/2)),true);
   assert.equal(rules.beamTouchesPlayer(from,to,edge,Math.min(.45,rules.blastWidth(15)/2)),false);
 });
+
+
+test('bone rise is harmless, active bounce shares height, and retreat is cosmetic', () => {
+  const start=rules.bonePose(0,2.6);assert.ok(Math.abs(start.offsetY+2.635)<1e-9);assert.equal(start.damaging,false);
+  const rising=rules.bonePose(15,2.6);assert.ok(rising.offsetY<0 && rising.offsetY>-2.6);assert.equal(rising.damaging,false);
+  assert.equal(rules.bonePose(18,2.6).damaging,true);
+  assert.ok(rules.bonePose(19,2.6).height>2.6);
+  assert.equal(rules.bonePose(83,2.6).damaging,false);
+  assert.ok(Math.abs(rules.bonePose(90,2.6).offsetY+2.635)<1e-9);
+});
+
+test('runtime bones rise before activation and cancel their ground markers on cleanup',async()=>{
+  const game=await runtime({teleportSucceeds:false});game.step(30);
+  const bones=[...game.entities.values()].filter(e=>e.typeId==='pinene_sans:bone');
+  const markers=[...game.entities.values()].filter(e=>e.typeId==='pinene_sans:ray');
+  assert.equal(markers.length,10);const buried=bones[0].location.y;
+  game.step(14);assert.ok(bones[0].location.y>buried && bones[0].location.y<1);
+  assert.equal(game.player.getComponent('minecraft:health').currentValue,20);
+  assert.equal(markers.some(e=>e.isValid),false);
+  game.step(5);assert.ok(bones[0].getProperty('pinene_sans:height')>1/1.5);
+  game.player.mode='Creative';game.step();
+  assert.equal(bones.some(e=>e.isValid),false);
+  assert.equal(markers.some(e=>e.isValid),false);
+});

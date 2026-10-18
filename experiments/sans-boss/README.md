@@ -1,4 +1,4 @@
-# Sans boss — development v0.5.4
+# Sans boss — development v0.6.0
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -172,3 +172,13 @@ directions. Departure lasts ten ticks, matching arrival: the head settles
 back into its tiny tilted silhouette behind/below the hover position and
 disappears. The pop and full vertical flip are replaced by this reversed
 arrival. Beam collapse, encirclement and damage rules are retained.
+
+## Bone wall animation 0.6.0
+
+Each bone receives a persistent thin black ground marker for the first twelve
+warning ticks. It rises from below ground during the final six warning ticks
+without dealing damage. The active wall advances with a small damped height
+bounce; its visible height is shared with collision. After the original
+65 active ticks, movement and damage stop and the bone sinks over eight
+cosmetic ticks. Ground markers and bones are removed together on cleanup.
+Low walls remain jumpable and tall walls retain the two-slot dodge gap.

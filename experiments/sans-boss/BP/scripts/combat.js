@@ -6,6 +6,8 @@ export const CONFIG = Object.freeze({
   encounterRadius: 32,
   attackInterval: 65,
   boneWarningTicks: 18,
+  boneRiseTicks: 6,
+  boneRetreatTicks: 8,
   boneLifeTicks: 65,
   boneSpeed: 0.24,
   boneDamagePerTick: 0.5,
@@ -143,4 +145,21 @@ export function blasterRingPlan(center, baseAngle, count) {
       z: center.z + Math.sin(angle) * CONFIG.blasterRingRadius,
     }};
   });
+}
+
+// Warning has no damage, including the rising animation. The active bounce's
+// visible height is also the swept collision height; retreat has no damage.
+export function bonePose(age, height) {
+  const activeAge = age - CONFIG.boneWarningTicks;
+  if (activeAge < 0) {
+    const p = Math.max(0, Math.min(1, (age - (CONFIG.boneWarningTicks - CONFIG.boneRiseTicks)) / CONFIG.boneRiseTicks));
+    const rise = 1 - (1-p) ** 3;
+    return {height, offsetY:-(height+.035)*(1-rise), damaging:false, warning:age < CONFIG.boneWarningTicks-CONFIG.boneRiseTicks};
+  }
+  if (activeAge < CONFIG.boneLifeTicks) {
+    const bounce = 1 + 0.10*Math.exp(-activeAge/4)*Math.sin(activeAge*Math.PI/3);
+    return {height:height*bounce, offsetY:0, damaging:true, warning:false};
+  }
+  const p = Math.min(1, (activeAge-CONFIG.boneLifeTicks+1)/CONFIG.boneRetreatTicks);
+  return {height, offsetY:-(height+.035)*p*p, damaging:false, warning:false};
 }

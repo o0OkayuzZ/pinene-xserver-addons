@@ -2,7 +2,7 @@ import { world, system, EntityDamageCause } from "@minecraft/server";
 import {
   CONFIG, hitChance, shouldDodge, add, subtract, scale, normalize,
   distanceSquared, boneTouchesPlayer, beamTouchesPlayer, accumulatedDamage, healthAfterTick,
-  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil, blasterRingPlan,
+  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil, blasterRingPlan, bonePose,
 } from "./combat.js";
 
 const SANS = "pinene_sans:sans";
@@ -43,7 +43,7 @@ function removeVisual(entity) {
 }
 
 function cleanup(state) {
-  for (const hazard of state.bones) removeVisual(hazard.visual);
+  for (const hazard of state.bones) { removeVisual(hazard.visual); removeVisual(hazard.marker); }
   for (const blaster of state.blasters) {
     removeVisual(blaster.visual);
     removeVisual(blaster.ray);
@@ -182,7 +182,8 @@ function boneWall(state, player, angleOffset = 0) {
   const gap = 2 + Math.floor(Math.random() * 7);
   const height = state.attackNumber % 2 ? 1.0 : 2.6;
   const activeAt = tick + CONFIG.boneWarningTicks;
-  const expires = activeAt + CONFIG.boneLifeTicks;
+  const endsAt = activeAt + CONFIG.boneLifeTicks;
+  const expires = endsAt + CONFIG.boneRetreatTicks;
   for (let i = 0; i < 12; i++) {
     if (i === gap || i === gap + 1 || state.bones.length >= CONFIG.maxHazardsPerBoss) continue;
     const location = add(origin, scale(sideways, i - 5.5));
@@ -191,7 +192,16 @@ function boneWall(state, player, angleOffset = 0) {
     // Collision is created only when its visual exists.
     if (!display) return false;
     guard(() => display.setProperty("pinene_sans:height", height / 1.5));
-    state.bones.push({ visual: display, location, previous: location, height, forward, activeAt, expires });
+    const marker = visual(state, RAY, add(location, {x:-forward.x*.36,y:.035,z:-forward.z*.36}),
+      activeAt - CONFIG.boneRiseTicks);
+    if (marker) guard(() => {
+      marker.teleport(marker.location, {facingLocation:add(marker.location,forward)});
+      marker.setProperty("pinene_sans:length", .72);
+      marker.setProperty("pinene_sans:width", .035);
+      marker.setProperty("pinene_sans:firing", false);
+    });
+    state.bones.push({ visual: display, marker, location, previous: location, height, forward,
+      bornAt:tick, activeAt, endsAt, expires });
   }
   sound(state.entity.dimension, "mob.skeleton.step", origin, 0.75);
 }
@@ -286,23 +296,28 @@ function updateHazards(state, players, damage) {
   const dimension = state.entity.dimension;
   state.bones = state.bones.filter(bone => {
     if (tick >= bone.expires || !valid(bone.visual)) {
-      removeVisual(bone.visual); return false;
+      removeVisual(bone.visual); removeVisual(bone.marker); return false;
     }
-    if (tick < bone.activeAt) {
-      if (tick % 6 === 0) particle(dimension, "pinene_sans:warning", add(bone.location, { x: 0, y: 0.1, z: 0 }));
-      return true;
-    }
+    const pose = bonePose(tick - bone.bornAt, bone.height);
+    if (!pose.warning) removeVisual(bone.marker);
+    if (tick < bone.activeAt && tick % 6 === 0)
+      particle(dimension, "pinene_sans:warning", add(bone.location, {x:0,y:.1,z:0}));
     bone.previous = bone.location;
-    bone.location = add(bone.location, scale(bone.forward, CONFIG.boneSpeed));
-    // Stop at solid blocks. Bone hazards do not pass through terrain or edit it.
-    const block = guard(() => dimension.getBlock(add(bone.location, { x: 0, y: 0.25, z: 0 })));
-    if (!block || !block.isAir) { removeVisual(bone.visual); return false; }
-    const moved = guard(() => { bone.visual.teleport(bone.location); return true; });
-    if (!moved) { removeVisual(bone.visual); return false; }
+    if (pose.damaging) {
+      bone.location = add(bone.location, scale(bone.forward, CONFIG.boneSpeed));
+      // Moving bones stop at solid blocks and never alter terrain.
+      const block = guard(() => dimension.getBlock(add(bone.location, {x:0,y:.25,z:0})));
+      if (!block || !block.isAir) { removeVisual(bone.visual); removeVisual(bone.marker); return false; }
+    }
+    const moved = guard(() => {
+      bone.visual.setProperty("pinene_sans:height", pose.height / 1.5);
+      bone.visual.teleport(add(bone.location,{x:0,y:pose.offsetY,z:0})); return true;
+    });
+    if (!moved) { removeVisual(bone.visual); removeVisual(bone.marker); return false; }
+    if (!pose.damaging) return true;
     for (const player of players) {
-      if (boneTouchesPlayer(bone.previous, bone.location, bone.height, player.location, player.isSneaking ? 1.5 : 1.8)) {
+      if (boneTouchesPlayer(bone.previous, bone.location, pose.height, player.location, player.isSneaking ? 1.5 : 1.8))
         addDamage(damage, player, CONFIG.boneDamagePerTick, state.entity);
-      }
     }
     return true;
   });
@@ -428,7 +443,7 @@ system.runInterval(() => {
           const expires = guard(() => entity.getDynamicProperty(EXPIRES));
           const state = bosses.get(owner);
           const tracked = state && [...state.bones, ...state.blasters].some(hazard =>
-            hazard.visual?.id === entity.id || hazard.ray?.id === entity.id);
+            hazard.visual?.id === entity.id || hazard.ray?.id === entity.id || hazard.marker?.id === entity.id);
           if (!tracked || typeof expires !== "number" || expires <= tick) removeVisual(entity);
         }
       }
