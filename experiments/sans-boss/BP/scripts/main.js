@@ -264,7 +264,7 @@ function spawnQueuedBlasters(state, player) {
     aimBeam(state, blaster, player);
     updateRay(state, blaster, false);
     state.blasters.push(blaster);
-    sound(state.entity.dimension, "pinene_sans.blaster_charge", origin, 1 + ((tick % 3) - 1) * 0.025);
+    sound(state.entity.dimension, "pinene_sans.blaster_charge", origin, 1);
     return false;
   });
 }

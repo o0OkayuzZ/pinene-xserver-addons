@@ -1,4 +1,4 @@
-# Sans boss — development v0.6.3
+# Sans boss — development v0.6.4
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -63,7 +63,7 @@ python tools/validate_pack.py
 
 Models/textures are original cube assets authored by `tools/visual_assets.py` and built by
 `tools/build_assets.py`; only
-original blaster and contact sounds plus vanilla movement sounds are used. The resource pack declares PBR and a matte texture set to
+reference blaster and authored contact sounds plus vanilla movement sounds are used. The resource pack declares PBR and a matte texture set to
 coexist with Vibrant Visuals. No music or external model assets are bundled.
 
 ## Validation boundary
@@ -183,29 +183,17 @@ bounce; its visible height is shared with collision. After the original
 cosmetic ticks. Ground markers and bones are removed together on cleanup.
 Low walls remain jumpable and tall walls retain the two-slot dodge gap.
 
-## Retro blaster audio 0.6.1
+## Reference blaster audio 0.6.4
 
-Blasters now use authored retro electronic effects inspired by Undertale's
-charge/blast sound direction. Charge is a bright FM chirp with a crunchy
-pulse texture; firing is a low distorted buzz/noise burst that follows the
-beam collapse envelope. Sans contact damage uses a short digital hit sound.
-All three are synthesized, not samples extracted from Undertale.
-The namespaced sound events do not replace global Minecraft sounds.
-`tools/build_sounds.py` regenerates the included mono OGG assets using
-NumPy, SciPy and ffmpeg; normal pack builds reuse the checked-in OGG files.
+Blaster charge and firing now use excerpts of the user-supplied reference:
+https://youtu.be/aOSRyij7Law. Charge is cut from 1.140–2.180 seconds;
+fire from 2.200–4.120 seconds. Original pitch and speed are preserved,
+with only 2 ms boundary fades. No bass boost, distortion, extra synthesis,
+or randomized playback pitch is applied. The fire release can ring beyond
+the visible beam; gameplay and animation timing are unchanged.
+Contact damage retains the authored short digital hit effect.
 
-## Deeper arrival sound 0.6.2
-
-The arrival charge now centers on a low resonant 72–137 Hz body with upper
-harmonics to retain weight on small speakers. The bright chirp is quieter
-and lower in pitch. Firing and hit audio are unchanged. Regenerate just
-this effect with `python tools/build_sounds.py blaster_charge`.
-
-## Supplied audio reference revision 0.6.3
-
-The supplied reference https://youtu.be/aOSRyij7Law informed a new synthesized
-charge with two low resonances, rough upper harmonics and a moving formant.
-Its 0.96-second envelope leaves a short pause before the 1.2-second fire cue.
-Fire now combines stable low resonances with broadband bite and a decaying
-blast envelope, still following the beam collapse. The reference waveform
-is used for analysis only and is not bundled in the addon.
+Regenerate the two blaster assets with
+`python tools/build_sounds.py --reference /path/to/reference.wav`.
+This requires a decoded mono 16-bit reference WAV and ffmpeg; normal pack
+builds reuse the checked-in OGG files and need no source recording.
