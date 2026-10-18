@@ -1,4 +1,4 @@
-# Sans boss — development v0.9.4
+# Sans boss — development v0.9.5
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -288,3 +288,11 @@ to skull highlights, hoodie folds, cuff ribbing, shorts and slippers. Side,
 back and top faces now have separate 32x32 pixel maps instead of flat
 colour tiles. The front face retains its 64x64 map and thin mouth contours.
 All other entity atlas regions remain unchanged.
+
+## Coarser pixel grid 0.9.5
+
+Sans-only front maps now use half the texel count on each axis: an effective
+32x32 face and torso, 16x32 sleeves, and 16x16 secondary maps. Each pixel is
+expanded by nearest neighbour into the existing atlas region, preserving UVs
+and avoiding changes to blaster or bone textures. The grin is redrawn at 32px
+to preserve continuous thin contours and light teeth. Model shape is unchanged.

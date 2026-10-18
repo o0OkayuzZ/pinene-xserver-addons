@@ -97,6 +97,22 @@ def sans():
     return output
 
 
+def reduced_pixels(image, face=False):
+    # Nearest-neighbour only: each authored texel becomes a clean 2x2 block.
+    small=image.resize((image.width//2,image.height//2),Image.Resampling.NEAREST)
+    if face:
+        # Re-author the one-pixel grin at 32px so it stays continuous instead
+        # of losing thin contours to sampling. Keep the approved light mouth.
+        d=ImageDraw.Draw(small)
+        d.rectangle([3,20,29,30],fill='#efeee5')
+        d.polygon([(4,21),(8,23),(24,23),(28,21),(26,26),(23,28),(19,29),(13,29),(9,28),(5,26)],fill='#fffdf1')
+        d.line([(4,21),(7,22),(12,23),(20,23),(25,22),(28,21)],fill='#333c3b',width=1)
+        d.line([(5,23),(6,26),(9,28),(13,29),(19,29),(23,28),(26,26),(27,23)],fill='#727b70',width=1)
+        for x,top,bottom in [(8,23,27),(12,24,28),(16,24,28),(20,24,28),(24,23,27)]:
+            d.line([(x,top),(x,bottom)],fill='#a6ad9f')
+    return small.resize(image.size,Image.Resampling.NEAREST)
+
+
 def paint_sans_details(atlas):
     # Keep existing 16px colour tiles unchanged for blasters/bones.
     face=Image.new('RGBA',(64,64),'#efeee5');d=ImageDraw.Draw(face)
@@ -122,7 +138,7 @@ def paint_sans_details(atlas):
     d.line([(12,51),(20,53),(44,53),(52,51)],fill='#cdd0c3',width=1)
     d.line([(7,40),(8,43)],fill='#333c3b',width=1)
     d.line([(57,40),(56,43)],fill='#333c3b',width=1)
-    atlas.paste(face,(0,32))
+    atlas.paste(reduced_pixels(face,face=True),(0,32))
     shirt=Image.new('RGBA',(64,64),'#1686c2');d=ImageDraw.Draw(shirt)
     d.rectangle([0,0,63,4],fill='#59b3d9');d.rectangle([0,55,63,63],fill='#176b9b')
     d.polygon([(20,3),(44,3),(47,63),(17,63)],fill='#f2f0e4')
@@ -140,7 +156,7 @@ def paint_sans_details(atlas):
     for x,y in [(21,32),(23,34),(39,42),(41,40)]:d.rectangle([x,y,x+1,y+3],fill='#dce1d5')
     for x in range(2,16,4):d.rectangle([x,58,x+1,61],fill='#2b83ad')
     for x in range(48,62,4):d.rectangle([x,58,x+1,61],fill='#2b83ad')
-    atlas.paste(shirt,(64,32))
+    atlas.paste(reduced_pixels(shirt),(64,32))
     sleeve=Image.new('RGBA',(32,64),'#1787c4');d=ImageDraw.Draw(sleeve)
     d.rectangle([0,0,31,4],fill='#36a4d5');d.rectangle([0,5,3,63],fill='#1375ad')
     d.rectangle([1,53,30,63],fill='#125e8e')
@@ -148,18 +164,18 @@ def paint_sans_details(atlas):
     for x in range(3,30,4):d.line([(x,55),(x,62)],fill='#398bb1')
     for x,y in [(6,9),(10,11),(14,13),(20,27),(16,29),(12,31),(6,43),(10,45)]:
         d.rectangle([x,y,x+3,y+1],fill='#369dce' if y<25 else '#0d76ae')
-    atlas.paste(sleeve,(128,32))
+    atlas.paste(reduced_pixels(sleeve),(128,32))
     shorts=Image.new('RGBA',(32,32),'#151b27');d=ImageDraw.Draw(shorts)
     d.rectangle([0,0,31,2],fill='#263145');d.rectangle([27,2,29,31],fill='#e3e6de')
     d.rectangle([2,29,26,31],fill='#0b111c')
     for x,y in [(5,6),(9,8),(13,10),(6,21),(18,23)]:d.rectangle([x,y,x+3,y+1],fill='#253047')
-    atlas.paste(shorts,(160,32))
+    atlas.paste(reduced_pixels(shorts),(160,32))
     shoe=Image.new('RGBA',(32,32),'#e5d4df');d=ImageDraw.Draw(shoe)
     d.rectangle([0,24,31,31],fill='#ba8cac');d.rectangle([2,3,29,6],fill='#f5e8ee')
     d.rectangle([4,7,27,9],fill='#d2b6cb')
     for x,y in [(4,12),(8,14),(22,13),(18,15)]:d.rectangle([x,y,x+3,y+1],fill='#f2e4ed')
     for x in range(2,30,4):d.rectangle([x,26,x+1,27],fill='#d5acc6')
-    atlas.paste(shoe,(192,32))
+    atlas.paste(reduced_pixels(shoe),(192,32))
     # 32px square maps for side, back and top surfaces. Ordered square
     # clusters suggest lighting and fabric folds without random speckle.
     for ox,base,shade,light in [(0,'#efeee5','#d7dcd2','#faf8ee'),
@@ -178,7 +194,7 @@ def paint_sans_details(atlas):
         if ox==224:
             td.rectangle([0,26,31,31],fill=shade)
             for x in range(2,28,4):td.rectangle([x,27,x+1,28],fill=light)
-        atlas.paste(tile,(ox,96))
+        atlas.paste(reduced_pixels(tile),(ox,96))
 
 
 def blaster():
