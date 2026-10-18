@@ -5,6 +5,11 @@ export const CONFIG = Object.freeze({
   dodgeWarpCooldown: 6,
   encounterRadius: 32,
   attackInterval: 65,
+  slamLiftAt: 10,
+  slamDropAt: 22,
+  slamTimeoutTicks: 60,
+  slamRecoveryTicks: 8,
+  slamImpactDamage: 1,
   boneSpawnInterval: 5,
   boneStreamCount: 16,
   spikeWarningTicks: 10,
@@ -218,4 +223,15 @@ export function sampleBoneSpike(center, random = Math.random, index = 0, heading
   const azimuth = ((index % 2)*180 + heading + (random()-.5)*100 + 720) % 360;
   return {...boneSpikePlan(center, azimuth, 2+26*Math.pow(random(),1.25),
     .35+random()*1.25, 2.2+random()*.6), side:index%2===0?'left':'right'};
+}
+
+export function slamPhase(age) {
+  return age < CONFIG.slamLiftAt ? 'warning' : age < CONFIG.slamDropAt ? 'lift' : 'drop';
+}
+
+// Choreography only: runtime landing is observed from actual engine physics.
+export function slamPreviewHeight(age) {
+  if(age<CONFIG.slamLiftAt)return 0;
+  if(age<CONFIG.slamDropAt){const t=(age-CONFIG.slamLiftAt)/(CONFIG.slamDropAt-CONFIG.slamLiftAt);return 1.6*(1-(1-t)**3);}
+  const t=Math.min(1,(age-CONFIG.slamDropAt)/4);return 1.6*(1-t*t);
 }

@@ -2,11 +2,12 @@ import { world, system, EntityDamageCause } from "@minecraft/server";
 import {
   CONFIG, hitChance, shouldDodge, add, subtract, scale, normalize,
   distanceSquared, boneTouchesPlayer, beamTouchesPlayer, accumulatedDamage, healthAfterTick,
-  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil, blasterRingPlan, boneSpikePose, sampleBoneSpike, boneSpikeSegment, spikeTouchesPlayer,
+  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil, blasterRingPlan, boneSpikePose, sampleBoneSpike, boneSpikeSegment, spikeTouchesPlayer, slamPhase,
 } from "./combat.js";
 
 const SANS = "pinene_sans:sans";
 const BONE = "pinene_sans:bone";
+const SOUL = "pinene_sans:soul";
 const BLASTER = "pinene_sans:blaster";
 const RAY = "pinene_sans:ray";
 const WARP_COUNT = "pinene_sans:warps";
@@ -50,6 +51,9 @@ function cleanup(state) {
   }
   state.bones.length = 0;
   state.boneStream = undefined;
+  if(state.slam) removeVisual(state.slam.visual);
+  state.slam = undefined;
+  guard(()=>state.entity.setProperty("pinene_sans:slam",0));
   state.blasters.length = 0;
   state.blasterQueue.length = 0;
   if (state.casting) {
@@ -278,13 +282,57 @@ function spawnQueuedBlasters(state, player) {
   });
 }
 
+function startSlam(state,player) {
+  const floor=guard(()=>player.dimension.getBlockFromRay(player.location,{x:0,y:-1,z:0},
+    {maxDistance:5,includeLiquidBlocks:false,includePassableBlocks:false}));
+  if(!floor) {boneStream(state,player);return;}
+  const visualSoul=visual(state,SOUL,add(player.location,{x:0,y:1,z:-.32}),tick+CONFIG.slamTimeoutTicks);
+  if(!visualSoul) {boneStream(state,player);return;}
+  state.slam={player,visual:visualSoul,bornAt:tick,impactedAt:undefined,lifted:false,dropped:false};
+  sound(player.dimension,"pinene_sans.gravity_cue",player.location,1);
+}
+
+function updateSlam(state,damage) {
+  const slam=state.slam;if(!slam)return;
+  const player=slam.player,age=tick-slam.bornAt;
+  const end=()=>{removeVisual(slam.visual);state.slam=undefined;
+    guard(()=>state.entity.setProperty("pinene_sans:slam",0));};
+  if(!eligible(player,state.entity.dimension)||!valid(slam.visual)||
+    distanceSquared(player.location,state.entity.location)>CONFIG.encounterRadius**2||
+    (player.getComponent("minecraft:health")?.currentValue??0)<=0||age>=CONFIG.slamTimeoutTicks){end();return;}
+  guard(()=>slam.visual.teleport(add(player.location,{x:0,y:1,z:-.32})));
+  if(slam.impactedAt!==undefined){
+    if(tick-slam.impactedAt>=CONFIG.slamRecoveryTicks){end();boneStream(state,player);}
+    return;
+  }
+  const phase=slamPhase(age);
+  guard(()=>state.entity.setProperty("pinene_sans:slam",phase==='drop'?2:1));
+  if(phase==='lift'&&!slam.lifted){
+    slam.lifted=guard(()=>{player.clearVelocity();player.applyImpulse({x:0,y:.42,z:0});return true;})??false;
+    if(!slam.lifted){end();return;}
+  }
+  if(phase==='drop'&&!slam.dropped){
+    slam.dropped=guard(()=>{player.clearVelocity();player.applyImpulse({x:0,y:-1.3,z:0});return true;})??false;
+    if(!slam.dropped){end();return;}
+    sound(player.dimension,"pinene_sans.gravity_cue",player.location,1);
+  }
+  // A real landing is required. No damage is dealt simply because a timer elapsed.
+  if(slam.dropped&&age>CONFIG.slamDropAt&&player.isOnGround){
+    slam.impactedAt=tick;
+    guard(()=>state.entity.setProperty("pinene_sans:slam",0));
+    sound(player.dimension,"pinene_sans.slam_impact",player.location,1);
+    particle(player.dimension,"pinene_sans:warp",player.location);
+    addDamage(damage,player,CONFIG.slamImpactDamage,state.entity);
+  }
+}
+
 function nextAttack(state, player) {
   state.attackNumber++;
   const pattern = state.attackNumber % 4;
   if (pattern === 1) boneStream(state, player);
   else if (pattern === 2) summonBlasters(state, player, 4);
   else if (pattern === 3) {
-    boneStream(state, player, 20);
+    startSlam(state, player);
   } else {
     summonBlasters(state, player, state.warps >= 15 ? 6 : 4);
     if (state.warps >= 25) boneStream(state, player);
@@ -436,13 +484,13 @@ system.runInterval(() => {
     const dimensions = new Map(world.getAllPlayers().map(player => [player.dimension.id, player.dimension]));
     for (const dimension of dimensions.values()) {
       for (const entity of guard(() => dimension.getEntities({ type: SANS })) ?? []) register(entity);
-      for (const type of [BONE, BLASTER, RAY]) {
+      for (const type of [BONE, BLASTER, RAY, SOUL]) {
         for (const entity of guard(() => dimension.getEntities({ type })) ?? []) {
           const owner = guard(() => entity.getDynamicProperty(OWNER));
           const expires = guard(() => entity.getDynamicProperty(EXPIRES));
           const state = bosses.get(owner);
-          const tracked = state && [...state.bones, ...state.blasters].some(hazard =>
-            hazard.visual?.id === entity.id || hazard.ray?.id === entity.id || hazard.marker?.id === entity.id);
+          const tracked = state && (state.slam?.visual?.id === entity.id || [...state.bones, ...state.blasters].some(hazard =>
+            hazard.visual?.id === entity.id || hazard.ray?.id === entity.id || hazard.marker?.id === entity.id));
           if (!tracked || typeof expires !== "number" || expires <= tick) removeVisual(entity);
         }
       }
@@ -472,8 +520,9 @@ system.runInterval(() => {
     if (tick >= state.nextAttack) nextAttack(state, state.target);
     spawnQueuedBones(state, state.target);
     spawnQueuedBlasters(state, state.target);
+    updateSlam(state, damage);
     updateHazards(state, players, damage);
-    const casting = !!state.boneStream || state.bones.length > 0 || state.blasters.length > 0 || state.blasterQueue.length > 0;
+    const casting = !!state.slam || !!state.boneStream || state.bones.length > 0 || state.blasters.length > 0 || state.blasterQueue.length > 0;
     if (casting !== state.casting) {
       state.casting = casting;
       guard(() => state.entity.setProperty("pinene_sans:casting", casting));

@@ -178,6 +178,11 @@ def attack_bone():
             shape['size'][axis] *= 1.35
     return [bone('root',shapes)]
 
+def soul():
+    rows=['0110110','1111111','1111111','0111110','0011100','0001000']
+    return [bone('root',[cube([(x-3.5)*.8,(5-y)*.8,-.4],[.8,.8,.8],1)
+        for y,row in enumerate(rows) for x,pixel in enumerate(row) if pixel=='1'])]
+
 def write_models(save, RP):
     atlas=Image.new('RGBA',ATLAS_SIZE,(0,0,0,0))
     d=ImageDraw.Draw(atlas)
@@ -212,7 +217,8 @@ def write_models(save, RP):
         'format_version':'1.16.100','minecraft:texture_set':{
             'color':'sans_atlas_render','metalness_emissive_roughness':'sans_atlas_mer'}})
     for name,shapes,height,width,offset in [
-        ('sans',sans(),3,3,[0,1,0]),('bone',attack_bone(),8,9,[0,0,0]),
+        ('sans',sans(),3,3,[0,1,0]),
+        ('soul',soul(),1,1,[0,.15,0]),('bone',attack_bone(),8,9,[0,0,0]),
         ('blaster',blaster(),3,4,[0,0.2,0.4]),
     ]:
         save(RP/f'models/entity/{name}.geo.json',{'format_version':'1.12.0','minecraft:geometry':[{
@@ -234,6 +240,7 @@ def write_models(save, RP):
             'animation.pinene_sans.idle':{'loop':True,'animation_length':2,'bones':{
                 'body':{'position':[0,'math.sin(query.life_time * 120) * 0.11',0],
                         'rotation':["query.property('pinene_sans:tired') * -5",0,0]},
+                'left_arm':{'rotation':["query.property('pinene_sans:slam') == 1 ? -100 : (query.property('pinene_sans:slam') == 2 ? 40 : 0)",0,"query.property('pinene_sans:slam') == 1 ? -25 : 0"]},
                 'head':{'rotation':[0,'math.sin(query.life_time * 45) * 2',
                                    'math.sin(query.life_time * 60) * 1.2']},
                 'magic_eye':{'scale':"query.property('pinene_sans:casting') ? 1.0 : 0.0"},

@@ -17,6 +17,13 @@
             0
           ]
         },
+        "left_arm": {
+          "rotation": [
+            "query.property('pinene_sans:slam') == 1 ? -100 : (query.property('pinene_sans:slam') == 2 ? 40 : 0)",
+            0,
+            "query.property('pinene_sans:slam') == 1 ? -25 : 0"
+          ]
+        },
         "head": {
           "rotation": [
             0,

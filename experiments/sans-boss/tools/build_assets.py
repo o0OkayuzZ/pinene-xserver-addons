@@ -1,6 +1,6 @@
 """Build original cube models/atlases and a distributable Bedrock addon.
 
-All geometry is authored here; no downloaded Undertale models or audio are used.
+All geometry is authored here. Reference audio assets are documented in README.
 Requires Python 3 and Pillow. Run from any directory.
 """
 from pathlib import Path
@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BP, RP = ROOT / 'BP', ROOT / 'RP'
 BP_UUID = 'd3ee4106-29e6-5c94-b502-cb49346e75b2'
 RP_UUID = '7243b118-8a4c-56de-a52b-4ae014f52d5a'
-VERSION = [0, 7, 2]
+VERSION = [0, 8, 0]
 
 def save(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -87,7 +87,8 @@ def build():
         'format_version': '1.21.0', 'minecraft:entity': {
             'description': {'identifier': 'pinene_sans:sans', 'is_spawnable': True, 'is_summonable': True,
                             'menu_category': {'category': 'nature', 'group': 'itemGroup.name.mobEgg'},
-                            'properties': {'pinene_sans:tired': {'type': 'float', 'range': [0, 1],
+                            'properties': {'pinene_sans:slam': {'type': 'int', 'range': [0, 2], 'default': 0, 'client_sync': True},
+                                           'pinene_sans:tired': {'type': 'float', 'range': [0, 1],
                                                                   'default': 0, 'client_sync': True},
                                            'pinene_sans:casting': {'type': 'bool', 'default': False, 'client_sync': True}}},
             'components': {
@@ -104,6 +105,8 @@ def build():
             },
         },
     })
+    save(BP / 'entities/soul.json', prop_entity('pinene_sans:soul', {}))
+    save(RP / 'entity/soul.entity.json', client('pinene_sans:soul', 'geometry.pinene_sans.soul'))
     save(BP / 'entities/bone.json', prop_entity('pinene_sans:bone', {
         'pinene_sans:height': {'type': 'float', 'range': [0.1, 3], 'default': 1, 'client_sync': True},
         'pinene_sans:tilt': {'type': 'float', 'range': [0, 60], 'default': 0, 'client_sync': True},
@@ -122,7 +125,7 @@ def build():
         'format_version': '1.20.20',
         'sound_definitions': {
             'pinene_sans.'+name: {'category':'hostile', 'sounds':['sounds/pinene_sans/'+name]}
-            for name in ['blaster_charge','blaster_fire']}})
+            for name in ['blaster_charge','blaster_fire','gravity_cue','slam_impact']}})
     icon = write_models(save, RP)
     write_ray(save, RP)
     save(RP / 'entity/sans.entity.json', client('pinene_sans:sans', 'geometry.pinene_sans.sans',

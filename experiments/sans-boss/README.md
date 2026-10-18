@@ -1,4 +1,4 @@
-# Sans boss — development v0.7.2
+# Sans boss — development v0.8.0
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -224,3 +224,19 @@ Each stream locks a left/right axis relative to the boss-to-target direction.
 Successive bones alternate sides, with independent +/-50 degree azimuth
 jitter within each side. Lean magnitude, exposed length and insertion radius
 still vary. Appending to an existing stream preserves its phase.
+
+## Gravity slam 0.8.0
+
+The third attack becomes a gravity slam. A blue heart marks the target, Sans
+raises his hand, and a short warning precedes an upward impulse at tick 10.
+At tick 22 his hand drops and a downward impulse is applied. Impact damage
+is emitted once only after actual isOnGround, followed eight ticks later by
+the approved alternating bone stream. Leaving, death, lost visuals and the
+60-tick timeout cancel the sequence. No input locks or persistent effects
+are installed. No blocks are destroyed. Preview vertical motion is staged;
+actual flight and landing use Minecraft physics and require engine review.
+
+Gravity cue and impact reference assets come from snd_ding.wav and
+snd_impact.wav in https://github.com/znm2500/Undertale-Engine-Ultra .
+They are used at original pitch with boundary fades; no noise-based extra
+contact sound is mixed. Blaster audio remains unchanged.

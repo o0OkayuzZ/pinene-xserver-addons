@@ -10,6 +10,15 @@
         "group": "itemGroup.name.mobEgg"
       },
       "properties": {
+        "pinene_sans:slam": {
+          "type": "int",
+          "range": [
+            0,
+            2
+          ],
+          "default": 0,
+          "client_sync": true
+        },
         "pinene_sans:tired": {
           "type": "float",
           "range": [

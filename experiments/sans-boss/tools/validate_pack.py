@@ -21,7 +21,7 @@ for identifier in ids:
 assert bm['dependencies'][0] == {'uuid': rm['header']['uuid'], 'version': rm['header']['version']}
 assert (BP / next(entry['entry'] for entry in bm['modules'] if entry['type'] == 'script')).is_file()
 identifiers = {load(path)['minecraft:entity']['description']['identifier'] for path in (BP / 'entities').glob('*.json')}
-assert identifiers == {'pinene_sans:sans', 'pinene_sans:bone', 'pinene_sans:blaster', 'pinene_sans:ray'}
+assert identifiers == {'pinene_sans:sans', 'pinene_sans:bone', 'pinene_sans:blaster', 'pinene_sans:ray', 'pinene_sans:soul'}
 geometries = {}
 for path in (RP / 'models/entity').glob('*.json'):
     geometry = load(path)['minecraft:geometry'][0]

@@ -68,9 +68,9 @@ async function runtime({ warps = 0, teleportSucceeds = true, bones = true } = {}
         typeId: location.y >= 1 ? 'minecraft:air' : 'minecraft:stone',
         location: { x: Math.floor(location.x), y: Math.floor(location.y), z: Math.floor(location.z) } };
     },
-    getBlockFromRay(origin, direction) {
+    getBlockFromRay(origin, direction, options = {}) {
       if (direction.y === -1) {
-        if (!bones) return undefined;
+        if (!bones && options.maxDistance === 8) return undefined;
         const location={x:Math.floor(origin.x),y:0,z:Math.floor(origin.z)};
         return {block:{location},faceLocation:{x:origin.x-location.x,y:1,z:origin.z-location.z}};
       }
@@ -91,7 +91,9 @@ async function runtime({ warps = 0, teleportSucceeds = true, bones = true } = {}
     };
     const entity = {
       id: `entity-${++counter}`, typeId: type, isValid: true, dimension,
-      location: { ...position }, isSneaking: false, mode: 'Survival',
+      location: { ...position }, isSneaking: false, isOnGround:false, impulses:[], mode: 'Survival',
+      clearVelocity() { mutation(); },
+      applyImpulse(value) { mutation(); this.impulses.push({...value}); },
       getComponent(id) { return id === 'minecraft:health' ? health : undefined; },
       getGameMode() { return this.mode; },
       getDynamicProperty(key) { return dynamic.get(key); },
@@ -451,4 +453,29 @@ test('spike lean alternates sides with variation for rotated stream headings',()
   }
   assert.ok(new Set(azimuths).size>35);
  }
+});
+
+test('gravity slam lifts then drops, requires a landing, and deals impact damage once',async()=>{
+ const game=await runtime({teleportSucceeds:false,bones:false});game.wallAt(0);
+ for(let i=0;i<159;i++){game.player.getComponent('minecraft:health').currentValue=20;game.step();}
+ game.player.getComponent('minecraft:health').currentValue=20;
+ game.step();assert.ok([...game.entities.values()].some(e=>e.typeId==='pinene_sans:soul'&&e.isValid));
+ game.step(10);assert.ok(game.player.impulses.at(-1).y>0);
+ game.step(12);assert.ok(game.player.impulses.at(-1).y<0);
+ assert.equal(game.sans.getProperty('pinene_sans:slam'),2);
+ game.step(4);const hp=game.player.getComponent('minecraft:health');assert.equal(hp.currentValue,20);
+ game.player.isOnGround=true;game.step();assert.equal(hp.currentValue,19);
+ game.step(4);assert.equal(hp.currentValue,19);
+ game.player.mode='Creative';game.step();
+ assert.equal([...game.entities.values()].some(e=>e.typeId==='pinene_sans:soul'&&e.isValid),false);
+ assert.equal(game.sans.getProperty('pinene_sans:slam'),0);
+});
+
+test('leaving during the lift cancels the pending drop and hit',async()=>{
+ const game=await runtime({teleportSucceeds:false,bones:false});game.wallAt(0);
+ for(let i=0;i<170;i++){game.player.getComponent('minecraft:health').currentValue=20;game.step();}
+ assert.equal(game.player.impulses.length,1);
+ const n=game.player.impulses.length;game.player.mode='Spectator';game.step(60);
+ assert.equal(game.player.impulses.length,n);
+ assert.equal([...game.entities.values()].some(e=>e.typeId==='pinene_sans:soul'&&e.isValid),false);
 });

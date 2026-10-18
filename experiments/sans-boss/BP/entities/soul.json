@@ -1,0 +1,63 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pinene_sans:soul",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "properties": {}
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "pinene_sans_visual"
+        ]
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.01,
+        "height": 0.01
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "time": 8,
+        "time_down_event": {
+          "event": "pinene_sans:expire",
+          "target": "self"
+        }
+      }
+    },
+    "component_groups": {
+      "pinene_sans:remove": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "events": {
+      "pinene_sans:expire": {
+        "add": {
+          "component_groups": [
+            "pinene_sans:remove"
+          ]
+        }
+      }
+    }
+  }
+}
