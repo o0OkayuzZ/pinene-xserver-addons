@@ -1,4 +1,4 @@
-# Sans boss — development v0.9.2
+# Sans boss — development v0.9.3
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -273,3 +273,10 @@ Restores torso and lower-body length while keeping the broad rectangular
 silhouette and the 64x64 face map. The head retains its aspect ratio and
 is lifted by 6.25 model units; body and leg positions, dimensions and pivots
 are transformed consistently. Horizontal dimensions and sound are unchanged.
+
+## Lighter grin 0.9.3
+
+Replaces the thick dark mouth surround with an ivory tooth surface, one-pixel
+upper contour, softer lower contour and lighter tooth separators. Small dark
+upturned mouth corners retain the expression. Model proportions, eyes,
+casting overlays, attacks and sound are unchanged.

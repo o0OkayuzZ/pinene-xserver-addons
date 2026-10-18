@@ -99,11 +99,16 @@ def paint_sans_details(atlas):
         d.line([(x+1,17),(x+18,16)],fill='#c4c9c4',width=1)
     d.rectangle([16,25,18,28],fill='#fffdf3')
     d.polygon([(29,35),(34,35),(36,40),(28,40)],fill='#10141a')
-    d.polygon([(7,41),(13,44),(49,44),(57,41),(56,53),(51,59),(13,59),(8,53)],fill='#11151b')
-    d.polygon([(10,45),(19,48),(45,48),(54,45),(52,53),(47,56),(17,56),(12,52)],fill='#fffdf1')
-    for x in [16,22,28,34,40,46,51]:d.line([(x,46 if x<19 or x>48 else 48),(x,55)],fill='#6b7473',width=1)
-    d.line([(12,51),(18,53),(47,53),(52,50)],fill='#c3c7bc',width=1)
-    d.line([(6,38),(7,42)],fill='#a9b1ad');d.line([(58,38),(57,42)],fill='#a9b1ad')
+    # White tooth surface dominates; the grin is outlined, not a black mask.
+    d.polygon([(8,42),(15,45),(24,46),(40,46),(49,45),(56,42),
+               (54,51),(48,56),(40,58),(24,58),(16,56),(10,51)],fill='#fffdf1')
+    d.line([(8,42),(14,45),(24,46),(40,46),(50,45),(56,42)],fill='#232a2c',width=1)
+    d.line([(9,44),(11,51),(17,56),(25,58),(39,58),(47,56),(53,51),(55,44)],fill='#58605b',width=1)
+    for x,top,bottom in [(15,46,54),(22,47,57),(29,47,57),(36,47,57),(43,47,57),(50,46,54)]:
+        d.line([(x,top),(x,bottom)],fill='#93998e',width=1)
+    d.line([(12,51),(20,53),(44,53),(52,51)],fill='#cdd0c3',width=1)
+    d.line([(7,40),(8,43)],fill='#333c3b',width=1)
+    d.line([(57,40),(56,43)],fill='#333c3b',width=1)
     atlas.paste(face,(0,32))
     shirt=Image.new('RGBA',(64,64),'#1686c2');d=ImageDraw.Draw(shirt)
     d.rectangle([0,0,63,4],fill='#59b3d9');d.rectangle([0,55,63,63],fill='#176b9b')
