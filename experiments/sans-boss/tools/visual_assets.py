@@ -124,6 +124,23 @@ def sans():
         slipper += [cube([side*2.15-2.2,0,-3.2],[4.4,0.4,5.9],11),
                     cube([side*2.15-1.4,2.2,-0.5],[2.8,0.6,1.2],6)]
         output.append(bone(label+'_foot',slipper,'root',[side*2,2,0]))
+    # Compact, broad Sans silhouette. Transform every pivot with its cubes so
+    # the face and the new gravity-slam arm animation remain aligned.
+    def yshape(y):
+        return y*.85 if y <= 16 else 13.6+(y-16)*1.08
+    for part in output:
+        name = part['name']
+        face = name in ['head','pupil','magic_eye']
+        sx = 1.22 if face else 1.30 if name in ['body','hood'] else 1.25
+        sz = 1.10 if face else 1.18 if name in ['body','hood','left_arm','right_arm'] else 1.08
+        def point(v): return [v[0]*sx,yshape(v[1]),v[2]*sz]
+        part['pivot'] = point(part['pivot'])
+        for shape in part['cubes']:
+            origin=shape['origin'];size=shape['size']
+            end=[origin[i]+size[i] for i in range(3)]
+            a,b=point(origin),point(end)
+            shape['origin']=a;shape['size']=[b[i]-a[i] for i in range(3)]
+            if 'pivot' in shape:shape['pivot']=point(shape['pivot'])
     return output
 
 def blaster():

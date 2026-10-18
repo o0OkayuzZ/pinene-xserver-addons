@@ -1,4 +1,4 @@
-# Sans boss — development v0.8.1
+# Sans boss — development v0.9.0
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -248,3 +248,12 @@ https://youtu.be/AxhIbyOIT7o at 21.135–21.635 seconds, preserving pitch.
 It plays once at tick 18 while the target is raised, then the downward
 impulse occurs at tick 22 and the impact sound plays on actual landing.
 The preview stages impact at tick 26. No duplicate blue-mode/start cue.
+
+## Broader compact Sans model 0.9.0
+
+Preserves the sculpted face, eye sockets, grin and individual teeth while
+widening the skull by 22%. The hoodie and hood are 30% wider and 18% deeper.
+Sleeves, shorts and slippers are broader, with shorter lower-body proportions
+and a slightly taller skull relative to the body. Geometry and pivots are
+transformed together, preserving the gravity-slam gesture. Attack rules and
+audio are unchanged.
