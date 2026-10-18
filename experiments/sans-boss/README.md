@@ -1,4 +1,4 @@
-# Sans boss — development v0.9.5
+# Sans boss — development v0.9.6
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -296,3 +296,9 @@ Sans-only front maps now use half the texel count on each axis: an effective
 expanded by nearest neighbour into the existing atlas region, preserving UVs
 and avoiding changes to blaster or bone textures. The grin is redrawn at 32px
 to preserve continuous thin contours and light teeth. Model shape is unchanged.
+
+## Clean skull surface 0.9.6
+
+Removes isolated mark-like shading clusters from the face and skull side,
+back and top maps. Edge shading, facial features, coarse pixel grid, clothing
+textures, model proportions and combat behavior are retained.

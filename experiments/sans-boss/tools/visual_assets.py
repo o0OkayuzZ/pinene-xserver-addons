@@ -118,11 +118,7 @@ def paint_sans_details(atlas):
     face=Image.new('RGBA',(64,64),'#efeee5');d=ImageDraw.Draw(face)
     d.rectangle([0,0,63,3],fill='#faf8ee');d.rectangle([0,4,3,59],fill='#d5d7d2')
     d.rectangle([60,4,63,59],fill='#cbd0cc');d.rectangle([4,60,59,63],fill='#d7dbd4')
-    # Small, deliberate square clusters keep a readable pixel-art surface.
-    for x,y,w,h,col in [(6,6,4,2,'#e0e2d8'),(10,8,2,2,'#e0e2d8'),(18,5,4,2,'#faf8ee'),
-        (22,7,2,2,'#faf8ee'),(42,7,4,2,'#e0e2d8'),(46,9,2,2,'#e0e2d8'),
-        (52,12,4,2,'#e0e2d8'),(54,14,2,2,'#d2d7ce'),(5,36,2,4,'#d2d7ce'),(57,35,2,4,'#d2d7ce')]:
-        d.rectangle([x,y,x+w-1,y+h-1],fill=col)
+    # Skull stays clean; pixel clusters belong to the clothing.
     for x in [7,36]:
         d.polygon([(x+2,18),(x+18,18),(x+20,21),(x+20,32),(x+17,35),(x+1,34),(x,31),(x,21)],fill='#090d12')
         d.line([(x+1,17),(x+18,16)],fill='#c4c9c4',width=1)
@@ -185,9 +181,10 @@ def paint_sans_details(atlas):
         (224,'#e5d4df','#c29bb8','#f5e8ee')]:
         tile=Image.new('RGBA',(32,32),base);td=ImageDraw.Draw(tile)
         td.rectangle([0,0,31,2],fill=light);td.rectangle([27,3,31,31],fill=shade)
-        for x,y in [(4,6),(8,8),(12,10),(20,20),(16,22),(12,24)]:
-            td.rectangle([x,y,x+3,y+1],fill=light if y<14 else shade)
-        for x,y in [(25,8),(23,12),(25,16),(23,24)]:td.rectangle([x,y,x+1,y+1],fill=shade)
+        if ox not in [0,32,160]:
+            for x,y in [(4,6),(8,8),(12,10),(20,20),(16,22),(12,24)]:
+                td.rectangle([x,y,x+3,y+1],fill=light if y<14 else shade)
+            for x,y in [(25,8),(23,12),(25,16),(23,24)]:td.rectangle([x,y,x+1,y+1],fill=shade)
         if ox in [64,128,192]:
             td.rectangle([0,27,31,31],fill=shade)
             for x in range(2,28,4):td.rectangle([x,28,x+1,30],fill=light)
