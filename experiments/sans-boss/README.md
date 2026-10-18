@@ -1,4 +1,4 @@
-# Sans boss — development v0.5.2
+# Sans boss — development v0.5.3
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -155,3 +155,11 @@ envelope. Collision radius follows half the current visible width, capped
 at the original 0.45-block radius. The ray disappears at the same fire-end
 tick as before, followed by the head's full vertical retreat flip. Contact
 damage and KARMA amounts are unchanged.
+
+## Popping backward exit 0.5.3
+
+The exit turns nose-up into a full backwards vertical flip. A small vertical
+hop follows 7*sin(pi*departure)+4*departure pixels, rather than rising in a
+straight line. Backward travel is shortened to eighteen pixels at full exit.
+The head shrinks continuously through the turn using the existing 1 -
+departure² envelope. Beam collapse and all combat timings are unchanged.

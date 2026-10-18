@@ -49,14 +49,14 @@
       "bones": {
         "root": {
           "rotation": [
-            "-22 * (1 - ((query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival'))))) - 360 * (query.property('pinene_sans:departure'))",
+            "-22 * (1 - ((query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival'))))) + 360 * (query.property('pinene_sans:departure'))",
             0,
             "math.sin(query.life_time * 80) * 1.5 - 18 * (1 - ((query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival')))))"
           ],
           "position": [
             0,
-            "-8 * (1 - ((query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival'))))) + 12 * (query.property('pinene_sans:departure'))",
-            "14 * (1 - ((query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival'))))) + 30 * (query.property('pinene_sans:departure')) * (query.property('pinene_sans:departure'))"
+            "-8 * (1 - ((query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival'))))) + 7 * math.sin((query.property('pinene_sans:departure')) * 180) + 4 * (query.property('pinene_sans:departure'))",
+            "14 * (1 - ((query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival'))))) + 18 * (query.property('pinene_sans:departure'))"
           ],
           "scale": "(0.03 + 0.97 * ((query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival')))) + 0.40 * math.sin(((query.property('pinene_sans:arrival') * query.property('pinene_sans:arrival') * (3 - 2 * query.property('pinene_sans:arrival')))) * 180)) * (1 - (query.property('pinene_sans:departure')) * (query.property('pinene_sans:departure')))"
         },

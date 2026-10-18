@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BP, RP = ROOT / 'BP', ROOT / 'RP'
 BP_UUID = 'd3ee4106-29e6-5c94-b502-cb49346e75b2'
 RP_UUID = '7243b118-8a4c-56de-a52b-4ae014f52d5a'
-VERSION = [0, 5, 2]
+VERSION = [0, 5, 3]
 
 def save(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)

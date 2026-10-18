@@ -39,14 +39,14 @@ def quads(name, casting=False, firing=False, age=0, recoil=0, arrival=1, departu
         if name=='blaster' and key=='skull': angles=[10 if firing else 10*max(0,1-departure*3) if departure>0 else 0,0,0]
         if name=='blaster' and key=='root':
             eased=arrival*arrival*(3-2*arrival)
-            angles=[-22*(1-eased)-360*departure,0,math.sin(math.radians(age/20*80))*1.5-18*(1-eased)]
+            angles=[-22*(1-eased)+360*departure,0,math.sin(math.radians(age/20*80))*1.5-18*(1-eased)]
         local=transform(bone.get('pivot',[0,0,0]),angles)
         if name=='blaster' and key=='root':
             size=(.03+.97*eased+.40*math.sin(eased*math.pi))*(1-departure**2)
             local[:3,:3]*=size
             pivot=np.array(bone.get('pivot',[0,0,0]))
             local[:3,3]=pivot-local[:3,:3]@pivot
-            local[:3,3]+=np.array([0,-8*(1-eased)+12*departure,14*(1-eased)+30*departure**2])
+            local[:3,3]+=np.array([0,-8*(1-eased)+7*math.sin(math.pi*departure)+4*departure,14*(1-eased)+18*departure])
         if name=='blaster' and key in ['jaw','skull']:
             local[:3,3]+=np.array([0,math.sin(math.radians(age/20*140))*.55,recoil*2.8])
         matrices[key]=matrices.get(bone.get('parent'),np.eye(4))@local
