@@ -31,7 +31,7 @@ UP=np.cross(RIGHT,CAM);UP/=np.linalg.norm(UP)
 BASIS=np.stack([RIGHT,UP,CAM],axis=1)
 ORIGIN=np.array([0.,2.5,10.])
 VIEW=np.array([0.,0.,0.])
-ZOOM=43
+ZOOM=37
 
 def project(vertices):
     projected=(np.asarray(vertices)-VIEW)@BASIS
