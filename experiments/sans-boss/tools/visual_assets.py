@@ -53,95 +53,72 @@ def ellipsoid(center, radii, tile=0, step=0.75, omit=None):
     return output
 
 def sans():
-    def sockets(x, y, z):
-        eye = ((abs(x)-2.25)/1.6)**2 + ((y-20.25)/1.13)**2 < 1
-        grin_y = 17.4 + 0.065*x*x
-        mouth = abs(x) < 4.15 and abs(y-grin_y) < 0.82
-        nose = abs(x) < 0.55 and 18.8 < y < 19.55
-        return z < -1.5 and (eye or mouth or nose)
-
-    head = ellipsoid([0, 20.0, 0], [5.5, 4.25, 3.5], omit=sockets)
-    # Recessed eye sockets. Black is visible behind a real cutout, not painted
-    # on the outer skull. Large cheeks frame the wide grin.
-    head += ellipsoid([-2.25, 20.25, -1.5], [1.8, 1.25, 0.4], 14, step=0.5)
-    head += ellipsoid([2.25, 20.25, -1.5], [1.8, 1.25, 0.4], 14, step=0.5)
-    head += [cube([-0.6, 18.75, -2.25], [1.2, 0.8, 0.4], 14),
-             cube([-4.3, 17.0, -1.75], [8.6, 2.0, 0.35], 14)]
-    # Ten individually placed teeth follow a curved smile. A thin dark gap
-    # between upper and lower rows preserves the familiar grin at small scale.
-    for i in range(10):
-        x = -3.85 + i*0.78
-        y = 17.05 + 0.058*x*x
-        height = 0.95 if abs(x) < 2.7 else 0.72
-        head.append(cube([x, y, -2.7], [0.64, height, 0.45], 4))
-        head.append(cube([x+0.04, y-0.55, -2.62], [0.57, 0.47, 0.36], 0))
-    # Small bright pupils at the back of the eye wells.
-    head += [cube([-2.5, 20.05, -2.02], [0.38, 0.48, 0.08], 4)]
-
-    hoodie = ellipsoid([0, 11.9, 0.0], [4.55, 4.45, 2.8], 1, step=0.75)
-    # Open zipper/front panels expose a pale shirt. Blue lapels are layered
-    # above it and tapered with rotation, making a hoodie rather than a box.
-    hoodie += [cube([-2.3, 8.7, -3.02], [4.6, 6.5, 0.25], 4),
-               cube([-4.15, 8.65, -3.4], [1.45, 6.7, 0.4], 1,
-                    [0, 0, -6], [-3.6, 15, -3.2]),
-               cube([2.7, 8.65, -3.4], [1.45, 6.7, 0.4], 1,
-                    [0, 0, 6], [3.6, 15, -3.2]),
-               cube([-4.1, 8.25, -2.9], [8.2, 0.7, 5.8], 7),
-               cube([-4.35, 10.0, -3.52], [2.25, 0.55, 0.28], 7,
-                    [0, 0, -18], [-3, 10.5, -3.5]),
-               cube([2.1, 10.0, -3.52], [2.25, 0.55, 0.28], 7,
-                    [0, 0, 18], [3, 10.5, -3.5])]
-    # Puff of hood behind the neck, with a rounded padded white rim.
-    hood = ellipsoid([0, 15.0, 1.15], [4.9, 2.5, 3.25], 7,
-                     omit=lambda x,y,z: z < -0.8 and y > 14.8)
-    for i in range(9):
-        angle = math.pi*(i/8)
-        x = math.cos(angle)*4.2
-        z = -2.6 + math.sin(angle)*1.0
-        hood.append(cube([x-0.48, 14.9+math.sin(angle)*0.5, z-0.45], [0.96,1.25,0.9], 6))
-    hoodie += [cube([-1.9,14.1,-3.3],[0.25,1.7,0.2],6),
-               cube([1.6,14.1,-3.3],[0.25,1.7,0.2],6)]
-
-    output = [bone('root'), bone('body', hoodie, 'root', [0,12,0]),
-              bone('hood', hood, 'body', [0,15,0]),
-              bone('head', head, 'body', [0,16,0]),
-              bone('pupil', [cube([2.1,20.05,-2.02],[0.38,0.48,0.08],4)], 'head', [2.25,20.25,-2]),
-              bone('magic_eye', [cube([1.8,19.88,-2.08],[0.95,0.87,0.09],5),
-                                 cube([2.13,20.05,-2.2],[0.33,0.48,0.08],15)], 'head', [2.25,20.25,-2])]
-    # Bent sleeves disappear into the front pocket openings. No loose arms
-    # hanging beside a generic Minecraft humanoid.
-    for side, label in [(-1,'left'),(1,'right')]:
-        sleeve = ellipsoid([side*4.7,12.4,0],[1.65,3.0,2.15],1,step=0.75)
-        sleeve += [cube([side*3.45-1.15,9.6,-3.25],[2.3,2.4,2.0],1,
-                        [0,0,side*22],[side*4.8,11.4,-1]),
-                   cube([side*3.0-0.8,9.55,-3.45],[1.6,0.65,1.5],7)]
-        output.append(bone(label+'_arm', sleeve, 'body', [side*4,15,0]))
-        shorts = [cube([side*1.95-1.85,4.65,-2.55],[3.7,3.8,5.1],2),
-                  cube([side*3.4-0.2,4.8,-2.67],[0.4,3.4,0.16],6),
-                  cube([side*1.95-1.6,2.65,-1.45],[3.2,2,2.9],0)]
-        output.append(bone(label+'_leg',shorts,'root',[side*2,8,0],rotation=[0,0,-side*3]))
-        slipper = ellipsoid([side*2.15,1.25,-0.65],[2.4,1.25,3.25],10,step=0.5)
-        slipper += [cube([side*2.15-2.2,0,-3.2],[4.4,0.4,5.9],11),
-                    cube([side*2.15-1.4,2.2,-0.5],[2.8,0.6,1.2],6)]
-        output.append(bone(label+'_foot',slipper,'root',[side*2,2,0]))
-    # Compact, broad Sans silhouette. Transform every pivot with its cubes so
-    # the face and the new gravity-slam arm animation remain aligned.
-    def yshape(y):
-        return y*.85 if y <= 16 else 13.6+(y-16)*1.08
-    for part in output:
-        name = part['name']
-        face = name in ['head','pupil','magic_eye']
-        sx = 1.22 if face else 1.30 if name in ['body','hood'] else 1.25
-        sz = 1.10 if face else 1.18 if name in ['body','hood','left_arm','right_arm'] else 1.08
-        def point(v): return [v[0]*sx,yshape(v[1]),v[2]*sz]
-        part['pivot'] = point(part['pivot'])
-        for shape in part['cubes']:
-            origin=shape['origin'];size=shape['size']
-            end=[origin[i]+size[i] for i in range(3)]
-            a,b=point(origin),point(end)
-            shape['origin']=a;shape['size']=[b[i]-a[i] for i in range(3)]
-            if 'pivot' in shape:shape['pivot']=point(shape['pivot'])
+    # Broad box silhouette; facial/clothing detail lives in 64px face maps.
+    def mapped(origin,size,region,tile=0):
+        c=cube(origin,size,tile)
+        x,y,w,h=region;c['uv']['north']={'uv':[x,y],'uv_size':[w,h]}
+        return c
+    head=[mapped([-8,12.5,-5],[16,10,10],(0,32,64,64))]
+    jacket=[mapped([-7,4.5,-4.5],[14,9,9],(64,32,64,64),1)]
+    output=[bone('root'),bone('body',jacket,'root',[0,9,0]),
+        bone('hood',[cube([-7.3,11.8,-3.8],[14.6,1.5,8.5],7)],'body',[0,12,0]),
+        bone('head',head,'body',[0,12.5,0]),
+        bone('pupil',[cube([3.25,17.9,-5.04],[.55,.65,.04],4)],'head',[3.5,18.2,-5]),
+        bone('magic_eye',[cube([2.95,17.65,-5.06],[1.15,1.15,.04],5),
+                          cube([3.36,17.85,-5.1],[.32,.64,.04],15)],'head',[3.5,18.2,-5])]
+    for side,label in [(-1,'left'),(1,'right')]:
+        x=-10.4 if side<0 else 6.4
+        arm=[mapped([x,5,-4.4],[4,7.5,8.4],(128,32,32,64),1),
+             cube([x+.2,4.8,-4.65],[3.6,1.25,2.6],7)]
+        output.append(bone(label+'_arm',arm,'body',[side*7.4,12.2,0]))
+        leg=[mapped([side*3.55-3.45,2.6,-4.1],[6.9,3.3,8.2],(160,32,32,32),2),
+             cube([side*3.55-2.3,1.5,-2],[4.6,1.3,4],0)]
+        output.append(bone(label+'_leg',leg,'root',[side*3.55,5.2,0]))
+        foot=[mapped([side*3.6-3.1,0,-5.3],[6.2,1.9,9],(192,32,32,32),10),
+              cube([side*3.6-3.15,0,-5.35],[6.3,.35,9.1],11)]
+        output.append(bone(label+'_foot',foot,'root',[side*3.6,1.5,0]))
     return output
+
+
+def paint_sans_details(atlas):
+    # Keep existing 16px colour tiles unchanged for blasters/bones.
+    face=Image.new('RGBA',(64,64),'#efeee5');d=ImageDraw.Draw(face)
+    d.rectangle([0,0,63,3],fill='#faf8ee');d.rectangle([0,4,3,59],fill='#d5d7d2')
+    d.rectangle([60,4,63,59],fill='#cbd0cc');d.rectangle([4,60,59,63],fill='#d7dbd4')
+    for x in [7,36]:
+        d.polygon([(x+2,18),(x+18,18),(x+20,21),(x+20,32),(x+17,35),(x+1,34),(x,31),(x,21)],fill='#090d12')
+        d.line([(x+1,17),(x+18,16)],fill='#c4c9c4',width=1)
+    d.rectangle([16,25,18,28],fill='#fffdf3')
+    d.polygon([(29,35),(34,35),(36,40),(28,40)],fill='#10141a')
+    d.polygon([(7,41),(13,44),(49,44),(57,41),(56,53),(51,59),(13,59),(8,53)],fill='#11151b')
+    d.polygon([(10,45),(19,48),(45,48),(54,45),(52,53),(47,56),(17,56),(12,52)],fill='#fffdf1')
+    for x in [16,22,28,34,40,46,51]:d.line([(x,46 if x<19 or x>48 else 48),(x,55)],fill='#6b7473',width=1)
+    d.line([(12,51),(18,53),(47,53),(52,50)],fill='#c3c7bc',width=1)
+    d.line([(6,38),(7,42)],fill='#a9b1ad');d.line([(58,38),(57,42)],fill='#a9b1ad')
+    atlas.paste(face,(0,32))
+    shirt=Image.new('RGBA',(64,64),'#1686c2');d=ImageDraw.Draw(shirt)
+    d.rectangle([0,0,63,4],fill='#59b3d9');d.rectangle([0,55,63,63],fill='#176b9b')
+    d.polygon([(20,3),(44,3),(47,63),(17,63)],fill='#f2f0e4')
+    d.rectangle([20,4,43,8],fill='#d4dcd8')
+    for x in [16,46]:d.line([(x,6),(x+(-2 if x<32 else 2),62)],fill='#0d598a',width=2)
+    for x in [23,39]:
+        d.rectangle([x,4,x+1,22],fill='#c4d1d0');d.rectangle([x,22,x+2,25],fill='#9cacab')
+    d.line([(2,43),(13,39)],fill='#0d6596',width=3);d.line([(51,39),(61,43)],fill='#0d6596',width=3)
+    d.line([(3,46),(13,42)],fill='#3e9ecc',width=1);d.line([(51,42),(60,46)],fill='#3e9ecc',width=1)
+    atlas.paste(shirt,(64,32))
+    sleeve=Image.new('RGBA',(32,64),'#1787c4');d=ImageDraw.Draw(sleeve)
+    d.rectangle([0,0,31,4],fill='#36a4d5');d.rectangle([0,5,3,63],fill='#1375ad')
+    d.rectangle([1,53,30,63],fill='#125e8e')
+    for y in [21,37]:d.line([(6,y),(23,y+3)],fill='#2c98ca',width=2)
+    for x in range(3,30,4):d.line([(x,55),(x,62)],fill='#398bb1')
+    atlas.paste(sleeve,(128,32))
+    shorts=Image.new('RGBA',(32,32),'#151b27');d=ImageDraw.Draw(shorts)
+    d.rectangle([0,0,31,2],fill='#263145');d.rectangle([27,2,29,31],fill='#e3e6de')
+    d.rectangle([2,29,26,31],fill='#0b111c');atlas.paste(shorts,(160,32))
+    shoe=Image.new('RGBA',(32,32),'#e5d4df');d=ImageDraw.Draw(shoe)
+    d.rectangle([0,24,31,31],fill='#ba8cac');d.rectangle([2,3,29,6],fill='#f5e8ee')
+    d.rectangle([4,7,27,9],fill='#d2b6cb');atlas.paste(shoe,(192,32))
+
 
 def blaster():
     # Posterior cranium, cheek ridges and a narrow elongated muzzle. The two
@@ -212,6 +189,7 @@ def write_models(save, RP):
                 for x in range(16):
                     shift=3 if (x*17+y*31)%13==0 else (-3 if (x*11+y*7)%17==0 else 0)
                     if shift:d.point((index*16+x,y),fill=tuple(max(0,min(255,c+shift)) for c in rgb)+(255,))
+    paint_sans_details(atlas)
     (RP/'textures/entity').mkdir(parents=True,exist_ok=True)
     atlas.save(RP/'textures/entity/sans_atlas.png')
     # Classic emissive entity shaders use TGA alpha for light, while the PBR

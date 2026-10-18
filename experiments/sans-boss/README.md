@@ -1,4 +1,4 @@
-# Sans boss — development v0.9.0
+# Sans boss — development v0.9.1
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -257,3 +257,12 @@ Sleeves, shorts and slippers are broader, with shorter lower-body proportions
 and a slightly taller skull relative to the body. Geometry and pivots are
 transformed together, preserving the gravity-slam gesture. Attack rules and
 audio are unchanged.
+
+## Box model with higher-density pixel art 0.9.1
+
+Sans now uses a broad box skull and jacket, thick rectangular sleeves and
+very short legs. Facial detail is drawn on a 64x64 front map, with larger
+clothing maps for the zipper, collar, folds, pockets, cuffs and shorts stripe.
+The shared 256x128 atlas has dedicated regions below the existing colour
+tiles; blaster and bone textures retain their original regions. Eye overlays
+and arm pivots preserve the casting and slam animation.
