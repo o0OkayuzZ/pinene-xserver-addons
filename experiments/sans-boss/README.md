@@ -1,4 +1,4 @@
-# Sans boss — development v0.6.2
+# Sans boss — development v0.6.3
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -200,3 +200,12 @@ The arrival charge now centers on a low resonant 72–137 Hz body with upper
 harmonics to retain weight on small speakers. The bright chirp is quieter
 and lower in pitch. Firing and hit audio are unchanged. Regenerate just
 this effect with `python tools/build_sounds.py blaster_charge`.
+
+## Supplied audio reference revision 0.6.3
+
+The supplied reference https://youtu.be/aOSRyij7Law informed a new synthesized
+charge with two low resonances, rough upper harmonics and a moving formant.
+Its 0.96-second envelope leaves a short pause before the 1.2-second fire cue.
+Fire now combines stable low resonances with broadband bite and a decaying
+blast envelope, still following the beam collapse. The reference waveform
+is used for analysis only and is not bundled in the addon.
