@@ -1,4 +1,4 @@
-# Sans boss — development v0.6.4
+# Sans boss — development v0.7.0
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -197,3 +197,15 @@ Regenerate the two blaster assets with
 `python tools/build_sounds.py --reference /path/to/reference.wav`.
 This requires a decoded mono 16-bit reference WAV and ffmpeg; normal pack
 builds reuse the checked-in OGG files and need no source recording.
+
+## Continuous angled ground spikes 0.7.0
+
+Replaces moving bone walls with a stream of independent ground spikes: one
+every five ticks (four per second), 16 spikes normally or 20 in the longer pattern.
+Each new insertion locks onto the current target area, finds the actual floor,
+and selects a 15–55 degree lean in a different azimuth. A thin ground mark warns
+for 0.5 seconds, then the rigid bone thrusts along its axis for 0.2 seconds,
+holds 0.5 seconds, and retracts over 0.4 seconds without damaging on retreat.
+Collision follows only the exposed angled segment, including during thrust.
+No terrain is removed. Reference-only blaster audio is retained; the added
+noise-based contact sound is disabled following the approved clean preview.

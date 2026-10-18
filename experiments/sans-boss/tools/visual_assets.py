@@ -208,7 +208,7 @@ def write_models(save, RP):
         'format_version':'1.16.100','minecraft:texture_set':{
             'color':'sans_atlas_render','metalness_emissive_roughness':'sans_atlas_mer'}})
     for name,shapes,height,width,offset in [
-        ('sans',sans(),3,3,[0,1,0]),('bone',attack_bone(),5,1,[0,1.5,0]),
+        ('sans',sans(),3,3,[0,1,0]),('bone',attack_bone(),8,9,[0,0,0]),
         ('blaster',blaster(),3,4,[0,0.2,0.4]),
     ]:
         save(RP/f'models/entity/{name}.geo.json',{'format_version':'1.12.0','minecraft:geometry':[{
@@ -235,7 +235,8 @@ def write_models(save, RP):
                 'magic_eye':{'scale':"query.property('pinene_sans:casting') ? 1.0 : 0.0"},
                 'pupil':{'scale':"query.property('pinene_sans:casting') ? 0.0 : 1.0"}}},
             'animation.pinene_sans.bone':{'loop':True,'bones':{
-                'root':{'scale':[1,"query.property('pinene_sans:height')",1]}}},
+                'root':{'scale':[1,"query.property('pinene_sans:height')",1],
+                    'rotation':[0,"query.property('pinene_sans:azimuth')","query.property('pinene_sans:tilt')"]}}},
             'animation.pinene_sans.blaster':{'loop':True,'bones':{
                 'root':{'rotation':[
                     '-22 * (1 - ('+arrival+'))',0,

@@ -47,7 +47,7 @@ function signal() {
   return { subscribe(fn) { callbacks.push(fn); }, emit(event) { for (const fn of callbacks) fn(event); } };
 }
 
-async function runtime({ warps = 0, teleportSucceeds = true } = {}) {
+async function runtime({ warps = 0, teleportSucceeds = true, bones = true } = {}) {
   const queued = [];
   const errors = [];
   const entities = new Map();
@@ -69,6 +69,11 @@ async function runtime({ warps = 0, teleportSucceeds = true } = {}) {
         location: { x: Math.floor(location.x), y: Math.floor(location.y), z: Math.floor(location.z) } };
     },
     getBlockFromRay(origin, direction) {
+      if (direction.y === -1) {
+        if (!bones) return undefined;
+        const location={x:Math.floor(origin.x),y:0,z:Math.floor(origin.z)};
+        return {block:{location},faceLocation:{x:origin.x-location.x,y:1,z:origin.z-location.z}};
+      }
       if (!obstruction) return undefined;
       const point = rules.add(origin, rules.scale(direction, 2));
       const location = {x:Math.floor(point.x), y:Math.floor(point.y), z:Math.floor(point.z)};
@@ -196,24 +201,20 @@ test('automatic warps add fatigue only during an active encounter', async () => 
   assert.equal(game.sans.getDynamicProperty('pinene_sans:warps'), 1);
 });
 
-test('bones warn before damage, then actual runtime drains health on consecutive ticks', async () => {
-  const game = await runtime({ teleportSucceeds: false });
-  game.step(30);
-  const bones = [...game.entities.values()].filter(entity => entity.typeId === 'pinene_sans:bone');
-  assert.equal(bones.length, 10);
-  assert.equal(game.player.getComponent('minecraft:health').currentValue, 20);
-  game.step(17);
-  assert.equal(game.player.getComponent('minecraft:health').currentValue, 20);
-  game.step();
-  const contact = bones.find(entity => entity.isValid);
-  const hp = game.player.getComponent('minecraft:health');
-  game.player.location = { ...contact.location };
-  game.step(2);
-  assert.equal(hp.currentValue, 19);
+test('spikes warn, thrust on their axis and drain health on consecutive ticks', async () => {
+ const game=await runtime({teleportSucceeds:false});game.step(30);
+ const bones=[...game.entities.values()].filter(e=>e.typeId==='pinene_sans:bone');
+ assert.equal(bones.length,1);const hp=game.player.getComponent('minecraft:health');
+ game.step(9);assert.equal(hp.currentValue,20);
+ game.step(4);
+ const first=bones[0];
+ game.player.location={...first.location,y:1};hp.currentValue=20;
+ game.step();assert.equal(hp.currentValue,19.5);
+ game.step();assert.equal(hp.currentValue,18.5);
 });
 
 test('blaster fires only after charge and stops after its finite firing window', async () => {
-  const game = await runtime({ teleportSucceeds: false });
+  const game = await runtime({ teleportSucceeds: false, bones:false });
   game.step(95);
   const blaster = [...game.entities.values()].find(entity => entity.typeId === 'pinene_sans:blaster' && entity.isValid);
   assert.ok(blaster);
@@ -249,7 +250,7 @@ test('boss death and no targets clean up every active hazard', async () => {
 });
 
 test('runtime raycast obstruction shields a player from the blaster', async () => {
-  const game = await runtime({ teleportSucceeds: false });
+  const game = await runtime({ teleportSucceeds: false, bones:false });
   game.wallAt(0);
   game.step(95);
   game.player.location = { x: 0.5, y: 1, z: 6.5 };
@@ -279,7 +280,7 @@ test('karma is capped and cannot cross the one HP floor', () => {
 });
 
 test('karma persists after escaping a beam, then drains every four ticks', async () => {
-  const game = await runtime({ teleportSucceeds: false });
+  const game = await runtime({ teleportSucceeds: false, bones:false });
   game.step(134);
   const hp = game.player.getComponent('minecraft:health');
   assert.equal(hp.currentValue, 5);
@@ -296,7 +297,7 @@ test('karma persists after escaping a beam, then drains every four ticks', async
 });
 
 test('karma stops at one HP and clears for creative players and defeated bosses', async () => {
-  const game = await runtime({ teleportSucceeds: false });
+  const game = await runtime({ teleportSucceeds: false, bones:false });
   game.step(134);
   game.player.location.x += 10;
   game.player.location.z += 10;
@@ -305,12 +306,12 @@ test('karma stops at one HP and clears for creative players and defeated bosses'
   game.step(20);
   assert.equal(hp.currentValue, 1);
   assert.equal(game.player.lastDamage, undefined);
-  const creative = await runtime({ teleportSucceeds: false });
+  const creative = await runtime({ teleportSucceeds: false, bones:false });
   creative.step(134);
   creative.player.mode = 'Creative';
   creative.step(20);
   assert.equal(creative.player.getComponent('minecraft:health').currentValue, 5);
-  const victory = await runtime({ teleportSucceeds: false });
+  const victory = await runtime({ teleportSucceeds: false, bones:false });
   victory.step(134);
   victory.world.afterEvents.entityDie.emit({ deadEntity: victory.sans });
   victory.sans.isValid = false;
@@ -319,7 +320,7 @@ test('karma stops at one HP and clears for creative players and defeated bosses'
 });
 
 test('hovering settles at aim lock; black ray becomes a solid firing beam and cleans up', async () => {
-  const game = await runtime({ teleportSucceeds: false });
+  const game = await runtime({ teleportSucceeds: false, bones:false });
   game.step(95);
   const head = [...game.entities.values()].find(e => e.typeId === 'pinene_sans:blaster' && e.isValid);
   const ray = [...game.entities.values()].find(e => e.typeId === 'pinene_sans:ray' && e.isValid);
@@ -366,7 +367,7 @@ test('ring slots alternate opposite sides with a four-tick cadence and six-head 
 });
 
 test('runtime spawns a ring in sequence, fires in sequence and cancels pending heads', async () => {
-  const game=await runtime({teleportSucceeds:false});
+  const game=await runtime({teleportSucceeds:false,bones:false});
   const heads=()=>[...game.entities.values()].filter(e=>e.typeId==='pinene_sans:blaster'&&e.isValid);
   game.step(95);assert.equal(heads().length,1);
   game.step(3);assert.equal(heads().length,1);
@@ -376,7 +377,7 @@ test('runtime spawns a ring in sequence, fires in sequence and cancels pending h
   game.step(8);assert.equal(heads().length,4);
   game.step(12);assert.equal(heads().filter(e=>e.getProperty('pinene_sans:firing')).length,1);
   game.step(4);assert.equal(heads().filter(e=>e.getProperty('pinene_sans:firing')).length,2);
-  const cancelled=await runtime({teleportSucceeds:false});
+  const cancelled=await runtime({teleportSucceeds:false,bones:false});
   cancelled.step(95);cancelled.player.mode='Creative';cancelled.step(25);
   assert.equal([...cancelled.entities.values()].filter(e=>e.typeId==='pinene_sans:blaster').length,1);
   assert.equal([...cancelled.entities.values()].some(e=>e.typeId==='pinene_sans:blaster'&&e.isValid),false);
@@ -403,16 +404,33 @@ test('bone rise is harmless, active bounce shares height, and retreat is cosmeti
   assert.ok(Math.abs(rules.bonePose(90,2.6).offsetY+2.635)<1e-9);
 });
 
-test('runtime bones rise before activation and cancel their ground markers on cleanup',async()=>{
-  const game=await runtime({teleportSucceeds:false});game.step(30);
-  const bones=[...game.entities.values()].filter(e=>e.typeId==='pinene_sans:bone');
-  const markers=[...game.entities.values()].filter(e=>e.typeId==='pinene_sans:ray');
-  assert.equal(markers.length,10);const buried=bones[0].location.y;
-  game.step(14);assert.ok(bones[0].location.y>buried && bones[0].location.y<1);
-  assert.equal(game.player.getComponent('minecraft:health').currentValue,20);
-  assert.equal(markers.some(e=>e.isValid),false);
-  game.step(5);assert.ok(bones[0].getProperty('pinene_sans:height')>1/1.5);
-  game.player.mode='Creative';game.step();
-  assert.equal(bones.some(e=>e.isValid),false);
-  assert.equal(markers.some(e=>e.isValid),false);
+test('runtime spikes spawn every five ticks and cancel their pending stream on cleanup',async()=>{
+ const game=await runtime({teleportSucceeds:false});game.step(30);
+ const all=type=>[...game.entities.values()].filter(e=>e.typeId===type);
+ const first=all('pinene_sans:bone')[0],buried=first.location.y;
+ assert.equal(all('pinene_sans:bone').length,1);
+ game.step(4);assert.equal(all('pinene_sans:bone').length,1);
+ game.step();assert.equal(all('pinene_sans:bone').length,2);
+ game.step(5);assert.ok(first.location.y>buried);
+ assert.equal(first.getProperty('pinene_sans:tilt'),35);
+ game.player.mode='Creative';game.step(40);
+ assert.equal(all('pinene_sans:bone').some(e=>e.isValid),false);
+ assert.equal(all('pinene_sans:ray').some(e=>e.isValid),false);
+ assert.equal(all('pinene_sans:bone').length,3);
+});
+
+test('tilted spike collision covers the exposed segment, while retreat is harmless',()=>{
+ const p=rules.boneSpikePlan({x:0,y:0,z:0},45,55,1.5,3);
+ assert.ok(Math.abs(Math.hypot(...Object.values(p.direction))-1)<1e-10);
+ assert.equal(rules.boneSpikePose(9,3).presence,0);
+ assert.equal(rules.boneSpikePose(9,3).damaging,false);
+ const rise=rules.boneSpikePose(10,3),full=rules.boneSpikePose(13,3);
+ assert.ok(rise.presence>0&&rise.presence<1);assert.equal(full.presence,1);
+ assert.equal(rules.boneSpikePose(24,3).damaging,false);
+ assert.equal(rules.boneSpikePose(31,3).presence,0);
+ const seg=rules.boneSpikeSegment(p,full),middle=rules.add(seg.start,rules.scale(p.direction,1.5));
+ assert.equal(rules.spikeTouchesPlayer(seg.start,seg.end,{...middle,y:0}),true);
+ assert.equal(rules.spikeTouchesPlayer(seg.start,seg.end,{x:10,y:0,z:10}),false);
+ assert.equal(rules.spikeTouchesPlayer(seg.start,seg.start,{x:0,y:0,z:0}),false);
+ assert.equal(rules.spikeTouchesPlayer({x:-1,y:.2,z:0},{x:1,y:.35,z:0},{x:0,y:0,z:0}),true);
 });

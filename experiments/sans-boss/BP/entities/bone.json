@@ -14,6 +14,24 @@
           ],
           "default": 1,
           "client_sync": true
+        },
+        "pinene_sans:tilt": {
+          "type": "float",
+          "range": [
+            0,
+            60
+          ],
+          "default": 0,
+          "client_sync": true
+        },
+        "pinene_sans:azimuth": {
+          "type": "float",
+          "range": [
+            0,
+            360
+          ],
+          "default": 0,
+          "client_sync": true
         }
       }
     },

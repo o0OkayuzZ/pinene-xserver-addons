@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BP, RP = ROOT / 'BP', ROOT / 'RP'
 BP_UUID = 'd3ee4106-29e6-5c94-b502-cb49346e75b2'
 RP_UUID = '7243b118-8a4c-56de-a52b-4ae014f52d5a'
-VERSION = [0, 6, 4]
+VERSION = [0, 7, 0]
 
 def save(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -67,7 +67,7 @@ def particle(identifier, color, size, lifetime, count=1):
 def build():
     save(BP / 'manifest.json', {
         'format_version': 2,
-        'header': {'name': 'Pinene Sans Boss BP', 'description': 'Sans: warp fatigue, bone walls and Gaster Blasters.',
+        'header': {'name': 'Pinene Sans Boss BP', 'description': 'Sans: warp fatigue, angled bone spikes and Gaster Blasters.',
                    'uuid': BP_UUID, 'version': VERSION, 'min_engine_version': [1, 26, 50]},
         'modules': [
             {'type': 'data', 'uuid': '17b04ce7-6d79-5828-97e1-7264da192ae2', 'version': VERSION},
@@ -105,7 +105,9 @@ def build():
         },
     })
     save(BP / 'entities/bone.json', prop_entity('pinene_sans:bone', {
-        'pinene_sans:height': {'type': 'float', 'range': [0.1, 3], 'default': 1, 'client_sync': True}}))
+        'pinene_sans:height': {'type': 'float', 'range': [0.1, 3], 'default': 1, 'client_sync': True},
+        'pinene_sans:tilt': {'type': 'float', 'range': [0, 60], 'default': 0, 'client_sync': True},
+        'pinene_sans:azimuth': {'type': 'float', 'range': [0, 360], 'default': 0, 'client_sync': True}}))
     save(BP / 'entities/blaster.json', prop_entity('pinene_sans:blaster', {
         'pinene_sans:firing': {'type': 'bool', 'default': False, 'client_sync': True},
         'pinene_sans:arrival': {'type': 'float', 'range': [0, 1], 'default': 0, 'client_sync': True},
@@ -120,7 +122,7 @@ def build():
         'format_version': '1.20.20',
         'sound_definitions': {
             'pinene_sans.'+name: {'category':'hostile', 'sounds':['sounds/pinene_sans/'+name]}
-            for name in ['blaster_charge','blaster_fire','karma_hit']}})
+            for name in ['blaster_charge','blaster_fire']}})
     icon = write_models(save, RP)
     write_ray(save, RP)
     save(RP / 'entity/sans.entity.json', client('pinene_sans:sans', 'geometry.pinene_sans.sans',

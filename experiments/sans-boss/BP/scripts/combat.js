@@ -5,6 +5,12 @@ export const CONFIG = Object.freeze({
   dodgeWarpCooldown: 6,
   encounterRadius: 32,
   attackInterval: 65,
+  boneSpawnInterval: 5,
+  boneStreamCount: 16,
+  spikeWarningTicks: 10,
+  spikeRiseTicks: 4,
+  spikeHoldTicks: 10,
+  spikeRetreatTicks: 8,
   boneWarningTicks: 18,
   boneRiseTicks: 6,
   boneRetreatTicks: 8,
@@ -162,4 +168,47 @@ export function bonePose(age, height) {
   }
   const p = Math.min(1, (activeAge-CONFIG.boneLifeTicks+1)/CONFIG.boneRetreatTicks);
   return {height, offsetY:-(height+.035)*p*p, damaging:false, warning:false};
+}
+
+// A rigid bone slides along its own tilted axis, rather than stretching.
+export function boneSpikePose(age, length) {
+  const a = age - CONFIG.spikeWarningTicks;
+  let presence = 0;
+  if (a >= 0 && a < CONFIG.spikeRiseTicks) presence = 1 - (1 - (a + 1) / CONFIG.spikeRiseTicks) ** 3;
+  else if (a >= CONFIG.spikeRiseTicks && a < CONFIG.spikeRiseTicks + CONFIG.spikeHoldTicks) presence = 1;
+  else if (a >= CONFIG.spikeRiseTicks + CONFIG.spikeHoldTicks) {
+    const t = Math.min(1, (a - CONFIG.spikeRiseTicks - CONFIG.spikeHoldTicks + 1) / CONFIG.spikeRetreatTicks);
+    presence = 1 - t*t*(3-2*t);
+  }
+  return { presence, slide: -(length + .08) * (1-presence),
+    warning: age >= 0 && a < 0, damaging: a >= 0 && a < CONFIG.spikeRiseTicks + CONFIG.spikeHoldTicks };
+}
+
+// Seed values are injected so the preview can reproduce the runtime's plans.
+export function boneSpikePlan(center, azimuth, tilt, radius, length) {
+  const t = tilt * Math.PI / 180, a = azimuth * Math.PI / 180;
+  const direction = { x: -Math.sin(t)*Math.cos(a), y: Math.cos(t), z: Math.sin(t)*Math.sin(a) };
+  // Lean toward the intended point, with the foot planted around it.
+  const base = {x:center.x-direction.x*radius, y:center.y, z:center.z-direction.z*radius};
+  return {base, direction, tilt, azimuth, length};
+}
+
+export function boneSpikeSegment(plan, pose) {
+  const visibleLength = Math.max(0, plan.length + pose.slide);
+  return {start:plan.base, end:add(plan.base, scale(plan.direction, visibleLength))};
+}
+
+// Exact distance from a tilted bone segment to a player's vertical capsule.
+export function spikeTouchesPlayer(start, end, feet, height = 1.8) {
+  const u=subtract(end,start), v={x:0,y:height,z:0}, w=subtract(start,feet);
+  const dot=(a,b)=>a.x*b.x+a.y*b.y+a.z*b.z;
+  const a=dot(u,u),b=dot(u,v),c=dot(v,v),d=dot(u,w),e=dot(v,w);
+  if (a < 1e-10) return false;
+  let s=0,t=0,den=a*c-b*b;
+  if (den>1e-10) s=Math.max(0,Math.min(1,(b*e-c*d)/den));
+  t=(b*s+e)/c;
+  if(t<0){t=0;s=Math.max(0,Math.min(1,-d/a));}
+  else if(t>1){t=1;s=Math.max(0,Math.min(1,(b-d)/a));}
+  const delta=subtract(add(start,scale(u,s)),add(feet,scale(v,t)));
+  return dot(delta,delta) <= .46**2;
 }

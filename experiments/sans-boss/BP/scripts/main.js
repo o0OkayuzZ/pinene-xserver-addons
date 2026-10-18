@@ -2,7 +2,7 @@ import { world, system, EntityDamageCause } from "@minecraft/server";
 import {
   CONFIG, hitChance, shouldDodge, add, subtract, scale, normalize,
   distanceSquared, boneTouchesPlayer, beamTouchesPlayer, accumulatedDamage, healthAfterTick,
-  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil, blasterRingPlan, bonePose,
+  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil, blasterRingPlan, boneSpikePose, boneSpikePlan, boneSpikeSegment, spikeTouchesPlayer,
 } from "./combat.js";
 
 const SANS = "pinene_sans:sans";
@@ -49,6 +49,7 @@ function cleanup(state) {
     removeVisual(blaster.ray);
   }
   state.bones.length = 0;
+  state.boneStream = undefined;
   state.blasters.length = 0;
   state.blasterQueue.length = 0;
   if (state.casting) {
@@ -68,7 +69,7 @@ function register(entity) {
     entity, warps: Math.max(0, Math.floor(Number(warps) || 0)),
     nextWarp: tick + CONFIG.warpInterval, nextAttack: tick + 30,
     lastWarp: -100, pendingWarp: false, attackNumber: 0, casting: false,
-    bones: [], blasters: [], blasterQueue: [], target: undefined, emptySince: undefined,
+    bones: [], boneStream: undefined, blasters: [], blasterQueue: [], target: undefined, emptySince: undefined,
   };
   bosses.set(entity.id, state);
   guard(() => entity.setProperty("pinene_sans:casting", false));
@@ -173,37 +174,42 @@ function visual(state, type, position, expires) {
   return entity;
 }
 
-function boneWall(state, player, angleOffset = 0) {
-  const direction = normalize(subtract(player.location, state.entity.location));
-  const angle = Math.atan2(direction.z, direction.x) + angleOffset;
-  const forward = { x: Math.cos(angle), y: 0, z: Math.sin(angle) };
-  const sideways = { x: -forward.z, y: 0, z: forward.x };
-  const origin = add(player.location, scale(forward, -7));
-  const gap = 2 + Math.floor(Math.random() * 7);
-  const height = state.attackNumber % 2 ? 1.0 : 2.6;
-  const activeAt = tick + CONFIG.boneWarningTicks;
-  const endsAt = activeAt + CONFIG.boneLifeTicks;
-  const expires = endsAt + CONFIG.boneRetreatTicks;
-  for (let i = 0; i < 12; i++) {
-    if (i === gap || i === gap + 1 || state.bones.length >= CONFIG.maxHazardsPerBoss) continue;
-    const location = add(origin, scale(sideways, i - 5.5));
-    location.y = Math.floor(player.location.y);
-    const display = visual(state, BONE, add(location, { x: 0, y: -height, z: 0 }), expires);
-    // Collision is created only when its visual exists.
-    if (!display) return false;
-    guard(() => display.setProperty("pinene_sans:height", height / 1.5));
-    const marker = visual(state, RAY, add(location, {x:-forward.x*.36,y:.035,z:-forward.z*.36}),
-      activeAt - CONFIG.boneRiseTicks);
-    if (marker) guard(() => {
-      marker.teleport(marker.location, {facingLocation:add(marker.location,forward)});
-      marker.setProperty("pinene_sans:length", .72);
-      marker.setProperty("pinene_sans:width", .035);
-      marker.setProperty("pinene_sans:firing", false);
-    });
-    state.bones.push({ visual: display, marker, location, previous: location, height, forward,
-      bornAt:tick, activeAt, endsAt, expires });
-  }
-  sound(state.entity.dimension, "mob.skeleton.step", origin, 0.75);
+function boneStream(state, player, count = CONFIG.boneStreamCount) {
+  if (state.boneStream) state.boneStream.remaining += count;
+  else state.boneStream = {nextAt:tick, remaining:count};
+}
+
+function spawnQueuedBones(state, player) {
+  const stream = state.boneStream;
+  if (!stream || tick < stream.nextAt) return;
+  stream.nextAt += CONFIG.boneSpawnInterval;
+  if (--stream.remaining <= 0) state.boneStream = undefined;
+  if (state.bones.length >= CONFIG.maxHazardsPerBoss) return;
+  const center = {...player.location};
+  const plan = boneSpikePlan(center, Math.random()*360, 15+Math.random()*40,
+    .4+Math.random()*2.1, 2.6+Math.random()*.8);
+  // Find the actual floor below each insertion point. Never modify blocks.
+  const from = add(plan.base,{x:0,y:2,z:0});
+  const floor = guard(() => state.entity.dimension.getBlockFromRay(from,{x:0,y:-1,z:0},
+    {maxDistance:8,includeLiquidBlocks:false,includePassableBlocks:false}));
+  if (!floor) return;
+  plan.base.y = floor.block.location.y + floor.faceLocation.y;
+  const expires=tick+CONFIG.spikeWarningTicks+CONFIG.spikeRiseTicks+CONFIG.spikeHoldTicks+CONFIG.spikeRetreatTicks;
+  const pose=boneSpikePose(0,plan.length);
+  const display=visual(state,BONE,add(plan.base,scale(plan.direction,pose.slide)),expires);
+  if (!display) return;
+  const marker=visual(state,RAY,add(plan.base,{x:0,y:.025,z:-.3}),tick+CONFIG.spikeWarningTicks);
+  guard(()=>{
+    display.setProperty("pinene_sans:height",plan.length/1.5);
+    display.setProperty("pinene_sans:tilt",plan.tilt);
+    display.setProperty("pinene_sans:azimuth",plan.azimuth);
+    if(marker){
+      marker.setProperty("pinene_sans:length",.6);
+      marker.setProperty("pinene_sans:width",.025);
+      marker.setProperty("pinene_sans:firing",false);
+    }
+  });
+  state.bones.push({...plan,visual:display,marker,bornAt:tick,expires});
 }
 
 function aimBeam(state, blaster, target) {
@@ -272,14 +278,13 @@ function spawnQueuedBlasters(state, player) {
 function nextAttack(state, player) {
   state.attackNumber++;
   const pattern = state.attackNumber % 4;
-  if (pattern === 1) boneWall(state, player);
+  if (pattern === 1) boneStream(state, player);
   else if (pattern === 2) summonBlasters(state, player, 4);
   else if (pattern === 3) {
-    boneWall(state, player);
-    boneWall(state, player, Math.PI / 2);
+    boneStream(state, player, 20);
   } else {
     summonBlasters(state, player, state.warps >= 15 ? 6 : 4);
-    if (state.warps >= 25) boneWall(state, player);
+    if (state.warps >= 25) boneStream(state, player);
   }
   state.nextAttack = tick + CONFIG.attackInterval;
 }
@@ -298,26 +303,18 @@ function updateHazards(state, players, damage) {
     if (tick >= bone.expires || !valid(bone.visual)) {
       removeVisual(bone.visual); removeVisual(bone.marker); return false;
     }
-    const pose = bonePose(tick - bone.bornAt, bone.height);
+    const pose = boneSpikePose(tick - bone.bornAt, bone.length);
     if (!pose.warning) removeVisual(bone.marker);
-    if (tick < bone.activeAt && tick % 6 === 0)
-      particle(dimension, "pinene_sans:warning", add(bone.location, {x:0,y:.1,z:0}));
-    bone.previous = bone.location;
-    if (pose.damaging) {
-      bone.location = add(bone.location, scale(bone.forward, CONFIG.boneSpeed));
-      // Moving bones stop at solid blocks and never alter terrain.
-      const block = guard(() => dimension.getBlock(add(bone.location, {x:0,y:.25,z:0})));
-      if (!block || !block.isAir) { removeVisual(bone.visual); removeVisual(bone.marker); return false; }
-    }
-    const moved = guard(() => {
-      bone.visual.setProperty("pinene_sans:height", pose.height / 1.5);
-      bone.visual.teleport(add(bone.location,{x:0,y:pose.offsetY,z:0})); return true;
+    const moved=guard(()=>{
+      bone.visual.teleport(add(bone.base,scale(bone.direction,pose.slide)), {rotation:{x:0,y:0}});
+      return true;
     });
-    if (!moved) { removeVisual(bone.visual); removeVisual(bone.marker); return false; }
-    if (!pose.damaging) return true;
-    for (const player of players) {
-      if (boneTouchesPlayer(bone.previous, bone.location, pose.height, player.location, player.isSneaking ? 1.5 : 1.8))
-        addDamage(damage, player, CONFIG.boneDamagePerTick, state.entity);
+    if(!moved){removeVisual(bone.visual);removeVisual(bone.marker);return false;}
+    if(!pose.damaging) return true;
+    const segment=boneSpikeSegment(bone,pose);
+    for(const player of players){
+      if(spikeTouchesPlayer(segment.start,segment.end,player.location,player.isSneaking?1.5:1.8))
+        addDamage(damage,player,CONFIG.boneDamagePerTick,state.entity);
     }
     return true;
   });
@@ -379,7 +376,6 @@ function applyTickDamage({ player, amount, source, quiet = false }) {
     // Non-lethal health drain supplies the requested true 20 Hz damage instead.
     health.setCurrentValue(next);
     if (!quiet && tick % 5 === 0) {
-      sound(player.dimension, "pinene_sans.karma_hit", player.location, 1);
       particle(player.dimension, "pinene_sans:beam", add(player.location, { x: 0, y: 1, z: 0 }));
     }
   } else {
@@ -471,9 +467,10 @@ system.runInterval(() => {
       if (!warp(state, state.target)) state.nextWarp = tick + 10;
     }
     if (tick >= state.nextAttack) nextAttack(state, state.target);
+    spawnQueuedBones(state, state.target);
     spawnQueuedBlasters(state, state.target);
     updateHazards(state, players, damage);
-    const casting = state.bones.length > 0 || state.blasters.length > 0 || state.blasterQueue.length > 0;
+    const casting = !!state.boneStream || state.bones.length > 0 || state.blasters.length > 0 || state.blasterQueue.length > 0;
     if (casting !== state.casting) {
       state.casting = casting;
       guard(() => state.entity.setProperty("pinene_sans:casting", casting));
