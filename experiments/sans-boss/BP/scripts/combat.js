@@ -22,7 +22,7 @@ export const CONFIG = Object.freeze({
   blasterSpawnInterval: 4,
   blasterRingRadius: 8,
   blasterArrivalTicks: 10,
-  blasterDepartureTicks: 14,
+  blasterDepartureTicks: 18,
   beamRadius: 0.45,
   beamLength: 28,
   maxBosses: 4,

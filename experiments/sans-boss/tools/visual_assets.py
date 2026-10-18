@@ -161,7 +161,7 @@ def blaster():
                  cube([side*2.15-0.16,3.38,-1.23],[0.32,0.62,0.1],15)]
     core = [cube([-1.15,-0.35,-1.9],[2.3,1.5,0.16],5),
             cube([-0.7,-0.1,-2.02],[1.4,0.95,0.1],15)]
-    return [bone('root'),bone('skull',skull,'root',[0,1,7]),
+    return [bone('root',pivot=[0,1,7]),bone('skull',skull,'root',[0,1,7]),
             bone('jaw',jaw,'root',[0,-1.3,8]),
             bone('eyes',eyes,'skull'),bone('core',core,'root',[0,0,0])]
 
@@ -238,11 +238,11 @@ def write_models(save, RP):
                 'root':{'scale':[1,"query.property('pinene_sans:height')",1]}}},
             'animation.pinene_sans.blaster':{'loop':True,'bones':{
                 'root':{'rotation':[
-                    '-22 * (1 - ('+arrival+')) + 28 * ('+departure+')',0,
-                    'math.sin(query.life_time * 80) * 1.5 - 18 * (1 - ('+arrival+')) + 30 * ('+departure+')'],
+                    '-22 * (1 - ('+arrival+')) - 360 * ('+departure+')',0,
+                    'math.sin(query.life_time * 80) * 1.5 - 18 * (1 - ('+arrival+'))'],
                     'position':[0,'-8 * (1 - ('+arrival+')) + 12 * ('+departure+')',
                         '14 * (1 - ('+arrival+')) + 30 * ('+departure+') * ('+departure+')'],
-                    'scale':'(0.03 + 0.97 * ('+arrival+') + 0.40 * math.sin(('+arrival+') * 180)) * (1 - ('+departure+')) * (1 - ('+departure+'))'},
+                    'scale':'(0.03 + 0.97 * ('+arrival+') + 0.40 * math.sin(('+arrival+') * 180)) * (1 - ('+departure+') * ('+departure+'))'},
                 'jaw':{'rotation':["query.property('pinene_sans:firing') ? -46 : (query.property('pinene_sans:departure') > 0 ? -4 - 42 * math.max(0, 1 - query.property('pinene_sans:departure') * 3) : -4)",0,0],
                     'position':[0,'math.sin(query.life_time * 140) * 0.55',"query.property('pinene_sans:recoil') * 2.8"]},
                 'skull':{'rotation':["query.property('pinene_sans:firing') ? 10 : (query.property('pinene_sans:departure') > 0 ? 10 * math.max(0, 1 - query.property('pinene_sans:departure') * 3) : 0)",0,0],

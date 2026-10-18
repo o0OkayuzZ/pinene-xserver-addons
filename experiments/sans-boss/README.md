@@ -1,4 +1,4 @@
-# Sans boss — development v0.5.0
+# Sans boss — development v0.5.1
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -139,3 +139,11 @@ lock and sixteen-tick firing window; firing follows the arrival rhythm.
 Queued spawns are cancelled on boss defeat or when no eligible target remains.
 The cap is six heads per boss including queued slots, and combined damage
 remains capped at 1 HP per tick.
+
+## Vertical exit flip 0.5.1
+
+Retreat now lasts eighteen ticks (0.9 seconds). The entire skull pitches
+through a full backwards vertical turn around its center, without an exit
+roll. Its scale follows 1 - departure², keeping the first half of the turn
+large and readable before it shrinks away. Backwards/upwards retreat, jaw
+closure, beam cutoff, warning width and staggered encirclement are retained.

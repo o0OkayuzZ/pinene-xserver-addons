@@ -230,7 +230,7 @@ test('blaster fires only after charge and stops after its finite firing window',
   game.step();
   assert.equal(blaster.isValid, true);
   assert.equal(blaster.getProperty('pinene_sans:firing'), false);
-  game.step(14);
+  game.step(rules.CONFIG.blasterDepartureTicks);
   assert.equal(blaster.isValid, false);
 });
 
@@ -343,7 +343,7 @@ test('hovering settles at aim lock; black ray becomes a solid firing beam and cl
   assert.equal(head.isValid, true);
   assert.equal(ray.isValid, false);
   assert.ok(head.getProperty('pinene_sans:departure') > 0);
-  game.step(14);
+  game.step(rules.CONFIG.blasterDepartureTicks);
   assert.equal(head.isValid, false);
 });
 
