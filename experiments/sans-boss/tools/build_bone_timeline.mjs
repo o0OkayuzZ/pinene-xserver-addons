@@ -1,13 +1,14 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 const root=new URL('../',import.meta.url);
 const source=await readFile(new URL('BP/scripts/combat.js',root),'utf8');
-const {CONFIG:C,boneSpikePose,boneSpikePlan,boneSpikeSegment,spikeTouchesPlayer}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+const {CONFIG:C,boneSpikePose,sampleBoneSpike,boneSpikeSegment,spikeTouchesPlayer}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const snapshots=[],plans=[];
+let seed=72119;
+const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
 for(let tick=-10;tick<122;tick++){
  const feet={x:Math.sin(Math.max(0,tick)*.045)*1.4,y:0,z:Math.sin(Math.max(0,tick)*.065)*.7};
  if(tick>=0&&tick<80&&tick%C.boneSpawnInterval===0){
-  const i=tick/C.boneSpawnInterval;
-  plans.push({...boneSpikePlan(feet,(i*137.508+35)%360,15+(i*17%41),.6+(i*.73%1.7),2.6+(i*.19%.8)),bornAt:tick});
+  plans.push({...sampleBoneSpike(feet,random),bornAt:tick});
  }
  const bones=plans.map(p=>({...p,age:tick-p.bornAt,pose:boneSpikePose(tick-p.bornAt,p.length)}))
   .filter(b=>b.age<C.spikeWarningTicks+C.spikeRiseTicks+C.spikeHoldTicks+C.spikeRetreatTicks);

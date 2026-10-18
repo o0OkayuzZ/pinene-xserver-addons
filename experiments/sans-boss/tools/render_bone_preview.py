@@ -42,16 +42,16 @@ for index,s in enumerate(timeline):
  draw.text((29,83),'EXPORTED ASSETS + SHARED COMBAT RULES  /  OFFLINE PREVIEW',font=font(11),fill='#829eb1')
  draw.rectangle([0,575,r.WIDTH,r.HEIGHT],fill='#111c29')
  draw.text((28,592),'4 BONES / SECOND',font=font(20,True),fill='#eff5ed')
- draw.text((490,592),f"{s['spawned']:02d} / 16   |   15-55 DEGREE LEAN",font=font(16,True),fill='#a1e5d5')
+ draw.text((490,592),f"{s['spawned']:02d} / 16   |   2-28 DEGREE LEAN",font=font(16,True),fill='#a1e5d5')
  draw.text((29,625),'0.5s warning / 0.2s thrust / 0.5s hold / 0.4s retreat',font=font(13),fill='#9daebe')
  draw.text((29,650),'Each bone locks its own angle and ground point. New bones follow the moving target.',font=font(12),fill='#829eb1')
  canvas.save(png/f'{index:04}.png');frames.append(canvas)
- if s['tick']==42:canvas.save(OUT/'Bone_Spikes_Preview.png')
+ if s['tick']==42:canvas.save(OUT/'Bone_Spikes_Refined.png')
  if index%40==0:print('Spike frames',index,'/',len(timeline),flush=True)
 palette=Image.new('RGB',(r.WIDTH*3,r.HEIGHT))
 for n,i in enumerate([20,50,80]):palette.paste(frames[i],(n*r.WIDTH,0))
 palette=palette.quantize(colors=160,method=Image.Quantize.MEDIANCUT)
 indexed=[f.quantize(palette=palette,dither=Image.Dither.NONE) for f in frames]
-path=OUT/'Sans_Angled_Bone_Spikes.gif'
+path=OUT/'Sans_Bone_Spikes_Refined_v071.gif'
 indexed[0].save(path,save_all=True,append_images=indexed[1:],duration=50,loop=0,optimize=True,disposal=1)
 print(path,flush=True)

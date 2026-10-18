@@ -412,7 +412,7 @@ test('runtime spikes spawn every five ticks and cancel their pending stream on c
  game.step(4);assert.equal(all('pinene_sans:bone').length,1);
  game.step();assert.equal(all('pinene_sans:bone').length,2);
  game.step(5);assert.ok(first.location.y>buried);
- assert.equal(first.getProperty('pinene_sans:tilt'),35);
+ assert.equal(first.getProperty('pinene_sans:tilt'),2+26*Math.pow(.5,1.25));
  game.player.mode='Creative';game.step(40);
  assert.equal(all('pinene_sans:bone').some(e=>e.isValid),false);
  assert.equal(all('pinene_sans:ray').some(e=>e.isValid),false);
@@ -428,7 +428,10 @@ test('tilted spike collision covers the exposed segment, while retreat is harmle
  assert.ok(rise.presence>0&&rise.presence<1);assert.equal(full.presence,1);
  assert.equal(rules.boneSpikePose(24,3).damaging,false);
  assert.equal(rules.boneSpikePose(31,3).presence,0);
- const seg=rules.boneSpikeSegment(p,full),middle=rules.add(seg.start,rules.scale(p.direction,1.5));
+ const seg=rules.boneSpikeSegment(p,full);
+ assert.ok(Math.abs(Math.sqrt(rules.distanceSquared(seg.start,seg.end))-p.length*.62)<1e-9);
+ assert.ok(full.slide<-.5);
+ const middle=rules.add(seg.start,rules.scale(p.direction,1.5));
  assert.equal(rules.spikeTouchesPlayer(seg.start,seg.end,{...middle,y:0}),true);
  assert.equal(rules.spikeTouchesPlayer(seg.start,seg.end,{x:10,y:0,z:10}),false);
  assert.equal(rules.spikeTouchesPlayer(seg.start,seg.start,{x:0,y:0,z:0}),false);

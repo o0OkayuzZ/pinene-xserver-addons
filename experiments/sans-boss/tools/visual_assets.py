@@ -167,11 +167,15 @@ def blaster():
 
 def attack_bone():
     # Double lobes at each end, a narrow shaft and a subtle marrow-coloured seam.
-    shapes = [cube([-0.7,2,-0.7],[1.4,20,1.4],0)]
+    shapes = [cube([-1.15,2,-1.15],[2.3,20,2.3],0)]
     for y in [0,21.5]:
         shapes += [cube([-2.6,y+0.4,-1.05],[5.2,1.5,2.1],0),
                    cube([-2.15,y,-0.85],[1.85,2.5,1.7],0),
                    cube([0.3,y,-0.85],[1.85,2.5,1.7],0)]
+    for shape in shapes:
+        for axis in [0, 2]:
+            shape['origin'][axis] *= 1.35
+            shape['size'][axis] *= 1.35
     return [bone('root',shapes)]
 
 def write_models(save, RP):

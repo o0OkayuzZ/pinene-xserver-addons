@@ -180,7 +180,7 @@ export function boneSpikePose(age, length) {
     const t = Math.min(1, (a - CONFIG.spikeRiseTicks - CONFIG.spikeHoldTicks + 1) / CONFIG.spikeRetreatTicks);
     presence = 1 - t*t*(3-2*t);
   }
-  return { presence, slide: -(length + .08) * (1-presence),
+  return { presence, slide: -length*.38 - (length*.62 + .08) * (1-presence),
     warning: age >= 0 && a < 0, damaging: a >= 0 && a < CONFIG.spikeRiseTicks + CONFIG.spikeHoldTicks };
 }
 
@@ -189,7 +189,7 @@ export function boneSpikePlan(center, azimuth, tilt, radius, length) {
   const t = tilt * Math.PI / 180, a = azimuth * Math.PI / 180;
   const direction = { x: -Math.sin(t)*Math.cos(a), y: Math.cos(t), z: Math.sin(t)*Math.sin(a) };
   // Lean toward the intended point, with the foot planted around it.
-  const base = {x:center.x-direction.x*radius, y:center.y, z:center.z-direction.z*radius};
+  const base = {x:center.x+Math.cos(a)*radius, y:center.y, z:center.z-Math.sin(a)*radius};
   return {base, direction, tilt, azimuth, length};
 }
 
@@ -211,4 +211,10 @@ export function spikeTouchesPlayer(start, end, feet, height = 1.8) {
   else if(t>1){t=1;s=Math.max(0,Math.min(1,(b-d)/a));}
   const delta=subtract(add(start,scale(u,s)),add(feet,scale(v,t)));
   return dot(delta,delta) <= .46**2;
+}
+
+// Uncorrelated draws avoid a repeated fan or a uniform sequence of tilts.
+export function sampleBoneSpike(center, random = Math.random) {
+  return boneSpikePlan(center, random()*360, 2+26*Math.pow(random(),1.25),
+    .35+random()*1.25, 2.2+random()*.6);
 }

@@ -2,7 +2,7 @@ import { world, system, EntityDamageCause } from "@minecraft/server";
 import {
   CONFIG, hitChance, shouldDodge, add, subtract, scale, normalize,
   distanceSquared, boneTouchesPlayer, beamTouchesPlayer, accumulatedDamage, healthAfterTick,
-  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil, blasterRingPlan, boneSpikePose, boneSpikePlan, boneSpikeSegment, spikeTouchesPlayer,
+  addKarmaDebt, karmaPulse, blasterHover, blastWidth, blastRecoil, blasterRingPlan, boneSpikePose, sampleBoneSpike, boneSpikeSegment, spikeTouchesPlayer,
 } from "./combat.js";
 
 const SANS = "pinene_sans:sans";
@@ -186,8 +186,7 @@ function spawnQueuedBones(state, player) {
   if (--stream.remaining <= 0) state.boneStream = undefined;
   if (state.bones.length >= CONFIG.maxHazardsPerBoss) return;
   const center = {...player.location};
-  const plan = boneSpikePlan(center, Math.random()*360, 15+Math.random()*40,
-    .4+Math.random()*2.1, 2.6+Math.random()*.8);
+  const plan = sampleBoneSpike(center);
   // Find the actual floor below each insertion point. Never modify blocks.
   const from = add(plan.base,{x:0,y:2,z:0});
   const floor = guard(() => state.entity.dimension.getBlockFromRay(from,{x:0,y:-1,z:0},

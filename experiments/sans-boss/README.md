@@ -1,4 +1,4 @@
-# Sans boss — development v0.7.0
+# Sans boss — development v0.7.1
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -209,3 +209,11 @@ holds 0.5 seconds, and retracts over 0.4 seconds without damaging on retreat.
 Collision follows only the exposed angled segment, including during thrust.
 No terrain is removed. Reference-only blaster audio is retained; the added
 noise-based contact sound is disabled following the approved clean preview.
+
+## Bone proportions and angle variation 0.7.1
+
+Bones remain 38% buried at full extension, exposing 1.36–1.74 blocks of their
+length. The shaft is thicker, the upper joint wider, and the lower joint stays
+below ground. Independent random draws vary azimuth, length, ground radius
+and a gentler 2–28 degree lean. Runtime and preview use the same sampler.
+Four-per-second cadence and phase durations are unchanged.
