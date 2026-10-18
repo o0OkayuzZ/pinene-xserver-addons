@@ -302,3 +302,13 @@ to preserve continuous thin contours and light teeth. Model shape is unchanged.
 Removes isolated mark-like shading clusters from the face and skull side,
 back and top maps. Edge shading, facial features, coarse pixel grid, clothing
 textures, model proportions and combat behavior are retained.
+
+## Combined combat preview
+
+`python tools/render_battle_preview.py` renders a 23.9-second offline sequence
+using the current exported model, shared bone/blaster timelines and approved
+charge/fire/gravity/impact audio. It includes a warp, alternating bone stream,
+staged gravity slam and follow-up bones, then six staggered ring blasters.
+Target travel, Sans facing/gestures and transitions are staged choreography;
+this does not validate Minecraft physics or change runtime attack scheduling.
+Output: `dist/Sans_Combat_Sequence_v097.mp4` (H.264/AAC, 1000x680, 20 fps).
