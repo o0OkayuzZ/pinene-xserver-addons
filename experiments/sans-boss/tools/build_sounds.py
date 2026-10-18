@@ -3,7 +3,7 @@ No game samples are included. Requires NumPy, SciPy and ffmpeg to regenerate.
 The already-generated OGG files are bundled; normal pack builds need no audio tools.
 """
 from pathlib import Path
-import math,subprocess,wave
+import math,subprocess,wave,sys
 import numpy as np
 from scipy import signal
 ROOT=Path(__file__).resolve().parents[1]
@@ -11,10 +11,12 @@ OUT=ROOT/'RP/sounds/pinene_sans'
 TEMP=ROOT/'dist/authored_audio'
 RATE=22050
 rng=np.random.default_rng(11062026)
+SELECT=set(sys.argv[1:])
 
 def phase(freq):return np.cumsum(freq)*2*np.pi/RATE
 
 def finish(name,a):
+    if SELECT and name not in SELECT:return
     # Deliberate low-resolution texture, with click-free boundaries.
     a=np.repeat(a[::2],2)[:len(a)]
     a=np.round(np.tanh(a*1.45)*47)/47
@@ -31,12 +33,16 @@ def finish(name,a):
     print(name,round(len(a)/RATE,3),'seconds')
 
 t=np.arange(round(.62*RATE))/RATE;u=t/.62
-f=520+1400*np.exp(-13*t)+1250*u*u
-p=phase(f*(1+.012*np.sin(2*np.pi*31*t)))
-carrier=.55*np.sin(p+2.8*np.sin(p*.502))+.28*signal.sawtooth(p,width=.34)+.12*np.sin(p*2.003)
-env=(1-np.exp(-t*500))*(1-u)**.48*(.78+.22*np.sin(2*np.pi*18*t)**2)
-a=carrier*env
-shift=round(.024*RATE);a[shift:]+=.24*a[:-shift]
+# A low resonant arrival "voom" with the brighter electronic edge behind it.
+f=130+420*np.exp(-15*t)+120*u*u
+p=phase(f*(1+.008*np.sin(2*np.pi*23*t)))
+edge=.30*np.sin(p+1.7*np.sin(p*.502))+.12*signal.sawtooth(p,width=.34)
+low=phase(72+65*np.exp(-t*14))
+body=.68*np.sin(low)+.32*np.sin(2*low)+.16*np.sin(3*low)
+sub=.20*np.sin(low*.5)
+env=(1-np.exp(-t*320))*(1-u)**.78*(.90+.10*np.cos(2*np.pi*11*t))
+a=(body+sub+edge)*env
+shift=round(.028*RATE);a[shift:]+=.17*a[:-shift]
 finish('blaster_charge',a)
 
 t=np.arange(round(.86*RATE))/RATE

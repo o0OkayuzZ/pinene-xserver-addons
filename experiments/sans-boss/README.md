@@ -1,4 +1,4 @@
-# Sans boss — development v0.6.1
+# Sans boss — development v0.6.2
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -193,3 +193,10 @@ All three are synthesized, not samples extracted from Undertale.
 The namespaced sound events do not replace global Minecraft sounds.
 `tools/build_sounds.py` regenerates the included mono OGG assets using
 NumPy, SciPy and ffmpeg; normal pack builds reuse the checked-in OGG files.
+
+## Deeper arrival sound 0.6.2
+
+The arrival charge now centers on a low resonant 72–137 Hz body with upper
+harmonics to retain weight on small speakers. The bright chirp is quieter
+and lower in pitch. Firing and hit audio are unchanged. Regenerate just
+this effect with `python tools/build_sounds.py blaster_charge`.
