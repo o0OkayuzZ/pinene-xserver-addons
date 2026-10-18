@@ -51,7 +51,7 @@ for i,s in enumerate(T):
  if age==18:canvas.save(OUT/'Slam_Preview_Check.png')
  if i%40==0:print('Slam frames',i,'/',len(T),flush=True)
 rate=48000;mix=np.zeros(round(len(T)/20*rate))
-for age,name in [(0,'gravity_cue'),(22,'gravity_cue'),(26,'slam_impact')]:
+for age,name in [(18,'gravity_cue'),(26,'slam_impact')]:
  raw=subprocess.check_output(['ffmpeg','-v','error','-i',str(ROOT/'RP/sounds/pinene_sans'/(name+'.ogg')),'-f','f32le','-ac','1','-ar',str(rate),'-'])
  a=np.frombuffer(raw,dtype='<f4').astype(float)*.65;start=round((age+10)/20*rate);n=min(len(a),len(mix)-start);mix[start:start+n]+=a[:n]
 mix*=min(1,.92/max(1e-9,abs(mix).max()))

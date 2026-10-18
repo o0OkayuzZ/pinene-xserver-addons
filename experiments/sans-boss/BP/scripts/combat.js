@@ -6,6 +6,7 @@ export const CONFIG = Object.freeze({
   encounterRadius: 32,
   attackInterval: 65,
   slamLiftAt: 10,
+  slamCueAt: 18,
   slamDropAt: 22,
   slamTimeoutTicks: 60,
   slamRecoveryTicks: 8,

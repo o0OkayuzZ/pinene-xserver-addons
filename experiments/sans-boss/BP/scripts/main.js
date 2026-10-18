@@ -289,7 +289,6 @@ function startSlam(state,player) {
   const visualSoul=visual(state,SOUL,add(player.location,{x:0,y:1,z:-.32}),tick+CONFIG.slamTimeoutTicks);
   if(!visualSoul) {boneStream(state,player);return;}
   state.slam={player,visual:visualSoul,bornAt:tick,impactedAt:undefined,lifted:false,dropped:false};
-  sound(player.dimension,"pinene_sans.gravity_cue",player.location,1);
 }
 
 function updateSlam(state,damage) {
@@ -311,10 +310,12 @@ function updateSlam(state,damage) {
     slam.lifted=guard(()=>{player.clearVelocity();player.applyImpulse({x:0,y:.42,z:0});return true;})??false;
     if(!slam.lifted){end();return;}
   }
+  if(age>=CONFIG.slamCueAt&&!slam.cued){
+    slam.cued=true;sound(player.dimension,"pinene_sans.gravity_cue",player.location,1);
+  }
   if(phase==='drop'&&!slam.dropped){
     slam.dropped=guard(()=>{player.clearVelocity();player.applyImpulse({x:0,y:-1.3,z:0});return true;})??false;
     if(!slam.dropped){end();return;}
-    sound(player.dimension,"pinene_sans.gravity_cue",player.location,1);
   }
   // A real landing is required. No damage is dealt simply because a timer elapsed.
   if(slam.dropped&&age>CONFIG.slamDropAt&&player.isOnGround){

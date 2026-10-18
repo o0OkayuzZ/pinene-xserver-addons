@@ -49,6 +49,7 @@ function signal() {
 
 async function runtime({ warps = 0, teleportSucceeds = true, bones = true } = {}) {
   const queued = [];
+  const soundEvents = [];
   const errors = [];
   const entities = new Map();
   let counter = 0;
@@ -80,7 +81,7 @@ async function runtime({ warps = 0, teleportSucceeds = true, bones = true } = {}
       return {block:{location}, faceLocation:rules.subtract(point,location)};
     },
     spawnParticle() { mutation(); },
-    playSound() { mutation(); },
+    playSound(id) { mutation(); soundEvents.push(id); },
     spawnEntity(type, pos) { mutation(); return makeEntity(type, pos); },
   };
   function makeEntity(type, position = { x: 0.5, y: 1, z: 0.5 }) {
@@ -137,7 +138,7 @@ async function runtime({ warps = 0, teleportSucceeds = true, bones = true } = {}
   world.afterEvents.entitySpawn.emit({ entity: sans });
   const player = makeEntity('minecraft:player', { x: 0.5, y: 1, z: 6.5 });
   return {
-    world, sans, player, entities, errors,
+    world, sans, player, entities, errors, soundEvents,
     attack(cause = 'entityAttack', amount = 100) {
       const event = { hurtEntity: sans, damage: amount,
         damageSource: { cause, damagingEntity: player }, cancel: false };
@@ -463,9 +464,11 @@ test('gravity slam lifts then drops, requires a landing, and deals impact damage
  game.step(10);assert.ok(game.player.impulses.at(-1).y>0);
  game.step(12);assert.ok(game.player.impulses.at(-1).y<0);
  assert.equal(game.sans.getProperty('pinene_sans:slam'),2);
+ assert.equal(game.soundEvents.filter(id=>id==='pinene_sans.gravity_cue').length,1);
  game.step(4);const hp=game.player.getComponent('minecraft:health');assert.equal(hp.currentValue,20);
  game.player.isOnGround=true;game.step();assert.equal(hp.currentValue,19);
  game.step(4);assert.equal(hp.currentValue,19);
+ assert.equal(game.soundEvents.filter(id=>id==='pinene_sans.slam_impact').length,1);
  game.player.mode='Creative';game.step();
  assert.equal([...game.entities.values()].some(e=>e.typeId==='pinene_sans:soul'&&e.isValid),false);
  assert.equal(game.sans.getProperty('pinene_sans:slam'),0);

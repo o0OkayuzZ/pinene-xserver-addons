@@ -1,4 +1,4 @@
-# Sans boss — development v0.8.0
+# Sans boss — development v0.8.1
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -240,3 +240,11 @@ Gravity cue and impact reference assets come from snd_ding.wav and
 snd_impact.wav in https://github.com/znm2500/Undertale-Engine-Ultra .
 They are used at original pitch with boundary fades; no noise-based extra
 contact sound is mixed. Blaster audio remains unchanged.
+
+## Timestamped gravity cue 0.8.1
+
+Replaces the provisional snd_ding cue with the user-selected effect from
+https://youtu.be/AxhIbyOIT7o at 21.135–21.635 seconds, preserving pitch.
+It plays once at tick 18 while the target is raised, then the downward
+impulse occurs at tick 22 and the impact sound plays on actual landing.
+The preview stages impact at tick 26. No duplicate blue-mode/start cue.
