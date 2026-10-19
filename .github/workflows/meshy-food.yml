@@ -16,4 +16,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: node tools/meshy_food/test_placement.cjs
+      - run: python -m pip install -r tools/meshy_food/requirements.txt
+      - run: python tools/meshy_food/test_alpha_edges.py
+      - run: python tools/meshy_food/rebuild_alpha_edges.py --check
       - run: python tools/meshy_food/validate.py

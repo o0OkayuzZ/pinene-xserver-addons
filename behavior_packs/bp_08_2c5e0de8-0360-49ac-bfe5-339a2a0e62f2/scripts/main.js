@@ -137,6 +137,9 @@ export function isValidTarget(target) {
 
 
 
+import "./performance/playerCountdowns.js";
+import "./performance/quiverCooldownGuard.js";
+
 import "./worldInitialise.js";
 import "./advancements.js";
 

@@ -19,4 +19,4 @@ system.runInterval(() => {
             player.dimension.spawnParticle(particleName, player.location)
         }
     }
-});
+}, 2);

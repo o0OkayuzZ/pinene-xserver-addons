@@ -28,4 +28,4 @@ system.runInterval(() => {
             grantAdvancement(player, "dungeons:gold_rush")
         }
     }
-})
+}, 20)

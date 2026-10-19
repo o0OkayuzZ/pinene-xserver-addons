@@ -89,7 +89,7 @@ system.runInterval(() => {
           }
         }
     }
-})
+}, 5)
 
 world.afterEvents.entitySpawn.subscribe((e) => {
     if (!hunts) return;

@@ -35,8 +35,17 @@ world.afterEvents.entityDie.subscribe(e => {
     }
 })
 
+let lastStorageSweepAt = Date.now()
+
 system.runInterval(() => {
+    const now = Date.now()
+    const elapsed = now - lastStorageSweepAt
+    lastStorageSweepAt = now
     processPlayerXp()
+    // Placement rollback becomes much more likely when the authoritative server
+    // is several ticks behind. XP fluid motion is background work, so shed one
+    // sweep after a severe stall instead of compounding the next tick.
+    if (elapsed > 250) return
     for (const dimensionId of [...new Set(world.getAllPlayers().map(player => player.dimension.id))]) {
         const dimension = world.getDimension(dimensionId)
 
@@ -276,7 +285,7 @@ system.runInterval(() => {
             return direction
         }
     }
-})
+}, 2)
 
 function transferXpToTank(xpFluit, currentBlock, fx, fy, fz, dimension, posData) {
     xpFluit.removeTag(posData ?? "")

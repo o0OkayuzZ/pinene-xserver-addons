@@ -15,7 +15,7 @@ const sorted = value => Array.isArray(value) ? value.map(sorted) : value && type
     ? Object.fromEntries(Object.keys(value).sort().map(k => [k, sorted(value[k])])) : value;
 test('outline declares PBR compatibility and Deathnerite requires its current version', () => {
     const manifest = read(pack + 'manifest.json');
-    assert.deepEqual(manifest.header.version, [1, 0, 6]);
+    assert.deepEqual(manifest.header.version, [1, 0, 9]);
     assert.deepEqual(manifest.capabilities, ['pbr']);
     assert.ok(manifest.modules.every(module => JSON.stringify(module.version) === JSON.stringify(manifest.header.version)));
     const deathnerite = read('behavior_packs/bp_05_90f045c3-0718-4981-a1ff-180976002a93/manifest.json');

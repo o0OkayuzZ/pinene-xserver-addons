@@ -18,4 +18,4 @@ system.runInterval(() => {
       player.playAnimation('animation.player.greatsword_hold', { blendOutTime: 0.3, nextState: 'claymoreHold' })
     }
   }
-});
+}, 2);

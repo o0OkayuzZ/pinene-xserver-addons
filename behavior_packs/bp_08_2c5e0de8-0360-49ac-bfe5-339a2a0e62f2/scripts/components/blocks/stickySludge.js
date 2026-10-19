@@ -18,4 +18,4 @@ system.runInterval(() => {
             }, 1)
         }
     }
-})
+}, 2)

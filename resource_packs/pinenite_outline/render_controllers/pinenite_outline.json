@@ -7849,38 +7849,51 @@
       "ignore_lighting": true
     },
     "controller.render.pinenite_outline.minecraft_creeper_1": {
-      "geometry": "Geometry.pn_outline_charged",
+      "geometry": "Geometry.pn_outline_default",
+      "part_visibility": [
+        {
+          "*": true
+        }
+      ],
       "materials": [
         {
           "*": "Material.pn_outline"
         }
       ],
+      "arrays": {
+        "textures": {
+          "array.skins": [
+            "texture.empty",
+            "texture.glint"
+          ]
+        }
+      },
       "textures": [
-        "Texture.charged"
+        "array.skins[query.is_powered]"
       ],
-      "overlay_color": {
-        "r": 0.2235294117647059,
-        "g": 0.7725490196078432,
-        "b": 0.7333333333333333,
-        "a": 1
-      },
-      "uv_anim": {
-        "offset": [
-          "(query.is_powered) ? (Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 : 0.0",
-          "(query.is_powered) ? (Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 : 0.0"
-        ],
-        "scale": [
-          1.0,
-          1.0
-        ]
-      },
-      "light_color_multiplier": 0.5,
-      "ignore_lighting": true,
       "color": {
         "r": 1,
         "g": 1,
         "b": 1,
         "a": "variable.pinenite_outline ?? 0"
+      },
+      "uv_anim": {
+        "offset": [
+          "(math.floor(query.life_time*20)+query.frame_alpha)*-0.02",
+          "(math.floor(query.life_time*20)+query.frame_alpha)*0.03"
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      },
+      "light_color_multiplier": 1.5,
+      "ignore_lighting": true,
+      "overlay_color": {
+        "r": 0.2235294117647059,
+        "g": 0.7725490196078432,
+        "b": 0.7333333333333333,
+        "a": 1
       }
     },
     "controller.render.pinenite_outline.minecraft_dolphin_0": {
@@ -10086,6 +10099,12 @@
             "Texture.brown",
             "Texture.gray"
           ],
+          "Array.baby_base": [
+            "Texture.baby_creamy",
+            "Texture.baby_white",
+            "Texture.baby_brown",
+            "Texture.baby_gray"
+          ],
           "Array.decor": [
             "Texture.decor_none",
             "Texture.decor_white",
@@ -10107,7 +10126,7 @@
           ]
         }
       },
-      "geometry": "Geometry.pn_outline_default",
+      "geometry": "query.is_baby ? Geometry.pn_outline_baby : Geometry.pn_outline_default",
       "part_visibility": [
         {
           "chest*": "query.is_chested"
@@ -10119,7 +10138,7 @@
         }
       ],
       "textures": [
-        "Array.base[query.variant]"
+        "query.is_baby ? Array.baby_base[query.variant] : Array.base[query.variant]"
       ],
       "overlay_color": {
         "r": 0.2235294117647059,

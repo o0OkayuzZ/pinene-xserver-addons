@@ -1,3 +1,5 @@
+import "./budding_amethyst.js";
+import "./trader_density.js";
 import "./gf/index.js";
 import "./mycology/index.js";
 import { world, ItemStack, system, BlockPermutation } from "@minecraft/server";

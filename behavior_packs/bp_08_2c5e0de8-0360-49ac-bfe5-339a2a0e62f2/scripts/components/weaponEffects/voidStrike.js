@@ -39,21 +39,3 @@ world.beforeEvents.entityHurt.subscribe((e) => {
         hurt.dimension.playSound("weapon.enchant.void_strike", hurt.location)
     })
 });
-
-// TIMER
-system.runInterval(() => {
-    for (const player of world.getPlayers()) {
-        var timeLeft = world.scoreboard.getObjective('dungeons:void_strike_t');
-        if (!timeLeft) return;
-        if (!player.scoreboardIdentity) continue;
-        if (!timeLeft.hasParticipant(player.scoreboardIdentity)) continue;
-        let duration = timeLeft.getScore(player);
-
-        if (duration > 0) {
-            timeLeft.addScore(player, -1);
-        }
-        if (duration <= 0) {
-            timeLeft.removeParticipant(player)
-        }
-    }
-});

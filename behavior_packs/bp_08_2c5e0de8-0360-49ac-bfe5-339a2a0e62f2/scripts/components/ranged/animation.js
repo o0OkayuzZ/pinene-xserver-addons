@@ -26,4 +26,4 @@ system.runInterval(() => {
             }
         }
     }
-});
+}, 2);

@@ -10,15 +10,8 @@ import {
 import { salvages } from "components/blocks/netheriteGrindstone.js"
 
 function runeIcon(rune) {
-    if (rune == "u") return ""
-    if (rune == "t") return ""
-    if (rune == "s") return ""
-    if (rune == "r") return ""
-    if (rune == "p") return ""
-    if (rune == "o") return ""
-    if (rune == "i") return ""
-    if (rune == "c") return ""
-    if (rune == "a") return ""
+    const icons = { u: "\uE901", t: "\uE902", s: "\uE903", r: "\uE904", p: "\uE905", o: "\uE906", i: "\uE907", c: "\uE908", a: "\uE909" }
+    return icons[rune] ?? `§e[${String(rune).toUpperCase()}]§r `
 }
 
 function getCount(player, type) {

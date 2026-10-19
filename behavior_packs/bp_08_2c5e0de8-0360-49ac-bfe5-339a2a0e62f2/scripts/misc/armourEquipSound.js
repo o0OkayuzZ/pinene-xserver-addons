@@ -32,4 +32,4 @@ system.runInterval(() => {
             if (feet2 && (!feet || feet.typeId !== feet2.typeId)) playsound(player, feet2)
         }, 1)
     }
-})
+}, 4)
