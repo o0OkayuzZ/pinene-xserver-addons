@@ -56,6 +56,31 @@ test('second player cannot take knife while first native screen is active',()=>{
  assert.equal(event.cancel,true);assert.equal(e.block.permutation.state,'copper');
  e.player.location={x:2,y:0,z:2};e.events.interact({...event,cancel:false});e.flush();assert.equal(e.block.permutation.state,'empty');
 });
+test('book interaction releases a native cooking reservation without player movement',()=>{
+ const e=environment();knife(e);e.click();e.click();
+ e.inventory.setItem(0,new e.Stack('minecraft:book'));
+ const bookClick=e.click();
+ // recipe_guide.js will cancel this event and open its own form.
+ assert.equal(bookClick.cancel,false);
+ const second={...e.player,id:'p2',selectedSlotIndex:1,isSneaking:true};
+ e.world.getAllPlayers=()=>[e.player,second];
+ const ev={player:second,block:e.block,isFirstEvent:true,cancel:false};
+ e.events.interact(ev);e.flush();
+ assert.equal(e.block.permutation.state,'empty');
+ assert.equal(e.entities[0].isValid,false);
+});
+
+test('switching to the recipe guide does not charge a phantom knife session',()=>{
+ const e=environment();knife(e);e.click();
+ e.inventory.setItem(1,new e.Stack('pine:whole_cheese',1));e.click();
+ e.inventory.setItem(0,new e.Stack('minecraft:book'));e.click();
+ e.inventory.setItem(1,undefined);
+ e.inventory.setItem(2,new e.Stack('pine:cheese',4));e.tick(2);
+ const held=e.entities[0].getComponent().container.getItem(0);
+ assert.equal(held.damage,37);
+ assert.equal(held.getDynamicProperty('pinene_cooking:uses_v1'),undefined);
+});
+
 test('used session retains ownership until operator moves away',()=>{
  const e=environment();knife(e);e.click();e.inventory.setItem(1,new e.Stack('pine:whole_cheese'));e.click();
  e.inventory.setItem(1,undefined);e.inventory.setItem(2,new e.Stack('pine:cheese',4));e.tick();

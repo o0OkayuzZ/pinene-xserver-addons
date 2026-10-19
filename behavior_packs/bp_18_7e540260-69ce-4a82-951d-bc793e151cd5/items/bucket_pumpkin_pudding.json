@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "pine:bucket_pumpkin_pudding",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.miscFood"
+      }
+    },
+    "components": {
+      "minecraft:icon": "bucket_pumpkin_pudding",
+      "minecraft:display_name": {
+        "value": "item.pine:bucket_pumpkin_pudding.name"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:food": {
+        "nutrition": 16,
+        "saturation_modifier": 0.9,
+        "can_always_eat": false,
+        "using_converts_to": "minecraft:bucket"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6,
+        "movement_modifier": 0.35
+      },
+      "minecraft:use_animation": "eat",
+      "pine:meal_effects": {}
+    }
+  }
+}

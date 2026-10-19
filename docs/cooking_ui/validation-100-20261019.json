@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-19",
+  "source_commit": "b7eb258514fbfc0fa86c7554cdf3e2af9b03ac59",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "tools/cooking_native/build_catalog100.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": "{\"dishes\": 100, \"free\": 10, \"expansion\": 90, \"materials\": 7, \"native_recipe_variants\": 271, \"drift\": 0}\r\n"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/cooking_native",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "................................\r\n----------------------------------------------------------------------\r\nRan 32 tests in 0.367s\r\n\r\nOK\r\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=spec",
+        "tools/cooking_native/test_meal_effects.mjs",
+        "tools/cooking_native/test_runtime.mjs",
+        "tools/cooking_native/test_wear_curve.mjs",
+        "tools/cooking_native/test_recipe_discovery.mjs",
+        "tools/cooking_native/test_recipe_guide.mjs"
+      ],
+      "exit_code": 0,
+      "output": "(node:16008) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Public/pinene-cooking-100-20261019/behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/scripts/meal_effects.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to \\\\?\\C:\\Users\\Public\\pinene-cooking-100-20261019\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ effects are granted for all 100 catalog meals with exact configured tick durations (4.499ms)\n✔ different meals share the cooldown and duplicate callbacks do not reapply (0.2869ms)\n✔ cooldown ends at exactly 30 seconds without additive duration stacking (0.1484ms)\n✔ stronger potion effects, longer equal effects and infinite effects are preserved (0.1957ms)\n✔ a shorter equal-strength effect is refreshed, never added to the old duration (0.1469ms)\n✔ cooldown belongs to each player and survives a reconnect via dynamic property (0.1713ms)\n✔ food-only meals do not consume or extend an effect cooldown (0.1098ms)\n✔ foreign entities, missing dishes and invalid players are ignored (0.1391ms)\n✔ a failed effect does not claim successful application or bill a cooldown (0.7349ms)\n✔ custom component is registered at startup and grants effects only on actual consumption (18.7715ms)\n(node:2616) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Public/pinene-cooking-100-20261019/behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to \\\\?\\C:\\Users\\Public\\pinene-cooking-100-20261019\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ all seven rank-0 recipes are visible without discovery state (2.6687ms)\n✔ higher-rank recipes remain hidden until their unlock material is acquired (2.6321ms)\n✔ one shared ingredient can discover every matching recipe without duplicates (0.4731ms)\n✔ obtaining a finished dish also migrates that dish to discovered (0.2119ms)\n✔ invalid and rank-0 ids never pollute persistent discovery state (0.2025ms)\n(node:18732) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Public/pinene-cooking-100-20261019/behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to \\\\?\\C:\\Users\\Public\\pinene-cooking-100-20261019\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ recipe guide starts with a compact rank index rather than every recipe (4.6082ms)\n✔ rank page only shows its recipes, back returns to rank index (2.1098ms)\n✔ unavailable or undiscovered recipes are hidden until their ingredients were collected (3.2299ms)\n✔ repeated detail/back navigation runs in one loop without nested form chains (10.6826ms)\n✔ book interaction cancels normal cooking, releases its reservation and schedules guide (3.3689ms)\n✔ guide navigation stops safely when the cutting board is removed (1.4865ms)\n(node:5604) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Public/pinene-cooking-100-20261019/behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_runtime.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to \\\\?\\C:\\Users\\Public\\pinene-cooking-100-20261019\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ legacy marker migrates once with damage retained (8.6523ms)\n✔ duplicate legacy markers are preserved and rejected (1.411ms)\n✔ failed legacy migration retains damage and allows a safe retry (1.0395ms)\n✔ second player cannot take knife while first native screen is active (1.4202ms)\n✔ book interaction releases a native cooking reservation without player movement (1.6146ms)\n✔ switching to the recipe guide does not charge a phantom knife session (1.4171ms)\n✔ used session retains ownership until operator moves away (3.1586ms)\n✔ native ingredient snapshot is taken before deferred callbacks (2.1138ms)\n✔ higher-rank output pickup cannot count as crafting on copper board (1.7755ms)\n✔ movement abandons stale inventory evidence (2.051ms)\n✔ empty board refuses native open (2.241ms)\n✔ normal unrelated crafting table untouched (1.0863ms)\n✔ place stores exact knife, not recreated default (2.1957ms)\n✔ native screen opening is not canceled after placing (1.2074ms)\n✔ retrieval keeps wear/name/lore (1.3495ms)\n✔ full inventory retrieval leaves stored knife intact (1.9855ms)\n✔ failed permutation change rolls knife back (1.4565ms)\n✔ no phantom knife allowed by visual state alone (0.8627ms)\n✔ separate players do not disable cooking globally (1.1843ms)\n✔ occupied board mining preserves the stored knife (1.041ms)\n✔ move refuses occupied destination (2.6223ms)\n✔ repeated 100 placements/retrievals neither duplicate nor reset metadata in mock (11.8545ms)\n✔ queued placement refuses a swapped source item (1.2051ms)\n✔ same-type worn knife swapped before queue is not consumed (0.8969ms)\n✔ same-type renamed knife swapped before queue is not consumed (0.9242ms)\n✔ exhausted knife cannot enable a recipe table (0.9013ms)\n✔ negative knife damage fails closed (1.5099ms)\n✔ health change before placement preserves the knife (1.3476ms)\n✔ test audit reads eight knives with exactly one worn fixture (1.0998ms)\n✔ test audit rejects missing and duplicate knife fixtures (0.9912ms)\n✔ rank notice uses existing limits and standard ASCII roman numerals (0.8643ms)\n✔ placing knife emits one notice without changing its name or damage (1.1021ms)\n✔ native open is not canceled or delayed by deferred HUD notice (1.8824ms)\n✔ retrieval reports unset rank once (2.4269ms)\n✔ empty and unrelated boards do not invent a rank notice (1.1203ms)\n✔ failed placement does not announce success (1.2401ms)\n✔ repeat held-input events do not refresh the notice (0.9481ms)\n✔ notice failure never rolls back a completed place or retrieve (1.211ms)\n✔ disconnect before deferred notice suppresses stale display (1.1156ms)\n✔ leaving the board before deferred notice suppresses stale display (1.1734ms)\n✔ removing the knife before deferred notice suppresses stale rank (1.0502ms)\n✔ session wear adds one lightweight monitor but no UI reopening or title popup (0.2576ms)\n✔ opening and closing without a detected recipe does not age the knife (2.4215ms)\n✔ one detected cheese craft ages the placed knife exactly once (2.2287ms)\n✔ shift-style sixteen cheese output is still one used session (2.9154ms)\n✔ picking up a tracked result without consuming its recipe ingredients does not age the knife (1.9162ms)\n✔ ingredient loss without a result does not age the knife (1.5213ms)\n✔ crafted output on the cursor is included in used-session detection (1.3389ms)\n✔ mixed allowed seed consumption can prove an oil session without billing every seed (1.3045ms)\n✔ a winning break roll is persisted but does not delete the knife during the completed session (1.2601ms)\n✔ pending probabilistic break resolves before the next native board opening (1.2956ms)\n✔ pending break cannot be dodged by sneaking to retrieve the knife (0.9354ms)\n✔ session wear metadata survives normal retrieval when no break was rolled (1.1927ms)\n(node:19976) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Public/pinene-cooking-100-20261019/behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/wear_curve.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to \\\\?\\C:\\Users\\Public\\pinene-cooking-100-20261019\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ base lives preserve the existing knife durability ordering and values (2.7574ms)\n✔ copper is guaranteed safe through the first half of its base life (0.845ms)\n✔ copper chance increases after the safe half-life (0.3149ms)\n✔ copper legacy damage migrates to session age without reset (0.2695ms)\n✔ copper visual damage never reaches invalid max durability (0.2191ms)\n✔ iron is guaranteed safe through the first half of its base life (0.2187ms)\n✔ iron chance increases after the safe half-life (0.202ms)\n✔ iron legacy damage migrates to session age without reset (0.1456ms)\n✔ iron visual damage never reaches invalid max durability (0.2037ms)\n✔ gold is guaranteed safe through the first half of its base life (0.3952ms)\n✔ gold chance increases after the safe half-life (0.2198ms)\n✔ gold legacy damage migrates to session age without reset (0.1097ms)\n✔ gold visual damage never reaches invalid max durability (0.2703ms)\n✔ diamond is guaranteed safe through the first half of its base life (0.4604ms)\n✔ diamond chance increases after the safe half-life (2.0857ms)\n✔ diamond legacy damage migrates to session age without reset (0.2407ms)\n✔ diamond visual damage never reaches invalid max durability (0.0896ms)\n✔ netherite is guaranteed safe through the first half of its base life (0.3642ms)\n✔ netherite chance increases after the safe half-life (0.1145ms)\n✔ netherite legacy damage migrates to session age without reset (0.054ms)\n✔ netherite visual damage never reaches invalid max durability (0.0468ms)\n✔ roll boundary is deterministic and never hides the probability calculation (0.2123ms)\n✔ probability inputs fail closed (0.6274ms)\n✔ gold has a higher per-session chance than netherite at the same normalized age (0.103ms)\nℹ tests 98\nℹ suites 0\nℹ pass 98\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 293.6233\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=spec",
+        "tests/chili-crop.test.mjs",
+        "tests/chili-crop-runtime.test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "✔ mature crop harvest gives 2-4 peppers and returns to regrowing age 1 (5.9999ms)\n✔ rapid repeated harvest events cannot duplicate drops from the same crop (1.0821ms)\n✔ failed item spawn restores mature harvest instead of losing peppers (0.8669ms)\n✔ failed crop age change does not spawn a drop (0.7453ms)\n✔ removed crop cannot be harvested by a stale queued callback (0.7475ms)\n✔ tick growth respects probability and four valid age stages (1.4516ms)\n✔ survival bonemeal is consumed once and increases growth stage once (0.9493ms)\n✔ creative bonemeal grows crop without consuming the item (0.7652ms)\n✔ premature crop interaction and non-bonemeal input are harmless (0.8152ms)\n✔ chili item is the planting item and only targets farmland (1.8908ms)\n✔ crop exposes four visual growth stages and stays lightweight (2.8573ms)\n✔ harvest contract is 2-4 peppers and regrows from age 1; bone meal is wired (1.9575ms)\n✔ all implementation textures are 64x64 PNG and registered (5.6484ms)\n✔ Infinite Castle includes one chili draw with tiered low chest targets (8.7715ms)\nℹ tests 14\nℹ suites 0\nℹ pass 14\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 142.1894\n"
+    }
+  ],
+  "engine_qa": "not_run",
+  "art_pending": 73,
+  "asset_references": {
+    "checked_dishes": 100,
+    "missing": [],
+    "new_art_status": "73 development fallbacks; not complete"
+  },
+  "all_passed": true
+}

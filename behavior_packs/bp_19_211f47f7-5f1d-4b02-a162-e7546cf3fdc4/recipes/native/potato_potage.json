@@ -1,0 +1,40 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:potato_potage"
+    },
+    "tags": [
+      "pinene_native_rank_3"
+    ],
+    "pattern": [
+      "ABC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:baked_potato"
+      },
+      "B": {
+        "item": "pine:milk_bottle"
+      },
+      "C": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:potato_potage",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:baked_potato"
+      }
+    ]
+  }
+}

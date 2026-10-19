@@ -1,0 +1,41 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:carrot_potage"
+    },
+    "tags": [
+      "pinene_native_rank_3"
+    ],
+    "pattern": [
+      "AAB",
+      "C  "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:carrot"
+      },
+      "B": {
+        "item": "pine:milk_bottle"
+      },
+      "C": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:carrot_potage",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:carrot"
+      }
+    ]
+  }
+}

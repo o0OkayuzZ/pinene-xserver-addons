@@ -1,0 +1,50 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:carbonara"
+    },
+    "tags": [
+      "pinene_native_rank_5"
+    ],
+    "pattern": [
+      "ABC",
+      "DEF"
+    ],
+    "key": {
+      "A": {
+        "item": "pine:noodles"
+      },
+      "B": {
+        "item": "pine:cheese"
+      },
+      "C": {
+        "item": "minecraft:egg"
+      },
+      "D": {
+        "item": "pine:milk_bottle"
+      },
+      "E": {
+        "item": "minecraft:cooked_porkchop"
+      },
+      "F": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:carbonara",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "pine:noodles"
+      }
+    ]
+  }
+}

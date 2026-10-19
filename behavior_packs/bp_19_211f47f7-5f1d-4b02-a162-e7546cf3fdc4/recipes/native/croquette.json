@@ -1,0 +1,44 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:croquette"
+    },
+    "tags": [
+      "pinene_native_rank_4"
+    ],
+    "pattern": [
+      "ABC",
+      "D  "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:baked_potato"
+      },
+      "B": {
+        "item": "minecraft:wheat"
+      },
+      "C": {
+        "item": "minecraft:egg"
+      },
+      "D": {
+        "item": "pine:cooking_oil"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:croquette",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:baked_potato"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:potato_gratin"
+    },
+    "tags": [
+      "pinene_native_rank_5"
+    ],
+    "pattern": [
+      "ABB",
+      "CDE"
+    ],
+    "key": {
+      "A": {
+        "item": "pine:cheese"
+      },
+      "B": {
+        "item": "minecraft:baked_potato"
+      },
+      "C": {
+        "item": "pine:milk_bottle"
+      },
+      "D": {
+        "item": "pine:butter"
+      },
+      "E": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:potato_gratin",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "pine:cheese"
+      }
+    ]
+  }
+}

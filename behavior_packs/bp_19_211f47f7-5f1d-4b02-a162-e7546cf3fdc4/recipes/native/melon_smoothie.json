@@ -1,0 +1,41 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:melon_smoothie"
+    },
+    "tags": [
+      "pinene_native_rank_3"
+    ],
+    "pattern": [
+      "AAA",
+      "BC "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:melon_slice"
+      },
+      "B": {
+        "item": "pine:milk_bottle"
+      },
+      "C": {
+        "item": "minecraft:glass_bottle"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:melon_smoothie",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:melon_slice"
+      }
+    ]
+  }
+}

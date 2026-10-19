@@ -1,0 +1,41 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:caramel_apple"
+    },
+    "tags": [
+      "pinene_native_rank_3"
+    ],
+    "pattern": [
+      "ABB",
+      "C  "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:apple"
+      },
+      "B": {
+        "item": "minecraft:sugar"
+      },
+      "C": {
+        "item": "pine:milk_bottle"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:caramel_apple",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:apple"
+      }
+    ]
+  }
+}

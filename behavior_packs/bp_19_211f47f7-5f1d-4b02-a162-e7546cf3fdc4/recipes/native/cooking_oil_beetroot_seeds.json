@@ -24,10 +24,8 @@
       "item": "pine:cooking_oil",
       "count": 1
     },
-    "unlock": [
-      {
-        "item": "minecraft:beetroot_seeds"
-      }
-    ]
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    }
   }
 }

@@ -1,0 +1,48 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:bucket_pudding"
+    },
+    "tags": [
+      "pinene_native_rank_6"
+    ],
+    "pattern": [
+      "AAB",
+      "CCD",
+      "DE "
+    ],
+    "key": {
+      "A": {
+        "item": "pine:milk_bottle"
+      },
+      "B": {
+        "item": "pine:gelatin"
+      },
+      "C": {
+        "item": "minecraft:sugar"
+      },
+      "D": {
+        "item": "minecraft:egg"
+      },
+      "E": {
+        "item": "minecraft:bucket"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:bucket_pudding",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 3
+      }
+    ],
+    "unlock": [
+      {
+        "item": "pine:milk_bottle"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pinene_native:cheese_toast"
+    },
+    "tags": [
+      "pinene_native_rank_2"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:bread"
+      },
+      {
+        "item": "pine:cheese"
+      }
+    ],
+    "result": {
+      "item": "pine:cheese_toast",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:bread"
+      }
+    ]
+  }
+}

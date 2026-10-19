@@ -1,0 +1,50 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:salmon_gratin"
+    },
+    "tags": [
+      "pinene_native_rank_6"
+    ],
+    "pattern": [
+      "ABC",
+      "DEF"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:cooked_salmon"
+      },
+      "B": {
+        "item": "pine:cheese"
+      },
+      "C": {
+        "item": "minecraft:baked_potato"
+      },
+      "D": {
+        "item": "pine:milk_bottle"
+      },
+      "E": {
+        "item": "pine:butter"
+      },
+      "F": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:salmon_gratin",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:cooked_salmon"
+      }
+    ]
+  }
+}

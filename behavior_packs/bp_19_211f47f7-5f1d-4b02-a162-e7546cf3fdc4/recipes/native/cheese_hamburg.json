@@ -1,0 +1,47 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:cheese_hamburg"
+    },
+    "tags": [
+      "pinene_native_rank_6"
+    ],
+    "pattern": [
+      "AAB",
+      "CDE"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:cooked_beef"
+      },
+      "B": {
+        "item": "pine:cheese"
+      },
+      "C": {
+        "item": "minecraft:egg"
+      },
+      "D": {
+        "item": "minecraft:wheat"
+      },
+      "E": {
+        "item": "pine:cooking_oil"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:cheese_hamburg",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:cooked_beef"
+      }
+    ]
+  }
+}

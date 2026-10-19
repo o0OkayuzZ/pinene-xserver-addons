@@ -1,0 +1,41 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:pancake"
+    },
+    "tags": [
+      "pinene_native_rank_2"
+    ],
+    "pattern": [
+      "AAB",
+      "C  "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:wheat"
+      },
+      "B": {
+        "item": "minecraft:egg"
+      },
+      "C": {
+        "item": "pine:milk_bottle"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:pancake",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:wheat"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:cocoa"
+    },
+    "tags": [
+      "pinene_native_rank_3"
+    ],
+    "pattern": [
+      "ABC"
+    ],
+    "key": {
+      "A": {
+        "item": "pine:milk_bottle"
+      },
+      "B": {
+        "item": "pine:chocolate"
+      },
+      "C": {
+        "item": "minecraft:glass_bottle"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:cocoa",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "pine:milk_bottle"
+      }
+    ]
+  }
+}

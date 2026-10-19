@@ -1,0 +1,110 @@
+{
+  "date_jst": "2026-10-19",
+  "base_commit": "ca53239a0ffe97d973686dc7f18af188d7e7f6c8",
+  "branch": "feat/cooking-100-20261019",
+  "materials_added": 14,
+  "existing_golden_ingredients": 27,
+  "new_dishes": 0,
+  "max_dish_rank": 10,
+  "engine_qa": "not_run",
+  "art_review": "generated_candidates_pending_user_review",
+  "checks": [
+    {
+      "check": "diff",
+      "exit_code": 0,
+      "log": "C:\\Users\\Public\\golden-materials-diff-20261019.log"
+    },
+    {
+      "check": "cooking",
+      "exit_code": 0,
+      "log": "C:\\Users\\Public\\golden-materials-cooking-20261019.log"
+    },
+    {
+      "check": "existing_golden_foods",
+      "exit_code": 0,
+      "log": "C:\\Users\\Public\\golden-materials-existing_golden_foods-20261019.log"
+    },
+    {
+      "check": "repository_static",
+      "exit_code": 1,
+      "log": "C:\\Users\\Public\\golden-materials-repository_static-20261019.log"
+    }
+  ],
+  "changed_files": [
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/enchanted_golden_butter.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/enchanted_golden_cheese.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/enchanted_golden_chocolate.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/enchanted_golden_cooking_oil.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/enchanted_golden_gelatin.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/enchanted_golden_milk_bottle.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/enchanted_golden_noodles.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/golden_butter.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/golden_cheese.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/golden_chocolate.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/golden_cooking_oil.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/golden_gelatin.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/golden_milk_bottle.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/items/golden_noodles.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/enchanted_golden_butter.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/enchanted_golden_cheese.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/enchanted_golden_chocolate.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/enchanted_golden_cooking_oil.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/enchanted_golden_gelatin.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/enchanted_golden_milk_bottle.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/enchanted_golden_noodles.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/golden_butter.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/golden_cheese.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/golden_chocolate.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/golden_cooking_oil.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/golden_gelatin.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/golden_milk_bottle.json",
+    "behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5/recipes/golden/golden_noodles.json",
+    "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_data.js",
+    "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/cooking_runtime.js",
+    "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/inventory_icons.generated.js",
+    "behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/recipe_guide.js",
+    "docs/cooking_ui/COOKBOOK_100.md",
+    "docs/cooking_ui/GOLDEN_MATERIALS.md",
+    "docs/cooking_ui/RELEASE_100_PLAN.md",
+    "docs/cooking_ui/catalog-100.json",
+    "docs/cooking_ui/edition-content.json",
+    "docs/cooking_ui/golden-ingredients.json",
+    "docs/cooking_ui/golden-material-art.json",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/texts/en_US.lang",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/texts/ja_JP.lang",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/item_texture.json",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_butter.png",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_cheese.png",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_chocolate.png",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_cooking_oil.png",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_gelatin.png",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_milk_bottle.png",
+    "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_noodles.png",
+    "tools/cooking_native/build_catalog100.py",
+    "tools/cooking_native/compiler.py",
+    "tools/cooking_native/golden_materials.py",
+    "tools/cooking_native/test_compiler.py",
+    "tools/cooking_native/test_golden_materials.py",
+    "tools/cooking_native/test_recipe_discovery.mjs",
+    "tools/cooking_native/test_recipe_guide.mjs"
+  ],
+  "test_counts": {
+    "cooking_python": 40,
+    "cooking_javascript": 99,
+    "existing_golden_foods": 45,
+    "total_passed": 184
+  },
+  "repository_static_limitation": {
+    "status": "preexisting_windows_line_ending_failure_verified",
+    "file": "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egbread.json",
+    "failing_inputs_unchanged": [
+      "tools/validate.py",
+      "docs/deployments/2026-09-10-release-files.json",
+      "behavior_packs/bp_02_ef6e99cf-077d-4b55-9e11-f86bb9e66880/items/egbread.json"
+    ],
+    "expected_sha256": "ff551f70ddef61475719b1b3c341834cd91cc4584d3a04e3e8a35b6d950a23b1",
+    "worktree_sha256": "15629ecd718267bda19268c8901a3f1a879041855940531c7180750406b55b85",
+    "normalized_lf_sha256": "ff551f70ddef61475719b1b3c341834cd91cc4584d3a04e3e8a35b6d950a23b1",
+    "source_modified_to_bypass_check": false
+  }
+}
