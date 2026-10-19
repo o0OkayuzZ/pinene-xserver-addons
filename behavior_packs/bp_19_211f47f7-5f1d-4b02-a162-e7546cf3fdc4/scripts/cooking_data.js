@@ -333,6 +333,1168 @@ export const COOKING_RECIPES = [
     "saturation": null
   },
   {
+    "id": "pine:golden_butter",
+    "name": "金のバター",
+    "rank": 0,
+    "description": "作業台の中心にバターを置き、周囲8マスを金インゴットで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:butter",
+        "count": 1,
+        "name": "バター",
+        "icon": "textures/items/butter"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 8,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "pine:butter",
+        "count": 1,
+        "name": "バター",
+        "icon": "textures/items/butter"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_butter",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "golden"
+  },
+  {
+    "id": "pine:enchanted_golden_butter",
+    "name": "エンチャントされた金のバター",
+    "rank": 0,
+    "description": "作業台の中心に金のバターを置き、周囲8マスを金ブロックで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:golden_butter",
+        "count": 1,
+        "name": "金のバター",
+        "icon": "textures/items/golden_butter"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 8,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "pine:golden_butter",
+        "count": 1,
+        "name": "金のバター",
+        "icon": "textures/items/golden_butter"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_butter",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "enchanted_golden"
+  },
+  {
+    "id": "pine:golden_chocolate",
+    "name": "金のチョコ",
+    "rank": 0,
+    "description": "作業台の中心にチョコを置き、周囲8マスを金インゴットで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:chocolate",
+        "count": 1,
+        "name": "チョコ",
+        "icon": "textures/items/chocolate"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 8,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "pine:chocolate",
+        "count": 1,
+        "name": "チョコ",
+        "icon": "textures/items/chocolate"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_chocolate",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "golden"
+  },
+  {
+    "id": "pine:enchanted_golden_chocolate",
+    "name": "エンチャントされた金のチョコ",
+    "rank": 0,
+    "description": "作業台の中心に金のチョコを置き、周囲8マスを金ブロックで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:golden_chocolate",
+        "count": 1,
+        "name": "金のチョコ",
+        "icon": "textures/items/golden_chocolate"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 8,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "pine:golden_chocolate",
+        "count": 1,
+        "name": "金のチョコ",
+        "icon": "textures/items/golden_chocolate"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_chocolate",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "enchanted_golden"
+  },
+  {
+    "id": "pine:golden_milk_bottle",
+    "name": "金のミルク瓶",
+    "rank": 0,
+    "description": "作業台の中心にミルク瓶を置き、周囲8マスを金インゴットで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:milk_bottle",
+        "count": 1,
+        "name": "ミルク瓶",
+        "icon": "textures/items/milk_bottle"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 8,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "pine:milk_bottle",
+        "count": 1,
+        "name": "ミルク瓶",
+        "icon": "textures/items/milk_bottle"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_milk_bottle",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "golden"
+  },
+  {
+    "id": "pine:enchanted_golden_milk_bottle",
+    "name": "エンチャントされた金のミルク瓶",
+    "rank": 0,
+    "description": "作業台の中心に金のミルク瓶を置き、周囲8マスを金ブロックで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:golden_milk_bottle",
+        "count": 1,
+        "name": "金のミルク瓶",
+        "icon": "textures/items/golden_milk_bottle"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 8,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "pine:golden_milk_bottle",
+        "count": 1,
+        "name": "金のミルク瓶",
+        "icon": "textures/items/golden_milk_bottle"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_milk_bottle",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "enchanted_golden"
+  },
+  {
+    "id": "pine:golden_cheese",
+    "name": "金のチーズ",
+    "rank": 0,
+    "description": "作業台の中心にチーズを置き、周囲8マスを金インゴットで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:cheese",
+        "count": 1,
+        "name": "チーズ",
+        "icon": "textures/items/cheese"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 8,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "pine:cheese",
+        "count": 1,
+        "name": "チーズ",
+        "icon": "textures/items/cheese"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_cheese",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "golden"
+  },
+  {
+    "id": "pine:enchanted_golden_cheese",
+    "name": "エンチャントされた金のチーズ",
+    "rank": 0,
+    "description": "作業台の中心に金のチーズを置き、周囲8マスを金ブロックで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:golden_cheese",
+        "count": 1,
+        "name": "金のチーズ",
+        "icon": "textures/items/golden_cheese"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 8,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "pine:golden_cheese",
+        "count": 1,
+        "name": "金のチーズ",
+        "icon": "textures/items/golden_cheese"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_cheese",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "enchanted_golden"
+  },
+  {
+    "id": "pine:golden_cooking_oil",
+    "name": "金の調理油",
+    "rank": 0,
+    "description": "作業台の中心に調理油を置き、周囲8マスを金インゴットで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:cooking_oil",
+        "count": 1,
+        "name": "調理油",
+        "icon": "textures/items/cooking_oil"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 8,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "pine:cooking_oil",
+        "count": 1,
+        "name": "調理油",
+        "icon": "textures/items/cooking_oil"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_cooking_oil",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "golden"
+  },
+  {
+    "id": "pine:enchanted_golden_cooking_oil",
+    "name": "エンチャントされた金の調理油",
+    "rank": 0,
+    "description": "作業台の中心に金の調理油を置き、周囲8マスを金ブロックで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:golden_cooking_oil",
+        "count": 1,
+        "name": "金の調理油",
+        "icon": "textures/items/golden_cooking_oil"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 8,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "pine:golden_cooking_oil",
+        "count": 1,
+        "name": "金の調理油",
+        "icon": "textures/items/golden_cooking_oil"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_cooking_oil",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "enchanted_golden"
+  },
+  {
+    "id": "pine:golden_gelatin",
+    "name": "金のゼラチン",
+    "rank": 0,
+    "description": "作業台の中心にゼラチンを置き、周囲8マスを金インゴットで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:gelatin",
+        "count": 1,
+        "name": "ゼラチン",
+        "icon": "textures/items/gelatin"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 8,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "pine:gelatin",
+        "count": 1,
+        "name": "ゼラチン",
+        "icon": "textures/items/gelatin"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_gelatin",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "golden"
+  },
+  {
+    "id": "pine:enchanted_golden_gelatin",
+    "name": "エンチャントされた金のゼラチン",
+    "rank": 0,
+    "description": "作業台の中心に金のゼラチンを置き、周囲8マスを金ブロックで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:golden_gelatin",
+        "count": 1,
+        "name": "金のゼラチン",
+        "icon": "textures/items/golden_gelatin"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 8,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "pine:golden_gelatin",
+        "count": 1,
+        "name": "金のゼラチン",
+        "icon": "textures/items/golden_gelatin"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_gelatin",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "enchanted_golden"
+  },
+  {
+    "id": "pine:golden_noodles",
+    "name": "金の麺",
+    "rank": 0,
+    "description": "作業台の中心に麺を置き、周囲8マスを金インゴットで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:noodles",
+        "count": 1,
+        "name": "麺",
+        "icon": "textures/items/noodles"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 8,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "pine:noodles",
+        "count": 1,
+        "name": "麺",
+        "icon": "textures/items/noodles"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 1,
+        "name": "金インゴット",
+        "icon": "textures/items/gold_ingot"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_noodles",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "golden"
+  },
+  {
+    "id": "pine:enchanted_golden_noodles",
+    "name": "エンチャントされた金の麺",
+    "rank": 0,
+    "description": "作業台の中心に金の麺を置き、周囲8マスを金ブロックで囲む。上位料理用の素材。",
+    "ingredients": [
+      {
+        "id": "pine:golden_noodles",
+        "count": 1,
+        "name": "金の麺",
+        "icon": "textures/items/golden_noodles"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 8,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "layout": [
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "pine:golden_noodles",
+        "count": 1,
+        "name": "金の麺",
+        "icon": "textures/items/golden_noodles"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      },
+      {
+        "id": "minecraft:gold_block",
+        "count": 1,
+        "name": "金ブロック",
+        "icon": "textures/blocks/gold_block"
+      }
+    ],
+    "resultCount": 1,
+    "icon": "textures/items/golden_noodles",
+    "nutrition": null,
+    "saturation": null,
+    "station": "crafting_table",
+    "retains_container": true,
+    "material_tier": "enchanted_golden"
+  },
+  {
     "id": "pine:honey_bread",
     "name": "はちみつパン",
     "rank": 2,
@@ -5029,4 +6191,4 @@ export const COOKING_RECIPES = [
     "effect_cooldown_seconds": 30
   }
 ];
-export const CATEGORY_ORDER = [0,1,2,3,4,5,6,7];
+export const CATEGORY_ORDER = [0,1,2,3,4,5,6,7,8,9,10];

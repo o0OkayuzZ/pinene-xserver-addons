@@ -6,16 +6,20 @@
     "free_dishes": 10,
     "expansion_dishes": 90,
     "total_dishes": 100,
-    "basic_material_recipes": 7
+    "basic_material_recipes": 7,
+    "adopted_dish_names": 54,
+    "unadopted_dish_proposals": 46,
+    "golden_materials": 14
   },
-  "status": "Implementation candidate. Game engine, visuals and balance require playtesting.",
+  "status": "Design draft: 54 adopted dish names and 46 unadopted assistant proposals on hold. User authors new dish names. Golden materials do not count as dishes.",
   "policy": {
     "effect_amplifier_max": 0,
     "effect_cooldown_seconds": 30,
     "can_always_eat": false,
     "preserve_stronger_or_longer_effects": true,
     "payment_checks_in_game": false,
-    "effect_realism": "ゲーム内の役割分担であり、現実の食品の健康効果ではない"
+    "effect_realism": "ゲーム内の役割分担であり、現実の食品の健康効果ではない",
+    "max_dish_rank": 10
   },
   "notes": [
     "小麦麺をうどん・そばにアレンジする。そば粉素材は増やさない。",
@@ -3060,7 +3064,7 @@
       "effect_summary": "追加効果なし・食料回復と腹持ちを重視",
       "effect_cooldown_seconds": 0,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:butter_toast",
@@ -3094,7 +3098,7 @@
       "effect_summary": "追加効果なし・食料回復と腹持ちを重視",
       "effect_cooldown_seconds": 0,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:chorus_parfait",
@@ -3157,7 +3161,7 @@
       "effect_summary": "落下速度低下 I 45秒 / 暗視 I 90秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:glass_bottle",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:berry_pancake",
@@ -3203,7 +3207,7 @@
       "effect_summary": "移動速度上昇 I 55秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:honey_pancake",
@@ -3243,7 +3247,7 @@
       "effect_summary": "再生能力 I 5秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:cheese_pancake",
@@ -3289,7 +3293,7 @@
       "effect_summary": "衝撃吸収 I 65秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:chocolate_cookie",
@@ -3335,7 +3339,7 @@
       "effect_summary": "採掘速度上昇 I 20秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:berry_cookie",
@@ -3381,7 +3385,7 @@
       "effect_summary": "移動速度上昇 I 20秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:honey_cookie",
@@ -3421,7 +3425,7 @@
       "effect_summary": "追加効果なし・食料回復と腹持ちを重視",
       "effect_cooldown_seconds": 0,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:pumpkin_cookie",
@@ -3467,7 +3471,7 @@
       "effect_summary": "衝撃吸収 I 25秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:chocolate_muffin",
@@ -3525,7 +3529,7 @@
       "effect_summary": "採掘速度上昇 I 45秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:berry_muffin",
@@ -3583,7 +3587,7 @@
       "effect_summary": "移動速度上昇 I 45秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:apple_pie",
@@ -3641,7 +3645,7 @@
       "effect_summary": "再生能力 I 6秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:berry_pie",
@@ -3699,7 +3703,7 @@
       "effect_summary": "移動速度上昇 I 65秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:pumpkin_tart",
@@ -3763,7 +3767,7 @@
       "effect_summary": "衝撃吸収 I 75秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:cheesecake",
@@ -3832,7 +3836,7 @@
       "effect_summary": "衝撃吸収 I 90秒 / 再生能力 I 4秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:baked_apple",
@@ -3878,7 +3882,7 @@
       "effect_summary": "再生能力 I 3秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:caramel_apple",
@@ -3924,7 +3928,7 @@
       "effect_summary": "移動速度上昇 I 35秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:berry_smoothie",
@@ -3976,7 +3980,7 @@
       "effect_summary": "移動速度上昇 I 35秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:glass_bottle",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:melon_smoothie",
@@ -4022,7 +4026,7 @@
       "effect_summary": "再生能力 I 4秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:glass_bottle",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:apple_milk",
@@ -4074,7 +4078,7 @@
       "effect_summary": "再生能力 I 4秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:glass_bottle",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:glow_berry_jelly",
@@ -4126,7 +4130,7 @@
       "effect_summary": "暗視 I 90秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:glass_bottle",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:melon_jelly",
@@ -4178,7 +4182,7 @@
       "effect_summary": "再生能力 I 4秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:glass_bottle",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:honey_pudding",
@@ -4236,7 +4240,7 @@
       "effect_summary": "再生能力 I 5秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:baked_salmon_pie",
@@ -4294,7 +4298,7 @@
       "effect_summary": "水中呼吸 I 90秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:fish_and_chips",
@@ -4346,7 +4350,7 @@
       "effect_summary": "水中呼吸 I 65秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:fish_sandwich",
@@ -4392,7 +4396,7 @@
       "effect_summary": "水中呼吸 I 45秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:salmon_sandwich",
@@ -4438,7 +4442,7 @@
       "effect_summary": "水中呼吸 I 50秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:kelp_udon",
@@ -4484,7 +4488,7 @@
       "effect_summary": "水中呼吸 I 50秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:mushroom_udon",
@@ -4542,7 +4546,7 @@
       "effect_summary": "採掘速度上昇 I 50秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:egg_udon",
@@ -4594,7 +4598,7 @@
       "effect_summary": "衝撃吸収 I 55秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:spicy_noodles",
@@ -4658,7 +4662,7 @@
       "effect_summary": "攻撃力上昇 I 25秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:chili_carbonara",
@@ -4733,7 +4737,7 @@
       "effect_summary": "攻撃力上昇 I 25秒 / 採掘速度上昇 I 40秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:cheese_croquette",
@@ -4791,7 +4795,7 @@
       "effect_summary": "衝撃吸収 I 70秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:mushroom_gratin",
@@ -4855,7 +4859,7 @@
       "effect_summary": "採掘速度上昇 I 65秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:salmon_gratin",
@@ -4924,7 +4928,7 @@
       "effect_summary": "水中呼吸 I 75秒 / 衝撃吸収 I 40秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:potato_potage",
@@ -4970,7 +4974,7 @@
       "effect_summary": "採掘速度上昇 I 40秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:carrot_potage",
@@ -5016,7 +5020,7 @@
       "effect_summary": "暗視 I 65秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:beetroot_potage",
@@ -5062,7 +5066,7 @@
       "effect_summary": "再生能力 I 4秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:vegetable_stew",
@@ -5114,7 +5118,7 @@
       "effect_summary": "追加効果なし・食料回復と腹持ちを重視",
       "effect_cooldown_seconds": 0,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:mutton_stew",
@@ -5172,7 +5176,7 @@
       "effect_summary": "耐性 I 30秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:roast_chicken",
@@ -5218,7 +5222,7 @@
       "effect_summary": "追加効果なし・食料回復と腹持ちを重視",
       "effect_cooldown_seconds": 0,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:pepper_steak",
@@ -5270,7 +5274,7 @@
       "effect_summary": "攻撃力上昇 I 30秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:spicy_chicken",
@@ -5322,7 +5326,7 @@
       "effect_summary": "攻撃力上昇 I 25秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:rabbit_pie",
@@ -5385,7 +5389,7 @@
       "effect_summary": "跳躍力上昇 I 75秒 / 移動速度上昇 I 35秒",
       "effect_cooldown_seconds": 30,
       "container_return": null,
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     },
     {
       "id": "pine:nether_hotpot",
@@ -5454,7 +5458,7 @@
       "effect_summary": "火炎耐性 I 45秒 / 耐性 I 20秒",
       "effect_cooldown_seconds": 30,
       "container_return": "minecraft:bowl",
-      "review_status": "balance_draft"
+      "review_status": "unadopted_on_hold"
     }
   ]
 }

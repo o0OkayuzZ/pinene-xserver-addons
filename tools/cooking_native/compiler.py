@@ -2,11 +2,12 @@
 from __future__ import annotations
 import copy,json,re
 from collections import Counter
+from golden_materials import MAX_DISH_RANK, golden_container_returns
 LIMITS={'copper':2,'iron':3,'gold':4,'diamond':6,'netherite':7}
 TAG_PREFIX='pinene_native_rank_'
 CONTAINER_RETURNS={'minecraft:milk_bucket':'minecraft:bucket','minecraft:honey_bottle':'minecraft:glass_bottle',
     'pine:milk_bottle':'minecraft:glass_bottle','pine:cooking_oil':'minecraft:glass_bottle',
-    'pine:gelatin':'minecraft:glass_bottle'}
+    'pine:gelatin':'minecraft:glass_bottle', **golden_container_returns()}
 SEEDS=['minecraft:wheat_seeds','minecraft:pumpkin_seeds','minecraft:melon_seeds','minecraft:beetroot_seeds']
 def parse_data(text):
     match=re.fullmatch(r'\s*export const COOKING_RECIPES\s*=\s*(\[[\s\S]*\]);\s*export const CATEGORY_ORDER\s*=\s*\[[0-9,\s]*\];\s*',text)
@@ -14,7 +15,7 @@ def parse_data(text):
     data=json.loads(match[1]); ids=[r['id'] for r in data]
     if len(ids)!=len(set(ids)):raise ValueError('Duplicate cooking IDs')
     for r in data:
-        if type(r['rank']) is not int or not 0<=r['rank']<=7:raise ValueError('Invalid rank')
+        if type(r['rank']) is not int or not 0<=r['rank']<=MAX_DISH_RANK:raise ValueError('Invalid rank')
         if type(r['resultCount']) is not int or not 1<=r['resultCount']<=64:raise ValueError('Invalid result count')
         if not r['ingredients']:raise ValueError('Missing ingredients')
         for p in r['ingredients']:
@@ -54,6 +55,9 @@ def _compile_recipe(r):
     deliberately not claimed until a supported native tag is confirmed.
     """
     base=r['id'].split(':',1)[1]
+    station=r.get('station','cutting_board')
+    if station not in ('cutting_board','crafting_table'):raise ValueError('Unknown crafting station')
+    if r.get('retains_container') and station!='crafting_table':raise ValueError('Container retention is only for material coating')
     ids_parts=[p for p in r['ingredients'] if 'ids' in p]
     if ids_parts:
         if r['id']!='pine:cooking_oil' or ids_parts[0]['ids']!=SEEDS or len(ids_parts)!=1:raise ValueError('Unsupported choice ingredient')
@@ -62,7 +66,7 @@ def _compile_recipe(r):
     out=[]
     for variant in variants:
         suffix='_'+variant.split(':')[1] if variant else ''
-        body={'description':{'identifier':'pinene_native:'+base+suffix},'tags':[TAG_PREFIX+str(r['rank'])]}
+        body={'description':{'identifier':('pine:' if station=='crafting_table' else 'pinene_native:')+base+suffix},'tags':['crafting_table'] if station=='crafting_table' else [TAG_PREFIX+str(r['rank'])]}
         def item(p):
             if 'ids' in p:return variant
             return p['id']
@@ -88,7 +92,7 @@ def _compile_recipe(r):
         primary={'item':r['id'],'count':r['resultCount']}
         returned=Counter()
         for part in r['ingredients']:
-            if part.get('id') in CONTAINER_RETURNS:
+            if not r.get('retains_container') and part.get('id') in CONTAINER_RETURNS:
                 returned[CONTAINER_RETURNS[part['id']]]+=part['count']
         if returned and kind=='shapeless':
             # Bedrock rejects mixed output types in shapeless result lists.

@@ -11,14 +11,15 @@ from collections import Counter
 import json
 from pathlib import Path
 import re
-from compiler import compile_recipe, parse_data, native_counts, signature
+from compiler import LIMITS, compile_recipe, parse_data, native_counts, signature
+from golden_materials import MAX_DISH_RANK, golden_recipe_rows, ingredient_registry, load_golden_spec, material_item
 
 ROOT = Path(__file__).resolve().parents[2]
 FOOD = Path('behavior_packs/bp_18_7e540260-69ce-4a82-951d-bc793e151cd5')
 TOOLS = Path('behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4')
 RP = Path('resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2')
 CATALOG = Path('docs/cooking_ui/catalog-100.json')
-KEYS = ['id','name','rank','description','ingredients','layout','resultCount','icon','nutrition','saturation','edition','family','role','effects','effect_summary','effect_cooldown_seconds']
+KEYS = ['id','name','rank','description','ingredients','layout','resultCount','icon','nutrition','saturation','edition','family','role','effects','effect_summary','effect_cooldown_seconds','station','retains_container','material_tier']
 EFFECT_LIMITS = {'speed':90,'haste':90,'night_vision':120,'water_breathing':90,
                  'regeneration':6,'resistance':40,'strength':30,'absorption':90,
                  'fire_resistance':45,'slow_falling':45,'jump_boost':90}
@@ -42,13 +43,15 @@ def validate_catalog(catalog):
     assert len(materials)==7 and all(r['rank']==0 for r in materials)
     all_rows=materials+dishes
     by_id={r['id']:r for r in all_rows}
+    registered=ingredient_registry()
     assert len(by_id)==107, 'Duplicate IDs or material counted as a dish'
     assert len({r['name'] for r in dishes})==100, 'Duplicate dish names'
     assert sum(r['origin']=='existing' for r in dishes)==27
     assert sum(r['origin']=='approved_wave2' for r in dishes)==27
     assert sum(r['origin']=='new_20261019' for r in dishes)==46
     for r in dishes:
-        assert 1<=r['rank']<=7 and 1<=r['nutrition']<=16
+        assert r.get('station','cutting_board')=='cutting_board' and not r.get('retains_container'), 'Dishes must use the cooking station and return their input containers'
+        assert 1<=r['rank']<=MAX_DISH_RANK and 1<=r['nutrition']<=16
         assert 0<r['saturation']<=1.7 and 1<=r['resultCount']<=64
         assert sum(p['count'] for p in r['ingredients'])<=9
         assert r['container_return'] in [None,'minecraft:bowl','minecraft:bucket','minecraft:glass_bottle']
@@ -60,10 +63,10 @@ def validate_catalog(catalog):
             assert e['id'] in EFFECT_LIMITS and e['amplifier']==0
             assert 1<=e['seconds']<=EFFECT_LIMITS[e['id']]
         for part in r['ingredients']:
-            assert re.fullmatch(r'(minecraft|pine):[a-z0-9_]+',part['id']), part['id']
+            assert re.fullmatch(r'[a-z0-9_]+:[a-z0-9_]+',part['id']), part['id']
             assert type(part['count']) is int and part['count']>0
             dep=by_id.get(part['id'])
-            assert dep or part['id'].startswith('minecraft:') or part['id'] in ['pine:whole_cheese','pine:chili_pepper'], 'Unknown material'
+            assert dep or part['id'].startswith('minecraft:') or part['id'] in ['pine:whole_cheese','pine:chili_pepper'] or part['id'] in registered, 'Unknown material'
             if dep:
                 assert dep['rank']<=r['rank'], 'Requires a higher-rank ingredient'
                 if r['edition']=='free':assert dep.get('edition','free')=='free', 'Free dish depends on expansion'
@@ -89,16 +92,19 @@ def validate_catalog(catalog):
 
 def generated_files(catalog, root=ROOT):
     rows=validate_catalog(catalog);out={}
+    gold_rows=golden_recipe_rows(catalog)
+    rows=catalog['materials']+gold_rows+catalog['dishes']
     recipes=[{key:r[key] for key in KEYS if key in r} for r in rows]
-    code='export const COOKING_RECIPES = '+json.dumps(recipes,ensure_ascii=False,indent=2)+';\nexport const CATEGORY_ORDER = [0,1,2,3,4,5,6,7];\n'
-    assert len(parse_data(code))==107
+    code='export const COOKING_RECIPES = '+json.dumps(recipes,ensure_ascii=False,indent=2)+';\nexport const CATEGORY_ORDER = [0,1,2,3,4,5,6,7,8,9,10];\n'
+    assert len(parse_data(code))==107+len(gold_rows)
     out[TOOLS/'scripts/cooking_data.js']=code
     runtime={r['id']:{'resultCount':r['resultCount'],'rank':r['rank'],
-                         'ingredients':[{'ids':p.get('ids',[p.get('id')]),'count':p['count']} for p in r['ingredients']]} for r in rows}
-    observed=sorted({r['id'] for r in rows}|{ident for r in rows for p in r['ingredients'] for ident in p.get('ids',[p.get('id')])})
+                         'ingredients':[{'ids':p.get('ids',[p.get('id')]),'count':p['count']} for p in r['ingredients']]} for r in rows if r.get('station')!='crafting_table'}
+    observed=sorted({r['id'] for r in rows}|{ident for r in rows for p in r['ingredients'] for ident in p.get('ids',[p.get('id')])}|set(ingredient_registry()))
     out[TOOLS/'scripts/cooking_runtime.js']='export const COOKING_RUNTIME = Object.freeze('+json.dumps(runtime,ensure_ascii=False,separators=(',',':'))+');\nexport const OBSERVED_ITEM_IDS = Object.freeze('+json.dumps(observed,separators=(',',':'))+');\n'
     for r in rows:
-        for filename,value in compile_recipe(r):out[TOOLS/'recipes/native'/filename]=dumps(value)
+        destination=FOOD/'recipes/golden' if r.get('station')=='crafting_table' else TOOLS/'recipes/native'
+        for filename,value in compile_recipe(r):out[destination/filename]=dumps(value)
     meal_data={r['id']:{'name':r['name'],'effects':r['effects'],'cooldownSeconds':r['effect_cooldown_seconds']} for r in catalog['dishes']}
     out[FOOD/'scripts/meal_catalog.generated.js']='// Generated by tools/cooking_native/build_catalog100.py.\nexport const MEALS = '+json.dumps(meal_data,ensure_ascii=False,indent=2)+';\n'
     atlas=json.loads((root/RP/'textures/item_texture.json').read_text(encoding='utf-8-sig'))
@@ -106,6 +112,11 @@ def generated_files(catalog, root=ROOT):
     icon_code=icon_file.read_text(encoding='utf-8-sig')
     icon_match=re.search(r'export const INVENTORY_ICONS\s*=\s*(\{[\s\S]*\});',icon_code)
     icons=json.loads(icon_match[1])
+    for r in gold_rows:
+        slug=r['id'].split(':')[1]
+        out[FOOD/'items'/f'{slug}.json']=dumps(material_item(r))
+        atlas['texture_data'][slug.removeprefix('enchanted_')]={'textures':r['icon']}
+        icons[r['id']]=r['icon']
     for r in catalog['dishes']:
         slug=r['id'].split(':')[1]
         existing_path=root/FOOD/'items'/f'{slug}.json'
@@ -148,14 +159,15 @@ def generated_files(catalog, root=ROOT):
     out[Path('docs/cooking_ui/edition-content.json')]=dumps({
         'schema_version':1,'free':[r['id'] for r in catalog['dishes'] if r['edition']=='free'],
         'expansion':[r['id'] for r in catalog['dishes'] if r['edition']=='expansion'],
-        'shared_material_recipes':[r['id'] for r in catalog['materials']],
+        'shared_material_recipes':[r['id'] for r in catalog['materials']+gold_rows],
         'shared_material_items':['pine:whole_cheese','pine:chili_pepper'],
+        'optional_existing_golden_ingredients':load_golden_spec()['existing_ingredients'],
         'paid_runtime_verification':False,'status':'Content assignment only; independent package export and shop integration pending.'})
     # The old server-only ingredient is also present in inactive legacy recipes.
     for file in (root/FOOD/'recipes').glob('*.json'):
         text=file.read_text(encoding='utf-8-sig')
         if 'myname:pancake' in text:out[file.relative_to(root)]=text.replace('myname:pancake','pine:pancake')
-    lines=['# 料理100品 — 効果・レシピ初稿','', '無料10品＋追加90品。基本素材7レシピ・道具・唐辛子は品数に含めない。',
+    lines=['# 料理100品 — 効果・レシピ初稿','', '無料10品＋追加90品の候補表。採用済み54品＋保留中の仮案46品。基本素材7種・金素材14種・道具・唐辛子は品数に含めない。',
            '','特殊効果はすべてI。特殊効果の再発動は食べ物をまたいで30秒待ち。食料回復は通常どおり。',
            '強い・長い既存効果を弱めない。満腹時には食べられない。料理とポーションの効果を加算して強度を増やさない。',
            '', '数値は実機で調整する初稿。新規73品の採用済み画像・3D・実機確認は未完了。','',
@@ -171,6 +183,9 @@ def main():
     mode.add_argument('--write',action='store_true');mode.add_argument('--check',action='store_true');mode.add_argument('--release-check',action='store_true')
     args=ap.parse_args();catalog=load_catalog();outputs=generated_files(catalog)
     if args.release_check:
+        if load_golden_spec().get('art_status')!='approved':raise SystemExit('RELEASE BLOCKED: golden material icon candidates need visual approval and game-engine QA.')
+        unreachable=[r['id'] for r in catalog['dishes'] if r['rank']>max(LIMITS.values())]
+        if unreachable:raise SystemExit('RELEASE BLOCKED: Rank VIII-X dishes need an obtainable cooking-tool progression.')
         pending=[r['id'] for r in catalog['dishes'] if r['art_status']!='existing_approved']
         if pending:raise SystemExit(f'RELEASE BLOCKED: {len(pending)} dishes need approved art/models, plus engine and device QA.')
         raise SystemExit('RELEASE BLOCKED: real engine/device QA and independent package validation have not been recorded.')
@@ -180,7 +195,7 @@ def main():
         if not file.exists() or file.read_text(encoding='utf-8-sig')!=text:
             different.append(str(relative))
             if args.write:file.parent.mkdir(parents=True,exist_ok=True);file.write_text(text,encoding='utf-8',newline='\n')
-    print(json.dumps({'dishes':100,'free':10,'expansion':90,'materials':7,'native_recipe_variants':sum('/recipes/native/' in str(p).replace('\\','/') for p in outputs), 'files_changed' if args.write else 'drift':len(different)},ensure_ascii=False))
+    print(json.dumps({'dishes':100,'free':10,'expansion':90,'basic_materials':7,'golden_materials':14,'native_recipe_variants':sum('/recipes/native/' in str(p).replace('\\','/') for p in outputs), 'files_changed' if args.write else 'drift':len(different)},ensure_ascii=False))
     if args.check and different:raise SystemExit(1)
 
 if __name__=='__main__':main()

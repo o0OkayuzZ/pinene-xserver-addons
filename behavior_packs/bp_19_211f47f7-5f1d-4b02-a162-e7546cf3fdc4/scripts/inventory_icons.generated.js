@@ -2936,5 +2936,19 @@ export const INVENTORY_ICONS = {
   "pine:pepper_steak": "textures/items/honey_chicken",
   "pine:spicy_chicken": "textures/items/honey_chicken",
   "pine:rabbit_pie": "textures/items/honey_chicken",
-  "pine:nether_hotpot": "textures/items/fruit_bowl"
+  "pine:nether_hotpot": "textures/items/fruit_bowl",
+  "pine:golden_butter": "textures/items/golden_butter",
+  "pine:enchanted_golden_butter": "textures/items/golden_butter",
+  "pine:golden_chocolate": "textures/items/golden_chocolate",
+  "pine:enchanted_golden_chocolate": "textures/items/golden_chocolate",
+  "pine:golden_milk_bottle": "textures/items/golden_milk_bottle",
+  "pine:enchanted_golden_milk_bottle": "textures/items/golden_milk_bottle",
+  "pine:golden_cheese": "textures/items/golden_cheese",
+  "pine:enchanted_golden_cheese": "textures/items/golden_cheese",
+  "pine:golden_cooking_oil": "textures/items/golden_cooking_oil",
+  "pine:enchanted_golden_cooking_oil": "textures/items/golden_cooking_oil",
+  "pine:golden_gelatin": "textures/items/golden_gelatin",
+  "pine:enchanted_golden_gelatin": "textures/items/golden_gelatin",
+  "pine:golden_noodles": "textures/items/golden_noodles",
+  "pine:enchanted_golden_noodles": "textures/items/golden_noodles"
 };

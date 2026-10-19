@@ -9,10 +9,10 @@ import {
   isRecipeDiscovered
 } from '../../behavior_packs/bp_19_211f47f7-5f1d-4b02-a162-e7546cf3fdc4/scripts/recipe_discovery.js';
 
-test('all seven rank-0 recipes are visible without discovery state', () => {
+test('all 21 basic and golden material recipes are visible without discovery state', () => {
   const found = parseDiscovery(undefined);
   const basic = COOKING_RECIPES.filter(recipe => recipe.rank === 0);
-  assert.equal(basic.length, 7);
+  assert.equal(basic.length, 21);
   assert(basic.every(recipe => isRecipeDiscovered(recipe, found)));
 });
 

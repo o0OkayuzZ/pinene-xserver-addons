@@ -12,7 +12,7 @@ import {
 
 const STATE = 'pinene_cooking:knife';
 const KNIFE_LIMIT = Object.freeze({ copper: 2, iron: 3, gold: 4, diamond: 6, netherite: 7 });
-const RANK_ROMAN = Object.freeze(['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII']);
+const RANK_ROMAN = Object.freeze(['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']);
 
 function isBoard(typeId) {
   return typeof typeId === 'string' && typeId.startsWith('pinene_cooking:') && typeId.endsWith('_cutting_board');
@@ -47,7 +47,11 @@ function seedInventory(player) {
 }
 
 function rankLabel(rank) {
-  return rank === 0 ? '基礎素材' : `Rank ${RANK_ROMAN[rank] ?? rank}`;
+  return rank === 0 ? '基礎素材・金素材' : `Rank ${RANK_ROMAN[rank] ?? rank}`;
+}
+
+function canCookRecipe(recipe, current) {
+  return recipe.station === 'crafting_table' || current.rank >= recipe.rank;
 }
 
 function boardRank(block) {
@@ -67,6 +71,7 @@ function ingredientBody(recipe, canCook) {
   const rawtext = [
     { text: `§7${rankLabel(recipe.rank)}§r\n${recipe.description ?? ''}\n\n§l材料§r\n` }
   ];
+  if (recipe.station === 'crafting_table') rawtext.push({ text: '§6作業台（3×3）で作成§r\n' });
   for (const part of recipe.ingredients) {
     rawtext.push({ text: `§7×${part.count} §r` });
     const ids = part.ids ?? [part.id];
@@ -127,7 +132,7 @@ export async function showRecipeGuide(player, initialBlock) {
         for (const rank of ranks) {
           const recipes = COOKING_RECIPES.filter(recipe => recipe.rank === rank);
           const discovered = recipes.filter(recipe => isRecipeDiscovered(recipe, found)).length;
-          const unavailable = current.rank < rank ? '\n§8現在調理不可§r' : '';
+          const unavailable = recipes.every(recipe => !canCookRecipe(recipe, current)) ? '\n§8現在調理不可§r' : '';
           form.button(rankLabel(rank) + '\n§7発見 ' + discovered + '/' + recipes.length + '§r' + unavailable);
         }
         const response = await form.show(player);
@@ -145,7 +150,7 @@ export async function showRecipeGuide(player, initialBlock) {
         form.body('§7発見済み ' + recipes.filter(recipe => isRecipeDiscovered(recipe, found)).length + '/' + recipes.length + '§r');
         for (const recipe of recipes) {
           if (isRecipeDiscovered(recipe, found)) {
-            const unavailable = current.rank < recipe.rank ? '\n§8現在調理不可§r' : '';
+            const unavailable = canCookRecipe(recipe, current) ? '' : '\n§8現在調理不可§r';
             form.button(recipe.name + '\n§7' + rankLabel(recipe.rank) + '§r' + unavailable, INVENTORY_ICONS[recipe.id]);
           } else {
             form.button('§8？？？\n' + rankLabel(recipe.rank) + '§r');
@@ -169,7 +174,7 @@ export async function showRecipeGuide(player, initialBlock) {
         const form = new ActionFormData();
         if (unlocked) {
           form.title(activeRecipe.name);
-          form.body(ingredientBody(activeRecipe, current.rank >= activeRecipe.rank));
+          form.body(ingredientBody(activeRecipe, canCookRecipe(activeRecipe, current)));
           form.button('◀ 戻る', INVENTORY_ICONS[activeRecipe.id]);
         } else {
           form.title('？？？');

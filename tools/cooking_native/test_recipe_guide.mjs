@@ -83,6 +83,22 @@ function availableRanks() {
   return CATEGORY_ORDER.filter(rank => COOKING_RECIPES.some(recipe => recipe.rank === rank));
 }
 
+test('gold coating is shown as workbench material even when the board has no knife', async () => {
+  const index = COOKING_RECIPES.filter(recipe => recipe.rank === 0)
+    .findIndex(recipe => recipe.id === 'pine:golden_butter');
+  assert(index >= 0);
+  const e = createUi([{ canceled: false, selection: availableRanks().indexOf(0) },
+    { canceled: false, selection: index }, { canceled: true }]);
+  e.setMaterial('empty');
+  await e.showRecipeGuide(e.player, e.block);
+  assert(!e.forms[1].buttons[index].text.includes('現在調理不可'));
+  const detail = e.forms[2].bodyText.rawtext.map(part => part.text ?? '').join('');
+  assert(detail.includes('作業台（3×3）'));
+  assert(!detail.includes('現在のナイフでは'));
+  assert(!detail.includes('食料回復'));
+  assert.equal(e.rankLabel(10), 'Rank X');
+});
+
 test('recipe guide starts with a compact rank index rather than every recipe', async () => {
   const e = createUi();
   await e.showRecipeGuide(e.player, e.block);
@@ -90,7 +106,7 @@ test('recipe guide starts with a compact rank index rather than every recipe', a
   assert.equal(e.forms[0].titleText, '料理図鑑');
   assert.equal(e.forms[0].buttons.length, availableRanks().length);
   assert.match(e.forms[0].buttons[0].text, /基礎素材/);
-  assert.match(e.forms[0].buttons[0].text, /発見 7\/7/);
+  assert.match(e.forms[0].buttons[0].text, /発見 21\/21/);
   assert(!e.forms[0].buttons.some(b => b.text.includes('キャロットサラダ')));
 });
 
@@ -142,7 +158,7 @@ test('repeated detail/back navigation runs in one loop without nested form chain
   const e = createUi(replies);
   await e.showRecipeGuide(e.player, e.block);
   assert.equal(e.forms.length, 2 + rounds * 2);
-  assert.equal(e.forms[1].titleText, '基礎素材 - 料理図鑑');
+  assert.equal(e.forms[1].titleText, '基礎素材・金素材 - 料理図鑑');
 });
 
 test('book interaction cancels normal cooking, releases its reservation and schedules guide', () => {
