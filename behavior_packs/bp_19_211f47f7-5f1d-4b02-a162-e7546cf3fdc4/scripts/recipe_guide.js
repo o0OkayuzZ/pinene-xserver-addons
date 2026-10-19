@@ -77,6 +77,11 @@ function ingredientBody(recipe, canCook) {
     rawtext.push({ text: '\n' });
   }
   rawtext.push({ text: `\n§7完成数: §f${recipe.resultCount}§r` });
+  if (recipe.rank > 0) {
+    rawtext.push({ text: `\n§7食料回復: §f${recipe.nutrition}§7 / 腹持ち係数: §f${recipe.saturation}§r` });
+    rawtext.push({ text: `\n§7効果: §f${recipe.effect_summary ?? '追加効果なし'}§r` });
+    if (recipe.effects?.length) rawtext.push({ text: '\n§8食事効果の再発動待ち: 30秒（全料理共通）。食料回復は通常どおり。§r' });
+  }
   if (!canCook) rawtext.push({ text: '\n\n§c現在のナイフではこのRankを調理できません。§r' });
   return { rawtext };
 }

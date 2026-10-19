@@ -1,0 +1,40 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:karaage"
+    },
+    "tags": [
+      "pinene_native_rank_4"
+    ],
+    "pattern": [
+      "ABC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:cooked_chicken"
+      },
+      "B": {
+        "item": "minecraft:wheat"
+      },
+      "C": {
+        "item": "pine:cooking_oil"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:karaage",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:cooked_chicken"
+      }
+    ]
+  }
+}

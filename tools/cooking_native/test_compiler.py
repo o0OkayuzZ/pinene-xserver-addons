@@ -54,14 +54,14 @@ class CompilerTests(unittest.TestCase):
         with self.assertRaises(ValueError):parse_data('export const COOKING_RECIPES = '+json.dumps([r])+';export const CATEGORY_ORDER = [0];')
     @unittest.skipUnless(DATA.exists(),'source data not mounted here')
     def test_17_real_recipes(self):
-        data=parse_data(DATA.read_text(encoding='utf-8-sig'));self.assertEqual(len(data),34);self.assertEqual(sum(r['rank']==0 for r in data),7)
+        data=parse_data(DATA.read_text(encoding='utf-8-sig'));self.assertEqual(len(data),107);self.assertEqual(sum(r['rank']==0 for r in data),7)
         count=0
         for r in data:
             for name,d in compile_recipe(r):
                 count+=1;b=d[next(k for k in d if k.startswith('minecraft:recipe_'))]
                 self.assertEqual(b['result'][0] if isinstance(b['result'],list) else b['result'],{'item':r['id'],'count':r['resultCount']})
                 if r['id']!='pine:cooking_oil':self.assertEqual(native_counts(d),signature(r['ingredients']))
-        self.assertEqual(count,198)
+        self.assertEqual(count,271)
     @unittest.skipUnless(DATA.exists(),'source data not mounted here')
     def test_18_all_boards_keep_models(self):
         files=list((DATA.parent.parent/'blocks').glob('*_cutting_board.json'));self.assertEqual(len(files),13)

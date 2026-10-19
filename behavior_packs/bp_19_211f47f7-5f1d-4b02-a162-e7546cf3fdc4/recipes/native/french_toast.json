@@ -1,0 +1,47 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:french_toast"
+    },
+    "tags": [
+      "pinene_native_rank_4"
+    ],
+    "pattern": [
+      "ABC",
+      "DE "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:bread"
+      },
+      "B": {
+        "item": "minecraft:egg"
+      },
+      "C": {
+        "item": "pine:milk_bottle"
+      },
+      "D": {
+        "item": "minecraft:sugar"
+      },
+      "E": {
+        "item": "pine:butter"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:french_toast",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:bread"
+      }
+    ]
+  }
+}

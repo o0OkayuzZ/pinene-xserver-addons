@@ -1,0 +1,44 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:berry_smoothie"
+    },
+    "tags": [
+      "pinene_native_rank_3"
+    ],
+    "pattern": [
+      "AAB",
+      "CD "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:sweet_berries"
+      },
+      "B": {
+        "item": "pine:milk_bottle"
+      },
+      "C": {
+        "item": "minecraft:sugar"
+      },
+      "D": {
+        "item": "minecraft:glass_bottle"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:berry_smoothie",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:sweet_berries"
+      }
+    ]
+  }
+}

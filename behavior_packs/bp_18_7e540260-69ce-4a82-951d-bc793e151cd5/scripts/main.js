@@ -1,6 +1,7 @@
 import { GameMode, ItemStack, system, world } from "@minecraft/server";
 import { PLACEABLE_FOODS } from "./meshy_food_catalog.js";
 import "./chili_crop.js";
+import "./meal_component.js";
 
 const PICKUP_ITEMS = Object.freeze({
   ...Object.fromEntries(Object.entries(PLACEABLE_FOODS).map(([item, entity]) => [entity, item])),

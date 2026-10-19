@@ -4,7 +4,9 @@ import copy,json,re
 from collections import Counter
 LIMITS={'copper':2,'iron':3,'gold':4,'diamond':6,'netherite':7}
 TAG_PREFIX='pinene_native_rank_'
-CONTAINER_RETURNS={'minecraft:milk_bucket':'minecraft:bucket','minecraft:honey_bottle':'minecraft:glass_bottle'}
+CONTAINER_RETURNS={'minecraft:milk_bucket':'minecraft:bucket','minecraft:honey_bottle':'minecraft:glass_bottle',
+    'pine:milk_bottle':'minecraft:glass_bottle','pine:cooking_oil':'minecraft:glass_bottle',
+    'pine:gelatin':'minecraft:glass_bottle'}
 SEEDS=['minecraft:wheat_seeds','minecraft:pumpkin_seeds','minecraft:melon_seeds','minecraft:beetroot_seeds']
 def parse_data(text):
     match=re.fullmatch(r'\s*export const COOKING_RECIPES\s*=\s*(\[[\s\S]*\]);\s*export const CATEGORY_ORDER\s*=\s*\[[0-9,\s]*\];\s*',text)

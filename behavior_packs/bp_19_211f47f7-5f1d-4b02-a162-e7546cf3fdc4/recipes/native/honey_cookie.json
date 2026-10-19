@@ -1,0 +1,41 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:honey_cookie"
+    },
+    "tags": [
+      "pinene_native_rank_2"
+    ],
+    "pattern": [
+      "AAB",
+      "C  "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:wheat"
+      },
+      "B": {
+        "item": "minecraft:honey_bottle"
+      },
+      "C": {
+        "item": "pine:butter"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:honey_cookie",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:wheat"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:cheesecake"
+    },
+    "tags": [
+      "pinene_native_rank_6"
+    ],
+    "pattern": [
+      "AAB",
+      "CDE",
+      "F  "
+    ],
+    "key": {
+      "A": {
+        "item": "pine:cheese"
+      },
+      "B": {
+        "item": "minecraft:wheat"
+      },
+      "C": {
+        "item": "pine:butter"
+      },
+      "D": {
+        "item": "minecraft:egg"
+      },
+      "E": {
+        "item": "pine:milk_bottle"
+      },
+      "F": {
+        "item": "minecraft:sugar"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:cheesecake",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "pine:cheese"
+      }
+    ]
+  }
+}

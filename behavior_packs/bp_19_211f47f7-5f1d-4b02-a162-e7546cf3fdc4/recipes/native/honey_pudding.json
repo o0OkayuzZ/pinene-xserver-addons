@@ -1,0 +1,47 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:honey_pudding"
+    },
+    "tags": [
+      "pinene_native_rank_4"
+    ],
+    "pattern": [
+      "ABC",
+      "DE "
+    ],
+    "key": {
+      "A": {
+        "item": "pine:milk_bottle"
+      },
+      "B": {
+        "item": "minecraft:egg"
+      },
+      "C": {
+        "item": "pine:gelatin"
+      },
+      "D": {
+        "item": "minecraft:honey_bottle"
+      },
+      "E": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:honey_pudding",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 3
+      }
+    ],
+    "unlock": [
+      {
+        "item": "pine:milk_bottle"
+      }
+    ]
+  }
+}

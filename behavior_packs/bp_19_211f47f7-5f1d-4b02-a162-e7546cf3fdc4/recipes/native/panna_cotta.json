@@ -1,0 +1,44 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:panna_cotta"
+    },
+    "tags": [
+      "pinene_native_rank_4"
+    ],
+    "pattern": [
+      "AAB",
+      "CD "
+    ],
+    "key": {
+      "A": {
+        "item": "pine:milk_bottle"
+      },
+      "B": {
+        "item": "pine:gelatin"
+      },
+      "C": {
+        "item": "minecraft:sugar"
+      },
+      "D": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:panna_cotta",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 3
+      }
+    ],
+    "unlock": [
+      {
+        "item": "pine:milk_bottle"
+      }
+    ]
+  }
+}
