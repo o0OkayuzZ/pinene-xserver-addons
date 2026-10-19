@@ -1,103 +1,138 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "method": "mechanical_recolor_from_approved_sources",
+  "palette_hex": [
+    "#593a0c",
+    "#80540f",
+    "#a36d13",
+    "#c78b17",
+    "#e5ac20",
+    "#f7cd35",
+    "#ffe15b",
+    "#fff18a",
+    "#ffffca"
+  ],
+  "command": "python tools/cooking_native/recolor_golden_materials.py --write",
+  "image_generation_used": false,
   "assets": [
     {
       "id": "pine:golden_butter",
       "source_reference": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/butter.png",
+      "source_sha256": "d3f421a2b1d8125f2837208c8860ed8f9b6fbc2d3f8093cd3f121c10e3b2b665",
       "output": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_butter.png",
-      "sha256": "e2aa1b056c5995f5a0f6f4888cbbb22a7030e0e6f20abbedcc4ca453081ecaca",
+      "sha256": "a32917932eebfe8669d37e22ec0cfac57f124a849660ba83365c8877149d0d91",
       "size": [
         32,
         32
       ],
-      "generation": "built-in image_gen",
-      "processing": "Nearest-neighbor downscale only; alpha preserved.",
-      "review_status": "generated_candidate",
-      "prompt": "Use case: precise-object-edit. Asset type: Minecraft Bedrock inventory sprite for Pine Food, golden butter. The referenced local image is the edit target, the approved existing a small rectangular pat of butter on its tiny wrapper. Make ONLY a golden material color variant. Preserve exactly the original object's silhouette, object count, viewing angle, pose, position, outline, shading structure, dish/wrapper/glass boundaries, and pixel-art identity. Recolor the edible material to rich metallic gold with amber shadows and pale gold highlights, clearly more gilded than the original. Keep the original visible plates, wrappers, and clear glass as supporting parts. Render as a crisp low-resolution 32-by-32 pixel-art sprite enlarged with hard nearest-neighbor pixel blocks, centered at the same scale, within a square transparent canvas. Genuine transparent alpha background. No checkerboard drawn into pixels. No labels, text, lettering, border, extra objects, sparkles, glow, shadows outside the original silhouette, or enchanted purple glint (the game supplies glint separately). Do not redesign the food. Return one isolated sprite only."
+      "alpha_sha256": "2d2bf8dda9b868594ccc29abbee4e793b85fb78dbf82d5af4dbd5457ed93f98e",
+      "generation": "deterministic_palette_recolor",
+      "processing": "RGB palette conversion only; original coordinates, dimensions and every alpha byte preserved.",
+      "review_status": "user_requested_mechanical_recolor",
+      "luminance_low": 25,
+      "luminance_high": 241
     },
     {
       "id": "pine:golden_chocolate",
       "source_reference": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/chocolate.png",
+      "source_sha256": "62e68527f55562694602cd79e0a1af383006eb2e555df27df663048abd428ced",
       "output": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_chocolate.png",
-      "sha256": "4d61ccd45e5c452714f4a2bd2e27b3bde02d143a52ef13b5d5d583f792f95c1f",
+      "sha256": "ce6ec94482551f11e5649308e0c6363dacfbd917009b1b39269597e1c48d43ee",
       "size": [
         32,
         32
       ],
-      "generation": "built-in image_gen",
-      "processing": "Nearest-neighbor downscale only; alpha preserved.",
-      "review_status": "generated_candidate",
-      "prompt": "Use case: precise-object-edit. Asset type: Minecraft Bedrock inventory sprite for Pine Food, golden chocolate. The referenced local image is the edit target, the approved existing a segmented chocolate bar. Make ONLY a golden material color variant. Preserve exactly the original object's silhouette, object count, viewing angle, pose, position, outline, shading structure, dish/wrapper/glass boundaries, and pixel-art identity. Recolor the edible material to rich metallic gold with amber shadows and pale gold highlights, clearly more gilded than the original. Keep the original visible plates, wrappers, and clear glass as supporting parts. Render as a crisp low-resolution 32-by-32 pixel-art sprite enlarged with hard nearest-neighbor pixel blocks, centered at the same scale, within a square transparent canvas. Genuine transparent alpha background. No checkerboard drawn into pixels. No labels, text, lettering, border, extra objects, sparkles, glow, shadows outside the original silhouette, or enchanted purple glint (the game supplies glint separately). Do not redesign the food. Return one isolated sprite only."
+      "alpha_sha256": "f5da817cd0cc3898854e5840696509f191f8f1d7f3f6762b21ec63fb060dc2f3",
+      "generation": "deterministic_palette_recolor",
+      "processing": "RGB palette conversion only; original coordinates, dimensions and every alpha byte preserved.",
+      "review_status": "user_requested_mechanical_recolor",
+      "luminance_low": 12,
+      "luminance_high": 128
     },
     {
       "id": "pine:golden_milk_bottle",
       "source_reference": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/milk_bottle.png",
+      "source_sha256": "9e8bf4efe295fbe2bafa1ea6d19be36d7a749e4e9d43657e83a721f96d7c38ae",
       "output": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_milk_bottle.png",
-      "sha256": "22fda412a552386ec8628f0404469b8fa6f089e1cd8e7d0229c3fc980b482d07",
+      "sha256": "c520f971dc5fd1122870c0493049c36003004e3bd48511d1a62cc060afa892a3",
       "size": [
         32,
         32
       ],
-      "generation": "built-in image_gen",
-      "processing": "Nearest-neighbor downscale only; alpha preserved.",
-      "review_status": "generated_candidate",
-      "prompt": "Use case: precise-object-edit. Asset type: Minecraft Bedrock inventory sprite for Pine Food, golden milk_bottle. The referenced local image is the edit target, the approved existing a glass milk bottle with golden liquid; keep the glass highlights and cap. Make ONLY a golden material color variant. Preserve exactly the original object's silhouette, object count, viewing angle, pose, position, outline, shading structure, dish/wrapper/glass boundaries, and pixel-art identity. Recolor the edible material to rich metallic gold with amber shadows and pale gold highlights, clearly more gilded than the original. Keep the original visible plates, wrappers, and clear glass as supporting parts. Render as a crisp low-resolution 32-by-32 pixel-art sprite enlarged with hard nearest-neighbor pixel blocks, centered at the same scale, within a square transparent canvas. Genuine transparent alpha background. No checkerboard drawn into pixels. No labels, text, lettering, border, extra objects, sparkles, glow, shadows outside the original silhouette, or enchanted purple glint (the game supplies glint separately). Do not redesign the food. Return one isolated sprite only."
+      "alpha_sha256": "0db240f89eca619420a667a2271efa289d1a5641c334591a725348f74f877642",
+      "generation": "deterministic_palette_recolor",
+      "processing": "RGB palette conversion only; original coordinates, dimensions and every alpha byte preserved.",
+      "review_status": "user_requested_mechanical_recolor",
+      "luminance_low": 29,
+      "luminance_high": 251
     },
     {
       "id": "pine:golden_cheese",
       "source_reference": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/cheese.png",
+      "source_sha256": "64db9d780eb23397c5956f38de5ef2bed1c5b8713631bd70478161ae7645dc03",
       "output": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_cheese.png",
-      "sha256": "2aa856daca40e4c795d25b101f3acb68f786461dd66a48ce031192f800f9e724",
+      "sha256": "5fdf51f8d1d91a816e16ed3be5fc5c2048028249965fa72025c64b35703a36b1",
       "size": [
-        32,
-        32
+        64,
+        64
       ],
-      "generation": "built-in image_gen",
-      "processing": "Nearest-neighbor downscale only; alpha preserved.",
-      "review_status": "generated_candidate",
-      "prompt": "Use case: precise-object-edit. Asset type: Minecraft Bedrock inventory sprite for Pine Food, golden cheese. The referenced local image is the edit target, the approved existing a triangular wedge of cheese with holes. Make ONLY a golden material color variant. Preserve exactly the original object's silhouette, object count, viewing angle, pose, position, outline, shading structure, dish/wrapper/glass boundaries, and pixel-art identity. Recolor the edible material to rich metallic gold with amber shadows and pale gold highlights, clearly more gilded than the original. Keep the original visible plates, wrappers, and clear glass as supporting parts. Render as a crisp low-resolution 32-by-32 pixel-art sprite enlarged with hard nearest-neighbor pixel blocks, centered at the same scale, within a square transparent canvas. Genuine transparent alpha background. No checkerboard drawn into pixels. No labels, text, lettering, border, extra objects, sparkles, glow, shadows outside the original silhouette, or enchanted purple glint (the game supplies glint separately). Do not redesign the food. Return one isolated sprite only."
+      "alpha_sha256": "99f28ab8abadbed8f6922d4597689ea7a5eadcd0a47d6cf3442218ac4877e67c",
+      "generation": "deterministic_palette_recolor",
+      "processing": "RGB palette conversion only; original coordinates, dimensions and every alpha byte preserved.",
+      "review_status": "user_requested_mechanical_recolor",
+      "luminance_low": 87,
+      "luminance_high": 251
     },
     {
       "id": "pine:golden_cooking_oil",
       "source_reference": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/cooking_oil.png",
+      "source_sha256": "e9bfa644c06df78c32bca164fbc8773d3a42c0a175c776538c0588a4d78e780c",
       "output": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_cooking_oil.png",
-      "sha256": "17c23f09b6395c69c4aca983f344f931f663b070e19ab3c376e2d772401b075e",
+      "sha256": "82bb22804135bef5207db478f7eaa633c8a421294601006d8805e0cda9ee3d96",
       "size": [
-        32,
-        32
+        64,
+        64
       ],
-      "generation": "built-in image_gen",
-      "processing": "Nearest-neighbor downscale only; alpha preserved.",
-      "review_status": "generated_candidate",
-      "prompt": "Use case: precise-object-edit. Asset type: Minecraft Bedrock inventory sprite for Pine Food, golden cooking_oil. The referenced local image is the edit target, the approved existing the exact oil drop and small oil pool silhouette in the reference. Make ONLY a golden material color variant. Preserve exactly the original object's silhouette, object count, viewing angle, pose, position, outline, shading structure, dish/wrapper/glass boundaries, and pixel-art identity. Recolor the edible material to rich metallic gold with amber shadows and pale gold highlights, clearly more gilded than the original. Keep the original visible plates, wrappers, and clear glass as supporting parts. Render as a crisp low-resolution 32-by-32 pixel-art sprite enlarged with hard nearest-neighbor pixel blocks, centered at the same scale, within a square transparent canvas. Genuine transparent alpha background. No checkerboard drawn into pixels. No labels, text, lettering, border, extra objects, sparkles, glow, shadows outside the original silhouette, or enchanted purple glint (the game supplies glint separately). Do not redesign the food. Return one isolated sprite only."
+      "alpha_sha256": "d1c365c8b64f1d1b3dc8ac376cbcf9821b85d0468639ba0726b43605bbc9c5fd",
+      "generation": "deterministic_palette_recolor",
+      "processing": "RGB palette conversion only; original coordinates, dimensions and every alpha byte preserved.",
+      "review_status": "user_requested_mechanical_recolor",
+      "luminance_low": 5,
+      "luminance_high": 254
     },
     {
       "id": "pine:golden_gelatin",
       "source_reference": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/gelatin.png",
+      "source_sha256": "57697750b8f73d2273b3b3f1b46d0c58c36bce69f24262d56111020bd0c64516",
       "output": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_gelatin.png",
-      "sha256": "04444098a97fddce3d6eec4383bc798acd91f218a78c7567682b517d4c271dc5",
+      "sha256": "f795f589532378636445cc3ac5edbabf72c469c7434f7b1ba041b734268c5660",
       "size": [
-        32,
-        32
+        64,
+        64
       ],
-      "generation": "built-in image_gen",
-      "processing": "Nearest-neighbor downscale only; alpha preserved.",
-      "review_status": "generated_candidate",
-      "prompt": "Use case: precise-object-edit. Asset type: Minecraft Bedrock inventory sprite for Pine Food, golden gelatin. The referenced local image is the edit target, the approved existing the exact translucent gelatin pieces and small dish silhouette in the reference. Make ONLY a golden material color variant. Preserve exactly the original object's silhouette, object count, viewing angle, pose, position, outline, shading structure, dish/wrapper/glass boundaries, and pixel-art identity. Recolor the edible material to rich metallic gold with amber shadows and pale gold highlights, clearly more gilded than the original. Keep the original visible plates, wrappers, and clear glass as supporting parts. Render as a crisp low-resolution 32-by-32 pixel-art sprite enlarged with hard nearest-neighbor pixel blocks, centered at the same scale, within a square transparent canvas. Genuine transparent alpha background. No checkerboard drawn into pixels. No labels, text, lettering, border, extra objects, sparkles, glow, shadows outside the original silhouette, or enchanted purple glint (the game supplies glint separately). Do not redesign the food. Return one isolated sprite only."
+      "alpha_sha256": "adaf3cbc518261f141cf7be950112286d68119452391fd8a05e0821d10ae7d3c",
+      "generation": "deterministic_palette_recolor",
+      "processing": "RGB palette conversion only; original coordinates, dimensions and every alpha byte preserved.",
+      "review_status": "user_requested_mechanical_recolor",
+      "luminance_low": 8,
+      "luminance_high": 239
     },
     {
       "id": "pine:golden_noodles",
       "source_reference": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/noodles.png",
+      "source_sha256": "0f86685abd372435f4074163b7296dedb2aa327c75653cf9051b0ca204d3a799",
       "output": "resource_packs/rp_21_c81a6798-b6b1-4716-a514-c49967ad0ee2/textures/items/golden_noodles.png",
-      "sha256": "e407a0613c7013cd54cb18011720fd8696d3cceb809183597d92293fe3a1e6ca",
+      "sha256": "91bfc912515fc0f898851d9e8b88b6091a7c15b78023d46e84aa91583d35deb1",
       "size": [
-        32,
-        32
+        64,
+        64
       ],
-      "generation": "built-in image_gen",
-      "processing": "Nearest-neighbor downscale only; alpha preserved.",
-      "review_status": "generated_candidate",
-      "prompt": "Use case: precise-object-edit. Asset type: Minecraft Bedrock inventory sprite for Pine Food, golden noodles. The referenced local image is the edit target, the approved existing the exact coiled noodles and plate silhouette in the reference. Make ONLY a golden material color variant. Preserve exactly the original object's silhouette, object count, viewing angle, pose, position, outline, shading structure, dish/wrapper/glass boundaries, and pixel-art identity. Recolor the edible material to rich metallic gold with amber shadows and pale gold highlights, clearly more gilded than the original. Keep the original visible plates, wrappers, and clear glass as supporting parts. Render as a crisp low-resolution 32-by-32 pixel-art sprite enlarged with hard nearest-neighbor pixel blocks, centered at the same scale, within a square transparent canvas. Genuine transparent alpha background. No checkerboard drawn into pixels. No labels, text, lettering, border, extra objects, sparkles, glow, shadows outside the original silhouette, or enchanted purple glint (the game supplies glint separately). Do not redesign the food. Return one isolated sprite only."
+      "alpha_sha256": "6b2244f3ff52d25852850450151a9359bd05c6bff14295e67da0773a02c72924",
+      "generation": "deterministic_palette_recolor",
+      "processing": "RGB palette conversion only; original coordinates, dimensions and every alpha byte preserved.",
+      "review_status": "user_requested_mechanical_recolor",
+      "luminance_low": 102,
+      "luminance_high": 244
     }
   ]
 }

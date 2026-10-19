@@ -183,7 +183,7 @@ def main():
     mode.add_argument('--write',action='store_true');mode.add_argument('--check',action='store_true');mode.add_argument('--release-check',action='store_true')
     args=ap.parse_args();catalog=load_catalog();outputs=generated_files(catalog)
     if args.release_check:
-        if load_golden_spec().get('art_status')!='approved':raise SystemExit('RELEASE BLOCKED: golden material icon candidates need visual approval and game-engine QA.')
+        if load_golden_spec().get('art_status') not in ('approved','approved_mechanical_recolor'):raise SystemExit('RELEASE BLOCKED: golden material icon candidates need visual approval and game-engine QA.')
         unreachable=[r['id'] for r in catalog['dishes'] if r['rank']>max(LIMITS.values())]
         if unreachable:raise SystemExit('RELEASE BLOCKED: Rank VIII-X dishes need an obtainable cooking-tool progression.')
         pending=[r['id'] for r in catalog['dishes'] if r['art_status']!='existing_approved']
