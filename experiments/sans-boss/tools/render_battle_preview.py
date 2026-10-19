@@ -3,7 +3,7 @@
 This is an offline animation, not a capture or Bedrock physics validation.
 """
 from pathlib import Path
-import json, math, subprocess, wave
+import json, math, subprocess, wave, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 import render_attack_preview as r
@@ -73,6 +73,7 @@ for i,(stage,s) in enumerate(timeline):
         for a in np.linspace(0,2*math.pi,18,endpoint=False):
             surfaces += r.box(feet+[math.cos(a)*radius-.035,.025,math.sin(a)*radius-.035],[.07,.035,.07],[83,193,237])
     for b in s.get('bones',[]):
+        if t-b['bornAt']==10:events.append((i,'bone_emerge'))
         pose=b['pose'];base=np.array([b['base'][k] for k in ['x','y','z']]);axis=np.array([b['direction'][k] for k in ['x','y','z']])
         if pose['warning']:surfaces += r.box(base+[-.3,.015,-.0125],[.6,.025,.025],[2,2,5])
         if pose['presence']<=0:continue
@@ -88,6 +89,7 @@ for i,(stage,s) in enumerate(timeline):
         if b['age']==24:events.append((i,'blaster_fire'))
     if stage=='slam' and t==18:events.append((i,'gravity_cue'))
     if stage=='slam' and t==26:events.append((i,'slam_impact'))
+    if '--audio-only' in sys.argv:continue
     rgba,_,emission=r.render_surfaces(surfaces);layer=Image.fromarray(rgba,'RGBA');canvas.paste(layer,(0,0),layer)
     blur=np.asarray(Image.fromarray(emission).filter(ImageFilter.GaussianBlur(7))).astype(float)
     canvas=Image.fromarray(np.clip(np.asarray(canvas).astype(float)+blur*.4,0,255).astype(np.uint8))
@@ -115,7 +117,7 @@ mix*=min(1,.92/max(1e-9,abs(mix).max()))
 audio=OUT/'battle_v097_audio.wav'
 with wave.open(str(audio),'wb') as f:
     f.setparams((1,2,rate,len(mix),'NONE','not compressed'));f.writeframes((mix*32767).astype('<i2').tobytes())
-video=OUT/'Sans_Combat_Sequence_v097.mp4'
+video=OUT/'Sans_Combat_Sequence_Bone_SFX_v098.mp4'
 subprocess.run(['ffmpeg','-y','-v','error','-framerate',str(FPS),'-i',str(frames/'%04d.png'),'-i',str(audio),'-c:v','libx264','-crf','19','-preset','fast','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-movflags','+faststart','-shortest',str(video)],check=True)
 subprocess.run(['ffmpeg','-v','error','-i',str(video),'-f','null','-'],check=True)
 print('BATTLE_COMPLETE',video,'seconds',len(timeline)/FPS,'sound events',len(events),flush=True)

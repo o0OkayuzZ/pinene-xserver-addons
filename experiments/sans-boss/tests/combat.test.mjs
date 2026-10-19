@@ -422,6 +422,17 @@ test('runtime spikes spawn every five ticks and cancel their pending stream on c
  assert.equal(all('pinene_sans:bone').length,3);
 });
 
+test('bone emergence sounds once at rise, stays silent during warning and cancels with stream',async()=>{
+ const game=await runtime({teleportSucceeds:false});game.step(30);
+ const count=()=>game.soundEvents.filter(id=>id==='pinene_sans.bone_emerge').length;
+ assert.equal(count(),0);game.step(9);assert.equal(count(),0);
+ game.step();assert.equal(count(),1);
+ game.step(4);assert.equal(count(),1);
+ game.step();assert.equal(count(),2);
+ game.player.mode='Creative';game.step(40);assert.equal(count(),2);
+ assert.deepEqual(game.errors,[]);
+});
+
 test('tilted spike collision covers the exposed segment, while retreat is harmless',()=>{
  const p=rules.boneSpikePlan({x:0,y:0,z:0},45,55,1.5,3);
  assert.ok(Math.abs(Math.hypot(...Object.values(p.direction))-1)<1e-10);

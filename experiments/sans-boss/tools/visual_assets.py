@@ -85,8 +85,9 @@ def sans():
         foot=[mapped([side*3.6-3.1,0,-5.3],[6.2,1.9,9],(192,32,32,32),10),
               cube([side*3.6-3.15,0,-5.35],[6.3,.35,9.1],11)]
         output.append(bone(label+'_foot',foot,'root',[side*3.6,1.5,0]))
-    # Restore the taller body balance while retaining the box head's aspect.
-    def stretch_y(y): return y*1.5 if y <= 12.5 else y+6.25
+    # Short, broad Sans: shorten the body/legs without squashing the skull.
+    # Overall height: 24.5 model pixels (1.53125 blocks), down from 28.75.
+    def stretch_y(y): return y*1.16 if y <= 12.5 else y+2
     for part in output:
         part['pivot'][1]=stretch_y(part['pivot'][1])
         for shape in part['cubes']:

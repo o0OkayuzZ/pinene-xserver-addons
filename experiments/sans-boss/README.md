@@ -1,4 +1,4 @@
-# Sans boss — development v0.9.7
+# Sans boss — development v0.9.8
 
 Independent Bedrock BP/RP under the authoritative `pinene-xserver-addons` repo.
 No production world registration is changed. Stable `@minecraft/server` 2.7.0 is required;
@@ -311,4 +311,16 @@ charge/fire/gravity/impact audio. It includes a warp, alternating bone stream,
 staged gravity slam and follow-up bones, then six staggered ring blasters.
 Target travel, Sans facing/gestures and transitions are staged choreography;
 this does not validate Minecraft physics or change runtime attack scheduling.
-Output: `dist/Sans_Combat_Sequence_v097.mp4` (H.264/AAC, 1000x680, 20 fps).
+Output: `dist/Sans_Combat_Sequence_Bone_SFX_v098.mp4` (H.264/AAC, 1000x680, 20 fps).
+
+## Shorter body and bone emergence audio 0.9.8
+
+Sans is now 24.5 model pixels tall (1.53125 blocks), about 15% shorter.
+Only the torso/leg height changes; the skull dimensions and overall width
+retain the approved box silhouette and clean pixel face.
+
+`python tools/build_bone_audio.py` reproduces the bundled 85ms dry retro
+bone effect from deterministic tones, with no random noise sample. Each
+valid spike plays it once when its warning ends and it starts to rise.
+Cancelled or invalid hazards stay silent. The combined preview includes
+32 emergence sounds, plus the existing 14 blaster/gravity/impact events.

@@ -362,6 +362,10 @@ function updateHazards(state, players, damage) {
       return true;
     });
     if(!moved){removeVisual(bone.visual);removeVisual(bone.marker);return false;}
+    if (!bone.emerged && tick - bone.bornAt >= CONFIG.spikeWarningTicks) {
+      bone.emerged = true;
+      sound(dimension, "pinene_sans.bone_emerge", bone.base, 1);
+    }
     if(!pose.damaging) return true;
     const segment=boneSpikeSegment(bone,pose);
     for(const player of players){
