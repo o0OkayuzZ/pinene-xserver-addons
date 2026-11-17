@@ -1,4 +1,8 @@
-"""Build a reversible, hash-checked RP patch; never edit the source server tree.
+"""Historical glass-appearance experiment, rolled back on 2026-11-18.
+
+Build a reversible, hash-checked RP patch; never edit the source server tree.
+Production is back to its pre-experiment appearance. See the operation record
+for the user's reported trap malfunction and undesired client appearance.
 
 The separately managed rendering pack is discovered by UUID. Vanilla texture
 files fall through to the client; private atlas aliases prevent Waystone's

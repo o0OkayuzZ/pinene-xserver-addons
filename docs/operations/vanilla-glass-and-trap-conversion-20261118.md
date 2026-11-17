@@ -1,5 +1,7 @@
 # Vanilla glass appearance and connected trap glass
 
+**Current status: rolled back at the user's request on 2026-11-18.** The user reported that the traps stopped working and the appearance was not as expected. The deployment and conversion below are historical, not the current production configuration. Saved connection masks and block counts did not establish farm compatibility or acceptable client rendering.
+
 The user requested vanilla appearance for ordinary glass, then connected-glass replacement in the guardian farm and connected tinted glass in the creeper farm.
 
 ## Ordinary glass appearance
@@ -45,3 +47,17 @@ The replacement completed and was independently verified from a consistent saved
 Evidence beside the backup: `trap-glass-before.json`, `trap-glass-after.json`, `trap-glass-console.log`, `trap-glass-result.json`, `trap-glass-after-save-manifest.json`, and `trap-glass-verification.json`. Rollback should use the recorded positions and check the expected connected identifier before restoring each original block, rather than overwriting the whole bounding box. The full offline world archive is also retained.
 
 The builder passed a dry run against the captured source files, including the 37-definition scope and preservation assertions, and Python syntax validation. Server/structure checks do not establish the visual appearance in a player client.
+
+## Rollback completed
+
+Rollback was independently verified at **2026-11-18 03:15:33 JST**.
+
+- Restored the guardian farm's **1,226** blocks to `minecraft:glass` and the creeper farm's **2,460** blocks to `minecraft:tinted_glass`.
+- Generated 129 guardian and four creeper fill cuboids from the exact saved positions. Every cuboid contained only recorded targets; every command filtered for the expected connected identifier. No whole-world restore or bounding-box overwrite was performed.
+- A fresh consistent saved-world copy confirms all **4,003** glass positions across both audited regions match their original identifiers and states, including the creeper farm's unaffected 317 ordinary glass blocks. No non-air secondary layer was introduced.
+- Restored all **282** rendering asset/definition files byte-for-byte to their pre-experiment hashes. The manifest and the two references use **1.3.48** to refresh client caches; the appearance itself is the original 1.3.46 configuration.
+- Both complete connected-glass packs remain unchanged, so pre-existing unrelated connected-glass builds remain supported.
+- Restored Area2 and removed the temporary ticking area. Both services are active after restart, with zero content errors. Actual farm spawning/processing and client appearance have not been independently observed after rollback.
+- Alylica's Dungeons remains at local deployment **2.1.6** (upstream 2.1.4). Other buildings, player progress and unrelated addons were not rolled back.
+
+Rollback evidence in the original backup directory: `rollback-trap-plan.json`, `rollback-trap-console.log`, `rollback-trap-result.json`, `trap-glass-rollback.json`, and `rollback-verification.json`. The pack rollback has its own before-files and deployment plan at `/opt/minecraft/server/_pinene_deploy_backups/glass-rollback-20261118-031413`. The original complete world backup is retained; temporary database copies were removed after verification.
