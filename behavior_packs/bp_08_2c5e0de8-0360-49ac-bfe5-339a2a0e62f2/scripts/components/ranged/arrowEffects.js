@@ -150,7 +150,7 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     const hurtLoc = hurt.location
     const projLoc = projectile.location
     if (projectile.typeId == "dungeons:torment_arrow") {
-        e.damage = Math.max(12, e.damage*3)
+        e.damage = Math.max(12, e.damage*1.5)
         const dir = getDirection(projLoc, hurtLoc)
         system.run(() => {
             hurt.applyKnockback(makeVector(dir, 1.5), 0.08)

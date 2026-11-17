@@ -15,6 +15,7 @@
     "texture": "$texture",
     "alpha": "$alpha",
     "visible": "$visible",
+    "$font_scale|default": 1.0,
     "$offset|default": [
       0,
       "50%-68px"
@@ -28,7 +29,7 @@
         "$visible": false
       },
       {
-        "requires": "((not($atext - '§d§l ' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext))",
+        "requires": "((not($atext - '§d§l ' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext) and ($atext - '§c§l§o§c§r' = $atext) and ($atext - '§s§d§i§a§m' = $atext))",
         "$offset": [
           150,
           "50%-15px"
@@ -37,7 +38,7 @@
         "$alpha": 1
       },
       {
-        "requires": "((not($atext - '§c§l ' = $atext)) and ($atext - '§d§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext))",
+        "requires": "((not($atext - '§c§l ' = $atext)) and ($atext - '§d§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext) and ($atext - '§c§l§o§c§r' = $atext) and ($atext - '§s§d§i§a§m' = $atext))",
         "$offset": [
           150,
           "50%-15px"
@@ -46,16 +47,17 @@
         "$alpha": 1
       },
       {
-        "requires": "((not($atext - '§s§o§u§l§r' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§d§l ' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext))",
+        "requires": "((not($atext - '§s§o§u§l§r' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§d§l ' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext) and ($atext - '§c§l§o§c§r' = $atext) and ($atext - '§s§d§i§a§m' = $atext))",
         "$offset": [
           150,
           "50%-15px"
         ],
+        "$font_scale": 1,
         "$texture": "textures/ui/soul_bar_bg",
         "$alpha": 1
       },
       {
-        "requires": "((not($atext - '§q§u§i§v§r' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§d§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext))",
+        "requires": "((not($atext - '§q§u§i§v§r' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§d§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext) and ($atext - '§c§l§o§c§r' = $atext) and ($atext - '§s§d§i§a§m' = $atext))",
         "$offset": [
           150,
           "50%-15px"
@@ -64,19 +66,38 @@
         "$alpha": 1
       },
       {
-        "requires": "((not($atext - '§c§o§o§l§r' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§d§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext))",
+        "requires": "((not($atext - '§c§o§o§l§r' = $atext)) and ($atext - '§c§l ' = $atext) and ($atext - '§d§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§l§o§c§r' = $atext) and ($atext - '§s§d§i§a§m' = $atext))",
         "$offset": [
           150,
           "50%-15px"
         ],
         "$texture": "textures/ui/cooldown_timer_bg",
         "$alpha": 1
+      },
+      {
+        "requires": "((not($atext - '§c§l§o§c§r' = $atext)) and ($atext - '§d§l ' = $atext) and ($atext - '§c§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext) and ($atext - '§s§d§i§a§m' = $atext))",
+        "$offset": [
+          150,
+          "50%-15px"
+        ],
+        "$texture": "textures/ui/mana_bar_clock",
+        "$alpha": 1
+      },
+      {
+        "requires": "((not($atext - '§s§d§i§a§m' = $atext)) and ($atext - '§d§l ' = $atext) and ($atext - '§c§l ' = $atext) and ($atext - '§s§o§u§l§r' = $atext) and ($atext - '§q§u§i§v§r' = $atext) and ($atext - '§c§o§o§l§r' = $atext) and ($atext - '§c§l§o§c§r' = $atext))",
+        "$offset": [
+          170,
+          "50%-24px"
+        ],
+        "$font_scale": 1.5,
+        "$alpha": 0
       }
     ],
     "controls": [
       {
         "actionbar_message": {
           "type": "label",
+          "font_scale_factor": "$font_scale",
           "anchor_from": "center",
           "anchor_to": "center",
           "color": "$tool_tip_text",
@@ -1019,7 +1040,7 @@
       }
     ]
   },
-  // Chris Night 
+  // Chris Night
   "chrisnight_health": {
     "type": "panel",
     "anchor_from": "top_middle",
@@ -1089,7 +1110,7 @@
     "type": "image",
     "texture": "textures/ui/bossbars/chrisnight/overlayBar"
   },
-  // Lethal Dragon 
+  // Lethal Dragon
   "lethaldragon_health": {
     "type": "panel",
     "anchor_from": "top_middle",
@@ -1159,7 +1180,7 @@
     "type": "image",
     "texture": "textures/ui/bossbars/lethaldragon/overlayBar"
   },
-  // Redstone Monstrosity 
+  // Redstone Monstrosity
   "redstonemonstrosity_health": {
     "type": "panel",
     "anchor_from": "top_middle",
@@ -1229,7 +1250,7 @@
     "type": "image",
     "texture": "textures/ui/bossbars/redstonemonstrosity/overlayBar"
   },
-  // Obsidian Monstrosity 
+  // Obsidian Monstrosity
   "obsidianmonstrosity_health": {
     "type": "panel",
     "anchor_from": "top_middle",
@@ -1509,7 +1530,7 @@
     "type": "image",
     "texture": "textures/ui/bossbars/heartofender/overlayBar"
   },
-  // Haunted Monstrosity 
+  // Haunted Monstrosity
   "hauntedmonstrosity_health": {
     "type": "panel",
     "anchor_from": "top_middle",
@@ -1579,7 +1600,7 @@
     "type": "image",
     "texture": "textures/ui/bossbars/hauntedmonstrosity/overlayBar"
   },
-  // Nameless One 
+  // Nameless One
   "namelessone_health": {
     "type": "panel",
     "anchor_from": "top_middle",
@@ -1649,7 +1670,7 @@
     "type": "image",
     "texture": "textures/ui/bossbars/namelessone/overlayBar"
   },
-  // Mooshroom Monstrosity 
+  // Mooshroom Monstrosity
   "mooshroommonstrosity_health": {
     "type": "panel",
     "anchor_from": "top_middle",
@@ -2209,7 +2230,7 @@
     "type": "image",
     "texture": "textures/ui/bossbars/timer/overlayBar"
   },
-  // Ancient Guardian 
+  // Ancient Guardian
   "ancientguardian_health": {
     "type": "panel",
     "anchor_from": "top_middle",

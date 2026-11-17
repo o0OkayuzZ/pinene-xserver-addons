@@ -20,7 +20,7 @@
                 },
                 {
                   "test": "has_tag",
-                  "value": "dungeons:ancient_hunt",
+                  "value": "dungeons:prevent_zombification",
                   "subject": "self",
                   "operator": "not"
                 }
@@ -42,7 +42,7 @@
                 },
                 {
                   "test": "has_tag",
-                  "value": "dungeons:ancient_hunt",
+                  "value": "dungeons:prevent_zombification",
                   "subject": "self"
                 }
               ]
@@ -141,7 +141,7 @@
         }
       },
       "minecraft:hoglin_adult": {
-        
+
         "minecraft:scale": {
           "value": 1.3
         },

@@ -26,10 +26,10 @@
                     }
                 ]
             },
-            "minecraft:material_instances": {
+          "minecraft:material_instances": {
                 "*": {
-                    "texture": "flattened_structure_void",
-                    "tint_method": "default_foliage"
+                    "texture": "empty",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:tags": [

@@ -121,7 +121,6 @@ const hasMusic = [
     "dungeons:ancientdim_outer_end"
 ]
 
-
 system.run(() => {
     if (hunts == undefined) hunts = world.getDynamicProperty("dungeons:ancient_hunts_enabled") == false ? false : true
 })
@@ -198,13 +197,13 @@ system.runInterval(() => {
 //find portal
 
 const subchunkSize = 8
- 
+
 function* findSpawnerJob(player, dim, loc, state, tryAgain) {
     var offset = 0
     if (dim.id == "dungeons:ancientdim_misty_peak") offset = 10
     if (dim.id == "dungeons:ancientdim_sanctum_summit") offset = 10
     if (dim.id == "dungeons:ancientdim_obsidian_fortress") offset = 10
- 
+
     const radius = Math.ceil(29 / 3 + 9)
     const minCorner = {
         x: loc.x - radius,
@@ -236,11 +235,11 @@ function* findSpawnerJob(player, dim, loc, state, tryAgain) {
     }
     subchunks.sort((a, b) => a.distSq - b.distSq)
     const failedstuff = []
- 
+
     const checkChunk = function* (chunk) {
         if (!player.isValid) return "abort";
         const volume = new BlockVolume(chunk.from, chunk.to)
- 
+
         var hasSpawner = false
         var loadFailure = false
         try {
@@ -249,12 +248,12 @@ function* findSpawnerJob(player, dim, loc, state, tryAgain) {
             loadFailure = true
             hasSpawner = false
         }
- 
+
         if (loadFailure) {
             failedstuff.push(chunk)
             return "continue";
         }
- 
+
         if (hasSpawner) {
             for (const blockLoc of volume.getBlockLocationIterator()) {
                 if (!player.isValid) return "abort";
@@ -276,14 +275,14 @@ function* findSpawnerJob(player, dim, loc, state, tryAgain) {
         }
         return "continue";
     }
- 
+
     try {
         for (const chunk of subchunks) {
             const result = yield* checkChunk(chunk)
             if (result === "abort" || result === "found") return;
             yield
         }
- 
+
         if (failedstuff.length > 0) {
             console.warn(`§eRetrying safespace check !`)
             for (const chunk of failedstuff) {
@@ -292,14 +291,14 @@ function* findSpawnerJob(player, dim, loc, state, tryAgain) {
                 yield
             }
         }
- 
+
         if(!tryAgain) console.warn("§cCould not find safespace!!! very bad")
         player.addTag("dungeons:ancient_hunt_try_again_placement")
     } finally {
         state.active = false
     }
 }
- 
+
 const tryagainTag = "dungeons:ancient_hunt_try_again_placement"
 system.runInterval(() => {
     for(const player of world.getPlayers({tags:[tryagainTag]})) {
@@ -335,7 +334,7 @@ function runSpawnerSearch(player, dim, loc) {
             z: loc.z + searchRadius
         }
     })
- 
+
     player.runCommand("hud @s hide")
     player.addTag("dungeons:ancient_hunt_loading")
     player.addEffect("invisibility", 1200)
@@ -357,7 +356,7 @@ function runSpawnerSearch(player, dim, loc) {
         player.onScreenDisplay.setActionBar({ rawtext: [{ text: "§l§d" }, { translate: "dungeons.warn.ancient_hunt.loading" }] })
         player.teleport(loc, { dimension: dim })
     }, 1)
- 
+
     system.runJob(findSpawnerJob(player, dim, loc, state))
 }
 //invis while loading
@@ -551,6 +550,9 @@ system.runInterval(() => {
 //prevent block break
 
 const canBreak = [
+    "minecraft:red_mushroom",
+    "minecraft:brown_mushroom",
+    "minecraft:nether_sprouts",
     "minecraft:seagrass",
     "minecraft:sea_grass",
     "minecraft:kelp",
@@ -774,7 +776,7 @@ system.runInterval(() => {
         if (!bounds && dimensionId.includes("sanctum_summit")) bounds = 35
         if (!blockId) blockId = "stone"
         if (!bounds) bounds = 20
- 
+
         for (const player of dim.getPlayers({ excludeGameModes: ["Spectator"] })) {
             if ((!player.isOnGround && !player.isInWater) && !player.isJumping && !player.isSwimming) continue
             for (let i = -5; i < 5; i++) {
@@ -798,7 +800,7 @@ system.runInterval(() => {
                         z: player.location.z + j
                     }
                     var fill = true
- 
+
                     if (!openRoof.includes(dimensionId)) {
                         for (let k = player.location.y - bounds; k < player.location.y + bounds; k++) {
                             const block = dim.getBlock({ x: loc.x, y: k, z: loc.z })
@@ -1034,7 +1036,7 @@ system.runInterval(() => {
 
     }
     if (!hunts) return;
-    
+
     for (const dimId of hasFog) {
         const dim = world.getDimension(dimId)
         const fogTag = dimId.replace("ancientdim_", "") + "_fog"
@@ -1447,7 +1449,7 @@ system.runInterval(() => {
 
     }
     if (!hunts) return;
-    
+
     for (const dimId of hasGraphics) {
         const dim = world.getDimension(dimId)
         const graphicsettingTag = dimId.replace("ancientdim_", "") + "_graphicsetting"
@@ -1467,7 +1469,7 @@ system.runInterval(() => {
             if(colourData.highlightsGamma) colourGrading.setHighlightsGamma(colourData.highlightsGamma)
             if(colourData.midtonesGamma) colourGrading.setMidtonesGamma(colourData.midtonesGamma)
             if(colourData.shadowsGamma) colourGrading.setShadowsGamma(colourData.shadowsGamma)
-            
+
         }
     }
 }, 5)
@@ -1492,37 +1494,85 @@ system.runInterval(() => {
 
 
 
-
-
 //detect exit
- 
-const searchDist = 200; //how far to check for exit portal
-const searchHeight = 100; // same but vertical
-const checkCount = 32; //how many blocks to check at once
- 
+const searchDist = 200;
+const searchHeight = 100;
+const checkCount = 32;
+
+const portal = { sizeY: 5, sizeZ: 4, openZ: [1, 2], openMinY: 1, openMaxY: 3 };
+const maxWalkRadius = 60;
+const maxNodes = 12000;
+const yieldEvery = 300;
+
+const floorOverrides = {
+    "dungeons:ancientdim_misty_peak": { minY: 78 },
+};
+
+const noFloorTypes = [
+    "dungeons:ancient_hunt_barrier",
+    "dungeons:ancient_portal",
+    "minecraft:barrier"
+];
+const protectedTypes = [
+    "dungeons:ancient_hunt_barrier",
+    "dungeons:ancient_portal",
+    "minecraft:barrier",
+    "dungeons:spawner_obsidian"
+];
+const nonSolidPattern = /(torch|sign|flower|sapling|vine|button|lever|rail|web|fire|pressure_plate|banner|tripwire|redstone_wire|ladder|carpet|snow_layer|fern|grass$|tallgrass|tall_grass|dead_bush|mushroom|coral_fan|sweet_berry|candle|lantern_chain)/;
+
+function getBlockAt(dim, x, y, z) {
+    try { return dim.getBlock({ x, y, z }); } catch { return undefined; }
+}
+
+function isOpen(block) {
+    if (!block) return false;
+    if (block.isLiquid) return false;
+    return block.isAir || canBreak.includes(block.typeId);
+}
+
+function isFloor(block) {
+    if (!block || block.isLiquid) return false;
+    if (noFloorTypes.includes(block.typeId) || block.typeId.includes("leaves")) return false;
+    let solid = block.isSolid;
+    if (typeof solid === "function") {
+        try { solid = block.isSolid(); } catch { solid = undefined; }
+    }
+    if (typeof solid !== "boolean") {
+        solid = !block.isAir && !canBreak.includes(block.typeId) && !nonSolidPattern.test(block.typeId);
+    }
+    return solid;
+}
+
+function canStand(dim, x, y, z) {
+    return isFloor(getBlockAt(dim, x, y - 1, z)) && isOpen(getBlockAt(dim, x, y, z)) && isOpen(getBlockAt(dim, x, y + 1, z));
+}
+
 system.afterEvents.scriptEventReceive.subscribe(async (e) => {
     if (e.id !== "dungeons:test_if_exit") return;
     console.warn("looking for exit portal")
     const entity = e.sourceEntity;
+    if (!entity || !entity.isValid) return;
     const dim = entity.dimension;
-    const marker = dim.getEntities({ location: entity.location, type: "dungeons:ancient_hunt_marker", maxDistance: 150 });
+    const entityLoc = { x: entity.location.x, y: entity.location.y, z: entity.location.z };
+    const marker = dim.getEntities({ location: entityLoc, type: "dungeons:ancient_hunt_marker", maxDistance: 150 });
     if (marker.length === 0) return console.warn("Failed portal check: no marker");
- 
+
     const dimMarker = marker[0];
     if (dimMarker.getDynamicProperty("dungeons:exit_portal_location")) return console.warn("Failed portal check: already saved")
     if (dimMarker.hasTag("dungeons:searching_for_exit")) return console.warn("Failed portal check: already searching")
- 
+
     dimMarker.addTag("dungeons:searching_for_exit")
     var loc = dimMarker.location;
-    var topMost = entity.dimension.getTopmostBlock({ x: entity.location.x, z: entity.location.z }, entity.location.y)
-    if (!topMost) topMost = { x: entity.location.x, y: 64, z: entity.location.z }
+    var topMost = dim.getTopmostBlock({ x: entityLoc.x, z: entityLoc.z }, entityLoc.y)
+    if (!topMost) topMost = { x: entityLoc.x, y: 64, z: entityLoc.z }
     loc = {
         x: loc.x,
         y: topMost.y + 1,
         z: loc.z
     }
     let hasPortal = false;
-    var exitCoOrds = false
+    var exitCoords = false
     if (!hasPortal) {
         const tickingAreaManager = world.tickingAreaManager;
         var minX
@@ -1533,7 +1583,7 @@ system.afterEvents.scriptEventReceive.subscribe(async (e) => {
         var heightMax
         const maxBound = dimMarker.getDynamicProperty("dungeons:max_bound")
         const minBound = dimMarker.getDynamicProperty("dungeons:min_bound")
- 
+
         if (maxBound !== undefined && minBound !== undefined) {
             minX = Math.min(minBound.x, maxBound.x)
             maxX = Math.max(minBound.x, maxBound.x)
@@ -1550,10 +1600,10 @@ system.afterEvents.scriptEventReceive.subscribe(async (e) => {
             heightMax = loc.y + searchHeight
             console.warn("§cNo bounds saved ;c")
         }
- 
+
         if (dim.heightRange.max < heightMax) heightMax = dim.heightRange.max
         if (dim.heightRange.min > heightMin) heightMin = dim.heightRange.min
- 
+
         const steps = [];
         for (let x = minX; x < maxX; x += checkCount) {
             for (let z = minZ; z < maxZ; z += checkCount) {
@@ -1570,7 +1620,7 @@ system.afterEvents.scriptEventReceive.subscribe(async (e) => {
                 });
             }
         }
- 
+
         for (const step of steps) {
             if (hasPortal) break;
             const options = { dimension: dim, from: step.from, to: step.to };
@@ -1580,112 +1630,172 @@ system.afterEvents.scriptEventReceive.subscribe(async (e) => {
                     continue;
                 }
             }
- 
+
             try {
                 await tickingAreaManager.createTickingArea(step.id, options);
             } catch {
                 continue;
             }
- 
+
             const vol = new BlockVolume(step.from, step.to);
             try {
                 if (dim.containsBlock(vol, { includeTypes: ["dungeons:ancient_portal"] }, true)) {
                     hasPortal = true;
-                    if (exitCoOrds == false) {
+                    if (exitCoords == false) {
                         console.warn("attempting to save location")
-                        exitCoOrds = true
-                        saveLoc(dimMarker, vol)
+                        exitCoords = true
+                        let worked = false
+                        let i = 0
+                        const tickId = `dungeons:dimension_save_loc_${dimMarker.id}`
+                        tickingAreaManager.createTickingArea(tickId, {
+                            dimension: dim,
+                            from: vol.from,
+                            to: vol.to
+                        })
+                        for (const testBlock of vol.getBlockLocationIterator()) {
+                            i += 0.0001
+                            system.runTimeout(() => {
+                                if (dim.getBlock(testBlock).typeId == "dungeons:ancient_portal" && worked == false) {
+                                    worked = true
+                                    dimMarker.setDynamicProperty("dungeons:exit_portal_location", testBlock)
+                                }
+                            }, Math.floor(i))
+                        }
+                        system.runTimeout(() => {
+                            dimMarker.removeTag("dungeons:searching_for_exit")
+                            tickingAreaManager.removeTickingArea(tickId)
+                            if (worked) console.warn("Location was saved")
+                            if (!worked) console.warn("Location was not saved")
+                        }, Math.floor(i) + 1)
                     }
                 }
             } catch { }
             tickingAreaManager.removeTickingArea(step.id);
         }
     }
- 
+
     if (!hasPortal) {
         console.warn("§cNo exit portal was generated")
-        var topMost = undefined
-        var minHeight = undefined
-        if (dim.id == "dungeons:ancientdim_misty_peak") minHeight = 77
-        for (let h = 0; h < 10; h++) {
-            if (topMost) continue;
-            for (let i = -8 - h; i < 8 + h; i++) {
-                if (topMost) continue;
- 
-                for (let j = -8 - h; j < 8 + h; j++) {
-                    if (topMost) continue;
-                    const testLoc = {
-                        x: entity.location.x + i * 2,
-                        z: entity.location.z + j * 2
-                    }
-                    const testTopMost = dim.getTopmostBlock(testLoc, loc.y + 1)
-                    if (testTopMost && minHeight && testTopMost.y < minHeight) continue;
-                    /*if (testTopMost) {
-                        testTopMost.setType("minecraft:glowstone")
-                    } else {
-                        dim.getBlock({ x: testLoc.x, y: loc.y, z: testLoc.z }).setType("minecraft:shroomlight")
-                    }*/
-                    if (!topMost && testTopMost && (testTopMost.above().isAir || canBreak.includes(testTopMost.above().typeId))) {
-                        const neighbours = [
-                            testTopMost.north(),
-                            testTopMost.east(),
-                            testTopMost.south(),
-                            testTopMost.west()
-                        ]
-                        var neighboursPass = true
-                        for (const neighbour of neighbours) {
-                            if (neighbour.typeId == "dungeons:ancient_hunt_barrier") neighboursPass = false
-                        }
-                        var noPlayersNear = dim.getPlayers({maxDistance:3, location: testTopMost.location})
-                        if (noPlayersNear.length == 0 && neighboursPass && testTopMost.y > loc.y - 1) {
-                            topMost = testTopMost
-                        }
-                    }
+        if (!dimMarker.isValid) return;
+
+        const override = floorOverrides[dim.id];
+        const ox = Math.floor(entityLoc.x), oy = Math.floor(entityLoc.y), oz = Math.floor(entityLoc.z);
+        const range = dim.heightRange;
+
+        let startY;
+        for (let d = 0; d <= 6 && startY === undefined; d++) {
+            for (const y of d === 0 ? [oy] : [oy + d, oy - d]) {
+                if (y <= range.min || y + portal.sizeY >= range.max) continue;
+                if (canStand(dim, ox, y, oz)) {
+                    startY = y;
+                    break;
                 }
             }
         }
-        if (!topMost) {
-            dimMarker.removeTag("dungeons:searching_for_exit")
+
+        let spot;
+        if (startY !== undefined) {
+            const key = (x, y, z) => `${x},${y},${z}`;
+            const seen = new Set([key(ox, startY, oz)]);
+            const tested = new Set();
+            const queue = [{ x: ox, y: startY, z: oz }];
+            let processed = 0;
+
+            walk: for (let qi = 0; qi < queue.length; qi++) {
+                const n = queue[qi];
+
+                const skipLevel = override && (
+                    (override.floorY !== undefined && n.y !== override.floorY) ||
+                    (override.minY !== undefined && n.y < override.minY)
+                );
+
+                if (!skipLevel) {
+                    for (const side of [1, -1]) {
+                        for (const k of portal.openZ) {
+                            const px = n.x + side, py = n.y - 1, pz = n.z - k;
+                            const id = key(px, py, pz);
+                            if (tested.has(id)) continue;
+                            tested.add(id);
+
+                            let fits = true;
+                            volume: for (let dz = 0; dz < portal.sizeZ; dz++) {
+                                const inOpeningColumn = portal.openZ.includes(dz);
+                                for (let dy = 0; dy < portal.sizeY; dy++) {
+                                    const b = getBlockAt(dim, px, py + dy, pz + dz);
+                                    const inOpening = inOpeningColumn && dy >= portal.openMinY && dy <= portal.openMaxY;
+                                    if (
+                                        !b ||
+                                        b.isLiquid ||
+                                        protectedTypes.includes(b.typeId) ||
+                                        (inOpening && !isOpen(b)) ||
+                                        (dy === 0 && !isFloor(b))
+                                    ) {
+                                        fits = false;
+                                        break volume;
+                                    }
+                                }
+                            }
+                            if (fits) {
+                                barrier: for (let x = px - 1; x <= px + 1; x++) {
+                                    for (let z = pz - 1; z <= pz + portal.sizeZ; z++) {
+                                        for (let y = py; y <= py + portal.sizeY; y++) {
+                                            const b = getBlockAt(dim, x, y, z);
+                                            if (b && b.typeId === "dungeons:ancient_hunt_barrier") {
+                                                fits = false;
+                                                break barrier;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (!fits) continue;
+
+                            const centre = { x: px + 0.5, y: py + 2, z: pz + portal.sizeZ / 2 };
+                            if (dim.getPlayers({ location: centre, maxDistance: 3 }).length > 0) continue;
+
+                            spot = {
+                                origin: { x: px, y: py, z: pz },
+                                saved: { x: px, y: py + portal.openMinY, z: pz + portal.openZ[0] }
+                            };
+                            break walk;
+                        }
+                    }
+                }
+
+                if (queue.length < maxNodes) {
+                    for (const [dx, dz] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
+                        const nx = n.x + dx, nz = n.z + dz;
+                        if (Math.abs(nx - ox) > maxWalkRadius || Math.abs(nz - oz) > maxWalkRadius) continue;
+                        for (const ny of [n.y + 1, n.y, n.y - 1, n.y - 2, n.y - 3]) {
+                            if (ny === n.y + 1 && !isOpen(getBlockAt(dim, n.x, n.y + 2, n.z))) continue;
+                            if (!canStand(dim, nx, ny, nz)) continue;
+                            const nextKey = key(nx, ny, nz);
+                            if (!seen.has(nextKey)) {
+                                seen.add(nextKey);
+                                queue.push({ x: nx, y: ny, z: nz });
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                if (++processed % yieldEvery === 0) await system.waitTicks(1);
+            }
+        }
+
+        if (dimMarker.isValid) dimMarker.removeTag("dungeons:searching_for_exit")
+        if (!spot) {
             console.warn("§cNo fallback portal generated")
             return;
         }
-        dimMarker.removeTag("dungeons:searching_for_exit")
         console.warn("§eGenerating exit portal...")
-        dim.runCommand('/structure load "mystructure:ancient_hunt/fallback_portal" ' + `${topMost.x} ${topMost.y - 1} ${topMost.z}`)
-        dimMarker.setDynamicProperty("dungeons:exit_portal_location", topMost)
+        dim.runCommand('/structure load "mystructure:ancient_hunt/fallback_portal" ' + `${spot.origin.x} ${spot.origin.y} ${spot.origin.z}`)
+        if (dimMarker.isValid) dimMarker.setDynamicProperty("dungeons:exit_portal_location", spot.saved)
     } else {
         dimMarker.removeTag("dungeons:searching_for_exit")
-        if (!exitCoOrds) console.warn("never attempted to save location??")
-        //console.warn("§aExit portal is generated")
+        if (!exitCoords) console.warn("didnt save bro we are so fuckeddd")
     }
 });
-
-function saveLoc(marker, vol) {
-    var worked = false
-    var i = 0
-    const tickingAreaManager = world.tickingAreaManager
-    const tickId = `dungeons:dimension_save_loc_${marker.id}`
-    tickingAreaManager.createTickingArea(tickId, {
-        dimension: marker.dimension,
-        from: vol.from,
-        to: vol.to
-    })
-    for (const testBlock of vol.getBlockLocationIterator()) {
-        i += 0.0001
-        system.runTimeout(() => {
-            if (marker.dimension.getBlock(testBlock).typeId == "dungeons:ancient_portal" && worked == false) {
-                worked = true
-                marker.setDynamicProperty("dungeons:exit_portal_location", testBlock)
-            }
-        }, Math.floor(i))
-    }
-    system.runTimeout(() => {
-            marker.removeTag("dungeons:searching_for_exit")
-        tickingAreaManager.removeTickingArea(tickId)
-        if (worked) console.warn("Location was saved")
-        if (!worked) console.warn("Location was not saved")
-    }, Math.floor(i) + 1)
-}
 
 //locator bar
 function clearAncientWaypoints(player) {
@@ -1906,4 +2016,21 @@ world.afterEvents.entityDie.subscribe((e) => {
         }
         player.locatorBar.addWaypoint(waypoint)
     }
+})
+
+
+//piglins
+const zombifieable = [
+    "minecraft:piglin",
+    "minecraft:piglin_brute",
+    "minecraft:hoglin",
+    "dungeons:piglin_fungus_thrower",
+    "dungeons:unstoppable_tusk",
+    "dungeons:unstoppable_tusk_minion"
+]
+world.afterEvents.entitySpawn.subscribe((e) => {
+    const entity = e.entity;
+    if(!entity || !entity.isValid || zombifieable.includes(entity.typeId) == false) return;
+    if(entity.dimension.id.includes("dungeons:ancientdim_") == false) return;
+    entity.addTag("dungeons:prevent_zombification")
 })

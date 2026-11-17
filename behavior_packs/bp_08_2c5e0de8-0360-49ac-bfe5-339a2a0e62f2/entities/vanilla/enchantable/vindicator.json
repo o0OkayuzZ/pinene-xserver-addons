@@ -11,10 +11,7 @@
           "client_sync": true,
           "default": 0,
           "type": "int",
-          "range": [
-            0,
-            2
-          ]
+          "range": [0, 2]
         }
       }
     },
@@ -245,7 +242,7 @@
           "preserve_equipment": false
         }
       },
-            "dungeons:transform_to_mountaineer_for_raid": {
+      "dungeons:transform_to_mountaineer_for_raid": {
         "minecraft:transformation": {
           "into": "dungeons:mountaineer<minecraft:entity_spawned>",
           "preserve_equipment": false
@@ -589,44 +586,32 @@
     "events": {
       "dungeons:become_enchanted_arch_illager": {
         "add": {
-          "component_groups": [
-            "dungeons:transform_to_enchanted_arch_illager"
-          ]
+          "component_groups": ["dungeons:transform_to_enchanted_arch_illager"]
         }
       },
       "dungeons:become_enchanted_regular": {
         "add": {
-          "component_groups": [
-            "dungeons:transform_to_enchanted_regular"
-          ]
+          "component_groups": ["dungeons:transform_to_enchanted_regular"]
         }
       },
       "dungeons:become_enchanted_golden": {
         "add": {
-          "component_groups": [
-            "dungeons:transform_to_enchanted_golden"
-          ]
+          "component_groups": ["dungeons:transform_to_enchanted_golden"]
         }
       },
       "dungeons:become_enchanted_diamond": {
         "add": {
-          "component_groups": [
-            "dungeons:transform_to_enchanted_diamond"
-          ]
+          "component_groups": ["dungeons:transform_to_enchanted_diamond"]
         }
       },
       "dungeons:become_chef": {
         "add": {
-          "component_groups": [
-            "dungeons:transform_to_chef"
-          ]
+          "component_groups": ["dungeons:transform_to_chef"]
         }
       },
       "dungeons:become_royal_guard": {
         "add": {
-          "component_groups": [
-            "dungeons:transform_to_royal_guard"
-          ]
+          "component_groups": ["dungeons:transform_to_royal_guard"]
         }
       },
       "dungeons:spawn_royal_guard_for_raid": {
@@ -645,10 +630,8 @@
       },
       "dungeons:become_mountaineer_for_raid": {
         "add": {
-          "component_groups": [
-          "dungeons:transform_to_mountaineer_for_raid"
-         ]
-       }
+          "component_groups": ["dungeons:transform_to_mountaineer_for_raid"]
+        }
       },
       "dungeons:vindicator_gear_regular": {
         "filters": [
@@ -663,9 +646,7 @@
           "dungeons:armour_type": 0
         },
         "add": {
-          "component_groups": [
-            "dungeons:vindicator_regular"
-          ]
+          "component_groups": ["dungeons:vindicator_regular"]
         },
         "remove": {
           "component_groups": [
@@ -687,9 +668,7 @@
           "dungeons:armour_type": 1
         },
         "add": {
-          "component_groups": [
-            "dungeons:vindicator_golden"
-          ]
+          "component_groups": ["dungeons:vindicator_golden"]
         },
         "remove": {
           "component_groups": [
@@ -711,9 +690,7 @@
           "dungeons:armour_type": 2
         },
         "add": {
-          "component_groups": [
-            "dungeons:vindicator_diamond"
-          ]
+          "component_groups": ["dungeons:vindicator_diamond"]
         },
         "remove": {
           "component_groups": [
@@ -742,7 +719,6 @@
                 "weight": 2
               }
             ]
-
           },
           {
             "filters": {
@@ -767,7 +743,6 @@
                 "weight": 4
               }
             ]
-
           },
           {
             "filters": {
@@ -818,22 +793,22 @@
                 "trigger": "dungeons:vindicator_gear_diamond"
               }
             ]
+          },
+          {
+            "add": {
+              "component_groups": [
+                "minecraft:default_targeting",
+                "minecraft:raid_configuration",
+                "minecraft:raid_persistence",
+                "minecraft:raid_despawn"
+              ]
+            }
           }
-        ],
-        "add": {
-          "component_groups": [
-            "minecraft:default_targeting",
-            "minecraft:raid_configuration",
-            "minecraft:raid_persistence",
-            "minecraft:raid_despawn"
-          ]
-        }
+        ]
       },
       "minecraft:become_aggro": {
         "add": {
-          "component_groups": [
-            "minecraft:vindicator_aggro"
-          ]
+          "component_groups": ["minecraft:vindicator_aggro"]
         }
       },
       "minecraft:entity_spawned": {
@@ -871,9 +846,7 @@
           {
             "trigger": "dungeons:decide_vindicator_gear",
             "add": {
-              "component_groups": [
-                "minecraft:default_targeting"
-              ]
+              "component_groups": ["minecraft:default_targeting"]
             }
           }
         ]
@@ -902,9 +875,7 @@
               "value": false
             },
             "remove": {
-              "component_groups": [
-                "minecraft:raid_persistence"
-              ]
+              "component_groups": ["minecraft:raid_persistence"]
             }
           }
         ]
@@ -917,9 +888,7 @@
           ]
         },
         "remove": {
-          "component_groups": [
-            "minecraft:patrol_follower"
-          ]
+          "component_groups": ["minecraft:patrol_follower"]
         }
       },
       "minecraft:spawn_as_illager_captain": {
@@ -938,9 +907,7 @@
           ]
         },
         "remove": {
-          "component_groups": [
-            "minecraft:patrol_follower"
-          ]
+          "component_groups": ["minecraft:patrol_follower"]
         }
       },
       "minecraft:spawn_as_patrol_follower": {
@@ -953,23 +920,18 @@
       },
       "minecraft:stop_johnny": {
         "add": {
-          "component_groups": [
-            "minecraft:default_targeting"
-          ]
+          "component_groups": ["minecraft:default_targeting"]
         },
         "remove": {
-          "component_groups": [
-            "minecraft:vindicator_johnny"
-          ]
+          "component_groups": ["minecraft:vindicator_johnny"]
         }
       },
-      "minecraft:start_celebrating": { // Event must be called exactly this for village to fire it when a raid is lost
+      "minecraft:start_celebrating": {
+        // Event must be called exactly this for village to fire it when a raid is lost
         "sequence": [
           {
             "add": {
-              "component_groups": [
-                "minecraft:celebrate"
-              ]
+              "component_groups": ["minecraft:celebrate"]
             }
           },
           {
@@ -978,32 +940,24 @@
               "value": false
             },
             "remove": {
-              "component_groups": [
-                "minecraft:raid_persistence"
-              ]
+              "component_groups": ["minecraft:raid_persistence"]
             }
           }
         ]
       },
       "minecraft:start_johnny": {
         "add": {
-          "component_groups": [
-            "minecraft:vindicator_johnny"
-          ]
+          "component_groups": ["minecraft:vindicator_johnny"]
         }
       },
       "minecraft:stop_aggro": {
         "remove": {
-          "component_groups": [
-            "minecraft:vindicator_aggro"
-          ]
+          "component_groups": ["minecraft:vindicator_aggro"]
         }
       },
       "minecraft:stop_celebrating": {
         "remove": {
-          "component_groups": [
-            "minecraft:celebrate"
-          ]
+          "component_groups": ["minecraft:celebrate"]
         }
       },
       "dungeons:spawn_structure": {
@@ -1036,17 +990,13 @@
       },
       "dungeons:spawn_obsidian_gear": {
         "add": {
-          "component_groups": [
-            "dungeons:obsidian_targeting"
-          ]
+          "component_groups": ["dungeons:obsidian_targeting"]
         },
         "trigger": "dungeons:vindicator_gear_golden"
       },
       "dungeons:spawn_arch_illager_gear": {
         "add": {
-          "component_groups": [
-            "dungeons:obsidian_targeting"
-          ]
+          "component_groups": ["dungeons:obsidian_targeting"]
         },
         "trigger": "dungeons:vindicator_gear_regular"
       }

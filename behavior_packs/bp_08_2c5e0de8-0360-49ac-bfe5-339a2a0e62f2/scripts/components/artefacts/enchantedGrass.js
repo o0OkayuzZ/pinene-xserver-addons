@@ -33,8 +33,8 @@ system.beforeEvents.startup.subscribe((event) => {
 });
 
 system.afterEvents.scriptEventReceive.subscribe((e) => {
-  const id = e.id;
-  if (id !== "dungeons:force_artefact") return;
+  const eventId = e.id;
+  if (eventId !== "dungeons:force_artefact") return;
   const player = e.sourceEntity;
   if (!player) return;
   const itemId = e.message;
@@ -152,6 +152,6 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
     }
   } else {
     const distanceBetween = Math.round(Math.hypot(owner.location.x - entity.location.x, owner.location.y - entity.location.y, owner.location.z - entity.location.z))
-    if(distanceBetween > 64) entity.remove()        
+    if(distanceBetween > 64) entity.remove()
   }
 })

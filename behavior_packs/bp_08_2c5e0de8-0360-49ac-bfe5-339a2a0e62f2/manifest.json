@@ -4,18 +4,18 @@
     "name": "[大型] Minecraft Dungeons BP",
     "description": "Dungeons由来のモブ・装備・構造物・ワールド生成を担当。",
     "uuid": "2c5e0de8-0360-49ac-bfe5-339a2a0e62f2",
-    "version": "2.1.5",
+    "version": "2.1.6",
     "min_engine_version": "1.26.10"
   },
   "modules": [
     {
       "type": "data",
       "uuid": "f6998f6e-1841-4da3-8425-034233ae930f",
-      "version": "2.1.5"
+      "version": "2.1.6"
     },
     {
       "uuid": "d7f02fa9-f236-487e-9d23-a80053ccd5f3",
-      "version": "2.1.5",
+      "version": "2.1.6",
       "type": "script",
       "language": "javascript",
       "entry": "scripts/main.js"
@@ -31,12 +31,22 @@
       "text": "Ancient Hunts",
       "name": "dungeons:ancient_hunts",
       "default": true
+    },
+    {
+      "type": "label",
+      "text": "§l§gAncient Hunts Close-Spawning§r\nIf ON, Reduces the range that mobs will spawn around the player during Ancient Hunts. \n§aEnabling this may improve performance\n§cRecommended: ON (For Servers / Low End Devices)"
+    },
+    {
+      "type": "toggle",
+      "text": "Close-Spawning",
+      "name": "dungeons:ancient_hunt_close_spawning",
+      "default": true
     }
   ],
   "dependencies": [
     {
       "uuid": "ab296f68-bb16-4ede-a49c-d0ed99b5b87b",
-      "version": "2.1.5"
+      "version": "2.1.6"
     },
     {
       "module_name": "@minecraft/server",

@@ -4,7 +4,21 @@ import {
   MolangVariableMap
 } from "@minecraft/server";
 import { isWearingSet, isWearingMysteryArmour } from "components/armour.js"
+function diamondUnicodeIcon(pct) {
+    var clamped = Math.min(1, Math.max(0, pct))
+    var step = Math.round(clamped * 24)
 
+    var code
+    if (step >= 24) {
+      code = 0xE3EC
+    } else if (step < 12) {
+      code = 0xE3E0 + step
+    } else {
+      code = 0xE3F0 + (step - 12)
+    }
+
+    return String.fromCharCode(code)
+}
 
 export function getSoulBarText(player, darken, ignoreFormat, returnArray) {
   let soulGauge = world.scoreboard.getObjective('soulGauge')
@@ -37,6 +51,14 @@ export function getSoulBarText(player, darken, ignoreFormat, returnArray) {
     }
     text = {rawtext:[{text:`${trail}${colour}${barText} `}]}
     arrayText = [{text:`${trail}${colour}${barText} `}]
+  }
+  if(player.hasTag("dungeons:soul_display_diamond")) {
+    trail = "§s§d§i§a§m"
+    var max = 100
+    if (isWearingSet(player, "dungeons:bag_o_souls") || souls > 100) max = 200
+    var character = diamondUnicodeIcon(souls/max)
+    text = {rawtext:[{text:`${trail}${character}`}]}
+    arrayText = [{text: `${trail}${colour}${souls}§s `}, {text: "Souls"},{text: " "}]
   }
   if(returnArray) return arrayText
   return text

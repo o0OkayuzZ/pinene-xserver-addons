@@ -2,7 +2,8 @@ import {
     world,
     system,
     DimensionTypes,
-    ItemStack
+    ItemStack,
+    EntityDamageCause
 } from "@minecraft/server";
 
 export const arrowTypes = [
@@ -87,7 +88,7 @@ world.afterEvents.entitySpawn.subscribe((e) => {
                 owner.setDynamicProperty("dungeons:arrow_count", quiverCount -1)
             }
             entity.addTag("dungeons:cannot_be_picked_up")
-            
+
         }
         const equippable = owner.getComponent("equippable")
         if (!equippable) return;
@@ -170,7 +171,7 @@ world.afterEvents.entityDie.subscribe((e) => {
 
 system.runInterval(() => {
     for(const dim of DimensionTypes.getAll()) {
-        
+
         for(const arrow of world.getDimension(dim.typeId).getEntities({tags:["dungeons:fired_arrow"]})) {
             if(arrow.isOnGround) {
                 var timer = arrow.getDynamicProperty("dungeons:ongroundtime")
@@ -240,6 +241,8 @@ system.runInterval(() => {
         }
     }
 })
+
+
 
 import "./ranged/crossbowLoading.js"
 import "./ranged/animation.js"

@@ -4,6 +4,8 @@ import {
   ItemStack
 } from "@minecraft/server";
 
+import {getSoulBarText} from "misc/soulManager.js"
+
 system.beforeEvents.startup.subscribe((event) => {
   event.itemComponentRegistry.registerCustomComponent('dungeons:totem_of_soul_protection', {
     onUse(e) {
@@ -110,13 +112,13 @@ world.beforeEvents.entityHurt.subscribe((e) => {
       system.runTimeout(() => {
         if (soulScore.getScore(hurt) > 0) {
           soulScore.addScore(hurt, -1)
-          hurt.onScreenDisplay.setActionBar(`§s${soulScore.getScore(hurt)}§s Souls `)
+          hurt.onScreenDisplay.setActionBar(getSoulBarText(hurt, true))
         }
       }, i)
     }
 
     system.runTimeout(() => {
-      hurt.onScreenDisplay.setActionBar(`§b${soulScore.getScore(hurt)}§s Souls `)
+          hurt.onScreenDisplay.setActionBar(getSoulBarText(hurt, false))
     }, 11)
   })
 })
