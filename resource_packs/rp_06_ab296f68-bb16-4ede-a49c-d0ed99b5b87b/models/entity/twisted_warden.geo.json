@@ -6,34 +6,34 @@
 				"identifier": "geometry.twisted_warden",
 				"texture_width": 256,
 				"texture_height": 512,
-				"visible_bounds_width": 10,
-				"visible_bounds_height": 11,
-				"visible_bounds_offset": [0, 3.5, 0]
+				"visible_bounds_width": 12,
+				"visible_bounds_height": 12,
+				"visible_bounds_offset": [0, 4, 0]
 			},
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, 0, 0],
-					"cubes": [
-						{"origin": [-32, 29, -14.5], "size": [64, 23, 29], "uv": [0, 161]},
-						{"origin": [-24, 39, -22.5], "size": [48, 13, 8], "uv": [51, 52]}
-					]
+					"pivot": [0, 0, 0]
 				},
 				{
-					"name": "left_leg",
+					"name": "lower_body",
 					"parent": "root",
-					"pivot": [17, 29, 0],
+					"pivot": [0, 29, 0],
 					"cubes": [
-						{"origin": [7, 0, -10], "size": [20, 29, 20], "uv": [176, 133]}
-					]
+						{"origin": [-24, 39, -24.5], "size": [48, 13, 10], "uv": [49, 50]},
+						{"origin": [-32, 29, -14.5], "size": [64, 23, 29], "uv": [0, 161]}
+					],
+					"locators": {
+						"jaws": [0, 51, 7]
+					}
 				},
 				{
 					"name": "body_tophalf",
-					"parent": "root",
+					"parent": "lower_body",
 					"pivot": [0, 52, 14.5],
 					"cubes": [
 						{"origin": [-32, 52, -14.5], "size": [64, 40, 29], "uv": [0, 79]},
-						{"origin": [-24, 52, -22.5], "size": [48, 13, 8], "inflate": -0.01, "uv": [125, 22]}
+						{"origin": [-24, 52, -24.5], "size": [48, 13, 10], "inflate": -0.01, "uv": [123, 20]}
 					]
 				},
 				{
@@ -71,7 +71,10 @@
 					"cubes": [
 						{"origin": [32, 19, -9.5], "size": [16, 75, 20], "uv": [0, 225]},
 						{"origin": [43, 94, -9.5], "size": [5, 22, 20], "uv": [116, 223]}
-					]
+					],
+					"locators": {
+						"left_hand": [40, 26, 0.5]
+					}
 				},
 				{
 					"name": "right_arm",
@@ -80,6 +83,17 @@
 					"cubes": [
 						{"origin": [-48, 19, -9.5], "size": [16, 75, 20], "uv": [0, 225], "mirror": true},
 						{"origin": [-48, 94, -9.5], "size": [5, 22, 20], "uv": [116, 223], "mirror": true}
+					],
+					"locators": {
+						"right_hand": [-40, 26, 0.5]
+					}
+				},
+				{
+					"name": "left_leg",
+					"parent": "root",
+					"pivot": [17, 29, 0],
+					"cubes": [
+						{"origin": [7, 0, -10], "size": [20, 29, 20], "uv": [176, 133]}
 					]
 				},
 				{

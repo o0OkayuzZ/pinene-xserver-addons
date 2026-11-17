@@ -1,8 +1,8 @@
 import { world, system } from "@minecraft/server";
 
 const componentId = `dungeons:ancient_hunt_mob`;
-
-const chunkSpawnDist = 6;
+const closeSpawning = world.getPackSettings()["dungeons:ancient_hunt_close_spawning"]
+const chunkSpawnDist = closeSpawning ? 1 : 6;
 
 system.beforeEvents.startup.subscribe((initEvent) => {
   initEvent.blockComponentRegistry.registerCustomComponent(componentId, {
@@ -143,6 +143,10 @@ system.beforeEvents.startup.subscribe((initEvent) => {
               );
               if (mob.isValid) {
                 mob.tryTeleport(spawnLoc, { checkForBlocks: true });
+                if(closeSpawning) {
+                  dimension.spawnParticle("dungeons:instant_teleport", mob.getHeadLocation())
+                            dimension.spawnParticle("dungeons:gravity", {x:spawnLoc.x,y:spawnLoc.y+0.2,z:spawnLoc.z})
+                }
                 mob.addTag("dungeons:ancient_hunt");
                 mob.addTag("dungeons:ancient_hunt_" + type);
                 system.runTimeout(() => {
@@ -2039,7 +2043,7 @@ const spawnData = [
   {
     type:"coral_cave",
     groups:["large"],
-    entity: "minecraft:sunken_skeleton",
+    entity: "dungeons:sunken_skeleton",
     weight:10
   },
   {

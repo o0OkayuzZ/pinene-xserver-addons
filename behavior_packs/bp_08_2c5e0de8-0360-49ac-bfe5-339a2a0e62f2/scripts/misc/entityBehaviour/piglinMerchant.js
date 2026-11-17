@@ -203,7 +203,7 @@ world.afterEvents.playerInteractWithEntity.subscribe((e) => {
     if (entity.nameTag) title = entity.nameTag
     form.title(title);
     form.body({ rawtext: [{ translate: "dungeons.piglin_merchant.description" }, { translate: item.localizationKey }] })
-    if(category == "armor") form.label({ rawtext: [{text: "§7"},{translate: "dungeons.piglin_merchant.armor_warn"}]})
+    if(category == "armor") form.label({ rawtext: [{text: "§8"},{translate: "dungeons.piglin_merchant.armor_warn"}]})
     form.label(` ${getGoldAmt(player)}`)
     const hiddenTradeCount = 2
     const buttonArray = []
@@ -212,7 +212,7 @@ world.afterEvents.playerInteractWithEntity.subscribe((e) => {
         if (i >= saleOptions.length - (hiddenTradeCount - unlockedTrades)) {
             buttonArray.push([`locked`, 8])
             form.divider()
-            form.button({ rawtext: [{ text: `§g8  §7` }, { translate: "dungeons.piglin_merchant.unlock" }] }, "textures/ui/form/gild/locked_slot")
+            form.button({ rawtext: [{ text: `§g8  §8` }, { translate: "dungeons.piglin_merchant.unlock" }] }, "textures/ui/form/gild/locked_slot")
         } else {
             buttonArray.push(sale)
             form.divider()
@@ -223,7 +223,7 @@ world.afterEvents.playerInteractWithEntity.subscribe((e) => {
                 if (categoryArray.includes(sale[0])) {
                     form.button({ rawtext: [{ text: `§g${sale[1]}  §8` }, { translate: "dungeons.gild." + sale[0] }] }, "textures/ui/form/gild/" + sale[0])
                 } else {
-                    form.button({ rawtext: [{ text: `§g${sale[1]}  §7` }, { translate: "dungeons.gild." + sale[0] }] }, "textures/ui/form/gild/" + sale[0])
+                    form.button({ rawtext: [{ text: `§g${sale[1]}  §8` }, { translate: "dungeons.gild." + sale[0] }] }, "textures/ui/form/gild/" + sale[0])
                 }
             }
         }

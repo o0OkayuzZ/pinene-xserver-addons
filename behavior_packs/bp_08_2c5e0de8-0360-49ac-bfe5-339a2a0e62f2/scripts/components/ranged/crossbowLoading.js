@@ -139,11 +139,11 @@ export function crossbowFired(player, item, arrow) {
         system.runTimeout(() => {
             if (arrow.isValid) allTags = arrow.getTags()
             if (player.isValid) extraShot(allTags, id, player, weaponId, params.sound)
-        }, 4)
+        }, 5)
         system.runTimeout(() => {
             if (arrow.isValid) allTags = arrow.getTags()
             if (player.isValid) extraShot(allTags, id, player, weaponId, params.sound)
-        }, 9)
+        }, 10)
     } else if (item.hasTag("dungeons:double_crossbow_shot")) {
         var allTags = arrow.getTags()
         const id = arrow.typeId
@@ -154,7 +154,7 @@ export function crossbowFired(player, item, arrow) {
         }, 2)
         system.runTimeout(() => {
             if (player.isValid) extraShot(allTags, id, player, weaponId, params.sound)
-        }, 9)
+        }, 10)
     }
     system.run(() => {
 
@@ -230,7 +230,7 @@ export function multiShot(projectileCount, projectileId, player, item, sourceVel
     const useSpeed = speed > 0.01 ? speed : fallbackMult;
 
     for (let i = 0; i < amount; i++) {
-        if(item) { 
+        if(item) {
             const equippable = player.getComponent("equippable")
             const held = equippable.getEquipment("Mainhand")
             if (!held) return;

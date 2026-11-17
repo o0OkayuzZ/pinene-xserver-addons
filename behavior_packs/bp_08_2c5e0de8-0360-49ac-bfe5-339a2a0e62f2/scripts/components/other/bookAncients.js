@@ -208,7 +208,7 @@ export const dimensions = [
   {
     id: "sanctum_summit",
     boss: "vigilant_scoundrel",
-    runes: ["c", "t", "u"],
+    runes: ["r", "i", "i", "t"],
     loot: [
       ["mace", "suns_grace", "flail"],
       ["azure_seeker", "the_slicer"],
@@ -240,7 +240,7 @@ export const dimensions = [
   {
     id: "forgotten_citadel",
     boss: "watcher_of_the_end",
-    runes: ["c","t","u"],
+    runes: ["c","a","t"],
     loot: [
       ["void_touched_blades", "the_beginning_and_the_end"],
       ["shadow_crossbow", "veiled_crossbow"],
@@ -377,7 +377,7 @@ function makeDimensionPage(player, dimensionCheck, bossCleared) {
   var runeString = "";
   for (const rune of dimensionCheck.runes) runeString += runeIcon(rune);
   form.label(runeString);
-  
+
   if(bossCleared) {
     form.label({rawtext:[{translate: "dungeons.boa.ancient"}, {text: " "}, {translate: "entity.dungeons:" + dimensionCheck.boss + ".name"}]})
     form.label({rawtext:[{text:"§l§o§g"},{translate: "dungeons.boa.ancient_loot_table"}]})

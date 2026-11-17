@@ -129,3 +129,15 @@ system.runInterval(() => {
         player.onScreenDisplay.setActionBar(colour + "TPS:" + ` ${Math.round(TPS)}`);
     }
 }, interval)
+
+
+system.runInterval(() => {
+    for (const player of world.getPlayers({ tags: ["dungeons:debug_mobs"] })) {
+        const mobs = player.dimension.getEntities().length
+        var colour = "§a"
+        if (mobs > 100) colour = "§e"
+        if (mobs > 200) colour = "§c"
+        player.onScreenDisplay.setActionBar(colour + "Current Loaded Mobs:" + ` ${Math.round(mobs)}`);
+
+    }
+})

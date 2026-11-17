@@ -1146,12 +1146,12 @@
       "dungeons:spawned_by_spawner": {
         "add": {
           "component_groups": [
-            "transient",
             "minecraft:zombie_default",
             "minecraft:zombie_adult",
             "minecraft:on_foot",
             "minecraft:not_on_zombie_horse",
-            "minecraft:can_have_equipment"
+            "minecraft:can_have_equipment",
+            "transient"
           ]
         }
       },

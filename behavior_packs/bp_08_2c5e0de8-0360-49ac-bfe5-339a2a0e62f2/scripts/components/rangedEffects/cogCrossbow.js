@@ -27,7 +27,5 @@ world.beforeEvents.entityHurt.subscribe((e) => {
     if (canHit <= 0) return;
     //effect code
     if (e.damage <= 0) return;
-
     e.damage = e.damage * 1.5
-
 });

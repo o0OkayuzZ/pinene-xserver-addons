@@ -12,10 +12,7 @@
           "client_sync": true,
           "default": 0,
           "type": "int",
-          "range": [
-            0,
-            2
-          ]
+          "range": [0, 2]
         }
       }
     },
@@ -175,13 +172,7 @@
         ]
       },
       "minecraft:type_family": {
-        "family": [
-          "enchanted",
-          "vindicator",
-          "monster",
-          "illager",
-          "mob"
-        ]
+        "family": ["enchanted", "vindicator", "monster", "illager", "mob"]
       },
       "minecraft:variant": {
         "value": 0
@@ -227,11 +218,11 @@
                         "subject": "other",
                         "value": "irongolem"
                       },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "key_golem_target"
-                }
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "key_golem_target"
+                      }
                     ]
                   }
                 ]
@@ -525,33 +516,25 @@
     "events": {
       "dungeons:arch_illager": {
         "add": {
-          "component_groups": [
-            "dungeons:obsidian_targeting"
-          ]
+          "component_groups": ["dungeons:obsidian_targeting"]
         },
         "trigger": "dungeons:vindicator_gear_regular"
       },
       "dungeons:spawn_diamond": {
         "add": {
-          "component_groups": [
-            "minecraft:default_targeting"
-          ]
+          "component_groups": ["minecraft:default_targeting"]
         },
         "trigger": "dungeons:vindicator_gear_diamond"
       },
       "dungeons:spawn_golden": {
         "add": {
-          "component_groups": [
-            "minecraft:default_targeting"
-          ]
+          "component_groups": ["minecraft:default_targeting"]
         },
         "trigger": "dungeons:vindicator_gear_golden"
       },
       "dungeons:spawn_regular": {
         "add": {
-          "component_groups": [
-            "minecraft:default_targeting"
-          ]
+          "component_groups": ["minecraft:default_targeting"]
         },
         "trigger": "dungeons:vindicator_gear_regular"
       },
@@ -568,9 +551,7 @@
           "dungeons:armour_type": 0
         },
         "add": {
-          "component_groups": [
-            "dungeons:vindicator_regular"
-          ]
+          "component_groups": ["dungeons:vindicator_regular"]
         },
         "remove": {
           "component_groups": [
@@ -592,9 +573,7 @@
           "dungeons:armour_type": 1
         },
         "add": {
-          "component_groups": [
-            "dungeons:vindicator_golden"
-          ]
+          "component_groups": ["dungeons:vindicator_golden"]
         },
         "remove": {
           "component_groups": [
@@ -616,9 +595,7 @@
           "dungeons:armour_type": 2
         },
         "add": {
-          "component_groups": [
-            "dungeons:vindicator_diamond"
-          ]
+          "component_groups": ["dungeons:vindicator_diamond"]
         },
         "remove": {
           "component_groups": [
@@ -639,17 +616,13 @@
       },
       "minecraft:become_aggro": {
         "add": {
-          "component_groups": [
-            "minecraft:vindicator_aggro"
-          ]
+          "component_groups": ["minecraft:vindicator_aggro"]
         }
       },
       "minecraft:entity_spawned": {
         "trigger": "dungeons:decide_vindicator_gear",
         "add": {
-          "component_groups": [
-            "minecraft:default_targeting"
-          ]
+          "component_groups": ["minecraft:default_targeting"]
         }
       },
       "dungeons:decide_vindicator_gear": {
@@ -676,9 +649,7 @@
               "value": false
             },
             "remove": {
-              "component_groups": [
-                "minecraft:raid_persistence"
-              ]
+              "component_groups": ["minecraft:raid_persistence"]
             }
           }
         ]
@@ -691,9 +662,7 @@
           ]
         },
         "remove": {
-          "component_groups": [
-            "minecraft:patrol_follower"
-          ]
+          "component_groups": ["minecraft:patrol_follower"]
         }
       },
       "minecraft:spawn_as_illager_captain": {
@@ -712,9 +681,7 @@
           ]
         },
         "remove": {
-          "component_groups": [
-            "minecraft:patrol_follower"
-          ]
+          "component_groups": ["minecraft:patrol_follower"]
         }
       },
       "minecraft:spawn_as_patrol_follower": {
@@ -727,23 +694,18 @@
       },
       "minecraft:stop_johnny": {
         "add": {
-          "component_groups": [
-            "minecraft:default_targeting"
-          ]
+          "component_groups": ["minecraft:default_targeting"]
         },
         "remove": {
-          "component_groups": [
-            "minecraft:vindicator_johnny"
-          ]
+          "component_groups": ["minecraft:vindicator_johnny"]
         }
       },
-      "minecraft:start_celebrating": { // Event must be called exactly this for village to fire it when a raid is lost
+      "minecraft:start_celebrating": {
+        // Event must be called exactly this for village to fire it when a raid is lost
         "sequence": [
           {
             "add": {
-              "component_groups": [
-                "minecraft:celebrate"
-              ]
+              "component_groups": ["minecraft:celebrate"]
             }
           },
           {
@@ -752,32 +714,24 @@
               "value": false
             },
             "remove": {
-              "component_groups": [
-                "minecraft:raid_persistence"
-              ]
+              "component_groups": ["minecraft:raid_persistence"]
             }
           }
         ]
       },
       "minecraft:start_johnny": {
         "add": {
-          "component_groups": [
-            "minecraft:vindicator_johnny"
-          ]
+          "component_groups": ["minecraft:vindicator_johnny"]
         }
       },
       "minecraft:stop_aggro": {
         "remove": {
-          "component_groups": [
-            "minecraft:vindicator_aggro"
-          ]
+          "component_groups": ["minecraft:vindicator_aggro"]
         }
       },
       "minecraft:stop_celebrating": {
         "remove": {
-          "component_groups": [
-            "minecraft:celebrate"
-          ]
+          "component_groups": ["minecraft:celebrate"]
         }
       }
     }

@@ -1783,7 +1783,7 @@ export const salvages = [
         ]
     },
     {
-        item: "dungeons:harpoon_crossbow",
+        item: "dungeons:nautical_crossbow",
         returns: [
             ["minecraft:gold_nugget", 2, 6],
             ["minecraft:gold_ingot", 2, 4]

@@ -3,7 +3,8 @@ import { world, system } from "@minecraft/server";
 const entriesArray = [
     "default",
     "bar",
-    "classic"
+    "classic",
+    "diamond"
 ]
 
 system.beforeEvents.startup.subscribe(event => {

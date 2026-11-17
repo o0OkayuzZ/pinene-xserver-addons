@@ -4,6 +4,17 @@ import {
     ItemStack
 } from "@minecraft/server";
 
+const items = [
+    "dungeons:sparkler",
+    "dungeons:sugar_rush",
+    "dungeons:sweet_tooth_helmet"
+]
+
+function pickItem() {
+    var item = items[Math.floor(Math.random()*items.length)]
+    return item
+}
+
 world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
     const entity = e.entity;
     const id = e.eventId;
@@ -13,8 +24,10 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
         var validDay = false
         if (month == 5 && date >= 18) validDay = true
         if (month == 6 && date <= 3) validDay = true
+        if (month == 10 && date >= 1 && date <= 9) validDay = true
         if (!validDay) return;
-        if (Math.random() > 1 / 3) return;
+        if (Math.random() > 3 / 4) return;
+        const itemId = pickItem()
         system.runTimeout(() => {
             entity.dimension.playSound("firework.launch", entity.location)
         }, 20)
@@ -40,8 +53,23 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe((e) => {
             dim.spawnParticle("dungeons:sparkler_hit", loc)
             dim.playSound("random.birthday", loc, { pitch: 1.5 })
             dim.playSound("random.birthday", loc, { pitch: 1.5 })
-            const sparkler = new ItemStack("dungeons:sparkler", 1)
-            dim.spawnItem(sparkler, loc)
+            var ids = []
+            if(itemId.includes("helmet")) {
+                ids = [
+                    itemId,
+                    itemId.replace("helmet","chestplate"),
+                    itemId.replace("helmet","leggings"),
+                    itemId.replace("helmet","boots")
+                ]
+            } else {
+                ids = [
+                    itemId
+                ]
+            }
+            for(const entry of ids) {
+                const sitem = new ItemStack(entry, 1)
+                dim.spawnItem(sitem, loc)
+            }
         }, 30)
     }
 });
