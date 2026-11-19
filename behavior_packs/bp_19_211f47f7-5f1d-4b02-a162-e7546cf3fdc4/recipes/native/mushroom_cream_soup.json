@@ -1,33 +1,43 @@
 {
   "format_version": "1.20.10",
-  "minecraft:recipe_shapeless": {
+  "minecraft:recipe_shaped": {
     "description": {
       "identifier": "pinene_native:mushroom_cream_soup"
     },
     "tags": [
       "pinene_native_rank_5"
     ],
-    "ingredients": [
-      {
+    "pattern": [
+      "ABC",
+      "DE "
+    ],
+    "key": {
+      "A": {
         "item": "minecraft:red_mushroom"
       },
-      {
+      "B": {
         "item": "minecraft:brown_mushroom"
       },
-      {
+      "C": {
         "item": "pine:milk_bottle"
       },
-      {
+      "D": {
         "item": "pine:butter"
       },
-      {
+      "E": {
         "item": "minecraft:bowl"
       }
-    ],
-    "result": {
-      "item": "pine:mushroom_cream_soup",
-      "count": 1
     },
+    "result": [
+      {
+        "item": "pine:mushroom_cream_soup",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
     "unlock": [
       {
         "item": "minecraft:red_mushroom"

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pinene_native:fish_sandwich"
+    },
+    "tags": [
+      "pinene_native_rank_4"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:bread"
+      },
+      {
+        "item": "minecraft:cooked_cod"
+      },
+      {
+        "item": "pine:butter"
+      }
+    ],
+    "result": {
+      "item": "pine:fish_sandwich",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:bread"
+      }
+    ]
+  }
+}

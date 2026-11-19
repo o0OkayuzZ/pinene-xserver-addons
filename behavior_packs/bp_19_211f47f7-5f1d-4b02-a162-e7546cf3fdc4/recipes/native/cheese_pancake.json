@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pinene_native:cheese_pancake"
+    },
+    "tags": [
+      "pinene_native_rank_5"
+    ],
+    "ingredients": [
+      {
+        "item": "pine:pancake"
+      },
+      {
+        "item": "pine:cheese"
+      },
+      {
+        "item": "minecraft:egg"
+      }
+    ],
+    "result": {
+      "item": "pine:cheese_pancake",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "pine:pancake"
+      }
+    ]
+  }
+}

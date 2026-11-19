@@ -1,30 +1,40 @@
 {
   "format_version": "1.20.10",
-  "minecraft:recipe_shapeless": {
+  "minecraft:recipe_shaped": {
     "description": {
       "identifier": "pinene_native:pumpkin_soup"
     },
     "tags": [
       "pinene_native_rank_4"
     ],
-    "ingredients": [
-      {
+    "pattern": [
+      "ABC",
+      "D  "
+    ],
+    "key": {
+      "A": {
         "item": "minecraft:pumpkin"
       },
-      {
+      "B": {
         "item": "pine:milk_bottle"
       },
-      {
+      "C": {
         "item": "pine:butter"
       },
-      {
+      "D": {
         "item": "minecraft:bowl"
       }
-    ],
-    "result": {
-      "item": "pine:pumpkin_soup",
-      "count": 1
     },
+    "result": [
+      {
+        "item": "pine:pumpkin_soup",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
     "unlock": [
       {
         "item": "minecraft:pumpkin"

@@ -16,10 +16,8 @@
       "item": "pine:cheese",
       "count": 4
     },
-    "unlock": [
-      {
-        "item": "pine:whole_cheese"
-      }
-    ]
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    }
   }
 }

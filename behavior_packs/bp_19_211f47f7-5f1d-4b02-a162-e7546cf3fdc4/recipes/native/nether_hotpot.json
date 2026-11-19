@@ -1,0 +1,43 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pinene_native:nether_hotpot"
+    },
+    "tags": [
+      "pinene_native_rank_7"
+    ],
+    "ingredients": [
+      {
+        "item": "pine:chili_pepper"
+      },
+      {
+        "item": "pine:chili_pepper"
+      },
+      {
+        "item": "minecraft:cooked_porkchop"
+      },
+      {
+        "item": "minecraft:magma_cream"
+      },
+      {
+        "item": "minecraft:nether_wart"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:bowl"
+      }
+    ],
+    "result": {
+      "item": "pine:nether_hotpot",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "pine:chili_pepper"
+      }
+    ]
+  }
+}

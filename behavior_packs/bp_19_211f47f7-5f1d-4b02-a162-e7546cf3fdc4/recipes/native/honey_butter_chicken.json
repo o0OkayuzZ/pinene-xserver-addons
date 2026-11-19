@@ -1,0 +1,40 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:honey_butter_chicken"
+    },
+    "tags": [
+      "pinene_native_rank_5"
+    ],
+    "pattern": [
+      "ABC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:cooked_chicken"
+      },
+      "B": {
+        "item": "pine:butter"
+      },
+      "C": {
+        "item": "minecraft:honey_bottle"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:honey_butter_chicken",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:cooked_chicken"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:fruit_jelly"
+    },
+    "tags": [
+      "pinene_native_rank_3"
+    ],
+    "pattern": [
+      "ABB",
+      "CDE"
+    ],
+    "key": {
+      "A": {
+        "item": "pine:gelatin"
+      },
+      "B": {
+        "item": "minecraft:sweet_berries"
+      },
+      "C": {
+        "item": "minecraft:apple"
+      },
+      "D": {
+        "item": "minecraft:sugar"
+      },
+      "E": {
+        "item": "minecraft:glass_bottle"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:fruit_jelly",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "pine:gelatin"
+      }
+    ]
+  }
+}

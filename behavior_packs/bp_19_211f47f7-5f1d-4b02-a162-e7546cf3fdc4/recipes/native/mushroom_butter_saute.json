@@ -1,0 +1,37 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "pinene_native:mushroom_butter_saute"
+    },
+    "tags": [
+      "pinene_native_rank_4"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:red_mushroom"
+      },
+      {
+        "item": "pine:butter"
+      },
+      {
+        "item": "minecraft:bowl"
+      }
+    ],
+    "result": {
+      "item": "pine:mushroom_butter_saute",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:brown_mushroom"
+      }
+    ]
+  }
+}

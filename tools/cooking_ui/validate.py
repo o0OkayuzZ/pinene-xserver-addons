@@ -34,9 +34,13 @@ import sys
 sys.path.insert(0,str(ROOT/'tools/cooking_native'))
 from compiler import compile_recipe,compile_board,table
 assert read(RP/'ui/server_form.json')=={'namespace':'server_form'}
-assert (BP/'scripts/main.js').read_text(encoding='utf-8').strip()=="import './native_boards.js';"
+assert (BP/'scripts/main.js').read_text(encoding='utf-8').strip()=="import './recipe_guide.js';\nimport './native_boards.js';"
 native=(BP/'scripts/native_boards.js').read_text(encoding='utf-8')
+guide=(BP/'scripts/recipe_guide.js').read_text(encoding='utf-8')
+discovery=(BP/'scripts/recipe_discovery.js').read_text(encoding='utf-8')
 assert 'ActionFormData' not in native and 'CustomForm' not in native
+assert 'ActionFormData' in guide and 'playerInventoryItemChange' in guide and 'minecraft:book' in guide
+assert 'discoverFromItems' in discovery and 'isRecipeDiscovered' in discovery
 assert 'bootstrap.js' not in native and 'minecraft:emerald_block' not in native
 assert 'getAllPlayers().length!==1' not in native
 assert 'migrateLegacyKnife' in native and 'otherSessionOwnsBoard' in native
@@ -52,8 +56,9 @@ for p in (BP/'entities').glob('placed_*_knife.json'):
     d['minecraft:entity']['components'].pop('minecraft:inventory')
     assert d==json.loads(previous(p)),p
 manifest=read(BP/'manifest.json')
+assert manifest['header']['version']==[0,3,1]
 assert next(d['version'] for d in manifest['dependencies'] if d.get('module_name')=='@minecraft/server')=='2.7.0'
-assert not any(d.get('module_name')=='@minecraft/server-ui' for d in manifest['dependencies'])
+assert next(d['version'] for d in manifest['dependencies'] if d.get('module_name')=='@minecraft/server-ui')=='2.2.0'
 assert manifest['modules'][1]['uuid']=='b86c67e2-0d84-4643-8d78-28cfdeb2718d'
 # The food pack, placed food models, original icons and all item stats are untouched.
 changed=subprocess.check_output(['git','-c','safe.directory='+ROOT.as_posix(),'diff','--name-only','986fe836c5c8207f3436638ae54580d7b89a96ca'],cwd=ROOT,text=True).splitlines()

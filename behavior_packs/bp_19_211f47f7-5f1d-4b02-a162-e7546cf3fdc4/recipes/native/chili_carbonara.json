@@ -1,0 +1,54 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pinene_native:chili_carbonara"
+    },
+    "tags": [
+      "pinene_native_rank_6"
+    ],
+    "pattern": [
+      "ABC",
+      "DEF",
+      "G  "
+    ],
+    "key": {
+      "A": {
+        "item": "pine:chili_pepper"
+      },
+      "B": {
+        "item": "pine:noodles"
+      },
+      "C": {
+        "item": "pine:cheese"
+      },
+      "D": {
+        "item": "minecraft:egg"
+      },
+      "E": {
+        "item": "pine:milk_bottle"
+      },
+      "F": {
+        "item": "minecraft:cooked_porkchop"
+      },
+      "G": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": [
+      {
+        "item": "pine:chili_carbonara",
+        "count": 1
+      },
+      {
+        "item": "minecraft:glass_bottle",
+        "count": 1
+      }
+    ],
+    "unlock": [
+      {
+        "item": "pine:chili_pepper"
+      }
+    ]
+  }
+}
